@@ -7,7 +7,7 @@ export function LocalBusinessJsonLd() {
     name: siteConfig.name,
     description: siteConfig.description.en,
     url: siteConfig.url,
-    telephone: `+${siteConfig.phone}`,
+    telephone: siteConfig.phone,
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
@@ -57,7 +57,7 @@ export function OrganizationJsonLd() {
     sameAs: [siteConfig.instagram],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: `+${siteConfig.phone}`,
+      telephone: siteConfig.phone,
       contactType: "customer service",
       availableLanguage: ["Dutch", "English"],
     },

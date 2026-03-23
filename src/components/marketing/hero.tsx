@@ -66,16 +66,12 @@ export function Hero({ locale }: { locale: Locale }) {
 
           {/* 3 CTAs — all clearly visible on dark background */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
-            {t.ctas.map((cta, i) => (
+            {t.ctas.map((cta) => (
               <ButtonLink
                 key={cta.href}
                 href={cta.href}
                 size="lg"
-                className={
-                  i === 0
-                    ? "bg-brand hover:bg-brand-dark text-white rounded-xl px-6 py-5 text-sm font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
-                    : "rounded-xl px-6 py-5 text-sm font-semibold border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all"
-                }
+                className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all"
               >
                 <cta.icon className="mr-2 w-4 h-4" />
                 {cta.label}

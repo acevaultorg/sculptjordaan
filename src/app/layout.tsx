@@ -43,13 +43,29 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     alternateLocale: "en_US",
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SculptClub — Boutique Personal Training Amsterdam Jordaan",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-default.jpg"],
   },
   robots: {
     index: true,
     follow: true,
   },
+  other: {
+    "theme-color": "#134DE1",
+  },
   icons: {
     icon: "/favicon.ico",
+    apple: "/images/icon-192.png",
   },
 };
 

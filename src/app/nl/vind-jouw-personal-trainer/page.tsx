@@ -76,7 +76,7 @@ export default function TrainersPageNL() {
                     src={trainer.image}
                     alt={trainer.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>

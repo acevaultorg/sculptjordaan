@@ -83,14 +83,14 @@ export function Header() {
             ))}
           </div>
 
-          {/* Language toggle — desktop only, pill */}
+          {/* Language toggle — desktop only, shows current lang */}
           <Link
             href={altPath}
             className="hidden md:flex items-center gap-1.5 ml-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-border transition-all"
             aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
           >
             <Globe className="w-3.5 h-3.5" />
-            {altLocale.toUpperCase()}
+            {locale.toUpperCase()}
           </Link>
 
           {/* Hamburger menu — always visible */}
@@ -164,7 +164,7 @@ export function Header() {
                 className="px-3 py-2.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-colors min-h-[44px] flex items-center gap-2"
               >
                 <Globe className="w-4 h-4" />
-                {altLocale === "en" ? "English" : "Nederlands"}
+                {locale === "nl" ? "Nederlands" : "English"} → {altLocale === "en" ? "English" : "Nederlands"}
               </Link>
             </div>
           </motion.div>
