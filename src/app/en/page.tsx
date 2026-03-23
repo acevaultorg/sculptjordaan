@@ -10,9 +10,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SculptClub — Boutique Personal Training Amsterdam Jordaan",
   description:
-    "Privé personal training studio in de Jordaan, Amsterdam. Personal training, Open Gym en studio verhuur. Geen abonnement, geen drukte, geen contracten.",
+    "Private personal training studio in the Jordaan, Amsterdam. Personal training, Open Gym and studio rental. No membership, no crowds, no contracts.",
   alternates: {
-    canonical: "/",
+    canonical: "/en",
     languages: {
       nl: "/",
       en: "/en",
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default function HomePageEN() {
   return (
     <PageLayout>
-      <Hero locale="nl" />
-      <ServicesOverview locale="nl" />
-      <HowItWorks locale="nl" />
-      <ReviewsPreview locale="nl" />
-      <FaqPreview locale="nl" />
-      <CtaBand locale="nl" />
+      <Hero locale="en" />
+      <ServicesOverview locale="en" />
+      <HowItWorks locale="en" />
+      <ReviewsPreview locale="en" />
+      <FaqPreview locale="en" />
+      <CtaBand locale="en" />
     </PageLayout>
   );
 }

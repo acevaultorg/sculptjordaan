@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sculptjordaan",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev"],
+      "port": 3456,
+      "autoPort": true,
+      "cwd": "/Users/Paulo/Documents/Claude-mac-170326-master/sculptjordaan"
+    }
+  ]
+}
