@@ -119,13 +119,13 @@ export function CookieConsent() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={handleEssential}
-                className="rounded-full border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
+                className="rounded-full border border-border bg-transparent px-5 py-2.5 min-h-[44px] text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
               >
                 {t.essential}
               </button>
               <button
                 onClick={handleAccept}
-                className="rounded-full bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand/90 transition-colors cursor-pointer"
+                className="rounded-full bg-brand px-5 py-2.5 min-h-[44px] text-sm font-medium text-white hover:bg-brand/90 transition-colors cursor-pointer"
               >
                 {t.accept}
               </button>
