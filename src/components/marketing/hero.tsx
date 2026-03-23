@@ -1,34 +1,51 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
-import { ctaButtons } from "@/config/acuity";
+import { acuityLinks } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
 export function Hero({ locale }: { locale: Locale }) {
-  const cta = ctaButtons.hero[locale];
   const t = {
     nl: {
       tagline: "Jouw gym. Jouw manier. Jouw resultaat.",
-      subtitle: "Boutique Personal Training — Amsterdam Jordaan",
+      subtitle: "Privé Personal Training Studio — Amsterdam Jordaan",
       description:
-        "Privé personal training studio in het hart van de Jordaan. Train met een expert trainer, solo in Open Gym, of huur de studio voor je eigen klanten. Geen abonnement. Geen drukte. Geen contracten.",
+        "Een private gym aan de gracht in de Jordaan. Train met een personal trainer, train zelfstandig of huur de studio. Geen abonnement, geen drukte — alleen jij en je training.",
+      ctas: [
+        { label: "Vind je Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
+        { label: "Train Zelfstandig", href: "/nl/open-gym", icon: Dumbbell },
+        { label: "Studio Huren", href: "/nl/studio-huren", icon: Building2 },
+      ],
     },
     en: {
       tagline: "Your gym. Your way. Your results.",
-      subtitle: "Boutique Personal Training — Amsterdam Jordaan",
+      subtitle: "Private Personal Training Studio — Amsterdam Jordaan",
       description:
-        "Private personal training studio in the heart of the Jordaan. Train with an expert trainer, solo in Open Gym, or rent the studio for your own clients. No membership. No crowds. No contracts.",
+        "A private gym on the canal in the Jordaan. Train with a personal trainer, train independently or rent the studio. No membership, no crowds — just you and your training.",
+      ctas: [
+        { label: "Find your Trainer", href: "/en/find-personal-trainer", icon: Users },
+        { label: "Train Solo", href: "/en/open-gym", icon: Dumbbell },
+        { label: "Rent the Studio", href: "/en/studio-rental", icon: Building2 },
+      ],
     },
   }[locale];
 
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
+      {/* Background image with gradient overlay */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/30" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-brand/5 rounded-full blur-3xl" />
+        <Image
+          src="/images/hero/gym-entrance.jpeg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 to-background/60" />
       </div>
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -48,25 +65,23 @@ export function Hero({ locale }: { locale: Locale }) {
             {t.description}
           </p>
 
-          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <ButtonLink
-              href={cta.primary.href}
-              external
-              size="lg"
-              className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
-            >
-              {cta.primary.label}
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </ButtonLink>
-
-            <ButtonLink
-              href={cta.secondary.href}
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold"
-            >
-              {cta.secondary.label}
-            </ButtonLink>
+          {/* 3 CTAs — matching old site's 3-service hero */}
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
+            {t.ctas.map((cta, i) => (
+              <ButtonLink
+                key={cta.href}
+                href={cta.href}
+                size="lg"
+                className={
+                  i === 0
+                    ? "bg-brand hover:bg-brand-dark text-white rounded-xl px-6 py-5 text-sm font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
+                    : "rounded-xl px-6 py-5 text-sm font-semibold border border-border bg-card/80 backdrop-blur-sm hover:bg-card transition-all"
+                }
+              >
+                <cta.icon className="mr-2 w-4 h-4" />
+                {cta.label}
+              </ButtonLink>
+            ))}
           </div>
         </motion.div>
       </div>

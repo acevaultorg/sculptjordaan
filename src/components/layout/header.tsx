@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
@@ -55,11 +55,13 @@ export function Header() {
             </Link>
           ))}
 
-          {/* Language toggle */}
+          {/* Language toggle — pill design */}
           <Link
             href={altPath}
-            className="ml-2 px-3 py-1.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+            className="ml-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-border transition-all"
+            aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
           >
+            <Globe className="w-3.5 h-3.5" />
             {altLocale.toUpperCase()}
           </Link>
         </div>
@@ -121,11 +123,13 @@ export function Header() {
 
               <div className="my-2 border-t border-border/50" />
 
+              {/* Language switch — mobile */}
               <Link
                 href={altPath}
                 onClick={() => setMobileOpen(false)}
-                className="px-3 py-2.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-colors min-h-[44px] flex items-center"
+                className="px-3 py-2.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-colors min-h-[44px] flex items-center gap-2"
               >
+                <Globe className="w-4 h-4" />
                 {altLocale === "en" ? "English" : "Nederlands"}
               </Link>
             </div>

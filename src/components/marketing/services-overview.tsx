@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Users, Dumbbell, Building2, ArrowRight } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
-import { acuityLinks } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
 const services = {
@@ -13,28 +13,31 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Kies jouw trainer. Gratis intake. Trainers bepalen hun eigen tarieven — vanaf €49 per sessie. 0% commissie model.",
+        "Kies een personal trainer die past bij jouw doel. Eerste intake altijd gratis. Trainers bepalen hun eigen prijs — vanaf €49 per sessie.",
       href: "/nl/vind-jouw-personal-trainer",
-      cta: "Vind je Trainer",
-      acuity: false,
+      cta: "Bekijk trainers & tarieven",
+      image: "/images/trainers/alex.jpg",
+      imageAlt: "Personal Training bij SculptClub",
     },
     {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Train zelfstandig in een privé studio met professionele apparatuur. Vanaf €5,75 per sessie. Geen abonnement, per 4 weken.",
+        "Open Gym in een rustige privé studio. Boek een slot van 60 min, max 3 personen tegelijk. Lidmaatschap vanaf €49/4 weken.",
       href: "/nl/open-gym",
-      cta: "Ontdek Open Gym",
-      acuity: false,
+      cta: "Bekijk Open Gym & prijzen",
+      image: "/images/studio/power-rack.jpeg",
+      imageAlt: "Open Gym apparatuur bij SculptClub",
     },
     {
       icon: Building2,
       title: "Studio Huren",
       description:
-        "Huur onze volledig uitgeruste studio voor je eigen klanten. Vanaf €9,24 per sessie met kortingspakketten. Flexibel per uur.",
+        "Voor trainers. Huur de studio per sessie voor jouw klanten. Vanaf €12 per uur, of bespaar tot 23% met een kortingspakket. Geen contract.",
       href: "/nl/studio-huren",
-      cta: "Bekijk Tarieven",
-      acuity: false,
+      cta: "Bekijk studio & tarieven",
+      image: "/images/studio/studio-overview.jpeg",
+      imageAlt: "SculptClub studio overzicht",
     },
   ],
   en: [
@@ -42,28 +45,31 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Choose your trainer. Free intro. Trainers set their own rates — from €49 per session. 0% commission model.",
+        "Choose a personal trainer who fits your goals. First intro always free. Trainers set their own rates — from €49 per session.",
       href: "/en/find-personal-trainer",
-      cta: "Find your Trainer",
-      acuity: false,
+      cta: "View trainers & rates",
+      image: "/images/trainers/alex.jpg",
+      imageAlt: "Personal Training at SculptClub",
     },
     {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Train independently in a private studio with professional equipment. From €5.75 per session. No contracts, per 4 weeks.",
+        "Open Gym in a quiet private studio. Book 60-min sessions, max 3 people at a time. Membership from €49/4 weeks.",
       href: "/en/open-gym",
-      cta: "Discover Open Gym",
-      acuity: false,
+      cta: "View Open Gym & pricing",
+      image: "/images/studio/power-rack.jpeg",
+      imageAlt: "Open Gym equipment at SculptClub",
     },
     {
       icon: Building2,
       title: "Studio Rental",
       description:
-        "Rent our fully equipped studio for your own clients. From €9.24 per session with discount packages. Flexible per hour.",
+        "For trainers. Rent the studio per session for your clients. From €12 per hour, or save up to 23% with a discount package. No contract.",
       href: "/en/studio-rental",
-      cta: "View Rates",
-      acuity: false,
+      cta: "View studio & rates",
+      image: "/images/studio/studio-overview.jpeg",
+      imageAlt: "SculptClub studio overview",
     },
   ],
 };
@@ -80,7 +86,16 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
       <div className="grid sm:grid-cols-3 gap-6">
         {items.map((service, i) => (
           <FadeIn key={service.title} delay={i * 0.1}>
-            <Card className="h-full group hover:shadow-brand-lg transition-all duration-300 border-border/50">
+            <Card className="h-full group hover:shadow-brand-lg transition-all duration-300 border-border/50 overflow-hidden">
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  className="object-cover rounded-t-xl"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              </div>
               <CardHeader>
                 <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-3">
                   <service.icon className="w-5 h-5 text-brand" />

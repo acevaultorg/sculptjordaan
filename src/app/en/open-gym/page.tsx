@@ -120,7 +120,7 @@ export default function OpenGymPageEN() {
           description="Open Gym in a private studio. No crowds, no waiting. Book a time slot and train your way with professional equipment."
         />
         <FadeIn className="flex justify-center">
-          <ButtonLink href={acuityLinks.openGym} size="lg">
+          <ButtonLink href={acuityLinks.openGymBook} size="lg">
             Book Open Gym
           </ButtonLink>
         </FadeIn>
@@ -167,7 +167,7 @@ export default function OpenGymPageEN() {
         </div>
 
         <FadeIn delay={0.4} className="mt-10 flex justify-center">
-          <ButtonLink href={acuityLinks.openGym} size="lg">
+          <ButtonLink href={acuityLinks.openGymBook} size="lg">
             Book Open Gym
           </ButtonLink>
         </FadeIn>

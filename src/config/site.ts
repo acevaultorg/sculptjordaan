@@ -34,7 +34,7 @@ export const siteConfig = {
   acuity: {
     openGymId: "87017445",
     baseUrl: "https://app.acuityscheduling.com/schedule.php",
-    owner: "sculptclub",
+    owner: "36720238",
   },
   analytics: {
     ga4: "G-QYW5H4XTXW",

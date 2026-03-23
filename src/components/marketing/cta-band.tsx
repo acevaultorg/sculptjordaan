@@ -3,8 +3,7 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Section, FadeIn } from "@/components/sections/section";
-import { ctaButtons } from "@/config/acuity";
-import { siteConfig } from "@/config/site";
+import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
 export function CtaBand({ locale }: { locale: Locale }) {
@@ -29,28 +28,27 @@ export function CtaBand({ locale }: { locale: Locale }) {
     <Section bg="dark">
       <FadeIn>
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             {t.title}
           </h2>
-          <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
             {t.description}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <ButtonLink
-              href={ctaButtons.hero[locale].primary.href}
+              href={acuityLinks.generic}
               external
               size="lg"
-              className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
+              className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-white rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
             >
               {t.primary}
               <ArrowRight className="ml-2 w-4 h-4" />
             </ButtonLink>
             <ButtonLink
-              href={siteConfig.whatsapp}
+              href={whatsappLinks.generic}
               external
-              variant="outline"
               size="lg"
-              className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
+              className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border border-white/30 text-white bg-white/10 hover:bg-white/20 transition-all"
             >
               <MessageCircle className="mr-2 w-4 h-4" />
               {t.whatsapp}

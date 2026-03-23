@@ -1,6 +1,8 @@
+import { Users, Dumbbell, Building2, MessageCircle } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader } from "@/components/sections/section";
-import { siteConfig } from "@/config/site";
+import { ButtonLink } from "@/components/ui/button-link";
+import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,27 +11,80 @@ export const metadata: Metadata = {
   alternates: { canonical: "/en/book", languages: { nl: "/nl/boek", en: "/en/book" } },
 };
 
+const bookingOptions = [
+  {
+    icon: Users,
+    title: "Personal Training",
+    description: "Book a session with one of our expert trainers. Free intro available.",
+    href: acuityLinks.generic,
+    cta: "Book Personal Training",
+  },
+  {
+    icon: Dumbbell,
+    title: "Open Gym Session",
+    description: "Reserve your private training slot in our fully equipped studio.",
+    href: acuityLinks.openGymBook,
+    cta: "Book Open Gym",
+  },
+  {
+    icon: Building2,
+    title: "Studio Rental",
+    description: "Rent the studio for your own clients. Flexible per hour or with discount packages.",
+    href: acuityLinks.generic,
+    cta: "Rent the Studio",
+  },
+];
+
 export default function BookPageEN() {
   return (
     <PageLayout>
       <Section>
-        <SectionHeader overline="Schedule" title="Book a session" description="Pick your session, select a time and you're set. Questions? WhatsApp us." />
-        <div className="max-w-3xl mx-auto">
-          <iframe
-            src={`https://app.acuityscheduling.com/schedule.php?owner=${siteConfig.acuity.owner}`}
-            title="Book session"
-            width="100%"
-            height="800"
-            frameBorder="0"
-            className="rounded-xl border border-border/50"
-          />
-          <p className="mt-6 text-center text-sm text-muted-foreground">
-            Questions?{" "}
-            <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand hover:text-brand-dark">
+        <SectionHeader
+          overline="Schedule"
+          title="Book a session"
+          description="Pick your session, select a time and you're set. Questions? WhatsApp us."
+        />
+        <div className="max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-6">
+            {bookingOptions.map((option) => (
+              <div
+                key={option.title}
+                className="rounded-2xl border border-border/50 bg-card p-6 flex flex-col gap-4 hover:shadow-brand-lg transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center">
+                  <option.icon className="w-6 h-6 text-brand" />
+                </div>
+                <h3 className="text-lg font-bold">{option.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {option.description}
+                </p>
+                <ButtonLink
+                  href={option.href}
+                  external
+                  className="w-full bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl text-sm font-semibold transition-all"
+                >
+                  {option.cta}
+                </ButtonLink>
+              </div>
+            ))}
+          </div>
+
+          {/* WhatsApp contact */}
+          <div className="mt-10 text-center space-y-3">
+            <ButtonLink
+              href={whatsappLinks.generic}
+              external
+              variant="outline"
+              size="lg"
+              className="rounded-xl px-8 py-5 text-base font-semibold"
+            >
+              <MessageCircle className="mr-2 w-5 h-5" />
               WhatsApp us
-            </a>
-            {" "}— we usually respond within 1 hour.
-          </p>
+            </ButtonLink>
+            <p className="text-sm text-muted-foreground">
+              Questions? We usually respond within 1 hour.
+            </p>
+          </div>
         </div>
       </Section>
     </PageLayout>
