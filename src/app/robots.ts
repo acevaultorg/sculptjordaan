@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://sculptjordaan.nl/sitemap.xml",
+    sitemap: "https://sculptclub.nl/sitemap.xml",
   };
 }

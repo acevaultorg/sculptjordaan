@@ -12,7 +12,7 @@ export const siteConfig = {
     nl: "Privé personal training studio in de Jordaan, Amsterdam. Personal training, Open Gym en studio verhuur. Geen abonnement, geen drukte.",
     en: "Private personal training studio in the Jordaan, Amsterdam. Personal training, Open Gym and studio rental. No membership, no crowds.",
   },
-  url: "https://sculptjordaan.nl",
+  url: "https://sculptclub.nl",
   ogImage: "/images/og-default.jpg",
   address: {
     street: "Egelantiersgracht 424",

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://sculptjordaan.nl";
+const BASE_URL = "https://sculptclub.nl";
 
 const nlPages = [
   "/",
