@@ -2,7 +2,7 @@ import { Users, Dumbbell, Building2, MessageCircle } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { whatsappLinks } from "@/config/acuity";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,22 +16,25 @@ const bookingOptions = [
     icon: Users,
     title: "Personal Training",
     description: "Boek een sessie met een van onze expert trainers. Gratis intake beschikbaar.",
-    href: acuityLinks.generic,
-    cta: "Boek Personal Training",
+    href: "/nl/vind-jouw-personal-trainer",
+    cta: "Vind je Trainer",
+    external: false,
   },
   {
     icon: Dumbbell,
     title: "Open Gym Sessie",
     description: "Reserveer je privé trainingsslot in onze volledig uitgeruste studio.",
-    href: acuityLinks.openGymBook,
-    cta: "Boek Open Gym",
+    href: "/nl/open-gym",
+    cta: "Train Zelfstandig",
+    external: false,
   },
   {
     icon: Building2,
     title: "Studio Huren",
     description: "Huur de studio voor je eigen klanten. Flexibel per uur of met kortingspakket.",
-    href: acuityLinks.generic,
-    cta: "Huur de Studio",
+    href: "/nl/studio-huren",
+    cta: "Studio Huren",
+    external: false,
   },
 ];
 
@@ -60,7 +63,7 @@ export default function BookPageNL() {
                 </p>
                 <ButtonLink
                   href={option.href}
-                  external
+                  external={option.external}
                   className="w-full bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl text-sm font-semibold transition-all"
                 >
                   {option.cta}

@@ -18,7 +18,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Find Your Personal Trainer \u2014 SculptClub Amsterdam Jordaan",
+  title: "Find Your Personal Trainer — SculptClub Amsterdam Jordaan",
   description:
     "Discover our personal trainers in the Jordaan. Free intro session, trainers set their own rates. Find the perfect match for your goals.",
   alternates: {
@@ -51,7 +51,7 @@ export default function TrainersPageEN() {
         <SectionHeader
           overline="Our Trainers"
           title="Find Your Personal Trainer"
-          description="Free intro session \u2014 trainers set their own rates. Book a no-obligation introduction and find the perfect match."
+          description="Free intro session — trainers set their own rates. Book a no-obligation introduction and find the perfect match."
         />
 
         {/* Trust badges */}

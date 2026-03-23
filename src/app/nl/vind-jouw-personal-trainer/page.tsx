@@ -18,7 +18,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vind Jouw Personal Trainer \u2014 SculptClub Amsterdam Jordaan",
+  title: "Vind Jouw Personal Trainer — SculptClub Amsterdam Jordaan",
   description:
     "Ontdek onze personal trainers in de Jordaan. Gratis intake, trainers bepalen hun eigen tarieven. Vind de perfecte match voor jouw doelen.",
   alternates: {
@@ -51,7 +51,7 @@ export default function TrainersPageNL() {
         <SectionHeader
           overline="Onze Trainers"
           title="Vind Jouw Personal Trainer"
-          description="Gratis intake \u2014 trainers bepalen hun eigen tarieven. Boek een vrijblijvend kennismakingsgesprek en vind de perfecte match."
+          description="Gratis intake — trainers bepalen hun eigen tarieven. Boek een vrijblijvend kennismakingsgesprek en vind de perfecte match."
         />
 
         {/* Trust badges */}

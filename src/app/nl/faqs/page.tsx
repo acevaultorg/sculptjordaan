@@ -70,7 +70,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Wat kosten de trainers?",
-        a: "Trainers bepalen hun eigen tarieven, vanaf \u20AC49 per sessie. Wij rekenen 0% commissie \u2014 de prijs die je van je trainer hoort is wat je betaalt.",
+        a: "Trainers bepalen hun eigen tarieven, vanaf \u20AC49 per sessie. Wij rekenen 0% commissie — de prijs die je van je trainer hoort is wat je betaalt.",
       },
       {
         q: "Hoe kies ik een trainer?",

@@ -22,7 +22,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Studio Rental \u2014 Private Training Space | SculptClub Amsterdam Jordaan",
+  title: "Studio Rental — Private Training Space | SculptClub Amsterdam Jordaan",
   description:
     "Rent our private studio in the Jordaan for personal training or small group sessions. From \u20ac12/hour, no commission. Professional equipment, flexible by the hour.",
   alternates: {

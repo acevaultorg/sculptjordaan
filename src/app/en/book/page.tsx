@@ -2,7 +2,7 @@ import { Users, Dumbbell, Building2, MessageCircle } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { whatsappLinks } from "@/config/acuity";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,22 +16,25 @@ const bookingOptions = [
     icon: Users,
     title: "Personal Training",
     description: "Book a session with one of our expert trainers. Free intro available.",
-    href: acuityLinks.generic,
-    cta: "Book Personal Training",
+    href: "/en/find-personal-trainer",
+    cta: "Find your Trainer",
+    external: false,
   },
   {
     icon: Dumbbell,
     title: "Open Gym Session",
     description: "Reserve your private training slot in our fully equipped studio.",
-    href: acuityLinks.openGymBook,
-    cta: "Book Open Gym",
+    href: "/en/open-gym",
+    cta: "Train Solo",
+    external: false,
   },
   {
     icon: Building2,
     title: "Studio Rental",
     description: "Rent the studio for your own clients. Flexible per hour or with discount packages.",
-    href: acuityLinks.generic,
+    href: "/en/studio-rental",
     cta: "Rent the Studio",
+    external: false,
   },
 ];
 
@@ -60,7 +63,7 @@ export default function BookPageEN() {
                 </p>
                 <ButtonLink
                   href={option.href}
-                  external
+                  external={option.external}
                   className="w-full bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl text-sm font-semibold transition-all"
                 >
                   {option.cta}

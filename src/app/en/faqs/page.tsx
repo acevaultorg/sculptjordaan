@@ -70,7 +70,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What do the trainers charge?",
-        a: "Trainers set their own rates, starting from \u20AC49 per session. We charge 0% commission \u2014 the price your trainer quotes is what you pay.",
+        a: "Trainers set their own rates, starting from \u20AC49 per session. We charge 0% commission — the price your trainer quotes is what you pay.",
       },
       {
         q: "How do I choose a trainer?",

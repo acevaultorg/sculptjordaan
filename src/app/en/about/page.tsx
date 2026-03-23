@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us \u2014 SculptClub Amsterdam Jordaan",
+  title: "About Us — SculptClub Amsterdam Jordaan",
   description:
     "SculptClub is a boutique personal training studio on the Egelantiersgracht in Amsterdam Jordaan. Private training, Open Gym and studio rental. Founded in 2025.",
   alternates: {
@@ -147,7 +147,7 @@ export default function AboutPage() {
         <SectionHeader
           overline="What we offer"
           title="Three pillars"
-          description="Personal Training, Open Gym and Studio Rental \u2014 all under one roof."
+          description="Personal Training, Open Gym and Studio Rental — all under one roof."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
