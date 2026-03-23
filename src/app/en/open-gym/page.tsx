@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 import {
   Accordion,
@@ -16,13 +17,14 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
-import { Clock, Key, Dumbbell } from "lucide-react";
+import { Clock, Key, Dumbbell, Info } from "lucide-react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Open Gym — Train Independently | SculptClub Amsterdam Jordaan",
+  title: "Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam Jordaan",
   description:
-    "Train independently in a private studio in the Jordaan. Book a time slot, get your door code and train your way. From \u20AC29 per 4 weeks.",
+    "Book 60-minute sessions in a quiet, fully equipped private studio in the Jordaan. Max. 3 people per slot. Membership from \u20ac29 per 4 weeks.",
   alternates: {
     canonical: "/en/open-gym",
     languages: {
@@ -35,35 +37,47 @@ export const metadata: Metadata = {
 const plans = [
   {
     name: "Starter Plan",
+    sessions: "4 sessions",
     frequency: "1x / week",
-    price: "\u20AC29",
+    tagline: "Ideal to get started",
+    price: "\u20ac29",
     period: "/ 4 weeks",
-    perSession: "\u20AC7.25 / session",
+    perSession: "\u20ac7.25 / session",
     badge: null,
+    link: acuityLinks.openGymPlans.instapplan,
   },
   {
     name: "Popular",
+    sessions: "8 sessions",
     frequency: "2x / week",
-    price: "\u20AC49",
+    tagline: "Regular training without too much pressure",
+    price: "\u20ac49",
     period: "/ 4 weeks",
-    perSession: "\u20AC6.13 / session",
+    perSession: "\u20ac6.13 / session",
     badge: "Most popular",
+    link: acuityLinks.openGymPlans.populair,
   },
   {
     name: "Intensive",
+    sessions: "12 sessions",
     frequency: "3x / week",
-    price: "\u20AC69",
+    tagline: "Achieve serious results",
+    price: "\u20ac69",
     period: "/ 4 weeks",
-    perSession: "\u20AC5.75 / session",
+    perSession: "\u20ac5.75 / session",
     badge: null,
+    link: acuityLinks.openGymPlans.intensief,
   },
   {
     name: "Unlimited",
+    sessions: "Unlimited",
     frequency: "Unlimited",
-    price: "\u20AC89",
+    tagline: "Maximum freedom and flexibility",
+    price: "\u20ac89",
     period: "/ 4 weeks",
     perSession: null,
     badge: null,
+    link: acuityLinks.openGymPlans.onbeperkt,
   },
 ];
 
@@ -86,6 +100,13 @@ const steps = [
   },
 ];
 
+const studioImages = [
+  { src: "/images/studio/power-rack.jpeg", alt: "Power rack at SculptClub studio" },
+  { src: "/images/studio/assault-bike.jpeg", alt: "Assault bike at SculptClub studio" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack at SculptClub studio" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "SculptClub studio overview" },
+];
+
 const faqs = [
   {
     q: "What exactly is Open Gym?",
@@ -101,11 +122,15 @@ const faqs = [
   },
   {
     q: "Can I bring a friend?",
-    a: "Open Gym sessions are individual. Want to train together? Check out our studio rental options for small group training.",
+    a: "Up to 3 people can be in the studio at the same time. Want to train together? Check out our studio rental options for small group training.",
   },
   {
     q: "What if I need to cancel?",
     a: "You can cancel free of charge up to 12 hours before your session via the booking system. Late cancellations will be deducted from your credit.",
+  },
+  {
+    q: "Is it really a membership?",
+    a: "Yes, Open Gym works with a membership per 4 weeks. You choose a plan that fits you and can cancel at any time. No long-term contract.",
   },
 ];
 
@@ -116,38 +141,56 @@ export default function OpenGymPageEN() {
       <Section>
         <SectionHeader
           overline="Open Gym"
-          title="Train Independently"
-          description="Open Gym in a private studio. No crowds, no waiting. Book a time slot and train your way with professional equipment."
+          title="Open Gym in a Private Studio"
+          description="Book 60-minute sessions in a quiet, fully equipped studio in the Jordaan. Max. 3 people per slot."
         />
-        <FadeIn className="flex justify-center">
+        <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <ButtonLink href={acuityLinks.openGymBook} size="lg">
-            Book Open Gym
+            Already a member? Reserve your hour
+          </ButtonLink>
+          <ButtonLink href={acuityLinks.generic} size="lg" variant="outline">
+            New? Start with a free trial
           </ButtonLink>
         </FadeIn>
       </Section>
 
-      {/* Pricing */}
+      {/* Social proof */}
       <Section bg="muted">
+        <FadeIn>
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="text-lg font-semibold text-primary">
+              Most members start with 2x per week
+            </p>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Info className="h-4 w-4" />
+              <span>60-minute sessions. For 1 person.</span>
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* Pricing */}
+      <Section>
         <SectionHeader
-          overline="Pricing"
+          overline="Membership"
           title="Choose Your Plan"
-          description="All plans are per 4 weeks. No contract, no commitments."
+          description="All plans run per 4 weeks. No long-term contract."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
               <Card
-                className={`h-full text-center ${plan.badge ? "ring-2 ring-primary" : ""}`}
+                className={`h-full text-center flex flex-col ${plan.badge ? "ring-2 ring-primary" : ""}`}
               >
                 <CardHeader>
                   {plan.badge && (
                     <Badge className="mx-auto mb-2">{plan.badge}</Badge>
                   )}
                   <CardTitle className="text-lg">{plan.name}</CardTitle>
-                  <CardDescription>{plan.frequency}</CardDescription>
+                  <CardDescription>{plan.sessions}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   <p className="text-3xl font-bold">
                     {plan.price}
                     <span className="text-base font-normal text-muted-foreground">
@@ -160,21 +203,23 @@ export default function OpenGymPageEN() {
                       {plan.perSession}
                     </p>
                   )}
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {plan.tagline}
+                  </p>
                 </CardContent>
+                <CardFooter className="justify-center">
+                  <ButtonLink href={plan.link} size="sm" className="w-full">
+                    Start
+                  </ButtonLink>
+                </CardFooter>
               </Card>
             </FadeIn>
           ))}
         </div>
-
-        <FadeIn delay={0.4} className="mt-10 flex justify-center">
-          <ButtonLink href={acuityLinks.openGymBook} size="lg">
-            Book Open Gym
-          </ButtonLink>
-        </FadeIn>
       </Section>
 
       {/* How it works */}
-      <Section>
+      <Section bg="muted">
         <SectionHeader
           overline="How it works"
           title="Get Started in 3 Steps"
@@ -191,6 +236,30 @@ export default function OpenGymPageEN() {
                 <p className="text-sm text-muted-foreground">
                   {step.description}
                 </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* Studio gallery */}
+      <Section>
+        <SectionHeader
+          overline="The Studio"
+          title="Fully Equipped"
+          description="Power rack, dumbbells, cable machine, cardio and more. Everything you need."
+        />
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {studioImages.map((img, i) => (
+            <FadeIn key={img.src} delay={i * 0.1}>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
               </div>
             </FadeIn>
           ))}
@@ -215,6 +284,32 @@ export default function OpenGymPageEN() {
               </AccordionItem>
             ))}
           </Accordion>
+        </FadeIn>
+      </Section>
+
+      {/* Bottom CTA */}
+      <Section bg="dark">
+        <SectionHeader
+          overline="Ready to start?"
+          title="Choose Your Membership"
+          description="Choose a membership if you are new, or reserve directly if you are already a member."
+        />
+        <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <ButtonLink
+            href={acuityLinks.openGymPlans.populair}
+            size="lg"
+            className="text-white"
+          >
+            Become a member
+          </ButtonLink>
+          <ButtonLink
+            href={acuityLinks.openGymBook}
+            size="lg"
+            variant="outline"
+            className="text-white border-white/30 hover:bg-white/10"
+          >
+            Reserve a session
+          </ButtonLink>
         </FadeIn>
       </Section>
     </PageLayout>

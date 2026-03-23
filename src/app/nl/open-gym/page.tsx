@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 import {
   Accordion,
@@ -16,13 +17,14 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
-import { Clock, Key, Dumbbell } from "lucide-react";
+import { Clock, Key, Dumbbell, Info } from "lucide-react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Open Gym — Train Zelfstandig | SculptClub Amsterdam Jordaan",
+  title: "Open Gym — Train Zelfstandig in een Priv\u00e9 Studio | SculptClub Amsterdam Jordaan",
   description:
-    "Train zelfstandig in een priv\u00e9 studio in de Jordaan. Boek een tijdslot, ontvang je deurcode en train op jouw manier. Vanaf \u20AC29 per 4 weken.",
+    "Boek sessies van 60 minuten in een rustige, volledig uitgeruste priv\u00e9 studio in de Jordaan. Max. 3 personen per slot. Lidmaatschap vanaf \u20ac29 per 4 weken.",
   alternates: {
     canonical: "/nl/open-gym",
     languages: {
@@ -35,35 +37,47 @@ export const metadata: Metadata = {
 const plans = [
   {
     name: "Instapplan",
+    sessions: "4 sessies",
     frequency: "1x / week",
-    price: "\u20AC29",
+    tagline: "Ideaal om te beginnen",
+    price: "\u20ac29",
     period: "/ 4 weken",
-    perSession: "\u20AC7,25 / sessie",
+    perSession: "\u20ac7,25 / sessie",
     badge: null,
+    link: acuityLinks.openGymPlans.instapplan,
   },
   {
     name: "Populair",
+    sessions: "8 sessies",
     frequency: "2x / week",
-    price: "\u20AC49",
+    tagline: "Regelmatig trainen zonder te veel druk",
+    price: "\u20ac49",
     period: "/ 4 weken",
-    perSession: "\u20AC6,13 / sessie",
+    perSession: "\u20ac6,13 / sessie",
     badge: "Meest gekozen",
+    link: acuityLinks.openGymPlans.populair,
   },
   {
     name: "Intensief",
+    sessions: "12 sessies",
     frequency: "3x / week",
-    price: "\u20AC69",
+    tagline: "Serieus resultaat behalen",
+    price: "\u20ac69",
     period: "/ 4 weken",
-    perSession: "\u20AC5,75 / sessie",
+    perSession: "\u20ac5,75 / sessie",
     badge: null,
+    link: acuityLinks.openGymPlans.intensief,
   },
   {
     name: "Onbeperkt",
+    sessions: "Onbeperkt",
     frequency: "Onbeperkt",
-    price: "\u20AC89",
+    tagline: "Maximale vrijheid en flexibiliteit",
+    price: "\u20ac89",
     period: "/ 4 weken",
     perSession: null,
     badge: null,
+    link: acuityLinks.openGymPlans.onbeperkt,
   },
 ];
 
@@ -86,6 +100,13 @@ const steps = [
   },
 ];
 
+const studioImages = [
+  { src: "/images/studio/power-rack.jpeg", alt: "Power rack in SculptClub studio" },
+  { src: "/images/studio/assault-bike.jpeg", alt: "Assault bike in SculptClub studio" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack in SculptClub studio" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht SculptClub studio" },
+];
+
 const faqs = [
   {
     q: "Wat is Open Gym precies?",
@@ -101,11 +122,15 @@ const faqs = [
   },
   {
     q: "Kan ik een vriend meenemen?",
-    a: "Open Gym sessies zijn individueel. Wil je samen trainen? Bekijk dan onze studio verhuur opties voor small group training.",
+    a: "Er mogen maximaal 3 personen tegelijk in de studio. Wil je samen trainen? Bekijk dan onze studio verhuur opties voor small group training.",
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
     a: "Je kunt tot 12 uur van tevoren kosteloos annuleren via het boekingssysteem. Bij te laat annuleren wordt de sessie in mindering gebracht op je tegoed.",
+  },
+  {
+    q: "Is het echt een lidmaatschap?",
+    a: "Ja, Open Gym werkt met een lidmaatschap per 4 weken. Je kiest een plan dat bij je past en kunt elk moment opzeggen. Geen langlopend contract.",
   },
 ];
 
@@ -116,38 +141,56 @@ export default function OpenGymPageNL() {
       <Section>
         <SectionHeader
           overline="Open Gym"
-          title="Train Zelfstandig"
-          description="Open Gym in een priv\u00e9 studio. Geen drukte, geen wachten. Boek een tijdslot en train op jouw manier met professionele apparatuur."
+          title="Open Gym in een Priv\u00e9 Studio"
+          description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
         />
-        <FadeIn className="flex justify-center">
+        <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <ButtonLink href={acuityLinks.openGymBook} size="lg">
-            Boek Open Gym
+            Al lid? Reserveer jouw uur
+          </ButtonLink>
+          <ButtonLink href={acuityLinks.generic} size="lg" variant="outline">
+            Nieuw? Begin met een gratis proefles
           </ButtonLink>
         </FadeIn>
       </Section>
 
-      {/* Pricing */}
+      {/* Social proof */}
       <Section bg="muted">
+        <FadeIn>
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="text-lg font-semibold text-primary">
+              De meeste leden starten met 2x per week
+            </p>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Info className="h-4 w-4" />
+              <span>Sessies van 60 minuten. Voor 1 persoon.</span>
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* Pricing */}
+      <Section>
         <SectionHeader
-          overline="Tarieven"
+          overline="Lidmaatschap"
           title="Kies Jouw Plan"
-          description="Alle plannen zijn per 4 weken. Geen contract, geen verplichtingen."
+          description="Alle plannen lopen per 4 weken. Geen langlopend contract."
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
               <Card
-                className={`h-full text-center ${plan.badge ? "ring-2 ring-primary" : ""}`}
+                className={`h-full text-center flex flex-col ${plan.badge ? "ring-2 ring-primary" : ""}`}
               >
                 <CardHeader>
                   {plan.badge && (
                     <Badge className="mx-auto mb-2">{plan.badge}</Badge>
                   )}
                   <CardTitle className="text-lg">{plan.name}</CardTitle>
-                  <CardDescription>{plan.frequency}</CardDescription>
+                  <CardDescription>{plan.sessions}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1">
                   <p className="text-3xl font-bold">
                     {plan.price}
                     <span className="text-base font-normal text-muted-foreground">
@@ -160,21 +203,23 @@ export default function OpenGymPageNL() {
                       {plan.perSession}
                     </p>
                   )}
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {plan.tagline}
+                  </p>
                 </CardContent>
+                <CardFooter className="justify-center">
+                  <ButtonLink href={plan.link} size="sm" className="w-full">
+                    Start
+                  </ButtonLink>
+                </CardFooter>
               </Card>
             </FadeIn>
           ))}
         </div>
-
-        <FadeIn delay={0.4} className="mt-10 flex justify-center">
-          <ButtonLink href={acuityLinks.openGymBook} size="lg">
-            Boek Open Gym
-          </ButtonLink>
-        </FadeIn>
       </Section>
 
       {/* How it works */}
-      <Section>
+      <Section bg="muted">
         <SectionHeader
           overline="Hoe het werkt"
           title="In 3 Stappen aan de Slag"
@@ -197,6 +242,30 @@ export default function OpenGymPageNL() {
         </div>
       </Section>
 
+      {/* Studio gallery */}
+      <Section>
+        <SectionHeader
+          overline="De Studio"
+          title="Volledig Uitgerust"
+          description="Powerrack, dumbbells, kabelmachine, cardio en meer. Alles wat je nodig hebt."
+        />
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {studioImages.map((img, i) => (
+            <FadeIn key={img.src} delay={i * 0.1}>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
       {/* FAQ */}
       <Section bg="muted">
         <SectionHeader overline="Veelgestelde vragen" title="Open Gym FAQ" />
@@ -212,6 +281,32 @@ export default function OpenGymPageNL() {
               </AccordionItem>
             ))}
           </Accordion>
+        </FadeIn>
+      </Section>
+
+      {/* Bottom CTA */}
+      <Section bg="dark">
+        <SectionHeader
+          overline="Klaar om te starten?"
+          title="Kies Jouw Lidmaatschap"
+          description="Kies een lidmaatschap als je nieuw bent, of reserveer direct als je al lid bent."
+        />
+        <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <ButtonLink
+            href={acuityLinks.openGymPlans.populair}
+            size="lg"
+            className="text-white"
+          >
+            Word lid
+          </ButtonLink>
+          <ButtonLink
+            href={acuityLinks.openGymBook}
+            size="lg"
+            variant="outline"
+            className="text-white border-white/30 hover:bg-white/10"
+          >
+            Reserveer een sessie
+          </ButtonLink>
         </FadeIn>
       </Section>
     </PageLayout>
