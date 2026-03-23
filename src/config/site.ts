@@ -23,7 +23,7 @@ export const siteConfig = {
   geo: { lat: 52.3759967, lng: 4.880676 },
   phone: "+31683178934",
   phoneDisplay: "+31 6 83 17 89 34",
-  email: "info@sculptclub.nl",
+  email: "contact@sculptclub.nl",
   whatsapp: "https://wa.me/31683178934",
   hours: "Daily 06:30–22:00",
   instagram: "https://instagram.com/sculptclubjordaan",

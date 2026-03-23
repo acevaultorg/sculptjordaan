@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { ArrowRight, MessageCircle, Users, Dumbbell, Building2, Lock, MapPin, CalendarCheck } from "lucide-react";
+import {
+  ArrowRight,
+  MessageCircle,
+  Users,
+  Dumbbell,
+  Building2,
+  Lock,
+  MapPin,
+  CalendarCheck,
+  KeyRound,
+  Clock,
+  UserCheck,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — SculptClub Amsterdam Jordaan",
+  title: "About Us \u2014 SculptClub Amsterdam Jordaan",
   description:
     "SculptClub is a boutique personal training studio on the Egelantiersgracht in Amsterdam Jordaan. Private training, Open Gym and studio rental. Founded in 2025.",
   alternates: {
@@ -40,11 +53,11 @@ const pillars = [
   },
 ];
 
-const values = [
+const uniqueFeatures = [
   {
     icon: Lock,
     title: "Private",
-    description: "Maximum 3 people at a time. No crowds, no waiting.",
+    description: "Maximum 3 people during Open Gym. No crowds, no waiting.",
   },
   {
     icon: MapPin,
@@ -53,10 +66,28 @@ const values = [
       "Located on the Egelantiersgracht in the heart of the Jordaan.",
   },
   {
+    icon: KeyRound,
+    title: "Door code access",
+    description:
+      "No reception desk. After booking you receive a door code and train at your convenience.",
+  },
+  {
+    icon: Clock,
+    title: "06:30 \u2013 22:00 daily",
+    description:
+      "Open 7 days a week. Early birds and night owls, everyone is welcome.",
+  },
+  {
     icon: CalendarCheck,
     title: "Flexible",
     description:
       "No membership, no contracts. Book per session, cancel up to 24 hours in advance.",
+  },
+  {
+    icon: UserCheck,
+    title: "Tailored capacity",
+    description:
+      "During Open Gym we limit the space to three people. With a full studio rental the space fits up to six people plus your trainer.",
   },
 ];
 
@@ -68,20 +99,31 @@ export default function AboutPage() {
         <SectionHeader
           overline="About SculptClub"
           title="Where disciplined ambition meets refined transformation"
-          description="SculptClub is a boutique personal training studio in the heart of Amsterdam's Jordaan. Founded in 2025 with a simple mission: to provide the best private training space in Amsterdam."
+          description="SculptClub is a boutique personal training studio in the heart of Amsterdam\u2019s Jordaan. Founded in 2025 with a simple mission: to provide the best private training space in Amsterdam."
         />
       </Section>
 
-      {/* Story */}
+      {/* Story + Photo */}
       <Section bg="muted">
-        <div className="max-w-3xl mx-auto">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <FadeIn>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/studio/studio-interior-1.jpeg"
+                alt="SculptClub studio interior"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.15}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">Our story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 SculptClub was born out of frustration with overcrowded gyms and
-                long-term contracts. We believe training should be personal —
-                without crowds, without obligations, without compromises.
+                long-term contracts. We believe training should be personal
+                &mdash; without crowds, without obligations, without compromises.
               </p>
               <p>
                 Our studio on the Egelantiersgracht offers an intimate training
@@ -92,7 +134,7 @@ export default function AboutPage() {
               <p>
                 Whether you train with a personal trainer, come for an
                 independent Open Gym session, or rent our studio as a freelance
-                trainer for your own clients — at SculptClub it&apos;s all about
+                trainer for your own clients &mdash; at SculptClub it&apos;s all about
                 quality over quantity.
               </p>
             </div>
@@ -105,7 +147,7 @@ export default function AboutPage() {
         <SectionHeader
           overline="What we offer"
           title="Three pillars"
-          description="Personal Training, Open Gym and Studio Rental — all under one roof."
+          description="Personal Training, Open Gym and Studio Rental \u2014 all under one roof."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
@@ -124,14 +166,15 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Values */}
+      {/* What makes us unique */}
       <Section bg="muted">
         <SectionHeader
           overline="Our values"
-          title="No membership. No crowds. No contracts."
+          title="What makes us unique"
+          description="No membership. No crowds. No contracts."
         />
-        <div className="grid sm:grid-cols-3 gap-8">
-          {values.map((value, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {uniqueFeatures.map((value, i) => (
             <FadeIn key={value.title} delay={i * 0.1}>
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand/10 text-brand mb-4">
@@ -170,28 +213,25 @@ export default function AboutPage() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-background">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Come and experience it yourself
             </h2>
-            <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Book a free intro or reach out via WhatsApp.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
                 href={acuityLinks.generic}
-                external
                 size="lg"
-                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
                 Book Free Trial
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink
                 href={siteConfig.whatsapp}
-                external
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
+                className="border-white/20 text-white hover:bg-white/10"
               >
                 <MessageCircle className="mr-2 w-4 h-4" />
                 WhatsApp us

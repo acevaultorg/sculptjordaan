@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { ArrowRight, MessageCircle, Users, Dumbbell, Building2, Lock, MapPin, CalendarCheck } from "lucide-react";
+import {
+  ArrowRight,
+  MessageCircle,
+  Users,
+  Dumbbell,
+  Building2,
+  Lock,
+  MapPin,
+  CalendarCheck,
+  KeyRound,
+  Clock,
+  UserCheck,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Over Ons — SculptClub Amsterdam Jordaan",
+  title: "Over Ons \u2014 SculptClub Amsterdam Jordaan",
   description:
-    "SculptClub is een boutique personal training studio aan de Egelantiersgracht in Amsterdam Jordaan. Privé training, Open Gym en studio verhuur. Opgericht in 2025.",
+    "SculptClub is een boutique personal training studio aan de Egelantiersgracht in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Opgericht in 2025.",
   alternates: {
     canonical: "/nl/over-ons",
     languages: {
@@ -30,7 +43,7 @@ const pillars = [
     icon: Dumbbell,
     title: "Open Gym",
     description:
-      "Train zelfstandig in een privé studio met professionele apparatuur. Boek je sessie, ontvang een deurcode en train op jouw tijd.",
+      "Train zelfstandig in een priv\u00e9 studio met professionele apparatuur. Boek je sessie, ontvang een deurcode en train op jouw tijd.",
   },
   {
     icon: Building2,
@@ -40,11 +53,11 @@ const pillars = [
   },
 ];
 
-const values = [
+const uniqueFeatures = [
   {
     icon: Lock,
-    title: "Privé",
-    description: "Maximaal 3 personen tegelijk. Geen drukte, geen wachten.",
+    title: "Priv\u00e9",
+    description: "Maximaal 3 personen bij Open Gym. Geen drukte, geen wachten.",
   },
   {
     icon: MapPin,
@@ -53,10 +66,28 @@ const values = [
       "Gelegen aan de Egelantiersgracht in het hart van de Jordaan.",
   },
   {
+    icon: KeyRound,
+    title: "Deurcode toegang",
+    description:
+      "Geen receptie. Na boeking ontvang je een deurcode en train je op jouw gemak.",
+  },
+  {
+    icon: Clock,
+    title: "06:30 \u2013 22:00 dagelijks",
+    description:
+      "Open 7 dagen per week. Vroege vogels en avondmensen, iedereen is welkom.",
+  },
+  {
     icon: CalendarCheck,
     title: "Flexibel",
     description:
       "Geen abonnement, geen contracten. Boek per sessie, annuleer tot 24 uur van tevoren.",
+  },
+  {
+    icon: UserCheck,
+    title: "Capaciteit op maat",
+    description:
+      "Bij Open Gym beperken we de ruimte tot drie personen. Bij volledige studiohuur past de ruimte tot zes personen plus je trainer.",
   },
 ];
 
@@ -68,14 +99,25 @@ export default function OverOnsPage() {
         <SectionHeader
           overline="Over SculptClub"
           title="Waar gedisciplineerde ambitie verfijnde transformatie ontmoet"
-          description="SculptClub is een boutique personal training studio in het hart van Amsterdam's Jordaan. Opgericht in 2025 met een simpele missie: de beste privé trainingsruimte van Amsterdam bieden."
+          description="SculptClub is een boutique personal training studio in het hart van Amsterdam\u2019s Jordaan. Opgericht in 2025 met een simpele missie: de beste priv\u00e9 trainingsruimte van Amsterdam bieden."
         />
       </Section>
 
-      {/* Story */}
+      {/* Story + Photo */}
       <Section bg="muted">
-        <div className="max-w-3xl mx-auto">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <FadeIn>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/studio/studio-interior-1.jpeg"
+                alt="SculptClub studio interieur"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.15}>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">
               Ons verhaal
             </h2>
@@ -83,7 +125,7 @@ export default function OverOnsPage() {
               <p>
                 SculptClub is ontstaan uit frustratie met overvolle sportscholen
                 en lange contracten. Wij geloven dat trainen persoonlijk hoort
-                te zijn — zonder drukte, zonder verplichtingen, zonder
+                te zijn &mdash; zonder drukte, zonder verplichtingen, zonder
                 compromissen.
               </p>
               <p>
@@ -95,7 +137,7 @@ export default function OverOnsPage() {
               <p>
                 Of je nu traint met een personal trainer, zelfstandig komt
                 trainen via Open Gym, of als ZZP-trainer onze studio huurt voor
-                je eigen klanten — bij SculptClub draait alles om kwaliteit
+                je eigen klanten &mdash; bij SculptClub draait alles om kwaliteit
                 boven kwantiteit.
               </p>
             </div>
@@ -108,7 +150,7 @@ export default function OverOnsPage() {
         <SectionHeader
           overline="Wat wij bieden"
           title="Drie pijlers"
-          description="Personal Training, Open Gym en Studio Verhuur — alles onder een dak."
+          description="Personal Training, Open Gym en Studio Verhuur \u2014 alles onder \u00e9\u00e9n dak."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
@@ -127,14 +169,15 @@ export default function OverOnsPage() {
         </div>
       </Section>
 
-      {/* Values */}
+      {/* Wat maakt ons uniek */}
       <Section bg="muted">
         <SectionHeader
           overline="Onze waarden"
-          title="Geen abonnement. Geen drukte. Geen contracten."
+          title="Wat maakt ons uniek"
+          description="Geen abonnement. Geen drukte. Geen contracten."
         />
-        <div className="grid sm:grid-cols-3 gap-8">
-          {values.map((value, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {uniqueFeatures.map((value, i) => (
             <FadeIn key={value.title} delay={i * 0.1}>
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand/10 text-brand mb-4">
@@ -173,28 +216,25 @@ export default function OverOnsPage() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-background">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Kom langs en ervaar het zelf
             </h2>
-            <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Boek een gratis intake of neem contact met ons op via WhatsApp.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
                 href={acuityLinks.generic}
-                external
                 size="lg"
-                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
                 Boek Gratis Proefles
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink
                 href={siteConfig.whatsapp}
-                external
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
+                className="border-white/20 text-white hover:bg-white/10"
               >
                 <MessageCircle className="mr-2 w-4 h-4" />
                 WhatsApp ons

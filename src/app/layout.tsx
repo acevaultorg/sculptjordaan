@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { LocalBusinessJsonLd, OrganizationJsonLd } from "@/components/seo/json-ld";
+import { Analytics } from "@/components/layout/analytics";
+import { CookieConsent } from "@/components/layout/cookie-consent";
+import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 
 const syne = localFont({
   src: [
@@ -61,10 +64,15 @@ export default function RootLayout({
       className={`${syne.variable} ${instrumentSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <Analytics />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <LocalBusinessJsonLd />
         <OrganizationJsonLd />
         {children}
+        <CookieConsent />
+        <WhatsAppButton />
       </body>
     </html>
   );

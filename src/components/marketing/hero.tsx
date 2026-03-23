@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
-import { acuityLinks } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
 export function Hero({ locale }: { locale: Locale }) {
@@ -34,8 +33,8 @@ export function Hero({ locale }: { locale: Locale }) {
   }[locale];
 
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
-      {/* Background image with gradient overlay */}
+    <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
+      {/* Background image with strong dark overlay for text readability */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/hero/gym-entrance.jpeg"
@@ -45,7 +44,7 @@ export function Hero({ locale }: { locale: Locale }) {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
       </div>
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -55,17 +54,17 @@ export function Hero({ locale }: { locale: Locale }) {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="overline mb-4">{t.subtitle}</p>
+          <p className="overline mb-4 !text-white/70">{t.subtitle}</p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95] text-white">
             {t.tagline}
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             {t.description}
           </p>
 
-          {/* 3 CTAs — matching old site's 3-service hero */}
+          {/* 3 CTAs — all clearly visible on dark background */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
             {t.ctas.map((cta, i) => (
               <ButtonLink
@@ -75,7 +74,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 className={
                   i === 0
                     ? "bg-brand hover:bg-brand-dark text-white rounded-xl px-6 py-5 text-sm font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
-                    : "rounded-xl px-6 py-5 text-sm font-semibold border border-border bg-card/80 backdrop-blur-sm hover:bg-card transition-all"
+                    : "rounded-xl px-6 py-5 text-sm font-semibold border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all"
                 }
               >
                 <cta.icon className="mr-2 w-4 h-4" />

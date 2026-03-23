@@ -7,8 +7,8 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button-link";
-import { whatsappLinks } from "@/config/acuity";
 import { trainers } from "@/config/trainers";
+import { siteConfig } from "@/config/site";
 import type { Locale } from "@/config/site";
 
 interface TrainerIntakeProps {
@@ -18,6 +18,19 @@ interface TrainerIntakeProps {
 
 export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   const trainer = trainers.find((t) => t.id === trainerId)!;
+
+  // WhatsApp: link to trainer directly if they have their own number
+  const trainerWhatsapp = trainer.whatsapp
+    ? `${trainer.whatsapp}?text=${encodeURIComponent(
+        locale === "nl"
+          ? `Hoi ${trainer.name}! Ik wil graag een gratis intake boeken.`
+          : `Hi ${trainer.name}! I'd like to book a free intro.`
+      )}`
+    : `${siteConfig.whatsapp}?text=${encodeURIComponent(
+        locale === "nl"
+          ? `Hoi! Ik wil graag een gratis intake boeken bij ${trainer.name}`
+          : `Hi! I'd like to book a free intro with ${trainer.name}`
+      )}`;
 
   const t = locale === "nl" ? {
     overline: "Gratis intake",
@@ -35,7 +48,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     messageLabel: "Bericht (optioneel)",
     messagePlaceholder: "Vertel ons over je doelen...",
     submitLabel: "Verstuur bericht",
-    whatsappLabel: `WhatsApp ons over ${trainer.name}`,
+    whatsappLabel: `WhatsApp ${trainer.name} direct`,
     emailLabel: "Of stuur een e-mail",
     responseTime: "We reageren meestal binnen 1 uur",
     sent: "Bericht verstuurd! We nemen snel contact op.",
@@ -55,7 +68,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     messageLabel: "Message (optional)",
     messagePlaceholder: "Tell us about your goals...",
     submitLabel: "Send message",
-    whatsappLabel: `WhatsApp us about ${trainer.name}`,
+    whatsappLabel: `WhatsApp ${trainer.name} directly`,
     emailLabel: "Or send an email",
     responseTime: "We usually respond within 1 hour",
     sent: "Message sent! We'll get back to you soon.",
@@ -66,7 +79,6 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Client-side only for now — log and show success
     console.log("Trainer intake form:", { trainerId, ...formState });
     setSubmitted(true);
   }
@@ -86,7 +98,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                     src={trainer.image}
                     alt={trainer.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 320px"
                   />
                 </div>
@@ -126,9 +138,9 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
               <div className="space-y-6">
                 <h3 className="text-lg font-bold">{t.contactTitle}</h3>
 
-                {/* WhatsApp CTA — prominent */}
+                {/* WhatsApp CTA — goes to trainer directly */}
                 <ButtonLink
-                  href={whatsappLinks.trainerIntake(trainer.name, locale)}
+                  href={trainerWhatsapp}
                   external
                   size="lg"
                   className="w-full bg-[#25D366] hover:bg-[#1da851] text-white rounded-xl px-6 py-5 text-base font-semibold transition-all"
@@ -198,15 +210,15 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   </form>
                 )}
 
-                {/* Email fallback */}
+                {/* Email fallback — contact@sculptclub.nl */}
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Mail className="w-4 h-4" />
                   <span>{t.emailLabel}:</span>
                   <a
-                    href="mailto:info@sculptclub.nl"
+                    href="mailto:contact@sculptclub.nl"
                     className="font-semibold text-brand hover:text-brand-dark"
                   >
-                    info@sculptclub.nl
+                    contact@sculptclub.nl
                   </a>
                 </div>
 

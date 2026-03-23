@@ -12,6 +12,8 @@ export interface Trainer {
   credentials?: string;
   bio: Record<Locale, string>;
   image: string;
+  /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
+  whatsapp?: string;
 }
 
 export const trainers: Trainer[] = [
@@ -121,5 +123,6 @@ export const trainers: Trainer[] = [
       en: "Dara specializes in personal training and small group sessions. Her energetic approach motivates you to push your limits.",
     },
     image: "/images/trainers/dara.jpg",
+    whatsapp: "https://wa.me/31645658213",
   },
 ];

@@ -81,7 +81,7 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
     : { overline: "Three ways to train", title: "Your studio, your rules" };
 
   return (
-    <Section bg="muted">
+    <Section>
       <SectionHeader overline={t.overline} title={t.title} />
       <div className="grid sm:grid-cols-3 gap-6">
         {items.map((service, i) => (

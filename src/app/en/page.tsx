@@ -3,6 +3,7 @@ import { Hero } from "@/components/marketing/hero";
 import { ServicesOverview } from "@/components/marketing/services-overview";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { ReviewsPreview } from "@/components/marketing/reviews-preview";
+import { GoogleMap } from "@/components/marketing/google-map";
 import { FaqPreview } from "@/components/marketing/faq-preview";
 import { CtaBand } from "@/components/marketing/cta-band";
 import type { Metadata } from "next";
@@ -27,6 +28,7 @@ export default function HomePageEN() {
       <ServicesOverview locale="en" />
       <HowItWorks locale="en" />
       <ReviewsPreview locale="en" />
+      <GoogleMap locale="en" />
       <FaqPreview locale="en" />
       <CtaBand locale="en" />
     </PageLayout>

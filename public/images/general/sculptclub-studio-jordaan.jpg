@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="nl-NL"><head><meta charset="UTF-8" /> <script src="data:text/javascript;base64,d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKX0KZ3RhZygnY29uc2VudCcsJ2RlZmF1bHQnLHsnYWRfc3RvcmFnZSc6J2RlbmllZCcsJ2FkX3VzZXJfZGF0YSc6J2RlbmllZCcsJ2FkX3BlcnNvbmFsaXphdGlvbic6J2RlbmllZCcsJ2FuYWx5dGljc19zdG9yYWdlJzonZGVuaWVkJywnZnVuY3Rpb25hbGl0eV9zdG9yYWdlJzonZ3JhbnRlZCcsJ3BlcnNvbmFsaXphdGlvbl9zdG9yYWdlJzonZGVuaWVkJywnc2VjdXJpdHlfc3RvcmFnZSc6J2dyYW50ZWQnLCd3YWl0X2Zvcl91cGRhdGUnOjUwMH0pO2d0YWcoJ3NldCcsJ3VybF9wYXNzdGhyb3VnaCcsITApO2d0YWcoJ3NldCcsJ2Fkc19kYXRhX3JlZGFjdGlvbicsITAp" defer></script> <meta name="viewport" content="width=device-width, initial-scale=1" /><meta name='robots' content='noindex, follow' /><link rel="preload" href="https://sculptclub.nl/wp-content/themes/editnative-starter/assets/fonts/syne-variable.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://sculptclub.nl/wp-content/themes/editnative-starter/assets/fonts/instrument-sans-variable.woff2" as="font" type="font/woff2" crossorigin><link rel="preconnect" href="https://app.acuityscheduling.com" crossorigin><link rel="dns-prefetch" href="//app.acuityscheduling.com"><meta name="msvalidate.01" content="E99F14F043F072B8126CD5C7CF7CB7FE" /><meta name="google-site-verification" content="3E15Zj0RsYA3Akktau2-yQQPE9hsi45aXcCt9ckZySc" /><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin /><link rel="preconnect" href="https://maps.googleapis.com" crossorigin /><meta name="theme-color" content="#2A45D4" /> <script id="google_gtagjs-js-consent-mode-data-layer" src="data:text/javascript;base64,d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKX0KZ3RhZygnY29uc2VudCcsJ2RlZmF1bHQnLHsiYWRfcGVyc29uYWxpemF0aW9uIjoiZGVuaWVkIiwiYWRfc3RvcmFnZSI6ImRlbmllZCIsImFkX3VzZXJfZGF0YSI6ImRlbmllZCIsImFuYWx5dGljc19zdG9yYWdlIjoiZGVuaWVkIiwiZnVuY3Rpb25hbGl0eV9zdG9yYWdlIjoiZGVuaWVkIiwic2VjdXJpdHlfc3RvcmFnZSI6ImRlbmllZCIsInBlcnNvbmFsaXphdGlvbl9zdG9yYWdlIjoiZGVuaWVkIiwicmVnaW9uIjpbIkFUIiwiQkUiLCJCRyIsIkNIIiwiQ1kiLCJDWiIsIkRFIiwiREsiLCJFRSIsIkVTIiwiRkkiLCJGUiIsIkdCIiwiR1IiLCJIUiIsIkhVIiwiSUUiLCJJUyIsIklUIiwiTEkiLCJMVCIsIkxVIiwiTFYiLCJNVCIsIk5MIiwiTk8iLCJQTCIsIlBUIiwiUk8iLCJTRSIsIlNJIiwiU0siXSwid2FpdF9mb3JfdXBkYXRlIjo1MDB9KTt3aW5kb3cuX2dvb2dsZXNpdGVraXRDb25zZW50Q2F0ZWdvcnlNYXA9eyJzdGF0aXN0aWNzIjpbImFuYWx5dGljc19zdG9yYWdlIl0sIm1hcmtldGluZyI6WyJhZF9zdG9yYWdlIiwiYWRfdXNlcl9kYXRhIiwiYWRfcGVyc29uYWxpemF0aW9uIl0sImZ1bmN0aW9uYWwiOlsiZnVuY3Rpb25hbGl0eV9zdG9yYWdlIiwic2VjdXJpdHlfc3RvcmFnZSJdLCJwcmVmZXJlbmNlcyI6WyJwZXJzb25hbGl6YXRpb25fc3RvcmFnZSJdfTt3aW5kb3cuX2dvb2dsZXNpdGVraXRDb25zZW50cz17ImFkX3BlcnNvbmFsaXphdGlvbiI6ImRlbmllZCIsImFkX3N0b3JhZ2UiOiJkZW5pZWQiLCJhZF91c2VyX2RhdGEiOiJkZW5pZWQiLCJhbmFseXRpY3Nfc3RvcmFnZSI6ImRlbmllZCIsImZ1bmN0aW9uYWxpdHlfc3RvcmFnZSI6ImRlbmllZCIsInNlY3VyaXR5X3N0b3JhZ2UiOiJkZW5pZWQiLCJwZXJzb25hbGl6YXRpb25fc3RvcmFnZSI6ImRlbmllZCIsInJlZ2lvbiI6WyJBVCIsIkJFIiwiQkciLCJDSCIsIkNZIiwiQ1oiLCJERSIsIkRLIiwiRUUiLCJFUyIsIkZJIiwiRlIiLCJHQiIsIkdSIiwiSFIiLCJIVSIsIklFIiwiSVMiLCJJVCIsIkxJIiwiTFQiLCJMVSIsIkxWIiwiTVQiLCJOTCIsIk5PIiwiUEwiLCJQVCIsIlJPIiwiU0UiLCJTSSIsIlNLIl0sIndhaXRfZm9yX3VwZGF0ZSI6NTAwfQ==" defer></script> <meta property="og:locale" content="nl_NL" /><meta property="og:title" content="Page not found - SculptClub Jordaan" /><meta property="og:site_name" content="SculptClub Jordaan" /> <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://sculptclub.nl/#website","url":"https://sculptclub.nl/","name":"SculptClub Jordaan","description":"","publisher":{"@id":"https://sculptclub.nl/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://sculptclub.nl/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"nl-NL"},{"@type":"Organization","@id":"https://sculptclub.nl/#organization","name":"SculptClub Jordaan","url":"https://sculptclub.nl/","logo":{"@type":"ImageObject","inLanguage":"nl-NL","@id":"https://sculptclub.nl/#/schema/logo/image/","url":"https://sculptclub.nl/wp-content/uploads/2025/12/Group-scaled.png","contentUrl":"https://sculptclub.nl/wp-content/uploads/2025/12/Group-scaled.png","width":2560,"height":199,"caption":"SculptClub Jordaan"},"image":{"@id":"https://sculptclub.nl/#/schema/logo/image/"},"sameAs":["https://www.instagram.com/sculptclubjordaan/","https://wa.me/31683178934"]}]}</script> <title>Page not found - SculptClub Jordaan</title><link rel='dns-prefetch' href='//www.googletagmanager.com' /><link rel='dns-prefetch' href='//stats.wp.com' /><link rel="alternate" type="application/rss+xml" title="SculptClub Jordaan &raquo; feed" href="https://sculptclub.nl/feed/" /><link rel="alternate" type="application/rss+xml" title="SculptClub Jordaan &raquo; reacties feed" href="https://sculptclub.nl/comments/feed/" /> <script src="data:text/javascript;base64,aWYodHlwZW9mIGd0YWc9PT0nZnVuY3Rpb24nKXtndGFnKCdjb25maWcnLCdBVy0xNzc0OTg3NzMzMycpfWVsc2V7d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKX0KZ3RhZygnY29uZmlnJywnQVctMTc3NDk4NzczMzMnKX0=" defer></script> <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": [
+        "HealthClub",
+        "SportsActivityLocation"
+    ],
+    "@id": "https://sculptclub.nl/#localbusiness",
+    "name": "SculptClub",
+    "description": "Boutique gym voor personal training, Open Gym en studio-verhuur in de Jordaan, Amsterdam.",
+    "url": "https://sculptclub.nl",
+    "telephone": "+31683178934",
+    "email": "info@sculptclub.nl",
+    "foundingDate": "2025",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Egelantiersgracht 424",
+        "addressLocality": "Amsterdam",
+        "addressRegion": "Noord-Holland",
+        "postalCode": "1015 RR",
+        "addressCountry": "NL"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.3759967,
+        "longitude": 4.880676
+    },
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+        ],
+        "opens": "06:30",
+        "closes": "22:00"
+    },
+    "image": "https://sculptclub.nl/wp-content/uploads/2025/07/sculptclub-studio-jordaan.jpg",
+    "logo": "https://sculptclub.nl/wp-content/uploads/2025/07/sculptclub-studio-jordaan.jpg",
+    "priceRange": "$$",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Credit Card, Debit Card, iDEAL",
+    "sameAs": [
+        "https://www.instagram.com/sculptclubjordaan/",
+        "https://wa.me/31683178934"
+    ],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10",
+        "bestRating": "5",
+        "worstRating": "1"
+    }
+}</script> <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://sculptclub.nl/#organization",
+    "name": "SculptClub",
+    "url": "https://sculptclub.nl",
+    "logo": "https://sculptclub.nl/wp-content/uploads/2025/07/sculptclub-studio-jordaan.jpg",
+    "foundingDate": "2025",
+    "telephone": "+31683178934",
+    "email": "info@sculptclub.nl",
+    "sameAs": [
+        "https://www.instagram.com/sculptclubjordaan/",
+        "https://wa.me/31683178934"
+    ]
+}</script> <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sculptclub.nl/nl/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Uploads",
+            "item": "https://sculptclub.nl/wp-content/uploads/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "2025",
+            "item": "https://sculptclub.nl/wp-content/uploads/2025/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "07",
+            "item": "https://sculptclub.nl/wp-content/uploads/2025/07/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Sculptclub studio jordaan.jpg",
+            "item": "https://sculptclub.nl/wp-content/uploads/2025/07/sculptclub-studio-jordaan.jpg/"
+        }
+    ]
+}</script> <link data-optimized="2" rel="stylesheet" href="https://sculptclub.nl/wp-content/litespeed/css/4c8e4814da61f6172d402a51cadbffe7.css?ver=6de26" /> <script src="https://sculptclub.nl/wp-content/litespeed/localres/aHR0cHM6Ly93d3cuZ29vZ2xldGFnbWFuYWdlci5jb20vZ3RhZy9qcw==?id=GT-5D4TVS7K" id="google_gtagjs-js" async defer data-deferred="1"></script> <script id="google_gtagjs-js-after" src="data:text/javascript;base64,d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKX0KZ3RhZygic2V0IiwibGlua2VyIix7ImRvbWFpbnMiOlsic2N1bHB0Y2x1Yi5ubCJdfSk7Z3RhZygianMiLG5ldyBEYXRlKCkpO2d0YWcoInNldCIsImRldmVsb3Blcl9pZC5kWlROaU1UIiwhMCk7Z3RhZygiY29uZmlnIiwiR1QtNUQ0VFZTN0siKTt3aW5kb3cuX2dvb2dsZXNpdGVraXQ9d2luZG93Ll9nb29nbGVzaXRla2l0fHx7fTt3aW5kb3cuX2dvb2dsZXNpdGVraXQudGhyb3R0bGVkRXZlbnRzPVtdO3dpbmRvdy5fZ29vZ2xlc2l0ZWtpdC5ndGFnRXZlbnQ9KG5hbWUsZGF0YSk9Pnt2YXIga2V5PUpTT04uc3RyaW5naWZ5KHtuYW1lLGRhdGF9KTtpZighIXdpbmRvdy5fZ29vZ2xlc2l0ZWtpdC50aHJvdHRsZWRFdmVudHNba2V5XSl7cmV0dXJufXdpbmRvdy5fZ29vZ2xlc2l0ZWtpdC50aHJvdHRsZWRFdmVudHNba2V5XT0hMDtzZXRUaW1lb3V0KCgpPT57ZGVsZXRlIHdpbmRvdy5fZ29vZ2xlc2l0ZWtpdC50aHJvdHRsZWRFdmVudHNba2V5XX0sNSk7Z3RhZygiZXZlbnQiLG5hbWUsey4uLmRhdGEsZXZlbnRfc291cmNlOiJzaXRlLWtpdCJ9KX0=" defer></script> <link rel="https://api.w.org/" href="https://sculptclub.nl/wp-json/" /><meta name="generator" content="Site Kit by Google 1.174.0" /><noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4350118535216982&ev=PageView&noscript=1"
+/></noscript><meta name="ti-site-data" content="eyJyIjoiMTowITc6MCEzMDoxIiwibyI6Imh0dHBzOlwvXC9zY3VscHRjbHViLm5sP3RpLW9ubGluZS11c2Vycy1nb29nbGU9MSZhbXA7cD0lMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjUlMkYwNyUyRnNjdWxwdGNsdWItc3R1ZGlvLWpvcmRhYW4uanBnJmFtcDtfd3Bub25jZT02YjFlY2U5OTc2In0=" /><meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236"><meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com"><link rel="icon" href="https://sculptclub.nl/wp-content/uploads/2025/12/cropped-icon-512-32x32.png" sizes="32x32" /><link rel="icon" href="https://sculptclub.nl/wp-content/uploads/2025/12/cropped-icon-512-192x192.png" sizes="192x192" /><link rel="apple-touch-icon" href="https://sculptclub.nl/wp-content/uploads/2025/12/cropped-icon-512-180x180.png" /><meta name="msapplication-TileImage" content="https://sculptclub.nl/wp-content/uploads/2025/12/cropped-icon-512-270x270.png" /><style id="sc-mobile-fixes-v2.2">/* === GLOBAL: prevent horizontal scroll === */
+    html {
+      overflow-x: clip;
+      max-width: 100%;
+    }
+    body {
+      overflow-x: clip;
+      max-width: 100%;
+    }
+
+    /* === SAFETY: kill any remaining 100vw from WP core or plugins === */
+    .alignfull,
+    .wp-block-cover.alignfull,
+    .wp-block-group.alignfull {
+      max-width: 100% !important;
+      overflow-x: clip;
+    }
+
+    /* === FIX: sc-divider uses 100vw which causes overflow === */
+    .sc-divider {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-inline: 0 !important;
+    }
+
+    /* === TABLES: scrollable on mobile === */
+    @media (max-width: 640px) {
+      .wp-block-table {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        display: block !important;
+        max-width: 100% !important;
+      }
+      .wp-block-table table {
+        min-width: 480px;
+      }
+      figure.wp-block-table {
+        overflow-x: auto !important;
+        margin-inline: 0 !important;
+      }
+    }
+
+    /* === BLOG POSTS: containment === */
+    .sc-blog-post {
+      max-width: 100% !important;
+      overflow-x: hidden;
+    }
+    .sc-blog-post .wp-block-table {
+      margin-inline: 0 !important;
+    }
+
+    /* === POST CONTENT: overflow guard === */
+    .wp-block-post-content {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    .wp-block-post-content > *:not(p):not(ul):not(ol):not(.wp-block-list):not(h1):not(h2):not(h3):not(h4):not(.wp-block-heading) {
+      max-width: 100% !important;
+    }
+
+    /* === CONSTRAINED LAYOUTS: center properly === */
+    .is-layout-constrained {
+      margin-inline: auto !important;
+    }
+
+    /* === HEADER: tighten at <=414px === */
+    @media (max-width: 414px) {
+      .sc-header-bar.has-global-padding {
+        padding-inline: var(--wp--preset--spacing--20) !important;
+      }
+      .sc-header-main {
+        padding-inline: var(--wp--preset--spacing--10) !important;
+        gap: var(--wp--preset--spacing--10) !important;
+      }
+      .sc-header-actions {
+        gap: var(--wp--preset--spacing--10) !important;
+      }
+      .sc-header-actions .wp-block-buttons {
+        gap: var(--wp--preset--spacing--10) !important;
+      }
+      .sc-header-actions .wp-block-button__link {
+        padding-inline: var(--wp--preset--spacing--20) !important;
+        font-size: var(--wp--preset--font-size--x-small) !important;
+      }
+      .sc-header-logo .wp-block-site-logo {
+        max-width: 90px !important;
+      }
+      .sc-header-logo .wp-block-site-logo img {
+        max-height: 16px !important;
+      }
+      .sc-lang-toggle .sc-lang-option {
+        font-size: var(--wp--preset--font-size--x-small) !important;
+        padding: var(--wp--preset--spacing--10) !important;
+      }
+    }
+
+    /* === BUTTONS: wrap on mobile === */
+    @media (max-width: 640px) {
+      .wp-block-buttons {
+        flex-wrap: wrap !important;
+      }
+      .sc-btn--full-mobile .wp-block-button__link,
+      .sc-btn-group .wp-block-button__link {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    /* === EMBEDS: constrain === */
+    .wp-block-embed,
+    iframe {
+      max-width: 100% !important;
+    }
+
+    /* === COLUMNS: stack on mobile with proper centering === */
+    @media (max-width: 640px) {
+      .wp-block-columns {
+        flex-direction: column !important;
+        gap: var(--wp--preset--spacing--40) !important;
+      }
+      .wp-block-column {
+        flex-basis: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      /* Cards/packs in stacked columns: fill parent, center content */
+      .wp-block-column > .sc-card,
+      .wp-block-column > .sc-pack,
+      .wp-block-column > .wp-block-group.sc-card,
+      .wp-block-column > .wp-block-group.sc-pack {
+        width: 100% !important;
+        margin-inline: auto !important;
+      }
+    }
+
+    /* === PANEL: ensure inner content doesn't overflow === */
+    .sc-panel {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .sc-panel > .wp-block-columns {
+      width: 100%;
+    }
+
+    /* === IMAGES: prevent overflow === */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* === NAV OVERLAY: use 100% not 100vw === */
+    .wp-block-navigation__responsive-container {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    /* === TRAINER CARDS: consistent portrait images === */
+    .sc-trainer-listing .sc-card > a > img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* === TRAINER TAGS: ensure gap between pills === */
+    .sc-trainer-tags {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: var(--wp--preset--spacing--20) !important;
+    }
+    .sc-trainer-tag {
+      display: inline-block;
+    }
+    .sc-trainer-langs {
+      display: flex;
+      gap: var(--wp--preset--spacing--20);
+    }
+/* === TRAINER LISTING: responsive grid === */
+    .sc-trainer-listing {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--wp--preset--spacing--50, 32px);
+      margin-top: var(--wp--preset--spacing--50, 32px);
+    }
+    /* === TRAINER CARD: card styling === */
+    .sc-trainer-listing .sc-card {
+      background: var(--wp--preset--color--base, #F7F5F2);
+      border-radius: var(--wp--custom--primitives--radius-xl, 1.5rem);
+      border: 1px solid var(--wp--preset--color--border, #D3CCC4);
+      overflow: hidden;
+      box-shadow: var(--wp--custom--shadow--sm);
+      transition: box-shadow 220ms cubic-bezier(0.22,1,0.36,1),
+        transform 220ms cubic-bezier(0.22,1,0.36,1);
+    }
+    .sc-trainer-listing .sc-card:hover {
+      box-shadow: var(--wp--custom--shadow--lg);
+      transform: translateY(-0.25rem);
+    }
+    .sc-trainer-listing .sc-card .sc-card-body {
+      padding: var(--wp--preset--spacing--40, 20px);
+    }
+    .sc-trainer-listing .sc-card h3 {
+      margin-top: 0;
+      margin-bottom: var(--wp--preset--spacing--20, 8px);
+    }
+    @media (max-width: 600px) {
+      .sc-trainer-listing {
+        grid-template-columns: 1fr;
+        gap: var(--wp--preset--spacing--40, 20px);
+      }
+    }</style></head><body class="error404 wp-custom-logo wp-embed-responsive wp-theme-editnative-starter"><div class="wp-site-blocks"><div class="wp-block-template-part">
+<a class="skip-to-content" href="#main">Ga naar inhoud</a><header class="wp-block-group has-base-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-f1a9b7be wp-block-group-is-layout-constrained wp-container-1 is-position-sticky" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--50)"><div class="wp-block-group is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-5924e470 wp-block-group-is-layout-flex"><div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-b6e95508 wp-block-group-is-layout-flex"><div class="wp-block-site-logo"><a href="https://sculptclub.nl/" class="custom-logo-link" rel="home"><img width="160" height="12" src="https://sculptclub.nl/wp-content/uploads/2025/12/Group-scaled.png" class="custom-logo" alt="SculptClub privé trainingsstudio in de Jordaan, Amsterdam" decoding="async" srcset="https://sculptclub.nl/wp-content/uploads/2025/12/Group-scaled.png 2560w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-300x23.png 300w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-1024x80.png 1024w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-768x60.png 768w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-1536x120.png 1536w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-2048x160.png 2048w" sizes="(max-width: 160px) 100vw, 160px" loading="eager" data-no-lazy="1" fetchpriority="high" /></a></div></div><div class="sc-header-nav-row"><nav class="items-justified-center wp-block-navigation is-content-justification-center is-layout-flex wp-container-core-navigation-is-layout-f5b6105e wp-block-navigation-is-layout-flex" aria-label="Main navigation Main navigation"><ul class="wp-block-navigation__container items-justified-center wp-block-navigation" aria-label="Main navigation"><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/nl/vind-jouw-personal-trainer/"><span class="wp-block-navigation-item__label">Vind je Trainer</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/nl/open-gym/"><span class="wp-block-navigation-item__label">Train Zelfstandig</span></a></li><li class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/nl/training-studio-huren-amsterdam/"><span class="wp-block-navigation-item__label">Huur de Studio</span></a></li></ul></nav><div class="sc-lang-toggle"><a href="/" class="sc-lang-option active" style="color:#0E0C0A">NL</a><a href="/en/" class="sc-lang-option">EN</a></div><div class="sc-hb-wrap"><button class="sc-hb-btn" aria-label="Menu" aria-expanded="false" type="button" onclick="var d=this.nextElementSibling;var o=d.classList.contains('sc-hb-open');d.classList.toggle('sc-hb-open');this.setAttribute('aria-expanded',o?'false':'true');if(!o){var self=this;document.addEventListener('click',function c(e){if(!e.target.closest('.sc-hb-wrap')){d.classList.remove('sc-hb-open');self.setAttribute('aria-expanded','false');document.removeEventListener('click',c)}})}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="sc-hb-dd"><a href="/nl/over-ons/" class="sc-hb-link">Over ons</a><a href="/nl/reviews/" class="sc-hb-link">Reviews</a><a href="/nl/resultaten/" class="sc-hb-link">Resultaten</a><a href="/nl/faqs/" class="sc-hb-link">Veelgestelde vragen</a><a href="/nl/eerste-bezoek/" class="sc-hb-link">Eerste bezoek</a><a href="/nl/cadeaukaarten/" class="sc-hb-link">Cadeaukaarten</a><a href="/nl/contact/" class="sc-hb-link">Contact</a><a href="/nl/locatie-uren/" class="sc-hb-link">Locatie</a><a href="/nl/blog/" class="sc-hb-link">Blog</a></div></div></div></div></header></div><main class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" id="main" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)"><h1 class="wp-block-heading has-text-align-center has-xxx-large-font-size">Page not found</h1><p class="has-text-align-center has-neutral-color has-text-color has-large-font-size">The page you&#8217;re looking for doesn&#8217;t exist or has been moved.</p><form role="search" method="get" action="https://sculptclub.nl/" class="wp-block-search__button-inside wp-block-search__icon-button aligncenter wp-block-search"    ><label class="wp-block-search__label screen-reader-text" for="wp-block-search__input-2" >Search</label><div class="wp-block-search__inside-wrapper"  style="width: 100%;border-radius: calc(6px + 4px)"><input class="wp-block-search__input" id="wp-block-search__input-2" placeholder="Search this site…" value="" type="search" name="s" required  style="border-radius: 6px"/><button aria-label="Search" class="wp-block-search__button has-icon wp-element-button" type="submit"  style="border-radius: 6px"><svg class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+<path d="M13 5c-3.3 0-6 2.7-6 6 0 1.4.5 2.7 1.3 3.7l-3.8 3.8 1.1 1.1 3.8-3.8c1 .8 2.3 1.3 3.7 1.3 3.3 0 6-2.7 6-6S16.3 5 13 5zm0 10.5c-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5-2 4.5-4.5 4.5z"></path>
+</svg></button></div></form><div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-bb659de6 wp-block-buttons-is-layout-flex" style="margin-top:var(--wp--preset--spacing--50)"><div class="wp-block-button is-style-outline is-style-outline--3"><a class="wp-block-button__link wp-element-button" style="border-radius:6px" href="/">Back to Home</a></div></div></main><div class="wp-block-template-part"><footer class="wp-block-group has-surface-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-0633c792 wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-d1c656ed wp-block-columns-is-layout-flex"><div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:22%"><div class="wp-block-site-logo"><a href="https://sculptclub.nl/" class="custom-logo-link" rel="home"><img width="140" height="10" src="https://sculptclub.nl/wp-content/uploads/2025/12/Group-scaled.png" class="custom-logo" alt="SculptClub privé trainingsstudio in de Jordaan, Amsterdam" decoding="async" srcset="https://sculptclub.nl/wp-content/uploads/2025/12/Group-scaled.png 2560w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-300x23.png 300w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-1024x80.png 1024w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-768x60.png 768w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-1536x120.png 1536w, https://sculptclub.nl/wp-content/uploads/2025/12/Group-2048x160.png 2048w" sizes="(max-width: 140px) 100vw, 140px" loading="eager" data-no-lazy="1" /></a></div><p class="has-neutral-color has-text-color has-small-font-size">Boutique Personal Training<br>Amsterdam Jordaan</p><ul class="wp-block-social-links has-small-icon-size has-icon-color has-icon-background-color is-style-default is-layout-flex wp-block-social-links-is-layout-flex"><li style="color:var(--wp--preset--color--contrast);background-color:var(--wp--preset--color--surface);" class="wp-social-link wp-social-link-instagram has-contrast-color has-surface-background-color wp-block-social-link"><a href="https://www.instagram.com/sculptclub.nl/" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Instagram</span></a></li><li style="color:var(--wp--preset--color--contrast);background-color:var(--wp--preset--color--surface);" class="wp-social-link wp-social-link-whatsapp has-contrast-color has-surface-background-color wp-block-social-link"><a href="https://wa.me/31683178934?text=Hoi%21%20Ik%20wil%20graag%20meer%20weten%20over%20studio%20huren%20bij%20SculptClub" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M 12.011719 2 C 6.5057187 2 2.0234844 6.478375 2.0214844 11.984375 C 2.0204844 13.744375 2.4814687 15.462563 3.3554688 16.976562 L 2 22 L 7.2324219 20.763672 C 8.6914219 21.559672 10.333859 21.977516 12.005859 21.978516 L 12.009766 21.978516 C 17.514766 21.978516 21.995047 17.499141 21.998047 11.994141 C 22.000047 9.3251406 20.962172 6.8157344 19.076172 4.9277344 C 17.190172 3.0407344 14.683719 2.001 12.011719 2 z M 12.009766 4 C 14.145766 4.001 16.153109 4.8337969 17.662109 6.3417969 C 19.171109 7.8517969 20.000047 9.8581875 19.998047 11.992188 C 19.996047 16.396187 16.413812 19.978516 12.007812 19.978516 C 10.674812 19.977516 9.3544062 19.642812 8.1914062 19.007812 L 7.5175781 18.640625 L 6.7734375 18.816406 L 4.8046875 19.28125 L 5.2851562 17.496094 L 5.5019531 16.695312 L 5.0878906 15.976562 C 4.3898906 14.768562 4.0204844 13.387375 4.0214844 11.984375 C 4.0234844 7.582375 7.6067656 4 12.009766 4 z M 8.4765625 7.375 C 8.3095625 7.375 8.0395469 7.4375 7.8105469 7.6875 C 7.5815469 7.9365 6.9355469 8.5395781 6.9355469 9.7675781 C 6.9355469 10.995578 7.8300781 12.182609 7.9550781 12.349609 C 8.0790781 12.515609 9.68175 15.115234 12.21875 16.115234 C 14.32675 16.946234 14.754891 16.782234 15.212891 16.740234 C 15.670891 16.699234 16.690438 16.137687 16.898438 15.554688 C 17.106437 14.971687 17.106922 14.470187 17.044922 14.367188 C 16.982922 14.263188 16.816406 14.201172 16.566406 14.076172 C 16.317406 13.951172 15.090328 13.348625 14.861328 13.265625 C 14.632328 13.182625 14.464828 13.140625 14.298828 13.390625 C 14.132828 13.640625 13.655766 14.201187 13.509766 14.367188 C 13.363766 14.534188 13.21875 14.556641 12.96875 14.431641 C 12.71875 14.305641 11.914938 14.041406 10.960938 13.191406 C 10.218937 12.530406 9.7182656 11.714844 9.5722656 11.464844 C 9.4272656 11.215844 9.5585938 11.079078 9.6835938 10.955078 C 9.7955938 10.843078 9.9316406 10.663578 10.056641 10.517578 C 10.180641 10.371578 10.223641 10.267562 10.306641 10.101562 C 10.389641 9.9355625 10.347156 9.7890625 10.285156 9.6640625 C 10.223156 9.5390625 9.737625 8.3065 9.515625 7.8125 C 9.328625 7.3975 9.131125 7.3878594 8.953125 7.3808594 C 8.808125 7.3748594 8.6425625 7.375 8.4765625 7.375 z"></path></svg><span class="wp-block-social-link-label screen-reader-text">WhatsApp</span></a></li><li style="color:var(--wp--preset--color--contrast);background-color:var(--wp--preset--color--surface);" class="wp-social-link wp-social-link-google has-contrast-color has-surface-background-color wp-block-social-link"><a href="https://g.co/kgs/X3cqpWQ" class="wp-block-social-link-anchor"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12.02,10.18v3.72v0.01h5.51c-0.26,1.57-1.67,4.22-5.5,4.22c-3.31,0-6.01-2.75-6.01-6.12s2.7-6.12,6.01-6.12 c1.87,0,3.13,0.8,3.85,1.48l2.84-2.76C16.99,2.99,14.73,2,12.03,2c-5.52,0-10,4.48-10,10s4.48,10,10,10c5.77,0,9.6-4.06,9.6-9.77 c0-0.83-0.11-1.42-0.25-2.05H12.02z"></path></svg><span class="wp-block-social-link-label screen-reader-text">Google</span></a></li></ul></div><div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:26%"><h2 class="wp-block-heading has-contrast-color has-text-color has-small-font-size">Diensten</h2><ul style="padding-left:0;font-size:0.875rem;list-style:none" class="is-style-default sc-footer-nav wp-block-list"><li><a href="/nl/vind-jouw-personal-trainer/">Vind een personal trainer</a></li><li><a href="/nl/open-gym/">Train Zelfstandig</a></li><li><a href="/nl/training-studio-huren-amsterdam/">Rent the Studio</a></li><li><a href="/nl/eerste-bezoek/">Eerste bezoek</a></li></ul></div><div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:26%"><h2 class="wp-block-heading has-contrast-color has-text-color has-small-font-size">Bedrijf</h2><ul style="padding-left:0;font-size:0.875rem;list-style:none" class="is-style-default sc-footer-nav wp-block-list"><li><a href="/nl/over-ons/">Over ons</a></li><li><a href="/nl/reviews/">Reviews</a></li><li><a href="/nl/faqs/">Veelgestelde vragen</a></li><li><a href="/nl/blog/">Blog</a></li></ul></div><div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:26%"><h2 class="wp-block-heading has-contrast-color has-text-color has-small-font-size">Locatie</h2><p class="has-neutral-color has-text-color has-small-font-size">Egelantiersgracht 424<br>1015 RR Amsterdam<br>Nederland</p><p class="has-small-font-size"><a href="https://wa.me/31683178934?text=Hoi%21%20Ik%20wil%20graag%20meer%20weten%20over%20studio%20huren%20bij%20SculptClub">WhatsApp ons</a> · <a href="mailto:info@sculptclub.nl">E-mail</a></p><p class="has-neutral-color has-text-color has-x-small-font-size">Usually replies within 1 hour</p></div></div><hr class="wp-block-separator has-text-color has-border-color has-border-background-color has-background"/><div class="wp-block-group is-content-justification-space-between is-layout-flex wp-container-core-group-is-layout-9366075c wp-block-group-is-layout-flex"><p class="has-neutral-color has-text-color has-small-font-size">&copy; 2026 SculptClub Jordaan. Alle rechten voorbehouden.</p><p class="has-neutral-color has-text-color has-small-font-size"><a href="/nl/algemene-voorwaarden/">Voorwaarden</a> · <a href="/nl/privacybeleid/">Privacybeleid</a> · <a href="/nl/cookiebeleid/">Cookiebeleid</a> · <a href="/nl/toegankelijkheid/">Toegankelijkheid</a></p></div></footer></div></div> <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/editnative-starter/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}</script>  <script id="jetpack-stats-js-before">_stq = window._stq || [];
+_stq.push([ "view", {"v":"ext","blog":"252793228","post":"0","tz":"1","srv":"sculptclub.nl","arch_err":"/wp-content/uploads/2025/07/sculptclub-studio-jordaan.jpg","j":"1:15.6"} ]);
+_stq.push([ "clickTrackerInit", "252793228", "0" ]);
+//# sourceURL=jetpack-stats-js-before</script> <script src="https://stats.wp.com/e-202613.js" id="jetpack-stats-js" defer data-wp-strategy="defer"></script> <script src="data:text/javascript;base64,KGZ1bmN0aW9uKCl7J3VzZSBzdHJpY3QnO3ZhciBDT09LSUU9J3NjX2NvbnNlbnQnO3ZhciBEQVlTPTM2NTtmdW5jdGlvbiBnZXRDb29raWUobil7dmFyIG09ZG9jdW1lbnQuY29va2llLm1hdGNoKG5ldyBSZWdFeHAoJyhefCApJytuKyc9KFteO10rKScpKTtyZXR1cm4gbT9tWzJdOm51bGx9CmZ1bmN0aW9uIHNldENvb2tpZShuLHYsZGF5cyl7dmFyIGQ9bmV3IERhdGUoKTtkLnNldFRpbWUoZC5nZXRUaW1lKCkrZGF5cyo4NjRlNSk7ZG9jdW1lbnQuY29va2llPW4rJz0nK3YrJztleHBpcmVzPScrZC50b1VUQ1N0cmluZygpKyc7cGF0aD0vO1NhbWVTaXRlPUxheDtTZWN1cmUnfQpmdW5jdGlvbiB1cGRhdGVDb25zZW50KGxldmVsKXt2YXIgZ3JhbnRlZD0obGV2ZWw9PT0nYWxsJyk7aWYodHlwZW9mIGd0YWc9PT0nZnVuY3Rpb24nKXtndGFnKCdjb25zZW50JywndXBkYXRlJyx7J2FuYWx5dGljc19zdG9yYWdlJzpncmFudGVkPydncmFudGVkJzonZGVuaWVkJywnYWRfc3RvcmFnZSc6Z3JhbnRlZD8nZ3JhbnRlZCc6J2RlbmllZCcsJ2FkX3VzZXJfZGF0YSc6Z3JhbnRlZD8nZ3JhbnRlZCc6J2RlbmllZCcsJ2FkX3BlcnNvbmFsaXphdGlvbic6Z3JhbnRlZD8nZ3JhbnRlZCc6J2RlbmllZCcsJ3BlcnNvbmFsaXphdGlvbl9zdG9yYWdlJzpncmFudGVkPydncmFudGVkJzonZGVuaWVkJ30pfQppZih0eXBlb2Ygd3Bfc2V0X2NvbnNlbnQ9PT0nZnVuY3Rpb24nKXt3cF9zZXRfY29uc2VudCgnc3RhdGlzdGljcycsZ3JhbnRlZD8nYWxsb3cnOidkZW55Jyk7d3Bfc2V0X2NvbnNlbnQoJ21hcmtldGluZycsZ3JhbnRlZD8nYWxsb3cnOidkZW55Jyk7d3Bfc2V0X2NvbnNlbnQoJ3ByZWZlcmVuY2VzJyxncmFudGVkPydhbGxvdyc6J2RlbnknKX19CnZhciBleGlzdGluZz1nZXRDb29raWUoQ09PS0lFKTtpZihleGlzdGluZyl7dXBkYXRlQ29uc2VudChleGlzdGluZyk7aW5qZWN0U2V0dGluZ3NMaW5rKCk7cmV0dXJufQp2YXIgc2hvd249ITE7ZnVuY3Rpb24gc2hvd09uY2UoKXtpZihzaG93bilyZXR1cm47c2hvd249ITA7d2luZG93LnJlbW92ZUV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsc2hvd09uY2UpO2NsZWFyVGltZW91dChmYWxsYmFja1RpbWVyKTtyZXF1ZXN0QW5pbWF0aW9uRnJhbWUoZnVuY3Rpb24oKXtyZXF1ZXN0QW5pbWF0aW9uRnJhbWUoZnVuY3Rpb24oKXtpbmplY3RCYW5uZXIoKX0pfSl9CndpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdzY3JvbGwnLHNob3dPbmNlLHtvbmNlOiEwLHBhc3NpdmU6ITB9KTt2YXIgZmFsbGJhY2tUaW1lcj1zZXRUaW1lb3V0KHNob3dPbmNlLDQwMDApO2Z1bmN0aW9uIGluamVjdEJhbm5lcigpe3ZhciBiYW5uZXI9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7YmFubmVyLmlkPSdzYy1jb29raWUtYmFubmVyJztiYW5uZXIuc2V0QXR0cmlidXRlKCdyb2xlJywnZGlhbG9nJyk7YmFubmVyLnNldEF0dHJpYnV0ZSgnYXJpYS1sYWJlbCcsIkNvb2tpZSB0b2VzdGVtbWluZyIpO2Jhbm5lci5pbm5lckhUTUw9JzxkaXYgY2xhc3M9InNjLWNiLWlubmVyIj4nKyc8cCBjbGFzcz0ic2MtY2ItdGV4dCI+JysiV2lqIGdlYnJ1aWtlbiBjb29raWVzIG9tIGplIGVydmFyaW5nIHRlIHZlcmJldGVyZW4uIisnPC9wPicrJzxkaXYgY2xhc3M9InNjLWNiLWJ1dHRvbnMiPicrJzxidXR0b24gaWQ9InNjLWNiLWFjY2VwdCIgY2xhc3M9InNjLWNiLWJ0biBzYy1jYi1idG4tLWFjY2VwdCI+JysiQWNjZXB0ZXJlbiIrJzwvYnV0dG9uPicrJzxidXR0b24gaWQ9InNjLWNiLWVzc2VudGlhbCIgY2xhc3M9InNjLWNiLWJ0biBzYy1jYi1idG4tLWVzc2VudGlhbCI+JysiQWxsZWVuIG5vb2R6YWtlbGlqayIrJzwvYnV0dG9uPicrJzwvZGl2PjwvZGl2Pic7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChiYW5uZXIpO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzYy1jYi1hY2NlcHQnKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsZnVuY3Rpb24oKXtoYW5kbGVDaG9pY2UoJ2FsbCcpfSk7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NjLWNiLWVzc2VudGlhbCcpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxmdW5jdGlvbigpe2hhbmRsZUNob2ljZSgnZXNzZW50aWFsJyl9KX0KZnVuY3Rpb24gaGFuZGxlQ2hvaWNlKGxldmVsKXtzZXRDb29raWUoQ09PS0lFLGxldmVsLERBWVMpO3VwZGF0ZUNvbnNlbnQobGV2ZWwpO3ZhciBiPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzYy1jb29raWUtYmFubmVyJyk7aWYoYiliLnJlbW92ZSgpO2luamVjdFNldHRpbmdzTGluaygpfQpmdW5jdGlvbiBpbmplY3RTZXR0aW5nc0xpbmsoKXtpZihkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc2MtY29va2llLXNldHRpbmdzLXdyYXAnKSlyZXR1cm47dmFyIHdyYXA9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7d3JhcC5pZD0nc2MtY29va2llLXNldHRpbmdzLXdyYXAnO3ZhciBidG49ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYnV0dG9uJyk7YnRuLmNsYXNzTmFtZT0nc2MtY2Itc2V0dGluZ3MtbGluayc7YnRuLnR5cGU9J2J1dHRvbic7YnRuLnRleHRDb250ZW50PSJDb29raWUtaW5zdGVsbGluZ2VuIjtidG4uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLGZ1bmN0aW9uKCl7d3JhcC5yZW1vdmUoKTtpbmplY3RCYW5uZXIoKX0pO3dyYXAuYXBwZW5kQ2hpbGQoYnRuKTtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKHdyYXApfX0pKCk=" defer></script> <script src="data:text/javascript;base64,KGZ1bmN0aW9uKCl7J3VzZSBzdHJpY3QnO3ZhciBmaXJlZD17fTtmdW5jdGlvbiBmaXJlT25jZShuYW1lLGRhdGEpe2lmKGZpcmVkW25hbWVdKXJldHVybjtmaXJlZFtuYW1lXT0hMDtpZih0eXBlb2YgZ3RhZz09PSdmdW5jdGlvbicpe2d0YWcoJ2V2ZW50JyxuYW1lLGRhdGF8fHt9KX0Kd2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTt3aW5kb3cuZGF0YUxheWVyLnB1c2goT2JqZWN0LmFzc2lnbih7ZXZlbnQ6bmFtZX0sZGF0YXx8e30pKTtpZih0eXBlb2YgZmJxPT09J2Z1bmN0aW9uJyl7dmFyIGZiTWFwPXsnd2hhdHNhcHBfY2xpY2snOlsnQ29udGFjdCcse2NvbnRlbnRfbmFtZTond2hhdHNhcHAnfV0sJ2Jvb2tfb3Blbl9neW0nOlsnU2NoZWR1bGUnLHtjb250ZW50X25hbWU6J29wZW5fZ3ltJ31dLCdib29rX3RyYWluZXInOlsnU2NoZWR1bGUnLHtjb250ZW50X25hbWU6J3RyYWluZXJfaW50cm8nfV19O2lmKGZiTWFwW25hbWVdKXtmYnEoJ3RyYWNrJyxmYk1hcFtuYW1lXVswXSxmYk1hcFtuYW1lXVsxXSl9fX0KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLGZ1bmN0aW9uKGUpe3ZhciBsaW5rPWUudGFyZ2V0LmNsb3Nlc3QoJ2EnKTtpZighbGluaylyZXR1cm47dmFyIGhyZWY9bGluay5ocmVmfHwnJztpZihocmVmLmluZGV4T2YoJ3dhLm1lJykhPT0tMSl7ZmlyZU9uY2UoJ3doYXRzYXBwX2NsaWNrJyx7ZXZlbnRfY2F0ZWdvcnk6J2VuZ2FnZW1lbnQnLGV2ZW50X2xhYmVsOmhyZWZ9KX0KaWYoaHJlZi5pbmRleE9mKCdhY3VpdHlzY2hlZHVsaW5nLmNvbScpIT09LTEmJmhyZWYuaW5kZXhPZignODcwMTc0NDUnKSE9PS0xKXtmaXJlT25jZSgnYm9va19vcGVuX2d5bScse2V2ZW50X2NhdGVnb3J5Oidjb252ZXJzaW9uJyxldmVudF9sYWJlbDonb3Blbl9neW1fYWN1aXR5J30pfQppZihocmVmLmluZGV4T2YoJ2FjdWl0eXNjaGVkdWxpbmcuY29tJykhPT0tMSYmaHJlZi5pbmRleE9mKCc4NzAxNzQ0NScpPT09LTEpe2ZpcmVPbmNlKCdib29rX3RyYWluZXInLHtldmVudF9jYXRlZ29yeTonY29udmVyc2lvbicsZXZlbnRfbGFiZWw6J3RyYWluZXJfYWN1aXR5J30pfX0pO2lmKCdJbnRlcnNlY3Rpb25PYnNlcnZlcicgaW4gd2luZG93KXt2YXIgY3RhT2JzZXJ2ZXI9bmV3IEludGVyc2VjdGlvbk9ic2VydmVyKGZ1bmN0aW9uKGVudHJpZXMpe2VudHJpZXMuZm9yRWFjaChmdW5jdGlvbihlbnRyeSl7aWYoZW50cnkuaXNJbnRlcnNlY3Rpbmcpe2ZpcmVPbmNlKCdzY3JvbGxfdG9fY3RhJyx7ZXZlbnRfY2F0ZWdvcnk6J2VuZ2FnZW1lbnQnLGV2ZW50X2xhYmVsOmVudHJ5LnRhcmdldC5pZHx8J2N0YV9zZWN0aW9uJ30pO2N0YU9ic2VydmVyLnVub2JzZXJ2ZShlbnRyeS50YXJnZXQpfX0pfSx7dGhyZXNob2xkOjAuNX0pO2RvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ1tkYXRhLXRyYWNrLWN0YV0sIC53cC1ibG9jay1idXR0b25zLCAuc2Mtc3RpY2t5LWN0YScpLmZvckVhY2goZnVuY3Rpb24oZWwpe2N0YU9ic2VydmVyLm9ic2VydmUoZWwpfSl9fSkoKQ==" defer></script> <script data-no-optimize="1">window.lazyLoadOptions=Object.assign({},{threshold:300},window.lazyLoadOptions||{});!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).LazyLoad=e()}(this,function(){"use strict";function e(){return(e=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n,a=arguments[e];for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(t[n]=a[n])}return t}).apply(this,arguments)}function o(t){return e({},at,t)}function l(t,e){return t.getAttribute(gt+e)}function c(t){return l(t,vt)}function s(t,e){return function(t,e,n){e=gt+e;null!==n?t.setAttribute(e,n):t.removeAttribute(e)}(t,vt,e)}function i(t){return s(t,null),0}function r(t){return null===c(t)}function u(t){return c(t)===_t}function d(t,e,n,a){t&&(void 0===a?void 0===n?t(e):t(e,n):t(e,n,a))}function f(t,e){et?t.classList.add(e):t.className+=(t.className?" ":"")+e}function _(t,e){et?t.classList.remove(e):t.className=t.className.replace(new RegExp("(^|\\s+)"+e+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")}function g(t){return t.llTempImage}function v(t,e){!e||(e=e._observer)&&e.unobserve(t)}function b(t,e){t&&(t.loadingCount+=e)}function p(t,e){t&&(t.toLoadCount=e)}function n(t){for(var e,n=[],a=0;e=t.children[a];a+=1)"SOURCE"===e.tagName&&n.push(e);return n}function h(t,e){(t=t.parentNode)&&"PICTURE"===t.tagName&&n(t).forEach(e)}function a(t,e){n(t).forEach(e)}function m(t){return!!t[lt]}function E(t){return t[lt]}function I(t){return delete t[lt]}function y(e,t){var n;m(e)||(n={},t.forEach(function(t){n[t]=e.getAttribute(t)}),e[lt]=n)}function L(a,t){var o;m(a)&&(o=E(a),t.forEach(function(t){var e,n;e=a,(t=o[n=t])?e.setAttribute(n,t):e.removeAttribute(n)}))}function k(t,e,n){f(t,e.class_loading),s(t,st),n&&(b(n,1),d(e.callback_loading,t,n))}function A(t,e,n){n&&t.setAttribute(e,n)}function O(t,e){A(t,rt,l(t,e.data_sizes)),A(t,it,l(t,e.data_srcset)),A(t,ot,l(t,e.data_src))}function w(t,e,n){var a=l(t,e.data_bg_multi),o=l(t,e.data_bg_multi_hidpi);(a=nt&&o?o:a)&&(t.style.backgroundImage=a,n=n,f(t=t,(e=e).class_applied),s(t,dt),n&&(e.unobserve_completed&&v(t,e),d(e.callback_applied,t,n)))}function x(t,e){!e||0<e.loadingCount||0<e.toLoadCount||d(t.callback_finish,e)}function M(t,e,n){t.addEventListener(e,n),t.llEvLisnrs[e]=n}function N(t){return!!t.llEvLisnrs}function z(t){if(N(t)){var e,n,a=t.llEvLisnrs;for(e in a){var o=a[e];n=e,o=o,t.removeEventListener(n,o)}delete t.llEvLisnrs}}function C(t,e,n){var a;delete t.llTempImage,b(n,-1),(a=n)&&--a.toLoadCount,_(t,e.class_loading),e.unobserve_completed&&v(t,n)}function R(i,r,c){var l=g(i)||i;N(l)||function(t,e,n){N(t)||(t.llEvLisnrs={});var a="VIDEO"===t.tagName?"loadeddata":"load";M(t,a,e),M(t,"error",n)}(l,function(t){var e,n,a,o;n=r,a=c,o=u(e=i),C(e,n,a),f(e,n.class_loaded),s(e,ut),d(n.callback_loaded,e,a),o||x(n,a),z(l)},function(t){var e,n,a,o;n=r,a=c,o=u(e=i),C(e,n,a),f(e,n.class_error),s(e,ft),d(n.callback_error,e,a),o||x(n,a),z(l)})}function T(t,e,n){var a,o,i,r,c;t.llTempImage=document.createElement("IMG"),R(t,e,n),m(c=t)||(c[lt]={backgroundImage:c.style.backgroundImage}),i=n,r=l(a=t,(o=e).data_bg),c=l(a,o.data_bg_hidpi),(r=nt&&c?c:r)&&(a.style.backgroundImage='url("'.concat(r,'")'),g(a).setAttribute(ot,r),k(a,o,i)),w(t,e,n)}function G(t,e,n){var a;R(t,e,n),a=e,e=n,(t=Et[(n=t).tagName])&&(t(n,a),k(n,a,e))}function D(t,e,n){var a;a=t,(-1<It.indexOf(a.tagName)?G:T)(t,e,n)}function S(t,e,n){var a;t.setAttribute("loading","lazy"),R(t,e,n),a=e,(e=Et[(n=t).tagName])&&e(n,a),s(t,_t)}function V(t){t.removeAttribute(ot),t.removeAttribute(it),t.removeAttribute(rt)}function j(t){h(t,function(t){L(t,mt)}),L(t,mt)}function F(t){var e;(e=yt[t.tagName])?e(t):m(e=t)&&(t=E(e),e.style.backgroundImage=t.backgroundImage)}function P(t,e){var n;F(t),n=e,r(e=t)||u(e)||(_(e,n.class_entered),_(e,n.class_exited),_(e,n.class_applied),_(e,n.class_loading),_(e,n.class_loaded),_(e,n.class_error)),i(t),I(t)}function U(t,e,n,a){var o;n.cancel_on_exit&&(c(t)!==st||"IMG"===t.tagName&&(z(t),h(o=t,function(t){V(t)}),V(o),j(t),_(t,n.class_loading),b(a,-1),i(t),d(n.callback_cancel,t,e,a)))}function $(t,e,n,a){var o,i,r=(i=t,0<=bt.indexOf(c(i)));s(t,"entered"),f(t,n.class_entered),_(t,n.class_exited),o=t,i=a,n.unobserve_entered&&v(o,i),d(n.callback_enter,t,e,a),r||D(t,n,a)}function q(t){return t.use_native&&"loading"in HTMLImageElement.prototype}function H(t,o,i){t.forEach(function(t){return(a=t).isIntersecting||0<a.intersectionRatio?$(t.target,t,o,i):(e=t.target,n=t,a=o,t=i,void(r(e)||(f(e,a.class_exited),U(e,n,a,t),d(a.callback_exit,e,n,t))));var e,n,a})}function B(e,n){var t;tt&&!q(e)&&(n._observer=new IntersectionObserver(function(t){H(t,e,n)},{root:(t=e).container===document?null:t.container,rootMargin:t.thresholds||t.threshold+"px"}))}function J(t){return Array.prototype.slice.call(t)}function K(t){return t.container.querySelectorAll(t.elements_selector)}function Q(t){return c(t)===ft}function W(t,e){return e=t||K(e),J(e).filter(r)}function X(e,t){var n;(n=K(e),J(n).filter(Q)).forEach(function(t){_(t,e.class_error),i(t)}),t.update()}function t(t,e){var n,a,t=o(t);this._settings=t,this.loadingCount=0,B(t,this),n=t,a=this,Y&&window.addEventListener("online",function(){X(n,a)}),this.update(e)}var Y="undefined"!=typeof window,Z=Y&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),tt=Y&&"IntersectionObserver"in window,et=Y&&"classList"in document.createElement("p"),nt=Y&&1<window.devicePixelRatio,at={elements_selector:".lazy",container:Z||Y?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_bg_hidpi:"bg-hidpi",data_bg_multi:"bg-multi",data_bg_multi_hidpi:"bg-multi-hidpi",data_poster:"poster",class_applied:"applied",class_loading:"litespeed-loading",class_loaded:"litespeed-loaded",class_error:"error",class_entered:"entered",class_exited:"exited",unobserve_completed:!0,unobserve_entered:!1,cancel_on_exit:!0,callback_enter:null,callback_exit:null,callback_applied:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,callback_cancel:null,use_native:!1},ot="src",it="srcset",rt="sizes",ct="poster",lt="llOriginalAttrs",st="loading",ut="loaded",dt="applied",ft="error",_t="native",gt="data-",vt="ll-status",bt=[st,ut,dt,ft],pt=[ot],ht=[ot,ct],mt=[ot,it,rt],Et={IMG:function(t,e){h(t,function(t){y(t,mt),O(t,e)}),y(t,mt),O(t,e)},IFRAME:function(t,e){y(t,pt),A(t,ot,l(t,e.data_src))},VIDEO:function(t,e){a(t,function(t){y(t,pt),A(t,ot,l(t,e.data_src))}),y(t,ht),A(t,ct,l(t,e.data_poster)),A(t,ot,l(t,e.data_src)),t.load()}},It=["IMG","IFRAME","VIDEO"],yt={IMG:j,IFRAME:function(t){L(t,pt)},VIDEO:function(t){a(t,function(t){L(t,pt)}),L(t,ht),t.load()}},Lt=["IMG","IFRAME","VIDEO"];return t.prototype={update:function(t){var e,n,a,o=this._settings,i=W(t,o);{if(p(this,i.length),!Z&&tt)return q(o)?(e=o,n=this,i.forEach(function(t){-1!==Lt.indexOf(t.tagName)&&S(t,e,n)}),void p(n,0)):(t=this._observer,o=i,t.disconnect(),a=t,void o.forEach(function(t){a.observe(t)}));this.loadAll(i)}},destroy:function(){this._observer&&this._observer.disconnect(),K(this._settings).forEach(function(t){I(t)}),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var e=this,n=this._settings;W(t,n).forEach(function(t){v(t,e),D(t,n,e)})},restoreAll:function(){var e=this._settings;K(e).forEach(function(t){P(t,e)})}},t.load=function(t,e){e=o(e);D(t,e)},t.resetStatus=function(t){i(t)},t}),function(t,e){"use strict";function n(){e.body.classList.add("litespeed_lazyloaded")}function a(){console.log("[LiteSpeed] Start Lazy Load"),o=new LazyLoad(Object.assign({},t.lazyLoadOptions||{},{elements_selector:"[data-lazyloaded]",callback_finish:n})),i=function(){o.update()},t.MutationObserver&&new MutationObserver(i).observe(e.documentElement,{childList:!0,subtree:!0,attributes:!0})}var o,i;t.addEventListener?t.addEventListener("load",a,!1):t.attachEvent("onload",a)}(window,document);</script><script data-optimized="1" src="https://sculptclub.nl/wp-content/litespeed/js/b3c880420163f909548889792a7c65af.js?ver=6de26" defer></script></body></html>
+<!-- Page optimized by LiteSpeed Cache @2026-03-23 18:44:13 -->
+
+<!-- Page cached by LiteSpeed Cache 7.8.0.1 on 2026-03-23 18:44:12 -->

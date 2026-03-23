@@ -223,4 +223,14 @@
   .shadow-brand-lg {
     box-shadow: 0 10px 15px rgba(14, 12, 10, 0.08), 0 4px 6px rgba(14, 12, 10, 0.04);
   }
+  /* WhatsApp button pulse — plays once on mount */
+  .animate-pulse-once {
+    animation: wa-pulse 2s ease-out 1;
+  }
+}
+
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
