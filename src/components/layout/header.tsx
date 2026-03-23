@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, Globe } from "lucide-react";
@@ -32,9 +33,16 @@ export function Header() {
         {/* Logo */}
         <Link
           href={locale === "nl" ? "/" : "/en"}
-          className="font-heading text-lg font-bold tracking-tight"
+          className="flex items-center"
         >
-          SculptClub
+          <Image
+            src="/images/logo-sculptclub.png"
+            alt="SculptClub"
+            width={140}
+            height={11}
+            className="h-5 w-auto dark:invert"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
