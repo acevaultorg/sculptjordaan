@@ -57,7 +57,7 @@ export function Header() {
             alt="SculptClub"
             width={120}
             height={9}
-            className="h-3.5 sm:h-4 w-auto dark:invert"
+            className="h-3 sm:h-4 w-auto dark:invert"
             priority
           />
         </Link>
