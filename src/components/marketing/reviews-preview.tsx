@@ -11,18 +11,23 @@ const reviewsHref: Record<Locale, string> = {
   en: "/en/reviews",
 };
 
-/* ─── Real Google Reviews (verified from Google Maps) ─── */
+/* ─── Real Google Reviews (verified from Google Maps, March 2026) ─── */
 const reviews = [
   {
     name: "Bryan van Luijken",
+    initial: "B",
+    color: "bg-teal-600",
+    badge: "Local Guide",
     text: {
-      nl: "Ik geef hier mijn small group Calisthenics aan 3 atleten. Geweldige locatie! Klein maar fijn. Heeft alles wat wij nodig hebben. Zelfs gratis koffie en thee!",
+      nl: "Ik geef hier mijn small group Calisthenics aan 3 atleten. Geweldige locatie! Klein maar fijn. Heeft alles wat wij nodig hebben. Zelfs gratis koffie een thee!",
       en: "I give my small group Calisthenics classes here for 3 athletes. Great location! Small but nice. Has everything we need. Even free coffee and tea!",
     },
     rating: 5,
   },
   {
     name: "Pien Buseman",
+    initial: "P",
+    color: "bg-purple-600",
     text: {
       nl: "Wat een cadeau een 'boutique' sportschool met goede trainers op loopafstand. Het is klein maar zeer fijn. Alle apparaten zijn aanwezig, indien gewenst met een PT en je kan er ook zelf trainen. Aanwinst voor in de buurt!",
       en: "What a gift — a boutique gym with great trainers within walking distance. Small but very nice. All equipment is available, with a PT if you want, and you can also train on your own. A great addition to the neighborhood!",
@@ -31,8 +36,10 @@ const reviews = [
   },
   {
     name: "Dara Thompson",
+    initial: "D",
+    color: "bg-blue-600",
     text: {
-      nl: "Geweldige ruimte om mijn klanten te trainen. Privé, volledig uitgerust en altijd schoon. Boeken makkelijk gemaakt met credits.",
+      nl: "Great space to train my clients. Private, fully equipped, and always clean. Booking made easy with credits.",
       en: "Great space to train my clients. Private, fully equipped, and always clean. Booking made easy with credits.",
     },
     rating: 5,
@@ -73,15 +80,26 @@ export function ReviewsPreview({ locale }: { locale: Locale }) {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   &ldquo;{review.text[locale]}&rdquo;
                 </p>
-                <div className="mt-4 flex items-center gap-2">
-                  {/* Google "G" icon */}
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                  </svg>
-                  <p className="text-sm font-semibold">{review.name}</p>
+                <div className="mt-4 flex items-center gap-3">
+                  {/* Avatar circle with initial (like Google) */}
+                  <div className={`w-8 h-8 rounded-full ${review.color} flex items-center justify-center text-white text-xs font-bold shrink-0`}>
+                    {review.initial}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5">
+                      <p className="text-sm font-semibold truncate">{review.name}</p>
+                      {/* Google "G" icon */}
+                      <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18A10.96 10.96 0 001 12c0 1.77.42 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                      </svg>
+                    </div>
+                    {("badge" in review && review.badge) && (
+                      <p className="text-[10px] text-muted-foreground">⭐ {review.badge}</p>
+                    )}
+                  </div>
                 </div>
               </div>
             </Link>
