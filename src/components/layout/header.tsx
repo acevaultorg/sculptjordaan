@@ -16,6 +16,14 @@ const bookingMenu = {
     title: "Wat wil je doen?",
     categories: [
       {
+        icon: Building2,
+        title: "Studio Huren",
+        description: "Per uur boeken · Pakketten",
+        href: "/nl/studio-huren",
+        accent: "from-purple-500 to-purple-600",
+        bg: "bg-purple-50 dark:bg-purple-950/30",
+      },
+      {
         icon: Users,
         title: "Vind een Trainer",
         description: "Gratis kennismaking · 45 min",
@@ -31,14 +39,6 @@ const bookingMenu = {
         accent: "from-emerald-500 to-emerald-600",
         bg: "bg-emerald-50 dark:bg-emerald-950/30",
       },
-      {
-        icon: Building2,
-        title: "Studio Huren",
-        description: "Per uur boeken · Pakketten",
-        href: "/nl/studio-huren",
-        accent: "from-purple-500 to-purple-600",
-        bg: "bg-purple-50 dark:bg-purple-950/30",
-      },
     ],
     returning: "Al lid? Mijn boekingen",
   },
@@ -46,6 +46,14 @@ const bookingMenu = {
     label: "Book",
     title: "What would you like to do?",
     categories: [
+      {
+        icon: Building2,
+        title: "Studio Rental",
+        description: "Book by the hour · Packages",
+        href: "/en/studio-rental",
+        accent: "from-purple-500 to-purple-600",
+        bg: "bg-purple-50 dark:bg-purple-950/30",
+      },
       {
         icon: Users,
         title: "Find a Trainer",
@@ -61,14 +69,6 @@ const bookingMenu = {
         href: "/en/open-gym",
         accent: "from-emerald-500 to-emerald-600",
         bg: "bg-emerald-50 dark:bg-emerald-950/30",
-      },
-      {
-        icon: Building2,
-        title: "Studio Rental",
-        description: "Book by the hour · Packages",
-        href: "/en/studio-rental",
-        accent: "from-purple-500 to-purple-600",
-        bg: "bg-purple-50 dark:bg-purple-950/30",
       },
     ],
     returning: "Already a member? My bookings",
@@ -277,7 +277,7 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
               onClick={() => setBookOpen(false)}
             />
 
@@ -287,7 +287,7 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}
               transition={{ type: "spring", damping: 28, stiffness: 300 }}
-              className="fixed inset-x-0 bottom-0 z-[70] flex flex-col max-h-[90dvh] sm:max-h-[85dvh]"
+              className="fixed inset-x-0 bottom-0 z-50 flex flex-col max-h-[90dvh] sm:max-h-[85dvh]"
             >
               <div className="bg-background rounded-t-[2rem] shadow-2xl flex flex-col flex-1 overflow-hidden">
                 {/* Handle bar */}
