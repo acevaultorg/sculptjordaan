@@ -12,6 +12,7 @@ import {
   Navigation,
   MessageCircle,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
@@ -58,6 +59,7 @@ export default function LocationPageNL() {
 
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Locatie & Uren","url":"/nl/locatie-uren"}]} />
       <Section>
         <SectionHeader
           overline="Locatie"

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Studio Huren — Priv\u00e9 Trainingsruimte | SculptClub Amsterdam Jordaan",
@@ -68,6 +69,13 @@ const galleryImages = [
 export default function StudioRentalPageNL() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Studio Huren","url":"/nl/studio-huren"}]} />
+      <ServiceJsonLd
+        name="Studio Verhuur"
+        description="Huur onze privé personal training studio in de Jordaan, Amsterdam. Professionele apparatuur, flexibel per uur, geen commissie."
+        url="/nl/studio-huren"
+        priceRange="Vanaf €25 per uur"
+      />
       {/* Hero */}
       <Section>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">

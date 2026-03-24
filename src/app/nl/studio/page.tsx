@@ -13,6 +13,7 @@ import {
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Studio & Apparatuur — SculptClub Amsterdam Jordaan",
@@ -90,6 +91,7 @@ const houseRules = [
 export default function StudioPageNL() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Studio","url":"/nl/studio"}]} />
       <Section>
         <SectionHeader
           overline="De Studio"

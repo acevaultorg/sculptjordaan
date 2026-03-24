@@ -157,3 +157,98 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string
     />
   );
 }
+
+export function BlogPostingJsonLd({
+  title,
+  description,
+  url,
+  datePublished,
+  dateModified,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url: `${siteConfig.url}${url}`,
+    datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/images/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}${url}`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ServiceJsonLd({
+  name,
+  description,
+  url,
+  priceRange,
+  areaServed,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  priceRange: string;
+  areaServed?: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${siteConfig.url}${url}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        postalCode: siteConfig.address.zip,
+        addressCountry: "NL",
+      },
+    },
+    areaServed: {
+      "@type": "City",
+      name: areaServed || "Amsterdam",
+    },
+    priceRange,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

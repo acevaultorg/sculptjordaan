@@ -26,6 +26,10 @@ const nlPages = [
   "/nl/plan-gratis-intake-met-hamish",
   "/nl/plan-gratis-intake-met-andrea",
   "/nl/plan-gratis-intake-met-dara",
+  "/nl/blog",
+  "/nl/blog/personal-training-amsterdam-jordaan",
+  "/nl/blog/krachttraining-voor-beginners",
+  "/nl/blog/open-gym-vs-sportschool",
 ];
 
 const enPages = [
@@ -52,6 +56,10 @@ const enPages = [
   "/en/plan-free-intro-with-hamish",
   "/en/plan-free-intro-with-andrea",
   "/en/plan-free-intro-with-dara",
+  "/en/blog",
+  "/en/blog/personal-training-amsterdam-jordaan",
+  "/en/blog/strength-training-beginners-guide",
+  "/en/blog/open-gym-vs-regular-gym",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

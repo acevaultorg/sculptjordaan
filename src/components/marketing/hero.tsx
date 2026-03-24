@@ -33,7 +33,7 @@ export function Hero({ locale }: { locale: Locale }) {
   }[locale];
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
+    <section className="relative overflow-hidden -mt-20 pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-48 lg:pb-40">
       {/* Background image with strong dark overlay for text readability */}
       <div className="absolute inset-0 -z-10">
         <Image

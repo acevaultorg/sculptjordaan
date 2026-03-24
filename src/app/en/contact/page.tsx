@@ -16,6 +16,7 @@ import {
   Clock,
   Send,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 const contactInfo = [
   {
@@ -53,6 +54,7 @@ const contactInfo = [
 export default function ContactPageEN() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Contact","url":"/en/contact"}]} />
       <Section>
         <SectionHeader
           overline="Contact"

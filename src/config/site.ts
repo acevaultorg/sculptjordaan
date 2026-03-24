@@ -29,7 +29,7 @@ export const siteConfig = {
   instagram: "https://instagram.com/sculptclubjordaan",
   instagramHandle: "@sculptclubjordaan",
   google: "https://g.page/sculptclub",
-  rating: { value: 5.0, count: 10 },
+  rating: { value: 5.0, count: 8 },
   founded: "2025",
   acuity: {
     openGymId: "87017445",

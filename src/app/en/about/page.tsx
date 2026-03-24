@@ -18,6 +18,7 @@ import {
   Clock,
   UserCheck,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "About Us — SculptClub Amsterdam Jordaan",
@@ -94,6 +95,7 @@ const uniqueFeatures = [
 export default function AboutPage() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"About","url":"/en/about"}]} />
       {/* Hero */}
       <Section>
         <SectionHeader

@@ -9,7 +9,10 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityLinks } from "@/config/acuity";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,86 +26,76 @@ export const metadata: Metadata = {
       en: "/en/blog",
     },
   },
-  robots: {
-    index: false,
-    follow: false,
-  },
 };
 
 const posts = [
   {
-    title: "Personal training studio in the Jordaan: why choose private?",
+    title: "Personal Training in Amsterdam Jordaan: What to Know",
     excerpt:
-      "Discover why more and more Amsterdammers are choosing a private personal training studio over a big gym.",
+      "Everything about personal training in the Jordaan. Discover what a private studio offers, what to expect, and why the Jordaan is the perfect location.",
     category: "Personal Training",
+    href: "/en/blog/personal-training-amsterdam-jordaan",
+    date: "March 24, 2026",
   },
   {
-    title: "Open Gym Amsterdam: train independently without a contract",
+    title: "Strength Training for Beginners: Complete Guide",
     excerpt:
-      "How does Open Gym at SculptClub work? Book a 60-minute session and train at your own pace in a quiet studio.",
-    category: "Open Gym",
-  },
-  {
-    title: "Cost of renting a personal training studio in Amsterdam",
-    excerpt:
-      "An overview of the costs of renting a personal training studio in Amsterdam. What can you expect?",
-    category: "Studio",
-  },
-  {
-    title: "Starting as a freelance personal trainer in Amsterdam",
-    excerpt:
-      "Tips and advice for freelance personal trainers looking to start in Amsterdam. From location to building clients.",
-    category: "For Trainers",
-  },
-  {
-    title: "What to expect at your first session",
-    excerpt:
-      "New to SculptClub? Here is what you can expect at your first personal training session or Open Gym visit.",
-    category: "Tips",
-  },
-  {
-    title: "The best warm-up routine for strength training",
-    excerpt:
-      "An effective warm-up makes all the difference. Discover our favourite warm-up routine for strength training.",
+      "Start strength training the right way. Learn the fundamental exercises, how often to train, and how to avoid injuries.",
     category: "Training",
+    href: "/en/blog/strength-training-beginners-guide",
+    date: "March 24, 2026",
+  },
+  {
+    title: "Open Gym vs Regular Gym: Which is Right for You?",
+    excerpt:
+      "Compare Open Gym with a regular gym on price, privacy, equipment, and atmosphere to make the best choice.",
+    category: "Open Gym",
+    href: "/en/blog/open-gym-vs-regular-gym",
+    date: "March 24, 2026",
   },
 ];
 
 export default function BlogPageEN() {
   return (
     <PageLayout>
-      {/* Hero */}
-      <Section>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/en" },
+          { name: "Blog", url: "/en/blog" },
+        ]}
+      />
+
+      {/* Hero + Posts grid */}
+      <Section bg="muted">
         <SectionHeader
           overline="Blog"
           title="Tips, Insights & Stories"
           description="Articles about personal training, fitness, nutrition and everything around our studio in the Jordaan."
         />
-      </Section>
-
-      {/* Posts grid */}
-      <Section bg="muted">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, i) => (
             <FadeIn key={post.title} delay={i * 0.1}>
-              <Card className="h-full flex flex-col">
-                <CardHeader>
-                  <Badge variant="secondary" className="w-fit mb-2">
-                    {post.category}
-                  </Badge>
-                  <CardTitle className="text-lg leading-snug">
-                    {post.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <CardDescription className="line-clamp-2">
-                    {post.excerpt}
-                  </CardDescription>
-                  <p className="mt-4 text-sm font-medium text-primary">
-                    Coming soon
-                  </p>
-                </CardContent>
-              </Card>
+              <Link href={post.href} className="block h-full">
+                <Card className="h-full flex flex-col cursor-pointer hover:shadow-brand-lg transition-shadow duration-300">
+                  <CardHeader>
+                    <Badge variant="secondary" className="w-fit mb-2">
+                      {post.category}
+                    </Badge>
+                    <CardTitle className="text-lg leading-snug">
+                      {post.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1">
+                    <CardDescription className="line-clamp-3">
+                      {post.excerpt}
+                    </CardDescription>
+                    <p className="mt-4 inline-flex items-center text-sm font-semibold text-brand">
+                      Read more
+                      <ArrowRight className="ml-1 w-4 h-4" />
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             </FadeIn>
           ))}
         </div>

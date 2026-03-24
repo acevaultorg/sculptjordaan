@@ -10,6 +10,7 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Cadeaukaarten — SculptClub Amsterdam Jordaan",
@@ -66,6 +67,7 @@ const giftCards = [
 export default function GiftCardsPageNL() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Cadeaukaarten","url":"/nl/cadeaukaarten"}]} />
       <Section>
         <SectionHeader
           overline="Cadeaukaarten"

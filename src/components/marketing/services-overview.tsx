@@ -86,35 +86,34 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
       <div className="grid sm:grid-cols-3 gap-6">
         {items.map((service, i) => (
           <FadeIn key={service.title} delay={i * 0.1}>
-            <Card className="h-full group hover:shadow-brand-lg transition-all duration-300 border-border/50 overflow-hidden">
-              <div className="relative aspect-video w-full">
-                <Image
-                  src={service.image}
-                  alt={service.imageAlt}
-                  fill
-                  className="object-cover rounded-t-xl"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
-              <CardHeader>
-                <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-3">
-                  <service.icon className="w-5 h-5 text-brand" />
+            <Link href={service.href} className="block h-full">
+              <Card className="h-full group cursor-pointer hover:shadow-brand-lg transition-all duration-300 border-border/50 overflow-hidden">
+                <div className="relative aspect-video w-full">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover rounded-t-xl"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
                 </div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-                <CardDescription className="text-base leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Link
-                  href={service.href}
-                  className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors group-hover:gap-2"
-                >
-                  {service.cta}
-                  <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </CardContent>
-            </Card>
+                <CardHeader>
+                  <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-3">
+                    <service.icon className="w-5 h-5 text-brand" />
+                  </div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <span className="inline-flex items-center text-sm font-semibold text-brand group-hover:text-brand-dark transition-colors group-hover:gap-2">
+                    {service.cta}
+                    <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
           </FadeIn>
         ))}
       </div>

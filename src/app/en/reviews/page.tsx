@@ -4,13 +4,13 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { ReviewsJsonLd } from "@/components/seo/json-ld";
+import { ReviewsJsonLd , BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { Star, ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Reviews — SculptClub Amsterdam Jordaan",
   description:
-    "Read what our clients say about SculptClub. 5.0 stars on Google with 10 reviews. Boutique personal training in Amsterdam Jordaan.",
+    "Read what our clients say about SculptClub. 5.0 stars on Google with 8 reviews. Boutique personal training in Amsterdam Jordaan.",
   alternates: {
     canonical: "/en/reviews",
     languages: {
@@ -104,6 +104,7 @@ const reviewsJsonLdData = reviews.map((r) => ({
 export default function ReviewsPageEN() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Reviews","url":"/en/reviews"}]} />
       <ReviewsJsonLd reviews={reviewsJsonLdData} />
       <Section>
         <SectionHeader

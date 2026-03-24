@@ -17,7 +17,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
-import { FaqJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -140,6 +140,13 @@ const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 export default function OpenGymPageEN() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Open Gym","url":"/en/open-gym"}]} />
+      <ServiceJsonLd
+        name="Open Gym"
+        description="Train independently in a private studio in the Jordaan, Amsterdam. Book 60-minute sessions, max 3 people at a time."
+        url="/en/open-gym"
+        priceRange="€99 - €249 per month"
+      />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}
       <Section>

@@ -15,7 +15,9 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { Star, Users, Gift, Percent, Briefcase, Building2, CalendarClock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Vind Jouw Personal Trainer — SculptClub Amsterdam Jordaan",
@@ -46,6 +48,13 @@ const trainerBenefits = [
 export default function TrainersPageNL() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Personal Trainers","url":"/nl/vind-jouw-personal-trainer"}]} />
+      <ServiceJsonLd
+        name="Personal Training"
+        description="Privé personal training in een boutique studio in de Jordaan, Amsterdam. Kies je eigen trainer, eerste intake altijd gratis."
+        url="/nl/vind-jouw-personal-trainer"
+        priceRange="€60 - €120 per sessie"
+      />
       {/* Hero */}
       <Section>
         <SectionHeader
@@ -70,60 +79,58 @@ export default function TrainersPageNL() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {trainers.map((trainer, i) => (
             <FadeIn key={trainer.id} delay={i * 0.1}>
-              <Card className="h-full flex flex-col overflow-hidden">
-                <div className="relative aspect-[4/3] w-full">
-                  <Image
-                    src={trainer.image}
-                    alt={trainer.name}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-lg">{trainer.name}</CardTitle>
-                  {trainer.credentials && (
-                    <CardDescription>{trainer.credentials}</CardDescription>
-                  )}
-                </CardHeader>
-
-                <CardContent className="flex-1 space-y-4">
-                  <div className="flex flex-wrap gap-1.5">
-                    {trainer.specialization.nl.map((spec) => (
-                      <Badge key={spec} variant="secondary">
-                        {spec}
-                      </Badge>
-                    ))}
+              <Link href={`/nl/${trainer.slug.nl}`} className="block h-full">
+                <Card className="h-full flex flex-col overflow-hidden cursor-pointer hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image
+                      src={trainer.image}
+                      alt={trainer.name}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
-
-                  <p className="text-sm text-muted-foreground">
-                    {trainer.bio.nl}
-                  </p>
-
-                  <div className="space-y-1 text-sm">
-                    <p>
-                      <span className="text-muted-foreground">Talen:</span>{" "}
-                      {trainer.languages.join(", ")}
-                    </p>
-                    {trainer.rate && (
-                      <p>
-                        <span className="text-muted-foreground">Tarief:</span>{" "}
-                        {trainer.rate}
-                      </p>
+                  <CardHeader>
+                    <CardTitle className="text-lg">{trainer.name}</CardTitle>
+                    {trainer.credentials && (
+                      <CardDescription>{trainer.credentials}</CardDescription>
                     )}
-                  </div>
-                </CardContent>
+                  </CardHeader>
 
-                <CardFooter>
-                  <ButtonLink
-                    href={`/nl/${trainer.slug.nl}`}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Plan gratis intake
-                  </ButtonLink>
-                </CardFooter>
-              </Card>
+                  <CardContent className="flex-1 space-y-4">
+                    <div className="flex flex-wrap gap-1.5">
+                      {trainer.specialization.nl.map((spec) => (
+                        <Badge key={spec} variant="secondary">
+                          {spec}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <p className="text-sm text-muted-foreground">
+                      {trainer.bio.nl}
+                    </p>
+
+                    <div className="space-y-1 text-sm">
+                      <p>
+                        <span className="text-muted-foreground">Talen:</span>{" "}
+                        {trainer.languages.join(", ")}
+                      </p>
+                      {trainer.rate && (
+                        <p>
+                          <span className="text-muted-foreground">Tarief:</span>{" "}
+                          {trainer.rate}
+                        </p>
+                      )}
+                    </div>
+                  </CardContent>
+
+                  <CardFooter>
+                    <span className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground">
+                      Plan gratis intake
+                    </span>
+                  </CardFooter>
+                </Card>
+              </Link>
             </FadeIn>
           ))}
         </div>

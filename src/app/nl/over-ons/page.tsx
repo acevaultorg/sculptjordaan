@@ -18,6 +18,7 @@ import {
   Clock,
   UserCheck,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Over Ons — SculptClub Amsterdam Jordaan",
@@ -94,6 +95,7 @@ const uniqueFeatures = [
 export default function OverOnsPage() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Over Ons","url":"/nl/over-ons"}]} />
       {/* Hero */}
       <Section>
         <SectionHeader

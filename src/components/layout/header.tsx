@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, CalendarCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
@@ -155,6 +155,17 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Acuity login for returning clients */}
+              <a
+                href="https://secure.acuityscheduling.com/login/36720238"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-2.5 rounded-lg text-sm font-semibold text-brand hover:text-brand-dark hover:bg-accent transition-colors min-h-[44px] flex items-center gap-2"
+              >
+                <CalendarCheck className="w-4 h-4" />
+                {locale === "nl" ? "Mijn Boekingen" : "My Bookings"}
+              </a>
 
               <div className="my-2 border-t border-border/50" />
 

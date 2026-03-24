@@ -4,6 +4,13 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import {
   ArrowRight,
   MessageCircle,
@@ -13,12 +20,16 @@ import {
   Shirt,
   Droplets,
   Footprints,
+  Bike,
+  Train,
+  ParkingCircle,
+  CheckCircle2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Eerste Bezoek — SculptClub Amsterdam Jordaan",
   description:
-    "Alles wat je moet weten voor je eerste bezoek aan SculptClub. Boek je sessie, kom naar de studio en start met trainen.",
+    "Alles wat je moet weten voor je eerste bezoek aan SculptClub. Stap-voor-stap uitleg, wat je mee moet nemen, bereikbaarheid en veelgestelde vragen.",
   alternates: {
     canonical: "/nl/eerste-bezoek",
     languages: {
@@ -34,7 +45,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Boek je sessie",
     description:
-      "Plan je eerste sessie via ons online boekingssysteem of stuur ons een bericht via WhatsApp. Kies een tijdslot dat je uitkomt en je ontvangt direct een bevestiging per e-mail.",
+      "Plan je eerste sessie via ons online boekingssysteem of stuur ons een bericht via WhatsApp. Kies een tijdslot dat je uitkomt en je ontvangt direct een bevestiging per e-mail. Heb je vragen over welk type sessie bij je past? Stuur ons gerust een bericht — we helpen je graag.",
     cta: {
       label: "Boek nu",
       href: acuityLinks.generic,
@@ -46,36 +57,68 @@ const steps = [
     icon: MapPin,
     title: "Kom naar de studio",
     description:
-      "Onze studio bevindt zich aan de Egelantiersgracht 424 in Amsterdam Jordaan. Na je boeking ontvang je een deurcode per e-mail waarmee je jezelf binnenlaat.",
+      "Onze studio bevindt zich aan de Egelantiersgracht 424 in Amsterdam Jordaan. Na je boeking ontvang je een deurcode per e-mail waarmee je jezelf binnenlaat. Kom 5 minuten voor je sessie zodat je rustig kunt omkleden en je warm kunt maken. De kleedruimte is direct beschikbaar wanneer je binnenkomt.",
   },
   {
     number: "3",
     icon: Dumbbell,
     title: "Start met trainen",
     description:
-      "Je trainer staat klaar, of je traint zelfstandig via Open Gym. Alle apparatuur is beschikbaar en de studio is volledig privé tijdens jouw sessie.",
+      "Je trainer staat klaar om je te begroeten, of je traint zelfstandig via Open Gym. Alle apparatuur is beschikbaar en de studio is volledig privé tijdens jouw sessie. Bij personal training bespreek je eerst je doelen en eventuele blessures, waarna je trainer een sessie op maat samenstelt.",
   },
 ];
 
 const bringItems = [
-  { icon: Shirt, label: "Sportkleding" },
-  { icon: Droplets, label: "Handdoek & waterfles" },
-  { icon: Footprints, label: "Indoor sportschoenen" },
+  { icon: Shirt, label: "Sportkleding", detail: "Comfortabele kleding waarin je vrij kunt bewegen" },
+  { icon: Droplets, label: "Handdoek & waterfles", detail: "Water is ook beschikbaar in de studio" },
+  { icon: Footprints, label: "Indoor sportschoenen", detail: "Schone schoenen met platte zool zijn ideaal" },
+];
+
+const faqs = [
+  {
+    q: "Moet ik al fit zijn om te beginnen?",
+    a: "Absoluut niet. Onze trainers werken met mensen van elk niveau, van complete beginners tot gevorderde sporters. Je trainer past de sessie volledig aan op jouw huidige niveau en doelen. Er is geen drempel — iedereen is welkom.",
+  },
+  {
+    q: "Hoe lang duurt een sessie?",
+    a: "Een personal training sessie duurt doorgaans 45 tot 60 minuten, afhankelijk van je trainer. Open Gym sessies zijn altijd 60 minuten. We raden aan om 5 minuten eerder te komen zodat je rustig kunt beginnen.",
+  },
+  {
+    q: "Kan ik annuleren of verplaatsen?",
+    a: "Ja, tot 24 uur voor je sessie kun je gratis annuleren of verzetten via het boekingssysteem. Binnen 24 uur geldt het annuleringsbeleid van je trainer.",
+  },
+  {
+    q: "Wat als ik de studio niet kan vinden?",
+    a: "Na je boeking ontvang je een e-mail met het exacte adres, een routebeschrijving en je persoonlijke deurcode. Kom je er niet uit? Stuur ons een WhatsApp en we helpen je verder.",
+  },
 ];
 
 export default function EersteBezoekPage() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Eerste Bezoek","url":"/nl/eerste-bezoek"}]} />
+
       <Section>
         <SectionHeader
           overline="Eerste bezoek"
           title="Je eerste keer bij SculptClub"
-          description="In 3 simpele stappen ben je klaar om te trainen. Geen inschrijfformulieren, geen verplichtingen."
+          description="In 3 simpele stappen ben je klaar om te trainen. Geen inschrijfformulieren, geen verplichtingen — gewoon een goede training in een fijne studio."
         />
+        <FadeIn>
+          <p className="mx-auto max-w-2xl text-center text-muted-foreground leading-relaxed">
+            We begrijpen dat een nieuwe sportomgeving spannend kan zijn. Daarom hebben we alles zo eenvoudig mogelijk gemaakt.
+            Of je nu komt voor personal training of Open Gym, hieronder vind je precies wat je kunt verwachten. Geen verrassingen,
+            alleen een prettige eerste ervaring.
+          </p>
+        </FadeIn>
       </Section>
 
-      {/* Steps */}
+      {/* What to Expect */}
       <Section bg="muted">
+        <SectionHeader
+          overline="Wat kun je verwachten?"
+          title="Een stap-voor-stap walkthrough"
+        />
         <div className="max-w-3xl mx-auto space-y-12">
           {steps.map((step, i) => (
             <FadeIn key={step.number} delay={i * 0.1}>
@@ -111,16 +154,31 @@ export default function EersteBezoekPage() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.3}>
+          <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-brand/20 bg-brand/5 p-6">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-brand mt-0.5 shrink-0" />
+              <div>
+                <p className="font-semibold">Bij personal training: de eerste intake is altijd gratis</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Tijdens de intake bespreek je je doelen, ervaring en eventuele beperkingen met je trainer. Zo kan je trainer
+                  de perfecte aanpak voor jou bepalen. Je zit nergens aan vast — pas daarna beslis je of je verder wilt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* What to Bring */}
       <Section>
         <SectionHeader
-          overline="Voorbereiding"
+          overline="Checklist"
           title="Wat neem je mee?"
           description="Je hoeft niet veel mee te nemen. Dit is alles wat je nodig hebt:"
         />
-        <div className="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
           {bringItems.map((item, i) => (
             <FadeIn key={item.label} delay={i * 0.1}>
               <div className="text-center">
@@ -128,41 +186,98 @@ export default function EersteBezoekPage() {
                   <item.icon className="w-6 h-6" />
                 </div>
                 <p className="text-sm font-semibold">{item.label}</p>
+                <p className="text-xs text-muted-foreground mt-1">{item.detail}</p>
               </div>
             </FadeIn>
           ))}
         </div>
         <FadeIn delay={0.3}>
           <p className="text-center text-sm text-muted-foreground mt-6">
-            Kleedruimte is beschikbaar in de studio.
+            Kleedruimte is beschikbaar in de studio. Douchen is niet mogelijk, maar de meeste sessies zijn zo gepland
+            dat je daarna direct naar huis of werk kunt.
           </p>
         </FadeIn>
       </Section>
 
-      {/* Location */}
+      {/* Transport / Parking */}
       <Section bg="muted">
+        <SectionHeader
+          overline="Bereikbaarheid"
+          title="Hoe kom je bij SculptClub?"
+        />
         <FadeIn>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="overline mb-3">Locatie</p>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Waar vind je ons?
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-1">
-              {siteConfig.address.street}, {siteConfig.address.zip}{" "}
-              {siteConfig.address.city}
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Open {siteConfig.hours.toLowerCase()}
-            </p>
-            <a
-              href={`https://maps.google.com/?q=${siteConfig.address.street}+${siteConfig.address.zip}+${siteConfig.address.city}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-brand hover:text-brand-dark transition-colors font-medium"
-            >
-              Bekijk op Google Maps
-              <ArrowRight className="ml-1 w-4 h-4" />
-            </a>
+          <div className="max-w-3xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-8 mb-8">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand/10 text-brand mb-3">
+                  <Bike className="w-6 h-6" />
+                </div>
+                <h3 className="text-sm font-semibold mb-1">Met de fiets</h3>
+                <p className="text-xs text-muted-foreground">
+                  Fietsenrekken direct voor de deur aan de Egelantiersgracht. De Jordaan is het best bereikbaar per fiets.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand/10 text-brand mb-3">
+                  <Train className="w-6 h-6" />
+                </div>
+                <h3 className="text-sm font-semibold mb-1">Openbaar vervoer</h3>
+                <p className="text-xs text-muted-foreground">
+                  Tram 13 en 17 stoppen bij Westermarkt (3 min lopen). Metro 52 stopt op station Vijzelgracht (10 min lopen).
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand/10 text-brand mb-3">
+                  <ParkingCircle className="w-6 h-6" />
+                </div>
+                <h3 className="text-sm font-semibold mb-1">Met de auto</h3>
+                <p className="text-xs text-muted-foreground">
+                  Betaald parkeren in de Jordaan (straatparkeren). Dichtstbijzijnde garage: Europarking, Marnixstraat 250 (5 min lopen).
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p className="text-muted-foreground leading-relaxed mb-1">
+                {siteConfig.address.street}, {siteConfig.address.zip}{" "}
+                {siteConfig.address.city}
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Open {siteConfig.hours.toLowerCase()}
+              </p>
+              <a
+                href={`https://maps.google.com/?q=${siteConfig.address.street}+${siteConfig.address.zip}+${siteConfig.address.city}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-brand hover:text-brand-dark transition-colors font-medium"
+              >
+                Bekijk op Google Maps
+                <ArrowRight className="ml-1 w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* FAQ */}
+      <Section>
+        <SectionHeader
+          overline="Veelgestelde vragen"
+          title="Heb je nog vragen?"
+          description="Hier vind je antwoorden op de meest gestelde vragen over je eerste bezoek."
+        />
+        <FadeIn>
+          <div className="max-w-2xl mx-auto">
+            <Accordion className="w-full">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`}>
+                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </FadeIn>
       </Section>
@@ -176,7 +291,7 @@ export default function EersteBezoekPage() {
             </h2>
             <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
               Klaar om te beginnen? Plan je eerste sessie of neem contact met
-              ons op via WhatsApp.
+              ons op via WhatsApp. We kijken ernaar uit je te verwelkomen in onze studio.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink

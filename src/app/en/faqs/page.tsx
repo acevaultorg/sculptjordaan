@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { FaqJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd , BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -140,6 +140,7 @@ const allFaqs = faqCategories.flatMap((cat) =>
 export default function FaqsPageEN() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"FAQs","url":"/en/faqs"}]} />
       <FaqJsonLd faqs={allFaqs} />
       <Section>
         <SectionHeader

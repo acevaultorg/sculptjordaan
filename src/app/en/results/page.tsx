@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { ReviewsJsonLd } from "@/components/seo/json-ld";
+import { ReviewsJsonLd , BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import {
   ArrowRight,
   TrendingUp,
@@ -68,6 +68,7 @@ const reviewsJsonLdData = results.map((r) => ({
 export default function ResultsPageEN() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Results","url":"/en/results"}]} />
       <ReviewsJsonLd reviews={reviewsJsonLdData} />
       <Section>
         <SectionHeader

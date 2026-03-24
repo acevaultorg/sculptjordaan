@@ -116,6 +116,16 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com wa.me",
+      "font-src 'self'",
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com",
+      "frame-src app.acuityscheduling.com www.google.com maps.google.com",
+    ].join("; ");
+
     return [
       {
         source: "/(.*)",
@@ -123,6 +133,7 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Content-Security-Policy", value: csp },
         ],
       },
       {

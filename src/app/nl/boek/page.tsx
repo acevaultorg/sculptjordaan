@@ -4,6 +4,7 @@ import { Section, SectionHeader } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { whatsappLinks } from "@/config/acuity";
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Boek een sessie",
@@ -41,6 +42,7 @@ const bookingOptions = [
 export default function BookPageNL() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Boek","url":"/nl/boek"}]} />
       <Section>
         <SectionHeader
           overline="Reserveren"

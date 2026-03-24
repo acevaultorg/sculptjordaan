@@ -2,6 +2,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Dumbbell, Zap, Grip, Music } from "lucide-react";
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   title: "Studio & Equipment",
@@ -19,6 +20,7 @@ const equipment = [
 export default function StudioPageEN() {
   return (
     <PageLayout>
+      <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Studio","url":"/en/studio"}]} />
       <Section>
         <SectionHeader overline="The studio" title="Everything you need. Nothing you don't." description="A fully equipped private training space in the heart of the Jordaan — designed for focused, distraction-free training." />
         <div className="grid sm:grid-cols-2 gap-8">
