@@ -32,6 +32,9 @@ const nlPages = [
   "/nl/blog/open-gym-vs-sportschool",
   "/nl/blog/wat-kost-personal-training-amsterdam",
   "/nl/blog/eerste-keer-sportschool-tips",
+  "/nl/blog/personal-trainer-amsterdam",
+  "/nl/blog/sportschool-zonder-abonnement-amsterdam",
+  "/nl/blog/afvallen-met-krachttraining",
 ];
 
 const enPages = [
@@ -64,6 +67,8 @@ const enPages = [
   "/en/blog/open-gym-vs-regular-gym",
   "/en/blog/personal-training-cost-amsterdam",
   "/en/blog/first-time-gym-tips",
+  "/en/blog/personal-trainer-amsterdam",
+  "/en/blog/gym-without-membership-amsterdam",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

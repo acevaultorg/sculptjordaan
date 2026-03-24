@@ -69,6 +69,30 @@ const posts = [
     href: "/nl/blog/eerste-keer-sportschool-tips",
     date: "24 maart 2026",
   },
+  {
+    title: "Personal Trainer in Amsterdam: Zo vind je de beste match",
+    excerpt:
+      "Hoe vind je de juiste personal trainer? Ontdek waar je op moet letten, welke rode vlaggen je moet vermijden en waarom een gratis intake het verschil maakt.",
+    category: "Personal Training",
+    href: "/nl/blog/personal-trainer-amsterdam",
+    date: "24 maart 2026",
+  },
+  {
+    title: "Sportschool zonder abonnement in Amsterdam: Je opties",
+    excerpt:
+      "Geen zin in een langlopend abonnement? Ontdek flexibele sportopties in Amsterdam, van pay-per-session tot Open Gym.",
+    category: "Open Gym",
+    href: "/nl/blog/sportschool-zonder-abonnement-amsterdam",
+    date: "24 maart 2026",
+  },
+  {
+    title: "Afvallen met krachttraining: Waarom het werkt",
+    excerpt:
+      "Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect en praktische tips.",
+    category: "Training",
+    href: "/nl/blog/afvallen-met-krachttraining",
+    date: "24 maart 2026",
+  },
 ];
 
 export default function BlogPageNL() {

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { isAcuityUrl, detectBookingType, trackBeginBooking } from "@/lib/tracking";
 import type { VariantProps } from "class-variance-authority";
 
 interface ButtonLinkProps
@@ -19,9 +20,19 @@ export function ButtonLink({
   href,
   external,
   children,
+  onClick,
   ...props
 }: ButtonLinkProps) {
   const classes = cn(buttonVariants({ variant, size, className }));
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Auto-track Acuity booking link clicks
+    if (isAcuityUrl(href)) {
+      const { bookingType, planName } = detectBookingType(href);
+      trackBeginBooking(bookingType, planName);
+    }
+    onClick?.(e);
+  };
 
   if (external || href.startsWith("http") || href.startsWith("https")) {
     return (
@@ -30,6 +41,7 @@ export function ButtonLink({
         target="_blank"
         rel="noopener noreferrer"
         className={classes}
+        onClick={handleClick}
         {...props}
       >
         {children}
@@ -38,7 +50,7 @@ export function ButtonLink({
   }
 
   return (
-    <Link href={href} className={classes} {...props}>
+    <Link href={href} className={classes} onClick={handleClick} {...props}>
       {children}
     </Link>
   );

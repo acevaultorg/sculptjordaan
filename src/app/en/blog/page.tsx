@@ -69,6 +69,22 @@ const posts = [
     href: "/en/blog/first-time-gym-tips",
     date: "March 24, 2026",
   },
+  {
+    title: "Personal Trainer in Amsterdam: How to Find the Best Match",
+    excerpt:
+      "How do you find the right personal trainer? Discover what to look for, red flags to avoid, and why a free intro makes all the difference.",
+    category: "Personal Training",
+    href: "/en/blog/personal-trainer-amsterdam",
+    date: "March 24, 2026",
+  },
+  {
+    title: "Gym Without Membership in Amsterdam: Your Options",
+    excerpt:
+      "Don't want a long-term membership? Discover flexible fitness options in Amsterdam, from pay-per-session to Open Gym.",
+    category: "Open Gym",
+    href: "/en/blog/gym-without-membership-amsterdam",
+    date: "March 24, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
