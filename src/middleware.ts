@@ -20,9 +20,24 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
+  // Auto-detect language on root path only
+  // Dutch system language → NL (root /), all others → EN (/en)
+  const { pathname } = request.nextUrl;
+  if (pathname === "/") {
+    const acceptLang = request.headers.get("accept-language") || "";
+    const isDutch = acceptLang.startsWith("nl");
+
+    if (!isDutch) {
+      // Non-Dutch speakers get redirected to /en
+      const url = request.nextUrl.clone();
+      url.pathname = "/en";
+      return NextResponse.redirect(url, 302);
+    }
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/((?!_next/static|_next/image|favicon.ico|images|fonts|manifest.json).*)",
+  matcher: "/((?!_next/static|_next/image|favicon.ico|images|fonts|manifest.json|api).*)",
 };

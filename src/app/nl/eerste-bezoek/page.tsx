@@ -11,12 +11,15 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import {
   ArrowRight,
   MessageCircle,
   CalendarCheck,
   MapPin,
   Dumbbell,
+  Building2,
+  Users,
   Shirt,
   Droplets,
   Footprints,
@@ -112,6 +115,64 @@ export default function EersteBezoekPage() {
             alleen een prettige eerste ervaring.
           </p>
         </FadeIn>
+      </Section>
+
+      {/* 3 Service Options — choose your path */}
+      <Section bg="muted">
+        <SectionHeader
+          overline="Kies je training"
+          title="Wat wil je doen?"
+          description="Drie manieren om te trainen bij SculptClub. Elk met een gratis eerste sessie."
+        />
+        <div className="grid gap-6 sm:grid-cols-3">
+          <FadeIn delay={0}>
+            <Card className="h-full flex flex-col">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
+                  <Building2 className="h-5 w-5 text-purple-600" />
+                </div>
+                <CardTitle>Studio Huren</CardTitle>
+                <CardDescription>Voor trainers. Huur de studio per uur voor jouw klanten. Vanaf €12/uur.</CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto flex flex-col gap-2">
+                <ButtonLink href="/nl/studio-huren" variant="outline" size="sm" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="sm" className="w-full">Probeer gratis</ButtonLink>
+              </CardFooter>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <Card className="h-full flex flex-col">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
+                  <Users className="h-5 w-5 text-blue-600" />
+                </div>
+                <CardTitle>Vind een Trainer</CardTitle>
+                <CardDescription>Personal training op maat. Eerste intake altijd gratis en vrijblijvend.</CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto flex flex-col gap-2">
+                <ButtonLink href="/nl/vind-jouw-personal-trainer" variant="outline" size="sm" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.generic} size="sm" className="w-full">Gratis intake</ButtonLink>
+              </CardFooter>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <Card className="h-full flex flex-col">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
+                  <Dumbbell className="h-5 w-5 text-emerald-600" />
+                </div>
+                <CardTitle>Open Gym</CardTitle>
+                <CardDescription>Train zelfstandig in een privé studio. Vanaf €29/4 weken.</CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto flex flex-col gap-2">
+                <ButtonLink href="/nl/open-gym" variant="outline" size="sm" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="sm" className="w-full">Gratis proefles</ButtonLink>
+              </CardFooter>
+            </Card>
+          </FadeIn>
+        </div>
       </Section>
 
       {/* What to Expect */}
