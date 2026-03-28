@@ -63,7 +63,7 @@ export default function BoekGymPageNL() {
             Train zelfstandig in een privé studio. Start met een gratis proefles.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full sm:w-auto">
+            <ButtonLink href={acuityLinks.openGymTrial} size="xl" className="w-full sm:w-auto">
               Start gratis proefles
               <ArrowRight className="ml-2 h-4 w-4" />
             </ButtonLink>

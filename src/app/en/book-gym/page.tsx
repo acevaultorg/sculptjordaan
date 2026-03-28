@@ -51,7 +51,7 @@ export default function BookGymPageEN() {
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book an Open Gym Session</h1>
           <p className="mt-3 text-muted-foreground">Train independently in a private studio. Start with a free trial.</p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full sm:w-auto">Start free trial<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
+            <ButtonLink href={acuityLinks.openGymTrial} size="xl" className="w-full sm:w-auto">Start free trial<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
             <ButtonLink href="/en/open-gym" size="lg" variant="outline" className="w-full sm:w-auto">View all plans</ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">From €7.25/session · Private studio · No contract · Daily 06:30–22:00</p>

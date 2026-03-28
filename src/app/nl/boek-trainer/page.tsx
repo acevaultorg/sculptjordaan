@@ -63,7 +63,7 @@ export default function BoekTrainerPageNL() {
             Gratis kennismaking van 30 min. Geen abonnement, altijd gratis annuleren.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ButtonLink href={acuityLinks.generic} size="lg" className="w-full sm:w-auto">
+            <ButtonLink href={acuityLinks.generic} size="xl" className="w-full sm:w-auto">
               Plan gratis intake
               <ArrowRight className="ml-2 h-4 w-4" />
             </ButtonLink>

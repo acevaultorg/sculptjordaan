@@ -113,7 +113,7 @@ export default function BookStudioPageEN() {
           description="Rent a fully equipped private studio by the hour. No contract, no commission — 100% of your revenue is yours."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <ButtonLink href="#pricing" size="lg">
+          <ButtonLink href="#pricing" size="xl">
             View rates & book directly
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
@@ -365,7 +365,7 @@ export default function BookStudioPageEN() {
               Try the studio for free or book a session directly.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href="#pricing" size="lg">
+              <ButtonLink href="#pricing" size="xl">
                 Book a session
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
