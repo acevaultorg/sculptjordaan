@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { CheckCircle, MessageCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, MessageCircle, ArrowRight, Eye, Key, Repeat } from "lucide-react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,10 +28,36 @@ export const metadata: Metadata = {
 
 const benefits = [
   "Gratis proefsessie — bekijk de studio zonder verplichtingen",
-  "Halve studio (1:1) vanaf €12/uur, hele studio vanaf €17/uur",
-  "Professionele apparatuur: powerrack, kabelmachine, Concept2, dumbbells",
-  "Geen contract, geen commissie — jij bepaalt je tarieven",
-  "Deurcode via WhatsApp, geen receptie",
+  "Halve studio (1:1) vanaf €12/uur, hele studio (max 6) vanaf €17/uur",
+  "Professionele apparatuur: powerrack, kabelmachine, Concept2, dumbbells tot 40kg",
+  "Geen contract, geen commissie — jij houdt 100% van je omzet",
+  "Bespaar 10-23% met een strippenkaart (1 jaar geldig)",
+  "Eigen deurcode via WhatsApp — geen receptie, geen wachttijd",
+];
+
+const steps = [
+  {
+    icon: Eye,
+    title: "Bekijk de studio",
+    description: "Boek een gratis proefsessie en test de ruimte en apparatuur zelf.",
+  },
+  {
+    icon: Key,
+    title: "Ontvang je deurcode",
+    description: "Boek per uur via het systeem. Je krijgt een eigen code via WhatsApp.",
+  },
+  {
+    icon: Repeat,
+    title: "Train je klanten",
+    description: "Gebruik de studio wanneer het jou uitkomt. Flexibel, zonder vast contract.",
+  },
+];
+
+const studioImages = [
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio" },
+  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interieur" },
+  { src: "/images/studio/power-rack.jpeg", alt: "Power rack in de SculptClub studio" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack in de SculptClub studio" },
 ];
 
 const faqs = [
@@ -39,12 +66,24 @@ const faqs = [
     a: "Halve studio (1:1) vanaf €12 per 60 minuten. Hele studio (max 6 personen) vanaf €17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
   },
   {
-    q: "Welke apparatuur is er?",
-    a: "Powerrack, kabelmachine, Concept2 roeier, verstelbare bank, dumbbells tot 40kg, kettlebells, resistance bands en meer. Alles voor een complete sessie.",
+    q: "Welke apparatuur is beschikbaar?",
+    a: "Powerrack, kabelmachine, Concept2 roeier, verstelbare bank, dumbbells tot 40kg, kettlebells, resistance bands en meer. Alles wat je nodig hebt voor een complete sessie.",
+  },
+  {
+    q: "Hoe werkt het boeken?",
+    a: "Je boekt online via het boekingssysteem. De avond voor je sessie ontvang je een deurcode via WhatsApp waarmee je de studio kunt betreden.",
   },
   {
     q: "Kan ik de studio eerst uitproberen?",
     a: "Ja, boek een gratis proefsessie. Bekijk de ruimte, test de apparatuur — geen verplichtingen.",
+  },
+  {
+    q: "Heb ik een verzekering nodig?",
+    a: "Ja, als ZZP-trainer of fysiotherapeut dien je een geldige beroepsaansprakelijkheidsverzekering te hebben. Dit is je eigen verantwoordelijkheid.",
+  },
+  {
+    q: "Welke kortingspakketten zijn er?",
+    a: "Starter €89 (10% korting), Routine €199 (15% korting) en Volume €549 (23% korting). Pakketten zijn 1 jaar geldig.",
   },
 ];
 
@@ -71,9 +110,9 @@ export default function BoekStudioPageNL() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="Studio Verhuur"
+          overline="Voor Personal Trainers"
           title="Boek de Studio"
-          description="Huur een volledig uitgeruste privé studio per uur. Direct beschikbaar, geen vast contract."
+          description="Huur een volledig uitgeruste privé studio per uur. Direct beschikbaar, geen vast contract. Jouw klanten, jouw ruimte."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <ButtonLink href={acuityLinks.studioTrial} size="lg">
@@ -91,21 +130,42 @@ export default function BoekStudioPageNL() {
         <FadeIn>
           <div className="flex flex-col items-center gap-2 text-center">
             <p className="text-lg font-semibold text-primary">
-              Vanaf €12/uur · Geen commissie · Geen contract
+              Vanaf €12/uur · 0% commissie · Geen contract
             </p>
             <p className="text-sm text-muted-foreground">
-              Dagelijks beschikbaar 06:30 – 22:00, ook in het weekend
+              Dagelijks 06:30 – 22:00 · Proefsessie gratis · Vaste trainers huren regelmatig
             </p>
           </div>
         </FadeIn>
       </Section>
 
-      {/* What you get */}
+      {/* How it works */}
       <Section>
+        <SectionHeader
+          overline="Hoe het werkt"
+          title="In 3 Stappen Starten"
+        />
+        <div className="grid gap-8 sm:grid-cols-3">
+          {steps.map((step, i) => (
+            <FadeIn key={step.title} delay={i * 0.15}>
+              <div className="text-center">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <step.icon className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.description}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* What you get */}
+      <Section bg="muted">
         <SectionHeader
           overline="Wat je krijgt"
           title="Volledig Uitgeruste Privé Studio"
-          description="Alles wat je nodig hebt om je klanten professioneel te trainen."
+          description="Alles om je klanten professioneel te trainen, zonder overhead."
         />
         <FadeIn>
           <div className="mx-auto max-w-lg">
@@ -127,21 +187,55 @@ export default function BoekStudioPageNL() {
         </FadeIn>
       </Section>
 
+      {/* Studio gallery */}
+      <Section>
+        <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {studioImages.map((img, i) => (
+            <FadeIn key={img.src} delay={i * 0.1}>
+              <div className="relative aspect-square overflow-hidden rounded-xl">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
       {/* Social proof */}
       <Section bg="muted">
-        <SectionHeader overline="Trainers" title="Wat Trainers Zeggen" />
-        <FadeIn>
-          <div className="mx-auto max-w-lg rounded-xl border bg-card p-6">
-            <p className="text-[1.05rem] leading-relaxed">
-              &ldquo;Eindelijk een studio waar ik mijn klanten in alle rust kan
-              trainen. Goede apparatuur, mooie locatie, geen gedoe met
-              abonnementen.&rdquo;
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              — Personal trainer, SculptClub
-            </p>
-          </div>
-        </FadeIn>
+        <SectionHeader overline="Trainers over SculptClub" title="Wat Collega-Trainers Zeggen" />
+        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
+          <FadeIn>
+            <div className="rounded-xl border bg-card p-6">
+              <p className="text-[1.05rem] leading-relaxed">
+                &ldquo;Eindelijk een studio waar ik mijn klanten in alle rust kan
+                trainen. Goede apparatuur, mooie locatie, geen gedoe met
+                abonnementen.&rdquo;
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                — Personal trainer, SculptClub
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="rounded-xl border bg-card p-6">
+              <p className="text-[1.05rem] leading-relaxed">
+                &ldquo;Ik huur hier nu wekelijks. Mijn klanten waarderen de rust en
+                privacy. Het boekingssysteem werkt soepel en de deurcode is altijd
+                op tijd.&rdquo;
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                — Fysiotherapeut, SculptClub
+              </p>
+            </div>
+          </FadeIn>
+        </div>
       </Section>
 
       {/* FAQ */}

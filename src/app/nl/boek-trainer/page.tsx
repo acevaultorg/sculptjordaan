@@ -1,7 +1,6 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionItem,
@@ -10,7 +9,8 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { CheckCircle, MessageCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, MessageCircle, ArrowRight, Calendar, Users, Dumbbell } from "lucide-react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,9 +29,35 @@ export const metadata: Metadata = {
 const benefits = [
   "Gratis intake van 30 minuten — vrijblijvend",
   "Persoonlijk trainingsplan op basis van jouw doel",
-  "Privé studio — alleen jij en je trainer",
-  "Geen abonnement, geen contract",
-  "Altijd gratis annuleren",
+  "Privé studio aan de gracht — alleen jij en je trainer",
+  "Professionele apparatuur (Rogue, Concept2, kabelmachine)",
+  "Geen abonnement, geen contract — altijd gratis annuleren",
+  "Deurcode via WhatsApp de avond ervoor",
+];
+
+const steps = [
+  {
+    icon: Calendar,
+    title: "Plan je intake",
+    description: "Kies een trainer en boek je gratis kennismaking van 30 minuten.",
+  },
+  {
+    icon: Users,
+    title: "Ontmoet je trainer",
+    description: "Bespreek je doelen, niveau en schema. Je trainer stelt een persoonlijk plan op.",
+  },
+  {
+    icon: Dumbbell,
+    title: "Start met trainen",
+    description: "Begin met trainen in een privé studio. Flexibel boeken, op jouw tempo.",
+  },
+];
+
+const studioImages = [
+  { src: "/images/studio/power-rack.jpeg", alt: "Power rack in SculptClub privé studio" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack in SculptClub studio" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht SculptClub trainingsruimte" },
+  { src: "/images/studio/assault-bike.jpeg", alt: "Cardio apparatuur in SculptClub studio" },
 ];
 
 const faqs = [
@@ -46,6 +72,18 @@ const faqs = [
   {
     q: "Heb ik ervaring nodig?",
     a: "Nee. Alle trainers werken met beginners tot gevorderden. Tijdens je gratis intake bespreek je jouw niveau en doelen.",
+  },
+  {
+    q: "Hoe lang duurt een sessie?",
+    a: "Afhankelijk van de trainer: 45 of 60 minuten. Tijdens je intake bepaal je samen welke sessieduur bij je past.",
+  },
+  {
+    q: "Waar is de studio?",
+    a: "Egelantiersgracht 424 in de Jordaan, Amsterdam. Begane grond, direct vanaf de straat. Je krijgt een deurcode via WhatsApp de avond ervoor.",
+  },
+  {
+    q: "Hoe kies ik de juiste trainer?",
+    a: "Bekijk de profielen op onze trainers-pagina en kies de coach die bij jouw doel past. Twijfel je? Stuur een WhatsApp — we helpen je kiezen.",
   },
 ];
 
@@ -92,21 +130,42 @@ export default function BoekTrainerPageNL() {
         <FadeIn>
           <div className="flex flex-col items-center gap-2 text-center">
             <p className="text-lg font-semibold text-primary">
-              ★ 5.0 op Google — 100% tevreden klanten
+              ★ 5.0 op Google — alle klanten 100% tevreden
             </p>
             <p className="text-sm text-muted-foreground">
-              Vanaf €45/sessie · Geen abonnement · Altijd gratis annuleren
+              Vanaf €45/sessie · Geen abonnement · Eerste intake gratis · Altijd gratis annuleren
             </p>
           </div>
         </FadeIn>
       </Section>
 
-      {/* What you get */}
+      {/* How it works */}
       <Section>
+        <SectionHeader
+          overline="Hoe het werkt"
+          title="In 3 Stappen aan de Slag"
+        />
+        <div className="grid gap-8 sm:grid-cols-3">
+          {steps.map((step, i) => (
+            <FadeIn key={step.title} delay={i * 0.15}>
+              <div className="text-center">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <step.icon className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.description}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* What you get */}
+      <Section bg="muted">
         <SectionHeader
           overline="Wat je krijgt"
           title="Personal Training vanaf €45"
-          description="Alles wat je nodig hebt om te starten."
+          description="Alles wat je nodig hebt om te starten met persoonlijke begeleiding."
         />
         <FadeIn>
           <div className="mx-auto max-w-lg">
@@ -128,6 +187,30 @@ export default function BoekTrainerPageNL() {
         </FadeIn>
       </Section>
 
+      {/* Studio gallery */}
+      <Section>
+        <SectionHeader
+          overline="De Studio"
+          title="Waar je Traint"
+          description="Een privé studio aan de Egelantiersgracht met professionele apparatuur."
+        />
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {studioImages.map((img, i) => (
+            <FadeIn key={img.src} delay={i * 0.1}>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
       {/* Social proof */}
       <Section bg="muted">
         <SectionHeader overline="Klanten" title="Wat Klanten Zeggen" />
@@ -136,7 +219,8 @@ export default function BoekTrainerPageNL() {
             <div className="rounded-xl border bg-card p-6">
               <p className="text-[1.05rem] leading-relaxed">
                 &ldquo;Ik voelde me direct op mijn gemak. Geen drukke sportschool, gewoon
-                een rustige studio met een trainer die echt naar je luistert.&rdquo;
+                een rustige studio met een trainer die echt naar je luistert. Na 3 maanden
+                zie ik al verschil.&rdquo;
               </p>
               <p className="mt-3 text-sm text-muted-foreground">
                 — Google Review, ★★★★★
@@ -147,7 +231,7 @@ export default function BoekTrainerPageNL() {
             <div className="rounded-xl border bg-card p-6">
               <p className="text-[1.05rem] leading-relaxed">
                 &ldquo;Persoonlijke aandacht zonder abonnement. Mijn trainer past het
-                schema aan op mijn drukke werkweek.&rdquo;
+                schema aan op mijn drukke werkweek. Precies wat ik zocht.&rdquo;
               </p>
               <p className="mt-3 text-sm text-muted-foreground">
                 — Google Review, ★★★★★

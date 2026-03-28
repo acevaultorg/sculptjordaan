@@ -39,6 +39,9 @@ const nlPages = [
   "/nl/plan-gratis-intake-met-hamish",
   "/nl/plan-gratis-intake-met-andrea",
   "/nl/plan-gratis-intake-met-dara",
+  "/nl/boek-trainer",
+  "/nl/boek-studio",
+  "/nl/boek-gym",
 ];
 
 const enPages = [
@@ -78,6 +81,9 @@ const enPages = [
   "/en/plan-free-intro-with-hamish",
   "/en/plan-free-intro-with-andrea",
   "/en/plan-free-intro-with-dara",
+  "/en/book-trainer",
+  "/en/book-studio",
+  "/en/book-gym",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
