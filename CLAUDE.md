@@ -55,6 +55,19 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Site config in `src/config/site.ts`
 - Booking links in `src/config/acuity.ts`
 
+## Brand & Design
+- Brand strategy, voice, and design principles: `docs/BRAND-STRATEGY.md`
+- Dark theme only — intentional for brand (never add light mode)
+- Color-clickability contract: if it's blue, it MUST be clickable
+- Fonts: Syne (headings) + Instrument Sans (body)
+- Primary brand color: #134DE1
+
+## Legacy WordPress Repo
+- **Repo:** github.com/pmdevries-rgb/sculptclub-site (archived)
+- Contains PHP snippets, JS runtime, and WordPress themes from before the Next.js migration
+- All business logic has been migrated to this repo — the WordPress repo is reference only
+- Do NOT build new features there
+
 ## Common Mistakes to Avoid
 - Never use "€49" or "€60" for PT starting price — it's **€45**
 - Never mention cancellation time limits — cancellation is **always free**
