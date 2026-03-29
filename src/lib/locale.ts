@@ -18,17 +18,10 @@ export function getAlternatePath(pathname: string): string {
   // Check exact match first
   if (alternateRoutes[pathname]) return alternateRoutes[pathname];
 
-  // Fallback: swap /nl/ ↔ /en/ prefix
-  if (pathname.startsWith("/en/")) {
-    return "/nl/" + pathname.slice(4);
-  }
-  if (pathname.startsWith("/nl/")) {
-    return "/en/" + pathname.slice(4);
-  }
-  // Root = NL, alternate = /en
-  if (pathname === "/") return "/en";
-
-  return pathname;
+  // Safe fallback: return alternate locale homepage instead of naively swapping
+  // prefixes (which would create broken URLs like /en/boek-studio)
+  if (pathname.startsWith("/en")) return "/";
+  return "/en";
 }
 
 /** Get HTML lang attribute */
