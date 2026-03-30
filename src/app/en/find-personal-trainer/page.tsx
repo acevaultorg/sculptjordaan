@@ -23,7 +23,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Find Your Personal Trainer — SculptClub Amsterdam Jordaan",
   description:
-    "Discover our personal trainers in the Jordaan. Free intro session, trainers set their own rates. Find the perfect match for your goals.",
+    "Personal trainers in Amsterdam Jordaan — free intro, from €45/session. 5 specialists, 0% commission. Find your match at SculptClub.",
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {

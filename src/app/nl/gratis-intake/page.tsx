@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
-import { acuityLinks } from "@/config/acuity";
+import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
   title: "Gratis Intake Personal Training — SculptClub Amsterdam Jordaan",
@@ -111,6 +111,17 @@ export default function GratisIntakePage() {
         <p className="mt-3 text-sm text-muted-foreground">
           Geen contract · Gratis annuleren · 45 minuten
         </p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Liever via WhatsApp?{" "}
+          <a
+            href={whatsappLinks.nl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand hover:underline font-medium"
+          >
+            Stuur een berichtje →
+          </a>
+        </p>
 
         {/* Studio photo */}
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
@@ -176,6 +187,31 @@ export default function GratisIntakePage() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Real reviews */}
+        <div className="mt-16 space-y-4 text-left">
+          <h2 className="text-2xl font-bold text-center mb-8">Wat klanten zeggen</h2>
+          {[
+            {
+              name: "Pien B.",
+              text: "Wat een cadeau — een boutique sportschool met goede trainers op loopafstand. Klein maar zeer fijn.",
+            },
+            {
+              name: "Bryan van L.",
+              text: "Geweldige locatie! Klein maar fijn. Heeft alles wat wij nodig hebben.",
+            },
+          ].map((r) => (
+            <div key={r.name} className="p-5 rounded-xl border border-border/50 bg-secondary">
+              <div className="flex gap-0.5 mb-2">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-sm leading-relaxed">&ldquo;{r.text}&rdquo;</p>
+              <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
+            </div>
+          ))}
         </div>
 
         {/* FAQ */}
