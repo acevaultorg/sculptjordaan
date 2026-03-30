@@ -136,7 +136,7 @@ export default function TermsPageNL() {
             </h2>
             <p className="text-muted-foreground">
               Boekingen worden gemaakt via ons online boekingssysteem (Acuity
-              Scheduling). Na het boeken ontvang je een bevestiging per e-mail.
+              Scheduling). Na het boeken ontvang je een bevestiging via het boekingssysteem.
               De avond voor je sessie ontvang je een unieke deurcode via
               WhatsApp. Betaling voor Open Gym geschiedt vooraf
               per cyclus via het boekingssysteem. Betaling voor personal training
