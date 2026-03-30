@@ -38,11 +38,11 @@ export default function HomePage() {
       <Hero locale="nl" />
       <ServicesOverview locale="nl" />
       <HowItWorks locale="nl" />
+      <CtaBand locale="nl" />
       <ReviewsPreview locale="nl" />
       <InstagramFeed locale="nl" />
       <GoogleMap locale="nl" />
       <FaqPreview locale="nl" />
-      <CtaBand locale="nl" />
     </PageLayout>
   );
 }
