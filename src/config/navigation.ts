@@ -133,6 +133,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/sportschool-zonder-abonnement-amsterdam": "/en/blog/gym-without-membership-amsterdam",
   "/nl/blog/studio-huren-personal-trainer-amsterdam": "/en/blog/studio-rental-personal-trainers-amsterdam",
   "/nl/blog/wat-kost-personal-training-amsterdam": "/en/blog/personal-training-cost-amsterdam",
+  "/nl/blog/voedingscoach-amsterdam": "/en/blog/nutrition-coach-amsterdam",
+  "/nl/blog/fysiotherapeut-personal-trainer-amsterdam": "/en/blog/physiotherapist-personal-trainer-amsterdam",
   // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
@@ -177,6 +179,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/gym-without-membership-amsterdam": "/nl/blog/sportschool-zonder-abonnement-amsterdam",
   "/en/blog/studio-rental-personal-trainers-amsterdam": "/nl/blog/studio-huren-personal-trainer-amsterdam",
   "/en/blog/personal-training-cost-amsterdam": "/nl/blog/wat-kost-personal-training-amsterdam",
+  "/en/blog/nutrition-coach-amsterdam": "/nl/blog/voedingscoach-amsterdam",
+  "/en/blog/physiotherapist-personal-trainer-amsterdam": "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
 };

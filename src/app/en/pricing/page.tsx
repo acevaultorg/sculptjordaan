@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages } from "@/config/acuity";
+import { acuityLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
