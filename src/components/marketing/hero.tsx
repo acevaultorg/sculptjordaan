@@ -14,7 +14,7 @@ export function Hero({ locale }: { locale: Locale }) {
       description:
         "Een private gym aan de gracht in de Jordaan. Train met een personal trainer, train zelfstandig of huur de studio. Geen abonnement, geen drukte — alleen jij en je training.",
       ctas: [
-        { label: "Gratis Intake", href: "/nl/boek-trainer", icon: Users },
+        { label: "Gratis Intake · Trainer", href: "/nl/boek-trainer", icon: Users },
         { label: "Train Zelfstandig", href: "/nl/boek-gym", icon: Dumbbell },
         { label: "Studio Huren", href: "/nl/boek-studio", icon: Building2 },
       ],
@@ -26,7 +26,7 @@ export function Hero({ locale }: { locale: Locale }) {
       description:
         "A private gym on the canal in the Jordaan. Train with a personal trainer, train independently or rent the studio. No membership, no crowds — just you and your training.",
       ctas: [
-        { label: "Free Intro", href: "/en/book-trainer", icon: Users },
+        { label: "Free Intro · Trainer", href: "/en/book-trainer", icon: Users },
         { label: "Train Solo", href: "/en/book-gym", icon: Dumbbell },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
       ],
