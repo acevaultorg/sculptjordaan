@@ -133,6 +133,14 @@ const posts = [
     href: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
     date: "30 maart 2026",
   },
+  {
+    title: "Gratis intake personal trainer Amsterdam: wat te verwachten",
+    excerpt:
+      "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en wat je moet vragen.",
+    category: "Tips",
+    href: "/nl/blog/gratis-intake-personal-trainer-amsterdam",
+    date: "1 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

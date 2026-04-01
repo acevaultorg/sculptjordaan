@@ -59,17 +59,26 @@ export function Analytics() {
       <Script id="gads-conversion" strategy="afterInteractive">
         {`
           (function() {
+            var FREE_INTRO_PAGES = ['/nl/gratis-intake', '/en/free-intro', '/nl/plan-gratis-intake-met-', '/en/plan-free-intro-with-'];
+            function isFreeIntroPage() {
+              var p = window.location.pathname;
+              return FREE_INTRO_PAGES.some(function(s) { return p.startsWith(s); });
+            }
             document.addEventListener('click', function(e) {
               var el = e.target.closest('a[href]');
               if (el && el.href && el.href.includes('acuityscheduling.com')) {
+                var isIntake = isFreeIntroPage();
                 if (typeof gtag === 'function') {
                   gtag('event', 'conversion', { send_to: '${googleAds}/${googleAdsConversion}' });
+                  if (isIntake) {
+                    gtag('event', 'free_intake_click', { booking_source: window.location.pathname });
+                  }
                 }
                 if (typeof fbq === 'function') {
-                  fbq('track', 'Lead');
+                  fbq('track', isIntake ? 'Lead' : 'InitiateCheckout');
                 }
                 if (typeof ttq !== 'undefined') {
-                  ttq.track('SubmitForm');
+                  ttq.track(isIntake ? 'SubmitForm' : 'AddToCart');
                 }
               }
             }, true);

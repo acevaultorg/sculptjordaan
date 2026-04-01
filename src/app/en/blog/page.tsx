@@ -133,6 +133,14 @@ const posts = [
     href: "/en/blog/physiotherapist-personal-trainer-amsterdam",
     date: "March 30, 2026",
   },
+  {
+    title: "Free Intro Personal Trainer Amsterdam: What to Expect",
+    excerpt:
+      "What happens during a free intro with a personal trainer in Amsterdam? Everything about the session, how to prepare, and what questions to ask.",
+    category: "Tips",
+    href: "/en/blog/free-intro-personal-trainer-amsterdam",
+    date: "April 1, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
