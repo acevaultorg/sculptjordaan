@@ -142,27 +142,33 @@ export function Header() {
           {/* Right side */}
           <div className="flex items-center gap-1">
             {/* Desktop nav links */}
-            <div className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={pathname === item.href ? "page" : undefined}
-                  className={cn(
-                    "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
-                    "hover:bg-accent",
-                    pathname === item.href ? "text-foreground" : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <div className="hidden md:flex items-center gap-0.5">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "relative px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
+                      "hover:bg-accent",
+                      isActive ? "text-foreground" : "text-muted-foreground"
+                    )}
+                  >
+                    {item.label}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-brand" />
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* First time? — always visible */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center ml-1 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-border text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[32px] sm:min-h-[36px]"
+              className="flex items-center ml-1 px-2.5 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[32px] sm:min-h-[36px]"
             >
               {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
@@ -185,11 +191,11 @@ export function Header() {
             {/* Language toggle — desktop */}
             <Link
               href={altPath}
-              className="hidden md:flex items-center gap-1.5 ml-1 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-xs font-semibold text-muted-foreground hover:text-foreground hover:border-border transition-all"
+              className="hidden md:flex items-center gap-1.5 ml-1 px-3 py-1.5 rounded-full text-xs font-semibold text-muted-foreground hover:text-foreground transition-all"
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
-              {locale.toUpperCase()}
+              {altLocale.toUpperCase()}
             </Link>
 
             {/* Hamburger */}
