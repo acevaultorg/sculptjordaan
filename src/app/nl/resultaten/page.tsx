@@ -9,7 +9,6 @@ import {
   ArrowRight,
   TrendingUp,
   Quote,
-  ImageIcon,
   MessageCircle,
 } from "lucide-react";
 
@@ -83,23 +82,7 @@ export default function ResultsPageNL() {
         <div className="space-y-8">
           {results.map((result, i) => (
             <FadeIn key={result.name} delay={i * 0.1}>
-              <div className="grid md:grid-cols-[280px_1fr] gap-6 p-6 rounded-2xl bg-card ring-1 ring-foreground/10">
-                {/* Before/After placeholder */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="aspect-[3/4] rounded-xl bg-secondary/50 border border-border/50 flex flex-col items-center justify-center">
-                    <ImageIcon className="w-6 h-6 text-muted-foreground/50 mb-1" />
-                    <span className="text-xs text-muted-foreground/50">
-                      Voor
-                    </span>
-                  </div>
-                  <div className="aspect-[3/4] rounded-xl bg-secondary/50 border border-border/50 flex flex-col items-center justify-center">
-                    <ImageIcon className="w-6 h-6 text-muted-foreground/50 mb-1" />
-                    <span className="text-xs text-muted-foreground/50">
-                      Na
-                    </span>
-                  </div>
-                </div>
-
+              <div className="p-6 rounded-2xl bg-card ring-1 ring-foreground/10">
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-2">
                     <p className="font-bold text-lg">{result.name}</p>
