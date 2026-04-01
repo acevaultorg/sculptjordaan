@@ -73,6 +73,13 @@ export default function ContactPageEN() {
 
     const whatsappUrl = `https://wa.me/31683178934?text=${encodeURIComponent(parts.join("\n"))}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    // Analytics
+    if (typeof (window as Window & { gtag?: Function }).gtag === "function") {
+      (window as Window & { gtag?: Function }).gtag!("event", "contact_form_submit", { method: "whatsapp", locale: "en" });
+    }
+    if (typeof (window as Window & { fbq?: Function }).fbq === "function") {
+      (window as Window & { fbq?: Function }).fbq!("track", "Contact");
+    }
     setSubmitted(true);
   };
 
