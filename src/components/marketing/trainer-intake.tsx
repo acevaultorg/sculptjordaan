@@ -79,7 +79,6 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log("Trainer intake form:", { trainerId, ...formState });
     setSubmitted(true);
   }
 

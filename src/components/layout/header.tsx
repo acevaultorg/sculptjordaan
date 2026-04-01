@@ -20,24 +20,18 @@ const bookingMenu = {
         title: "Studio Huren",
         description: "Per uur boeken · Pakketten",
         href: "/nl/boek-studio",
-        accent: "from-purple-500 to-purple-600",
-        bg: "bg-purple-50 dark:bg-purple-950/30",
       },
       {
         icon: Users,
         title: "Vind een Trainer",
         description: "Gratis kennismaking · 45 min",
         href: "/nl/boek-trainer",
-        accent: "from-blue-500 to-blue-600",
-        bg: "bg-blue-50 dark:bg-blue-950/30",
       },
       {
         icon: Dumbbell,
         title: "Open Gym",
         description: "Boek een sessie · Kies een plan",
         href: "/nl/boek-gym",
-        accent: "from-emerald-500 to-emerald-600",
-        bg: "bg-emerald-50 dark:bg-emerald-950/30",
       },
     ],
     returning: "Al lid? Mijn boekingen",
@@ -51,24 +45,18 @@ const bookingMenu = {
         title: "Studio Rental",
         description: "Book by the hour · Packages",
         href: "/en/book-studio",
-        accent: "from-purple-500 to-purple-600",
-        bg: "bg-purple-50 dark:bg-purple-950/30",
       },
       {
         icon: Users,
         title: "Find a Trainer",
         description: "Free consultation · 45 min",
         href: "/en/book-trainer",
-        accent: "from-blue-500 to-blue-600",
-        bg: "bg-blue-50 dark:bg-blue-950/30",
       },
       {
         icon: Dumbbell,
         title: "Open Gym",
         description: "Book a session · Pick a plan",
         href: "/en/book-gym",
-        accent: "from-emerald-500 to-emerald-600",
-        bg: "bg-emerald-50 dark:bg-emerald-950/30",
       },
     ],
     returning: "Already a member? My bookings",
@@ -159,6 +147,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-current={pathname === item.href ? "page" : undefined}
                   className={cn(
                     "px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
                     "hover:bg-accent",
@@ -185,7 +174,7 @@ export function Header() {
                 "ml-1 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer",
                 "min-h-[32px] sm:min-h-[36px] flex items-center gap-1 sm:gap-1.5",
                 bookOpen
-                  ? "bg-foreground text-background"
+                  ? "bg-brand-dark text-white"
                   : "bg-brand text-white hover:bg-brand-dark active:scale-95"
               )}
             >
@@ -234,6 +223,7 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      aria-current={pathname === item.href ? "page" : undefined}
                       className={cn(
                         "block px-3 py-2.5 rounded-lg text-base font-medium transition-colors",
                         "hover:bg-accent min-h-[44px] flex items-center",
@@ -328,17 +318,13 @@ export function Header() {
                           href={cat.href}
                           className={cn(
                             "group flex items-center gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl transition-all duration-200",
-                            "border border-border/50 hover:border-border",
+                            "border border-border/50 hover:border-brand/30",
                             "hover:shadow-brand-lg active:scale-[0.98]",
-                            cat.bg
+                            "bg-muted/50 hover:bg-muted"
                           )}
                         >
                           {/* Icon circle */}
-                          <div className={cn(
-                            "w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shrink-0",
-                            "bg-gradient-to-br text-white shadow-lg",
-                            cat.accent
-                          )}>
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shrink-0 bg-brand/10 text-brand">
                             <cat.icon className="w-7 h-7 sm:w-8 sm:h-8" />
                           </div>
 
