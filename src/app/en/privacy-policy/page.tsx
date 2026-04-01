@@ -17,7 +17,7 @@ export default function PrivacyPolicyEN() {
           <p className="text-sm text-muted-foreground">Last updated: 23 February 2026</p>
 
           <h2>1. Who we are</h2>
-          <p>SculptClub operates a private personal training studio at Egelantiersgracht 424, 1015 RR Amsterdam, Netherlands. Email: info@sculptclub.nl.</p>
+          <p>SculptClub operates a private personal training studio at Egelantiersgracht 424, 1015 RR Amsterdam, Netherlands. Email: contact@sculptclub.nl.</p>
 
           <h2>2. What data we collect</h2>
           <ul>
@@ -44,7 +44,7 @@ export default function PrivacyPolicyEN() {
           <p>See our <a href="/en/cookie-policy">Cookie Policy</a> for details on cookies and tracking.</p>
 
           <h2>6. Your rights (GDPR)</h2>
-          <p>You have the right to access, correct, delete, restrict or port your personal data. Contact us at info@sculptclub.nl.</p>
+          <p>You have the right to access, correct, delete, restrict or port your personal data. Contact us at contact@sculptclub.nl.</p>
 
           <h2>7. Data retention</h2>
           <p>We retain your data for as long as needed to provide services and meet legal obligations. CCTV footage is retained for a maximum of 30 days.</p>
@@ -53,7 +53,7 @@ export default function PrivacyPolicyEN() {
           <p>We use appropriate technical and organizational measures to protect your data.</p>
 
           <h2>9. Contact</h2>
-          <p>SculptClub<br />Egelantiersgracht 424<br />1015 RR Amsterdam<br />info@sculptclub.nl</p>
+          <p>SculptClub<br />Egelantiersgracht 424<br />1015 RR Amsterdam<br />contact@sculptclub.nl</p>
         </div>
       </Section>
     </PageLayout>

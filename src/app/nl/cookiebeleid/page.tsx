@@ -37,7 +37,7 @@ export default function CookiePolicyNL() {
           <p>Je kunt je cookievoorkeuren wijzigen via de cookiebanner onderaan de pagina, of via je browserinstellingen.</p>
 
           <h2>Contact</h2>
-          <p>SculptClub<br />Egelantiersgracht 424, 1015 RR Amsterdam<br />info@sculptclub.nl</p>
+          <p>SculptClub<br />Egelantiersgracht 424, 1015 RR Amsterdam<br />contact@sculptclub.nl</p>
         </div>
       </Section>
     </PageLayout>

@@ -326,10 +326,10 @@ export default function TermsPageEN() {
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:info@sculptclub.nl"
+                  href="mailto:contact@sculptclub.nl"
                   className="text-brand hover:text-brand-dark underline"
                 >
-                  info@sculptclub.nl
+                  contact@sculptclub.nl
                 </a>
               </p>
             </div>

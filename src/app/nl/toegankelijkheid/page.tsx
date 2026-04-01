@@ -31,7 +31,7 @@ export default function AccessibilityNL() {
           <p>Onze studio bevindt zich in een historisch pand in de Jordaan. Hierdoor zijn er beperkingen in de fysieke toegankelijkheid. Neem contact met ons op als je specifieke behoeften hebt — we denken graag mee.</p>
 
           <h2>Feedback</h2>
-          <p>Ervaar je problemen met de toegankelijkheid? Laat het ons weten via info@sculptclub.nl of WhatsApp. We nemen je feedback serieus en werken continu aan verbeteringen.</p>
+          <p>Ervaar je problemen met de toegankelijkheid? Laat het ons weten via contact@sculptclub.nl of WhatsApp. We nemen je feedback serieus en werken continu aan verbeteringen.</p>
         </div>
       </Section>
     </PageLayout>

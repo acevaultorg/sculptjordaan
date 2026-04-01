@@ -77,7 +77,7 @@ export default function PrivacyPageNL() {
             <p className="text-muted-foreground">
               Transactie-informatie en betalingsbevestigingen. Wij slaan geen
               creditcard- of bankgegevens op. Betalingen worden verwerkt door
-              onze betalingsverwerkers (Stripe/iDEAL).
+              onze betalingsverwerker (Stripe). iDEAL-betalingen verlopen via Apple Pay.
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3">
@@ -283,10 +283,10 @@ export default function PrivacyPageNL() {
             <p className="text-muted-foreground mt-4">
               Om gebruik te maken van je rechten, neem contact met ons op via{" "}
               <a
-                href="mailto:info@sculptclub.nl"
+                href="mailto:contact@sculptclub.nl"
                 className="text-brand hover:text-brand-dark underline"
               >
-                info@sculptclub.nl
+                contact@sculptclub.nl
               </a>
               . Wij reageren binnen 30 dagen op je verzoek.
             </p>
@@ -399,10 +399,10 @@ export default function PrivacyPageNL() {
               <p>
                 E-mail:{" "}
                 <a
-                  href="mailto:info@sculptclub.nl"
+                  href="mailto:contact@sculptclub.nl"
                   className="text-brand hover:text-brand-dark underline"
                 >
-                  info@sculptclub.nl
+                  contact@sculptclub.nl
                 </a>
               </p>
             </div>
