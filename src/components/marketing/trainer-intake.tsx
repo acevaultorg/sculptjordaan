@@ -19,18 +19,14 @@ interface TrainerIntakeProps {
 export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   const trainer = trainers.find((t) => t.id === trainerId)!;
 
-  // WhatsApp: link to trainer directly if they have their own number
-  const trainerWhatsapp = trainer.whatsapp
-    ? `${trainer.whatsapp}?text=${encodeURIComponent(
-        locale === "nl"
-          ? `Hoi ${trainer.name}! Ik wil graag een gratis intake boeken.`
-          : `Hi ${trainer.name}! I'd like to book a free intro.`
-      )}`
-    : `${siteConfig.whatsapp}?text=${encodeURIComponent(
-        locale === "nl"
-          ? `Hoi! Ik wil graag een gratis intake boeken bij ${trainer.name}`
-          : `Hi! I'd like to book a free intro with ${trainer.name}`
-      )}`;
+  // WhatsApp base URL — trainer's own number if configured, else studio
+  const waBase = trainer.whatsapp ?? siteConfig.whatsapp;
+  // WhatsApp button with simple pre-filled greeting
+  const trainerWhatsapp = `${waBase}?text=${encodeURIComponent(
+    locale === "nl"
+      ? `Hoi ${trainer.name}! Ik wil graag een gratis intake boeken.`
+      : `Hi ${trainer.name}! I'd like to book a free intro.`
+  )}`;
 
   const t = locale === "nl" ? {
     overline: "Gratis intake",
@@ -79,6 +75,20 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const greeting = locale === "nl"
+      ? `Hoi ${trainer.name}! Ik wil graag een gratis intake boeken.`
+      : `Hi ${trainer.name}! I'd like to book a free intro.`;
+    const parts = [
+      greeting,
+      formState.name ? (locale === "nl" ? `Naam: ${formState.name}` : `Name: ${formState.name}`) : "",
+      formState.phone ? (locale === "nl" ? `Tel: ${formState.phone}` : `Phone: ${formState.phone}`) : "",
+      formState.message ? formState.message : "",
+    ].filter(Boolean);
+    window.open(
+      `${waBase}?text=${encodeURIComponent(parts.join("\n"))}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
     setSubmitted(true);
   }
 
