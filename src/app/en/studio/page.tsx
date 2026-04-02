@@ -174,7 +174,7 @@ export default function StudioPageEN() {
                 size="lg"
                 className="rounded-xl"
               >
-                <MessageCircle className="mr-2 w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
                 WhatsApp us
               </ButtonLink>
             </div>

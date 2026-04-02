@@ -107,7 +107,7 @@ export default function LocationPageEN() {
                 size="lg"
                 className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                <Navigation className="mr-2 w-4 h-4" />
+                <Navigation className="w-4 h-4" />
                 Get Directions
               </ButtonLink>
             </div>
@@ -181,7 +181,7 @@ export default function LocationPageEN() {
               size="lg"
               className="rounded-xl"
             >
-              <MessageCircle className="mr-2 w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
               WhatsApp us with questions
             </ButtonLink>
           </div>

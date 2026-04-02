@@ -144,7 +144,7 @@ export default function ResultsPageNL() {
                 size="lg"
                 className="rounded-xl"
               >
-                <MessageCircle className="mr-2 w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
                 Stel een vraag
               </ButtonLink>
             </div>

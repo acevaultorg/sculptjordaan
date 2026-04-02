@@ -90,7 +90,7 @@ export function InstagramFeed({ locale }: { locale: Locale }) {
           size="lg"
           variant="outline"
         >
-          <InstagramIcon className="mr-2 w-4 h-4" />
+          <InstagramIcon className="w-4 h-4" />
           {content.cta}
         </ButtonLink>
       </FadeIn>

@@ -206,7 +206,7 @@ export default function ContactPageNL() {
                       type="submit"
                       className="inline-flex items-center justify-center w-full rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground px-6 py-3 text-sm font-semibold transition-all hover:scale-[1.01] active:scale-[0.98]"
                     >
-                      <Send className="mr-2 w-4 h-4" />
+                      <Send className="w-4 h-4" />
                       Verstuur via WhatsApp
                     </button>
                     <p className="text-xs text-muted-foreground text-center">

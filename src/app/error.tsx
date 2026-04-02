@@ -65,7 +65,7 @@ export default function Error({
                 {t.retry}
               </button>
               <ButtonLink href={t.homeHref} variant="outline" size="lg">
-                <Home className="mr-2 w-4 h-4" />
+                <Home className="w-4 h-4" />
                 {t.home}
               </ButtonLink>
             </div>

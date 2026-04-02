@@ -174,7 +174,7 @@ export default function StudioRentalPageEN() {
                       <span className="font-semibold">&euro;12</span>
                       <ButtonLink
                         href={acuityLinks.halfStudio60}
-                        size="sm"
+                        size="default"
                         className="ml-3"
                       >
                         Book
@@ -184,7 +184,7 @@ export default function StudioRentalPageEN() {
                       <span className="font-semibold">&euro;17</span>
                       <ButtonLink
                         href={acuityLinks.halfStudio90}
-                        size="sm"
+                        size="default"
                         className="ml-3"
                       >
                         Book
@@ -197,7 +197,7 @@ export default function StudioRentalPageEN() {
                       <span className="font-semibold">&euro;17</span>
                       <ButtonLink
                         href={acuityLinks.fullStudio60}
-                        size="sm"
+                        size="default"
                         className="ml-3"
                       >
                         Book
@@ -207,7 +207,7 @@ export default function StudioRentalPageEN() {
                       <span className="font-semibold">&euro;24</span>
                       <ButtonLink
                         href={acuityLinks.fullStudio90}
-                        size="sm"
+                        size="default"
                         className="ml-3"
                       >
                         Book
@@ -253,7 +253,7 @@ export default function StudioRentalPageEN() {
                 </p>
                 <ButtonLink
                   href={acuityPackages.studio.starter}
-                  size="sm"
+                  size="lg"
                   className="mt-4"
                 >
                   Buy Starter
@@ -279,7 +279,7 @@ export default function StudioRentalPageEN() {
                 </p>
                 <ButtonLink
                   href={acuityPackages.studio.routine}
-                  size="sm"
+                  size="lg"
                   className="mt-4"
                 >
                   Buy Routine
@@ -305,7 +305,7 @@ export default function StudioRentalPageEN() {
                 </p>
                 <ButtonLink
                   href={acuityPackages.studio.volume}
-                  size="sm"
+                  size="lg"
                   className="mt-4"
                 >
                   Buy Volume

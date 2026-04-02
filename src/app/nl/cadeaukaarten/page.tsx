@@ -127,7 +127,7 @@ export default function GiftCardsPageNL() {
                     card.badge === "Meest gekozen" ? "default" : "outline"
                   }
                 >
-                  <MessageCircle className="mr-2 w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" />
                   Bestel via WhatsApp
                 </ButtonLink>
               </div>
@@ -189,7 +189,7 @@ export default function GiftCardsPageNL() {
               size="lg"
               className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
             >
-              <MessageCircle className="mr-2 w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
               Bestel je cadeaukaart via WhatsApp
             </ButtonLink>
           </div>

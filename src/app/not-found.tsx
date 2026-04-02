@@ -106,7 +106,7 @@ export default function NotFound() {
             </p>
             <div className="mt-8">
               <ButtonLink href={t.homeHref} size="lg">
-                <Home className="mr-2 w-4 h-4" />
+                <Home className="w-4 h-4" />
                 {t.homeButton}
               </ButtonLink>
             </div>

@@ -371,7 +371,7 @@ export default function EersteBezoekPage() {
                 size="lg"
                 className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
               >
-                <MessageCircle className="mr-2 w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
                 WhatsApp ons
               </ButtonLink>
             </div>
