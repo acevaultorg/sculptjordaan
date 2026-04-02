@@ -24,7 +24,7 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-const INSTAGRAM_URL = "https://www.instagram.com/sculptclub.nl/";
+const INSTAGRAM_URL = "https://instagram.com/sculptclubjordaan";
 
 const images = [
   { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interior" },
@@ -40,13 +40,13 @@ const t = {
     overline: "Instagram",
     title: "Volg ons op Instagram",
     description: "Bekijk onze studio, trainers en community op Instagram.",
-    cta: "Volg @sculptclub.nl",
+    cta: "Volg @sculptclubjordaan",
   },
   en: {
     overline: "Instagram",
     title: "Follow us on Instagram",
     description: "Check out our studio, trainers and community on Instagram.",
-    cta: "Follow @sculptclub.nl",
+    cta: "Follow @sculptclubjordaan",
   },
 };
 

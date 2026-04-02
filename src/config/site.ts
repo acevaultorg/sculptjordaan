@@ -30,7 +30,7 @@ export const siteConfig = {
   instagramHandle: "@sculptclubjordaan",
   tiktok: "https://www.tiktok.com/@sculptclub.jordaan",
   tiktokHandle: "@sculptclub.jordaan",
-  google: "https://g.page/sculptclub",
+  google: "https://www.google.com/maps/place/SculptClub/@52.3759967,4.880676,17z",
   rating: { value: 5.0, count: 8 },
   founded: "2025",
   acuity: {

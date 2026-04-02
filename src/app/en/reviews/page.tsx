@@ -172,6 +172,27 @@ export default function ReviewsPageEN() {
         </FadeIn>
       </Section>
 
+      {/* Leave a review */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="text-center max-w-lg mx-auto">
+            <h2 className="text-2xl font-bold mb-3">Already a client?</h2>
+            <p className="text-muted-foreground mb-6">
+              Share your experience and help others make the right choice.
+            </p>
+            <ButtonLink
+              href="https://search.google.com/local/writereview?placeid=ChIJYTN-msa3xUcRyE_GF6oXLRI"
+              size="lg"
+              variant="outline"
+              external
+            >
+              Leave a review on Google
+              <ExternalLink className="ml-2 w-4 h-4" />
+            </ButtonLink>
+          </div>
+        </FadeIn>
+      </Section>
+
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">

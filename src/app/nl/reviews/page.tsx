@@ -173,6 +173,27 @@ export default function ReviewsPageNL() {
         </FadeIn>
       </Section>
 
+      {/* Leave a review */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="text-center max-w-lg mx-auto">
+            <h2 className="text-2xl font-bold mb-3">Ben je al klant?</h2>
+            <p className="text-muted-foreground mb-6">
+              Deel je ervaring en help anderen de juiste keuze te maken.
+            </p>
+            <ButtonLink
+              href="https://search.google.com/local/writereview?placeid=ChIJYTN-msa3xUcRyE_GF6oXLRI"
+              size="lg"
+              variant="outline"
+              external
+            >
+              Laat een review achter op Google
+              <ExternalLink className="ml-2 w-4 h-4" />
+            </ButtonLink>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* CTA */}
       <Section bg="dark">
         <FadeIn>

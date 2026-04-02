@@ -109,7 +109,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${BASE_URL}${path}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: path === "/" || path === "/en" ? 1.0 : path.includes("/blog/") ? 0.6 : 0.8,
+    priority: path === "/" || path === "/en"
+      ? 1.0
+      : path.includes("/blog/")
+      ? 0.6
+      : /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/.test(path)
+      ? 0.2
+      : 0.8,
   }));
 
   return allPages;
