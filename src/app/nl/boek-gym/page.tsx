@@ -184,7 +184,7 @@ export default function BoekGymPageNL() {
                 Start gratis proefles
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
-              <ButtonLink href={whatsappLinks.openGymNl} variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" external>
+              <ButtonLink href={whatsappLinks.openGymNl} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external>
                 <MessageCircle className="mr-2 h-4 w-4" />
                 WhatsApp ons
               </ButtonLink>

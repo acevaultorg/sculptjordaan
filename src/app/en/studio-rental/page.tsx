@@ -493,7 +493,7 @@ export default function StudioRentalPageEN() {
                 href={whatsappLinks.studioEn}
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10"
+                className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent"
               >
                 <MessageCircle className="mr-2 h-4 w-4" />
                 WhatsApp us
