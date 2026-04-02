@@ -165,6 +165,22 @@ const posts = [
     href: "/nl/blog/fysiotherapie-studio-huren-amsterdam",
     date: "2 april 2026",
   },
+  {
+    title: "Sportschool Jordaan Amsterdam: jouw opties op een rij",
+    excerpt:
+      "Op zoek naar een sportschool in de Jordaan? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
+    category: "Lokaal",
+    href: "/nl/blog/sportschool-jordaan-amsterdam",
+    date: "2 april 2026",
+  },
+  {
+    title: "Personal training voor afvallen in Amsterdam",
+    excerpt:
+      "Wil je afvallen met begeleiding? Ontdek waarom krachttraining effectiever is dan cardio en hoe een personal trainer je helpt.",
+    category: "Training",
+    href: "/nl/blog/personal-training-afvallen-amsterdam",
+    date: "2 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

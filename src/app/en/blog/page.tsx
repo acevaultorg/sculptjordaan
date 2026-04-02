@@ -165,6 +165,22 @@ const posts = [
     href: "/en/blog/physiotherapy-studio-rental-amsterdam",
     date: "April 2, 2026",
   },
+  {
+    title: "Gym in the Jordaan Amsterdam: Your Options Compared",
+    excerpt:
+      "Looking for a gym in the Jordaan? Compare big chains, boutique studios and private gyms. Find what fits your training style.",
+    category: "Local",
+    href: "/en/blog/gym-jordaan-amsterdam",
+    date: "April 2, 2026",
+  },
+  {
+    title: "Personal Training for Weight Loss in Amsterdam",
+    excerpt:
+      "Want to lose weight with guidance? Discover why strength training beats cardio and how a personal trainer helps you get results.",
+    category: "Training",
+    href: "/en/blog/personal-training-weight-loss-amsterdam",
+    date: "April 2, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

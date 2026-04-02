@@ -139,6 +139,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/gym-huren-per-uur-amsterdam": "/en/blog/gym-rental-per-hour-amsterdam",
   "/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam": "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
   "/nl/blog/fysiotherapie-studio-huren-amsterdam": "/en/blog/physiotherapy-studio-rental-amsterdam",
+  "/nl/blog/sportschool-jordaan-amsterdam": "/en/blog/gym-jordaan-amsterdam",
+  "/nl/blog/personal-training-afvallen-amsterdam": "/en/blog/personal-training-weight-loss-amsterdam",
   // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
@@ -189,6 +191,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/gym-rental-per-hour-amsterdam": "/nl/blog/gym-huren-per-uur-amsterdam",
   "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam": "/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam",
   "/en/blog/physiotherapy-studio-rental-amsterdam": "/nl/blog/fysiotherapie-studio-huren-amsterdam",
+  "/en/blog/gym-jordaan-amsterdam": "/nl/blog/sportschool-jordaan-amsterdam",
+  "/en/blog/personal-training-weight-loss-amsterdam": "/nl/blog/personal-training-afvallen-amsterdam",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
 };
