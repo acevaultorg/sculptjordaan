@@ -17,7 +17,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { acuityLinks } from "@/config/acuity";
-import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -146,6 +146,17 @@ export default function OpenGymPageNL() {
         description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam. Boek sessies van 60 minuten, max 3 personen tegelijk."
         url="/nl/open-gym"
         priceRange="€29 - €89 per 4 weken"
+      />
+      <OfferCatalogJsonLd
+        name="Open Gym Abonnementen"
+        description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam. Boek sessies van 60 minuten."
+        url="/nl/open-gym"
+        offers={[
+          { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29, eligibleDuration: "P4W" },
+          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49, eligibleDuration: "P4W" },
+          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69, eligibleDuration: "P4W" },
+          { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 89, eligibleDuration: "P4W" },
+        ]}
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* Hero */}

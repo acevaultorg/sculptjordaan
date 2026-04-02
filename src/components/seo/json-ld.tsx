@@ -37,6 +37,43 @@ export function LocalBusinessJsonLd() {
     image: `${siteConfig.url}/images/og-default.jpg`,
     sameAs: [siteConfig.instagram, siteConfig.tiktok],
     foundingDate: siteConfig.founded,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "SculptClub Services",
+      itemListElement: [
+        {
+          "@type": "OfferCatalog",
+          name: "Personal Training",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Personal Training Session" },
+              price: 45,
+              priceCurrency: "EUR",
+              description: "1-on-1 personal training, trainers set own rates from €45. Free intro session.",
+            },
+          ],
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Open Gym",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Instapplan — 4 sessions/4 weeks" }, price: 29, priceCurrency: "EUR" },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Populair — 8 sessions/4 weeks" }, price: 49, priceCurrency: "EUR" },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Intensief — 12 sessions/4 weeks" }, price: 69, priceCurrency: "EUR" },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Onbeperkt — unlimited/4 weeks" }, price: 89, priceCurrency: "EUR" },
+          ],
+        },
+        {
+          "@type": "OfferCatalog",
+          name: "Studio Rental",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Half Studio — 60 min" }, price: 12, priceCurrency: "EUR" },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Studio — 60 min" }, price: 17, priceCurrency: "EUR" },
+          ],
+        },
+      ],
+    },
   };
 
   return (
@@ -196,6 +233,68 @@ export function BlogPostingJsonLd({
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${siteConfig.url}${url}`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function OfferCatalogJsonLd({
+  name,
+  description,
+  url,
+  offers,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  offers: {
+    name: string;
+    description: string;
+    price: number;
+    priceCurrency?: string;
+    eligibleDuration?: string;
+    url?: string;
+  }[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${siteConfig.url}${url}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Amsterdam",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name,
+      itemListElement: offers.map((offer) => ({
+        "@type": "Offer",
+        name: offer.name,
+        description: offer.description,
+        price: offer.price,
+        priceCurrency: offer.priceCurrency || "EUR",
+        ...(offer.eligibleDuration
+          ? { eligibleDuration: { "@type": "QuantitativeValue", value: 4, unitCode: "WEE" } }
+          : {}),
+        ...(offer.url ? { url: `${siteConfig.url}${offer.url}` } : {}),
+        seller: {
+          "@type": "LocalBusiness",
+          name: siteConfig.name,
+        },
+      })),
     },
   };
 
