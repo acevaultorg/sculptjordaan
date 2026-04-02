@@ -213,6 +213,22 @@ const posts = [
     href: "/en/blog/boutique-gym-vs-big-chain-gym",
     date: "April 2, 2026",
   },
+  {
+    title: "Personal Trainer for Beginners",
+    excerpt:
+      "Never trained before? A personal trainer helps beginners start safely. Free intro, no experience needed.",
+    category: "Training",
+    href: "/en/blog/personal-trainer-for-beginners",
+    date: "April 2, 2026",
+  },
+  {
+    title: "Personal Trainer Amsterdam East",
+    excerpt:
+      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride.",
+    category: "Local",
+    href: "/en/blog/personal-trainer-amsterdam-east",
+    date: "April 2, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

@@ -146,6 +146,7 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/personal-trainer-de-pijp-amsterdam": "/en/blog/personal-trainer-de-pijp-amsterdam",
   "/nl/blog/boutique-gym-vs-sportschool-keten": "/en/blog/boutique-gym-vs-big-chain-gym",
   "/nl/blog/personal-trainer-voor-beginners": "/en/blog/personal-trainer-for-beginners",
+  "/nl/blog/personal-trainer-amsterdam-oost": "/en/blog/personal-trainer-amsterdam-east",
   // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
@@ -203,6 +204,7 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/personal-trainer-de-pijp-amsterdam": "/nl/blog/personal-trainer-de-pijp-amsterdam",
   "/en/blog/boutique-gym-vs-big-chain-gym": "/nl/blog/boutique-gym-vs-sportschool-keten",
   "/en/blog/personal-trainer-for-beginners": "/nl/blog/personal-trainer-voor-beginners",
+  "/en/blog/personal-trainer-amsterdam-east": "/nl/blog/personal-trainer-amsterdam-oost",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
 };

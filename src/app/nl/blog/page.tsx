@@ -213,6 +213,22 @@ const posts = [
     href: "/nl/blog/boutique-gym-vs-sportschool-keten",
     date: "2 april 2026",
   },
+  {
+    title: "Personal trainer voor beginners",
+    excerpt:
+      "Nog nooit gesport? Een personal trainer helpt beginners veilig op weg. Gratis intake, geen ervaring nodig.",
+    category: "Training",
+    href: "/nl/blog/personal-trainer-voor-beginners",
+    date: "2 april 2026",
+  },
+  {
+    title: "Personal trainer Amsterdam Oost",
+    excerpt:
+      "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen.",
+    category: "Lokaal",
+    href: "/nl/blog/personal-trainer-amsterdam-oost",
+    date: "2 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {
