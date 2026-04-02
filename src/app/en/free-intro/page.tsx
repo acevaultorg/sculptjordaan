@@ -126,7 +126,7 @@ export default function FreeIntroPage() {
         {/* Studio photo */}
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
-            src="/images/hero/training-room.jpg"
+            src="/images/studio/studio-interior-1.jpeg"
             alt="SculptClub private personal training studio in the Jordaan"
             fill
             className="object-cover"
