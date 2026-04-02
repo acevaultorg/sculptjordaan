@@ -218,7 +218,7 @@ export default function PricingPageEN() {
                   )}
                 </CardContent>
                 <CardFooter className="justify-center">
-                  <ButtonLink href={plan.link} size="sm" className="w-full">
+                  <ButtonLink href={plan.link} size="lg" className="w-full">
                     Start
                   </ButtonLink>
                 </CardFooter>

@@ -138,9 +138,9 @@ export default function ContactPageNL() {
                   href={siteConfig.whatsapp}
                   external
                   size="lg"
-                  className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
+                  className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
                 >
-                  <MessageCircle className="mr-2 w-4 h-4" />
+                  <MessageCircle className="w-4 h-4" />
                   WhatsApp ons direct
                 </ButtonLink>
               </div>

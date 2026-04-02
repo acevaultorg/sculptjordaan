@@ -135,8 +135,8 @@ export default function FirstVisitPage() {
                 <CardDescription>For trainers. Rent the studio by the hour for your clients. From €12/hour.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/studio-rental" variant="outline" size="sm" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.studioTrial} size="sm" className="w-full">Try for free</ButtonLink>
+                <ButtonLink href="/en/studio-rental" variant="outline" size="lg" className="w-full">More info</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Try for free</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -151,8 +151,8 @@ export default function FirstVisitPage() {
                 <CardDescription>Personal training tailored to you. First intro always free, no obligation.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/find-personal-trainer" variant="outline" size="sm" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.generic} size="sm" className="w-full">Free intro</ButtonLink>
+                <ButtonLink href="/en/find-personal-trainer" variant="outline" size="lg" className="w-full">More info</ButtonLink>
+                <ButtonLink href={acuityLinks.generic} size="lg" className="w-full">Free intro</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -167,8 +167,8 @@ export default function FirstVisitPage() {
                 <CardDescription>Train independently in a private studio. From €29/4 weeks.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/open-gym" variant="outline" size="sm" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.openGymTrial} size="sm" className="w-full">Free trial</ButtonLink>
+                <ButtonLink href="/en/open-gym" variant="outline" size="lg" className="w-full">More info</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Free trial</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>

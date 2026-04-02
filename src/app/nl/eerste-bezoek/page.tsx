@@ -135,8 +135,8 @@ export default function EersteBezoekPage() {
                 <CardDescription>Voor trainers. Huur de studio per uur voor jouw klanten. Vanaf €12/uur.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/studio-huren" variant="outline" size="sm" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.studioTrial} size="sm" className="w-full">Probeer gratis</ButtonLink>
+                <ButtonLink href="/nl/studio-huren" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Probeer gratis</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -151,8 +151,8 @@ export default function EersteBezoekPage() {
                 <CardDescription>Personal training op maat. Eerste intake altijd gratis en vrijblijvend.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/vind-jouw-personal-trainer" variant="outline" size="sm" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.generic} size="sm" className="w-full">Gratis intake</ButtonLink>
+                <ButtonLink href="/nl/vind-jouw-personal-trainer" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.generic} size="lg" className="w-full">Gratis intake</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -167,8 +167,8 @@ export default function EersteBezoekPage() {
                 <CardDescription>Train zelfstandig in een privé studio. Vanaf €29/4 weken.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/open-gym" variant="outline" size="sm" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.openGymTrial} size="sm" className="w-full">Gratis proefles</ButtonLink>
+                <ButtonLink href="/nl/open-gym" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Gratis proefles</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>

@@ -191,7 +191,7 @@ export default function BookStudioPageEN() {
                 <p className="text-sm text-muted-foreground line-through">&euro;99</p>
                 <p className="text-3xl font-bold">&euro;89</p>
                 <p className="mt-2 text-sm text-discount font-medium">Save 10%</p>
-                <ButtonLink href={acuityPackages.studio.starter} size="sm" className="mt-4 w-full">
+                <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                   Buy Starter
                 </ButtonLink>
               </CardContent>
@@ -208,7 +208,7 @@ export default function BookStudioPageEN() {
                 <p className="text-sm text-muted-foreground line-through">&euro;234</p>
                 <p className="text-3xl font-bold">&euro;199</p>
                 <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
-                <ButtonLink href={acuityPackages.studio.routine} size="sm" className="mt-4 w-full">
+                <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                   Buy Routine
                 </ButtonLink>
               </CardContent>
@@ -225,7 +225,7 @@ export default function BookStudioPageEN() {
                 <p className="text-sm text-muted-foreground line-through">&euro;713</p>
                 <p className="text-3xl font-bold">&euro;549</p>
                 <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
-                <ButtonLink href={acuityPackages.studio.volume} size="sm" className="mt-4 w-full">
+                <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                   Buy Volume
                 </ButtonLink>
               </CardContent>

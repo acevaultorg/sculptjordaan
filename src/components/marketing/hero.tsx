@@ -77,7 +77,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all"
                 onClick={() => trackHeroClick(cta.label, i + 1, locale)}
               >
-                <cta.icon className="mr-2 w-4 h-4" />
+                <cta.icon className="w-4 h-4" />
                 {cta.label}
               </ButtonLink>
             ))}

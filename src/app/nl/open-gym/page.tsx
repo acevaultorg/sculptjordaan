@@ -232,7 +232,7 @@ export default function OpenGymPageNL() {
                   </p>
                 </CardContent>
                 <CardFooter className="justify-center">
-                  <ButtonLink href={plan.link} size="sm" className="w-full">
+                  <ButtonLink href={plan.link} size="lg" className="w-full">
                     Start
                   </ButtonLink>
                 </CardFooter>
@@ -327,7 +327,7 @@ export default function OpenGymPageNL() {
             href={acuityLinks.openGymBook}
             size="lg"
             variant="outline"
-            className="text-white border-white/30 hover:bg-white/10"
+            className="bg-transparent text-white border-white/30 hover:bg-white/10 dark:bg-transparent"
           >
             Reserveer een sessie
           </ButtonLink>
