@@ -181,7 +181,7 @@ export default function ReviewsPageEN() {
               Share your experience and help others make the right choice.
             </p>
             <ButtonLink
-              href="https://search.google.com/local/writereview?placeid=ChIJYTN-msa3xUcRyE_GF6oXLRI"
+              href="https://www.google.com/maps/place/SculptClub/@52.3759967,4.880676,17z"
               size="lg"
               variant="outline"
               external

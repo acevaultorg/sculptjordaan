@@ -182,7 +182,7 @@ export default function ReviewsPageNL() {
               Deel je ervaring en help anderen de juiste keuze te maken.
             </p>
             <ButtonLink
-              href="https://search.google.com/local/writereview?placeid=ChIJYTN-msa3xUcRyE_GF6oXLRI"
+              href="https://www.google.com/maps/place/SculptClub/@52.3759967,4.880676,17z"
               size="lg"
               variant="outline"
               external

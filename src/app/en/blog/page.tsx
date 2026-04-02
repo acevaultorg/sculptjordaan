@@ -189,6 +189,14 @@ const posts = [
     href: "/en/blog/personal-trainer-amsterdam-west",
     date: "April 2, 2026",
   },
+  {
+    title: "Personal Trainer Amsterdam Centrum",
+    excerpt:
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, from €45/session.",
+    category: "Local",
+    href: "/en/blog/personal-trainer-amsterdam-centrum",
+    date: "April 2, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
