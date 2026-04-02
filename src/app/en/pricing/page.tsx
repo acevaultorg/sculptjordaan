@@ -384,7 +384,7 @@ export default function PricingPageEN() {
                 href="/en/find-personal-trainer"
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10"
+                className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent"
               >
                 View trainers
               </ButtonLink>

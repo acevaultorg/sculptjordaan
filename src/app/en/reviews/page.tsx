@@ -196,7 +196,7 @@ export default function ReviewsPageEN() {
                 external
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent"
               >
                 <MessageCircle className="mr-2 w-4 h-4" />
                 WhatsApp us

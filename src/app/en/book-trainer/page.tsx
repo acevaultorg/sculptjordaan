@@ -115,7 +115,7 @@ export default function BookTrainerPageEN() {
             <p className="mx-auto mt-3 max-w-xl text-white/70">Book your free intro — we usually respond within an hour.</p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href="/en/find-personal-trainer" size="lg">Book free intro<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
-              <ButtonLink href={whatsappLinks.en} variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
+              <ButtonLink href={whatsappLinks.en} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
             </div>
           </div>
         </FadeIn>

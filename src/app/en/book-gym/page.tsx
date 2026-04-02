@@ -115,7 +115,7 @@ export default function BookGymPageEN() {
             <p className="mx-auto mt-3 max-w-xl text-white/70">Book your free trial — you could start tomorrow.</p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href={acuityLinks.openGymTrial} size="lg">Start free trial<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
-              <ButtonLink href={whatsappLinks.openGymEn} variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
+              <ButtonLink href={whatsappLinks.openGymEn} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
             </div>
           </div>
         </FadeIn>
