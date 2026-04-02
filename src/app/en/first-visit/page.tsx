@@ -151,8 +151,7 @@ export default function FirstVisitPage() {
                 <CardDescription>Personal training tailored to you. First intro always free, no obligation.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/find-personal-trainer" variant="outline" size="lg" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.generic} size="lg" className="w-full">Free intro</ButtonLink>
+                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Meet our trainers</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>

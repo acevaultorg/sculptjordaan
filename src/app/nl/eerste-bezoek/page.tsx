@@ -151,8 +151,7 @@ export default function EersteBezoekPage() {
                 <CardDescription>Personal training op maat. Eerste intake altijd gratis en vrijblijvend.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/vind-jouw-personal-trainer" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.generic} size="lg" className="w-full">Gratis intake</ButtonLink>
+                <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Bekijk trainers</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
