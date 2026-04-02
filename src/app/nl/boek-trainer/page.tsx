@@ -64,11 +64,12 @@ export default function BoekTrainerPageNL() {
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <ButtonLink href="/nl/vind-jouw-personal-trainer" size="xl" className="w-full sm:w-auto">
-              Plan gratis intake
+              Bekijk onze trainers
               <ArrowRight className="ml-2 h-4 w-4" />
             </ButtonLink>
-            <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" variant="outline" className="w-full sm:w-auto">
-              Bekijk onze trainers
+            <ButtonLink href={whatsappLinks.nl} size="lg" variant="outline" className="w-full sm:w-auto" external>
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp ons
             </ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
@@ -181,7 +182,7 @@ export default function BoekTrainerPageNL() {
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg">
-                Plan gratis intake
+                Bekijk onze trainers
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink href={whatsappLinks.nl} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external>

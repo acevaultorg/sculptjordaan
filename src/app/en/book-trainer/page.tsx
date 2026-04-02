@@ -51,8 +51,8 @@ export default function BookTrainerPageEN() {
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book Your Personal Trainer</h1>
           <p className="mt-3 text-muted-foreground">Free 30-minute introduction. No membership, always free cancellation.</p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ButtonLink href="/en/find-personal-trainer" size="xl" className="w-full sm:w-auto">Book free intro<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
-            <ButtonLink href="/en/find-personal-trainer" size="lg" variant="outline" className="w-full sm:w-auto">Meet our trainers</ButtonLink>
+            <ButtonLink href="/en/find-personal-trainer" size="xl" className="w-full sm:w-auto">Meet our trainers<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
+            <ButtonLink href={whatsappLinks.en} size="lg" variant="outline" className="w-full sm:w-auto" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">★ 5.0 on Google · From €45/session · First intro free</p>
         </div>
@@ -114,7 +114,7 @@ export default function BookTrainerPageEN() {
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Ready to start?</h2>
             <p className="mx-auto mt-3 max-w-xl text-white/70">Book your free intro — we usually respond within an hour.</p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href="/en/find-personal-trainer" size="lg">Book free intro<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
+              <ButtonLink href="/en/find-personal-trainer" size="lg">Meet our trainers<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
               <ButtonLink href={whatsappLinks.en} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
             </div>
           </div>
