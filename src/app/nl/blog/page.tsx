@@ -197,6 +197,14 @@ const posts = [
     href: "/nl/blog/personal-trainer-amsterdam-centrum",
     date: "2 april 2026",
   },
+  {
+    title: "Personal trainer De Pijp Amsterdam",
+    excerpt:
+      "Op zoek naar een personal trainer in De Pijp? SculptClub in de Jordaan is 10 minuten fietsen via het Vondelpark.",
+    category: "Lokaal",
+    href: "/nl/blog/personal-trainer-de-pijp-amsterdam",
+    date: "2 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {
