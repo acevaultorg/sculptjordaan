@@ -149,6 +149,22 @@ const posts = [
     href: "/en/blog/gym-rental-per-hour-amsterdam",
     date: "April 1, 2026",
   },
+  {
+    title: "Rent Training Space as a Freelance Personal Trainer in Amsterdam",
+    excerpt:
+      "Practical guide for freelance personal trainers: costs, tax benefits, insurance and how to start renting training space in Amsterdam.",
+    category: "For Trainers",
+    href: "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
+    date: "April 2, 2026",
+  },
+  {
+    title: "Physiotherapy Studio Rental in Amsterdam",
+    excerpt:
+      "Looking for a space for physiotherapy or rehab training? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
+    category: "For Trainers",
+    href: "/en/blog/physiotherapy-studio-rental-amsterdam",
+    date: "April 2, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

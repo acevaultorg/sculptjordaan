@@ -149,6 +149,22 @@ const posts = [
     href: "/nl/blog/gym-huren-per-uur-amsterdam",
     date: "1 april 2026",
   },
+  {
+    title: "Trainingsruimte huren als ZZP personal trainer in Amsterdam",
+    excerpt:
+      "Praktische gids voor ZZP personal trainers: kosten, belasting, verzekering en hoe je begint met het huren van een trainingsruimte in Amsterdam.",
+    category: "Voor Trainers",
+    href: "/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam",
+    date: "2 april 2026",
+  },
+  {
+    title: "Fysiotherapie studio huren in Amsterdam",
+    excerpt:
+      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining? Huur een volledig uitgeruste studio per uur. Ideaal voor ZZP-fysiotherapeuten.",
+    category: "Voor Trainers",
+    href: "/nl/blog/fysiotherapie-studio-huren-amsterdam",
+    date: "2 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

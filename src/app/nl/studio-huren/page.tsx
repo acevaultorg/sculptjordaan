@@ -447,6 +447,33 @@ export default function StudioRentalPageNL() {
         </FadeIn>
       </Section>
 
+      {/* Related articles */}
+      <Section>
+        <FadeIn>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Meer lezen over studio huur</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Studio huren als personal trainer in Amsterdam</p>
+              </a>
+              <a href="/nl/blog/gym-huren-per-uur-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Gym huren per uur Amsterdam: flexibele trainingsruimte</p>
+              </a>
+              <a href="/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Trainingsruimte huren als ZZP personal trainer</p>
+              </a>
+              <a href="/nl/blog/fysiotherapie-studio-huren-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Fysiotherapie studio huren in Amsterdam</p>
+              </a>
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Bottom CTA */}
       <Section bg="dark">
         <FadeIn>

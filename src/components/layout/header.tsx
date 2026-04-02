@@ -350,7 +350,7 @@ export function Header() {
                   {/* Returning client */}
                   <div className="mt-6 text-center">
                     <a
-                      href="https://secure.acuityscheduling.com/login/36720238"
+                      href="https://app.acuityscheduling.com/schedule.php?owner=36720238&action=appt"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand transition-colors"

@@ -137,6 +137,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/fysiotherapeut-personal-trainer-amsterdam": "/en/blog/physiotherapist-personal-trainer-amsterdam",
   "/nl/blog/gratis-intake-personal-trainer-amsterdam": "/en/blog/free-intro-personal-trainer-amsterdam",
   "/nl/blog/gym-huren-per-uur-amsterdam": "/en/blog/gym-rental-per-hour-amsterdam",
+  "/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam": "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
+  "/nl/blog/fysiotherapie-studio-huren-amsterdam": "/en/blog/physiotherapy-studio-rental-amsterdam",
   // EN → NL: pages
   "/en": "/",
   "/en/find-personal-trainer": "/nl/vind-jouw-personal-trainer",
@@ -185,6 +187,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/physiotherapist-personal-trainer-amsterdam": "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
   "/en/blog/free-intro-personal-trainer-amsterdam": "/nl/blog/gratis-intake-personal-trainer-amsterdam",
   "/en/blog/gym-rental-per-hour-amsterdam": "/nl/blog/gym-huren-per-uur-amsterdam",
+  "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam": "/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam",
+  "/en/blog/physiotherapy-studio-rental-amsterdam": "/nl/blog/fysiotherapie-studio-huren-amsterdam",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
 };
