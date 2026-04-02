@@ -173,6 +173,12 @@ export default function PersonalTrainerAmsterdamNL() {
                 <a href="/nl/blog/gratis-intake-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted">
                   <p className="font-semibold text-sm group-hover:text-brand transition-colors">Gratis intake personal trainer</p>
                 </a>
+                <a href="/nl/blog/personal-trainer-amsterdam-west" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted">
+                  <p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam West</p>
+                </a>
+                <a href="/nl/blog/personal-trainer-amsterdam-oost" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted">
+                  <p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam Oost</p>
+                </a>
               </div>
             </div>
 
