@@ -25,7 +25,7 @@ const bookingMenu = {
         icon: Users,
         title: "Vind een Trainer",
         description: "Gratis kennismaking · 45 min",
-        href: "/nl/boek-trainer",
+        href: "/nl/vind-jouw-personal-trainer",
       },
       {
         icon: Dumbbell,
@@ -50,7 +50,7 @@ const bookingMenu = {
         icon: Users,
         title: "Find a Trainer",
         description: "Free consultation · 45 min",
-        href: "/en/book-trainer",
+        href: "/en/find-personal-trainer",
       },
       {
         icon: Dumbbell,

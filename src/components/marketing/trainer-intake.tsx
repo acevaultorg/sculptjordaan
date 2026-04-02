@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MessageCircle, Mail, Send } from "lucide-react";
+import { MessageCircle, Mail, Send, ArrowLeft, ArrowRight } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Badge } from "@/components/ui/badge";
@@ -28,6 +28,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
       : `Hi ${trainer.name}! I'd like to book a free intro.`
   )}`;
 
+  const trainersUrl = locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer";
+
   const t = locale === "nl" ? {
     overline: "Gratis intake",
     title: `Plan je gratis intake met ${trainer.name}`,
@@ -48,6 +50,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     emailLabel: "Of stuur een e-mail",
     responseTime: "We reageren meestal binnen 1 uur",
     sent: "Bericht verstuurd! We nemen snel contact op.",
+    browseAll: "Bekijk alle trainers",
+    otherTrainerCta: "Niet zeker? Bekijk alle trainers en vind je match.",
   } : {
     overline: "Free intro",
     title: `Book your free intro with ${trainer.name}`,
@@ -68,6 +72,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     emailLabel: "Or send an email",
     responseTime: "We usually respond within 1 hour",
     sent: "Message sent! We'll get back to you soon.",
+    browseAll: "View all trainers",
+    otherTrainerCta: "Not sure yet? Browse all trainers and find your match.",
   };
 
   const [formState, setFormState] = useState({ name: "", phone: "", message: "" });
@@ -96,6 +102,15 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     <PageLayout>
       <Section>
         <div className="max-w-4xl mx-auto">
+          {/* Back to trainers */}
+          <a
+            href={trainersUrl}
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {t.browseAll}
+          </a>
+
           <SectionHeader as="h1" overline={t.overline} title={t.title} description={t.description} />
 
           <FadeIn>
@@ -239,6 +254,19 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
             </div>
           </FadeIn>
         </div>
+      </Section>
+
+      {/* Browse other trainers CTA */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="text-center max-w-lg mx-auto">
+            <p className="text-muted-foreground mb-4">{t.otherTrainerCta}</p>
+            <ButtonLink href={trainersUrl} size="lg" variant="outline">
+              {t.browseAll}
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </ButtonLink>
+          </div>
+        </FadeIn>
       </Section>
     </PageLayout>
   );
