@@ -31,6 +31,7 @@ export function trackBeginBooking(
   sendEvent("begin_booking", {
     booking_type: bookingType,
     plan_name: planName,
+    ...getUtmParams(),
   });
 }
 
@@ -41,6 +42,35 @@ export function trackHeroClick(label: string, position: number, locale: string) 
     cta_position: String(position),
     locale,
   });
+}
+
+/**
+ * Capture UTM parameters from the URL on first visit and persist in sessionStorage.
+ * Call this once on app mount (e.g., in layout or analytics component).
+ */
+export function captureUtmParams() {
+  if (typeof window === "undefined") return;
+  // Only capture once per session — don't overwrite if already set
+  if (sessionStorage.getItem("utm_source")) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"] as const;
+  for (const key of utmKeys) {
+    const val = params.get(key);
+    if (val) sessionStorage.setItem(key, val);
+  }
+}
+
+/** Read persisted UTM params from sessionStorage */
+function getUtmParams(): Record<string, string> {
+  if (typeof window === "undefined") return {};
+  const result: Record<string, string> = {};
+  const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
+  for (const key of keys) {
+    const val = sessionStorage.getItem(key);
+    if (val) result[key] = val;
+  }
+  return result;
 }
 
 /** Returns true if a URL points to Acuity Scheduling */
