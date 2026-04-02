@@ -181,6 +181,14 @@ const posts = [
     href: "/en/blog/personal-training-weight-loss-amsterdam",
     date: "April 2, 2026",
   },
+  {
+    title: "Personal Trainer Amsterdam West & Oud-West",
+    excerpt:
+      "Looking for a personal trainer in Amsterdam West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €45/session.",
+    category: "Local",
+    href: "/en/blog/personal-trainer-amsterdam-west",
+    date: "April 2, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
