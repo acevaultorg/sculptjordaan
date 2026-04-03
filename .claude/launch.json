@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "sculptjordaan",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["next", "dev", "--webpack"],
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "export PATH=/Users/paulodevries/.nvm/versions/node/v24.14.0/bin:$PATH && npx next dev --webpack -p 3456"],
       "port": 3456,
       "autoPort": true,
       "cwd": "."
