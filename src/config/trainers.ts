@@ -125,4 +125,25 @@ export const trainers: Trainer[] = [
     image: "/images/trainers/dara.jpg",
     whatsapp: "https://wa.me/31645658213",
   },
+  {
+    id: "jearmey",
+    name: "Jearmey",
+    slug: {
+      nl: "plan-gratis-intake-met-jearmey",
+      en: "plan-free-intro-with-jearmey",
+    },
+    specialization: {
+      nl: ["Kracht", "Afvallen", "Atletische Prestatie"],
+      en: ["Strength", "Fat Loss", "Athletic Performance"],
+    },
+    languages: ["NL", "EN"],
+    rate: null,
+    instagram: "https://instagram.com/jer.proformance",
+    instagramHandle: "@jer.proformance",
+    bio: {
+      nl: "Jearmey helpt je sterker worden, vet verliezen en pijnvrij bewegen. Met een focus op kracht en atletische prestaties bouwt hij programma's die resultaat leveren.",
+      en: "Jearmey helps you build strength, lose fat and move pain-free. With a focus on strength and athletic performance, he builds programmes that deliver results.",
+    },
+    image: "/images/trainers/jearmey.jpg",
+  },
 ];

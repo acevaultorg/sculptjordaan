@@ -123,6 +123,7 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/plan-gratis-intake-met-dara": "/en/plan-free-intro-with-dara",
   "/nl/plan-gratis-intake-met-eva": "/en/plan-free-intro-with-eva",
   "/nl/plan-gratis-intake-met-hamish": "/en/plan-free-intro-with-hamish",
+  "/nl/plan-gratis-intake-met-jearmey": "/en/plan-free-intro-with-jearmey",
   // NL → EN: blog posts
   "/nl/blog/afvallen-met-krachttraining": "/en/blog/weight-loss-strength-training",
   "/nl/blog/consistent-blijven-met-sporten": "/en/blog/stay-consistent-exercise",
@@ -185,6 +186,7 @@ export const alternateRoutes: Record<string, string> = {
   "/en/plan-free-intro-with-dara": "/nl/plan-gratis-intake-met-dara",
   "/en/plan-free-intro-with-eva": "/nl/plan-gratis-intake-met-eva",
   "/en/plan-free-intro-with-hamish": "/nl/plan-gratis-intake-met-hamish",
+  "/en/plan-free-intro-with-jearmey": "/nl/plan-gratis-intake-met-jearmey",
   // Campaign landing pages
   "/nl/gratis-intake": "/en/free-intro",
   // EN → NL: blog posts
