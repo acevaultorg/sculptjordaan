@@ -365,6 +365,31 @@ export default function PricingPageNL() {
         </div>
       </Section>
 
+      {/* Pricing FAQ */}
+      <Section>
+        <SectionHeader
+          overline="Veelgestelde vragen"
+          title="Over Prijzen & Betaling"
+        />
+        <FadeIn>
+          <div className="max-w-2xl mx-auto space-y-0">
+            {[
+              { q: "Moet ik een abonnement afsluiten?", a: "Nee. Open Gym werkt in 4-weken cycli die je op elk moment kunt opzeggen. Personal training boek je per sessie. Studio huur per uur of via een pakket. Geen langetermijncontract." },
+              { q: "Kan ik altijd annuleren?", a: "Ja, annuleren is altijd gratis. Geen tijdslimiet, geen kosten." },
+              { q: "Hoe betaal ik?", a: "CreditCard, Apple Pay en Google Pay. Studio huur ook per factuur. iDEAL via Apple Pay." },
+              { q: "Wat als de trainer niet bij me past?", a: "De eerste intake is gratis en vrijblijvend. Bevalt het niet? Geen verplichtingen. Je kunt altijd een andere trainer proberen." },
+              { q: "Zijn er verborgen kosten?", a: "Nee. De prijzen op deze pagina zijn alles-inclusief. Geen inschrijfgeld, geen administratiekosten, geen verrassingen." },
+              { q: "Hoe werkt de deurcode?", a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode. Geen receptie, geen sleutels — je loopt direct naar binnen." },
+            ].map((faq, i) => (
+              <div key={i} className="border-b border-border/50 py-6">
+                <h3 className="font-semibold mb-2">{faq.q}</h3>
+                <p className="text-sm text-muted-foreground">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Bottom CTA */}
       <Section bg="dark">
         <FadeIn>

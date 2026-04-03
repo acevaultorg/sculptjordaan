@@ -365,6 +365,31 @@ export default function PricingPageEN() {
         </div>
       </Section>
 
+      {/* Pricing FAQ */}
+      <Section>
+        <SectionHeader
+          overline="Frequently asked questions"
+          title="About Pricing & Payment"
+        />
+        <FadeIn>
+          <div className="max-w-2xl mx-auto space-y-0">
+            {[
+              { q: "Do I need a membership?", a: "No. Open Gym works in 4-week cycles you can cancel anytime. Personal training is booked per session. Studio rental per hour or via a package. No long-term contract." },
+              { q: "Can I always cancel?", a: "Yes, cancellation is always free. No time limit, no fees." },
+              { q: "How do I pay?", a: "Credit card, Apple Pay and Google Pay. Studio rental also accepts invoice. iDEAL via Apple Pay." },
+              { q: "What if the trainer isn't right for me?", a: "The first intro is free and no-obligation. Not a match? No worries. You can always try a different trainer." },
+              { q: "Are there hidden costs?", a: "No. The prices on this page are all-inclusive. No sign-up fee, no admin charges, no surprises." },
+              { q: "How does the door code work?", a: "The evening before your session you receive a unique door code via WhatsApp. No reception, no keys — walk straight in." },
+            ].map((faq, i) => (
+              <div key={i} className="border-b border-border/50 py-6">
+                <h3 className="font-semibold mb-2">{faq.q}</h3>
+                <p className="text-sm text-muted-foreground">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Bottom CTA */}
       <Section bg="dark">
         <FadeIn>

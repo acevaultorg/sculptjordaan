@@ -5,6 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 
 interface TrainerMatchFormProps {
   locale: "nl" | "en";
@@ -77,6 +84,14 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
       onSubmit={(e) => {
         e.preventDefault();
         if (name && whatsapp && goal) {
+          window.gtag?.("event", "trainer_match_submit", {
+            goal: selectedGoalLabel,
+            locale,
+          });
+          window.fbq?.("track", "Lead", {
+            content_name: "trainer_match",
+            content_category: selectedGoalLabel,
+          });
           window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
         }
       }}
@@ -101,6 +116,8 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
           value={whatsapp}
           onChange={(e) => setWhatsapp(e.target.value)}
           placeholder={t.whatsappPlaceholder}
+          pattern="[\+]?[0-9\s\-]{8,15}"
+          title={locale === "nl" ? "Voer een geldig telefoonnummer in" : "Enter a valid phone number"}
           required
         />
       </div>
