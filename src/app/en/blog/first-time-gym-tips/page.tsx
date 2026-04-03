@@ -156,6 +156,16 @@ export default function FirstTimeGymTips() {
               </p>
             </div>
 
+            <div className="mt-12 border-t border-border/50 pt-8">
+              <h3 className="text-lg font-bold mb-4">Read more</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <a href="/en/blog/personal-trainer-for-beginners" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer for beginners</p></a>
+                <a href="/en/blog/strength-training-beginners-guide" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Strength training for beginners</p></a>
+                <a href="/en/blog/gym-without-membership-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Gym without membership</p></a>
+                <a href="/en/blog/strength-training-for-women" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Strength training for women</p></a>
+              </div>
+            </div>
+
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Prefer to start with guidance?</h3>
               <p className="text-muted-foreground mb-6">

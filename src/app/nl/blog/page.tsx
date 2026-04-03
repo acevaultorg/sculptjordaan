@@ -229,6 +229,22 @@ const posts = [
     href: "/nl/blog/personal-trainer-amsterdam-oost",
     date: "2 april 2026",
   },
+  {
+    title: "Personal Trainer na een Blessure in Amsterdam",
+    excerpt:
+      "Veilig terugkeren naar sport na een blessure? Een personal trainer helpt met hersteltraining op maat.",
+    category: "Herstel",
+    href: "/nl/blog/personal-trainer-na-blessure-amsterdam",
+    date: "3 april 2026",
+  },
+  {
+    title: "Krachttraining voor Vrouwen in Amsterdam",
+    excerpt:
+      "Krachttraining is de beste investering in vrouwelijke gezondheid. Ontdek waarom en hoe je begint.",
+    category: "Training",
+    href: "/nl/blog/krachttraining-voor-vrouwen",
+    date: "3 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

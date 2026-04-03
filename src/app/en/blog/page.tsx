@@ -229,6 +229,22 @@ const posts = [
     href: "/en/blog/personal-trainer-amsterdam-east",
     date: "April 2, 2026",
   },
+  {
+    title: "Personal Trainer After an Injury in Amsterdam",
+    excerpt:
+      "Returning to exercise after an injury? A personal trainer builds you back safely with tailored recovery training.",
+    category: "Recovery",
+    href: "/en/blog/personal-trainer-after-injury-amsterdam",
+    date: "April 3, 2026",
+  },
+  {
+    title: "Strength Training for Women in Amsterdam",
+    excerpt:
+      "Strength training is the best investment in women's health. Discover why and how to start.",
+    category: "Training",
+    href: "/en/blog/strength-training-for-women",
+    date: "April 3, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

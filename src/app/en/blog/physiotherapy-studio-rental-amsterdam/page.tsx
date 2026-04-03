@@ -151,6 +151,16 @@ export default function BlogPostPhysioStudioEN() {
               </p>
             </div>
 
+            <div className="mt-12 border-t border-border/50 pt-8">
+              <h3 className="text-lg font-bold mb-4">Read more</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <a href="/en/blog/gym-rental-per-hour-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Gym rental per hour Amsterdam</p></a>
+                <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio rental for personal trainers</p></a>
+                <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Physiotherapist as personal trainer</p></a>
+                <a href="/en/blog/personal-trainer-after-injury-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer after an injury</p></a>
+              </div>
+            </div>
+
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Interested in the studio for your practice?</h3>
               <p className="text-muted-foreground mb-6">

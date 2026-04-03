@@ -151,6 +151,16 @@ export default function BlogPostStudioRentalEN() {
               </p>
             </div>
 
+            <div className="mt-12 border-t border-border/50 pt-8">
+              <h3 className="text-lg font-bold mb-4">Read more</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <a href="/en/blog/gym-rental-per-hour-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Gym rental per hour Amsterdam</p></a>
+                <a href="/en/blog/rent-training-space-freelance-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Training space for freelance trainers</p></a>
+                <a href="/en/blog/physiotherapy-studio-rental-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Physiotherapy studio rental</p></a>
+                <a href="/en/blog/personal-training-amsterdam-jordaan" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal training in the Jordaan</p></a>
+              </div>
+            </div>
+
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Interested in renting our studio?</h3>
               <p className="text-muted-foreground mb-6">
