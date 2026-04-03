@@ -47,7 +47,7 @@ export function Hero({ locale }: { locale: Locale }) {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
@@ -63,18 +63,22 @@ export function Hero({ locale }: { locale: Locale }) {
             {t.tagline}
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
             {t.description}
           </p>
 
-          {/* 3 CTAs — all clearly visible on dark background */}
+          {/* 3 CTAs — primary solid, secondary glass */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
             {t.ctas.map((cta, i) => (
               <ButtonLink
                 key={cta.href}
                 href={cta.href}
                 size="lg"
-                className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all"
+                className={
+                  i === 0
+                    ? "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white transition-all shadow-lg"
+                    : "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold border border-white/40 bg-white/15 text-white backdrop-blur-sm hover:bg-white/25 hover:border-white/60 transition-all"
+                }
                 onClick={() => trackHeroClick(cta.label, i + 1, locale)}
               >
                 <cta.icon className="w-4 h-4" />
@@ -82,7 +86,7 @@ export function Hero({ locale }: { locale: Locale }) {
               </ButtonLink>
             ))}
           </div>
-          <p className="mt-4 text-xs text-white/50">{t.trust}</p>
+          <p className="mt-4 text-xs text-white/60">{t.trust}</p>
         </motion.div>
       </div>
     </section>

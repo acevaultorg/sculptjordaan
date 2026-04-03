@@ -151,22 +151,36 @@
     @apply scroll-smooth;
     scroll-padding-top: 5rem;
   }
-  h1, h2, h3, h4 {
+  h1 {
     font-family: var(--font-heading);
     font-weight: 700;
     letter-spacing: -0.045em;
-    line-height: 1.05;
+    line-height: 1.0;
+    color: var(--foreground);
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    color: var(--foreground);
+  }
+  h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
     color: var(--foreground);
   }
   h5, h6 {
     font-family: var(--font-heading);
     font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
   }
   p, li, td, th {
-    letter-spacing: -0.012em;
-    line-height: 1.55;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
   }
   /* Overline pattern (H6-style) */
   .overline {
