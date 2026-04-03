@@ -261,6 +261,14 @@ const posts = [
     href: "/nl/blog/personal-trainer-voor-senioren-amsterdam",
     date: "3 april 2026",
   },
+  {
+    title: "Personal Trainer Worden in Amsterdam",
+    excerpt:
+      "Wil je starten als freelance personal trainer? Alles over studio, klanten en tarieven in Amsterdam.",
+    category: "Voor Trainers",
+    href: "/nl/blog/personal-trainer-worden-amsterdam",
+    date: "3 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

@@ -261,6 +261,14 @@ const posts = [
     href: "/en/blog/personal-trainer-for-seniors-amsterdam",
     date: "April 3, 2026",
   },
+  {
+    title: "Become a Personal Trainer in Amsterdam",
+    excerpt:
+      "Want to start as a freelance personal trainer? Everything about studio, clients and rates in Amsterdam.",
+    category: "For Trainers",
+    href: "/en/blog/become-personal-trainer-amsterdam",
+    date: "April 3, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
