@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "SculptClub privacy policy. How we collect, use and protect your data.",
+  description: "SculptClub privacy policy. How we collect, use and protect your personal data in compliance with GDPR. Your privacy matters.",
   alternates: { canonical: "/en/privacy-policy", languages: { nl: "/nl/privacybeleid", en: "/en/privacy-policy" } },
 };
 

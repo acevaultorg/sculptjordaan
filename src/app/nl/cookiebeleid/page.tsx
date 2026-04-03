@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Cookiebeleid",
-  description: "SculptClub cookiebeleid. Welke cookies we gebruiken en waarom.",
+  description: "SculptClub cookiebeleid. Welke cookies we gebruiken, waarom, en hoe je je voorkeuren kunt beheren op onze website.",
   alternates: { canonical: "/nl/cookiebeleid", languages: { nl: "/nl/cookiebeleid", en: "/en/cookie-policy" } },
 };
 

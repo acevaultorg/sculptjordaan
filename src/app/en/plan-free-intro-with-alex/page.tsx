@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Book free intro with Alex",
-  description: "Book a free introductory session with Alex at SculptClub Amsterdam Jordaan.",
+  description: "Book a free intro with Alex — strength, calisthenics and recovery specialist at SculptClub Amsterdam Jordaan. No commitment.",
   alternates: { canonical: "/en/plan-free-intro-with-alex", languages: { nl: "/nl/plan-gratis-intake-met-alex", en: "/en/plan-free-intro-with-alex" } },
 };
 

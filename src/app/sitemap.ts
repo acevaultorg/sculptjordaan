@@ -134,7 +134,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allPages = [...nlPages, ...enPages].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
-    changeFrequency: "weekly" as const,
+    changeFrequency: path === "/" || path === "/en"
+      ? "daily" as const
+      : /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/.test(path)
+      ? "monthly" as const
+      : path.includes("/blog/")
+      ? "monthly" as const
+      : "weekly" as const,
     priority: path === "/" || path === "/en"
       ? 1.0
       : path.includes("/blog/")

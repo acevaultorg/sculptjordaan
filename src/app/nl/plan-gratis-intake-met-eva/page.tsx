@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Plan gratis intake met Eva",
-  description: "Boek een gratis kennismakingsgesprek met Eva bij SculptClub Amsterdam Jordaan.",
+  description: "Gratis intake met Eva — gediplomeerd diëtist en personal trainer bij SculptClub Amsterdam Jordaan. Kracht + voeding, geen verplichtingen.",
   alternates: { canonical: "/nl/plan-gratis-intake-met-eva", languages: { nl: "/nl/plan-gratis-intake-met-eva", en: "/en/plan-free-intro-with-eva" } },
 };
 
