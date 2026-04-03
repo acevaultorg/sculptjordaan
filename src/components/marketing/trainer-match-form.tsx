@@ -92,6 +92,12 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
             content_name: "trainer_match",
             content_category: selectedGoalLabel,
           });
+          if (typeof (window as Window & { ttq?: { track: (...args: unknown[]) => void } }).ttq !== "undefined") {
+            (window as Window & { ttq?: { track: (...args: unknown[]) => void } }).ttq!.track("SubmitForm", {
+              value: 45,
+              currency: "EUR",
+            });
+          }
           window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
         }
       }}
