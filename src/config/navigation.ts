@@ -50,12 +50,14 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Train Zelfstandig", href: "/nl/open-gym" },
     { label: "Huur de Studio", href: "/nl/studio-huren" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
+    { label: "Word trainer", href: "/nl/word-trainer" },
   ],
   en: [
     { label: "Find your Trainer", href: "/en/find-personal-trainer" },
     { label: "Train Solo", href: "/en/open-gym" },
     { label: "Rent the Studio", href: "/en/studio-rental" },
     { label: "First Visit", href: "/en/first-visit" },
+    { label: "Become a trainer", href: "/en/become-trainer" },
   ],
 };
 

@@ -469,6 +469,14 @@ export default function StudioRentalPageEN() {
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Physiotherapy studio rental in Amsterdam</p>
               </a>
+              <a href="/en/become-trainer" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
+                <p className="text-sm text-brand mb-1">For trainers</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Become a trainer at SculptClub — 0% commission</p>
+              </a>
+              <a href="/en/blog/become-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Become a personal trainer in Amsterdam</p>
+              </a>
             </div>
           </div>
         </FadeIn>
