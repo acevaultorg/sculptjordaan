@@ -39,7 +39,7 @@ const paths = [
   },
   {
     icon: Building2,
-    title: "I\u2019m a trainer looking for a studio",
+    title: "I'm a trainer looking for a studio",
     description: "Rent our fully equipped studio for your clients. 0% commission. Your rate, your schedule.",
     cta: "Book free studio tour",
     href: acuityLinks.studioTrial,

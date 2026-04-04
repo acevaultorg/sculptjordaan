@@ -5,9 +5,9 @@ import { Star, ArrowRight, Dumbbell, Users, Building2, MapPin, Clock, Shield } f
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
+  title: "Welkom bij SculptClub — Privé Studio Amsterdam Jordaan",
   description:
-    "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+    "Privé personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/nl/start",
@@ -31,7 +31,7 @@ const paths = [
   {
     icon: Dumbbell,
     title: "Ik wil zelfstandig trainen",
-    description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Geen abonnement nodig.",
+    description: "Boek 60-min slots in een privé studio. Max 3 personen. Geen abonnement nodig.",
     cta: "Probeer Open Gym gratis",
     href: acuityLinks.openGymTrial,
     external: true,
@@ -84,7 +84,7 @@ export default function StartPageNL() {
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-3">
-            Jouw priv\u00e9 studio in de{" "}
+            Jouw privé studio in de{" "}
             <span className="text-brand">Jordaan</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-10 max-w-md mx-auto leading-relaxed">
@@ -152,7 +152,7 @@ export default function StartPageNL() {
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
             src="/images/studio/studio-interior-1.jpeg"
-            alt="SculptClub priv\u00e9 studio in de Jordaan, Amsterdam"
+            alt="SculptClub privé studio in de Jordaan, Amsterdam"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
