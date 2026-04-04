@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks } from "@/config/acuity";
+import { acuityLinks, acuityPackages } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
@@ -36,6 +36,15 @@ export const metadata: Metadata = {
 };
 
 const openGymPlans = [
+  {
+    name: "Losse sessie",
+    sessions: "1 sessie",
+    price: "\u20ac10",
+    period: "",
+    perSession: "Geen lidmaatschap nodig",
+    badge: null,
+    link: acuityLinks.openGymBook,
+  },
   {
     name: "Instapplan",
     sessions: "4 sessies",
@@ -125,6 +134,7 @@ export default function PricingPageNL() {
         url="/nl/prijzen"
         recurring
         offers={[
+          { name: "Losse sessie", description: "1 sessie, geen lidmaatschap nodig", price: 10 },
           { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
           { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49 },
           { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69 },
@@ -140,6 +150,10 @@ export default function PricingPageNL() {
           { name: "Halve studio — 90 min", description: "Halve studio huur, 90 minuten", price: 17 },
           { name: "Volledige studio — 60 min", description: "Volledige studio huur, 60 minuten", price: 17 },
           { name: "Volledige studio — 90 min", description: "Volledige studio huur, 90 minuten", price: 24 },
+          { name: "Starter strippenkaart", description: "Strippenkaart studio huur, 10% korting", price: 89 },
+          { name: "Routine strippenkaart", description: "Strippenkaart studio huur, 15% korting", price: 199 },
+          { name: "Pro strippenkaart", description: "Strippenkaart studio huur, 19% korting", price: 349 },
+          { name: "Volume strippenkaart", description: "Strippenkaart studio huur, 23% korting", price: 549 },
         ]}
       />
 
@@ -190,7 +204,7 @@ export default function PricingPageNL() {
           description="Train zelfstandig in onze priv\u00e9 studio. Sessies van 60 minuten, max. 3 personen."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {openGymPlans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
               <Card
@@ -272,7 +286,7 @@ export default function PricingPageNL() {
         </div>
 
         {/* Discount packages */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <FadeIn delay={0}>
             <Card className="h-full text-center">
               <CardHeader>
@@ -287,6 +301,11 @@ export default function PricingPageNL() {
                   <span className="sc-discount">Bespaar 10%</span>
                 </p>
               </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.starter} size="lg" className="w-full">
+                  Koop Starter
+                </ButtonLink>
+              </CardFooter>
             </Card>
           </FadeIn>
 
@@ -305,10 +324,37 @@ export default function PricingPageNL() {
                   <span className="sc-discount">Bespaar 15%</span>
                 </p>
               </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.routine} size="lg" className="w-full">
+                  Koop Routine
+                </ButtonLink>
+              </CardFooter>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.2}>
+            <Card className="h-full text-center">
+              <CardHeader>
+                <CardTitle className="text-xl">Pro</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">
+                  <span className="sc-price-old">&euro;436</span>
+                </p>
+                <p className="text-3xl font-bold">&euro;349</p>
+                <p className="mt-2 text-sm">
+                  <span className="sc-discount">Bespaar 19%</span>
+                </p>
+              </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.pro} size="lg" className="w-full">
+                  Koop Pro
+                </ButtonLink>
+              </CardFooter>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
             <Card className="h-full text-center ring-2 ring-primary">
               <CardHeader>
                 <Badge className="mx-auto mb-2">Beste deal</Badge>
@@ -323,6 +369,11 @@ export default function PricingPageNL() {
                   <span className="sc-discount">Bespaar 23%</span>
                 </p>
               </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.volume} size="lg" className="w-full">
+                  Koop Volume
+                </ButtonLink>
+              </CardFooter>
             </Card>
           </FadeIn>
         </div>

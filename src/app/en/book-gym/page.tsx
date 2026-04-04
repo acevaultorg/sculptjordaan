@@ -28,8 +28,8 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "How much does an Open Gym session cost?", a: "Membership from €29/4 weeks (1x/week). Most popular: 2x/week for €49. You can always upgrade or downgrade." },
-  { q: "Do I need a membership?", a: "It works with a 4-week membership, but you can cancel at any time. No long-term contract." },
+  { q: "How much does an Open Gym session cost?", a: "Single session €10. Or get a membership from €29/4 weeks (€7.25/session). Most popular: 2x/week for €49. You can always upgrade or downgrade." },
+  { q: "Do I need a membership?", a: "No, you can book a single session for €10. Or get a 4-week membership for better value. Cancel anytime." },
   { q: "Is it really just for me?", a: "Yes. The entire studio to yourself during your booked 60-minute slot. No other gym-goers." },
   { q: "Can I bring a friend?", a: "Up to 3 people can train together. Want to train together? Check our studio rental options." },
   { q: "What if I need to cancel?", a: "Cancelling or rescheduling is always free through the booking system." },
@@ -54,7 +54,7 @@ export default function BookGymPageEN() {
             <ButtonLink href={acuityLinks.openGymTrial} size="xl" className="w-full sm:w-auto">Start free trial<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
             <ButtonLink href="/en/open-gym" size="lg" variant="outline" className="w-full sm:w-auto">View all plans</ButtonLink>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">From €7.25/session · Private studio · No contract · Daily 06:30–22:00</p>
+          <p className="mt-4 text-xs text-muted-foreground">Single session €10 · Membership from €7.25/session · Daily 06:30–22:00</p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
               Already a member? Book your session →
@@ -83,7 +83,7 @@ export default function BookGymPageEN() {
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
-              {["Free trial session — try it with no obligation", "Private studio all to yourself — no waiting, no crowds", "Membership from €29/4 weeks (€7.25/session)", "Most popular: 2x/week for €49/4 weeks", "No long-term contract — cancel anytime", "Door code via WhatsApp, start right away"].map((b, i) => (
+              {["Free trial session — try it with no obligation", "Single session €10 — no membership needed", "Private studio all to yourself — no waiting, no crowds", "Membership from €29/4 weeks (€7.25/session)", "Most popular: 2x/week for €49/4 weeks", "Door code via WhatsApp, start right away"].map((b, i) => (
                 <li key={i} className="flex items-start gap-3"><CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span className="text-sm">{b}</span></li>
               ))}
             </ul>

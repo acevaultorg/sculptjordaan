@@ -41,6 +41,7 @@ export const acuityPackages = {
   studio: {
     starter: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149357`,
     routine: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149358`,
+    pro: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149359`,
     volume: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149360`,
   },
   /** Open Gym membership plans */

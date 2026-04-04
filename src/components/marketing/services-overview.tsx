@@ -23,7 +23,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Zelfstandig trainen in een privé studio. Boek een slot, krijg je deurcode, train. Max 3 personen, altijd ruimte. Vanaf €5,75 per sessie.",
+        "Zelfstandig trainen in een privé studio. Boek een slot, krijg je deurcode, train. Max 3 personen, altijd ruimte. Vanaf €29/4 weken.",
       href: "/nl/boek-gym",
       cta: "Bekijk Open Gym",
       image: "/images/studio/power-rack.jpeg",
@@ -33,7 +33,7 @@ const services = {
       icon: Building2,
       title: "Studio Huren",
       description:
-        "Groei je praktijk zonder vaste lasten. Huur de studio per uur voor jouw klanten. Vanaf €12/uur, 0% commissie, geen contract.",
+        "Groei je praktijk zonder vaste lasten. Huur de studio per sessie voor jouw klanten. Vanaf €12/60 min, kortingspakketten tot 23% korting.",
       href: "/nl/boek-studio",
       cta: "Bekijk studio & tarieven",
       image: "/images/studio/studio-overview.jpeg",
@@ -55,7 +55,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Train independently in a private studio. Book a slot, get your door code, train. Max 3 people, always space. From €5.75 per session.",
+        "Train independently in a private studio. Book a slot, get your door code, train. Max 3 people, always space. From €29/4 weeks.",
       href: "/en/book-gym",
       cta: "View Open Gym",
       image: "/images/studio/power-rack.jpeg",
@@ -65,7 +65,7 @@ const services = {
       icon: Building2,
       title: "Studio Rental",
       description:
-        "Grow your practice without fixed costs. Rent the studio per hour for your clients. From €12/hour, 0% commission, no contract.",
+        "Grow your practice without fixed costs. Rent the studio per session for your clients. From €12/60 min, discount packs up to 23% off.",
       href: "/en/book-studio",
       cta: "View studio & rates",
       image: "/images/studio/studio-overview.jpeg",

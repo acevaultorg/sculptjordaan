@@ -37,8 +37,8 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "Wat kost een Open Gym sessie?", a: "Lidmaatschap vanaf €29/4 weken (1x/week). Populairste: 2x/week voor €49. Je kunt altijd upgraden of downgraden." },
-  { q: "Heb ik een abonnement nodig?", a: "Het werkt met een lidmaatschap per 4 weken, maar je kunt elk moment opzeggen. Geen langlopend contract." },
+  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap vanaf €29/4 weken (€7,25/sessie). Populairste: 2x/week voor €49. Je kunt altijd upgraden of downgraden." },
+  { q: "Heb ik een abonnement nodig?", a: "Nee, je kunt ook een losse sessie boeken voor €10. Of neem een lidmaatschap per 4 weken voor meer voordeel. Altijd opzegbaar." },
   { q: "Is het echt alleen voor mij?", a: "Ja. De hele studio voor jezelf tijdens je geboekte slot van 60 minuten. Geen andere sporters." },
   { q: "Kan ik een vriend meenemen?", a: "Er mogen max 3 personen tegelijk in de studio. Samen trainen? Bekijk onze studio verhuur opties." },
   { q: "Wat als ik moet annuleren?", a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem." },
@@ -72,7 +72,7 @@ export default function BoekGymPageNL() {
             </ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Vanaf €7,25/sessie · Privé studio · Geen contract · Dagelijks 06:30–22:00
+            Losse sessie €10 · Lidmaatschap vanaf €7,25/sessie · Dagelijks 06:30–22:00
           </p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
@@ -108,10 +108,10 @@ export default function BoekGymPageNL() {
             <ul className="space-y-3">
               {[
                 "Gratis proefles — probeer het zonder verplichtingen",
+                "Losse sessie €10 — geen lidmaatschap nodig",
                 "Privé studio helemaal voor jezelf — geen wachten, geen drukte",
                 "Lidmaatschap vanaf €29/4 weken (€7,25/sessie)",
                 "Populairste plan: 2x per week voor €49/4 weken",
-                "Geen langlopend contract — elk moment opzeggen",
                 "Deurcode via WhatsApp, direct starten",
               ].map((b, i) => (
                 <li key={i} className="flex items-start gap-3">

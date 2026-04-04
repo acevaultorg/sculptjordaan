@@ -110,7 +110,7 @@ export default function BlogPostEN1() {
               <h2 className="text-2xl font-bold mt-10 mb-4">How much does personal training in the Jordaan cost?</h2>
               <p>
                 Prices for personal training in Amsterdam Jordaan vary by trainer. Generally, you can expect rates between
-                49 and 120 euros per session, depending on the trainer&apos;s experience, session duration, and any packages.
+                from 45 euros per session, depending on the trainer&apos;s experience, session duration, and any packages.
                 At SculptClub, trainers set their own rates, and the first intro session is always free. This lets you get
                 to know a trainer before committing.
               </p>

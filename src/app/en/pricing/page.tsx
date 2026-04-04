@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks } from "@/config/acuity";
+import { acuityLinks, acuityPackages } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
@@ -36,6 +36,15 @@ export const metadata: Metadata = {
 };
 
 const openGymPlans = [
+  {
+    name: "Single Session",
+    sessions: "1 session",
+    price: "\u20ac10",
+    period: "",
+    perSession: "No membership needed",
+    badge: null,
+    link: acuityLinks.openGymBook,
+  },
   {
     name: "Starter Plan",
     sessions: "4 sessions",
@@ -125,6 +134,7 @@ export default function PricingPageEN() {
         url="/en/pricing"
         recurring
         offers={[
+          { name: "Single Session", description: "1 session, no membership needed", price: 10 },
           { name: "Starter Plan — 4 sessions", description: "4 sessions per 4 weeks, €7.25 per session", price: 29 },
           { name: "Popular — 8 sessions", description: "8 sessions per 4 weeks, €6.13 per session", price: 49 },
           { name: "Intensive — 12 sessions", description: "12 sessions per 4 weeks, €5.75 per session", price: 69 },
@@ -140,6 +150,10 @@ export default function PricingPageEN() {
           { name: "Half studio — 90 min", description: "Half studio rental, 90 minutes", price: 17 },
           { name: "Full studio — 60 min", description: "Full studio rental, 60 minutes", price: 17 },
           { name: "Full studio — 90 min", description: "Full studio rental, 90 minutes", price: 24 },
+          { name: "Starter discount pack", description: "Studio rental discount pack, 10% off", price: 89 },
+          { name: "Routine discount pack", description: "Studio rental discount pack, 15% off", price: 199 },
+          { name: "Pro discount pack", description: "Studio rental discount pack, 19% off", price: 349 },
+          { name: "Volume discount pack", description: "Studio rental discount pack, 23% off", price: 549 },
         ]}
       />
 
@@ -190,7 +204,7 @@ export default function PricingPageEN() {
           description="Train independently in our private studio. 60-minute sessions, max. 3 people."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {openGymPlans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
               <Card
@@ -272,7 +286,7 @@ export default function PricingPageEN() {
         </div>
 
         {/* Discount packages */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <FadeIn delay={0}>
             <Card className="h-full text-center">
               <CardHeader>
@@ -287,6 +301,11 @@ export default function PricingPageEN() {
                   <span className="sc-discount">Save 10%</span>
                 </p>
               </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.starter} size="lg" className="w-full">
+                  Buy Starter
+                </ButtonLink>
+              </CardFooter>
             </Card>
           </FadeIn>
 
@@ -305,10 +324,37 @@ export default function PricingPageEN() {
                   <span className="sc-discount">Save 15%</span>
                 </p>
               </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.routine} size="lg" className="w-full">
+                  Buy Routine
+                </ButtonLink>
+              </CardFooter>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.2}>
+            <Card className="h-full text-center">
+              <CardHeader>
+                <CardTitle className="text-xl">Pro</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">
+                  <span className="sc-price-old">&euro;436</span>
+                </p>
+                <p className="text-3xl font-bold">&euro;349</p>
+                <p className="mt-2 text-sm">
+                  <span className="sc-discount">Save 19%</span>
+                </p>
+              </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.pro} size="lg" className="w-full">
+                  Buy Pro
+                </ButtonLink>
+              </CardFooter>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
             <Card className="h-full text-center ring-2 ring-primary">
               <CardHeader>
                 <Badge className="mx-auto mb-2">Best deal</Badge>
@@ -323,6 +369,11 @@ export default function PricingPageEN() {
                   <span className="sc-discount">Save 23%</span>
                 </p>
               </CardContent>
+              <CardFooter className="justify-center">
+                <ButtonLink href={acuityPackages.studio.volume} size="lg" className="w-full">
+                  Buy Volume
+                </ButtonLink>
+              </CardFooter>
             </Card>
           </FadeIn>
         </div>

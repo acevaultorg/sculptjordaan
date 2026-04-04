@@ -13,25 +13,25 @@ export function Hero({ locale }: { locale: Locale }) {
       tagline: "Jouw gym. Jouw manier. Jouw resultaat.",
       subtitle: "Privé Personal Training Studio — Amsterdam Jordaan",
       description:
-        "Privé studio aan de gracht. Personal training vanaf €45, Open Gym vanaf €5,75 of huur de studio voor je eigen klanten. Altijd zonder abonnement.",
+        "Privé studio aan de gracht. Personal training vanaf €45/sessie. Open Gym vanaf €29/4 weken. Studio huren vanaf €12/uur. Altijd opzegbaar.",
       ctas: [
         { label: "Boek Gratis Intake", href: "/nl/vind-jouw-personal-trainer", icon: Users },
         { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
         { label: "Train Zelfstandig", href: "/nl/boek-gym", icon: Dumbbell },
       ],
-      trust: "Eerste intake gratis · Geen abonnement · 5.0 ★ Google",
+      trust: "Eerste intake gratis · Geen vaste contracten · 5.0 ★ Google",
     },
     en: {
       tagline: "Your gym. Your way. Your results.",
       subtitle: "Private Personal Training Studio — Amsterdam Jordaan",
       description:
-        "Private studio on the canal. Personal training from €45, Open Gym from €5.75 or rent the studio for your own clients. Always without membership.",
+        "Private studio on the canal. Personal training from €45/session. Open Gym from €29/4 weeks. Studio rental from €12/hour. Cancel anytime.",
       ctas: [
         { label: "Book Free Intro", href: "/en/find-personal-trainer", icon: Users },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
         { label: "Train Solo", href: "/en/book-gym", icon: Dumbbell },
       ],
-      trust: "First intro free · No membership · 5.0 ★ Google",
+      trust: "First intro free · No lock-in contracts · 5.0 ★ Google",
     },
   }[locale];
 
