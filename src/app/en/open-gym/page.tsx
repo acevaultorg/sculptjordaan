@@ -37,6 +37,17 @@ export const metadata: Metadata = {
 
 const plans = [
   {
+    name: "Single Session",
+    sessions: "1 session",
+    frequency: "Whenever you want",
+    tagline: "No membership needed",
+    price: "\u20ac10",
+    period: "",
+    perSession: null,
+    badge: null,
+    link: acuityLinks.openGymBook,
+  },
+  {
     name: "Starter Plan",
     sessions: "4 sessions",
     frequency: "1x / week",

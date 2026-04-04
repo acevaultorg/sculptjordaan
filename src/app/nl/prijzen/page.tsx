@@ -200,8 +200,8 @@ export default function PricingPageNL() {
       <Section>
         <SectionHeader
           overline="Open Gym"
-          title="Lidmaatschap per 4 Weken"
-          description="Train zelfstandig in onze priv\u00e9 studio. Sessies van 60 minuten, max. 3 personen."
+          title="Train Zelfstandig"
+          description="Losse sessie of lidmaatschap per 4 weken. Sessies van 60 minuten in onze priv\u00e9 studio."
         />
 
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">

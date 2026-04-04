@@ -37,6 +37,17 @@ export const metadata: Metadata = {
 
 const plans = [
   {
+    name: "Losse sessie",
+    sessions: "1 sessie",
+    frequency: "Wanneer je wilt",
+    tagline: "Geen lidmaatschap nodig",
+    price: "\u20ac10",
+    period: "",
+    perSession: null,
+    badge: null,
+    link: acuityLinks.openGymBook,
+  },
+  {
     name: "Instapplan",
     sessions: "4 sessies",
     frequency: "1x / week",

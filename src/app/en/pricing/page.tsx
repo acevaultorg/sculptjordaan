@@ -200,8 +200,8 @@ export default function PricingPageEN() {
       <Section>
         <SectionHeader
           overline="Open Gym"
-          title="4-Week Memberships"
-          description="Train independently in our private studio. 60-minute sessions, max. 3 people."
+          title="Train Independently"
+          description="Single session or 4-week membership. 60-minute sessions in our private studio."
         />
 
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">

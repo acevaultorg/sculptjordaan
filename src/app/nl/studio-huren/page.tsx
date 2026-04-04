@@ -236,7 +236,7 @@ export default function StudioRentalPageNL() {
           description="Koop een strippenkaart en bespaar op elke sessie. Pakketten zijn 1 jaar geldig."
         />
 
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* Starter */}
           <FadeIn delay={0}>
             <Card className="h-full text-center">
@@ -288,8 +288,33 @@ export default function StudioRentalPageNL() {
             </Card>
           </FadeIn>
 
-          {/* Volume */}
+          {/* Pro */}
           <FadeIn delay={0.2}>
+            <Card className="h-full text-center">
+              <CardHeader>
+                <CardTitle className="text-xl">Pro</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">
+                  <span className="sc-price-old">&euro;436</span>
+                </p>
+                <p className="text-3xl font-bold">&euro;349</p>
+                <p className="mt-2 text-sm">
+                  <span className="sc-discount">Bespaar 19%</span>
+                </p>
+                <ButtonLink
+                  href={acuityPackages.studio.pro}
+                  size="lg"
+                  className="mt-4"
+                >
+                  Koop Pro
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+
+          {/* Volume */}
+          <FadeIn delay={0.3}>
             <Card className="h-full text-center ring-2 ring-primary">
               <CardHeader>
                 <Badge className="mx-auto mb-2">Beste deal</Badge>
