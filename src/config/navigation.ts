@@ -189,6 +189,7 @@ export const alternateRoutes: Record<string, string> = {
   "/en/plan-free-intro-with-jearmey": "/nl/plan-gratis-intake-met-jearmey",
   // Campaign landing pages
   "/nl/gratis-intake": "/en/free-intro",
+  "/nl/start": "/en/start",
   // EN → NL: blog posts
   "/en/blog/weight-loss-strength-training": "/nl/blog/afvallen-met-krachttraining",
   "/en/blog/stay-consistent-exercise": "/nl/blog/consistent-blijven-met-sporten",
@@ -223,4 +224,5 @@ export const alternateRoutes: Record<string, string> = {
   "/en/become-trainer": "/nl/word-trainer",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
+  "/en/start": "/nl/start",
 };

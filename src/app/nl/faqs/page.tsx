@@ -109,11 +109,11 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "Wat kost het om de studio te huren?",
-        a: "Vanaf \u20AC12 per 60 minuten. We bieden ook kortingspakketten: 10-uren pakket met 15% korting en een 20-uren pakket met 23% korting.",
+        a: "Vanaf \u20AC12 per 60 minuten (halve studio) of \u20AC17 per 60 minuten (hele studio). We bieden ook strippenkaarten met 10-23% korting.",
       },
       {
         q: "Welke pakketten zijn er?",
-        a: "Per uur: \u20AC12/60 min. 10-uren pakket: \u20AC10,20/60 min (15% korting). 20-uren pakket: \u20AC9,24/60 min (23% korting). Pakketten zijn 3 maanden geldig.",
+        a: "Starter \u20AC89 (10% korting), Routine \u20AC199 (15% korting), Pro \u20AC349 (19% korting) en Volume \u20AC549 (23% korting). Pakketten zijn 1 jaar geldig en te gebruiken voor halve of hele studio.",
       },
       {
         q: "Wat is inbegrepen bij studio huur?",

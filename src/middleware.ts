@@ -56,16 +56,22 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // Auto-detect language on root path only
-  // Dutch system language → NL (root /), all others → EN (/en)
-  if (pathname === "/") {
+  // Auto-detect language on root path and /start
+  // Dutch system language → NL, all others → EN
+  if (pathname === "/" || pathname === "/start") {
     const acceptLang = request.headers.get("accept-language") || "";
     const isDutch = acceptLang.startsWith("nl");
 
-    if (!isDutch) {
-      // Non-Dutch speakers get redirected to /en
+    if (pathname === "/") {
+      if (!isDutch) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/en";
+        return NextResponse.redirect(url, 302);
+      }
+    } else {
+      // /start → /nl/start or /en/start
       const url = request.nextUrl.clone();
-      url.pathname = "/en";
+      url.pathname = isDutch ? "/nl/start" : "/en/start";
       return NextResponse.redirect(url, 302);
     }
   }

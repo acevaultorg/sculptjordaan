@@ -207,12 +207,12 @@ export default function OpenGymPageNL() {
       {/* Pricing */}
       <Section>
         <SectionHeader
-          overline="Lidmaatschap"
+          overline="Open Gym"
           title="Kies Jouw Plan"
-          description="Alle plannen lopen per 4 weken. Geen langlopend contract."
+          description="Losse sessie of lidmaatschap per 4 weken. Altijd opzegbaar."
         />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {plans.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 0.1}>
               <Card

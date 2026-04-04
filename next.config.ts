@@ -49,12 +49,20 @@ const nextConfig: NextConfig = {
       { source: "/en/rent-the-studio-how-sculptclub-works", destination: "/en/studio-rental", permanent: true },
       { source: "/nl/zo-werkt-open-gym", destination: "/nl/open-gym", permanent: true },
       { source: "/en/how-open-gym-works", destination: "/en/open-gym", permanent: true },
-      { source: "/en/start", destination: "/nl/gratis-intake", permanent: false },
-      { source: "/start", destination: "/nl/gratis-intake", permanent: false },
+      // /en/start and /nl/start are now real Instagram landing pages (audience segmentation)
 
       // Campaign landing pages — short URLs for Instagram bio / TikTok / ads
       { source: "/gratis-intake", destination: "/nl/gratis-intake", permanent: false },
       { source: "/free-intro", destination: "/en/free-intro", permanent: false },
+      // /start is handled by middleware (language detection) — not here
+
+      // Shortlinks (migrated from Hostinger redirects)
+      { source: "/ft", destination: "/en/find-personal-trainer", permanent: true },
+      { source: "/bs", destination: "/nl/boek-studio", permanent: true },
+      { source: "/qr-door-sign", destination: "/en/become-trainer", permanent: true },
+      { source: "/book-a-free-session", destination: "/en/become-trainer", permanent: true },
+      { source: "/qr", destination: "/", permanent: true },
+      { source: "/qr01", destination: "/", permanent: true },
 
       // Utility pages
       { source: "/acuity/:path*", destination: "/nl/boek", permanent: true },
