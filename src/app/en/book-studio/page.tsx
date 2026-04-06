@@ -165,12 +165,6 @@ export default function BookStudioPageEN() {
           </div>
         </div>
 
-        {/* Secondary CTA */}
-        <div className="mt-4 flex justify-center">
-          <ButtonLink href={acuityLinks.studioTrial} size="sm" variant="outline">
-            Try the studio first? Free trial session
-          </ButtonLink>
-        </div>
       </Section>
 
       {/* ═══ DISCOUNT PACKAGES ═══ */}
@@ -181,7 +175,7 @@ export default function BookStudioPageEN() {
           description="Buy a multi-pass and save. Valid for 1 year."
         />
 
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <FadeIn delay={0}>
             <Card className="h-full text-center">
               <CardHeader>
@@ -216,6 +210,22 @@ export default function BookStudioPageEN() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
+            <Card className="h-full text-center">
+              <CardHeader>
+                <CardTitle className="text-xl">Pro</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-through">&euro;436</p>
+                <p className="text-3xl font-bold">&euro;349</p>
+                <p className="mt-2 text-sm text-discount font-medium">Save 19%</p>
+                <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
+                  Buy Pro
+                </ButtonLink>
+              </CardContent>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
             <Card className="h-full text-center ring-2 ring-primary">
               <CardHeader>
                 <Badge className="mx-auto mb-2">Best deal</Badge>
