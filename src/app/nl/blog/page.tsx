@@ -290,7 +290,7 @@ export default function BlogPageNL() {
           description="Artikelen over personal training, fitness, voeding en alles rondom onze studio in de Jordaan."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => (
+          {[...posts].reverse().map((post, i) => (
             <FadeIn key={post.title} delay={i * 0.1}>
               <Link href={post.href} className="block h-full">
                 <Card className="h-full flex flex-col cursor-pointer hover:shadow-brand-lg transition-shadow duration-300">
