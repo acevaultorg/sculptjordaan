@@ -13,7 +13,7 @@ import {
 import { trainers } from "@/config/trainers";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
-import { Star, Users, Gift, Percent, Briefcase, Building2, CalendarClock } from "lucide-react";
+import { Star, Users, Gift, Percent, Building2, CalendarClock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";

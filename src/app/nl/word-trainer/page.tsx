@@ -5,7 +5,6 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/config/site";
 import {
   ArrowRight,
   MessageCircle,
