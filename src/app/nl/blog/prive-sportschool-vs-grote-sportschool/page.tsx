@@ -119,7 +119,7 @@ export default function BlogPostPriveVsGrNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Flexibiliteit en contract</h2>
               <p>
                 Grote ketens werken vaak met jaarcontracten en opzegtermijnen van een tot drie maanden. Dat kan
-                problematisch zijn als je situatie verandert. Privé studio's zijn vaak flexibeler. Bij SculptClub
+                problematisch zijn als je situatie verandert. Privé studio&apos;s zijn vaak flexibeler. Bij SculptClub
                 kun je altijd gratis opzeggen. Er is geen contract en geen opzegtermijn. Je betaalt voor wat je
                 gebruikt, meer niet. Dat geeft rust en voorkomt dat je betaalt voor een sportschool die je niet
                 meer bezoekt.

@@ -80,7 +80,7 @@ export default function BlogPostStudioHurenNL() {
                 Als zelfstandig personal trainer in Amsterdam sta je voor een belangrijke keuze: werk je bij een
                 grote sportschool, train je bij klanten thuis, of huur je een eigen studio? Steeds meer trainers
                 kiezen voor die laatste optie. Een eigen ruimte geeft je controle over de ervaring die je je
-                klanten biedt, zonder de kosten en risico's van een volledig eigen pand. In dit artikel leggen
+                klanten biedt, zonder de kosten en risico&apos;s van een volledig eigen pand. In dit artikel leggen
                 we uit waarom het huren van een studio vaak de slimste zet is.
               </p>
 

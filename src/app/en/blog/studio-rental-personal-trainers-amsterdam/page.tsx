@@ -90,7 +90,7 @@ export default function BlogPostStudioRentalEN() {
                 equipment and a stream of potential clients. But the downsides often outweigh the benefits. You
                 hand over a significant percentage of your earnings, sometimes 40 to 60 percent. You have
                 little control over scheduling, atmosphere and the client experience. And you are building the
-                gym's brand, not your own.
+                gym&apos;s brand, not your own.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">The benefits of your own studio</h2>
