@@ -26,7 +26,7 @@ const bookingOptions = [
     title: "Open Gym Session",
     description: "Reserve your private training slot in our fully equipped studio.",
     href: "/en/open-gym",
-    cta: "Train Solo",
+    cta: "View Open Gym",
     external: false,
   },
   {

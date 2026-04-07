@@ -26,7 +26,7 @@ const bookingOptions = [
     title: "Open Gym Sessie",
     description: "Reserveer je privé trainingsslot in onze volledig uitgeruste studio.",
     href: "/nl/open-gym",
-    cta: "Train Zelfstandig",
+    cta: "Bekijk Open Gym",
     external: false,
   },
   {
