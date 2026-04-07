@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, Dumbbell, Building2 } from "lucide-react";
+import { Users, Dumbbell, Building2, Star, MapPin, Clock } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import type { Locale } from "@/config/site";
@@ -20,6 +20,11 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Boek Open Gym", href: "/nl/boek-gym", icon: Dumbbell },
       ],
       trust: "Eerste intake gratis · Geen vaste contracten · 5.0 ★ Google",
+      signals: {
+        rating: "5.0 op Google",
+        location: "Jordaan, Amsterdam",
+        hours: "Dagelijks 06:30 – 22:00",
+      },
     },
     en: {
       tagline: "Your gym. Your way. Your results.",
@@ -32,6 +37,11 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Book Open Gym", href: "/en/book-gym", icon: Dumbbell },
       ],
       trust: "First intro free · No lock-in contracts · 5.0 ★ Google",
+      signals: {
+        rating: "5.0 on Google",
+        location: "Jordaan, Amsterdam",
+        hours: "Daily 06:30 – 22:00",
+      },
     },
   }[locale];
 
@@ -83,6 +93,22 @@ export function Hero({ locale }: { locale: Locale }) {
             ))}
           </div>
           <p className="mt-4 text-xs text-white/60">{t.trust}</p>
+
+          {/* Trust bar — visual chips with icons */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
+              <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+              {t.signals.rating}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
+              <MapPin className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
+              {t.signals.location}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
+              <Clock className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
+              {t.signals.hours}
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -118,6 +118,50 @@ export function Analytics() {
         `}
       </Script>
 
+      {/* Scroll depth + data-cta click tracking (engagement signals → GA4) */}
+      <Script id="engagement-tracking" strategy="afterInteractive">
+        {`
+          (function() {
+            if (typeof window === 'undefined') return;
+            var milestones = [25, 50, 75, 100];
+            var fired = {};
+            function onScroll() {
+              var doc = document.documentElement;
+              var top = window.scrollY || doc.scrollTop;
+              var vh = window.innerHeight || doc.clientHeight;
+              var total = doc.scrollHeight - vh;
+              if (total <= 0) return;
+              var pct = Math.round((top / total) * 100);
+              for (var i = 0; i < milestones.length; i++) {
+                var m = milestones[i];
+                if (pct >= m && !fired[m]) {
+                  fired[m] = 1;
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'scroll_depth', { percent: m, page_path: window.location.pathname });
+                  }
+                }
+              }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            document.addEventListener('click', function(e) {
+              var t = e.target;
+              while (t && t !== document.body) {
+                if (t.getAttribute && t.getAttribute('data-cta')) {
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'cta_click', {
+                      cta_id: t.getAttribute('data-cta'),
+                      page_path: window.location.pathname
+                    });
+                  }
+                  break;
+                }
+                t = t.parentElement;
+              }
+            });
+          })();
+        `}
+      </Script>
+
       {/* Google Ads remarketing — page category signals for audience building */}
       <Script id="gads-remarketing" strategy="afterInteractive">
         {`
