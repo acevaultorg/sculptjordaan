@@ -5,7 +5,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Home, Dumbbell, DoorOpen, Building2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type Lang = "nl" | "en";
 
@@ -68,25 +68,22 @@ const content = {
   },
 };
 
-export default function NotFound() {
-  const [lang, setLang] = useState<Lang>("nl");
-
-  useEffect(() => {
-    // Detect language from the URL path or referrer
-    const path = window.location.pathname;
-    if (path.startsWith("/en")) {
-      setLang("en");
-    } else if (typeof document !== "undefined" && document.referrer) {
-      try {
-        const ref = new URL(document.referrer);
-        if (ref.pathname.startsWith("/en")) {
-          setLang("en");
-        }
-      } catch {
-        // ignore invalid referrer
-      }
+function detectLang(): Lang {
+  if (typeof window === "undefined") return "nl";
+  if (window.location.pathname.startsWith("/en")) return "en";
+  if (typeof document !== "undefined" && document.referrer) {
+    try {
+      const ref = new URL(document.referrer);
+      if (ref.pathname.startsWith("/en")) return "en";
+    } catch {
+      // ignore invalid referrer
     }
-  }, []);
+  }
+  return "nl";
+}
+
+export default function NotFound() {
+  const [lang] = useState<Lang>(detectLang);
 
   const t = content[lang];
 

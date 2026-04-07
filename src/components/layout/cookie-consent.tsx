@@ -65,11 +65,13 @@ export function CookieConsent() {
       updateConsent(existing === "all");
       return;
     }
-    // Show banner after a short delay for slide-in effect
-    setVisible(true);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => setAnimateIn(true));
+    // Show banner after next frame (async → not a synchronous effect setState)
+    const raf1 = requestAnimationFrame(() => {
+      setVisible(true);
+      const raf2 = requestAnimationFrame(() => setAnimateIn(true));
+      return () => cancelAnimationFrame(raf2);
     });
+    return () => cancelAnimationFrame(raf1);
   }, []);
 
   function handleAccept() {

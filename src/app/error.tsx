@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { RefreshCw, Home } from "lucide-react";
@@ -31,13 +31,9 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const [lang, setLang] = useState<"nl" | "en">("nl");
-
-  useEffect(() => {
-    if (window.location.pathname.startsWith("/en")) {
-      setLang("en");
-    }
-  }, []);
+  const [lang] = useState<"nl" | "en">(() =>
+    typeof window !== "undefined" && window.location.pathname.startsWith("/en") ? "en" : "nl"
+  );
 
   const t = content[lang];
 

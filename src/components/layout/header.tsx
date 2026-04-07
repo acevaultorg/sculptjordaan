@@ -70,7 +70,15 @@ export function Header() {
   const altPath = getAlternatePath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookOpen, setBookOpen] = useState(false);
+  const [lastPath, setLastPath] = useState(pathname);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Reset menus on route change (React 19: update state during render, not in effect)
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setMenuOpen(false);
+    setBookOpen(false);
+  }
 
   const navItems = mainNav[locale];
   const moreItems = secondaryNav[locale];
@@ -86,12 +94,6 @@ export function Header() {
     if (menuOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
-
-  // Close all on route change
-  useEffect(() => {
-    setMenuOpen(false);
-    setBookOpen(false);
-  }, [pathname]);
 
   // Lock body scroll when book panel is open
   useEffect(() => {
