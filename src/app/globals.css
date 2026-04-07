@@ -146,6 +146,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    /* Reserve space for the mobile sticky CTA bar so footer content isn't hidden */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: calc(env(safe-area-inset-bottom) + 5.25rem);
+    }
   }
   html {
     @apply scroll-smooth;

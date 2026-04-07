@@ -34,9 +34,17 @@ export function LocalBusinessJsonLd() {
       bestRating: 5,
     },
     priceRange: "€€",
+    paymentAccepted: ["Credit Card", "Apple Pay", "Google Pay"],
+    currenciesAccepted: "EUR",
+    areaServed: [
+      { "@type": "City", name: "Amsterdam" },
+      { "@type": "AdministrativeArea", name: "Noord-Holland" },
+    ],
     image: `${siteConfig.url}/images/og-default.jpg`,
     sameAs: [siteConfig.instagram, siteConfig.tiktok],
     foundingDate: siteConfig.founded,
+    slogan: "Boutique personal training studio in Amsterdam Jordaan",
+    knowsLanguage: ["nl", "en"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "SculptClub Services",
