@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function SportschoolJordaanNL() {
         url="/nl/blog/sportschool-jordaan-amsterdam"
         datePublished="2026-04-02"
       />
+      <FaqJsonLd faqs={[
+        { question: "Wat voor sportscholen vind je in de Jordaan?", answer: "In de Jordaan vind je hoofdzakelijk drie typen plekken om te trainen:" },
+        { question: "Waarom kiezen steeds meer mensen voor een privé studio?", answer: "De trend is duidelijk: mensen willen niet meer in een volle sportschool staan. Ze willen trainen op hun eigen tempo, zonder wachten, zonder drukke kleedkamers en zonder de sociale druk die veel beginners voelen. Een privé studio biedt precies dat. Je boekt een tijdslot, krijgt een deurcode en traint in alle rust. Na je sessie is de ruimte van jou geweest." },
+      ]} />
 
       <Section>
         <FadeIn>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,6 +32,10 @@ export default function PTWordenAmsterdamNL() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Personal trainer worden", url: "/nl/blog/personal-trainer-worden-amsterdam" }]} />
       <BlogPostingJsonLd title="Personal Trainer Worden in Amsterdam" description="Hoe start je als freelance personal trainer in Amsterdam? Studio, klanten, tarieven." url="/nl/blog/personal-trainer-worden-amsterdam" datePublished="2026-04-03" />
+      <FaqJsonLd faqs={[
+        { question: "Wat heb je nodig om te starten?", answer: "Certificering: Een erkend diploma (NASM, EREPS, ALO, CIOS of vergelijkbaar). Zonder certificering kun je geen verzekering afsluiten.; KvK-inschrijving: Als ZZP'er schrijf je je in bij de Kamer van Koophandel. Dit is binnen een dag geregeld.; Verzekering: Beroepsaansprakelijkheidsverzekering is verplicht. Kost circa €15-30/maand.; Trainingslocatie: Dit is het grootste obstakel. Een eigen studio huren kost €1.500-3.000/maand in Amsterdam. Of je huurt per uur.; Klanten: Instagram,..." },
+        { question: "Tarieven: wat kun je verdienen?", answer: "De meeste personal trainers in Amsterdam rekenen €45-90 per sessie. Bij SculptClub betaal je €12/uur voor de studio. Dat betekent dat je bij een tarief van €60 per sessie netto €48 overhoudt — zonder commissie, zonder vaste lasten." },
+      ]} />
 
       <Section>
         <FadeIn>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,11 @@ export default function NutritionCoachAmsterdamEN() {
         url="/en/blog/nutrition-coach-amsterdam"
         datePublished="2026-03-30"
       />
+      <FaqJsonLd faqs={[
+        { question: "Nutrition coach vs. registered dietitian: what's the difference?", answer: "In the Netherlands, the title diëtist (dietitian) is a protected professional title. A registered dietitian holds an HBO degree (university of applied sciences) and is registered in the BIG register — the Dutch equivalent of a licensed healthcare professional. They can work with medical nutrition cases, including diabetes, kidney disease and digestive disorders, and sessions may be (partially) reimbursed by Dutch health insurance." },
+        { question: "When do you actually need a nutrition coach?", answer: "Not everyone needs a dietitian right away. But in these situations, professional nutrition advice makes a real difference:" },
+        { question: "What does a nutrition consultation cost in Amsterdam?", answer: "A standalone session with an independent dietitian in Amsterdam costs on average €70–€110 per hour. Some supplementary health insurances cover part of this — check your policy." },
+      ]} />
 
       <Section>
         <FadeIn>

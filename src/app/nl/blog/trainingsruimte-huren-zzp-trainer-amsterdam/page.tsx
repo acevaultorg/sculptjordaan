@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,11 @@ export default function BlogPostZZPTrainerNL() {
         url="/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam"
         datePublished="2026-04-02"
       />
+      <FaqJsonLd faqs={[
+        { question: "De kosten: wat kost een trainingsruimte in Amsterdam?", answer: "De kosten hangen af van je model. Een eigen studio huren in Amsterdam kost al snel €1.500 tot €3.000 per maand, exclusief apparatuur, schoonmaak en onderhoud. Voor een ZZP-trainer die net begint is dat een enorm risico." },
+        { question: "Verzekering: wat heb je nodig?", answer: "Als ZZP personal trainer heb je minimaal een beroepsaansprakelijkheidsverzekering (BAV) nodig. Die dekt schade door fouten in je begeleiding of advies. Veel trainers nemen ook een bedrijfsaansprakelijkheidsverzekering (AVB) voor schade aan derden of eigendommen. Controleer altijd of de studio waar je huurt een eigen verzekering heeft voor de apparatuur en de ruimte. Bij SculptClub is de studio volledig verzekerd — je hoeft je alleen te focussen op je eigen dekking." },
+        { question: "Waar moet je op letten bij een trainingsruimte?", answer: "Niet elke ruimte is geschikt voor personal training. Waar je op moet letten:" },
+      ]} />
 
       <Section>
         <FadeIn>

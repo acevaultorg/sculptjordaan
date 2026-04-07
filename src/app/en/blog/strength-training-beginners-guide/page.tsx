@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,10 @@ export default function BlogPostEN2() {
         url="/en/blog/strength-training-beginners-guide"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "Why strength training?", answer: "Strength training offers benefits that go far beyond building muscle. Scientific research shows that regular strength training helps prevent osteoporosis, improves mental health, lowers blood pressure, and increases energy levels. It also aids weight management: more muscle mass means a higher resting metabolism." },
+        { question: "How often should beginners train?", answer: "When you are just starting out, two to three times per week is more than enough. Your body needs time to recover and adapt to the new demands. An effective beginner schedule looks like this:" },
+      ]} />
 
       <Section>
         <FadeIn>

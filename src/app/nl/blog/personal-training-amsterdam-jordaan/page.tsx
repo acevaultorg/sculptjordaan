@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,13 @@ export default function BlogPostNL1() {
         url="/nl/blog/personal-training-amsterdam-jordaan"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "Waarom personal training in de Jordaan?", answer: "De Jordaan biedt iets wat de meeste grote sportscholen in Amsterdam niet kunnen: rust en privacy. In plaats van drukke fitnesszalen met wachtrijen bij de apparaten, vind je hier boutique studio's waar je in alle rust kunt trainen. Dat maakt een enorm verschil voor je motivatie en resultaten." },
+        { question: "Wat biedt een privé personal training studio?", answer: "Een privé studio verschilt fundamenteel van een grote sportschool. Bij een boutique studio zoals SculptClub in de Jordaan train je in een afgesloten ruimte met professionele apparatuur, zonder dat anderen je sessie verstoren. Dit geeft een aantal belangrijke voordelen:" },
+        { question: "Wat kost personal training in de Jordaan?", answer: "De prijzen voor personal training in Amsterdam Jordaan variëren per trainer. Over het algemeen kun je rekenen op tarieven vanaf 45 euro per sessie, afhankelijk van de ervaring van de trainer, de duur van de sessie en eventuele pakketten. Bij SculptClub bepalen trainers hun eigen tarieven, en de eerste intake is altijd gratis. Zo kun je vrijblijvend kennismaken voordat je beslist." },
+        { question: "Hoe kies je de juiste personal trainer?", answer: "Het kiezen van een personal trainer is een persoonlijke keuze. Hier zijn een aantal tips om de juiste match te vinden:" },
+        { question: "Klaar om te beginnen?", answer: "Of je nu een complete beginner bent of al jarenlang traint — personal training in de Jordaan biedt een unieke ervaring. De combinatie van een prachtige locatie, privé studio en professionele begeleiding zorgt ervoor dat je het maximale uit elke sessie haalt. Plan je gratis intake en ontdek het zelf." },
+      ]} />
 
       <Section>
         <FadeIn>

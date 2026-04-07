@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,6 +32,11 @@ export default function PTAmsterdamZuidNL() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Personal trainer Amsterdam Zuid", url: "/nl/blog/personal-trainer-amsterdam-zuid" }]} />
       <BlogPostingJsonLd title="Personal Trainer Amsterdam Zuid" description="SculptClub in de Jordaan: personal training op fietsafstand van Amsterdam Zuid." url="/nl/blog/personal-trainer-amsterdam-zuid" datePublished="2026-04-03" />
+      <FaqJsonLd faqs={[
+        { question: "Waarom naar de Jordaan voor personal training?", answer: "Amsterdam Zuid heeft veel sportscholen, maar weinig privé studios. Bij SculptClub train je in een volledig uitgeruste studio — alleen jij en je trainer. Geen wachttijden bij apparaten, geen drukte, geen blikken. De studio ligt aan de Egelantiersgracht, een rustige gracht in het hart van de Jordaan." },
+        { question: "Wat maakt SculptClub anders?", answer: "Privé studio: Train alleen met je trainer — geen andere klanten tegelijk; Geen abonnement: Boek per sessie, annuleer altijd gratis; Gratis intake: De eerste kennismaking kost niets; Vijf trainers: Van krachttraining tot voeding tot fysiotherapie; Deurcode via WhatsApp: De avond ervoor, geen receptie nodig" },
+        { question: "Hoe bereik je SculptClub vanuit Amsterdam Zuid?", answer: "Met de fiets: 10-15 minuten via Nassaukade of Singelgracht. Fietsparkeren direct voor de deur." },
+      ]} />
 
       <Section>
         <FadeIn>

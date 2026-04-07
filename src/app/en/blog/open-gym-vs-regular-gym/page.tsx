@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,11 @@ export default function BlogPostEN3() {
         url="/en/blog/open-gym-vs-regular-gym"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "What is Open Gym?", answer: "Open Gym is a concept where you train independently in a private or semi-private studio. You book a time slot of usually 60 minutes and during that time have access to professional equipment, without having to share the space with dozens of other people. At SculptClub, there are a maximum of 3 people in the studio at any time." },
+        { question: "Who is Open Gym right for?", answer: "Open Gym is ideal for people who:" },
+        { question: "Who is a regular gym better for?", answer: "A traditional gym might be a better fit if you:" },
+      ]} />
 
       <Section>
         <FadeIn>

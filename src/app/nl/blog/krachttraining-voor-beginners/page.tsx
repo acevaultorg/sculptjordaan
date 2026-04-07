@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,10 @@ export default function BlogPostNL2() {
         url="/nl/blog/krachttraining-voor-beginners"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "Waarom krachttraining?", answer: "Krachttraining biedt voordelen die verder gaan dan alleen spieropbouw. Wetenschappelijk onderzoek toont aan dat regelmatige krachttraining helpt bij het voorkomen van botontkalking, het verbeteren van je mentale gezondheid, het verlagen van je bloeddruk en het verhogen van je energieniveau. Bovendien helpt het bij gewichtsbeheersing: meer spiermassa betekent een hogere stofwisseling in rust." },
+        { question: "Hoe vaak moet je trainen als beginner?", answer: "Als je net begint, is twee tot drie keer per week meer dan genoeg. Je lichaam heeft tijd nodig om te herstellen en zich aan te passen aan de nieuwe belasting. Een effectief beginners schema ziet er zo uit:" },
+      ]} />
 
       <Section>
         <FadeIn>

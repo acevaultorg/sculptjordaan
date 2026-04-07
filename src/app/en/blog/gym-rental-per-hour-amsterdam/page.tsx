@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,11 @@ export default function BlogPostGymRentalPerHour() {
         url="/en/blog/gym-rental-per-hour-amsterdam"
         datePublished="2026-04-01"
       />
+      <FaqJsonLd faqs={[
+        { question: "What does gym rental per hour cost in Amsterdam?", answer: "Prices for renting a training space by the hour in Amsterdam vary widely. Here's an overview:" },
+        { question: "What do you need to rent the studio?", answer: "Renting as a freelance trainer or physiotherapist is straightforward. You need:" },
+        { question: "What equipment is in the studio?", answer: "For freelance trainers and physiotherapists, the equipment in the rental studio is crucial. SculptClub offers:" },
+      ]} />
 
       <Section>
         <FadeIn>

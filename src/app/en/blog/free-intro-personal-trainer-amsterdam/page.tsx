@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,14 @@ export default function FreeIntroBlogEN() {
         url="/en/blog/free-intro-personal-trainer-amsterdam"
         datePublished="2026-04-01"
       />
+      <FaqJsonLd faqs={[
+        { question: "What is a free intro with a personal trainer?", answer: "A free intro is a first meeting between you and a personal trainer. In 30 to 45 minutes, you discuss your goals, your current fitness level, and what you expect from working together. The trainer explains how they work and whether their approach is a good fit." },
+        { question: "Why do personal trainers offer a free intro?", answer: "Good trainers know that a successful working relationship starts with the right fit. The intro is as much for you as it is for the trainer — they also want to know if you're a good match. A free session removes the barrier to taking that first step, without locking you into anything." },
+        { question: "What happens during the intro?", answer: "Every trainer has their own style, but a free intro at SculptClub typically looks like this:" },
+        { question: "How do you prepare for a free intro?", answer: "No extensive preparation needed. But a few things help you get more out of it:" },
+        { question: "What questions should you ask?", answer: "A few questions worth bringing to your free intro:" },
+        { question: "After the intro: how do you decide?", answer: "You don't need to decide on the spot. Take time to think it over. A few questions that help:" },
+      ]} />
 
       <Section>
         <FadeIn>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,12 @@ export default function BlogPostEN1() {
         url="/en/blog/personal-training-amsterdam-jordaan"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "Why personal training in the Jordaan?", answer: "The Jordaan offers something most large gyms in Amsterdam cannot: peace and privacy. Instead of crowded fitness floors with queues at every machine, you will find boutique studios where you can train in complete tranquility. This makes an enormous difference to your motivation and results." },
+        { question: "What does a private personal training studio offer?", answer: "A private studio is fundamentally different from a large gym. At a boutique studio like SculptClub in the Jordaan, you train in a closed space with professional equipment, without anyone else disturbing your session. This provides several key advantages:" },
+        { question: "How much does personal training in the Jordaan cost?", answer: "Prices for personal training in Amsterdam Jordaan vary by trainer. Generally, you can expect rates between from 45 euros per session, depending on the trainer's experience, session duration, and any packages. At SculptClub, trainers set their own rates, and the first intro session is always free. This lets you get to know a trainer before committing." },
+        { question: "Ready to get started?", answer: "Whether you are a complete beginner or have been training for years — personal training in the Jordaan offers a unique experience. The combination of a beautiful location, private studio, and professional guidance ensures you get the most out of every session. Schedule your free intro and see for yourself." },
+      ]} />
 
       <Section>
         <FadeIn>

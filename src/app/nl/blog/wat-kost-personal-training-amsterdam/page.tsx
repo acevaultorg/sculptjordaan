@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,11 @@ export default function WatKostPersonalTraining() {
         url="/nl/blog/wat-kost-personal-training-amsterdam"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "Wat bepaalt de prijs van personal training?", answer: "De prijs van een personal training sessie hangt af van meerdere factoren. Dit zijn de belangrijkste:" },
+        { question: "Waarom vragen boutique studios meer?", answer: "Een boutique studio biedt iets wat een grote sportschool simpelweg niet kan: volledige privacy, persoonlijke aandacht en een premium ervaring. Je deelt de ruimte niet met tientallen andere sporters. De apparatuur is van hoge kwaliteit en wordt exclusief voor jouw sessie gebruikt. De sfeer is rustig en gefocust." },
+        { question: "Is personal training de investering waard?", answer: "Personal training is een investering in jezelf. Studies tonen keer op keer aan dat mensen met een personal trainer sneller resultaat boeken, minder blessures oplopen en langer gemotiveerd blijven. Vergelijk het met zelf een taal leren versus een privéleraar inhuren — het kan allebei, maar met begeleiding boek je sneller en beter resultaat." },
+      ]} />
 
       <Section>
         <FadeIn>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function BlogPostStudioHurenNL() {
         url="/nl/blog/studio-huren-personal-trainer-amsterdam"
         datePublished="2026-03-26"
       />
+      <FaqJsonLd faqs={[
+        { question: "Waarom niet bij een grote sportschool werken?", answer: "Veel trainers beginnen hun carrière bij een grote keten. Het voordeel is duidelijk: je hebt toegang tot apparatuur en een stroom aan potentiële klanten. Maar de nadelen wegen vaak zwaarder. Je draagt een flink percentage van je inkomsten af, soms wel 40 tot 60 procent. Je hebt weinig controle over de planning, de sfeer en de klantenervaring. En je bouwt aan het merk van de sportschool, niet aan je eigen merk." },
+        { question: "Kosten: wat kost het huren van een studio?", answer: "De kosten variëren sterk in Amsterdam. Een volledig eigen studio huren begint al snel bij €1.500 tot €3.000 per maand, exclusief apparatuur en onderhoudskosten. Een slimmere optie is het huren per uur of per dagdeel in een bestaande studio. Bij SculptClub kun je al een studio huren vanaf €12 per uur. Met een strippenkaart of vast schema krijg je tot 23% korting. Dat maakt het financieel haalbaar, ook als je net begint als ZZP-trainer." },
+      ]} />
 
       <Section>
         <FadeIn>

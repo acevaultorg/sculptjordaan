@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,11 @@ export default function VoedingscoachAmsterdamNL() {
         url="/nl/blog/voedingscoach-amsterdam"
         datePublished="2026-03-30"
       />
+      <FaqJsonLd faqs={[
+        { question: "Voedingscoach of diëtist: wat is het verschil?", answer: "In Nederland is de titel diëtist een beschermde beroepstitel. Een diëtist heeft een HBO-opleiding gevolgd en is BIG-geregistreerd. Ze werken ook met medische voedingsvraagstukken — denk aan diabetes, nierziekten, of darmproblemen — en hun consult wordt soms (deels) vergoed door de zorgverzekeraar." },
+        { question: "Wanneer heb je een voedingscoach nodig?", answer: "Niet iedereen heeft meteen een diëtist nodig. Maar in de volgende situaties maakt professioneel voedingsadvies een groot verschil:" },
+        { question: "Wat kost een voedingsconsult in Amsterdam?", answer: "Een losse sessie bij een zelfstandige diëtist in Amsterdam kost gemiddeld €70–€110 per uur. Sommige zorgverzekeraars vergoeden dit deels via de aanvullende verzekering — check je polis." },
+      ]} />
 
       <Section>
         <FadeIn>

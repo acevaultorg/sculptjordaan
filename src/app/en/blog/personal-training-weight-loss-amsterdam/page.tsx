@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function PersonalTrainingWeightLossEN() {
         url="/en/blog/personal-training-weight-loss-amsterdam"
         datePublished="2026-04-02"
       />
+      <FaqJsonLd faqs={[
+        { question: "What does a personal trainer do for you?", answer: "A personal trainer makes the difference in three areas:" },
+        { question: "What does personal training for weight loss cost?", answer: "Personal training at SculptClub starts from €45 per session. Each trainer sets their own rate — we charge 0% commission. The first introduction is always free. During that intro you discuss your goals, your trainer assesses your current level and together you decide on a plan. No obligations upfront." },
+      ]} />
 
       <Section>
         <FadeIn>

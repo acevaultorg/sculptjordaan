@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function PersonalTrainingAfvallenNL() {
         url="/nl/blog/personal-training-afvallen-amsterdam"
         datePublished="2026-04-02"
       />
+      <FaqJsonLd faqs={[
+        { question: "Wat doet een personal trainer voor je?", answer: "Een personal trainer maakt het verschil op drie vlakken:" },
+        { question: "Wat kost personal training voor afvallen?", answer: "Personal training bij SculptClub begint vanaf €45 per sessie. Elke trainer bepaalt zelf zijn tarief — wij rekenen 0% commissie. De eerste kennismaking is altijd gratis. Tijdens die intake bespreek je je doelen, je trainer bekijkt je huidige niveau en samen bepalen jullie het plan. Geen verplichtingen vooraf." },
+      ]} />
 
       <Section>
         <FadeIn>

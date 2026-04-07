@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,13 @@ export default function PhysiotherapistPersonalTrainerEN() {
         url="/en/blog/physiotherapist-personal-trainer-amsterdam"
         datePublished="2026-03-30"
       />
+      <FaqJsonLd faqs={[
+        { question: "What can a physiotherapist-personal trainer do for you?", answer: "Screen for limitations — before you start training, they map out what you can and can't do.; Movement analysis — faulty movement patterns are often the cause of complaints. Correcting them early prevents new injuries.; Tailored training programme — no generic plan, but a programme that accounts for your specific injury and goals.; Progressive loading — building recovery and strength simultaneously, at a pace that works for your body.; Preventing relapse — once recovered, they make sure you..." },
+        { question: "Can I train with a herniated disc?", answer: "In many cases, yes — but with supervision and the right modifications. A physiotherapist determines which exercises are safe and how to progress loading without worsening the condition." },
+        { question: "Can I train after surgery?", answer: "Depending on what surgery and when. Post-surgical rehabilitation is one of Hamish's specialities. He works alongside your surgeon or specialist's guidelines to build you back up safely." },
+        { question: "Do you speak English?", answer: "Yes. Hamish is fully fluent in English — all sessions can be conducted in English." },
+        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily from 06:30 to 22:00. You receive a door code via WhatsApp — no buzzer, no reception desk." },
+      ]} />
 
       <Section>
         <FadeIn>

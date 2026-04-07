@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function BlogPostStudioRentalEN() {
         url="/en/blog/studio-rental-personal-trainers-amsterdam"
         datePublished="2026-03-26"
       />
+      <FaqJsonLd faqs={[
+        { question: "Why not work at a big gym?", answer: "Many trainers start their career at a large chain. The advantage is clear: you get access to equipment and a stream of potential clients. But the downsides often outweigh the benefits. You hand over a significant percentage of your earnings, sometimes 40 to 60 percent. You have little control over scheduling, atmosphere and the client experience. And you are building the gym's brand, not your own." },
+        { question: "Costs: what does renting a studio cost?", answer: "Costs vary considerably in Amsterdam. Renting a fully dedicated studio starts at around €1,500 to €3,000 per month, not including equipment and maintenance. A smarter option is renting by the hour or half-day in an existing studio. At SculptClub, you can rent a studio from just €12 per hour. With a multi-session card or fixed schedule, you get up to 23% discount. That makes it financially viable, even when you are just starting out as a freelance trainer." },
+      ]} />
 
       <Section>
         <FadeIn>

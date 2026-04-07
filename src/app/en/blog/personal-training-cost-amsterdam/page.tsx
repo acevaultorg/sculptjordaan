@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,11 @@ export default function PersonalTrainingCostAmsterdam() {
         url="/en/blog/personal-training-cost-amsterdam"
         datePublished="2026-03-24"
       />
+      <FaqJsonLd faqs={[
+        { question: "What Affects the Cost of Personal Training?", answer: "Several factors determine what you will pay for personal training. Understanding these helps you make an informed decision." },
+        { question: "Why Do Boutique Studios Charge More?", answer: "A boutique studio offers something a large gym simply cannot: complete privacy, personal attention, and a premium experience. You do not share the space with dozens of other gym-goers. The equipment is high-quality and used exclusively during your session. The atmosphere is calm and focused." },
+        { question: "Is Personal Training Worth the Investment?", answer: "Personal training is an investment in yourself. Research consistently shows that people who train with a personal trainer achieve results faster, sustain fewer injuries, and stay motivated longer. Compare it to learning a language on your own versus hiring a private tutor — both can work, but guided instruction gets you there faster and more effectively." },
+      ]} />
 
       <Section>
         <FadeIn>

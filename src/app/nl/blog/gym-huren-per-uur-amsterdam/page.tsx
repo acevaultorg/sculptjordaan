@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,6 +41,11 @@ export default function BlogPostGymHurenPerUur() {
         url="/nl/blog/gym-huren-per-uur-amsterdam"
         datePublished="2026-04-01"
       />
+      <FaqJsonLd faqs={[
+        { question: "Wat zijn de kosten van gym huren per uur in Amsterdam?", answer: "De prijzen voor het huren van een trainingsruimte per uur in Amsterdam variëren sterk. Een overzicht:" },
+        { question: "Wat heb je nodig om de studio te huren?", answer: "Huren als ZZP-trainer of fysiotherapeut is eenvoudig. Je hebt nodig:" },
+        { question: "Welke apparatuur is er in de studio?", answer: "Voor freelance trainers en fysiotherapeuten is de uitrusting van de huurstudio cruciaal. SculptClub biedt:" },
+      ]} />
 
       <Section>
         <FadeIn>

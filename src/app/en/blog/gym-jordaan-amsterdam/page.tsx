@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function GymJordaanEN() {
         url="/en/blog/gym-jordaan-amsterdam"
         datePublished="2026-04-02"
       />
+      <FaqJsonLd faqs={[
+        { question: "What types of gyms are in the Jordaan?", answer: "In the Jordaan, you'll mainly find three types of places to train:" },
+        { question: "Why are more people choosing a private studio?", answer: "The trend is clear: people don't want to stand in a crowded gym anymore. They want to train at their own pace, without waiting, without busy changing rooms and without the social pressure that many beginners feel. A private studio offers exactly that. You book a time slot, receive a door code and train in peace." },
+      ]} />
 
       <Section>
         <FadeIn>

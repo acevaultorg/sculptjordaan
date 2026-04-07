@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,14 @@ export default function GratisIntakeBlogNL() {
         url="/nl/blog/gratis-intake-personal-trainer-amsterdam"
         datePublished="2026-04-01"
       />
+      <FaqJsonLd faqs={[
+        { question: "Wat is een gratis intake bij een personal trainer?", answer: "Een gratis intake is een eerste kennismaking tussen jou en een personal trainer. In 30 tot 45 minuten bespreken jullie je doelen, je huidige conditie en wat je verwacht van de samenwerking. De trainer legt uit hoe hij of zij werkt en of de aanpak bij jou past." },
+        { question: "Waarom biedt een personal trainer een gratis intake aan?", answer: "Goede trainers weten dat een succesvolle samenwerking begint met een klik. De intake is net zo goed voor jou als voor de trainer: ook hij of zij wil weten of jullie goed bij elkaar passen. Een gratis kennismaking verlaagt de drempel om die eerste stap te zetten — zonder dat je meteen ergens aan vastzit." },
+        { question: "Wat gebeurt er tijdens de intake?", answer: "Elke trainer heeft zijn eigen stijl, maar een gratis intake bij SculptClub ziet er doorgaans zo uit:" },
+        { question: "Hoe bereid je je voor op een gratis intake?", answer: "Geen uitgebreide voorbereiding nodig. Maar een paar dingen helpen om er meer uit te halen:" },
+        { question: "Welke vragen kun je stellen tijdens de intake?", answer: "Een paar vragen die je kunt meenemen naar je gratis intake:" },
+        { question: "Na de intake: hoe beslis je?", answer: "Je hoeft niet meteen te beslissen. Neem de tijd om het te laten bezinken. Een paar vragen die helpen:" },
+      ]} />
 
       <Section>
         <FadeIn>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,6 +32,10 @@ export default function BecomePTAmsterdamEN() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "Become a personal trainer", url: "/en/blog/become-personal-trainer-amsterdam" }]} />
       <BlogPostingJsonLd title="Become a Personal Trainer in Amsterdam" description="How to start as a freelance personal trainer in Amsterdam. Studio, clients, rates." url="/en/blog/become-personal-trainer-amsterdam" datePublished="2026-04-03" />
+      <FaqJsonLd faqs={[
+        { question: "What do you need to get started?", answer: "Certification: A recognised diploma (NASM, EREPS, or equivalent). Without certification you can't get insurance.; Business registration: Register as a freelancer with the Dutch Chamber of Commerce (KvK). Done in a day.; Insurance: Professional liability insurance is mandatory. Costs around €15-30/month.; Training location: This is the biggest hurdle. Renting your own studio costs €1,500-3,000/month in Amsterdam. Or you rent by the hour.; Clients: Instagram, word-of-mouth, Google and..." },
+        { question: "Rates: what can you earn?", answer: "Most personal trainers in Amsterdam charge €45-90 per session. At SculptClub you pay €12/hour for the studio. That means at a rate of €60 per session you keep €48 net — no commission, no fixed costs." },
+      ]} />
 
       <Section>
         <FadeIn>

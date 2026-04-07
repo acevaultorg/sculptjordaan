@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function BlogPostFreelanceTrainerEN() {
         url="/en/blog/rent-training-space-freelance-personal-trainer-amsterdam"
         datePublished="2026-04-02"
       />
+      <FaqJsonLd faqs={[
+        { question: "What does training space cost in Amsterdam?", answer: "Leasing your own studio in Amsterdam starts at €1,500 to €3,000 per month, excluding equipment, cleaning and maintenance. For a freelance trainer just starting out, that's a huge risk." },
+        { question: "Insurance: what do you need?", answer: "As a freelance personal trainer you need at minimum a professional liability insurance (beroepsaansprakelijkheidsverzekering). This covers damage from errors in your guidance or advice. Many trainers also take out a general liability insurance for damage to third parties or property. Always check whether the studio you rent has its own insurance for equipment and the space. At SculptClub, the studio is fully insured — you only need to focus on your own coverage." },
+      ]} />
 
       <Section>
         <FadeIn>
