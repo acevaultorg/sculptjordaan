@@ -17,7 +17,7 @@ export function Hero({ locale }: { locale: Locale }) {
       ctas: [
         { label: "Vind je Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
         { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
-        { label: "Train Zelfstandig", href: "/nl/boek-gym", icon: Dumbbell },
+        { label: "Word Open Gym Lid", href: "/nl/boek-gym", icon: Dumbbell },
       ],
       trust: "Eerste intake gratis · Geen vaste contracten · 5.0 ★ Google",
     },
@@ -29,7 +29,7 @@ export function Hero({ locale }: { locale: Locale }) {
       ctas: [
         { label: "Find your Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
-        { label: "Train Solo", href: "/en/book-gym", icon: Dumbbell },
+        { label: "Join Open Gym", href: "/en/book-gym", icon: Dumbbell },
       ],
       trust: "First intro free · No lock-in contracts · 5.0 ★ Google",
     },
