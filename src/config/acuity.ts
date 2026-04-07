@@ -74,6 +74,15 @@ export const whatsappLinks = {
     locale === "nl"
       ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`)}`
       : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'd like to book a free intro with ${name} at SculptClub`)}`,
+  /** Trainer price request — per trainer. Opens WhatsApp with pre-filled rate enquiry + free intro. */
+  trainerPriceRequest: (name: string, locale: "nl" | "en", baseUrl?: string) => {
+    const base = baseUrl ?? "https://wa.me/31683178934";
+    const text =
+      locale === "nl"
+        ? `Hoi! Ik wil graag het tarief weten van ${name} en een gratis intake plannen.`
+        : `Hi! I'd like to know ${name}'s rate and book a free intro.`;
+    return `${base}?text=${encodeURIComponent(text)}`;
+  },
   /** Generic (no pre-filled text) */
   generic: "https://wa.me/31683178934",
   /** Bank transfer for Volume pack */

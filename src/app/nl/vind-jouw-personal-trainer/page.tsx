@@ -111,7 +111,13 @@ export default function TrainersPageNL() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {trainers.map((trainer, i) => (
             <FadeIn key={trainer.id} delay={i * 0.1}>
-              <Link href={`/nl/${trainer.slug.nl}`} className="block h-full">
+              <Link
+                href={whatsappLinks.trainerPriceRequest(trainer.name, "nl", trainer.whatsapp)}
+                target="_blank"
+                rel="noopener"
+                aria-label={`Vraag tarief aan bij ${trainer.name} via WhatsApp`}
+                className="block h-full"
+              >
                 <Card className="h-full flex flex-col overflow-hidden cursor-pointer hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
