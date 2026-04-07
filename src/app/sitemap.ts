@@ -136,27 +136,52 @@ const enPages = [
   "/en/free-intro",
 ];
 
+// High-intent money pages get max priority — everything else cascades down.
+const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym|studio-huren|studio-rental|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake|plan-free-intro|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
+const LEGAL_RE = /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/;
+
+// Newest blog posts get a priority boost — signals freshness to Google.
+const FRESH_BLOG_SLUGS = new Set([
+  "personal-trainer-amsterdam-noord",
+  "personal-trainer-amsterdam-north",
+  "zakelijk-personal-training-amsterdam",
+  "corporate-personal-training-amsterdam",
+  "personal-trainer-na-blessure-amsterdam",
+  "personal-trainer-after-injury-amsterdam",
+  "krachttraining-voor-vrouwen",
+  "strength-training-for-women",
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const allPages = [...nlPages, ...enPages].map((path) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified: now,
-    changeFrequency: path === "/" || path === "/en"
-      ? "daily" as const
-      : /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/.test(path)
-      ? "monthly" as const
-      : path.includes("/blog/")
-      ? "monthly" as const
-      : "weekly" as const,
-    priority: path === "/" || path === "/en"
-      ? 1.0
-      : path.includes("/blog/")
-      ? 0.6
-      : /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/.test(path)
-      ? 0.2
-      : 0.8,
-  }));
+  const allPages = [...nlPages, ...enPages].map((path) => {
+    const isHome = path === "/" || path === "/en";
+    const isMoney = MONEY_PAGE_RE.test(path);
+    const isLegal = LEGAL_RE.test(path);
+    const isBlog = path.includes("/blog/") && path !== "/nl/blog" && path !== "/en/blog";
+    const blogSlug = isBlog ? path.split("/").pop() ?? "" : "";
+    const isFreshBlog = isBlog && FRESH_BLOG_SLUGS.has(blogSlug);
+
+    let priority = 0.8;
+    if (isHome) priority = 1.0;
+    else if (isMoney) priority = 0.9;
+    else if (isFreshBlog) priority = 0.75;
+    else if (isBlog) priority = 0.6;
+    else if (isLegal) priority = 0.2;
+
+    let changeFrequency: "daily" | "weekly" | "monthly" = "weekly";
+    if (isHome || isMoney) changeFrequency = "daily";
+    else if (isLegal) changeFrequency = "monthly";
+    else if (isBlog) changeFrequency = "monthly";
+
+    return {
+      url: `${BASE_URL}${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority,
+    };
+  });
 
   return allPages;
 }

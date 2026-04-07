@@ -11,6 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { acuityLinks, acuityPackages } from "@/config/acuity";
+import { siteConfig } from "@/config/site";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
@@ -19,6 +20,9 @@ import {
   Key,
   Handshake,
   Dumbbell,
+  Shield,
+  Star,
+  Check,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -42,6 +46,7 @@ const openGymPlans = [
     price: "\u20ac10",
     period: "",
     perSession: "No membership needed",
+    blurb: "Try the studio, no commitment",
     badge: null,
     link: acuityLinks.openGymBook,
   },
@@ -51,6 +56,7 @@ const openGymPlans = [
     price: "\u20ac29",
     period: "/ 4 weeks",
     perSession: "\u20ac7.25 / session",
+    blurb: "See if Open Gym suits you",
     badge: null,
     link: acuityLinks.openGymPlans.instapplan,
   },
@@ -60,6 +66,7 @@ const openGymPlans = [
     price: "\u20ac49",
     period: "/ 4 weeks",
     perSession: "\u20ac6.13 / session",
+    blurb: "The sweet spot for most members",
     badge: "Most chosen",
     link: acuityLinks.openGymPlans.populair,
   },
@@ -69,6 +76,7 @@ const openGymPlans = [
     price: "\u20ac69",
     period: "/ 4 weeks",
     perSession: "\u20ac5.75 / session",
+    blurb: "For 3\u00d7 per week training",
     badge: null,
     link: acuityLinks.openGymPlans.intensief,
   },
@@ -78,9 +86,17 @@ const openGymPlans = [
     price: "\u20ac89",
     period: "/ 4 weeks",
     perSession: null,
+    blurb: "No limits, no planning",
     badge: null,
     link: acuityLinks.openGymPlans.onbeperkt,
   },
+];
+
+const trustChipsEN = [
+  { icon: Check, label: "First intake free" },
+  { icon: XCircle, label: "No lock-in contract" },
+  { icon: Shield, label: "Cancel anytime" },
+  { icon: Star, label: "5.0\u2605 on Google" },
 ];
 
 const included = [
@@ -165,6 +181,19 @@ export default function PricingPageEN() {
           title="All Pricing at a Glance"
           description="No hidden costs, no long-term contracts. View all rates for personal training, Open Gym and studio rental."
         />
+        <FadeIn>
+          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            {trustChipsEN.map((chip) => (
+              <div
+                key={chip.label}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium"
+              >
+                <chip.icon className="h-4 w-4 text-primary" />
+                <span>{chip.label}</span>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Personal Training */}
@@ -230,6 +259,9 @@ export default function PricingPageEN() {
                       {plan.perSession}
                     </p>
                   )}
+                  {plan.blurb && (
+                    <p className="mt-2 text-xs text-primary">{plan.blurb}</p>
+                  )}
                 </CardContent>
                 <CardFooter className="justify-center">
                   <ButtonLink href={plan.link} size="lg" className="w-full">
@@ -245,6 +277,27 @@ export default function PricingPageEN() {
           <ButtonLink href="/en/open-gym" variant="outline" size="lg">
             Book Open Gym
           </ButtonLink>
+        </FadeIn>
+      </Section>
+
+      {/* Social proof */}
+      <Section>
+        <FadeIn>
+          <Card className="mx-auto max-w-2xl text-center">
+            <CardContent className="pt-6">
+              <div className="flex items-center justify-center gap-1 text-primary">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
+              </div>
+              <p className="mt-3 text-sm font-medium">
+                {siteConfig.rating.value.toFixed(1)}★ on Google{siteConfig.rating.count ? ` · based on ${siteConfig.rating.count} reviews` : ""}
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Members value the calm, the personal attention, and the absence of obligations.
+              </p>
+            </CardContent>
+          </Card>
         </FadeIn>
       </Section>
 
@@ -438,6 +491,25 @@ export default function PricingPageEN() {
               </div>
             ))}
           </div>
+        </FadeIn>
+      </Section>
+
+      {/* Intake guarantee */}
+      <Section>
+        <FadeIn>
+          <Card className="mx-auto max-w-2xl">
+            <CardContent className="flex flex-col items-center gap-4 pt-6 text-center sm:flex-row sm:text-left">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <Handshake className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">First intake is free</h3>
+                <p className="text-sm text-muted-foreground">
+                  Come in for a free intake first. Not a match with your trainer? No problem, no hard feelings.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </FadeIn>
       </Section>
 

@@ -211,12 +211,16 @@ export function BlogPostingJsonLd({
   url,
   datePublished,
   dateModified,
+  wordCount,
+  image,
 }: {
   title: string;
   description: string;
   url: string;
   datePublished: string;
   dateModified?: string;
+  wordCount?: number;
+  image?: string;
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -226,6 +230,9 @@ export function BlogPostingJsonLd({
     url: `${siteConfig.url}${url}`,
     datePublished,
     dateModified: dateModified || datePublished,
+    inLanguage: url.startsWith("/en") ? "en-US" : "nl-NL",
+    ...(wordCount ? { wordCount } : {}),
+    ...(image ? { image: image.startsWith("http") ? image : `${siteConfig.url}${image}` } : {}),
     author: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -243,6 +250,10 @@ export function BlogPostingJsonLd({
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${siteConfig.url}${url}`,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "article p"],
     },
   };
 

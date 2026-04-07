@@ -11,6 +11,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { acuityLinks, acuityPackages } from "@/config/acuity";
+import { siteConfig } from "@/config/site";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
   CreditCard,
@@ -19,6 +20,9 @@ import {
   Key,
   Handshake,
   Dumbbell,
+  Shield,
+  Star,
+  Check,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -42,6 +46,7 @@ const openGymPlans = [
     price: "\u20ac10",
     period: "",
     perSession: "Geen lidmaatschap nodig",
+    blurb: "Voel de studio, zonder commitment",
     badge: null,
     link: acuityLinks.openGymBook,
   },
@@ -51,6 +56,7 @@ const openGymPlans = [
     price: "\u20ac29",
     period: "/ 4 weken",
     perSession: "\u20ac7,25 / sessie",
+    blurb: "Probeer of Open Gym bij jou past",
     badge: null,
     link: acuityLinks.openGymPlans.instapplan,
   },
@@ -60,6 +66,7 @@ const openGymPlans = [
     price: "\u20ac49",
     period: "/ 4 weken",
     perSession: "\u20ac6,13 / sessie",
+    blurb: "De sweet spot voor de meeste leden",
     badge: "Meest gekozen",
     link: acuityLinks.openGymPlans.populair,
   },
@@ -69,6 +76,7 @@ const openGymPlans = [
     price: "\u20ac69",
     period: "/ 4 weken",
     perSession: "\u20ac5,75 / sessie",
+    blurb: "Voor wie 3\u00d7 per week sport",
     badge: null,
     link: acuityLinks.openGymPlans.intensief,
   },
@@ -78,9 +86,17 @@ const openGymPlans = [
     price: "\u20ac89",
     period: "/ 4 weken",
     perSession: null,
+    blurb: "Geen limiet, geen geregel",
     badge: null,
     link: acuityLinks.openGymPlans.onbeperkt,
   },
+];
+
+const trustChipsNL = [
+  { icon: Check, label: "Eerste intake gratis" },
+  { icon: XCircle, label: "Geen lang contract" },
+  { icon: Shield, label: "Altijd opzegbaar" },
+  { icon: Star, label: "5.0\u2605 op Google" },
 ];
 
 const included = [
@@ -165,6 +181,19 @@ export default function PricingPageNL() {
           title="Alle Prijzen op een Rij"
           description="Geen verborgen kosten, geen langlopende contracten. Bekijk alle tarieven voor personal training, Open Gym en studio verhuur."
         />
+        <FadeIn>
+          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            {trustChipsNL.map((chip) => (
+              <div
+                key={chip.label}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium"
+              >
+                <chip.icon className="h-4 w-4 text-primary" />
+                <span>{chip.label}</span>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Personal Training */}
@@ -230,6 +259,9 @@ export default function PricingPageNL() {
                       {plan.perSession}
                     </p>
                   )}
+                  {plan.blurb && (
+                    <p className="mt-2 text-xs text-primary">{plan.blurb}</p>
+                  )}
                 </CardContent>
                 <CardFooter className="justify-center">
                   <ButtonLink href={plan.link} size="lg" className="w-full">
@@ -245,6 +277,27 @@ export default function PricingPageNL() {
           <ButtonLink href="/nl/open-gym" variant="outline" size="lg">
             Boek Open Gym
           </ButtonLink>
+        </FadeIn>
+      </Section>
+
+      {/* Social proof */}
+      <Section>
+        <FadeIn>
+          <Card className="mx-auto max-w-2xl text-center">
+            <CardContent className="pt-6">
+              <div className="flex items-center justify-center gap-1 text-primary">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
+              </div>
+              <p className="mt-3 text-sm font-medium">
+                {siteConfig.rating.value.toFixed(1)}★ op Google{siteConfig.rating.count ? ` · gebaseerd op ${siteConfig.rating.count} reviews` : ""}
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Leden waarderen de rust, de persoonlijke aandacht en het ontbreken van verplichtingen.
+              </p>
+            </CardContent>
+          </Card>
         </FadeIn>
       </Section>
 
@@ -438,6 +491,25 @@ export default function PricingPageNL() {
               </div>
             ))}
           </div>
+        </FadeIn>
+      </Section>
+
+      {/* Intake guarantee */}
+      <Section>
+        <FadeIn>
+          <Card className="mx-auto max-w-2xl">
+            <CardContent className="flex flex-col items-center gap-4 pt-6 text-center sm:flex-row sm:text-left">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <Handshake className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">Eerste intake is gratis</h3>
+                <p className="text-sm text-muted-foreground">
+                  Kom eerst gratis langs voor een intake. Geen match met je trainer? Geen probleem, niks aan de hand.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </FadeIn>
       </Section>
 
