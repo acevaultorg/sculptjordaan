@@ -15,7 +15,7 @@ export function Hero({ locale }: { locale: Locale }) {
       description:
         "Privé studio aan de gracht. Personal training vanaf €45/sessie. Open Gym vanaf €29/4 weken. Studio huren vanaf €12/uur. Altijd opzegbaar.",
       ctas: [
-        { label: "Boek Gratis Intake", href: "/nl/vind-jouw-personal-trainer", icon: Users },
+        { label: "Vind je Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
         { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
         { label: "Train Zelfstandig", href: "/nl/boek-gym", icon: Dumbbell },
       ],
@@ -27,7 +27,7 @@ export function Hero({ locale }: { locale: Locale }) {
       description:
         "Private studio on the canal. Personal training from €45/session. Open Gym from €29/4 weeks. Studio rental from €12/hour. Cancel anytime.",
       ctas: [
-        { label: "Book Free Intro", href: "/en/find-personal-trainer", icon: Users },
+        { label: "Find your Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
         { label: "Train Solo", href: "/en/book-gym", icon: Dumbbell },
       ],
