@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -132,7 +133,7 @@ export default function PersonalTrainerAmsterdamNL() {
                 <li>Vragen stellen over planning, prijzen en aanpak</li>
               </ul>
               <p>
-                Bij SculptClub is de eerste intake altijd gratis en vrijblijvend. Je kiest zelf welke trainer je wilt
+                Bij SculptClub is de eerste <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">intake altijd gratis</Link> en vrijblijvend. Je kiest zelf welke trainer je wilt
                 ontmoeten op basis van hun profiel, specialisatie en beschikbaarheid. Er is geen verkooppraatje en
                 geen druk om meteen te tekenen.
               </p>
@@ -152,7 +153,7 @@ export default function PersonalTrainerAmsterdamNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Begin vandaag</h2>
               <p>
-                De juiste personal trainer vinden in Amsterdam hoeft niet moeilijk te zijn. Stel je criteria op, doe
+                De juiste <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">personal trainer vinden</Link> in Amsterdam hoeft niet moeilijk te zijn. Stel je criteria op, doe
                 je research en boek een gratis kennismaking. Zo ontdek je snel of er een klik is, zonder risico.
               </p>
             </div>

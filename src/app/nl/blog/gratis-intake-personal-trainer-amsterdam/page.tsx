@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -85,7 +86,7 @@ export default function GratisIntakeBlogNL() {
                 samenwerking. De trainer legt uit hoe hij of zij werkt en of de aanpak bij jou past.
               </p>
               <p>
-                Bij SculptClub duurt de gratis intake 45 minuten. Je hoeft niets voor te bereiden —
+                Bij SculptClub duurt de <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">gratis intake</Link> 45 minuten. Je hoeft niets voor te bereiden —
                 kom gewoon langs in je sportkleding. Er is geen receptie en geen wachtrij: je krijgt
                 de avond van tevoren een persoonlijke deurcode via WhatsApp.
               </p>
@@ -188,7 +189,7 @@ export default function GratisIntakeBlogNL() {
               <p>
                 Als het antwoord op deze vragen ja is, ben je waarschijnlijk op de goede plek.
                 Als er twijfels zijn, plan dan gewoon een intake bij een andere trainer. Dat kan ook
-                gratis — SculptClub werkt met vijf trainers met elk een eigen specialisatie.
+                gratis — SculptClub werkt met <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">vijf trainers met elk een eigen specialisatie</Link>.
               </p>
 
               <h2>Gratis intake bij SculptClub in Amsterdam Jordaan</h2>

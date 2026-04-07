@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -121,7 +122,7 @@ export default function GymWithoutMembershipEN() {
               <p>
                 A relatively new concept in Amsterdam is Open Gym: you book a private gym space for a set time
                 and train independently with professional equipment. No crowds, no waiting, no distractions.
-                At SculptClub, Open Gym operates on a 4-week cycle with no contract. You can cancel anytime and
+                At SculptClub, <Link href="/en/open-gym" className="text-brand underline-offset-2 hover:underline">Open Gym</Link> operates on a 4-week cycle with no contract. You can cancel anytime and
                 pay from just 5.75 euros per session.
               </p>
               <p>
@@ -159,7 +160,7 @@ export default function GymWithoutMembershipEN() {
               </p>
               <p>
                 At SculptClub, you can combine all these options. Train independently with Open Gym, book a
-                personal trainer for guidance, or rent the studio for your own sessions. Everything without
+                personal trainer for guidance, or <Link href="/en/studio-rental" className="text-brand underline-offset-2 hover:underline">rent the studio</Link> for your own sessions. Everything without
                 a contract.
               </p>
             </div>

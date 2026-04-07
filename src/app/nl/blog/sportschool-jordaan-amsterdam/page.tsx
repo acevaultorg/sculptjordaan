@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -132,7 +133,7 @@ export default function SportschoolJordaanNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Personal training in de Jordaan</h2>
               <p>
                 Als je begeleiding zoekt, bieden meerdere trainers in de Jordaan personal training aan.
-                Bij SculptClub werken vijf onafhankelijke trainers met tarieven vanaf €45 per sessie.
+                Bij SculptClub werken <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">vijf onafhankelijke trainers</Link> met tarieven vanaf €45 per sessie.
                 De eerste intake is altijd gratis en vrijblijvend. Elke trainer bepaalt zelf zijn tarief —
                 wij rekenen 0% commissie, dus wat je betaalt gaat volledig naar je trainer.
               </p>
@@ -142,7 +143,7 @@ export default function SportschoolJordaanNL() {
                 SculptClub zit aan de Egelantiersgracht 424, in het hart van de Jordaan. Een volledig
                 uitgeruste privé studio op de begane grond, direct vanaf de straat. Professionele
                 apparatuur van Rogue en Concept2, dagelijks open van 06:30 tot 22:00. Je kunt er
-                zelfstandig trainen via Open Gym, een personal trainer kiezen of de studio huren als
+                zelfstandig trainen via Open Gym, een personal trainer kiezen of de <Link href="/nl/studio-huren" className="text-brand underline-offset-2 hover:underline">studio huren</Link> als
                 ZZP-trainer.
               </p>
 

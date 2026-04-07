@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -90,8 +91,8 @@ export default function PTForBeginnersEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Cost and how to start</h2>
               <p>
-                Personal training at SculptClub starts from €45 per session. The first introduction
-                is always free — discuss your goals, your trainer assesses your level and you make
+                Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €45 per session</Link>. The <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first introduction
+                is always free</Link> — discuss your goals, your trainer assesses your level and you make
                 a plan together. No membership, no contract. Book per session, always cancel for free.
               </p>
             </div>

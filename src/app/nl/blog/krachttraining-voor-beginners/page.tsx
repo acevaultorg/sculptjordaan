@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -147,7 +148,7 @@ export default function BlogPostNL2() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Het belang van goede begeleiding</h2>
               <p>
-                Als beginner is de juiste techniek essentieel om blessures te voorkomen. Een ervaren personal trainer kan je
+                Als beginner is de juiste techniek essentieel om blessures te voorkomen. Een ervaren <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">personal trainer</Link> kan je
                 helpen met de correcte uitvoering van oefeningen, een gepersonaliseerd trainingsschema opstellen en je
                 motiveren wanneer het lastig wordt. Bij SculptClub werken we met trainers die gespecialiseerd zijn in het
                 begeleiden van beginners.
@@ -181,7 +182,7 @@ export default function BlogPostNL2() {
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Klaar om te starten met krachttraining?</h3>
               <p className="text-muted-foreground mb-6">
-                Boek een gratis intake en ontdek hoe onze trainers je kunnen helpen.
+                Boek een <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">gratis intake</Link> en ontdek hoe onze trainers je kunnen helpen.
               </p>
               <ButtonLink href="/nl/boek" size="lg">
                 Boek gratis intake

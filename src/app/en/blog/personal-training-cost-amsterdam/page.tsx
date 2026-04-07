@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -100,7 +101,7 @@ export default function PersonalTrainingCostAmsterdam() {
                 <li><strong>Top-tier (high-profile trainers):</strong> 120 &ndash; 200+ euros per session</li>
               </ul>
               <p>
-                At SculptClub, rates start from 45 euros per session depending on which trainer you choose. Each
+                At SculptClub, <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">rates start from 45 euros per session</Link> depending on which trainer you choose. Each
                 trainer sets their own rate, so you can always find the best match for your budget and goals.
               </p>
 
@@ -167,7 +168,7 @@ export default function PersonalTrainingCostAmsterdam() {
               <p>
                 At SculptClub in the Jordaan, you pay from 45 euros per session for training in a private studio with
                 professional equipment. Our trainers each have their own specialization — from strength training and
-                weight loss to rehabilitation and athletic performance. Your first introduction is always free, so you
+                weight loss to rehabilitation and athletic performance. Your <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first introduction is always free</Link>, so you
                 can explore which trainer suits you best with no obligation.
               </p>
               <p>

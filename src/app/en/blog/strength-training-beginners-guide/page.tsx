@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -146,7 +147,7 @@ export default function BlogPostEN2() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">The importance of proper guidance</h2>
               <p>
-                As a beginner, proper technique is essential to prevent injuries. An experienced personal trainer can help
+                As a beginner, proper technique is essential to prevent injuries. An experienced <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">personal trainer</Link> can help
                 you with correct exercise form, design a personalized training program, and motivate you when things get
                 tough. At SculptClub, we work with trainers who specialize in guiding beginners.
               </p>
@@ -179,7 +180,7 @@ export default function BlogPostEN2() {
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Ready to start strength training?</h3>
               <p className="text-muted-foreground mb-6">
-                Book a free intro and discover how our trainers can help you.
+                Book a <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> and discover how our trainers can help you.
               </p>
               <ButtonLink href="/en/book" size="lg">
                 Book free intro

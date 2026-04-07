@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -116,7 +117,7 @@ export default function BlogPostEN1() {
               <h2 className="text-2xl font-bold mt-10 mb-4">How much does personal training in the Jordaan cost?</h2>
               <p>
                 Prices for personal training in Amsterdam Jordaan vary by trainer. Generally, you can expect rates between
-                from 45 euros per session, depending on the trainer&apos;s experience, session duration, and any packages.
+                <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">from 45 euros per session</Link>, depending on the trainer&apos;s experience, session duration, and any packages.
                 At SculptClub, trainers set their own rates, and the first intro session is always free. This lets you get
                 to know a trainer before committing.
               </p>
@@ -143,7 +144,7 @@ export default function BlogPostEN1() {
               <p>
                 Whether you are a complete beginner or have been training for years — personal training in the Jordaan
                 offers a unique experience. The combination of a beautiful location, private studio, and professional
-                guidance ensures you get the most out of every session. Schedule your free intro and see for yourself.
+                guidance ensures you get the most out of every session. Schedule your <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> and see for yourself.
               </p>
             </div>
 

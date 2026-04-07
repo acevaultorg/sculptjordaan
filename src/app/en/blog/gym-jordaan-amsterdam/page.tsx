@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -131,7 +132,7 @@ export default function GymJordaanEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Personal training in the Jordaan</h2>
               <p>
                 If you&apos;re looking for guidance, several trainers in the Jordaan offer personal
-                training. At SculptClub, five independent trainers work with rates from €45 per
+                training. At SculptClub, <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">five independent trainers</Link> work with rates from €45 per
                 session. The first intro is always free with no obligation. Each trainer sets their
                 own rate — we charge 0% commission, so what you pay goes entirely to your trainer.
               </p>
@@ -141,7 +142,7 @@ export default function GymJordaanEN() {
                 SculptClub is located at Egelantiersgracht 424, in the heart of the Jordaan. A fully
                 equipped private studio at ground level, directly from the street. Professional
                 equipment from Rogue and Concept2, open daily from 06:30 to 22:00. You can train
-                independently via Open Gym, choose a personal trainer or rent the studio as a
+                independently via Open Gym, choose a personal trainer or <Link href="/en/studio-rental" className="text-brand underline-offset-2 hover:underline">rent the studio</Link> as a
                 freelance trainer.
               </p>
 

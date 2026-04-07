@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -124,7 +125,7 @@ export default function SportschoolZonderAbonnementNL() {
               <p>
                 Een relatief nieuw concept in Amsterdam is Open Gym: je huurt een privé sportruimte voor een vaste
                 tijd en traint zelfstandig met professionele apparatuur. Geen drukte, geen wachten, geen afleiding.
-                Bij SculptClub werkt Open Gym met een 4-weken cyclus zonder contract. Je kunt elk moment opzeggen
+                Bij SculptClub werkt <Link href="/nl/open-gym" className="text-brand underline-offset-2 hover:underline">Open Gym</Link> met een 4-weken cyclus zonder contract. Je kunt elk moment opzeggen
                 en betaalt vanaf 5,75 euro per sessie.
               </p>
               <p>
@@ -162,7 +163,7 @@ export default function SportschoolZonderAbonnementNL() {
               </p>
               <p>
                 Bij SculptClub kun je al deze opties combineren. Train zelfstandig met Open Gym, boek een personal
-                trainer voor begeleiding, of huur de studio voor je eigen sessies. Alles zonder contract.
+                trainer voor begeleiding, of <Link href="/nl/studio-huren" className="text-brand underline-offset-2 hover:underline">huur de studio</Link> voor je eigen sessies. Alles zonder contract.
               </p>
             </div>
 

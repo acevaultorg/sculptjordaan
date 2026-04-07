@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -108,9 +109,9 @@ export default function BlogPostEN3() {
               <h3 className="text-xl font-bold mt-8 mb-3">Cost</h3>
               <p>
                 A budget gym typically starts at around 20 to 30 euros per month, but you also get a budget experience. A
-                mid-range gym easily costs 40 to 60 euros per month. Open Gym at SculptClub starts from 29 euros per 4 weeks
+                mid-range gym easily costs 40 to 60 euros per month. <Link href="/en/open-gym" className="text-brand underline-offset-2 hover:underline">Open Gym at SculptClub</Link> starts from 29 euros per 4 weeks
                 for 2 sessions per week, which is comparable to a mid-range gym. The difference? You get a premium experience
-                for a similar price.
+                for a similar <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">price</Link>.
               </p>
 
               <h3 className="text-xl font-bold mt-8 mb-3">Equipment</h3>

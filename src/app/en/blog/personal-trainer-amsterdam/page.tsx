@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -132,7 +133,7 @@ export default function PersonalTrainerAmsterdamEN() {
                 <li>Ask questions about scheduling, pricing, and approach</li>
               </ul>
               <p>
-                At SculptClub, the first intro is always free and no-obligation. You choose which trainer you want
+                At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first intro is always free</Link> and no-obligation. You choose which trainer you want
                 to meet based on their profile, specialization, and availability. There&apos;s no sales pitch and no
                 pressure to sign up immediately.
               </p>
@@ -152,7 +153,7 @@ export default function PersonalTrainerAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Get started today</h2>
               <p>
-                Finding the right personal trainer in Amsterdam doesn&apos;t have to be complicated. Define your
+                <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">Finding the right personal trainer</Link> in Amsterdam doesn&apos;t have to be complicated. Define your
                 criteria, do your research, and book a free intro. You&apos;ll quickly discover if there&apos;s a match,
                 with zero risk.
               </p>

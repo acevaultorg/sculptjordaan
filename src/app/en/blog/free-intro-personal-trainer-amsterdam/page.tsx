@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -85,7 +86,7 @@ export default function FreeIntroBlogEN() {
                 together. The trainer explains how they work and whether their approach is a good fit.
               </p>
               <p>
-                At SculptClub, the free intro lasts 45 minutes. No preparation needed — just show up
+                At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> lasts 45 minutes. No preparation needed — just show up
                 in your workout clothes. There&apos;s no reception desk and no waiting: you receive a
                 personal door code via WhatsApp the evening before.
               </p>
@@ -183,8 +184,8 @@ export default function FreeIntroBlogEN() {
               </ul>
               <p>
                 If the answers are yes, you&apos;re probably in the right place. If you&apos;re unsure,
-                book a free intro with another trainer. You can do that too — SculptClub has five
-                trainers, each with their own speciality.
+                book a free intro with another trainer. You can do that too — SculptClub has <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">five
+                trainers, each with their own speciality</Link>.
               </p>
 
               <h2>Free intro at SculptClub in Amsterdam Jordaan</h2>

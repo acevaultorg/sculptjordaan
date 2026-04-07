@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -120,7 +121,7 @@ export default function PersonalTrainingWeightLossEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What does personal training for weight loss cost?</h2>
               <p>
-                Personal training at SculptClub starts from €45 per session. Each trainer sets their own
+                Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €45 per session</Link>. Each trainer sets their own
                 rate — we charge 0% commission. The first introduction is always free. During that intro
                 you discuss your goals, your trainer assesses your current level and together you decide
                 on a plan. No obligations upfront.
@@ -141,7 +142,7 @@ export default function PersonalTrainingWeightLossEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Start today</h2>
               <p>
                 You don&apos;t have to wait until Monday, until January or until you&apos;re
-                &quot;ready.&quot; Book a free intro with one of our trainers. Discuss your goal, your
+                &quot;ready.&quot; Book a <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> with one of our trainers. Discuss your goal, your
                 trainer makes a plan and you begin. No threshold, no membership, no excuses.
               </p>
             </div>

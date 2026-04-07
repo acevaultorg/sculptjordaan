@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -119,7 +120,7 @@ export default function PersonalTrainingAfvallenNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat kost personal training voor afvallen?</h2>
               <p>
-                Personal training bij SculptClub begint vanaf €45 per sessie. Elke trainer bepaalt zelf
+                Personal training bij SculptClub <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">begint vanaf €45 per sessie</Link>. Elke trainer bepaalt zelf
                 zijn tarief — wij rekenen 0% commissie. De eerste kennismaking is altijd gratis. Tijdens
                 die intake bespreek je je doelen, je trainer bekijkt je huidige niveau en samen bepalen
                 jullie het plan. Geen verplichtingen vooraf.
@@ -142,7 +143,7 @@ export default function PersonalTrainingAfvallenNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Begin vandaag</h2>
               <p>
                 Je hoeft niet te wachten tot maandag, tot januari of tot je &quot;klaar&quot; bent. Boek een
-                gratis intake met een van onze trainers. Je bespreekt je doel, je trainer maakt een plan
+                <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline"> gratis intake</Link> met een van onze trainers. Je bespreekt je doel, je trainer maakt een plan
                 en je begint. Geen drempel, geen abonnement, geen excuses.
               </p>
             </div>

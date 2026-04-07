@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -108,9 +109,9 @@ export default function BlogPostNL3() {
               <h3 className="text-xl font-bold mt-8 mb-3">Kosten</h3>
               <p>
                 Een budget sportschool begint vaak rond de 20 tot 30 euro per maand, maar dan krijg je ook een
-                budget-ervaring. Een mid-range sportschool kost al snel 40 tot 60 euro per maand. Open Gym bij
-                SculptClub begint vanaf 29 euro per 4 weken voor 2 sessies per week, wat vergelijkbaar is met een
-                mid-range sportschool. Het verschil? Je krijgt een premium ervaring voor een vergelijkbare prijs.
+                budget-ervaring. Een mid-range sportschool kost al snel 40 tot 60 euro per maand. <Link href="/nl/open-gym" className="text-brand underline-offset-2 hover:underline">Open Gym bij
+                SculptClub</Link> begint vanaf 29 euro per 4 weken voor 2 sessies per week, wat vergelijkbaar is met een
+                mid-range sportschool. Het verschil? Je krijgt een premium ervaring voor een vergelijkbare <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">prijs</Link>.
               </p>
 
               <h3 className="text-xl font-bold mt-8 mb-3">Apparatuur</h3>

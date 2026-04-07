@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -100,7 +101,7 @@ export default function WatKostPersonalTraining() {
                 <li><strong>Top-tier (bekende trainers, celebrities):</strong> €120 – €200+ per sessie</li>
               </ul>
               <p>
-                Bij SculptClub beginnen de tarieven vanaf €45 per sessie, afhankelijk van welke trainer je kiest. Elke
+                Bij SculptClub beginnen de <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">tarieven vanaf €45 per sessie</Link>, afhankelijk van welke trainer je kiest. Elke
                 trainer bepaalt zelf zijn of haar tarief, zodat je altijd de beste match kunt vinden voor je budget en
                 doelen.
               </p>
@@ -168,7 +169,7 @@ export default function WatKostPersonalTraining() {
               <p>
                 Bij SculptClub in de Jordaan betaal je vanaf €45 per sessie voor training in een privé studio met
                 professionele apparatuur. Onze trainers hebben elk hun eigen specialisatie — van krachttraining en
-                afvallen tot revalidatie en sportprestaties. De eerste kennismaking is altijd gratis, zodat je
+                afvallen tot revalidatie en sportprestaties. De eerste <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">kennismaking is altijd gratis</Link>, zodat je
                 vrijblijvend kunt ontdekken welke trainer bij je past.
               </p>
               <p>
