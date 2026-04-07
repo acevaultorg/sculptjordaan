@@ -15,7 +15,7 @@ export function Hero({ locale }: { locale: Locale }) {
       description:
         "Privé studio aan de gracht. Personal training vanaf €45/sessie. Open Gym vanaf €29/4 weken. Studio huren vanaf €12/uur. Altijd opzegbaar.",
       ctas: [
-        { label: "Vind je Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
+        { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
         { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
         { label: "Boek Open Gym", href: "/nl/boek-gym", icon: Dumbbell },
       ],
@@ -27,7 +27,7 @@ export function Hero({ locale }: { locale: Locale }) {
       description:
         "Private studio on the canal. Personal training from €45/session. Open Gym from €29/4 weeks. Studio rental from €12/hour. Cancel anytime.",
       ctas: [
-        { label: "Find your Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
+        { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
         { label: "Book Open Gym", href: "/en/book-gym", icon: Dumbbell },
       ],
@@ -74,11 +74,7 @@ export function Hero({ locale }: { locale: Locale }) {
                 key={cta.href}
                 href={cta.href}
                 size="lg"
-                className={
-                  i === 0
-                    ? "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white transition-all shadow-lg"
-                    : "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold border border-white/40 bg-white/15 text-white backdrop-blur-sm hover:bg-white/25 hover:border-white/60 transition-all"
-                }
+                className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white transition-all shadow-lg"
                 onClick={() => trackHeroClick(cta.label, i + 1, locale)}
               >
                 <cta.icon className="w-4 h-4" />
