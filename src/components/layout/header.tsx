@@ -186,14 +186,14 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — icon-only on mobile, icon+label on desktop */}
+            {/* Language toggle — always visible */}
             <Link
               href={altPath}
-              className="flex items-center justify-center sm:gap-1 ml-0.5 sm:ml-1 w-8 sm:w-auto sm:px-3 h-8 sm:h-9 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+              className="flex items-center gap-1 ml-0.5 sm:ml-1 px-2 sm:px-3 h-8 sm:h-9 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">{altLocale.toUpperCase()}</span>
+              {altLocale.toUpperCase()}
             </Link>
 
             {/* Client login — Acuity, always visible */}
