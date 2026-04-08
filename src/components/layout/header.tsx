@@ -132,9 +132,14 @@ export function Header() {
             aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
             className="flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
           >
-            <span className="font-display text-[13px] sm:text-base font-bold tracking-[0.06em] sm:tracking-[0.08em] text-foreground select-none whitespace-nowrap">
-              SCULPT<span className="text-brand">CLUB</span>
-            </span>
+            <Image
+              src="/images/logo-sculptclub.svg"
+              alt="SculptClub"
+              width={108}
+              height={20}
+              className="h-4 sm:h-5 w-auto invert select-none"
+              priority
+            />
           </Link>
 
           {/* Right side */}
