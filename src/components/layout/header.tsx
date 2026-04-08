@@ -129,7 +129,8 @@ export function Header() {
           {/* Logo */}
           <Link
             href={locale === "nl" ? "/" : "/en"}
-            className="flex items-center"
+            aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
+            className="flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
           >
             <Image
               src="/images/logo-sculptclub.png"

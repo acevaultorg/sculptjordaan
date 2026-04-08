@@ -10,8 +10,9 @@ import type { Locale } from "@/config/site";
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
     nl: {
+      taglineParts: ["Jouw gym.", "Jouw manier.", "Jouw resultaat."],
       tagline: "Jouw gym. Jouw manier. Jouw resultaat.",
-      subtitle: "Privé Personal Training Studio — Amsterdam Jordaan",
+      subtitle: "Privé Studio · Amsterdam Jordaan",
       description:
         "Privé studio aan de gracht in de Jordaan. Drie manieren om te trainen — gratis intake, altijd opzegbaar.",
       ctas: [
@@ -27,8 +28,9 @@ export function Hero({ locale }: { locale: Locale }) {
       },
     },
     en: {
+      taglineParts: ["Your gym.", "Your way.", "Your results."],
       tagline: "Your gym. Your way. Your results.",
-      subtitle: "Private Personal Training Studio — Amsterdam Jordaan",
+      subtitle: "Private Studio · Amsterdam Jordaan",
       description:
         "Private studio on the canal in the Jordaan. Three ways to train — free intro, cancel anytime.",
       ctas: [
@@ -69,8 +71,13 @@ export function Hero({ locale }: { locale: Locale }) {
         >
           <p className="overline mb-4 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
-          <h1 className="text-[2.5rem] leading-[0.92] sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] text-white text-balance">
-            {t.tagline}
+          <h1 className="text-[2.25rem] leading-[1] sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] text-white">
+            {t.taglineParts.map((part, i) => (
+              <span key={i} className="inline-block">
+                {part}
+                {i < t.taglineParts.length - 1 && " "}
+              </span>
+            ))}
           </h1>
 
           <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/85 max-w-xl sm:max-w-2xl mx-auto leading-relaxed text-pretty">
