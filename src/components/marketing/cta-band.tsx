@@ -80,20 +80,29 @@ export function CtaBand({ locale }: { locale: Locale }) {
           </p>
         </div>
 
-        {/* 3 clear options */}
+        {/* 3 clear options — primary first, glass for the rest */}
         <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-          {t.options.map((opt) => (
-            <ButtonLink
-              key={opt.label}
-              href={opt.href}
-              external={opt.external}
-              className="flex flex-col items-center gap-2 rounded-2xl border border-white/15 bg-white/5 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/10 hover:border-white/30 transition-all group"
-            >
-              <opt.icon className="w-6 h-6 text-brand-foreground opacity-80 group-hover:opacity-100" />
-              <span className="text-sm font-semibold text-white">{opt.label}</span>
-              <span className="text-xs text-white/60">{opt.description}</span>
-            </ButtonLink>
-          ))}
+          {t.options.map((opt, i) => {
+            const isPrimary = i === 0;
+            return (
+              <ButtonLink
+                key={opt.label}
+                href={opt.href}
+                external={opt.external}
+                className={
+                  isPrimary
+                    ? "flex flex-col items-center gap-2 rounded-2xl bg-brand hover:bg-brand-dark text-white px-5 py-6 text-center shadow-brand-md hover:shadow-brand-lg transition-all group"
+                    : "flex flex-col items-center gap-2 rounded-2xl border border-white/25 bg-white/10 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/15 hover:border-white/40 transition-all group"
+                }
+              >
+                <opt.icon className={isPrimary ? "w-6 h-6 text-white" : "w-6 h-6 text-white/85"} />
+                <span className="text-sm font-semibold text-white">{opt.label}</span>
+                <span className={isPrimary ? "text-xs text-white/85" : "text-xs text-white/65"}>
+                  {opt.description}
+                </span>
+              </ButtonLink>
+            );
+          })}
         </div>
 
         {/* WhatsApp fallback */}

@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${syne.variable} ${instrumentSans.variable} h-full antialiased`}
+      className={`dark ${syne.variable} ${instrumentSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
