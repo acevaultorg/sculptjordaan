@@ -20,7 +20,7 @@ export interface Trainer {
 // (strongest niche first), not by booking volume. Busy trainers have
 // less availability, which hurts conversion. Clear specialties convert
 // best because visitors pick on need-match, not on who's most popular.
-const DISPLAY_ORDER = ["joey", "hamish", "eva", "alex", "andrea", "dara", "jearmey"] as const;
+const DISPLAY_ORDER = ["eva", "joey", "alex", "andrea", "dara", "hamish", "jearmey"] as const;
 
 const trainersRaw: Trainer[] = [
   {
