@@ -17,7 +17,8 @@ import { Star, Users, Gift, Percent, Building2, CalendarClock } from "lucide-rea
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd } from "@/components/seo/json-ld";
+import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export default function TrainersPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Personal Trainers","url":"/nl/vind-jouw-personal-trainer"}]} />
+      <ReviewsJsonLd reviews={googleReviews} />
       <ServiceJsonLd
         name="Personal Training"
         description="Privé personal training in een boutique studio in de Jordaan, Amsterdam. Kies je eigen trainer, eerste intake altijd gratis."
