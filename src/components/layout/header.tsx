@@ -198,7 +198,7 @@ export function Header() {
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
-              {altLocale.toUpperCase()}
+              {locale.toUpperCase()}
             </Link>
 
             {/* Client login — Acuity, tight against language toggle */}
