@@ -278,10 +278,10 @@ export default function BecomeTrainerEN() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-background">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Ready to get started?
             </h2>
-            <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Send a WhatsApp and schedule a free tour. No obligations — just see if it fits.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -298,7 +298,7 @@ export default function BecomeTrainerEN() {
                 href="/en/studio-rental"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
+                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
                 View rates
                 <ArrowRight className="ml-2 w-4 h-4" />

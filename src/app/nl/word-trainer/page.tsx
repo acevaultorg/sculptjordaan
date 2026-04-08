@@ -279,10 +279,10 @@ export default function WordTrainerNL() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-background">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Klaar om te starten?
             </h2>
-            <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Stuur een WhatsApp en plan een gratis rondleiding. Geen verplichtingen — gewoon kijken of het past.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -299,7 +299,7 @@ export default function WordTrainerNL() {
                 href="/nl/studio-huren"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
+                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
                 Bekijk tarieven
                 <ArrowRight className="ml-2 w-4 h-4" />

@@ -186,10 +186,10 @@ export default function FaqsPageNL() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-background">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Nog vragen?
             </h2>
-            <p className="mt-4 text-lg text-background/70 max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Neem contact met ons op via WhatsApp. Meestal reageren we binnen 1
               uur.
             </p>
@@ -208,7 +208,7 @@ export default function FaqsPageNL() {
                 external
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-background/20 text-background hover:bg-background/10"
+                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp ons
