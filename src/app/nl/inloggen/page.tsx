@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Calendar, XCircle, PencilLine } from "lucide-react";
 
 const ACUITY_LOGIN = "https://app.acuityscheduling.com/login.php?owner=36720238";
 
@@ -31,32 +31,47 @@ export default function LoginPageNL() {
             description="Bekijk, wijzig of annuleer je boekingen. Je gebruikt hetzelfde account dat je bij je eerste boeking hebt aangemaakt."
           />
 
-          <div className="mt-10 max-w-3xl mx-auto">
-            <div className="rounded-2xl border border-border/60 bg-background/40 overflow-hidden shadow-xl">
-              <iframe
-                src={ACUITY_LOGIN}
-                title="SculptClub — Acuity client login"
-                className="w-full h-[640px] bg-white"
-                loading="lazy"
-              />
-            </div>
+          <div className="mt-10 max-w-xl mx-auto">
+            <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Calendar className="w-4 h-4 text-brand shrink-0" />
+                  <span>Bekijk je komende afspraken</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <PencilLine className="w-4 h-4 text-brand shrink-0" />
+                  <span>Verplaats of wijzig een boeking</span>
+                </li>
+                <li className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <XCircle className="w-4 h-4 text-brand shrink-0" />
+                  <span>Annuleer — altijd gratis, zonder vaste termijn</span>
+                </li>
+              </ul>
 
-            <p className="mt-6 text-center text-sm text-muted-foreground">
-              Werkt het inloggen niet? Open de inlogpagina direct in een nieuw tabblad.
-            </p>
-
-            <div className="mt-4 flex justify-center">
               <ButtonLink
                 href={ACUITY_LOGIN}
-                variant="outline"
+                variant="default"
                 size="lg"
                 target="_blank"
                 rel="noopener"
+                className="w-full"
               >
                 <ExternalLink className="w-4 h-4" />
-                Open in nieuw tabblad
+                Log in op je account
               </ButtonLink>
+
+              <p className="mt-4 text-center text-xs text-muted-foreground">
+                Opent in een nieuw tabblad · beveiligd door Acuity Scheduling
+              </p>
             </div>
+
+            <p className="mt-6 text-center text-sm text-muted-foreground">
+              Nog geen account? Maak er een aan bij je{" "}
+              <a href="/nl/boek" className="text-brand hover:underline">
+                eerste boeking
+              </a>
+              .
+            </p>
           </div>
         </FadeIn>
       </Section>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Users, Dumbbell, Building2, Star, MapPin, Clock } from "lucide-react";
+import { Users, Dumbbell, Building2, MapPin, Clock } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import type { Locale } from "@/config/site";
@@ -71,7 +71,7 @@ export function Hero({ locale }: { locale: Locale }) {
         >
           <p className="overline mb-4 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
-          <h1 className="text-[2.25rem] leading-[1] sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] text-white">
+          <h1 className="text-[2rem] leading-[1.05] sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] text-white">
             {t.taglineParts.map((part, i) => (
               <span key={i} className="inline-block">
                 {part}
@@ -101,17 +101,18 @@ export function Hero({ locale }: { locale: Locale }) {
           </div>
           <p className="mt-4 text-xs text-white/60">{t.trust}</p>
 
-          {/* Trust bar — location + hours only (rating already in trust line above) */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
+          {/* Trust line: location · hours — single line, no chip overlap with WhatsApp FAB */}
+          <p className="mt-5 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs text-white/75 pr-16 sm:pr-0">
+            <span className="inline-flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
               {t.signals.location}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
+            <span className="text-white/30" aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
               {t.signals.hours}
             </span>
-          </div>
+          </p>
         </motion.div>
       </div>
     </section>

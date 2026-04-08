@@ -146,4 +146,27 @@ export const trainers: Trainer[] = [
     },
     image: "/images/trainers/jearmey.jpg",
   },
+  {
+    id: "joey",
+    name: "Joey",
+    slug: {
+      nl: "plan-gratis-intake-met-joey",
+      en: "plan-free-intro-with-joey",
+    },
+    specialization: {
+      nl: ["Kracht", "Ademwerk", "Zenuwstelsel", "Zelfonderzoek"],
+      en: ["Strength", "Breathwork", "Nervous System", "Self-Inquiry"],
+    },
+    languages: ["NL", "EN"],
+    rate: null,
+    instagram: "https://www.instagram.com/joaonomad137",
+    instagramHandle: "@joaonomad137",
+    credentials: "The Ascend Method — Inner Alignment System",
+    bio: {
+      nl: "Joey begeleidt je om lichaam, geest en bewustzijn op één lijn te brengen. Via functionele training, ademwerk en zelfonderzoek bouw je energie, helderheid en innerlijke kracht op. Voor high-performers die vastzitten, stress ervaren of zich afgesloten voelen — herwin je energie, neem de regie terug. \"Wisdom isn't studied, it's embodied.\"",
+      en: "Joey guides you to align body, mind and awareness. Through functional training, breathwork and self-inquiry you build energy, clarity and inner strength. For high-performers feeling stuck, stressed or disconnected — reclaim your energy, take back control. \"Wisdom isn't studied, it's embodied.\"",
+    },
+    image: "/images/trainers/joey.jpg",
+    whatsapp: "https://wa.me/31639175337",
+  },
 ];
