@@ -6,6 +6,7 @@ import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { InstagramFeed } from "@/components/marketing/instagram-feed";
 import { GoogleMap } from "@/components/marketing/google-map";
 import { FaqPreview } from "@/components/marketing/faq-preview";
+import { ComparisonTeaser } from "@/components/marketing/comparison-teaser";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { FaqJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
@@ -38,6 +39,7 @@ export default function HomePageEN() {
       <Hero locale="en" />
       <ServicesOverview locale="en" />
       <HowItWorks locale="en" />
+      <ComparisonTeaser locale="en" />
       <CtaBand locale="en" />
       <ReviewsPreview locale="en" />
       <InstagramFeed locale="en" />

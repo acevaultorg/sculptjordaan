@@ -16,7 +16,13 @@ export interface Trainer {
   whatsapp?: string;
 }
 
-export const trainers: Trainer[] = [
+// Display order — optimised for conversion by differentiation strength
+// (strongest niche first), not by booking volume. Busy trainers have
+// less availability, which hurts conversion. Clear specialties convert
+// best because visitors pick on need-match, not on who's most popular.
+const DISPLAY_ORDER = ["joey", "hamish", "eva", "alex", "andrea", "dara", "jearmey"] as const;
+
+const trainersRaw: Trainer[] = [
   {
     id: "alex",
     name: "Alex",
@@ -170,3 +176,6 @@ export const trainers: Trainer[] = [
     whatsapp: "https://wa.me/31639175337",
   },
 ];
+
+const byId = Object.fromEntries(trainersRaw.map((t) => [t.id, t]));
+export const trainers: Trainer[] = DISPLAY_ORDER.map((id) => byId[id]).filter(Boolean);
