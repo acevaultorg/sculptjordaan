@@ -4,7 +4,9 @@ import { Section } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ExternalLink, Calendar, XCircle, PencilLine } from "lucide-react";
 
-const ACUITY_LOGIN = "https://app.acuityscheduling.com/schedule.php?owner=36720238&action=appts";
+// Acuity scheduler URL — this page has the SIGN UP / LOGIN row in the top-right.
+// The previous ?action=appts URL renders blank (Acuity side bug).
+const ACUITY_LOGIN = "https://app.acuityscheduling.com/schedule/fba376d5";
 
 export const metadata: Metadata = {
   title: "Inloggen — Mijn Boekingen | SculptClub",
