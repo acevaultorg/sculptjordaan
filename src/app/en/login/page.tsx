@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
-import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
+import { Section, SectionHeader } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ExternalLink, Calendar, XCircle, PencilLine } from "lucide-react";
 
@@ -24,7 +24,7 @@ export default function LoginPageEN() {
   return (
     <PageLayout>
       <Section>
-        <FadeIn>
+        <div>
           <SectionHeader
             overline="My account"
             title="Login"
@@ -72,7 +72,7 @@ export default function LoginPageEN() {
               .
             </p>
           </div>
-        </FadeIn>
+        </div>
       </Section>
     </PageLayout>
   );
