@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
-import { Section, SectionHeader } from "@/components/sections/section";
+import { Section } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ExternalLink, Calendar, XCircle, PencilLine } from "lucide-react";
 
@@ -25,11 +25,13 @@ export default function LoginPageEN() {
     <PageLayout>
       <Section>
         <div>
-          <SectionHeader
-            overline="My account"
-            title="Login"
-            description="View, reschedule or cancel your bookings. Enter your email — we'll send you a direct login link."
-          />
+          <div className="mb-10 sm:mb-14 text-center">
+            <p className="overline mb-3">My account</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Login</h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              View, reschedule or cancel your bookings. Enter your email — we&apos;ll send you a direct login link.
+            </p>
+          </div>
 
           <div className="mt-10 max-w-xl mx-auto">
             <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
-import { Section, SectionHeader } from "@/components/sections/section";
+import { Section } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ExternalLink, Calendar, XCircle, PencilLine } from "lucide-react";
 
@@ -25,11 +25,13 @@ export default function LoginPageNL() {
     <PageLayout>
       <Section>
         <div>
-          <SectionHeader
-            overline="Mijn account"
-            title="Inloggen"
-            description="Bekijk, verplaats of annuleer je boekingen. Vul je e-mailadres in — we sturen je direct een inloglink."
-          />
+          <div className="mb-10 sm:mb-14 text-center">
+            <p className="overline mb-3">Mijn account</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Inloggen</h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Bekijk, verplaats of annuleer je boekingen. Vul je e-mailadres in — we sturen je direct een inloglink.
+            </p>
+          </div>
 
           <div className="mt-10 max-w-xl mx-auto">
             <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
