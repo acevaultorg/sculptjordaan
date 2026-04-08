@@ -120,7 +120,7 @@ export function Header() {
       <header ref={menuRef} className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
         <nav
           className={cn(
-            "flex items-center justify-between px-4 py-2.5 sm:px-6",
+            "flex items-center justify-between pl-3 pr-2 py-2 sm:pl-6 sm:pr-5 sm:py-2.5",
             "rounded-[1.5rem] border border-border/50",
             "bg-background/82 backdrop-blur-xl",
             "shadow-brand-md transition-all duration-300"
@@ -132,18 +132,13 @@ export function Header() {
             aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
             className="flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
           >
-            <Image
-              src="/images/logo-sculptclub.png"
-              alt="SculptClub logo"
-              width={180}
-              height={14}
-              className="h-3.5 sm:h-4 w-auto dark:invert"
-              priority
-            />
+            <span className="font-display text-[15px] sm:text-base font-bold tracking-[0.08em] text-foreground select-none">
+              SCULPT<span className="text-brand">CLUB</span>
+            </span>
           </Link>
 
           {/* Right side */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5 sm:gap-1">
             {/* Desktop nav links */}
             <div className="hidden md:flex items-center gap-0.5">
               {navItems.map((item) => {
@@ -171,7 +166,7 @@ export function Header() {
             {/* First time? — always visible */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center ml-1 px-2.5 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[32px] sm:min-h-[36px]"
+              className="flex items-center ml-0.5 sm:ml-1 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap h-8 sm:h-9"
             >
               {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
@@ -180,8 +175,8 @@ export function Header() {
             <button
               onClick={handleBookClick}
               className={cn(
-                "ml-1 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer",
-                "min-h-[32px] sm:min-h-[36px] flex items-center gap-1 sm:gap-1.5",
+                "ml-0.5 sm:ml-1 px-2.5 sm:px-4 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer",
+                "h-8 sm:h-9 flex items-center gap-1 sm:gap-1.5",
                 bookOpen
                   ? "bg-brand-dark text-white"
                   : "bg-brand text-white hover:bg-brand-dark active:scale-95"
@@ -191,14 +186,14 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — always visible (mobile + desktop) */}
+            {/* Language toggle — icon-only on mobile, icon+label on desktop */}
             <Link
               href={altPath}
-              className="flex items-center gap-1 ml-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground transition-all min-h-[32px] sm:min-h-[36px]"
+              className="flex items-center justify-center sm:gap-1 ml-0.5 sm:ml-1 w-8 sm:w-auto sm:px-3 h-8 sm:h-9 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
-              {altLocale.toUpperCase()}
+              <span className="hidden sm:inline">{altLocale.toUpperCase()}</span>
             </Link>
 
             {/* Client login — Acuity, always visible */}

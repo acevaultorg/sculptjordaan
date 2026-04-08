@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ExternalLink, Calendar, XCircle, PencilLine } from "lucide-react";
 
-const ACUITY_LOGIN = "https://app.acuityscheduling.com/login.php?owner=36720238";
+const ACUITY_LOGIN = "https://app.acuityscheduling.com/schedule.php?owner=36720238&action=appts";
 
 export const metadata: Metadata = {
   title: "Login — My Bookings | SculptClub",
@@ -28,7 +28,7 @@ export default function LoginPageEN() {
           <SectionHeader
             overline="My account"
             title="Login"
-            description="View, change or cancel your bookings. You use the same account you created with your first booking."
+            description="View, reschedule or cancel your bookings. Enter your email — we'll send you a direct login link."
           />
 
           <div className="mt-10 max-w-xl mx-auto">
@@ -57,7 +57,7 @@ export default function LoginPageEN() {
                 className="w-full"
               >
                 <ExternalLink className="w-4 h-4" />
-                Log in to your account
+                Open my bookings
               </ButtonLink>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
