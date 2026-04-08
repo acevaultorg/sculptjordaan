@@ -167,20 +167,20 @@ export function Header() {
               })}
             </div>
 
-            {/* First time? — always visible */}
+            {/* First time? — desktop only; mobile has this in the sticky CTA bar */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center ml-1 px-2.5 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[32px] sm:min-h-[36px]"
+              className="hidden md:flex items-center ml-1 px-3 rounded-full text-sm font-medium border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap min-h-[36px]"
             >
               {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
 
-            {/* BOOK button — always visible */}
+            {/* BOOK button — desktop only; mobile has this in the sticky CTA bar */}
             <button
               onClick={handleBookClick}
               className={cn(
-                "ml-1 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer",
-                "min-h-[32px] sm:min-h-[36px] flex items-center gap-1 sm:gap-1.5",
+                "hidden md:flex ml-1 px-4 py-1.5 rounded-full text-sm font-bold transition-all cursor-pointer",
+                "min-h-[36px] items-center gap-1.5",
                 bookOpen
                   ? "bg-brand-dark text-white"
                   : "bg-brand text-white hover:bg-brand-dark active:scale-95"
