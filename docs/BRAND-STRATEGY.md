@@ -1,118 +1,122 @@
 # SculptClub — Brand Strategy
 
-Migrated from WordPress legacy repo (sculptclub-site). The design tokens below are principles — actual color values, fonts, and spacing live in `tailwind.config.ts` and `src/config/site.ts`.
+This doc is the source of truth for voice, positioning, and design decisions. Every copy choice on the site should trace back to it. Design tokens (colors, fonts, spacing) live in `tailwind.config.ts` and `src/config/site.ts` — this doc is strategy, not implementation.
 
 ---
 
-## Brand Personality
+## What SculptClub actually is
 
-1. **Bold** — unapologetic confidence in every touchpoint
-2. **Empowering** — transformation through disciplined action
-3. **Premium** — elevated craft in a curated Amsterdam setting
-4. **Energetic** — kinetic intensity that moves people forward
-5. **Precise** — surgical attention to form, technique, and detail
+A small, independent private training studio on the Egelantiersgracht in the Jordaan. Three things happen in the same room:
 
-## Brand Essence
+1. **Independent personal trainers** bring their own clients and set their own prices. SculptClub takes **0% commission**.
+2. **Open Gym members** train on their own in 4-week cycles with no membership lock-in.
+3. **Freelance trainers, physios and coaches** rent the studio by the hour or by the pack.
 
-> "SculptClub is where disciplined ambition meets refined transformation."
+No reception. No front desk. No membership cards. Door codes by WhatsApp the night before. Cancellation is always free. Max 3 people in the space at once.
 
-## Audience
+This is a **boutique private gym**, not a premium lifestyle brand. Prices are honest: PT from €45, Open Gym from €5.75/session, studio rental from €12/hour. The room is beautiful but the economics are accessible.
 
-Amsterdam professionals (25-45) who treat fitness as craft, not chore. They value quality over convenience, seek expert guidance, and reject mass-market gym culture.
+## Positioning (one sentence)
 
-**They value:** Expertise, aesthetic environments, measurable results, community without pretension, time efficiency.
+> **SculptClub is the independent private studio in the Jordaan — no membership, no commission markup, no crowd. Just the room, the equipment, and the trainer of your choice.**
 
-**They reject:** Cookie-cutter programs, overcrowded facilities, cheap equipment, motivational platitudes, bro-science.
+## Core beliefs
 
-## Positioning
+These are the four things the business actually believes, written the way a human would say them. They are the "why" behind every operational choice.
 
-> For Amsterdam professionals who demand precision in their training, SculptClub is the boutique studio that combines expert personal training with a curated Jordaan environment — where every session is engineered for measurable transformation.
+1. **Trainers do their best work when they own their prices and their clients.** That's why we take 0% commission. The rate you see is the rate they charge — we don't mark it up.
+2. **People train harder in privacy.** That's why we cap at 3 people simultaneously and send door codes instead of having a reception desk.
+3. **Commitment doesn't equal results.** That's why Open Gym runs in 4-week cycles you can cancel anytime, and why the first intake is free with no pressure to book again.
+4. **Neighbourhood matters.** That's why we're on the canal in the Jordaan and not in a strip-mall fitness park.
 
-## Brand Tension
+These beliefs are the north star. If a copy or product decision contradicts one of them, the decision is wrong.
 
-**Raw power ↔ Refined elegance** — The physical intensity of training meets the sophistication of the Jordaan neighborhood.
+## Audiences
 
-## Spiritual Neighbors
+Two very different audiences use the site, and the copy needs to speak to each without confusing the other.
 
-- **Barry's** — high-energy studio culture + premium positioning
-- **Equinox** — elevated fitness as lifestyle brand
-- **Apple** — precision engineering meets human-centered design
+### A. End clients (people who want to train)
+- Amsterdam residents, 25-50, live or work in walking distance of the Jordaan
+- Tried chain gyms, got crowded out, frustrated with membership traps
+- Want a small space with real equipment and no social pressure
+- Value privacy over group energy, quality over flash
+- **They care about:** free intro, no contracts, pick-your-own-trainer, location, clean equipment, quiet hours
+- **They don't care about:** brand lifestyle, trainer certifications (they trust the curation), membership tiers
 
-## Brand Dimensions
-
-- **Primary: Competence** — expertise-driven, structured, trustworthy, results-oriented
-- **Secondary: Excitement** — energetic, bold, dynamic, contemporary
+### B. Independent trainers, physios, coaches
+- Freelance professionals in Amsterdam who already have clients
+- Currently either (a) renting studio time at marked-up hourly rates, (b) paying commission to a gym, or (c) training clients in overcrowded chain gyms
+- Want a clean, equipped room they can call their own without fixed overhead
+- **They care about:** cost per session, scheduling freedom, 0% commission, free marketing support, clean equipment
+- **They don't care about:** branded merchandise, management meetings, team-building nonsense
 
 ## Voice
 
+Direct. Honest. Operational. Never aspirational, never corporate.
+
 | Context | Tone |
-|---------|------|
-| Headings | Direct, active, benefit-focused. Short. Punchy. |
-| Body text | Clear, confident, informative. No fluff. |
-| CTAs | Specific action verbs with implied transformation. |
-| Empty states | Encouraging, forward-looking. |
-| Error messages | Honest, helpful, never condescending. |
+|---|---|
+| Headings | Short, concrete, benefit-first. Max 10 words. |
+| Body | Matter-of-fact. Names prices. Says what it is. No filler adjectives. |
+| CTAs | Specific actions. "Book free intro", "Rent the studio", "Train today". |
+| FAQ | Answers the real question. No legalese. |
+| Error messages | Honest, helpful. |
 
-### CTA Phrases
-1. "Start Your Transformation"
-2. "Book a Session"
-3. "Train With Us"
-4. "Claim Your Spot"
-5. "See the Studio"
+**Words we use:** private, independent, honest, quiet, canal, intro, cancel, free, trainer, studio, room, walk in.
 
-### Copy Examples
-- **Error:** "Something didn't work. Refresh and try again — or reach out to us directly."
-- **Empty:** "No sessions booked yet. Your transformation starts with one click."
-- **Loading:** "Loading your schedule..."
-- **Success:** "You're in. Check your email for confirmation."
+**Words we avoid:** transformation, journey, craft, refined, elevated, curated, holistic, wellness, alignment, synergy, precision engineering, lifestyle.
 
-## Design Principles
+## What SculptClub is NOT
 
-### The Color-Clickability Contract
+- Not Equinox (no membership lifestyle brand)
+- Not Barry's (no group classes, no high-energy bootcamp vibe)
+- Not F45 (no programmed circuits)
+- Not CrossFit (no box culture, no community pressure)
+- Not a budget chain (no rows of treadmills, no 24/7 self-service)
+
+It's closer to a private music studio or a shared photography darkroom than to any of the above. A room with good equipment that professionals rent to do their real work, with a small public membership on the side.
+
+## Brand tension
+
+**Private but welcoming.** The space is small and quiet, but the policies are generous — free intro, no contracts, trainers keep 100%. The hardest thing to communicate is that "private" doesn't mean "exclusive" or "expensive". It means "not a chain".
+
+## Design principles
+
+### The color-clickability contract
 **If it's blue, it MUST be clickable. If it's not clickable, it MUST NOT be blue.**
-
 - Buttons, links, CTAs, focus rings → brand color
-- Headings, body text, labels → dark/neutral colors only
-- Navigation text (default state) → dark, not brand color
+- Headings, body text, labels → foreground/neutral only
+- Navigation text (default state) → foreground, not brand color
 
-### Visual Hierarchy (5 levels)
-| Level | Role | Examples |
-|-------|------|----------|
-| L1 | THE thing | Hero headline, page title |
-| L2 | Supports L1 | Section headings, CTA buttons |
-| L3 | Details | Body text, descriptions |
-| L4 | Supporting | Dates, captions, metadata |
-| L5 | Ambient | Dividers, bg tints, borders |
+### Dark theme only
+SculptClub is dark-only by design. Never add a light-mode toggle. The dark palette is the brand — matching the private, quiet, after-hours feeling of the space.
 
-### Button Hierarchy
-- **Primary** (filled): MAX ONE per viewport. "Book Now", "Start Training"
-- **Secondary** (outlined): Supports primary. "Learn More", "View Details"
-- **Ghost** (text-only): Low emphasis. "Skip", "Cancel"
-- Two buttons side-by-side: one primary + one secondary. NEVER two primaries.
+### Visual hierarchy
+| Level | Role |
+|---|---|
+| L1 | Hero headline, page title |
+| L2 | Section headings, primary CTAs |
+| L3 | Body, card titles |
+| L4 | Captions, metadata, timestamps |
+| L5 | Dividers, backgrounds, borders |
 
-### Section Background Rhythm
-Never 2+ consecutive sections with the same background. Alternate: base → surface → base → accent → base.
+### Button hierarchy
+- **Primary** (filled brand): max ONE per viewport — "Book free intro" is the usual one
+- **Secondary** (glass/outline): supports the primary
+- **Ghost** (text-only): low emphasis, navigation
+- Never two filled primaries side by side.
 
-### Quality Checklist
-- [ ] Could this appear in a design agency portfolio?
-- [ ] Blue = clickable, everywhere, always?
-- [ ] Headings NEVER look like links?
-- [ ] Does every section have clear L1/L2/L3 hierarchy?
-- [ ] Is spacing consistent (tokens, not arbitrary)?
-- [ ] Does the site feel like ONE designer made it?
+### Section rhythm
+Alternate backgrounds to create visual breathing room: default → muted → default → dark. Never two consecutive sections with identical background.
 
-## Research Backing
-
-| Claim | Source |
-|-------|--------|
-| Typography conveys brand personality | Shaikh, Chaparro & Fox 2006; Grohmann 2016 |
-| Color maps to brand dimensions | Labrecque & Milne 2012, JAMS |
-| Saturation → excitement, brightness → competence | Labrecque & Milne 2012 Study 2 |
-| Processing fluency → trust | Reber, Schwarz & Winkielman 2004 |
-| Whitespace → perceived credibility | Lin & Hsieh 2011 |
+### Quality checklist before shipping copy
+- [ ] Does it answer a real user question or pain?
+- [ ] Would a friend recognise this as "how SculptClub talks"?
+- [ ] Does it contradict any of the four core beliefs?
+- [ ] Is it shorter than the first draft?
+- [ ] Does it name concrete numbers / places / names where possible?
+- [ ] Is it free of the banned words above?
 
 ---
 
-**Origin:** WordPress `sculptclub-brand/BRAND-SPEC.md` + `DESIGN-SYSTEM-SPEC.md`
-**Migrated:** 2026-03-29
-**Legacy repo:** github.com/pmdevries-rgb/sculptclub-site (archived)
+**Last rewritten:** 2026-04-08 — reset to match operational reality after a drift audit showed the doc and the site were pointing at different businesses.

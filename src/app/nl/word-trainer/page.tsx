@@ -100,15 +100,19 @@ export default function WordTrainerNL() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <FadeIn>
             <div>
-              <p className="overline mb-3">Voor trainers</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Start je praktijk bij SculptClub
+              <p className="overline mb-3 text-brand">Voor onafhankelijke trainers</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
+                <span className="text-brand">0% commissie.</span> Jouw klanten, jouw tarief, jouw agenda.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                Een privé studio in Amsterdam Jordaan. Professionele apparatuur. Eigen profiel
-                op onze website. 0% commissie. Alles wat je nodig hebt om je personal training
-                praktijk te starten of te laten groeien.
+                Een privé studio in de Jordaan waar je 100% houdt van wat je rekent. Huur per uur vanaf €12, betaal alleen wanneer je traint, en krijg een gratis profiel op sculptclub.nl om je agenda te vullen.
               </p>
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                <li>✓ 0% commissie — wat jij rekent, hou jij</li>
+                <li>✓ Huur per uur vanaf €12, of bespaar tot 23% met een pakket</li>
+                <li>✓ Gratis profiel + WhatsApp-CTA op onze website</li>
+                <li>✓ Geen lidmaatschap, geen vaste lasten, altijd opzegbaar</li>
+              </ul>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <ButtonLink
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}

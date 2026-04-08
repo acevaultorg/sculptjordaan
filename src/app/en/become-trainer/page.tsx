@@ -99,15 +99,19 @@ export default function BecomeTrainerEN() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <FadeIn>
             <div>
-              <p className="overline mb-3">For trainers</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Start your practice at SculptClub
+              <p className="overline mb-3 text-brand">For independent trainers</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
+                <span className="text-brand">0% commission.</span> Your clients, your rates, your schedule.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                A private studio in Amsterdam Jordaan. Professional equipment. Your own profile
-                on our website. 0% commission. Everything you need to start or grow your
-                personal training practice.
+                A private studio in the Jordaan where you keep 100% of what you charge. Rent by the hour from €12, pay only when you train, and get a free profile on sculptclub.nl to help you fill your calendar.
               </p>
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                <li>✓ 0% commission — the rate you charge is the rate you keep</li>
+                <li>✓ Rent by the hour from €12, or save up to 23% with a pack</li>
+                <li>✓ Free profile + WhatsApp CTA on our website</li>
+                <li>✓ No membership, no fixed overhead, cancel anytime</li>
+              </ul>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <ButtonLink
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to know more about working at SculptClub")}`}
