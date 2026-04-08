@@ -67,6 +67,7 @@ const nlPages = [
   "/nl/boek-studio",
   "/nl/boek-gym",
   "/nl/gratis-intake",
+  "/nl/inloggen",
 ];
 
 const enPages = [

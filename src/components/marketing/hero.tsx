@@ -67,37 +67,30 @@ export function Hero({ locale }: { locale: Locale }) {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="overline mb-4 !text-white/70">{t.subtitle}</p>
+          <p className="overline mb-4 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95] text-white">
+          <h1 className="text-[2.5rem] leading-[0.92] sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] text-white text-balance">
             {t.tagline}
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/85 max-w-xl sm:max-w-2xl mx-auto leading-relaxed text-pretty">
             {t.description}
           </p>
 
-          {/* 3 CTAs — 1 primary solid + 2 glass secondaries (visual hierarchy) */}
+          {/* 3 CTAs — all glass; primary Book lives in the header */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
-            {t.ctas.map((cta, i) => {
-              const isPrimary = i === 0;
-              return (
-                <ButtonLink
-                  key={cta.href}
-                  href={cta.href}
-                  size="lg"
-                  className={
-                    isPrimary
-                      ? "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white transition-all shadow-lg"
-                      : "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/25 backdrop-blur transition-all"
-                  }
-                  onClick={() => trackHeroClick(cta.label, i + 1, locale)}
-                >
-                  <cta.icon className="w-4 h-4" />
-                  {cta.label}
-                </ButtonLink>
-              );
-            })}
+            {t.ctas.map((cta, i) => (
+              <ButtonLink
+                key={cta.href}
+                href={cta.href}
+                size="lg"
+                className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/25 backdrop-blur transition-all"
+                onClick={() => trackHeroClick(cta.label, i + 1, locale)}
+              >
+                <cta.icon className="w-4 h-4" />
+                {cta.label}
+              </ButtonLink>
+            ))}
           </div>
           <p className="mt-4 text-xs text-white/60">{t.trust}</p>
 

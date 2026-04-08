@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight } from "lucide-react";
+import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
@@ -198,6 +198,16 @@ export function Header() {
             >
               <Globe className="w-3.5 h-3.5" />
               {altLocale.toUpperCase()}
+            </Link>
+
+            {/* Client login — Acuity, always visible */}
+            <Link
+              href={locale === "nl" ? "/nl/inloggen" : "/en/login"}
+              className="flex items-center justify-center ml-0.5 sm:ml-1 w-8 sm:w-9 h-8 sm:h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+              aria-label={locale === "nl" ? "Inloggen" : "Login"}
+              title={locale === "nl" ? "Inloggen" : "Login"}
+            >
+              <User className="w-4 h-4" />
             </Link>
 
             {/* Hamburger */}
