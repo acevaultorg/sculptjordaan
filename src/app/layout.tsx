@@ -7,7 +7,6 @@ import { LocalBusinessJsonLd, OrganizationJsonLd } from "@/components/seo/json-l
 import { Analytics } from "@/components/layout/analytics";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
-import { MobileStickyCta } from "@/components/layout/mobile-sticky-cta";
 import { UtmCapture } from "@/components/layout/utm-capture";
 
 const syne = localFont({
@@ -100,7 +99,6 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <WhatsAppButton />
-        <MobileStickyCta />
         <UtmCapture />
         <Analytics />
         <Script

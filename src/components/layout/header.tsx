@@ -190,14 +190,14 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — desktop */}
+            {/* Language toggle — always visible (mobile + desktop) */}
             <Link
               href={altPath}
-              className="hidden md:flex items-center gap-1.5 ml-1 px-3 py-1.5 rounded-full text-xs font-semibold text-muted-foreground hover:text-foreground transition-all"
+              className="flex items-center gap-1 ml-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground transition-all min-h-[32px] sm:min-h-[36px]"
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
-              {locale.toUpperCase()}
+              {altLocale.toUpperCase()}
             </Link>
 
             {/* Hamburger */}
