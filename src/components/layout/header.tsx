@@ -134,9 +134,9 @@ export function Header() {
             <Image
               src="/images/logo-sculptclub.png"
               alt="SculptClub logo"
-              width={120}
-              height={9}
-              className="h-2.5 sm:h-3 w-auto dark:invert"
+              width={180}
+              height={14}
+              className="h-3.5 sm:h-4 w-auto dark:invert"
               priority
             />
           </Link>

@@ -13,7 +13,7 @@ export function Hero({ locale }: { locale: Locale }) {
       tagline: "Jouw gym. Jouw manier. Jouw resultaat.",
       subtitle: "Privé Personal Training Studio — Amsterdam Jordaan",
       description:
-        "Privé studio aan de gracht. Personal training vanaf €45/sessie. Open Gym vanaf €29/4 weken. Studio huren vanaf €12/uur. Altijd opzegbaar.",
+        "Privé studio aan de gracht in de Jordaan. Drie manieren om te trainen — gratis intake, altijd opzegbaar.",
       ctas: [
         { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
         { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
@@ -30,7 +30,7 @@ export function Hero({ locale }: { locale: Locale }) {
       tagline: "Your gym. Your way. Your results.",
       subtitle: "Private Personal Training Studio — Amsterdam Jordaan",
       description:
-        "Private studio on the canal. Personal training from €45/session. Open Gym from €29/4 weeks. Studio rental from €12/hour. Cancel anytime.",
+        "Private studio on the canal in the Jordaan. Three ways to train — free intro, cancel anytime.",
       ctas: [
         { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
@@ -94,12 +94,8 @@ export function Hero({ locale }: { locale: Locale }) {
           </div>
           <p className="mt-4 text-xs text-white/60">{t.trust}</p>
 
-          {/* Trust bar — visual chips with icons */}
+          {/* Trust bar — location + hours only (rating already in trust line above) */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
-              <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
-              {t.signals.rating}
-            </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur px-3 py-1.5 text-xs font-medium text-white ring-1 ring-white/15">
               <MapPin className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
               {t.signals.location}
