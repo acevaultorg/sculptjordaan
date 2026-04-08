@@ -77,20 +77,27 @@ export function Hero({ locale }: { locale: Locale }) {
             {t.description}
           </p>
 
-          {/* 3 CTAs — primary solid, secondary glass */}
+          {/* 3 CTAs — 1 primary solid + 2 glass secondaries (visual hierarchy) */}
           <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
-            {t.ctas.map((cta, i) => (
-              <ButtonLink
-                key={cta.href}
-                href={cta.href}
-                size="lg"
-                className="rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white transition-all shadow-lg"
-                onClick={() => trackHeroClick(cta.label, i + 1, locale)}
-              >
-                <cta.icon className="w-4 h-4" />
-                {cta.label}
-              </ButtonLink>
-            ))}
+            {t.ctas.map((cta, i) => {
+              const isPrimary = i === 0;
+              return (
+                <ButtonLink
+                  key={cta.href}
+                  href={cta.href}
+                  size="lg"
+                  className={
+                    isPrimary
+                      ? "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white transition-all shadow-lg"
+                      : "rounded-xl px-6 py-5 min-h-[48px] text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/25 backdrop-blur transition-all"
+                  }
+                  onClick={() => trackHeroClick(cta.label, i + 1, locale)}
+                >
+                  <cta.icon className="w-4 h-4" />
+                  {cta.label}
+                </ButtonLink>
+              );
+            })}
           </div>
           <p className="mt-4 text-xs text-white/60">{t.trust}</p>
 
