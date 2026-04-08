@@ -201,15 +201,17 @@ export function Header() {
               {locale.toUpperCase()}
             </Link>
 
-            {/* Client login — Acuity, tight against language toggle */}
-            <Link
-              href={locale === "nl" ? "/nl/inloggen" : "/en/login"}
+            {/* Client login — direct to Acuity scheduler (has Sign Up / Login in top-right) */}
+            <a
+              href="https://app.acuityscheduling.com/schedule/fba376d5"
+              target="_blank"
+              rel="noopener"
               className="flex items-center justify-center -ml-0.5 sm:ml-0 w-8 sm:w-9 h-8 sm:h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
               aria-label={locale === "nl" ? "Inloggen" : "Login"}
               title={locale === "nl" ? "Inloggen" : "Login"}
             >
               <User className="w-4 h-4" />
-            </Link>
+            </a>
 
             {/* Hamburger */}
             <button
