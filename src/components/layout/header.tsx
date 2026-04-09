@@ -70,6 +70,7 @@ export function Header() {
   const altPath = getAlternatePath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookOpen, setBookOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -78,6 +79,7 @@ export function Header() {
     setLastPath(pathname);
     setMenuOpen(false);
     setBookOpen(false);
+    setLoginOpen(false);
   }
 
   const navItems = mainNav[locale];
@@ -95,23 +97,31 @@ export function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
-  // Lock body scroll when book panel is open
+  // Lock body scroll when book or login panel is open
   useEffect(() => {
-    if (bookOpen) {
+    if (bookOpen || loginOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
     return () => { document.body.style.overflow = ""; };
-  }, [bookOpen]);
+  }, [bookOpen, loginOpen]);
 
   function handleBookClick() {
     setBookOpen(!bookOpen);
     setMenuOpen(false);
+    setLoginOpen(false);
   }
 
   function handleMenuClick() {
     setMenuOpen(!menuOpen);
+    setBookOpen(false);
+    setLoginOpen(false);
+  }
+
+  function handleLoginClick() {
+    setLoginOpen(!loginOpen);
+    setMenuOpen(false);
     setBookOpen(false);
   }
 
@@ -191,28 +201,30 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — always visible, full tap target, no overlap */}
-            <Link
+            {/* Language toggle — shows TARGET locale, full reload for reliable switch */}
+            <a
               href={altPath}
-              prefetch={false}
               className="relative z-10 flex items-center gap-1 ml-1 px-2.5 sm:px-3 h-9 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
-              {locale.toUpperCase()}
-            </Link>
+              {altLocale.toUpperCase()}
+            </a>
 
-            {/* Client login — direct to Acuity scheduler */}
-            <a
-              href="https://app.acuityscheduling.com/schedule/fba376d5"
-              target="_blank"
-              rel="noopener"
-              className="flex items-center justify-center ml-0.5 w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
-              aria-label={locale === "nl" ? "Inloggen" : "Login"}
-              title={locale === "nl" ? "Inloggen" : "Login"}
+            {/* Client login — opens Acuity in embedded panel */}
+            <button
+              onClick={handleLoginClick}
+              className={cn(
+                "flex items-center justify-center ml-0.5 w-9 h-9 rounded-full transition-all cursor-pointer touch-manipulation",
+                loginOpen
+                  ? "text-foreground bg-accent"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95"
+              )}
+              aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
+              title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
             >
               <User className="w-4 h-4" />
-            </a>
+            </button>
 
             {/* Hamburger */}
             <button
@@ -274,18 +286,67 @@ export function Header() {
 
                 <div className="my-2 border-t border-border/50" />
 
-                <Link
+                <a
                   href={altPath}
                   className="px-3 py-2.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-colors min-h-[44px] flex items-center gap-2"
                 >
                   <Globe className="w-4 h-4" />
-                  {locale === "nl" ? "Nederlands" : "English"} → {altLocale === "en" ? "English" : "Nederlands"}
-                </Link>
+                  {altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
+                </a>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
+
+      {/* ─── LOGIN / My Bookings panel (Acuity iframe) ─── */}
+      <AnimatePresence>
+        {loginOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm"
+              onClick={() => setLoginOpen(false)}
+            />
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[92dvh]"
+            >
+              <div className="bg-[#ffffff] dark:bg-[#0a0a0a] rounded-t-[2rem] shadow-2xl flex flex-col flex-1 overflow-hidden">
+                <div className="flex justify-center pt-3 pb-1">
+                  <div className="w-10 h-1 rounded-full bg-border" />
+                </div>
+                <div className="flex items-center justify-between px-6 py-4">
+                  <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
+                    {locale === "nl" ? "Mijn boekingen" : "My bookings"}
+                  </h2>
+                  <button
+                    onClick={() => setLoginOpen(false)}
+                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors cursor-pointer"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="flex-1 overflow-hidden">
+                  <iframe
+                    src="https://app.acuityscheduling.com/schedule/fba376d5"
+                    title={locale === "nl" ? "SculptClub boekingen" : "SculptClub bookings"}
+                    className="w-full h-full border-0"
+                    style={{ minHeight: "60dvh" }}
+                    allow="payment"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* ─── BOOK fullscreen panel ─── */}
       <AnimatePresence>
