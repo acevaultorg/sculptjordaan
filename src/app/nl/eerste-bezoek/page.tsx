@@ -175,7 +175,7 @@ export default function EersteBezoekPage() {
       </Section>
 
       {/* What to Expect */}
-      <Section bg="muted">
+      <Section>
         <SectionHeader
           overline="Wat kun je verwachten?"
           title="Een stap-voor-stap walkthrough"

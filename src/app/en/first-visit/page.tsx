@@ -175,7 +175,7 @@ export default function FirstVisitPage() {
       </Section>
 
       {/* What to Expect */}
-      <Section bg="muted">
+      <Section>
         <SectionHeader
           overline="What to expect"
           title="A step-by-step walkthrough"
