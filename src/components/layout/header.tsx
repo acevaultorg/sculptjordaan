@@ -171,7 +171,7 @@ export function Header() {
             {/* First time? — always visible */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center mr-1 sm:mr-0 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-all whitespace-nowrap h-8 sm:h-9"
+              className="flex items-center mr-1 sm:mr-0 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-brand/60 text-brand hover:border-brand hover:bg-brand/10 transition-all whitespace-nowrap h-8 sm:h-9"
             >
               {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
@@ -191,22 +191,23 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — always visible, tight on mobile */}
+            {/* Language toggle — always visible, full tap target, no overlap */}
             <Link
               href={altPath}
-              className="flex items-center gap-1 ml-1 sm:ml-1 px-1.5 sm:px-3 h-8 sm:h-9 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+              prefetch={false}
+              className="relative z-10 flex items-center gap-1 ml-1 px-2.5 sm:px-3 h-9 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
               aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
             >
               <Globe className="w-3.5 h-3.5" />
               {locale.toUpperCase()}
             </Link>
 
-            {/* Client login — direct to Acuity scheduler (has Sign Up / Login in top-right) */}
+            {/* Client login — direct to Acuity scheduler */}
             <a
               href="https://app.acuityscheduling.com/schedule/fba376d5"
               target="_blank"
               rel="noopener"
-              className="flex items-center justify-center -ml-0.5 sm:ml-0 w-8 sm:w-9 h-8 sm:h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+              className="flex items-center justify-center ml-0.5 w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
               aria-label={locale === "nl" ? "Inloggen" : "Login"}
               title={locale === "nl" ? "Inloggen" : "Login"}
             >
