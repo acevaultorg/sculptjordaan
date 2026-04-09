@@ -143,6 +143,7 @@ export function Footer() {
           <p>
             {siteConfig.address.street}, {siteConfig.address.city}
           </p>
+          <p className="opacity-40 text-[10px]">Powered by AcePilot</p>
         </div>
       </div>
     </footer>
