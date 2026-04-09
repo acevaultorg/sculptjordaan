@@ -221,6 +221,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/personal-trainer-amsterdam-south": "/nl/blog/personal-trainer-amsterdam-zuid",
   "/en/blog/personal-trainer-for-seniors-amsterdam": "/nl/blog/personal-trainer-voor-senioren-amsterdam",
   "/en/blog/become-personal-trainer-amsterdam": "/nl/blog/personal-trainer-worden-amsterdam",
+  "/en/blog/personal-trainer-amsterdam-north": "/nl/blog/personal-trainer-amsterdam-noord",
+  "/en/blog/corporate-personal-training-amsterdam": "/nl/blog/zakelijk-personal-training-amsterdam",
   "/en/become-trainer": "/nl/word-trainer",
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",

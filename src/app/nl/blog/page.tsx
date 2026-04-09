@@ -269,6 +269,22 @@ const posts = [
     href: "/nl/blog/personal-trainer-worden-amsterdam",
     date: "3 april 2026",
   },
+  {
+    title: "Personal Trainer Amsterdam Noord",
+    excerpt:
+      "Wonen of werken in Amsterdam Noord en op zoek naar een personal trainer? Eerlijk overzicht van het aanbod, plus een rustig alternatief in de Jordaan via de pont.",
+    category: "Lokaal",
+    href: "/nl/blog/personal-trainer-amsterdam-noord",
+    date: "5 april 2026",
+  },
+  {
+    title: "Zakelijk Personal Training Amsterdam",
+    excerpt:
+      "Personal training voor drukke professionals en teams in Amsterdam. Privé studio in de Jordaan, dagelijks 06:30–22:00, factuur op bedrijfsnaam mogelijk.",
+    category: "Zakelijk",
+    href: "/nl/blog/zakelijk-personal-training-amsterdam",
+    date: "5 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

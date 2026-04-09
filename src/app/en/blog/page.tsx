@@ -269,6 +269,22 @@ const posts = [
     href: "/en/blog/become-personal-trainer-amsterdam",
     date: "April 3, 2026",
   },
+  {
+    title: "Personal Trainer Amsterdam North",
+    excerpt:
+      "Living or working in Amsterdam Noord and looking for a personal trainer? Honest local overview, plus a quiet alternative in the Jordaan via the ferry.",
+    category: "Local",
+    href: "/en/blog/personal-trainer-amsterdam-north",
+    date: "April 5, 2026",
+  },
+  {
+    title: "Corporate Personal Training Amsterdam",
+    excerpt:
+      "Personal training for busy professionals and small teams in Amsterdam. Private studio in the Jordaan, open daily 06:30–22:00, invoice on company name available.",
+    category: "Corporate",
+    href: "/en/blog/corporate-personal-training-amsterdam",
+    date: "April 5, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
