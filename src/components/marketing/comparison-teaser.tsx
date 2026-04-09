@@ -42,7 +42,7 @@ export function ComparisonTeaser({ locale }: { locale: Locale }) {
         };
 
   return (
-    <Section bg="muted">
+    <Section>
       <FadeIn>
         <div className="text-center mb-10">
           <p className="overline mb-3 text-brand tracking-[0.18em]">{t.eyebrow}</p>

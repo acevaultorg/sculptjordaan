@@ -157,14 +157,14 @@ export default function TrainersPageNL() {
                       </p>
                       <p>
                         <span className="text-muted-foreground">Tarief:</span>{" "}
-                        Op aanvraag
+                        {trainer.rate ?? "Op aanvraag"}
                       </p>
                     </div>
                   </CardContent>
 
                   <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
                     <span className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground">
-                      Vraag tarief aan
+                      {trainer.rate ? "Plan gratis intake" : "Vraag tarief aan"}
                     </span>
                   </CardFooter>
                 </Card>

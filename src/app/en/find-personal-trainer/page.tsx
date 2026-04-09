@@ -157,14 +157,14 @@ export default function TrainersPageEN() {
                       </p>
                       <p>
                         <span className="text-muted-foreground">Rate:</span>{" "}
-                        On request
+                        {trainer.rate ?? "On request"}
                       </p>
                     </div>
                   </CardContent>
 
                   <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
                     <span className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground">
-                      Request price
+                      {trainer.rate ? "Book free intro" : "Request price"}
                     </span>
                   </CardFooter>
                 </Card>

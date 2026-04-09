@@ -455,7 +455,7 @@ export default function StudioRentalPageEN() {
       </Section>
 
       {/* FAQ */}
-      <Section bg="muted">
+      <Section>
         <SectionHeader overline="Frequently asked questions" title="Studio Rental FAQ" />
 
         <FadeIn>
