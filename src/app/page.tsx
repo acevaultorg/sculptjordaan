@@ -7,7 +7,6 @@ import { InstagramFeed } from "@/components/marketing/instagram-feed";
 import { GoogleMap } from "@/components/marketing/google-map";
 import { FaqPreview } from "@/components/marketing/faq-preview";
 import { WhyWeExist } from "@/components/marketing/why-we-exist";
-import { ComparisonTeaser } from "@/components/marketing/comparison-teaser";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { FaqJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
@@ -41,7 +40,6 @@ export default function HomePage() {
       <ServicesOverview locale="nl" />
       <HowItWorks locale="nl" />
       <WhyWeExist locale="nl" />
-      <ComparisonTeaser locale="nl" />
       <CtaBand locale="nl" />
       <ReviewsPreview locale="nl" />
       <InstagramFeed locale="nl" />
