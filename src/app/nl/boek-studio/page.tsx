@@ -130,13 +130,13 @@ export default function BoekStudioPageNL() {
                   <td className="px-4 py-3 font-medium">Halve studio (1:1)</td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;12</span>
-                    <ButtonLink href={acuityLinks.halfStudio60} size="default" className="ml-2">
+                    <ButtonLink href={acuityLinks.halfStudio60} size="lg" className="ml-2">
                       Boek
                     </ButtonLink>
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;17</span>
-                    <ButtonLink href={acuityLinks.halfStudio90} size="default" className="ml-2">
+                    <ButtonLink href={acuityLinks.halfStudio90} size="lg" className="ml-2">
                       Boek
                     </ButtonLink>
                   </td>
@@ -145,13 +145,13 @@ export default function BoekStudioPageNL() {
                   <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;17</span>
-                    <ButtonLink href={acuityLinks.fullStudio60} size="default" className="ml-2">
+                    <ButtonLink href={acuityLinks.fullStudio60} size="lg" className="ml-2">
                       Boek
                     </ButtonLink>
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span className="font-semibold">&euro;24</span>
-                    <ButtonLink href={acuityLinks.fullStudio90} size="default" className="ml-2">
+                    <ButtonLink href={acuityLinks.fullStudio90} size="lg" className="ml-2">
                       Boek
                     </ButtonLink>
                   </td>
