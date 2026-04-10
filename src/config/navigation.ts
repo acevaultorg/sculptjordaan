@@ -51,6 +51,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Huur de Studio", href: "/nl/studio-huren" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
     { label: "Word trainer", href: "/nl/word-trainer" },
+    { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
   en: [
     { label: "Find your Trainer", href: "/en/find-personal-trainer" },
@@ -58,6 +59,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Rent the Studio", href: "/en/studio-rental" },
     { label: "First Visit", href: "/en/first-visit" },
     { label: "Become a trainer", href: "/en/become-trainer" },
+    { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
 };
 
