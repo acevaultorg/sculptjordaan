@@ -1,21 +1,11 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
 import { trainers } from "@/config/trainers";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
+import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
 import { Star, Users, Gift, Percent, Building2, CalendarClock } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd } from "@/components/seo/json-ld";
 import { googleReviews } from "@/data/reviews";
@@ -109,69 +99,8 @@ export default function TrainersPageNL() {
           </div>
         </FadeIn>
 
-        {/* Trainer cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {trainers.map((trainer, i) => (
-            <FadeIn key={trainer.id} delay={i * 0.1}>
-              <Link
-                href={whatsappLinks.trainerPriceRequest(trainer.name, "nl", trainer.whatsapp)}
-                target="_blank"
-                rel="noopener"
-                aria-label={`Vraag tarief aan bij ${trainer.name} via WhatsApp`}
-                className="block h-full"
-              >
-                <Card className="h-full flex flex-col overflow-hidden cursor-pointer hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src={trainer.image}
-                      alt={`Foto van ${trainer.name}, personal trainer bij SculptClub Amsterdam`}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{trainer.name}</CardTitle>
-                    {trainer.credentials && (
-                      <CardDescription>{trainer.credentials}</CardDescription>
-                    )}
-                  </CardHeader>
-
-                  <CardContent className="flex-1 space-y-3">
-                    <div className="flex flex-wrap gap-1.5">
-                      {trainer.specialization.nl.map((spec) => (
-                        <Badge key={spec} variant="secondary">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {trainer.bio.nl}
-                    </p>
-
-                    <div className="space-y-0.5 text-sm">
-                      <p>
-                        <span className="text-muted-foreground">Talen:</span>{" "}
-                        {trainer.languages.join(", ")}
-                      </p>
-                      <p>
-                        <span className="text-muted-foreground">Tarief:</span>{" "}
-                        {trainer.rate ?? "Op aanvraag"}
-                      </p>
-                    </div>
-                  </CardContent>
-
-                  <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
-                    <span className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground">
-                      {trainer.rate ? "Plan gratis intake" : "Vraag tarief aan"}
-                    </span>
-                  </CardFooter>
-                </Card>
-              </Link>
-            </FadeIn>
-          ))}
-        </div>
+        {/* Trainer cards with filter */}
+        <TrainerFilterGrid trainers={trainers} locale="nl" />
       </Section>
 
       {/* Trainer matching form */}
