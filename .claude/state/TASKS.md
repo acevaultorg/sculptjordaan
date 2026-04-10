@@ -28,18 +28,27 @@
 - [x] `P1` SEO Cross-links from 6 related posts to new content [id:crosslinks-new]
 - [x] `P1` FIX Self-link in EN strength training beginners guide [id:fix-self-link]
 - [x] `P1` CONFIGURE Submit sitemap to Google Search Console — sitemap.xml Success, last read 7 Apr 2026; stale sitemap_index.xml removed [id:gsc-sitemap]
-- [👤] `P1` CONFIGURE Import free_intake_click in Google Ads — `platform:google-ads` [id:gads-conversion]
-- [👤] `P1` CONFIGURE Submit to local directories — `platform:sportlocator,yelp` [id:local-directories]
-- [👤] `P2` CONFIGURE Verify Google Ads conversion tracking — `platform:google-ads` [id:gads-verify]
-- [x] `P2` CONFIGURE Check Rich Results in Search Console — Breadcrumbs 13 valid / 0 invalid; Review snippets enhancement active [id:gsc-rich-results]
-- [👤] `P2` COLLECT Real client testimonials for /resultaten — `platform:manual` [id:real-testimonials]
-- [👤] `P2` DESIGN Referral programme — `platform:manual` [id:referral-programme]
 - [x] `P0` ADS Create Google Ads account + apply NL promo (€400 free credit activated) — `platform:google-ads` [id:gads-setup]
 - [x] `P0` ADS Set up PMax campaign (€5/day, 8 themes, Amsterdam, NL+EN) — `platform:google-ads` [id:gads-campaign]
 - [x] `P0` ADS Update Google Ads tag to AW-18011741633 — `src/config/site.ts` [id:gads-tag-update]
-- [👤] `P0` ADS Verify payment method in Google Ads to go live — `platform:google-ads` [id:gads-payment]
-- [👤] `P1` ADS Set up Meta Business Manager + verify pixel — `platform:meta-ads` [id:meta-setup]
-- [👤] `P1` ADS Create Instagram campaign — `platform:meta-ads` [id:meta-campaign]
-- [👤] `P1` ADS TikTok bio + organic posting 2-3x/week — `platform:tiktok` [id:tiktok-organic]
-- [👤] `P2` ADS Create Lookalike Audience in Meta — `platform:meta-ads` [id:meta-lookalike]
+- [x] `P2` CONFIGURE Check Rich Results in Search Console — Breadcrumbs 13 valid / 0 invalid; Review snippets enhancement active [id:gsc-rich-results]
+- [x] `P0` FIX Vanity domain routing lost (UTM + deep-link gone) — codify in middleware `vanityDomains` map for 10 domains [id:vanity-map] [score:13.0]
+
+## Queue (open)
+- [👤] `P0` CRITICAL Change 10 vanity domains from "Redirect" to alias in Vercel dashboard — `platform:vercel` [id:vercel-vanity-alias] [score:13.0] 👤 See HANDOFF.md step 1 — blocks all vanity domain attribution
+- [👤] `P0` ADS Verify payment method in Google Ads to go live — `platform:google-ads` [id:gads-payment] [score:12.0] 👤 Unblocks €400 promo credit + paid traffic
+- [👤] `P1` CONFIGURE Import free_intake_click in Google Ads — `platform:google-ads` [id:gads-conversion] [score:7.5]
+- [👤] `P1` ADS Set up Meta Business Manager + verify pixel — `platform:meta-ads` [id:meta-setup] [score:7.0]
+- [👤] `P1` ADS Create Instagram campaign — `platform:meta-ads` [id:meta-campaign] [score:6.5]
+- [👤] `P1` ADS TikTok bio + organic posting 2-3x/week — `platform:tiktok` [id:tiktok-organic] [score:5.5]
+- [👤] `P1` CONFIGURE Submit to local directories — `platform:yelp,sport-locator` [id:local-directories] [score:4.5]
+- [👤] `P2` CONFIGURE Verify Google Ads conversion tracking — `platform:google-ads` [id:gads-verify] [score:3.5]
+- [👤] `P2` COLLECT Real client testimonials for /resultaten — `platform:manual` [id:real-testimonials] [score:3.5]
+- [👤] `P2` ADS Create Lookalike Audience in Meta — `platform:meta-ads` [id:meta-lookalike] [score:2.5]
+- [👤] `P2` DESIGN Referral programme — `platform:manual` [id:referral-programme] [score:2.5]
+- [ ] `P2` FEAT Trainer matching quiz / filter on trainers page [id:trainer-quiz] [score:4.0]
+- [ ] `P2` FEAT Richer trainer profiles (availability, reviews) [id:trainer-profiles] [score:3.5]
+- [ ] `P2` PERF Image optimization — convert remaining PNGs to WebP [id:webp-convert] [score:3.0]
+- [ ] `P2` SEO More EN cross-links on newer blog posts [id:en-newer-crosslinks] [score:2.5]
+
 ## Blocked
