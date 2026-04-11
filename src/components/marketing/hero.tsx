@@ -33,7 +33,10 @@ export function Hero({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative overflow-hidden -mt-20 pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-48 lg:pb-40">
-      {/* Background image with strong dark overlay for text readability */}
+      {/* Background image — minimal overlay so the gym stays visible.
+          Only a subtle top/bottom vignette to keep the nav + trust text readable.
+          Text contrast comes from text-shadow on the text elements, NOT from
+          darkening the image itself (per user feedback "do not make image dark"). */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/studio/studio-interior-1.jpeg"
@@ -43,7 +46,7 @@ export function Hero({ locale }: { locale: Locale }) {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
@@ -51,9 +54,9 @@ export function Hero({ locale }: { locale: Locale }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="text-center [text-shadow:_0_2px_20px_rgba(0,0,0,0.55)]"
         >
-          <p className="overline mb-5 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
+          <p className="overline mb-5 !text-white/85 tracking-[0.18em]">{t.subtitle}</p>
 
           <h1 className="text-white">
             {/* Hero headline — single line on all viewports 320px+.

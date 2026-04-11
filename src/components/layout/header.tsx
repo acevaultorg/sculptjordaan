@@ -135,7 +135,7 @@ export function Header() {
           "transition-all duration-300"
         )}
       >
-        <nav className="flex items-center justify-between gap-2 px-3 py-2.5 sm:px-6 sm:py-3.5 mx-auto max-w-7xl min-w-0">
+        <nav className="flex items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-3.5 mx-auto max-w-7xl min-w-0">
           {/* Logo */}
           <Link
             href={locale === "nl" ? "/" : "/en"}
@@ -152,9 +152,9 @@ export function Header() {
             />
           </Link>
 
-          {/* Right side */}
-          <div className="flex items-center gap-0 sm:gap-1 shrink-0">
-            {/* Desktop nav links */}
+          {/* Right side — 3 groups with clear visual separation: desktop nav / CTAs / utilities */}
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+            {/* Group 1 — Desktop nav links (md+) */}
             <div className="hidden md:flex items-center gap-0.5">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
@@ -164,7 +164,7 @@ export function Header() {
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "relative px-3 py-1.5 rounded-lg text-sm font-medium transition-colors",
+                      "relative px-3 h-9 flex items-center rounded-lg text-sm font-medium transition-colors",
                       "hover:bg-accent",
                       isActive ? "text-foreground" : "text-muted-foreground"
                     )}
@@ -178,62 +178,92 @@ export function Header() {
               })}
             </div>
 
-            {/* First time? — always visible */}
-            <Link
-              href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="flex items-center mr-1 sm:mr-0 px-2 sm:px-3 rounded-full text-[11px] sm:text-sm font-medium border border-brand/60 text-brand hover:border-brand hover:bg-brand/10 transition-all whitespace-nowrap h-8 sm:h-9"
-            >
-              {locale === "nl" ? "Nieuw hier?" : "New here?"}
-            </Link>
+            {/* Group 2 — Primary CTAs (Nieuw hier + Boek) */}
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Link
+                href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
+                className="h-9 flex items-center px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-medium border border-brand/60 text-brand hover:border-brand hover:bg-brand/10 transition-all whitespace-nowrap"
+              >
+                {locale === "nl" ? "Nieuw hier?" : "New here?"}
+              </Link>
 
-            {/* BOOK button — always visible */}
-            <button
-              onClick={handleBookClick}
-              className={cn(
-                "px-2.5 sm:px-4 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer",
-                "h-8 sm:h-9 flex items-center gap-1 sm:gap-1.5 whitespace-nowrap",
-                bookOpen
-                  ? "bg-brand-dark text-white"
-                  : "bg-brand text-white hover:bg-brand-dark active:scale-95"
-              )}
-            >
-              <CalendarCheck className="w-3.5 h-3.5" />
-              {booking.label}
-            </button>
+              <button
+                onClick={handleBookClick}
+                className={cn(
+                  "h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                  bookOpen
+                    ? "bg-brand-dark text-white"
+                    : "bg-brand text-white hover:bg-brand-dark active:scale-95"
+                )}
+              >
+                <CalendarCheck className="w-3.5 h-3.5" />
+                {booking.label}
+              </button>
+            </div>
 
-            {/* Language toggle — shows TARGET locale, full reload for reliable switch */}
-            <a
-              href={altPath}
-              className="relative z-10 flex items-center gap-1 ml-1 px-2.5 sm:px-3 h-9 rounded-full text-[11px] sm:text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
-              aria-label={altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
-            >
-              <Globe className="w-3.5 h-3.5" />
-              {altLocale.toUpperCase()}
-            </a>
+            {/* Group 3 — Utilities (Language / Login / Menu) */}
+            <div className="flex items-center gap-1">
+              {/* Language toggle — segmented pill, current highlighted.
+                  UX pattern from Linear/Vercel/Stripe: shows BOTH languages
+                  with the active one visibly highlighted. Clicking the
+                  inactive one navigates to that locale. */}
+              <div
+                className="h-9 flex items-center p-0.5 rounded-full bg-muted/40 border border-border/50"
+                role="group"
+                aria-label={locale === "nl" ? "Taal" : "Language"}
+              >
+                <a
+                  href={locale === "nl" ? pathname : altPath}
+                  aria-current={locale === "nl" ? "page" : undefined}
+                  aria-label="Nederlands"
+                  className={cn(
+                    "h-8 min-w-[2rem] flex items-center justify-center px-2 rounded-full text-[11px] font-semibold transition-all",
+                    locale === "nl"
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  NL
+                </a>
+                <a
+                  href={locale === "en" ? pathname : altPath}
+                  aria-current={locale === "en" ? "page" : undefined}
+                  aria-label="English"
+                  className={cn(
+                    "h-8 min-w-[2rem] flex items-center justify-center px-2 rounded-full text-[11px] font-semibold transition-all",
+                    locale === "en"
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  EN
+                </a>
+              </div>
 
-            {/* Client login — opens Acuity in embedded panel */}
-            <button
-              onClick={handleLoginClick}
-              className={cn(
-                "flex items-center justify-center ml-0.5 w-9 h-9 rounded-full transition-all cursor-pointer touch-manipulation",
-                loginOpen
-                  ? "text-foreground bg-accent"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95"
-              )}
-              aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
-              title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
-            >
-              <User className="w-4 h-4" />
-            </button>
+              {/* Client login */}
+              <button
+                onClick={handleLoginClick}
+                className={cn(
+                  "w-9 h-9 flex items-center justify-center rounded-full transition-all cursor-pointer touch-manipulation",
+                  loginOpen
+                    ? "text-foreground bg-accent"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95"
+                )}
+                aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
+                title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
+              >
+                <User className="w-4 h-4" />
+              </button>
 
-            {/* Hamburger */}
-            <button
-              onClick={handleMenuClick}
-              className="p-1.5 sm:p-2 -mr-1.5 sm:-mr-2 ml-0.5 sm:ml-1 rounded-lg hover:bg-accent transition-colors cursor-pointer"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-            >
-              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
+              {/* Hamburger */}
+              <button
+                onClick={handleMenuClick}
+                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-accent transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+              >
+                {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
         </nav>
 
