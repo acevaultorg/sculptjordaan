@@ -13,8 +13,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Find Your Personal Trainer — SculptClub Amsterdam Jordaan",
-  description:
-    "Personal trainers in Amsterdam Jordaan — free intro, from €45/session. 5 specialists, 0% commission. Find your match at SculptClub.",
+  description: `Personal trainers in Amsterdam Jordaan — free intro, from €45/session. ${trainers.length} specialists, 0% commission. Find your match at SculptClub.`,
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
 
 const trustBadges = [
   { icon: Star, label: "5.0 on Google" },
-  { icon: Users, label: "5 trainers" },
+  { icon: Users, label: `${trainers.length} trainers` },
   { icon: Gift, label: "Free intro" },
   { icon: Percent, label: "0% commission" },
 ];

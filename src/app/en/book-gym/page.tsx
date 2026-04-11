@@ -130,7 +130,11 @@ export default function BookGymPageEN() {
             <FadeIn key={plan.name} delay={i * 0.1}>
               <Card className={`h-full text-center flex flex-col ${plan.badge ? "ring-2 ring-primary" : ""}`}>
                 <CardHeader>
-                  {plan.badge && <Badge className="mx-auto mb-2">{plan.badge}</Badge>}
+                  {plan.badge ? (
+                    <Badge className="mx-auto mb-2">{plan.badge}</Badge>
+                  ) : (
+                    <Badge className="mx-auto mb-2 invisible" aria-hidden="true">—</Badge>
+                  )}
                   <CardTitle className="text-lg">{plan.name}</CardTitle>
                   <CardDescription>{plan.sessions}</CardDescription>
                 </CardHeader>
@@ -139,9 +143,9 @@ export default function BookGymPageEN() {
                     {plan.price}
                     <span className="text-base font-normal text-muted-foreground"> {plan.period}</span>
                   </p>
-                  {plan.perSession && (
-                    <p className="mt-1 text-sm text-muted-foreground">{plan.perSession}</p>
-                  )}
+                  <p className={`mt-1 text-sm text-muted-foreground ${plan.perSession ? "" : "invisible"}`} aria-hidden={!plan.perSession}>
+                    {plan.perSession ?? "—"}
+                  </p>
                   <p className="mt-3 text-sm text-muted-foreground">{plan.tagline}</p>
                 </CardContent>
                 <CardFooter className="justify-center">
