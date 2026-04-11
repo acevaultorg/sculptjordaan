@@ -143,54 +143,93 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /* ============================================================
+     SculptClub typography system
+     See: docs/TYPOGRAPHY-GUIDELINES.md
+     Reference measurements (via Chrome MCP DOM probe, 2026-04-11):
+     - Apple "iPhone" H2:       56px SF Pro, weight 600, -0.005em
+     - Saints & Stars H1:       54px FSHackney, 700, +0.148em, uppercase
+     - Balenciaga H1:           22px BB-CondBold, 400, +0.05em, uppercase
+     Premium brands cap around 54-56px. "Monumental" comes from
+     tracking + uppercase, not font-size. These defaults reflect that.
+     ============================================================ */
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11"; /* Instrument Sans stylistic sets */
+    letter-spacing: 0;
+    line-height: 1.6;
     padding-bottom: env(safe-area-inset-bottom);
   }
   html {
     @apply scroll-smooth;
     scroll-padding-top: 5rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  /* H1 — content pages (non-hero).
+     Hero H1 has its own Tailwind class overrides for fluid sizing. */
   h1 {
     font-family: var(--font-heading);
     font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.0;
+    letter-spacing: -0.02em; /* was -0.045em — too tight for Syne's idiosyncratic curves */
+    line-height: 1.05;        /* was 1.0 — cut into multi-line descenders */
     color: var(--foreground);
+    text-wrap: balance;       /* modern browsers: balanced line breaks on multi-line h1 */
   }
   h2 {
     font-family: var(--font-heading);
     font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
+    letter-spacing: -0.02em; /* was -0.035em */
+    line-height: 1.1;
     color: var(--foreground);
+    text-wrap: balance;
   }
   h3, h4 {
     font-family: var(--font-heading);
     font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
+    letter-spacing: -0.015em; /* was -0.025em */
+    line-height: 1.2;         /* was 1.15 — small bump for readability at card sizes */
+    color: var(--foreground);
+    text-wrap: balance;
+  }
+  /* H5/H6 — sub-labels, meta. Switch to Instrument Sans: Syne's
+     display letterforms get noisy at 14-18px. Instrument Sans stays clean. */
+  h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.005em; /* was -0.015em */
+    line-height: 1.3;
     color: var(--foreground);
   }
-  h5, h6 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    line-height: 1.25;
-  }
   p, li, td, th {
-    letter-spacing: -0.01em;
+    letter-spacing: 0;        /* was -0.01em — Instrument Sans is already balanced */
     line-height: 1.6;
   }
-  /* Overline pattern (H6-style) */
+  /* Long-form body text gets a slightly generous leading for readability */
+  .prose p, article p {
+    line-height: 1.7;
+  }
+  /* Overline pattern — small utility label above H2.
+     Switched from Syne to Instrument Sans: Apple/Balenciaga use their
+     regular font for section labels, not a separate display face. */
   .overline {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.75rem;       /* 12px */
     text-transform: uppercase;
     letter-spacing: 0.18em;
+    line-height: 1;
     color: var(--muted-foreground);
+  }
+  /* Buttons, form labels — tight UI tracking for crispness */
+  button, [role="button"], input, select, textarea, label {
+    letter-spacing: -0.005em;
+  }
+  /* Tabular numerals for prices, numbers, stats */
+  .tabular-nums, [class*="price"], [class*="Price"] {
+    font-variant-numeric: tabular-nums;
   }
   /* Discount text — always red and bold */
   .sc-discount {

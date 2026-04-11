@@ -21,7 +21,34 @@ Measured at 1482px viewport width on production sites:
 5. **Weight 600–700 is standard.** Apple uses 600 (SF Pro semibold), S&S uses 700 (FSHackney bold). Nobody uses 900/black for hero headlines.
 6. **Viewport coverage 23–37% is the target** for the largest on-page headline. If your hero headline takes up >50% of viewport width, it's competing with the imagery.
 
+## Font stack (binding — do not change without brand review)
+
+| Role | Font | Source | Why |
+|---|---|---|---|
+| Display / headings | **Syne Variable** | `public/fonts/Syne-Variable.woff2` | Editorial display sans with idiosyncratic letterforms. Positions SculptClub as design-forward boutique, not mass-market gym. Used for H1–H4 and the hero signature. |
+| Body / UI | **Instrument Sans Variable** | `public/fonts/InstrumentSans-Variable.woff2` | Humanist sans with clean letterforms that stay readable at small sizes. Used for H5/H6, body, overlines, buttons, labels, microcopy. |
+
+Both loaded via `next/font/local` in `src/app/layout.tsx` with `display: swap` and `preload: true`. CSS vars: `--font-heading` (Syne) and `--font-sans` (Instrument Sans).
+
+**Forbidden**: using Syne at sizes ≤ 18px. Its curves get noisy at small sizes — use Instrument Sans instead. The `.overline` class was recently migrated off Syne to fix this.
+
 ## SculptClub rules (binding)
+
+### The base layer (globals.css)
+
+These defaults cascade to every element on the site unless a Tailwind class override is applied:
+
+| Element | Font | Weight | Letter-spacing | Line-height | Notes |
+|---|---|---|---|---|---|
+| `body` | Instrument Sans | 400 | **0** (normal) | 1.6 | Was `-0.01em` — unnecessary, IS is already balanced. |
+| `h1` (content pages) | Syne | 700 | **-0.02em** | **1.05** | Was `-0.045em / 1.0` — too tight, broke multi-line. |
+| `h2` | Syne | 700 | **-0.02em** | 1.1 | Was `-0.035em / 1.08`. |
+| `h3, h4` | Syne | 700 | **-0.015em** | **1.2** | Was `-0.025em / 1.15`. |
+| `h5, h6` | **Instrument Sans** | 600 | -0.005em | 1.3 | Was `Syne 600 / -0.015em` — Syne quirky at small sizes. |
+| `p, li, td, th` | Instrument Sans | 400 | **0** | 1.6 | Was `-0.01em`. |
+| `.prose p, article p` | Instrument Sans | 400 | 0 | **1.7** | New — long-form gets generous leading. |
+| `.overline` | **Instrument Sans** | 600 | +0.18em | 1 | Was Syne 600. Apple/Balenciaga use their regular font for section labels. |
+| buttons, inputs, labels | Instrument Sans | per-component | -0.005em | inherit | Crisp UI tracking. |
 
 ### Hero headline (H1, homepage only)
 
