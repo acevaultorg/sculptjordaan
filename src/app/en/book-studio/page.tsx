@@ -179,6 +179,7 @@ export default function BookStudioPageEN() {
           <FadeIn delay={0}>
             <Card className="h-full text-center">
               <CardHeader>
+                <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
                 <CardTitle className="text-xl">Starter</CardTitle>
               </CardHeader>
               <CardContent>
@@ -212,6 +213,7 @@ export default function BookStudioPageEN() {
           <FadeIn delay={0.2}>
             <Card className="h-full text-center">
               <CardHeader>
+                <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
                 <CardTitle className="text-xl">Pro</CardTitle>
               </CardHeader>
               <CardContent>

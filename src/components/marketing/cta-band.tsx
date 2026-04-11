@@ -91,8 +91,8 @@ export function CtaBand({ locale }: { locale: Locale }) {
                 external={opt.external}
                 className={
                   isPrimary
-                    ? "flex flex-col items-center gap-2 rounded-2xl bg-brand hover:bg-brand-dark text-white px-5 py-6 text-center shadow-brand-md hover:shadow-brand-lg transition-all group"
-                    : "flex flex-col items-center gap-2 rounded-2xl border border-white/25 bg-white/10 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/15 hover:border-white/40 transition-all group"
+                    ? "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl bg-brand hover:bg-brand-dark text-white px-5 py-6 text-center shadow-brand-md hover:shadow-brand-lg transition-all group"
+                    : "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl border border-white/25 bg-white/10 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/15 hover:border-white/40 transition-all group"
                 }
               >
                 <opt.icon className={isPrimary ? "w-6 h-6 text-white" : "w-6 h-6 text-white/85"} />
