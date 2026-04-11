@@ -72,7 +72,19 @@ export function Header() {
   const [bookOpen, setBookOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Scroll-aware header: transparent at top, opaque+blur after 40px scroll.
+  // Premium pattern used by Apple, Saints & Stars, Tesla, Balenciaga.
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    onScroll(); // set initial state (handles deep links with hash)
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Reset menus on route change (React 19: update state during render, not in effect)
   if (pathname !== lastPath) {
@@ -131,8 +143,10 @@ export function Header() {
         ref={menuRef}
         className={cn(
           "fixed top-0 inset-x-0 z-50",
-          "border-b border-border/50 bg-background/85 backdrop-blur-xl",
-          "transition-all duration-300"
+          "transition-[background-color,backdrop-filter,border-color] duration-300",
+          scrolled
+            ? "bg-background/85 backdrop-blur-xl border-b border-border/50"
+            : "bg-transparent border-b border-transparent"
         )}
       >
         <nav className="flex items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-3.5 mx-auto max-w-7xl min-w-0">
@@ -156,7 +170,8 @@ export function Header() {
               gap-2 sm:gap-3 makes every item-to-item distance match the
               Nieuw hier ↔ Boek gap visually. */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Desktop nav links (md+ only) */}
+            {/* Desktop nav links (md+ only) — text-shadow when header is transparent
+                so links stay legible over the hero image */}
             <div className="hidden md:flex items-center gap-0.5 mr-1">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
@@ -168,7 +183,8 @@ export function Header() {
                     className={cn(
                       "relative px-3 h-9 flex items-center rounded-lg text-sm font-medium transition-colors",
                       "hover:bg-accent",
-                      isActive ? "text-foreground" : "text-muted-foreground"
+                      isActive ? "text-foreground" : "text-muted-foreground",
+                      !scrolled && "[text-shadow:_0_1px_8px_rgba(0,0,0,0.6)]"
                     )}
                   >
                     {item.label}
