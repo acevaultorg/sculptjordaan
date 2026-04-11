@@ -23,7 +23,7 @@ const bookingMenu = {
       },
       {
         icon: Users,
-        title: "Vind een Trainer",
+        title: "Personal Trainer",
         description: "Gratis kennismaking · 45 min",
         href: "/nl/vind-jouw-personal-trainer",
       },
@@ -48,8 +48,8 @@ const bookingMenu = {
       },
       {
         icon: Users,
-        title: "Find a Trainer",
-        description: "Free consultation · 45 min",
+        title: "Personal Trainer",
+        description: "Free intro · 45 min",
         href: "/en/find-personal-trainer",
       },
       {
@@ -135,8 +135,8 @@ export function Header() {
           "transition-all duration-300"
         )}
       >
-        <nav className="flex items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-3.5 mx-auto max-w-7xl min-w-0">
-          {/* Logo */}
+        <nav className="flex items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-3.5 mx-auto max-w-7xl min-w-0">
+          {/* Logo — bigger for brand presence */}
           <Link
             href={locale === "nl" ? "/" : "/en"}
             aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
@@ -147,15 +147,16 @@ export function Header() {
               alt="SculptClub"
               width={162}
               height={30}
-              className="h-[22px] sm:h-7 w-auto invert select-none"
+              className="h-7 sm:h-8 w-auto invert select-none"
               priority
             />
           </Link>
 
-          {/* Right side — 3 groups with clear visual separation: desktop nav / CTAs / utilities */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
-            {/* Group 1 — Desktop nav links (md+) */}
-            <div className="hidden md:flex items-center gap-0.5">
+          {/* Right side — single flat row, consistent gap between ALL items.
+              No more group-based spacing hierarchy — every item-to-item gap is identical. */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Desktop nav links (md+ only) */}
+            <div className="hidden md:flex items-center gap-0.5 mr-1">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -178,92 +179,87 @@ export function Header() {
               })}
             </div>
 
-            {/* Group 2 — Primary CTAs (Nieuw hier + Boek) */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <Link
-                href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-                className="h-9 flex items-center px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-medium border border-brand/60 text-brand hover:border-brand hover:bg-brand/10 transition-all whitespace-nowrap"
-              >
-                {locale === "nl" ? "Nieuw hier?" : "New here?"}
-              </Link>
+            {/* Nieuw hier? */}
+            <Link
+              href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
+              className="h-9 flex items-center px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-medium border border-brand/60 text-brand hover:border-brand hover:bg-brand/10 transition-all whitespace-nowrap"
+            >
+              {locale === "nl" ? "Nieuw hier?" : "New here?"}
+            </Link>
 
-              <button
-                onClick={handleBookClick}
+            {/* Boek */}
+            <button
+              onClick={handleBookClick}
+              className={cn(
+                "h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                bookOpen
+                  ? "bg-brand-dark text-white"
+                  : "bg-brand text-white hover:bg-brand-dark active:scale-95"
+              )}
+            >
+              <CalendarCheck className="w-3.5 h-3.5" />
+              {booking.label}
+            </button>
+
+            {/* Language toggle — vertically stacked segmented pill (NL over EN)
+                for compact footprint. ~36px wide vs ~72px horizontal.
+                Both languages visible, current one highlighted. */}
+            <div
+              className="w-9 h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border/50"
+              role="group"
+              aria-label={locale === "nl" ? "Taal" : "Language"}
+            >
+              <a
+                href={locale === "nl" ? pathname : altPath}
+                aria-current={locale === "nl" ? "page" : undefined}
+                aria-label="Nederlands"
                 className={cn(
-                  "h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
-                  bookOpen
-                    ? "bg-brand-dark text-white"
-                    : "bg-brand text-white hover:bg-brand-dark active:scale-95"
+                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-all",
+                  locale === "nl"
+                    ? "bg-background text-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                <CalendarCheck className="w-3.5 h-3.5" />
-                {booking.label}
-              </button>
-            </div>
-
-            {/* Group 3 — Utilities (Language / Login / Menu) */}
-            <div className="flex items-center gap-1">
-              {/* Language toggle — segmented pill, current highlighted.
-                  UX pattern from Linear/Vercel/Stripe: shows BOTH languages
-                  with the active one visibly highlighted. Clicking the
-                  inactive one navigates to that locale. */}
-              <div
-                className="h-9 flex items-center p-0.5 rounded-full bg-muted/40 border border-border/50"
-                role="group"
-                aria-label={locale === "nl" ? "Taal" : "Language"}
-              >
-                <a
-                  href={locale === "nl" ? pathname : altPath}
-                  aria-current={locale === "nl" ? "page" : undefined}
-                  aria-label="Nederlands"
-                  className={cn(
-                    "h-8 min-w-[2rem] flex items-center justify-center px-2 rounded-full text-[11px] font-semibold transition-all",
-                    locale === "nl"
-                      ? "bg-background text-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  NL
-                </a>
-                <a
-                  href={locale === "en" ? pathname : altPath}
-                  aria-current={locale === "en" ? "page" : undefined}
-                  aria-label="English"
-                  className={cn(
-                    "h-8 min-w-[2rem] flex items-center justify-center px-2 rounded-full text-[11px] font-semibold transition-all",
-                    locale === "en"
-                      ? "bg-background text-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  EN
-                </a>
-              </div>
-
-              {/* Client login */}
-              <button
-                onClick={handleLoginClick}
+                NL
+              </a>
+              <a
+                href={locale === "en" ? pathname : altPath}
+                aria-current={locale === "en" ? "page" : undefined}
+                aria-label="English"
                 className={cn(
-                  "w-9 h-9 flex items-center justify-center rounded-full transition-all cursor-pointer touch-manipulation",
-                  loginOpen
-                    ? "text-foreground bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95"
+                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-all",
+                  locale === "en"
+                    ? "bg-background text-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
-                aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
-                title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
               >
-                <User className="w-4 h-4" />
-              </button>
-
-              {/* Hamburger */}
-              <button
-                onClick={handleMenuClick}
-                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-accent transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
-                aria-label={menuOpen ? "Close menu" : "Open menu"}
-              >
-                {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
+                EN
+              </a>
             </div>
+
+            {/* Client login */}
+            <button
+              onClick={handleLoginClick}
+              className={cn(
+                "w-9 h-9 flex items-center justify-center rounded-full transition-all cursor-pointer touch-manipulation",
+                loginOpen
+                  ? "text-foreground bg-accent"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95"
+              )}
+              aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
+              title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
+            >
+              <User className="w-4 h-4" />
+            </button>
+
+            {/* Hamburger */}
+            <button
+              onClick={handleMenuClick}
+              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-accent transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </nav>
 
