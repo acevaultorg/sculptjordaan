@@ -202,41 +202,39 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — vertically stacked segmented pill (NL over EN)
-                for compact footprint. ~36px wide vs ~72px horizontal.
-                Both languages visible, current one highlighted. */}
-            <div
-              className="w-9 h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border"
-              role="group"
-              aria-label={locale === "nl" ? "Taal" : "Language"}
+            {/* Language toggle — ENTIRE pill is one clickable anchor that
+                switches to the other locale (via altPath). Inner spans are
+                visual-only, showing both languages with the current one
+                highlighted. Click target is the full 36×36, not two slivers. */}
+            <a
+              href={altPath}
+              aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
+              title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
+              className="w-9 h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all"
             >
-              <a
-                href={locale === "nl" ? pathname : altPath}
-                aria-current={locale === "nl" ? "page" : undefined}
-                aria-label="Nederlands"
+              <span
                 className={cn(
-                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-all",
+                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
                   locale === "nl"
                     ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground"
                 )}
+                aria-hidden="true"
               >
                 NL
-              </a>
-              <a
-                href={locale === "en" ? pathname : altPath}
-                aria-current={locale === "en" ? "page" : undefined}
-                aria-label="English"
+              </span>
+              <span
                 className={cn(
-                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-all",
+                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
                   locale === "en"
                     ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground"
                 )}
+                aria-hidden="true"
               >
                 EN
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Client login — matching chip style with Language pill */}
             <button
