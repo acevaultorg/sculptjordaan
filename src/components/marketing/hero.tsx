@@ -10,8 +10,9 @@ import type { Locale } from "@/config/site";
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
     nl: {
-      taglineParts: ["Jouw gym.", "Jouw manier.", "Jouw resultaat."],
-      tagline: "Jouw gym. Jouw manier. Jouw resultaat.",
+      taglineMain: "PRIVATE GYM",
+      taglineSub: "Jouw manier. Jouw resultaat.",
+      tagline: "PRIVATE GYM — Jouw manier. Jouw resultaat.",
       subtitle: "Privé Studio · Amsterdam Jordaan",
       description:
         "Privé studio aan de gracht in de Jordaan. Drie manieren om te trainen — gratis intake, altijd opzegbaar.",
@@ -28,8 +29,9 @@ export function Hero({ locale }: { locale: Locale }) {
       },
     },
     en: {
-      taglineParts: ["Your gym.", "Your way.", "Your results."],
-      tagline: "Your gym. Your way. Your results.",
+      taglineMain: "PRIVATE GYM",
+      taglineSub: "Your way. Your results.",
+      tagline: "PRIVATE GYM — Your way. Your results.",
       subtitle: "Private Studio · Amsterdam Jordaan",
       description:
         "Private studio on the canal in the Jordaan. Three ways to train — free intro, cancel anytime.",
@@ -71,13 +73,13 @@ export function Hero({ locale }: { locale: Locale }) {
         >
           <p className="overline mb-4 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
-          <h1 className="text-[2rem] leading-[1.05] sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] text-white">
-            {t.taglineParts.map((part, i) => (
-              <span key={i} className="inline-block">
-                {part}
-                {i < t.taglineParts.length - 1 && " "}
-              </span>
-            ))}
+          <h1 className="text-white">
+            <span className="block text-[3rem] leading-[0.92] sm:text-7xl md:text-[6.5rem] lg:text-[9rem] xl:text-[11rem] font-bold tracking-[-0.05em] whitespace-nowrap">
+              {t.taglineMain}
+            </span>
+            <span className="block mt-3 sm:mt-4 lg:mt-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] text-white/85">
+              {t.taglineSub}
+            </span>
           </h1>
 
           <p className="mt-6 text-base sm:text-lg lg:text-xl text-white/85 max-w-xl sm:max-w-2xl mx-auto leading-relaxed text-pretty">

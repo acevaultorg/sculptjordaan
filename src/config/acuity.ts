@@ -69,11 +69,15 @@ export const whatsappLinks = {
   /** Studio rental interest */
   studioNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over studio huren bij SculptClub")}`,
   studioEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to know more about renting the studio at SculptClub")}`,
-  /** Trainer intake — per trainer */
-  trainerIntake: (name: string, locale: "nl" | "en") =>
-    locale === "nl"
-      ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`)}`
-      : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'd like to book a free intro with ${name} at SculptClub`)}`,
+  /** Trainer intake — per trainer. Opens WhatsApp with pre-filled free-intro enquiry. */
+  trainerIntake: (name: string, locale: "nl" | "en", baseUrl?: string) => {
+    const base = baseUrl ?? "https://wa.me/31683178934";
+    const text =
+      locale === "nl"
+        ? `Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`
+        : `Hi! I'd like to book a free intro with ${name} at SculptClub`;
+    return `${base}?text=${encodeURIComponent(text)}`;
+  },
   /** Trainer price request — per trainer. Opens WhatsApp with pre-filled rate enquiry + free intro. */
   trainerPriceRequest: (name: string, locale: "nl" | "en", baseUrl?: string) => {
     const base = baseUrl ?? "https://wa.me/31683178934";

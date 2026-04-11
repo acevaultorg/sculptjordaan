@@ -4,6 +4,26 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/sections/section";
@@ -31,9 +51,9 @@ const copy = {
     rate: "Tarief",
     onRequest: "Op aanvraag",
     bookIntro: "Plan gratis intake",
-    requestPrice: "Vraag tarief aan",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
-    ariaPrice: (name: string) => `Vraag tarief aan bij ${name} via WhatsApp`,
+    ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
+    ariaInstagram: (handle: string) => `Bekijk ${handle} op Instagram`,
   },
   en: {
     filterHeading: "Filter by specialty or language",
@@ -48,9 +68,9 @@ const copy = {
     rate: "Rate",
     onRequest: "On request",
     bookIntro: "Book free intro",
-    requestPrice: "Request price",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
-    ariaPrice: (name: string) => `Request ${name}'s price via WhatsApp`,
+    ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,
+    ariaInstagram: (handle: string) => `View ${handle} on Instagram`,
   },
 } as const;
 
@@ -207,62 +227,73 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredTrainers.map((trainer, i) => (
             <FadeIn key={trainer.id} delay={i * 0.1}>
-              <Link
-                href={whatsappLinks.trainerPriceRequest(trainer.name, locale, trainer.whatsapp)}
-                target="_blank"
-                rel="noopener"
-                aria-label={t.ariaPrice(trainer.name)}
-                className="block h-full"
-              >
-                <Card className="h-full flex flex-col overflow-hidden cursor-pointer hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src={trainer.image}
-                      alt={t.photoAlt(trainer.name)}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+              <Card className="h-full flex flex-col overflow-hidden !rounded-none hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={trainer.image}
+                    alt={t.photoAlt(trainer.name)}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <CardTitle className="text-lg">{trainer.name}</CardTitle>
+                      {trainer.credentials && (
+                        <CardDescription>{trainer.credentials}</CardDescription>
+                      )}
+                    </div>
+                    <a
+                      href={trainer.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={t.ariaInstagram(trainer.instagramHandle)}
+                      className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                    >
+                      <InstagramIcon className="w-4 h-4" />
+                    </a>
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{trainer.name}</CardTitle>
-                    {trainer.credentials && (
-                      <CardDescription>{trainer.credentials}</CardDescription>
-                    )}
-                  </CardHeader>
+                </CardHeader>
 
-                  <CardContent className="flex-1 space-y-3">
-                    <div className="flex flex-wrap gap-1.5">
-                      {trainer.specialization[locale].map((spec) => (
-                        <Badge key={spec} variant="secondary">
-                          {spec}
-                        </Badge>
-                      ))}
-                    </div>
+                <CardContent className="flex-1 space-y-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {trainer.specialization[locale].map((spec) => (
+                      <Badge key={spec} variant="secondary">
+                        {spec}
+                      </Badge>
+                    ))}
+                  </div>
 
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {trainer.bio[locale]}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {trainer.bio[locale]}
+                  </p>
+
+                  <div className="space-y-0.5 text-sm">
+                    <p>
+                      <span className="text-muted-foreground">{t.languages}:</span>{" "}
+                      {trainer.languages.join(", ")}
                     </p>
+                    <p>
+                      <span className="text-muted-foreground">{t.rate}:</span>{" "}
+                      {trainer.rate ?? t.onRequest}
+                    </p>
+                  </div>
+                </CardContent>
 
-                    <div className="space-y-0.5 text-sm">
-                      <p>
-                        <span className="text-muted-foreground">{t.languages}:</span>{" "}
-                        {trainer.languages.join(", ")}
-                      </p>
-                      <p>
-                        <span className="text-muted-foreground">{t.rate}:</span>{" "}
-                        {trainer.rate ?? t.onRequest}
-                      </p>
-                    </div>
-                  </CardContent>
-
-                  <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
-                    <span className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground">
-                      {trainer.rate ? t.bookIntro : t.requestPrice}
-                    </span>
-                  </CardFooter>
-                </Card>
-              </Link>
+                <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
+                  <Link
+                    href={whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={t.ariaIntro(trainer.name)}
+                    className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    {t.bookIntro}
+                  </Link>
+                </CardFooter>
+              </Card>
             </FadeIn>
           ))}
         </div>

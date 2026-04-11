@@ -28,7 +28,7 @@ const INSTAGRAM_URL = "https://instagram.com/sculptclubjordaan";
 
 const images = [
   { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interior" },
-  { src: "/images/trainers/hamish.jpg", alt: "Personal training session" },
+  { src: "/images/trainers/joey.jpg", alt: "Trainer Joey at SculptClub" },
   { src: "/images/studio/dumbbell-rack.jpeg", alt: "Professional dumbbells" },
   { src: "/images/trainers/eva.jpg", alt: "Trainer Eva at SculptClub" },
   { src: "/images/studio/power-rack.jpeg", alt: "Power rack setup" },
@@ -67,7 +67,7 @@ export function InstagramFeed({ locale }: { locale: Locale }) {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block aspect-square rounded-xl overflow-hidden"
+              className="group relative block aspect-square overflow-hidden"
             >
               <Image
                 src={img.src}
