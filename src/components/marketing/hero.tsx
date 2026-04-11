@@ -56,14 +56,13 @@ export function Hero({ locale }: { locale: Locale }) {
           <p className="overline mb-5 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
           <h1 className="text-white">
-            {/* PRIVATE GYM — stacked on all viewports (Apple / Balenciaga / S&S pattern).
-                Fluid clamp: min 48px (fits iPhone SE at 320px), scales with 16vw, caps at 176px.
-                Verified via probe: PRIVATE (7 chars Syne Bold -5% tracking) = 5.11 * font-size wide. */}
-            <span className="block font-bold tracking-[-0.05em] leading-[0.85] text-[clamp(3rem,16vw,11rem)]">
-              <span className="block">PRIVATE</span>
-              <span className="block">GYM</span>
+            {/* Hero headline — stacked on mobile (< sm 640), single line on sm+.
+                Saints & Stars scale: ~60% viewport width at desktop. */}
+            <span className="block font-bold tracking-normal leading-[0.95] text-[clamp(2.75rem,11vw,4.5rem)] sm:text-[clamp(3.5rem,8vw,8.5rem)]">
+              <span className="block sm:inline">PRIVATE</span>{" "}
+              <span className="block sm:inline">GYM</span>
             </span>
-            <span className="block mt-5 sm:mt-6 lg:mt-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] text-white/85">
+            <span className="block mt-5 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
               {t.taglineSub}
             </span>
           </h1>
