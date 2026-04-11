@@ -10,7 +10,7 @@ import type { Locale } from "@/config/site";
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
     nl: {
-      subtitle: "Privé Studio · Amsterdam Jordaan",
+      subtitle: "Amsterdam Jordaan",
       taglineSub: "Jouw manier. Jouw resultaat.",
       ctas: [
         { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
@@ -20,7 +20,7 @@ export function Hero({ locale }: { locale: Locale }) {
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
     },
     en: {
-      subtitle: "Private Studio · Amsterdam Jordaan",
+      subtitle: "Amsterdam Jordaan",
       taglineSub: "Your way. Your results.",
       ctas: [
         { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users },

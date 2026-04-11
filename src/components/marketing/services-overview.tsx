@@ -77,8 +77,8 @@ const services = {
 export function ServicesOverview({ locale }: { locale: Locale }) {
   const items = services[locale];
   const t = locale === "nl"
-    ? { overline: "Drie manieren om te trainen", title: "Jouw studio, jouw regels" }
-    : { overline: "Three ways to train", title: "Your studio, your rules" };
+    ? { overline: "Kies zelf", title: "Jouw studio, jouw regels" }
+    : { overline: "Your choice", title: "Your studio, your rules" };
 
   return (
     <Section>

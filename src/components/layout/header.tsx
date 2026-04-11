@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight, User } from "lucide-react";
+import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight, User, ExternalLink, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
@@ -299,7 +299,7 @@ export function Header() {
         </AnimatePresence>
       </header>
 
-      {/* ─── LOGIN / My Bookings panel (Acuity iframe) ─── */}
+      {/* ─── LOGIN / My Bookings panel — action menu (replaces broken Acuity iframe) ─── */}
       <AnimatePresence>
         {loginOpen && (
           <>
@@ -316,7 +316,7 @@ export function Header() {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[92dvh]"
+              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[85dvh]"
             >
               <div className="bg-[#ffffff] dark:bg-[#0a0a0a] rounded-t-[2rem] shadow-2xl flex flex-col flex-1 overflow-hidden">
                 <div className="flex justify-center pt-3 pb-1">
@@ -329,18 +329,64 @@ export function Header() {
                   <button
                     onClick={() => setLoginOpen(false)}
                     className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors cursor-pointer"
+                    aria-label={locale === "nl" ? "Sluiten" : "Close"}
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
-                <div className="flex-1 overflow-hidden">
-                  <iframe
-                    src="https://app.acuityscheduling.com/schedule/fba376d5"
-                    title={locale === "nl" ? "SculptClub boekingen" : "SculptClub bookings"}
-                    className="w-full h-full border-0"
-                    style={{ minHeight: "60dvh" }}
-                    allow="payment"
-                  />
+                <div className="flex-1 overflow-y-auto px-6 pb-8">
+                  <p className="text-sm text-muted-foreground mb-5">
+                    {locale === "nl"
+                      ? "Plan een nieuwe sessie of beheer bestaande boekingen."
+                      : "Book a new session or manage existing bookings."}
+                  </p>
+
+                  <div className="space-y-3">
+                    {booking.categories.map((cat) => (
+                      <Link
+                        key={cat.href}
+                        href={cat.href}
+                        onClick={() => setLoginOpen(false)}
+                        className="flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:border-brand hover:bg-brand/5 transition-colors group"
+                      >
+                        <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
+                          <cat.icon className="w-5 h-5 text-brand" aria-hidden="true" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-base">{cat.title}</div>
+                          <div className="text-sm text-muted-foreground">{cat.description}</div>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 transition-all shrink-0" aria-hidden="true" />
+                      </Link>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-border/50 space-y-3">
+                    <a
+                      href="https://app.acuityscheduling.com/schedule/fba376d5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setLoginOpen(false)}
+                      className="flex items-center gap-3 p-3 rounded-xl text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
+                      <span className="flex-1">
+                        {locale === "nl" ? "Beheer via Acuity (nieuw tabblad)" : "Manage via Acuity (new tab)"}
+                      </span>
+                    </a>
+                    <a
+                      href="https://wa.me/31683178934"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setLoginOpen(false)}
+                      className="flex items-center gap-3 p-3 rounded-xl text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+                      <span className="flex-1">
+                        {locale === "nl" ? "Hulp nodig? WhatsApp ons" : "Need help? WhatsApp us"}
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

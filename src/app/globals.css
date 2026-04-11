@@ -213,7 +213,12 @@
   }
   /* Overline pattern — small utility label above H2.
      Switched from Syne to Instrument Sans: Apple/Balenciaga use their
-     regular font for section labels, not a separate display face. */
+     regular font for section labels, not a separate display face.
+
+     NOTE: Tailwind v4 ships a built-in .overline utility for
+     text-decoration-line: overline. Our custom .overline class
+     MUST explicitly reset it or Tailwind's utility stacks and
+     draws a visible decoration line ABOVE the text. */
   .overline {
     font-family: var(--font-sans);
     font-weight: 600;
@@ -222,6 +227,10 @@
     letter-spacing: 0.18em;
     line-height: 1;
     color: var(--muted-foreground);
+    /* Must be !important: Tailwind v4's built-in .overline utility (text-decoration-line: overline)
+       lives in the utilities layer which beats @layer base by cascade order. Without !important
+       the Tailwind utility draws a visible line ABOVE the text. */
+    text-decoration-line: none !important;
   }
   /* Buttons, form labels — tight UI tracking for crispness */
   button, [role="button"], input, select, textarea, label {
