@@ -237,14 +237,14 @@ export function Header() {
               </a>
             </div>
 
-            {/* Client login */}
+            {/* Client login — matching chip style with Language pill (bg-muted/40 + border) */}
             <button
               onClick={handleLoginClick}
               className={cn(
-                "w-9 h-9 flex items-center justify-center rounded-full transition-all cursor-pointer touch-manipulation",
+                "w-9 h-9 flex items-center justify-center rounded-lg border transition-all cursor-pointer touch-manipulation",
                 loginOpen
-                  ? "text-foreground bg-accent"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95"
+                  ? "text-foreground bg-accent border-border"
+                  : "text-muted-foreground hover:text-foreground bg-muted/40 border-border/50 hover:bg-accent active:scale-95"
               )}
               aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
               title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
@@ -252,10 +252,15 @@ export function Header() {
               <User className="w-4 h-4" />
             </button>
 
-            {/* Hamburger */}
+            {/* Hamburger — matching chip style with Language pill (bg-muted/40 + border) */}
             <button
               onClick={handleMenuClick}
-              className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-accent transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
+              className={cn(
+                "w-9 h-9 flex items-center justify-center rounded-lg border transition-all cursor-pointer touch-manipulation",
+                menuOpen
+                  ? "text-foreground bg-accent border-border"
+                  : "text-muted-foreground hover:text-foreground bg-muted/40 border-border/50 hover:bg-accent active:scale-95"
+              )}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
