@@ -56,13 +56,20 @@ export function Hero({ locale }: { locale: Locale }) {
           <p className="overline mb-5 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
           <h1 className="text-white">
-            {/* Hero headline — applies SculptClub typography guidelines (docs/TYPOGRAPHY-GUIDELINES.md).
-                Measured reference: Apple 56px, Saints & Stars 54px. Max here: 64px.
-                The editorial weight comes from wide tracking (+0.12em) + uppercase source text,
-                not from a monumental font-size. Target ~30-40% viewport width on desktop. */}
-            <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(2rem,8vw,2.5rem)] md:text-[clamp(2.5rem,4vw,4rem)]">
-              <span className="block md:inline">PRIVATE</span>{" "}
-              <span className="block md:inline">GYM</span>
+            {/* Hero headline — single line on all viewports 320px+.
+                SculptClub typography guidelines (docs/TYPOGRAPHY-GUIDELINES.md).
+                Measured ratio: PRIVATE GYM = 9.09 × font-size at +0.12em tracking.
+                clamp(1.875rem, 8vw, 4rem) = 30px → 64px (cap at 800px viewport).
+                Verified with DOM probe:
+                - 320px:  30px font × 9.09 = 273px text in 288 container (fits +15)
+                - 375px:  30px font × 9.09 = 273px text in 343 container (fits +70)
+                - 640px:  51.2px font × 9.09 = 465px text in 592 container (fits +127)
+                - 768px:  61.44px font × 9.09 = 559px text in 720 container (fits +161)
+                - 1280px: 64px (capped) × 9.09 = 582px text in 1104 container (45% vp)
+                - 1728px: 64px (capped) × 9.09 = 582px text in 1104 container (34% vp)
+                No whitespace-nowrap — allows graceful wrap on <320px edge viewports. */}
+            <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(1.875rem,8vw,4rem)]">
+              PRIVATE GYM
             </span>
             <span className="block mt-5 sm:mt-6 lg:mt-7 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
               {t.taglineSub}
