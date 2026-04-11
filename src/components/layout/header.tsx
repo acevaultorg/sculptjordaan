@@ -147,14 +147,15 @@ export function Header() {
               alt="SculptClub"
               width={162}
               height={30}
-              className="h-7 sm:h-8 w-auto invert select-none"
+              className="h-8 sm:h-9 w-auto invert select-none"
               priority
             />
           </Link>
 
           {/* Right side — single flat row, consistent gap between ALL items.
-              No more group-based spacing hierarchy — every item-to-item gap is identical. */}
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              gap-2 sm:gap-3 makes every item-to-item distance match the
+              Nieuw hier ↔ Boek gap visually. */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Desktop nav links (md+ only) */}
             <div className="hidden md:flex items-center gap-0.5 mr-1">
               {navItems.map((item) => {
@@ -205,7 +206,7 @@ export function Header() {
                 for compact footprint. ~36px wide vs ~72px horizontal.
                 Both languages visible, current one highlighted. */}
             <div
-              className="w-9 h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border/50"
+              className="w-9 h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border"
               role="group"
               aria-label={locale === "nl" ? "Taal" : "Language"}
             >
@@ -237,14 +238,14 @@ export function Header() {
               </a>
             </div>
 
-            {/* Client login — matching chip style with Language pill (bg-muted/40 + border) */}
+            {/* Client login — matching chip style with Language pill */}
             <button
               onClick={handleLoginClick}
               className={cn(
-                "w-9 h-9 flex items-center justify-center rounded-lg border transition-all cursor-pointer touch-manipulation",
+                "w-9 h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
                 loginOpen
-                  ? "text-foreground bg-accent border-border"
-                  : "text-muted-foreground hover:text-foreground bg-muted/40 border-border/50 hover:bg-accent active:scale-95"
+                  ? "text-foreground bg-accent"
+                  : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
               )}
               aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
               title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
@@ -252,14 +253,14 @@ export function Header() {
               <User className="w-4 h-4" />
             </button>
 
-            {/* Hamburger — matching chip style with Language pill (bg-muted/40 + border) */}
+            {/* Hamburger — matching chip style with Language pill */}
             <button
               onClick={handleMenuClick}
               className={cn(
-                "w-9 h-9 flex items-center justify-center rounded-lg border transition-all cursor-pointer touch-manipulation",
+                "w-9 h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
                 menuOpen
-                  ? "text-foreground bg-accent border-border"
-                  : "text-muted-foreground hover:text-foreground bg-muted/40 border-border/50 hover:bg-accent active:scale-95"
+                  ? "text-foreground bg-accent"
+                  : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
               )}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
