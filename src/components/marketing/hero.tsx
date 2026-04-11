@@ -10,10 +10,8 @@ import type { Locale } from "@/config/site";
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
     nl: {
-      taglineMain: "PRIVATE GYM",
-      taglineSub: "Jouw manier. Jouw resultaat.",
-      tagline: "PRIVATE GYM — Jouw manier. Jouw resultaat.",
       subtitle: "Privé Studio · Amsterdam Jordaan",
+      taglineSub: "Jouw manier. Jouw resultaat.",
       ctas: [
         { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
         { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
@@ -22,10 +20,8 @@ export function Hero({ locale }: { locale: Locale }) {
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
     },
     en: {
-      taglineMain: "PRIVATE GYM",
-      taglineSub: "Your way. Your results.",
-      tagline: "PRIVATE GYM — Your way. Your results.",
       subtitle: "Private Studio · Amsterdam Jordaan",
+      taglineSub: "Your way. Your results.",
       ctas: [
         { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
         { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
@@ -60,10 +56,14 @@ export function Hero({ locale }: { locale: Locale }) {
           <p className="overline mb-5 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
           <h1 className="text-white">
-            <span className="block font-bold tracking-[-0.05em] leading-[0.88] text-[clamp(2.75rem,14vw,9.5rem)]">
-              {t.taglineMain}
+            {/* PRIVATE GYM — stacked on all viewports (Apple / Balenciaga / S&S pattern).
+                Fluid clamp: min 48px (fits iPhone SE at 320px), scales with 16vw, caps at 176px.
+                Verified via probe: PRIVATE (7 chars Syne Bold -5% tracking) = 5.11 * font-size wide. */}
+            <span className="block font-bold tracking-[-0.05em] leading-[0.85] text-[clamp(3rem,16vw,11rem)]">
+              <span className="block">PRIVATE</span>
+              <span className="block">GYM</span>
             </span>
-            <span className="block mt-4 sm:mt-5 lg:mt-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] text-white/85">
+            <span className="block mt-5 sm:mt-6 lg:mt-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] text-white/85">
               {t.taglineSub}
             </span>
           </h1>
