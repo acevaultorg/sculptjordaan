@@ -43,8 +43,9 @@ export function GoogleMap({ locale }: { locale: Locale }) {
 
           {/* Info card */}
           <div className="space-y-4 rounded-2xl border border-border/50 bg-card p-5 shadow-brand-sm">
+            {/* Address — decorative icon (muted), not clickable. The Route button below handles navigation. */}
             <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-brand mt-0.5 shrink-0" />
+              <MapPin className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <p className="font-semibold text-sm">{siteConfig.address.street}</p>
                 <p className="text-sm text-muted-foreground">
@@ -53,20 +54,22 @@ export function GoogleMap({ locale }: { locale: Locale }) {
               </div>
             </div>
 
+            {/* Hours — decorative icon (muted), not clickable. */}
             <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-brand mt-0.5 shrink-0" />
+              <Clock className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" aria-hidden="true" />
               <p className="text-sm text-muted-foreground">{t.hours}</p>
             </div>
 
-            <div className="flex items-start gap-3">
-              <Phone className="w-5 h-5 text-brand mt-0.5 shrink-0" />
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="text-sm font-medium text-brand hover:text-brand-dark transition-colors"
-              >
+            {/* Phone — whole row is a tel: link, icon stays brand-colored (clickable context). */}
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="flex items-start gap-3 group"
+            >
+              <Phone className="w-5 h-5 text-brand mt-0.5 shrink-0 group-hover:text-brand-dark transition-colors" aria-hidden="true" />
+              <span className="text-sm font-medium text-brand group-hover:text-brand-dark transition-colors">
                 {siteConfig.phoneDisplay}
-              </a>
-            </div>
+              </span>
+            </a>
 
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${siteConfig.geo.lat},${siteConfig.geo.lng}`}
