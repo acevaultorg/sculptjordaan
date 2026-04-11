@@ -1,6 +1,15 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import {
   Accordion,
   AccordionItem,
@@ -16,7 +25,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
   description:
-    "Boek een Open Gym sessie bij SculptClub in de Jordaan. Vanaf €29/4 weken, privé studio. Start met een gratis proefles.",
+    "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie €10 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
   alternates: {
     canonical: "/nl/boek-gym",
     languages: { nl: "/nl/boek-gym", en: "/en/book-gym" },
@@ -27,6 +36,59 @@ const steps = [
   { icon: Clock, title: "Boek een sessie", description: "Kies een tijdslot via het boekingssysteem." },
   { icon: Key, title: "Ontvang je deurcode", description: "Unieke code via WhatsApp om de studio binnen te komen." },
   { icon: Dumbbell, title: "Train op jouw tijd", description: "De volledige studio met professionele apparatuur, voor jezelf." },
+];
+
+const plans = [
+  {
+    name: "Losse sessie",
+    sessions: "1 sessie",
+    tagline: "Geen lidmaatschap nodig",
+    price: "€10",
+    period: "",
+    perSession: null,
+    badge: null,
+    link: acuityLinks.openGymBook,
+  },
+  {
+    name: "Instapplan",
+    sessions: "4 sessies",
+    tagline: "Ideaal om te beginnen",
+    price: "€29",
+    period: "/ 4 weken",
+    perSession: "€7,25 / sessie",
+    badge: null,
+    link: acuityLinks.openGymPlans.instapplan,
+  },
+  {
+    name: "Populair",
+    sessions: "8 sessies",
+    tagline: "2x / week trainen",
+    price: "€49",
+    period: "/ 4 weken",
+    perSession: "€6,13 / sessie",
+    badge: "Meest gekozen",
+    link: acuityLinks.openGymPlans.populair,
+  },
+  {
+    name: "Intensief",
+    sessions: "12 sessies",
+    tagline: "3x / week trainen",
+    price: "€69",
+    period: "/ 4 weken",
+    perSession: "€5,75 / sessie",
+    badge: null,
+    link: acuityLinks.openGymPlans.intensief,
+  },
+  {
+    name: "Onbeperkt",
+    sessions: "Onbeperkt",
+    tagline: "Maximale vrijheid",
+    price: "€89",
+    period: "/ 4 weken",
+    perSession: null,
+    badge: null,
+    link: acuityLinks.openGymPlans.onbeperkt,
+  },
 ];
 
 const studioImages = [
@@ -60,25 +122,62 @@ export default function BoekGymPageNL() {
           <p className="overline text-primary">Open Gym · Jordaan, Amsterdam</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek een Open Gym Sessie</h1>
           <p className="mt-3 text-muted-foreground">
-            Train zelfstandig in een privé studio. Start met een gratis proefles.
+            Train zelfstandig in een privé studio. Losse sessie of lidmaatschap — altijd opzegbaar.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <ButtonLink href={acuityLinks.openGymTrial} size="xl" className="w-full sm:w-auto">
-              Start gratis proefles
+            <ButtonLink href={acuityLinks.openGymBook} size="xl" className="w-full sm:w-auto">
+              Boek een sessie
               <ArrowRight className="ml-2 h-4 w-4" />
             </ButtonLink>
-            <ButtonLink href="/nl/open-gym" size="lg" variant="outline" className="w-full sm:w-auto">
-              Bekijk alle plannen
+            <ButtonLink href="#plannen" size="lg" variant="outline" className="w-full sm:w-auto">
+              Kies een plan
             </ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
             Losse sessie €10 · Lidmaatschap vanaf €7,25/sessie · Dagelijks 06:30–22:00
           </p>
           <div className="mt-6 pt-4 border-t border-border/50">
-            <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Al lid? Reserveer jouw uur →
+            <ButtonLink href={acuityLinks.openGymTrial} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
+              Nieuw? Probeer eerst een gratis proefles →
             </ButtonLink>
           </div>
+        </div>
+      </Section>
+
+      {/* Pricing — Open Gym plans */}
+      <Section id="plannen">
+        <SectionHeader
+          overline="Open Gym"
+          title="Kies Jouw Plan"
+          description="Losse sessie of lidmaatschap per 4 weken. Altijd opzegbaar."
+        />
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          {plans.map((plan, i) => (
+            <FadeIn key={plan.name} delay={i * 0.1}>
+              <Card className={`h-full text-center flex flex-col ${plan.badge ? "ring-2 ring-primary" : ""}`}>
+                <CardHeader>
+                  {plan.badge && <Badge className="mx-auto mb-2">{plan.badge}</Badge>}
+                  <CardTitle className="text-lg">{plan.name}</CardTitle>
+                  <CardDescription>{plan.sessions}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <p className="text-3xl font-bold">
+                    {plan.price}
+                    <span className="text-base font-normal text-muted-foreground"> {plan.period}</span>
+                  </p>
+                  {plan.perSession && (
+                    <p className="mt-1 text-sm text-muted-foreground">{plan.perSession}</p>
+                  )}
+                  <p className="mt-3 text-sm text-muted-foreground">{plan.tagline}</p>
+                </CardContent>
+                <CardFooter className="justify-center">
+                  <ButtonLink href={plan.link} size="lg" className="w-full">
+                    {plan.period ? "Kies plan" : "Boek nu"}
+                  </ButtonLink>
+                </CardFooter>
+              </Card>
+            </FadeIn>
+          ))}
         </div>
       </Section>
 
@@ -182,11 +281,11 @@ export default function BoekGymPageNL() {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Klaar om te trainen?</h2>
             <p className="mx-auto mt-3 max-w-xl text-white/70">
-              Boek je gratis proefles — morgen kun je al starten.
+              Boek je sessie — morgen kun je al starten.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={acuityLinks.openGymTrial} size="lg">
-                Start gratis proefles
+              <ButtonLink href={acuityLinks.openGymBook} size="lg">
+                Boek een sessie
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink href={whatsappLinks.openGymNl} variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent" external>
