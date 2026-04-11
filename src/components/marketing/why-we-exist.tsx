@@ -5,10 +5,10 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
   const t =
     locale === "nl"
       ? {
-          eyebrow: "Waarom we bestaan",
-          title: "Een privé gym, zonder de gym.",
+          eyebrow: "Het verschil",
+          title: "Geen contract. Geen commissie. Geen drukte.",
           intro:
-            "SculptClub is klein, onafhankelijk en rustig. Geen lidmaatschap, geen commissie, geen drukte. Dit is waarom we het zo doen:",
+            "Klein, onafhankelijk, stil. De beste onafhankelijke trainers van Amsterdam werken hier omdat wij niet in de weg lopen.",
           beliefs: [
             {
               n: "01",
@@ -22,16 +22,16 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             },
             {
               n: "03",
-              title: "Contracten maken niemand sterker.",
+              title: "Vrijheid maakt je sterker.",
               body: "De eerste intake is gratis, Open Gym loopt in 4-weken cycli die je altijd kunt opzeggen, en PT boek je per sessie. Je blijft omdat het werkt, niet omdat je vast zit.",
             },
           ],
         }
       : {
-          eyebrow: "Why we exist",
-          title: "A private gym, without the gym.",
+          eyebrow: "What makes us different",
+          title: "No contract. No commission. No crowds.",
           intro:
-            "SculptClub is small, independent and quiet. No membership, no commission, no crowd. Here's why we do it this way:",
+            "Small, independent, quiet. The best independent trainers in Amsterdam work here because we don't get in the way.",
           beliefs: [
             {
               n: "01",
@@ -45,7 +45,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             },
             {
               n: "03",
-              title: "Contracts don't make anyone stronger.",
+              title: "Freedom makes you stronger.",
               body: "First intro is free, Open Gym runs in 4-week cycles you can cancel anytime, and PT is booked per session. You stay because it works, not because you're locked in.",
             },
           ],
