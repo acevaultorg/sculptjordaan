@@ -56,13 +56,15 @@ export function Hero({ locale }: { locale: Locale }) {
           <p className="overline mb-5 !text-white/70 tracking-[0.18em]">{t.subtitle}</p>
 
           <h1 className="text-white">
-            {/* Hero headline — stacked on mobile (< sm 640), single line on sm+.
-                Saints & Stars scale: ~60% viewport width at desktop. */}
-            <span className="block font-bold tracking-normal leading-[0.95] text-[clamp(2.75rem,11vw,4.5rem)] sm:text-[clamp(3.5rem,8vw,8.5rem)]">
-              <span className="block sm:inline">PRIVATE</span>{" "}
-              <span className="block sm:inline">GYM</span>
+            {/* Hero headline — applies SculptClub typography guidelines (docs/TYPOGRAPHY-GUIDELINES.md).
+                Measured reference: Apple 56px, Saints & Stars 54px. Max here: 64px.
+                The editorial weight comes from wide tracking (+0.12em) + uppercase source text,
+                not from a monumental font-size. Target ~30-40% viewport width on desktop. */}
+            <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(2rem,8vw,2.5rem)] md:text-[clamp(2.5rem,4vw,4rem)]">
+              <span className="block md:inline">PRIVATE</span>{" "}
+              <span className="block md:inline">GYM</span>
             </span>
-            <span className="block mt-5 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
+            <span className="block mt-5 sm:mt-6 lg:mt-7 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
               {t.taglineSub}
             </span>
           </h1>
