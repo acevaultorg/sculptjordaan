@@ -40,7 +40,7 @@ export function Hero({ locale }: { locale: Locale }) {
           src="/images/studio/studio-interior-1.jpeg"
           alt="SculptClub private personal training studio interior with professional equipment in Amsterdam Jordaan"
           fill
-          className="object-cover"
+          className="object-cover [transform:translateZ(0)]"
           sizes="100vw"
           priority
         />
