@@ -112,8 +112,8 @@ export default function OverOnsPage() {
           <FadeIn>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/studio-interior-1.jpeg"
-                alt="SculptClub studio interieur"
+                src="/images/studio/entrance-portrait.jpg"
+                alt="Entree SculptClub aan Amsterdams grachtenpand, tegenlicht"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

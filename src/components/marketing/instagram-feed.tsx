@@ -27,12 +27,12 @@ function InstagramIcon({ className }: { className?: string }) {
 const INSTAGRAM_URL = "https://instagram.com/sculptclubjordaan";
 
 const images = [
-  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interior" },
+  { src: "/images/studio/training-bike-energy.jpg", alt: "Training on assault bike at SculptClub" },
   { src: "/images/trainers/joey.jpg", alt: "Trainer Joey at SculptClub" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Professional dumbbells" },
-  { src: "/images/trainers/eva.jpg", alt: "Trainer Eva at SculptClub" },
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack setup" },
-  { src: "/images/studio/studio-interior-2.jpeg", alt: "SculptClub gym space" },
+  { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang training at SculptClub" },
+  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Dumbbell training at SculptClub" },
+  { src: "/images/studio/entrance-portrait.jpg", alt: "SculptClub entrance in Amsterdam canal house" },
+  { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Barbell training at SculptClub" },
 ];
 
 const t = {

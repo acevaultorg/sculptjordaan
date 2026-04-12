@@ -66,10 +66,10 @@ const features = [
 ];
 
 const galleryImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio met trainingsapparatuur" },
-  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interieur met trainingsruimte en apparatuur" },
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack met halter in de SculptClub studio" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Professioneel dumbbell rack in de SculptClub studio" },
+  { src: "/images/studio/entrance-smile.jpg", alt: "Gastvrije entree van SculptClub aan Amsterdams grachtenpand" },
+  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in het Rogue rack bij SculptClub" },
+  { src: "/images/studio/training-bike-energy.jpg", alt: "Energieke assault bike training bij SculptClub" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio" },
 ];
 
 const faqs = [
@@ -136,8 +136,8 @@ export default function StudioRentalPageNL() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/studio-overview.jpeg"
-                alt="SculptClub studio overzicht"
+                src="/images/studio/entrance-portrait.jpg"
+                alt="Entree SculptClub aan Amsterdams grachtenpand, tegenlicht"
                 fill
                 className="object-cover"
                 priority

@@ -76,10 +76,10 @@ const plans = [
 ];
 
 const studioImages = [
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack in SculptClub studio" },
-  { src: "/images/studio/assault-bike.jpeg", alt: "Assault bike in SculptClub studio" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack in SculptClub studio" },
-  { src: "/images/studio/studio-overview.jpeg", alt: "SculptClub studio overview" },
+  { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press on bench at SculptClub" },
+  { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang on pull-up bar at SculptClub" },
+  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Focused dumbbell training at SculptClub" },
+  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in Rogue rack at SculptClub" },
 ];
 
 const faqs = [

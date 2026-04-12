@@ -66,10 +66,10 @@ const features = [
 ];
 
 const galleryImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio with training equipment" },
-  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interior showing the training floor and equipment" },
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack with barbell at SculptClub studio" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Professional dumbbell rack at SculptClub studio" },
+  { src: "/images/studio/entrance-smile.jpg", alt: "Welcoming entrance of SculptClub at Amsterdam canal house" },
+  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in Rogue rack at SculptClub" },
+  { src: "/images/studio/training-bike-energy.jpg", alt: "High-energy assault bike training at SculptClub" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio" },
 ];
 
 const faqs = [
@@ -136,8 +136,8 @@ export default function StudioRentalPageEN() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/studio-overview.jpeg"
-                alt="SculptClub studio overview"
+                src="/images/studio/entrance-portrait.jpg"
+                alt="SculptClub entrance at Amsterdam canal house, backlit"
                 fill
                 className="object-cover"
                 priority

@@ -138,8 +138,8 @@ export default function WordTrainerNL() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/studio/studio-overview.jpeg"
-                alt="SculptClub privé studio interieur met professionele apparatuur"
+                src="/images/studio/entrance-portrait.jpg"
+                alt="Entree SculptClub aan Amsterdams grachtenpand, tegenlicht"
                 fill
                 className="object-cover"
                 priority
@@ -206,9 +206,9 @@ export default function WordTrainerNL() {
         <FadeIn>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { src: "/images/studio/power-rack.jpeg", alt: "Powerrack en trainingsruimte" },
-              { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rek" },
-              { src: "/images/studio/studio-interior-2.jpeg", alt: "Studio interieur" },
+              { src: "/images/studio/training-bike-smile.jpg", alt: "Lachend op de assault bike bij SculptClub" },
+              { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Dramatische barbell close-up bij SculptClub" },
+              { src: "/images/studio/training-squat-cinematic.jpg", alt: "Cinematische back squat door het rack bij SculptClub" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />

@@ -52,10 +52,10 @@ const steps = [
 ];
 
 const studioImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "SculptClub private studio overview" },
-  { src: "/images/studio/studio-interior-1.jpeg", alt: "SculptClub studio interior" },
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack in SculptClub studio" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack in SculptClub studio" },
+  { src: "/images/studio/entrance-smile.jpg", alt: "Welcoming entrance of SculptClub at Amsterdam canal house" },
+  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in Rogue rack at SculptClub" },
+  { src: "/images/studio/training-bike-energy.jpg", alt: "High-energy assault bike training at SculptClub" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio" },
 ];
 
 const faqs = [

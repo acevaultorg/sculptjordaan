@@ -37,8 +37,8 @@ export function Hero({ locale }: { locale: Locale }) {
           Text contrast comes from text-shadow on the motion container. */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/studio/studio-interior-1.jpeg"
-          alt="SculptClub private personal training studio interior with professional equipment in Amsterdam Jordaan"
+          src="/images/studio/training-barbell-squat.jpg"
+          alt="Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack"
           fill
           className="object-cover [transform:translateZ(0)]"
           sizes="100vw"

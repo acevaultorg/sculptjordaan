@@ -113,10 +113,10 @@ const steps = [
 ];
 
 const studioImages = [
-  { src: "/images/studio/power-rack.jpeg", alt: "Power rack in SculptClub studio" },
-  { src: "/images/studio/assault-bike.jpeg", alt: "Assault bike in SculptClub studio" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Dumbbell rack in SculptClub studio" },
-  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht SculptClub studio" },
+  { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press op bank bij SculptClub" },
+  { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang aan de pull-up bar bij SculptClub" },
+  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Geconcentreerd trainen met dumbbells bij SculptClub" },
+  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in het Rogue rack bij SculptClub" },
 ];
 
 const faqs = [
