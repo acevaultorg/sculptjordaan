@@ -137,8 +137,8 @@ export default function BecomeTrainerEN() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/studio/canal-view-doors.jpg"
-                alt="View from inside SculptClub through open doors to Egelantiersgracht canal"
+                src="/images/studio/model-facade-full.jpg"
+                alt="Athlete at the entrance of SculptClub Private Gym at Egelantiersgracht 424"
                 fill
                 className="object-cover"
                 priority

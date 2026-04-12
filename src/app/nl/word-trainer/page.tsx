@@ -138,8 +138,8 @@ export default function WordTrainerNL() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/studio/canal-view-doors.jpg"
-                alt="Uitzicht vanuit SculptClub door open deuren op de Egelantiersgracht"
+                src="/images/studio/model-facade-full.jpg"
+                alt="Atleet bij de ingang van SculptClub Private Gym aan Egelantiersgracht 424"
                 fill
                 className="object-cover"
                 priority

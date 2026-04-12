@@ -35,6 +35,7 @@ const images = [
   { src: "/images/studio/boutique-corner.jpg", alt: "SculptClub boutique dumbbell rack with plants and vinyl" },
   { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Barbell training at SculptClub" },
   { src: "/images/studio/turf-lane-canal.jpg", alt: "SculptClub turf training lane with canal view" },
+  { src: "/images/studio/model-facade-relaxed.jpg", alt: "Athlete at SculptClub Private Gym entrance Egelantiersgracht 424" },
 ];
 
 const t = {
