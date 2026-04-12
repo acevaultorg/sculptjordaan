@@ -126,8 +126,8 @@ export default function FreeIntroPage() {
         {/* Studio photo */}
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
-            src="/images/studio/training-bike-smile.jpg"
-            alt="Smiling on assault bike at SculptClub private studio"
+            src="/images/studio/training-dumbbells-smile.jpg"
+            alt="Smiling with dumbbells at SculptClub private studio"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"

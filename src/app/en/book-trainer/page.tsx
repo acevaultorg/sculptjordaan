@@ -21,7 +21,7 @@ const steps = [
 ];
 
 const studioImages = [
-  { src: "/images/studio/entrance-portrait.jpg", alt: "SculptClub entrance at Amsterdam canal house, backlit" },
+  { src: "/images/studio/pt-session-barbell.jpg", alt: "Real personal training session with barbell in Rogue rack at SculptClub" },
   { src: "/images/studio/training-bike-smile.jpg", alt: "Smiling on assault bike at SculptClub" },
   { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Dramatic barbell close-up at SculptClub" },
   { src: "/images/studio/training-squat-cinematic.jpg", alt: "Cinematic back squat framed through rack at SculptClub" },

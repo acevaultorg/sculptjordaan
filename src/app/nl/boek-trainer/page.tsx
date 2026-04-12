@@ -30,7 +30,7 @@ const steps = [
 ];
 
 const studioImages = [
-  { src: "/images/studio/entrance-portrait.jpg", alt: "Entree SculptClub aan Amsterdams grachtenpand, tegenlicht" },
+  { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal training sessie met barbell in het Rogue rack bij SculptClub" },
   { src: "/images/studio/training-bike-smile.jpg", alt: "Lachend op de assault bike bij SculptClub" },
   { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Dramatische barbell close-up bij SculptClub" },
   { src: "/images/studio/training-squat-cinematic.jpg", alt: "Cinematische back squat door het rack bij SculptClub" },

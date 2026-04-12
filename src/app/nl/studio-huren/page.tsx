@@ -66,10 +66,10 @@ const features = [
 ];
 
 const galleryImages = [
-  { src: "/images/studio/entrance-smile.jpg", alt: "Gastvrije entree van SculptClub aan Amsterdams grachtenpand" },
-  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in het Rogue rack bij SculptClub" },
-  { src: "/images/studio/training-bike-energy.jpg", alt: "Energieke assault bike training bij SculptClub" },
-  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio" },
+  { src: "/images/studio/turf-lane-canal.jpg", alt: "Turf lane met SCULPT wandlogo en uitzicht op de gracht bij SculptClub" },
+  { src: "/images/studio/back-room-full.jpg", alt: "Achterruimte met slee, Rogue rack en bank onder daklicht bij SculptClub" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack met planten en vinyl speler bij SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht vanuit SculptClub op de Egelantiersgracht" },
 ];
 
 const faqs = [
@@ -136,8 +136,8 @@ export default function StudioRentalPageNL() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/entrance-portrait.jpg"
-                alt="Entree SculptClub aan Amsterdams grachtenpand, tegenlicht"
+                src="/images/studio/facade-sculptclub.jpg"
+                alt="Gevel van SculptClub Private Gym aan Egelantiersgracht 424 Amsterdam"
                 fill
                 className="object-cover"
                 priority

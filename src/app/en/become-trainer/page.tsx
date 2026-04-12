@@ -137,8 +137,8 @@ export default function BecomeTrainerEN() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="/images/studio/entrance-portrait.jpg"
-                alt="SculptClub entrance at Amsterdam canal house, backlit"
+                src="/images/studio/canal-view-doors.jpg"
+                alt="View from inside SculptClub through open doors to Egelantiersgracht canal"
                 fill
                 className="object-cover"
                 priority
@@ -207,7 +207,7 @@ export default function BecomeTrainerEN() {
             {[
               { src: "/images/studio/training-bike-smile.jpg", alt: "Smiling on assault bike at SculptClub" },
               { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Dramatic barbell close-up at SculptClub" },
-              { src: "/images/studio/training-squat-cinematic.jpg", alt: "Cinematic back squat framed through rack at SculptClub" },
+              { src: "/images/studio/training-barbell-skylight.jpg", alt: "Barbell training under skylight at SculptClub" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />

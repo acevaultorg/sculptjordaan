@@ -28,11 +28,13 @@ const INSTAGRAM_URL = "https://instagram.com/sculptclubjordaan";
 
 const images = [
   { src: "/images/studio/training-bike-energy.jpg", alt: "Training on assault bike at SculptClub" },
-  { src: "/images/trainers/joey.jpg", alt: "Trainer Joey at SculptClub" },
+  { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub Private Gym entrance at Egelantiersgracht 424 Amsterdam" },
   { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang training at SculptClub" },
-  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Dumbbell training at SculptClub" },
-  { src: "/images/studio/entrance-portrait.jpg", alt: "SculptClub entrance in Amsterdam canal house" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "View from SculptClub to Egelantiersgracht canal Amsterdam" },
+  { src: "/images/studio/training-dumbbells-joy.jpg", alt: "Joyful dumbbell training at SculptClub" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "SculptClub boutique dumbbell rack with plants and vinyl" },
   { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Barbell training at SculptClub" },
+  { src: "/images/studio/turf-lane-canal.jpg", alt: "SculptClub turf training lane with canal view" },
 ];
 
 const t = {

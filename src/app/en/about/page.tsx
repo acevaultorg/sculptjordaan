@@ -112,8 +112,8 @@ export default function AboutPage() {
           <FadeIn>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/entrance-portrait.jpg"
-                alt="SculptClub entrance at Amsterdam canal house, backlit"
+                src="/images/studio/facade-sculptclub.jpg"
+                alt="SculptClub Private Gym facade at Egelantiersgracht 424 Amsterdam"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

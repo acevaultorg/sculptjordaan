@@ -36,8 +36,8 @@ const services = {
         "Groei je praktijk zonder vaste lasten. Huur de studio per sessie voor jouw klanten. Vanaf €12/60 min, kortingspakketten tot 23% korting.",
       href: "/nl/boek-studio",
       cta: "Bekijk studio & tarieven",
-      image: "/images/studio/entrance-smile.jpg",
-      imageAlt: "SculptClub studio in Amsterdam canal house",
+      image: "/images/studio/facade-sculptclub.jpg",
+      imageAlt: "Gevel van SculptClub Private Gym aan de Egelantiersgracht",
     },
   ],
   en: [
@@ -68,8 +68,8 @@ const services = {
         "Grow your practice without fixed costs. Rent the studio per session for your clients. From €12/60 min, discount packs up to 23% off.",
       href: "/en/book-studio",
       cta: "View studio & rates",
-      image: "/images/studio/entrance-smile.jpg",
-      imageAlt: "SculptClub studio in Amsterdam canal house",
+      image: "/images/studio/facade-sculptclub.jpg",
+      imageAlt: "SculptClub Private Gym facade at Egelantiersgracht Amsterdam",
     },
   ],
 };

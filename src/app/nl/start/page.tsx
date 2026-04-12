@@ -119,8 +119,8 @@ export default function StartPageNL() {
           {/* Studio photo */}
           <div className="mt-8 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
             <Image
-              src="/images/studio/training-barbell-squat.jpg"
-              alt="Barbell squat in het Rogue rack bij SculptClub, Jordaan Amsterdam"
+              src="/images/studio/portrait-entrance-warm.jpg"
+              alt="Warm portret bij de entree van SculptClub, Jordaan Amsterdam"
               fill
               className="object-cover"
               sizes="(max-width: 672px) 100vw, 672px"

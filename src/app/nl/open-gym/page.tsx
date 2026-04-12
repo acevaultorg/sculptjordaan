@@ -116,7 +116,7 @@ const studioImages = [
   { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press op bank bij SculptClub" },
   { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang aan de pull-up bar bij SculptClub" },
   { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Geconcentreerd trainen met dumbbells bij SculptClub" },
-  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in het Rogue rack bij SculptClub" },
+  { src: "/images/studio/back-room-full.jpg", alt: "Volledige achterruimte met slee, rack en bank bij SculptClub" },
 ];
 
 const faqs = [

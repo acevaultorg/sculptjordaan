@@ -126,8 +126,8 @@ export default function GratisIntakePage() {
         {/* Studio photo */}
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
-            src="/images/studio/training-bike-smile.jpg"
-            alt="Lachend op de assault bike bij SculptClub privé studio"
+            src="/images/studio/training-dumbbells-smile.jpg"
+            alt="Lachend met dumbbells bij SculptClub privé studio"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
