@@ -169,7 +169,7 @@ export function Header() {
           {/* Right side — single flat row, consistent gap between ALL items.
               gap-2 sm:gap-3 makes every item-to-item distance match the
               Nieuw hier ↔ Boek gap visually. */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-3 shrink-0">
             {/* Desktop nav links (md+ only) — text-shadow when header is transparent
                 so links stay legible over the hero image */}
             <div className="hidden md:flex items-center gap-0.5 mr-1">
@@ -199,7 +199,7 @@ export function Header() {
             {/* Nieuw hier? */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="h-9 flex items-center px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-medium border border-brand/60 text-brand hover:border-brand hover:bg-brand/10 transition-all whitespace-nowrap"
+              className="h-9 flex items-center px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
             >
               {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
@@ -208,7 +208,7 @@ export function Header() {
             <button
               onClick={handleBookClick}
               className={cn(
-                "h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-full text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                "h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen
                   ? "bg-brand-dark text-white"
                   : "bg-brand text-white hover:bg-brand-dark active:scale-95"
