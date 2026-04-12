@@ -20,7 +20,7 @@ export interface Trainer {
 // (strongest niche first), not by booking volume. Busy trainers have
 // less availability, which hurts conversion. Clear specialties convert
 // best because visitors pick on need-match, not on who's most popular.
-const DISPLAY_ORDER = ["eva", "joey", "alex", "andrea", "dara", "hamish", "jearmey"] as const;
+const DISPLAY_ORDER = ["eva", "joey", "alex", "gezina", "andrea", "dara", "hamish", "jearmey"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -87,6 +87,27 @@ const trainersRaw: Trainer[] = [
       en: "Hamish combines his physiotherapy background with strength training. Ideal for rehabilitation, injury prevention and building a strong foundation.",
     },
     image: "/images/trainers/hamish.jpg",
+  },
+  {
+    id: "gezina",
+    name: "Gezina",
+    slug: {
+      nl: "plan-gratis-intake-met-gezina",
+      en: "plan-free-intro-with-gezina",
+    },
+    specialization: {
+      nl: ["Vrouwentraining", "Kracht", "Prestatie"],
+      en: ["Women's Training", "Strength", "Performance"],
+    },
+    languages: ["NL", "EN"],
+    rate: null,
+    instagram: "https://www.instagram.com/gezfitness/",
+    instagramHandle: "@gezfitness",
+    bio: {
+      nl: "Gezina is een gecertificeerde personal trainer gespecialiseerd in vrouwentraining. Ze helpt vrouwen sterker worden door personal training en small group sessies, afgestemd op het lichaam en de cyclus.",
+      en: "Gezina is a certified personal trainer specializing in women's training. She helps women build strength through personal training and small group sessions, designed to work in sync with the body and cycle.",
+    },
+    image: "/images/trainers/gezina.jpg",
   },
   {
     id: "andrea",
