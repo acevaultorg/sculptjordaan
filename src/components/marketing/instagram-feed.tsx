@@ -27,15 +27,12 @@ function InstagramIcon({ className }: { className?: string }) {
 const INSTAGRAM_URL = "https://instagram.com/sculptclubjordaan";
 
 const images = [
-  { src: "/images/studio/training-bike-energy.jpg", alt: "Training on assault bike at SculptClub" },
+  { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal training session with barbell at SculptClub" },
   { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub Private Gym entrance at Egelantiersgracht 424 Amsterdam" },
-  { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang training at SculptClub" },
-  { src: "/images/studio/canal-view-doors.jpg", alt: "View from SculptClub to Egelantiersgracht canal Amsterdam" },
   { src: "/images/studio/training-dumbbells-joy.jpg", alt: "Joyful dumbbell training at SculptClub" },
-  { src: "/images/studio/boutique-corner.jpg", alt: "SculptClub boutique dumbbell rack with plants and vinyl" },
-  { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Barbell training at SculptClub" },
-  { src: "/images/studio/turf-lane-canal.jpg", alt: "SculptClub turf training lane with canal view" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "View from SculptClub to Egelantiersgracht canal Amsterdam" },
   { src: "/images/studio/model-facade-relaxed.jpg", alt: "Athlete at SculptClub Private Gym entrance Egelantiersgracht 424" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "SculptClub boutique dumbbell rack with plants and vinyl" },
 ];
 
 const t = {
