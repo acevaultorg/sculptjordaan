@@ -81,9 +81,9 @@ export default function TrainersPageEN() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="Our Trainers"
+          overline="Personal Trainers"
           title="Find Your Personal Trainer"
-          description="Free intro session — trainers set their own rates. Book a no-obligation introduction and find the perfect match."
+          description="Free intro — trainers set their own rates. Come in, try a session, see if it clicks."
         />
 
         {/* Trust badges */}
@@ -118,7 +118,7 @@ export default function TrainersPageEN() {
       <Section>
         <SectionHeader
           overline="For trainers"
-          title="Become a Personal Trainer at SculptClub"
+          title="Grow Your Practice Without Fixed Costs"
           description="Start or grow your practice in our premium studio in the Jordaan."
         />
 

@@ -81,9 +81,9 @@ export default function TrainersPageNL() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="Onze Trainers"
+          overline="Personal Trainers"
           title="Vind Jouw Personal Trainer"
-          description="Gratis intake — trainers bepalen hun eigen tarieven. Boek een vrijblijvend kennismakingsgesprek en vind de perfecte match."
+          description="Gratis intake — trainers bepalen hun eigen tarieven. Kom langs, probeer een sessie, kijk of het klikt."
         />
 
         {/* Trust badges */}
@@ -118,7 +118,7 @@ export default function TrainersPageNL() {
       <Section>
         <SectionHeader
           overline="Voor trainers"
-          title="Word Personal Trainer bij SculptClub"
+          title="Groei Je Praktijk Zonder Vaste Lasten"
           description="Start of groei je praktijk in onze premium studio in de Jordaan."
         />
 

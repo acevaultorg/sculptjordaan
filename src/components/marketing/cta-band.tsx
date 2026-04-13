@@ -30,8 +30,8 @@ export function CtaBand({ locale }: { locale: Locale }) {
             },
             {
               icon: Building2,
-              label: "Proefles Studio Huren",
-              description: "60 min · gratis · studio bekijken",
+              label: "Rondleiding Studio",
+              description: "15 min · gratis · kijk of het past",
               href: acuityLinks.studioTrial,
               external: true,
             },
@@ -59,8 +59,8 @@ export function CtaBand({ locale }: { locale: Locale }) {
             },
             {
               icon: Building2,
-              label: "Studio Rental trial",
-              description: "60 min · free · see the studio",
+              label: "Studio Tour",
+              description: "15 min · free · see if it fits",
               href: acuityLinks.studioTrial,
               external: true,
             },

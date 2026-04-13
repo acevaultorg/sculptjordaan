@@ -33,7 +33,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   const t = locale === "nl" ? {
     overline: "Gratis intake",
     title: `Plan je gratis intake met ${trainer.name}`,
-    description: "Vertel ons over je doelen en we plannen een vrijblijvend kennismakingsgesprek.",
+    description: "Vertel ons over je doelen en we plannen een gratis kennismaking.",
     specializations: "Specialisaties",
     languages: "Talen",
     rate: "Tarief",
@@ -55,7 +55,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   } : {
     overline: "Free intro",
     title: `Book your free intro with ${trainer.name}`,
-    description: "Tell us about your goals and we'll schedule a no-obligation introductory session.",
+    description: "Tell us about your goals and we'll set up a free intro session.",
     specializations: "Specializations",
     languages: "Languages",
     rate: "Rate",
