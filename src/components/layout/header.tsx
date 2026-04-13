@@ -218,19 +218,21 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — ENTIRE pill is one clickable anchor that
-                switches to the other locale (via altPath). Inner spans are
-                visual-only, showing both languages with the current one
-                highlighted. Click target is the full 36×36, not two slivers. */}
+            {/* Language toggle — single tap target.
+                Mobile: globe icon (universal, no language bias).
+                Desktop: stacked NL/EN pill with current highlighted. */}
             <a
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className="w-11 h-11 sm:w-9 sm:h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all touch-manipulation"
+              className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center sm:flex-col p-0.5 rounded-lg bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all touch-manipulation"
             >
+              {/* Mobile: globe icon */}
+              <Globe className="w-4 h-4 sm:hidden text-foreground" aria-hidden="true" />
+              {/* Desktop: stacked NL/EN with current highlighted */}
               <span
                 className={cn(
-                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
+                  "hidden sm:flex flex-1 items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
                   locale === "nl"
                     ? "bg-background text-foreground shadow-sm"
                     : "text-muted-foreground"
@@ -241,7 +243,7 @@ export function Header() {
               </span>
               <span
                 className={cn(
-                  "flex-1 flex items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
+                  "hidden sm:flex flex-1 items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
                   locale === "en"
                     ? "bg-background text-foreground shadow-sm"
                     : "text-muted-foreground"
