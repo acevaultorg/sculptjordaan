@@ -226,7 +226,7 @@ export function Header() {
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className="w-9 h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all"
+              className="w-11 h-11 sm:w-9 sm:h-9 flex flex-col p-0.5 rounded-lg bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all touch-manipulation"
             >
               <span
                 className={cn(
