@@ -48,7 +48,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Boek je sessie",
     description:
-      "Plan je eerste sessie via ons online boekingssysteem of stuur ons een bericht via WhatsApp. Kies een tijdslot dat je uitkomt en je ontvangt direct een bevestiging. De avond ervoor ontvang je je deurcode via WhatsApp. Heb je vragen over welk type sessie bij je past? Stuur ons gerust een bericht — we helpen je graag.",
+      "Kies een tijdslot via onze website of stuur een WhatsApp. Je ontvangt direct een bevestiging. De avond ervoor krijg je je deurcode via WhatsApp.",
     cta: {
       label: "Boek nu",
       href: acuityLinks.generic,
@@ -58,16 +58,16 @@ const steps = [
   {
     number: "2",
     icon: MapPin,
-    title: "Kom naar de studio",
+    title: "Loop binnen",
     description:
-      "Onze studio bevindt zich aan de Egelantiersgracht 424 in Amsterdam Jordaan. De avond voor je sessie ontvang je een deurcode via WhatsApp waarmee je jezelf binnenlaat. Kom 5 minuten voor je sessie zodat je rustig kunt omkleden en je warm kunt maken. De kleedruimte is direct beschikbaar wanneer je binnenkomt.",
+      "Egelantiersgracht 424, Jordaan. Voer je deurcode in en laat jezelf binnen. Geen receptie, geen wachtrij. Kleedruimte is direct beschikbaar. Kom 5 minuten voor je sessie.",
   },
   {
     number: "3",
     icon: Dumbbell,
-    title: "Start met trainen",
+    title: "Train",
     description:
-      "Je trainer staat klaar om je te begroeten, of je traint zelfstandig via Open Gym. Alle apparatuur is beschikbaar en de studio is volledig privé tijdens jouw sessie. Bij personal training bespreek je eerst je doelen en eventuele blessures, waarna je trainer een sessie op maat samenstelt.",
+      "Je trainer staat klaar, of je traint zelfstandig via Open Gym. De studio is volledig privé tijdens jouw sessie. Alle apparatuur is beschikbaar. Annuleren kan altijd gratis.",
   },
 ];
 
@@ -106,15 +106,8 @@ export default function EersteBezoekPage() {
           as="h1"
           overline="Eerste bezoek"
           title="Je eerste keer bij SculptClub"
-          description="In 3 simpele stappen ben je klaar om te trainen. Geen inschrijfformulieren, geen verplichtingen — gewoon een goede training in een fijne studio."
+          description="Geen inschrijfformulieren. Geen verplichtingen. Hieronder staat precies wat je kunt verwachten."
         />
-        <FadeIn>
-          <p className="mx-auto max-w-2xl text-center text-muted-foreground leading-relaxed">
-            We begrijpen dat een nieuwe sportomgeving spannend kan zijn. Daarom hebben we alles zo eenvoudig mogelijk gemaakt.
-            Of je nu komt voor personal training of Open Gym, hieronder vind je precies wat je kunt verwachten. Geen verrassingen,
-            alleen een prettige eerste ervaring.
-          </p>
-        </FadeIn>
       </Section>
 
       {/* 3 Service Options — choose your path */}
@@ -128,27 +121,11 @@ export default function EersteBezoekPage() {
           <FadeIn delay={0}>
             <Card className="h-full flex flex-col">
               <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
-                  <Building2 className="h-5 w-5 text-purple-600" />
-                </div>
-                <CardTitle>Studio Huren</CardTitle>
-                <CardDescription>Voor trainers. Huur de studio per uur voor jouw klanten. Vanaf €12/uur.</CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/studio-huren" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Probeer gratis</ButtonLink>
-              </CardFooter>
-            </Card>
-          </FadeIn>
-
-          <FadeIn delay={0.1}>
-            <Card className="h-full flex flex-col">
-              <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
                   <Users className="h-5 w-5 text-blue-600" />
                 </div>
-                <CardTitle>Vind een Trainer</CardTitle>
-                <CardDescription>Personal training op maat. Eerste intake altijd gratis en vrijblijvend.</CardDescription>
+                <CardTitle>Personal Training</CardTitle>
+                <CardDescription>1-op-1 met een trainer die bij je past. Eerste intake altijd gratis.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Bekijk trainers</ButtonLink>
@@ -156,18 +133,34 @@ export default function EersteBezoekPage() {
             </Card>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.1}>
             <Card className="h-full flex flex-col">
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
                   <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
                 <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train zelfstandig in een privé studio. Vanaf €29/4 weken.</CardDescription>
+                <CardDescription>Train zelfstandig in een privé studio. Max 3 personen. Vanaf €29/4 weken.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/nl/open-gym" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
                 <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Gratis proefles</ButtonLink>
+              </CardFooter>
+            </Card>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <Card className="h-full flex flex-col">
+              <CardHeader>
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
+                  <Building2 className="h-5 w-5 text-purple-600" />
+                </div>
+                <CardTitle>Studio Huren</CardTitle>
+                <CardDescription>Voor trainers. Huur per uur voor jouw klanten. Vanaf €12/uur, 0% commissie.</CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto flex flex-col gap-2">
+                <ButtonLink href="/nl/studio-huren" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Gratis rondleiding</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -223,8 +216,8 @@ export default function EersteBezoekPage() {
               <div>
                 <p className="font-semibold">Bij personal training: de eerste intake is altijd gratis</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Tijdens de intake bespreek je je doelen, ervaring en eventuele beperkingen met je trainer. Zo kan je trainer
-                  de perfecte aanpak voor jou bepalen. Je zit nergens aan vast — pas daarna beslis je of je verder wilt.
+                  Je bespreekt je doelen, ervaring en eventuele beperkingen. Je trainer stelt een aanpak samen die bij je past.
+                  Je zit nergens aan vast — pas daarna beslis je of je verder wilt.
                 </p>
               </div>
             </div>
@@ -351,8 +344,7 @@ export default function EersteBezoekPage() {
               Boek je eerste sessie
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Klaar om te beginnen? Plan je eerste sessie of neem contact met
-              ons op via WhatsApp. We kijken ernaar uit je te verwelkomen in onze studio.
+              Plan je eerste sessie of stuur ons een WhatsApp.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink

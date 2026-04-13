@@ -48,7 +48,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Book your session",
     description:
-      "Schedule your first session via our online booking system or send us a message via WhatsApp. Choose a time slot that suits you and you will receive a confirmation right away. The evening before, you will receive your door code via WhatsApp. Not sure which type of session is right for you? Send us a message — we are happy to help.",
+      "Pick a time slot on our website or send a WhatsApp. You get a confirmation right away. The evening before, you receive your door code via WhatsApp.",
     cta: {
       label: "Book now",
       href: acuityLinks.generic,
@@ -58,16 +58,16 @@ const steps = [
   {
     number: "2",
     icon: MapPin,
-    title: "Come to the studio",
+    title: "Walk in",
     description:
-      "Our studio is located at Egelantiersgracht 424 in Amsterdam Jordaan. The evening before your session, you will receive your door code via WhatsApp to let yourself in. Arrive 5 minutes before your session so you can change and warm up at your own pace. The changing area is available as soon as you walk in.",
+      "Egelantiersgracht 424, Jordaan. Enter your door code and let yourself in. No reception, no queue. Changing area is right there. Arrive 5 minutes early.",
   },
   {
     number: "3",
     icon: Dumbbell,
-    title: "Start training",
+    title: "Train",
     description:
-      "Your trainer will be ready to welcome you, or you train independently via Open Gym. All equipment is available and the studio is fully private during your session. For personal training, you will first discuss your goals and any injuries, after which your trainer designs a tailored session.",
+      "Your trainer is ready, or you train solo via Open Gym. The studio is fully private during your session. All equipment is available. Cancellation is always free.",
   },
 ];
 
@@ -106,15 +106,8 @@ export default function FirstVisitPage() {
           as="h1"
           overline="First visit"
           title="Your first time at SculptClub"
-          description="In 3 simple steps you are ready to train. No sign-up forms, no obligations — just a great workout in a great studio."
+          description="No sign-up forms. No obligations. Here is exactly what to expect."
         />
-        <FadeIn>
-          <p className="mx-auto max-w-2xl text-center text-muted-foreground leading-relaxed">
-            We understand that a new gym environment can feel daunting. That is why we have made everything as simple as possible.
-            Whether you are coming for personal training or Open Gym, below you will find exactly what to expect. No surprises,
-            just a pleasant first experience.
-          </p>
-        </FadeIn>
       </Section>
 
       {/* 3 Service Options */}
@@ -128,15 +121,14 @@ export default function FirstVisitPage() {
           <FadeIn delay={0}>
             <Card className="h-full flex flex-col">
               <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
-                  <Building2 className="h-5 w-5 text-purple-600" />
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
+                  <Users className="h-5 w-5 text-blue-600" />
                 </div>
-                <CardTitle>Studio Rental</CardTitle>
-                <CardDescription>For trainers. Rent the studio by the hour for your clients. From €12/hour.</CardDescription>
+                <CardTitle>Personal Training</CardTitle>
+                <CardDescription>1-on-1 with a trainer who fits your goals. First intro always free.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/studio-rental" variant="outline" size="lg" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Try for free</ButtonLink>
+                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Browse trainers</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -144,14 +136,15 @@ export default function FirstVisitPage() {
           <FadeIn delay={0.1}>
             <Card className="h-full flex flex-col">
               <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
-                  <Users className="h-5 w-5 text-blue-600" />
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
+                  <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
-                <CardTitle>Find a Trainer</CardTitle>
-                <CardDescription>Personal training tailored to you. First intro always free, no obligation.</CardDescription>
+                <CardTitle>Open Gym</CardTitle>
+                <CardDescription>Train independently in a private studio. Max 3 people. From €29/4 weeks.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Meet our trainers</ButtonLink>
+                <ButtonLink href="/en/open-gym" variant="outline" size="lg" className="w-full">More info</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Free trial</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -159,15 +152,15 @@ export default function FirstVisitPage() {
           <FadeIn delay={0.2}>
             <Card className="h-full flex flex-col">
               <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
-                  <Dumbbell className="h-5 w-5 text-emerald-600" />
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
+                  <Building2 className="h-5 w-5 text-purple-600" />
                 </div>
-                <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train independently in a private studio. From €29/4 weeks.</CardDescription>
+                <CardTitle>Studio Rental</CardTitle>
+                <CardDescription>For trainers. Rent by the hour for your clients. From €12/hour, 0% commission.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/open-gym" variant="outline" size="lg" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Free trial</ButtonLink>
+                <ButtonLink href="/en/studio-rental" variant="outline" size="lg" className="w-full">More info</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Free tour</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -223,9 +216,8 @@ export default function FirstVisitPage() {
               <div>
                 <p className="font-semibold">For personal training: the first intro is always free</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  During the intro, you will discuss your goals, experience, and any limitations with your trainer. This allows
-                  your trainer to determine the perfect approach for you. There is no commitment — you decide afterwards if you
-                  want to continue.
+                  You discuss your goals, experience, and any limitations. Your trainer designs an approach that fits.
+                  No commitment — you decide afterwards if you want to continue.
                 </p>
               </div>
             </div>
@@ -352,8 +344,7 @@ export default function FirstVisitPage() {
               Book your first session
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Ready to start? Schedule your first session or reach out via
-              WhatsApp. We look forward to welcoming you to our studio.
+              Book your first session or send us a WhatsApp.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
