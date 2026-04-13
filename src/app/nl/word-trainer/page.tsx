@@ -141,7 +141,7 @@ export default function WordTrainerNL() {
                 src="/images/studio/model-facade-full.jpg"
                 alt="Atleet bij de ingang van SculptClub Private Gym aan Egelantiersgracht 424"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -211,7 +211,7 @@ export default function WordTrainerNL() {
               { src: "/images/studio/training-barbell-skylight.jpg", alt: "Barbell training onder het daklicht bij SculptClub" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                <Image src={img.src} alt={img.alt} fill className="object-cover object-top" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
               </div>
             ))}
           </div>

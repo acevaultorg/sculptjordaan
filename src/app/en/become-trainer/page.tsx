@@ -140,7 +140,7 @@ export default function BecomeTrainerEN() {
                 src="/images/studio/model-facade-full.jpg"
                 alt="Athlete at the entrance of SculptClub Private Gym at Egelantiersgracht 424"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -210,7 +210,7 @@ export default function BecomeTrainerEN() {
               { src: "/images/studio/training-barbell-skylight.jpg", alt: "Barbell training under skylight at SculptClub" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                <Image src={img.src} alt={img.alt} fill className="object-cover object-top" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
               </div>
             ))}
           </div>
