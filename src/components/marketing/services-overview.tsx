@@ -93,7 +93,7 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
                     src={service.image}
                     alt={service.imageAlt}
                     fill
-                    className="object-cover rounded-t-xl"
+                    className="object-cover object-top rounded-t-xl"
                     sizes="(max-width: 640px) 100vw, 33vw"
                   />
                 </div>
