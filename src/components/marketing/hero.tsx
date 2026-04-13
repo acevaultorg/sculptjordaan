@@ -40,7 +40,7 @@ export function Hero({ locale }: { locale: Locale }) {
           src="/images/studio/training-barbell-squat.jpg"
           alt="Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack"
           fill
-          className="object-cover [object-position:center_35%] [transform:translateZ(0)]"
+          className="object-cover [object-position:center_25%] [transform:translateZ(0)]"
           sizes="100vw"
           priority
         />
