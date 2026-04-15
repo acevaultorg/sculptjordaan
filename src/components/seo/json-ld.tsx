@@ -185,6 +185,57 @@ export function ReviewsJsonLd({
   );
 }
 
+export function PersonJsonLd({
+  name,
+  description,
+  image,
+  url,
+  jobTitle,
+  languages,
+  sameAs,
+}: {
+  name: string;
+  description: string;
+  image: string;
+  url: string;
+  jobTitle: string;
+  languages: string[];
+  sameAs?: string[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    jobTitle,
+    description,
+    image: image.startsWith("http") ? image : `${siteConfig.url}${image}`,
+    url: url.startsWith("http") ? url : `${siteConfig.url}${url}`,
+    worksFor: {
+      "@type": ["LocalBusiness", "HealthClub"],
+      name: siteConfig.name,
+      url: siteConfig.url,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        postalCode: siteConfig.address.zip,
+        addressCountry: "NL",
+      },
+    },
+    knowsLanguage: languages.map((l) =>
+      l === "NL" ? "Dutch" : l === "EN" ? "English" : l === "PT" ? "Portuguese" : l
+    ),
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
   const schema = {
     "@context": "https://schema.org",

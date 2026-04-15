@@ -7,6 +7,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button-link";
+import { PersonJsonLd } from "@/components/seo/json-ld";
 import { trainers } from "@/config/trainers";
 import { siteConfig } from "@/config/site";
 import type { Locale } from "@/config/site";
@@ -100,6 +101,15 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
 
   return (
     <PageLayout>
+      <PersonJsonLd
+        name={trainer.name}
+        description={trainer.bio[locale]}
+        image={trainer.image}
+        url={`/${locale}/${trainer.slug[locale]}`}
+        jobTitle={locale === "nl" ? "Personal Trainer" : "Personal Trainer"}
+        languages={trainer.languages}
+        sameAs={trainer.instagram ? [trainer.instagram] : []}
+      />
       <Section>
         <div className="max-w-4xl mx-auto">
           {/* Back to trainers */}
