@@ -219,7 +219,7 @@ export default function BoekStudioPageNL() {
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">&euro;436</p>
                 <p className="text-3xl font-bold">&euro;349</p>
-                <p className="mt-2 text-sm text-discount font-medium">Bespaar 19%</p>
+                <p className="mt-2 text-sm text-discount font-medium">Bespaar 20%</p>
                 <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                   Koop Pro
                 </ButtonLink>

@@ -300,7 +300,7 @@ export default function StudioRentalPageNL() {
                 </p>
                 <p className="text-3xl font-bold">&euro;349</p>
                 <p className="mt-2 text-sm">
-                  <span className="sc-discount">Bespaar 19%</span>
+                  <span className="sc-discount">Bespaar 20%</span>
                 </p>
                 <ButtonLink
                   href={acuityPackages.studio.pro}

@@ -113,7 +113,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Welke pakketten zijn er?",
-        a: "Starter \u20AC89 (10% korting), Routine \u20AC199 (15% korting), Pro \u20AC349 (19% korting) en Volume \u20AC549 (23% korting). Pakketten zijn 1 jaar geldig en te gebruiken voor halve of hele studio.",
+        a: "Starter \u20AC89 (10% korting), Routine \u20AC199 (15% korting), Pro \u20AC349 (20% korting) en Volume \u20AC549 (23% korting). Pakketten zijn 1 jaar geldig en te gebruiken voor halve of hele studio.",
       },
       {
         q: "Wat is inbegrepen bij studio huur?",
