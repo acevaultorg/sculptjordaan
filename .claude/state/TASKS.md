@@ -35,7 +35,8 @@
 - [x] `P0` FIX Vanity domain routing lost (UTM + deep-link gone) — codify in middleware `vanityDomains` map for 10 domains [id:vanity-map] [score:13.0]
 
 ## Queue (open)
-- [👤] `P0` CRITICAL Change 10 vanity domains from "Redirect" to alias in Vercel dashboard — `platform:vercel` [id:vercel-vanity-alias] [score:13.0] 👤 See HANDOFF.md step 1 — blocks all vanity domain attribution
+- [x] `P0` CRITICAL Vercel side of vanity routing DONE — detached 10 domains (ptjordaan, jordaanpt, pt45, vindpt, sculptspace, sculpt45, gymjordaan, krachtzaal, jordaangym, sculptjordaan) from domain-portfolio-router + attached as aliases to sculptclub project (apex + www 308 redirect). Via Vercel API. [id:vercel-vanity-alias]
+- [👤] `P0` CRITICAL Update DNS at Hostinger for 10 vanity domains to point to Vercel — `platform:hostinger` [id:hostinger-ns-switch] [score:13.0] 👤 BLOCKS middleware routing. See HANDOFF.md step 1 (updated). Either change nameservers to ns1/ns2.vercel-dns.com OR add A @ 76.76.21.21 + CNAME www → cname.vercel-dns.com for each domain
 - [👤] `P0` ADS Verify payment method in Google Ads to go live — `platform:google-ads` [id:gads-payment] [score:12.0] 👤 Unblocks €400 promo credit + paid traffic
 - [👤] `P1` CONFIGURE Import free_intake_click in Google Ads — `platform:google-ads` [id:gads-conversion] [score:7.5]
 - [👤] `P1` ADS Set up Meta Business Manager + verify pixel — `platform:meta-ads` [id:meta-setup] [score:7.0]
