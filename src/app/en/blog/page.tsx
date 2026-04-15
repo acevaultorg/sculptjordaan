@@ -285,6 +285,14 @@ const posts = [
     href: "/en/blog/corporate-personal-training-amsterdam",
     date: "April 5, 2026",
   },
+  {
+    title: "Female Personal Trainer in Amsterdam",
+    excerpt:
+      "Three female trainers at SculptClub — Gezina, Eva and Andrea. Private studio in the Jordaan, no crowds, no judgement. First intro is free.",
+    category: "Training",
+    href: "/en/blog/female-personal-trainer-amsterdam",
+    date: "April 15, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
