@@ -46,9 +46,10 @@
 - [👤] `P2` COLLECT Real client testimonials for /resultaten — `platform:manual` [id:real-testimonials] [score:3.5]
 - [👤] `P2` ADS Create Lookalike Audience in Meta — `platform:meta-ads` [id:meta-lookalike] [score:2.5]
 - [👤] `P2` DESIGN Referral programme — `platform:manual` [id:referral-programme] [score:2.5]
-- [ ] `P2` FEAT Trainer matching quiz / filter on trainers page [id:trainer-quiz] [score:4.0]
+- [x] `P0` FIX Missing Gezina intake pages (NL+EN) + wire into nav/sitemap, Joey alternateRoutes [id:gezina-missing]
+- [x] `P2` FEAT Trainer matching on trainers page — already shipped via TrainerFilterGrid + TrainerMatchForm [id:trainer-quiz]
 - [ ] `P2` FEAT Richer trainer profiles (availability, reviews) [id:trainer-profiles] [score:3.5]
-- [ ] `P2` PERF Image optimization — convert remaining PNGs to WebP [id:webp-convert] [score:3.0]
+- [~] `P2` PERF PNG→WebP superseded — next/image auto-optimizes all images; remaining PNGs are PWA icons + JSON-LD logo (must stay PNG) [id:webp-convert]
 - [ ] `P2` SEO More EN cross-links on newer blog posts [id:en-newer-crosslinks] [score:2.5]
 
 ## Blocked
