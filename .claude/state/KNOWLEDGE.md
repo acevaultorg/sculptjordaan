@@ -19,3 +19,8 @@
 ## Error patterns
 - trainer-intake form: handleSubmit was a stub (just setSubmitted=true, no send). Always verify form submit handlers actually send data. Pattern: WhatsApp redirect with form data encoded as text. <!-- added 2026-04-01, source: task -->
 - sitemap.ts: must be manually updated when new pages/blog posts are added. Not auto-generated. Check after every session that adds new routes. <!-- added 2026-04-01, source: task -->
+
+## Deploy pipeline (verified 2026-04-16)
+- Vercel GitHub App webhook on `acevaultorg/sculptjordaan` → `sculptclub` project stopped auto-firing sometime around 2026-04-13. Pushes to main land in git but do NOT trigger Vercel production builds automatically. Fleet-wide issue — also affects `sculptcoach`, `txtfeed`, `ace-pilot` (last auto-deploys: 4-7 days old vs git HEADs). Vercel GitHub App itself is installed + not suspended (verified via `gh api orgs/acevaultorg/installations`), so the problem is per-project credential/link integrity, not the app. <!-- added 2026-04-16, source: investigation -->
+- Manual deploy fallback: every project has a Vercel deploy hook URL in `project.link.deployHooks`. SculptClub's is `https://api.vercel.com/v1/integrations/deploy/prj_2CkPYkUuRzMwN9484yN57Yt9pNia/xhdFVH32Wx` (production, main branch). Fire with `curl -X POST <hook>` — picks up current HEAD. This is how 8e36c336 landed on 2026-04-16T00:08. <!-- added 2026-04-16, source: investigation -->
+- Deploy-truth check pattern: after pushing to main, poll `https://api.vercel.com/v6/deployments?projectId=<id>&teamId=<id>&limit=1` and confirm the latest READY deployment's `meta.githubCommitSha` matches local `git rev-parse HEAD`. If stale >2h → fire the deploy hook. <!-- added 2026-04-16, source: investigation -->
