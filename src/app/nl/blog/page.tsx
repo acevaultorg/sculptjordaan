@@ -309,6 +309,14 @@ const posts = [
     href: "/nl/blog/personal-trainer-na-bevalling-amsterdam",
     date: "15 april 2026",
   },
+  {
+    title: "Personal Trainer tijdens Zwangerschap in Amsterdam",
+    excerpt:
+      "Veilig blijven trainen tijdens je zwangerschap. Per trimester — heupmobiliteit, bekkenbodem, bevallingsvoorbereiding. Privé studio, vrouwelijke trainers.",
+    category: "Training",
+    href: "/nl/blog/personal-trainer-zwangerschap-amsterdam",
+    date: "15 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

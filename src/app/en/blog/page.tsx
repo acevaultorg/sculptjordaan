@@ -309,6 +309,14 @@ const posts = [
     href: "/en/blog/postpartum-personal-trainer-amsterdam",
     date: "April 15, 2026",
   },
+  {
+    title: "Prenatal Personal Trainer in Amsterdam",
+    excerpt:
+      "Stay strong safely through pregnancy. Trimester-specific programming, hip mobility, pelvic floor, birth prep. Private studio, female trainers.",
+    category: "Training",
+    href: "/en/blog/prenatal-personal-trainer-amsterdam",
+    date: "April 15, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
