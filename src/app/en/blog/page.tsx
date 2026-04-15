@@ -293,6 +293,14 @@ const posts = [
     href: "/en/blog/female-personal-trainer-amsterdam",
     date: "April 15, 2026",
   },
+  {
+    title: "English-Speaking Personal Trainer in Amsterdam",
+    excerpt:
+      "Every trainer at SculptClub coaches fluently in English. No Dutch required for intake, sessions, invoices or communication. Built for expats and internationals.",
+    category: "Expats",
+    href: "/en/blog/english-speaking-personal-trainer-amsterdam",
+    date: "April 15, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
