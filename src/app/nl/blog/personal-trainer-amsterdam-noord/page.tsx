@@ -110,13 +110,14 @@ export default function PersonalTrainerAmsterdamNoordNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat heeft Noord lokaal te bieden?</h2>
               <p>
-                In Noord vind je vooral grote ketens. Basic-Fit zit op meerdere plekken, TrainMore is in
-                opmars, en daarnaast zijn er een paar CrossFit-boxen en bootcamp-aanbieders. Allemaal
-                prima als je houdt van groepstraining, drukte en flexibele openingstijden tegen een lage
-                prijs. Voor iemand die juist één-op-één wil trainen, in een rustige omgeving en met een
-                vaste trainer, is het aanbod beperkter. Een aantal zelfstandige trainers werkt in Noord
-                vanuit huurplekken in grotere gyms — dat betekent dat je sessies tussen tientallen
-                anderen plaatsvinden, op apparaten die je deelt.
+                In Noord vind je vooral <a href="/nl/blog/prive-sportschool-vs-grote-sportschool" className="text-brand hover:underline">grote ketens</a>.
+                Basic-Fit zit op meerdere plekken, TrainMore is in opmars, en daarnaast zijn er een paar
+                CrossFit-boxen en bootcamp-aanbieders. Allemaal prima als je houdt van groepstraining,
+                drukte en flexibele openingstijden tegen een lage prijs. Voor iemand die juist één-op-één
+                wil trainen, in een rustige omgeving en met een vaste trainer, is het aanbod beperkter.
+                Een aantal zelfstandige trainers werkt in Noord vanuit huurplekken in grotere gyms —
+                dat betekent dat je sessies tussen tientallen anderen plaatsvinden, op apparaten die je
+                deelt.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Waarom een trainer aan de overkant van het IJ overwegen?</h2>
@@ -154,19 +155,26 @@ export default function PersonalTrainerAmsterdamNoordNL() {
               <p>
                 Bij SculptClub werken vijf onafhankelijke trainers met verschillende specialisaties:
                 krachttraining, voeding, fysiotherapie, houding en techniek. Je kiest de trainer die
-                bij jouw doel past — niet andersom. Tarieven beginnen bij €45 per sessie, de eerste
-                kennismaking is altijd gratis. Geen abonnement, geen lange contracten, geen verborgen
-                kosten. Annuleren is altijd gratis. De studio is dagelijks open van 06:30 tot 22:00,
-                dus voor of na je werk in Centrum of Zuidas past het meestal moeiteloos in je dag.
+                bij jouw doel past — niet andersom. Tarieven beginnen bij €45 per sessie en we houden
+                een <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="text-brand hover:underline">eerlijk overzicht van wat personal training kost in Amsterdam</a>.
+                De eerste kennismaking is altijd gratis. Geen abonnement, geen lange contracten, geen
+                verborgen kosten. Annuleren is altijd gratis. De studio is dagelijks open van 06:30 tot
+                22:00, dus voor of na je werk in{" "}
+                <a href="/nl/blog/personal-trainer-amsterdam-centrum" className="text-brand hover:underline">Centrum</a> of{" "}
+                <a href="/nl/blog/personal-trainer-amsterdam-zuid" className="text-brand hover:underline">Zuidas</a> past het
+                meestal moeiteloos in je dag.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym voor zelfstandige trainingen</h2>
               <p>
-                Niet elke training hoeft begeleid te zijn. Open Gym geeft je toegang tot dezelfde privé
-                studio voor solo sessies van 60 minuten. Vier sessies per maand beginnen bij €29.
-                Onbeperkt traint vanaf €89 per vier weken. Geen contract, geen opzegtermijn — een
-                praktische tussenoplossing voor wie in Noord woont en af en toe in het centrum is voor
-                werk of afspraken.
+                Niet elke training hoeft begeleid te zijn.{" "}
+                <a href="/nl/blog/open-gym-vs-sportschool" className="text-brand hover:underline">Open Gym</a> geeft
+                je toegang tot dezelfde privé studio voor solo sessies van 60 minuten. Vier sessies per
+                maand beginnen bij €29. Onbeperkt traint vanaf €89 per vier weken. Geen contract, geen
+                opzegtermijn — een praktische tussenoplossing voor wie in Noord woont en af en toe in
+                het centrum is voor werk of afspraken. Voor wie verder weg woont legt onze{" "}
+                <a href="/nl/blog/sportschool-zonder-abonnement-amsterdam" className="text-brand hover:underline">gids voor trainen zonder abonnement</a>{" "}
+                uit hoe de prijsopbouw vergelijkt.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Veelgestelde vragen</h2>
@@ -183,10 +191,12 @@ export default function PersonalTrainerAmsterdamNoordNL() {
             <div className="mt-12 border-t border-border/50 pt-8">
               <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
               <div className="grid sm:grid-cols-2 gap-3">
-                <a href="/nl/vind-jouw-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Vind jouw personal trainer</p></a>
-                <a href="/nl/gratis-intake" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Plan een gratis intake</p></a>
                 <a href="/nl/blog/personal-trainer-amsterdam-centrum" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam Centrum</p></a>
-                <a href="/nl/prijzen" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Bekijk onze prijzen</p></a>
+                <a href="/nl/blog/personal-trainer-amsterdam-oost" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam Oost</p></a>
+                <a href="/nl/blog/personal-trainer-amsterdam-west" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam West</p></a>
+                <a href="/nl/blog/personal-trainer-amsterdam-zuid" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam Zuid</p></a>
+                <a href="/nl/blog/prive-sportschool-vs-grote-sportschool" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Privé sportschool vs grote sportschool</p></a>
+                <a href="/nl/blog/boutique-gym-vs-sportschool-keten" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Boutique gym vs keten</p></a>
               </div>
             </div>
 

@@ -128,11 +128,14 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Flexibele tijden voor drukke agenda&apos;s</h2>
               <p>
                 De studio is dagelijks geopend van 06:30 tot 22:00. Dat klinkt logisch, maar in de
-                praktijk maakt het uit. Voor executives in Zuidas die om 08:00 hun eerste call hebben,
-                betekent het dat een sessie om 06:45 reëel is — douche, koffie, en op tijd op kantoor.
-                Voor consultants die om 19:00 het kantoor uitlopen, is een sessie om 19:30 of 20:00
-                geen uitzondering. We boeken niet in vaste blokken; jij en je trainer bepalen samen
-                wat past.
+                praktijk maakt het uit. Voor executives in{" "}
+                <a href="/nl/blog/personal-trainer-amsterdam-zuid" className="text-brand hover:underline">Zuidas</a> die
+                om 08:00 hun eerste call hebben, betekent het dat een sessie om 06:45 reëel is —
+                douche, koffie, en op tijd op kantoor. Voor consultants die om 19:00 het kantoor
+                uitlopen, is een sessie om 19:30 of 20:00 geen uitzondering. We boeken niet in vaste
+                blokken; jij en je trainer bepalen samen wat past. Een jaar consistentie compoundt —
+                hier lees je hoe je{" "}
+                <a href="/nl/blog/consistent-blijven-met-sporten" className="text-brand hover:underline">consistent blijft met trainen ondanks een drukke agenda</a>.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Discretie en privacy</h2>
@@ -146,13 +149,16 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Factuur op bedrijfsnaam en boekhouding</h2>
               <p>
-                Voor studio-huur leveren we standaard een factuur. Voor personal training-sessies werkt
-                het anders: elke trainer is zelfstandig en stuurt zijn eigen factuur. Veel trainers
-                kunnen die op bedrijfsnaam zetten met je BTW-nummer en een specifieke omschrijving. Of
-                personal training fiscaal aftrekbaar is voor jouw onderneming hangt af van je
-                rechtsvorm, je situatie en de aard van de uitgave — overleg dat met je eigen accountant.
-                Wat wij wel doen: zorgen dat de factuur correct en herleidbaar is, zodat je accountant
-                er goed mee kan werken.
+                Voor <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="text-brand hover:underline">studio-huur</a>{" "}
+                leveren we standaard een factuur. Voor personal training-sessies werkt het anders: elke
+                trainer is zelfstandig en stuurt zijn eigen factuur. Veel trainers kunnen die op
+                bedrijfsnaam zetten met je BTW-nummer en een specifieke omschrijving. Of personal
+                training fiscaal aftrekbaar is voor jouw onderneming hangt af van je rechtsvorm, je
+                situatie en de aard van de uitgave — overleg dat met je eigen accountant. Wat wij wel
+                doen: zorgen dat de factuur correct en herleidbaar is, zodat je accountant er goed mee
+                kan werken. Tarieven verschillen per trainer; ons{" "}
+                <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="text-brand hover:underline">eerlijke overzicht van personal training-prijzen in Amsterdam</a>{" "}
+                laat zien waar je op kan rekenen.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Small-group voor teams en collega&apos;s</h2>
@@ -160,9 +166,10 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
                 Niet iedereen wil alleen trainen. Verschillende trainers bieden small-group sessies aan
                 voor 2 tot 4 personen — handig voor collega&apos;s die samen willen sporten of een vast
                 duo dat de drempel liever deelt. Voor bedrijven die hun team een wellness-traject
-                willen aanbieden kunnen we ook periodiek de hele studio reserveren, eventueel in
-                combinatie met een kennismakingsblok over kracht, voeding of houding. Dat laatste is
-                geen standaardpakket — bel of mail ons en we maken iets passend.
+                willen aanbieden kunnen we ook periodiek de{" "}
+                <a href="/nl/blog/gym-huren-per-uur-amsterdam" className="text-brand hover:underline">hele studio per uur reserveren</a>,
+                eventueel in combinatie met een kennismakingsblok over kracht, voeding of houding. Dat
+                laatste is geen standaardpakket — bel of mail ons en we maken iets passend.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Locatie: waarom de Jordaan voor centrum- en Zuidas-professionals werkt</h2>
@@ -189,10 +196,12 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
             <div className="mt-12 border-t border-border/50 pt-8">
               <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
               <div className="grid sm:grid-cols-2 gap-3">
-                <a href="/nl/vind-jouw-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Vind jouw personal trainer</p></a>
-                <a href="/nl/gratis-intake" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Plan een gratis intake</p></a>
-                <a href="/nl/studio-huren" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio huren met factuur</p></a>
-                <a href="/nl/prijzen" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Bekijk onze prijzen</p></a>
+                <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio huren met factuur</p></a>
+                <a href="/nl/blog/gym-huren-per-uur-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Gym huren per uur</p></a>
+                <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Wat kost personal training in Amsterdam?</p></a>
+                <a href="/nl/blog/consistent-blijven-met-sporten" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Consistent blijven met trainen</p></a>
+                <a href="/nl/blog/fysiotherapie-studio-huren-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Fysiotherapie studio huren</p></a>
+                <a href="/nl/blog/prive-sportschool-vs-grote-sportschool" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Privé sportschool vs grote sportschool</p></a>
               </div>
             </div>
 
