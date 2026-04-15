@@ -317,6 +317,14 @@ const posts = [
     href: "/en/blog/prenatal-personal-trainer-amsterdam",
     date: "April 15, 2026",
   },
+  {
+    title: "Small Group Training in Amsterdam",
+    excerpt:
+      "Train with your partner, a friend or small team. Closed groups of 2-4 in our private studio. Personal coaching at a lower cost per person.",
+    category: "Training",
+    href: "/en/blog/small-group-training-amsterdam",
+    date: "April 15, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

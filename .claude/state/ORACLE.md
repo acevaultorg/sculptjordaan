@@ -14,6 +14,7 @@
 | 1917528 | 2026-04-15 15:50 | infrastructure | Next.js 16 priority→preload (70 files) | 0 | 0 | 0 | compat migration, no revenue delta; silences deprecation warnings + unblocks future minor version bumps |
 | TBD | 2026-04-15 | new_landing_page | NL+EN postpartum PT blog → Gezina funnel | 55 | TBD | TBD | very narrow high-intent segment (postpartum mothers seeking safe return), direct CTA to Gezina intake; higher conversion expected than generic posts despite lower volume |
 | TBD | 2026-04-15 | new_landing_page | NL+EN prenatal PT blog → Gezina funnel | 45 | TBD | TBD | mirrors postpartum for the pregnancy segment; trimester-specific guidance + birth prep; completes the maternity funnel (prenatal → postpartum → female) all routing to Gezina |
+| TBD | 2026-04-15 | new_landing_page | NL+EN small-group training blog | 40 | TBD | TBD | distinct buyer segment (pairs/teams/colleagues vs solo); diversifies Oracle portfolio away from the women-funnel (prior 3 ships); routes to Dara (small-group specialist) + Gezina + corporate funnel; strong upsell from zakelijk-PT and couples organic search |
 
 ## Archetype multipliers (Oracle v1 cold start)
 

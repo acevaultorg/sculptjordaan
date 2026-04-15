@@ -317,6 +317,14 @@ const posts = [
     href: "/nl/blog/personal-trainer-zwangerschap-amsterdam",
     date: "15 april 2026",
   },
+  {
+    title: "Small Group Training in Amsterdam",
+    excerpt:
+      "Samen trainen met partner, vriend of collega. Besloten groepjes van 2-4 in onze privé studio. Personal coaching tegen lagere kosten per persoon.",
+    category: "Training",
+    href: "/nl/blog/small-group-training-amsterdam",
+    date: "15 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {
