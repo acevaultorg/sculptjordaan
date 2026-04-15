@@ -128,10 +128,12 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Flexible hours for full calendars</h2>
               <p>
                 The studio is open daily from 06:30 to 22:00. That sounds obvious, but it matters in
-                practice. For Zuidas executives with an 08:00 first call, a 06:45 session is realistic
-                — train, shower, coffee, on time at the office. For consultants leaving the office at
-                19:00, a 19:30 or 20:00 session is normal. We don&apos;t book in fixed slots; you and your
-                trainer agree what fits.
+                practice. For <a href="/en/blog/personal-trainer-amsterdam-south" className="text-brand hover:underline">Zuidas</a> executives
+                with an 08:00 first call, a 06:45 session is realistic — train, shower, coffee, on time
+                at the office. For consultants leaving the office at 19:00, a 19:30 or 20:00 session
+                is normal. We don&apos;t book in fixed slots; you and your trainer agree what fits.
+                Consistency compounds over a year of these sessions — here&apos;s how to{" "}
+                <a href="/en/blog/stay-consistent-exercise" className="text-brand hover:underline">stay consistent when work gets busy</a>.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Discretion and privacy</h2>
@@ -144,23 +146,26 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Invoicing and accounting</h2>
               <p>
-                For studio rental we provide an invoice as standard. Personal training works
-                differently: each trainer is independent and issues their own invoice. Many can put it
-                on company name with your VAT number and an itemised description. Whether personal
-                training is tax-deductible for your business depends on your entity, your situation
-                and the nature of the expense — please discuss that with your own accountant. What we
-                do guarantee: invoices that are correct and traceable, so your accountant has what
-                they need.
+                For <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="text-brand hover:underline">studio rental</a> we
+                provide an invoice as standard. Personal training works differently: each trainer is
+                independent and issues their own invoice. Many can put it on company name with your
+                VAT number and an itemised description. Whether personal training is tax-deductible for
+                your business depends on your entity, your situation and the nature of the expense —
+                please discuss that with your own accountant. What we do guarantee: invoices that are
+                correct and traceable, so your accountant has what they need. Rates vary by trainer; our{" "}
+                <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of personal training costs in Amsterdam</a>{" "}
+                shows what to expect.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Small-group sessions for teams and colleagues</h2>
               <p>
                 Not everyone wants to train alone. Several trainers offer small-group sessions for 2 to
                 4 people — useful for colleagues training together or a regular pair sharing the
-                accountability. For companies offering their team a wellness programme we can also
-                reserve the entire studio periodically, optionally combined with a short education
-                block on strength, nutrition or posture. That&apos;s not an off-the-shelf package — call
-                or email and we&apos;ll build something that fits.
+                accountability. For companies offering their team a wellness programme we can also{" "}
+                <a href="/en/blog/gym-rental-per-hour-amsterdam" className="text-brand hover:underline">reserve the entire studio by the hour</a>,
+                optionally combined with a short education block on strength, nutrition or posture.
+                That&apos;s not an off-the-shelf package — call or email and we&apos;ll build something that
+                fits.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why the Jordaan works for centre and Zuidas professionals</h2>
@@ -186,10 +191,12 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
             <div className="mt-12 border-t border-border/50 pt-8">
               <h3 className="text-lg font-bold mb-4">Read more</h3>
               <div className="grid sm:grid-cols-2 gap-3">
-                <a href="/en/find-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Find your personal trainer</p></a>
-                <a href="/en/free-intro" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Book a free intro</p></a>
-                <a href="/en/studio-rental" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio rental with invoice</p></a>
-                <a href="/en/pricing" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">See our pricing</p></a>
+                <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Studio rental with invoice</p></a>
+                <a href="/en/blog/gym-rental-per-hour-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Gym rental per hour</p></a>
+                <a href="/en/blog/personal-training-cost-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">What does personal training cost in Amsterdam?</p></a>
+                <a href="/en/blog/stay-consistent-exercise" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">How to stay consistent with training</p></a>
+                <a href="/en/blog/physiotherapy-studio-rental-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Physiotherapy studio rental</p></a>
+                <a href="/en/blog/private-gym-vs-big-box-gym" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Private gym vs big-box gym</p></a>
               </div>
             </div>
 

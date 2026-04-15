@@ -110,13 +110,13 @@ export default function PersonalTrainerAmsterdamNorthEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What does Noord actually offer locally?</h2>
               <p>
-                You&apos;ll mostly find chain gyms in Noord. Basic-Fit operates several locations,
-                TrainMore is expanding, and there are a handful of CrossFit boxes and bootcamp groups.
-                Great if you like group energy, busy floors and flexible opening hours at low prices.
-                For someone who wants one-on-one coaching in a calm room with a fixed trainer, the menu
-                is shorter. A few independent trainers operate in Noord by renting hours inside larger
-                gyms — which means your sessions still happen among dozens of strangers on shared
-                equipment.
+                You&apos;ll mostly find <a href="/en/blog/private-gym-vs-big-box-gym" className="text-brand hover:underline">chain gyms</a> in
+                Noord. Basic-Fit operates several locations, TrainMore is expanding, and there are a
+                handful of CrossFit boxes and bootcamp groups. Great if you like group energy, busy
+                floors and flexible opening hours at low prices. For someone who wants one-on-one
+                coaching in a calm room with a fixed trainer, the menu is shorter. A few independent
+                trainers operate in Noord by renting hours inside larger gyms — which means your
+                sessions still happen among dozens of strangers on shared equipment.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why consider a trainer across the IJ?</h2>
@@ -153,19 +153,25 @@ export default function PersonalTrainerAmsterdamNorthEN() {
               <p>
                 SculptClub has five independent trainers covering strength, nutrition, physiotherapy,
                 posture and movement technique. You pick the trainer that fits your goal — not the
-                other way round. Rates start at €45 per session, the first intro is always free. No
-                membership, no long contracts, no hidden fees. Cancellation is always free. The studio
-                is open daily 06:30 to 22:00, so squeezing a session in before or after work in Centrum
-                or Zuidas is usually straightforward.
+                other way round. Rates start at €45 per session and we keep an{" "}
+                <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of what personal training costs in Amsterdam</a>.
+                The first intro is always free. No membership, no long contracts, no hidden fees.
+                Cancellation is always free. The studio is open daily 06:30 to 22:00, so squeezing a
+                session in before or after work in <a href="/en/blog/personal-trainer-amsterdam-centrum" className="text-brand hover:underline">Centrum</a>{" "}
+                or <a href="/en/blog/personal-trainer-amsterdam-south" className="text-brand hover:underline">Zuidas</a> is usually
+                straightforward.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym for solo days</h2>
               <p>
-                Not every workout needs a coach. Open Gym gives you access to the same private studio
-                for 60-minute solo sessions. Four sessions per month start at €29. Unlimited access
-                runs from €89 per four weeks. No contract, no notice period — a practical middle ground
-                for people who live in Noord and pass through the centre regularly for work or
-                appointments.
+                Not every workout needs a coach.{" "}
+                <a href="/en/blog/open-gym-vs-regular-gym" className="text-brand hover:underline">Open Gym</a> gives you access to the
+                same private studio for 60-minute solo sessions. Four sessions per month start at €29.
+                Unlimited access runs from €89 per four weeks. No contract, no notice period — a
+                practical middle ground for people who live in Noord and pass through the centre
+                regularly for work or appointments. If you&apos;re commuting from further afield,
+                our <a href="/en/blog/gym-without-membership-amsterdam" className="text-brand hover:underline">no-membership gym guide</a>{" "}
+                explains how the pricing compares.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Frequently asked questions</h2>
@@ -182,10 +188,12 @@ export default function PersonalTrainerAmsterdamNorthEN() {
             <div className="mt-12 border-t border-border/50 pt-8">
               <h3 className="text-lg font-bold mb-4">Read more</h3>
               <div className="grid sm:grid-cols-2 gap-3">
-                <a href="/en/find-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Find your personal trainer</p></a>
-                <a href="/en/free-intro" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Book a free intro</p></a>
                 <a href="/en/blog/personal-trainer-amsterdam-centrum" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam Centrum</p></a>
-                <a href="/en/pricing" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">See our pricing</p></a>
+                <a href="/en/blog/personal-trainer-amsterdam-east" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam East</p></a>
+                <a href="/en/blog/personal-trainer-amsterdam-west" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam West</p></a>
+                <a href="/en/blog/personal-trainer-amsterdam-south" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer Amsterdam South</p></a>
+                <a href="/en/blog/private-gym-vs-big-box-gym" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Private gym vs big-box gym</p></a>
+                <a href="/en/blog/boutique-gym-vs-big-chain-gym" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Boutique gym vs big chain</p></a>
               </div>
             </div>
 

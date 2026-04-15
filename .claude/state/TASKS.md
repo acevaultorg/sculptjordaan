@@ -50,6 +50,6 @@
 - [x] `P2` FEAT Trainer matching on trainers page — already shipped via TrainerFilterGrid + TrainerMatchForm [id:trainer-quiz]
 - [ ] `P2` FEAT Richer trainer profiles (availability, reviews) [id:trainer-profiles] [score:3.5]
 - [~] `P2` PERF PNG→WebP superseded — next/image auto-optimizes all images; remaining PNGs are PWA icons + JSON-LD logo (must stay PNG) [id:webp-convert]
-- [ ] `P2` SEO More EN cross-links on newer blog posts [id:en-newer-crosslinks] [score:2.5]
+- [x] `P2` SEO More EN cross-links on newer blog posts — corporate (0→7 inline+cards) + amsterdam-north (1→9 inline+cards) [id:en-newer-crosslinks]
 
 ## Blocked
