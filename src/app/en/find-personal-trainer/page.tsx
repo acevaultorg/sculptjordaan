@@ -102,6 +102,43 @@ export default function TrainersPageEN() {
         <TrainerFilterGrid trainers={trainers} locale="en" />
       </Section>
 
+      {/* Specific-need routing — self-segment for high-intent visitors */}
+      <Section>
+        <SectionHeader
+          overline="Looking for something specific?"
+          title="Jump to Your Situation"
+          description="Searching for a trainer for a specific life phase or group? Use the shortcuts below."
+        />
+        <FadeIn>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/en/blog/female-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Female personal trainer</p>
+              <p className="text-sm text-muted-foreground">Gezina, Eva or Andrea — three female trainers, private studio, comfortable learning environment.</p>
+            </a>
+            <a href="/en/blog/english-speaking-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">English-speaking trainer</p>
+              <p className="text-sm text-muted-foreground">Every trainer coaches fluently in English. Built for expats and international teams.</p>
+            </a>
+            <a href="/en/blog/prenatal-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">During pregnancy</p>
+              <p className="text-sm text-muted-foreground">Stay strong safely by trimester. Mobility, core, birth prep.</p>
+            </a>
+            <a href="/en/blog/postpartum-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">After birth (postpartum)</p>
+              <p className="text-sm text-muted-foreground">Gradual return to strength. Diastasis, pelvic floor, relaxin — with experience.</p>
+            </a>
+            <a href="/en/blog/small-group-training-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Small group (2–4 people)</p>
+              <p className="text-sm text-muted-foreground">Duo or small group with partner, friend or colleagues. Split cost, private studio.</p>
+            </a>
+            <a href="/en/blog/personal-trainer-for-seniors-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">For seniors (50+)</p>
+              <p className="text-sm text-muted-foreground">Stay strong, keep balance, prevent falls. Gradual build in a quiet space.</p>
+            </a>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Trainer matching form */}
       <Section bg="muted">
         <SectionHeader

@@ -102,6 +102,43 @@ export default function TrainersPageNL() {
         <TrainerFilterGrid trainers={trainers} locale="nl" />
       </Section>
 
+      {/* Specific-need routing — self-segment for high-intent visitors */}
+      <Section>
+        <SectionHeader
+          overline="Specifieke behoefte?"
+          title="Direct Naar Jouw Situatie"
+          description="Op zoek naar een trainer voor een specifieke levensfase of samenstelling? Gebruik de snelkoppelingen hieronder."
+        />
+        <FadeIn>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/nl/blog/vrouwelijke-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Vrouwelijke personal trainer</p>
+              <p className="text-sm text-muted-foreground">Gezina, Eva of Andrea — drie vrouwelijke trainers, privé studio, comfortabel leren krachttrainen.</p>
+            </a>
+            <a href="/nl/blog/engels-sprekende-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Engels-sprekende trainer</p>
+              <p className="text-sm text-muted-foreground">Alle trainers coachen vloeiend in het Engels. Geschikt voor expats en internationale teams.</p>
+            </a>
+            <a href="/nl/blog/personal-trainer-zwangerschap-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Tijdens je zwangerschap</p>
+              <p className="text-sm text-muted-foreground">Veilig blijven trainen per trimester. Mobiliteit, core, bevallingsvoorbereiding.</p>
+            </a>
+            <a href="/nl/blog/personal-trainer-na-bevalling-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Na de bevalling (postpartum)</p>
+              <p className="text-sm text-muted-foreground">Geleidelijk terug naar kracht. Diastase, bekkenbodem, relaxine — met ervaring.</p>
+            </a>
+            <a href="/nl/blog/small-group-training-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Samen trainen (2–4 personen)</p>
+              <p className="text-sm text-muted-foreground">Duo of klein groepje met partner, vriend of collega&apos;s. Kosten delen, privé studio.</p>
+            </a>
+            <a href="/nl/blog/personal-trainer-voor-senioren-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Voor senioren (50+)</p>
+              <p className="text-sm text-muted-foreground">Sterker blijven, balans behouden, valpreventie. Rustig opbouwen in een rustige ruimte.</p>
+            </a>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Trainer matching form */}
       <Section bg="muted">
         <SectionHeader

@@ -15,6 +15,7 @@
 | TBD | 2026-04-15 | new_landing_page | NL+EN postpartum PT blog → Gezina funnel | 55 | TBD | TBD | very narrow high-intent segment (postpartum mothers seeking safe return), direct CTA to Gezina intake; higher conversion expected than generic posts despite lower volume |
 | TBD | 2026-04-15 | new_landing_page | NL+EN prenatal PT blog → Gezina funnel | 45 | TBD | TBD | mirrors postpartum for the pregnancy segment; trimester-specific guidance + birth prep; completes the maternity funnel (prenatal → postpartum → female) all routing to Gezina |
 | TBD | 2026-04-15 | new_landing_page | NL+EN small-group training blog | 40 | TBD | TBD | distinct buyer segment (pairs/teams/colleagues vs solo); diversifies Oracle portfolio away from the women-funnel (prior 3 ships); routes to Dara (small-group specialist) + Gezina + corporate funnel; strong upsell from zakelijk-PT and couples organic search |
+| TBD | 2026-04-15 | conversion_copy_fix | Specific-need routing section on /vind-jouw-personal-trainer + /find-personal-trainer | 30 | TBD | TBD | Above-the-fold decision support for high-intent visitors arriving at the primary trainer directory; 6 cards routing to female / english / prenatal / postpartum / small-group / seniors blogs; internal-link density boost (SEO compound) + self-segmentation (conversion lift before the quiz form); archetype pivot away from new_landing_page (saturation) to conversion_copy_fix on highest-traffic conversion hub |
 
 ## Archetype multipliers (Oracle v1 cold start)
 
