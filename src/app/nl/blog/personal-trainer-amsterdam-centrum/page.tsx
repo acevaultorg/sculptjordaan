@@ -58,7 +58,7 @@ export default function PersonalTrainerCentrumNL() {
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-              <Image src="/images/studio/sculpt-wall-logo.jpeg" alt="SculptClub logo op de muur in de studio" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
+              <Image src="/images/studio/sculpt-wall-logo.jpeg" alt="SculptClub logo op de muur in de studio" fill className="object-cover" preload sizes="(max-width: 768px) 100vw, 800px" />
             </div>
 
             <div className="prose prose-lg max-w-none">

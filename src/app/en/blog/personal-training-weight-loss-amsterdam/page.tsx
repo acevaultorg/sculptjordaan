@@ -74,7 +74,7 @@ export default function PersonalTrainingWeightLossEN() {
                 alt="Dumbbells on the floor at SculptClub studio"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

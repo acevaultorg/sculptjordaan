@@ -74,7 +74,7 @@ export default function BlogPostEN2() {
                 alt="Strength training session at SculptClub"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

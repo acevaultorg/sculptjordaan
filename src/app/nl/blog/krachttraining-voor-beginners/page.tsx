@@ -74,7 +74,7 @@ export default function BlogPostNL2() {
                 alt="Power rack in de SculptClub studio"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

@@ -42,7 +42,7 @@ export function Hero({ locale }: { locale: Locale }) {
           fill
           className="object-cover [object-position:center_25%] [transform:translateZ(0)]"
           sizes="100vw"
-          priority
+          preload
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
       </div>

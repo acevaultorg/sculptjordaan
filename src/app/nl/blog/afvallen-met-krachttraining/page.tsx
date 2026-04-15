@@ -71,7 +71,7 @@ export default function AfvallenMetKrachttrainingNL() {
                 alt="Krachttraining voor afvallen bij SculptClub Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

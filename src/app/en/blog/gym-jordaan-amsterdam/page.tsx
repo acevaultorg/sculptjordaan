@@ -74,7 +74,7 @@ export default function GymJordaanEN() {
                 alt="SculptClub studio on the Egelantiersgracht in the Jordaan, Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

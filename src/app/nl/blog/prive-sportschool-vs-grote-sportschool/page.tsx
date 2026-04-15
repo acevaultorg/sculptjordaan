@@ -70,7 +70,7 @@ export default function BlogPostPriveVsGrNL() {
                 alt="Overzicht van de SculptClub privé studio"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

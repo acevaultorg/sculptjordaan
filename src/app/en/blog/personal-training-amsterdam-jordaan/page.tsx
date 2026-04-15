@@ -76,7 +76,7 @@ export default function BlogPostEN1() {
                 alt="Personal training at SculptClub in the Jordaan, Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

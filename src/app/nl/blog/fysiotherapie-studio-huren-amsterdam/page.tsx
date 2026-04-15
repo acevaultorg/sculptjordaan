@@ -70,7 +70,7 @@ export default function BlogPostFysioStudioNL() {
                 alt="Power rack en trainingsapparatuur in studio SculptClub"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

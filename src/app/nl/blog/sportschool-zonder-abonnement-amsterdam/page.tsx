@@ -72,7 +72,7 @@ export default function SportschoolZonderAbonnementNL() {
                 alt="Open Gym bij SculptClub Amsterdam — sporten zonder abonnement"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

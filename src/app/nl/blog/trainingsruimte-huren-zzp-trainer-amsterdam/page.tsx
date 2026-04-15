@@ -75,7 +75,7 @@ export default function BlogPostZZPTrainerNL() {
                 alt="Volledig uitgeruste trainingsruimte bij SculptClub Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

@@ -76,7 +76,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
                 alt="Hamish, physiotherapist and personal trainer at SculptClub Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

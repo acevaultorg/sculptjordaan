@@ -73,7 +73,7 @@ export default function FreeIntroPage() {
             width={140}
             height={10}
             className="h-3.5 w-auto dark:invert"
-            priority
+            preload
           />
         </Link>
       </header>

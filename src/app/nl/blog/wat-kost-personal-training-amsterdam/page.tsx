@@ -76,7 +76,7 @@ export default function WatKostPersonalTraining() {
                 alt="Personal training sessie bij SculptClub Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

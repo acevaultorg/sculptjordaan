@@ -69,7 +69,7 @@ export default function PersonalTrainerAmsterdamWestNL() {
                 alt="Ingang SculptClub studio aan de Egelantiersgracht"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

@@ -142,7 +142,7 @@ export default function WordTrainerNL() {
                 alt="Atleet bij de ingang van SculptClub Private Gym aan Egelantiersgracht 424"
                 fill
                 className="object-cover object-top"
-                priority
+                preload
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

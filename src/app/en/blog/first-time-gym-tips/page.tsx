@@ -70,7 +70,7 @@ export default function FirstTimeGymTips() {
                 alt="Dumbbell rack at SculptClub private gym in Amsterdam Jordaan"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

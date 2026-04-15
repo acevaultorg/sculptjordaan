@@ -71,7 +71,7 @@ export default function WeightLossStrengthTrainingEN() {
                 alt="Strength training for weight loss at SculptClub Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

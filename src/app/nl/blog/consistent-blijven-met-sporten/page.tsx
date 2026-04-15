@@ -70,7 +70,7 @@ export default function BlogPostConsistentNL() {
                 alt="Trainingsruimte bij SculptClub in de Jordaan"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

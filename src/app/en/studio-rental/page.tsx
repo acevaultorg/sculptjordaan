@@ -140,7 +140,7 @@ export default function StudioRentalPageEN() {
                 alt="SculptClub Private Gym facade at Egelantiersgracht 424 Amsterdam"
                 fill
                 className="object-cover"
-                priority
+                preload
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
