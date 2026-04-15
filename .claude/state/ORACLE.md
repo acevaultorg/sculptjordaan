@@ -12,6 +12,7 @@
 | ea136b9 | 2026-04-15 14:15 | SEO_page_addition | NL blog cross-links: zakelijk + noord mirror | 3 | TBD | TBD | mirror of EN fix |
 | 4a9351c | 2026-04-15 15:04 | infrastructure | Vercel vanity migration (10 domains → sculptclub aliases) | 80 | TBD | TBD | Vercel side done; full unlock gated on Hostinger DNS (operator action). Once DNS flips, each vanity domain routes through middleware with correct UTM attribution — Dutch intent no longer bounces to English homepage |
 | 1917528 | 2026-04-15 15:50 | infrastructure | Next.js 16 priority→preload (70 files) | 0 | 0 | 0 | compat migration, no revenue delta; silences deprecation warnings + unblocks future minor version bumps |
+| TBD | 2026-04-15 | new_landing_page | NL+EN postpartum PT blog → Gezina funnel | 55 | TBD | TBD | very narrow high-intent segment (postpartum mothers seeking safe return), direct CTA to Gezina intake; higher conversion expected than generic posts despite lower volume |
 
 ## Archetype multipliers (Oracle v1 cold start)
 

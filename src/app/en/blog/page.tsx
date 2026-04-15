@@ -301,6 +301,14 @@ const posts = [
     href: "/en/blog/english-speaking-personal-trainer-amsterdam",
     date: "April 15, 2026",
   },
+  {
+    title: "Postpartum Personal Trainer in Amsterdam",
+    excerpt:
+      "Return to strength training safely after birth. Private studio, female trainers experienced with diastasis recti, pelvic floor and postpartum programming.",
+    category: "Training",
+    href: "/en/blog/postpartum-personal-trainer-amsterdam",
+    date: "April 15, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

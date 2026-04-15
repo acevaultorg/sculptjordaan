@@ -301,6 +301,14 @@ const posts = [
     href: "/nl/blog/engels-sprekende-personal-trainer-amsterdam",
     date: "15 april 2026",
   },
+  {
+    title: "Personal Trainer na de Bevalling in Amsterdam",
+    excerpt:
+      "Veilig weer beginnen met krachttraining na de bevalling. Privé studio, vrouwelijke trainers met postpartum-ervaring — diastase, bekkenbodem, geleidelijk opbouwen.",
+    category: "Training",
+    href: "/nl/blog/personal-trainer-na-bevalling-amsterdam",
+    date: "15 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {
