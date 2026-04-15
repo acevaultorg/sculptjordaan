@@ -168,7 +168,7 @@ export default function PricingPageNL() {
           { name: "Volledige studio — 90 min", description: "Volledige studio huur, 90 minuten", price: 24 },
           { name: "Starter strippenkaart", description: "Strippenkaart studio huur, 10% korting", price: 89 },
           { name: "Routine strippenkaart", description: "Strippenkaart studio huur, 15% korting", price: 199 },
-          { name: "Pro strippenkaart", description: "Strippenkaart studio huur, 19% korting", price: 349 },
+          { name: "Pro strippenkaart", description: "Strippenkaart studio huur, 20% korting", price: 349 },
           { name: "Volume strippenkaart", description: "Strippenkaart studio huur, 23% korting", price: 549 },
         ]}
       />
@@ -396,7 +396,7 @@ export default function PricingPageNL() {
                 </p>
                 <p className="text-3xl font-bold">&euro;349</p>
                 <p className="mt-2 text-sm">
-                  <span className="sc-discount">Bespaar 19%</span>
+                  <span className="sc-discount">Bespaar 20%</span>
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -408,9 +408,9 @@ export default function PricingPageNL() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <Card className="h-full text-center ring-2 ring-primary">
+            <Card className="h-full text-center">
               <CardHeader>
-                <Badge className="mx-auto mb-2">Beste deal</Badge>
+                <Badge className="mx-auto mb-2" variant="secondary">Beste deal</Badge>
                 <CardTitle className="text-xl">Volume</CardTitle>
               </CardHeader>
               <CardContent>

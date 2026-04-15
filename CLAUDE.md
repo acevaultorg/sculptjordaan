@@ -19,7 +19,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Open Gym Onbeperkt:** unlimited, €89/4 weeks
 - **Studio Rental Half:** €12/60min, €17/90min
 - **Studio Rental Full:** €17/60min, €24/90min
-- **Packages:** Starter €89 (10% off), Routine €199 (15% off), Volume €549 (23% off)
+- **Packages:** Starter €89 (10% off), Routine €199 (15% off), Pro €349 (20% off), Volume €549 (23% off)
 
 ## Policies (ALWAYS use these)
 - **Cancellation:** Always free. No time restriction. Never say "24 hours" or "12 hours".

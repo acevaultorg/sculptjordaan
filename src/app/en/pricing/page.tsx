@@ -168,7 +168,7 @@ export default function PricingPageEN() {
           { name: "Full studio — 90 min", description: "Full studio rental, 90 minutes", price: 24 },
           { name: "Starter discount pack", description: "Studio rental discount pack, 10% off", price: 89 },
           { name: "Routine discount pack", description: "Studio rental discount pack, 15% off", price: 199 },
-          { name: "Pro discount pack", description: "Studio rental discount pack, 19% off", price: 349 },
+          { name: "Pro discount pack", description: "Studio rental discount pack, 20% off", price: 349 },
           { name: "Volume discount pack", description: "Studio rental discount pack, 23% off", price: 549 },
         ]}
       />
@@ -396,7 +396,7 @@ export default function PricingPageEN() {
                 </p>
                 <p className="text-3xl font-bold">&euro;349</p>
                 <p className="mt-2 text-sm">
-                  <span className="sc-discount">Save 19%</span>
+                  <span className="sc-discount">Save 20%</span>
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -408,9 +408,9 @@ export default function PricingPageEN() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <Card className="h-full text-center ring-2 ring-primary">
+            <Card className="h-full text-center">
               <CardHeader>
-                <Badge className="mx-auto mb-2">Best deal</Badge>
+                <Badge className="mx-auto mb-2" variant="secondary">Best deal</Badge>
                 <CardTitle className="text-xl">Volume</CardTitle>
               </CardHeader>
               <CardContent>
