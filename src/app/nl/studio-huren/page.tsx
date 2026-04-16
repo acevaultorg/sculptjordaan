@@ -315,9 +315,9 @@ export default function StudioRentalPageNL() {
 
           {/* Volume */}
           <FadeIn delay={0.3}>
-            <Card className="h-full text-center ring-2 ring-primary">
+            <Card className="h-full text-center">
               <CardHeader>
-                <Badge className="mx-auto mb-2">Beste deal</Badge>
+                <Badge className="mx-auto mb-2" variant="secondary">Beste deal</Badge>
                 <CardTitle className="text-xl">Volume</CardTitle>
               </CardHeader>
               <CardContent>
