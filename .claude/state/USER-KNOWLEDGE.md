@@ -5,6 +5,21 @@
 - contact@sculptclub.nl is the correct email. Never use info@sculptclub.nl. <!-- added 2026-04-04, source: user confirmation -->
 - No student/senior discounts. Price point is already low for boutique. Free trial handles conversion. Don't undercut trainers. <!-- added 2026-04-04, source: user confirmation -->
 
+## Business Registration (verified 2026-04-18)
+- **Legal entity:** P.M. de Vries (eenmanszaak) — solo founder / ZZP structure
+- **Trade name (handelsnaam):** SculptClub
+- **KvK nummer:** 64708101
+- **BTW-identificatienummer (public VAT ID):** NL002250100B57
+- **Registered business address:** Egelantiersgracht 424, 1015 RR Amsterdam (the studio)
+- **Mail / personal registered address:** Egelantiersstraat 220-C, 1015 PT Amsterdam
+- **Business phone:** +31 6 83 17 89 34
+- **Business email:** contact@sculptclub.nl
+- **Billing email (ad accounts, etc.):** paulomdevries@gmail.com
+- **Google Ads account ID:** 932-594-8599
+- Use KvK + BTW + legal name P.M. de Vries for Organisation-path identity checks on any platform (Meta business verification, Stripe Atlas, etc.). Use "SculptClub" only as trade name.
+- **Google Ads advertiser identity: VERIFIED 2026-04-18** — went Individual path ("Ads funded by: paulo de vries · NL"). All 4 tasks green-checked. No re-verification needed unless Google prompts.
+- Do NOT persist: IBAN, BIC, Omzetbelastingnummer (personal tax-ID). Never enter these into web forms on operator's behalf. Operator provides directly when needed.
+
 ## Operations & Policies (verified 2026-04-04)
 - Open Gym pause: clients can always pause (freeze) their 4-week cycle, not just cancel.
 - Open Gym cancel mid-cycle: client keeps remaining sessions until cycle ends.
