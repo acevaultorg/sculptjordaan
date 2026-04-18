@@ -5,6 +5,11 @@
 - contact@sculptclub.nl is the correct email. Never use info@sculptclub.nl. <!-- added 2026-04-04, source: user confirmation -->
 - No student/senior discounts. Price point is already low for boutique. Free trial handles conversion. Don't undercut trainers. <!-- added 2026-04-04, source: user confirmation -->
 
+## Ship-end autopilot (operator directive 2026-04-18)
+- In `/acepilot auto` on SculptClub: after opening a PR, **immediately merge it, fire the Vercel deploy hook, and verify the new state live via Chrome MCP DOM query** — all in one continuous pass, no "ready to merge?" check-in. Operator directive 2026-04-18 after PR #30 sat unmerged: "you do this in the future".
+- The Vercel GitHub auto-deploy webhook has been dormant fleet-wide since 2026-04-13, so **manual deploy-hook curl is part of the ship pipeline**, not an exception. Hook URL + verification pattern live in `KNOWLEDGE.md ## Deploy pipeline (verified 2026-04-16)`.
+- Verification = grep the rendered HTML for the expected asset filename OR query the DOM via Chrome MCP `find` for the alt-text. Don't trust browser visual — operator's browser caches aggressively; DOM / HTML grep is authoritative.
+
 ## Business Registration (verified 2026-04-18)
 - **Legal entity:** P.M. de Vries (eenmanszaak) — solo founder / ZZP structure
 - **Trade name (handelsnaam):** SculptClub
