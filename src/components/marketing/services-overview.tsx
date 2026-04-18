@@ -88,12 +88,12 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
           <FadeIn key={service.title} delay={i * 0.1}>
             <Link href={service.href} className="block h-full">
               <Card className="h-full group cursor-pointer hover:shadow-brand-lg transition-all duration-300 border-border/50 overflow-hidden pt-0">
-                <div className="relative aspect-video w-full">
+                <div className="relative aspect-[4/5] w-full">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
                     fill
-                    className="object-cover object-top rounded-t-xl"
+                    className="object-cover object-center rounded-t-xl"
                     sizes="(max-width: 640px) 100vw, 33vw"
                   />
                 </div>
