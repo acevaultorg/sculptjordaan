@@ -134,11 +134,11 @@ const nextConfig: NextConfig = {
   async headers() {
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app",
+      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com wa.me",
       "font-src 'self'",
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app",
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com",
       "frame-src app.acuityscheduling.com www.google.com maps.google.com",
     ].join("; ");
 
