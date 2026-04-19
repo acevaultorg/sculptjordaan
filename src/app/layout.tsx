@@ -79,6 +79,7 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://plausible.io" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.google.com" />

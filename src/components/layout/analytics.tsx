@@ -2,10 +2,22 @@ import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
 const { ga4, googleAds, googleAdsConversion, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
+const PLAUSIBLE_DOMAIN = "sculptclub.nl";
 
 export function Analytics() {
   return (
     <>
+      {/* Plausible — privacy-first analytics, no cookies, no consent needed */}
+      <Script
+        defer
+        data-domain={PLAUSIBLE_DOMAIN}
+        src="https://plausible.io/js/script.outbound-links.tagged-events.js"
+        strategy="afterInteractive"
+      />
+      <Script id="plausible-init" strategy="afterInteractive">
+        {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
+      </Script>
+
       {/* Google Analytics 4 + Google Ads — consent mode v2 default denied */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${ga4}`}
