@@ -185,6 +185,56 @@ const nextConfig: NextConfig = {
       { source: "/en/feed", destination: "/en/blog", permanent: true },
       { source: "/nl/blog/rss", destination: "/nl/blog", permanent: true },
       { source: "/en/blog/rss", destination: "/en/blog", permanent: true },
+
+      // ─── GSC 404 cleanup — wave 2 (PT variants, legal pages, intake aliases) ───
+      // PT shortcodes
+      { source: "/pt", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/nl/pt", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/en/pt", destination: "/en/find-personal-trainer", permanent: true },
+      // Missing locale prefix on booking + gym pages
+      { source: "/boek-studio", destination: "/nl/boek-studio", permanent: true },
+      { source: "/boek-gym", destination: "/nl/boek-gym", permanent: true },
+      { source: "/open-gym", destination: "/nl/open-gym", permanent: true },
+      // Find-trainer EN variants
+      { source: "/find-trainer", destination: "/en/find-personal-trainer", permanent: true },
+      { source: "/nl/find-trainer", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/trainers-amsterdam", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/nl/trainers-amsterdam", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/studio-huren-amsterdam", destination: "/nl/studio-huren", permanent: true },
+      { source: "/nl/jordaan-personal-trainer", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      // Subscription / membership queries (SculptClub has no memberships — land them on pricing)
+      { source: "/nl/abonnementen", destination: "/nl/prijzen", permanent: true },
+      { source: "/en/abonnementen", destination: "/en/pricing", permanent: true },
+      { source: "/abonnement", destination: "/nl/prijzen", permanent: true },
+      { source: "/nl/abonnement", destination: "/nl/prijzen", permanent: true },
+      // Legal / policy naked variants
+      { source: "/privacy", destination: "/nl/privacybeleid", permanent: true },
+      { source: "/nl/privacy", destination: "/nl/privacybeleid", permanent: true },
+      { source: "/en/privacy", destination: "/en/privacy-policy", permanent: true },
+      { source: "/cookies", destination: "/nl/cookiebeleid", permanent: true },
+      { source: "/nl/cookies", destination: "/nl/cookiebeleid", permanent: true },
+      { source: "/en/cookies", destination: "/en/cookie-policy", permanent: true },
+      { source: "/terms", destination: "/nl/algemene-voorwaarden", permanent: true },
+      { source: "/nl/terms", destination: "/nl/algemene-voorwaarden", permanent: true },
+      { source: "/en/terms", destination: "/en/terms-conditions", permanent: true },
+      { source: "/en/terms-and-conditions", destination: "/en/terms-conditions", permanent: true },
+      { source: "/en/terms-of-service", destination: "/en/terms-conditions", permanent: true },
+      { source: "/nl/voorwaarden", destination: "/nl/algemene-voorwaarden", permanent: true },
+      { source: "/en/accessibility", destination: "/en/accessibility-statement", permanent: true },
+      // Intake aliases
+      { source: "/intake", destination: "/nl/gratis-intake", permanent: true },
+      { source: "/nl/intake", destination: "/nl/gratis-intake", permanent: true },
+      { source: "/en/intake", destination: "/en/free-intro", permanent: true },
+      { source: "/free-intake", destination: "/nl/gratis-intake", permanent: true },
+      { source: "/free-intro-session", destination: "/en/free-intro", permanent: true },
+      // Sitemap variants
+      { source: "/nl/sitemap", destination: "/sitemap.xml", permanent: true },
+      { source: "/en/sitemap", destination: "/sitemap.xml", permanent: true },
+      // WordPress author legacy
+      { source: "/author/:path*", destination: "/", permanent: true },
+      // AMP legacy (AMP was removed)
+      { source: "/amp", destination: "/", permanent: true },
+      { source: "/nl/amp", destination: "/nl/blog", permanent: true },
     ];
   },
 
