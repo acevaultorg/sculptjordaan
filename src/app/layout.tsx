@@ -105,6 +105,13 @@ export default function RootLayout({
           data-site="sculptclub"
           strategy="lazyOnload"
         />
+        {/* Cloudflare Web Analytics — cookieless, privacy-first */}
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "ad5693a31b8c409e9e653a64937e94e8"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
