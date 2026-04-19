@@ -235,6 +235,52 @@ const nextConfig: NextConfig = {
       // AMP legacy (AMP was removed)
       { source: "/amp", destination: "/", permanent: true },
       { source: "/nl/amp", destination: "/nl/blog", permanent: true },
+
+      // ─── GSC 404 cleanup — wave 3 (exact URL list pulled from Search Console 2026-04-19) ───
+      // No-locale trainer intake (old WP slugs)
+      { source: "/plan-gratis-intake-met-alex", destination: "/nl/plan-gratis-intake-met-alex", permanent: true },
+      { source: "/plan-gratis-intake-met-dara", destination: "/nl/plan-gratis-intake-met-dara", permanent: true },
+      { source: "/plan-gratis-intake-met-eva", destination: "/nl/plan-gratis-intake-met-eva", permanent: true },
+      { source: "/plan-gratis-intake-met-hamish", destination: "/nl/plan-gratis-intake-met-hamish", permanent: true },
+      { source: "/plan-gratis-intake-met-andrea", destination: "/nl/plan-gratis-intake-met-andrea", permanent: true },
+      { source: "/plan-gratis-intake-met-gezina", destination: "/nl/plan-gratis-intake-met-gezina", permanent: true },
+      { source: "/plan-gratis-intake-met-jearmey", destination: "/nl/plan-gratis-intake-met-jearmey", permanent: true },
+      { source: "/plan-gratis-intake-met-joey", destination: "/nl/plan-gratis-intake-met-joey", permanent: true },
+      // WP duplicate-page artifacts
+      { source: "/sculpt45class", destination: "/nl/open-gym", permanent: true },
+      { source: "/help", destination: "/nl/contact", permanent: true },
+      { source: "/nl/members", destination: "/nl/prijzen", permanent: true },
+      { source: "/nl/contact-2", destination: "/nl/contact", permanent: true },
+      { source: "/home-nl/faqs", destination: "/nl/faqs", permanent: true },
+      { source: "/sculptclub-partner", destination: "/", permanent: true },
+      { source: "/en/home-kopie-english", destination: "/en", permanent: true },
+      { source: "/rent-studio-kopieren", destination: "/nl/studio-huren", permanent: true },
+      { source: "/club-access-kopieren", destination: "/nl/open-gym", permanent: true },
+      { source: "/start-2", destination: "/", permanent: true },
+      { source: "/start-", destination: "/", permanent: true },
+      { source: "/home-nl", destination: "/", permanent: true },
+      // Naked legacy slugs that never had a locale prefix
+      { source: "/rent-studio-for-trainers", destination: "/nl/studio-huren", permanent: true },
+      { source: "/en/rent-studio-for-trainers", destination: "/en/studio-rental", permanent: true },
+      { source: "/rent-studio", destination: "/nl/studio-huren", permanent: true },
+      { source: "/training-studio-rent-jordaan-amsterdam", destination: "/en/studio-rental", permanent: true },
+      { source: "/terms-conditions", destination: "/nl/algemene-voorwaarden", permanent: true },
+      { source: "/try", destination: "/nl/gratis-intake", permanent: true },
+      { source: "/come-by", destination: "/nl/locatie-uren", permanent: true },
+      { source: "/subscriptions", destination: "/nl/prijzen", permanent: true },
+      { source: "/fullorhalf", destination: "/nl/prijzen", permanent: true },
+      { source: "/full", destination: "/nl/prijzen", permanent: true },
+      { source: "/workout-sheets", destination: "/nl/blog", permanent: true },
+      { source: "/memberships", destination: "/nl/prijzen", permanent: true },
+      { source: "/faq", destination: "/nl/faqs", permanent: true },
+      { source: "/small-group-trainer", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/club-access", destination: "/nl/open-gym", permanent: true },
+      { source: "/Club-access", destination: "/nl/open-gym", permanent: true },
+      { source: "/START", destination: "/", permanent: true },
+      { source: "/choose-trainer", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/strength-45", destination: "/nl/prijzen", permanent: true },
+      // EN blog slug was Dutch — send to EN equivalent
+      { source: "/en/blog/prive-sportschool-vs-grote-sportschool", destination: "/en/blog/private-gym-vs-big-box-gym", permanent: true },
     ];
   },
 
