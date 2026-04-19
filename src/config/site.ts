@@ -41,7 +41,7 @@ export const siteConfig = {
   analytics: {
     ga4: "G-QYW5H4XTXW",
     googleAds: "AW-18011741633",
-    googleAdsConversion: "QW0mCPOF_YocENXE5o9C",
+    googleAdsConversion: "NwwsCNGZlp8cEMG71YxD",
     fbPixel: "4350118535216982",
     clarity: "vx7zcg6zys",
     tiktokPixel: "D75710BC77UDBCCMHF60",
