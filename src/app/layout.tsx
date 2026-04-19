@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { LocalBusinessJsonLd, OrganizationJsonLd } from "@/components/seo/json-ld";
+import { HreflangLinks } from "@/components/seo/hreflang";
 import { Analytics } from "@/components/layout/analytics";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
@@ -83,6 +84,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.google.com" />
+        <HreflangLinks />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <a
