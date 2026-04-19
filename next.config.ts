@@ -128,6 +128,63 @@ const nextConfig: NextConfig = {
       { source: "/how-to-choose-a-personal-trainer-in-amsterdam-jordaan-a-no-nonsense-checklist", destination: "/en/find-personal-trainer", permanent: true },
       { source: "/studio-rental-model-sculptclub-trainers", destination: "/en/studio-rental", permanent: true },
       { source: "/english-speaking-personal-trainers-in-amsterdam", destination: "/en/find-personal-trainer", permanent: true },
+
+      // ─── GSC 404 cleanup — naked slugs, typos, old spellings, WP artifacts ───
+      // Naked/alternate section entry points
+      { source: "/blog", destination: "/nl/blog", permanent: true },
+      { source: "/contact", destination: "/nl/contact", permanent: true },
+      { source: "/reviews", destination: "/nl/reviews", permanent: true },
+      { source: "/studio", destination: "/nl/studio-huren", permanent: true },
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/nl/home", destination: "/", permanent: true },
+      { source: "/en/home", destination: "/en", permanent: true },
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/nl/index.html", destination: "/", permanent: true },
+      { source: "/jordaan", destination: "/", permanent: true },
+      { source: "/nl/jordaan", destination: "/", permanent: true },
+      { source: "/sculptclub", destination: "/", permanent: true },
+      // Personal training variants
+      { source: "/personal-training", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/nl/personal-training", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/en/personal-training", destination: "/en/find-personal-trainer", permanent: true },
+      { source: "/personal-trainer-amsterdam", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/nl/trainers", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/nl/training", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/nl/team", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/en/team", destination: "/en/find-personal-trainer", permanent: true },
+      // Become-a-trainer variants
+      { source: "/nl/werk-met-ons", destination: "/nl/word-trainer", permanent: true },
+      { source: "/nl/word-pt", destination: "/nl/word-trainer", permanent: true },
+      { source: "/en/become-pt", destination: "/en/become-trainer", permanent: true },
+      // About/location/team
+      { source: "/nl/over", destination: "/nl/over-ons", permanent: true },
+      { source: "/en/over-ons", destination: "/en/about", permanent: true },
+      { source: "/nl/locatie", destination: "/nl/locatie-uren", permanent: true },
+      { source: "/en/location", destination: "/en/location-hours", permanent: true },
+      // Gym / studio variants
+      { source: "/nl/sportschool", destination: "/nl/open-gym", permanent: true },
+      // Booking variants
+      { source: "/nl/reserveer", destination: "/nl/boek", permanent: true },
+      { source: "/en/book-session", destination: "/en/book", permanent: true },
+      // Pricing variants
+      { source: "/prijzen-pt", destination: "/nl/prijzen", permanent: true },
+      { source: "/nl/prijzen-pt", destination: "/nl/prijzen", permanent: true },
+      { source: "/tarieven", destination: "/nl/prijzen", permanent: true },
+      { source: "/nl/tarieven", destination: "/nl/prijzen", permanent: true },
+      { source: "/en/rates", destination: "/en/pricing", permanent: true },
+      // Gift cards
+      { source: "/nl/cadeaubon", destination: "/nl/cadeaukaarten", permanent: true },
+      { source: "/en/gift-card", destination: "/en/gift-cards", permanent: true },
+      // Sitemap / feed artifacts (WordPress legacy)
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemaps.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap-index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/rss", destination: "/nl/blog", permanent: true },
+      { source: "/feed", destination: "/nl/blog", permanent: true },
+      { source: "/nl/feed", destination: "/nl/blog", permanent: true },
+      { source: "/en/feed", destination: "/en/blog", permanent: true },
+      { source: "/nl/blog/rss", destination: "/nl/blog", permanent: true },
+      { source: "/en/blog/rss", destination: "/en/blog", permanent: true },
     ];
   },
 
