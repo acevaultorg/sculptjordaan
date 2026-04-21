@@ -88,9 +88,13 @@ export function Analytics() {
             }
             document.addEventListener('click', function(e) {
               var el = e.target.closest('a[href]');
-              if (el && el.href && el.href.includes('acuityscheduling.com')) {
+              if (!el || !el.href) return;
+              var href = el.href;
+
+              // ── Acuity click → full conversion stack ───────────────────
+              if (href.includes('acuityscheduling.com')) {
                 var isIntake = isFreeIntroPage();
-                var booking = detectBookingType(el.href);
+                var booking = detectBookingType(href);
                 if (typeof gtag === 'function') {
                   gtag('event', 'conversion', {
                     send_to: '${googleAds}/${googleAdsConversion}',
@@ -124,6 +128,60 @@ export function Analytics() {
                     currency: 'EUR'
                   });
                 }
+                return;
+              }
+
+              // ── WhatsApp click → high-intent lead signal ───────────────
+              // Treat wa.me/* the same as a free-intake lead (€45 value).
+              // These are users who WhatsApp to book — legitimate conversions.
+              if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com/') !== -1) {
+                if (typeof gtag === 'function') {
+                  gtag('event', 'whatsapp_click', {
+                    booking_source: window.location.pathname,
+                    value: 45,
+                    currency: 'EUR'
+                  });
+                  gtag('event', 'generate_lead', {
+                    method: 'whatsapp',
+                    value: 45,
+                    currency: 'EUR',
+                    booking_source: window.location.pathname
+                  });
+                }
+                if (typeof fbq === 'function') {
+                  fbq('track', 'Contact', {
+                    value: 45,
+                    currency: 'EUR',
+                    content_name: 'whatsapp'
+                  });
+                }
+                if (typeof ttq !== 'undefined') {
+                  ttq.track('Contact', {
+                    value: 45,
+                    currency: 'EUR'
+                  });
+                }
+                return;
+              }
+
+              // ── Phone / email click → lead signal (lower intensity) ────
+              if (href.indexOf('tel:') === 0) {
+                if (typeof gtag === 'function') {
+                  gtag('event', 'phone_click', {
+                    booking_source: window.location.pathname
+                  });
+                }
+                if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'phone' });
+                return;
+              }
+              if (href.indexOf('mailto:') === 0) {
+                if (typeof gtag === 'function') {
+                  gtag('event', 'email_click', {
+                    booking_source: window.location.pathname
+                  });
+                }
+                if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'email' });
+                return;
               }
             }, true);
           })();
