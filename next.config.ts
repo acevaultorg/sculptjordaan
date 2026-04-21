@@ -59,6 +59,7 @@ const nextConfig: NextConfig = {
       // Shortlinks (migrated from Hostinger redirects)
       { source: "/ft", destination: "/en/find-personal-trainer", permanent: true },
       { source: "/bs", destination: "/nl/boek-studio", permanent: true },
+      { source: "/rent", destination: "/nl/studio-huren", permanent: true },
       { source: "/qr-door-sign", destination: "/en/become-trainer", permanent: true },
       { source: "/book-a-free-session", destination: "/en/become-trainer", permanent: true },
       { source: "/qr", destination: "/", permanent: true },
