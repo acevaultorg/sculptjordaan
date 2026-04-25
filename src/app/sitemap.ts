@@ -46,6 +46,7 @@ const nlPages = [
   "/nl/blog/personal-trainer-na-blessure-amsterdam",
   "/nl/blog/krachttraining-voor-vrouwen",
   "/nl/blog/personal-trainer-rugklachten-amsterdam",
+  "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
   "/nl/blog/personal-trainer-amsterdam-zuid",
   "/nl/blog/personal-trainer-voor-senioren-amsterdam",
   "/nl/blog/personal-trainer-worden-amsterdam",
@@ -121,6 +122,7 @@ const enPages = [
   "/en/blog/personal-trainer-after-injury-amsterdam",
   "/en/blog/strength-training-for-women",
   "/en/blog/back-pain-personal-trainer-amsterdam",
+  "/en/blog/improve-body-composition-amsterdam",
   "/en/blog/personal-trainer-amsterdam-south",
   "/en/blog/personal-trainer-for-seniors-amsterdam",
   "/en/blog/become-personal-trainer-amsterdam",
@@ -168,6 +170,8 @@ const FRESH_BLOG_SLUGS = new Set([
   "strength-training-for-women",
   "personal-trainer-rugklachten-amsterdam",
   "back-pain-personal-trainer-amsterdam",
+  "lichaamssamenstelling-verbeteren-amsterdam",
+  "improve-body-composition-amsterdam",
 ]);
 
 export default function sitemap(): MetadataRoute.Sitemap {

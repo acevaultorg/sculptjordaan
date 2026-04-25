@@ -72,14 +72,26 @@ export default function ContactPageNL() {
     ].filter(Boolean);
 
     const whatsappUrl = `https://wa.me/31683178934?text=${encodeURIComponent(parts.join("\n"))}`;
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    // Analytics
+    // Fire conversion + lead events BEFORE window.open (popup blockers can clip async work)
     if (typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-      (window as Window & { gtag?: (...args: unknown[]) => void }).gtag!("event", "contact_form_submit", { method: "whatsapp", locale: "nl" });
+      const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag!;
+      gtag("event", "conversion", {
+        send_to: "AW-18011741633/NwwsCNGZlp8cEMG71YxD",
+        value: 45,
+        currency: "EUR",
+      });
+      gtag("event", "generate_lead", {
+        method: "contact_form",
+        value: 45,
+        currency: "EUR",
+        locale: "nl",
+      });
+      gtag("event", "contact_form_submit", { method: "whatsapp", locale: "nl" });
     }
     if (typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === "function") {
-      (window as Window & { fbq?: (...args: unknown[]) => void }).fbq!("track", "Contact");
+      (window as Window & { fbq?: (...args: unknown[]) => void }).fbq!("track", "Lead", { value: 45, currency: "EUR", content_name: "contact_form_nl" });
     }
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };
 

@@ -5,15 +5,15 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Free Intro Personal Training — SculptClub Amsterdam Jordaan",
+  title: "Boutique Gym Amsterdam — SculptClub Private Studio Jordaan",
   description:
-    "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
-  robots: { index: false, follow: false },
+    "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €45 per session. First intro free.",
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: "/en/free-intro",
+    canonical: "/en/boutique-gym-amsterdam",
     languages: {
-      nl: "/nl/gratis-intake",
-      en: "/en/free-intro",
+      nl: "/nl/sportschool-jordaan",
+      en: "/en/boutique-gym-amsterdam",
     },
   },
 };
@@ -21,47 +21,47 @@ export const metadata: Metadata = {
 const steps = [
   {
     step: "1",
-    title: "Book online",
-    desc: "Pick a time that works — straight into our calendar. Takes 2 minutes.",
+    title: "Book a free intro",
+    desc: "45 minutes, on us. Meet a trainer and see the private studio on the Egelantiersgracht — no commitment.",
   },
   {
     step: "2",
-    title: "Come by",
-    desc: "You'll receive a door code via WhatsApp the evening before. No reception, no waiting.",
+    title: "Pick your way to train",
+    desc: "Personal training from €45/session, Open Gym from €5.75/session, or rent the studio privately. No membership needed.",
   },
   {
     step: "3",
-    title: "See if it's a fit",
-    desc: "45-minute free intro. No obligation. No hidden costs.",
+    title: "Train on your schedule",
+    desc: "Open daily 06:30–22:00. Door code via WhatsApp the night before. No reception, no queues, no small talk.",
   },
 ];
 
 const trustItems = [
   { icon: Shield, text: "No contract" },
   { icon: Clock, text: "Daily 06:30–22:00" },
-  { icon: MessageCircle, text: "Fast replies via WhatsApp" },
+  { icon: MessageCircle, text: "Quick reply on WhatsApp" },
 ];
 
 const faqs = [
   {
-    q: "Is the intro really free?",
-    a: "Yes. Your first 45-minute intro is always free — no credit card required.",
+    q: "What makes this a boutique gym?",
+    a: "SculptClub is a private canal-side studio in the Jordaan — small, calm, and personal. Never crowded, no waiting for racks, no chain-gym atmosphere. Just a beautiful space and 5 trainers who know your name.",
   },
   {
-    q: "Am I committing to anything after the intro?",
-    a: "No. You decide whether to continue after. No membership, no contract.",
+    q: "Where is the gym in Amsterdam?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan, walking distance from the Westerstraat, Lindengracht, and the Negen Straatjes.",
   },
   {
-    q: "What happens during the intro?",
-    a: "You meet your trainer, discuss your goals and get a feel for the studio. The trainer explains what they can do for you.",
+    q: "Do I need a membership?",
+    a: "No. No contract, no membership, no commitment. Pay per session for personal training (from €45) or pick a 4-week Open Gym plan with no auto-renewal lock-in.",
   },
   {
-    q: "How do I get in?",
-    a: "You receive a unique door code via WhatsApp the evening before. No buzzer, no reception.",
+    q: "Is English spoken at the gym?",
+    a: "Yes. All five trainers speak English fluently. SculptClub welcomes Amsterdam expats, locals, and visitors alike — book in either language.",
   },
 ];
 
-export default function FreeIntroPage() {
+export default function BoutiqueGymAmsterdamPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Minimal header */}
@@ -73,7 +73,6 @@ export default function FreeIntroPage() {
             width={140}
             height={10}
             className="h-3.5 w-auto dark:invert"
-            preload
           />
         </Link>
       </header>
@@ -90,12 +89,12 @@ export default function FreeIntroPage() {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[0.95] mb-4">
-          First intro{" "}
-          <span className="text-brand">100% free</span>
+          Boutique gym{" "}
+          <span className="text-brand">in Amsterdam Jordaan</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          Meet your personal trainer in our private studio on the canal in the
-          Jordaan. No obligation, no membership.
+          A private canal-side studio. No chain-gym crowds, no contract, no
+          small talk. Personal training from €45. First intro free.
         </p>
 
         {/* Primary CTA */}
@@ -105,11 +104,11 @@ export default function FreeIntroPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
-          Book your free intro
+          Book a free intro
           <ArrowRight className="w-5 h-5" />
         </a>
         <p className="mt-3 text-sm text-muted-foreground">
-          No contract · Cancel anytime · 45 minutes
+          No contract · Free cancellation · 45 minutes
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Prefer WhatsApp?{" "}
@@ -127,7 +126,7 @@ export default function FreeIntroPage() {
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
             src="/images/studio/training-dumbbells-smile.jpg"
-            alt="Smiling with dumbbells at SculptClub private studio"
+            alt="Inside the boutique gym in Amsterdam Jordaan — private canal-side studio at SculptClub"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
@@ -138,7 +137,7 @@ export default function FreeIntroPage() {
 
         {/* How it works */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">How does it work?</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">How it works</h2>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div
@@ -174,14 +173,15 @@ export default function FreeIntroPage() {
 
         {/* What you get */}
         <div className="mt-16 text-left p-6 rounded-2xl bg-secondary border border-border/50">
-          <h2 className="text-xl font-bold mb-4">What&apos;s included?</h2>
+          <h2 className="text-xl font-bold mb-4">Why this boutique gym?</h2>
           <ul className="space-y-3">
             {[
-              "45-minute free personal intro",
-              "Private studio — no crowds, no distractions",
-              "Clarity on your goals and the best approach",
-              "Transparent pricing, 0% commission",
-              "Trainers from €45/session",
+              "Private studio on the Egelantiersgracht in the Jordaan",
+              "Small, calm space — never crowded, never queueing",
+              "5 trainers, all English-speaking",
+              "Personal training from €45 per session, 0% trainer commission",
+              "Open Gym from €29 for 4 sessions — no membership lock-in",
+              "Open daily 06:30–22:00, door code via WhatsApp",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />
@@ -193,15 +193,15 @@ export default function FreeIntroPage() {
 
         {/* Real reviews */}
         <div className="mt-16 space-y-4 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">What clients say</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">What members say</h2>
           {[
             {
               name: "Pien B.",
-              text: "What a gift — a boutique gym with great trainers within walking distance. Small but very nice.",
+              text: "What a gift — a boutique gym with great trainers within walking distance. Small but very lovely.",
             },
             {
               name: "Bryan van L.",
-              text: "Great location! Small but nice. Has everything we need. Even free coffee and tea!",
+              text: "Wonderful spot! Small but excellent. Has everything we need.",
             },
           ].map((r) => (
             <div key={r.name} className="p-5 rounded-xl border border-border/50 bg-secondary">
@@ -218,7 +218,7 @@ export default function FreeIntroPage() {
 
         {/* FAQ */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="p-5 rounded-xl border border-border/50 bg-secondary">
@@ -231,9 +231,9 @@ export default function FreeIntroPage() {
 
         {/* Final CTA */}
         <div className="mt-16 p-8 rounded-2xl bg-brand text-white text-center">
-          <h2 className="text-2xl font-bold mb-2">Ready to get started?</h2>
+          <h2 className="text-2xl font-bold mb-2">Try the boutique gym in Amsterdam</h2>
           <p className="text-white/80 mb-6">
-            Book your free intro now. Takes 2 minutes.
+            Book your free intro. Takes 2 minutes.
           </p>
           <a
             href={acuityLinks.generic}
@@ -248,7 +248,15 @@ export default function FreeIntroPage() {
 
         {/* Address */}
         <p className="mt-8 text-sm text-muted-foreground">
-          Egelantiersgracht 424, Amsterdam Jordaan
+          SculptClub · Egelantiersgracht 424, 1015 RR Amsterdam Jordaan ·{" "}
+          <a
+            href="https://maps.google.com/?q=Egelantiersgracht+424,+Amsterdam"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            View on map
+          </a>
         </p>
       </main>
     </div>

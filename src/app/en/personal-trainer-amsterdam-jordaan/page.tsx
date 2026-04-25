@@ -5,15 +5,15 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Free Intro Personal Training — SculptClub Amsterdam Jordaan",
+  title: "Personal Trainer Amsterdam Jordaan — SculptClub Private Studio",
   description:
-    "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
-  robots: { index: false, follow: false },
+    "Find your personal trainer in Amsterdam Jordaan. 5 English-speaking trainers, private canal-side studio. From €45 per session. No contract. First intro free.",
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: "/en/free-intro",
+    canonical: "/en/personal-trainer-amsterdam-jordaan",
     languages: {
-      nl: "/nl/gratis-intake",
-      en: "/en/free-intro",
+      nl: "/nl/personal-trainer-jordaan",
+      en: "/en/personal-trainer-amsterdam-jordaan",
     },
   },
 };
@@ -21,47 +21,47 @@ export const metadata: Metadata = {
 const steps = [
   {
     step: "1",
-    title: "Book online",
-    desc: "Pick a time that works — straight into our calendar. Takes 2 minutes.",
+    title: "Pick your personal trainer",
+    desc: "5 trainers in the Jordaan — Alex, Eva, Hamish, Andrea and Dara. Each with a different specialty: strength, nutrition, physiotherapy, posture, small-group.",
   },
   {
     step: "2",
-    title: "Come by",
-    desc: "You'll receive a door code via WhatsApp the evening before. No reception, no waiting.",
+    title: "Book a free intro",
+    desc: "45 minutes, 100% free. Meet your personal trainer and see the private studio on the Amsterdam Egelantiersgracht. No commitment.",
   },
   {
     step: "3",
-    title: "See if it's a fit",
-    desc: "45-minute free intro. No obligation. No hidden costs.",
+    title: "Train on your terms",
+    desc: "Open daily 06:30–22:00. Pay per session, from €45. No contract, no membership, free cancellation.",
   },
 ];
 
 const trustItems = [
   { icon: Shield, text: "No contract" },
   { icon: Clock, text: "Daily 06:30–22:00" },
-  { icon: MessageCircle, text: "Fast replies via WhatsApp" },
+  { icon: MessageCircle, text: "Direct line on WhatsApp" },
 ];
 
 const faqs = [
   {
-    q: "Is the intro really free?",
-    a: "Yes. Your first 45-minute intro is always free — no credit card required.",
+    q: "Where in Amsterdam Jordaan is the studio?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan, walking distance from the Westerstraat, Lindengracht, and the Negen Straatjes.",
   },
   {
-    q: "Am I committing to anything after the intro?",
-    a: "No. You decide whether to continue after. No membership, no contract.",
+    q: "How much does a personal trainer in Amsterdam Jordaan cost?",
+    a: "Sessions start from €45. Trainers set their own rates and we charge them 0% commission, so what you pay goes straight to your trainer. The first 45-minute intro is free.",
   },
   {
-    q: "What happens during the intro?",
-    a: "You meet your trainer, discuss your goals and get a feel for the studio. The trainer explains what they can do for you.",
+    q: "Can I choose my own personal trainer?",
+    a: "Yes. You pick from 5 personal trainers in the Amsterdam Jordaan studio, each with a different specialty and style. All speak English fluently. Browse their profiles on our trainers page.",
   },
   {
-    q: "How do I get in?",
-    a: "You receive a unique door code via WhatsApp the evening before. No buzzer, no reception.",
+    q: "Do I need a membership or contract?",
+    a: "No. No membership, no contract, no long lock-in. You pay per session and can cancel any time at no cost.",
   },
 ];
 
-export default function FreeIntroPage() {
+export default function PersonalTrainerAmsterdamJordaanPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Minimal header */}
@@ -73,7 +73,6 @@ export default function FreeIntroPage() {
             width={140}
             height={10}
             className="h-3.5 w-auto dark:invert"
-            preload
           />
         </Link>
       </header>
@@ -90,12 +89,12 @@ export default function FreeIntroPage() {
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[0.95] mb-4">
-          First intro{" "}
-          <span className="text-brand">100% free</span>
+          Personal trainer{" "}
+          <span className="text-brand">in Amsterdam Jordaan</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          Meet your personal trainer in our private studio on the canal in the
-          Jordaan. No obligation, no membership.
+          5 English-speaking trainers. One private studio on the
+          Egelantiersgracht. From €45 per session. First intro free.
         </p>
 
         {/* Primary CTA */}
@@ -105,11 +104,11 @@ export default function FreeIntroPage() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
-          Book your free intro
+          Book a free intro
           <ArrowRight className="w-5 h-5" />
         </a>
         <p className="mt-3 text-sm text-muted-foreground">
-          No contract · Cancel anytime · 45 minutes
+          No contract · Free cancellation · 45 minutes
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Prefer WhatsApp?{" "}
@@ -127,7 +126,7 @@ export default function FreeIntroPage() {
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
             src="/images/studio/training-dumbbells-smile.jpg"
-            alt="Smiling with dumbbells at SculptClub private studio"
+            alt="Personal training in the private SculptClub studio on the Egelantiersgracht in Amsterdam Jordaan"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
@@ -138,7 +137,7 @@ export default function FreeIntroPage() {
 
         {/* How it works */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">How does it work?</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">How it works</h2>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div
@@ -174,14 +173,15 @@ export default function FreeIntroPage() {
 
         {/* What you get */}
         <div className="mt-16 text-left p-6 rounded-2xl bg-secondary border border-border/50">
-          <h2 className="text-xl font-bold mb-4">What&apos;s included?</h2>
+          <h2 className="text-xl font-bold mb-4">What you get in Amsterdam Jordaan</h2>
           <ul className="space-y-3">
             {[
-              "45-minute free personal intro",
-              "Private studio — no crowds, no distractions",
-              "Clarity on your goals and the best approach",
-              "Transparent pricing, 0% commission",
-              "Trainers from €45/session",
+              "Private canal-side studio on the Egelantiersgracht",
+              "5 personal trainers — your match for goal and style",
+              "First 45-minute intro free, no credit card needed",
+              "From €45 per session — 0% trainer commission",
+              "Open daily 06:30–22:00 — train when it suits you",
+              "Door code via WhatsApp the night before — no reception",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />
@@ -193,15 +193,15 @@ export default function FreeIntroPage() {
 
         {/* Real reviews */}
         <div className="mt-16 space-y-4 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">What clients say</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">What members say</h2>
           {[
             {
               name: "Pien B.",
-              text: "What a gift — a boutique gym with great trainers within walking distance. Small but very nice.",
+              text: "What a gift — a boutique gym with great trainers within walking distance. Small but very lovely.",
             },
             {
               name: "Bryan van L.",
-              text: "Great location! Small but nice. Has everything we need. Even free coffee and tea!",
+              text: "Wonderful spot! Small but excellent. Has everything we need.",
             },
           ].map((r) => (
             <div key={r.name} className="p-5 rounded-xl border border-border/50 bg-secondary">
@@ -218,7 +218,7 @@ export default function FreeIntroPage() {
 
         {/* FAQ */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="p-5 rounded-xl border border-border/50 bg-secondary">
@@ -231,9 +231,9 @@ export default function FreeIntroPage() {
 
         {/* Final CTA */}
         <div className="mt-16 p-8 rounded-2xl bg-brand text-white text-center">
-          <h2 className="text-2xl font-bold mb-2">Ready to get started?</h2>
+          <h2 className="text-2xl font-bold mb-2">Train with a personal trainer in Amsterdam Jordaan</h2>
           <p className="text-white/80 mb-6">
-            Book your free intro now. Takes 2 minutes.
+            Book your free intro. Takes 2 minutes.
           </p>
           <a
             href={acuityLinks.generic}
@@ -248,7 +248,15 @@ export default function FreeIntroPage() {
 
         {/* Address */}
         <p className="mt-8 text-sm text-muted-foreground">
-          Egelantiersgracht 424, Amsterdam Jordaan
+          SculptClub · Egelantiersgracht 424, 1015 RR Amsterdam Jordaan ·{" "}
+          <a
+            href="https://maps.google.com/?q=Egelantiersgracht+424,+Amsterdam"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            View on map
+          </a>
         </p>
       </main>
     </div>

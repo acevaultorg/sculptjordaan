@@ -5,15 +5,15 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Free Intro Personal Training — SculptClub Amsterdam Jordaan",
+  title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
   description:
-    "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
-  robots: { index: false, follow: false },
+    "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
+  robots: { index: true, follow: true },
   alternates: {
-    canonical: "/en/free-intro",
+    canonical: "/nl/sportschool-jordaan",
     languages: {
-      nl: "/nl/gratis-intake",
-      en: "/en/free-intro",
+      nl: "/nl/sportschool-jordaan",
+      en: "/en/boutique-gym-amsterdam",
     },
   },
 };
@@ -21,59 +21,58 @@ export const metadata: Metadata = {
 const steps = [
   {
     step: "1",
-    title: "Book online",
-    desc: "Pick a time that works — straight into our calendar. Takes 2 minutes.",
+    title: "Probeer gratis",
+    desc: "Boek een gratis Open Gym try-out. Ervaar de privé studio in de Jordaan zonder verplichting.",
   },
   {
     step: "2",
-    title: "Come by",
-    desc: "You'll receive a door code via WhatsApp the evening before. No reception, no waiting.",
+    title: "Kies je plan",
+    desc: "Open Gym vanaf €29 per 4 weken (4 sessies). Geen abonnement met opzegtermijn — gewoon 4-weken cycli.",
   },
   {
     step: "3",
-    title: "See if it's a fit",
-    desc: "45-minute free intro. No obligation. No hidden costs.",
+    title: "Train wanneer jij wilt",
+    desc: "Dagelijks open van 06:30 tot 22:00. Deurcode via WhatsApp de avond van tevoren. Geen receptie.",
   },
 ];
 
 const trustItems = [
-  { icon: Shield, text: "No contract" },
-  { icon: Clock, text: "Daily 06:30–22:00" },
-  { icon: MessageCircle, text: "Fast replies via WhatsApp" },
+  { icon: Shield, text: "Geen abonnement" },
+  { icon: Clock, text: "Dagelijks 06:30–22:00" },
+  { icon: MessageCircle, text: "Direct boeken via WhatsApp" },
 ];
 
 const faqs = [
   {
-    q: "Is the intro really free?",
-    a: "Yes. Your first 45-minute intro is always free — no credit card required.",
+    q: "Is dit een sportschool of een privé club?",
+    a: "Eigenlijk allebei. SculptClub is een boutique sportschool in de Jordaan met de uitstraling van een privé club: kleine groepen, geen drukte, geen rijen voor het rek. Gewoon een rustige studio aan de gracht.",
   },
   {
-    q: "Am I committing to anything after the intro?",
-    a: "No. You decide whether to continue after. No membership, no contract.",
+    q: "Wat kost de sportschool in de Jordaan zonder abonnement?",
+    a: "Open Gym Instapplan is €29 per 4 weken (4 sessies, €7,25 per keer). Populair €49 per 4 weken (8 sessies). Intensief €69 (12 sessies). Onbeperkt €89. Geen lange contracten, geen opzegtermijn.",
   },
   {
-    q: "What happens during the intro?",
-    a: "You meet your trainer, discuss your goals and get a feel for the studio. The trainer explains what they can do for you.",
+    q: "Kan ik eerst een keer proberen?",
+    a: "Ja. De eerste Open Gym sessie is gratis. Boek een try-out en ervaar of de sportschool bij je past. Geen creditcard nodig.",
   },
   {
-    q: "How do I get in?",
-    a: "You receive a unique door code via WhatsApp the evening before. No buzzer, no reception.",
+    q: "Waar zit de sportschool precies?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — midden in de Jordaan, dichtbij de Westerstraat en de Negen Straatjes.",
   },
 ];
 
-export default function FreeIntroPage() {
+export default function SportschoolJordaanPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Minimal header */}
       <header className="flex items-center justify-center py-6 px-4 border-b border-border/30">
-        <Link href="/en" aria-label="Back to homepage">
+        <Link href="/" aria-label="Terug naar homepage">
           <Image
             src="/images/logo-sculptclub.png"
             alt="SculptClub"
             width={140}
             height={10}
             className="h-3.5 w-auto dark:invert"
-            preload
           />
         </Link>
       </header>
@@ -85,41 +84,41 @@ export default function FreeIntroPage() {
             <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
           ))}
           <span className="font-semibold text-foreground ml-1">5.0</span>
-          <span>on Google</span>
+          <span>op Google</span>
         </div>
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[0.95] mb-4">
-          First intro{" "}
-          <span className="text-brand">100% free</span>
+          Sportschool in de Jordaan{" "}
+          <span className="text-brand">zonder abonnement</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          Meet your personal trainer in our private studio on the canal in the
-          Jordaan. No obligation, no membership.
+          Geen sportschool-deal, een privé club. Open Gym vanaf €5,75 per
+          sessie. Geen contract, geen opzegtermijn. Eerste keer gratis.
         </p>
 
         {/* Primary CTA */}
         <a
-          href={acuityLinks.generic}
+          href={acuityLinks.openGymTrial}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
-          Book your free intro
+          Probeer gratis
           <ArrowRight className="w-5 h-5" />
         </a>
         <p className="mt-3 text-sm text-muted-foreground">
-          No contract · Cancel anytime · 45 minutes
+          Geen abonnement · Geen creditcard · Eerste sessie gratis
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          Prefer WhatsApp?{" "}
+          Vragen?{" "}
           <a
-            href={whatsappLinks.en}
+            href={whatsappLinks.openGymNl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand hover:underline font-medium"
           >
-            Send us a message →
+            App ons even →
           </a>
         </p>
 
@@ -127,7 +126,7 @@ export default function FreeIntroPage() {
         <div className="mt-12 rounded-2xl overflow-hidden aspect-video relative shadow-xl">
           <Image
             src="/images/studio/training-dumbbells-smile.jpg"
-            alt="Smiling with dumbbells at SculptClub private studio"
+            alt="Open Gym sportschool in de Jordaan — privé studio aan de Egelantiersgracht"
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
@@ -138,7 +137,7 @@ export default function FreeIntroPage() {
 
         {/* How it works */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">How does it work?</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">Zo werkt het</h2>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div
@@ -174,14 +173,15 @@ export default function FreeIntroPage() {
 
         {/* What you get */}
         <div className="mt-16 text-left p-6 rounded-2xl bg-secondary border border-border/50">
-          <h2 className="text-xl font-bold mb-4">What&apos;s included?</h2>
+          <h2 className="text-xl font-bold mb-4">Waarom deze sportschool in de Jordaan?</h2>
           <ul className="space-y-3">
             {[
-              "45-minute free personal intro",
-              "Private studio — no crowds, no distractions",
-              "Clarity on your goals and the best approach",
-              "Transparent pricing, 0% commission",
-              "Trainers from €45/session",
+              "Geen abonnement — gewoon 4-weken cycli, opzeggen wanneer je wilt",
+              "Open Gym Instapplan: €29 voor 4 sessies (€7,25 p/s)",
+              "Open Gym Onbeperkt: €89 per 4 weken",
+              "Privé sfeer — geen drukte, nooit wachten op apparaten",
+              "Personal trainers beschikbaar (vanaf €45 per sessie)",
+              "Ook studio te huren vanaf €12 voor een uur",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />
@@ -193,15 +193,15 @@ export default function FreeIntroPage() {
 
         {/* Real reviews */}
         <div className="mt-16 space-y-4 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">What clients say</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">Wat buurtgenoten zeggen</h2>
           {[
             {
               name: "Pien B.",
-              text: "What a gift — a boutique gym with great trainers within walking distance. Small but very nice.",
+              text: "Wat een cadeau — een boutique sportschool met goede trainers op loopafstand. Klein maar zeer fijn.",
             },
             {
               name: "Bryan van L.",
-              text: "Great location! Small but nice. Has everything we need. Even free coffee and tea!",
+              text: "Geweldige locatie! Klein maar fijn. Heeft alles wat wij nodig hebben.",
             },
           ].map((r) => (
             <div key={r.name} className="p-5 rounded-xl border border-border/50 bg-secondary">
@@ -218,7 +218,7 @@ export default function FreeIntroPage() {
 
         {/* FAQ */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">Frequently asked questions</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">Veelgestelde vragen</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.q} className="p-5 rounded-xl border border-border/50 bg-secondary">
@@ -231,24 +231,32 @@ export default function FreeIntroPage() {
 
         {/* Final CTA */}
         <div className="mt-16 p-8 rounded-2xl bg-brand text-white text-center">
-          <h2 className="text-2xl font-bold mb-2">Ready to get started?</h2>
+          <h2 className="text-2xl font-bold mb-2">Een sportschool in de Jordaan, zonder gedoe</h2>
           <p className="text-white/80 mb-6">
-            Book your free intro now. Takes 2 minutes.
+            Probeer de eerste sessie gratis. Duurt 2 minuten om te boeken.
           </p>
           <a
-            href={acuityLinks.generic}
+            href={acuityLinks.openGymTrial}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
           >
-            Book free intro
+            Gratis try-out boeken
             <ArrowRight className="w-5 h-5" />
           </a>
         </div>
 
         {/* Address */}
         <p className="mt-8 text-sm text-muted-foreground">
-          Egelantiersgracht 424, Amsterdam Jordaan
+          SculptClub · Egelantiersgracht 424, 1015 RR Amsterdam Jordaan ·{" "}
+          <a
+            href="https://maps.google.com/?q=Egelantiersgracht+424,+Amsterdam"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            Bekijk op kaart
+          </a>
         </p>
       </main>
     </div>
