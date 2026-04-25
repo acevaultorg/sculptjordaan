@@ -131,6 +131,8 @@ export default function FreeIntroPage() {
             fill
             className="object-cover"
             sizes="(max-width: 672px) 100vw, 672px"
+            priority
+            fetchPriority="high"
           />
         </div>
 

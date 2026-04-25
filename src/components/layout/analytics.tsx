@@ -131,11 +131,16 @@ export function Analytics() {
                 return;
               }
 
-              // ── WhatsApp click → high-intent lead signal ───────────────
+              // ── WhatsApp click → high-intent lead → Google Ads conversion ───────────────
               // Treat wa.me/* the same as a free-intake lead (€45 value).
               // These are users who WhatsApp to book — legitimate conversions.
               if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com/') !== -1) {
                 if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    send_to: '${googleAds}/${googleAdsConversion}',
+                    value: 45,
+                    currency: 'EUR'
+                  });
                   gtag('event', 'whatsapp_click', {
                     booking_source: window.location.pathname,
                     value: 45,
@@ -164,23 +169,51 @@ export function Analytics() {
                 return;
               }
 
-              // ── Phone / email click → lead signal (lower intensity) ────
+              // ── Phone click → lead → Google Ads conversion ─────────────
+              // Click-to-call = high-intent (mobile users tapping CTA).
               if (href.indexOf('tel:') === 0) {
                 if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    send_to: '${googleAds}/${googleAdsConversion}',
+                    value: 45,
+                    currency: 'EUR'
+                  });
                   gtag('event', 'phone_click', {
+                    booking_source: window.location.pathname,
+                    value: 45,
+                    currency: 'EUR'
+                  });
+                  gtag('event', 'generate_lead', {
+                    method: 'phone',
+                    value: 45,
+                    currency: 'EUR',
                     booking_source: window.location.pathname
                   });
                 }
-                if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'phone' });
+                if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'phone', value: 45, currency: 'EUR' });
                 return;
               }
+              // ── Email click → lead → Google Ads conversion (lower value) ─
               if (href.indexOf('mailto:') === 0) {
                 if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    send_to: '${googleAds}/${googleAdsConversion}',
+                    value: 30,
+                    currency: 'EUR'
+                  });
                   gtag('event', 'email_click', {
+                    booking_source: window.location.pathname,
+                    value: 30,
+                    currency: 'EUR'
+                  });
+                  gtag('event', 'generate_lead', {
+                    method: 'email',
+                    value: 30,
+                    currency: 'EUR',
                     booking_source: window.location.pathname
                   });
                 }
-                if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'email' });
+                if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'email', value: 30, currency: 'EUR' });
                 return;
               }
             }, true);
