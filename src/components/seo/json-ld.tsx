@@ -54,6 +54,13 @@ export function LocalBusinessJsonLd() {
           },
           "query-input": "required name=search_term_string",
         },
+        // Speakable: voice assistants (Google Assistant, Alexa) and AI Overview
+        // spoken-answer extraction prefer pages with explicit speakable hints.
+        // Targets H1, H2, and the first paragraph of the main content.
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2", "main p:first-of-type"],
+        },
       },
       {
         "@type": ["LocalBusiness", "HealthClub", "SportsActivityLocation"],
