@@ -30,4 +30,10 @@ git pull --ff-only origin main
 echo "→ Deploying to Vercel production..."
 vercel --prod --yes
 
+# IndexNow ping — Bing / Yandex / Naver / Seznam see new content within minutes
+# instead of waiting for natural crawl. Google honors via Bing data sharing.
+# Non-blocking: failure here doesn't fail the deploy.
+echo "→ IndexNow ping..."
+node bin/indexnow.mjs || echo "  (IndexNow ping failed — non-blocking, deploy is still live)"
+
 echo "✓ Shipped. Verify: curl -sI https://sculptclub.nl/ | head -1"
