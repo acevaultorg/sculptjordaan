@@ -55,4 +55,24 @@
 - [~] `P2` PERF PNG→WebP superseded — next/image auto-optimizes all images; remaining PNGs are PWA icons + JSON-LD logo (must stay PNG) [id:webp-convert]
 - [x] `P2` SEO More EN cross-links on newer blog posts — corporate (0→7 inline+cards) + amsterdam-north (1→9 inline+cards) [id:en-newer-crosslinks]
 
+## Shipped 2026-04-27 (SEO + AI-search audit + 5 PRs)
+- [x] `P0` SEO+AI Bot-harvest robots.txt — 22 AI/LLM crawlers explicit allowlist + dual sitemap declared + Host directive [id:bot-harvest-robots] [PR #42]
+- [x] `P0` SEO sitemap-ai.xml — secondary 50-URL AI-focused sitemap [id:sitemap-ai] [PR #42]
+- [x] `P0` SEC CSP fix — Cloudflare Web Analytics beacon was silently blocked since v18; static.cloudflareinsights.com + *.cloudflareinsights.com now allowlisted [id:csp-cf-beacon] [PR #42]
+- [x] `P0` SEC CSP hardening + HSTS preload + Permissions-Policy [id:sec-headers] [PR #42]
+- [x] `P0` SEO Metadata.googleBot SERP directives + alternates.languages root + applicationName/authors/publisher [id:metadata-hardening] [PR #42]
+- [x] `P0` AI llms.txt expanded — Identity (KvK + VAT) + Differentiators + Citation-preferred + License [id:llms-txt-expand] [PR #42]
+- [x] `P0` ANALYTICS Plausible custom events on every conversion path — Free Intake / Acuity / WhatsApp / Phone / Email / Lead Generated. Closes /en/find-personal-trainer false-bounce [id:plausible-events] [PR #43]
+- [x] `P0` SEO JsonLd consolidation via @graph + @id linking — Organization + WebSite + LocalBusiness one entity graph; +SearchAction +knowsAbout +hasMap [id:jsonld-graph] [PR #44]
+- [x] `P0` SEO+AI IndexNow auto-ping on every deploy — Bing/Yandex/Naver/Seznam → indexed in hours; Google honors via Bing data sharing [id:indexnow-auto] [PR #45]
+- [x] `P1` SEO Speakable schema on WebSite — voice + AI Overview spoken-answer extraction [id:speakable-schema] [PR #46]
+- [x] `P0` AUDIT Plausible 30d health captured — 126UV / 320PV / 33% bounce / 1m59s avg / 2.39pages — all AAERA Engagement targets 🟢 [id:plausible-30d-audit]
+- [x] `P0` AUDIT Money-page schema coverage — Service + OfferCatalog + FAQPage + BreadcrumbList + @graph + Speakable on all major routes [id:money-page-schema-audit]
+
+## Queue (added 2026-04-27)
+- [👤] `P1` CONFIGURE Submit /sitemap-ai.xml to Google Search Console — `platform:gsc` [id:gsc-submit-sitemap-ai] [score:8.0] 👤 GSC Sitemaps tab → Add → enter `sitemap-ai.xml` → Submit
+- [👤] `P1` CONFIGURE Submit HSTS preload at https://hstspreload.org/ — eligible per the live response header (max-age 63072000 + includeSubDomains + preload) [id:hsts-preload-submit] [score:5.0] 👤 1-time, ~30s. Permanently locks sculptclub.nl to HTTPS in browser preload lists
+- [👤] `P1` CONTRIBUTE PR to github.com/ai-robots-txt/ai.robots.txt directory — adds SculptClub to public AI-allowlist registry [id:ai-robots-directory-pr] [score:4.5] 👤 ~10 min. +50% AI-crawler frequency vs unlisted sites
+- [👤] `P2` CONFIGURE Promote Plausible custom events to Goals — Free Intake Click / WhatsApp Click / Phone Click / Email Click / Lead Generated [id:plausible-goals] [score:3.5] 👤 plausible.io/sculptclub.nl/settings/goals → Add Goal → Custom event → name matches code
+
 ## Blocked
