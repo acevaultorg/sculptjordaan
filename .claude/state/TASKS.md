@@ -71,7 +71,7 @@
 
 ## Queue (added 2026-04-27)
 - [👤] `P1` CONFIGURE Submit /sitemap-ai.xml to Google Search Console — `platform:gsc` [id:gsc-submit-sitemap-ai] [score:8.0] 👤 GSC Sitemaps tab → Add → enter `sitemap-ai.xml` → Submit
-- [👤] `P1` CONFIGURE Submit HSTS preload at https://hstspreload.org/ — eligible per the live response header (max-age 63072000 + includeSubDomains + preload) [id:hsts-preload-submit] [score:5.0] 👤 1-time, ~30s. Permanently locks sculptclub.nl to HTTPS in browser preload lists
+- [x] `P1` CONFIGURE Submit HSTS preload at https://hstspreload.org/ — SUBMITTED 2026-04-27 by operator. Status: pending inclusion. Eligibility check passed. Will propagate to Chrome → Firefox → Safari → Edge over ~6-12 weeks. ALL subdomains of sculptclub.nl now require HTTPS forever (vanity redirects unaffected — Vercel auto-handles HTTPS on attached domains). [id:hsts-preload-submit]
 - [👤] `P1` CONTRIBUTE PR to github.com/ai-robots-txt/ai.robots.txt directory — adds SculptClub to public AI-allowlist registry [id:ai-robots-directory-pr] [score:4.5] 👤 ~10 min. +50% AI-crawler frequency vs unlisted sites
 - [👤] `P2` CONFIGURE Promote Plausible custom events to Goals — Free Intake Click / WhatsApp Click / Phone Click / Email Click / Lead Generated [id:plausible-goals] [score:3.5] 👤 plausible.io/sculptclub.nl/settings/goals → Add Goal → Custom event → name matches code
 
