@@ -128,6 +128,18 @@ export function Analytics() {
                     currency: 'EUR'
                   });
                 }
+                if (typeof window.plausible === 'function') {
+                  window.plausible(isIntake ? 'Free Intake Click' : 'Acuity Click', {
+                    props: {
+                      booking_type: booking.type,
+                      value: booking.value || 45,
+                      source_page: window.location.pathname
+                    }
+                  });
+                  if (isIntake) {
+                    window.plausible('Lead Generated', { props: { method: 'free_intake', value: 45, source_page: window.location.pathname } });
+                  }
+                }
                 return;
               }
 
@@ -166,6 +178,14 @@ export function Analytics() {
                     currency: 'EUR'
                   });
                 }
+                if (typeof window.plausible === 'function') {
+                  window.plausible('WhatsApp Click', {
+                    props: { value: 45, source_page: window.location.pathname }
+                  });
+                  window.plausible('Lead Generated', {
+                    props: { method: 'whatsapp', value: 45, source_page: window.location.pathname }
+                  });
+                }
                 return;
               }
 
@@ -191,6 +211,14 @@ export function Analytics() {
                   });
                 }
                 if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'phone', value: 45, currency: 'EUR' });
+                if (typeof window.plausible === 'function') {
+                  window.plausible('Phone Click', {
+                    props: { value: 45, source_page: window.location.pathname }
+                  });
+                  window.plausible('Lead Generated', {
+                    props: { method: 'phone', value: 45, source_page: window.location.pathname }
+                  });
+                }
                 return;
               }
               // ── Email click → lead → Google Ads conversion (lower value) ─
@@ -214,6 +242,14 @@ export function Analytics() {
                   });
                 }
                 if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: 'email', value: 30, currency: 'EUR' });
+                if (typeof window.plausible === 'function') {
+                  window.plausible('Email Click', {
+                    props: { value: 30, source_page: window.location.pathname }
+                  });
+                  window.plausible('Lead Generated', {
+                    props: { method: 'email', value: 30, source_page: window.location.pathname }
+                  });
+                }
                 return;
               }
             }, true);
