@@ -1,6 +1,34 @@
 import type { MetadataRoute } from "next";
+import { existsSync, statSync } from "node:fs";
+import { join } from "node:path";
 
 const BASE_URL = "https://sculptclub.nl";
+
+// Resolve the on-disk page.tsx for a given route so we can read its real
+// last-modified mtime — Google + Bing both use lastmod as a freshness signal,
+// and uniform `now` for every URL is a known anti-pattern (gets discounted).
+const APP_DIR = join(process.cwd(), "src", "app");
+function pageFileFor(routePath: string): string | null {
+  // "/" → src/app/page.tsx
+  // "/en" → src/app/en/page.tsx
+  // "/nl/blog/foo" → src/app/nl/blog/foo/page.tsx
+  const trimmed = routePath === "/" ? "" : routePath.replace(/^\//, "");
+  const candidates = [
+    join(APP_DIR, trimmed, "page.tsx"),
+    join(APP_DIR, trimmed, "page.ts"),
+    join(APP_DIR, trimmed, "page.mdx"),
+  ];
+  return candidates.find((p) => existsSync(p)) ?? null;
+}
+function lastModifiedFor(routePath: string, fallback: Date): Date {
+  const file = pageFileFor(routePath);
+  if (!file) return fallback;
+  try {
+    return statSync(file).mtime;
+  } catch {
+    return fallback;
+  }
+}
 
 const nlPages = [
   "/",
@@ -199,7 +227,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return {
       url: `${BASE_URL}${path}`,
-      lastModified: now,
+      lastModified: lastModifiedFor(path, now),
       changeFrequency,
       priority,
     };
