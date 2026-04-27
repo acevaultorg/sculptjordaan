@@ -41,23 +41,59 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description.nl,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  generator: "Next.js",
+  publisher: siteConfig.name,
+  category: "fitness",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "nl-NL": "/",
+      en: "/en",
+      "x-default": "/",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "nl_NL",
     alternateLocale: "en_US",
     siteName: siteConfig.name,
+    url: siteConfig.url,
+    title: `${siteConfig.name} — ${siteConfig.subtitle.nl}`,
+    description: siteConfig.description.nl,
     // Images provided by src/app/opengraph-image.tsx (Next.js file convention)
   },
   twitter: {
     card: "summary_large_image",
+    title: `${siteConfig.name} — ${siteConfig.subtitle.nl}`,
+    description: siteConfig.description.nl,
     // Images provided by src/app/twitter-image.tsx
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
   other: {
     "theme-color": "#134DE1",
+    "msapplication-TileColor": "#134DE1",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "apple-mobile-web-app-title": siteConfig.name,
   },
 };
 

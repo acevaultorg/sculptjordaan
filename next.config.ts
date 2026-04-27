@@ -286,14 +286,24 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
+    // Content-Security-Policy
+    // Cloudflare Web Analytics: beacon at static.cloudflareinsights.com loads + posts back
+    // to *.cloudflareinsights.com — both must be allowlisted (was missing pre-2026-04-27).
+    // Hardening: base-uri / object-src / frame-ancestors / form-action / upgrade-insecure
+    // close common XSS + clickjacking vectors that the prior CSP left open.
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com",
+      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com wa.me",
+      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com www.facebook.com www.google.com wa.me",
       "font-src 'self'",
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com",
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com cloudflareinsights.com *.cloudflareinsights.com",
       "frame-src app.acuityscheduling.com www.google.com maps.google.com",
+      "base-uri 'self'",
+      "form-action 'self' https://wa.me",
+      "object-src 'none'",
+      "frame-ancestors 'none'",
+      "upgrade-insecure-requests",
     ].join("; ");
 
     return [
@@ -303,6 +313,8 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "geolocation=(), microphone=(), camera=(), payment=(self), interest-cohort=()" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
           { key: "Content-Security-Policy", value: csp },
         ],
       },
