@@ -325,6 +325,22 @@ const posts = [
     href: "/nl/blog/small-group-training-amsterdam",
     date: "15 april 2026",
   },
+  {
+    title: "Personal Trainer bij Rugklachten in Amsterdam",
+    excerpt:
+      "Rugklachten? Train met Hamish, fysiotherapeut BSc + personal trainer. Veilig, opbouwend en effectief — zonder dat je vermijden de norm wordt.",
+    category: "Herstel",
+    href: "/nl/blog/personal-trainer-rugklachten-amsterdam",
+    date: "16 april 2026",
+  },
+  {
+    title: "Lichaamssamenstelling Verbeteren in Amsterdam",
+    excerpt:
+      "Minder vet, meer spier — zonder crashdieet. Personal training gericht op body recomposition. Krachttraining + voeding bij SculptClub Jordaan.",
+    category: "Training",
+    href: "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
+    date: "16 april 2026",
+  },
 ];
 
 export default function BlogPageNL() {

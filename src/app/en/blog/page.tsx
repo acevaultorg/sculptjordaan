@@ -325,6 +325,22 @@ const posts = [
     href: "/en/blog/small-group-training-amsterdam",
     date: "April 15, 2026",
   },
+  {
+    title: "Personal Trainer for Back Pain in Amsterdam",
+    excerpt:
+      "Back pain? Train with Hamish, physiotherapist BSc + personal trainer. Safe, progressive and effective — without making avoidance the norm.",
+    category: "Recovery",
+    href: "/en/blog/back-pain-personal-trainer-amsterdam",
+    date: "April 16, 2026",
+  },
+  {
+    title: "Improve Your Body Composition in Amsterdam",
+    excerpt:
+      "Less fat, more muscle — without crash dieting. Personal training focused on body recomposition. Strength training + nutrition at SculptClub Jordaan.",
+    category: "Training",
+    href: "/en/blog/improve-body-composition-amsterdam",
+    date: "April 16, 2026",
+  },
 ];
 
 export default function BlogPageEN() {
