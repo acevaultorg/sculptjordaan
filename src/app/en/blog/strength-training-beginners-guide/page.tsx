@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Strength Training for Beginners: Complete Guide — SculptClub",
+  title: { absolute: "Strength Training for Beginners: Complete Guide — SculptClub" },
   description:
     "Start strength training the right way. Learn the fundamental exercises, how often to train, and how to avoid injuries in this complete beginner's guide.",
   keywords: [

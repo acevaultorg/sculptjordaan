@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan",
+  title: { absolute: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan" },
   description:
     "Start or grow your personal training practice at SculptClub. 0% commission, your own profile on our website, private studio from €12/hour. Free tour.",
   keywords: [

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub",
+  title: { absolute: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub" },
   description:
     "What's the difference between a nutrition coach and a registered dietitian in Amsterdam? When does nutrition advice actually make a difference in your training results?",
   keywords: [

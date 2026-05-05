@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub",
+  title: { absolute: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub" },
   description:
     "Veilig blijven trainen tijdens je zwangerschap. Privé studio in de Jordaan, vrouwelijke trainers met ervaring in prenatale kracht- en mobiliteitstraining.",
   keywords: [

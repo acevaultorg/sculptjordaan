@@ -6,7 +6,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub",
+  title: { absolute: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub" },
   description:
     "Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten.",
   keywords: [

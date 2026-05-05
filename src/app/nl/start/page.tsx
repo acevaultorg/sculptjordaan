@@ -6,7 +6,7 @@ import { Star, MapPin, Clock, Shield } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
+  title: { absolute: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan" },
   description:
     "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
   robots: { index: false, follow: false },

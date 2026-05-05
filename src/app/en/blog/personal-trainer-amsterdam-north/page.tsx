@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer Amsterdam North — SculptClub",
+  title: { absolute: "Personal Trainer Amsterdam North — SculptClub" },
   description:
     "Living or working in Amsterdam Noord and looking for a personal trainer? Honest local overview, plus a quiet alternative in the Jordaan via the ferry.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Personal Trainer Amsterdam North — SculptClub",
+    title: { absolute: "Personal Trainer Amsterdam North — SculptClub" },
     description:
       "Honest overview of personal training in Amsterdam Noord, plus a private studio just 10 minutes away via the ferry.",
     url: "/en/blog/personal-trainer-amsterdam-north",

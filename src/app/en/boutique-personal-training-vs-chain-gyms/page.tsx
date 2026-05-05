@@ -9,7 +9,7 @@ import {
 } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Boutique Personal Training vs Chain Gyms — SculptClub",
+  title: { absolute: "Boutique Personal Training vs Chain Gyms — SculptClub" },
   description:
     "Honest comparison: boutique personal training studio vs big chain gym in Amsterdam. Price, atmosphere, coaching and results — no spin.",
   keywords: [

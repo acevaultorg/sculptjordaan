@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Physiotherapy Studio Rental in Amsterdam — SculptClub",
+  title: { absolute: "Physiotherapy Studio Rental in Amsterdam — SculptClub" },
   description:
     "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
   keywords: [

@@ -14,7 +14,7 @@ import { FaqJsonLd , BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Veelgestelde Vragen — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Veelgestelde Vragen — SculptClub Amsterdam Jordaan" },
   description:
     "Antwoorden op veelgestelde vragen over personal training, Open Gym, studio huur, prijzen en boekingen bij SculptClub Amsterdam.",
   alternates: {

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Private Gym vs Big Box Gym: The Key Differences — SculptClub",
+  title: { absolute: "Private Gym vs Big Box Gym: The Key Differences — SculptClub" },
   description:
     "What is the difference between a private gym and a big box gym? Compare atmosphere, equipment access, personal attention, hygiene and price.",
   keywords: [

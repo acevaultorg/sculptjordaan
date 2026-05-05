@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Training in Amsterdam Jordaan: Wat je moet weten — SculptClub",
+  title: { absolute: "Personal Training in Amsterdam Jordaan: Wat je moet weten — SculptClub" },
   description:
     "Alles over personal training in de Jordaan, Amsterdam. Ontdek wat een privé studio biedt, wat je kunt verwachten van een trainer, en waarom de Jordaan de perfecte locatie is.",
   keywords: [

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Weight Loss Through Strength Training: Why It Works — SculptClub",
+  title: { absolute: "Weight Loss Through Strength Training: Why It Works — SculptClub" },
   description:
     "Want to lose weight? Discover why strength training is more effective than cardio for fat loss. The science behind the afterburn effect, metabolism, and practical tips.",
   keywords: [

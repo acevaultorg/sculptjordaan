@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub",
+  title: { absolute: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub" },
   description:
     "Op zoek naar een sportschool in de Jordaan, Amsterdam? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
   keywords: [

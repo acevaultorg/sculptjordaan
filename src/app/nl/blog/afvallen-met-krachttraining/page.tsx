@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Afvallen met krachttraining: Waarom het werkt — SculptClub",
+  title: { absolute: "Afvallen met krachttraining: Waarom het werkt — SculptClub" },
   description:
     "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect, metabolisme en praktische tips.",
   keywords: [

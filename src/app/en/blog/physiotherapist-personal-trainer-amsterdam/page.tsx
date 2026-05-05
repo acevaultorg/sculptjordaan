@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Physiotherapist as Personal Trainer in Amsterdam: Training with an Injury — SculptClub",
+  title: { absolute: "Physiotherapist as Personal Trainer in Amsterdam: Training with an Injury — SculptClub" },
   description:
     "An injury doesn't have to mean the end of your training. Discover how a physiotherapist-personal trainer in Amsterdam helps you train safely and recover faster.",
   keywords: [

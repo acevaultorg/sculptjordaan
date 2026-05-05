@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub",
+  title: { absolute: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub" },
   description:
     "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en waar je op let bij het kiezen van een trainer.",
   keywords: [

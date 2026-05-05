@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Results — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Results — SculptClub Amsterdam Jordaan" },
   description:
     "See our clients' transformations and results. Personal training that works. Book your free trial at SculptClub.",
   alternates: {

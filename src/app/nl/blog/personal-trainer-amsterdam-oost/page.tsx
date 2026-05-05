@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer Amsterdam Oost — SculptClub",
+  title: { absolute: "Personal Trainer Amsterdam Oost — SculptClub" },
   description:
     "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, trainers vanaf €45.",
   keywords: [

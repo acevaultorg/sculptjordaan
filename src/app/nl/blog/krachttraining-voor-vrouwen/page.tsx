@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Krachttraining voor Vrouwen in Amsterdam — SculptClub",
+  title: { absolute: "Krachttraining voor Vrouwen in Amsterdam — SculptClub" },
   description:
     "Krachttraining is de beste investering in je gezondheid. Personal training speciaal voor vrouwen bij SculptClub Amsterdam. Gratis intake.",
   keywords: [

@@ -15,7 +15,7 @@ import {
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan" },
   description:
     "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:30 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
   alternates: {
@@ -116,7 +116,7 @@ export default function LocationPageNL() {
           <FadeIn delay={0.15}>
             <div className="aspect-[4/3] rounded-2xl bg-secondary/50 border border-border/50 flex items-center justify-center overflow-hidden">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.8!2d${siteConfig.geo.lng}!3d${siteConfig.geo.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSculptClub!5e0!3m2!1snl!2snl!4v1`}
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(`${siteConfig.address.street}, ${siteConfig.address.zip} ${siteConfig.address.city}`)}&t=&z=16&ie=UTF8&iwloc=B&output=embed&hl=nl`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

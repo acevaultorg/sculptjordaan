@@ -23,7 +23,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam Jordaan",
+  title: { absolute: "Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam Jordaan" },
   description:
     "Book 60-minute sessions in a quiet, fully equipped private studio in the Jordaan. Max. 3 people per slot. Membership from \u20ac29 per 4 weeks.",
   alternates: {

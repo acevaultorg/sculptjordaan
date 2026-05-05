@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub",
+  title: { absolute: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub" },
   description:
     "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding. Ontdek wat het beste werkt voor jouw doelen.",
   keywords: [

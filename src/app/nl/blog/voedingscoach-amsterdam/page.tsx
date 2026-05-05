@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub",
+  title: { absolute: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub" },
   description:
     "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig? Ontdek hoe voeding en training samenkomen bij SculptClub.",
   keywords: [

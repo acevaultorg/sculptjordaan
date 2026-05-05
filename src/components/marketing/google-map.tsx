@@ -29,14 +29,14 @@ export function GoogleMap({ locale }: { locale: Locale }) {
           {/* Map embed */}
           <div className="relative w-full aspect-[16/9] md:aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 shadow-brand-sm">
             <iframe
-              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.0!2d${siteConfig.geo.lng}!3d${siteConfig.geo.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60960f9ba7109%3A0x54ad0ca856ae73b!2sSculptClub!5e0!3m2!1snl!2snl!4v1`}
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(`${siteConfig.address.street}, ${siteConfig.address.zip} ${siteConfig.address.city}`)}&t=&z=16&ie=UTF8&iwloc=B&output=embed&hl=${locale}`}
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="SculptClub locatie"
+              title={locale === "nl" ? "SculptClub locatie op Google Maps" : "SculptClub location on Google Maps"}
               className="absolute inset-0"
             />
           </div>

@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How Much Does Personal Training Cost in Amsterdam? — SculptClub",
+  title: { absolute: "How Much Does Personal Training Cost in Amsterdam? — SculptClub" },
   description:
     "How much does personal training cost in Amsterdam? Discover average prices, what affects the cost, and why a boutique studio like SculptClub offers great value from €45/session.",
   keywords: [

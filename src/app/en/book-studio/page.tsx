@@ -21,7 +21,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book the Studio — Private Training Space | SculptClub Amsterdam",
+  title: { absolute: "Book the Studio — Private Training Space | SculptClub Amsterdam" },
   description:
     "Rent a fully equipped private studio in the Jordaan. From €12/hour, no contract, free trial session. Professional equipment, flexible by the hour.",
   alternates: {

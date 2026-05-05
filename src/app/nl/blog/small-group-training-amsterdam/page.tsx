@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Small Group Training in Amsterdam — SculptClub Jordaan",
+  title: { absolute: "Small Group Training in Amsterdam — SculptClub Jordaan" },
   description:
     "Train samen met je partner, vriend(in) of collega's. Small group personal training in een privé studio in de Jordaan. Vanaf 2 personen, geen contract.",
   keywords: [

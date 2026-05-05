@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub",
+  title: { absolute: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub" },
   description:
     "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer. Vergelijk flexibel sporten.",
   keywords: [

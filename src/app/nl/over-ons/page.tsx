@@ -21,7 +21,7 @@ import {
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Over Ons — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Over Ons — SculptClub Amsterdam Jordaan" },
   description:
     "SculptClub is een boutique personal training studio aan de Egelantiersgracht in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Opgericht in 2025.",
   alternates: {

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Trainingsruimte Huren als ZZP Personal Trainer — SculptClub",
+  title: { absolute: "Trainingsruimte Huren als ZZP Personal Trainer — SculptClub" },
   description:
     "Praktische gids voor ZZP personal trainers die een trainingsruimte willen huren in Amsterdam. Kosten, belasting, verzekering en hoe je begint.",
   keywords: [

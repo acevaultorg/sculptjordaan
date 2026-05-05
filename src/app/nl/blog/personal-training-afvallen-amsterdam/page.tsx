@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Training voor Afvallen in Amsterdam — SculptClub",
+  title: { absolute: "Personal Training voor Afvallen in Amsterdam — SculptClub" },
   description:
     "Wil je afvallen met begeleiding van een personal trainer in Amsterdam? Ontdek waarom krachttraining effectiever is dan cardio en hoe je begint.",
   keywords: [

@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Studio & Equipment — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Studio & Equipment — SculptClub Amsterdam Jordaan" },
   description:
     "Fully equipped private gym in the Jordaan. Squat rack, dumbbells, Echo Bike, sled, kettlebells and more. Showers, changing area and vinyl record player.",
   alternates: { canonical: "/en/studio", languages: { nl: "/nl/studio", en: "/en/studio" } },

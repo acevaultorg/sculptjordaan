@@ -5,7 +5,7 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
+  title: { absolute: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club" },
   description:
     "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   robots: { index: true, follow: true },

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "English-Speaking Personal Trainer in Amsterdam — SculptClub",
+  title: { absolute: "English-Speaking Personal Trainer in Amsterdam — SculptClub" },
   description:
     "Expat or international in Amsterdam? Every trainer at SculptClub coaches fluently in English. Private studio in the Jordaan. Free intro session.",
   keywords: [

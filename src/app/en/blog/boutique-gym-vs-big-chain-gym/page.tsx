@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub",
+  title: { absolute: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub" },
   description:
     "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results. Find what works best for your goals.",
   keywords: [

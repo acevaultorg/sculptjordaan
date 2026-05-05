@@ -13,7 +13,7 @@ import {
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Gift Cards — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Gift Cards — SculptClub Amsterdam Jordaan" },
   description:
     "Give the gift of personal training. SculptClub gift cards from 75 euros. Valid for 12 months. Pay with Visa, Apple Pay or Google Pay.",
   alternates: {

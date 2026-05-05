@@ -16,7 +16,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan",
+  title: { absolute: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan" },
   description:
     "Lees onze blog over personal training, open gym, fitness tips en meer vanuit onze studio in de Jordaan, Amsterdam.",
   alternates: {

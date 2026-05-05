@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Gym in the Jordaan Amsterdam: Your Options Compared — SculptClub",
+  title: { absolute: "Gym in the Jordaan Amsterdam: Your Options Compared — SculptClub" },
   description:
     "Looking for a gym in the Jordaan, Amsterdam? Compare big chains, boutique studios and private gyms. Find what fits your training style.",
   keywords: [

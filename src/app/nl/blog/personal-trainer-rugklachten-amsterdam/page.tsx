@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer bij Rugklachten Amsterdam — SculptClub",
+  title: { absolute: "Personal Trainer bij Rugklachten Amsterdam — SculptClub" },
   description:
     "Rugklachten? Bij SculptClub traint je met Hamish, fysiotherapeut BSc. Veilig, opbouwend en effectief. Gratis intake in Amsterdam Jordaan.",
   keywords: [

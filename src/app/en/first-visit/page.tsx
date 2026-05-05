@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "First Visit — SculptClub Amsterdam Jordaan",
+  title: { absolute: "First Visit — SculptClub Amsterdam Jordaan" },
   description:
     "Everything you need to know for your first visit to SculptClub. Step-by-step guide, what to bring, how to get here, and frequently asked questions.",
   alternates: {

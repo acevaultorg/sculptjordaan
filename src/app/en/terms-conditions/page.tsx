@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Terms & Conditions — SculptClub Amsterdam Jordaan" },
   description:
     "Terms and conditions of SculptClub. Information about bookings, cancellation, payment, house rules and liability.",
   alternates: {

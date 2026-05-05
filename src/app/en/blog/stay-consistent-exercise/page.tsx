@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How to Stay Consistent with Exercise: 7 Proven Tips — SculptClub",
+  title: { absolute: "How to Stay Consistent with Exercise: 7 Proven Tips — SculptClub" },
   description:
     "Struggling to stick with your workouts? Discover 7 practical tips to stay consistent with exercise and build lasting fitness habits.",
   keywords: [

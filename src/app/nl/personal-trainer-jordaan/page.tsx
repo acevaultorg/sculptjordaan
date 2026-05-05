@@ -5,7 +5,7 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer Jordaan — SculptClub Privé Studio Amsterdam",
+  title: { absolute: "Personal Trainer Jordaan — SculptClub Privé Studio Amsterdam" },
   description:
     "Vind jouw personal trainer in de Jordaan. Privé studio aan de Egelantiersgracht. Vanaf €45 per sessie. Geen contract, geen abonnement. Eerste intake gratis.",
   robots: { index: true, follow: true },

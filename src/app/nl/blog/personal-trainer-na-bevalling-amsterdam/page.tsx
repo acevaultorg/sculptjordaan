@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer na de Bevalling in Amsterdam — SculptClub",
+  title: { absolute: "Personal Trainer na de Bevalling in Amsterdam — SculptClub" },
   description:
     "Veilig weer beginnen met krachttraining na de bevalling. Persoonlijk, in een privé studio, met een vrouwelijke trainer die postpartum-training begrijpt.",
   keywords: [

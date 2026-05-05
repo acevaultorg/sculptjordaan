@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Lichaamssamenstelling Verbeteren Amsterdam — SculptClub",
+  title: { absolute: "Lichaamssamenstelling Verbeteren Amsterdam — SculptClub" },
   description:
     "Minder vet, meer spier — zonder crashdieet. Personal training gericht op lichaamssamenstelling bij SculptClub Amsterdam Jordaan. Gratis intake.",
   keywords: [

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer De Pijp Amsterdam — SculptClub",
+  title: { absolute: "Personal Trainer De Pijp Amsterdam — SculptClub" },
   description:
     "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, trainers vanaf €45.",
   keywords: [

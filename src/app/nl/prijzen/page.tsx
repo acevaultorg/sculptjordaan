@@ -27,7 +27,7 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prijzen — Personal Training, Open Gym & Studio Huur | SculptClub Amsterdam Jordaan",
+  title: { absolute: "Prijzen — Personal Training, Open Gym & Studio Huur | SculptClub Amsterdam Jordaan" },
   description:
     "Alle prijzen bij SculptClub Amsterdam. Personal training vanaf €45, Open Gym vanaf €29/4wk, studio huur vanaf €12/uur. Geen contract.",
   alternates: {
@@ -343,6 +343,7 @@ export default function PricingPageNL() {
           <FadeIn delay={0}>
             <Card className="h-full text-center">
               <CardHeader>
+                <Badge className="mx-auto mb-2 invisible" aria-hidden="true">Meest gekozen</Badge>
                 <CardTitle className="text-xl">Starter</CardTitle>
               </CardHeader>
               <CardContent>
@@ -388,6 +389,7 @@ export default function PricingPageNL() {
           <FadeIn delay={0.2}>
             <Card className="h-full text-center">
               <CardHeader>
+                <Badge className="mx-auto mb-2 invisible" aria-hidden="true">Meest gekozen</Badge>
                 <CardTitle className="text-xl">Pro</CardTitle>
               </CardHeader>
               <CardContent>

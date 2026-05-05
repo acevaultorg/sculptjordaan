@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Personal Trainer Worden in Amsterdam — Zo Begin Je | SculptClub",
+  title: { absolute: "Personal Trainer Worden in Amsterdam — Zo Begin Je | SculptClub" },
   description:
     "Wil je personal trainer worden in Amsterdam? Alles over starten als ZZP-trainer: studio, klanten, tarieven en hoe SculptClub je helpt groeien.",
   keywords: [

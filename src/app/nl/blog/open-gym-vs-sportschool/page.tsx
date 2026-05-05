@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Open Gym vs Sportschool: Wat past bij jou? — SculptClub",
+  title: { absolute: "Open Gym vs Sportschool: Wat past bij jou? — SculptClub" },
   description:
     "Wat is het verschil tussen Open Gym en een reguliere sportschool? Vergelijk prijs, privacy, apparatuur en sfeer om de beste keuze te maken.",
   keywords: [

@@ -29,7 +29,7 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
-  title: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan",
+  title: { absolute: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan" },
   description:
     "Huur een privé trainingsruimte in Amsterdam Jordaan. Professionele studio voor freelance personal trainers & fysiotherapeuten. Vanaf €12/uur, geen commissie, flexibel per sessie.",
   alternates: {

@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Studio Rental for Personal Trainers in Amsterdam — SculptClub",
+  title: { absolute: "Studio Rental for Personal Trainers in Amsterdam — SculptClub" },
   description:
     "Looking for a training space to rent as a personal trainer in Amsterdam? Compare costs, flexibility and benefits of renting your own studio.",
   keywords: [

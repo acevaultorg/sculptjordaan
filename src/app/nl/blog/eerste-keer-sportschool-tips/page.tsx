@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub",
+  title: { absolute: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub" },
   description:
     "Zenuwachtig voor je eerste bezoek aan de sportschool? Deze 7 praktische tips helpen je om je voor te bereiden, zelfverzekerd binnen te stappen en direct een goede start te maken.",
   keywords: [

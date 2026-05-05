@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub",
+  title: { absolute: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub" },
   description:
     "What happens during a free intro with a personal trainer in Amsterdam? Find out what to expect, how to prepare, and what questions to ask to find the right trainer for you.",
   keywords: [

@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacybeleid — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Privacybeleid — SculptClub Amsterdam Jordaan" },
   description:
     "Privacybeleid van SculptClub. Hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen conform de AVG.",
   alternates: {

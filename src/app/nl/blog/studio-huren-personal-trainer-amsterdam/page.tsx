@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Studio huren als personal trainer in Amsterdam — SculptClub",
+  title: { absolute: "Studio huren als personal trainer in Amsterdam — SculptClub" },
   description:
     "Op zoek naar een trainingsruimte om te huren als personal trainer in Amsterdam? Vergelijk kosten, flexibiliteit en voordelen van een eigen studio.",
   keywords: [

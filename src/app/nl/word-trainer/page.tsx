@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan",
+  title: { absolute: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan" },
   description:
     "Start of groei je personal training praktijk bij SculptClub. 0% commissie, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
   keywords: [

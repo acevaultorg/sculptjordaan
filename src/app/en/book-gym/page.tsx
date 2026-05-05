@@ -11,7 +11,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
+  title: { absolute: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam" },
   description: "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
   alternates: { canonical: "/en/book-gym", languages: { nl: "/nl/boek-gym", en: "/en/book-gym" } },
 };

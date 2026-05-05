@@ -8,7 +8,7 @@ import { ReviewsJsonLd , BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { Star, ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Reviews — SculptClub Amsterdam Jordaan",
+  title: { absolute: "Reviews — SculptClub Amsterdam Jordaan" },
   description:
     "Read what our clients say about SculptClub. 5.0 stars on Google. Boutique personal training in Amsterdam Jordaan.",
   alternates: {

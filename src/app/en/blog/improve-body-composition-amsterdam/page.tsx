@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Improve Body Composition Amsterdam — SculptClub",
+  title: { absolute: "Improve Body Composition Amsterdam — SculptClub" },
   description:
     "Less fat, more muscle — without crash diets. Personal training focused on body recomposition at SculptClub Amsterdam Jordaan. Free intro session.",
   keywords: [

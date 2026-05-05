@@ -27,7 +27,7 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing — Personal Training, Open Gym & Studio Rental | SculptClub Amsterdam Jordaan",
+  title: { absolute: "Pricing — Personal Training, Open Gym & Studio Rental | SculptClub Amsterdam Jordaan" },
   description:
     "All pricing at SculptClub Amsterdam. Personal training from €45, Open Gym from €29/4wk, studio rental from €12/hour. No contract.",
   alternates: {
@@ -343,6 +343,7 @@ export default function PricingPageEN() {
           <FadeIn delay={0}>
             <Card className="h-full text-center">
               <CardHeader>
+                <Badge className="mx-auto mb-2 invisible" aria-hidden="true">Most popular</Badge>
                 <CardTitle className="text-xl">Starter</CardTitle>
               </CardHeader>
               <CardContent>
@@ -388,6 +389,7 @@ export default function PricingPageEN() {
           <FadeIn delay={0.2}>
             <Card className="h-full text-center">
               <CardHeader>
+                <Badge className="mx-auto mb-2 invisible" aria-hidden="true">Most popular</Badge>
                 <CardTitle className="text-xl">Pro</CardTitle>
               </CardHeader>
               <CardContent>

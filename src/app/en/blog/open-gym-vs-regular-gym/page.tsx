@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub",
+  title: { absolute: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub" },
   description:
     "What is the difference between Open Gym and a regular gym? Compare price, privacy, equipment, and atmosphere to make the best choice for your training.",
   keywords: [

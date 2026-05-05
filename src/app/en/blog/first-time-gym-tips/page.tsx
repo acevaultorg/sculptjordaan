@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "First Time at the Gym: 7 Tips for Beginners — SculptClub",
+  title: { absolute: "First Time at the Gym: 7 Tips for Beginners — SculptClub" },
   description:
     "Nervous about your first gym visit? These 7 practical tips will help you prepare, walk in with confidence, and get off to a great start.",
   keywords: [
