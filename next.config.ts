@@ -3,6 +3,22 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    // Cost optimization (2026-05-06): default deviceSizes generates up to 8
+    // variants per source image (640/750/828/1080/1200/1920/2048/3840). For a
+    // marketing site this is over-provisioned; the trimmed list below covers
+    // the layouts in use (`sizes="(max-width: 672px) 100vw, 672px"` →
+    // 640/828/1080/1920). Cuts unique-transform count by ~50%.
+    deviceSizes: [640, 828, 1080, 1920],
+    // Default minimumCacheTTL is 14400s (4h) — every cached transform
+    // revalidates that often, paying for transforms over and over. Raising to
+    // 7 days (604800) cuts revalidations ~42×. Source images on this project
+    // change rarely (they're committed JPEGs); 7-day staleness is acceptable
+    // and on operator-triggered re-deploy the cache is invalidated by the
+    // Vercel build pipeline anyway.
+    minimumCacheTTL: 604800,
+    // Lock to single quality variant (default behavior, but explicit prevents
+    // accidental future per-image overrides from doubling variant count).
+    qualities: [75],
   },
 
   async redirects() {
