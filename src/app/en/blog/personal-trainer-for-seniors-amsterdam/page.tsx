@@ -80,8 +80,8 @@ export default function PTForSeniorsEN() {
               </p>
               <p>
                 At SculptClub you train in a <a href="/en/studio" className="text-brand hover:underline">private
-                studio</a> — no crowds, no rush, no discomfort. You receive your door code
-                via WhatsApp the evening before. You set the pace.
+                studio</a> — no crowds, no rush, no discomfort. Your trainer arranges
+                the studio and gets you in. You set the pace.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Physiotherapist on the team</h2>

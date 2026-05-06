@@ -46,7 +46,7 @@ export default function FysiotherapeutPersonalTrainerNL() {
         { question: "Wat kan een fysiotherapeut-personal trainer voor je doen?", answer: "Screenen op beperkingen — voordat je begint met trainen, brengt hij in kaart wat je wel en niet kan.; Bewegingsanalyse — verkeerde bewegingspatronen zijn vaak de oorzaak van klachten. Door ze vroeg te corrigeren voorkom je nieuwe blessures.; Aangepast trainingsprogramma — geen standaard schema, maar een programma dat rekening houdt met jouw klachten én je doelen.; Progressieve opbouw — herstel en kracht opbouwen tegelijkertijd, in een tempo dat werkt voor jouw lichaam.; Voorkomen van..." },
         { question: "Mag ik trainen met een hernia?", answer: "In veel gevallen ja — maar onder begeleiding en met de juiste aanpassingen. Een fysiotherapeut bepaalt welke oefeningen veilig zijn en hoe je de belasting opbouwt zonder de klacht te verergeren." },
         { question: "Vergoedt mijn zorgverzekeraar de sessies?", answer: "Personal training bij een fysiotherapeut valt doorgaans niet onder de zorgverzekering. Sommige aanvullende verzekeringen vergoeden (para)medische fitness deels — check je polis." },
-        { question: "Waar is SculptClub gevestigd?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Je ontvangt een deurcode via WhatsApp — geen bel, geen receptie." },
+        { question: "Waar is SculptClub gevestigd?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Voor PT-sessies regelt je trainer de toegang; voor Open Gym ontvang je zelf een deurcode via WhatsApp. Geen bel, geen receptie." },
       ]} />
 
       <Section>

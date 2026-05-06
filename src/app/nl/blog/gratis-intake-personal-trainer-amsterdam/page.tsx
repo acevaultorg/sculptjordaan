@@ -87,8 +87,8 @@ export default function GratisIntakeBlogNL() {
               </p>
               <p>
                 Bij SculptClub duurt de <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">gratis intake</Link> 45 minuten. Je hoeft niets voor te bereiden —
-                kom gewoon langs in je sportkleding. Er is geen receptie en geen wachtrij: je krijgt
-                de avond van tevoren een persoonlijke deurcode via WhatsApp.
+                kom gewoon langs in je sportkleding. Er is geen receptie en geen wachtrij: je trainer regelt de studio en
+                zorgt dat je binnen kunt — bij de deur of via WhatsApp.
               </p>
 
               <h2>Waarom biedt een personal trainer een gratis intake aan?</h2>
@@ -154,8 +154,8 @@ export default function GratisIntakeBlogNL() {
                   wat zijn of haar specialisatie is.
                 </li>
                 <li>
-                  <strong>Kom op tijd.</strong> Je ontvangt de deurcode van tevoren via WhatsApp. Plan
-                  5 minuten extra in om de studio te vinden en je om te kleden.
+                  <strong>Kom op tijd.</strong> Je trainer stemt vooraf met je af hoe je binnenkomt — meestal
+                  ontmoet je de trainer bij de deur. Plan 5 minuten extra in om de studio te vinden en je om te kleden.
                 </li>
               </ul>
 

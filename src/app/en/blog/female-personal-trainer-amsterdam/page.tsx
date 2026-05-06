@@ -117,7 +117,7 @@ export default function FemalePTAmsterdamEN() {
                 training. The bench area is claimed by men cheering each other on, the squat
                 rack queue feels like an exam, and unsolicited advice is more frustrating than
                 useful. A <a href="/en/blog/private-gym-vs-big-box-gym" className="text-brand hover:underline">private gym versus a big-box gym</a> is
-                a different universe: you get the door code via WhatsApp, you&apos;re there alone
+                a different universe: your trainer arranges the studio for your session and you&apos;re there alone
                 with your trainer (or alone in <a href="/en/open-gym" className="text-brand hover:underline">Open Gym</a>),
                 and nobody is watching your form.
               </p>

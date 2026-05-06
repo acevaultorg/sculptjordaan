@@ -104,7 +104,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
 
               <h3 className="text-xl font-bold mt-8 mb-3">"Do I need to speak any Dutch at all?"</h3>
               <p>
-                No. Sessions, intake forms, communication (WhatsApp door code, reschedule
+                No. Sessions, intake forms, communication (WhatsApp access info, reschedule
                 messages), invoices and studio signage all work in English. The{" "}
                 <a href="/en/free-intro" className="text-brand hover:underline">free intro</a> and{" "}
                 <a href="/en/pricing" className="text-brand hover:underline">pricing page</a> are

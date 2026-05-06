@@ -80,8 +80,8 @@ export default function PTVoorSeniorenNL() {
               </p>
               <p>
                 Bij SculptClub train je in een <a href="/nl/studio" className="text-brand hover:underline">privé
-                studio</a> — geen drukte, geen haast, geen ongemak. De deurcode ontvang je
-                via WhatsApp de avond tevoren. Het tempo bepaal je zelf.
+                studio</a> — geen drukte, geen haast, geen ongemak. Je trainer regelt
+                de studio en zorgt dat je binnen kunt. Het tempo bepaal je zelf.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Fysiotherapeut in het team</h2>

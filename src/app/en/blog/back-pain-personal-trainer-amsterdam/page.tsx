@@ -128,7 +128,7 @@ export default function BackPainPersonalTrainerAmsterdam() {
                 Hamish&#39;s full attention is on you, every session.
               </p>
               <p>
-                You receive the studio door code via WhatsApp the evening before. No reception, no
+                Your trainer arranges the studio and gets you in. No reception, no
                 crowds, no queues. You arrive, you train, you leave. For people with back pain —
                 who are sometimes already stressed by the journey to the studio — that calm
                 environment is not a luxury, but a necessity.

@@ -85,8 +85,8 @@ export default function StrengthTrainingForWomenEN() {
                 Many women feel uncomfortable in the weights section of a large gym. The male
                 dominance, the stares, the feeling of being watched. At SculptClub you train
                 in a <a href="/en/studio" className="text-brand hover:underline">private
-                studio</a> — just you and your trainer. You receive your door code via WhatsApp
-                the evening before. No reception, no waiting, no audience.
+                studio</a> — just you and your trainer. Your trainer arranges the studio
+                and gets you in. No reception, no waiting, no audience.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">A programme tailored to you</h2>

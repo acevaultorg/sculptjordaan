@@ -120,8 +120,8 @@ export default function VrouwelijkePTAmsterdamNL() {
                 aanmoedigen, de squat rack-wachtrij voelt als een examen en advies uit onverwachte
                 hoek is soms irritanter dan nuttig. Een{" "}
                 <a href="/nl/blog/prive-sportschool-vs-grote-sportschool" className="text-brand hover:underline">privé studio versus grote sportschool</a>{" "}
-                is een ander universum: je krijgt de deurcode via WhatsApp, je bent er alleen
-                met je trainer of alleen als je in{" "}
+                is een ander universum: je trainer regelt de studio voor je sessie en je bent er alleen
+                met je trainer (of alleen als je in{" "}
                 <a href="/nl/open-gym" className="text-brand hover:underline">Open Gym</a> zit,
                 en niemand bekijkt jou of je techniek.
               </p>

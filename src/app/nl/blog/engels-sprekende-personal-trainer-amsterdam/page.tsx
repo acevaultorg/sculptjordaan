@@ -102,7 +102,7 @@ export default function EngelsSprekendePTAmsterdamNL() {
 
               <h3 className="text-xl font-bold mt-8 mb-3">"Moet ik Nederlands spreken?"</h3>
               <p>
-                Nee. Intake, sessies, WhatsApp-communicatie (deurcode, herplannen), facturen en
+                Nee. Intake, sessies, WhatsApp-communicatie (toegang regelen, herplannen), facturen en
                 studiobewegwijzering werken in het Engels. De{" "}
                 <a href="/nl/gratis-intake" className="text-brand hover:underline">gratis intake</a> en{" "}
                 <a href="/nl/prijzen" className="text-brand hover:underline">prijzenpagina</a> zijn

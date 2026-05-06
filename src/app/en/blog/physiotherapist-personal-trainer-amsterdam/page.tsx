@@ -47,7 +47,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
         { question: "Can I train with a herniated disc?", answer: "In many cases, yes — but with supervision and the right modifications. A physiotherapist determines which exercises are safe and how to progress loading without worsening the condition." },
         { question: "Can I train after surgery?", answer: "Depending on what surgery and when. Post-surgical rehabilitation is one of Hamish's specialities. He works alongside your surgeon or specialist's guidelines to build you back up safely." },
         { question: "Do you speak English?", answer: "Yes. Hamish is fully fluent in English — all sessions can be conducted in English." },
-        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily from 06:30 to 22:00. You receive a door code via WhatsApp — no buzzer, no reception desk." },
+        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily from 06:30 to 22:00. For PT sessions your trainer arranges access; for Open Gym you receive a door code via WhatsApp. No buzzer, no reception desk." },
       ]} />
 
       <Section>

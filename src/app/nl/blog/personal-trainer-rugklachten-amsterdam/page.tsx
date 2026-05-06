@@ -129,7 +129,7 @@ export default function PersonalTrainerRugklachtenAmsterdam() {
                 Hamish heeft zijn volledige aandacht bij jou, elke sessie.
               </p>
               <p>
-                Bovendien krijg je de deurcode van de studio via WhatsApp de avond van tevoren.
+                Bovendien regelt je trainer de studio en zorgt dat je binnen kunt.
                 Geen receptie, geen drukte, geen wachttijden. Je komt binnen, je traint, je gaat.
                 Voor mensen met rugklachten — die soms al belast zijn door de komst naar de studio —
                 is die rust geen luxe, maar noodzaak.

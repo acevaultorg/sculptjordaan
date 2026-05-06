@@ -88,7 +88,7 @@ export default function FreeIntroBlogEN() {
               <p>
                 At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> lasts 45 minutes. No preparation needed — just show up
                 in your workout clothes. There&apos;s no reception desk and no waiting: you receive a
-                personal door code via WhatsApp the evening before.
+                your trainer arranges the studio and gets you in — meeting you at the door or sending instructions via WhatsApp beforehand.
               </p>
 
               <h2>Why do personal trainers offer a free intro?</h2>
@@ -153,7 +153,7 @@ export default function FreeIntroBlogEN() {
                   speciality is.
                 </li>
                 <li>
-                  <strong>Arrive on time.</strong> You&apos;ll receive the door code in advance via
+                  <strong>Arrive on time.</strong> Your trainer will tell you in advance how to get in — usually they&apos;ll meet you at the door. Information arrives via
                   WhatsApp. Allow 5 extra minutes to find the studio and get changed.
                 </li>
               </ul>
