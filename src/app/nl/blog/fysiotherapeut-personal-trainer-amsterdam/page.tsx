@@ -121,7 +121,7 @@ export default function FysiotherapeutPersonalTrainerNL() {
               </p>
               <h3>Waar is SculptClub gevestigd?</h3>
               <p>
-                Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Je ontvangt een deurcode via WhatsApp — geen bel, geen receptie.
+                Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Voor PT-sessies regelt je trainer de toegang; voor Open Gym ontvang je zelf een deurcode via WhatsApp. Geen bel, geen receptie.
               </p>
 
               <h2>Klachten? Begin met een gratis intake</h2>
