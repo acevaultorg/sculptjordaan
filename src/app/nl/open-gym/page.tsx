@@ -172,25 +172,42 @@ export default function OpenGymPageNL() {
         ]}
       />
       <FaqJsonLd faqs={faqJsonLdData} />
-      {/* Hero */}
+      {/* Hero — 2-column: text+CTAs left, solo-training image right */}
       <Section>
-        <SectionHeader
-          as="h1"
-          overline="Open Gym"
-          title="Open Gym in een Priv\u00e9 Studio"
-          description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
-        />
-        <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          {/* Free try-out → embedded scheduler below (in-page #schedule anchor).
-              Visitor stays on sculptclub.nl during booking. */}
-          <ButtonLink href="#schedule" size="lg">
-            Gratis proefles boeken
-          </ButtonLink>
-          {/* Paid Open Gym session — keeps target=_blank for Apple Pay support. */}
-          <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
-            Al lid? Reserveer jouw uur
-          </ButtonLink>
-        </FadeIn>
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <SectionHeader
+              as="h1"
+              overline="Open Gym"
+              title="Open Gym in een Priv\u00e9 Studio"
+              description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
+              center={false}
+            />
+            <FadeIn className="flex flex-col sm:flex-row gap-3">
+              {/* Free try-out → embedded scheduler below (in-page #schedule anchor).
+                  Visitor stays on sculptclub.nl during booking. */}
+              <ButtonLink href="#schedule" size="lg">
+                Gratis proefles boeken
+              </ButtonLink>
+              {/* Paid Open Gym session — keeps target=_blank for Apple Pay support. */}
+              <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
+                Al lid? Reserveer jouw uur
+              </ButtonLink>
+            </FadeIn>
+          </div>
+          <FadeIn>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/studio/training-dumbbells-focus.jpg"
+                alt="Zelfstandig trainen met dumbbells bij SculptClub Open Gym in de Jordaan — focus, geen drukte, geen wachttijd"
+                fill
+                className="object-cover"
+                preload
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </FadeIn>
+        </div>
       </Section>
 
       {/* Embedded Acuity scheduler — free Open Gym try-out stays on sculptclub.nl */}
