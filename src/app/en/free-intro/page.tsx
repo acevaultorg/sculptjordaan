@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
+import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle, Users } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
-import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 
 export const metadata: Metadata = {
   title: { absolute: "Free Intro Personal Training — SculptClub Amsterdam Jordaan" },
@@ -99,28 +98,37 @@ export default function FreeIntroPage() {
           Jordaan. No obligation, no membership.
         </p>
 
-        {/* Primary CTA — scrolls to embedded Acuity scheduler below
-            (free intro is embedded so visitors don't leave sculptclub.nl) */}
-        <a
-          href="#schedule"
+        {/* Primary CTA — Personal Training intake goes through the
+            trainer-finder hub. Each trainer has their own WhatsApp +
+            optional intake form. Acuity is NOT used for PT intake (only
+            for Open Gym + Studio Rental free try-outs). */}
+        <Link
+          href="/en/find-personal-trainer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
-          Book your free intro
+          Pick your trainer
           <ArrowRight className="w-5 h-5" />
-        </a>
+        </Link>
         <p className="mt-3 text-sm text-muted-foreground">
           No contract · Cancel anytime · 45 minutes
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          Prefer WhatsApp?{" "}
+          Prefer to message us directly?{" "}
           <a
             href={whatsappLinks.en}
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand hover:underline font-medium"
           >
-            Send us a message →
+            WhatsApp us →
           </a>
+          {" "}·{" "}
+          <Link
+            href="/en/contact"
+            className="text-brand hover:underline font-medium"
+          >
+            Or use our contact form
+          </Link>
         </p>
 
         {/* Studio photo */}
@@ -133,20 +141,6 @@ export default function FreeIntroPage() {
             sizes="(max-width: 672px) 100vw, 672px"
             priority
             fetchPriority="high"
-          />
-        </div>
-
-        {/* Embedded Acuity scheduler — free intro stays on sculptclub.nl */}
-        <div id="schedule" className="mt-16 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-center mb-2">Pick your time</h2>
-          <p className="text-center text-muted-foreground mb-6">
-            Schedule online directly — no waitlist, no reception.
-          </p>
-          <AcuityEmbed
-            url={acuityLinks.studioTrial}
-            title="Book your free intro at SculptClub"
-            height={900}
-            className="rounded-2xl overflow-hidden bg-white"
           />
         </div>
 

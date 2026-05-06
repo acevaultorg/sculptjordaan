@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
+import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle, Users } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
-import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 
 export const metadata: Metadata = {
   title: { absolute: "Gratis Intake Personal Training — SculptClub Amsterdam Jordaan" },
@@ -99,20 +98,22 @@ export default function GratisIntakePage() {
           in de Jordaan. Geen verplichting, geen abonnement.
         </p>
 
-        {/* Primary CTA — scrolls to embedded Acuity scheduler below
-            (free intake is embedded so visitors don't leave sculptclub.nl) */}
-        <a
-          href="#schedule"
+        {/* Primary CTA — Personal Training intake goes through the
+            trainer-finder hub. Each trainer has their own WhatsApp +
+            optional intake form. Acuity is NOT used for PT intake (only
+            for Open Gym + Studio Rental free try-outs). */}
+        <Link
+          href="/nl/vind-jouw-personal-trainer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
-          Plan je gratis intake
+          Kies je trainer
           <ArrowRight className="w-5 h-5" />
-        </a>
+        </Link>
         <p className="mt-3 text-sm text-muted-foreground">
           Geen contract · Gratis annuleren · 45 minuten
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          Liever via WhatsApp?{" "}
+          Liever direct WhatsAppen?{" "}
           <a
             href={whatsappLinks.nl}
             target="_blank"
@@ -121,6 +122,13 @@ export default function GratisIntakePage() {
           >
             Stuur een berichtje →
           </a>
+          {" "}·{" "}
+          <Link
+            href="/nl/contact"
+            className="text-brand hover:underline font-medium"
+          >
+            Of vul ons contactformulier in
+          </Link>
         </p>
 
         {/* Studio photo */}
@@ -133,20 +141,6 @@ export default function GratisIntakePage() {
             sizes="(max-width: 672px) 100vw, 672px"
             priority
             fetchPriority="high"
-          />
-        </div>
-
-        {/* Embedded Acuity scheduler — free intake stays on sculptclub.nl */}
-        <div id="schedule" className="mt-16 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-center mb-2">Kies je tijd</h2>
-          <p className="text-center text-muted-foreground mb-6">
-            Direct online plannen — geen wachtlijst, geen receptie.
-          </p>
-          <AcuityEmbed
-            url={acuityLinks.studioTrial}
-            title="Plan je gratis intake bij SculptClub"
-            height={900}
-            className="rounded-2xl overflow-hidden bg-white"
           />
         </div>
 

@@ -8,7 +8,8 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
+import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
+import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import {
   Dumbbell,
   Lock,
@@ -124,7 +125,9 @@ export default function StudioRentalPageEN() {
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
-              <ButtonLink href={acuityLinks.studioTrial} size="lg">
+              {/* Free studio try-out → embedded scheduler below
+                  (in-page #schedule anchor; visitor stays on sculptclub.nl). */}
+              <ButtonLink href="#schedule" size="lg">
                 Book a free trial session
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
@@ -146,6 +149,21 @@ export default function StudioRentalPageEN() {
             </div>
           </FadeIn>
         </div>
+      </Section>
+
+      {/* Embedded Acuity scheduler — free Studio Rental try-out stays on sculptclub.nl */}
+      <Section id="schedule">
+        <SectionHeader
+          overline="Free trial session"
+          title="Book your free trial session"
+          description="60 minutes in our studio — get to know the space, no commitment. No commission, no contract."
+        />
+        <AcuityEmbed
+          url={acuityFreeTrials.studioRentalTryout}
+          title="Book your free Studio Rental trial at SculptClub"
+          height={900}
+          className="rounded-2xl overflow-hidden bg-white max-w-3xl mx-auto"
+        />
       </Section>
 
       {/* Pricing table */}

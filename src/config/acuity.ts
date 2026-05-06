@@ -2,31 +2,82 @@
  * All Acuity Scheduling links — exact match with live sculptclub.nl
  * Owner ID: 36720238
  * Schedule slug: fba376d5
+ *
+ * ─────────────────────────────────────────────────────────────────────
+ *  CRITICAL: FREE vs PAID Acuity links have DIFFERENT integration rules
+ * ─────────────────────────────────────────────────────────────────────
+ *
+ *  FREE try-outs (`acuityFreeTrials`)
+ *    ✓ CAN be EMBEDDED via <AcuityEmbed> on sculptclub.nl pages
+ *    ✓ No payment, so no Apple Pay concerns
+ *    ✓ Visitor stays on sculptclub.nl during booking
+ *    Used on: /nl/open-gym, /en/open-gym, /nl/studio-huren, /en/studio-rental
+ *
+ *  PAID sessions/packs (`acuityPaidSessions` / `acuityPackages`)
+ *    ✗ MUST NOT be embedded in iframe
+ *    ✗ Apple Pay's PaymentRequest API is BLOCKED inside iframes
+ *    ✓ Use target="_blank" links to full Acuity domain
+ *
+ *  Personal Training free intake
+ *    ✗ NOT an Acuity flow at all
+ *    ✓ Goes through trainer-specific WhatsApp OR /nl/contact form
+ *    Hub page: /nl/vind-jouw-personal-trainer (lists 8 trainers)
+ *
+ *  The legacy `acuityLinks` export below is kept as a DEPRECATED alias
+ *  for backwards-compat with 30+ existing call sites. New code MUST use
+ *  the explicit acuityFreeTrials / acuityPaidSessions objects.
+ *
+ *  The legacy `acuityLinks.generic` URL (Acuity master schedule) does
+ *  NOT WORK — operator has disabled the public master booking page in
+ *  Acuity settings. It returns "Online scheduling is not currently
+ *  available." All 23 call sites of acuityLinks.generic are broken in
+ *  production and should be migrated to either a specific deep-link
+ *  or the trainer-finder /nl/vind-jouw-personal-trainer fallback.
  */
 
 const SCHEDULE = "https://app.acuityscheduling.com/schedule.php";
 const CATALOG = "https://app.acuityscheduling.com/catalog.php";
 const OWNER = "36720238";
 
-// ─── Single Session Booking (schedule.php) ───────────────────────
-export const acuityLinks = {
-  /** Studio Rental — Half Studio 60 min (€12) */
-  halfStudio60: `${SCHEDULE}?owner=${OWNER}&appointmentType=84032351`,
-  /** Studio Rental — Half Studio 90 min (€17) */
-  halfStudio90: `${SCHEDULE}?owner=${OWNER}&appointmentType=86677323`,
-  /** Studio Rental — Full Studio 60 min (€17) */
-  fullStudio60: `${SCHEDULE}?owner=${OWNER}&appointmentType=82553655`,
-  /** Studio Rental — Full Studio 90 min (€24) */
-  fullStudio90: `${SCHEDULE}?owner=${OWNER}&appointmentType=85410115`,
-  /** Open Gym — book a session (existing members) */
-  openGymBook: `${SCHEDULE}?owner=${OWNER}&appointmentType=83513953`,
-  /** Free try-out — Open Gym */
-  openGymTrial: `${SCHEDULE}?owner=${OWNER}&appointmentType=87017445`,
-  /** Free try-out — Studio Rental */
-  studioTrial: `https://app.acuityscheduling.com/schedule/fba376d5/appointment/86758291/calendar/12633534?appointmentTypeIds[]=86758291`,
-  /** Generic scheduler (used by pages that don't target a specific appointment type) */
-  generic: `${SCHEDULE}?owner=${OWNER}`,
-  /** Aliases for Open Gym plans (used across pages) */
+// ─── FREE try-outs ──────────────────────────────────────────────────
+// Both can be safely embedded via <AcuityEmbed> (no payment = no Apple Pay).
+// Live verified 2026-05-06: deep-link URLs load working calendars in iframe.
+export const acuityFreeTrials = {
+  /**
+   * Free Open Gym try-out (appointmentType=87017445).
+   * Embed on /nl/open-gym + /en/open-gym free-trial CTA section.
+   */
+  openGymTryout: `${SCHEDULE}?owner=${OWNER}&appointmentType=87017445`,
+
+  /**
+   * Free Studio Rental try-out (appointmentType=86758291).
+   * Title shown in Acuity: "Free try out: Full Studio 60 min with SculptClub".
+   * Embed on /nl/studio-huren + /en/studio-rental free-trial CTA section.
+   * NOTE: this is for STUDIO RENTAL trial, NOT for personal-training intake.
+   */
+  studioRentalTryout: `https://app.acuityscheduling.com/schedule/fba376d5/appointment/86758291/calendar/12633534?appointmentTypeIds[]=86758291`,
+} as const;
+
+// ─── PAID single sessions ───────────────────────────────────────────
+// MUST be opened via target="_blank" — never embedded.
+// Apple Pay's PaymentRequest API is blocked inside iframes.
+export const acuityPaidSessions = {
+  /** Paid Open Gym single session (appointmentType=83513953) */
+  openGymSession: `${SCHEDULE}?owner=${OWNER}&appointmentType=83513953`,
+
+  /** Studio Rental Half 60min — €12 (appointmentType=84032351) */
+  studioRentalHalf60: `${SCHEDULE}?owner=${OWNER}&appointmentType=84032351`,
+
+  /** Studio Rental Half 90min — €17 (appointmentType=86677323) */
+  studioRentalHalf90: `${SCHEDULE}?owner=${OWNER}&appointmentType=86677323`,
+
+  /** Studio Rental Full 60min — €17 (appointmentType=82553655) */
+  studioRentalFull60: `${SCHEDULE}?owner=${OWNER}&appointmentType=82553655`,
+
+  /** Studio Rental Full 90min — €24 (appointmentType=85410115) */
+  studioRentalFull90: `${SCHEDULE}?owner=${OWNER}&appointmentType=85410115`,
+
+  /** Open Gym multi-session plan add-to-cart links (paid) */
   openGymPlans: {
     instapplan: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155887`,
     populair: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155888`,
@@ -35,7 +86,8 @@ export const acuityLinks = {
   },
 } as const;
 
-// ─── Package Purchases (catalog.php) ─────────────────────────────
+// ─── PAID packages (catalog.php) ────────────────────────────────────
+// MUST be opened via target="_blank" — Apple Pay restriction.
 export const acuityPackages = {
   /** Studio rental discount packs */
   studio: {
@@ -58,7 +110,48 @@ export const acuityPackages = {
   },
 } as const;
 
+// ─── DEPRECATED aliases (backwards-compat) ──────────────────────────
+// Existing call sites still resolve through this object. ALL NEW code
+// MUST use the explicit acuityFreeTrials / acuityPaidSessions objects
+// above so the FREE-vs-PAID distinction is explicit at the call site.
+export const acuityLinks = {
+  /** @deprecated → use `acuityPaidSessions.studioRentalHalf60` */
+  halfStudio60: acuityPaidSessions.studioRentalHalf60,
+  /** @deprecated → use `acuityPaidSessions.studioRentalHalf90` */
+  halfStudio90: acuityPaidSessions.studioRentalHalf90,
+  /** @deprecated → use `acuityPaidSessions.studioRentalFull60` */
+  fullStudio60: acuityPaidSessions.studioRentalFull60,
+  /** @deprecated → use `acuityPaidSessions.studioRentalFull90` */
+  fullStudio90: acuityPaidSessions.studioRentalFull90,
+  /** @deprecated → use `acuityPaidSessions.openGymSession` */
+  openGymBook: acuityPaidSessions.openGymSession,
+  /** @deprecated → use `acuityFreeTrials.openGymTryout` (note: FREE) */
+  openGymTrial: acuityFreeTrials.openGymTryout,
+  /**
+   * @deprecated → use `acuityFreeTrials.studioRentalTryout` (note: FREE).
+   * IMPORTANT: this is the STUDIO RENTAL trial, NOT a personal-training
+   * intake. PT intake flows through trainer WhatsApp + /nl/contact form,
+   * not Acuity.
+   */
+  studioTrial: acuityFreeTrials.studioRentalTryout,
+  /**
+   * @deprecated DOES NOT WORK — operator disabled the Acuity master
+   * schedule page in Acuity settings. Returns "Online scheduling is
+   * not currently available." Migrate call sites to either:
+   *  - `/nl/vind-jouw-personal-trainer` for PT intake hub
+   *  - `acuityFreeTrials.openGymTryout` for Open Gym free trial
+   *  - `acuityFreeTrials.studioRentalTryout` for Studio Rental free trial
+   *  - `acuityPaidSessions.X` for specific paid sessions
+   */
+  generic: `${SCHEDULE}?owner=${OWNER}`,
+  /** @deprecated → use `acuityPaidSessions.openGymPlans` */
+  openGymPlans: acuityPaidSessions.openGymPlans,
+} as const;
+
 // ─── WhatsApp Links ──────────────────────────────────────────────
+// Personal Training free intake flows through these WhatsApp links
+// (per-trainer when possible, generic fallback otherwise) plus the
+// /nl/contact + /en/contact form pages.
 export const whatsappLinks = {
   /** Generic question */
   nl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik heb een vraag over SculptClub")}`,

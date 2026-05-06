@@ -16,7 +16,8 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityLinks } from "@/config/acuity";
+import { acuityLinks, acuityFreeTrials } from "@/config/acuity";
+import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info } from "lucide-react";
 import Image from "next/image";
@@ -180,13 +181,31 @@ export default function OpenGymPageNL() {
           description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <ButtonLink href={acuityLinks.openGymTrial} size="lg">
+          {/* Free try-out → embedded scheduler below (in-page #schedule anchor).
+              Visitor stays on sculptclub.nl during booking. */}
+          <ButtonLink href="#schedule" size="lg">
             Gratis proefles boeken
           </ButtonLink>
+          {/* Paid Open Gym session — keeps target=_blank for Apple Pay support. */}
           <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
             Al lid? Reserveer jouw uur
           </ButtonLink>
         </FadeIn>
+      </Section>
+
+      {/* Embedded Acuity scheduler — free Open Gym try-out stays on sculptclub.nl */}
+      <Section id="schedule">
+        <SectionHeader
+          overline="Gratis proefles"
+          title="Plan je gratis proefles"
+          description="Direct online plannen — kies een tijd en kom langs. Geen verplichting, geen abonnement."
+        />
+        <AcuityEmbed
+          url={acuityFreeTrials.openGymTryout}
+          title="Boek je gratis Open Gym proefles bij SculptClub"
+          height={900}
+          className="rounded-2xl overflow-hidden bg-white max-w-3xl mx-auto"
+        />
       </Section>
 
       {/* Social proof */}
