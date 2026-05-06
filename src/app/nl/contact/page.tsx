@@ -91,6 +91,13 @@ export default function ContactPageNL() {
     if (typeof (window as Window & { fbq?: (...args: unknown[]) => void }).fbq === "function") {
       (window as Window & { fbq?: (...args: unknown[]) => void }).fbq!("track", "Lead", { value: 45, currency: "EUR", content_name: "contact_form_nl" });
     }
+    type PlausibleW = Window & { plausible?: (event: string, opts?: { props: Record<string, unknown> }) => void };
+    if (typeof (window as PlausibleW).plausible === "function") {
+      const plausible = (window as PlausibleW).plausible!;
+      const path = window.location.pathname;
+      plausible("Contact Form Submit", { props: { locale: "nl", source_page: path } });
+      plausible("Lead Generated", { props: { method: "contact_form", value: 45, source_page: path } });
+    }
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };

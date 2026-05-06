@@ -91,6 +91,53 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
       formState.phone ? (locale === "nl" ? `Tel: ${formState.phone}` : `Phone: ${formState.phone}`) : "",
       formState.message ? formState.message : "",
     ].filter(Boolean);
+    // Fire full conversion stack BEFORE window.open (popup blockers can clip async work).
+    // High-intent lead: visitor filled name + phone + WhatsApp greeting for a SPECIFIC trainer.
+    type W = Window & {
+      gtag?: (...args: unknown[]) => void;
+      fbq?: (...args: unknown[]) => void;
+      ttq?: { track: (...args: unknown[]) => void };
+      plausible?: (event: string, opts?: { props: Record<string, unknown> }) => void;
+    };
+    const w = window as W;
+    const path = window.location.pathname;
+    if (typeof w.gtag === "function") {
+      w.gtag("event", "conversion", {
+        send_to: "AW-18011741633/NwwsCNGZlp8cEMG71YxD",
+        value: 45,
+        currency: "EUR",
+      });
+      w.gtag("event", "generate_lead", {
+        method: "trainer_intake_form",
+        value: 45,
+        currency: "EUR",
+        booking_source: path,
+        trainer: trainer.id,
+      });
+      w.gtag("event", "trainer_intake_submit", {
+        trainer: trainer.id,
+        locale,
+        booking_source: path,
+      });
+    }
+    if (typeof w.fbq === "function") {
+      w.fbq("track", "Lead", {
+        value: 45,
+        currency: "EUR",
+        content_name: `trainer_intake_${trainer.id}`,
+      });
+    }
+    if (w.ttq && typeof w.ttq.track === "function") {
+      w.ttq.track("SubmitForm", { value: 45, currency: "EUR" });
+    }
+    if (typeof w.plausible === "function") {
+      w.plausible("Trainer Intake Submit", {
+        props: { trainer: trainer.id, locale, source_page: path },
+      });
+      w.plausible("Lead Generated", {
+        props: { method: "trainer_intake_form", value: 45, source_page: path },
+      });
+    }
     window.open(
       `${waBase}?text=${encodeURIComponent(parts.join("\n"))}`,
       "_blank",

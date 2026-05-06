@@ -9,6 +9,7 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
+    plausible?: (event: string, opts?: { props: Record<string, unknown> }) => void;
   }
 }
 
@@ -84,11 +85,26 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
       onSubmit={(e) => {
         e.preventDefault();
         if (name && whatsapp && goal) {
+          const path = window.location.pathname;
+          window.gtag?.("event", "conversion", {
+            send_to: "AW-18011741633/NwwsCNGZlp8cEMG71YxD",
+            value: 45,
+            currency: "EUR",
+          });
+          window.gtag?.("event", "generate_lead", {
+            method: "trainer_match_form",
+            value: 45,
+            currency: "EUR",
+            booking_source: path,
+            goal: selectedGoalLabel,
+          });
           window.gtag?.("event", "trainer_match_submit", {
             goal: selectedGoalLabel,
             locale,
           });
           window.fbq?.("track", "Lead", {
+            value: 45,
+            currency: "EUR",
             content_name: "trainer_match",
             content_category: selectedGoalLabel,
           });
@@ -98,6 +114,12 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
               currency: "EUR",
             });
           }
+          window.plausible?.("Trainer Match Submit", {
+            props: { goal: selectedGoalLabel, locale, source_page: path },
+          });
+          window.plausible?.("Lead Generated", {
+            props: { method: "trainer_match_form", value: 45, source_page: path },
+          });
           window.open(buildWhatsAppUrl(), "_blank", "noopener,noreferrer");
         }
       }}
