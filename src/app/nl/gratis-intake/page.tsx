@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 
 export const metadata: Metadata = {
   title: { absolute: "Gratis Intake Personal Training — SculptClub Amsterdam Jordaan" },
@@ -98,11 +99,10 @@ export default function GratisIntakePage() {
           in de Jordaan. Geen verplichting, geen abonnement.
         </p>
 
-        {/* Primary CTA */}
+        {/* Primary CTA — scrolls to embedded Acuity scheduler below
+            (free intake is embedded so visitors don't leave sculptclub.nl) */}
         <a
-          href={acuityLinks.generic}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#schedule"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
           Plan je gratis intake
@@ -133,6 +133,20 @@ export default function GratisIntakePage() {
             sizes="(max-width: 672px) 100vw, 672px"
             priority
             fetchPriority="high"
+          />
+        </div>
+
+        {/* Embedded Acuity scheduler — free intake stays on sculptclub.nl */}
+        <div id="schedule" className="mt-16 scroll-mt-20">
+          <h2 className="text-2xl font-bold text-center mb-2">Kies je tijd</h2>
+          <p className="text-center text-muted-foreground mb-6">
+            Direct online plannen — geen wachtlijst, geen receptie.
+          </p>
+          <AcuityEmbed
+            url={acuityLinks.generic}
+            title="Plan je gratis intake bij SculptClub"
+            height={900}
+            className="rounded-2xl overflow-hidden bg-white"
           />
         </div>
 
