@@ -1,13 +1,29 @@
 import type { MetadataRoute } from "next";
-import { existsSync, statSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const BASE_URL = "https://sculptclub.nl";
 
-// Resolve the on-disk page.tsx for a given route so we can read its real
-// last-modified mtime — Google + Bing both use lastmod as a freshness signal,
-// and uniform `now` for every URL is a known anti-pattern (gets discounted).
+// Resolve real per-route last-modified — Google + Bing both use lastmod as a
+// freshness signal, and uniform `now` for every URL is a known anti-pattern
+// (gets discounted). Resolution order:
+//   1. Generated git-commit-time map (scripts/sitemap-lastmod.mjs at prebuild) —
+//      this is the only source that survives Vercel's git-clone mtime reset.
+//   2. Filesystem mtime (works in `next dev` with real edit times).
+//   3. Build-time `now` fallback.
 const APP_DIR = join(process.cwd(), "src", "app");
+const LASTMOD_MAP_PATH = join(process.cwd(), "src", "sitemap-lastmod.json");
+
+let lastmodMap: Record<string, string> | null = null;
+try {
+  lastmodMap = JSON.parse(readFileSync(LASTMOD_MAP_PATH, "utf8")) as Record<
+    string,
+    string
+  >;
+} catch {
+  lastmodMap = null;
+}
+
 function pageFileFor(routePath: string): string | null {
   // "/" → src/app/page.tsx
   // "/en" → src/app/en/page.tsx
@@ -21,6 +37,11 @@ function pageFileFor(routePath: string): string | null {
   return candidates.find((p) => existsSync(p)) ?? null;
 }
 function lastModifiedFor(routePath: string, fallback: Date): Date {
+  const fromMap = lastmodMap?.[routePath];
+  if (fromMap) {
+    const d = new Date(fromMap);
+    if (!isNaN(d.valueOf())) return d;
+  }
   const file = pageFileFor(routePath);
   if (!file) return fallback;
   try {

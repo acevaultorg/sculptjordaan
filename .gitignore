@@ -43,3 +43,6 @@ next-env.d.ts
 # local workspace
 /photos
 /.claude/worktrees
+
+# generated at prebuild — per-route git-mtime map for sitemap.ts
+/src/sitemap-lastmod.json
