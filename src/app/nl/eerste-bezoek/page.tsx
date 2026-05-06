@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     q: "Kan ik annuleren of verplaatsen?",
-    a: "Ja, je kunt altijd gratis annuleren of verzetten via het boekingssysteem.",
+    a: "Ja, voor Open Gym en studio-sessies via het boekingssysteem (Acuity); voor Personal Training direct met je trainer. Beide altijd gratis.",
   },
   {
     q: "Wat als ik de studio niet kan vinden?",

@@ -31,7 +31,7 @@ const faqs = {
     },
     {
       q: "Hoe annuleer ik een sessie?",
-      a: "Je kunt altijd gratis annuleren of verzetten via ons boekingssysteem.",
+      a: "Voor Open Gym en studio-sessies via ons boekingssysteem (Acuity); voor Personal Training direct met je trainer. Beide altijd gratis.",
     },
   ],
   en: [
@@ -53,7 +53,7 @@ const faqs = {
     },
     {
       q: "How do I cancel a session?",
-      a: "You can always cancel or reschedule for free via our booking system.",
+      a: "For Open Gym and studio sessions via our booking system (Acuity); for Personal Training contact your trainer directly. Both always free.",
     },
   ],
 };

@@ -50,7 +50,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How do I cancel a session?",
-        a: "You can always cancel or reschedule for free via our booking system.",
+        a: "For Open Gym and studio sessions, you can always cancel or reschedule for free via our booking system (Acuity). For Personal Training, contact your trainer directly — also always free.",
       },
       {
         q: "What should I bring?",

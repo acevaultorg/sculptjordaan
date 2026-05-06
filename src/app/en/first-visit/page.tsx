@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     q: "Can I cancel or reschedule?",
-    a: "Yes, you can always cancel or reschedule for free via the booking system.",
+    a: "Yes — for Open Gym and studio sessions via the booking system (Acuity); for Personal Training contact your trainer directly. Both always free.",
   },
   {
     q: "What if I cannot find the studio?",

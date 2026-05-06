@@ -16,7 +16,7 @@ const homeFaqs = [
   { question: "Hoe werkt Open Gym?", answer: "Je traint zelfstandig in onze priv\u00e9 studio met professionele apparatuur. Plan je sessies via ons boekingssysteem, ontvang een deurcode en train op jouw tijd. Vanaf \u20AC5,75 per sessie." },
   { question: "Moet ik een abonnement afsluiten?", answer: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract \u2014 opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten." },
   { question: "Kan ik de studio huren voor mijn eigen klanten?", answer: "Ja! Als ZZP-trainer of fysiotherapeut kun je onze studio huren vanaf \u20AC12 per 60 minuten. We bieden ook kortingspakketten tot 23% korting." },
-  { question: "Hoe annuleer ik een sessie?", answer: "Je kunt altijd gratis annuleren of verzetten via ons boekingssysteem." },
+  { question: "Hoe annuleer ik een sessie?", answer: "Voor Open Gym en studio-sessies kun je altijd gratis annuleren of verzetten via ons boekingssysteem (Acuity). Voor Personal Training neem je direct contact op met je trainer — ook altijd gratis." },
 ];
 
 export const metadata: Metadata = {

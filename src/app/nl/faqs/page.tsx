@@ -50,7 +50,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe annuleer ik een sessie?",
-        a: "Je kunt altijd gratis annuleren of verzetten via ons boekingssysteem.",
+        a: "Voor Open Gym en studio-sessies kun je altijd gratis annuleren of verzetten via ons boekingssysteem (Acuity). Voor Personal Training neem je direct contact op met je trainer — ook altijd gratis.",
       },
       {
         q: "Wat moet ik meenemen?",
