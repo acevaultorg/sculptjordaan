@@ -139,8 +139,8 @@ export default function StudioRentalPageNL() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/facade-sculptclub.jpg"
-                alt="Gevel van SculptClub Private Gym aan Egelantiersgracht 424 Amsterdam"
+                src="/images/studio/gym-latest.jpg"
+                alt="Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine"
                 fill
                 className="object-cover"
                 preload
