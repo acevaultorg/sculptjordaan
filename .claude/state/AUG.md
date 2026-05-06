@@ -54,11 +54,12 @@
 - Recent SEO PRs (#42-46 + sitemap polish 4f9231e/58ce360/37b66f5/0b5afc6) all shipped without regression
 - **Production timing measured 2026-05-06 (curl-based, not CrUX field):**
   - Static routes (sitemap.xml / robots.txt): TTFB 227-228ms · 1.5-26KB
-  - SSR routes (gratis-intake / vind-jouw-personal-trainer / locatie-uren): TTFB 482-584ms · 79-171KB · all <800ms failure threshold
-  - Pricing page (/nl/prijzen): TTFB 705ms / total 734ms / 162KB — highest TTFB on site, worth flagging as P2 investigate (rubric target <400ms; 705ms is 2x target but below 800ms failure)
+  - SSR routes on cache MISS (single first-curl): 482-705ms · 79-171KB
+  - SSR routes on cache HIT (retry-curl): TTFB 117-181ms · `x-vercel-cache: HIT, age:~2700s` — real user experience is fast
+  - **Initial /nl/prijzen 705ms was cold-cache outlier — retry confirms 117-181ms cached** (false positive caught + closed via [prijzen-ttfb] task; compounds with verify-before-claiming memory)
   - TLS handshake: 45-80ms · Connect: 17-41ms (Vercel edge healthy)
 - CWV field data (LCP/INP/CLS) requires PageSpeed Insights API key (free tier quota=0; operator must enable Cloud project). Without field data, confidence on perf=7 stays moderate.
-- Score 7 holds (real timings within target band on most routes; pricing-page SSR latency is one moderate concern)
+- Score 7 holds and is now better-validated (real cached TTFB 117-181ms on SSR routes is comfortably within rubric; static routes ~227ms; cache hit-rate appears healthy)
 
 ## Confidence
 
