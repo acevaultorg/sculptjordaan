@@ -21,18 +21,18 @@ export const metadata: Metadata = {
 const steps = [
   {
     step: "1",
-    title: "Boek online",
-    desc: "Kies een tijd die past — direct in onze agenda. Duurt 2 minuten.",
+    title: "Kies je trainer",
+    desc: "Bekijk de trainers en kies degene die past bij jouw doelen, stijl en taal.",
   },
   {
     step: "2",
-    title: "Kom langs",
-    desc: "Je ontvangt een deurcode via WhatsApp de avond van tevoren. Geen receptie, geen wachten.",
+    title: "Stuur de trainer een berichtje",
+    desc: "Via WhatsApp of het contactformulier. De trainer antwoordt snel en jullie stemmen samen een moment af — geen rigide agenda, gewoon op maat.",
   },
   {
     step: "3",
-    title: "Ontdek of het past",
-    desc: "45 minuten gratis kennismaking. Geen verplichting. Geen verborgen kosten.",
+    title: "45 minuten gratis kennismaking",
+    desc: "Ontmoet je trainer in onze privé studio in de Jordaan. Bespreek je doelen, leer de aanpak kennen, voel of het klikt. Geen verplichting, geen verborgen kosten.",
   },
 ];
 
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "Hoe kom ik binnen?",
-    a: "Je ontvangt de avond van tevoren een unieke deurcode via WhatsApp. Geen bel, geen receptie.",
+    a: "Je trainer regelt de studio en zorgt dat je binnen kunt. Bij je intake ontmoet je de trainer bij de deur of krijg je vooraf instructies via WhatsApp — geen bel, geen receptie, alles via je trainer.",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function GratisIntakePage() {
               "45 minuten gratis persoonlijke kennismaking",
               "Privé studio — geen drukte, geen afleidingen",
               "Inzicht in jouw doelen en de beste aanpak",
-              "Eerlijke tarieven, 0% commissie",
+              "Direct contact met je trainer — geen tussenpersoon",
               "Trainers vanaf €45/sessie",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">

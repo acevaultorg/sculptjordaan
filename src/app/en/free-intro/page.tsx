@@ -21,18 +21,18 @@ export const metadata: Metadata = {
 const steps = [
   {
     step: "1",
-    title: "Book online",
-    desc: "Pick a time that works — straight into our calendar. Takes 2 minutes.",
+    title: "Pick your trainer",
+    desc: "Browse the trainers and pick the one who fits your goals, style and language.",
   },
   {
     step: "2",
-    title: "Come by",
-    desc: "You'll receive a door code via WhatsApp the evening before. No reception, no waiting.",
+    title: "Send the trainer a message",
+    desc: "Via WhatsApp or our contact form. The trainer replies fast and you agree on a moment together — no rigid calendar, just on your terms.",
   },
   {
     step: "3",
-    title: "See if it's a fit",
-    desc: "45-minute free intro. No obligation. No hidden costs.",
+    title: "45-minute free intro",
+    desc: "Meet your trainer in our private studio in the Jordaan. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs.",
   },
 ];
 
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "How do I get in?",
-    a: "You receive a unique door code via WhatsApp the evening before. No buzzer, no reception.",
+    a: "Your trainer arranges the studio and makes sure you can get in. At your intake the trainer either meets you at the door or sends instructions via WhatsApp beforehand — no buzzer, no reception, everything goes through your trainer.",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function FreeIntroPage() {
               "45-minute free personal intro",
               "Private studio — no crowds, no distractions",
               "Clarity on your goals and the best approach",
-              "Transparent pricing, 0% commission",
+              "Direct contact with your trainer — no middleman",
               "Trainers from €45/session",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
@@ -243,15 +243,13 @@ export default function FreeIntroPage() {
           <p className="text-white/80 mb-6">
             Book your free intro now. Takes 2 minutes.
           </p>
-          <a
-            href={"/en/find-personal-trainer"}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/en/find-personal-trainer"
             className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
           >
-            Book free intro
+            Pick your trainer
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
 
         {/* Address */}
