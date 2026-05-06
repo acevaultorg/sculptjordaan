@@ -16,6 +16,41 @@ const REPO = join(__dirname, "..");
 const APP_DIR = join(REPO, "src", "app");
 const OUT = join(REPO, "src", "sitemap-lastmod.json");
 
+// Vercel does a shallow git clone (depth=1) by default — `git log -1` then
+// returns the deploy-merge time for every file unchanged in that single
+// commit, defeating the point of per-file mtimes. Deepen history before
+// querying. No-op locally where the repo is already non-shallow.
+function deepenGitHistory() {
+  try {
+    const isShallow =
+      execSync("git rev-parse --is-shallow-repository", {
+        cwd: REPO,
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      }).trim() === "true";
+    if (!isShallow) return;
+    console.log("  deepening shallow git clone for per-file mtimes...");
+    try {
+      execSync("git fetch --deepen=500 --quiet", {
+        cwd: REPO,
+        stdio: ["ignore", "ignore", "ignore"],
+      });
+    } catch {
+      try {
+        execSync("git fetch --unshallow --quiet", {
+          cwd: REPO,
+          stdio: ["ignore", "ignore", "ignore"],
+        });
+      } catch {
+        // Couldn't deepen — files unchanged in HEAD will fall through to
+        // the build-time fs/now fallback in sitemap.ts.
+      }
+    }
+  } catch {
+    // Not a git repo (rare in CI) — also fall through to fs/now.
+  }
+}
+
 function walk(dir, results = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const path = join(dir, entry.name);
@@ -50,6 +85,7 @@ function gitCommitTime(file) {
   }
 }
 
+deepenGitHistory();
 const pageFiles = walk(APP_DIR);
 const map = {};
 let resolved = 0;
