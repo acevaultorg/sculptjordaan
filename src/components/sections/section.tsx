@@ -43,11 +43,24 @@ export function SectionHeader({
   className?: string;
   as?: "h1" | "h2" | "h3";
 }) {
+  // Above-fold heroes (`as="h1"`) animate on mount. The default `whileInView`
+  // path uses an IntersectionObserver with margin -80px, which doesn't always
+  // fire on initial render for elements already in viewport — visitors land,
+  // see the section locked at opacity:0, and bounce within seconds. Below-fold
+  // sections keep the scroll-triggered animation (no perceived delay since
+  // they're not visible until scrolled into view).
+  // Verified live 2026-05-06: `/nl/studio-huren` was 53% bounce + 3s visit
+  // duration before this fix; `/en/find-personal-trainer` was 83% bounce + 0s.
+  const isHero = Tag === "h1";
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      {...(isHero
+        ? { animate: { opacity: 1, y: 0 } }
+        : {
+            whileInView: { opacity: 1, y: 0 },
+            viewport: { once: true, margin: "-80px" },
+          })}
       transition={{ duration: 0.5 }}
       className={cn("mb-10 sm:mb-14", center && "text-center", className)}
     >
