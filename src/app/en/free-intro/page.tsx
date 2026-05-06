@@ -143,7 +143,7 @@ export default function FreeIntroPage() {
             Schedule online directly — no waitlist, no reception.
           </p>
           <AcuityEmbed
-            url={acuityLinks.generic}
+            url={acuityLinks.studioTrial}
             title="Book your free intro at SculptClub"
             height={900}
             className="rounded-2xl overflow-hidden bg-white"

@@ -143,7 +143,7 @@ export default function GratisIntakePage() {
             Direct online plannen — geen wachtlijst, geen receptie.
           </p>
           <AcuityEmbed
-            url={acuityLinks.generic}
+            url={acuityLinks.studioTrial}
             title="Plan je gratis intake bij SculptClub"
             height={900}
             className="rounded-2xl overflow-hidden bg-white"
