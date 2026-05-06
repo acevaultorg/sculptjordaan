@@ -58,7 +58,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How does the booking system work?",
-        a: "We use Acuity Scheduling. You book online and receive your door code via WhatsApp the evening before. No reception, no waiting.",
+        a: "For Open Gym and studio rental we use Acuity Scheduling — you book online and receive your door code via WhatsApp the evening before. For Personal Training you contact your trainer directly (WhatsApp or contact form); the trainer schedules with you and arranges studio access. No reception, no waiting.",
       },
     ],
   },

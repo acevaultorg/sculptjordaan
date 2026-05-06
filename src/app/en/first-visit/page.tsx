@@ -48,11 +48,11 @@ const steps = [
     icon: CalendarCheck,
     title: "Book your session",
     description:
-      "Pick a time slot on our website or send a WhatsApp. You get a confirmation right away. The evening before, you receive your door code via WhatsApp.",
+      "For Personal Training, send your trainer a message via WhatsApp or our contact form — the trainer schedules a moment together with you. For Open Gym and studio rental, pick a time slot online; the evening before you receive your door code via WhatsApp.",
     cta: {
-      label: "Book now",
+      label: "Pick your trainer",
       href: "/en/find-personal-trainer",
-      external: true,
+      external: false,
     },
   },
   {
@@ -60,7 +60,7 @@ const steps = [
     icon: MapPin,
     title: "Walk in",
     description:
-      "Egelantiersgracht 424, Jordaan. Enter your door code and let yourself in. No reception, no queue. Changing area is right there. Arrive 5 minutes early.",
+      "Egelantiersgracht 424, Jordaan. For PT your trainer meets you at the door. For Open Gym and studio rental, you enter your own door code. No reception, no queue. Changing area is right there. Arrive 5 minutes early.",
   },
   {
     number: "3",

@@ -48,11 +48,11 @@ const steps = [
     icon: CalendarCheck,
     title: "Boek je sessie",
     description:
-      "Kies een tijdslot via onze website of stuur een WhatsApp. Je ontvangt direct een bevestiging. De avond ervoor krijg je je deurcode via WhatsApp.",
+      "Voor Personal Training stuur je je trainer een berichtje via WhatsApp of het contactformulier — de trainer plant samen met jou een moment. Voor Open Gym en studio kies je een tijdslot online; de avond ervoor krijg je je deurcode via WhatsApp.",
     cta: {
-      label: "Boek nu",
+      label: "Kies je trainer",
       href: "/nl/vind-jouw-personal-trainer",
-      external: true,
+      external: false,
     },
   },
   {
@@ -60,7 +60,7 @@ const steps = [
     icon: MapPin,
     title: "Loop binnen",
     description:
-      "Egelantiersgracht 424, Jordaan. Voer je deurcode in en laat jezelf binnen. Geen receptie, geen wachtrij. Kleedruimte is direct beschikbaar. Kom 5 minuten voor je sessie.",
+      "Egelantiersgracht 424, Jordaan. Voor PT ontmoet je je trainer bij de deur. Voor Open Gym en studio voer je je eigen deurcode in. Geen receptie, geen wachtrij. Kleedruimte is direct beschikbaar. Kom 5 minuten voor je sessie.",
   },
   {
     number: "3",

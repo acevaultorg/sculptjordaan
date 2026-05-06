@@ -58,7 +58,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe werkt het boekingssysteem?",
-        a: "We gebruiken Acuity Scheduling. Je boekt online en ontvangt de avond ervoor je deurcode via WhatsApp. Geen receptie, geen wachttijden.",
+        a: "Voor Open Gym en studio gebruiken we Acuity Scheduling — je boekt online en ontvangt de avond ervoor je deurcode via WhatsApp. Voor Personal Training neem je direct contact op met je trainer (WhatsApp of contactformulier); de trainer plant samen met jou en regelt studio-toegang. Geen receptie, geen wachttijden.",
       },
     ],
   },
