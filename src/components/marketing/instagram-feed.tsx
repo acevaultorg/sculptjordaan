@@ -67,6 +67,11 @@ export function InstagramFeed({ locale }: { locale: Locale }) {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={
+                locale === "nl"
+                  ? `Bekijk ${img.alt} op Instagram @sculptclubjordaan`
+                  : `View ${img.alt} on Instagram @sculptclubjordaan`
+              }
               className="group relative block aspect-square overflow-hidden"
             >
               <Image
@@ -77,7 +82,7 @@ export function InstagramFeed({ locale }: { locale: Locale }) {
                 sizes="(max-width: 640px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                <InstagramIcon className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <InstagramIcon className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
               </div>
             </a>
           </FadeIn>
