@@ -51,13 +51,18 @@
 
 ### Performance (7)
 - Site is Next.js 16 static-export-tuned, Vercel-deployed, recent build clean
-- Core Web Vitals not directly measured this session (no PageSpeed API pull)
 - Recent SEO PRs (#42-46 + sitemap polish 4f9231e/58ce360/37b66f5/0b5afc6) all shipped without regression
-- Score 7 (likely-good baseline; awaiting CWV measurement for confidence boost or correction)
+- **Production timing measured 2026-05-06 (curl-based, not CrUX field):**
+  - Static routes (sitemap.xml / robots.txt): TTFB 227-228ms · 1.5-26KB
+  - SSR routes (gratis-intake / vind-jouw-personal-trainer / locatie-uren): TTFB 482-584ms · 79-171KB · all <800ms failure threshold
+  - Pricing page (/nl/prijzen): TTFB 705ms / total 734ms / 162KB — highest TTFB on site, worth flagging as P2 investigate (rubric target <400ms; 705ms is 2x target but below 800ms failure)
+  - TLS handshake: 45-80ms · Connect: 17-41ms (Vercel edge healthy)
+- CWV field data (LCP/INP/CLS) requires PageSpeed Insights API key (free tier quota=0; operator must enable Cloud project). Without field data, confidence on perf=7 stays moderate.
+- Score 7 holds (real timings within target band on most routes; pricing-page SSR latency is one moderate concern)
 
 ## Confidence
 
-**0.5 (medium-cold)**: scores derived from documented values (CONTEXT.md, ORACLE.md, memory) not direct dashboard pull this session. Plausible numbers from 2026-04-27 (9 days stale). Clarity numbers from 2026-05-04 (2 days). Real-time pull via Plausible API + Clarity API would raise to 0.8.
+**0.6 (medium)**: scores derived from documented values (CONTEXT.md, ORACLE.md, memory) plus 2026-05-06 production curl-timing measurement on 7 routes. Plausible numbers from 2026-04-27 (9 days stale). Clarity numbers from 2026-05-04 (2 days). Real-time pull via Plausible API + Clarity API + PSI field data (requires operator-side API key) would raise to 0.8.
 
 ## I-35 Floor Status
 

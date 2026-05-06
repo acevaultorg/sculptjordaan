@@ -52,6 +52,7 @@
 - [x] `P0` FIX Missing Gezina intake pages (NL+EN) + wire into nav/sitemap, Joey alternateRoutes [id:gezina-missing]
 - [x] `P2` FEAT Trainer matching on trainers page — already shipped via TrainerFilterGrid + TrainerMatchForm [id:trainer-quiz]
 - [ ] `P2` FEAT Richer trainer profiles (availability, reviews) [id:trainer-profiles] [score:3.5]
+- [ ] `P2` PERF Investigate /nl/prijzen TTFB 705ms (target <400ms; 2x). Likely cause: SSR with @graph schema + 4 packages × 4-tier comparisons + many Section components. Brain-doable: audit next/dynamic candidates for below-fold sections, JsonLd render cost, consider ISR/edge runtime. Measured 2026-05-06 via curl-timing on 7 routes (other SSR pages 482-584ms — prijzen is the outlier). [id:prijzen-ttfb] [score:2.8]
 - [~] `P2` PERF PNG→WebP superseded — next/image auto-optimizes all images; remaining PNGs are PWA icons + JSON-LD logo (must stay PNG) [id:webp-convert]
 - [x] `P2` SEO More EN cross-links on newer blog posts — corporate (0→7 inline+cards) + amsterdam-north (1→9 inline+cards) [id:en-newer-crosslinks]
 
