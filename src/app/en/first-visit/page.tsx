@@ -51,7 +51,7 @@ const steps = [
       "Pick a time slot on our website or send a WhatsApp. You get a confirmation right away. The evening before, you receive your door code via WhatsApp.",
     cta: {
       label: "Book now",
-      href: acuityLinks.generic,
+      href: "/en/find-personal-trainer",
       external: true,
     },
   },

@@ -194,7 +194,7 @@ export default function TrainersPageNL() {
         />
         <FadeIn className="flex justify-center">
           <ButtonLink
-            href={acuityLinks.generic}
+            href={"/nl/vind-jouw-personal-trainer"}
             size="lg"
             className="text-white"
           >

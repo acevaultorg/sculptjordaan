@@ -194,7 +194,7 @@ export default function TrainersPageEN() {
         />
         <FadeIn className="flex justify-center">
           <ButtonLink
-            href={acuityLinks.generic}
+            href={"/en/find-personal-trainer"}
             size="lg"
             className="text-white"
           >

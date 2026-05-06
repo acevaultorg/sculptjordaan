@@ -224,7 +224,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
-                href={acuityLinks.generic}
+                href={"/en/find-personal-trainer"}
                 size="lg"
               >
                 Book Free Trial

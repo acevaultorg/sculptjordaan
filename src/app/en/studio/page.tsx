@@ -159,7 +159,7 @@ export default function StudioPageEN() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <ButtonLink
-                href={acuityLinks.generic}
+                href={"/en/studio-rental#schedule"}
                 external
                 size="lg"
                 className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"

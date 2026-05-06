@@ -227,7 +227,7 @@ export default function OverOnsPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
-                href={acuityLinks.generic}
+                href={"/nl/vind-jouw-personal-trainer"}
                 size="lg"
               >
                 Boek Gratis Proefles

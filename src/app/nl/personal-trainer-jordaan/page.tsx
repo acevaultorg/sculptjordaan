@@ -99,7 +99,7 @@ export default function PersonalTrainerJordaanPage() {
 
         {/* Primary CTA */}
         <a
-          href={acuityLinks.generic}
+          href={"/nl/vind-jouw-personal-trainer"}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
@@ -236,7 +236,7 @@ export default function PersonalTrainerJordaanPage() {
             Plan nu je gratis intake. Duurt 2 minuten.
           </p>
           <a
-            href={acuityLinks.generic}
+            href={"/nl/vind-jouw-personal-trainer"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"

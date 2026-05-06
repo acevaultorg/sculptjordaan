@@ -243,15 +243,13 @@ export default function GratisIntakePage() {
           <p className="text-white/80 mb-6">
             Plan nu je gratis intake. Duurt 2 minuten.
           </p>
-          <a
-            href={acuityLinks.generic}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/nl/vind-jouw-personal-trainer"
             className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
           >
-            Gratis intake plannen
+            Kies je trainer
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
 
         {/* Address */}

@@ -526,7 +526,7 @@ export default function PricingPageNL() {
               Start met een gratis proefles of neem contact met ons op via WhatsApp.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <ButtonLink href={acuityLinks.generic} size="lg">
+              <ButtonLink href={"/nl/vind-jouw-personal-trainer"} size="lg">
                 Boek Gratis Proefles
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>

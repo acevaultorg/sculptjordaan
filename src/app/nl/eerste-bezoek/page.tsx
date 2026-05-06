@@ -51,7 +51,7 @@ const steps = [
       "Kies een tijdslot via onze website of stuur een WhatsApp. Je ontvangt direct een bevestiging. De avond ervoor krijg je je deurcode via WhatsApp.",
     cta: {
       label: "Boek nu",
-      href: acuityLinks.generic,
+      href: "/nl/vind-jouw-personal-trainer",
       external: true,
     },
   },

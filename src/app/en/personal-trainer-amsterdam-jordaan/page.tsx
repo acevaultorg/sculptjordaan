@@ -99,7 +99,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
 
         {/* Primary CTA */}
         <a
-          href={acuityLinks.generic}
+          href={"/en/find-personal-trainer"}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
@@ -236,7 +236,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
             Book your free intro. Takes 2 minutes.
           </p>
           <a
-            href={acuityLinks.generic}
+            href={"/en/find-personal-trainer"}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
