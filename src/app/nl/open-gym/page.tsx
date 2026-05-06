@@ -24,7 +24,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Open Gym — Train Zelfstandig in een Priv\u00e9 Studio | SculptClub Amsterdam Jordaan" },
+  title: { absolute: "Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam Jordaan" },
   description:
     "Boek sessies van 60 minuten in een rustige, volledig uitgeruste priv\u00e9 studio in de Jordaan. Max. 3 personen per slot. Lidmaatschap vanaf \u20ac29 per 4 weken.",
   alternates: {
@@ -179,7 +179,7 @@ export default function OpenGymPageNL() {
             <SectionHeader
               as="h1"
               overline="Open Gym"
-              title="Open Gym in een Priv\u00e9 Studio"
+              title="Open Gym in een Privé Studio"
               description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
               center={false}
             />
