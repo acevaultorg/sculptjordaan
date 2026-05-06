@@ -1,11 +1,13 @@
 ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website + trainer acquisition platform for Amsterdam Jordaan. State: main branch on GitLab (gitlab.com/acevault-lab/sculptjordaan, canonical 2026-05-06+) + GitHub archive (acevaultorg/sculptjordaan), Vercel auto-deploy via Layer 7 API confirmed working (gitSource type=gitlab, projectId=81955354). Goal: maximize bookings + trainer acquisition.
 
 ## Session Handoff
-Mode: sovereign auto (v19.42 brain) — `/acepilot auto` 2026-05-05/06, all-day loop, GitLab migration + funnel audit + image-per-page audit + lessons compound
-Objective: operator funnel-audit directive ("check the funnel · step by step · where are users entering · are they converting · if not why not · all buttons tracked? · all free Acuity should be embedded; paid not — Apple Pay · be sure whole site is correct · also check mobile · also consider how images influence conversion · make names clearer for yourself")
+Mode: sovereign auto (v19.42 brain) — `/acepilot auto` 2026-05-05/06, all-day loop, GitLab migration + funnel audit + image-per-page audit + lessons compound + deep mobile/UX/a11y audit
+Objective: operator funnel-audit directive ("check the funnel · step by step · where are users entering · are they converting · if not why not · all buttons tracked? · all free Acuity should be embedded; paid not — Apple Pay · be sure whole site is correct · also check mobile · also consider how images influence conversion · make names clearer for yourself · also: do a deep audit, check the whole site, is it perfect for mobile? is the ux perfect? how to approach this best for best output?")
 Progress (2026-05-06 PM): 16 atomic commits shipped + 11 successful Layer 7 deploys + multiple state mutations. Final state: every fleet entry-page now correct, every CTA links to working destination, every hero image matches page intent, naming refactor prevents the architectural mistake class operator caught.
 
   COMMIT TIMELINE (most recent first):
+  c095a37  fix(a11y): aria-label on 6 Instagram feed links + aria-hidden on decorative SVG (deep-audit fix)
+  1b7f1c6  docs(state): Session Handoff for funnel+image+lessons ship
   26f77b8  docs(state): KNOWLEDGE.md + DECISIONS.md compounds (6 lessons baked in)
   b2460fd  fix(typo): replace literal \\u00e9 with é in /nl/open-gym hero (pre-existing bug, caught via Chrome MCP visual audit)
   3d50ce3  feat(ux): add 2-column hero image to /nl/open-gym + /en/open-gym (training-dumbbells-focus)
@@ -55,6 +57,30 @@ KNOWLEDGE.md 6 NEW LESSONS (compounds for future sessions):
   5. Image-per-page emotional-fit principle
   6. Mobile viewport testing tip (Chrome MCP 614px inner)
 
+DEEP-AUDIT FINDINGS 2026-05-06 (PM, post-funnel-fix):
+  ✅ Site fundamentally strong. 18 commits this session shipped a healthy site.
+  🔴 1 issue caught + fixed (commit c095a37): Instagram feed component had 6
+     unlabeled <a> links violating WCAG 2.4.4. Fixed via aria-label per locale
+     + aria-hidden on decorative SVG icon.
+  🟡 1 issue surfaced for operator decision: Cookie consent UI absent. Google
+     Consent Mode v2 default-denied is correctly initialized in analytics.tsx
+     but no UI prompts EU visitors to consent → tracking pixels stay denied
+     forever for EU traffic. Operator chooses: (a) add Cookiebot/Cookieyes
+     banner to recover EU attribution OR (b) accept denied default for
+     privacy-first brand vibe. Plausible (cookieless) works either way.
+  🟢 Polish noted: md: breakpoint coverage minimal (4 vs 384 sm: + 131 lg:);
+     3 unused source images >900KB (boutique-corner, assault-bike, studio-
+     interior-3) — Next.js auto-converts on serve so production impact minimal.
+  ✅ Site-wide strengths: TTFB 93-115ms, HTML 90-170KB per page, viewport
+     meta correct, fonts preloaded woff2 with crossorigin, 384 sm: + 131 lg:
+     responsive classes, 1 h1 per page, all images alt-text (post-fix), 2
+     JSON-LD blocks per page, robots+sitemaps 200, 23 NL/EN trainer-intake
+     parity, not-found.tsx exists, sr-only skip-link present.
+  Best-output methodology used: depth-on-top-traffic-pages > breadth, cross-
+  tool methodology (Chrome MCP + JS DOM queries + curl), severity-graded
+  findings, self-skepticism on detector results (skip-link initially flagged
+  as tiny tap target → identified as intentional WCAG feature).
+
 NEXT ACTIONS:
 (a) operator (unchanged from prior + new):
   Hostinger DNS [👤 P0] · Vercel GitLab webhook verify [👤 P1] · GSC sign-in to submit sitemap-ai.xml [👤 P1] · Google Ads payment + conversion verify [👤 P1] · HSTS preload submission [👤 P1] · ai.robots.txt directory PR [👤 P1] · Plausible Goals promotion [👤 P2 — register Free Intake / WhatsApp / Phone / Email Click as goals so the 44.2% Outbound CR is visible on the Goals tab itself] · 5 stale GitLab branches cleanup [👤 P3] · Acuity intake "first session date" field [👤 P2 — enables real retention metric for archetype]
@@ -67,7 +93,8 @@ Open questions: none.
 
 Momentum: 16-commit ship landed without operator interruption. All operator-stated rules (free=embedded, paid=target=_blank, PT-intake=trainer-WhatsApp+contact-form, every page best-images, every page mobile-correct, names architecturally-clear) are satisfied. Verify-before-claiming + visual-audit-beats-text-audit + structural-fix-beats-tactical-fix patterns all reinforced. Site is in genuinely correct shape per operator's funnel-audit directive.
 
-<!-- handoff: 2026-05-06 PM funnel + image audit + lessons compound -->
+<!-- handoff: 2026-05-06 evening — deep mobile/UX/a11y audit + Instagram a11y fix (c095a37) -->
+<!-- prior handoff: 2026-05-06 PM funnel + image audit + lessons compound -->
 <!-- prior handoff: 2026-05-06 GitLab migration + form-tracking fix -->
 <!-- prior handoff: 2026-05-06 sitemap-real-lastmod + AUG-baseline + verify-discipline -->
 <!-- prior handoff: 2026-04-27 SEO+AI audit -->
