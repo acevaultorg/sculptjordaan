@@ -20,7 +20,10 @@ import {
   MessageCircle,
 } from "lucide-react";
 import Image from "next/image";
+import { getColor } from "@/lib/image-color-manifest";
 import type { Metadata } from "next";
+
+const HERO_SRC = "/images/studio/gym-latest.jpg";
 import {
   Accordion,
   AccordionItem,
@@ -137,9 +140,12 @@ export default function StudioRentalPageNL() {
             </FadeIn>
           </div>
           <FadeIn delay={0.2}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+              style={{ backgroundColor: getColor(HERO_SRC) }}
+            >
               <Image
-                src="/images/studio/gym-latest.jpg"
+                src={HERO_SRC}
                 alt="Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine"
                 fill
                 className="object-cover"

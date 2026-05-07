@@ -4,7 +4,10 @@ import Image from "next/image";
 import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
+import { getColor } from "@/lib/image-color-manifest";
 import type { Locale } from "@/config/site";
+
+const HERO_SRC = "/images/studio/training-barbell-squat.jpg";
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
@@ -33,10 +36,14 @@ export function Hero({ locale }: { locale: Locale }) {
   return (
     <section className="relative overflow-hidden -mt-20 min-h-[90vh] sm:min-h-[88vh] lg:min-h-[92vh] flex flex-col">
       {/* Background image — minimal overlay so the gym stays visible.
-          Text contrast comes from text-shadow on the motion container. */}
-      <div className="absolute inset-0 z-0">
+          Text contrast comes from text-shadow on the hero container.
+          backgroundColor renders BEFORE the image fetches: zero-paint-cost
+          dominant-color preview (matched to image via build-time manifest).
+          Replaces the reverted blur-SVG approach (see
+          docs/PERF-EXPERIMENTS-2026-05-07.md). */}
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: getColor(HERO_SRC) }}>
         <Image
-          src="/images/studio/training-barbell-squat.jpg"
+          src={HERO_SRC}
           alt="Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack"
           fill
           className="object-cover [object-position:center_25%] [transform:translateZ(0)]"
