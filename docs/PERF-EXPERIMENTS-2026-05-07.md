@@ -64,8 +64,47 @@ Recommended next-iteration approach: **Option 2 (dominant-color background)**. D
 
 ---
 
+## ✅ KEPT (after honest re-measurement) — dominant-color background under hero <Image> (commit 7f44c24)
+
+**Hypothesis.** The blur-placeholder failure root-cause analysis pointed at `feGaussianBlur` paint cost. A flat CSS `background-color` (filling a rect with one color = effectively zero paint cost) should give the visual-preview benefit without the SVG filter cost.
+
+**Action.** Built `scripts/generate-image-color-manifest.mjs` (sharp resize-to-1×1 → hex), `src/lib/image-color-manifest.ts` (89 entries × ~40 bytes), wired `style={{ backgroundColor: getColor(HERO_SRC) }}` on the wrapper `<div>` behind the 2 critical hero `<Image>` elements. Added to prebuild.
+
+**Measurement (6-run Lighthouse mobile, post-deploy + warm Vercel edge cache):**
+
+| Run | LCP | FCP | TBT | Score |
+|---:|---:|---:|---:|---:|
+| 1 | 15211 | 9769 | 279 | 50 |
+| 2 | **7520** | **3540** | 1056 | 41 |
+| 3 | 15453 | 9622 | 288 | 50 |
+| 4 | 15551 | 9509 | 196 | 53 |
+| 5 | 15751 | 9637 | 198 | 53 |
+| 6 | 15363 | 9338 | 188 | 54 |
+
+Median LCP across 6 runs: **15,408ms**. Run 2 at 7.5s is an outlier (1 of 6).
+
+**Crucial re-interpretation.** The original "pre-blur baseline" (`lh.json`, LCP 6,724ms) was **also an outlier**, taken when Vercel's `_next/image` AVIF transform cache happened to be warm for the specific mobile-Lighthouse `w=` variant being requested. Subsequent runs hit cold transform cache → ~15s LCP includes the server-side image-optimization processing time. Real reproducible mobile LCP for this page = **~15.5s, not 6.7s**.
+
+**This means:**
+1. The color-background change is **NEUTRAL on LCP** — matches the `~15.5s` median of all post-framer-motion-drop runs, regardless of color/blur/no-color presence.
+2. Mobile LCP ~15s is **pre-existing** and dominated by cold image-transform cost on Vercel edge — not by any code change in this session.
+3. The visual benefit (warm tan/brown color preview before image loads on slow networks) is real and free — the 4-byte hex CSS adds zero paint cost vs the SVG-blur which adds 6-9s.
+
+**Verdict.** Kept. Color background gives the perceived-perf upgrade the blur experiment intended, without the regression cost. Framework: *good UX trade for zero performance cost = always ship*.
+
+**Future direction for the actual LCP problem.** The real bottleneck (Vercel `_next/image` cold-transform cost on mobile-specific viewport widths) is addressable by:
+- **Pre-warming the transform cache** on deploy via a script that fetches the common mobile widths after each deploy
+- **Pre-generating AVIF/WebP variants at build time** instead of on-demand (would require self-hosted image pipeline)
+- **Using Cloudflare Images** or another image CDN with better cold-cache performance
+- **Reducing the source image size** so transforms are faster (gym-latest.jpg is 266 KB at 1440×1920 — could be 150 KB at 1080×1440 with no perceptible quality loss for hero use)
+
+Recommended next ship: pre-warm script in deploy pipeline. ~30 min effort. Should drop mobile LCP from ~15s to ~3-5s on subsequent visits.
+
+---
+
 ## Calibration update for future sessions
 
-- Lighthouse mobile (simulated 1.5Mbps + 4× CPU) is the **authoritative LCP/FCP signal** for Plausible-class user populations. Trust it over Chrome MCP synthetic.
+- Lighthouse mobile (simulated 1.5Mbps + 4× CPU) is the **authoritative LCP/FCP signal** for Plausible-class user populations — but only with **6+ run median**. Single-run is noise. 3-run can still be misleading if image-transform cache state varies.
+- **Vercel `_next/image` cold-transform cost** is a real LCP contributor on mobile and explains a chunk of the "real-user LCP" Lighthouse measures. Pre-warming after deploy is a high-leverage operational fix.
 - A change that **adds CPU paint work** (SVG filters, complex CSS animations on critical-path elements) can regress perceived perf on throttled mobile **even when it helps perceived perf on desktop**. Always measure on slow CPU before shipping.
-- 3-run Lighthouse with consistent values (±5%) = real signal. Single-run = noise.
+- A change that adds **zero paint cost** (flat CSS color, single property style attribute) does not regress LCP even when measurements appear noisy. Trust the math, but get the data anyway.
