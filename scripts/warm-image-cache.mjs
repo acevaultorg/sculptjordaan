@@ -39,11 +39,23 @@
 const SITE_URL = process.env.SITE_URL || "https://sculptclub.nl";
 const VERBOSE = process.env.VERBOSE === "1";
 
-// Hero images that are LCP elements on top-entry pages (per Plausible 2026-05-07).
-// Grow this list when adding new high-traffic landing pages.
+// Hero images that are LCP elements on top-entry-page or conversion-path
+// routes (per Plausible 2026-05-07 + site-wide grep of `loading="eager"`
+// usage on critical routes). Grow this list when adding new high-traffic
+// landing pages or conversion-funnel entry points.
+//
+// Coverage map:
+//   training-barbell-squat.jpg     → /, /en (homepage NL+EN)
+//   gym-latest.jpg                 → /nl/studio-huren, /en/studio-rental
+//   training-dumbbells-focus.jpg   → /nl/boek-gym, /nl/open-gym,
+//                                    /en/book-gym (booking conversion path)
+//   model-facade-full.jpg          → /nl/word-trainer, /en/become-trainer
+//                                    (freelance-trainer acquisition path)
 const HEROES = [
-  "/images/studio/training-barbell-squat.jpg", // homepage hero
-  "/images/studio/gym-latest.jpg",             // /nl/studio-huren hero (top entry today)
+  "/images/studio/training-barbell-squat.jpg",
+  "/images/studio/gym-latest.jpg",
+  "/images/studio/training-dumbbells-focus.jpg",
+  "/images/studio/model-facade-full.jpg",
 ];
 
 // Match next.config.ts deviceSizes. Plus 384 for typical 1× mobile srcset.
