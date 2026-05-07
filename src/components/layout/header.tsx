@@ -199,7 +199,7 @@ export function Header() {
             {/* Nieuw hier? */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="h-9 flex items-center px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
+              className="h-11 sm:h-9 flex items-center px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
             >
               {locale === "nl" ? "Nieuw hier?" : "New here?"}
             </Link>
@@ -208,7 +208,7 @@ export function Header() {
             <button
               onClick={handleBookClick}
               className={cn(
-                "h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                "h-11 sm:h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen
                   ? "bg-brand-dark text-white"
                   : "bg-brand text-white hover:bg-brand-dark active:scale-95"
@@ -258,7 +258,7 @@ export function Header() {
             <button
               onClick={handleLoginClick}
               className={cn(
-                "w-9 h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
+                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
                 loginOpen
                   ? "text-foreground bg-accent"
                   : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
@@ -273,7 +273,7 @@ export function Header() {
             <button
               onClick={handleMenuClick}
               className={cn(
-                "w-9 h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
+                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
                 menuOpen
                   ? "text-foreground bg-accent"
                   : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
