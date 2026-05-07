@@ -74,7 +74,8 @@ export default function BlogPostStudioRentalEN() {
                 alt="Professional dumbbell rack at SculptClub"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

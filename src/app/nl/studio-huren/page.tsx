@@ -143,7 +143,6 @@ export default function StudioRentalPageNL() {
                 alt="Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine"
                 fill
                 className="object-cover"
-                preload
                 loading="eager"
                 fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"

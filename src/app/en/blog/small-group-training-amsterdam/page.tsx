@@ -47,7 +47,7 @@ export default function SmallGroupTrainingAmsterdamEN() {
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-              <Image src="/images/studio/studio-overview.jpeg" alt="SculptClub private studio — space for small group training" fill className="object-cover" preload sizes="(max-width: 768px) 100vw, 800px" />
+              <Image src="/images/studio/studio-overview.jpeg" alt="SculptClub private studio — space for small group training" fill className="object-cover" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" />
             </div>
 
             <div className="prose prose-lg max-w-none">

@@ -46,7 +46,7 @@ export default function PrenatalPTAmsterdamEN() {
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-              <Image src="/images/studio/studio-interior-1.jpeg" alt="SculptClub private studio — a calm place to keep training through pregnancy" fill className="object-cover" preload sizes="(max-width: 768px) 100vw, 800px" />
+              <Image src="/images/studio/studio-interior-1.jpeg" alt="SculptClub private studio — a calm place to keep training through pregnancy" fill className="object-cover" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" />
             </div>
 
             <div className="prose prose-lg max-w-none">

@@ -73,7 +73,8 @@ export default function GratisIntakePage() {
             width={140}
             height={10}
             className="h-3.5 w-auto dark:invert"
-            preload
+            loading="eager"
+            fetchPriority="high"
           />
         </Link>
       </header>

@@ -72,7 +72,8 @@ export default function GymWithoutMembershipEN() {
                 alt="Open Gym at SculptClub Amsterdam — gym without membership"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

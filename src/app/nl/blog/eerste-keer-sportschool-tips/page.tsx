@@ -70,7 +70,8 @@ export default function EersteKeerSportschoolTips() {
                 alt="SculptClub studio interieur in de Jordaan, Amsterdam"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

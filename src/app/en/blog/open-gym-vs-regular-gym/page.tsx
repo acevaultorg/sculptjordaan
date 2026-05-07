@@ -75,7 +75,8 @@ export default function BlogPostEN3() {
                 alt="SculptClub Open Gym studio interior"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

@@ -74,7 +74,8 @@ export default function PersonalTrainingAfvallenNL() {
                 alt="Dumbbells op de vloer van SculptClub studio"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

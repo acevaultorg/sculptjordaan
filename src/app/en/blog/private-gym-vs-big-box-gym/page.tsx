@@ -70,7 +70,8 @@ export default function BlogPostPriveVsGrEN() {
                 alt="Overview of the SculptClub private studio"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 800px"
               />
             </div>

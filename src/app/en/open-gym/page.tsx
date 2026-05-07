@@ -202,7 +202,8 @@ export default function OpenGymPageEN() {
                 alt="Independent training with dumbbells at SculptClub Open Gym in the Jordaan — focus, no crowd, no wait time"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

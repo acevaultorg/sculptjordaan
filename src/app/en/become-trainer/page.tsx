@@ -141,7 +141,8 @@ export default function BecomeTrainerEN() {
                 alt="Athlete at the entrance of SculptClub Private Gym at Egelantiersgracht 424"
                 fill
                 className="object-cover object-top"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

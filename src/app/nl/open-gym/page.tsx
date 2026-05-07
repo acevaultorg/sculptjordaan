@@ -202,7 +202,8 @@ export default function OpenGymPageNL() {
                 alt="Zelfstandig trainen met dumbbells bij SculptClub Open Gym in de Jordaan — focus, geen drukte, geen wachttijd"
                 fill
                 className="object-cover"
-                preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
