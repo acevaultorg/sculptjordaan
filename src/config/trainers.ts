@@ -1,5 +1,21 @@
 import type { Locale } from "./site";
 
+/**
+ * 🚨 CANONICAL TRAINER ROSTER — when adding/removing/renaming a trainer here,
+ * the following surfaces MUST be updated together to prevent AI-citation drift
+ * (rounds 14 + 15 of the 2026-05-07 cleanup found these were out of sync):
+ *
+ *   1. src/config/trainers.ts (this file)         ← source of truth
+ *   2. src/app/{nl,en}/plan-{...}/page.tsx        ← page routes per locale
+ *   3. public/llms.txt § Trainers                 ← AI-citation canonical
+ *   4. src/app/sitemap-ai.xml/route.ts            ← AI-crawler priority signal
+ *
+ * Build-time check at scripts/check-trainer-consistency.mjs (runs as
+ * `prebuild`) verifies surfaces 3 and 4 are in sync with this file. If you
+ * add a trainer here without updating llms.txt or sitemap-ai.xml, the build
+ * fails with a clear message.
+ */
+
 export interface Trainer {
   id: string;
   name: string;
