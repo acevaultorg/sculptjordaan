@@ -144,6 +144,8 @@ export default function StudioRentalPageNL() {
                 fill
                 className="object-cover"
                 preload
+                loading="eager"
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
