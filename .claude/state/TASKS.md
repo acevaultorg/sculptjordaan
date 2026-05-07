@@ -76,4 +76,9 @@
 - [👤] `P1` CONTRIBUTE PR to github.com/ai-robots-txt/ai.robots.txt directory — adds SculptClub to public AI-allowlist registry [id:ai-robots-directory-pr] [score:4.5] 👤 ~10 min. +50% AI-crawler frequency vs unlisted sites
 - [👤] `P2` CONFIGURE Promote Plausible custom events to Goals — Free Intake Click / WhatsApp Click / Phone Click / Email Click / Lead Generated [id:plausible-goals] [score:3.5] 👤 plausible.io/sculptclub.nl/settings/goals → Add Goal → Custom event → name matches code
 
+## Queue (added 2026-05-07 — traffic growth)
+- [👤] `P1` GROWTH Reddit organic answer in r/Amsterdam on PT/gym question — full Clarity Card in `docs/TRAFFIC-GROWTH-2026-05-07.md` [id:reddit-amsterdam-organic] [score:4.5] 👤 ~30 min. Mention 2-3 alternatives + SculptClub naturally; no link unless directly answering booking ask. +70 Distribution Oracle multiplier per `~/.claude/rules/aceusergrowth.md`
+- [👤] `P1` GROWTH LinkedIn zero-click framework post on PT studio-rental model — full Clarity Card in `docs/TRAFFIC-GROWTH-2026-05-07.md` [id:linkedin-zero-click-pt] [score:4.0] 👤 ~20 min. Operator profile (not company page); template provided; no external link in post body. +65 Distribution Oracle multiplier
+- [👤] `P2` GROWTH Wikipedia citation as primary source for PT-rental fact — full Clarity Card in `docs/TRAFFIC-GROWTH-2026-05-07.md` [id:wikipedia-citation-pt] [score:3.0] 👤 ~40 min slow-compound. READ COI policy first. Single citation on uncited claim only — never create SculptClub article. +75 Distribution Oracle multiplier (highest payoff if it survives)
+
 ## Blocked
