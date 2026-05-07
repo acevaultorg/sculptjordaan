@@ -40,7 +40,7 @@ export default function PersonalTrainerRugklachtenAmsterdam() {
               <p className="overline mb-3">Blog</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Personal Trainer bij Rugklachten in Amsterdam</h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1"><User className="w-4 h-4" />Hamish — Physiotherapist BSc</span>
+                <span className="flex items-center gap-1"><User className="w-4 h-4" />Hamish — Fysiotherapeut BSc</span>
                 <span className="flex items-center gap-1"><CalendarDays className="w-4 h-4" />19 april 2026</span>
               </div>
             </div>
