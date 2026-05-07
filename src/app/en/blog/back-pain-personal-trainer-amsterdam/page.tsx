@@ -176,8 +176,8 @@ export default function BackPainPersonalTrainerAmsterdam() {
               <div className="grid sm:grid-cols-2 gap-3">
                 <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Physiotherapist as personal trainer</p></a>
                 <a href="/en/blog/personal-trainer-after-injury-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer after an injury</p></a>
-                <a href="/en/blog/strength-training-for-beginners" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Strength training for beginners</p></a>
-                <a href="/en/blog/staying-consistent-with-exercise" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibent text-sm group-hover:text-brand transition-colors">Staying consistent with exercise</p></a>
+                <a href="/en/blog/strength-training-beginners-guide" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Strength training for beginners</p></a>
+                <a href="/en/blog/stay-consistent-exercise" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Staying consistent with exercise</p></a>
               </div>
             </div>
 

@@ -241,7 +241,7 @@ export default function ImproveBodyCompositionAmsterdam() {
                   strength training for women
                 </a>{" "}
                 or{" "}
-                <a href="/en/blog/lose-weight-with-strength-training" className="text-brand hover:underline">
+                <a href="/en/blog/weight-loss-strength-training" className="text-brand hover:underline">
                   losing weight with strength training
                 </a>
                 .
@@ -256,7 +256,7 @@ export default function ImproveBodyCompositionAmsterdam() {
               <h3 className="text-lg font-bold mb-4">Keep reading</h3>
               <div className="grid sm:grid-cols-2 gap-3">
                 <a
-                  href="/en/blog/lose-weight-with-strength-training"
+                  href="/en/blog/weight-loss-strength-training"
                   className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"
                 >
                   <p className="font-semibold text-sm group-hover:text-brand transition-colors">
@@ -280,7 +280,7 @@ export default function ImproveBodyCompositionAmsterdam() {
                   </p>
                 </a>
                 <a
-                  href="/en/blog/how-much-does-personal-training-cost-amsterdam"
+                  href="/en/blog/personal-training-cost-amsterdam"
                   className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"
                 >
                   <p className="font-semibold text-sm group-hover:text-brand transition-colors">
