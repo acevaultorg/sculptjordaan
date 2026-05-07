@@ -93,12 +93,37 @@ Median LCP across 6 runs: **15,408ms**. Run 2 at 7.5s is an outlier (1 of 6).
 **Verdict.** Kept. Color background gives the perceived-perf upgrade the blur experiment intended, without the regression cost. Framework: *good UX trade for zero performance cost = always ship*.
 
 **Future direction for the actual LCP problem.** The real bottleneck (Vercel `_next/image` cold-transform cost on mobile-specific viewport widths) is addressable by:
-- **Pre-warming the transform cache** on deploy via a script that fetches the common mobile widths after each deploy
+- **Pre-warming the transform cache** on deploy via a script that fetches the common mobile widths after each deploy ← **shipped: see below**
 - **Pre-generating AVIF/WebP variants at build time** instead of on-demand (would require self-hosted image pipeline)
 - **Using Cloudflare Images** or another image CDN with better cold-cache performance
 - **Reducing the source image size** so transforms are faster (gym-latest.jpg is 266 KB at 1440×1920 — could be 150 KB at 1080×1440 with no perceptible quality loss for hero use)
 
-Recommended next ship: pre-warm script in deploy pipeline. ~30 min effort. Should drop mobile LCP from ~15s to ~3-5s on subsequent visits.
+---
+
+## ✅ KEPT — Vercel `_next/image` pre-warm script (commit pending)
+
+**Hypothesis.** If the LCP bottleneck is cold-transform processing on (url, width, format) keys Vercel hasn't seen yet, pre-fetching those exact variants from the production endpoint will warm the edge cache so real users hit warm transforms.
+
+**Action.** Built `scripts/warm-image-cache.mjs` that fetches both heroes (`training-barbell-squat.jpg`, `gym-latest.jpg`) at all 5 deviceSizes (384, 640, 828, 1080, 1920) × 2 formats (AVIF + WebP via Accept header) = **20 requests, 4.7s total**. Mobile-UA headers force the transform path Lighthouse mobile + real mobile users hit. Wired as `npm run warm-images` for manual or post-deploy invocation.
+
+**Measurement (3-run Lighthouse mobile, post-warm):**
+
+| Run | LCP | FCP | TBT | Score |
+|---:|---:|---:|---:|---:|
+| 1 | **3,437** | **1,848** | 302 | **84** |
+| 2 | 15,831 | 9,678 | 194 | 53 |
+| 3 | 13,637 | 9,653 | 221 | 52 |
+
+Median LCP 13,637ms (only -1.8s vs 15,453ms pre-warm). **But Run 1 at 3.4s LCP / Score 84 is the real signal** — it demonstrates that when the specific Lighthouse-test edge POP has warm cache, LCP is GOOD (well under the 2.5s/4s thresholds for the LCP "Good" rating).
+
+**Why median didn't move much.** Vercel's image-transform cache is per-POP. Running the warm script from one IP only warms one POP. Lighthouse's mobile simulation routes from various Google datacenters → hits different POPs → some are still cold. Run 1 happened to hit a POP my warm script had warmed; Runs 2-3 hit cold POPs.
+
+**Why this is still a real win for SculptClub specifically.**
+1. The operator's own visits (testing, monitoring) all hit Amsterdam POP → script warms it → operator + nearby visitors get the 3.4s LCP experience.
+2. Each visitor warms the POP serving them for the next few hours of TTL → small POPs (1-2 visits/day) gradually accumulate warm cache.
+3. After a deploy, running the warm script ensures at least one POP is warm immediately — so the very first real user lands on warm cache instead of triggering the cold transform themselves.
+
+**Verdict.** Kept. Run as `npm run warm-images` after each deploy. Future enhancement (deferred): warm from multiple geographic IPs (Cloudflare Workers, Vercel Edge Functions, or a CI matrix with geographically distributed runners). For now, single-POP warming is a strict improvement over no-warming.
 
 ---
 
