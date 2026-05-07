@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import {
   Accordion,
@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { whatsappLinks } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
 const faqs = {
@@ -65,12 +66,16 @@ export function FaqPreview({ locale }: { locale: Locale }) {
       ? {
           overline: "Veelgestelde vragen",
           title: "Heb je een vraag?",
+          stillHaveQuestion: "Staat je vraag er niet tussen?",
+          whatsappCta: "Stuur ons een berichtje op WhatsApp",
           cta: "Bekijk alle FAQ's",
           ctaHref: "/nl/faqs",
         }
       : {
           overline: "FAQ",
           title: "Have a question?",
+          stillHaveQuestion: "Question not answered?",
+          whatsappCta: "Send us a WhatsApp message",
           cta: "View all FAQs",
           ctaHref: "/en/faqs",
         };
@@ -94,15 +99,44 @@ export function FaqPreview({ locale }: { locale: Locale }) {
           </Accordion>
         </div>
       </FadeIn>
-      <div className="mt-8 text-center">
-        <Link
-          href={t.ctaHref}
-          className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
-        >
-          {t.cta}
-          <ArrowRight className="ml-1 w-4 h-4" />
-        </Link>
-      </div>
+      {/*
+        Closing CTA — added 2026-05-08. The FAQ section is the last content
+        block on the homepage; high-intent visitors who scroll through
+        Hero → Services → Steps → Differentiators → CtaBand → Reviews →
+        Instagram → Map → FAQ have consumed everything and need a clear
+        next action. Previously the only post-FAQ CTA was a low-impact
+        "View all FAQs →" link, which sent answer-hunting visitors deeper
+        into static content rather than to a booking/contact path. Per
+        CLAUDE.md the operator's preferred informal channel is WhatsApp
+        ("Door code: Sent via WhatsApp the night before") and tracked
+        conversion goals include WhatsApp clicks. Primary CTA is now
+        WhatsApp; "View all FAQs" remains as a tertiary link below.
+      */}
+      <FadeIn>
+        <div className="mt-12 text-center max-w-md mx-auto">
+          <p className="text-base text-muted-foreground mb-4">
+            {t.stillHaveQuestion}
+          </p>
+          <a
+            href={whatsappLinks.generic}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-dark text-white px-6 py-3 text-sm font-semibold shadow-brand-md hover:shadow-brand-lg transition-all"
+          >
+            <MessageCircle className="w-4 h-4" />
+            {t.whatsappCta}
+          </a>
+          <div className="mt-5">
+            <Link
+              href={t.ctaHref}
+              className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+            >
+              {t.cta}
+              <ArrowRight className="ml-1 w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </FadeIn>
     </Section>
   );
 }
