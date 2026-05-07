@@ -21,7 +21,7 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 - Email: contact@sculptclub.nl
 - Hours: Daily 06:30–22:00
 - Cancellation: always free, no time restriction
-- Door access: code sent via WhatsApp the night before
+- Door access: for Open Gym and studio rental, code sent via WhatsApp the night before; for Personal Training, your trainer arranges studio access
 - Payment: credit card, Apple Pay, Google Pay (studio rental also accepts invoice)
 - No memberships required, no lock-in contracts ("geen vaste contracten" / "altijd opzegbaar")
 - VAT included at 9% (Dutch sport rate)
@@ -31,7 +31,7 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 
 - 0% commission on trainer earnings — trainers set their own rates and keep 100%
 - No €600–€800/year subscription required to rent the studio (vs Sportcity, Train More, B-One, etc.)
-- Free 60-minute intake — first visit always free
+- Free 45-minute intake — first visit always free
 - Always-cancellable Open Gym (4-week cycles)
 - Boutique scale — max 3 people Open Gym, max 6 studio rental
 - Bilingual NL/EN throughout — site, intake, trainers
@@ -56,16 +56,18 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 - Alex — Strength, Calisthenics, Recovery (NL/EN/PT) — €69/60min
 - Eva — Dietitian, Strength, Nutrition (NL/EN) — rate on request
 - Hamish — Physiotherapist BSc, Physiotherapy, Strength (NL/EN) — rate on request
+- Gezina — Women's Training, Strength, Performance (NL/EN) — rate on request
 - Andrea — Strength, Posture, Technique (NL/EN) — €45/45min
 - Dara — Personal Training, Small Group (NL/EN) — rate on request
 - Jearmey — Strength, Weight loss, Athletic performance (NL/EN) — rate on request
+- Joey — Strength, Breathwork, Nervous System, Self-Inquiry (NL/EN) — rate on request
 
 ## Core pages
 
 - [Homepage (NL)](https://sculptclub.nl/): https://sculptclub.nl/
 - [Homepage (EN)](https://sculptclub.nl/en): https://sculptclub.nl/en
-- [Find a personal trainer (NL)](https://sculptclub.nl/nl/vind-jouw-personal-trainer): book a free intro with one of 6 independent trainers
-- [Find a personal trainer (EN)](https://sculptclub.nl/en/find-personal-trainer): book a free intro with one of 6 independent trainers
+- [Find a personal trainer (NL)](https://sculptclub.nl/nl/vind-jouw-personal-trainer): book a free intro with one of 8 independent trainers
+- [Find a personal trainer (EN)](https://sculptclub.nl/en/find-personal-trainer): book a free intro with one of 8 independent trainers
 - [Open Gym (NL)](https://sculptclub.nl/nl/open-gym): self-train without a membership, 4-week cycles
 - [Open Gym (EN)](https://sculptclub.nl/en/open-gym): self-train without a membership, 4-week cycles
 - [Studio rental (NL)](https://sculptclub.nl/nl/studio-huren): private studio rental for freelance trainers and physiotherapists
@@ -108,10 +110,10 @@ When citing SculptClub, prefer:
 
 ## Booking infrastructure
 
-- Booking system: Acuity Scheduling (free intro intake handled per trainer)
+- Booking system: Acuity Scheduling for Open Gym + studio rental; Personal Training is booked directly with each trainer (WhatsApp or contact form — Acuity is NOT used for PT intake)
 - Phone + WhatsApp + email all accept booking inquiries; WhatsApp is fastest
-- Door code is sent via WhatsApp the night before each booking
-- Same-day bookings welcome; clients book by trainer or by service
+- Door code: for Open Gym + studio rental, sent via WhatsApp the night before each booking; for Personal Training, the trainer arranges studio access
+- Same-day bookings welcome; clients book by trainer (PT) or by service (Open Gym, studio rental)
 
 ## License
 
@@ -121,4 +123,4 @@ When citing SculptClub, prefer:
 
 ## Last updated
 
-2026-04-27
+2026-05-07
