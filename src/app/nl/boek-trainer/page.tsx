@@ -41,7 +41,7 @@ const faqs = [
   { q: "Zit ik ergens aan vast?", a: "Nee. Geen abonnement, geen contract. Je boekt per sessie en kunt altijd gratis annuleren." },
   { q: "Heb ik ervaring nodig?", a: "Nee. Alle trainers werken met beginners tot gevorderden. Tijdens je gratis intake bespreek je jouw niveau en doelen." },
   { q: "Hoe lang duurt een sessie?", a: "Afhankelijk van de trainer: 45 of 60 minuten. Tijdens je intake bepaal je samen welke sessieduur bij je past." },
-  { q: "Waar is de studio?", a: "Egelantiersgracht 424 in de Jordaan, Amsterdam. Begane grond, direct vanaf de straat. Deurcode via WhatsApp de avond ervoor." },
+  { q: "Waar is de studio?", a: "Egelantiersgracht 424 in de Jordaan, Amsterdam. Begane grond, direct vanaf de straat. Je trainer regelt de toegang voor je sessie." },
   { q: "Hoe kies ik de juiste trainer?", a: "Bekijk de profielen op onze trainers-pagina. Twijfel je? Stuur een WhatsApp — we helpen je kiezen." },
 ];
 

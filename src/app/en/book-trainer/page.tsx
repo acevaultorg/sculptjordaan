@@ -32,7 +32,7 @@ const faqs = [
   { q: "Am I locked into a contract?", a: "No. No membership, no contract. You book per session and can always cancel for free." },
   { q: "Do I need experience?", a: "No. All trainers work with beginners to advanced. During your free intro you'll discuss your level and goals." },
   { q: "How long is a session?", a: "Depending on the trainer: 45 or 60 minutes. During your intro you'll decide together." },
-  { q: "Where is the studio?", a: "Egelantiersgracht 424 in the Jordaan, Amsterdam. Ground floor. Door code via WhatsApp the evening before." },
+  { q: "Where is the studio?", a: "Egelantiersgracht 424 in the Jordaan, Amsterdam. Ground floor. Your trainer arranges access for your session." },
   { q: "How do I choose the right trainer?", a: "Browse profiles on our trainers page. Not sure? Send a WhatsApp — we'll help you choose." },
 ];
 
