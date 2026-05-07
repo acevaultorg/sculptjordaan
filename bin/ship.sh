@@ -36,4 +36,14 @@ vercel --prod --yes
 echo "→ IndexNow ping..."
 node bin/indexnow.mjs || echo "  (IndexNow ping failed — non-blocking, deploy is still live)"
 
+# Warm Vercel _next/image transform cache for top-entry-page heroes.
+# First request per (url, w, format) triggers a cold transform (~3-10s
+# server-side processing). Pre-warming means the FIRST real user lands on
+# a warm-cache POP instead of triggering the cold transform themselves.
+# Sub-5s runtime in the normal case. Covers ~4 of top 7 entry pages
+# (other 3 are text-LCP, no warming needed). Non-blocking.
+# Context: docs/PERF-EXPERIMENTS-2026-05-07.md
+echo "→ Warming _next/image cache..."
+node scripts/warm-image-cache.mjs || echo "  (image warm failed — non-blocking)"
+
 echo "✓ Shipped. Verify: curl -sI https://sculptclub.nl/ | head -1"
