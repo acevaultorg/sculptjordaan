@@ -7,13 +7,13 @@ const steps = {
   nl: [
     {
       step: "01",
-      title: "Boek online",
+      title: "Plan je sessie",
       description:
         "Personal Training plan je direct met je trainer (WhatsApp of contactformulier). Open Gym en studio boek je online via onze website — in 2 minuten geregeld.",
     },
     {
       step: "02",
-      title: "Krijg je deurcode",
+      title: "Krijg toegang",
       description:
         "Voor PT regelt je trainer de studio en zorgt dat je binnen kunt. Voor Open Gym en studio ontvang je de avond ervoor een deurcode via WhatsApp. Geen receptie, geen wachten.",
     },
@@ -27,13 +27,13 @@ const steps = {
   en: [
     {
       step: "01",
-      title: "Book online",
+      title: "Plan your session",
       description:
         "Personal Training is arranged directly with your trainer (via WhatsApp or contact form). Open Gym and studio sessions are booked online via our website — sorted in 2 minutes.",
     },
     {
       step: "02",
-      title: "Get your door code",
+      title: "Get access",
       description:
         "For PT your trainer arranges the studio and gets you in. For Open Gym and studio rental, you receive a door code via WhatsApp the evening before. No reception, no waiting.",
     },

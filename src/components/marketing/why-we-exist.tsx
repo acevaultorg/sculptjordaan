@@ -18,7 +18,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               n: "02",
               title: "Je traint harder in privé.",
-              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen publiek, geen receptie. Je krijgt de avond ervoor een deurcode via WhatsApp — je loopt binnen en begint.",
+              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen publiek, geen receptie. Je traint zonder afleiding — alleen jij en je werk.",
             },
             {
               n: "03",
@@ -41,7 +41,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               n: "02",
               title: "You train harder in private.",
-              body: "Max 3 people at once. No queue, no audience, no reception desk. You get a door code via WhatsApp the night before — you walk in and start.",
+              body: "Max 3 people at once. No queue, no audience, no reception desk. You train without distraction — just you and your work.",
             },
             {
               n: "03",
