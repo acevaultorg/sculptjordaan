@@ -55,13 +55,25 @@ const aiPriorityPages = [
   { path: "/nl/blog/studio-huren-personal-trainer-amsterdam", priority: 0.8 },
   { path: "/en/blog/studio-rental-personal-trainers-amsterdam", priority: 0.8 },
   // Trainer profile pages — Person schema, citation-worthy when LLMs answer
-  // "who are personal trainers in jordaan amsterdam"
+  // "who are personal trainers in jordaan amsterdam". Both NL + EN versions
+  // for each trainer so AI engines surface them per-locale. Roster matches
+  // src/config/trainers.ts (8 trainers).
   { path: "/nl/plan-gratis-intake-met-alex", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-alex", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-eva", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-eva", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-hamish", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-hamish", priority: 0.75 },
+  { path: "/nl/plan-gratis-intake-met-gezina", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-gezina", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-andrea", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-andrea", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-dara", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-dara", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-jearmey", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-jearmey", priority: 0.75 },
+  { path: "/nl/plan-gratis-intake-met-joey", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-joey", priority: 0.75 },
 ];
 
 export function GET() {
