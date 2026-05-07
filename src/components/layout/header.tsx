@@ -5,7 +5,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight, User, ExternalLink, MessageCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
 import { cn } from "@/lib/utils";
@@ -287,17 +286,16 @@ export function Header() {
         </nav>
 
         {/* ─── Hamburger dropdown ─── */}
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
+        {/* Always-rendered + state-driven CSS transitions (replaces framer-motion
+            AnimatePresence). When closed: opacity:0 + translate-y-2 + pointer-events-none
+            + aria-hidden. Transition duration 200ms matches prior framer-motion. */}
+        {menuOpen && (
+            <div
               className={cn(
                 "mt-2 rounded-[1.5rem] border border-border/50",
                 "bg-background/95 backdrop-blur-xl",
-                "shadow-brand-lg p-4"
+                "shadow-brand-lg p-4",
+                "[animation:hamburger-dropdown-in_0.2s_ease-out]"
               )}
             >
               <div className="flex flex-col gap-1">
@@ -343,29 +341,24 @@ export function Header() {
                   {altLocale === "en" ? "Switch to English" : "Schakel naar Nederlands"}
                 </a>
               </div>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
       </header>
 
       {/* ─── LOGIN / My Bookings panel — action menu (replaces broken Acuity iframe) ─── */}
-      <AnimatePresence>
-        {loginOpen && (
+      {/* Backdrop fade-in + bottom-sheet slide-up via CSS keyframes (replaces
+          framer-motion spring physics — visually equivalent at this scale,
+          120KB lighter at runtime). Conditional render means exit is instant;
+          on this UI (modal closing) instant exit is acceptable per the
+          section.tsx FadeIn fix precedent. */}
+      {loginOpen && (
           <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm"
+            <div
+              className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm [animation:backdrop-fade-in_0.25s_ease-out]"
               onClick={() => setLoginOpen(false)}
             />
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[85dvh]"
+            <div
+              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[85dvh] [animation:panel-slide-up_0.4s_cubic-bezier(0.16,1,0.3,1)]"
             >
               <div className="bg-[#ffffff] dark:bg-[#0a0a0a] rounded-t-[2rem] shadow-2xl flex flex-col flex-1 overflow-hidden">
                 <div className="flex justify-center pt-3 pb-1">
@@ -438,32 +431,25 @@ export function Header() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </>
         )}
-      </AnimatePresence>
 
       {/* ─── BOOK fullscreen panel ─── */}
-      <AnimatePresence>
-        {bookOpen && (
+      {/* Same CSS-keyframe pattern as login panel above (backdrop fade-in +
+          bottom-sheet slide-up). Booking cards inside use staggered CSS
+          animation-delay (i × 0.08s) — see card markup below. */}
+      {bookOpen && (
           <>
             {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm"
+            <div
+              className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm [animation:backdrop-fade-in_0.25s_ease-out]"
               onClick={() => setBookOpen(false)}
             />
 
             {/* Panel */}
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[85dvh]"
+            <div
+              className="fixed inset-x-0 bottom-0 z-[999] flex flex-col max-h-[85dvh] [animation:panel-slide-up_0.4s_cubic-bezier(0.16,1,0.3,1)]"
             >
               <div className="bg-[#ffffff] dark:bg-[#0a0a0a] rounded-t-[2rem] shadow-2xl flex flex-col flex-1 overflow-hidden">
                 {/* Handle bar */}
@@ -486,11 +472,14 @@ export function Header() {
                 <div className="flex-1 overflow-y-auto px-4 sm:px-6 pb-6">
                   <div className="grid gap-3 sm:gap-4">
                     {booking.categories.map((cat, i) => (
-                      <motion.div
+                      <div
                         key={cat.href}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.08, duration: 0.3 }}
+                        // Staggered fade-in via CSS animation-delay (i × 0.08s).
+                        // Replaces framer-motion's `transition={{ delay: i * 0.08, duration: 0.3 }}`.
+                        style={{
+                          animation: "panel-card-fade-in 0.3s ease-out both",
+                          animationDelay: `${i * 0.08}s`,
+                        }}
                       >
                         <Link
                           href={cat.href}
@@ -515,7 +504,7 @@ export function Header() {
                           {/* Arrow */}
                           <ArrowRight className="w-5 h-5 text-muted-foreground/40 group-hover:text-foreground group-hover:translate-x-1 transition-all shrink-0" />
                         </Link>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
 
@@ -534,10 +523,9 @@ export function Header() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </>
         )}
-      </AnimatePresence>
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -75,14 +75,13 @@ export function SectionHeader({
       </div>
     );
   }
+  // Below-fold scroll-triggered fade-in (replaces framer-motion's whileInView).
+  // Plain IntersectionObserver + CSS transition. Lighter than framer-motion +
+  // also more reliable per the 2026-05-06 incident (rules/section.tsx comment
+  // above) where framer-motion's IntersectionObserver was missing initial-mount
+  // viewport elements.
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5 }}
-      className={cn("mb-10 sm:mb-14", center && "text-center", className)}
-    >
+    <FadeInOnScroll className={cn("mb-10 sm:mb-14", center && "text-center", className)}>
       {overline && <p className="overline mb-3">{overline}</p>}
       <Tag className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</Tag>
       {description && (
@@ -90,7 +89,58 @@ export function SectionHeader({
           {description}
         </p>
       )}
-    </motion.div>
+    </FadeInOnScroll>
+  );
+}
+
+function FadeInOnScroll({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    // If already in viewport on mount (or IntersectionObserver unsupported),
+    // show immediately. Same defensive behavior as the FadeIn fix below.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < (window.innerHeight || 0) + 80 && rect.bottom > -80) {
+      setVisible(true);
+      return;
+    }
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "-80px" },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        className,
+        "transition-[opacity,transform] duration-500 ease-out",
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5",
+      )}
+    >
+      {children}
+    </div>
   );
 }
 

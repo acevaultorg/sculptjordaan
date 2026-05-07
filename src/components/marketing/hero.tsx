@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
@@ -52,11 +51,8 @@ export function Hero({ locale }: { locale: Locale }) {
           and bottom cluster anchored near bottom. Padding matches the nav
           height at top and gives breathing room at bottom. */}
       <div className="relative z-10 flex-1 flex flex-col mx-auto max-w-6xl w-full px-4 sm:px-6 pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center flex-1 flex flex-col [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)]"
+        <div
+          className="text-center flex-1 flex flex-col [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)] [animation:hero-content-fade-in_0.6s_ease-out]"
         >
           {/* TOP CLUSTER — overline + h1 + taglineSub (tight group, pulled up) */}
           <div>
@@ -97,7 +93,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
             <p className="mt-5 text-xs text-white/70">{t.trust}</p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

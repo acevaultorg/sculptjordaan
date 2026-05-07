@@ -297,6 +297,43 @@
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
+/* Hero content entrance — replaces framer-motion in marketing/hero.tsx (was
+   motion.div initial:{opacity:0,y:30} → animate:{opacity:1,y:0}, duration 0.6s).
+   Plain CSS keyframe is ~120KB lighter at runtime and renders identically. */
+@keyframes hero-content-fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hamburger dropdown entrance — replaces framer-motion in layout/header.tsx
+   (was motion.div initial:{opacity:0,y:-8} → animate:{opacity:1,y:0}, 0.2s). */
+@keyframes hamburger-dropdown-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal/sheet backdrop fade-in — replaces framer-motion AnimatePresence in
+   login + book panels (header.tsx). */
+@keyframes backdrop-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Bottom-sheet panel slide-up — approximates framer-motion's spring physics
+   (damping: 30, stiffness: 300) with a tuned cubic-bezier ease-out-quart.
+   Visually equivalent at this scale; saves the entire framer-motion runtime. */
+@keyframes panel-slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+/* Booking card staggered fade-in — used with inline animationDelay style for
+   the i × 0.08s stagger (replaces motion.div per-card transition delays). */
+@keyframes panel-card-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Accessibility: disable motion animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   [style*="opacity: 0"],
