@@ -20,7 +20,10 @@ import {
   MessageCircle,
 } from "lucide-react";
 import Image from "next/image";
+import { getBlur } from "@/lib/blur-manifest";
 import type { Metadata } from "next";
+
+const HERO_SRC = "/images/studio/gym-latest.jpg";
 import {
   Accordion,
   AccordionItem,
@@ -139,13 +142,15 @@ export default function StudioRentalPageNL() {
           <FadeIn delay={0.2}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
-                src="/images/studio/gym-latest.jpg"
+                src={HERO_SRC}
                 alt="Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine"
                 fill
                 className="object-cover"
                 loading="eager"
                 fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL={getBlur(HERO_SRC)}
               />
             </div>
           </FadeIn>
