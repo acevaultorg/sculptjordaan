@@ -55,7 +55,7 @@ export function Hero({ locale }: { locale: Locale }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center flex-1 flex flex-col [text-shadow:_0_2px_20px_rgba(0,0,0,0.55)]"
+          className="text-center flex-1 flex flex-col [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)]"
         >
           {/* TOP CLUSTER — overline + h1 + taglineSub (tight group, pulled up) */}
           <div>
