@@ -123,9 +123,19 @@ export default function RootLayout({
         <HreflangLinks />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {/*
+          Skip-to-main-content link. Tailwind v4's `focus:not-sr-only` did not
+          override the `sr-only` clip-path on focus (verified 2026-05-07: even
+          with the link focused, clip-path stayed `inset(50%)` and width=1px,
+          so keyboard users couldn't see it). Switched to the canonical
+          absolute-positioning pattern: link is positioned off-screen above
+          the viewport by default and slides into view on focus via `focus:top-4`.
+          Standard recipe from web.dev / a11yproject.com — no sr-only utility
+          dependency.
+        */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+          className="absolute left-4 -top-[9999px] z-[100] px-4 py-2 bg-brand text-white rounded-lg text-sm font-semibold outline-none focus:top-4 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-all"
         >
           Skip to main content
         </a>
