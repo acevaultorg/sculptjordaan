@@ -188,7 +188,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   {trainer.name}
                   {trainer.credentials && (
                     <span className="ml-2 text-sm font-normal text-muted-foreground">
-                      {trainer.credentials}
+                      {trainer.credentials[locale]}
                     </span>
                   )}
                 </h3>

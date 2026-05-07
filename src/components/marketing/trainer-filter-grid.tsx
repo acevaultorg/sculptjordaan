@@ -242,7 +242,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                     <div className="min-w-0">
                       <CardTitle className="text-lg">{trainer.name}</CardTitle>
                       {trainer.credentials && (
-                        <CardDescription>{trainer.credentials}</CardDescription>
+                        <CardDescription>{trainer.credentials[locale]}</CardDescription>
                       )}
                     </div>
                     <a

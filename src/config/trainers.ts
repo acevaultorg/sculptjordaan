@@ -25,7 +25,16 @@ export interface Trainer {
   rate: string | null;
   instagram: string;
   instagramHandle: string;
-  credentials?: string;
+  /**
+   * Localized credential string shown under the trainer's name on cards
+   * and intake pages. Use the locale-appropriate professional title:
+   *   nl: "Diëtist", "Fysiotherapeut, BSc"
+   *   en: "Dietitian", "Physiotherapist, BSc"
+   * Was a single non-localized string before 2026-05-07; that put the
+   * Dutch term on the EN page (e.g. "Diëtist" on /en/find-personal-trainer)
+   * which is a content correctness bug for English visitors.
+   */
+  credentials?: Record<Locale, string>;
   bio: Record<Locale, string>;
   image: string;
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
@@ -75,7 +84,10 @@ const trainersRaw: Trainer[] = [
     rate: null,
     instagram: "https://instagram.com/sportieefnl",
     instagramHandle: "@sportieefnl",
-    credentials: "Diëtist",
+    credentials: {
+      nl: "Diëtist",
+      en: "Dietitian",
+    },
     bio: {
       nl: "Als gediplomeerd diëtist en personal trainer biedt Eva een unieke combinatie van krachttraining en voedingsadvies voor een holistische aanpak.",
       en: "As a certified dietitian and personal trainer, Eva offers a unique combination of strength training and nutritional guidance for a holistic approach.",
@@ -97,7 +109,10 @@ const trainersRaw: Trainer[] = [
     rate: null,
     instagram: "https://instagram.com/hamishleijer",
     instagramHandle: "@hamishleijer",
-    credentials: "Fysiotherapeut, BSc",
+    credentials: {
+      nl: "Fysiotherapeut, BSc",
+      en: "Physiotherapist, BSc",
+    },
     bio: {
       nl: "Hamish combineert zijn achtergrond als fysiotherapeut met krachttraining. Ideaal voor revalidatie, blessurepreventie en het opbouwen van een sterke basis.",
       en: "Hamish combines his physiotherapy background with strength training. Ideal for rehabilitation, injury prevention and building a strong foundation.",
@@ -204,7 +219,11 @@ const trainersRaw: Trainer[] = [
     rate: null,
     instagram: "https://www.instagram.com/joaonomad137",
     instagramHandle: "@joaonomad137",
-    credentials: "The Ascend Method — Inner Alignment System",
+    credentials: {
+      // Joey's method name is a brand term — same in NL and EN, no translation.
+      nl: "The Ascend Method — Inner Alignment System",
+      en: "The Ascend Method — Inner Alignment System",
+    },
     bio: {
       nl: "Joey begeleidt je om lichaam, geest en bewustzijn op één lijn te brengen. Via functionele training, ademwerk en zelfonderzoek bouw je energie, helderheid en innerlijke kracht op. Voor high-performers die vastzitten, stress ervaren of zich afgesloten voelen — herwin je energie, neem de regie terug. \"Wisdom isn't studied, it's embodied.\"",
       en: "Joey guides you to align body, mind and awareness. Through functional training, breathwork and self-inquiry you build energy, clarity and inner strength. For high-performers feeling stuck, stressed or disconnected — reclaim your energy, take back control. \"Wisdom isn't studied, it's embodied.\"",
