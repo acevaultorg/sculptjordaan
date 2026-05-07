@@ -4,10 +4,7 @@ import Image from "next/image";
 import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
-import { getBlur } from "@/lib/blur-manifest";
 import type { Locale } from "@/config/site";
-
-const HERO_SRC = "/images/studio/training-barbell-squat.jpg";
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
@@ -39,15 +36,13 @@ export function Hero({ locale }: { locale: Locale }) {
           Text contrast comes from text-shadow on the motion container. */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={HERO_SRC}
+          src="/images/studio/training-barbell-squat.jpg"
           alt="Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack"
           fill
           className="object-cover [object-position:center_25%] [transform:translateZ(0)]"
           sizes="100vw"
           loading="eager"
           fetchPriority="high"
-          placeholder="blur"
-          blurDataURL={getBlur(HERO_SRC)}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
       </div>
