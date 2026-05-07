@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionItem,
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "Wat als ik de studio niet kan vinden?",
-    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres, een routebeschrijving en je persoonlijke deurcode. Kom je er niet uit? Stuur ons een WhatsApp en we helpen je verder.",
+    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Kom je er niet uit? Stuur ons een WhatsApp en we helpen je verder.",
   },
 ];
 
@@ -100,6 +100,7 @@ export default function EersteBezoekPage() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Eerste Bezoek","url":"/nl/eerste-bezoek"}]} />
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
 
       <Section>
         <SectionHeader

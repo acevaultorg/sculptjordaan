@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionItem,
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "What if I cannot find the studio?",
-    a: "The evening before your session, you will receive a WhatsApp with the exact address, directions, and your personal door code. Still having trouble? Send us a WhatsApp and we will guide you.",
+    a: "The evening before your session, you will receive a WhatsApp with the exact address and directions. For PT your trainer arranges studio access; for Open Gym and studio rental you will receive your personal door code. Still having trouble? Send us a WhatsApp and we will guide you.",
   },
 ];
 
@@ -100,6 +100,7 @@ export default function FirstVisitPage() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"First Visit","url":"/en/first-visit"}]} />
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
 
       <Section>
         <SectionHeader
