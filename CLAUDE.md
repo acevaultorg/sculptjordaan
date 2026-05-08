@@ -39,7 +39,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Booking: Acuity Scheduling
 - Analytics: GA4 (G-QYW5H4XTXW), Google Ads (AW-18011741633, conversion label `NwwsCNGZlp8cEMG71YxD`), Meta Pixel (4350118535216982), TikTok Pixel (D75710BC77UDBCCMHF60), Clarity (vx7zcg6zys)
 - Source of truth: `src/config/site.ts` (analytics object). If you update an ID in code, update CLAUDE.md in the same commit.
-- Event taxonomy: every WhatsApp + Acuity click event includes `intent` (`trainer` | `studio_rental` | `open_gym` | `generic`) + `pricing` (`free` | `paid` | `unknown`). Operator splits Plausible goals by these props to see trainer-free-tryouts vs trainer-paid-packs vs studio-rental vs gym-subs. Logic in `src/components/layout/analytics.tsx` (`detectWaIntent` / `classifyAcuityIntent` / `classifyAcuityPricing`).
+- Event taxonomy: every WhatsApp + Acuity click event includes `intent` (`trainer` | `studio_rental` | `open_gym` | `generic`) + `pricing` (`free` | `paid` | `unknown`). Splits Plausible goals by these props to see trainer-free-tryouts vs trainer-paid-packs vs studio-rental vs gym-subs. **Full reference: [docs/ANALYTICS.md](docs/ANALYTICS.md)** (goals, props, classification rules, Plausible UI navigation, naming-mismatch trap, verification protocol).
 - Tracking: FunnelPilot fp.js snippet
 - Deploy: Vercel
 
