@@ -87,11 +87,13 @@ const nlPages = [
   "/nl/blog/sportschool-jordaan-amsterdam",
   "/nl/blog/personal-training-afvallen-amsterdam",
   "/nl/blog/personal-trainer-amsterdam-west",
-  "/nl/blog/personal-trainer-amsterdam-centrum",
-  "/nl/blog/personal-trainer-de-pijp-amsterdam",
+  // Removed from sitemap (still live for navigation; noindex'd per
+  // rules/adsense-thin-content-prevention.md Gates 2 + 3 — thin/templated):
+  //   /nl/blog/personal-trainer-amsterdam-centrum
+  //   /nl/blog/personal-trainer-de-pijp-amsterdam
+  //   /nl/blog/personal-trainer-amsterdam-oost
   "/nl/blog/boutique-gym-vs-sportschool-keten",
   "/nl/blog/personal-trainer-voor-beginners",
-  "/nl/blog/personal-trainer-amsterdam-oost",
   "/nl/blog/personal-trainer-na-blessure-amsterdam",
   "/nl/blog/krachttraining-voor-vrouwen",
   "/nl/blog/personal-trainer-rugklachten-amsterdam",
@@ -113,13 +115,10 @@ const nlPages = [
   "/nl/privacybeleid",
   "/nl/cookiebeleid",
   "/nl/toegankelijkheid",
-  "/nl/plan-gratis-intake-met-alex",
-  "/nl/plan-gratis-intake-met-eva",
-  "/nl/plan-gratis-intake-met-andrea",
-  "/nl/plan-gratis-intake-met-dara",
-  "/nl/plan-gratis-intake-met-gezina",
-  "/nl/plan-gratis-intake-met-jearmey",
-  "/nl/plan-gratis-intake-met-joey",
+  // Removed from sitemap (still live for booking funnel; noindex'd — 14 templated
+  // trainer-intake pages = doorway pattern per rules/adsense-thin-content-prevention.md
+  // Gate 3. Conversion funnel preserved via /nl/vind-jouw-personal-trainer + /nl/boek-trainer):
+  //   /nl/plan-gratis-intake-met-{alex,eva,andrea,dara,gezina,jearmey,joey}
   "/nl/boek-trainer",
   "/nl/boek-studio",
   "/nl/boek-gym",
@@ -162,11 +161,13 @@ const enPages = [
   "/en/blog/gym-jordaan-amsterdam",
   "/en/blog/personal-training-weight-loss-amsterdam",
   "/en/blog/personal-trainer-amsterdam-west",
-  "/en/blog/personal-trainer-amsterdam-centrum",
-  "/en/blog/personal-trainer-de-pijp-amsterdam",
+  // Removed from sitemap (still live; noindex'd — thin/templated location pages
+  // per rules/adsense-thin-content-prevention.md Gates 2 + 3):
+  //   /en/blog/personal-trainer-amsterdam-centrum
+  //   /en/blog/personal-trainer-de-pijp-amsterdam
+  //   /en/blog/personal-trainer-amsterdam-east
   "/en/blog/boutique-gym-vs-big-chain-gym",
   "/en/blog/personal-trainer-for-beginners",
-  "/en/blog/personal-trainer-amsterdam-east",
   "/en/blog/personal-trainer-after-injury-amsterdam",
   "/en/blog/strength-training-for-women",
   "/en/blog/back-pain-personal-trainer-amsterdam",
@@ -188,13 +189,10 @@ const enPages = [
   "/en/privacy-policy",
   "/en/cookie-policy",
   "/en/accessibility-statement",
-  "/en/plan-free-intro-with-alex",
-  "/en/plan-free-intro-with-eva",
-  "/en/plan-free-intro-with-andrea",
-  "/en/plan-free-intro-with-dara",
-  "/en/plan-free-intro-with-gezina",
-  "/en/plan-free-intro-with-jearmey",
-  "/en/plan-free-intro-with-joey",
+  // Removed from sitemap (still live for booking funnel; noindex'd — 14 templated
+  // trainer-intake pages = doorway pattern. Conversion funnel preserved via
+  // /en/find-personal-trainer + /en/book-trainer):
+  //   /en/plan-free-intro-with-{alex,eva,andrea,dara,gezina,jearmey,joey}
   "/en/book-trainer",
   "/en/book-studio",
   "/en/book-gym",

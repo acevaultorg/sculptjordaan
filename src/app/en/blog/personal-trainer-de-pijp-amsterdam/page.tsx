@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "fitness de pijp",
     "personal training amsterdam south",
   ],
+  // Noindex: ~350 prose words; doorway-template pattern. See
+  // rules/adsense-thin-content-prevention.md Gates 2 + 3. Stays live; substantive
+  // location pages remain indexed.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "/en/blog/personal-trainer-de-pijp-amsterdam",
     languages: {
@@ -75,9 +79,11 @@ export default function PersonalTrainerDePijpEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers and rates</h2>
               <p>
-                Five independent trainers. Specialisations: strength, nutrition, physiotherapy, posture,
-                small group. Rates from €45 per session. First intro always free. 0% commission — you
-                pay your trainer directly. No membership, no contract.
+                Seven independent trainers. Specialisations: strength, nutrition, women&apos;s training,
+                posture, technique and small group. Rates from €45 per session. First intro always free.
+                0% commission — you pay your trainer directly. No membership, no contract. For
+                rehabilitation or physiotherapy we&apos;ll refer you out — we don&apos;t have a
+                physiotherapist on staff.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym for independent training</h2>

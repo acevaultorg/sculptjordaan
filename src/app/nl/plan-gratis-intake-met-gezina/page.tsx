@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Plan gratis intake met Gezina",
   description: "Gratis intake met Gezina — gecertificeerde personal trainer gespecialiseerd in vrouwentraining, kracht en prestatie bij SculptClub Amsterdam Jordaan. Geen verplichtingen.",
+  // Noindex: conversion-funnel route, not editorial. Templated trainer-intake pages = doorway-pattern risk.
+  robots: { index: false, follow: true },
   alternates: { canonical: "/nl/plan-gratis-intake-met-gezina", languages: { nl: "/nl/plan-gratis-intake-met-gezina", en: "/en/plan-free-intro-with-gezina" } },
 };
 

@@ -149,10 +149,11 @@ export default function PersonalTrainerAmsterdamNorthEN() {
                 Jordaan works comfortably, especially outside office hours.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Five trainers, one studio, no contract</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Seven trainers, one studio, no contract</h2>
               <p>
-                SculptClub has five independent trainers covering strength, nutrition, physiotherapy,
-                posture and movement technique. You pick the trainer that fits your goal — not the
+                SculptClub has seven independent trainers covering strength, nutrition, women&apos;s
+                training, posture and movement technique. For physiotherapy we&apos;ll refer you out —
+                we don&apos;t have a physiotherapist on staff. You pick the trainer that fits your goal — not the
                 other way round. Rates start at €45 per session and we keep an{" "}
                 <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of what personal training costs in Amsterdam</a>.
                 The first intro is always free. No membership, no long contracts, no hidden fees.

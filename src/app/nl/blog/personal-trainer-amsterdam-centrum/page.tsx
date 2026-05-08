@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "gym centrum amsterdam",
     "fitness amsterdam centrum",
   ],
+  // Noindex: ~400 prose words; templated location-variant pattern shared with
+  // siblings. See rules/adsense-thin-content-prevention.md Gates 2 + 3.
+  // Page stays live for navigation; substantive location pages stay indexed.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "/nl/blog/personal-trainer-amsterdam-centrum",
     languages: {
@@ -86,12 +90,13 @@ export default function PersonalTrainerCentrumNL() {
                 kabelmachine, dumbbells tot 50 kg — alleen jij en je trainer.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Vijf trainers, gratis intake</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Zeven trainers, gratis intake</h2>
               <p>
-                Bij SculptClub werken vijf onafhankelijke trainers met specialisaties van krachttraining
-                tot voeding en fysiotherapie. De eerste kennismaking is altijd gratis. Tarieven vanaf
-                €45 per sessie. Geen abonnement, geen contract — boek per sessie en annuleer altijd
-                gratis. Wij rekenen 0% commissie.
+                Bij SculptClub werken zeven onafhankelijke trainers met specialisaties van krachttraining
+                tot voeding, vrouwentraining en houding. De eerste kennismaking is altijd gratis.
+                Tarieven vanaf €45 per sessie. Geen abonnement, geen contract — boek per sessie en
+                annuleer altijd gratis. Wij rekenen 0% commissie. Voor fysiotherapie verwijzen we je
+                door — we hebben geen fysiotherapeut in dienst.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Ook zelfstandig trainen</h2>

@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Plan gratis intake met Eva",
   description: "Gratis intake met Eva — gediplomeerd diëtist en personal trainer bij SculptClub Amsterdam Jordaan. Kracht + voeding, geen verplichtingen.",
+  // Noindex: conversion-funnel route, not editorial. Templated trainer-intake pages = doorway-pattern risk.
+  robots: { index: false, follow: true },
   alternates: { canonical: "/nl/plan-gratis-intake-met-eva", languages: { nl: "/nl/plan-gratis-intake-met-eva", en: "/en/plan-free-intro-with-eva" } },
 };
 

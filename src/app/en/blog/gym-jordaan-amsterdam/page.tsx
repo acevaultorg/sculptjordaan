@@ -133,7 +133,7 @@ export default function GymJordaanEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Personal training in the Jordaan</h2>
               <p>
                 If you&apos;re looking for guidance, several trainers in the Jordaan offer personal
-                training. At SculptClub, <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">five independent trainers</Link> work with rates from €45 per
+                training. At SculptClub, <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">seven independent trainers</Link> work with rates from €45 per
                 session. The first intro is always free with no obligation. Each trainer sets their
                 own rate — we charge 0% commission, so what you pay goes entirely to your trainer.
               </p>

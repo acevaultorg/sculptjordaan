@@ -97,7 +97,7 @@ export default function StrengthTrainingForWomenEN() {
                 evaluates progress and adjusts.
               </p>
               <p>
-                SculptClub has five trainers with diverse specialisations. From{" "}
+                SculptClub has seven trainers with diverse specialisations. From{" "}
                 <a href="/en/blog/nutrition-coach-amsterdam" className="text-brand hover:underline">nutrition coaching</a> to{" "}
                 <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="text-brand hover:underline">physiotherapy</a> —
                 you&apos;ll find the expertise that suits you.

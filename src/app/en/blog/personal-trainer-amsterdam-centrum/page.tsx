@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "fitness amsterdam city centre",
     "personal trainer near dam square",
   ],
+  // Noindex: ~400 prose words; templated location-variant pattern shared with
+  // siblings. See rules/adsense-thin-content-prevention.md Gates 2 + 3.
+  // Page stays live; substantive location pages remain indexed.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "/en/blog/personal-trainer-amsterdam-centrum",
     languages: {
@@ -86,12 +90,13 @@ export default function PersonalTrainerCentrumEN() {
                 dumbbells up to 50 kg — just you and your trainer.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Five trainers, free intro</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Seven trainers, free intro</h2>
               <p>
-                SculptClub has five independent trainers specialising in strength training, nutrition
-                and physiotherapy. The first introduction is always free. Rates from €45 per session.
-                No membership, no contract — book per session and always cancel for free. We charge
-                0% commission.
+                SculptClub has seven independent trainers specialising in strength training, nutrition,
+                women&apos;s training and posture. The first introduction is always free. Rates from
+                €45 per session. No membership, no contract — book per session and always cancel for
+                free. We charge 0% commission. For physiotherapy we&apos;ll refer you out — we
+                don&apos;t have a physiotherapist on staff.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Train independently too</h2>

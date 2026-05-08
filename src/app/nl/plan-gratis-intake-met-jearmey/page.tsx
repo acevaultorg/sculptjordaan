@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Plan gratis intake met Jearmey",
   description: "Gratis intake met Jearmey — specialist in kracht, afvallen en atletische prestaties bij SculptClub Amsterdam Jordaan. Geen verplichtingen.",
+  // Noindex: conversion-funnel route, not editorial. Templated trainer-intake pages = doorway-pattern risk.
+  robots: { index: false, follow: true },
   alternates: { canonical: "/nl/plan-gratis-intake-met-jearmey", languages: { nl: "/nl/plan-gratis-intake-met-jearmey", en: "/en/plan-free-intro-with-jearmey" } },
 };
 

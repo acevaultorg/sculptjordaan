@@ -17,6 +17,12 @@ export const metadata: Metadata = {
     "fitness amsterdam oost",
     "personal trainer oosterpark",
   ],
+  // Noindex: ~350 prose words; below the substance floor in
+  // rules/adsense-thin-content-prevention.md Gate 2. Templated structure shared
+  // with sibling location pages = Gate 3 doorway-pattern risk. Page stays live
+  // for users navigating from /find-trainer; only search-indexing is suppressed.
+  // Substantive location pages (noord, zuid, west, jordaan, amsterdam) stay indexed.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "/nl/blog/personal-trainer-amsterdam-oost",
     languages: {
@@ -67,7 +73,7 @@ export default function PersonalTrainerOostNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat krijg je bij SculptClub?</h2>
               <p>
-                Een volledig uitgeruste privé studio met professionele apparatuur. Vijf onafhankelijke
+                Een volledig uitgeruste privé studio met professionele apparatuur. Zeven onafhankelijke
                 trainers met elk hun eigen specialisatie. Gratis intake. Tarieven vanaf €45 per sessie.
                 Geen abonnement. Ook Open Gym voor zelfstandig trainen vanaf €5,75 per sessie.
               </p>

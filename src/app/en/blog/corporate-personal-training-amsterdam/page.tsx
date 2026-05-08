@@ -202,7 +202,7 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
 
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">No-strings introduction</h3>
-              <p className="text-muted-foreground mb-6">Book a free intro with one of our five trainers. Decide afterwards whether it fits.</p>
+              <p className="text-muted-foreground mb-6">Book a free intro with one of our seven trainers. Decide afterwards whether it fits.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <ButtonLink href="/en/find-personal-trainer" size="lg">Meet our trainers<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/en/studio-rental" size="lg" variant="outline">Studio rental</ButtonLink>

@@ -78,7 +78,7 @@ export default function PTVoorBeginnersNL() {
                 De grootste misvatting: &quot;Ik moet eerst fitter worden voordat ik naar een
                 trainer ga.&quot; Dat is alsof je zegt: &quot;Ik moet eerst gezond worden voordat ik
                 naar de dokter ga.&quot; Een trainer is er juist om je van nul naar je eerste resultaat
-                te brengen. Bij SculptClub werken alle vijf trainers met beginners. Geen oordeel,
+                te brengen. Bij SculptClub werken alle zeven trainers met beginners. Geen oordeel,
                 geen druk — gewoon beginnen.
               </p>
 

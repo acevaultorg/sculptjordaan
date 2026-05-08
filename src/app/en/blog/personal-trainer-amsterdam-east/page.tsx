@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     "fitness amsterdam east",
     "personal trainer oosterpark",
   ],
+  // Noindex: ~350 prose words; below substance floor + templated location-variant
+  // doorway pattern. See rules/adsense-thin-content-prevention.md Gates 2 + 3.
+  // Page stays live for /find-trainer navigation; substantive location pages
+  // (north, south, west, jordaan, amsterdam-general) remain indexed.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "/en/blog/personal-trainer-amsterdam-east",
     languages: {
@@ -66,7 +71,7 @@ export default function PersonalTrainerEastEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What do you get at SculptClub?</h2>
               <p>
-                A fully equipped private studio with professional equipment. Five independent trainers
+                A fully equipped private studio with professional equipment. Seven independent trainers
                 each with their own specialisation. Free intro. Rates from €45 per session. No
                 membership. Also Open Gym for independent training from €5.75 per session.
               </p>

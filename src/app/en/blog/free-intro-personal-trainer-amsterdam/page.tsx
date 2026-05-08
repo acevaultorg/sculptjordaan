@@ -191,7 +191,7 @@ export default function FreeIntroBlogEN() {
               <h2>Free intro at SculptClub in Amsterdam Jordaan</h2>
               <p>
                 SculptClub is a boutique personal training studio at Egelantiersgracht 424 in the
-                Jordaan. We work with five trainers — each with their own speciality, approach, and
+                Jordaan. We work with seven trainers — each with their own speciality, approach, and
                 rate. The first intro is always free, even if you later decide to work with a different
                 trainer.
               </p>

@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     "fitness de pijp",
     "personal training amsterdam zuid",
   ],
+  // Noindex: ~350 prose words; doorway-template structure with sibling location
+  // pages. See rules/adsense-thin-content-prevention.md Gates 2 + 3. Stays live
+  // for navigation; substantive location pages stay indexed.
+  robots: { index: false, follow: true },
   alternates: {
     canonical: "/nl/blog/personal-trainer-de-pijp-amsterdam",
     languages: {
@@ -75,9 +79,11 @@ export default function PersonalTrainerDePijpNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers en tarieven</h2>
               <p>
-                Vijf onafhankelijke trainers. Specialisaties: kracht, voeding, fysiotherapie, posture,
-                small group. Tarieven vanaf €45 per sessie. Eerste intake altijd gratis. 0% commissie —
-                je betaalt je trainer direct. Geen abonnement, geen contract.
+                Zeven onafhankelijke trainers. Specialisaties: kracht, voeding, vrouwentraining,
+                houding, techniek en small group. Tarieven vanaf €45 per sessie. Eerste intake altijd
+                gratis. 0% commissie — je betaalt je trainer direct. Geen abonnement, geen contract.
+                Voor revalidatie of fysiotherapie verwijzen we je door — wij hebben geen fysiotherapeut
+                in dienst.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym voor zelfstandige sporters</h2>

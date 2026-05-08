@@ -189,13 +189,13 @@ export default function GratisIntakeBlogNL() {
               <p>
                 Als het antwoord op deze vragen ja is, ben je waarschijnlijk op de goede plek.
                 Als er twijfels zijn, plan dan gewoon een intake bij een andere trainer. Dat kan ook
-                gratis — SculptClub werkt met <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">vijf trainers met elk een eigen specialisatie</Link>.
+                gratis — SculptClub werkt met <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">zeven trainers met elk een eigen specialisatie</Link>.
               </p>
 
               <h2>Gratis intake bij SculptClub in Amsterdam Jordaan</h2>
               <p>
                 SculptClub is een boutique personal training studio aan de Egelantiersgracht 424 in
-                de Jordaan. We werken met vijf trainers — elk met een eigen specialisatie, werkwijze
+                de Jordaan. We werken met zeven trainers — elk met een eigen specialisatie, werkwijze
                 en tarief. De eerste kennismaking is altijd gratis, ook als je daarna met een andere
                 trainer wilt beginnen.
               </p>

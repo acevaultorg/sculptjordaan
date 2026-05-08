@@ -207,7 +207,7 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
 
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Kennismaken zonder verplichting</h3>
-              <p className="text-muted-foreground mb-6">Boek een gratis intake bij een van onze vijf trainers. Pas daarna beslis je of het past.</p>
+              <p className="text-muted-foreground mb-6">Boek een gratis intake bij een van onze zeven trainers. Pas daarna beslis je of het past.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg">Bekijk trainers<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/nl/studio-huren" size="lg" variant="outline">Studio huren</ButtonLink>

@@ -77,7 +77,7 @@ export default function PTAmsterdamSouthEN() {
                 <li><strong>Private studio:</strong> Train alone with your trainer — no other clients at the same time</li>
                 <li><strong>No membership:</strong> Book per session, cancel any time for free</li>
                 <li><strong>Free intro:</strong> The first session costs nothing</li>
-                <li><strong>Five trainers:</strong> From strength training to nutrition to physiotherapy</li>
+                <li><strong>Seven trainers:</strong> From strength training and nutrition to women&apos;s training and posture</li>
                 <li><strong>Door code via WhatsApp:</strong> The evening before, no reception needed</li>
               </ul>
 

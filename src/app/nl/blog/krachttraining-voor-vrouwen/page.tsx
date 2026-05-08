@@ -97,7 +97,7 @@ export default function KrachttrainingVoorVrouwenNL() {
                 trainer de voortgang en past aan.
               </p>
               <p>
-                Bij SculptClub werken vijf trainers met uiteenlopende specialisaties. Van{" "}
+                Bij SculptClub werken zeven trainers met uiteenlopende specialisaties. Van{" "}
                 <a href="/nl/blog/voedingscoach-amsterdam" className="text-brand hover:underline">voedingscoaching</a> tot{" "}
                 <a href="/nl/blog/fysiotherapeut-personal-trainer-amsterdam" className="text-brand hover:underline">fysiotherapie</a> —
                 je vindt de expertise die bij je past.

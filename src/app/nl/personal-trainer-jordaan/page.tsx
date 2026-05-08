@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: "Kan ik mijn personal trainer zelf kiezen?",
-    a: "Ja. Je kiest uit 5 personal trainers in de Jordaan, elk met eigen specialisatie — krachttraining, voeding, fysiotherapie, houding of small group. Je vindt hun profielen op onze trainerspagina.",
+    a: "Ja. Je kiest uit zeven personal trainers in de Jordaan, elk met eigen specialisatie — krachttraining, voeding, vrouwentraining, houding of small group. Voor fysiotherapie verwijzen we je door (we hebben geen fysiotherapeut in dienst). Je vindt hun profielen op onze trainerspagina.",
   },
   {
     q: "Moet ik een abonnement afsluiten?",
@@ -93,7 +93,7 @@ export default function PersonalTrainerJordaanPage() {
           <span className="text-brand">in de Jordaan</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          5 trainers, één privé studio aan de Egelantiersgracht. Vanaf €45 per
+          7 trainers, één privé studio aan de Egelantiersgracht. Vanaf €45 per
           sessie. Geen contract. Eerste intake gratis.
         </p>
 

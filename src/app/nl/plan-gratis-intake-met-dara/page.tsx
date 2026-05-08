@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Plan gratis intake met Dara",
   description: "Gratis intake met Dara — personal training en small group specialist bij SculptClub Amsterdam Jordaan. Geen verplichtingen.",
+  // Noindex: conversion-funnel route, not editorial. Templated trainer-intake pages = doorway-pattern risk.
+  robots: { index: false, follow: true },
   alternates: { canonical: "/nl/plan-gratis-intake-met-dara", languages: { nl: "/nl/plan-gratis-intake-met-dara", en: "/en/plan-free-intro-with-dara" } },
 };
 

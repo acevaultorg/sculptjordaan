@@ -45,7 +45,7 @@ const trustItems = [
 const faqs = [
   {
     q: "What makes this a boutique gym?",
-    a: "SculptClub is a private canal-side studio in the Jordaan — small, calm, and personal. Never crowded, no waiting for racks, no chain-gym atmosphere. Just a beautiful space and 5 trainers who know your name.",
+    a: "SculptClub is a private canal-side studio in the Jordaan — small, calm, and personal. Never crowded, no waiting for racks, no chain-gym atmosphere. Just a beautiful space and 7 trainers who know your name.",
   },
   {
     q: "Where is the gym in Amsterdam?",
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "Is English spoken at the gym?",
-    a: "Yes. All five trainers speak English fluently. SculptClub welcomes Amsterdam expats, locals, and visitors alike — book in either language.",
+    a: "Yes. All seven trainers speak English fluently. SculptClub welcomes Amsterdam expats, locals, and visitors alike — book in either language.",
   },
 ];
 
@@ -178,7 +178,7 @@ export default function BoutiqueGymAmsterdamPage() {
             {[
               "Private studio on the Egelantiersgracht in the Jordaan",
               "Small, calm space — never crowded, never queueing",
-              "5 trainers, all English-speaking",
+              "7 trainers, all English-speaking",
               "Personal training from €45 per session, 0% trainer commission",
               "Open Gym from €29 for 4 sessions — no membership lock-in",
               "Open daily 06:30–22:00, door code via WhatsApp",
