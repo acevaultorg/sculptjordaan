@@ -125,7 +125,6 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/plan-gratis-intake-met-dara": "/en/plan-free-intro-with-dara",
   "/nl/plan-gratis-intake-met-eva": "/en/plan-free-intro-with-eva",
   "/nl/plan-gratis-intake-met-gezina": "/en/plan-free-intro-with-gezina",
-  "/nl/plan-gratis-intake-met-hamish": "/en/plan-free-intro-with-hamish",
   "/nl/plan-gratis-intake-met-jearmey": "/en/plan-free-intro-with-jearmey",
   "/nl/plan-gratis-intake-met-joey": "/en/plan-free-intro-with-joey",
   // NL → EN: blog posts
@@ -192,7 +191,6 @@ export const alternateRoutes: Record<string, string> = {
   "/en/plan-free-intro-with-dara": "/nl/plan-gratis-intake-met-dara",
   "/en/plan-free-intro-with-eva": "/nl/plan-gratis-intake-met-eva",
   "/en/plan-free-intro-with-gezina": "/nl/plan-gratis-intake-met-gezina",
-  "/en/plan-free-intro-with-hamish": "/nl/plan-gratis-intake-met-hamish",
   "/en/plan-free-intro-with-jearmey": "/nl/plan-gratis-intake-met-jearmey",
   "/en/plan-free-intro-with-joey": "/nl/plan-gratis-intake-met-joey",
   // Campaign landing pages

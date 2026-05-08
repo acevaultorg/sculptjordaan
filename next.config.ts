@@ -41,7 +41,11 @@ const nextConfig: NextConfig = {
       { source: "/en/alex", destination: "/en/find-personal-trainer", permanent: true },
       { source: "/nl/eva", destination: "/nl/plan-gratis-intake-met-eva", permanent: true },
       { source: "/en/eva", destination: "/en/find-personal-trainer", permanent: true },
-      { source: "/nl/hamish", destination: "/nl/plan-gratis-intake-met-hamish", permanent: true },
+      // Hamish left SculptClub (2026-05-08) — intake routes deleted; all entry points
+      // funnel into the find-trainer page so visitors can pick from current roster.
+      { source: "/nl/plan-gratis-intake-met-hamish", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/en/plan-free-intro-with-hamish", destination: "/en/find-personal-trainer", permanent: true },
+      { source: "/nl/hamish", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
       { source: "/en/hamish", destination: "/en/find-personal-trainer", permanent: true },
       { source: "/nl/andrea", destination: "/nl/plan-gratis-intake-met-andrea", permanent: true },
       { source: "/en/andrea", destination: "/en/find-personal-trainer", permanent: true },

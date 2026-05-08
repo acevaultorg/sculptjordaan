@@ -45,7 +45,7 @@ export interface Trainer {
 // (strongest niche first), not by booking volume. Busy trainers have
 // less availability, which hurts conversion. Clear specialties convert
 // best because visitors pick on need-match, not on who's most popular.
-const DISPLAY_ORDER = ["eva", "joey", "alex", "gezina", "andrea", "dara", "hamish", "jearmey"] as const;
+const DISPLAY_ORDER = ["eva", "joey", "alex", "gezina", "andrea", "dara", "jearmey"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -93,31 +93,6 @@ const trainersRaw: Trainer[] = [
       en: "As a certified dietitian and personal trainer, Eva offers a unique combination of strength training and nutritional guidance for a holistic approach.",
     },
     image: "/images/trainers/eva.jpg",
-  },
-  {
-    id: "hamish",
-    name: "Hamish",
-    slug: {
-      nl: "plan-gratis-intake-met-hamish",
-      en: "plan-free-intro-with-hamish",
-    },
-    specialization: {
-      nl: ["Fysiotherapie", "Kracht"],
-      en: ["Physiotherapy", "Strength"],
-    },
-    languages: ["NL", "EN"],
-    rate: null,
-    instagram: "https://instagram.com/hamishleijer",
-    instagramHandle: "@hamishleijer",
-    credentials: {
-      nl: "Fysiotherapeut, BSc",
-      en: "Physiotherapist, BSc",
-    },
-    bio: {
-      nl: "Hamish combineert zijn achtergrond als fysiotherapeut met krachttraining. Ideaal voor revalidatie, blessurepreventie en het opbouwen van een sterke basis.",
-      en: "Hamish combines his physiotherapy background with strength training. Ideal for rehabilitation, injury prevention and building a strong foundation.",
-    },
-    image: "/images/trainers/hamish.jpg",
   },
   {
     id: "gezina",

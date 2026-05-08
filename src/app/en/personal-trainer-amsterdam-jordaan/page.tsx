@@ -22,7 +22,7 @@ const steps = [
   {
     step: "1",
     title: "Pick your personal trainer",
-    desc: "5 trainers in the Jordaan — Alex, Eva, Hamish, Andrea and Dara. Each with a different specialty: strength, nutrition, physiotherapy, posture, small-group.",
+    desc: "7 trainers in the Jordaan — Eva, Joey, Alex, Gezina, Andrea, Dara and Jearmey. Each with a different specialty: nutrition, breathwork, strength, women's training, posture, small-group, athletic performance.",
   },
   {
     step: "2",

@@ -22,7 +22,7 @@ const steps = [
   {
     step: "1",
     title: "Kies je personal trainer",
-    desc: "5 trainers in de Jordaan — Alex, Eva, Hamish, Andrea en Dara. Elk met een eigen specialisatie en stijl.",
+    desc: "7 trainers in de Jordaan — Eva, Joey, Alex, Gezina, Andrea, Dara en Jearmey. Elk met een eigen specialisatie en stijl.",
   },
   {
     step: "2",

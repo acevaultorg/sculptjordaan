@@ -30,7 +30,6 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 ## Trainers
 - **Alex:** €69/60min, Strength/Calisthenics/Recovery, NL/EN/PT
 - **Eva:** Rate on request, Dietitian, Strength/Nutrition, NL/EN
-- **Hamish:** Rate on request, Physiotherapist BSc, Physiotherapy/Strength, NL/EN
 - **Andrea:** €45/45min, Strength/Posture/Technique, NL/EN
 - **Dara:** Rate on request, Personal Training/Small Group, NL/EN
 
