@@ -86,6 +86,49 @@ export function Analytics() {
               if (href.includes('appointmentType=87017445') || href.includes('appointmentType=86758291')) return { type: 'trial', value: 0 };
               return { type: 'generic', value: 0 };
             }
+            // Intent: cross-funnel category — 'trainer' | 'studio_rental' | 'open_gym' | 'generic'.
+            // Pricing: funnel stage — 'free' (free intake/tryout) | 'paid' (real money) | 'unknown'.
+            // Operator can split any goal by intent + pricing in Plausible to see today's trainer-free-tryouts vs trainer-paid-packs vs studio-rental-bookings vs gym-subs.
+            function classifyAcuityIntent(bookingType) {
+              if (bookingType === 'open_gym' || bookingType === 'open_gym_session') return 'open_gym';
+              if (bookingType === 'studio_rental') return 'studio_rental';
+              if (bookingType === 'trial' || bookingType === 'studio_pack_starter' || bookingType === 'studio_pack_routine' || bookingType === 'studio_pack_volume') return 'trainer';
+              return 'generic';
+            }
+            function classifyAcuityPricing(bookingType) {
+              if (bookingType === 'trial') return 'free';
+              if (bookingType === 'generic') return 'unknown';
+              return 'paid';
+            }
+            function detectWaIntent(href) {
+              // Direct trainer numbers (Joey, Dara) — trainer intent, free intake assumed
+              if (href.indexOf('wa.me/31639175337') !== -1) return { intent: 'trainer', pricing: 'free', trainer_name: 'Joey' };
+              if (href.indexOf('wa.me/31645658213') !== -1) return { intent: 'trainer', pricing: 'free', trainer_name: 'Dara' };
+              // Decode text= param to classify by message content
+              var text = '';
+              var qIdx = href.indexOf('text=');
+              if (qIdx !== -1) {
+                var raw = href.substring(qIdx + 5);
+                var ampIdx = raw.indexOf('&');
+                if (ampIdx !== -1) raw = raw.substring(0, ampIdx);
+                try { text = decodeURIComponent(raw).toLowerCase(); } catch (_) { text = raw.toLowerCase(); }
+              }
+              // Open Gym = paid subscription
+              if (text.indexOf('open gym') !== -1) return { intent: 'open_gym', pricing: 'paid', trainer_name: '' };
+              // Studio rental = paid hourly
+              if (text.indexOf('studio huren') !== -1 || text.indexOf('renting the studio') !== -1 || text.indexOf('huren van de studio') !== -1 || text.indexOf('trainingsruimte') !== -1 || text.indexOf('fysiotherapeut') !== -1) {
+                return { intent: 'studio_rental', pricing: 'paid', trainer_name: '' };
+              }
+              // Volume pack purchase = trainer paid (€549 PT package)
+              if (text.indexOf('volume pakket') !== -1 || text.indexOf('volume pack') !== -1) {
+                return { intent: 'trainer', pricing: 'paid', trainer_name: '' };
+              }
+              // Free intake / blog inquiries → trainer free tryout
+              if (text.indexOf('intake') !== -1 || text.indexOf('intro') !== -1 || text.indexOf('tarief') !== -1 || text.indexOf("'s rate") !== -1 || text.indexOf('afvallen') !== -1 || text.indexOf('begeleiding') !== -1 || text.indexOf('krachttraining') !== -1 || text.indexOf('rugklachten') !== -1) {
+                return { intent: 'trainer', pricing: 'free', trainer_name: '' };
+              }
+              return { intent: 'generic', pricing: 'unknown', trainer_name: '' };
+            }
             document.addEventListener('click', function(e) {
               var el = e.target.closest('a[href]');
               if (!el || !el.href) return;
@@ -95,6 +138,8 @@ export function Analytics() {
               if (href.includes('acuityscheduling.com')) {
                 var isIntake = isFreeIntroPage();
                 var booking = detectBookingType(href);
+                var acuityIntent = classifyAcuityIntent(booking.type);
+                var acuityPricing = classifyAcuityPricing(booking.type);
                 if (typeof gtag === 'function') {
                   gtag('event', 'conversion', {
                     send_to: '${googleAds}/${googleAdsConversion}',
@@ -103,6 +148,8 @@ export function Analytics() {
                   });
                   gtag('event', 'begin_checkout', {
                     booking_type: booking.type,
+                    intent: acuityIntent,
+                    pricing: acuityPricing,
                     value: booking.value,
                     currency: 'EUR',
                     booking_source: window.location.pathname
@@ -110,6 +157,8 @@ export function Analytics() {
                   if (isIntake) {
                     gtag('event', 'free_intake_click', {
                       booking_source: window.location.pathname,
+                      intent: acuityIntent,
+                      pricing: acuityPricing,
                       value: 45,
                       currency: 'EUR'
                     });
@@ -119,25 +168,29 @@ export function Analytics() {
                   fbq('track', isIntake ? 'Lead' : 'InitiateCheckout', {
                     value: booking.value || 45,
                     currency: 'EUR',
-                    content_name: booking.type
+                    content_name: booking.type,
+                    content_category: acuityIntent + '|' + acuityPricing
                   });
                 }
                 if (typeof ttq !== 'undefined') {
                   ttq.track(isIntake ? 'SubmitForm' : 'AddToCart', {
                     value: booking.value,
-                    currency: 'EUR'
+                    currency: 'EUR',
+                    content_category: acuityIntent + '|' + acuityPricing
                   });
                 }
                 if (typeof window.plausible === 'function') {
                   window.plausible(isIntake ? 'Free Intake Click' : 'Acuity Click', {
                     props: {
                       booking_type: booking.type,
+                      intent: acuityIntent,
+                      pricing: acuityPricing,
                       value: booking.value || 45,
                       source_page: window.location.pathname
                     }
                   });
                   if (isIntake) {
-                    window.plausible('Lead Generated', { props: { method: 'free_intake', value: 45, source_page: window.location.pathname } });
+                    window.plausible('Lead Generated', { props: { method: 'free_intake', intent: acuityIntent, pricing: acuityPricing, value: 45, source_page: window.location.pathname } });
                   }
                 }
                 return;
@@ -147,6 +200,7 @@ export function Analytics() {
               // Treat wa.me/* the same as a free-intake lead (€45 value).
               // These are users who WhatsApp to book — legitimate conversions.
               if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com/') !== -1) {
+                var waSig = detectWaIntent(href);
                 if (typeof gtag === 'function') {
                   gtag('event', 'conversion', {
                     send_to: '${googleAds}/${googleAdsConversion}',
@@ -155,11 +209,17 @@ export function Analytics() {
                   });
                   gtag('event', 'whatsapp_click', {
                     booking_source: window.location.pathname,
+                    intent: waSig.intent,
+                    pricing: waSig.pricing,
+                    trainer_name: waSig.trainer_name,
                     value: 45,
                     currency: 'EUR'
                   });
                   gtag('event', 'generate_lead', {
                     method: 'whatsapp',
+                    intent: waSig.intent,
+                    pricing: waSig.pricing,
+                    trainer_name: waSig.trainer_name,
                     value: 45,
                     currency: 'EUR',
                     booking_source: window.location.pathname
@@ -169,21 +229,23 @@ export function Analytics() {
                   fbq('track', 'Contact', {
                     value: 45,
                     currency: 'EUR',
-                    content_name: 'whatsapp'
+                    content_name: 'whatsapp',
+                    content_category: waSig.intent + '|' + waSig.pricing
                   });
                 }
                 if (typeof ttq !== 'undefined') {
                   ttq.track('Contact', {
                     value: 45,
-                    currency: 'EUR'
+                    currency: 'EUR',
+                    content_category: waSig.intent + '|' + waSig.pricing
                   });
                 }
                 if (typeof window.plausible === 'function') {
                   window.plausible('WhatsApp Click', {
-                    props: { value: 45, source_page: window.location.pathname }
+                    props: { value: 45, source_page: window.location.pathname, intent: waSig.intent, pricing: waSig.pricing, trainer_name: waSig.trainer_name }
                   });
                   window.plausible('Lead Generated', {
-                    props: { method: 'whatsapp', value: 45, source_page: window.location.pathname }
+                    props: { method: 'whatsapp', value: 45, source_page: window.location.pathname, intent: waSig.intent, pricing: waSig.pricing, trainer_name: waSig.trainer_name }
                   });
                 }
                 return;
