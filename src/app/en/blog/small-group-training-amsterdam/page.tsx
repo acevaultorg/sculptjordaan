@@ -95,7 +95,7 @@ export default function SmallGroupTrainingAmsterdamEN() {
                 person at the same length.
               </p>
               <p>
-                For trainers without a fixed rate (Eva, Gezina, Dara, Hamish, Jearmey) you
+                For trainers without a fixed rate (Eva, Gezina, Dara, Jearmey, Joey) you
                 confirm the small-group rate during the free intro. In Amsterdam, small
                 group PT typically ranges €12-€30 per person per session — well below solo
                 PT (€45-€85) and comparable to premium gym memberships. See our{" "}

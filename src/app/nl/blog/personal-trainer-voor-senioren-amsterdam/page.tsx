@@ -84,14 +84,14 @@ export default function PTVoorSeniorenNL() {
                 de studio en zorgt dat je binnen kunt. Het tempo bepaal je zelf.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Fysiotherapeut in het team</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Twijfels over je gezondheid? Eerst medisch advies</h2>
               <p>
-                <a href="/nl/blog/fysiotherapeut-personal-trainer-amsterdam" className="text-brand hover:underline">Hamish</a> werkt
-                als fysiotherapeut BSc bij SculptClub. Hij heeft ervaring met ouderen,
-                revalidatie en chronische klachten. Als je twijfelt of training geschikt is
-                voor jou, is hij de aangewezen trainer om mee te beginnen. De{" "}
-                <a href="/nl/gratis-intake" className="text-brand hover:underline">eerste intake</a> is
-                altijd gratis.
+                Wij hebben momenteel geen fysiotherapeut in dienst. Heb je hart- of
+                vaatklachten, gewrichtsproblemen of een recente operatie? Bespreek met je
+                huisarts of fysiotherapeut of krachttraining op dit moment voor jou
+                geschikt is. Met groen licht plan je daarna een{" "}
+                <a href="/nl/gratis-intake" className="text-brand hover:underline">gratis intake</a> en
+                bespreken we hoe we de training opbouwen rond jouw situatie.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat kun je verwachten?</h2>

@@ -4,18 +4,17 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, CalendarDays, User } from "lucide-react";
+import { ArrowRight, CalendarDays, User, Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Physiotherapist as Personal Trainer in Amsterdam: Training with an Injury — SculptClub" },
+  title: { absolute: "Training with an Injury or Pain in Amsterdam — SculptClub" },
   description:
-    "An injury doesn't have to mean the end of your training. Discover how a physiotherapist-personal trainer in Amsterdam helps you train safely and recover faster.",
+    "An injury doesn't have to mean the end of your training. How SculptClub approaches training-after-injury, alongside (not instead of) your physiotherapist.",
   keywords: [
-    "physiotherapist amsterdam",
-    "physiotherapy personal trainer amsterdam",
     "training with injury amsterdam",
-    "rehabilitation training amsterdam",
-    "physio personal trainer amsterdam jordaan",
+    "personal trainer injury amsterdam",
+    "strength training after physio amsterdam",
+    "rehab training amsterdam jordaan",
   ],
   alternates: {
     canonical: "/en/blog/physiotherapist-personal-trainer-amsterdam",
@@ -33,21 +32,21 @@ export default function PhysiotherapistPersonalTrainerEN() {
         items={[
           { name: "Home", url: "/en" },
           { name: "Blog", url: "/en/blog" },
-          { name: "Physiotherapist Personal Trainer Amsterdam", url: "/en/blog/physiotherapist-personal-trainer-amsterdam" },
+          { name: "Training with an Injury", url: "/en/blog/physiotherapist-personal-trainer-amsterdam" },
         ]}
       />
       <BlogPostingJsonLd
-        title="Physiotherapist as Personal Trainer in Amsterdam: Training with an Injury"
-        description="An injury doesn't have to mean the end of your training. A physiotherapist as personal trainer lets you train safely and recover faster."
+        title="Training with an Injury or Pain in Amsterdam"
+        description="An injury doesn't have to mean the end of your training. How to build strength training in coordination with your physiotherapist."
         url="/en/blog/physiotherapist-personal-trainer-amsterdam"
         datePublished="2026-03-30"
+        dateModified="2026-05-08"
       />
       <FaqJsonLd faqs={[
-        { question: "What can a physiotherapist-personal trainer do for you?", answer: "Screen for limitations — before you start training, they map out what you can and can't do.; Movement analysis — faulty movement patterns are often the cause of complaints. Correcting them early prevents new injuries.; Tailored training programme — no generic plan, but a programme that accounts for your specific injury and goals.; Progressive loading — building recovery and strength simultaneously, at a pace that works for your body.; Preventing relapse — once recovered, they make sure you..." },
-        { question: "Can I train with a herniated disc?", answer: "In many cases, yes — but with supervision and the right modifications. A physiotherapist determines which exercises are safe and how to progress loading without worsening the condition." },
-        { question: "Can I train after surgery?", answer: "Depending on what surgery and when. Post-surgical rehabilitation is one of Hamish's specialities. He works alongside your surgeon or specialist's guidelines to build you back up safely." },
-        { question: "Do you speak English?", answer: "Yes. Hamish is fully fluent in English — all sessions can be conducted in English." },
-        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily from 06:30 to 22:00. For PT sessions your trainer arranges access; for Open Gym you receive a door code via WhatsApp. No buzzer, no reception desk." },
+        { question: "Does SculptClub have a physiotherapist on staff?", answer: "Not currently. For diagnosis, treatment and rehabilitation we refer you to a licensed physiotherapist. Our personal trainers take over once your physio gives the green light — strength, technique, progressive loading." },
+        { question: "Can I train with a herniated disc?", answer: "Your physiotherapist or doctor decides that, not your personal trainer. With clearance from your treating clinician, our trainers can build you up safely — under the load tolerance they set." },
+        { question: "Does my insurance cover the sessions?", answer: "Personal training is not covered by basic health insurance. Some supplementary plans partially cover (para)medical fitness — check your policy." },
+        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily 06:30–22:00. For PT sessions your trainer arranges access; for Open Gym you receive a door code via WhatsApp. No buzzer, no reception desk." },
       ]} />
 
       <Section>
@@ -56,7 +55,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Physiotherapist as Personal Trainer in Amsterdam: Training with an Injury
+                Training with an Injury or Pain in Amsterdam
               </h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
@@ -65,15 +64,15 @@ export default function PhysiotherapistPersonalTrainerEN() {
                 </span>
                 <span className="flex items-center gap-1">
                   <CalendarDays className="w-4 h-4" />
-                  30 March 2026
+                  Updated 8 May 2026
                 </span>
               </div>
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
               <Image
-                src="/images/trainers/hamish.jpg"
-                alt="Hamish, physiotherapist and personal trainer at SculptClub Amsterdam"
+                src="/images/studio/dumbbell-rack.jpeg"
+                alt="Private personal training studio at SculptClub Amsterdam"
                 fill
                 className="object-cover"
                 loading="eager"
@@ -83,56 +82,67 @@ export default function PhysiotherapistPersonalTrainerEN() {
             </div>
 
             <div className="prose prose-lg max-w-none">
+              <div className="not-prose mb-8 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5">
+                <div className="flex gap-3">
+                  <Info className="w-5 h-5 mt-0.5 flex-shrink-0 text-amber-500" />
+                  <div className="text-sm leading-relaxed">
+                    <strong className="block mb-1">Honest: we are not physiotherapists.</strong>
+                    <span className="text-muted-foreground">
+                      SculptClub doesn&apos;t currently have a physiotherapist on staff.
+                      For diagnosis, treatment and rehabilitation we recommend consulting
+                      a licensed physiotherapist first. What our personal trainers do
+                      offer: progressive strength training under supervision once your
+                      treating clinician gives the green light.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               <p>
-                Back pain, a knee complaint, or a lingering shoulder injury that never quite heals. You want to keep training — but you&apos;re not sure how to do it safely. This is exactly where a physiotherapist who is also a personal trainer makes all the difference.
+                Back pain, a knee niggle, or an old shoulder injury that just won&apos;t
+                resolve. You want to train (again) — but you don&apos;t know how to build
+                back up safely. Below we explain how we approach the transition from
+                treatment to independent training, in coordination with your physiotherapist.
               </p>
 
-              <h2>Why a regular personal trainer isn&apos;t always enough</h2>
+              <h2>Physiotherapy first, training second</h2>
               <p>
-                Most personal trainers know how to build an effective programme for healthy individuals. But with an injury, chronic pain, or a rehabilitation trajectory, you need more than that. Loading incorrectly delays recovery — or makes things worse.
+                The roles are different. A <strong>physiotherapist</strong> diagnoses,
+                treats where needed, and decides when you&apos;re cleared to load. A{" "}
+                <strong>personal trainer</strong> takes it from there: progressive
+                strength, technique, building load tolerance. Both are necessary — but
+                they&apos;re not the same job, and we only do the second one.
               </p>
               <p>
-                A physiotherapist understands anatomy, knows how tissue heals, and can distinguish between pain that&apos;s acceptable during recovery and pain that&apos;s a warning signal. When that knowledge is combined with personal training, you don&apos;t just train safely — you train effectively.
+                Still in active treatment? We ask your trainer to coordinate with your
+                physiotherapist. Which movements are safe? What&apos;s your current load
+                tolerance? What should programming avoid for now? That prevents
+                contradictory advice.
               </p>
 
-              <h2>What can a physiotherapist-personal trainer do for you?</h2>
+              <h2>What a good personal trainer can do</h2>
               <ul>
-                <li><strong>Screen for limitations</strong> — before you start training, they map out what you can and can&apos;t do.</li>
-                <li><strong>Movement analysis</strong> — faulty movement patterns are often the cause of complaints. Correcting them early prevents new injuries.</li>
-                <li><strong>Tailored training programme</strong> — no generic plan, but a programme that accounts for your specific injury and goals.</li>
-                <li><strong>Progressive loading</strong> — building recovery and strength simultaneously, at a pace that works for your body.</li>
-                <li><strong>Preventing relapse</strong> — once recovered, they make sure you don&apos;t repeat the same mistake.</li>
+                <li><strong>Watch your technique</strong> — faulty movement patterns are often the cause of complaints. Your trainer corrects them session after session.</li>
+                <li><strong>Programmed progression</strong> — no generic plan, but a build that accounts for your situation and your goals.</li>
+                <li><strong>Dose the load</strong> — recovery and strength built simultaneously, at a pace that works for your body.</li>
+                <li><strong>Prevent relapse</strong> — once recovered, we make sure you don&apos;t make the same mistake twice.</li>
               </ul>
 
-              <h2>Hamish: physiotherapist and personal trainer in Amsterdam</h2>
+              <h2>A private studio helps</h2>
               <p>
-                At SculptClub, <strong>Hamish</strong> holds a BSc in Physiotherapy and is also a qualified personal trainer. He works with people who can no longer train optimally due to injury or chronic complaints, as well as people who want to preventively strengthen their body.
-              </p>
-              <p>
-                Hamish offers both 1-on-1 sessions and small group training. His approach combines physiotherapy knowledge with strength training. Rate available on request.
-              </p>
-
-              <h2>Frequently asked questions</h2>
-              <h3>Can I train with a herniated disc?</h3>
-              <p>
-                In many cases, yes — but with supervision and the right modifications. A physiotherapist determines which exercises are safe and how to progress loading without worsening the condition.
-              </p>
-              <h3>Can I train after surgery?</h3>
-              <p>
-                Depending on what surgery and when. Post-surgical rehabilitation is one of Hamish&apos;s specialities. He works alongside your surgeon or specialist&apos;s guidelines to build you back up safely.
-              </p>
-              <h3>Do you speak English?</h3>
-              <p>
-                Yes. Hamish is fully fluent in English — all sessions can be conducted in English.
-              </p>
-              <h3>Where is SculptClub located?</h3>
-              <p>
-                Egelantiersgracht 424, Amsterdam Jordaan. Open daily from 06:30 to 22:00. For PT sessions your trainer arranges access; for Open Gym you receive a door code via WhatsApp. No buzzer, no reception desk.
+                In a busy gym you train anonymously. Nobody sees your compensation
+                pattern getting worse, or that you&apos;re bracing wrong. At SculptClub
+                you train <a href="/en/studio-rental" className="text-brand hover:underline">one-on-one in a private studio</a> — just
+                you and your trainer. Full attention on your movement, every session.
               </p>
 
-              <h2>Injury or chronic pain? Start with a free intro</h2>
+              <h2>How to start</h2>
               <p>
-                An intro costs nothing. In 45 minutes you discuss your complaints, goals and options with Hamish. No contract, no commitment.
+                Still in active treatment? Talk to your physiotherapist first about
+                whether strength training is right for you now. With the green light,
+                book a free intro with us — no obligations, no cost. We&apos;ll discuss
+                your situation, goals and options, and figure out together which trainer
+                is the best match.
               </p>
             </div>
 
@@ -142,17 +152,18 @@ export default function PhysiotherapistPersonalTrainerEN() {
                 <a href="/en/blog/personal-trainer-after-injury-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer after an injury</p></a>
                 <a href="/en/blog/physiotherapy-studio-rental-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Physiotherapy studio rental</p></a>
                 <a href="/en/blog/personal-trainer-for-beginners" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Personal trainer for beginners</p></a>
-                <a href="/en/blog/strength-training-beginners-guide" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Strength training for beginners</p></a>
+                <a href="/en/blog/strength-training-for-beginners" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Strength training for beginners</p></a>
               </div>
             </div>
 
             <div className="mt-12 p-8 rounded-2xl bg-secondary border border-border/50">
-              <h2 className="text-xl font-bold mb-2">Free intro with Hamish</h2>
+              <h2 className="text-xl font-bold mb-2">Book a free intro</h2>
               <p className="text-muted-foreground mb-6">
-                Injury, chronic pain, or simply wanting to build up carefully? Book a free intro.
+                Tell us your situation. We listen, think along, and point you toward
+                the right trainer — or, if it&apos;s a better fit, toward a physiotherapist.
               </p>
-              <ButtonLink href="/en/free-intro">
-                Book free intro <ArrowRight className="w-4 h-4" />
+              <ButtonLink href="/en/find-personal-trainer">
+                Find your personal trainer <ArrowRight className="w-4 h-4" />
               </ButtonLink>
             </div>
           </article>

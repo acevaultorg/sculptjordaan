@@ -89,10 +89,11 @@ export default function PTAmsterdamSouthEN() {
                 Personal training starts from €45 per session.
               </p>
               <p>
-                <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="text-brand hover:underline">Hamish</a> works
-                as a physiotherapist BSc — ideal if you need rehabilitation alongside training.{" "}
                 <a href="/en/blog/nutrition-coach-amsterdam" className="text-brand hover:underline">Eva</a> combines
-                strength training with nutrition coaching.
+                strength training with nutrition coaching as a certified dietitian. Joey
+                works with breathwork and self-inquiry alongside strength training. For
+                rehabilitation or physiotherapy we&apos;ll refer you out — we don&apos;t
+                currently have a physiotherapist on staff.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym for independent training</h2>

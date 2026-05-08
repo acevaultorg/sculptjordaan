@@ -74,17 +74,18 @@ export default function PTAfterInjuryEN() {
                 <li><strong>Rebuild confidence:</strong> Overcome the fear of moving with expert guidance</li>
               </ul>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Physiotherapist and personal trainer</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Physiotherapy first, training second</h2>
               <p>
-                At SculptClub, <a href="/en/find-personal-trainer" className="text-brand hover:underline">Hamish</a> works
-                as a physiotherapist BSc. He combines rehabilitation knowledge with strength
-                training. This means you can make the transition from physiotherapy to
-                independent training under the same guidance. No more gap between rehab and sport.
+                We don&apos;t currently have a physiotherapist on staff. For the medical
+                side of rehabilitation we refer you to a licensed physiotherapist — they
+                make the diagnosis, set load tolerance, and give the green light for
+                progressive loading. That&apos;s their expertise, not a personal trainer&apos;s.
               </p>
               <p>
-                Other trainers at SculptClub also have experience with clients returning
-                after injuries. During the <a href="/en/free-intro" className="text-brand hover:underline">free
-                intro session</a> you discuss your situation and find the best match.
+                Our trainers take over once you&apos;re cleared to move: strength work,
+                posture, progressive build toward full sport load. During the <a href="/en/free-intro" className="text-brand hover:underline">free
+                intro session</a> you discuss your situation and find the trainer that best
+                matches your recovery phase.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Private studio: no pressure, no rush</h2>

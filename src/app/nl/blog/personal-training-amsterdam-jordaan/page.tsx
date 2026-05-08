@@ -73,7 +73,7 @@ export default function BlogPostNL1() {
             {/* Hero image */}
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
               <Image
-                src="/images/trainers/hamish.jpg"
+                src="/images/trainers/alex.jpg"
                 alt="Personal training in de Jordaan bij SculptClub Amsterdam"
                 fill
                 className="object-cover"

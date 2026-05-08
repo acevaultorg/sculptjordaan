@@ -74,17 +74,18 @@ export default function PTNaBlessureNL() {
                 <li><strong>Vertrouwen terugwinnen:</strong> De angst om te bewegen overwinnen met begeleiding</li>
               </ul>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Fysiotherapeut én personal trainer</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Eerst fysiotherapie, dan training</h2>
               <p>
-                Bij SculptClub werkt <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">Hamish</a> als
-                fysiotherapeut BSc. Hij combineert revalidatiekennis met krachttraining. Dat
-                betekent dat je de overgang van fysiotherapie naar zelfstandig trainen kunt
-                maken onder dezelfde begeleiding. Geen gat meer tussen revalidatie en sport.
+                Wij hebben momenteel geen fysiotherapeut in dienst. Voor de medische
+                kant van revalidatie verwijzen we je naar een gediplomeerd fysiotherapeut
+                — die stelt de diagnose, bepaalt belastbaarheid en geeft groen licht voor
+                opbouwende belasting. Dat is hun expertise, niet die van een personal trainer.
               </p>
               <p>
-                Andere trainers bij SculptClub hebben ook ervaring met cliënten die
-                terugkeren na blessures. Tijdens de <a href="/nl/gratis-intake" className="text-brand hover:underline">gratis
-                intake</a> bespreek je je situatie en vind je de trainer die het beste past.
+                Onze trainers nemen het over zodra je weer mag bewegen: krachttraining,
+                houding, opbouw richting volledige sportbelasting. Tijdens de <a href="/nl/gratis-intake" className="text-brand hover:underline">gratis
+                intake</a> bespreek je je situatie en vind je de trainer die het beste past
+                bij je herstelfase.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Privé studio: geen druk, geen haast</h2>

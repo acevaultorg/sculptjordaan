@@ -328,7 +328,7 @@ const posts = [
   {
     title: "Personal Trainer bij Rugklachten in Amsterdam",
     excerpt:
-      "Rugklachten? Train met Hamish, fysiotherapeut BSc + personal trainer. Veilig, opbouwend en effectief — zonder dat je vermijden de norm wordt.",
+      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw — in samenwerking met je fysiotherapeut. Veilig en opbouwend trainen bij SculptClub.",
     category: "Herstel",
     href: "/nl/blog/personal-trainer-rugklachten-amsterdam",
     date: "16 april 2026",

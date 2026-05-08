@@ -48,7 +48,7 @@ const results = [
     name: "Mark R.",
     duration: "4 maanden",
     quote:
-      "Na mijn blessure heeft Hamish me weer opgebouwd. Van revalidatie naar persoonlijke records. Fantastische begeleiding.",
+      "Na mijn blessure heeft mijn trainer me weer opgebouwd. Van revalidatie naar persoonlijke records. Fantastische begeleiding.",
     highlights: [
       "Volledig hersteld",
       "Nieuwe PR's gezet",

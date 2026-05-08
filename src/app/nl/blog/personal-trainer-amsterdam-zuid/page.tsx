@@ -94,10 +94,11 @@ export default function PTAmsterdamZuidNL() {
                 volledige profiel van elke trainer. Personal training begint vanaf €45 per sessie.
               </p>
               <p>
-                <a href="/nl/blog/fysiotherapeut-personal-trainer-amsterdam" className="text-brand hover:underline">Hamish</a> werkt
-                als fysiotherapeut BSc — ideaal als je naast training ook revalidatie of
-                blessurepreventie zoekt. <a href="/nl/blog/voedingscoach-amsterdam" className="text-brand hover:underline">Eva</a> combineert
-                krachttraining met voedingsadvies.
+                <a href="/nl/blog/voedingscoach-amsterdam" className="text-brand hover:underline">Eva</a> combineert
+                krachttraining met voedingsadvies als gediplomeerd diëtist. Joey werkt
+                met ademwerk en zelfonderzoek naast krachttraining. Voor revalidatie of
+                fysiotherapie verwijzen we je door — wij hebben momenteel geen fysiotherapeut
+                in dienst.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Ook Open Gym voor zelfstandig trainen</h2>

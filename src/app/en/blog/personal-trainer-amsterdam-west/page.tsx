@@ -101,13 +101,15 @@ export default function PersonalTrainerAmsterdamWestEN() {
                 evening before.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Five trainers, each with their own specialisation</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Independent trainers, each with their own specialisation</h2>
               <p>
-                SculptClub has five independent trainers. Alex specialises in strength and
-                calisthenics. Eva combines personal training with nutritional advice as a certified
-                dietitian. Hamish is a physiotherapist working with rehab and specific conditions.
-                Andrea focuses on technique and posture. Dara offers personal training and small
-                group sessions. Each with their own rates, each with a free intro.
+                SculptClub has independent trainers with different backgrounds. Alex
+                specialises in strength and calisthenics. Eva combines personal training
+                with nutritional advice as a certified dietitian. Joey works with breathwork,
+                self-inquiry and strength training. Gezina specialises in women&apos;s
+                training. Andrea focuses on technique and posture. Dara offers personal
+                training and small-group sessions. Jearmey focuses on strength and athletic
+                performance. Each with their own rates, each with a free intro.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Cost and flexibility</h2>

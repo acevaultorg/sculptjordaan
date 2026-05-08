@@ -88,7 +88,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
               <ul>
                 <li><strong>Alex</strong> — Strength, calisthenics, recovery. NL/EN/PT. €69/60 min.</li>
                 <li><strong>Eva</strong> — Certified dietitian + personal trainer. Strength and nutrition. NL/EN.</li>
-                <li><strong>Hamish</strong> — Physiotherapist BSc. Rehab, injury prevention. NL/EN.</li>
+                <li><strong>Joey</strong> — Strength, breathwork, nervous system, self-inquiry. NL/EN.</li>
                 <li><strong>Gezina</strong> — Women&apos;s training, strength, performance. NL/EN. See the{" "}
                   <a href="/en/blog/female-personal-trainer-amsterdam" className="text-brand hover:underline">female-trainer guide</a>.</li>
                 <li><strong>Andrea</strong> — Strength, posture, technique. NL/EN. €45/45 min.</li>

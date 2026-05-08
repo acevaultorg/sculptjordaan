@@ -48,7 +48,7 @@ const results = [
     name: "Mark R.",
     duration: "4 months",
     quote:
-      "After my injury, Hamish rebuilt me. From rehabilitation to personal records. Fantastic guidance.",
+      "After my injury, my trainer rebuilt me. From rehabilitation to personal records. Fantastic guidance.",
     highlights: [
       "Fully recovered",
       "New PRs set",

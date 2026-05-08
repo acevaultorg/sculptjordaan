@@ -84,14 +84,14 @@ export default function PTForSeniorsEN() {
                 the studio and gets you in. You set the pace.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Physiotherapist on the team</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Health concerns? Get medical clearance first</h2>
               <p>
-                <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="text-brand hover:underline">Hamish</a> works
-                as a physiotherapist BSc at SculptClub. He has experience with older adults,
-                rehabilitation and chronic conditions. If you&apos;re unsure whether training is
-                right for you, he&apos;s the ideal trainer to start with. The{" "}
-                <a href="/en/free-intro" className="text-brand hover:underline">first intro session</a> is
-                always free.
+                We don&apos;t currently have a physiotherapist on staff. If you have heart
+                or vascular issues, joint problems, or a recent surgery, talk to your GP
+                or physiotherapist about whether strength training is right for you now.
+                With the green light, book a{" "}
+                <a href="/en/free-intro" className="text-brand hover:underline">free intro</a> and
+                we&apos;ll discuss how to build training around your situation.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What to expect</h2>

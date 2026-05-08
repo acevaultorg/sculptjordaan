@@ -4,18 +4,17 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, CalendarDays, User } from "lucide-react";
+import { ArrowRight, CalendarDays, User, Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Fysiotherapeut als Personal Trainer in Amsterdam: Trainen met een blessure — SculptClub" },
+  title: { absolute: "Trainen met een blessure of klachten in Amsterdam — SculptClub" },
   description:
-    "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Ontdek hoe een fysiotherapeut als personal trainer in Amsterdam je veilig laat doortrainen.",
+    "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Lees hoe SculptClub omgaat met training na blessure, in samenwerking met je fysiotherapeut.",
   keywords: [
-    "fysiotherapeut amsterdam",
-    "fysiotherapeut personal trainer amsterdam",
     "trainen met blessure amsterdam",
-    "revalidatie training amsterdam",
-    "fysiotherapeut jordaan amsterdam",
+    "personal trainer blessure amsterdam",
+    "krachttraining na fysiotherapie amsterdam",
+    "training opbouwen na blessure jordaan",
   ],
   alternates: {
     canonical: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
@@ -33,19 +32,20 @@ export default function FysiotherapeutPersonalTrainerNL() {
         items={[
           { name: "Home", url: "/" },
           { name: "Blog", url: "/nl/blog" },
-          { name: "Fysiotherapeut als Personal Trainer", url: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam" },
+          { name: "Trainen met een blessure", url: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam" },
         ]}
       />
       <BlogPostingJsonLd
-        title="Fysiotherapeut als Personal Trainer in Amsterdam: Trainen met een blessure"
-        description="Een blessure hoeft geen einde van je training te betekenen. Een fysiotherapeut als personal trainer maakt veilig doortrainen mogelijk."
+        title="Trainen met een blessure of klachten in Amsterdam"
+        description="Een blessure hoeft geen einde van je training te betekenen. Hoe je krachttraining opbouwt in samenwerking met je fysiotherapeut."
         url="/nl/blog/fysiotherapeut-personal-trainer-amsterdam"
         datePublished="2026-03-30"
+        dateModified="2026-05-08"
       />
       <FaqJsonLd faqs={[
-        { question: "Wat kan een fysiotherapeut-personal trainer voor je doen?", answer: "Screenen op beperkingen — voordat je begint met trainen, brengt hij in kaart wat je wel en niet kan.; Bewegingsanalyse — verkeerde bewegingspatronen zijn vaak de oorzaak van klachten. Door ze vroeg te corrigeren voorkom je nieuwe blessures.; Aangepast trainingsprogramma — geen standaard schema, maar een programma dat rekening houdt met jouw klachten én je doelen.; Progressieve opbouw — herstel en kracht opbouwen tegelijkertijd, in een tempo dat werkt voor jouw lichaam.; Voorkomen van..." },
-        { question: "Mag ik trainen met een hernia?", answer: "In veel gevallen ja — maar onder begeleiding en met de juiste aanpassingen. Een fysiotherapeut bepaalt welke oefeningen veilig zijn en hoe je de belasting opbouwt zonder de klacht te verergeren." },
-        { question: "Vergoedt mijn zorgverzekeraar de sessies?", answer: "Personal training bij een fysiotherapeut valt doorgaans niet onder de zorgverzekering. Sommige aanvullende verzekeringen vergoeden (para)medische fitness deels — check je polis." },
+        { question: "Heeft SculptClub een fysiotherapeut in dienst?", answer: "Op dit moment niet. Voor diagnose, behandeling en revalidatie verwijzen we je naar een gediplomeerd fysiotherapeut. Onze personal trainers nemen het over zodra je weer mag bewegen — opbouw, kracht en techniek." },
+        { question: "Mag ik trainen met een hernia?", answer: "Dat bepaalt je fysiotherapeut of arts, niet je personal trainer. Met groen licht van je behandelaar kunnen onze trainers je veilig opbouwen — onder de belastbaarheid die zij hebben aangegeven." },
+        { question: "Vergoedt mijn zorgverzekeraar de sessies?", answer: "Personal training valt niet onder de zorgverzekering. Sommige aanvullende verzekeringen vergoeden (para)medische fitness deels — check je polis." },
         { question: "Waar is SculptClub gevestigd?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Voor PT-sessies regelt je trainer de toegang; voor Open Gym ontvang je zelf een deurcode via WhatsApp. Geen bel, geen receptie." },
       ]} />
 
@@ -55,7 +55,7 @@ export default function FysiotherapeutPersonalTrainerNL() {
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Fysiotherapeut als Personal Trainer in Amsterdam: Trainen met een blessure
+                Trainen met een blessure of klachten in Amsterdam
               </h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
@@ -64,15 +64,15 @@ export default function FysiotherapeutPersonalTrainerNL() {
                 </span>
                 <span className="flex items-center gap-1">
                   <CalendarDays className="w-4 h-4" />
-                  30 maart 2026
+                  Bijgewerkt 8 mei 2026
                 </span>
               </div>
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
               <Image
-                src="/images/trainers/hamish.jpg"
-                alt="Hamish, fysiotherapeut en personal trainer bij SculptClub Amsterdam"
+                src="/images/studio/dumbbell-rack.jpeg"
+                alt="Privé personal training studio bij SculptClub Amsterdam"
                 fill
                 className="object-cover"
                 loading="eager"
@@ -82,52 +82,67 @@ export default function FysiotherapeutPersonalTrainerNL() {
             </div>
 
             <div className="prose prose-lg max-w-none">
+              <div className="not-prose mb-8 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5">
+                <div className="flex gap-3">
+                  <Info className="w-5 h-5 mt-0.5 flex-shrink-0 text-amber-500" />
+                  <div className="text-sm leading-relaxed">
+                    <strong className="block mb-1">Eerlijk: wij zijn geen fysiotherapeuten.</strong>
+                    <span className="text-muted-foreground">
+                      Bij SculptClub werken momenteel geen fysiotherapeuten. Voor diagnose,
+                      behandeling en revalidatie raden we aan eerst een gediplomeerd
+                      fysiotherapeut te raadplegen. Wat onze personal trainers wél bieden:
+                      opbouwende krachttraining onder begeleiding zodra je behandelaar
+                      groen licht geeft.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               <p>
-                Je hebt rugpijn, een knieklacht of een oude schouderblessure die maar niet goed wordt. Je wilt graag trainen — maar je weet niet hoe je dat veilig doet. Precies hier maakt een fysiotherapeut als personal trainer het verschil.
+                Je hebt rugpijn, een knieklacht of een oude schouderblessure die maar niet
+                goed wordt. Je wilt graag (weer) trainen — maar je weet niet hoe je dat
+                veilig opbouwt. Hieronder leggen we uit hoe wij die overgang van behandeling
+                naar zelfstandig trainen aanpakken, in samenwerking met je fysiotherapeut.
               </p>
 
-              <h2>Waarom een gewone personal trainer niet altijd genoeg is</h2>
+              <h2>Eerst fysiotherapeut, dan personal trainer</h2>
               <p>
-                De meeste personal trainers weten hoe ze een effectief trainingsprogramma opstellen voor gezonde mensen. Maar bij een blessure, chronische pijn of een revalidatietraject is meer kennis nodig. Foutief belasten vertraagt herstel — of maakt het erger.
+                De rolverdeling is duidelijk. Een <strong>fysiotherapeut</strong> stelt
+                vast wat er aan de hand is, behandelt waar nodig en bepaalt wanneer je
+                weer mag belasten. Een <strong>personal trainer</strong> bouwt vanaf dat
+                punt verder: progressie in kracht, techniek en belastbaarheid. Beide rollen
+                zijn nodig — maar het is niet hetzelfde werk en wij doen alleen het tweede.
               </p>
               <p>
-                Een fysiotherapeut begrijpt de anatomie, weet hoe weefsel geneest en kan de grens bepalen tussen pijn die acceptabel is tijdens herstel en pijn als waarschuwingssignaal. Als die kennis gecombineerd wordt met personal training, train je niet alleen veilig — je traint ook effectief.
+                Loop je nog onder behandeling? Dan vragen we je trainer om af te stemmen
+                met je fysiotherapeut. Welke bewegingen zijn veilig? Wat is de huidige
+                belastbaarheid? Welke kant moet er aan de programmering nog niet bij?
+                Daarmee voorkom je tegenstrijdige adviezen.
               </p>
 
-              <h2>Wat kan een fysiotherapeut-personal trainer voor je doen?</h2>
+              <h2>Wat een goede personal trainer wél kan</h2>
               <ul>
-                <li><strong>Screenen op beperkingen</strong> — voordat je begint met trainen, brengt hij in kaart wat je wel en niet kan.</li>
-                <li><strong>Bewegingsanalyse</strong> — verkeerde bewegingspatronen zijn vaak de oorzaak van klachten. Door ze vroeg te corrigeren voorkom je nieuwe blessures.</li>
-                <li><strong>Aangepast trainingsprogramma</strong> — geen standaard schema, maar een programma dat rekening houdt met jouw klachten én je doelen.</li>
-                <li><strong>Progressieve opbouw</strong> — herstel en kracht opbouwen tegelijkertijd, in een tempo dat werkt voor jouw lichaam.</li>
-                <li><strong>Voorkomen van terugval</strong> — eenmaal hersteld, zorgt hij dat je niet opnieuw dezelfde fout maakt.</li>
+                <li><strong>Techniek bewaken</strong> — verkeerde bewegingspatronen zijn vaak de oorzaak van klachten. Je trainer corrigeert ze sessie voor sessie.</li>
+                <li><strong>Programmering met progressie</strong> — geen standaard schema, maar opbouw die rekening houdt met jouw klachten én je doelen.</li>
+                <li><strong>Belasting doseren</strong> — herstel en kracht opbouwen tegelijkertijd, in een tempo dat werkt voor jouw lichaam.</li>
+                <li><strong>Voorkomen van terugval</strong> — eenmaal hersteld, zorgen we dat je niet opnieuw dezelfde fout maakt.</li>
               </ul>
 
-              <h2>Hamish: fysiotherapeut en personal trainer in Amsterdam</h2>
+              <h2>Een privé studio helpt</h2>
               <p>
-                Bij SculptClub werkt <strong>Hamish</strong> — BSc fysiotherapeut én personal trainer. Hij werkt met mensen die door een blessure of chronische klacht niet meer optimaal kunnen trainen, maar ook met mensen die preventief hun lichaam willen versterken.
-              </p>
-              <p>
-                Hamish biedt zowel 1-op-1 sessies als small group training. Zijn aanpak combineert fysiotherapeutische kennis met krachttraining. Tarief op aanvraag.
-              </p>
-
-              <h2>Veelgestelde vragen</h2>
-              <h3>Mag ik trainen met een hernia?</h3>
-              <p>
-                In veel gevallen ja — maar onder begeleiding en met de juiste aanpassingen. Een fysiotherapeut bepaalt welke oefeningen veilig zijn en hoe je de belasting opbouwt zonder de klacht te verergeren.
-              </p>
-              <h3>Vergoedt mijn zorgverzekeraar de sessies?</h3>
-              <p>
-                Personal training bij een fysiotherapeut valt doorgaans niet onder de zorgverzekering. Sommige aanvullende verzekeringen vergoeden (para)medische fitness deels — check je polis.
-              </p>
-              <h3>Waar is SculptClub gevestigd?</h3>
-              <p>
-                Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Voor PT-sessies regelt je trainer de toegang; voor Open Gym ontvang je zelf een deurcode via WhatsApp. Geen bel, geen receptie.
+                In een grote sportschool train je anoniem. Niemand ziet dat je
+                compensatiepatroon verergert of dat je een oefening verkeerd uitvoert.
+                Bij SculptClub train je <a href="/nl/studio" className="text-brand hover:underline">één-op-één in een privé studio</a> — alleen
+                jij en je trainer. De volledige aandacht ligt bij jouw beweging, elke sessie.
               </p>
 
-              <h2>Klachten? Begin met een gratis intake</h2>
+              <h2>Hoe begin je?</h2>
               <p>
-                Een kennismaking kost niets. In 45 minuten bespreek je jouw klachten, doelen en mogelijkheden met Hamish. Geen contract, geen verplichting.
+                Sta je nog onder behandeling? Bespreek eerst met je fysiotherapeut of
+                krachttraining op dit moment passend is. Met groen licht plan je een
+                gratis intake bij ons — geen verplichtingen, geen kosten. Je bespreekt
+                je situatie, doelen en mogelijkheden, en we bepalen samen welke trainer
+                het beste past.
               </p>
             </div>
 
@@ -142,12 +157,13 @@ export default function FysiotherapeutPersonalTrainerNL() {
             </div>
 
             <div className="mt-12 p-8 rounded-2xl bg-secondary border border-border/50">
-              <h2 className="text-xl font-bold mb-2">Intake met Hamish — gratis</h2>
+              <h2 className="text-xl font-bold mb-2">Plan een gratis intake</h2>
               <p className="text-muted-foreground mb-6">
-                Blessure, chronische pijn of gewoon voorzichtig willen opbouwen? Plan een gratis kennismaking.
+                Vertel ons je situatie. We luisteren, denken mee en wijzen je door
+                naar de juiste trainer — of, als dat passender is, naar een fysiotherapeut.
               </p>
-              <ButtonLink href="/nl/gratis-intake">
-                Plan gratis intake <ArrowRight className="w-4 h-4" />
+              <ButtonLink href="/nl/vind-jouw-personal-trainer">
+                Vind jouw personal trainer <ArrowRight className="w-4 h-4" />
               </ButtonLink>
             </div>
           </article>

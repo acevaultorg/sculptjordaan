@@ -138,9 +138,8 @@ export default function PTNaBevallingAmsterdamNL() {
                 Voor veel postpartum-cliënten is een bekkenfysiotherapeut de eerste stop. Als
                 je al onder behandeling bent, werken onze trainers graag in overleg met je
                 behandelend therapeut zodat jullie programma&apos;s elkaar versterken, niet
-                tegenwerken. <a href="/nl/blog/fysiotherapeut-personal-trainer-amsterdam" className="text-brand hover:underline">Hamish</a>{" "}
-                werkt als fysiotherapeut BSc bij SculptClub — handige schakel als je
-                fysio-begeleiding en PT-begeleiding in één plek wilt.
+                tegenwerken. Wij hebben zelf geen fysiotherapeut in dienst — voor de medische
+                kant verwijzen we je graag door, en onze krachttraining sluit daar op aan.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Zo begin je</h2>

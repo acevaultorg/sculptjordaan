@@ -101,14 +101,15 @@ export default function PersonalTrainerAmsterdamWestNL() {
                 situaties. De deurcode ontvang je via WhatsApp de avond tevoren.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Vijf trainers, elk met een eigen specialisatie</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Onafhankelijke trainers, elk met een eigen specialisatie</h2>
               <p>
-                Bij SculptClub werken vijf onafhankelijke trainers. Alex is gespecialiseerd in
-                krachttraining en calisthenics. Eva combineert personal training met voedingsadvies
-                als gediplomeerd diëtist. Hamish is fysiotherapeut en werkt met klanten die
-                revalideren of specifieke klachten hebben. Andrea focust op techniek en houding.
-                Dara biedt personal training en small group sessies aan. Elk met eigen tarieven,
-                elk met een gratis intake.
+                Bij SculptClub werken onafhankelijke trainers met verschillende achtergronden.
+                Alex is gespecialiseerd in krachttraining en calisthenics. Eva combineert
+                personal training met voedingsadvies als gediplomeerd diëtist. Joey werkt met
+                ademwerk, zelfonderzoek en krachttraining. Gezina is gespecialiseerd in
+                vrouwentraining. Andrea focust op techniek en houding. Dara biedt personal
+                training en small group sessies aan. Jearmey richt zich op kracht en
+                atletische prestaties. Elk met eigen tarieven, elk met een gratis intake.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en flexibiliteit</h2>

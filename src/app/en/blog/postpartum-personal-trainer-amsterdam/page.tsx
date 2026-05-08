@@ -136,10 +136,9 @@ export default function PostpartumPTAmsterdamEN() {
               <p>
                 For many postpartum clients, a pelvic-floor physio is the first stop. If you&apos;re
                 already being treated, our trainers coordinate with your therapist so the
-                programmes reinforce rather than conflict.{" "}
-                <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="text-brand hover:underline">Hamish</a>{" "}
-                works as a physiotherapist BSc at SculptClub — a useful bridge if you want
-                physio guidance and PT guidance in one place.
+                programmes reinforce rather than conflict. We don&apos;t currently have a
+                physiotherapist on staff — for the medical side we&apos;re happy to refer you
+                out, and our strength training picks up where their treatment ends.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">How to start</h2>

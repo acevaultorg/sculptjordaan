@@ -97,7 +97,7 @@ export default function SmallGroupTrainingAmsterdamNL() {
                 per persoon bij dezelfde sessielengte.
               </p>
               <p>
-                Bij trainers zonder vast tarief (Eva, Gezina, Dara, Hamish, Jearmey) bespreek
+                Bij trainers zonder vast tarief (Eva, Gezina, Dara, Jearmey, Joey) bespreek
                 je het small-group tarief tijdens de gratis intake. In Amsterdam liggen small
                 group PT-tarieven typisch tussen €12 en €30 per persoon per sessie — een stuk
                 onder solo personal training (€45-85) en vergelijkbaar met premium sportschool-

@@ -328,7 +328,7 @@ const posts = [
   {
     title: "Personal Trainer for Back Pain in Amsterdam",
     excerpt:
-      "Back pain? Train with Hamish, physiotherapist BSc + personal trainer. Safe, progressive and effective — without making avoidance the norm.",
+      "Back pain? Strength training focused on technique, posture and progression — alongside your physiotherapist. Safe, progressive training at SculptClub.",
     category: "Recovery",
     href: "/en/blog/back-pain-personal-trainer-amsterdam",
     date: "April 16, 2026",
