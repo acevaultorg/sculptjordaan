@@ -26,6 +26,24 @@ function sendEvent(name: string, params: Record<string, string>) {
   }
 }
 
+// Mirror start_path_click into Plausible so /start performance shows up in the
+// same dashboard as WhatsApp/Acuity goals. utm_content (set per-path in /start)
+// is the "which path" signal — extracted into the Plausible `intent` prop so it
+// joins the existing trainer/open_gym/studio_rental taxonomy from analytics.tsx.
+function sendPlausibleStartPathClick(title: string, href: string) {
+  if (typeof window === "undefined") return;
+  const plausible = (window as unknown as {
+    plausible?: (name: string, opts?: { props?: Record<string, string> }) => void;
+  }).plausible;
+  if (typeof plausible !== "function") return;
+  const m = href.match(/[?&]utm_content=([^&]+)/);
+  const intentMap: Record<string, string> = { pt: "trainer", open_gym: "open_gym", studio_rental: "studio_rental" };
+  const intent = m ? (intentMap[m[1]] ?? "generic") : "generic";
+  plausible("Start Path Click", {
+    props: { intent, path_title: title, source_page: window.location.pathname },
+  });
+}
+
 export function StartPathCard({ icon, title, description, cta, href, external, highlight }: StartPathCardProps) {
   const Icon = iconMap[icon];
   const handleClick = () => {
@@ -38,6 +56,7 @@ export function StartPathCard({ icon, title, description, cta, href, external, h
       path_cta: cta,
       path_href: href,
     });
+    sendPlausibleStartPathClick(title, href);
   };
 
   const content = (

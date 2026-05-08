@@ -19,13 +19,21 @@ export const metadata: Metadata = {
   },
 };
 
+// UTM-tagged Instagram bio paths \u2014 attribution survives through to Acuity bookings.
+// utm_content differentiates which of the 3 audience paths the visitor picked.
+const IG_UTM = "utm_source=instagram&utm_medium=bio&utm_campaign=start";
+const withUtm = (url: string, content: string) => {
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}${IG_UTM}&utm_content=${content}`;
+};
+
 const paths = [
   {
     icon: "Users" as const,
     title: "Ik zoek een personal trainer",
     description: "Vind een trainer die bij jouw doelen past. De eerste intake is 100% gratis. Vanaf \u20ac45/sessie daarna.",
     cta: "Boek gratis intake",
-    href: "/nl/gratis-intake?utm_source=instagram&utm_medium=bio&utm_campaign=start",
+    href: withUtm("/nl/gratis-intake", "pt"),
     external: false,
     highlight: "Eerste sessie gratis",
   },
@@ -34,7 +42,7 @@ const paths = [
     title: "Ik wil zelfstandig trainen",
     description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Vanaf \u20ac5,75/sessie, geen abonnement.",
     cta: "Probeer Open Gym gratis",
-    href: acuityLinks.openGymTrial,
+    href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,
     highlight: "Gratis proefles",
   },
@@ -43,7 +51,7 @@ const paths = [
     title: "Ik ben trainer en zoek een studio",
     description: "Volledig uitgeruste priv\u00e9 studio voor jouw cli\u00ebnten. 0% commissie. Vanaf \u20ac12/uur.",
     cta: "Boek gratis rondleiding",
-    href: acuityLinks.studioTrial,
+    href: withUtm(acuityLinks.studioTrial, "studio_rental"),
     external: true,
     highlight: "Gratis rondleiding",
   },

@@ -19,13 +19,21 @@ export const metadata: Metadata = {
   },
 };
 
+// UTM-tagged Instagram bio paths \u2014 attribution survives through to Acuity bookings.
+// utm_content differentiates which of the 3 audience paths the visitor picked.
+const IG_UTM = "utm_source=instagram&utm_medium=bio&utm_campaign=start";
+const withUtm = (url: string, content: string) => {
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}${IG_UTM}&utm_content=${content}`;
+};
+
 const paths = [
   {
     icon: "Users" as const,
     title: "I want a personal trainer",
     description: "Get matched with a trainer who fits your goals. First intro is 100% free. From \u20ac45/session after.",
     cta: "Book free intro",
-    href: "/en/free-intro?utm_source=instagram&utm_medium=bio&utm_campaign=start",
+    href: withUtm("/en/free-intro", "pt"),
     external: false,
     highlight: "Free first session",
   },
@@ -34,7 +42,7 @@ const paths = [
     title: "I want to train solo",
     description: "Book 60-min slots in a private studio. Max 3 people. From \u20ac5.75/session, no membership.",
     cta: "Try Open Gym free",
-    href: acuityLinks.openGymTrial,
+    href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,
     highlight: "Free tryout",
   },
@@ -43,7 +51,7 @@ const paths = [
     title: "I\u2019m a trainer looking for a studio",
     description: "Fully equipped private studio for your clients. 0% commission. From \u20ac12/hour.",
     cta: "Book free studio tour",
-    href: acuityLinks.studioTrial,
+    href: withUtm(acuityLinks.studioTrial, "studio_rental"),
     external: true,
     highlight: "Free tour",
   },
