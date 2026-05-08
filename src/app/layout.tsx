@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import { LocalBusinessJsonLd, OrganizationJsonLd } from "@/components/seo/json-ld";
+import { LocalBusinessJsonLd } from "@/components/seo/json-ld";
 import { HreflangLinks } from "@/components/seo/hreflang";
 import { Analytics } from "@/components/layout/analytics";
 import { CookieConsent } from "@/components/layout/cookie-consent";
@@ -140,7 +140,6 @@ export default function RootLayout({
           Skip to main content
         </a>
         <LocalBusinessJsonLd />
-        <OrganizationJsonLd />
         {children}
         <CookieConsent />
         <WhatsAppButton />

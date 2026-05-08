@@ -174,13 +174,6 @@ export function LocalBusinessJsonLd() {
   );
 }
 
-// OrganizationJsonLd is now a no-op — its content folded into the @graph in
-// LocalBusinessJsonLd above. Kept exported so existing imports don't break.
-// Will be removed in a follow-up after grep confirms zero non-layout callers.
-export function OrganizationJsonLd() {
-  return null;
-}
-
 export function FaqJsonLd({ faqs }: { faqs: { question: string; answer: string }[] }) {
   const schema = {
     "@context": "https://schema.org",
