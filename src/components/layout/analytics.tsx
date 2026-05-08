@@ -180,7 +180,9 @@ export function Analytics() {
                   });
                 }
                 if (typeof window.plausible === 'function') {
-                  window.plausible(isIntake ? 'Free Intake Click' : 'Acuity Click', {
+                  // Note: 'Free Intake: Click' matches the goal already configured in Plausible Settings.
+                  // Don't rename to 'Free Intake Click' (no colon) — historical funnels depend on this name.
+                  window.plausible(isIntake ? 'Free Intake: Click' : 'Acuity Click', {
                     props: {
                       booking_type: booking.type,
                       intent: acuityIntent,
