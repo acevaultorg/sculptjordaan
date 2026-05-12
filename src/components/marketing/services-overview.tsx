@@ -10,46 +10,46 @@ import type { Locale } from "@/config/site";
 const services = {
   nl: [
     {
-      icon: Building2,
-      title: "Studio Huren",
-      description:
-        "Voor freelance personal trainers en fysiotherapeuten. Huur de studio per uur, behoud je klanten, 0% commissie. Vanaf €12/60 min. Kortingspakketten tot 23%.",
-      href: "/nl/studio-huren",
-      cta: "Bekijk studio & tarieven",
-      image: "/images/studio/studio-overview.jpeg",
-      imageAlt: "SculptClub studio interieur met sprint lane en dumbbell rack",
-    },
-    {
       icon: Users,
       title: "Personal Training",
       description:
-        "Train 1-op-1 met een trainer die bij jouw doel past. Gratis intake, geen contract. Vanaf €45 per sessie, 0% commissie.",
+        "Train 1-op-1 met een trainer die bij jouw doel past. Gratis intake, geen contract. Vanaf €45 per sessie.",
       href: "/nl/vind-jouw-personal-trainer",
       cta: "Vind je trainer",
       image: "/images/studio/pt-session-barbell.jpg",
       imageAlt: "Trainer begeleidt een personal training sessie bij SculptClub",
     },
-  ],
-  en: [
     {
       icon: Building2,
-      title: "Studio Rental",
+      title: "Studio Huren",
       description:
-        "For freelance personal trainers and physiotherapists. Rent the studio per hour, keep your clients, 0% commission. From €12/60 min. Discount packs up to 23%.",
-      href: "/en/studio-rental",
-      cta: "View studio & rates",
+        "Voor freelance personal trainers en fysiotherapeuten. Huur de studio per uur, behoud je klanten, 0% commissie. Vanaf €12/60 min.",
+      href: "/nl/studio-huren",
+      cta: "Bekijk studio & tarieven",
       image: "/images/studio/studio-overview.jpeg",
-      imageAlt: "SculptClub studio interior with sprint lane and dumbbell rack",
+      imageAlt: "SculptClub studio interieur met sprint lane en dumbbell rack",
     },
+  ],
+  en: [
     {
       icon: Users,
       title: "Personal Training",
       description:
-        "Train 1-on-1 with a trainer who fits your goals. Free intro, no contract. From €45 per session, 0% commission.",
+        "Train 1-on-1 with a trainer who fits your goals. Free intro, no contract. From €45 per session.",
       href: "/en/find-personal-trainer",
       cta: "Find your trainer",
       image: "/images/studio/pt-session-barbell.jpg",
       imageAlt: "Trainer spotting a personal training session at SculptClub",
+    },
+    {
+      icon: Building2,
+      title: "Studio Rental",
+      description:
+        "For freelance personal trainers and physiotherapists. Rent the studio per hour, keep your clients, 0% commission. From €12/60 min.",
+      href: "/en/studio-rental",
+      cta: "View studio & rates",
+      image: "/images/studio/studio-overview.jpeg",
+      imageAlt: "SculptClub studio interior with sprint lane and dumbbell rack",
     },
   ],
 };

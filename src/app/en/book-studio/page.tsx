@@ -252,6 +252,30 @@ export default function BookStudioPageEN() {
         />
       </Section>
 
+      {/* Indecisive-capture: low-friction WhatsApp before booking commitment */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center sm:flex sm:items-center sm:justify-between sm:text-left">
+            <div>
+              <p className="text-base font-semibold">Not sure which option?</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                WhatsApp us your situation — we&apos;ll advise within 1 hour.
+              </p>
+            </div>
+            <ButtonLink
+              href={whatsappLinks.studioEn}
+              external
+              size="lg"
+              variant="outline"
+              className="mt-4 sm:mt-0 plausible-event-name=book_studio_uncertain_whatsapp"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp us
+            </ButtonLink>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* How it works */}
       <Section>
         <SectionHeader overline="How it works" title="Get Started in 3 Steps" />

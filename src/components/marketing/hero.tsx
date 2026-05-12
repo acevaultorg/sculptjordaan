@@ -15,8 +15,8 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Jouw manier. Jouw resultaat.",
       ctas: [
-        { label: "Huur de Studio", href: "/nl/studio-huren", icon: Building2 },
-        { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
+        { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users, primary: true },
+        { label: "Huur de Studio", href: "/nl/studio-huren", icon: Building2, primary: false },
       ],
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
     },
@@ -24,8 +24,8 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Your way. Your results.",
       ctas: [
-        { label: "Rent the Studio", href: "/en/studio-rental", icon: Building2 },
-        { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
+        { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users, primary: true },
+        { label: "Rent the Studio", href: "/en/studio-rental", icon: Building2, primary: false },
       ],
       trust: "First intro free · No contracts · Daily 06:30–22:00 · 5.0 ★ Google",
     },
@@ -87,7 +87,11 @@ export function Hero({ locale }: { locale: Locale }) {
                   key={cta.href}
                   href={cta.href}
                   size="lg"
-                  className="rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/25 backdrop-blur transition-all"
+                  className={
+                    cta.primary
+                      ? "rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white border border-brand transition-all shadow-brand-lg"
+                      : "rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/25 backdrop-blur transition-all"
+                  }
                   onClick={() => trackHeroClick(cta.label, i + 1, locale)}
                 >
                   <cta.icon className="w-4 h-4" />
