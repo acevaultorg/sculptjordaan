@@ -151,12 +151,12 @@ export default function TrainersPageEN() {
         </FadeIn>
       </Section>
 
-      {/* For trainers — recruitment */}
+      {/* For trainers — recruitment cross-link */}
       <Section>
         <SectionHeader
           overline="For trainers"
-          title="Grow Your Practice Without Fixed Costs"
-          description="Start or grow your practice in our premium studio in the Jordaan."
+          title="Are you a personal trainer? Rent the studio."
+          description="0% commission, your own profile on this site, and matching with clients who find SculptClub directly. From €12/hour."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -175,12 +175,16 @@ export default function TrainersPageEN() {
           ))}
         </div>
 
-        <FadeIn delay={0.4} className="mt-10 flex justify-center">
+        <FadeIn delay={0.4} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <ButtonLink href="/en/for-trainers" size="lg">
+            See For-Trainers info
+          </ButtonLink>
           <ButtonLink
             href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and I'd like to know more about working at SculptClub")}`}
             size="lg"
+            variant="outline"
           >
-            Apply via WhatsApp
+            WhatsApp us
           </ButtonLink>
         </FadeIn>
       </Section>
