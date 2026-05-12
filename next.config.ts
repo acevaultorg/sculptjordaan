@@ -304,6 +304,16 @@ const nextConfig: NextConfig = {
       { source: "/strength-45", destination: "/nl/prijzen", permanent: true },
       // EN blog slug was Dutch — send to EN equivalent
       { source: "/en/blog/prive-sportschool-vs-grote-sportschool", destination: "/en/blog/private-gym-vs-big-box-gym", permanent: true },
+
+      // ─── GSC 404 cleanup — wave 4 (pulled from Search Console 2026-05-12) ───
+      // 5 gaps caught after wave-3 audit: WP path-probe + missing locale/blog redirects + naked /about
+      { source: "/wp-content/:path*", destination: "/", permanent: true },
+      { source: "/wp-includes/:path*", destination: "/", permanent: true },
+      { source: "/wp-json/:path*", destination: "/", permanent: true },
+      { source: "/nl/faqs-2", destination: "/nl/faqs", permanent: true },
+      { source: "/nl/blog/personal-trainer-amsterdam-jordaan", destination: "/nl/personal-trainer-jordaan", permanent: true },
+      { source: "/bookstudio", destination: "/nl/boek-studio", permanent: true },
+      { source: "/about", destination: "/nl/over-ons", permanent: true },
     ];
   },
 
