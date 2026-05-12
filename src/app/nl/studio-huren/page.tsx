@@ -31,6 +31,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 
 export const metadata: Metadata = {
   title: { absolute: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan" },
@@ -157,6 +158,9 @@ export default function StudioRentalPageNL() {
           </FadeIn>
         </div>
       </Section>
+
+      {/* Client-growth value prop — what trainers GET beyond the room */}
+      <TrainerValueProp locale="nl" />
 
       {/* Embedded Acuity scheduler — free Studio Rental try-out stays on sculptclub.nl */}
       <Section id="schedule">
