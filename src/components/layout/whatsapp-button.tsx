@@ -3,10 +3,53 @@
 import { usePathname } from "next/navigation";
 import { getLocaleFromPath } from "@/lib/locale";
 
-const whatsappLinks = {
-  nl: "https://wa.me/31683178934?text=Hoi!%20Ik%20heb%20een%20vraag%20over%20SculptClub",
-  en: "https://wa.me/31683178934?text=Hi!%20I%20have%20a%20question%20about%20SculptClub",
+const PHONE = "31683178934";
+
+const messages = {
+  nl: {
+    studio:
+      "Hoi! Ik ben personal trainer en wil graag de studio bekijken / huren",
+    trainerMember:
+      "Hoi! Ik wil graag trainer-member worden bij SculptClub",
+    trainerInfo:
+      "Hoi! Ik ben personal trainer en heb een vraag over SculptClub",
+    findTrainer:
+      "Hoi! Ik zoek een personal trainer bij SculptClub",
+    openGym:
+      "Hoi! Ik heb een vraag over Open Gym bij SculptClub",
+    default: "Hoi! Ik heb een vraag over SculptClub",
+  },
+  en: {
+    studio:
+      "Hi! I'm a personal trainer and would like to see / rent the studio",
+    trainerMember:
+      "Hi! I'd like to become a trainer member at SculptClub",
+    trainerInfo:
+      "Hi! I'm a personal trainer and have a question about SculptClub",
+    findTrainer:
+      "Hi! I'm looking for a personal trainer at SculptClub",
+    openGym:
+      "Hi! I have a question about Open Gym at SculptClub",
+    default: "Hi! I have a question about SculptClub",
+  },
 } as const;
+
+function pickMessage(pathname: string, locale: "nl" | "en"): string {
+  const m = messages[locale];
+  // Trainer-acquisition pages (highest revenue per click)
+  if (/\/(studio-huren|studio-rental)(\/|$)/.test(pathname)) return m.studio;
+  if (/\/(word-trainer|become-trainer)(\/|$)/.test(pathname))
+    return m.trainerMember;
+  if (/\/(voor-trainers|for-trainers)(\/|$)/.test(pathname))
+    return m.trainerInfo;
+  // Consumer pages
+  if (
+    /\/(vind-jouw-personal-trainer|find-personal-trainer)(\/|$)/.test(pathname)
+  )
+    return m.findTrainer;
+  if (/\/(open-gym|book-gym|boek-gym)(\/|$)/.test(pathname)) return m.openGym;
+  return m.default;
+}
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -25,12 +68,14 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function WhatsAppButton() {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname);
+  const message = pickMessage(pathname, locale);
+  const href = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
 
   const label = locale === "nl" ? "Chat via WhatsApp" : "Chat via WhatsApp";
 
   return (
     <a
-      href={whatsappLinks[locale]}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
