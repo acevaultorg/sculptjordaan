@@ -4,7 +4,8 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale } from "lucide-react";
+import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar } from "lucide-react";
+import { acuityFreeTrials } from "@/config/acuity";
 
 export const metadata: Metadata = {
   title: { absolute: "Voor Personal Trainers in Amsterdam | SculptClub Jordaan" },
@@ -132,7 +133,11 @@ export default function VoorTrainersHubNL() {
           center={false}
         />
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="/nl/word-trainer" size="lg">
+          <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+            <Calendar className="mr-2 h-4 w-4" />
+            Plan gratis rondleiding
+          </ButtonLink>
+          <ButtonLink href="/nl/word-trainer" variant="outline" size="lg">
             Word trainer-member
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
@@ -203,16 +208,18 @@ export default function VoorTrainersHubNL() {
               60 minuten in de studio, kennismaken, vraag stellen. Geen verplichting. Geen pitch.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+                <Calendar className="mr-2 h-4 w-4" />
+                Plan gratis rondleiding
+              </ButtonLink>
               <ButtonLink
                 href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag de studio bekijken")}`}
                 external
+                variant="outline"
                 size="lg"
+                className="border-white/20 text-white hover:bg-white/10"
               >
                 WhatsApp ons
-              </ButtonLink>
-              <ButtonLink href="/nl/word-trainer" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                Lees meer over word-trainer
-                <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
             </div>
           </div>

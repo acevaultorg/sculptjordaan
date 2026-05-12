@@ -4,7 +4,8 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale } from "lucide-react";
+import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar } from "lucide-react";
+import { acuityFreeTrials } from "@/config/acuity";
 
 export const metadata: Metadata = {
   title: { absolute: "For Personal Trainers in Amsterdam | SculptClub Jordaan" },
@@ -132,7 +133,11 @@ export default function ForTrainersHubEN() {
           center={false}
         />
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="/en/become-trainer" size="lg">
+          <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+            <Calendar className="mr-2 h-4 w-4" />
+            Schedule a free tour
+          </ButtonLink>
+          <ButtonLink href="/en/become-trainer" variant="outline" size="lg">
             Become a trainer member
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
@@ -203,16 +208,18 @@ export default function ForTrainersHubEN() {
               60 minutes in the studio, get to know us, ask anything. No obligation. No pitch.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+                <Calendar className="mr-2 h-4 w-4" />
+                Schedule a free tour
+              </ButtonLink>
               <ButtonLink
                 href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to see the studio")}`}
                 external
+                variant="outline"
                 size="lg"
+                className="border-white/20 text-white hover:bg-white/10"
               >
                 WhatsApp us
-              </ButtonLink>
-              <ButtonLink href="/en/become-trainer" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                Learn about membership
-                <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
             </div>
           </div>
