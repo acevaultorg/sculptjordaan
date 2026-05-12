@@ -3,9 +3,29 @@
 # Schema: AUG v3 7-factor composite per `rules/aceusergrowth.md` v3 Part 25
 # Created: 2026-05-06 (first audit — pre-existing site, retroactive baseline)
 # Archetype: local_business_multilingual_seo_with_clarity_conversions (per concept-finder-methodology v2.3)
-# Note: D7 retention is the WRONG primary metric for this archetype — see
-#       per-project memory `feedback_sculptclub_archetype_correction.md`.
-#       Primary AAERA-compliant metric here = session_to_booking_attempt_rate (Activation).
+#
+# RETENTION FACTOR — archetype-corrected (2026-05-12):
+#   Generic AUG v3 uses D7 return-rate as retention proxy. For
+#   `local_business_multilingual_seo` archetype, D7 is the WRONG metric —
+#   boutique-gym visitors return for booked sessions weeks/months later,
+#   not within 7 days. Per `feedback_sculptclub_archetype_correction.md`,
+#   primary retention metric here = `session_to_booking_attempt_rate`
+#   (Acuity Click + WhatsApp Click + Free Intake: Click goal CR vs total UV).
+#   This is operationally Activation-stage in AAERA, but for a boutique
+#   service-business it's also the durable retention proxy: a booked session
+#   IS the return signal that matters.
+#   Score mapping (booking-attempt CR → ret factor 0-10):
+#     <2%   → 1  (broken funnel)
+#     2-5%  → 3  (weak)
+#     5-10% → 5  (acceptable)
+#     10-15% → 6 (strong)
+#     15-25% → 7 (excellent)
+#     25-35% → 8 (best-in-class)
+#     >35%  → 9-10 (exceptional / requires verification)
+#   Prior 2026-05-06 rows used D7 metric (gave ret=2) — incorrect per archetype
+#   correction. From 2026-05-12 forward, retention factor uses
+#   booking-attempt CR. Historical rows retained for audit trail; AUG_v3
+#   numbers in 2026-05-06 rows are LOW relative to true site health.
 
 ## Weekly Score v3
 
@@ -105,4 +125,28 @@
   3. **Acquisition 4→6+**: Instagram cadence ramp (operator-side, not brain-doable)
 
 The shipped work today is PROTECTIVE not GROWTH-MULTIPLYING. Per v19.43 funnel-order discipline at site scale (15 UV/day), protective work is correct — without compliance + tracking integrity, future growth would be at risk. AUG plateau is the honest measurement; growth needs operator + time + the two brain-doable upgrades above.
+
+
+| 2026-05-12 (post methodology correction) | 4 | 7 | 7 | 7 | 4 | 7 | 7 | 60 | +7 (methodology, not site delta) | advocacy (still no engineered share mechanism) | 0.9 | live Plausible Chrome MCP audit + archetype-corrected retention metric per `feedback_sculptclub_archetype_correction.md` |
+
+**Computed (2026-05-12 methodology correction):** Product = 4×7×7×7×4×7×7 = 268,912; ⁷√268912 ≈ 5.97; ×10 = 60.
+
+**Retention factor derivation (NEW methodology):**
+- Today's Plausible Goals (period=day): Lead Generated 3 unique visitors / 15 UV = **20% booking-attempt CR**
+- Per archetype-corrected schema in header: 15-25% → 7 (excellent)
+- This corrects the prior D7-mismatch scoring of 3 (which scored a wrong metric)
+- Score is NOT a site improvement — it's a measurement correction. Site health was always at this level; we were just measuring it with the wrong metric.
+
+**WoW analysis (corrected vs corrected):**
+- 2026-05-06 baseline if re-computed with corrected retention: would have been similarly ~60 (Plausible data 6 days ago showed similar booking-attempt CR per CONTEXT.md tracking-calibration history; we don't have exact ret-as-booking-attempt computation for that day, but inferred from similar Acuity Click rates)
+- Real WoW site-health delta: ~0 (no actual growth in 6 days, as expected at 15 UV/day scale)
+- Score WoW: +7 from methodology correction, not site improvement
+
+**New top weakness (post correction):** advocacy (4). Engineered share mechanism still missing. Per AceUserGrowth v3 § Part 12, opportunities:
+- Share-card per booking-confirmation page (1200×630 PNG + pre-composed tweet + Instagram share button)
+- Referral mechanic (visitor brings friend to free intake → friend's first session = discount for referrer)
+- Social proof embed widget for trainers' own sites + blog cross-links
+These are NEW-FEATURE ships per v20.0 ship-moratorium; gated for explicit operator trigger (`make new version because [specific revenue mechanism]`).
+
+**Score-tier shift:** 53 (Thriving upper-band) → 60 (Fleet champion baseline territory per `rules/aceusergrowth.md` Part 25 thresholds: >50 = scale horizontally, but 60 approaches "fleet champion" 64+). Honest read: SculptClub is healthier than the AUG composite was showing; the metric correction surfaces that.
 
