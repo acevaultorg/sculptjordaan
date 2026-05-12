@@ -161,7 +161,7 @@ export default function ZZPChecklistNL() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href="/nl/word-trainer" size="lg">
-                Word vaste trainer
+                Word trainer
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

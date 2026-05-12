@@ -59,7 +59,50 @@ export default function StudioVsThuisVsBuitenNL() {
             Een freelance personal trainer kan op vier manieren werken: eigen studio leasen, bij de klant thuis trainen, buiten in een park, of een studio per uur huren. Elke optie heeft een ander kostenmodel, andere klantgroep, en andere risico's. Hieronder de vergelijking gebaseerd op echte cijfers uit de Amsterdam-PT-markt.
           </p>
 
-          <h2>Optie A — Eigen studio leasen</h2>
+          {/* At-a-glance comparison table — sticky scannable summary */}
+          <div className="not-prose my-10 overflow-x-auto rounded-2xl border border-border bg-card/50">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border bg-muted/30">
+                  <th className="px-4 py-3 text-left font-semibold">Optie</th>
+                  <th className="px-4 py-3 text-right font-semibold">Vaste kosten/mnd</th>
+                  <th className="px-4 py-3 text-right font-semibold">Netto-marge*</th>
+                  <th className="px-4 py-3 text-left font-semibold hidden sm:table-cell">Wanneer kiezen?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-border/50">
+                  <td className="px-4 py-3"><a href="#optie-a" className="font-medium hover:underline">A. Eigen studio</a></td>
+                  <td className="px-4 py-3 text-right">€1.850-€4.200</td>
+                  <td className="px-4 py-3 text-right">€4.500</td>
+                  <td className="px-4 py-3 text-muted-foreground hidden sm:table-cell">3+ jaar, ≥25 sessies/wk</td>
+                </tr>
+                <tr className="border-b border-border/50">
+                  <td className="px-4 py-3"><a href="#optie-b" className="font-medium hover:underline">B. Bij klant thuis</a></td>
+                  <td className="px-4 py-3 text-right">€25-€45</td>
+                  <td className="px-4 py-3 text-right">€5.400</td>
+                  <td className="px-4 py-3 text-muted-foreground hidden sm:table-cell">Start, &lt;10 klanten</td>
+                </tr>
+                <tr className="border-b border-border/50">
+                  <td className="px-4 py-3"><a href="#optie-c" className="font-medium hover:underline">C. Buiten in park</a></td>
+                  <td className="px-4 py-3 text-right">€25-€45</td>
+                  <td className="px-4 py-3 text-right">€3.300 (zomer)</td>
+                  <td className="px-4 py-3 text-muted-foreground hidden sm:table-cell">Aanvulling, niet hoofd</td>
+                </tr>
+                <tr className="bg-primary/5">
+                  <td className="px-4 py-3"><a href="#optie-d" className="font-semibold text-primary hover:underline">D. Studio per uur</a></td>
+                  <td className="px-4 py-3 text-right font-semibold">€25-€45</td>
+                  <td className="px-4 py-3 text-right font-semibold">€6.760-€7.260</td>
+                  <td className="px-4 py-3 hidden sm:table-cell"><strong>Meeste trainers</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="px-4 py-3 text-xs text-muted-foreground border-t border-border/50">
+              *Bij 25 sessies/week × €85, vóór belasting. Volledige berekeningen + risico's per optie hieronder.
+            </p>
+          </div>
+
+          <h2 id="optie-a">Optie A — Eigen studio leasen</h2>
           <p>
             Een eigen ruimte huren of kopen, eventueel met andere trainers delen. Volledige controle, maar substantiële vaste kosten.
           </p>
@@ -72,7 +115,7 @@ export default function StudioVsThuisVsBuitenNL() {
             <li><strong>Risico's:</strong> lange huurcontracten (meestal 5 jaar), apparatuur-afschrijving, leegstand bij vakantie of ziekte</li>
           </ul>
 
-          <h2>Optie B — Bij de klant thuis trainen</h2>
+          <h2 id="optie-b">Optie B — Bij de klant thuis trainen</h2>
           <p>
             Geen ruimtekosten, maar reistijd-belasting en lager gepercipieerde professionaliteit.
           </p>
@@ -85,7 +128,7 @@ export default function StudioVsThuisVsBuitenNL() {
             <li><strong>Risico's:</strong> klant-no-show kost reistijd (niet alleen sessietijd), beperkte apparatuur, geen referral-effect (klanten zien je niet werken met anderen)</li>
           </ul>
 
-          <h2>Optie C — Buiten in het park</h2>
+          <h2 id="optie-c">Optie C — Buiten in het park</h2>
           <p>
             Vondelpark, Westerpark, Sloterpark. Geen huur, maar weersafhankelijk en niet voor zware training geschikt.
           </p>
@@ -99,7 +142,7 @@ export default function StudioVsThuisVsBuitenNL() {
             <li><strong>Risico's:</strong> regen/wind annulering, geen apparatuur voor krachttraining, beperkt publiek (vooral younger active types)</li>
           </ul>
 
-          <h2>Optie D — Studio per uur huren</h2>
+          <h2 id="optie-d">Optie D — Studio per uur huren</h2>
           <p>
             Boek een uur in een gedeelde of privé studio wanneer je een klant hebt. Geen vaste kosten, professionele uitstraling.
           </p>

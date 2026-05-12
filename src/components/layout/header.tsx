@@ -183,8 +183,11 @@ export function Header() {
                     className={cn(
                       "relative px-3 h-9 flex items-center rounded-lg text-sm font-medium transition-colors",
                       "hover:bg-accent",
-                      isActive ? "text-foreground" : "text-muted-foreground",
-                      !scrolled && "[text-shadow:_0_1px_8px_rgba(0,0,0,0.6)]"
+                      !scrolled
+                        ? "text-white [text-shadow:_0_1px_10px_rgba(0,0,0,0.85),0_0_4px_rgba(0,0,0,0.6)]"
+                        : isActive
+                          ? "text-foreground"
+                          : "text-muted-foreground"
                     )}
                   >
                     {item.label}

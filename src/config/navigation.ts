@@ -10,7 +10,7 @@ export const mainNav: Record<Locale, NavItem[]> = {
   nl: [
     { label: "Studio Huren", href: "/nl/studio-huren" },
     { label: "Voor Trainers", href: "/nl/voor-trainers" },
-    { label: "Trainers Vinden", href: "/nl/vind-jouw-personal-trainer" },
+    { label: "Trainer Vinden", href: "/nl/vind-jouw-personal-trainer" },
     { label: "Open Gym", href: "/nl/open-gym" },
   ],
   en: [
