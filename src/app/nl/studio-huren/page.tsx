@@ -192,16 +192,17 @@ export default function StudioRentalPageNL() {
               <div className="rounded-xl border border-border bg-card p-4">
                 <p className="text-sm font-semibold mb-1">Halve studio</p>
                 <p className="text-xs leading-relaxed text-muted-foreground">
-                  Eén trainingszone — perfect voor 1-op-1 sessies of duo-training.
-                  De andere helft kan tegelijk door een andere trainer worden gebruikt.
+                  Voor maximaal <strong className="text-foreground">2 personen</strong> totaal.
+                  Perfect voor 1-op-1 personal training. De andere helft van de studio kan
+                  tegelijk door een andere trainer gebruikt worden.
                 </p>
               </div>
               <div className="rounded-xl border border-border bg-card p-4">
                 <p className="text-sm font-semibold mb-1">Hele studio</p>
                 <p className="text-xs leading-relaxed text-muted-foreground">
                   Volledig privé — de hele ruimte voor jou en je klant(en).
-                  Max 6 personen. Voor groepstraining, semi-private of als je
-                  niemand anders wilt zien.
+                  We adviseren <strong className="text-foreground">maximaal 6 personen</strong>.
+                  Voor duo-, semi-private of kleine groepstraining.
                 </p>
               </div>
             </div>

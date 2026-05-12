@@ -4,6 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import Image from "next/image";
 import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar } from "lucide-react";
 import { acuityFreeTrials } from "@/config/acuity";
 
@@ -132,6 +133,18 @@ export default function VoorTrainersHubNL() {
           description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, geen commissie op jouw klanten, eigen profiel op onze site. Begin met uur-huur — of word trainer bij SculptClub en krijg klanten via ons."
           center={false}
         />
+        <FadeIn>
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl mb-6">
+            <Image
+              src="/images/studio/training-squat-cinematic.jpg"
+              alt="Privé squat rack in de SculptClub studio in Jordaan"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1024px"
+              priority
+            />
+          </div>
+        </FadeIn>
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink
             href={acuityFreeTrials.studioRentalTryout}

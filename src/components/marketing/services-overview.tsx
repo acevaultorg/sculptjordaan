@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Users, Dumbbell, Building2, ArrowRight } from "lucide-react";
+import { Users, Building2, ArrowRight } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import type { Locale } from "@/config/site";
@@ -29,16 +29,6 @@ const services = {
       image: "/images/studio/pt-session-barbell.jpg",
       imageAlt: "Trainer begeleidt een personal training sessie bij SculptClub",
     },
-    {
-      icon: Dumbbell,
-      title: "Open Gym",
-      description:
-        "Zelfstandig trainen in een privé studio. Boek een slot, krijg je deurcode, train. Max 3 personen, altijd ruimte. Vanaf €29/4 weken.",
-      href: "/nl/open-gym",
-      cta: "Bekijk Open Gym",
-      image: "/images/studio/training-squat-cinematic.jpg",
-      imageAlt: "Zelfstandig trainen in de privé squat rack bij SculptClub",
-    },
   ],
   en: [
     {
@@ -61,16 +51,6 @@ const services = {
       image: "/images/studio/pt-session-barbell.jpg",
       imageAlt: "Trainer spotting a personal training session at SculptClub",
     },
-    {
-      icon: Dumbbell,
-      title: "Open Gym",
-      description:
-        "Train independently in a private studio. Book a slot, get your door code, train. Max 3 people, always space. From €29/4 weeks.",
-      href: "/en/open-gym",
-      cta: "View Open Gym",
-      image: "/images/studio/training-squat-cinematic.jpg",
-      imageAlt: "Self-directed training in the private squat rack at SculptClub",
-    },
   ],
 };
 
@@ -83,7 +63,7 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
   return (
     <Section>
       <SectionHeader overline={t.overline} title={t.title} />
-      <div className="grid sm:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {items.map((service, i) => (
           <FadeIn key={service.title} delay={i * 0.1}>
             <Link href={service.href} className="block h-full">

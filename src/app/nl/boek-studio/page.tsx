@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -104,9 +105,9 @@ export default function BoekStudioPageNL() {
       />
       <FaqJsonLd faqs={faqJsonLdData} />
 
-      {/* ═══ ABOVE THE FOLD: Hero + Pricing Table in one view ═══ */}
+      {/* ═══ ABOVE THE FOLD: Hero + Tabs (Packages default · Hourly secondary) ═══ */}
       <Section>
-        <div className="mb-2 text-center">
+        <div className="mb-6 text-center">
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek de Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -114,145 +115,135 @@ export default function BoekStudioPageNL() {
           </p>
         </div>
 
-        {/* Pricing table — visible without scrolling */}
-        <div className="mx-auto mt-6 max-w-3xl">
-          <div className="overflow-hidden rounded-xl border bg-card">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b bg-muted/50">
-                  <th className="px-4 py-3 text-left font-medium">Ruimte</th>
-                  <th className="px-4 py-3 text-center font-medium">60 min</th>
-                  <th className="px-4 py-3 text-center font-medium">90 min</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b">
-                  <td className="px-4 py-3 font-medium">Halve studio (1:1)</td>
-                  <td className="px-4 py-3 text-center">
-                    <span className="font-semibold">&euro;12</span>
-                    <ButtonLink href={acuityLinks.halfStudio60} size="lg" className="ml-2">
-                      Boek
+        <RentalTabs
+          locale="nl"
+          packages={
+            <div className="mx-auto max-w-5xl">
+              <p className="mb-4 text-center text-sm text-muted-foreground">
+                Strippenkaart kopen en besparen. 1 jaar geldig.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <Card className="h-full text-center">
+                  <CardHeader>
+                    <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
+                    <CardTitle className="text-xl">Starter</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;99</p>
+                    <p className="text-3xl font-bold">&euro;89</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 10%</p>
+                    <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
+                      Koop Starter
                     </ButtonLink>
-                  </td>
-                  <td className="px-4 py-3 text-center">
-                    <span className="font-semibold">&euro;17</span>
-                    <ButtonLink href={acuityLinks.halfStudio90} size="lg" className="ml-2">
-                      Boek
-                    </ButtonLink>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
-                  <td className="px-4 py-3 text-center">
-                    <span className="font-semibold">&euro;17</span>
-                    <ButtonLink href={acuityLinks.fullStudio60} size="lg" className="ml-2">
-                      Boek
-                    </ButtonLink>
-                  </td>
-                  <td className="px-4 py-3 text-center">
-                    <span className="font-semibold">&euro;24</span>
-                    <ButtonLink href={acuityLinks.fullStudio90} size="lg" className="ml-2">
-                      Boek
-                    </ButtonLink>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-            <CreditCard className="h-3.5 w-3.5" />
-            <span>CreditCard, Apple Pay, Google Pay of factuur</span>
-          </div>
-        </div>
+                  </CardContent>
+                </Card>
 
-      </Section>
+                <Card className="h-full text-center ring-2 ring-primary">
+                  <CardHeader>
+                    <Badge className="mx-auto mb-2">Meest gekozen</Badge>
+                    <CardTitle className="text-xl">Routine</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;234</p>
+                    <p className="text-3xl font-bold">&euro;199</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 15%</p>
+                    <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
+                      Koop Routine
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
 
-      {/* ═══ DISCOUNT PACKAGES ═══ */}
-      <Section bg="muted">
-        <SectionHeader
-          overline="Voordeelpakketten"
-          title="Meer Trainen, Meer Besparen"
-          description="Strippenkaart kopen en besparen. 1 jaar geldig."
+                <Card className="h-full text-center">
+                  <CardHeader>
+                    <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
+                    <CardTitle className="text-xl">Pro</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;436</p>
+                    <p className="text-3xl font-bold">&euro;349</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 20%</p>
+                    <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
+                      Koop Pro
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
+
+                <Card className="h-full text-center">
+                  <CardHeader>
+                    <Badge className="mx-auto mb-2" variant="secondary">Beste deal</Badge>
+                    <CardTitle className="text-xl">Volume</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;713</p>
+                    <p className="text-3xl font-bold">&euro;549</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 23%</p>
+                    <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
+                      Koop Volume
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <p className="mt-6 text-center text-sm text-muted-foreground">
+                Laagste tarief: <span className="text-discount font-medium">&euro;9,24/sessie</span> · Liever per bank?{" "}
+                <a href={whatsappLinks.bankTransferNl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
+                  WhatsApp ons
+                </a>
+              </p>
+            </div>
+          }
+          hourly={
+            <div className="mx-auto max-w-3xl">
+              <div className="overflow-hidden rounded-xl border bg-card">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="px-4 py-3 text-left font-medium">Ruimte</th>
+                      <th className="px-4 py-3 text-center font-medium">60 min</th>
+                      <th className="px-4 py-3 text-center font-medium">90 min</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="px-4 py-3 font-medium">Halve studio (max 2)</td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;12</span>
+                          <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;17</span>
+                          <ButtonLink href={acuityLinks.halfStudio90} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;17</span>
+                          <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;24</span>
+                          <ButtonLink href={acuityLinks.fullStudio90} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <CreditCard className="h-3.5 w-3.5" />
+                <span>CreditCard, Apple Pay, Google Pay of factuur</span>
+              </div>
+            </div>
+          }
         />
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <FadeIn delay={0}>
-            <Card className="h-full text-center">
-              <CardHeader>
-                <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
-                <CardTitle className="text-xl">Starter</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">&euro;99</p>
-                <p className="text-3xl font-bold">&euro;89</p>
-                <p className="mt-2 text-sm text-discount font-medium">Bespaar 10%</p>
-                <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
-                  Koop Starter
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-
-          <FadeIn delay={0.1}>
-            <Card className="h-full text-center ring-2 ring-primary">
-              <CardHeader>
-                <Badge className="mx-auto mb-2">Meest gekozen</Badge>
-                <CardTitle className="text-xl">Routine</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">&euro;234</p>
-                <p className="text-3xl font-bold">&euro;199</p>
-                <p className="mt-2 text-sm text-discount font-medium">Bespaar 15%</p>
-                <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
-                  Koop Routine
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <Card className="h-full text-center">
-              <CardHeader>
-                <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
-                <CardTitle className="text-xl">Pro</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">&euro;436</p>
-                <p className="text-3xl font-bold">&euro;349</p>
-                <p className="mt-2 text-sm text-discount font-medium">Bespaar 20%</p>
-                <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
-                  Koop Pro
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <Card className="h-full text-center">
-              <CardHeader>
-                <Badge className="mx-auto mb-2" variant="secondary">Beste deal</Badge>
-                <CardTitle className="text-xl">Volume</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">&euro;713</p>
-                <p className="text-3xl font-bold">&euro;549</p>
-                <p className="mt-2 text-sm text-discount font-medium">Bespaar 23%</p>
-                <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
-                  Koop Volume
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-        </div>
-
-        <FadeIn delay={0.3}>
-          <p className="mt-6 text-center text-sm text-muted-foreground">
-            Laagste tarief: <span className="text-discount font-medium">&euro;9,24/sessie</span> · Liever per bank?{" "}
-            <a href={whatsappLinks.bankTransferNl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
-              WhatsApp ons
-            </a>
-          </p>
-        </FadeIn>
       </Section>
 
       {/* How it works */}

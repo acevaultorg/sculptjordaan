@@ -186,16 +186,17 @@ export default function StudioRentalPageEN() {
               <div className="rounded-xl border border-border bg-card p-4">
                 <p className="text-sm font-semibold mb-1">Half studio</p>
                 <p className="text-xs leading-relaxed text-muted-foreground">
-                  One training zone — perfect for 1-on-1 sessions or duo training.
-                  The other half can be used by another trainer at the same time.
+                  For a maximum of <strong className="text-foreground">2 people</strong> total.
+                  Perfect for 1-on-1 personal training. The other half of the studio
+                  can be used by another trainer at the same time.
                 </p>
               </div>
               <div className="rounded-xl border border-border bg-card p-4">
                 <p className="text-sm font-semibold mb-1">Full studio</p>
                 <p className="text-xs leading-relaxed text-muted-foreground">
                   Fully private — the entire space for you and your client(s).
-                  Max 6 people. For group training, semi-private, or when you
-                  want zero distractions.
+                  We recommend <strong className="text-foreground">a maximum of 6 people</strong>.
+                  For duo-, semi-private, or small group training.
                 </p>
               </div>
             </div>
