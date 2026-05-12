@@ -8,14 +8,16 @@ export interface NavItem {
 
 export const mainNav: Record<Locale, NavItem[]> = {
   nl: [
-    { label: "Trainers", href: "/nl/vind-jouw-personal-trainer" },
-    { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Studio Huren", href: "/nl/studio-huren" },
+    { label: "Voor Trainers", href: "/nl/voor-trainers" },
+    { label: "Trainers Vinden", href: "/nl/vind-jouw-personal-trainer" },
+    { label: "Open Gym", href: "/nl/open-gym" },
   ],
   en: [
-    { label: "Trainers", href: "/en/find-personal-trainer" },
-    { label: "Open Gym", href: "/en/open-gym" },
     { label: "Studio Rental", href: "/en/studio-rental" },
+    { label: "For Trainers", href: "/en/for-trainers" },
+    { label: "Find a Trainer", href: "/en/find-personal-trainer" },
+    { label: "Open Gym", href: "/en/open-gym" },
   ],
 };
 
@@ -46,19 +48,21 @@ export const secondaryNav: Record<Locale, NavItem[]> = {
 
 export const footerServices: Record<Locale, NavItem[]> = {
   nl: [
+    { label: "Huur de Studio", href: "/nl/studio-huren" },
+    { label: "Word trainer", href: "/nl/word-trainer" },
+    { label: "Voor Trainers (hub)", href: "/nl/voor-trainers" },
     { label: "Vind een personal trainer", href: "/nl/vind-jouw-personal-trainer" },
     { label: "Open Gym", href: "/nl/open-gym" },
-    { label: "Huur de Studio", href: "/nl/studio-huren" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
-    { label: "Word trainer", href: "/nl/word-trainer" },
     { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
   en: [
+    { label: "Rent the Studio", href: "/en/studio-rental" },
+    { label: "Become a trainer", href: "/en/become-trainer" },
+    { label: "For Trainers (hub)", href: "/en/for-trainers" },
     { label: "Find your Trainer", href: "/en/find-personal-trainer" },
     { label: "Open Gym", href: "/en/open-gym" },
-    { label: "Rent the Studio", href: "/en/studio-rental" },
     { label: "First Visit", href: "/en/first-visit" },
-    { label: "Become a trainer", href: "/en/become-trainer" },
     { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
 };
