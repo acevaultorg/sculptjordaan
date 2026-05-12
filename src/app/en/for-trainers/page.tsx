@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import Image from "next/image";
+import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
 import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar } from "lucide-react";
 import { acuityFreeTrials } from "@/config/acuity";
 
@@ -134,14 +134,16 @@ export default function ForTrainersHubEN() {
           center={false}
         />
         <FadeIn>
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl mb-6">
-            <Image
-              src="/images/studio/training-squat-cinematic.jpg"
-              alt="Private squat rack in the SculptClub studio in Jordaan"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 1024px"
-              priority
+          <div className="mb-6">
+            <PhotoSlideshow
+              images={[
+                { src: "/images/studio/training-squat-cinematic.jpg", alt: "Private squat rack in the SculptClub studio in Jordaan" },
+                { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio in the Jordaan" },
+                { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer running a session at SculptClub" },
+                { src: "/images/studio/canal-view-doors.jpg", alt: "Canal view from inside the SculptClub studio" },
+                { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub facade on Egelantiersgracht in the Jordaan" },
+              ]}
+              aspect="aspect-[16/9]"
             />
           </div>
         </FadeIn>

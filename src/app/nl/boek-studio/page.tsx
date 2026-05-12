@@ -17,8 +17,8 @@ import {
 import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
+import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
 import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight } from "lucide-react";
-import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -53,10 +53,16 @@ const steps = [
 ];
 
 const studioImages = [
-  { src: "/images/studio/entrance-smile.jpg", alt: "Gastvrije entree van SculptClub aan Amsterdams grachtenpand" },
-  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in het Rogue rack bij SculptClub" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio in de Jordaan" },
+  { src: "/images/studio/training-barbell-squat.jpg", alt: "Barbell squat in het Rogue power rack bij SculptClub" },
+  { src: "/images/studio/training-squat-cinematic.jpg", alt: "Privé squat rack in de SculptClub studio" },
   { src: "/images/studio/training-bike-energy.jpg", alt: "Energieke assault bike training bij SculptClub" },
-  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio" },
+  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Dumbbell training in de SculptClub studio" },
+  { src: "/images/studio/training-barbell-skylight.jpg", alt: "Barbell training onder de skylight bij SculptClub" },
+  { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal training sessie bij SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht op de gracht vanuit de SculptClub studio" },
+  { src: "/images/studio/entrance-smile.jpg", alt: "Gastvrije entree van SculptClub aan een Amsterdams grachtenpand" },
+  { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub gevel aan de Egelantiersgracht in de Jordaan" },
 ];
 
 const faqs = [
@@ -267,15 +273,11 @@ export default function BoekStudioPageNL() {
       {/* Studio gallery */}
       <Section bg="muted">
         <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {studioImages.map((img, i) => (
-            <FadeIn key={img.src} delay={i * 0.1}>
-              <div className="relative aspect-square overflow-hidden rounded-xl">
-                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <PhotoSlideshow images={studioImages} aspect="aspect-[4/3]" />
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Social proof */}
