@@ -7,7 +7,7 @@ const COPY = {
   nl: {
     badge: "Voor personal trainers",
     line: "Huur onze privé studio vanaf €12/uur — 0% commissie, geen contract, eigen profiel op onze site.",
-    cta: "Bekijk studio huur",
+    cta: "Bekijk studio",
     href: "/nl/studio-huren",
     secondaryLabel: "Of word trainer →",
     secondaryHref: "/nl/word-trainer",
@@ -15,7 +15,7 @@ const COPY = {
   en: {
     badge: "For personal trainers",
     line: "Rent our private studio from €12/hour — 0% commission, no contract, your own profile on our site.",
-    cta: "See studio rental",
+    cta: "See studio",
     href: "/en/studio-rental",
     secondaryLabel: "Or join as a trainer →",
     secondaryHref: "/en/become-trainer",
