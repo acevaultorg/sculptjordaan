@@ -88,3 +88,21 @@
 ## Corrections
 
 <!-- Append-only per I-35. Format: corrects: <original_date> | <reason> | <corrected_score> -->
+
+| 2026-05-12 (today, post policy-compliance + tracking-validation ship) | 4 | 7 | 7 | 3 | 4 | 7 | 7 | 53 | +0 | retention D7 mismatch + advocacy zero engineered shares (persistent) | 0.9 | live Plausible Chrome MCP audit + 6 self-paced loop iterations + classifier validation across all 4 properties (intent/pricing/trainer_name/booking_type) |
+
+**Computed (2026-05-12):** Product = 4×7×7×3×4×7×7 = 115,248; ⁷√115248 ≈ 5.29; ×10 = 53.
+
+**WoW analysis (2026-05-06 → 2026-05-12, +6 days):**
+- Score: 53 → 53 (no movement)
+- Shipped between baselines:
+  - 2026-05-08: Hamish trainer removal + Acuity intent classifier shipped + Plausible Start Path Click goal + Google policy full-surface compliance (36 files, noindex 20 doorway pages, physio claims stripped, trainer count 5→7 across 21 files, sitemap 147→124 URLs)
+  - 2026-05-12 (today): 6 self-paced loop iterations validating tracking taxonomy live with real visitors (all 7 code-fired goals + every classifier property splits confirmed firing)
+- Why AUG didn't move: the ships above PREVENT future degradation (Google policy violations, broken tracking attribution, false trainer claims) but don't directly improve any of the 7 measured factors. Acquisition didn't grow (operator-side IG cadence is the lever). Activation already strong (7). Engagement already strong (7). Retention D7-mismatch persists (3) — same archetype-correction issue from 2026-05-06. Advocacy still zero engineered share mechanism (4 from organic Instagram + chatgpt referrals only). Monetization unchanged. Performance unchanged (Vercel CDN was already 7).
+- Honest read: AUG composite is doing what it's designed to do — it flagged the same two top weaknesses (retention metric + advocacy mechanism) as 2026-05-06. Neither was addressed in this 6-day window. To move AUG above 53 requires:
+  1. **Retention 3→5+**: ship session_to_booking_attempt_rate tracking as primary retention metric per `feedback_sculptclub_archetype_correction.md` (brain-doable, conversion-polish scope)
+  2. **Advocacy 4→6+**: engineer share triggers (per AUG.md baseline note "advocacy still no engineered mechanism") — share-card per booking confirmation page, referral-link feature, social-proof embed widget (brain-doable, but new-feature ship)
+  3. **Acquisition 4→6+**: Instagram cadence ramp (operator-side, not brain-doable)
+
+The shipped work today is PROTECTIVE not GROWTH-MULTIPLYING. Per v19.43 funnel-order discipline at site scale (15 UV/day), protective work is correct — without compliance + tracking integrity, future growth would be at risk. AUG plateau is the honest measurement; growth needs operator + time + the two brain-doable upgrades above.
+
