@@ -107,6 +107,7 @@ const nlPages = [
   "/nl/blog/engels-sprekende-personal-trainer-amsterdam",
   "/nl/blog/personal-trainer-na-bevalling-amsterdam",
   "/nl/blog/personal-trainer-zwangerschap-amsterdam",
+  "/nl/blog/personal-trainer-stress-burnout-amsterdam",
   "/nl/blog/small-group-training-amsterdam",
   "/nl/word-trainer",
   "/nl/prijzen",
@@ -181,6 +182,7 @@ const enPages = [
   "/en/blog/english-speaking-personal-trainer-amsterdam",
   "/en/blog/postpartum-personal-trainer-amsterdam",
   "/en/blog/prenatal-personal-trainer-amsterdam",
+  "/en/blog/burnout-personal-trainer-amsterdam",
   "/en/blog/small-group-training-amsterdam",
   "/en/become-trainer",
   "/en/pricing",
@@ -205,6 +207,8 @@ const LEGAL_RE = /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelij
 
 // Newest blog posts get a priority boost — signals freshness to Google.
 const FRESH_BLOG_SLUGS = new Set([
+  "personal-trainer-stress-burnout-amsterdam",
+  "burnout-personal-trainer-amsterdam",
   "personal-trainer-amsterdam-noord",
   "personal-trainer-amsterdam-north",
   "zakelijk-personal-training-amsterdam",
