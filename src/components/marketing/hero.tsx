@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Users, Dumbbell, Building2 } from "lucide-react";
+import { Users, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
@@ -15,9 +15,8 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Jouw manier. Jouw resultaat.",
       ctas: [
+        { label: "Huur de Studio", href: "/nl/studio-huren", icon: Building2 },
         { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users },
-        { label: "Huur de Studio", href: "/nl/boek-studio", icon: Building2 },
-        { label: "Boek Open Gym", href: "/nl/boek-gym", icon: Dumbbell },
       ],
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
     },
@@ -25,9 +24,8 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Your way. Your results.",
       ctas: [
+        { label: "Rent the Studio", href: "/en/studio-rental", icon: Building2 },
         { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users },
-        { label: "Rent the Studio", href: "/en/book-studio", icon: Building2 },
-        { label: "Book Open Gym", href: "/en/book-gym", icon: Dumbbell },
       ],
       trust: "First intro free · No contracts · Daily 06:30–22:00 · 5.0 ★ Google",
     },
