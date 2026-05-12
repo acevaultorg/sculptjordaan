@@ -27,9 +27,9 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Pricing — Personal Training, Open Gym & Studio Rental | SculptClub Amsterdam Jordaan" },
+  title: { absolute: "Pricing — Studio Rental, Personal Training & Open Gym | SculptClub Amsterdam Jordaan" },
   description:
-    "All pricing at SculptClub Amsterdam. Personal training from €45, Open Gym from €29/4wk, studio rental from €12/hour. No contract.",
+    "All pricing at SculptClub Amsterdam. Studio rental from €12/hour (0% commission), personal training from €45, Open Gym from €29/4wk. No contract.",
   alternates: {
     canonical: "/en/pricing",
     languages: {
@@ -179,7 +179,7 @@ export default function PricingPageEN() {
           as="h1"
           overline="Pricing"
           title="All Pricing at a Glance"
-          description="No hidden costs, no long-term contracts. View all rates for personal training, Open Gym and studio rental."
+          description="No hidden costs, no long-term contracts. Studio rental from €12/hour (0% commission), personal training from €45, Open Gym from €29/4wk."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -194,10 +194,33 @@ export default function PricingPageEN() {
             ))}
           </div>
         </FadeIn>
+        {/* Jump nav — let trainers go straight to studio rental */}
+        <FadeIn delay={0.15}>
+          <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            <a
+              href="#studio-rental"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/20"
+            >
+              → Studio Rental (from €12/hr)
+            </a>
+            <a
+              href="#personal-training"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium transition hover:bg-muted"
+            >
+              → Personal Training (from €45)
+            </a>
+            <a
+              href="#open-gym"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium transition hover:bg-muted"
+            >
+              → Open Gym (from €29/4wk)
+            </a>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Personal Training */}
-      <Section bg="muted">
+      <Section bg="muted" id="personal-training">
         <SectionHeader
           overline="Personal Training"
           title="Train with a Personal Trainer"
@@ -226,7 +249,7 @@ export default function PricingPageEN() {
       </Section>
 
       {/* Open Gym */}
-      <Section>
+      <Section id="open-gym">
         <SectionHeader
           overline="Open Gym"
           title="Train Independently"
@@ -302,11 +325,11 @@ export default function PricingPageEN() {
       </Section>
 
       {/* Studio Rental */}
-      <Section bg="muted">
+      <Section bg="muted" id="studio-rental">
         <SectionHeader
           overline="Studio Rental"
-          title="Rent the Studio"
-          description="Train your clients in a fully equipped private studio. Flexible by the hour."
+          title="Rent the Studio (for personal trainers)"
+          description="For freelance trainers and physiotherapists. Train your clients in a fully equipped private studio. 0% commission, flexible by the hour, discount packs up to 23%."
         />
 
         {/* Rate table */}
