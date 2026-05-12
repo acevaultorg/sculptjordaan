@@ -176,10 +176,31 @@ export default function StudioRentalPageEN() {
         <SectionHeader
           overline="Pricing"
           title="Hourly Rates"
-          description="Flexible per session, no subscription required."
+          description="The studio is split into two zones — pick what fits how you train."
         />
 
         <div className="mx-auto max-w-3xl">
+          {/* Quick explainer: half vs full */}
+          <FadeIn>
+            <div className="grid gap-4 sm:grid-cols-2 mb-6">
+              <div className="rounded-xl border border-border bg-card p-4">
+                <p className="text-sm font-semibold mb-1">Half studio</p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  One training zone — perfect for 1-on-1 sessions or duo training.
+                  The other half can be used by another trainer at the same time.
+                </p>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <p className="text-sm font-semibold mb-1">Full studio</p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  Fully private — the entire space for you and your client(s).
+                  Max 6 people. For group training, semi-private, or when you
+                  want zero distractions.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
           <FadeIn>
             <div className="overflow-hidden rounded-xl border bg-card">
               <table className="w-full text-sm">
@@ -242,8 +263,14 @@ export default function StudioRentalPageEN() {
             </div>
           </FadeIn>
 
+          <FadeIn delay={0.15}>
+            <p className="mt-5 text-center text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Included:</span> all equipment (Rogue rack, dumbbells, cable machine, sleds, benches, bands, cardio), wifi, music, climate control and cleaning. Door code via WhatsApp the night before.
+            </p>
+          </FadeIn>
+
           <FadeIn delay={0.2}>
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <CreditCard className="h-4 w-4" />
               <span>Pay with CreditCard, Apple Pay, Google Pay or by invoice</span>
             </div>

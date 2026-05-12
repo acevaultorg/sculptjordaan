@@ -182,10 +182,31 @@ export default function StudioRentalPageNL() {
         <SectionHeader
           overline="Tarieven"
           title="Uurtarieven"
-          description="Flexibel per sessie, geen abonnement verplicht."
+          description="De studio is opgedeeld in twee zones — kies wat past bij hoe je traint."
         />
 
         <div className="mx-auto max-w-3xl">
+          {/* Quick explainer: what's the difference between the two options? */}
+          <FadeIn>
+            <div className="grid gap-4 sm:grid-cols-2 mb-6">
+              <div className="rounded-xl border border-border bg-card p-4">
+                <p className="text-sm font-semibold mb-1">Halve studio</p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  Eén trainingszone — perfect voor 1-op-1 sessies of duo-training.
+                  De andere helft kan tegelijk door een andere trainer worden gebruikt.
+                </p>
+              </div>
+              <div className="rounded-xl border border-border bg-card p-4">
+                <p className="text-sm font-semibold mb-1">Hele studio</p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  Volledig privé — de hele ruimte voor jou en je klant(en).
+                  Max 6 personen. Voor groepstraining, semi-private of als je
+                  niemand anders wilt zien.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
           <FadeIn>
             <div className="overflow-hidden rounded-xl border bg-card">
               <table className="w-full text-sm">
@@ -248,8 +269,14 @@ export default function StudioRentalPageNL() {
             </div>
           </FadeIn>
 
+          <FadeIn delay={0.15}>
+            <p className="mt-5 text-center text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">Inbegrepen:</span> alle apparatuur (Rogue rack, dumbbells, kabelmachine, sleds, banken, bands, cardio), wifi, muziek, klimaatbeheersing en schoonmaak. Deurcode via WhatsApp de avond ervoor.
+            </p>
+          </FadeIn>
+
           <FadeIn delay={0.2}>
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <CreditCard className="h-4 w-4" />
               <span>Betaal met CreditCard, Apple Pay, Google Pay of per factuur</span>
             </div>
