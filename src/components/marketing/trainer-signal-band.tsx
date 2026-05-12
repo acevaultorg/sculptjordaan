@@ -41,14 +41,14 @@ export function TrainerSignalBand({ locale }: { locale: Locale }) {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center md:flex-shrink-0">
           <Link
             href={c.href}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+            className="plausible-event-name=trainer_band_studio_click inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
           >
             {c.cta}
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             href={c.secondaryHref}
-            className="inline-flex items-center justify-center text-sm font-medium text-primary hover:underline"
+            className="plausible-event-name=trainer_band_member_click inline-flex items-center justify-center text-sm font-medium text-primary hover:underline"
           >
             {c.secondaryLabel}
           </Link>

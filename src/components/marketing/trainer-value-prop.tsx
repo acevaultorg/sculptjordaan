@@ -103,11 +103,20 @@ export function TrainerValueProp({ locale }: { locale: Locale }) {
       </div>
       <FadeIn delay={0.25}>
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href={c.ctaHref} size="lg">
+          <ButtonLink
+            href={c.ctaHref}
+            size="lg"
+            className="plausible-event-name=value_prop_member_click"
+          >
             {c.ctaLabel}
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
-          <ButtonLink href={c.secondaryHref} variant="outline" size="lg">
+          <ButtonLink
+            href={c.secondaryHref}
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=value_prop_rental_click"
+          >
             {c.secondaryLabel}
           </ButtonLink>
         </div>

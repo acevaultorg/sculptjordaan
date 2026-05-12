@@ -133,15 +133,30 @@ export default function ForTrainersHubEN() {
           center={false}
         />
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+          <ButtonLink
+            href={acuityFreeTrials.studioRentalTryout}
+            external
+            size="lg"
+            className="plausible-event-name=hub_hero_tour_click"
+          >
             <Calendar className="mr-2 h-4 w-4" />
             Schedule a free tour
           </ButtonLink>
-          <ButtonLink href="/en/become-trainer" variant="outline" size="lg">
+          <ButtonLink
+            href="/en/become-trainer"
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=hub_hero_member_click"
+          >
             Become a trainer member
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
-          <ButtonLink href="/en/studio-rental" variant="outline" size="lg">
+          <ButtonLink
+            href="/en/studio-rental"
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=hub_hero_rental_click"
+          >
             Just rent the space
           </ButtonLink>
         </FadeIn>
@@ -208,7 +223,12 @@ export default function ForTrainersHubEN() {
               60 minutes in the studio, get to know us, ask anything. No obligation. No pitch.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+              <ButtonLink
+                href={acuityFreeTrials.studioRentalTryout}
+                external
+                size="lg"
+                className="plausible-event-name=hub_bottom_tour_click"
+              >
                 <Calendar className="mr-2 h-4 w-4" />
                 Schedule a free tour
               </ButtonLink>
@@ -217,7 +237,7 @@ export default function ForTrainersHubEN() {
                 external
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10"
+                className="plausible-event-name=hub_bottom_whatsapp_click border-white/20 text-white hover:bg-white/10"
               >
                 WhatsApp us
               </ButtonLink>

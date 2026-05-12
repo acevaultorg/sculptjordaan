@@ -133,15 +133,30 @@ export default function VoorTrainersHubNL() {
           center={false}
         />
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+          <ButtonLink
+            href={acuityFreeTrials.studioRentalTryout}
+            external
+            size="lg"
+            className="plausible-event-name=hub_hero_tour_click"
+          >
             <Calendar className="mr-2 h-4 w-4" />
             Plan gratis rondleiding
           </ButtonLink>
-          <ButtonLink href="/nl/word-trainer" variant="outline" size="lg">
+          <ButtonLink
+            href="/nl/word-trainer"
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=hub_hero_member_click"
+          >
             Word trainer-member
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
-          <ButtonLink href="/nl/studio-huren" variant="outline" size="lg">
+          <ButtonLink
+            href="/nl/studio-huren"
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=hub_hero_rental_click"
+          >
             Alleen ruimte huren
           </ButtonLink>
         </FadeIn>
@@ -208,7 +223,12 @@ export default function VoorTrainersHubNL() {
               60 minuten in de studio, kennismaken, vraag stellen. Geen verplichting. Geen pitch.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <ButtonLink href={acuityFreeTrials.studioRentalTryout} external size="lg">
+              <ButtonLink
+                href={acuityFreeTrials.studioRentalTryout}
+                external
+                size="lg"
+                className="plausible-event-name=hub_bottom_tour_click"
+              >
                 <Calendar className="mr-2 h-4 w-4" />
                 Plan gratis rondleiding
               </ButtonLink>
@@ -217,7 +237,7 @@ export default function VoorTrainersHubNL() {
                 external
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10"
+                className="plausible-event-name=hub_bottom_whatsapp_click border-white/20 text-white hover:bg-white/10"
               >
                 WhatsApp ons
               </ButtonLink>
