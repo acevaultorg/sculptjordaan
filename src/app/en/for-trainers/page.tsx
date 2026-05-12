@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -70,6 +70,49 @@ const pillars = [
   },
 ];
 
+const trainerFaqs = [
+  {
+    q: "What does it actually cost to rent the studio?",
+    a: "Half studio (1:1 sessions) from €12 per 60 min, €17 per 90 min. Full studio (max 6 people) €17/60 min, €24/90 min. Discount packages save 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. All equipment, wifi, music and cleaning included. No subscription or brokerage fees.",
+  },
+  {
+    q: "How do I book a session?",
+    a: "Online via Acuity (our booking system). You receive immediate confirmation and the night before your session you get a unique door code via WhatsApp. No reception, no keys.",
+  },
+  {
+    q: "Can I come for a free look first?",
+    a: "Yes. We offer a free 60-minute trial session in the studio — see the space, train yourself, ask questions. No obligation, no sales pitch.",
+  },
+  {
+    q: "Do I get my own profile on sculptclub.nl?",
+    a: "Yes, if you become a trainer member. That's free with regular studio rental (from ~5 hours/month). Your profile appears on /en/find-personal-trainer where visitors who find SculptClub via Google can be matched directly with you.",
+  },
+  {
+    q: "What's the difference between hourly rental and being a trainer member?",
+    a: "Hourly rental: pay per session, BYO clients, no site listing. Trainer member: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. Both have 0% commission on your clients.",
+  },
+  {
+    q: "Do you take commission on my clients?",
+    a: "No. 0% commission. We earn only from the studio rental. Whatever you charge your client — €45, €75, €120 — is entirely yours.",
+  },
+  {
+    q: "What insurance do I need?",
+    a: "Valid professional liability insurance (ZZP-pensioen.nl, Centraal Beheer or similar, from ~€25/month). This is your own responsibility and applies wherever you train, including here.",
+  },
+  {
+    q: "What equipment is available?",
+    a: "Rogue power rack, Olympic barbells + bumpers, dumbbells up to 32 kg, cable machine, sleds, kettlebells, plyo box, benches, bands, and cardio. Sufficient for 95% of standard PT sessions. Full list on /en/studio-rental.",
+  },
+  {
+    q: "What are the operating hours?",
+    a: "Daily 06:30-22:00. You book your own time slot in Acuity; during your hour you and your client have the studio entirely to yourselves (private).",
+  },
+  {
+    q: "What's the cancellation policy?",
+    a: "Studio rental cancels free via Acuity, any time. No time limit, no fees. Packages: valid for 1 year from purchase.",
+  },
+];
+
 export default function ForTrainersHubEN() {
   return (
     <PageLayout>
@@ -127,6 +170,26 @@ export default function ForTrainersHubEN() {
               </FadeIn>
             );
           })}
+        </div>
+      </Section>
+
+      {/* Trainer FAQ — schema-marked for SEO */}
+      <FaqJsonLd faqs={trainerFaqs.map((f) => ({ question: f.q, answer: f.a }))} />
+      <Section bg="muted">
+        <SectionHeader
+          overline="Trainer questions"
+          title="Frequently asked questions"
+          description="Practical answers to what trainers ask before starting. Missing something? WhatsApp +31 6 83 17 89 34."
+        />
+        <div className="mx-auto max-w-3xl space-y-0">
+          {trainerFaqs.map((faq, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div className="border-b border-border/50 py-6">
+                <h3 className="mb-2 font-semibold">{faq.q}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </Section>
 

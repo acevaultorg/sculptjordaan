@@ -3,7 +3,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -70,6 +70,49 @@ const pillars = [
   },
 ];
 
+const trainerFaqs = [
+  {
+    q: "Wat kost het écht om de studio te huren?",
+    a: "Halve studio (1:1 sessies) vanaf €12 per 60 min, €17 per 90 min. Hele studio (max 6 personen) €17/60 min, €24/90 min. Kortingspakketten besparen 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. Alle apparatuur, wifi, muziek en schoonmaak zijn inbegrepen. Geen abonnement of bemiddelingskosten.",
+  },
+  {
+    q: "Hoe boek ik een sessie?",
+    a: "Online via Acuity (ons boekingssysteem). Je krijgt direct bevestiging en de avond voor je sessie ontvang je een unieke deurcode via WhatsApp. Geen receptie, geen sleutels.",
+  },
+  {
+    q: "Kan ik eerst gratis komen kijken?",
+    a: "Ja. We bieden een gratis 60-minuten proefsessie aan in de studio — bekijk de ruimte, train zelf, stel je vragen. Geen verplichting, geen verkoop-pitch.",
+  },
+  {
+    q: "Krijg ik een eigen profiel op sculptclub.nl?",
+    a: "Ja, als je trainer-member wordt. Dat is gratis bij regelmatige studio-huur (vanaf ~5 uur/maand). Je profiel verschijnt op /vind-jouw-personal-trainer waar bezoekers die SculptClub via Google vinden direct aan jou gematcht kunnen worden.",
+  },
+  {
+    q: "Wat is het verschil tussen losse uur-huur en trainer-member zijn?",
+    a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Trainer-member: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Beide hebben 0% commissie op jouw klanten.",
+  },
+  {
+    q: "Rekenen jullie commissie over mijn klanten?",
+    a: "Nee. 0% commissie. Wij verdienen alleen aan de studio-huur. Wat jij rekent aan je klant — €45, €75, €120 — is volledig voor jou.",
+  },
+  {
+    q: "Welke verzekering heb ik nodig?",
+    a: "Een geldige beroepsaansprakelijkheidsverzekering (ZZP-pensioen.nl, Centraal Beheer of vergelijkbaar, vanaf ~€25/maand). Dit is je eigen verantwoordelijkheid en geldt op elke locatie waar je traint, ook hier.",
+  },
+  {
+    q: "Welke apparatuur is aanwezig?",
+    a: "Rogue power rack, Olympic barbells + bumpers, dumbbells tot 32 kg, kabelmachine, sleds, kettlebells, plyo box, fitnessbanken, bands en cardio. Voldoende voor 95% van standaard-PT-sessies. Lijst op /nl/studio-huren.",
+  },
+  {
+    q: "Tot welke tijden is de studio open?",
+    a: "Dagelijks 06:30-22:00. Je boekt je eigen tijdvak in Acuity; binnen jouw uur ben jij + je klant alleen in de studio (privé).",
+  },
+  {
+    q: "Hoe zit het met annuleren?",
+    a: "Studio-huur annuleer je gratis via Acuity, op elk moment. Geen tijdslimiet, geen kosten. Voor pakketten geldt: 1 jaar geldig vanaf aankoop.",
+  },
+];
+
 export default function VoorTrainersHubNL() {
   return (
     <PageLayout>
@@ -127,6 +170,26 @@ export default function VoorTrainersHubNL() {
               </FadeIn>
             );
           })}
+        </div>
+      </Section>
+
+      {/* Trainer FAQ — schema-marked for SEO */}
+      <FaqJsonLd faqs={trainerFaqs.map((f) => ({ question: f.q, answer: f.a }))} />
+      <Section bg="muted">
+        <SectionHeader
+          overline="Vragen van trainers"
+          title="Veelgestelde vragen"
+          description="Praktische antwoorden op wat trainers vragen voordat ze beginnen. Mis je iets? WhatsApp +31 6 83 17 89 34."
+        />
+        <div className="mx-auto max-w-3xl space-y-0">
+          {trainerFaqs.map((faq, i) => (
+            <FadeIn key={i} delay={i * 0.05}>
+              <div className="border-b border-border/50 py-6">
+                <h3 className="mb-2 font-semibold">{faq.q}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </Section>
 
