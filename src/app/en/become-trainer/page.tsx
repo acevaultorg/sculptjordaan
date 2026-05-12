@@ -5,6 +5,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { TrainerReferralBanner } from "@/components/marketing/trainer-referral-banner";
 import {
   ArrowRight,
   MessageCircle,
@@ -278,6 +279,9 @@ export default function BecomeTrainerEN() {
           </div>
         </FadeIn>
       </Section>
+
+      {/* Referral incentive for current trainers */}
+      <TrainerReferralBanner locale="en" />
 
       {/* CTA */}
       <Section bg="dark">
