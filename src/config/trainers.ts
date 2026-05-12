@@ -45,7 +45,7 @@ export interface Trainer {
 // (strongest niche first), not by booking volume. Busy trainers have
 // less availability, which hurts conversion. Clear specialties convert
 // best because visitors pick on need-match, not on who's most popular.
-const DISPLAY_ORDER = ["eva", "joey", "alex", "gezina", "andrea", "dara", "jearmey"] as const;
+const DISPLAY_ORDER = ["eva", "joey", "alex", "gezina", "andrea", "sergei", "dara", "jearmey"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -178,6 +178,31 @@ const trainersRaw: Trainer[] = [
       en: "Jearmey helps you build strength, lose fat and move pain-free. With a focus on strength and athletic performance, he builds programmes that deliver results.",
     },
     image: "/images/trainers/jearmey.jpg",
+  },
+  {
+    id: "sergei",
+    name: "Sergei",
+    slug: {
+      nl: "plan-gratis-intake-met-sergei",
+      en: "plan-free-intro-with-sergei",
+    },
+    specialization: {
+      nl: ["Lichaamsrecompositie", "Houdingscorrectie", "Kracht & Beweging", "Herstel"],
+      en: ["Body Recomposition", "Posture Correction", "Strength & Movement", "Recovery"],
+    },
+    languages: ["EN", "RU"],
+    rate: "€80 / sessie",
+    instagram: "https://www.instagram.com/transformbst",
+    instagramHandle: "@transformbst",
+    credentials: {
+      nl: "Gecertificeerd personal trainer, 10+ jaar ervaring",
+      en: "Certified Personal Trainer, 10+ years experience",
+    },
+    bio: {
+      nl: "Sergei helpt drukke professionals en beginners om een sterker lichaam, betere houding, meer zelfvertrouwen en duurzame gezonde gewoontes op te bouwen via gestructureerde personal training. 1-op-1, duo of small group training.",
+      en: "Sergei helps busy professionals and beginners build a stronger body, better posture, more confidence, and long-term healthy habits through structured personal training. 1:1, duo or small group training.",
+    },
+    image: "/images/trainers/sergei.jpg",
   },
   {
     id: "joey",
