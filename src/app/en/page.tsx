@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Hero } from "@/components/marketing/hero";
+import { TrainerSignalBand } from "@/components/marketing/trainer-signal-band";
 import { ServicesOverview } from "@/components/marketing/services-overview";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { ReviewsPreview } from "@/components/marketing/reviews-preview";
@@ -20,9 +21,9 @@ const homeFaqs = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "SculptClub — Boutique Personal Training Amsterdam Jordaan" },
+  title: { absolute: "SculptClub — Boutique Studio for Personal Trainers Amsterdam Jordaan" },
   description:
-    "Private personal training studio in the Jordaan, Amsterdam. Free intro — trainers from €45/session. Open Gym & studio rental. No membership, no contract.",
+    "Private boutique studio in Amsterdam Jordaan. Rent the studio as a freelance personal trainer from €12/hour (0% commission). Personal training & open gym also available. No membership.",
   alternates: {
     canonical: "/en",
     languages: {
@@ -37,6 +38,7 @@ export default function HomePageEN() {
     <PageLayout>
       <FaqJsonLd faqs={homeFaqs} />
       <Hero locale="en" />
+      <TrainerSignalBand locale="en" />
       <ServicesOverview locale="en" />
       <HowItWorks locale="en" />
       <WhyWeExist locale="en" />
