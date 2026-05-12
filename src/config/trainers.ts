@@ -191,7 +191,7 @@ const trainersRaw: Trainer[] = [
       en: ["Body Recomposition", "Posture Correction", "Strength & Movement", "Recovery"],
     },
     languages: ["EN", "RU"],
-    rate: "€80 / sessie",
+    rate: "€80 / 60 min",
     instagram: "https://www.instagram.com/transformbst",
     instagramHandle: "@transformbst",
     credentials: {
