@@ -35,7 +35,7 @@ const pillars = [
     href: "/nl/word-trainer",
     text:
       "Eigen profiel op sculptclub.nl + klantenmatch via /vind-jouw-personal-trainer. Voor trainers die hun praktijk willen groeien, niet alleen ruimte willen.",
-    cta: "Word trainer-member →",
+    cta: "Word vaste trainer →",
   },
   {
     icon: FileText,
@@ -86,11 +86,11 @@ const trainerFaqs = [
   },
   {
     q: "Krijg ik een eigen profiel op sculptclub.nl?",
-    a: "Ja, als je trainer-member wordt. Dat is gratis bij regelmatige studio-huur (vanaf ~5 uur/maand). Je profiel verschijnt op /vind-jouw-personal-trainer waar bezoekers die SculptClub via Google vinden direct aan jou gematcht kunnen worden.",
+    a: "Ja, als je vaste trainer wordt. Dat is gratis bij regelmatige studio-huur (vanaf ~5 uur/maand). Je profiel verschijnt op /vind-jouw-personal-trainer waar bezoekers die SculptClub via Google vinden direct aan jou gematcht kunnen worden.",
   },
   {
-    q: "Wat is het verschil tussen losse uur-huur en trainer-member zijn?",
-    a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Trainer-member: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Beide hebben 0% commissie op jouw klanten.",
+    q: "Wat is het verschil tussen losse uur-huur en vaste trainer zijn?",
+    a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Vaste trainer: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Beide hebben 0% commissie op jouw klanten.",
   },
   {
     q: "Rekenen jullie commissie over mijn klanten?",
@@ -129,7 +129,7 @@ export default function VoorTrainersHubNL() {
           as="h1"
           overline="Voor personal trainers"
           title="Bouw je personal training praktijk in Amsterdam"
-          description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, geen commissie op jouw klanten, eigen profiel op onze site. Begin met huren — of word lid en krijg klanten via ons."
+          description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, geen commissie op jouw klanten, eigen profiel op onze site. Begin met uur-huur — of word vaste trainer en krijg klanten via ons."
           center={false}
         />
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
@@ -148,7 +148,7 @@ export default function VoorTrainersHubNL() {
             size="lg"
             className="plausible-event-name=hub_hero_member_click"
           >
-            Word trainer-member
+            Word vaste trainer
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
           <ButtonLink

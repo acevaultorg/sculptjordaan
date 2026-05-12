@@ -150,7 +150,7 @@ export default function FreelancePTGuideEN() {
             Going freelance in Amsterdam is achievable for trainers who work consistently. The first 6 months are hardest — after that, it compounds through referrals and reviews. The biggest levers: fixed location, specialized positioning, and an honest price that reflects your work.
           </p>
           <p>
-            At SculptClub in Jordaan you can start small — rent the studio by the hour, no membership, no commission on your clients. When you grow, you can become a trainer member and get your own profile on our site plus matching with clients who find SculptClub directly.
+            At SculptClub in Jordaan you can start small — rent the studio by the hour, no membership, no commission on your clients. When you grow, you can join as a trainer and get your own profile on our site plus matching with clients who find SculptClub directly.
           </p>
         </article>
       </Section>
@@ -166,7 +166,7 @@ export default function FreelancePTGuideEN() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href="/en/become-trainer" size="lg">
-                Become a trainer member
+                Join as a trainer
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

@@ -9,7 +9,7 @@ const COPY = {
     line: "Huur onze privé studio vanaf €12/uur — 0% commissie, geen contract, eigen profiel op onze site.",
     cta: "Bekijk studio huur",
     href: "/nl/studio-huren",
-    secondaryLabel: "Of word trainer-member →",
+    secondaryLabel: "Of word vaste trainer →",
     secondaryHref: "/nl/word-trainer",
   },
   en: {
@@ -17,7 +17,7 @@ const COPY = {
     line: "Rent our private studio from €12/hour — 0% commission, no contract, your own profile on our site.",
     cta: "See studio rental",
     href: "/en/studio-rental",
-    secondaryLabel: "Or become a trainer member →",
+    secondaryLabel: "Or join as a trainer →",
     secondaryHref: "/en/become-trainer",
   },
 } as const;

@@ -79,9 +79,9 @@ export function Hero({ locale }: { locale: Locale }) {
           {/* Flexible spacer — pushes CTAs to the bottom of the hero */}
           <div className="flex-1 min-h-[2rem]" aria-hidden="true" />
 
-          {/* BOTTOM CLUSTER — 3 CTAs + trust line (pushed down) */}
+          {/* BOTTOM CLUSTER — CTAs + trust line (pushed down) */}
           <div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto">
+            <div className="flex flex-col items-stretch sm:flex-row sm:flex-wrap sm:justify-center gap-3 max-w-2xl mx-auto">
               {t.ctas.map((cta, i) => (
                 <ButtonLink
                   key={cta.href}
@@ -96,7 +96,7 @@ export function Hero({ locale }: { locale: Locale }) {
               ))}
             </div>
 
-            <p className="mt-5 text-xs text-white/70">{t.trust}</p>
+            <p className="mt-5 text-center text-xs text-white/70">{t.trust}</p>
           </div>
         </div>
       </div>

@@ -151,7 +151,7 @@ export default function FreelancePTGuideNL() {
             Freelance PT worden in Amsterdam is haalbaar voor wie consistent werkt. De eerste 6 maanden zijn het zwaarst — daarna compoundt het door verwijzingen en reviews. De grootste hefbomen: vaste locatie, gespecialiseerde positionering, en een eerlijke prijs die je werk weerspiegelt.
           </p>
           <p>
-            Bij SculptClub in Jordaan kun je klein beginnen — studio huren per uur, geen abonnement, geen commissie op jouw klanten. Wanneer je groeit kun je trainer-member worden en krijg je een eigen profiel op onze site + match met klanten die SculptClub zelf vinden.
+            Bij SculptClub in Jordaan kun je klein beginnen — studio huren per uur, geen abonnement, geen commissie op jouw klanten. Wanneer je groeit kun je als vaste trainer aansluiten en krijg je een eigen profiel op onze site + match met klanten die SculptClub zelf vinden.
           </p>
         </article>
       </Section>
@@ -167,7 +167,7 @@ export default function FreelancePTGuideNL() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href="/nl/word-trainer" size="lg">
-                Word trainer-member
+                Word vaste trainer
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

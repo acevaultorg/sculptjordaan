@@ -65,7 +65,7 @@ const COPY = {
         text: "Visitors arrive, book through Acuity, return. Zero commission. You keep 100% of your rate; we earn only on rental.",
       },
     ],
-    ctaLabel: "Become a trainer member",
+    ctaLabel: "Join as a trainer",
     ctaHref: "/en/become-trainer",
     secondaryLabel: "Just rent the space →",
     secondaryHref: "#pricing",

@@ -162,7 +162,7 @@ export default function ZZPChecklistEN() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href="/en/become-trainer" size="lg">
-                Become a trainer member
+                Join as a trainer
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

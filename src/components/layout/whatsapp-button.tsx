@@ -10,7 +10,7 @@ const messages = {
     studio:
       "Hoi! Ik ben personal trainer en wil graag de studio bekijken / huren",
     trainerMember:
-      "Hoi! Ik wil graag trainer-member worden bij SculptClub",
+      "Hoi! Ik wil graag als vaste trainer aansluiten bij SculptClub",
     trainerInfo:
       "Hoi! Ik ben personal trainer en heb een vraag over SculptClub",
     findTrainer:
@@ -23,7 +23,7 @@ const messages = {
     studio:
       "Hi! I'm a personal trainer and would like to see / rent the studio",
     trainerMember:
-      "Hi! I'd like to become a trainer member at SculptClub",
+      "Hi! I'd like to join as a trainer at SculptClub",
     trainerInfo:
       "Hi! I'm a personal trainer and have a question about SculptClub",
     findTrainer:

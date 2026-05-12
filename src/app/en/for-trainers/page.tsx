@@ -31,11 +31,11 @@ const pillars = [
   },
   {
     icon: Users,
-    title: "Become a trainer member",
+    title: "Join as a trainer",
     href: "/en/become-trainer",
     text:
       "Get your own profile on sculptclub.nl + client matching via /en/find-personal-trainer. For trainers growing their practice, not just renting space.",
-    cta: "Become a member →",
+    cta: "Join as a trainer →",
   },
   {
     icon: FileText,
@@ -86,11 +86,11 @@ const trainerFaqs = [
   },
   {
     q: "Do I get my own profile on sculptclub.nl?",
-    a: "Yes, if you become a trainer member. That's free with regular studio rental (from ~5 hours/month). Your profile appears on /en/find-personal-trainer where visitors who find SculptClub via Google can be matched directly with you.",
+    a: "Yes, if you join as a trainer. That's free with regular studio rental (from ~5 hours/month). Your profile appears on /en/find-personal-trainer where visitors who find SculptClub via Google can be matched directly with you.",
   },
   {
-    q: "What's the difference between hourly rental and being a trainer member?",
-    a: "Hourly rental: pay per session, BYO clients, no site listing. Trainer member: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. Both have 0% commission on your clients.",
+    q: "What's the difference between hourly rental and being a regular trainer?",
+    a: "Hourly rental: pay per session, BYO clients, no site listing. Regular trainer: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. Both have 0% commission on your clients.",
   },
   {
     q: "Do you take commission on my clients?",
@@ -129,7 +129,7 @@ export default function ForTrainersHubEN() {
           as="h1"
           overline="For personal trainers"
           title="Build your personal training practice in Amsterdam"
-          description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, zero commission on your clients, own profile on our site. Start by renting — or become a member and get clients through us."
+          description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, zero commission on your clients, own profile on our site. Start with hourly rental — or join as a regular trainer and get clients through us."
           center={false}
         />
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
@@ -148,7 +148,7 @@ export default function ForTrainersHubEN() {
             size="lg"
             className="plausible-event-name=hub_hero_member_click"
           >
-            Become a trainer member
+            Join as a trainer
             <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
           <ButtonLink
