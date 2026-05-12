@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, Building2, Users, FileText, MapPin } from "lucide-react";
+import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: { absolute: "For Personal Trainers in Amsterdam | SculptClub Jordaan" },
@@ -45,12 +45,28 @@ const pillars = [
     cta: "Read the guide →",
   },
   {
-    icon: MapPin,
-    title: "Location: Jordaan",
-    href: "/en/location-hours",
+    icon: CheckSquare,
+    title: "ZZP setup checklist",
+    href: "/en/for-trainers/zzp-personal-trainer-checklist",
     text:
-      "Egelantiersgracht 424. Central, accessible, and the most sought-after Amsterdam neighborhood for boutique PT clients.",
-    cta: "Location & hours →",
+      "10-step practical guide: KvK, VAT, insurance, banking, admin. Costs, timeline, first invoice.",
+    cta: "See the checklist →",
+  },
+  {
+    icon: MapPin,
+    title: "Jordaan location analysis",
+    href: "/en/for-trainers/personal-trainer-location-amsterdam-jordaan",
+    text:
+      "Why Jordaan works for PTs: client profile, average rates, competition, realistic earnings.",
+    cta: "Read the analysis →",
+  },
+  {
+    icon: Scale,
+    title: "Studio vs home vs outdoor",
+    href: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
+    text:
+      "Comparison with real numbers: own studio lease, at client's home, outdoor, or hourly rental — when to choose what.",
+    cta: "See comparison →",
   },
 ];
 
@@ -85,7 +101,7 @@ export default function ForTrainersHubEN() {
 
       <Section>
         <SectionHeader
-          overline="Four paths"
+          overline="Six paths"
           title="Which path fits you?"
           description="SculptClub works for different types of trainers. Pick where you are now — we help you grow from there."
         />

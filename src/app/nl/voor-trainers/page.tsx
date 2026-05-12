@@ -4,7 +4,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, Building2, Users, FileText, MapPin } from "lucide-react";
+import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
   title: { absolute: "Voor Personal Trainers in Amsterdam | SculptClub Jordaan" },
@@ -45,12 +45,28 @@ const pillars = [
     cta: "Lees de gids →",
   },
   {
-    icon: MapPin,
-    title: "Locatie: Jordaan",
-    href: "/nl/locatie-uren",
+    icon: CheckSquare,
+    title: "ZZP setup checklist",
+    href: "/nl/voor-trainers/zzp-personal-trainer-checklist",
     text:
-      "Egelantiersgracht 424. Centraal, bereikbaar, en de meest gezochte Amsterdam-wijk voor boutique PT-cliënten.",
-    cta: "Locatie & openingstijden →",
+      "10-stappen praktische gids: KvK, BTW, verzekering, bank, administratie. Kosten, doorlooptijd, eerste factuur.",
+    cta: "Bekijk de checklist →",
+  },
+  {
+    icon: MapPin,
+    title: "Locatie-analyse Jordaan",
+    href: "/nl/voor-trainers/personal-trainer-locatie-amsterdam-jordaan",
+    text:
+      "Waarom Jordaan werkt voor PT's: klantprofiel, gemiddelde tarieven, concurrentie, en wat trainers hier verdienen.",
+    cta: "Lees de analyse →",
+  },
+  {
+    icon: Scale,
+    title: "Studio vs thuis vs buiten",
+    href: "/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten",
+    text:
+      "Vergelijking met echte cijfers: eigen studio leasen, bij klant thuis, in het park, of per uur huren — wanneer kies je wat?",
+    cta: "Zie vergelijking →",
   },
 ];
 
@@ -85,7 +101,7 @@ export default function VoorTrainersHubNL() {
 
       <Section>
         <SectionHeader
-          overline="Vier paden"
+          overline="Zes paden"
           title="Welk pad past bij jou?"
           description="SculptClub werkt voor verschillende type trainers. Kies waar je nu staat — we helpen je groeien vanaf daar."
         />
