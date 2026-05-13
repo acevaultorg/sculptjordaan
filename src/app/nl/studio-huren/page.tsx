@@ -167,7 +167,7 @@ export default function StudioRentalPageNL() {
         <SectionHeader
           overline="Gratis proefsessie"
           title="Plan je gratis proefsessie"
-          description="60 minuten in onze studio — kennismaken met de ruimte, geen verplichting. Geen commissie, geen contract."
+          description="60 minuten in onze studio — kennismaken met de ruimte, geen verplichting. Geen commissie, geen contract, altijd gratis annuleren."
         />
         <AcuityEmbed
           url={acuityFreeTrials.studioRentalTryout}

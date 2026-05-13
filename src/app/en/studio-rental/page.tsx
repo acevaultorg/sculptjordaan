@@ -161,7 +161,7 @@ export default function StudioRentalPageEN() {
         <SectionHeader
           overline="Free trial session"
           title="Book your free trial session"
-          description="60 minutes in our studio — get to know the space, no commitment. No commission, no contract."
+          description="60 minutes in our studio — get to know the space, no commitment. No commission, no contract, free cancellation anytime."
         />
         <AcuityEmbed
           url={acuityFreeTrials.studioRentalTryout}

@@ -117,7 +117,7 @@ export default function BookStudioPageEN() {
           <p className="overline text-primary">For Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book the Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hour · 0% commission · No contract · Daily 06:30–22:00
+            From €12/hour · 0% commission · Free cancellation · Daily 06:30–22:00
           </p>
         </div>
 
@@ -201,9 +201,10 @@ export default function BookStudioPageEN() {
           hourly={
             <div className="mx-auto max-w-3xl">
               <p className="mb-4 text-center text-sm text-muted-foreground">
-                Book per session. No subscription, no contract.{" "}
+                Book per session. No subscription, no contract,{" "}
+                <strong className="text-foreground">free cancellation anytime</strong>.{" "}
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private (max 6 people). Equipment, wifi and music included.
+                <strong className="text-foreground">Full studio</strong> = fully private (max 6 people).
               </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">

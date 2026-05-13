@@ -175,6 +175,11 @@ export default function ForTrainersHubEN() {
             Just rent the space
           </ButtonLink>
         </FadeIn>
+        <FadeIn>
+          <p className="mt-5 text-sm text-muted-foreground">
+            From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
+          </p>
+        </FadeIn>
       </Section>
 
       <Section>

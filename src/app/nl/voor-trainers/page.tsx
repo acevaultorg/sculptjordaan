@@ -175,6 +175,11 @@ export default function VoorTrainersHubNL() {
             Alleen ruimte huren
           </ButtonLink>
         </FadeIn>
+        <FadeIn>
+          <p className="mt-5 text-sm text-muted-foreground">
+            Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
+          </p>
+        </FadeIn>
       </Section>
 
       <Section>

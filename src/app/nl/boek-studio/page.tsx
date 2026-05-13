@@ -117,7 +117,7 @@ export default function BoekStudioPageNL() {
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek de Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · 0% commissie · Geen contract · Dagelijks 06:30–22:00
+            Vanaf €12/uur · 0% commissie · Gratis annuleren · Dagelijks 06:30–22:00
           </p>
         </div>
 
@@ -201,9 +201,10 @@ export default function BoekStudioPageNL() {
           hourly={
             <div className="mx-auto max-w-3xl">
               <p className="mb-4 text-center text-sm text-muted-foreground">
-                Reserveer per sessie. Geen abonnement, geen contract.{" "}
+                Reserveer per sessie. Geen abonnement, geen contract,{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé (max 6 personen). Apparatuur, wifi en muziek inbegrepen.
+                <strong className="text-foreground">Hele studio</strong> = volledig privé (max 6 personen).
               </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">
