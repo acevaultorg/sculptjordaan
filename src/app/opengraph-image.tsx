@@ -104,7 +104,7 @@ export default function OgImage() {
                 color: "#ffffff",
               }}
             >
-              ★ 5.0 Google
+              5.0 Google reviews
             </div>
             <div
               style={{
