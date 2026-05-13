@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Book the Studio — Private Training Space | SculptClub Amsterdam" },
   description:
-    "Rent a fully equipped private studio in the Jordaan. From €12/hour, no contract, free trial session. Professional equipment, flexible by the hour.",
+    "Rent a private studio in the Jordaan. From €12/hour — 0% commission, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
   alternates: {
     canonical: "/en/book-studio",
     languages: {

@@ -36,7 +36,7 @@ import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 export const metadata: Metadata = {
   title: { absolute: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan" },
   description:
-    "Huur een privé trainingsruimte in Amsterdam Jordaan. Professionele studio voor freelance personal trainers & fysiotherapeuten. Vanaf €12/uur, geen commissie, flexibel per sessie.",
+    "Huur een privé trainingsruimte in Amsterdam Jordaan voor freelance personal trainers & fysiotherapeuten. Vanaf €12/uur — 0% commissie, geen contract, altijd gratis annuleren. Eerste proefsessie gratis.",
   alternates: {
     canonical: "/nl/studio-huren",
     languages: {

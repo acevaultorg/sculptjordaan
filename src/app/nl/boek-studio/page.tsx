@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam" },
   description:
-    "Huur een volledig uitgeruste privé studio in de Jordaan. Vanaf €12/uur, geen contract, gratis proefsessie. Professionele apparatuur, flexibel per uur.",
+    "Huur een privé studio in de Jordaan. Vanaf €12/uur — 0% commissie, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
   alternates: {
     canonical: "/nl/boek-studio",
     languages: {
