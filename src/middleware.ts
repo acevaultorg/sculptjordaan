@@ -42,12 +42,6 @@ const vanityDomains: Record<string, VanityRoute> = {
     utmSource: "vindpt",
     utmCampaign: "pt",
   },
-  // Studio rental funnel
-  "sculptspace.nl": {
-    destPath: "/nl/studio-huren",
-    utmSource: "sculptspace",
-    utmCampaign: "studio_rental",
-  },
   // Pricing entry
   "sculpt45.com": {
     destPath: "/nl/prijzen",
