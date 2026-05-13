@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "SculptClub — Boutique Personal Training Amsterdam Jordaan";
+export const alt = "SculptClub — Personal Training & Private Studio Rental in Amsterdam Jordaan";
 
 export default function OgImage() {
   return new ImageResponse(
@@ -59,7 +59,7 @@ export default function OgImage() {
         >
           <div
             style={{
-              fontSize: 88,
+              fontSize: 84,
               fontWeight: 800,
               lineHeight: 0.95,
               letterSpacing: -2.5,
@@ -67,17 +67,17 @@ export default function OgImage() {
               maxWidth: 1000,
             }}
           >
-            Boutique Personal Training
+            Private studio for personal trainers
           </div>
           <div
             style={{
-              fontSize: 44,
+              fontSize: 38,
               fontWeight: 500,
               color: "#94a3b8",
               letterSpacing: -0.5,
             }}
           >
-            Amsterdam Jordaan
+            Amsterdam Jordaan · from €12/hour · 0% commission
           </div>
         </div>
 
@@ -115,7 +115,18 @@ export default function OgImage() {
                 border: "1px solid rgba(255,255,255,0.12)",
               }}
             >
-              Daily 06:30 – 22:00
+              Free cancellation
+            </div>
+            <div
+              style={{
+                display: "flex",
+                padding: "10px 20px",
+                background: "rgba(255,255,255,0.05)",
+                borderRadius: 999,
+                border: "1px solid rgba(255,255,255,0.12)",
+              }}
+            >
+              06:30 – 22:00
             </div>
           </div>
           <div style={{ display: "flex", fontSize: 22, color: "#94a3b8" }}>
