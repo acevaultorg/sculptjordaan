@@ -200,6 +200,11 @@ export default function BoekStudioPageNL() {
           }
           hourly={
             <div className="mx-auto max-w-3xl">
+              <p className="mb-4 text-center text-sm text-muted-foreground">
+                Reserveer per sessie. Geen abonnement, geen contract.{" "}
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer gebruikt worden).{" "}
+                <strong className="text-foreground">Hele studio</strong> = volledig privé (max 6 personen). Apparatuur, wifi en muziek inbegrepen.
+              </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">
                   <thead>
