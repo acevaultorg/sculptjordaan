@@ -147,24 +147,21 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // Auto-detect language on root path and /start
-  // Dutch system language → NL, all others → EN
-  if (pathname === "/" || pathname === "/start") {
+  // Per CLAUDE.md spec: "Root / = Dutch homepage" — / always serves Dutch.
+  // English visitors switch via header language toggle or direct /en URL.
+  // (Prior auto-Accept-Language redirect to /en was driving 28% of visitors
+  // off the Dutch-optimized landing page — see Plausible 2026-04-14..2026-05-13
+  // where /en outranked / as top page on a Jordaan-local Dutch business.
+  // Removing the auto-flip aligns code with documented spec + restores
+  // booking funnel for Dutch-intent traffic.)
+
+  // /start remains auto-detect since it has no static content of its own
+  if (pathname === "/start") {
     const acceptLang = request.headers.get("accept-language") || "";
     const isDutch = acceptLang.startsWith("nl");
-
-    if (pathname === "/") {
-      if (!isDutch) {
-        const url = request.nextUrl.clone();
-        url.pathname = "/en";
-        return NextResponse.redirect(url, 302);
-      }
-    } else {
-      // /start → /nl/start or /en/start
-      const url = request.nextUrl.clone();
-      url.pathname = isDutch ? "/nl/start" : "/en/start";
-      return NextResponse.redirect(url, 302);
-    }
+    const url = request.nextUrl.clone();
+    url.pathname = isDutch ? "/nl/start" : "/en/start";
+    return NextResponse.redirect(url, 302);
   }
 
   return NextResponse.next();
