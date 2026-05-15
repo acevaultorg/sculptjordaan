@@ -343,9 +343,21 @@ export default function SocialPage() {
                           </span>
                         )}
                       </h3>
-                      <span className="text-[10px] uppercase tracking-wider text-white/40">
-                        rotation {weekNum}/4
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <CopyButton
+                          label="Copy week schedule"
+                          text={`📅 SculptClub social — ${weekLabel.toLowerCase()}${weekDate ? ` (${formatShortDate(weekDate)})` : ""}\n\n${weekSlots
+                            .map((s) => {
+                              const i = SOCIAL_IDEAS.find((x) => x.id === s.ideaId);
+                              const d = now ? realDateForSlot(now, s.weekNumber, s.weekday) : null;
+                              return `${s.weekdayLabel}${d ? ` ${formatShortDate(d)}` : ""} · ${s.bestTime} · ${s.platform.toUpperCase()} ${i?.format ?? ""}\n   ${i?.title ?? ""}`;
+                            })
+                            .join("\n\n")}\n\nFull briefs + visuals: sculptclub.nl/nl/social`}
+                        />
+                        <span className="text-[10px] uppercase tracking-wider text-white/40">
+                          rotation {weekNum}/4
+                        </span>
+                      </div>
                     </div>
                     <div className="space-y-6">
                       {weekSlots.map((slot) => {
