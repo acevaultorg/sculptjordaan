@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Card, CardContent } from "@/components/ui/card";
-import { Copy, Check, Clock, Image as ImageIcon, Video } from "lucide-react";
+import { Copy, Check, Clock, Image as ImageIcon, Video, Download } from "lucide-react";
 import { SOCIAL_IDEAS, PILLARS, type Platform, type Pillar } from "@/data/social-content";
 
 type Filter = "all" | Pillar;
@@ -59,8 +59,12 @@ export default function SocialPage() {
         <SectionHeader
           overline="Content Studio"
           title="Social Content voor TikTok & Instagram"
-          description="Kant-en-klare scripts, captions en hashtags voor SculptClub. Filter op platform of pilaar, kopieer wat je nodig hebt en post. Alles is gebaseerd op echte SculptClub feiten — geen verzinsels."
+          description="Kant-en-klare scripts, captions, hashtags én visuals voor SculptClub. Klik een foto om te downloaden, kopieer de caption, post. Alles is gebaseerd op echte SculptClub feiten — geen verzinsels."
         />
+
+        <FadeIn className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-100/90">
+          <strong className="font-semibold">Foto's vs Video's:</strong> de visuals in elke kaart zijn bestaande SculptClub foto's (download direct). Voor TikTok/Reels Video's volg je het script — film met je phone in de studio. Foto's kunnen 1:1 als Instagram carousel gebruikt worden, of als referentie voor video-shots.
+        </FadeIn>
 
         <FadeIn className="mt-8 flex flex-wrap gap-2">
           <button
@@ -206,6 +210,47 @@ export default function SocialPage() {
                       {idea.visualNote}
                     </p>
                   </div>
+
+                  {idea.media && idea.media.length > 0 && (
+                    <div>
+                      <div className="mb-1.5 flex items-center justify-between">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                          🖼️ Visuals ({idea.media.length}) — klik om te downloaden
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                        {idea.media.map((asset) => {
+                          const filename = asset.src.split("/").pop() ?? "image.jpg";
+                          return (
+                            <a
+                              key={asset.src}
+                              href={asset.src}
+                              download={filename}
+                              className="group relative overflow-hidden rounded-md border border-white/10 bg-white/5 transition hover:border-brand"
+                              title={`Download ${filename}`}
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={asset.src}
+                                alt={asset.label}
+                                className="aspect-square w-full object-cover transition group-hover:scale-105"
+                                loading="lazy"
+                              />
+                              {asset.role === "primary" && (
+                                <span className="absolute left-1.5 top-1.5 rounded-full bg-brand px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+                                  Primary
+                                </span>
+                              )}
+                              <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-1 bg-black/70 px-2 py-1 text-[10px] font-medium text-white backdrop-blur">
+                                <span className="truncate">{asset.label}</span>
+                                <Download className="h-3 w-3 flex-shrink-0" />
+                              </div>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="border-t border-white/10 pt-3">
                     <CopyButton

@@ -17,6 +17,13 @@ export type Pillar =
   | "jordaan-local"
   | "social-proof";
 
+export interface MediaAsset {
+  src: string;
+  label: string;
+  /** "primary" = best fit for the main shot; "supporting" = b-roll / carousel slide */
+  role?: "primary" | "supporting";
+}
+
 export interface SocialIdea {
   id: string;
   platform: Platform;
@@ -28,6 +35,8 @@ export interface SocialIdea {
   hashtags: string;
   visualNote: string;
   duration?: string;
+  /** Curated assets from public/images. Operator clicks to download + use. */
+  media?: MediaAsset[];
 }
 
 export const SOCIAL_IDEAS: SocialIdea[] = [
@@ -57,6 +66,15 @@ Boek via link in bio of sculptclub.nl`,
     hashtags: `#amsterdam #jordaan #gymamsterdam #privegym #personaltraining #fitnessamsterdam #boutiquegym #studiohuren #amsterdamfitness #jordaanlocal`,
     visualNote: "Film overdag met natuurlijk licht. Music: upbeat trending sound (Reels Trending in NL). Geen voice-over nodig — alles op screen text.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/studio-overview.jpeg", label: "Studio overview", role: "primary" },
+      { src: "/images/studio/power-rack.jpeg", label: "Power rack" },
+      { src: "/images/studio/dumbbell-rack.jpeg", label: "Dumbbell rack" },
+      { src: "/images/studio/echo-bike-corner.jpg", label: "Echo bike corner" },
+      { src: "/images/studio/rogue-sled.jpg", label: "Rogue sled" },
+      { src: "/images/studio/canal-view-doors.jpg", label: "Gracht doors open" },
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Facade" },
+    ],
   },
   {
     id: "tt-tour-02",
@@ -81,6 +99,13 @@ Geen meerderheid van de gymroutine die je gewend bent — en dat is precies waar
     hashtags: `#amsterdam #jordaan #personaltrainer #gymamsterdam #boutiquegym #privegym #fitnessjourney #amsterdamlife #jordaanlife`,
     visualNote: "Quick-cut transitions tussen elke '#'. Each shot ~7-10s. Trending audio met countdown beat.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/canal-view-doors.jpg", label: "Garage door op gracht", role: "primary" },
+      { src: "/images/studio/studio-interior-1.jpeg", label: "Studio interior" },
+      { src: "/images/studio/studio-interior-2.jpeg", label: "Privé sfeer" },
+      { src: "/images/studio/sculpt-wall-logo.jpeg", label: "Wall logo" },
+      { src: "/images/studio/turf-lane-canal.jpg", label: "Turf lane" },
+    ],
   },
 
   // ─── TIKTOK · PT SHOWCASE ───────────────────────────────────────────
@@ -110,6 +135,13 @@ Boek je gratis intake via sculptclub.nl/vind-jouw-personal-trainer`,
     hashtags: `#personaltrainer #personaltraining #amsterdam #jordaan #fitnessmotivation #strengthtraining #gymlife #amsterdamfitness #pt #fitnesscoach`,
     visualNote: "Real client (consent eerst!). Multi-angle: vaste cam op statief + handheld voor coach close-ups. Niet over-editen.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/pt-session-barbell.jpg", label: "PT sessie barbell", role: "primary" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Squat coaching" },
+      { src: "/images/studio/training-chest-press.jpg", label: "Chest press" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Dumbbells focus" },
+      { src: "/images/studio/training-barbell-dramatic.jpg", label: "Barbell dramatic" },
+    ],
   },
   {
     id: "tt-pt-02",
@@ -139,6 +171,12 @@ Eerste intake gratis. Geen contract.`,
     hashtags: `#personaltrainer #amsterdam #jordaan #pricetransparency #fitnessamsterdam #ptlife #strengthcoach #amsterdamlife #fitnessjourney`,
     visualNote: "Tekst-driven video, lijst-stijl met snelle cuts. Achtergrond: trainer aan het coachen / studio shots tussen items.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Coach + klant", role: "primary" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "Dumbbells power" },
+      { src: "/images/studio/training-squat-cinematic.jpg", label: "Squat cinematic" },
+      { src: "/images/studio/training-dead-hang.jpg", label: "Dead hang" },
+    ],
   },
 
   // ─── TIKTOK · TRAINER SPOTLIGHT ─────────────────────────────────────
@@ -168,6 +206,12 @@ Boek direct via sculptclub.nl of stuur Alex een DM.
     hashtags: `#personaltrainer #amsterdam #jordaan #calisthenics #strengthtraining #personaltraineramsterdam #fitnesscoach #ptamsterdam`,
     visualNote: "Alex's authentic personality — geen scripted. Mix talking-head + coaching b-roll.",
     duration: "60s",
+    media: [
+      { src: "/images/trainers/alex.jpg", label: "Alex portrait", role: "primary" },
+      { src: "/images/trainers/alex-wp.jpg", label: "Alex wp" },
+      { src: "/images/studio/training-dead-hang.jpg", label: "Calisthenics action" },
+      { src: "/images/studio/training-barbell-dramatic.jpg", label: "Strength action" },
+    ],
   },
   {
     id: "tt-spotlight-eva",
@@ -195,6 +239,11 @@ Boek via sculptclub.nl`,
     hashtags: `#dietist #personaltrainer #amsterdam #jordaan #voedingsadvies #nutrition #strengthtraining #fitcoach #womenwholift #amsterdamhealth`,
     visualNote: "Show Eva in beide rollen — keuken/voedingsadvies én gym/coaching. Splice naast elkaar.",
     duration: "60s",
+    media: [
+      { src: "/images/trainers/eva.jpg", label: "Eva portrait", role: "primary" },
+      { src: "/images/trainers/eva-wp.jpg", label: "Eva wp" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Coaching action" },
+    ],
   },
 
   // ─── TIKTOK · BEFORE/AFTER ──────────────────────────────────────────
@@ -226,6 +275,11 @@ Geen wonderdiet, geen 8x/week training. Gewoon 2-3x/week, consistente coaching.
     hashtags: `#beforeafter #transformation #personaltrainer #amsterdam #jordaan #strengthtraining #fitnessjourney #pt #fitnesstransformation`,
     visualNote: "ESSENTIEEL: client schriftelijke toestemming voor beeld. Geen privé info zonder consent. Bij twijfel — animatie/stockfoto's met disclaimer 'representative example'.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Squat — vroege fase", role: "primary" },
+      { src: "/images/studio/training-squat-cinematic.jpg", label: "Squat — late fase" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "Power development" },
+    ],
   },
 
   // ─── TIKTOK · FITNESS TIP ───────────────────────────────────────────
@@ -256,6 +310,11 @@ Wil je dit live gecorrigeerd? Boek een gratis intake bij een van onze trainers.`
     hashtags: `#squatform #fitnesstip #personaltrainer #amsterdam #strengthtraining #liftingtips #gymtips #squat #formcheck #personaltraineramsterdam`,
     visualNote: "Trainer demos elke fout (slow-mo) + corrigeert. Use overlay text op elke fout. Music: educatieve achtergrond.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Squat reference shot", role: "primary" },
+      { src: "/images/studio/training-squat-cinematic.jpg", label: "Squat form" },
+      { src: "/images/studio/power-rack.jpeg", label: "Power rack setup" },
+    ],
   },
   {
     id: "tt-tip-02",
@@ -282,6 +341,11 @@ Voor een compleet core-programma op maat → sculptclub.nl/vind-jouw-personal-tr
     hashtags: `#coreworkout #corestability #fitnesstip #personaltrainer #amsterdam #strengthcoach #abs #fitnessadvice #liftingtips`,
     visualNote: "Top-down + side-view voor elke exercise. Beat-driven cuts tussen oefeningen.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Core focus reference", role: "primary" },
+      { src: "/images/studio/back-room-full.jpg", label: "Back room space" },
+      { src: "/images/studio/studio-interior-3.jpeg", label: "Floor space" },
+    ],
   },
 
   // ─── TIKTOK · BEHIND THE SCENES ─────────────────────────────────────
@@ -313,6 +377,13 @@ We zijn elke dag open 06:30 – 22:00. Plan jouw sessie voor werk, na werk, wann
     hashtags: `#jordaan #amsterdam #personaltrainer #morningroutine #gymlife #amsterdamlife #boutiquegym #fitnesscommunity #jordaanlife`,
     visualNote: "Authentic, geen overproduction. Film op één ochtend met phone. Vroege ochtend licht = magie.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/entrance-smile.jpg", label: "Entrance morning", role: "primary" },
+      { src: "/images/studio/canal-view-doors.jpg", label: "Doors op gracht" },
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Entrance warm" },
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Facade" },
+      { src: "/images/studio/training-bike-energy.jpg", label: "Energy training" },
+    ],
   },
 
   // ─── TIKTOK · SOCIAL PROOF ──────────────────────────────────────────
@@ -340,6 +411,12 @@ Wat onze klanten zeggen:
     hashtags: `#googlereviews #amsterdam #jordaan #personaltrainer #5sterren #fivestars #boutiquegym #pt #amsterdamfitness #realreviews`,
     visualNote: "Real Google review screenshots (geblurd voor privacy maar zichtbaar 5⭐). Show actual review text.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/training-dumbbells-smile.jpg", label: "Happy client", role: "primary" },
+      { src: "/images/studio/entrance-smile.jpg", label: "Entrance smile" },
+      { src: "/images/studio/training-bike-smile.jpg", label: "Cardio smile" },
+      { src: "/images/studio/training-dumbbells-joy.jpg", label: "Dumbbells joy" },
+    ],
   },
 
   // ─── INSTAGRAM · STUDIO TOUR ────────────────────────────────────────
@@ -369,6 +446,15 @@ We zijn een privé gym op Egelantiersgracht 424, midden in de Jordaan. Geen tick
 Boek via link in bio.`,
     hashtags: `#amsterdam #jordaan #privegym #boutiquegym #personaltrainer #strengthcoach #amsterdamfitness #fitnessamsterdam #jordaanlocal #amsterdamlife #personaltrainingamsterdam #gymamsterdam`,
     visualNote: "Carousel format — 7 high-quality square photos. Consistent grading (warm but clean).",
+    media: [
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Slide 1: Facade", role: "primary" },
+      { src: "/images/studio/power-rack.jpeg", label: "Slide 2: Power rack" },
+      { src: "/images/studio/dumbbells-floor.jpeg", label: "Slide 3: Dumbbells" },
+      { src: "/images/studio/echo-bike-corner.jpg", label: "Slide 4: Echo bike + sled" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Slide 5: Squat rack" },
+      { src: "/images/studio/canal-view-doors.jpg", label: "Slide 6: Gracht doors" },
+      { src: "/images/studio/studio-overview.jpeg", label: "Slide 7: Overview" },
+    ],
   },
   {
     id: "ig-tour-02",
@@ -393,6 +479,12 @@ Link in bio → sculptclub.nl`,
     hashtags: `#jordaan #amsterdam #fitnessamsterdam #boutiquegym #personaltrainer #strengthtraining #amsterdamlocal #jordaanvibes #amsterdamfitness`,
     visualNote: "Cinematic, slow camera moves. Music: chill ambient (Reels Audio Library). Geen voice-over.",
     duration: "30s",
+    media: [
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Facade", role: "primary" },
+      { src: "/images/studio/studio-overview.jpeg", label: "Studio overview" },
+      { src: "/images/studio/training-barbell-skylight.jpg", label: "Barbell skylight" },
+      { src: "/images/studio/training-barbell-dramatic.jpg", label: "Barbell dramatic" },
+    ],
   },
 
   // ─── INSTAGRAM · PT SHOWCASE ────────────────────────────────────────
@@ -427,6 +519,14 @@ Wel:
 Eerste intake gratis op sculptclub.nl/vind-jouw-personal-trainer`,
     hashtags: `#personaltrainer #amsterdam #jordaan #personaltraining #ptamsterdam #pricetransparency #fitnesscoach #strengthtraining #amsterdamlife`,
     visualNote: "Consistent visual style across 7 slides. Use SculptClub brand color (#134DE1) op een swipe-indicator.",
+    media: [
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Cover: coaching moment", role: "primary" },
+      { src: "/images/studio/training-chest-press.jpg", label: "Chest press" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Programma op maat" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Technique correctie" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "Voortgang" },
+      { src: "/images/studio/training-squat-cinematic.jpg", label: "PR moment" },
+    ],
   },
   {
     id: "ig-pt-02",
@@ -454,6 +554,11 @@ Boek via link in bio.`,
     hashtags: `#personaltrainer #amsterdam #jordaan #personaltraining #fitnesscoach #strengthcoach #realresults #ptlife #amsterdamfitness`,
     visualNote: "Real client (consent eerst). Multi-angle film. Geen overproduce.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/pt-session-barbell.jpg", label: "PT in action", role: "primary" },
+      { src: "/images/studio/training-barbell-dramatic.jpg", label: "Lift moment" },
+      { src: "/images/studio/training-dumbbells-smile.jpg", label: "Success moment" },
+    ],
   },
 
   // ─── INSTAGRAM · TRAINER SPOTLIGHTS ─────────────────────────────────
@@ -478,6 +583,11 @@ Andrea is een van onze trainers in de Jordaan en focust zich op fundamenten — 
 Boek je gratis intake via sculptclub.nl of stuur ons een DM.`,
     hashtags: `#personaltrainer #amsterdam #jordaan #posturecoach #strengthtraining #techniquefirst #personaltraineramsterdam #ptamsterdam`,
     visualNote: "Professional headshot/action — natural light, geen flash.",
+    media: [
+      { src: "/images/trainers/andrea.jpg", label: "Andrea portrait", role: "primary" },
+      { src: "/images/trainers/andrea-wp.jpg", label: "Andrea wp" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Coaching technique" },
+    ],
   },
   {
     id: "ig-spotlight-dara",
@@ -502,6 +612,11 @@ Dara werkt zowel 1-op-1 als in small groups. Goed voor wie een training partner 
 Stuur Dara een DM of boek via sculptclub.nl`,
     hashtags: `#personaltrainer #amsterdam #jordaan #smallgrouptraining #personaltrainingamsterdam #fitnesscoach #strengthcoach`,
     visualNote: "Carousel met mix solo + group shots. Show Dara's coaching range.",
+    media: [
+      { src: "/images/trainers/dara.jpg", label: "Dara portrait", role: "primary" },
+      { src: "/images/trainers/dara-wp.jpg", label: "Dara wp" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Coaching session" },
+    ],
   },
 
   // ─── INSTAGRAM · FITNESS TIPS ───────────────────────────────────────
@@ -531,6 +646,11 @@ Wil je een compleet mobility-programma op maat? Boek een sessie met onze trainer
     hashtags: `#hipmobility #squatform #personaltrainer #amsterdam #mobilitydrills #fitnesstip #strengthcoach #fitnessadvice #jordaan`,
     visualNote: "Clean side-view + top-down shots. Slow-mo voor elke drill. Music: educational/calm.",
     duration: "45s",
+    media: [
+      { src: "/images/studio/turf-lane-canal.jpg", label: "Mobility op turf", role: "primary" },
+      { src: "/images/studio/back-room-full.jpg", label: "Back room space" },
+      { src: "/images/studio/studio-interior-3.jpeg", label: "Floor space" },
+    ],
   },
   {
     id: "ig-tip-02",
@@ -559,6 +679,11 @@ Wil je beginnen? Eerste intake bij SculptClub is gratis.
 → sculptclub.nl/vind-jouw-personal-trainer`,
     hashtags: `#personaltrainer #amsterdam #jordaan #firstsession #fitnessbeginners #personaltrainingadvice #fitnesstip #ptamsterdam #strengthtraining`,
     visualNote: "Strong typography, consistent layout. Brand colors. Each slide = 1 mistake, 1 solution.",
+    media: [
+      { src: "/images/studio/entrance-portrait.jpg", label: "Cover: entrance", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "First session vibe" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Focus moment" },
+    ],
   },
 
   // ─── INSTAGRAM · JORDAAN LOCAL ──────────────────────────────────────
@@ -586,6 +711,12 @@ Link in bio → sculptclub.nl`,
     hashtags: `#jordaan #amsterdam #amsterdamlife #jordaanlife #morningvibes #amsterdammornings #jordaanmornings #amsterdamfitness #boutiquegym`,
     visualNote: "Cinematic, slow camera moves, natural light. Geen filters — Jordaan zelf is mooi genoeg.",
     duration: "30s",
+    media: [
+      { src: "/images/hero/canal-view.jpg", label: "Gracht morning", role: "primary" },
+      { src: "/images/studio/canal-view-doors.jpg", label: "Doors op gracht" },
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Facade" },
+      { src: "/images/studio/entrance-smile.jpg", label: "Entrance" },
+    ],
   },
   {
     id: "ig-local-02",
@@ -614,6 +745,11 @@ Onze studio: Egelantiersgracht 424. Train bij ons en verken de Jordaan eromheen.
 sculptclub.nl`,
     hashtags: `#jordaan #amsterdam #amsterdamlife #jordaanlife #amsterdamfitness #jordaanlocal #amsterdamlocal #boutiquegym #fitnessamsterdam`,
     visualNote: "Photos van elke spot. Aesthetic, Instagrammable. Geen tagged accounts zonder consent — gebruik exteriors.",
+    media: [
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Cover: facade", role: "primary" },
+      { src: "/images/hero/canal-view.jpg", label: "Gracht" },
+      { src: "/images/studio/canal-view-doors.jpg", label: "Studio op gracht" },
+    ],
   },
 
   // ─── INSTAGRAM · BEHIND SCENES ──────────────────────────────────────
@@ -647,6 +783,13 @@ Trainer worden? → sculptclub.nl/word-trainer`,
     hashtags: `#personaltrainer #amsterdam #jordaan #dayinthelife #ptlife #amsterdamfitness #personaltrainingamsterdam #boutiquegym`,
     visualNote: "Authentic, geen overproduce. One single PT's actual day. Time-stamps op screen.",
     duration: "60s",
+    media: [
+      { src: "/images/studio/entrance-smile.jpg", label: "Morning arrival", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Morning session" },
+      { src: "/images/studio/training-bike-energy.jpg", label: "Cardio block" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "Middle of day" },
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Evening close" },
+    ],
   },
 
   // ─── INSTAGRAM · SOCIAL PROOF ───────────────────────────────────────
@@ -670,6 +813,11 @@ Lees alles op Google → SculptClub op Maps.
 Of boek je eigen ervaring → sculptclub.nl`,
     hashtags: `#googlereviews #5sterren #amsterdam #jordaan #personaltrainer #boutiquegym #fivestarservice #realreviews #amsterdamfitness`,
     visualNote: "Real Google review screenshots. Privacy: only first names + initials. Get consent voor specifieke reviews.",
+    media: [
+      { src: "/images/studio/training-dumbbells-joy.jpg", label: "Cover: happy client", role: "primary" },
+      { src: "/images/studio/training-dumbbells-smile.jpg", label: "Real smile" },
+      { src: "/images/studio/training-bike-smile.jpg", label: "Cardio happy" },
+    ],
   },
 ];
 
