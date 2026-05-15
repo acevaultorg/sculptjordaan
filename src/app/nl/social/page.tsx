@@ -25,6 +25,37 @@ function slotKey(weekNum: number, weekday: number, ideaId: string): string {
   return `w${weekNum}-d${weekday}-${ideaId}`;
 }
 
+/** Get rotation-week (1-4) for any real date based on ISO-week mod 4 */
+function getRotationWeek(d: Date): 1 | 2 | 3 | 4 {
+  const start = new Date(d.getFullYear(), 0, 1);
+  const dayOfYear = Math.floor((d.getTime() - start.getTime()) / 86400000);
+  const isoWeek = Math.ceil((dayOfYear + start.getDay()) / 7);
+  return (((isoWeek - 1) % 4) + 1) as 1 | 2 | 3 | 4;
+}
+
+/** Real calendar date for a given rotation-week + ISO-weekday, anchored at `now`.
+ * Returns null if the slot's rotation week doesn't appear in the next 4 weeks starting today. */
+function realDateForSlot(now: Date, rotationWeek: 1 | 2 | 3 | 4, weekday: number): Date | null {
+  const todayIsoWd = ((now.getDay() + 6) % 7) + 1; // 1-7
+  const currentRotation = getRotationWeek(now);
+  for (let offset = 0; offset < 4; offset++) {
+    const targetRotation = (((currentRotation - 1 + offset) % 4) + 1) as 1 | 2 | 3 | 4;
+    if (targetRotation === rotationWeek) {
+      const daysAhead = (weekday - todayIsoWd) + 7 * offset;
+      if (daysAhead < 0) continue;
+      const result = new Date(now);
+      result.setDate(result.getDate() + daysAhead);
+      return result;
+    }
+  }
+  return null;
+}
+
+const MONTH_NL = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+function formatShortDate(d: Date): string {
+  return `${d.getDate()} ${MONTH_NL[d.getMonth()]}`;
+}
+
 /** Pick the next-due posting slot from today's date.
  * Maps real calendar weeks to the 4-week rotation by ISO-week mod 4. */
 function findNextSlot(today: Date, postedKeys: Set<string>) {
@@ -248,15 +279,18 @@ export default function SocialPage() {
 
         {view === "calendar" && (
           <FadeIn className="mt-8 space-y-6">
-            {nextSlot && (() => {
+            {nextSlot && now && (() => {
               const nextIdea = SOCIAL_IDEAS.find((i) => i.id === nextSlot.ideaId);
               if (!nextIdea) return null;
+              const nextDate = realDateForSlot(now, nextSlot.weekNumber, nextSlot.weekday);
               const dayLabel =
                 nextSlot.daysFromNow === 0
                   ? "today"
                   : nextSlot.daysFromNow === 1
                     ? "tomorrow"
-                    : `in ${nextSlot.daysFromNow} days`;
+                    : nextDate
+                      ? formatShortDate(nextDate)
+                      : `in ${nextSlot.daysFromNow} days`;
               return (
                 <a
                   href={`#slot-${nextSlot.weekNumber}-${nextSlot.weekday}`}
@@ -285,12 +319,34 @@ export default function SocialPage() {
             <p className="text-sm text-white/70">
               4-week rotation · 16 posts/month · everything you need for each post is inline below — hook, script, brief, hashtags, visuals (click to download), and a one-click "Copy everything" button per post.
             </p>
-            {[1, 2, 3, 4].map((weekNum) => {
+            {(() => {
+              const currentRotation = now ? getRotationWeek(now) : 1;
+              const orderedWeeks = [0, 1, 2, 3].map(
+                (offset) => ((((currentRotation - 1 + offset) % 4) + 1) as 1 | 2 | 3 | 4),
+              );
+              return orderedWeeks.map((weekNum, idx) => {
               const weekSlots = POSTING_CALENDAR.filter((s) => s.weekNumber === weekNum);
+              const weekFirstSlot = weekSlots[0];
+              const weekDate = now && weekFirstSlot
+                ? realDateForSlot(now, weekNum, weekFirstSlot.weekday)
+                : null;
+              const weekLabel = idx === 0 ? "This week" : idx === 1 ? "Next week" : `In ${idx} weeks`;
               return (
-                <Card key={weekNum} className="border-white/10 bg-white/[0.02]">
+                <Card key={`${weekNum}-${idx}`} className="border-white/10 bg-white/[0.02]">
                   <CardContent className="p-5">
-                    <h3 className="mb-4 text-base font-bold uppercase tracking-wider text-brand">Week {weekNum}</h3>
+                    <div className="mb-4 flex items-baseline justify-between gap-3 flex-wrap">
+                      <h3 className="text-base font-bold uppercase tracking-wider text-brand">
+                        {weekLabel}
+                        {weekDate && (
+                          <span className="ml-2 text-xs font-normal normal-case tracking-normal text-white/55">
+                            week of {formatShortDate(weekDate)}
+                          </span>
+                        )}
+                      </h3>
+                      <span className="text-[10px] uppercase tracking-wider text-white/40">
+                        rotation {weekNum}/4
+                      </span>
+                    </div>
                     <div className="space-y-6">
                       {weekSlots.map((slot) => {
                         const idea = SOCIAL_IDEAS.find((i) => i.id === slot.ideaId);
@@ -317,6 +373,12 @@ export default function SocialPage() {
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
                               <div className="flex flex-shrink-0 flex-col items-center justify-center rounded-lg bg-brand/15 border border-brand/30 p-3 sm:w-28">
                                 <p className="text-[10px] font-semibold uppercase tracking-wider text-brand">{slot.weekdayLabel}</p>
+                                {(() => {
+                                  const realDate = now ? realDateForSlot(now, slot.weekNumber, slot.weekday) : null;
+                                  return realDate ? (
+                                    <p className="text-[11px] font-medium text-white/75">{formatShortDate(realDate)}</p>
+                                  ) : null;
+                                })()}
                                 <p className="text-lg font-bold text-white">{slot.bestTime}</p>
                                 <p className="text-[9px] text-white/50">Amsterdam</p>
                               </div>
@@ -497,7 +559,8 @@ export default function SocialPage() {
                   </CardContent>
                 </Card>
               );
-            })}
+            });
+            })()}
           </FadeIn>
         )}
 
