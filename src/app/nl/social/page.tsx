@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Card, CardContent } from "@/components/ui/card";
-import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles } from "lucide-react";
+import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle } from "lucide-react";
 import {
   SOCIAL_IDEAS,
   PILLARS,
@@ -17,6 +17,51 @@ import {
 
 type Filter = "all" | Pillar;
 type View = "ideas" | "calendar" | "strategy";
+
+const STORAGE_KEY = "sculptclub-social-posted-v1";
+
+/** Stable key for each calendar slot — survives data reorders */
+function slotKey(weekNum: number, weekday: number, ideaId: string): string {
+  return `w${weekNum}-d${weekday}-${ideaId}`;
+}
+
+/** Pick the next-due posting slot from today's date.
+ * Maps real calendar weeks to the 4-week rotation by ISO-week mod 4. */
+function findNextSlot(today: Date, postedKeys: Set<string>) {
+  const dayOfWeek = ((today.getDay() + 6) % 7) + 1; // ISO weekday 1-7 (Mon-Sun)
+  const hour = today.getHours() + today.getMinutes() / 60;
+
+  // Get ISO week number, mod 4 → which rotation week we're on
+  const start = new Date(today.getFullYear(), 0, 1);
+  const dayOfYear = Math.floor((today.getTime() - start.getTime()) / 86400000);
+  const isoWeek = Math.ceil((dayOfYear + start.getDay()) / 7);
+  const rotationWeek = ((isoWeek - 1) % 4) + 1; // 1, 2, 3, or 4
+
+  // Build list of upcoming slots (today onwards, in rotation order)
+  type SlotWithDate = (typeof POSTING_CALENDAR)[number] & { daysFromNow: number };
+  const upcoming: SlotWithDate[] = [];
+
+  for (let weekOffset = 0; weekOffset < 4; weekOffset++) {
+    const targetWeek = (((rotationWeek - 1 + weekOffset) % 4) + 1) as 1 | 2 | 3 | 4;
+    const slots = POSTING_CALENDAR.filter((s) => s.weekNumber === targetWeek);
+    for (const slot of slots) {
+      let daysFromNow = (slot.weekday - dayOfWeek) + 7 * weekOffset;
+      if (weekOffset === 0 && daysFromNow < 0) continue; // past day this week
+      if (weekOffset === 0 && daysFromNow === 0) {
+        // Same day — check if the time has passed
+        const [hh, mm] = slot.bestTime.split(":").map(Number);
+        const slotHour = hh + mm / 60;
+        if (slotHour < hour - 0.5) continue; // already passed (with 30 min grace)
+      }
+      upcoming.push({ ...slot, daysFromNow });
+    }
+  }
+
+  // Sort by daysFromNow ascending; filter out already-posted
+  upcoming.sort((a, b) => a.daysFromNow - b.daysFromNow);
+  const next = upcoming.find((s) => !postedKeys.has(slotKey(s.weekNumber, s.weekday, s.ideaId)));
+  return next ?? null;
+}
 
 function CopyButton({ text, label }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
@@ -54,6 +99,35 @@ export default function SocialPage() {
   const [view, setView] = useState<View>("ideas");
   const [platform, setPlatform] = useState<Platform | "all">("all");
   const [pillar, setPillar] = useState<Filter>("all");
+  const [postedKeys, setPostedKeys] = useState<Set<string>>(new Set());
+  const [now, setNow] = useState<Date | null>(null);
+
+  // Hydrate posted-keys from localStorage on mount + capture client date
+  useEffect(() => {
+    setNow(new Date());
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) setPostedKeys(new Set(JSON.parse(raw)));
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const togglePosted = (key: string) => {
+    setPostedKeys((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
+  };
+
+  const nextSlot = useMemo(() => (now ? findNextSlot(now, postedKeys) : null), [now, postedKeys]);
 
   const ideas = useMemo(() => {
     return SOCIAL_IDEAS.filter((idea) => {
@@ -174,6 +248,40 @@ export default function SocialPage() {
 
         {view === "calendar" && (
           <FadeIn className="mt-8 space-y-6">
+            {nextSlot && (() => {
+              const nextIdea = SOCIAL_IDEAS.find((i) => i.id === nextSlot.ideaId);
+              if (!nextIdea) return null;
+              const dayLabel =
+                nextSlot.daysFromNow === 0
+                  ? "today"
+                  : nextSlot.daysFromNow === 1
+                    ? "tomorrow"
+                    : `in ${nextSlot.daysFromNow} days`;
+              return (
+                <a
+                  href={`#slot-${nextSlot.weekNumber}-${nextSlot.weekday}`}
+                  className="block rounded-xl border border-brand/40 bg-brand/10 p-4 transition hover:bg-brand/15"
+                >
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-brand">
+                        Up next · {dayLabel} · {nextSlot.weekdayLabel} {nextSlot.bestTime}
+                      </p>
+                      <p className="mt-1 text-base font-bold text-white">{nextIdea.title}</p>
+                      <p className="mt-0.5 text-xs text-white/70">
+                        {nextSlot.platform.toUpperCase()} · {nextIdea.format} · Week {nextSlot.weekNumber}
+                      </p>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 self-start rounded-full border border-brand/40 bg-brand/20 px-3 py-1.5 text-xs font-semibold text-white sm:self-auto">
+                      Jump to post ↓
+                    </span>
+                  </div>
+                  <p className="mt-3 border-t border-brand/20 pt-2 text-[11px] text-white/60">
+                    {postedKeys.size} of 16 marked posted · the banner advances when you check items off below
+                  </p>
+                </a>
+              );
+            })()}
             <p className="text-sm text-white/70">
               4-week rotation · 16 posts/month · everything you need for each post is inline below — hook, script, brief, hashtags, visuals (click to download), and a one-click "Copy everything" button per post.
             </p>
@@ -193,8 +301,18 @@ export default function SocialPage() {
                           supply: { bg: "bg-blue-500/20", text: "text-blue-300", label: "supply" },
                           broad: { bg: "bg-purple-500/20", text: "text-purple-300", label: "broad" },
                         }[side];
+                        const sKey = slotKey(slot.weekNumber, slot.weekday, slot.ideaId);
+                        const isPosted = postedKeys.has(sKey);
                         return (
-                          <div key={`${weekNum}-${slot.weekday}`} className="rounded-xl border border-white/10 bg-white/[0.03] p-4 space-y-4">
+                          <div
+                            key={`${weekNum}-${slot.weekday}`}
+                            id={`slot-${slot.weekNumber}-${slot.weekday}`}
+                            className={`rounded-xl border p-4 space-y-4 transition ${
+                              isPosted
+                                ? "border-emerald-500/30 bg-emerald-500/[0.04] opacity-60"
+                                : "border-white/10 bg-white/[0.03]"
+                            }`}
+                          >
                             {/* Slot header */}
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
                               <div className="flex flex-shrink-0 flex-col items-center justify-center rounded-lg bg-brand/15 border border-brand/30 p-3 sm:w-28">
@@ -203,6 +321,29 @@ export default function SocialPage() {
                                 <p className="text-[9px] text-white/50">Amsterdam</p>
                               </div>
                               <div className="flex-1">
+                                <div className="mb-2 flex justify-end">
+                                  <button
+                                    type="button"
+                                    onClick={() => togglePosted(sKey)}
+                                    className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium transition ${
+                                      isPosted
+                                        ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-200 hover:bg-emerald-500/25"
+                                        : "border-white/20 bg-white/5 text-white/70 hover:bg-white/15"
+                                    }`}
+                                  >
+                                    {isPosted ? (
+                                      <>
+                                        <CheckCircle2 className="h-3.5 w-3.5" />
+                                        Posted — undo
+                                      </>
+                                    ) : (
+                                      <>
+                                        <Circle className="h-3.5 w-3.5" />
+                                        Mark posted
+                                      </>
+                                    )}
+                                  </button>
+                                </div>
                                 <div className="mb-1.5 flex flex-wrap items-center gap-2">
                                   <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${slot.platform === "tiktok" ? "bg-pink-500/20 text-pink-300" : "bg-purple-500/20 text-purple-300"}`}>
                                     {slot.platform}
