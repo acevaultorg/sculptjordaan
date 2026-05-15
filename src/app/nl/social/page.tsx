@@ -211,6 +211,9 @@ export default function SocialPage() {
                                 >
                                   {slot.platform}
                                 </span>
+                                <span className="rounded-full bg-brand/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand">
+                                  {idea.format}
+                                </span>
                                 <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/80">
                                   {idea.pillar.replace("-", " ")}
                                 </span>
@@ -320,6 +323,9 @@ export default function SocialPage() {
                           }`}
                         >
                           {idea.platform}
+                        </span>
+                        <span className="rounded-full bg-brand/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand">
+                          {idea.format}
                         </span>
                         <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/80">
                           {idea.pillar.replace("-", " ")}

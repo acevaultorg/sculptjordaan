@@ -15,6 +15,7 @@
 // Operator owns: all customer-facing Dutch prose.
 
 export type Platform = "tiktok" | "instagram";
+export type PostFormat = "TikTok Video" | "Reel" | "Carousel" | "Photo Post" | "Story";
 export type Pillar =
   | "studio-tour"
   | "pt-showcase"
@@ -48,6 +49,8 @@ export interface SocialIdea {
   id: string;
   platform: Platform;
   pillar: Pillar;
+  /** Post format: Reel/Carousel/Photo Post (Instagram) or TikTok Video */
+  format: PostFormat;
   /** English title for internal navigation */
   title: string;
   /** Script/shotlist (English, production notes) */
@@ -79,6 +82,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-tour-01",
     platform: "tiktok",
     pillar: "studio-tour",
+    format: "TikTok Video",
     title: "Studio walkthrough — 60 sec",
     script: `[0-3s] Hook on-screen text
 [3-8s] Pan over Rogue power rack
@@ -99,7 +103,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         FACTS.hours,
         FACTS.rating,
       ],
-      hookConcept: "POV-style hook: 'POV: finding a private gym in Jordaan from €12/hour for two people'",
+      hookConcept: "POV: finding a private gym in Jordaan from €12/hour for two people",
       cta: `Book via ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -120,6 +124,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-tour-02",
     platform: "tiktok",
     pillar: "studio-tour",
+    format: "TikTok Video",
     title: "5 things people don't expect about our gym",
     script: `[0-3s] Hook: "5 things people don't expect"
 [3-12s] #5: Garage door onto the canal
@@ -138,7 +143,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         FACTS.hours,
         FACTS.address,
       ],
-      hookConcept: "Numbered list teaser: '5 things nobody expects about our gym'",
+      hookConcept: "5 things nobody expects about our gym",
       cta: `First intake free · ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -159,6 +164,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-pt-01",
     platform: "tiktok",
     pillar: "pt-showcase",
+    format: "TikTok Video",
     title: "Real 1-on-1 PT session (not Instagram-staged)",
     script: `[0-3s] Hook on-screen text over coaching moment
 [3-10s] Warming-up — dynamic stretches
@@ -175,7 +181,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         FACTS.pt,
         "First intake free",
       ],
-      hookConcept: "Hook: 'What a real PT session actually looks like'",
+      hookConcept: "What a real PT session actually looks like",
       cta: `Book via ${FACTS.ptLanding}`,
       targetLength: "medium",
     },
@@ -194,6 +200,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-pt-02",
     platform: "tiktok",
     pillar: "pt-showcase",
+    format: "TikTok Video",
     title: "What €45 actually gets you",
     script: `[0-3s] Hook: "€45 for a PT — what do you get?"
 [3-10s] Item 1 — Coach who listens
@@ -214,7 +221,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "0% commission — price = what the trainer earns",
         "First intake free",
       ],
-      hookConcept: "Question hook: 'What do you actually get for €45?'",
+      hookConcept: "What do you actually get for €45?",
       cta: `Find your trainer · ${FACTS.ptLanding}`,
       targetLength: "long",
     },
@@ -234,6 +241,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-spotlight-alex",
     platform: "tiktok",
     pillar: "trainer-spotlight",
+    format: "TikTok Video",
     title: "Meet Alex — Strength · Calisthenics",
     script: `[0-3s] Alex talking-head intro
 [3-10s] B-roll: Alex coaching a squat
@@ -250,7 +258,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Rate: €69 per 60 min",
         "First intake free",
       ],
-      hookConcept: "Hook: 'Meet Alex — strength + calisthenics trainer'",
+      hookConcept: "Meet Alex — strength + calisthenics trainer",
       cta: `Book via ${FACTS.website} or DM Alex`,
       targetLength: "medium",
     },
@@ -268,6 +276,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-spotlight-eva",
     platform: "tiktok",
     pillar: "trainer-spotlight",
+    format: "TikTok Video",
     title: "Meet Eva — Dietitian + PT (rare combo)",
     script: `[0-3s] Hook: "Our trainer Eva is also a dietitian"
 [3-12s] Eva intro: trains + advises on nutrition
@@ -285,7 +294,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "First intake free",
         "Strength + nutrition advice combo is rare in Amsterdam",
       ],
-      hookConcept: "Surprise hook: 'Our trainer is also a registered dietitian'",
+      hookConcept: "Our trainer is also a registered dietitian",
       cta: `Book via ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -304,6 +313,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-ba-01",
     platform: "tiktok",
     pillar: "before-after",
+    format: "TikTok Video",
     title: "12-week transformation (real client)",
     script: `[0-3s] Split screen: Week 1 ↔ Week 12
 [3-10s] First session b-roll
@@ -322,7 +332,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Weeks 9-12: hit PRs",
         "No miracle diet",
       ],
-      hookConcept: "Time-marker hook: '12 weeks. €45 per session. Real result.'",
+      hookConcept: "12 weeks. €45 per session. Real result.",
       cta: `First intake free · ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -341,6 +351,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-tip-01",
     platform: "tiktok",
     pillar: "fitness-tip",
+    format: "TikTok Video",
     title: "3 squat mistakes everyone makes",
     script: `[0-3s] Hook: "3 squat mistakes — fix this"
 [3-15s] Mistake #1: knees caving in → fix
@@ -356,7 +367,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Mistake 3: too much forward lean → chest up, core tight",
         "Want live correction? First intake free",
       ],
-      hookConcept: "Pain-point hook: '3 squat mistakes we see every week'",
+      hookConcept: "3 squat mistakes we see every week",
       cta: FACTS.ptLanding,
       targetLength: "medium",
     },
@@ -373,6 +384,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-tip-02",
     platform: "tiktok",
     pillar: "fitness-tip",
+    format: "TikTok Video",
     title: "How to actually train your core (not sit-ups)",
     script: `[0-3s] Hook: "Sit-ups don't make your core stronger"
 [3-12s] Dead bug — slow, controlled
@@ -389,7 +401,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Hollow body hold — total core tension",
         "Core = stabilizer, not visibility",
       ],
-      hookConcept: "Contrarian hook: 'Stop doing sit-ups. Try this instead.'",
+      hookConcept: "Stop doing sit-ups. Try this instead.",
       cta: `Complete program · ${FACTS.ptLanding}`,
       targetLength: "medium",
     },
@@ -408,6 +420,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-bts-01",
     platform: "tiktok",
     pillar: "behind-scenes",
+    format: "TikTok Video",
     title: "An early morning in the Jordaan studio",
     script: `[0-3s] Hook on-screen: "06:30 AM in the Jordaan"
 [3-12s] Trainer opens garage door, sun on canal
@@ -423,7 +436,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Early morning = quietest time, gym to yourself",
         FACTS.address,
       ],
-      hookConcept: "Time-anchor hook: '06:30 in the Jordaan'",
+      hookConcept: "06:30 in the Jordaan",
       cta: FACTS.website,
       targetLength: "short",
     },
@@ -444,6 +457,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "tt-proof-01",
     platform: "tiktok",
     pillar: "social-proof",
+    format: "TikTok Video",
     title: "Why 5.0 stars on Google aren't a marketing trick",
     script: `[0-3s] Hook: "How we keep our 5.0 on Google"
 [3-12s] Trainer talking to camera: explanation
@@ -459,7 +473,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "0% commission means trainers have time for clients",
         "No marketing team — just real service",
       ],
-      hookConcept: "Curiosity hook: 'Why our Google rating actually stays at 5.0'",
+      hookConcept: "Why our Google rating actually stays at 5.0",
       cta: `First intake free · ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -479,6 +493,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "ig-tour-01",
     platform: "instagram",
     pillar: "studio-tour",
+    format: "Carousel",
     title: "Carousel — 7 corners of our studio",
     script: `Carousel slides:
 1. Cover: Studio entrance facade + welcome text
@@ -498,7 +513,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         `Open Gym: ${FACTS.openGym}`,
         "First intake free",
       ],
-      hookConcept: "List hook: '7 corners of our studio in the Jordaan'",
+      hookConcept: "7 corners of our studio in the Jordaan",
       cta: "Book via link in bio",
       targetLength: "long",
     },
@@ -518,6 +533,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "ig-tour-02",
     platform: "instagram",
     pillar: "studio-tour",
+    format: "Reel",
     title: "Reel — Studio aesthetic 30s",
     script: `Reel (30s vertical):
 [0-3s] Slow pan on facade — Sculpt sign visible
@@ -533,7 +549,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Book per hour",
         "0% commission for trainers",
       ],
-      hookConcept: "Price-anchor hook: 'A private gym in Jordaan from €12 per hour'",
+      hookConcept: "A private gym in Jordaan from €12 per hour",
       cta: `Link in bio · ${FACTS.website}`,
       targetLength: "short",
     },
@@ -553,6 +569,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "ig-pt-01",
     platform: "instagram",
     pillar: "pt-showcase",
+    format: "Carousel",
     title: "Carousel — What €45 actually gets you",
     script: `Carousel slides:
 1. Cover: "€45 PT in Jordaan — what do you get?" + coaching photo
@@ -572,7 +589,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "0% commission",
         "First intake free",
       ],
-      hookConcept: "Question hook: 'What do you actually get for €45?'",
+      hookConcept: "What do you actually get for €45?",
       cta: FACTS.ptLanding,
       targetLength: "long",
     },
@@ -591,6 +608,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "ig-pt-02",
     platform: "instagram",
     pillar: "pt-showcase",
+    format: "Reel",
     title: "Reel — 60-sec PT session highlights",
     script: `Reel (60s):
 [0-5s] Hook: "No staged PT. Real session."
@@ -608,7 +626,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Program adjusted for next time",
         FACTS.pt,
       ],
-      hookConcept: "Authenticity hook: 'What a real PT session looks like at our gym'",
+      hookConcept: "What a real PT session looks like at our gym",
       cta: "Book via link in bio",
       targetLength: "medium",
     },
@@ -627,6 +645,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     id: "ig-spotlight-andrea",
     platform: "instagram",
     pillar: "trainer-spotlight",
+    format: "Reel",
     title: "Meet Andrea — Posture · Technique",
     script: `Single photo OR Reel:
 Photo: Andrea in studio, coaching action shot
@@ -640,7 +659,7 @@ Reel: 30s — intro + coaching demo`,
         "First intake free",
         "Good fit for beginners + post-injury return",
       ],
-      hookConcept: "Hook: 'Meet Andrea — strength, posture, technique'",
+      hookConcept: "Meet Andrea — strength, posture, technique",
       cta: `Book via ${FACTS.website} or DM us`,
       targetLength: "medium",
     },
@@ -656,6 +675,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-spotlight-dara",
     platform: "instagram",
     pillar: "trainer-spotlight",
+    format: "Carousel",
     title: "Meet Dara — Personal + Small Group",
     script: `Carousel:
 1. Dara coaching action shot
@@ -671,7 +691,7 @@ Reel: 30s — intro + coaching demo`,
         "First intake free",
         "Works 1-on-1 AND small groups",
       ],
-      hookConcept: "Hook: 'Dara — personal training and small groups'",
+      hookConcept: "Dara — personal training and small groups",
       cta: FACTS.website,
       targetLength: "medium",
     },
@@ -689,6 +709,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-tip-01",
     platform: "instagram",
     pillar: "fitness-tip",
+    format: "Reel",
     title: "Reel — 3 hip mobility drills",
     script: `Reel (45s):
 [0-3s] Hook: "Hip pain on squats? Start here."
@@ -705,7 +726,7 @@ Reel: 30s — intro + coaching demo`,
         "Frequency: 3-4× per week",
         "Result: noticeable within 4 weeks",
       ],
-      hookConcept: "Pain-point hook: 'Hip pain on squats? Start here.'",
+      hookConcept: "Hip pain on squats? Start here.",
       cta: `Full mobility program · ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -722,6 +743,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-tip-02",
     platform: "instagram",
     pillar: "fitness-tip",
+    format: "Carousel",
     title: "Carousel — 5 mistakes at your first PT session",
     script: `Carousel:
 1. Cover: "5 mistakes at your first PT session"
@@ -740,7 +762,7 @@ Reel: 30s — intro + coaching demo`,
         "Eat 1-2 hours before session",
         "Plan at least 4 sessions for noticeable result",
       ],
-      hookConcept: "List hook: '5 mistakes at your first PT session'",
+      hookConcept: "5 mistakes at your first PT session",
       cta: `First intake free · ${FACTS.ptLanding}`,
       targetLength: "long",
     },
@@ -758,6 +780,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-local-01",
     platform: "instagram",
     pillar: "jordaan-local",
+    format: "Reel",
     title: "Reel — Morning in the Jordaan",
     script: `Reel (30s):
 [0-5s] Open shot: canal in the morning, mist on water
@@ -773,7 +796,7 @@ Reel: 30s — intro + coaching demo`,
         "First session of day = quietest time",
         "Coffee on the house for early birds",
       ],
-      hookConcept: "Mood hook: 'Good morning from the Jordaan'",
+      hookConcept: "Good morning from the Jordaan",
       cta: `Link in bio · ${FACTS.website}`,
       targetLength: "short",
     },
@@ -791,6 +814,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-local-02",
     platform: "instagram",
     pillar: "jordaan-local",
+    format: "Carousel",
     title: "Carousel — 5 nearby spots for pre/post workout",
     script: `Carousel:
 1. Cover: "5 spots near our studio for pre/post workout"
@@ -809,7 +833,7 @@ Reel: 30s — intro + coaching demo`,
         "Local drugstore — recovery essentials",
         "The canal — free cooldown spot",
       ],
-      hookConcept: "Local insider hook: '5 spots in the Jordaan for before + after training'",
+      hookConcept: "5 spots in the Jordaan for before + after training",
       cta: `${FACTS.address} · ${FACTS.website}`,
       targetLength: "medium",
     },
@@ -827,6 +851,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-bts-01",
     platform: "instagram",
     pillar: "behind-scenes",
+    format: "Reel",
     title: "Reel — A day in the life of a PT",
     script: `Reel (60s):
 [0-5s] 06:00 — Trainer arrives, doors open
@@ -843,7 +868,7 @@ Reel: 30s — intro + coaching demo`,
         "Private studio, own profile on site",
         "Location: Jordaan",
       ],
-      hookConcept: "Day-in-life hook: 'A day in the life of a PT in the Jordaan'",
+      hookConcept: "A day in the life of a PT in the Jordaan",
       cta: `Become a trainer? ${FACTS.website}/word-trainer`,
       targetLength: "medium",
     },
@@ -864,6 +889,7 @@ Reel: 30s — intro + coaching demo`,
     id: "ig-proof-01",
     platform: "instagram",
     pillar: "social-proof",
+    format: "Carousel",
     title: "Carousel — Real Google reviews",
     script: `Carousel:
 1. Cover: "5.0 ⭐ on Google · What do our clients say?"
@@ -876,7 +902,7 @@ Reel: 30s — intro + coaching demo`,
         "Reviews are from real Google clients",
         "Privacy: only first name + initial shown",
       ],
-      hookConcept: "Quote hook: 'What clients actually say on Google'",
+      hookConcept: "What clients actually say on Google",
       cta: `Read on Google Maps · or book: ${FACTS.website}`,
       targetLength: "medium",
     },
