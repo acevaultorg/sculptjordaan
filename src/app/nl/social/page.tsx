@@ -69,11 +69,11 @@ export default function SocialPage() {
         <SectionHeader
           overline="Content Studio"
           title="Social Content voor TikTok & Instagram"
-          description="Kant-en-klare scripts, captions, hashtags én visuals voor SculptClub. Klik een foto om te downloaden, kopieer de caption, post. Alles is gebaseerd op echte SculptClub feiten — geen verzinsels."
+          description="Scripts · shotlists · caption-templates · hashtags · downloadbare visuals. Brain levert de structuur en de feiten. Jij schrijft de Nederlandse copy in jouw eigen stem."
         />
 
-        <FadeIn className="mt-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-100/90">
-          <strong className="font-semibold">Foto's vs Video's:</strong> de visuals in elke kaart zijn bestaande SculptClub foto's (download direct). Voor TikTok/Reels-video's volg je het script — film met je telefoon in de studio. Foto's kun je 1:1 gebruiken als Instagram-carrousel, of als referentie voor je video-shots.
+        <FadeIn className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-sm text-emerald-100/90">
+          <strong className="font-semibold">Waarom geen kant-en-klare captions?</strong> Native Nederlandse copy klinkt het beste als jij het schrijft. Daarom levert deze tool de <em>boodschap</em>, de <em>key facts</em> en de <em>CTA</em> — en schrijf jij het in je eigen voice (kort, direct, lokaal). Scripts, shotlists, hashtags en visuals zijn ready-to-use.
         </FadeIn>
 
         {/* View toggle: Ideas / Calendar / Strategy */}
@@ -362,13 +362,38 @@ export default function SocialPage() {
                   <div>
                     <div className="mb-1.5 flex items-center justify-between">
                       <span className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                        Caption
+                        Caption template — schrijf zelf in jouw stem
                       </span>
-                      <CopyButton text={idea.caption} />
+                      <CopyButton text={`${idea.captionTemplate.message}\n\n${idea.captionTemplate.keyPoints.map(p => `• ${p}`).join("\n")}\n\nCTA: ${idea.captionTemplate.cta}\n\nLengte: ${idea.captionTemplate.targetLength}`} label="Kopieer template" />
                     </div>
-                    <pre className="whitespace-pre-wrap rounded-md bg-white/5 px-3 py-2 text-xs leading-relaxed text-white/85 font-sans">
-                      {idea.caption}
-                    </pre>
+                    <div className="rounded-md bg-white/5 px-3 py-3 text-xs leading-relaxed text-white/85 space-y-2">
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-1">Boodschap</p>
+                        <p className="text-white/90">{idea.captionTemplate.message}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-1">Belangrijke punten (kies + herschrijf in jouw stem)</p>
+                        <ul className="space-y-0.5 text-white/80">
+                          {idea.captionTemplate.keyPoints.map((point, i) => (
+                            <li key={i}>• {point}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 pt-1">
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-0.5">CTA</p>
+                          <p className="text-white/90 text-[11px]">{idea.captionTemplate.cta}</p>
+                        </div>
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-0.5">Lengte</p>
+                          <p className="text-white/90 text-[11px]">
+                            {idea.captionTemplate.targetLength === "short" && "Kort (1-2 zinnen)"}
+                            {idea.captionTemplate.targetLength === "medium" && "Medium (50-80 woorden)"}
+                            {idea.captionTemplate.targetLength === "long" && "Lang (100-150 woorden)"}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div>
@@ -437,7 +462,7 @@ export default function SocialPage() {
 
                   <div className="border-t border-white/10 pt-3">
                     <CopyButton
-                      text={`Hook: ${idea.hook}\n\nScript:\n${idea.script}\n\nCaption:\n${idea.caption}\n\nHashtags:\n${idea.hashtags}\n\nVisual:\n${idea.visualNote}`}
+                      text={`Hook: ${idea.hook}\n\nScript:\n${idea.script}\n\nCaption boodschap:\n${idea.captionTemplate.message}\n\nKeypunten:\n${idea.captionTemplate.keyPoints.map(p => `• ${p}`).join("\n")}\n\nCTA: ${idea.captionTemplate.cta}\nLengte: ${idea.captionTemplate.targetLength}\n\nHashtags:\n${idea.hashtags}\n\nVisual:\n${idea.visualNote}`}
                       label="Kopieer alles"
                     />
                   </div>
