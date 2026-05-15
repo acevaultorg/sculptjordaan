@@ -28,6 +28,19 @@ export function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+          // Consent Mode v2 — ADVANCED (not basic).
+          // Basic mode (what we had before) blocked Google Ads conversion pings
+          // entirely when ad_storage was denied → 0 measured conversions on
+          // €182/30d Ads spend in SculptClub Ads account 511-161-9582 (audited
+          // 2026-05-15 via Chrome MCP). Most fleet visitors bounce in <2s from
+          // Instagram → never click cookie banner → consent stays denied →
+          // Google Ads conversion never recorded.
+          //
+          // Advanced mode (this block + url_passthrough + ads_data_redaction)
+          // sends anonymized/cookieless pings even in denied state. Google
+          // then uses conversion modeling to attribute these to campaigns.
+          // GDPR-compliant: no cookies, no PII, no cross-site tracking when
+          // ad_storage is denied — Google receives signal but cannot identify.
           gtag('consent', 'default', {
             analytics_storage: 'denied',
             ad_storage: 'denied',
@@ -35,6 +48,8 @@ export function Analytics() {
             ad_personalization: 'denied',
             wait_for_update: 500,
           });
+          gtag('set', 'url_passthrough', true);
+          gtag('set', 'ads_data_redaction', true);
           gtag('config', '${ga4}');
           gtag('config', '${googleAds}');
         `}
