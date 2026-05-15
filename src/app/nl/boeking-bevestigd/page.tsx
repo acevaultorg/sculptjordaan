@@ -93,6 +93,7 @@ export default function BookingConfirmedNL() {
     <PageLayout>
       <Section className="pt-32">
         <SectionHeader
+          as="h1"
           overline="Bevestigd"
           title="Je boeking is bevestigd"
           description="Bedankt — we kijken ernaar uit je te zien in de studio."

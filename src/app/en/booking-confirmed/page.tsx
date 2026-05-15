@@ -72,6 +72,7 @@ export default function BookingConfirmedEN() {
     <PageLayout>
       <Section className="pt-32">
         <SectionHeader
+          as="h1"
           overline="Confirmed"
           title="Your booking is confirmed"
           description="Thanks — we're looking forward to seeing you at the studio."
