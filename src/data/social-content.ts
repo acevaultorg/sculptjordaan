@@ -87,15 +87,15 @@ Boek via link in bio of sculptclub.nl`,
 [12-22s] #4: Geen abonnement nodig — "€12/uur, klaar"
 [22-32s] #3: 0% commissie voor trainers — "trainers houden alles zelf"
 [32-42s] #2: Privé — "alleen jij en je trainer"
-[42-55s] #1: Open elke dag 06:30 tot 22:00 — "kom voor werk, na werk, what works"
+[42-55s] #1: Open elke dag 06:30 tot 22:00 — "kom voor werk, na werk, wanneer het jou uitkomt"
 [55-60s] CTA: "Eerste intake is gratis · sculptclub.nl"`,
     caption: `5 dingen waar mensen verbaasd over zijn als ze onze studio voor het eerst zien 👇
 
-Geen meerderheid van de gymroutine die je gewend bent — en dat is precies waarom we hier zijn.
+Geen ketenroutine, geen abonnementsdruk, geen wachten op een rack. Dat is precies waarom we hier zijn.
 
 📍 Egelantiersgracht 424, Jordaan
 ⏰ Dagelijks 06:30–22:00
-⭐ 5.0 op Google`,
+⭐ 5,0 op Google`,
     hashtags: `#amsterdam #jordaan #personaltrainer #gymamsterdam #boutiquegym #privegym #fitnessjourney #amsterdamlife #jordaanlife`,
     visualNote: "Quick-cut transitions tussen elke '#'. Each shot ~7-10s. Trending audio met countdown beat.",
     duration: "60s",
@@ -115,7 +115,7 @@ Geen meerderheid van de gymroutine die je gewend bent — en dat is precies waar
     pillar: "pt-showcase",
     title: "Echte 1-op-1 sessie (geen acteer)",
     hook: "Hoe een echte personal training sessie eruit ziet",
-    script: `[0-3s] Hook tekst: "Geen voorgeprogrammeerd Instagram workout"
+    script: `[0-3s] Hook tekst: "Geen voorgeprogrammeerde Instagram-workout"
 [3-10s] Trainer + klant beginnen met dynamische warming-up
 [10-20s] Coaching moment — trainer corrigeert techniek
 [20-30s] Klant zet PR — gefilmd vanaf squat hoek
@@ -127,7 +127,7 @@ Geen meerderheid van de gymroutine die je gewend bent — en dat is precies waar
 Bij SculptClub bepaalt jouw trainer wat jij vandaag nodig hebt — niet een algoritme.
 
 ✓ 1-op-1 aandacht
-✓ Echt coachen, geen counting
+✓ Echt coachen, geen tellen
 ✓ Gratis intake
 ✓ Vanaf €45 per sessie
 
@@ -147,13 +147,13 @@ Boek je gratis intake via sculptclub.nl/vind-jouw-personal-trainer`,
     id: "tt-pt-02",
     platform: "tiktok",
     pillar: "pt-showcase",
-    title: "Wat €45 echt opbrengt",
+    title: "Wat €45 echt oplevert",
     hook: "Wat krijg je voor €45 bij een PT in de Jordaan?",
     script: `[0-3s] Hook: "€45 voor een PT — wat krijg je daarvoor?"
 [3-10s] Lijst-stijl: Item 1 — "Coach die naar je luistert"
-[10-17s] Item 2 — "Programma op maat, geen template"
-[17-24s] Item 3 — "Techniek-correcties live"
-[24-31s] Item 4 — "Voeding-advies indien gewenst"
+[10-17s] Item 2 — "Programma op maat, geen sjabloon"
+[17-24s] Item 3 — "Live techniek-correcties"
+[24-31s] Item 4 — "Voedingsadvies indien gewenst"
 [31-38s] Item 5 — "Volgende sessie aangepast op jouw progressie"
 [38-50s] Bonus: "Eerste intake is gratis"
 [50-60s] CTA: "Vind jouw trainer — sculptclub.nl"`,
@@ -193,7 +193,7 @@ Eerste intake gratis. Geen contract.`,
 [30-40s] Alex: "Tarief: €69 per 60 minuten. Eerste intake gratis."
 [40-50s] B-roll: Alex coaching a client door een sessie
 [50-60s] CTA: "Boek een gratis intake met Alex · sculptclub.nl"`,
-    caption: `Meet Alex — een van onze trainers in de Jordaan 💪
+    caption: `Maak kennis met Alex — een van onze trainers in de Jordaan 💪
 
 🎯 Specialisme: Strength · Calisthenics · Recovery
 🌍 Talen: NL · EN · PT
@@ -222,18 +222,18 @@ Boek direct via sculptclub.nl of stuur Alex een DM.
     script: `[0-3s] Hook: "Wist je dat onze trainer Eva ook diëtist is?"
 [3-12s] Eva: "Hi, ik ben Eva. Ik combineer strength training met voedingsadvies."
 [12-22s] B-roll: Eva measuring portions / coaching squat
-[22-32s] Eva: "De combinatie is krachtig — je traint én eet richtig."
+[22-32s] Eva: "De combinatie is krachtig — je traint én eet juist."
 [32-42s] Real client testimony (1 zin, met toestemming)
 [42-52s] Eva: "Tarief op aanvraag, eerste intake gratis"
 [52-60s] CTA: "Stuur Eva een DM voor je gratis intake"`,
-    caption: `Eva is diëtist + personal trainer — een combinatie die zeldzaam is in Amsterdam.
+    caption: `Eva is diëtist én personal trainer — een combinatie die zeldzaam is in Amsterdam.
 
 🥗 Voedingsadvies + krachttraining
 🌍 NL · EN
 💰 Tarief op aanvraag
 🎁 Eerste intake gratis
 
-Perfect als je naast workouts ook hulp wilt met je eetpatroon.
+Perfect als je naast je trainingen ook hulp wilt met je eetpatroon.
 
 Boek via sculptclub.nl`,
     hashtags: `#dietist #personaltrainer #amsterdam #jordaan #voedingsadvies #nutrition #strengthtraining #fitcoach #womenwholift #amsterdamhealth`,
@@ -251,20 +251,20 @@ Boek via sculptclub.nl`,
     id: "tt-ba-01",
     platform: "tiktok",
     pillar: "before-after",
-    title: "12-week strength transformation (real client)",
+    title: "12-weken transformatie (echte klant)",
     hook: "12 weken. €45 per sessie. Echt resultaat.",
     script: `[0-3s] Split screen: "Week 1" links, "Week 12" rechts
-[3-10s] Show eerste sessie b-roll — moeite met basics
-[10-20s] Tussenklipje: trainer notitie "Eerst techniek, dan gewicht"
-[20-30s] Week 4: meer zelfvertrouwen, betere vorm
-[30-42s] Week 12: zelfde oefening, 2× zwaarder, perfect vorm
-[42-52s] Tekst op screen: "Niet alleen sterker — ook anders gericht in z'n lichaam"
+[3-10s] Eerste sessie b-roll — moeite met basics
+[10-20s] Tussenklipje: trainer-notitie "Eerst techniek, dan gewicht"
+[20-30s] Week 4: meer zelfvertrouwen, betere uitvoering
+[30-42s] Week 12: zelfde oefening, 2× zwaarder, perfecte uitvoering
+[42-52s] Tekst op screen: "Niet alleen sterker — ook zelfverzekerder in eigen lichaam"
 [52-60s] CTA: "Wil jij ook? sculptclub.nl"`,
-    caption: `12 weken bij SculptClub. Resultaat van [naam client met toestemming].
+    caption: `12 weken bij SculptClub. Resultaat van [naam klant met toestemming].
 
 Wat we hebben gedaan:
 ✓ Eerste 4 weken: techniek
-✓ Week 5-8: load opbouwen
+✓ Week 5-8: gewicht opbouwen
 ✓ Week 9-12: PR's stellen + behalen
 
 Geen wonderdiet, geen 8x/week training. Gewoon 2-3x/week, consistente coaching.
@@ -295,16 +295,16 @@ Geen wonderdiet, geen 8x/week training. Gewoon 2-3x/week, consistente coaching.
 [27-39s] Fout #3: Forward lean too aggressive → show fix (chest up, core engaged)
 [39-50s] Demo: perfect rep met juiste cue
 [50-60s] CTA: "Want meer? Boek een sessie met onze trainers — sculptclub.nl"`,
-    caption: `3 squat fouten die iedereen maakt — fix dit voor je volgende sessie 👇
+    caption: `3 squat-fouten die iedereen maakt — verbeter dit voor je volgende sessie 👇
 
 1️⃣ Knieën die naar binnen vallen
-   → Push knees out tijdens descent
+   → Knieën actief naar buiten duwen tijdens het zakken
 
 2️⃣ Hielen die loskomen
-   → Gewicht in mid-foot, werk aan ankle mobility
+   → Gewicht op het midden van je voet, werk aan enkelmobiliteit
 
-3️⃣ Te voorover leunen
-   → Chest up, core hard, niet je heupen eerst
+3️⃣ Te ver voorover leunen
+   → Borst omhoog, core strak, heupen niet eerst naar achter
 
 Wil je dit live gecorrigeerd? Boek een gratis intake bij een van onze trainers.`,
     hashtags: `#squatform #fitnesstip #personaltrainer #amsterdam #strengthtraining #liftingtips #gymtips #squat #formcheck #personaltraineramsterdam`,
@@ -329,13 +329,13 @@ Wil je dit live gecorrigeerd? Boek een gratis intake bij een van onze trainers.`
 [32-42s] Korte uitleg: "Core = stabilizer, niet flexor"
 [42-52s] B-roll: client doet de drie exercises
 [52-60s] CTA: "Want een echte core programma? sculptclub.nl"`,
-    caption: `Stop met dagelijkse sit-ups. Probeer dit instead:
+    caption: `Stop met dagelijkse sit-ups. Probeer dit in plaats daarvan:
 
-1. Dead bug — leer je core stabilizen
-2. Pallof press — anti-rotation kracht
-3. Hollow body hold — totale core spanning
+1. Dead bug — leer je core stabiliseren
+2. Pallof press — anti-rotatie kracht
+3. Hollow body hold — totale core-spanning
 
-Je core is een stabilizer, niet een flexor. Train het dus voor stabiliteit, niet voor "abs".
+Je core is een stabilisator, geen flexor. Train hem dus voor stabiliteit, niet voor zichtbare "abs".
 
 Voor een compleet core-programma op maat → sculptclub.nl/vind-jouw-personal-trainer`,
     hashtags: `#coreworkout #corestability #fitnesstip #personaltrainer #amsterdam #strengthcoach #abs #fitnessadvice #liftingtips`,
@@ -391,7 +391,7 @@ We zijn elke dag open 06:30 – 22:00. Plan jouw sessie voor werk, na werk, wann
     id: "tt-proof-01",
     platform: "tiktok",
     pillar: "social-proof",
-    title: "Waarom 5.0 sterren niet leugt",
+    title: "Waarom 5.0 sterren niet liegen",
     hook: "Waarom we 5.0 ⭐ hebben op Google",
     script: `[0-3s] Hook tekst: "Hoe je 5.0 ⭐ houdt op Google"
 [3-12s] Trainer-aan-de-camera: "We hebben geen team van marketers"
@@ -404,7 +404,7 @@ We zijn elke dag open 06:30 – 22:00. Plan jouw sessie voor werk, na werk, wann
 
 Wat onze klanten zeggen:
 "Eerlijke trainers, prachtige studio in de Jordaan"
-"Geen abonnement-druk, gewoon goede coaching"
+"Geen abonnementsdruk, gewoon goede coaching"
 "De gratis intake was al beter dan veel betaalde sessies"
 
 → Zelf ervaren? Eerste intake gratis op sculptclub.nl`,
@@ -436,7 +436,7 @@ Wat onze klanten zeggen:
 7. CTA slide: "Boek je intake — sculptclub.nl · 5.0 ⭐ Google"`,
     caption: `7 hoekjes van onze studio in de Jordaan 🏋️‍♂️
 
-We zijn een privé gym op Egelantiersgracht 424, midden in de Jordaan. Geen tickets, geen abonnement-druk, gewoon echte apparatuur en goede coaching.
+We zijn een privé gym op Egelantiersgracht 424, midden in de Jordaan. Geen tickets, geen abonnementsdruk, gewoon echte apparatuur en goede coaching.
 
 → PT vanaf €45/sessie
 → Studio huur vanaf €12/uur
@@ -492,7 +492,7 @@ Link in bio → sculptclub.nl`,
     id: "ig-pt-01",
     platform: "instagram",
     pillar: "pt-showcase",
-    title: "Carousel — Wat €45 echt opbrengt",
+    title: "Carrousel — Wat €45 echt oplevert",
     hook: "Wat krijg je voor €45 bij een Jordaan PT?",
     script: `Carousel slides:
 1. Cover: "€45 PT in de Jordaan — wat krijg je?" + photo van coaching moment
@@ -506,14 +506,14 @@ Link in bio → sculptclub.nl`,
 
 Niet:
 ❌ Ketenwerk
-❌ Template-programma
+❌ Standaard sjabloon-programma
 ❌ Een coach die op zijn telefoon zit
 
 Wel:
 ✓ 1-op-1 aandacht
 ✓ Programma op maat
 ✓ Echte techniek-correctie
-✓ Voortgangs-tracking
+✓ Voortgang bijhouden + aanpassen
 ✓ De prijs die je ziet = wat de trainer krijgt (0% commissie)
 
 Eerste intake gratis op sculptclub.nl/vind-jouw-personal-trainer`,
@@ -541,7 +541,7 @@ Eerste intake gratis op sculptclub.nl/vind-jouw-personal-trainer`,
 [30-45s] PR moment — celebration, real reaction
 [45-55s] Cooldown gesprek
 [55-60s] CTA: "Vanaf €45 · sculptclub.nl"`,
-    caption: `Echte PT sessie. Geen scripted Instagram-versie.
+    caption: `Echte PT-sessie. Geen geënsceneerde Instagram-versie.
 
 ✓ Warming-up van 10 min
 ✓ 35 min werk (hypertrofie / kracht / techniek)
@@ -571,14 +571,14 @@ Boek via link in bio.`,
     script: `Single photo post OF Reel:
 Photo: Andrea in studio, action shot van coaching
 Reel: 30s — Andrea introduceert zichzelf + coaching demo`,
-    caption: `Meet Andrea 👋
+    caption: `Maak kennis met Andrea 👋
 
-🎯 Specialisme: Strength · Posture · Technique
+🎯 Specialisme: Kracht · Houding · Techniek
 🌍 Talen: NL · EN
 💰 Tarief: €45 / 45 min
 🎁 Eerste intake gratis
 
-Andrea is een van onze trainers in de Jordaan en focust zich op fundamenten — techniek, postuur, kracht-basics. Perfect voor wie net begint of na een blessure terugkomt.
+Andrea is een van onze trainers in de Jordaan en richt zich op de fundamenten — techniek, houding, basiskracht. Perfect voor wie net begint of na een blessure terugkomt.
 
 Boek je gratis intake via sculptclub.nl of stuur ons een DM.`,
     hashtags: `#personaltrainer #amsterdam #jordaan #posturecoach #strengthtraining #techniquefirst #personaltraineramsterdam #ptamsterdam`,
@@ -600,14 +600,14 @@ Boek je gratis intake via sculptclub.nl of stuur ons een DM.`,
 2. Dara talking to client (gesprek moment)
 3. Group dynamics — Dara coaching meerdere personen
 4. CTA — book via website`,
-    caption: `Meet Dara — personal trainer + small group coach 💪
+    caption: `Maak kennis met Dara — personal trainer + small-group coach 💪
 
 🎯 Specialisme: Personal Training · Small Group · Strength & Conditioning
 🌍 Talen: NL · EN
-💰 Tarief: Op aanvraag
+💰 Tarief: op aanvraag
 🎁 Eerste intake gratis
 
-Dara werkt zowel 1-op-1 als in small groups. Goed voor wie een training partner wil + dezelfde gefocuste coaching.
+Dara werkt zowel 1-op-1 als in kleine groepen. Goed voor wie samen met een trainingsmaatje wil komen en dezelfde gefocuste coaching wil houden.
 
 Stuur Dara een DM of boek via sculptclub.nl`,
     hashtags: `#personaltrainer #amsterdam #jordaan #smallgrouptraining #personaltrainingamsterdam #fitnesscoach #strengthcoach`,
@@ -624,15 +624,15 @@ Stuur Dara een DM of boek via sculptclub.nl`,
     id: "ig-tip-01",
     platform: "instagram",
     pillar: "fitness-tip",
-    title: "Reel — 3 hip mobility drills",
-    hook: "3 hip mobility drills die elke lifter zou moeten doen",
+    title: "Reel — 3 heup-mobiliteits oefeningen",
+    hook: "3 heup-mobiliteits oefeningen die elke lifter zou moeten doen",
     script: `Reel (45s):
-[0-3s] Hook: "Hip pain bij squat? Begin hier."
-[3-15s] Drill #1: 90/90 hip stretch — 30s elke kant
-[15-27s] Drill #2: World's greatest stretch — 5 reps elke kant
-[27-39s] Drill #3: Couch stretch — 60s elke kant
-[39-45s] CTA: "Save dit + doe het voor je volgende sessie"`,
-    caption: `Hip mobility = beter squatten, minder pijn 👇
+[0-3s] Hook: "Pijn in je heup bij squatten? Begin hier."
+[3-15s] Oefening #1: 90/90 hip stretch — 30s per kant
+[15-27s] Oefening #2: World's greatest stretch — 5 reps per kant
+[27-39s] Oefening #3: Couch stretch — 60s per kant
+[39-45s] CTA: "Bewaar deze post + doe het voor je volgende sessie"`,
+    caption: `Heup-mobiliteit = beter squatten, minder pijn 👇
 
 1️⃣ 90/90 Hip Stretch — 30s per kant
 2️⃣ World's Greatest Stretch — 5 reps per kant
@@ -640,9 +640,9 @@ Stuur Dara een DM of boek via sculptclub.nl`,
 
 Doe dit 3-4x per week voor merkbaar verschil binnen 4 weken.
 
-→ Save voor je volgende warming-up.
+→ Bewaar deze post voor je volgende warming-up.
 
-Wil je een compleet mobility-programma op maat? Boek een sessie met onze trainers via sculptclub.nl`,
+Wil je een compleet mobiliteits-programma op maat? Boek een sessie met onze trainers via sculptclub.nl`,
     hashtags: `#hipmobility #squatform #personaltrainer #amsterdam #mobilitydrills #fitnesstip #strengthcoach #fitnessadvice #jordaan`,
     visualNote: "Clean side-view + top-down shots. Slow-mo voor elke drill. Music: educational/calm.",
     duration: "45s",
@@ -656,23 +656,23 @@ Wil je een compleet mobility-programma op maat? Boek een sessie met onze trainer
     id: "ig-tip-02",
     platform: "instagram",
     pillar: "fitness-tip",
-    title: "Carousel — 5 mistakes bij eerste PT",
-    hook: "5 fouten die mensen maken bij hun eerste PT sessie",
-    script: `Carousel:
-1. Cover: "5 fouten bij je eerste PT sessie" + bold typography
-2. Fout 1: "Doelen vergeten te delen" → "Wat wil je bereiken?"
+    title: "Carrousel — 5 fouten bij eerste PT-sessie",
+    hook: "5 fouten die mensen maken bij hun eerste PT-sessie",
+    script: `Carrousel:
+1. Cover: "5 fouten bij je eerste PT-sessie" + sterke typografie
+2. Fout 1: "Doelen niet delen" → "Wat wil je bereiken?"
 3. Fout 2: "Te zware kleren / verkeerde schoenen" → "Comfort + grip"
-4. Fout 3: "Niet eerlijk over blessures" → "Trainer kan dan niets met je doen"
-5. Fout 4: "Eten 5 min voor sessie" → "1-2 uur ervoor"
+4. Fout 3: "Niet eerlijk over blessures" → "Trainer kan dan niks veiligs opbouwen"
+5. Fout 4: "5 min voor de sessie nog eten" → "Liever 1-2 uur ervoor"
 6. Fout 5: "Verwachten dat 1 sessie alles oplost" → "Consistentie wint"
 7. CTA: "Klaar voor je eerste sessie? Boek je gratis intake — sculptclub.nl"`,
-    caption: `5 fouten die mensen maken bij hun eerste PT sessie ⚠️
+    caption: `5 fouten die mensen maken bij hun eerste PT-sessie ⚠️
 
-1️⃣ Doelen niet delen — trainer kan niet bouwen wat hij niet kent
+1️⃣ Doelen niet delen — een trainer kan niet bouwen wat hij niet kent
 2️⃣ Verkeerde kleding — comfort + grip > stijl
 3️⃣ Blessures verzwijgen — eerlijk = veilig
-4️⃣ Eten direct voor sessie — geef je lichaam tijd
-5️⃣ 1-sessie wonder verwachten — consistentie wint
+4️⃣ Vlak vóór de sessie eten — geef je lichaam de tijd
+5️⃣ Verwachten dat 1 sessie alles oplost — consistentie wint
 
 Wil je beginnen? Eerste intake bij SculptClub is gratis.
 
@@ -691,7 +691,7 @@ Wil je beginnen? Eerste intake bij SculptClub is gratis.
     id: "ig-local-01",
     platform: "instagram",
     pillar: "jordaan-local",
-    title: "Reel — Jordaan morning vibes",
+    title: "Reel — Ochtend in de Jordaan",
     hook: "Onze ochtend in de Jordaan",
     script: `Reel (30s):
 [0-5s] Open shot: gracht in de ochtend, mist op water
@@ -701,11 +701,11 @@ Wil je beginnen? Eerste intake bij SculptClub is gratis.
 [26-30s] CTA: "Egelantiersgracht 424 · sculptclub.nl"`,
     caption: `Goedemorgen vanuit de Jordaan 🌅
 
-We zijn elke ochtend om 06:30 open. Eerste sessie van de dag is vaak de stilste — gracht is leeg, gym is van jou.
+We zijn elke ochtend om 06:30 open. De eerste sessie van de dag is vaak de stilste — gracht is leeg, gym is van jou.
 
 📍 Egelantiersgracht 424
-⏰ Daily 06:30 – 22:00
-☕ Koffie op huis voor early birds
+⏰ Dagelijks 06:30 – 22:00
+☕ Koffie van het huis voor de vroege vogels
 
 Link in bio → sculptclub.nl`,
     hashtags: `#jordaan #amsterdam #amsterdamlife #jordaanlife #morningvibes #amsterdammornings #jordaanmornings #amsterdamfitness #boutiquegym`,
@@ -722,23 +722,23 @@ Link in bio → sculptclub.nl`,
     id: "ig-local-02",
     platform: "instagram",
     pillar: "jordaan-local",
-    title: "Carousel — 5 plekken naast onze studio voor pre/post workout",
-    hook: "5 plekken in de Jordaan voor voor/na je training",
-    script: `Carousel:
-1. Cover: "5 spots vlakbij onze studio voor pre/post workout"
-2. Spot 1: Café 't Smalle (5 min loop) — coffee + outdoor seating
-3. Spot 2: AH op Westerstraat (1 min) — supplements + snacks
-4. Spot 3: Westerpark (8 min) — outdoor warmup of cooldown loopje
-5. Spot 4: Drogisterij voor magnesium/recovery (in de buurt)
-6. Spot 5: De gracht zelf — leg er een handdoek neer voor stretching
+    title: "Carrousel — 5 plekken vlakbij voor vóór en na je training",
+    hook: "5 plekken in de Jordaan voor vóór en na je training",
+    script: `Carrousel:
+1. Cover: "5 plekken vlakbij onze studio voor vóór en na je workout"
+2. Plek 1: Café 't Smalle (5 min lopen) — koffie + terras aan de gracht
+3. Plek 2: AH op Westerstraat (1 min) — supplementen + snacks
+4. Plek 3: Westerpark (8 min) — outdoor warming-up of cooldown-loopje
+5. Plek 4: Drogisterij om de hoek — magnesium + recovery essentials
+6. Plek 5: De gracht zelf — handdoek neer voor stretching
 7. CTA: "Train bij ons in de Jordaan — sculptclub.nl"`,
-    caption: `5 plekken in de Jordaan voor je pre/post workout 📍
+    caption: `5 plekken in de Jordaan voor vóór en na je training 📍
 
 ☕ Café 't Smalle — perfecte pre-workout koffie
-🛒 AH Westerstraat — last-minute supplements
+🛒 AH Westerstraat — last-minute supplementen
 🌳 Westerpark — outdoor loopje voor warming-up
-💊 Drogisterij Jordaan — magnesium + recovery basics
-🌊 De gracht zelf — gratis cooldown spot
+💊 Drogisterij in de buurt — magnesium + recovery essentials
+🌊 De gracht zelf — gratis cooldown-plek
 
 Onze studio: Egelantiersgracht 424. Train bij ons en verken de Jordaan eromheen.
 
@@ -768,16 +768,16 @@ sculptclub.nl`,
 [50-60s] 22:00 — Studio close. CTA: "Wil je trainer worden? Bekijk sculptclub.nl"`,
     caption: `Een dag in het leven van een SculptClub PT 🎯
 
-06:00 — Arriving, koffie aan
+06:00 — Aankomst, koffie aan
 06:30 — Eerste sessie
 09:00 — Programma's plannen
-11:00 — Tweede block sessies
-14:00 — Middag clients
-17:00 — Drukste uur
+11:00 — Tweede sessieblok
+14:00 — Middagklanten
+17:00 — Het drukste uur
 20:00 — Laatste sessies
 22:00 — Studio dicht
 
-Bij SculptClub bepaal jij je eigen tarief, je eigen tijden, je eigen klanten. 0% commissie.
+Bij SculptClub bepaal jij je eigen tarief, je eigen tijden en je eigen klanten. 0% commissie.
 
 Trainer worden? → sculptclub.nl/word-trainer`,
     hashtags: `#personaltrainer #amsterdam #jordaan #dayinthelife #ptlife #amsterdamfitness #personaltrainingamsterdam #boutiquegym`,
@@ -797,7 +797,7 @@ Trainer worden? → sculptclub.nl/word-trainer`,
     id: "ig-proof-01",
     platform: "instagram",
     pillar: "social-proof",
-    title: "Carousel — Echte Google reviews",
+    title: "Carrousel — Echte Google reviews",
     hook: "Wat klanten écht zeggen — Google reviews",
     script: `Carousel:
 1. Cover: "5.0 ⭐ op Google · Wat zeggen onze klanten?"
@@ -805,11 +805,11 @@ Trainer worden? → sculptclub.nl/word-trainer`,
 7. CTA: "Lees alle reviews op Google · sculptclub.nl"`,
     caption: `Wat onze klanten écht zeggen 💬
 
-Alle reviews zijn van echte Google klanten. 5.0 ⭐ gemiddeld over [X] reviews.
+Alle reviews zijn van echte Google-klanten. 5,0 ⭐ gemiddeld over [aantal] reviews.
 
-We zijn er trots op, maar we werken eraan dat het zo blijft. Elke nieuwe sessie is een kans om te verbeteren.
+We zijn er trots op, maar werken er elke dag aan om het zo te houden. Elke nieuwe sessie is een kans om te verbeteren.
 
-Lees alles op Google → SculptClub op Maps.
+Lees alle reviews op Google → SculptClub op Maps.
 Of boek je eigen ervaring → sculptclub.nl`,
     hashtags: `#googlereviews #5sterren #amsterdam #jordaan #personaltrainer #boutiquegym #fivestarservice #realreviews #amsterdamfitness`,
     visualNote: "Real Google review screenshots. Privacy: only first names + initials. Get consent voor specifieke reviews.",
@@ -832,3 +832,234 @@ export const PILLARS = [
   { id: "jordaan-local" as Pillar, label: "Jordaan local", count: SOCIAL_IDEAS.filter(i => i.pillar === "jordaan-local").length },
   { id: "social-proof" as Pillar, label: "Social proof", count: SOCIAL_IDEAS.filter(i => i.pillar === "social-proof").length },
 ];
+
+// ─── STRATEGY ────────────────────────────────────────────────────────
+// Brain-recommended balance between demand-side (PT customers) and supply-side
+// (studio renters). The two audiences barely overlap; ad budget split ≠ social
+// content split because:
+// 1. TikTok/IG is consumer-skewed — trainer-renters discover via LinkedIn +
+//    word-of-mouth, NOT short-form video.
+// 2. PT customers outnumber potential trainer-renters ~50:1.
+// 3. PT-showcase content secondarily attracts trainers ("they coach well, I'd
+//    like to join") — studio-tour content rarely brings PT customers.
+//
+// Targets per 10 posts:
+// - 6 demand-side (PT showcase, trainer spotlights, fitness tips, before/after,
+//   social proof) → drives PT booking funnel
+// - 3 supply-side (studio tour, behind-the-scenes "for trainers" framing)
+//   → drives studio rental + trainer recruitment
+// - 1 broad/local (Jordaan local, brand) → trust + local search relevance,
+//   serves both audiences
+//
+// This is a 60/30/10 split. Operator's Google Ads at €15 Studio / €5 PT (75/25)
+// stays unchanged — ads buy intent at moment-of-search, social builds trust
+// and pipeline over weeks.
+
+export type AudienceSide = "demand" | "supply" | "broad";
+
+export const PILLAR_TO_AUDIENCE: Record<Pillar, AudienceSide> = {
+  "studio-tour": "supply",
+  "pt-showcase": "demand",
+  "trainer-spotlight": "demand", // showcases trainer quality → drives PT bookings
+  "before-after": "demand",
+  "fitness-tip": "demand",
+  "behind-scenes": "supply",
+  "jordaan-local": "broad",
+  "social-proof": "demand",
+};
+
+// ─── WEEKLY POST CALENDAR ────────────────────────────────────────────
+// 4 posts/week (Mon/Wed/Fri/Sun). Realistic for solo operator.
+// Pattern: alternate platforms + alternate audiences to avoid monotony.
+// Aim: ~24 posts/month = full content rotation over 4 weeks before repeat.
+//
+// Best post times for Amsterdam timezone (CET):
+// - Monday 19:30 — feed catches commute-home + evening-scroll
+// - Wednesday 12:30 — lunch-break scroll
+// - Friday 19:00 — weekend-mode + workout-planning Friday night
+// - Sunday 11:00 — Sunday morning long-scroll, workout planning for week
+
+export interface CalendarSlot {
+  /** Mon=1, Tue=2, ..., Sun=7 (ISO weekday) */
+  weekday: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  weekdayLabel: string;
+  bestTime: string;
+  platform: Platform;
+  /** which week of the 4-week rotation: 1, 2, 3, 4 */
+  weekNumber: 1 | 2 | 3 | 4;
+  /** Specific idea ID from SOCIAL_IDEAS */
+  ideaId: string;
+  /** Why this slot/idea/platform combo */
+  rationale: string;
+}
+
+export const POSTING_CALENDAR: CalendarSlot[] = [
+  // ─── WEEK 1: Build awareness — establish brand + offerings ────────
+  {
+    weekday: 1,
+    weekdayLabel: "Maandag",
+    bestTime: "19:30",
+    platform: "instagram",
+    weekNumber: 1,
+    ideaId: "ig-tour-01",
+    rationale: "Maandag opent met de visuele basis: studio carrousel laat de hele club zien — context voor de rest van de week.",
+  },
+  {
+    weekday: 3,
+    weekdayLabel: "Woensdag",
+    bestTime: "12:30",
+    platform: "tiktok",
+    weekNumber: 1,
+    ideaId: "tt-pt-01",
+    rationale: "Demand-side PT showcase tijdens lunch-scroll — wanneer mensen aan hun fitness-doelen denken.",
+  },
+  {
+    weekday: 5,
+    weekdayLabel: "Vrijdag",
+    bestTime: "19:00",
+    platform: "tiktok",
+    weekNumber: 1,
+    ideaId: "tt-tip-01",
+    rationale: "Fitness-tip (squat fouten) op vrijdagavond — mensen plannen weekend-trainingen.",
+  },
+  {
+    weekday: 7,
+    weekdayLabel: "Zondag",
+    bestTime: "11:00",
+    platform: "instagram",
+    weekNumber: 1,
+    ideaId: "ig-spotlight-andrea",
+    rationale: "Zondagochtend = lange feed-scroll. Trainer spotlight bouwt vertrouwen voor 'maandag-start' bookings.",
+  },
+
+  // ─── WEEK 2: Differentiate — show what makes SculptClub different ────────
+  {
+    weekday: 1,
+    weekdayLabel: "Maandag",
+    bestTime: "19:30",
+    platform: "tiktok",
+    weekNumber: 2,
+    ideaId: "tt-tour-02",
+    rationale: "5-dingen-format scoort hoog op TikTok. Verrast nieuwe kijkers met '0% commissie' en '€12/uur'.",
+  },
+  {
+    weekday: 3,
+    weekdayLabel: "Woensdag",
+    bestTime: "12:30",
+    platform: "instagram",
+    weekNumber: 2,
+    ideaId: "ig-pt-01",
+    rationale: "Carrousel '€45 — wat krijg je?' beantwoordt de zilveren vraag van elke koopt-overwegende klant.",
+  },
+  {
+    weekday: 5,
+    weekdayLabel: "Vrijdag",
+    bestTime: "19:00",
+    platform: "tiktok",
+    weekNumber: 2,
+    ideaId: "tt-spotlight-eva",
+    rationale: "Trainer spotlight Eva (diëtist + PT) — unieke positionering, hoog deelbaar.",
+  },
+  {
+    weekday: 7,
+    weekdayLabel: "Zondag",
+    bestTime: "11:00",
+    platform: "instagram",
+    weekNumber: 2,
+    ideaId: "ig-local-01",
+    rationale: "Jordaan-ochtend Reel — bouwt local-brand-relevance, werkt voor zowel PT als studio-huur intent.",
+  },
+
+  // ─── WEEK 3: Convert — direct conversion-focused content ────────
+  {
+    weekday: 1,
+    weekdayLabel: "Maandag",
+    bestTime: "19:30",
+    platform: "instagram",
+    weekNumber: 3,
+    ideaId: "ig-tip-02",
+    rationale: "5-fouten-bij-eerste-PT carrousel adresseert objections die mensen tegenhouden van boeken.",
+  },
+  {
+    weekday: 3,
+    weekdayLabel: "Woensdag",
+    bestTime: "12:30",
+    platform: "tiktok",
+    weekNumber: 3,
+    ideaId: "tt-pt-02",
+    rationale: "Pricing transparency video (€45 wat krijg je) — converteert mid-funnel kijkers.",
+  },
+  {
+    weekday: 5,
+    weekdayLabel: "Vrijdag",
+    bestTime: "19:00",
+    platform: "tiktok",
+    weekNumber: 3,
+    ideaId: "tt-spotlight-alex",
+    rationale: "Trainer spotlight Alex (calisthenics) — niche-bereik via #calisthenics hashtag-community.",
+  },
+  {
+    weekday: 7,
+    weekdayLabel: "Zondag",
+    bestTime: "11:00",
+    platform: "instagram",
+    weekNumber: 3,
+    ideaId: "ig-proof-01",
+    rationale: "Social-proof carrousel met echte 5.0 reviews — voor mensen die maandag willen boeken maar laatste twijfel hebben.",
+  },
+
+  // ─── WEEK 4: Deepen — supply-side + community + repeat ────────
+  {
+    weekday: 1,
+    weekdayLabel: "Maandag",
+    bestTime: "19:30",
+    platform: "tiktok",
+    weekNumber: 4,
+    ideaId: "tt-bts-01",
+    rationale: "Behind-the-scenes ochtend — humaniseert de brand, bouwt parasocial vertrouwen.",
+  },
+  {
+    weekday: 3,
+    weekdayLabel: "Woensdag",
+    bestTime: "12:30",
+    platform: "instagram",
+    weekNumber: 4,
+    ideaId: "ig-tip-01",
+    rationale: "Heup-mobiliteit tip — saved-content (sterke retentie van followers).",
+  },
+  {
+    weekday: 5,
+    weekdayLabel: "Vrijdag",
+    bestTime: "19:00",
+    platform: "instagram",
+    weekNumber: 4,
+    ideaId: "ig-spotlight-dara",
+    rationale: "Trainer spotlight Dara (small group) — onderscheidt SculptClub van pure 1-op-1 PT studios.",
+  },
+  {
+    weekday: 7,
+    weekdayLabel: "Zondag",
+    bestTime: "11:00",
+    platform: "instagram",
+    weekNumber: 4,
+    ideaId: "ig-local-02",
+    rationale: "Jordaan plekken-gids — broad-appeal, vertrouwen-bouwer voor local-search-intent.",
+  },
+];
+
+export const WEEKDAY_NAMES_NL = ["", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"];
+
+export const STRATEGY_SUMMARY = {
+  headline: "Strategie: 60% demand · 30% supply · 10% broad",
+  body: `Operator's Google Ads gaat 75% naar Studio (€15/dag) en 25% naar PT (€5/dag). Maar social content volgt een ANDERE balans:
+
+→ 60% demand-side (PT showcases · trainer spotlights · fitness tips · before/after · social proof) — drives PT bookings, omdat consumenten 50× zo talrijk zijn als potentiële studio-huurders.
+
+→ 30% supply-side (studio tour · behind-the-scenes) — bouwt awareness bij trainers + voor mensen die de gym willen huren.
+
+→ 10% broad (Jordaan local · brand) — local-search relevance, werkt voor beide audiences.
+
+Waarom niet matchen met ad-budget? Omdat ads intentie kopen en social vertrouwen bouwt. Trainers vinden je via LinkedIn, mond-tot-mond en industry-channels — niet via TikTok. PT-content trekt indirect ook trainers aan ("hier zien ze goed coachen, daar wil ik werken").`,
+  cadence: "4 posts per week — Maandag 19:30, Woensdag 12:30, Vrijdag 19:00, Zondag 11:00 (Amsterdam time).",
+  rotation: "4 weken rotatie = 16 posts per maand. Pilaren rouleren zodat geen 2 vergelijkbare posts achter elkaar komen.",
+};
