@@ -265,7 +265,7 @@ UV: 13 (NL=12, DE=1) — unchanged. No new visitors in the past 1h. Quiet
 evening on a 13-UV/day site. Tracking taxonomy still operating as designed
 (no drift, no breakage, simply no new visitor activity in the interval).
 
-**Cross-session awareness (v19.46 active):** this Vault04 SculptClub session's
+**Cross-session awareness (v19.46 active):** this VAULT04-SculptClub session's
 scope = tracking-validation self-paced loop. No overlap risk with parallel
 AceVault HoldLens / VAULT-DEV-TOOLS webvitalstool sessions reported in
 v19.46 brain notes.

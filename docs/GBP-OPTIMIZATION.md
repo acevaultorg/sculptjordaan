@@ -132,7 +132,7 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 
 ## § Photos — bulk upload list
 
-**Drag-drop these from `/Users/paulodevries/Local/Vault04 SculptClub/sculptclub/public/images/studio/`:**
+**Drag-drop these from `/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub/public/images/studio/`:**
 
 | # | Filename | Category in GBP | Notes |
 |---|---|---|---|
