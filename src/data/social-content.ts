@@ -89,16 +89,17 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
 [40-50s] Fast cuts through all corners — beats of music
 [50-60s] CTA on screen: "Boek via sculptclub.nl"`,
     brief: {
-      message: "Show that our studio is a real private gym in the Jordaan, not a chain.",
+      message: "Show that our studio is a real private gym in the Jordaan, not a chain. Lead with the per-hour price for two people (trainer + client = €12/hr half-studio).",
       facts: [
         `Location: ${FACTS.address}`,
-        `Price: ${FACTS.studio}`,
+        "Half-studio: €12/60min, €17/90min (perfect for trainer + 1 client)",
+        "Full studio: €17/60min, €24/90min (for groups/duos training together)",
         "No membership required",
         "Real Rogue equipment",
         FACTS.hours,
         FACTS.rating,
       ],
-      hookConcept: "POV-style hook: 'POV: finding a private gym in Jordaan from €12/hour'",
+      hookConcept: "POV-style hook: 'POV: finding a private gym in Jordaan from €12/hour for two people'",
       cta: `Book via ${FACTS.website}`,
       targetLength: "medium",
     },
