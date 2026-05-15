@@ -9,16 +9,12 @@ const COPY = {
     line: "Huur onze privé studio vanaf €12/uur — 0% commissie, gratis annuleren, eigen profiel op onze site.",
     cta: "Bekijk studio",
     href: "/nl/studio-huren",
-    secondaryLabel: "Of word trainer →",
-    secondaryHref: "/nl/word-trainer",
   },
   en: {
     badge: "For personal trainers",
     line: "Rent our private studio from €12/hour — 0% commission, free cancellation, your own profile on our site.",
     cta: "See studio",
     href: "/en/studio-rental",
-    secondaryLabel: "Or join as a trainer →",
-    secondaryHref: "/en/become-trainer",
   },
 } as const;
 
@@ -38,19 +34,13 @@ export function TrainerSignalBand({ locale }: { locale: Locale }) {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center md:flex-shrink-0">
+        <div className="flex flex-shrink-0">
           <Link
             href={c.href}
             className="plausible-event-name=trainer_band_studio_click inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
           >
             {c.cta}
             <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            href={c.secondaryHref}
-            className="plausible-event-name=trainer_band_member_click inline-flex items-center justify-center text-sm font-medium text-primary hover:underline"
-          >
-            {c.secondaryLabel}
           </Link>
         </div>
       </div>
