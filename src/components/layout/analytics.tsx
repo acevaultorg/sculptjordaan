@@ -146,6 +146,20 @@ export function Analytics() {
                     value: booking.value,
                     currency: 'EUR'
                   });
+                  // GA4 event named to match the 'Book appointment' imported conversion
+                  // (Google Ads → Conversions → Book appointment uses GA4 event
+                  // 'Book_appointment_1'). The Ads-side trigger was originally configured
+                  // as a Page Load on a URL that doesn't exist (/nl/training-studio-huren-amsterdam/)
+                  // so this Click-based event variant gives operator a working trigger
+                  // to point the Ads conversion at via GA4 admin.
+                  gtag('event', 'Book_appointment_1', {
+                    value: booking.value,
+                    currency: 'EUR',
+                    booking_type: booking.type,
+                    intent: acuityIntent,
+                    pricing: acuityPricing,
+                    booking_source: window.location.pathname
+                  });
                   gtag('event', 'begin_checkout', {
                     booking_type: booking.type,
                     intent: acuityIntent,
@@ -208,6 +222,19 @@ export function Analytics() {
                     send_to: '${googleAds}/${googleAdsConversion}',
                     value: 45,
                     currency: 'EUR'
+                  });
+                  // GA4 event matching 'Trainer Intake Lead' imported conversion
+                  // (Google Ads → Conversions → Trainer Intake Lead, status 'Needs attention').
+                  // WhatsApp clicks to trainer numbers ARE intake leads — fire the event so
+                  // operator can re-trigger the Ads-side conversion against this GA4 event.
+                  gtag('event', 'Trainer_Intake_Lead_1', {
+                    value: 45,
+                    currency: 'EUR',
+                    intent: waSig.intent,
+                    pricing: waSig.pricing,
+                    trainer_name: waSig.trainer_name,
+                    booking_source: window.location.pathname,
+                    method: 'whatsapp'
                   });
                   gtag('event', 'whatsapp_click', {
                     booking_source: window.location.pathname,
