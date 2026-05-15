@@ -38,12 +38,12 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
       {copied ? (
         <>
           <Check className="h-3.5 w-3.5" />
-          Gekopieerd
+          Copied
         </>
       ) : (
         <>
           <Copy className="h-3.5 w-3.5" />
-          {label ?? "Kopieer"}
+          {label ?? "Copy"}
         </>
       )}
     </button>
@@ -69,11 +69,11 @@ export default function SocialPage() {
         <SectionHeader
           overline="Content Studio"
           title="Social Content voor TikTok & Instagram"
-          description="Scripts · shotlists · caption-templates · hashtags · downloadbare visuals. Brain levert de structuur en de feiten. Jij schrijft de Nederlandse copy in jouw eigen stem."
+          description="Briefs (English) · shotlists · hashtags · downloadable visuals. Brain provides the structure + facts. You write the Dutch in your own voice."
         />
 
         <FadeIn className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-sm text-emerald-100/90">
-          <strong className="font-semibold">Waarom geen kant-en-klare captions?</strong> Native Nederlandse copy klinkt het beste als jij het schrijft. Daarom levert deze tool de <em>boodschap</em>, de <em>key facts</em> en de <em>CTA</em> — en schrijf jij het in je eigen voice (kort, direct, lokaal). Scripts, shotlists, hashtags en visuals zijn ready-to-use.
+          <strong className="font-semibold">Why is this tool in English?</strong> Because AI-generated Dutch invents words no native would say. So this library is honest about its limits: brain delivers the <em>brief</em> (what to communicate, what facts to mention, what CTA, what length) in English. You translate to natural Dutch in your own voice. Photos, scripts, hashtags don't need translation.
         </FadeIn>
 
         {/* View toggle: Ideas / Calendar / Strategy */}
@@ -88,7 +88,7 @@ export default function SocialPage() {
             }`}
           >
             <Video className="h-3.5 w-3.5" />
-            Alle ideeën ({SOCIAL_IDEAS.length})
+            All ideas ({SOCIAL_IDEAS.length})
           </button>
           <button
             type="button"
@@ -100,7 +100,7 @@ export default function SocialPage() {
             }`}
           >
             <Calendar className="h-3.5 w-3.5" />
-            Post-kalender (4 weken)
+            Post calendar (4 weeks)
           </button>
           <button
             type="button"
@@ -112,7 +112,7 @@ export default function SocialPage() {
             }`}
           >
             <Sparkles className="h-3.5 w-3.5" />
-            Strategie
+            Strategy
           </button>
         </FadeIn>
 
@@ -126,11 +126,11 @@ export default function SocialPage() {
                 </p>
                 <div className="grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-white/60">Cadans</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/60">Cadence</p>
                     <p className="mt-1 text-sm text-white/90">{STRATEGY_SUMMARY.cadence}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-white/60">Rotatie</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/60">Rotation</p>
                     <p className="mt-1 text-sm text-white/90">{STRATEGY_SUMMARY.rotation}</p>
                   </div>
                 </div>
@@ -147,8 +147,8 @@ export default function SocialPage() {
                   broad: "border-purple-500/30 bg-purple-500/5",
                 };
                 const labels = {
-                  demand: "Demand-side (PT klanten)",
-                  supply: "Supply-side (studio-huur)",
+                  demand: "Demand-side (PT customers)",
+                  supply: "Supply-side (studio rental)",
                   broad: "Broad (Jordaan / brand)",
                 };
                 return (
@@ -176,7 +176,7 @@ export default function SocialPage() {
           <FadeIn className="mt-8 space-y-4">
             <p className="text-sm text-white/70">
               4-weken rotatieschema · 16 posts per maand · 4 per week op vaste tijden.
-              Klik een post om naar het idee te springen.
+              Click a post to jump to the idea.
             </p>
             {[1, 2, 3, 4].map((weekNum) => {
               const weekSlots = POSTING_CALENDAR.filter((s) => s.weekNumber === weekNum);
@@ -233,7 +233,7 @@ export default function SocialPage() {
                                 }}
                                 className="mt-2 text-xs font-medium text-brand hover:underline"
                               >
-                                → Bekijk idee + visuals
+                                → View idea + visuals
                               </button>
                             </div>
                           </div>
@@ -338,12 +338,12 @@ export default function SocialPage() {
                   <div>
                     <div className="mb-1.5 flex items-center justify-between">
                       <span className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                        Hook
+                        Hook concept (translate to your Dutch)
                       </span>
-                      <CopyButton text={idea.hook} />
+                      <CopyButton text={idea.brief.hookConcept} />
                     </div>
                     <p className="rounded-md bg-white/5 px-3 py-2 text-sm italic text-white/90">
-                      "{idea.hook}"
+                      {idea.brief.hookConcept}
                     </p>
                   </div>
 
@@ -362,34 +362,37 @@ export default function SocialPage() {
                   <div>
                     <div className="mb-1.5 flex items-center justify-between">
                       <span className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                        Caption template — schrijf zelf in jouw stem
+                        Caption brief — you write the Dutch
                       </span>
-                      <CopyButton text={`${idea.captionTemplate.message}\n\n${idea.captionTemplate.keyPoints.map(p => `• ${p}`).join("\n")}\n\nCTA: ${idea.captionTemplate.cta}\n\nLengte: ${idea.captionTemplate.targetLength}`} label="Kopieer template" />
+                      <CopyButton
+                        text={`Message: ${idea.brief.message}\n\nFacts to include:\n${idea.brief.facts.map(f => `• ${f}`).join("\n")}\n\nCTA: ${idea.brief.cta}\nLength: ${idea.brief.targetLength}`}
+                        label="Copy brief"
+                      />
                     </div>
                     <div className="rounded-md bg-white/5 px-3 py-3 text-xs leading-relaxed text-white/85 space-y-2">
                       <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-1">Boodschap</p>
-                        <p className="text-white/90">{idea.captionTemplate.message}</p>
+                        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-1">Message</p>
+                        <p className="text-white/90">{idea.brief.message}</p>
                       </div>
                       <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-1">Belangrijke punten (kies + herschrijf in jouw stem)</p>
+                        <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-1">Facts to include (translate + pick)</p>
                         <ul className="space-y-0.5 text-white/80">
-                          {idea.captionTemplate.keyPoints.map((point, i) => (
-                            <li key={i}>• {point}</li>
+                          {idea.brief.facts.map((fact, i) => (
+                            <li key={i}>• {fact}</li>
                           ))}
                         </ul>
                       </div>
                       <div className="grid grid-cols-2 gap-2 pt-1">
                         <div>
                           <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-0.5">CTA</p>
-                          <p className="text-white/90 text-[11px]">{idea.captionTemplate.cta}</p>
+                          <p className="text-white/90 text-[11px]">{idea.brief.cta}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-0.5">Lengte</p>
+                          <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50 mb-0.5">Length target</p>
                           <p className="text-white/90 text-[11px]">
-                            {idea.captionTemplate.targetLength === "short" && "Kort (1-2 zinnen)"}
-                            {idea.captionTemplate.targetLength === "medium" && "Medium (50-80 woorden)"}
-                            {idea.captionTemplate.targetLength === "long" && "Lang (100-150 woorden)"}
+                            {idea.brief.targetLength === "short" && "Short (1-2 sentences)"}
+                            {idea.brief.targetLength === "medium" && "Medium (50-80 words)"}
+                            {idea.brief.targetLength === "long" && "Long (100-150 words)"}
                           </p>
                         </div>
                       </div>
@@ -423,7 +426,7 @@ export default function SocialPage() {
                     <div>
                       <div className="mb-1.5 flex items-center justify-between">
                         <span className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                          🖼️ Visuals ({idea.media.length}) — klik om te downloaden
+                          🖼️ Visuals ({idea.media.length}) — click to download
                         </span>
                       </div>
                       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -462,8 +465,8 @@ export default function SocialPage() {
 
                   <div className="border-t border-white/10 pt-3">
                     <CopyButton
-                      text={`Hook: ${idea.hook}\n\nScript:\n${idea.script}\n\nCaption boodschap:\n${idea.captionTemplate.message}\n\nKeypunten:\n${idea.captionTemplate.keyPoints.map(p => `• ${p}`).join("\n")}\n\nCTA: ${idea.captionTemplate.cta}\nLengte: ${idea.captionTemplate.targetLength}\n\nHashtags:\n${idea.hashtags}\n\nVisual:\n${idea.visualNote}`}
-                      label="Kopieer alles"
+                      text={`Hook concept: ${idea.brief.hookConcept}\n\nScript:\n${idea.script}\n\nCaption message:\n${idea.brief.message}\n\nFacts to include:\n${idea.brief.facts.map(f => `• ${f}`).join("\n")}\n\nCTA: ${idea.brief.cta}\nLength: ${idea.brief.targetLength}\n\nHashtags:\n${idea.hashtags}\n\nVisual:\n${idea.visualNote}`}
+                      label="Copy everything"
                     />
                   </div>
                 </CardContent>
@@ -474,23 +477,23 @@ export default function SocialPage() {
 
         {ideas.length === 0 && (
           <p className="mt-12 text-center text-sm text-white/60">
-            Geen ideeën gevonden voor deze filter-combinatie. Probeer een andere.
+            No ideas found for this filter combination. Try a different one.
           </p>
         )}
         </>
         )}
 
         <FadeIn className="mt-16 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
-          <h2 className="mb-3 text-base font-semibold">Checklist voor het posten</h2>
+          <h2 className="mb-3 text-base font-semibold">Posting checklist</h2>
           <ul className="space-y-1.5 text-sm text-white/75">
-            <li>✓ Content met klanten? Vraag schriftelijk toestemming voor beeld (zeker bij voor- en na-shots).</li>
-            <li>✓ Tag SculptClub als @sculptclub (niet @sculptjordaan).</li>
-            <li>✓ Locatie: Egelantiersgracht 424, Amsterdam Jordaan.</li>
-            <li>✓ Houd de link in je bio actueel (sculptclub.nl).</li>
-            <li>✓ TikTok: gebruik trending audio uit NL trends (check elke week).</li>
-            <li>✓ Instagram: post tussen 19:00 – 21:00 voor maximaal bereik in Amsterdam.</li>
-            <li>✓ Plan 4 posts per week (zie post-kalender), wissel pilaren af.</li>
-            <li>✓ Reageer op DM's binnen 1 uur — de meeste klanten boeken zo.</li>
+            <li>✓ Client content? Get written consent for image (especially before/after shots).</li>
+            <li>✓ Tag SculptClub as @sculptclub (not @sculptjordaan).</li>
+            <li>✓ Location: Egelantiersgracht 424, Amsterdam Jordaan.</li>
+            <li>✓ Keep bio link current (sculptclub.nl).</li>
+            <li>✓ TikTok: use trending NL audio (check weekly).</li>
+            <li>✓ Instagram: post between 19:00 – 21:00 for max Amsterdam reach.</li>
+            <li>✓ Plan 4 posts/week (see calendar), alternate pillars.</li>
+            <li>✓ Reply to DMs within 1 hour — most clients book that way.</li>
           </ul>
         </FadeIn>
       </Section>
