@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Card, CardContent } from "@/components/ui/card";
-import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle } from "lucide-react";
+import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle, Users } from "lucide-react";
 import {
   SOCIAL_IDEAS,
   PILLARS,
@@ -14,9 +14,13 @@ import {
   type Platform,
   type Pillar,
 } from "@/data/social-content";
+import { trainers } from "@/config/trainers";
 
 type Filter = "all" | Pillar;
-type View = "ideas" | "calendar" | "strategy";
+type View = "ideas" | "calendar" | "strategy" | "trainers";
+
+// Which pillars a trainer can authentically post about themselves
+const TRAINER_PILLARS: Pillar[] = ["pt-showcase", "trainer-spotlight", "fitness-tip", "before-after"];
 
 const STORAGE_KEY = "sculptclub-social-posted-v1";
 
@@ -219,7 +223,124 @@ export default function SocialPage() {
             <Sparkles className="h-3.5 w-3.5" />
             Strategy
           </button>
+          <button
+            type="button"
+            onClick={() => setView("trainers")}
+            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
+              view === "trainers"
+                ? "border-brand bg-brand text-white"
+                : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <Users className="h-3.5 w-3.5" />
+            Per trainer ({trainers.length})
+          </button>
         </FadeIn>
+
+        {view === "trainers" && (
+          <FadeIn className="mt-8 space-y-6">
+            <Card className="border-brand/30 bg-brand/5">
+              <CardContent className="p-5">
+                <h2 className="text-base font-bold text-white">Trainer content pack</h2>
+                <p className="mt-1 text-sm text-white/80">
+                  Each trainer gets a 4-pillar pack (PT-showcase · trainer-spotlight · fitness-tip · before-after).
+                  Share with them via WhatsApp so they post to their own Instagram with their own audience.
+                  Pre-filled intro message included — each trainer becomes a posting node.
+                </p>
+                <p className="mt-2 text-xs text-white/55">
+                  Why this matters: SculptClub's booking funnel is ~95% Instagram-driven (Clarity, last 30d). Every trainer that posts = a new amplification node.
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {trainers.map((trainer) => {
+                const packIdeas = SOCIAL_IDEAS.filter((i) => TRAINER_PILLARS.includes(i.pillar)).slice(0, 6);
+                const trainerWa = trainer.whatsapp ?? `https://wa.me/31683178934`;
+                const intakeUrl = `https://sculptclub.nl/nl/${trainer.slug.nl}`;
+                const introMessage = `Hi ${trainer.name}! Hier zijn een paar content-ideeën die jij zelf naar Instagram kunt posten — voor jouw eigen leads + SculptClub bookings.
+
+Pak een idee dat bij jou past, film het in de studio (of vraag mij om te helpen), tag @sculptclub.nl en gebruik de hashtags. Jouw boekingslink:
+${intakeUrl}
+
+Tool met alle visuals + scripts + hashtags:
+https://sculptclub.nl/nl/social
+
+Vragen? Stuur mij een appje. — Paulo`;
+
+                return (
+                  <Card key={trainer.id} className="border-white/10 bg-white/[0.03]">
+                    <CardContent className="space-y-4 p-5">
+                      <div className="flex items-start gap-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={trainer.image}
+                          alt={trainer.name}
+                          className="h-14 w-14 flex-shrink-0 rounded-full border border-white/15 object-cover"
+                          loading="lazy"
+                        />
+                        <div className="flex-1">
+                          <p className="text-base font-bold text-white">{trainer.name}</p>
+                          <p className="text-xs text-white/55">{trainer.specialization.nl.join(" · ")}</p>
+                          <p className="mt-1 text-[11px] text-white/45">
+                            IG: <span className="text-brand">{trainer.instagramHandle}</span> · {trainer.languages.join("/")}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="mb-1.5 flex items-center justify-between">
+                          <span className="text-xs font-semibold uppercase tracking-wider text-white/60">
+                            Intro message for {trainer.name}
+                          </span>
+                          <CopyButton text={introMessage} label="Copy intro" />
+                        </div>
+                        <pre className="whitespace-pre-wrap rounded-md bg-white/5 px-3 py-2 text-[11px] leading-relaxed text-white/80 font-sans">{introMessage}</pre>
+                      </div>
+
+                      <div>
+                        <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-white/60">
+                          Content pack ({packIdeas.length} ideas)
+                        </p>
+                        <ul className="space-y-1.5 text-xs text-white/75">
+                          {packIdeas.map((i) => (
+                            <li key={i.id} className="flex items-baseline gap-2">
+                              <span className="rounded bg-brand/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand">
+                                {i.format}
+                              </span>
+                              <a href={`#idea-${i.id}`} className="text-white/85 hover:text-brand transition">
+                                {i.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 border-t border-white/10 pt-3">
+                        <a
+                          href={`${trainerWa}?text=${encodeURIComponent(introMessage)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand/85"
+                        >
+                          Send to {trainer.name} via WhatsApp →
+                        </a>
+                        <a
+                          href={trainer.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80 transition hover:bg-white/15"
+                        >
+                          {trainer.instagramHandle} →
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </FadeIn>
+        )}
 
         {view === "strategy" && (
           <FadeIn className="mt-8 space-y-6">
