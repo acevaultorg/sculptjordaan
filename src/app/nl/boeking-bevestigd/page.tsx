@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
@@ -145,6 +146,24 @@ export default function BookingConfirmedNL() {
             >
               Nog een sessie boeken
             </Link>
+          </div>
+
+          {/* Anticipation image — added 2026-05-16. Booking-confirmed had
+              zero images before this ship. Footer position (below the
+              CTAs) so the "What's next?" Card + back-to-home buttons stay
+              above-fold on mobile; image rewards scroll with a warm
+              "see you soon" moment + reduces no-show rate by anchoring
+              the studio visually in the visitor's memory between booking
+              and visiting. */}
+          <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/studio/training-dumbbells-smile.jpg"
+              alt="Tot snel — training met dumbbells in de SculptClub privé studio"
+              fill
+              className="object-cover"
+              sizes="(max-width: 672px) 100vw, 672px"
+              loading="lazy"
+            />
           </div>
         </FadeIn>
       </Section>

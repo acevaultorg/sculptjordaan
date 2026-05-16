@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -147,6 +148,26 @@ export default function FirstVisitPage() {
           title="Your first time at SculptClub"
           description="No sign-up. No contract. First intake free. Here is exactly what to expect."
         />
+
+        {/* Warm-entrance hero image — see NL parallel comment. Primary
+            paid+organic+direct landing target with zero above-fold image
+            before this ship; portrait-entrance-warm.jpg reduces "what does
+            this place look like?" anxiety for first-time visitors. */}
+        <FadeIn delay={0.05}>
+          <div className="mx-auto mt-8 max-w-3xl">
+            <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="/images/studio/portrait-entrance-warm.jpg"
+                alt="Warm welcome at the entrance of SculptClub private studio in the Amsterdam Jordaan"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+                fetchPriority="high"
+              />
+            </div>
+          </div>
+        </FadeIn>
 
         {/* Trust strip — 4 quick signals below the H1 */}
         <FadeIn delay={0.1}>
