@@ -23,8 +23,12 @@
  *   /nl/studio-huren        → "Boek gratis test sessie" → #schedule anchor
  *   /nl/open-gym            → "Boek gratis Open Gym sessie" → #schedule
  *   /nl/gratis-intake       → "WhatsApp direct" (intakeMatch link)
- *   /nl/vind-jouw-personal- → "WhatsApp ons" (intakeMatch link)
- *      trainer
+ *   /nl/vind-jouw-personal- → "WhatsApp direct — wij matchen" (intakeMatch
+ *      trainer                  link). Changed 2026-05-16 from scroll-to
+ *                               `#trainer-grid` (duplicate with in-page
+ *                               dual-CTA shipped same session) → WhatsApp
+ *                               instant-match. Bar = conversion exit, not
+ *                               scroll loop.
  *   /nl/eerste-bezoek       → "Boek je intake" → trainer-picker
  *   /nl/social, /nl/contact, → "Boek gratis try-out" → /nl/eerste-bezoek
  *      blog posts, etc.
@@ -93,18 +97,33 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
         };
   }
 
-  // Trainer-finder hub — visitors evaluating trainers
+  // Trainer-finder hub — visitors evaluating trainers.
+  //
+  // Was: scroll-to `#trainer-grid` anchor. Problem: the in-page dual-CTA
+  // strip shipped 2026-05-16 already exposes the scroll-grid action above
+  // the fold. The sticky-bar duplicating that action = redundant; visitors
+  // scrolling PAST the grid (to FAQ / specific-need routing / etc) lost
+  // the conversion exit because the bar just re-scrolled them up.
+  //
+  // Now: WhatsApp-direct match — same target as the in-page emerald CTA,
+  // but persistent. Visitor 60%+ down the page can still tap one button
+  // and reach a real lead. Pre-filled message asks SculptClub to match
+  // with the right trainer (operator-mediated, no choice paralysis).
   if (/\/(vind-jouw-personal-trainer|find-personal-trainer)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "Boek gratis intake →",
-          href: "#trainer-grid",
-          ctaId: "mobile-cta-trainer-pick",
+          label: "WhatsApp direct — wij matchen →",
+          href: "https://wa.me/31683178934?text=" +
+            encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?"),
+          external: true,
+          ctaId: "mobile-cta-trainerhub-whatsapp",
         }
       : {
-          label: "Book free intake →",
-          href: "#trainer-grid",
-          ctaId: "mobile-cta-trainer-pick",
+          label: "WhatsApp us — we'll match →",
+          href: "https://wa.me/31683178934?text=" +
+            encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?"),
+          external: true,
+          ctaId: "mobile-cta-trainerhub-whatsapp",
         };
   }
 
