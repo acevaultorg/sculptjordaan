@@ -4,7 +4,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Home, Dumbbell, DoorOpen, Building2 } from "lucide-react";
+import { Home, Dumbbell, DoorOpen, Camera } from "lucide-react";
 import { useState } from "react";
 
 type Lang = "nl" | "en";
@@ -31,10 +31,14 @@ const content = {
         icon: DoorOpen,
       },
       {
-        title: "Studio Huren",
-        description: "Huur onze volledig uitgeruste studio voor jouw sessies.",
-        href: "/nl/studio-huren",
-        icon: Building2,
+        // Swapped 2026-05-16 from "Studio Huren" (ZZP rental) → "Bekijk de studio"
+        // (consumer gallery). 404 visitors are far more likely to be lost consumer
+        // visitors than lost ZZP trainers; route them into the consumer funnel.
+        // ZZP trainers still reach studio rental via header nav.
+        title: "Bekijk de studio",
+        description: "Onze volledig uitgeruste privé gym in de Jordaan.",
+        href: "/nl/studio",
+        icon: Camera,
       },
     ],
   },
@@ -59,10 +63,12 @@ const content = {
         icon: DoorOpen,
       },
       {
-        title: "Studio Rental",
-        description: "Rent our fully equipped studio for your sessions.",
-        href: "/en/studio-rental",
-        icon: Building2,
+        // See NL parallel — consumer "see the studio" beats ZZP rental for
+        // typical 404 visitor (lost consumer not lost ZZP trainer).
+        title: "See the studio",
+        description: "Our fully equipped private gym in the Jordaan.",
+        href: "/en/studio",
+        icon: Camera,
       },
     ],
   },
