@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks, acuityFreeTrials } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info } from "lucide-react";
 import Image from "next/image";
@@ -253,6 +254,12 @@ export default function OpenGymPageEN() {
                 loading="eager"
                 fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Scroll-stop badge — paid-traffic conversion lever per Clarity 2026-05-16 audit */}
+              <HeroPriceBadge
+                price="€7.25"
+                label="per session"
+                subLabel="First class free"
               />
             </div>
           </FadeIn>

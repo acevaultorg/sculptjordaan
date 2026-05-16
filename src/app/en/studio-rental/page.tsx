@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import {
   Dumbbell,
   Lock,
@@ -195,6 +196,12 @@ export default function StudioRentalPageEN() {
                 loading="eager"
                 fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Scroll-stop badge — paid-traffic conversion lever per Clarity 2026-05-16 audit */}
+              <HeroPriceBadge
+                price="€12/hr"
+                label="0% commission"
+                subLabel="First test free"
               />
             </div>
           </FadeIn>
