@@ -30,42 +30,62 @@ export default function BookingConfirmedEN() {
       plausible?: PlausibleFn;
     };
 
-    if (typeof w.gtag === "function") {
-      w.gtag("event", "conversion", {
-        send_to: `${siteConfig.analytics.googleAds}/${siteConfig.analytics.googleAdsConversion}`,
-        value,
-        currency: "EUR",
-        transaction_id: params.get("id") ?? `bk-${Date.now()}`,
-      });
-      w.gtag("event", "Book_appointment_1", {
-        value,
-        currency: "EUR",
-        booking_type: type,
-        completion: true,
-      });
-      w.gtag("event", "purchase", {
-        transaction_id: params.get("id") ?? `bk-${Date.now()}`,
-        value,
-        currency: "EUR",
-        items: [{ item_name: type, price: value, quantity: 1 }],
-      });
-    }
+    const wExt = w as typeof w & { __scBookingFired?: boolean };
+    if (wExt.__scBookingFired) return;
+    wExt.__scBookingFired = true;
 
-    if (typeof w.fbq === "function") {
-      w.fbq("track", "Purchase", { value, currency: "EUR", content_name: type });
-    }
-    if (w.ttq && typeof w.ttq.track === "function") {
-      w.ttq.track("CompletePayment", { value, currency: "EUR", content_type: type });
-    }
-    if (typeof w.plausible === "function") {
-      w.plausible("Booking Confirmed", {
-        props: {
-          booking_type: type,
+    const fire = (attempt = 0) => {
+      const ready =
+        typeof w.gtag === "function" &&
+        typeof w.fbq === "function" &&
+        w.ttq &&
+        typeof w.ttq.track === "function" &&
+        typeof w.plausible === "function";
+
+      if (!ready && attempt < 30) {
+        setTimeout(() => fire(attempt + 1), 200);
+        return;
+      }
+
+      if (typeof w.gtag === "function") {
+        w.gtag("event", "conversion", {
+          send_to: `${siteConfig.analytics.googleAds}/${siteConfig.analytics.googleAdsConversion}`,
           value,
-          source: document.referrer || "direct",
-        },
-      });
-    }
+          currency: "EUR",
+          transaction_id: params.get("id") ?? `bk-${Date.now()}`,
+        });
+        w.gtag("event", "Book_appointment_1", {
+          value,
+          currency: "EUR",
+          booking_type: type,
+          completion: true,
+        });
+        w.gtag("event", "purchase", {
+          transaction_id: params.get("id") ?? `bk-${Date.now()}`,
+          value,
+          currency: "EUR",
+          items: [{ item_name: type, price: value, quantity: 1 }],
+        });
+      }
+
+      if (typeof w.fbq === "function") {
+        w.fbq("track", "Purchase", { value, currency: "EUR", content_name: type });
+      }
+      if (w.ttq && typeof w.ttq.track === "function") {
+        w.ttq.track("CompletePayment", { value, currency: "EUR", content_type: type });
+      }
+      if (typeof w.plausible === "function") {
+        w.plausible("Booking Confirmed", {
+          props: {
+            booking_type: type,
+            value,
+            source: document.referrer || "direct",
+          },
+        });
+      }
+    };
+
+    fire();
   }, []);
 
   return (

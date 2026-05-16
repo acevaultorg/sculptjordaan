@@ -27,9 +27,6 @@ import { siteConfig } from "@/config/site";
 export default function BookingConfirmedNL() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    const type = params.get("type") ?? "generic";
-    const value = Number(params.get("value") ?? "12") || 12;
 
     type GtagFn = (...args: unknown[]) => void;
     type FbqFn = (...args: unknown[]) => void;
@@ -41,52 +38,71 @@ export default function BookingConfirmedNL() {
       fbq?: FbqFn;
       ttq?: TtqObj;
       plausible?: PlausibleFn;
+      __scBookingFired?: boolean;
     };
 
-    // Google Ads — high-confidence conversion (booking actually completed)
-    if (typeof w.gtag === "function") {
-      w.gtag("event", "conversion", {
-        send_to: `${siteConfig.analytics.googleAds}/${siteConfig.analytics.googleAdsConversion}`,
-        value,
-        currency: "EUR",
-        transaction_id: params.get("id") ?? `bk-${Date.now()}`,
-      });
-      // GA4 named event matching the imported conversion in the other Ads account
-      w.gtag("event", "Book_appointment_1", {
-        value,
-        currency: "EUR",
-        booking_type: type,
-        completion: true,
-      });
-      // Purchase event so AdWords/GA4 can attribute as a sale (Purchase conversion exists in this account)
-      w.gtag("event", "purchase", {
-        transaction_id: params.get("id") ?? `bk-${Date.now()}`,
-        value,
-        currency: "EUR",
-        items: [{ item_name: type, price: value, quantity: 1 }],
-      });
-    }
+    if (w.__scBookingFired) return; // guard against StrictMode double-mount
+    w.__scBookingFired = true;
 
-    // Meta Pixel — Purchase
-    if (typeof w.fbq === "function") {
-      w.fbq("track", "Purchase", { value, currency: "EUR", content_name: type });
-    }
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type") ?? "generic";
+    const value = Number(params.get("value") ?? "12") || 12;
 
-    // TikTok Pixel — CompletePayment
-    if (w.ttq && typeof w.ttq.track === "function") {
-      w.ttq.track("CompletePayment", { value, currency: "EUR", content_type: type });
-    }
+    // Retry until tag libs are loaded (gtag.js loads afterInteractive — useEffect
+    // can run before that completes, causing the original implementation to silently
+    // skip every event when typeof w.gtag was still 'undefined' on first render).
+    const fire = (attempt = 0) => {
+      const ready =
+        typeof w.gtag === "function" &&
+        typeof w.fbq === "function" &&
+        w.ttq &&
+        typeof w.ttq.track === "function" &&
+        typeof w.plausible === "function";
 
-    // Plausible — high-signal goal
-    if (typeof w.plausible === "function") {
-      w.plausible("Booking Confirmed", {
-        props: {
-          booking_type: type,
+      if (!ready && attempt < 30) {
+        setTimeout(() => fire(attempt + 1), 200);
+        return;
+      }
+
+      // Google Ads — high-confidence conversion (booking actually completed)
+      if (typeof w.gtag === "function") {
+        w.gtag("event", "conversion", {
+          send_to: `${siteConfig.analytics.googleAds}/${siteConfig.analytics.googleAdsConversion}`,
           value,
-          source: document.referrer || "direct",
-        },
-      });
-    }
+          currency: "EUR",
+          transaction_id: params.get("id") ?? `bk-${Date.now()}`,
+        });
+        w.gtag("event", "Book_appointment_1", {
+          value,
+          currency: "EUR",
+          booking_type: type,
+          completion: true,
+        });
+        w.gtag("event", "purchase", {
+          transaction_id: params.get("id") ?? `bk-${Date.now()}`,
+          value,
+          currency: "EUR",
+          items: [{ item_name: type, price: value, quantity: 1 }],
+        });
+      }
+      if (typeof w.fbq === "function") {
+        w.fbq("track", "Purchase", { value, currency: "EUR", content_name: type });
+      }
+      if (w.ttq && typeof w.ttq.track === "function") {
+        w.ttq.track("CompletePayment", { value, currency: "EUR", content_type: type });
+      }
+      if (typeof w.plausible === "function") {
+        w.plausible("Booking Confirmed", {
+          props: {
+            booking_type: type,
+            value,
+            source: document.referrer || "direct",
+          },
+        });
+      }
+    };
+
+    fire();
   }, []);
 
   return (
