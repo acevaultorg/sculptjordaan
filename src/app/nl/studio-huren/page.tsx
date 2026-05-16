@@ -102,6 +102,26 @@ const faqs = [
     q: "Kan ik de studio eerst uitproberen?",
     a: "Ja, je kunt een gratis proefsessie boeken om de studio te bekijken en uit te proberen. Geen verplichtingen.",
   },
+  {
+    q: "Krijg ik klanten via SculptClub?",
+    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen commissie op die boekingen — wij verbinden alleen.",
+  },
+  {
+    q: "Kan ik vaste tijdslots reserveren?",
+    a: "Ja. Vraag via WhatsApp of het contactformulier een vast wekelijks of maandelijks rooster aan. Geschikt voor trainers met een vaste klantenkring. Geen lange contracten, altijd opzegbaar per maand.",
+  },
+  {
+    q: "Wat is het minimum aantal uren?",
+    a: "Geen minimum. Je kunt 1 uur boeken of meerdere uren per week. Pakketten (Starter/Routine/Volume) zijn voordeliger als je vaak komt, maar nooit verplicht.",
+  },
+  {
+    q: "Wat als ik niet kom opdagen?",
+    a: "Annuleren of verplaatsen is altijd gratis — geen no-show fee. We rekenen op je professionaliteit. Bij regelmatig last-minute annuleren bespreken we het direct.",
+  },
+  {
+    q: "Welke betaalmethodes worden geaccepteerd?",
+    a: "CreditCard, Apple Pay, Google Pay, of factuur (op verzoek). iDEAL via Apple Pay. Volume pakket (€549) kan op verzoek per bankoverschrijving — WhatsApp ons.",
+  },
 ];
 
 const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
@@ -138,6 +158,34 @@ export default function StudioRentalPageNL() {
               <ButtonLink href="#tarieven" variant="outline" size="lg">
                 Bekijk tarieven
               </ButtonLink>
+            </FadeIn>
+
+            {/* Trust strip — 5★ Google + price anchor + key benefits */}
+            <FadeIn delay={0.1} className="mt-6">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-amber-400">★★★★★</span>
+                  <span className="font-semibold">5,0 Google</span>
+                </span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">vanaf €12/uur</span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                  0% commissie
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-400">
+                  Geen abonnement
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
+                  Gratis annuleren
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 text-xs font-medium text-rose-700 dark:text-rose-400">
+                  Eigen profielpagina
+                </span>
+              </div>
             </FadeIn>
           </div>
           <FadeIn delay={0.2}>

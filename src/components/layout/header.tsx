@@ -221,39 +221,21 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — single tap target.
-                Mobile: globe icon (universal, no language bias).
-                Desktop: stacked NL/EN pill with current highlighted. */}
+            {/* Language toggle — globe icon all viewports.
+                Previously: desktop showed stacked NL/EN inside a tiny chip
+                which rendered as two awkward overlapping circles. Single
+                globe icon matches the chip system (rounded-xl 36-44px) and
+                the action ("switch language") is clear from context +
+                aria-label. */}
             <a
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center sm:flex-col p-0.5 rounded-xl bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all touch-manipulation"
+              className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-muted/40 border border-border text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
             >
-              {/* Mobile: globe icon */}
-              <Globe className="w-4 h-4 sm:hidden text-foreground" aria-hidden="true" />
-              {/* Desktop: stacked NL/EN with current highlighted */}
-              <span
-                className={cn(
-                  "hidden sm:flex flex-1 items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
-                  locale === "nl"
-                    ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground"
-                )}
-                aria-hidden="true"
-              >
-                NL
-              </span>
-              <span
-                className={cn(
-                  "hidden sm:flex flex-1 items-center justify-center rounded-md text-[10px] font-semibold leading-none tracking-[0.02em] transition-colors",
-                  locale === "en"
-                    ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground"
-                )}
-                aria-hidden="true"
-              >
-                EN
+              <Globe className="w-4 h-4" aria-hidden="true" />
+              <span className="sr-only">
+                {locale === "nl" ? "English" : "Nederlands"}
               </span>
             </a>
 

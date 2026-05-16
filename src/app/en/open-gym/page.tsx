@@ -145,6 +145,26 @@ const faqs = [
     q: "Is it really a membership?",
     a: "Yes, Open Gym works with a membership per 4 weeks. You choose a plan that fits you and can cancel at any time. No long-term contract.",
   },
+  {
+    q: "Is the first trial really free?",
+    a: "Yes. You book a free 60-minute trial via the booking system. No credit card required, no obligation, no automatic renewal.",
+  },
+  {
+    q: "What hours can I train?",
+    a: "Daily 06:30 to 22:00. Early morning, lunch, after work or late evening — you choose. The studio is always private during your booked slot.",
+  },
+  {
+    q: "Where is the studio and how do I get there?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area (Europarking 5 min walk). The evening before your session you receive the door code + directions via WhatsApp.",
+  },
+  {
+    q: "Are there changing rooms and showers?",
+    a: "There is a changing area with lockers. Showers are not available in the studio. Most members plan Open Gym so they can head straight home or to work after.",
+  },
+  {
+    q: "What do I bring?",
+    a: "Sportswear, a towel, a water bottle and clean indoor sports shoes. Water is also available free in the studio.",
+  },
 ];
 
 const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
@@ -193,6 +213,34 @@ export default function OpenGymPageEN() {
               <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
                 Already a member? Reserve your hour
               </ButtonLink>
+            </FadeIn>
+
+            {/* Trust strip — 5★ Google + price anchor + key benefits */}
+            <FadeIn delay={0.1} className="mt-6">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-amber-400">★★★★★</span>
+                  <span className="font-semibold">5.0 Google</span>
+                </span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">from €7.25/session</span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">Cancel anytime</span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                  First trial free
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
+                  Private studio · max 3 people
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-400">
+                  No contract
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 text-xs font-medium text-rose-700 dark:text-rose-400">
+                  Free cancellation
+                </span>
+              </div>
             </FadeIn>
           </div>
           <FadeIn>

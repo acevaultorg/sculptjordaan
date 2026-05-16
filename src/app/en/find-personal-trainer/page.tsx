@@ -5,9 +5,15 @@ import { trainers } from "@/config/trainers";
 import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
-import { Star, Users, Gift, Percent, Building2, CalendarClock } from "lucide-react";
+import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
@@ -36,11 +42,55 @@ const trainerBenefits = [
   { icon: CalendarClock, title: "Flexible schedule", description: "Plan your sessions whenever it suits you. Full freedom over your schedule." },
 ];
 
+const faqs = [
+  {
+    q: "What does personal training cost at SculptClub?",
+    a: "Trainers set their own rates, from €45 per session. The first intro (including a kick-off training) is always free — no charge, no commitment after.",
+  },
+  {
+    q: "How does the free intro work?",
+    a: "You send your chosen trainer a WhatsApp via their profile page. You agree on a time that suits you, come by the studio in the Jordaan, and do a 30–45 minute kick-off training together. After that you decide whether to continue.",
+  },
+  {
+    q: "What if I don't click with the trainer?",
+    a: "No problem. You can always switch — no contracts, no fees, no awkward conversations. Try another trainer or let us match you via the form below.",
+  },
+  {
+    q: "How long is a session?",
+    a: "Standard 60 minutes; some trainers also offer 45-minute or 90-minute sessions. Check your trainer's profile page for exact times and rates.",
+  },
+  {
+    q: "Can I train with a friend or partner?",
+    a: "Yes. Many trainers offer duo sessions or small-group training (2–4 people) at adjusted per-person rates. Cheaper and more fun if you want to train together.",
+  },
+  {
+    q: "I don't speak Dutch — is that okay?",
+    a: "All trainers coach fluently in English. Several also speak Portuguese or Russian. Use the language filter in the grid to see who speaks your language.",
+  },
+  {
+    q: "What if I have an injury or limitation?",
+    a: "Mention it in your first message to the trainer. Some trainers (Andrea — posture & technique, Sergei — recovery & posture correction) are explicitly specialized here. Every trainer adapts the session to what is safe for you.",
+  },
+  {
+    q: "How do I book my sessions?",
+    a: "After the free intro you arrange directly with your trainer — set times or one-off sessions. Payments go via your trainer (CreditCard, Apple Pay, or invoice). No membership, no long contracts.",
+  },
+  {
+    q: "Can I cancel or reschedule?",
+    a: "Always free. No time limit, no fees. WhatsApp your trainer and you reschedule or cancel directly.",
+  },
+  {
+    q: "Where is the studio?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area. The evening before your session you receive the exact address and directions via WhatsApp.",
+  },
+];
+
 export default function TrainersPageEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Personal Trainers","url":"/en/find-personal-trainer"}]} />
       <ReviewsJsonLd reviews={googleReviews} />
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <ServiceJsonLd
         name="Personal Training"
         description="Private personal training in a boutique studio in the Jordaan, Amsterdam. Choose your own trainer, first intro always free."
@@ -83,12 +133,12 @@ export default function TrainersPageEN() {
           as="h1"
           overline="Personal Trainers"
           title="Find Your Personal Trainer"
-          description="Free intro — trainers set their own rates. Come in, try a session, see if it clicks."
+          description="First intro free · Sessions from €45 · Pick your trainer, or let us match."
         />
 
         {/* Trust badges */}
         <FadeIn>
-          <div className="mb-12 flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex items-center gap-2 text-sm font-medium">
                 <badge.icon className="h-5 w-5 text-primary" />
@@ -99,7 +149,9 @@ export default function TrainersPageEN() {
         </FadeIn>
 
         {/* Trainer cards with filter */}
-        <TrainerFilterGrid trainers={trainers} locale="en" />
+        <div id="trainer-grid">
+          <TrainerFilterGrid trainers={trainers} locale="en" />
+        </div>
       </Section>
 
       {/* Specific-need routing — self-segment for high-intent visitors */}
@@ -189,21 +241,60 @@ export default function TrainersPageEN() {
         </FadeIn>
       </Section>
 
+      {/* FAQ */}
+      <Section>
+        <SectionHeader
+          overline="Frequently asked questions"
+          title="What you want to know before you start"
+          description="Everything first-time visitors ask us. Missing something? WhatsApp us."
+        />
+        <FadeIn>
+          <div className="max-w-2xl mx-auto">
+            <Accordion className="w-full">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`pt-faq-${i}`}>
+                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Bottom CTA */}
       <Section bg="dark">
         <SectionHeader
           overline="Ready to start?"
           title="Book Your Free Intro"
-          description="Book your free intro with one of our trainers and discover which approach suits you best."
+          description="First intro free. No contract. No commitment. Pick your trainer or WhatsApp us."
         />
-        <FadeIn className="flex justify-center">
+        <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <ButtonLink
-            href={"/en/find-personal-trainer"}
+            href="#trainer-grid"
             size="lg"
-            className="text-white"
+            className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-white rounded-xl px-8 py-6 text-base font-semibold"
           >
-            Book Free Intro
+            See the trainers
+            <ArrowRight className="ml-2 w-4 h-4" />
           </ButtonLink>
+          <ButtonLink
+            href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to book a free intro at SculptClub.")}`}
+            external
+            size="lg"
+            variant="outline"
+            className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+          >
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp us
+          </ButtonLink>
+        </FadeIn>
+        <FadeIn>
+          <p className="mt-6 text-center text-xs text-white/55">
+            +31 6 83 17 89 34 · we usually reply within an hour
+          </p>
         </FadeIn>
       </Section>
     </PageLayout>

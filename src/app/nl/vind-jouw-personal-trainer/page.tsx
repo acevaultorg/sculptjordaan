@@ -5,9 +5,15 @@ import { trainers } from "@/config/trainers";
 import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
-import { Star, Users, Gift, Percent, Building2, CalendarClock } from "lucide-react";
+import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
@@ -36,11 +42,55 @@ const trainerBenefits = [
   { icon: CalendarClock, title: "Flexibel rooster", description: "Plan je sessies wanneer het jou uitkomt. Volledige vrijheid over je agenda." },
 ];
 
+const faqs = [
+  {
+    q: "Wat kost personal training bij SculptClub?",
+    a: "Trainers bepalen hun eigen tarieven, vanaf \u20ac45 per sessie. De eerste intake (inclusief kennismakingstraining) is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
+  },
+  {
+    q: "Hoe werkt de gratis intake?",
+    a: "Je stuurt je gekozen trainer een WhatsApp via zijn/haar profielpagina. Jullie spreken af op een moment dat past, je komt naar de studio in de Jordaan, en je doet samen een kennismakingstraining van 30 tot 45 minuten. Daarna beslis je zelf of je verder wilt.",
+  },
+  {
+    q: "Wat als het niet klikt met de trainer?",
+    a: "Geen probleem. Je kunt altijd switchen \u2014 geen contracten, geen kosten, geen ongemakkelijke gesprekken. Probeer een andere trainer of laat ons matchen via het formulier verderop.",
+  },
+  {
+    q: "Hoe lang duurt een sessie?",
+    a: "Standaard 60 minuten, sommige trainers bieden ook 45-minuten of 90-minuten sessies aan. Check de profielpagina van je trainer voor exacte tijden en tarieven.",
+  },
+  {
+    q: "Kan ik met een vriend(in) of partner trainen?",
+    a: "Ja. Veel trainers bieden duo-sessies of small-group training aan (2\u20134 personen) tegen een aangepast tarief per persoon. Goedkoper \u00e9n leuker als je samen wilt trainen.",
+  },
+  {
+    q: "Ik spreek geen Nederlands \u2014 kan dat?",
+    a: "Alle trainers coachen vloeiend in het Engels. Een aantal trainers spreekt ook Portugees of Russisch. Gebruik het taalfilter in de grid om te zien wie jouw taal spreekt.",
+  },
+  {
+    q: "Wat als ik een blessure of beperking heb?",
+    a: "Vermeld het in je eerste bericht aan de trainer. Sommige trainers (Andrea \u2014 houding & techniek, Sergei \u2014 herstel & houdingscorrectie) zijn hier expliciet in gespecialiseerd. Iedere trainer past de sessie aan op wat veilig is voor jou.",
+  },
+  {
+    q: "Hoe boek ik mijn sessies?",
+    a: "Na de gratis intake spreek je direct met je trainer af over een vast moment of losse sessies. Betalingen lopen via je trainer (CreditCard, Apple Pay, of factuur). Geen abonnement, geen lange contracten.",
+  },
+  {
+    q: "Kan ik annuleren of verplaatsen?",
+    a: "Altijd gratis. Geen tijdslimiet, geen boetes. Stuur je trainer een WhatsApp en je verplaatst of annuleert direct.",
+  },
+  {
+    q: "Waar is de studio?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam \u2014 middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk. De avond voor je sessie krijg je via WhatsApp het exacte adres en routebeschrijving.",
+  },
+];
+
 export default function TrainersPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Personal Trainers","url":"/nl/vind-jouw-personal-trainer"}]} />
       <ReviewsJsonLd reviews={googleReviews} />
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <ServiceJsonLd
         name="Personal Training"
         description="Privé personal training in een boutique studio in de Jordaan, Amsterdam. Kies je eigen trainer, eerste intake altijd gratis."
@@ -83,12 +133,12 @@ export default function TrainersPageNL() {
           as="h1"
           overline="Personal Trainers"
           title="Vind Jouw Personal Trainer"
-          description="Gratis intake — trainers bepalen hun eigen tarieven. Kom langs, probeer een sessie, kijk of het klikt."
+          description="Eerste intake gratis · Sessies vanaf €45 · Kies je trainer, of laat ons matchen."
         />
 
         {/* Trust badges */}
         <FadeIn>
-          <div className="mb-12 flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex items-center gap-2 text-sm font-medium">
                 <badge.icon className="h-5 w-5 text-primary" />
@@ -99,7 +149,9 @@ export default function TrainersPageNL() {
         </FadeIn>
 
         {/* Trainer cards with filter */}
-        <TrainerFilterGrid trainers={trainers} locale="nl" />
+        <div id="trainer-grid">
+          <TrainerFilterGrid trainers={trainers} locale="nl" />
+        </div>
       </Section>
 
       {/* Specific-need routing — self-segment for high-intent visitors */}
@@ -189,21 +241,60 @@ export default function TrainersPageNL() {
         </FadeIn>
       </Section>
 
+      {/* FAQ */}
+      <Section>
+        <SectionHeader
+          overline="Veelgestelde vragen"
+          title="Wat je wilt weten voor je begint"
+          description="Alles wat eerste-keer-bezoekers ons vragen. Mis je iets? App ons."
+        />
+        <FadeIn>
+          <div className="max-w-2xl mx-auto">
+            <Accordion className="w-full">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={i} value={`pt-faq-${i}`}>
+                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Bottom CTA */}
       <Section bg="dark">
         <SectionHeader
           overline="Klaar om te beginnen?"
           title="Plan Je Gratis Intake"
-          description="Plan je gratis intake met een van onze trainers en ontdek welke aanpak het beste bij je past."
+          description="Eerste intake gratis. Geen contract. Geen verplichting. Kies je trainer of stuur ons een WhatsApp."
         />
-        <FadeIn className="flex justify-center">
+        <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <ButtonLink
-            href={"/nl/vind-jouw-personal-trainer"}
+            href="#trainer-grid"
             size="lg"
-            className="text-white"
+            className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-white rounded-xl px-8 py-6 text-base font-semibold"
           >
-            Boek Gratis Intake
+            Bekijk de trainers
+            <ArrowRight className="ml-2 w-4 h-4" />
           </ButtonLink>
+          <ButtonLink
+            href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake plannen bij SculptClub.")}`}
+            external
+            size="lg"
+            variant="outline"
+            className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+          >
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp ons
+          </ButtonLink>
+        </FadeIn>
+        <FadeIn>
+          <p className="mt-6 text-center text-xs text-white/55">
+            +31 6 83 17 89 34 · meestal antwoorden we binnen het uur
+          </p>
         </FadeIn>
       </Section>
     </PageLayout>

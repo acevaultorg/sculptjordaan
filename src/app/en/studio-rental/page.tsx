@@ -99,6 +99,26 @@ const faqs = [
     q: "Can I try the studio first?",
     a: "Yes, you can book a free trial session to see and try the studio. No obligations.",
   },
+  {
+    q: "Will I get clients via SculptClub?",
+    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No commission on those bookings — we just connect.",
+  },
+  {
+    q: "Can I reserve recurring time slots?",
+    a: "Yes. Request a fixed weekly or monthly schedule via WhatsApp or the contact form. Suitable for trainers with a steady client base. No long contracts, cancellable monthly.",
+  },
+  {
+    q: "What is the minimum number of hours?",
+    a: "No minimum. Book 1 hour or multiple hours per week. Packages (Starter/Routine/Volume) are cheaper if you come often, but never required.",
+  },
+  {
+    q: "What if I don't show up?",
+    a: "Cancel or reschedule is always free — no no-show fee. We rely on your professionalism. Recurring last-minute cancellations we discuss directly.",
+  },
+  {
+    q: "Which payment methods are accepted?",
+    a: "CreditCard, Apple Pay, Google Pay, or invoice (on request). iDEAL via Apple Pay. Volume package (€549) can be paid by bank transfer on request — WhatsApp us.",
+  },
 ];
 
 const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
@@ -135,6 +155,34 @@ export default function StudioRentalPageEN() {
               <ButtonLink href="#pricing" variant="outline" size="lg">
                 View rates
               </ButtonLink>
+            </FadeIn>
+
+            {/* Trust strip — 5★ Google + price anchor + key benefits */}
+            <FadeIn delay={0.1} className="mt-6">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-amber-400">★★★★★</span>
+                  <span className="font-semibold">5.0 Google</span>
+                </span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">from €12/hr</span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                  0% commission
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-400">
+                  No subscription
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
+                  Free cancellation
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 text-xs font-medium text-rose-700 dark:text-rose-400">
+                  Your own profile page
+                </span>
+              </div>
             </FadeIn>
           </div>
           <FadeIn delay={0.2}>

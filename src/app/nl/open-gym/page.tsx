@@ -145,6 +145,26 @@ const faqs = [
     q: "Is het echt een lidmaatschap?",
     a: "Ja, Open Gym werkt met een lidmaatschap per 4 weken. Je kiest een plan dat bij je past en kunt elk moment opzeggen. Geen langlopend contract.",
   },
+  {
+    q: "Is de eerste les echt gratis?",
+    a: "Ja. Je boekt een gratis proefles van 60 minuten via het boekingssysteem. Geen creditcard nodig, geen verplichting, geen automatische verlenging.",
+  },
+  {
+    q: "Hoe laat kan ik trainen?",
+    a: "Dagelijks van 06:30 tot 22:00. Vroege ochtend, lunchtijd, na het werk of laat in de avond — je kiest. De studio is altijd privé tijdens jouw geboekte tijdslot.",
+  },
+  {
+    q: "Waar is de studio en hoe kom ik er?",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk (Europarking 5 min lopen). De avond voor je sessie krijg je via WhatsApp de deurcode + routebeschrijving.",
+  },
+  {
+    q: "Zijn er kleedkamers en douches?",
+    a: "Er is een kleedruimte met opbergvakken. Douchen is niet mogelijk in de studio. De meeste leden plannen Open Gym zo dat ze daarna direct verder kunnen naar huis of werk.",
+  },
+  {
+    q: "Wat moet ik meenemen?",
+    a: "Sportkleding, een handdoek, een waterfles en schone indoor sportschoenen. Water is ook gratis aanwezig in de studio.",
+  },
 ];
 
 const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
@@ -193,6 +213,34 @@ export default function OpenGymPageNL() {
               <ButtonLink href={acuityLinks.openGymBook} size="lg" variant="outline">
                 Al lid? Reserveer jouw uur
               </ButtonLink>
+            </FadeIn>
+
+            {/* Trust strip — 5★ Google + price anchor + key benefits */}
+            <FadeIn delay={0.1} className="mt-6">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-amber-400">★★★★★</span>
+                  <span className="font-semibold">5,0 Google</span>
+                </span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">vanaf €7,25/sessie</span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-medium text-muted-foreground">Altijd opzegbaar</span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                  Eerste les gratis
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
+                  Privé studio · max 3 personen
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-400">
+                  Geen contract
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 text-xs font-medium text-rose-700 dark:text-rose-400">
+                  Gratis annuleren
+                </span>
+              </div>
             </FadeIn>
           </div>
           <FadeIn>
