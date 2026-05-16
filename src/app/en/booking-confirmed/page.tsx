@@ -135,7 +135,8 @@ export default function BookingConfirmedEN() {
               session from portrait studio image (cropped torso-only) to
               landscape-native hero/training-session.jpg (1.91:1) which
               fits the 16:7 banner cleanly. */}
-          <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
+          {/* aspect-[1376/720] = native ratio of homepage-hero.jpg (zero crop). */}
+          <div className="mt-10 relative aspect-[1376/720] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/hero/homepage-hero.jpg"
               alt="See you soon — SculptClub private studio interior with brand wall, Rogue power rack, and agility ladder"

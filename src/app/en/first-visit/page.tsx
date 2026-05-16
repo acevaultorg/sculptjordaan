@@ -154,7 +154,10 @@ export default function FirstVisitPage() {
             16:7 banner) to landscape-native hero/canal-view.jpg (1.91:1)
             showing the Amsterdam-Jordaan canal location. */}
         <div className="mx-auto mt-8 max-w-3xl">
-          <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
+          {/* aspect-[1200/630] matches og-default.jpg native ratio (1.905:1)
+              — zero crop. See NL parallel comment for "looks distorted"
+              fix history. */}
+          <div className="relative aspect-[1200/630] overflow-hidden rounded-2xl shadow-xl">
             <Image
               src="/images/og-default.jpg"
               alt="The entrance to SculptClub — Egelantiersgracht 424, Amsterdam Jordaan — exactly where you'll walk up for your first visit"

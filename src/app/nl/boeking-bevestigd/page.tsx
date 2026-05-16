@@ -156,7 +156,9 @@ export default function BookingConfirmedNL() {
               position keeps the "What's next?" Card + CTAs above-fold;
               image rewards scroll + anchors the studio visually between
               booking and visit (no-show rate reduction). */}
-          <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
+          {/* aspect-[1376/720] matches homepage-hero.jpg native ratio
+              (1.911:1) — zero crop, zero perceived distortion. */}
+          <div className="mt-10 relative aspect-[1376/720] overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/hero/homepage-hero.jpg"
               alt="Tot snel — SculptClub privé studio interieur met merkmuur, Rogue power rack en agility ladder"
