@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle, Users } from "lucide-react";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
+import { whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
   title: { absolute: "Free Intro Personal Training — SculptClub Amsterdam Jordaan" },
@@ -240,7 +240,8 @@ export default function FreeIntroPage() {
           </p>
           <Link
             href="/en/find-personal-trainer"
-            className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
+            className="plausible-event-name=free_intro_final_pick_trainer inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
+            data-cta="free-intro-final-pick-trainer"
           >
             Pick your trainer
             <ArrowRight className="w-5 h-5" />

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle, Users } from "lucide-react";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
+import { whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
   title: { absolute: "Gratis Intake Personal Training — SculptClub Amsterdam Jordaan" },
@@ -66,7 +66,7 @@ export default function GratisIntakePage() {
     <div className="min-h-screen bg-background">
       {/* Minimal header */}
       <header className="flex items-center justify-center py-6 px-4 border-b border-border/30">
-        <Link href="/" aria-label="Terug naar homepage">
+        <Link href="/nl" aria-label="Terug naar homepage">
           <Image
             src="/images/logo-sculptclub.png"
             alt="SculptClub"
@@ -247,7 +247,8 @@ export default function GratisIntakePage() {
           </p>
           <Link
             href="/nl/vind-jouw-personal-trainer"
-            className="inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
+            className="plausible-event-name=gratis_intake_final_pick_trainer inline-flex items-center gap-2 bg-white text-brand px-8 py-4 rounded-full text-lg font-bold hover:bg-white/90 transition-all active:scale-95"
+            data-cta="gratis-intake-final-pick-trainer"
           >
             Kies je trainer
             <ArrowRight className="w-5 h-5" />
