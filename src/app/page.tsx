@@ -22,7 +22,7 @@ const homeFaqs = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "SculptClub — Personal Training & Privé Studio Amsterdam Jordaan" },
+  title: { absolute: "SculptClub — Personal Training Studio Amsterdam Jordaan" },
   description:
     "Boutique privé studio in de Jordaan. Personal training vanaf €45 (gratis intake) of huur de studio vanaf €12/uur — 0% commissie, altijd gratis annuleren.",
   alternates: {

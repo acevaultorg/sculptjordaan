@@ -27,9 +27,9 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Pricing — Personal Training & Studio Rental | SculptClub Amsterdam Jordaan" },
+  title: { absolute: "Pricing — SculptClub Amsterdam Jordaan | PT, Studio, Open Gym" },
   description:
-    "All pricing at SculptClub Amsterdam. Personal training from €45 (free intro), studio rental from €12/hour (0% commission), Open Gym from €29/4wk. No contract, free cancellation anytime.",
+    "All pricing SculptClub Amsterdam: personal training €45 (free intro), studio rental €12/hour (0% commission), Open Gym €29/4wk. No contract.",
   alternates: {
     canonical: "/en/pricing",
     languages: {

@@ -5,7 +5,7 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: { absolute: "Free Intro Personal Training — SculptClub Amsterdam Jordaan" },
+  title: { absolute: "Free Intro Personal Training — SculptClub Jordaan" },
   description:
     "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
   robots: { index: false, follow: false },
