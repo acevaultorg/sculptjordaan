@@ -208,12 +208,12 @@ export function MobileBottomCTABar() {
               target="_blank"
               rel="noopener noreferrer"
               data-cta={cta.ctaId}
-              className="flex w-full items-center justify-center gap-2
+              className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex w-full items-center justify-center gap-2
                          rounded-2xl bg-brand px-5 py-3.5
                          text-base font-bold text-white
                          shadow-lg shadow-brand/30
                          transition-all active:scale-[0.98]
-                         pr-20"
+                         pr-20`}
             >
               {cta.label}
             </a>
@@ -221,12 +221,12 @@ export function MobileBottomCTABar() {
             <Link
               href={cta.href}
               data-cta={cta.ctaId}
-              className="flex w-full items-center justify-center gap-2
+              className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex w-full items-center justify-center gap-2
                          rounded-2xl bg-brand px-5 py-3.5
                          text-base font-bold text-white
                          shadow-lg shadow-brand/30
                          transition-all active:scale-[0.98]
-                         pr-20"
+                         pr-20`}
             >
               {cta.label}
               <ArrowRight className="h-5 w-5 -mr-2" />

@@ -102,7 +102,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
               rel="noopener"
               aria-label={c.ariaIntake(trainer.name)}
               data-cta={`home-trainer-${trainer.id}`}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-primary/60 hover:shadow-brand-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className={`plausible-event-name=home_trainer_${trainer.id} group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-primary/60 hover:shadow-brand-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
             >
               {/* Square photo on mobile, 4:3 on larger screens — denser visual
                   per card on small screens where every pixel counts. */}
@@ -168,7 +168,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
           <Link
             href={c.viewAllHref}
             data-cta="home-trainer-view-all"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-brand-lg active:scale-[0.98]"
+            className="plausible-event-name=home_trainer_view_all inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-brand-lg active:scale-[0.98]"
           >
             {c.ctaAll}
             <ArrowRight className="h-5 w-5" />
@@ -176,7 +176,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
           <Link
             href={c.seeStudioHref}
             data-cta="home-trainer-see-studio"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
+            className="plausible-event-name=home_trainer_see_studio inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
           >
             {c.ctaSeeStudio}
             <ArrowRight className="h-4 w-4" />

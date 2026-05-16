@@ -107,7 +107,7 @@ export default function FreeIntroPage() {
             href={whatsappLinks.intakeMatchEn}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
+            className="plausible-event-name=free_intro_whatsapp_direct inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
             data-cta="free-intro-whatsapp-direct"
           >
             <MessageCircle className="w-5 h-5" />
@@ -115,7 +115,7 @@ export default function FreeIntroPage() {
           </a>
           <Link
             href="/en/find-personal-trainer"
-            className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
+            className="plausible-event-name=free_intro_pick_trainer inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
             data-cta="free-intro-pick-trainer"
           >
             Or pick your trainer

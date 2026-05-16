@@ -170,7 +170,7 @@ export default function TrainersPageNL() {
               target="_blank"
               rel="noopener noreferrer"
               data-cta="trainerhub-whatsapp-direct"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
+              className="plausible-event-name=trainerhub_whatsapp_direct inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
             >
               <MessageCircle className="h-5 w-5" />
               WhatsApp direct — wij matchen
@@ -178,7 +178,7 @@ export default function TrainersPageNL() {
             <a
               href="#trainer-grid"
               data-cta="trainerhub-scroll-grid"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
+              className="plausible-event-name=trainerhub_scroll_grid inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
             >
               Of bekijk alle {trainers.length} trainers ↓
             </a>

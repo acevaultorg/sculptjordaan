@@ -114,7 +114,7 @@ export default function GratisIntakePage() {
             href={whatsappLinks.intakeMatchNl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
+            className="plausible-event-name=gratis_intake_whatsapp_direct inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
             data-cta="gratis-intake-whatsapp-direct"
           >
             <MessageCircle className="w-5 h-5" />
@@ -122,7 +122,7 @@ export default function GratisIntakePage() {
           </a>
           <Link
             href="/nl/vind-jouw-personal-trainer"
-            className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
+            className="plausible-event-name=gratis_intake_pick_trainer inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
             data-cta="gratis-intake-pick-trainer"
           >
             Of kies je trainer
