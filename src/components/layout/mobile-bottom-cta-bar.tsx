@@ -163,17 +163,29 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   }
 
   // Default — homepage, blog, social, contact, prijzen, etc.
-  // "Free try-out" routes to eerste-bezoek (the universal "first time here?" page)
+  //
+  // Click-intent fix 2026-05-17: was routing "Boek gratis try-out" (a
+  // CONVERSION-style label — "Boek" = book now) to /nl/eerste-bezoek
+  // (an INFORMATION page that requires scrolling 1.5 viewports to reach
+  // any actual booking CTA). Visitor mental model on tap: "book NOW"
+  // → landing on info-first page = friction.
+  //
+  // New: route to /nl/gratis-intake — the dedicated conversion landing
+  // with dual-primary CTAs above the fold (WhatsApp direct + "Of kies
+  // je trainer"). Same page the paid Google Ads campaign already lands
+  // on; consistent funnel architecture. Visitors who want the full
+  // first-visit education can still reach /nl/eerste-bezoek via the
+  // header "Try-Out" button or footer links.
   return locale === "nl"
     ? {
-        label: "Boek gratis try-out",
-        href: "/nl/eerste-bezoek",
-        ctaId: "mobile-cta-default-tryout",
+        label: "Boek gratis intake",
+        href: "/nl/gratis-intake",
+        ctaId: "mobile-cta-default-intake",
       }
     : {
-        label: "Book free try-out",
-        href: "/en/first-visit",
-        ctaId: "mobile-cta-default-tryout",
+        label: "Book free intake",
+        href: "/en/free-intro",
+        ctaId: "mobile-cta-default-intake",
       };
 }
 
