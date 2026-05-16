@@ -34,6 +34,8 @@ const COPY = {
     subtitle: `${trainers.length} personal trainers, eigen specialisatie, gratis intake — vanaf €45 per sessie. 0% commissie, geen abonnement.`,
     ctaCard: "Plan gratis intake",
     ctaAll: `Bekijk alle ${trainers.length} trainers`,
+    ctaSeeStudio: "Bekijk de studio",
+    seeStudioHref: "/nl/studio",
     rating: "5.0 op Google",
     photoAlt: (name: string) => `${name}, personal trainer bij SculptClub Amsterdam Jordaan`,
     rateLabel: "Tarief",
@@ -47,6 +49,8 @@ const COPY = {
     subtitle: `${trainers.length} personal trainers, distinct specialties, free intro — from €45 per session. 0% commission, no membership.`,
     ctaCard: "Book free intro",
     ctaAll: `View all ${trainers.length} trainers`,
+    ctaSeeStudio: "See the studio",
+    seeStudioHref: "/en/studio",
     rating: "5.0 on Google",
     photoAlt: (name: string) => `${name}, personal trainer at SculptClub Amsterdam Jordaan`,
     rateLabel: "Rate",
@@ -134,8 +138,13 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                   <span className="text-xs font-medium text-muted-foreground sm:text-sm">
                     {trainer.rate ?? c.onRequest}
                   </span>
+                  {/* Mobile users have no hover state — the CTA chip must be
+                      visible-at-rest or visitors won't realize each card is
+                      tappable. Was opacity-0+group-hover:opacity-100 before
+                      2026-05-16 fix (operator audit: cards rendered but lacked
+                      obvious "tap to book" affordance on mobile). */}
                   <span
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100 sm:text-sm"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
                     aria-hidden
                   >
                     {c.ctaCard}
@@ -148,9 +157,12 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
         ))}
       </div>
 
-      {/* View-all CTA — for visitors who want the full roster with filters,
-          bios, and language/specialty selection. Routes to the canonical
-          trainer hub where paid Google Ads also land (per 2026-05-16 fix). */}
+      {/* Dual footer CTAs — per operator funnel goals 2026-05-16:
+          "every new user should book try-out / book see-the-studio / click
+          try-out with trainer". Primary = view-all-trainers (book intake),
+          secondary = see-the-studio (gallery/tour route for visitors who
+          aren't yet ready to pick a trainer). Each trainer CARD above
+          already exposes the third path: per-trainer WhatsApp intake. */}
       <FadeIn delay={PREVIEW_COUNT * 0.08}>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
@@ -160,6 +172,14 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
           >
             {c.ctaAll}
             <ArrowRight className="h-5 w-5" />
+          </Link>
+          <Link
+            href={c.seeStudioHref}
+            data-cta="home-trainer-see-studio"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
+          >
+            {c.ctaSeeStudio}
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </FadeIn>
