@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "Kan ik alleen komen, of moet ik me ergens aanmelden?",
-    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen vreemden, geen wachten op apparatuur, niemand kijkt mee.",
+    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen vreemden, geen wachten op apparatuur, geen toeschouwers.",
   },
   {
     q: "Ik spreek geen Nederlands — kan dat?",
@@ -210,7 +210,7 @@ export default function EersteBezoekPage() {
               <Sparkles className="h-3 w-3" /> Beginners welkom
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
-              <Lock className="h-3 w-3" /> Privé studio · niemand kijkt mee
+              <Lock className="h-3 w-3" /> Privé studio · geen toeschouwers
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
               <Globe className="h-3 w-3" /> NL · EN · PT · RU
