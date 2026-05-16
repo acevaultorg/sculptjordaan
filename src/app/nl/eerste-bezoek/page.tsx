@@ -149,30 +149,28 @@ export default function EersteBezoekPage() {
           description="Geen inschrijving. Geen contract. Eerste intake gratis. Hieronder precies wat je kunt verwachten."
         />
 
-        {/* Warm-entrance hero image — added 2026-05-16. This page is the
-            destination of: header "Try-Out" button + mobile-bottom-cta-bar
-            default action + 404 page recovery + CtaBand on homepage. All
-            major paid/organic/direct funnels land here. Previously text-only
-            above-fold → low trust + low anticipation for first-visitors who
-            need to KNOW what the studio feels like before booking.
-            portrait-entrance-warm.jpg shows the actual entrance + warm
-            atmosphere = reduces "what does this place look like?" anxiety
-            below the h1 but above the path-choice grid. */}
-        <FadeIn delay={0.05}>
-          <div className="mx-auto mt-8 max-w-3xl">
-            <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
-              <Image
-                src="/images/studio/portrait-entrance-warm.jpg"
-                alt="Warm welkom bij de ingang van SculptClub privé studio in de Amsterdamse Jordaan"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
-                fetchPriority="high"
-              />
-            </div>
+        {/* Warm-entrance hero image — added 2026-05-16.
+            CRITICAL crop lesson logged in DECISIONS.md same session:
+            ALL studio/ images are portrait orientation (1280×1920 = 2:3) —
+            forcing them into a 16:9/16:7 banner cropped to a torso-only
+            strip with head cut off (operator screenshot 2026-05-16 13:00).
+            Fix: use a LANDSCAPE-native image from /images/hero/ (1376×720,
+            ~1.91:1). canal-view.jpg shows the Amsterdam-Jordaan canal
+            location — confirms WHERE the visitor is going + builds
+            excitement vs anxiety about a "new gym". */}
+        <div className="mx-auto mt-8 max-w-3xl">
+          <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/hero/canal-view.jpg"
+              alt="Egelantiersgracht in de Amsterdamse Jordaan — gracht-locatie van SculptClub privé studio"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+              fetchPriority="high"
+            />
           </div>
-        </FadeIn>
+        </div>
 
         {/* Trust strip — 4 quick signals just below the H1 */}
         <FadeIn delay={0.1}>

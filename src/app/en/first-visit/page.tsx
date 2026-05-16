@@ -149,25 +149,23 @@ export default function FirstVisitPage() {
           description="No sign-up. No contract. First intake free. Here is exactly what to expect."
         />
 
-        {/* Warm-entrance hero image — see NL parallel comment. Primary
-            paid+organic+direct landing target with zero above-fold image
-            before this ship; portrait-entrance-warm.jpg reduces "what does
-            this place look like?" anxiety for first-time visitors. */}
-        <FadeIn delay={0.05}>
-          <div className="mx-auto mt-8 max-w-3xl">
-            <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
-              <Image
-                src="/images/studio/portrait-entrance-warm.jpg"
-                alt="Warm welcome at the entrance of SculptClub private studio in the Amsterdam Jordaan"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-                priority
-                fetchPriority="high"
-              />
-            </div>
+        {/* Warm-entrance hero image — see NL parallel comment. Swapped
+            2026-05-16 from portrait studio/ image (cropped torso-only at
+            16:7 banner) to landscape-native hero/canal-view.jpg (1.91:1)
+            showing the Amsterdam-Jordaan canal location. */}
+        <div className="mx-auto mt-8 max-w-3xl">
+          <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
+            <Image
+              src="/images/hero/canal-view.jpg"
+              alt="Egelantiersgracht canal in the Amsterdam Jordaan — canal-side location of SculptClub private studio"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+              fetchPriority="high"
+            />
           </div>
-        </FadeIn>
+        </div>
 
         {/* Trust strip — 4 quick signals below the H1 */}
         <FadeIn delay={0.1}>

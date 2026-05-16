@@ -131,14 +131,14 @@ export default function BookingConfirmedEN() {
             </Link>
           </div>
 
-          {/* Anticipation image — see NL parallel comment. Footer position
-              keeps the "What's next?" card + CTAs above-fold; image rewards
-              scroll + anchors the studio visually between booking and visit
-              (no-show rate reduction). */}
+          {/* Anticipation image — see NL parallel comment. Swapped same
+              session from portrait studio image (cropped torso-only) to
+              landscape-native hero/training-session.jpg (1.91:1) which
+              fits the 16:7 banner cleanly. */}
           <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/studio/training-dumbbells-smile.jpg"
-              alt="See you soon — dumbbell training at the SculptClub private studio"
+              src="/images/hero/training-session.jpg"
+              alt="See you soon — training session at the SculptClub private studio in the Jordaan"
               fill
               className="object-cover"
               sizes="(max-width: 672px) 100vw, 672px"

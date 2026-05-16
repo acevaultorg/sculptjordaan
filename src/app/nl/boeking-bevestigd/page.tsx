@@ -148,17 +148,18 @@ export default function BookingConfirmedNL() {
             </Link>
           </div>
 
-          {/* Anticipation image — added 2026-05-16. Booking-confirmed had
-              zero images before this ship. Footer position (below the
-              CTAs) so the "What's next?" Card + back-to-home buttons stay
-              above-fold on mobile; image rewards scroll with a warm
-              "see you soon" moment + reduces no-show rate by anchoring
-              the studio visually in the visitor's memory between booking
-              and visiting. */}
+          {/* Anticipation image — added 2026-05-16. Swapped same session
+              from portrait studio/training-dumbbells-smile.jpg (cropped
+              torso-only, head cut off — operator screenshot 13:00) to
+              landscape-native hero/training-session.jpg (1376×720, ~1.91:1)
+              which fits the 16:7 banner without bad cropping. Footer
+              position keeps the "What's next?" Card + CTAs above-fold;
+              image rewards scroll + anchors the studio visually between
+              booking and visit (no-show rate reduction). */}
           <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/studio/training-dumbbells-smile.jpg"
-              alt="Tot snel — training met dumbbells in de SculptClub privé studio"
+              src="/images/hero/training-session.jpg"
+              alt="Tot snel — trainingsessie in de SculptClub privé studio in de Jordaan"
               fill
               className="object-cover"
               sizes="(max-width: 672px) 100vw, 672px"
