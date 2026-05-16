@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Hero } from "@/components/marketing/hero";
+import { TrainerPreviewGrid } from "@/components/marketing/trainer-preview-grid";
 import { TrainerSignalBand } from "@/components/marketing/trainer-signal-band";
 import { ServicesOverview } from "@/components/marketing/services-overview";
 import { HowItWorks } from "@/components/marketing/how-it-works";
@@ -38,6 +39,17 @@ export default function HomePage() {
     <PageLayout>
       <FaqJsonLd faqs={homeFaqs} />
       <Hero locale="nl" />
+      {/*
+        TrainerPreviewGrid added 2026-05-16 per operator directive: "landing
+        page should already show all trainers, after scroll". Placed directly
+        after Hero so the first scroll-stop is trainer faces + names + free
+        intake CTA — the action operator wants every new visitor to take.
+
+        TrainerSignalBand (ZZP studio rental) moved BELOW trainer preview so
+        visitor-facing trainer profiles get scroll priority over operator-
+        facing studio-rental call (was directly after Hero before).
+      */}
+      <TrainerPreviewGrid locale="nl" />
       <TrainerSignalBand locale="nl" />
       <ServicesOverview locale="nl" />
       <HowItWorks locale="nl" />

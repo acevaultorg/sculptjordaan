@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/layout/page-layout";
 import { Hero } from "@/components/marketing/hero";
+import { TrainerPreviewGrid } from "@/components/marketing/trainer-preview-grid";
 import { TrainerSignalBand } from "@/components/marketing/trainer-signal-band";
 import { ServicesOverview } from "@/components/marketing/services-overview";
 import { HowItWorks } from "@/components/marketing/how-it-works";
@@ -38,6 +39,10 @@ export default function HomePageEN() {
     <PageLayout>
       <FaqJsonLd faqs={homeFaqs} />
       <Hero locale="en" />
+      {/* Trainer preview surfaces faces + names + free-intro CTA directly after
+          hero (operator directive 2026-05-16). Full filterable roster lives
+          at /en/find-personal-trainer. */}
+      <TrainerPreviewGrid locale="en" />
       <TrainerSignalBand locale="en" />
       <ServicesOverview locale="en" />
       <HowItWorks locale="en" />
