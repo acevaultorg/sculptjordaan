@@ -23,6 +23,7 @@ export function LocalBusinessJsonLd() {
         "@type": "Organization",
         "@id": ORG_ID,
         name: siteConfig.name,
+        legalName: "SculptClub (P.M. de Vries, eenmanszaak)",
         url: siteConfig.url,
         logo: {
           "@type": "ImageObject",
@@ -30,7 +31,37 @@ export function LocalBusinessJsonLd() {
           width: 512,
           height: 512,
         },
-        sameAs: [siteConfig.instagram, siteConfig.tiktok],
+        // sameAs expanded from 2 to 3 URLs (added Google Maps verified profile).
+        // GEO entity-coherence: AI engines + Knowledge Graph weight Person +
+        // Organization + sameAs graphs heavily. More authoritative cross-refs
+        // = more citation-ready entity. 2026-05-17 add per @geo audit.
+        sameAs: [siteConfig.instagram, siteConfig.tiktok, siteConfig.google],
+        // Founder Person sub-entity — establishes Person+Organization
+        // entity-coherence pattern AI engines look for. Operator name from
+        // llms.txt legal-identity block (P.M. de Vries, eenmanszaak).
+        founder: {
+          "@type": "Person",
+          name: "P.M. de Vries",
+          jobTitle: "Founder",
+          worksFor: { "@id": ORG_ID },
+        },
+        foundingDate: siteConfig.founded,
+        foundingLocation: {
+          "@type": "Place",
+          name: "Amsterdam Jordaan",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Amsterdam",
+            addressRegion: "Noord-Holland",
+            addressCountry: "NL",
+          },
+        },
+        // taxID + identifier add KvK + VAT — official-registry entity signals
+        // AI engines weight as credibility (E-E-A-T expertise + authoritativeness).
+        identifier: [
+          { "@type": "PropertyValue", propertyID: "KvK", value: "64708101" },
+          { "@type": "PropertyValue", propertyID: "VAT", value: "NL002250100B57" },
+        ],
         contactPoint: {
           "@type": "ContactPoint",
           telephone: siteConfig.phone,
