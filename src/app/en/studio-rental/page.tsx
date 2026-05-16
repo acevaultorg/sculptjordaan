@@ -201,7 +201,7 @@ export default function StudioRentalPageEN() {
               <HeroPriceBadge
                 price="€12/hr"
                 label="0% commission"
-                subLabel="First test free"
+                subLabel="Free test session"
               />
             </div>
           </FadeIn>

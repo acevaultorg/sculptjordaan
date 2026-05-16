@@ -65,7 +65,7 @@ const steps = [
   {
     number: "2",
     icon: MapPin,
-    title: "Loop binnen",
+    title: "Ontmoet je trainer",
     description:
       "Egelantiersgracht 424, Jordaan. Voor PT ontmoet je je trainer bij de deur. Voor Open Gym en studio voer je je eigen deurcode in. Geen receptie, geen wachtrij. Kleedruimte is direct beschikbaar. Kom 5 minuten voor je sessie.",
   },
@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "Kan ik alleen komen, of moet ik me ergens aanmelden?",
-    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen vreemden, geen wachten op apparatuur, geen afkijken.",
+    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen vreemden, geen wachten op apparatuur, niemand kijkt mee.",
   },
   {
     q: "Ik spreek geen Nederlands — kan dat?",
@@ -210,7 +210,7 @@ export default function EersteBezoekPage() {
               <Sparkles className="h-3 w-3" /> Beginners welkom
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
-              <Lock className="h-3 w-3" /> Privé studio · geen afkijken
+              <Lock className="h-3 w-3" /> Privé studio · niemand kijkt mee
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
               <Globe className="h-3 w-3" /> NL · EN · PT · RU
@@ -232,7 +232,7 @@ export default function EersteBezoekPage() {
         <div className="grid gap-6 sm:grid-cols-3">
           <FadeIn delay={0}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
                 Gratis intake
               </span>
               <CardHeader>
@@ -251,7 +251,7 @@ export default function EersteBezoekPage() {
 
           <FadeIn delay={0.1}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
                 Gratis proefles
               </span>
               <CardHeader>
@@ -270,7 +270,7 @@ export default function EersteBezoekPage() {
 
           <FadeIn delay={0.2}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
                 Gratis rondleiding
               </span>
               <CardHeader>

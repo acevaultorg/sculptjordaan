@@ -177,7 +177,7 @@ export default function OgImage() {
                 fontWeight: 600,
               }}
             >
-              Eerste test gratis
+              Gratis proefsessie
             </div>
             <div
               style={{

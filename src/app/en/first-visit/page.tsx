@@ -65,7 +65,7 @@ const steps = [
   {
     number: "2",
     icon: MapPin,
-    title: "Walk in",
+    title: "Meet your trainer",
     description:
       "Egelantiersgracht 424, Jordaan. For PT your trainer meets you at the door. For Open Gym and studio rental, you enter your own door code. No reception, no queue. Changing area is right there. Arrive 5 minutes early.",
   },
@@ -227,7 +227,7 @@ export default function FirstVisitPage() {
         <div className="grid gap-6 sm:grid-cols-3">
           <FadeIn delay={0}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
                 Free intake
               </span>
               <CardHeader>
@@ -246,7 +246,7 @@ export default function FirstVisitPage() {
 
           <FadeIn delay={0.1}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
                 Free trial
               </span>
               <CardHeader>
@@ -265,7 +265,7 @@ export default function FirstVisitPage() {
 
           <FadeIn delay={0.2}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
                 Free tour
               </span>
               <CardHeader>
