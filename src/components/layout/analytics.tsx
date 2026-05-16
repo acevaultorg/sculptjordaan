@@ -79,6 +79,14 @@ export function Analytics() {
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "${clarity}");
+          // Clarity is cookieless + anonymous by design (no PII, no cross-site tracking).
+          // GA4 consent-mode-v2 'analytics_storage: denied' default was inadvertently
+          // gating Clarity's recording too — 0 sessions captured for 3+ days post-2026-05-15
+          // Consent-Mode-v2-Advanced ship while Plausible still showed 152 UV/7d.
+          // Explicit consent grant scoped to Clarity ONLY restores recording without
+          // touching GA4/Ads consent state. Verified Clarity privacy posture:
+          // https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent
+          window.clarity && window.clarity("consent");
         `}
       </Script>
 
