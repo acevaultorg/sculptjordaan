@@ -8,6 +8,7 @@ import { HreflangLinks } from "@/components/seo/hreflang";
 import { Analytics } from "@/components/layout/analytics";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { MobileBottomCTABar } from "@/components/layout/mobile-bottom-cta-bar";
 import { UtmCapture } from "@/components/layout/utm-capture";
 
 const syne = localFont({
@@ -143,6 +144,7 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <WhatsAppButton />
+        <MobileBottomCTABar />
         <UtmCapture />
         <Analytics />
         <Script
