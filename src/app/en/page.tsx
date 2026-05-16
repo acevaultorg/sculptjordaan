@@ -10,7 +10,7 @@ import { GoogleMap } from "@/components/marketing/google-map";
 import { FaqPreview } from "@/components/marketing/faq-preview";
 import { WhyWeExist } from "@/components/marketing/why-we-exist";
 import { CtaBand } from "@/components/marketing/cta-band";
-import { FaqJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
@@ -38,6 +38,50 @@ export default function HomePageEN() {
   return (
     <PageLayout>
       <FaqJsonLd faqs={homeFaqs} />
+      {/* DefinedTerm schema — GEO leverage for "what is X in Amsterdam"
+          definitional queries. AI engines + Knowledge Graph extract +
+          cite. EN mirror of NL homepage. */}
+      <DefinedTermJsonLd
+        termSetName="SculptClub Personal Training — Glossary"
+        termSetUrl="/en"
+        terms={[
+          {
+            name: "Private studio",
+            description: "A training space exclusively available to you (and your trainer) during your session. At SculptClub in Amsterdam Jordaan this means no crowds, no equipment queues, and full privacy — unlike commercial gyms where you share with dozens of others.",
+            url: "/en/studio",
+          },
+          {
+            name: "Personal Training",
+            description: "1-on-1 training with a certified personal trainer who designs your session around your goals, level, and body. At SculptClub in the Jordaan from €45/session, first intro free, no contract, no membership. Trainers work as freelancers (ZZP) with 0% commission to SculptClub.",
+            url: "/en/find-personal-trainer",
+          },
+          {
+            name: "Open Gym",
+            description: "Independent training in a quiet, fully-equipped private studio with max 3 people per slot. At SculptClub in Amsterdam Jordaan from €29 per 4 weeks (Starter, 4 sessions). Includes all equipment, free coffee/tea, and door-code access via WhatsApp.",
+            url: "/en/open-gym",
+          },
+          {
+            name: "Studio rental",
+            description: "Private training space rental for freelance personal trainers or physiotherapists. At SculptClub from €12/hour (half studio) or €17/hour (full studio). No commission, no contract, free cancellation anytime. Includes all equipment, wifi, music and cleaning.",
+            url: "/en/studio-rental",
+          },
+          {
+            name: "Calisthenics",
+            description: "Training methodology using only bodyweight for resistance — push-ups, pull-ups, dips, planks, muscle-ups. Some SculptClub trainers (Alex, Joey) specialize in calisthenics progressions from beginner to advanced level.",
+            url: "/en/find-personal-trainer",
+          },
+          {
+            name: "Freelance personal trainer",
+            description: "A self-employed personal trainer running their own practice, setting their own rates, and invoicing clients directly. At SculptClub freelance trainers rent the studio per hour or per package, with 0% commission on their training sessions.",
+            url: "/en/for-trainers",
+          },
+          {
+            name: "Free intro",
+            description: "A 45-minute intro session with a personal trainer where you discuss goals, get to know the approach, and feel out the fit — with no obligation and no cost. At SculptClub the first intro is always 100% free, with no credit card required.",
+            url: "/en/free-intro",
+          },
+        ]}
+      />
       <Hero locale="en" />
       {/* Trainer preview surfaces faces + names + free-intro CTA directly after
           hero (operator directive 2026-05-16). Full filterable roster lives

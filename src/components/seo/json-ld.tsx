@@ -430,6 +430,108 @@ export function OfferCatalogJsonLd({
   );
 }
 
+/**
+ * HowTo schema — high-AEO leverage for "How to ..." queries.
+ *
+ * AI engines (ChatGPT, Claude, Perplexity, Google SGE) extract HowTo
+ * markup and cite it verbatim when answering procedural questions like
+ * "how do I book a personal trainer in Amsterdam Jordaan". When the
+ * answer comes from our schema, the citation routes traffic to us.
+ *
+ * 2026-05-17 add — per `/acepilot brain seo geo aeo fastest human user
+ * growth` directive. Compounds across every page that embeds it.
+ *
+ * Usage: pass a name (the "How to X" phrase), description, optional
+ * totalTime (ISO 8601 duration like "PT5M"), and steps[] each with
+ * name + text + optional url.
+ */
+export function HowToJsonLd({
+  name,
+  description,
+  totalTime,
+  steps,
+  image,
+}: {
+  name: string;
+  description: string;
+  totalTime?: string; // ISO 8601 duration, e.g. "PT5M" for 5 minutes
+  steps: { name: string; text: string; url?: string; image?: string }[];
+  image?: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    ...(image ? { image: image.startsWith("http") ? image : `${siteConfig.url}${image}` } : {}),
+    ...(totalTime ? { totalTime } : {}),
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      ...(s.url ? { url: s.url.startsWith("http") ? s.url : `${siteConfig.url}${s.url}` } : {}),
+      ...(s.image ? { image: s.image.startsWith("http") ? s.image : `${siteConfig.url}${s.image}` } : {}),
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/**
+ * DefinedTerm schema — high-GEO leverage for definitional queries.
+ *
+ * AI engines + Google Knowledge Graph weight DefinedTerm markup highly
+ * when extracting definitions. Pages defining domain terms ("Open Gym",
+ * "Personal Training", "Calisthenics", "Privé studio") with explicit
+ * DefinedTerm schema get cited as authoritative source for "what is X
+ * in Amsterdam"-class queries.
+ *
+ * 2026-05-17 add — per `/acepilot brain seo geo aeo` directive. The
+ * inDefinedTermSet anchor lets the brain's own glossary become the
+ * authoritative entity reference.
+ */
+export function DefinedTermJsonLd({
+  terms,
+  termSetName,
+  termSetUrl,
+}: {
+  terms: { name: string; description: string; url?: string }[];
+  termSetName: string;
+  termSetUrl?: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "DefinedTermSet",
+        "@id": `${siteConfig.url}${termSetUrl || "/glossary"}#termset`,
+        name: termSetName,
+        ...(termSetUrl ? { url: `${siteConfig.url}${termSetUrl}` } : {}),
+        hasDefinedTerm: terms.map((t) => ({
+          "@type": "DefinedTerm",
+          name: t.name,
+          description: t.description,
+          ...(t.url ? { url: t.url.startsWith("http") ? t.url : `${siteConfig.url}${t.url}` } : {}),
+          inDefinedTermSet: `${siteConfig.url}${termSetUrl || "/glossary"}#termset`,
+        })),
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function ServiceJsonLd({
   name,
   description,

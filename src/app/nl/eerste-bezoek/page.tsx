@@ -5,7 +5,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd, HowToJsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionItem,
@@ -140,6 +140,35 @@ export default function EersteBezoekPage() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Eerste Bezoek","url":"/nl/eerste-bezoek"}]} />
       <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
+      {/* HowTo schema — AEO leverage. When ChatGPT/Claude/Perplexity/SGE
+          answer "how do I book a personal trainer in Amsterdam Jordaan",
+          they extract HowTo markup and cite the source. Our schema → our
+          citation → our traffic. 3 steps mirror the page's step content
+          so visible content + structured data align (anti-cloaking, I-26
+          + Google Search Quality structured-data-abuse rule). */}
+      <HowToJsonLd
+        name="Hoe boek je een personal trainer bij SculptClub Amsterdam Jordaan"
+        description="Boek je gratis intake personal training in 3 stappen bij SculptClub aan de Egelantiersgracht in Amsterdam Jordaan. Geen contract, geen lidmaatschap, eerste sessie 100% gratis."
+        totalTime="PT5M"
+        image="/images/og-default.jpg"
+        steps={[
+          {
+            name: "Kies je trainer",
+            text: "Bekijk alle 8 personal trainers op /nl/vind-jouw-personal-trainer. Filter op specialiteit (kracht, calisthenics, herstel, voeding) en taal (NL/EN/PT). Lees korte profielen, bekijk tarieven (vanaf €45/sessie) en kies de trainer die bij jouw doel past.",
+            url: "/nl/vind-jouw-personal-trainer",
+          },
+          {
+            name: "Stuur de trainer een berichtje",
+            text: "Klik op WhatsApp direct op de trainerpagina of gebruik het contactformulier. Je trainer reageert meestal binnen 1 uur. Jullie plannen samen een moment dat past — geen rigide agenda, gewoon op maat.",
+            url: "/nl/gratis-intake",
+          },
+          {
+            name: "45 minuten gratis kennismaking",
+            text: "Ontmoet je trainer in onze privé studio op Egelantiersgracht 424, Amsterdam Jordaan. Bespreek je doelen, leer de aanpak kennen, en voel of het klikt. Geen verplichting, geen verborgen kosten. Na de intake beslis je zelf of je verder wilt.",
+            url: "/nl/eerste-bezoek",
+          },
+        ]}
+      />
 
       <Section>
         <SectionHeader

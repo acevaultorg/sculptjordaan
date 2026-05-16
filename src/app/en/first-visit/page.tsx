@@ -5,7 +5,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd, HowToJsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionItem,
@@ -140,6 +140,32 @@ export default function FirstVisitPage() {
     <PageLayout>
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"First Visit","url":"/en/first-visit"}]} />
       <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
+      {/* HowTo schema — AEO leverage. Mirrors NL /nl/eerste-bezoek HowTo
+          for "how do I book a personal trainer in Amsterdam Jordaan"
+          English queries. AI engines extract + cite. */}
+      <HowToJsonLd
+        name="How to book a personal trainer at SculptClub Amsterdam Jordaan"
+        description="Book your free personal training intro in 3 steps at SculptClub on Egelantiersgracht in Amsterdam Jordaan. No contract, no membership, first session 100% free."
+        totalTime="PT5M"
+        image="/images/og-default.jpg"
+        steps={[
+          {
+            name: "Pick your trainer",
+            text: "Browse all 8 personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €45/session), and pick the trainer who fits your goal.",
+            url: "/en/find-personal-trainer",
+          },
+          {
+            name: "Send the trainer a message",
+            text: "Click WhatsApp direct on the trainer page or use the contact form. Your trainer usually replies within 1 hour. You agree on a time together — no rigid calendar, just on your terms.",
+            url: "/en/free-intro",
+          },
+          {
+            name: "45-minute free intro",
+            text: "Meet your trainer in our private studio at Egelantiersgracht 424, Amsterdam Jordaan. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs. After the intro, you decide whether to continue.",
+            url: "/en/first-visit",
+          },
+        ]}
+      />
 
       <Section>
         <SectionHeader

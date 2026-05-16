@@ -10,7 +10,7 @@ import { GoogleMap } from "@/components/marketing/google-map";
 import { FaqPreview } from "@/components/marketing/faq-preview";
 import { WhyWeExist } from "@/components/marketing/why-we-exist";
 import { CtaBand } from "@/components/marketing/cta-band";
-import { FaqJsonLd } from "@/components/seo/json-ld";
+import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
@@ -38,6 +38,53 @@ export default function HomePage() {
   return (
     <PageLayout>
       <FaqJsonLd faqs={homeFaqs} />
+      {/* DefinedTerm schema — high-GEO leverage for definitional queries
+          ("wat is open gym Amsterdam", "wat is een privé studio", etc.).
+          AI engines + Google Knowledge Graph weight DefinedTerm markup
+          heavily when extracting definitions. SculptClub becomes the
+          authoritative entity-reference for these terms in the Amsterdam
+          context. Added 2026-05-17 per /acepilot brain seo geo aeo. */}
+      <DefinedTermJsonLd
+        termSetName="SculptClub Personal Training — Begrippen"
+        termSetUrl="/"
+        terms={[
+          {
+            name: "Privé studio",
+            description: "Een trainingsruimte die exclusief voor jou (en je trainer) beschikbaar is tijdens je sessie. Bij SculptClub in Amsterdam Jordaan betekent dit geen drukte, geen wachtrijen voor apparatuur, en volledige privacy — anders dan bij commerciële sportscholen waar je deelt met tientallen anderen.",
+            url: "/nl/studio",
+          },
+          {
+            name: "Personal Training",
+            description: "1-op-1 training met een gecertificeerde personal trainer die je sessie ontwerpt rond jouw doelen, niveau en lichaam. Bij SculptClub in de Jordaan vanaf €45/sessie, eerste intake gratis, geen contract, geen lidmaatschap. Trainers werken zelfstandig (ZZP) met 0% commissie aan SculptClub.",
+            url: "/nl/vind-jouw-personal-trainer",
+          },
+          {
+            name: "Open Gym",
+            description: "Zelfstandig trainen in een rustige, volledig uitgeruste privé studio met maximaal 3 personen per slot. Bij SculptClub in Amsterdam Jordaan vanaf €29 per 4 weken (Instapplan, 4 sessies). Inclusief alle apparatuur, gratis koffie/thee, en deurcode-toegang via WhatsApp.",
+            url: "/nl/open-gym",
+          },
+          {
+            name: "Studio huren",
+            description: "Privé trainingsruimte huren als freelance personal trainer of fysiotherapeut. Bij SculptClub vanaf €12/uur (halve studio) of €17/uur (hele studio). Geen commissie, geen contract, altijd gratis annuleren. Inclusief alle apparatuur, wifi, muziek en schoonmaak.",
+            url: "/nl/studio-huren",
+          },
+          {
+            name: "Calisthenics",
+            description: "Trainingsmethode die uitsluitend het eigen lichaamsgewicht gebruikt voor weerstand — push-ups, pull-ups, dips, planks, muscle-ups. Sommige SculptClub trainers (zoals Alex, Joey) specialiseren in calisthenics-progressies van beginner naar gevorderd niveau.",
+            url: "/nl/vind-jouw-personal-trainer",
+          },
+          {
+            name: "ZZP personal trainer",
+            description: "Zelfstandige zonder personeel — een freelance personal trainer die zijn of haar eigen praktijk runt, eigen tarieven bepaalt, en cliënten direct factureert. Bij SculptClub huren ZZP-trainers de studio per uur of per pakket, met 0% commissie op hun trainingen.",
+            url: "/nl/voor-trainers",
+          },
+          {
+            name: "Gratis intake",
+            description: "Een 45-minuten kennismakingssessie met een personal trainer waar je doelen bespreekt, de aanpak leert kennen, en voelt of er een klik is — zonder verplichting en zonder kosten. Bij SculptClub is de eerste intake altijd 100% gratis, met geen creditcard vereist.",
+            url: "/nl/gratis-intake",
+          },
+        ]}
+      />
       <Hero locale="nl" />
       {/*
         TrainerPreviewGrid added 2026-05-16 per operator directive: "landing
