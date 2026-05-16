@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Users, Camera } from "lucide-react";
+import { Users, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
@@ -11,23 +11,24 @@ const HERO_SRC = "/images/studio/training-barbell-squat.jpg";
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
-    // Hero CTAs target the CONSUMER visitor (paid Google PT-search ads,
-    // organic search, brand traffic). Both CTAs match operator funnel goals
-    // 2026-05-16: "every new user should book try-out / book see-the-studio".
+    // Hero CTAs split by audience:
+    // - Primary = CONSUMER (Vind Personal Trainer → trainer hub) — matches
+    //   paid Google PT-search + organic + brand traffic
+    // - Secondary = ZZP TRAINER (Huur studio (voor trainers) → studio-rental)
+    //   — matches "studio huren amsterdam" + ZZP-trainer prospecting
     //
-    // Primary = trainer-search (matches highest-intent paid search keyword
-    // "personal trainer Jordaan/Amsterdam"). Secondary = see-the-studio
-    // gallery (was "Huur de Studio" → /studio-huren before 2026-05-16, which
-    // routes ZZP-trainer audience — wrong destination for consumer visitor).
-    //
-    // ZZP studio-rental path remains exposed via TrainerSignalBand directly
-    // below the hero + header nav "Studio Huren" / "Studio Rental".
+    // History 2026-05-16: tried "Bekijk de studio" → /nl/studio (consumer
+    // gallery) for the secondary CTA but operator restored ZZP-trainer
+    // targeting because (a) consumer audience is already covered by the
+    // primary trainer CTA, (b) the secondary CTA's distinct value-prop
+    // serves ZZP-trainers shopping for rental space, (c) "(voor trainers)"
+    // parenthetical disambiguates the audience explicitly on the button.
     nl: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Jouw manier. Jouw resultaat.",
       ctas: [
         { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users, primary: true },
-        { label: "Bekijk de studio", href: "/nl/studio", icon: Camera, primary: false },
+        { label: "Huur studio (voor trainers)", href: "/nl/studio-huren", icon: Building2, primary: false },
       ],
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
     },
@@ -36,7 +37,7 @@ export function Hero({ locale }: { locale: Locale }) {
       taglineSub: "Your way. Your results.",
       ctas: [
         { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users, primary: true },
-        { label: "See the studio", href: "/en/studio", icon: Camera, primary: false },
+        { label: "Rent studio (trainers)", href: "/en/studio-rental", icon: Building2, primary: false },
       ],
       trust: "First intro free · No contracts · Daily 06:30–22:00 · 5.0 ★ Google",
     },
