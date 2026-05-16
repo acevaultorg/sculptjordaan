@@ -325,11 +325,17 @@ const nextConfig: NextConfig = {
     // close common XSS + clickjacking vectors that the prior CSP left open.
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com",
+      // Clarity loads recording script from scripts.clarity.ms and POSTs
+      // session data to *.clarity.ms (k/a/b/.../z). Prior CSP allowlisted
+      // only `www.clarity.ms` (tag loader) → script + collect requests
+      // blocked → 0 sessions recorded for 3+ days while Plausible captured
+      // 152 UV/7d. Switching to `*.clarity.ms` wildcard covers all
+      // current + future Microsoft Clarity subdomains.
+      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net *.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com www.facebook.com www.google.com wa.me",
+      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com *.clarity.ms www.facebook.com www.google.com wa.me",
       "font-src 'self'",
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net connect.facebook.net www.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com cloudflareinsights.com *.cloudflareinsights.com",
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net connect.facebook.net *.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com cloudflareinsights.com *.cloudflareinsights.com",
       "frame-src app.acuityscheduling.com www.google.com maps.google.com",
       "base-uri 'self'",
       "form-action 'self' https://wa.me",
