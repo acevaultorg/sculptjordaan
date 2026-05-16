@@ -60,10 +60,15 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // Don't show on conversion-completion pages
   if (/\/(boeking-bevestigd|booking-confirmed)/.test(pathname)) return null;
 
+  // NOTE: labels NEVER end with " →" — the JSX renders an <ArrowRight /> icon
+  // for both internal AND external CTAs. 2026-05-16: operator phone-shot
+  // showed "Boek gratis try-out → →" — duplicate-arrow bug from labels
+  // containing trailing → plus JSX-rendered icon. Stripped from all labels.
+
   // Studio-rental — visitors are PT-trainers shopping rental space
   if (/\/(studio-huren|studio-rental)(\/|$)/.test(pathname)) {
     return {
-      label: locale === "nl" ? "Boek gratis test sessie →" : "Book free test session →",
+      label: locale === "nl" ? "Boek gratis test sessie" : "Book free test session",
       href: "#schedule",
       ctaId: "mobile-cta-studio-test",
     };
@@ -72,7 +77,7 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // Open Gym — visitors want to try the gym
   if (/\/(open-gym)(\/|$)/.test(pathname)) {
     return {
-      label: locale === "nl" ? "Boek gratis Open Gym →" : "Book free Open Gym →",
+      label: locale === "nl" ? "Boek gratis Open Gym" : "Book free Open Gym",
       href: "#schedule",
       ctaId: "mobile-cta-opengym-trial",
     };
@@ -82,14 +87,14 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   if (/\/(gratis-intake|free-intro)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "WhatsApp direct →",
+          label: "WhatsApp direct",
           href: "https://wa.me/31683178934?text=" +
             encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?"),
           external: true,
           ctaId: "mobile-cta-intake-whatsapp",
         }
       : {
-          label: "WhatsApp us now →",
+          label: "WhatsApp us now",
           href: "https://wa.me/31683178934?text=" +
             encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?"),
           external: true,
@@ -112,14 +117,14 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   if (/\/(vind-jouw-personal-trainer|find-personal-trainer)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "WhatsApp direct — wij matchen →",
+          label: "WhatsApp direct — wij matchen",
           href: "https://wa.me/31683178934?text=" +
             encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?"),
           external: true,
           ctaId: "mobile-cta-trainerhub-whatsapp",
         }
       : {
-          label: "WhatsApp us — we'll match →",
+          label: "WhatsApp us — we'll match",
           href: "https://wa.me/31683178934?text=" +
             encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?"),
           external: true,
@@ -131,12 +136,12 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   if (/\/(eerste-bezoek|first-visit)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "Boek je gratis intake →",
+          label: "Boek je gratis intake",
           href: "/nl/vind-jouw-personal-trainer",
           ctaId: "mobile-cta-firstvisit-intake",
         }
       : {
-          label: "Book your free intake →",
+          label: "Book your free intake",
           href: "/en/find-personal-trainer",
           ctaId: "mobile-cta-firstvisit-intake",
         };
@@ -146,12 +151,12 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   if (/\/(word-trainer|become-trainer|voor-trainers|for-trainers)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "Bekijk de studio →",
+          label: "Bekijk de studio",
           href: "/nl/studio-huren",
           ctaId: "mobile-cta-trainer-studio",
         }
       : {
-          label: "See the studio →",
+          label: "See the studio",
           href: "/en/studio-rental",
           ctaId: "mobile-cta-trainer-studio",
         };
@@ -161,12 +166,12 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // "Free try-out" routes to eerste-bezoek (the universal "first time here?" page)
   return locale === "nl"
     ? {
-        label: "Boek gratis try-out →",
+        label: "Boek gratis try-out",
         href: "/nl/eerste-bezoek",
         ctaId: "mobile-cta-default-tryout",
       }
     : {
-        label: "Book free try-out →",
+        label: "Book free try-out",
         href: "/en/first-visit",
         ctaId: "mobile-cta-default-tryout",
       };
@@ -216,6 +221,7 @@ export function MobileBottomCTABar() {
                          pr-20`}
             >
               {cta.label}
+              <ArrowRight className="h-5 w-5 -mr-2" />
             </a>
           ) : (
             <Link
