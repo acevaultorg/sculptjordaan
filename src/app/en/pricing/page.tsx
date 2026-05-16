@@ -27,7 +27,7 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Pricing — SculptClub Amsterdam Jordaan | PT, Studio, Open Gym" },
+  title: { absolute: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym" },
   description:
     "All pricing SculptClub Amsterdam: personal training €45 (free intro), studio rental €12/hour (0% commission), Open Gym €29/4wk. No contract.",
   alternates: {

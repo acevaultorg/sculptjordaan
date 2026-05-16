@@ -32,7 +32,7 @@ import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/jso
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Studio Rental Amsterdam | SculptClub Jordaan" },
+  title: { absolute: "Personal Trainer Studio Rental | SculptClub Jordaan" },
   description:
     "Private training studio in Amsterdam Jordaan from €12/hour — 0% commission, no contract, free cancellation. For PT and physiotherapist. First session free.",
   alternates: {
