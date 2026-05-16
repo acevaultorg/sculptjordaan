@@ -35,7 +35,7 @@ const COPY = {
     ],
     ctaLabel: "Word trainer met profiel",
     ctaHref: "/nl/word-trainer",
-    secondaryLabel: "Alleen ruimte huren →",
+    secondaryLabel: "Alleen ruimte huren",
     secondaryHref: "#tarieven",
   },
   en: {
@@ -67,7 +67,7 @@ const COPY = {
     ],
     ctaLabel: "Join as a trainer",
     ctaHref: "/en/become-trainer",
-    secondaryLabel: "Just rent the space →",
+    secondaryLabel: "Just rent the space",
     secondaryHref: "#pricing",
   },
 } as const;
@@ -118,6 +118,7 @@ export function TrainerValueProp({ locale }: { locale: Locale }) {
             className="plausible-event-name=value_prop_rental_click"
           >
             {c.secondaryLabel}
+            <ArrowRight className="ml-2 h-4 w-4" />
           </ButtonLink>
         </div>
       </FadeIn>

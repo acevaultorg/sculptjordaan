@@ -241,7 +241,7 @@ export default function FirstVisitPage() {
                 <CardDescription>1-on-1 with a trainer that fits you. 45 min intro + training. From €45/session after.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer →</ButtonLink>
+                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <p className="text-center text-[11px] text-muted-foreground">8 trainers · filter by specialty + language</p>
               </CardFooter>
             </Card>
@@ -260,7 +260,7 @@ export default function FirstVisitPage() {
                 <CardDescription>Train independently in a private studio. 60 min free trial. Max 3 people. Then from €29 per 4 weeks.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Book free trial →</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Book free trial<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/en/open-gym" variant="outline" size="lg" className="w-full">See plans</ButtonLink>
               </CardFooter>
             </Card>
@@ -279,7 +279,7 @@ export default function FirstVisitPage() {
                 <CardDescription>For trainers with their own clients. Half studio €12/hr, full studio €17/hr. 0% commission, no contract.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Book tour →</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Book tour<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/en/studio-rental" variant="outline" size="lg" className="w-full">Rates + packages</ButtonLink>
               </CardFooter>
             </Card>

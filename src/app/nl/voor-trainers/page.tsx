@@ -28,7 +28,7 @@ const pillars = [
     href: "/nl/studio-huren",
     text:
       "Privé trainingsruimte in Jordaan vanaf €12/uur. Geen commissie, flexibel per sessie, alles inbegrepen.",
-    cta: "Bekijk studio huur →",
+    cta: "Bekijk studio huur",
   },
   {
     icon: Users,
@@ -36,7 +36,7 @@ const pillars = [
     href: "/nl/word-trainer",
     text:
       "Eigen profiel op sculptclub.nl + klantenmatch via /vind-jouw-personal-trainer. Voor trainers die hun praktijk willen groeien, niet alleen ruimte willen.",
-    cta: "Word trainer →",
+    cta: "Word trainer",
   },
   {
     icon: FileText,
@@ -44,7 +44,7 @@ const pillars = [
     href: "/nl/voor-trainers/freelance-personal-trainer-worden",
     text:
       "Praktische gids voor personal trainers die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte.",
-    cta: "Lees de gids →",
+    cta: "Lees de gids",
   },
   {
     icon: CheckSquare,
@@ -52,7 +52,7 @@ const pillars = [
     href: "/nl/voor-trainers/zzp-personal-trainer-checklist",
     text:
       "10-stappen praktische gids: KvK, BTW, verzekering, bank, administratie. Kosten, doorlooptijd, eerste factuur.",
-    cta: "Bekijk de checklist →",
+    cta: "Bekijk de checklist",
   },
   {
     icon: MapPin,
@@ -60,7 +60,7 @@ const pillars = [
     href: "/nl/voor-trainers/personal-trainer-locatie-amsterdam-jordaan",
     text:
       "Waarom Jordaan werkt voor PT's: klantprofiel, gemiddelde tarieven, concurrentie, en wat trainers hier verdienen.",
-    cta: "Lees de analyse →",
+    cta: "Lees de analyse",
   },
   {
     icon: Scale,
@@ -68,7 +68,7 @@ const pillars = [
     href: "/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten",
     text:
       "Vergelijking met echte cijfers: eigen studio leasen, bij klant thuis, in het park, of per uur huren — wanneer kies je wat?",
-    cta: "Zie vergelijking →",
+    cta: "Zie vergelijking",
   },
 ];
 
@@ -204,6 +204,7 @@ export default function VoorTrainersHubNL() {
                     </p>
                     <ButtonLink href={pillar.href} variant="outline" size="sm">
                       {pillar.cta}
+                      <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                     </ButtonLink>
                   </CardContent>
                 </Card>

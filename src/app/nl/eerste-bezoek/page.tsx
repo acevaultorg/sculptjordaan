@@ -250,7 +250,7 @@ export default function EersteBezoekPage() {
                 <CardDescription>1-op-1 met een trainer die bij je past. 45 min kennismaking + training. Vanaf €45/sessie daarna.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Vind jouw trainer →</ButtonLink>
+                <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Vind jouw trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <p className="text-center text-[11px] text-muted-foreground">8 trainers · filter op specialiteit + taal</p>
               </CardFooter>
             </Card>
@@ -269,7 +269,7 @@ export default function EersteBezoekPage() {
                 <CardDescription>Train zelfstandig in een privé studio. 60 min proefles. Max 3 personen. Daarna vanaf €29 per 4 weken.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Boek gratis proefles →</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Boek gratis proefles<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/nl/open-gym" variant="outline" size="lg" className="w-full">Plannen bekijken</ButtonLink>
               </CardFooter>
             </Card>
@@ -288,7 +288,7 @@ export default function EersteBezoekPage() {
                 <CardDescription>Voor trainers met eigen klanten. Halve studio €12/uur, hele studio €17/uur. 0% commissie, geen contract.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Boek rondleiding →</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Boek rondleiding<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/nl/studio-huren" variant="outline" size="lg" className="w-full">Tarieven + pakketten</ButtonLink>
               </CardFooter>
             </Card>

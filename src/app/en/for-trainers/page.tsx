@@ -28,7 +28,7 @@ const pillars = [
     href: "/en/studio-rental",
     text:
       "Private training space in Jordaan from €12/hour. Zero commission, flexible per session, everything included.",
-    cta: "See studio rental →",
+    cta: "See studio rental",
   },
   {
     icon: Users,
@@ -36,7 +36,7 @@ const pillars = [
     href: "/en/become-trainer",
     text:
       "Get your own profile on sculptclub.nl + client matching via /en/find-personal-trainer. For trainers growing their practice, not just renting space.",
-    cta: "Join as a trainer →",
+    cta: "Join as a trainer",
   },
   {
     icon: FileText,
@@ -44,7 +44,7 @@ const pillars = [
     href: "/en/for-trainers/becoming-freelance-personal-trainer",
     text:
       "Practical guide for personal trainers considering going freelance in Amsterdam. Registration, rates, first clients, space.",
-    cta: "Read the guide →",
+    cta: "Read the guide",
   },
   {
     icon: CheckSquare,
@@ -52,7 +52,7 @@ const pillars = [
     href: "/en/for-trainers/zzp-personal-trainer-checklist",
     text:
       "10-step practical guide: KvK, VAT, insurance, banking, admin. Costs, timeline, first invoice.",
-    cta: "See the checklist →",
+    cta: "See the checklist",
   },
   {
     icon: MapPin,
@@ -60,7 +60,7 @@ const pillars = [
     href: "/en/for-trainers/personal-trainer-location-amsterdam-jordaan",
     text:
       "Why Jordaan works for PTs: client profile, average rates, competition, realistic earnings.",
-    cta: "Read the analysis →",
+    cta: "Read the analysis",
   },
   {
     icon: Scale,
@@ -68,7 +68,7 @@ const pillars = [
     href: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
     text:
       "Comparison with real numbers: own studio lease, at client's home, outdoor, or hourly rental — when to choose what.",
-    cta: "See comparison →",
+    cta: "See comparison",
   },
 ];
 
@@ -204,6 +204,7 @@ export default function ForTrainersHubEN() {
                     </p>
                     <ButtonLink href={pillar.href} variant="outline" size="sm">
                       {pillar.cta}
+                      <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                     </ButtonLink>
                   </CardContent>
                 </Card>
