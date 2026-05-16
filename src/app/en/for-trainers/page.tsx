@@ -11,7 +11,7 @@ import { acuityFreeTrials } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "For Personal Trainers in Amsterdam | SculptClub Jordaan" },
   description:
-    "For freelance personal trainers in Amsterdam: rent the studio from €12/hour, build your practice, get clients via SculptClub. 0% commission, free cancellation anytime, no contract.",
+    "For freelance personal trainers in Amsterdam: rent the studio from €12/hr via SculptClub. 0% commission, no contract, free cancellation anytime.",
   alternates: {
     canonical: "/en/for-trainers",
     languages: {

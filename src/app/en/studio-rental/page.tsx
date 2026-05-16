@@ -34,7 +34,7 @@ import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 export const metadata: Metadata = {
   title: { absolute: "Studio Rental for Personal Trainers Amsterdam | SculptClub Jordaan" },
   description:
-    "Rent a private training studio in Amsterdam Jordaan for freelance PTs & physiotherapists. From €12/hour — 0% commission, no contract, free cancellation anytime. First trial session free.",
+    "Rent a private training studio in Amsterdam Jordaan from €12/hour — 0% commission, no contract, free cancellation. For PTs & physiotherapists. First session free.",
   alternates: {
     canonical: "/en/studio-rental",
     languages: {
