@@ -66,7 +66,7 @@ export function SectionHeader({
     return (
       <div className={cn("mb-10 sm:mb-14", center && "text-center", className)}>
         {overline && <p className="overline mb-3">{overline}</p>}
-        <Tag className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</Tag>
+        <Tag className="text-[1.625rem] sm:text-4xl lg:text-5xl font-bold text-balance break-words">{title}</Tag>
         {description && (
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             {description}
@@ -83,7 +83,7 @@ export function SectionHeader({
   return (
     <FadeInOnScroll className={cn("mb-10 sm:mb-14", center && "text-center", className)}>
       {overline && <p className="overline mb-3">{overline}</p>}
-      <Tag className="text-3xl sm:text-4xl lg:text-5xl font-bold">{title}</Tag>
+      <Tag className="text-[1.625rem] sm:text-4xl lg:text-5xl font-bold text-balance break-words">{title}</Tag>
       {description && (
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           {description}
