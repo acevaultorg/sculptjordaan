@@ -466,19 +466,22 @@ export function Analytics() {
             var value = Number(params.get('value') || '12') || 12;
             var id = params.get('id') || ('bk-' + Date.now());
 
-            function fire(attempt) {
+            // Per-pixel firing — each pixel retries independently until its specific tag
+            // is loaded (gtag = afterInteractive ~immediate; fbq + ttq = lazyOnload ~3-8s post-idle;
+            // plausible = afterInteractive ~immediate). The prior implementation gated all
+            // firing on the SLOWEST pixel being ready, hitting the 30-attempt cap before
+            // fbq/ttq loaded and silently dropping every conversion event.
+
+            // Each pixel has its own fired-once guard so retries can't double-fire.
+            var fired = { gads: false, fbq: false, ttq: false, plausible: false };
+
+            function tryFire(attempt) {
               attempt = attempt || 0;
-              var ready = (typeof window.gtag === 'function') &&
-                          (typeof window.fbq === 'function') &&
-                          window.ttq && (typeof window.ttq.track === 'function') &&
-                          (typeof window.plausible === 'function');
-              if (!ready && attempt < 30) {
-                setTimeout(function() { fire(attempt + 1); }, 200);
-                return;
-              }
-              if (typeof window.gtag === 'function') {
-                // Fire the Purchase conversion action (not Submit-lead-form) — booking-confirmed
-                // pages represent completed paid bookings, the highest-value conversion class.
+
+              if (!fired.gads && typeof window.gtag === 'function') {
+                fired.gads = true;
+                // Purchase conversion action (not Submit-lead-form) — booking-confirmed pages
+                // represent completed paid bookings, the highest-value conversion class.
                 window.gtag('event', 'conversion', {
                   send_to: '${googleAds}/${googleAdsConversionPurchase}',
                   value: value, currency: 'EUR', transaction_id: id
@@ -491,19 +494,28 @@ export function Analytics() {
                   items: [{ item_name: type, price: value, quantity: 1 }]
                 });
               }
-              if (typeof window.fbq === 'function') {
-                window.fbq('track', 'Purchase', { value: value, currency: 'EUR', content_name: type });
-              }
-              if (window.ttq && typeof window.ttq.track === 'function') {
-                window.ttq.track('CompletePayment', { value: value, currency: 'EUR', content_type: type });
-              }
-              if (typeof window.plausible === 'function') {
+              if (!fired.plausible && typeof window.plausible === 'function') {
+                fired.plausible = true;
                 window.plausible('Booking Confirmed', {
                   props: { booking_type: type, value: value, source: document.referrer || 'direct' }
                 });
               }
+              if (!fired.fbq && typeof window.fbq === 'function') {
+                fired.fbq = true;
+                window.fbq('track', 'Purchase', { value: value, currency: 'EUR', content_name: type });
+              }
+              if (!fired.ttq && window.ttq && typeof window.ttq.track === 'function') {
+                fired.ttq = true;
+                window.ttq.track('CompletePayment', { value: value, currency: 'EUR', content_type: type });
+              }
+
+              // Keep retrying for slow-load pixels (fbq + ttq are lazyOnload, can take 3-10s)
+              // until all 4 fire or 60 attempts × 200ms = 12s cap.
+              if ((!fired.gads || !fired.fbq || !fired.ttq || !fired.plausible) && attempt < 60) {
+                setTimeout(function() { tryFire(attempt + 1); }, 200);
+              }
             }
-            fire();
+            tryFire();
           })();
         `}
       </Script>
