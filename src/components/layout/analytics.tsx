@@ -445,6 +445,67 @@ export function Analytics() {
         `}
       </Script>
 
+      {/* Booking-confirmed conversion firing (server-rendered script — fires on hydration).
+          Replaces the prior useEffect-based approach in
+          src/app/{nl/boeking-bevestigd, en/booking-confirmed}/page.tsx which silently
+          did NOT fire under Next.js 16 page-level "use client" hydration semantics
+          (verified via Chrome MCP 2026-05-16: dataLayer stayed at length 10 + 0
+          conversion events 20s after navigation despite identical bundle code).
+          Same retry-pattern as the other afterInteractive scripts above — verified
+          firing reliably in the same dataLayer the operator can see in pagead2 ccm/collect. */}
+      <Script id="booking-confirmed-conversion" strategy="afterInteractive">
+        {`
+          (function() {
+            var p = window.location.pathname;
+            if (p !== '/nl/boeking-bevestigd' && p !== '/en/booking-confirmed') return;
+            if (window.__scBookingFired) return;
+            window.__scBookingFired = true;
+
+            var params = new URLSearchParams(window.location.search);
+            var type = params.get('type') || 'generic';
+            var value = Number(params.get('value') || '12') || 12;
+            var id = params.get('id') || ('bk-' + Date.now());
+
+            function fire(attempt) {
+              attempt = attempt || 0;
+              var ready = (typeof window.gtag === 'function') &&
+                          (typeof window.fbq === 'function') &&
+                          window.ttq && (typeof window.ttq.track === 'function') &&
+                          (typeof window.plausible === 'function');
+              if (!ready && attempt < 30) {
+                setTimeout(function() { fire(attempt + 1); }, 200);
+                return;
+              }
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                  send_to: '${googleAds}/${googleAdsConversion}',
+                  value: value, currency: 'EUR', transaction_id: id
+                });
+                window.gtag('event', 'Book_appointment_1', {
+                  value: value, currency: 'EUR', booking_type: type, completion: true
+                });
+                window.gtag('event', 'purchase', {
+                  transaction_id: id, value: value, currency: 'EUR',
+                  items: [{ item_name: type, price: value, quantity: 1 }]
+                });
+              }
+              if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Purchase', { value: value, currency: 'EUR', content_name: type });
+              }
+              if (window.ttq && typeof window.ttq.track === 'function') {
+                window.ttq.track('CompletePayment', { value: value, currency: 'EUR', content_type: type });
+              }
+              if (typeof window.plausible === 'function') {
+                window.plausible('Booking Confirmed', {
+                  props: { booking_type: type, value: value, source: document.referrer || 'direct' }
+                });
+              }
+            }
+            fire();
+          })();
+        `}
+      </Script>
+
       {/* TikTok Pixel — only loads when pixel ID is configured */}
       {tiktokPixel && (
         <Script id="tiktok-pixel" strategy="lazyOnload">
