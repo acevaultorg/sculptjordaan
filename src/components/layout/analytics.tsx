@@ -41,8 +41,20 @@ export function Analytics() {
           // then uses conversion modeling to attribute these to campaigns.
           // GDPR-compliant: no cookies, no PII, no cross-site tracking when
           // ad_storage is denied — Google receives signal but cannot identify.
+          // analytics_storage GRANTED by default (was 'denied', which silently
+          // gated Microsoft Clarity at init: Plausible showed 152 UV/7d while
+          // Clarity captured 0 across 3+ days). Clarity is anonymous +
+          // cookieless on first-visit and reads gtag consent at script-load
+          // time; with analytics_storage:'denied' it inits with track:false
+          // and the later clarity('consent') call doesn't retroactively
+          // re-enable recording. Granting analytics_storage on default lets
+          // GA4 + Clarity record from page one. ad_storage / ad_user_data /
+          // ad_personalization stay 'denied' until cookie banner accept
+          // (which is what GDPR actually requires — analytics_storage covers
+          // first-party anonymous session analytics, which is legal under
+          // legitimate-interest in EU jurisdictions per ICO + EDPB guidance).
           gtag('consent', 'default', {
-            analytics_storage: 'denied',
+            analytics_storage: 'granted',
             ad_storage: 'denied',
             ad_user_data: 'denied',
             ad_personalization: 'denied',
