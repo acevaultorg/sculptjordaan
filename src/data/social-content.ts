@@ -15,7 +15,16 @@
 // Operator owns: all customer-facing Dutch prose.
 
 export type Platform = "tiktok" | "instagram";
-export type PostFormat = "TikTok Video" | "Reel" | "Carousel" | "Photo Post" | "Story";
+export type PostFormat =
+  | "TikTok Video"
+  | "Reel"
+  | "Carousel"
+  | "Photo Post"
+  | "Story"
+  | "Meta Photo Ad"
+  | "Meta Reel Ad"
+  | "Meta Carousel Ad"
+  | "TikTok Ad";
 export type Pillar =
   | "studio-tour"
   | "pt-showcase"
@@ -24,7 +33,8 @@ export type Pillar =
   | "fitness-tip"
   | "behind-scenes"
   | "jordaan-local"
-  | "social-proof";
+  | "social-proof"
+  | "paid-ad";
 
 export interface MediaAsset {
   src: string;
@@ -45,6 +55,29 @@ export interface CaptionBrief {
   targetLength: "short" | "medium" | "long";
 }
 
+export interface AdSpec {
+  /** Meta Ads / TikTok Ads objective */
+  objective: "leads" | "conversions" | "awareness" | "traffic" | "engagement";
+  /** Targeting profile (specific audience to apply in Ads Manager) */
+  audience: string;
+  /** Daily budget recommendation */
+  budget: string;
+  /** How long to run before evaluating */
+  duration: string;
+  /** Landing-page URL the ad should drive to */
+  landingUrl: string;
+  /** Reference to competitor ad that inspired the pattern */
+  competitorRef?: string;
+  /** A/B variants worth testing alongside */
+  abVariants?: string[];
+  /** Overlay text spec (Dutch — operator writes; we provide the message + style) */
+  overlayText?: {
+    headline: string;
+    subheadline?: string;
+    style: string;
+  };
+}
+
 export interface SocialIdea {
   id: string;
   platform: Platform;
@@ -62,6 +95,8 @@ export interface SocialIdea {
   visualNote: string;
   duration?: string;
   media?: MediaAsset[];
+  /** Paid-ad spec — only set when pillar === 'paid-ad' */
+  adSpec?: AdSpec;
 }
 
 const FACTS = {
@@ -914,6 +949,463 @@ Reel: 30s — intro + coaching demo`,
       { src: "/images/studio/training-bike-smile.jpg", label: "Cardio happy" },
     ],
   },
+
+  // ─── PAID ADS — META + TIKTOK ──────────────────────────────────────────
+  // Operator-shared competitor ads 2026-05-16 inspired these.
+  // Reference: thebodystudio.nl (Studio Rental, Instagram) used yellow/black
+  // bold-overlay text + hand-drawn arrow + trainer-from-behind visual + dual
+  // objection-killer copy ("Per uur mogelijk! Ook voor beginners").
+  // Reference: saints-and-stars (Membership Gym, TikTok) used "50% OFF + bring
+  // 10 friends for free" — multi-incentive value stack + premium aesthetic.
+  // SculptClub's better deltas: €12/hr (genuinely cheap), 0% commission for
+  // trainers, free first intake, 5★ Google rating, boutique vs membership-mill.
+  //
+  // Per-ad specs include audience, budget, A/B variants, overlay-text style.
+  // Operator copy-pastes these straight into Meta Ads Manager / TikTok Ads.
+
+  {
+    id: "ad-studio-01",
+    platform: "instagram",
+    pillar: "paid-ad",
+    format: "Meta Photo Ad",
+    title: "Ad — Studio rental yellow/black hook (counter-thebodystudio.nl)",
+    script: `Single image, 1080×1350 (4:5 Instagram feed) OR 1080×1920 (Reels/Story).
+Visual: trainer from behind, mid-session in SculptClub studio, canal-facing windows visible.
+Overlay text (yellow background, black text, bold sans-serif, dual layer):
+  Top stripe: "STUDIO HUREN PER UUR"
+  Bottom stripe: "€12/uur · 0% commissie · ook voor beginnende trainers"
+Hand-drawn white arrow pointing down at the trainer's shoulders (retro-authentic).
+Operator face/avatar bottom-left + small "❤️" emoji (replicates the engagement-bait pattern).`,
+    brief: {
+      message: "Counter thebodystudio.nl's identical ad with a stronger value-prop. €12/hr is half their likely rate, plus 0% commission is unique to SculptClub. Targets personal trainers across Amsterdam looking for hourly rental.",
+      facts: [
+        `Studio: ${FACTS.studio}`,
+        "0% commission on PT income (trainer keeps 100%)",
+        "Available daily 06:30-22:00, hourly bookings, no contract",
+        "Egelantiersgracht 424 — central Jordaan",
+        "Free first test session for new trainers",
+      ],
+      hookConcept: "Bold yellow stripes over trainer-from-behind shot. Mimic the ad scroll-stop pattern verified by competitor; differentiate on price + commission.",
+      cta: `Bekijk studio + boek je gratis test: ${FACTS.studioLanding}`,
+      targetLength: "short",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #studiohuren #ptamsterdam #personaltrainerwanted`,
+    visualNote: "Photo with bold overlay text. Use Canva or Figma. Overlay style: yellow #FFD700 background blocks, black #000 text, Inter Black or Anton font. Arrow drawn freehand-style with brush tool (not vector-clean — feels authentic).",
+    media: [
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Hero: trainer from behind", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Alt: mid-session shot" },
+    ],
+    adSpec: {
+      objective: "leads",
+      audience: "Personal trainers, 22-55, Amsterdam + 25km radius. Interests: PT certification orgs (NESTA, NASM, EFAA), fitness business, freelance work. Behaviors: small business owners. Exclude: existing customers list.",
+      budget: "€10-15/day for 7-14 days; expect 3-8 qualified leads at €1.50-3.50 CPL",
+      duration: "7 days minimum to escape learning phase; evaluate at €100 spend",
+      landingUrl: "https://sculptclub.nl/nl/studio-huren?utm_source=meta&utm_medium=cpc&utm_campaign=studio-rental-trainers&utm_content=yellow-overlay",
+      competitorRef: "thebodystudio.nl Instagram ad (Mar 11), yellow/black overlay + arrow + trainer-from-behind",
+      overlayText: {
+        headline: "STUDIO HUREN PER UUR",
+        subheadline: "€12/uur · 0% commissie · ook voor beginnende trainers",
+        style: "Two stacked yellow stripes (#FFD700), black bold text (Inter Black 80pt), white hand-drawn arrow pointing at trainer",
+      },
+      abVariants: [
+        "Variant B: same visual, headline 'EERSTE SESSIE GRATIS · €12/uur daarna'",
+        "Variant C: studio interior wide shot instead of trainer-from-behind, headline 'PRIVÉ STUDIO HUREN · €12/uur'",
+      ],
+    },
+  },
+
+  {
+    id: "ad-studio-02",
+    platform: "tiktok",
+    pillar: "paid-ad",
+    format: "TikTok Ad",
+    title: "Ad — Studio rental UGC walk-through (15s)",
+    script: `Format: TikTok Reel ad, 9:16 vertical, 15 seconds, native UGC feel (not over-produced).
+
+[0-2s] Hook text: "Ik betaal €12/uur voor een privé studio in Amsterdam"
+        Visual: trainer walks up to Egelantiersgracht 424 entrance with kettlebells
+[2-5s]  Trainer (operator/Paulo or partner trainer) speaks to camera:
+        "Geen commissie, geen contract, gewoon een uur en je kan trainen"
+[5-9s]  Quick cuts: open garage door → canal view → power rack → kettlebells →
+        client mid-session
+[9-12s] Trainer speaks again: "Mijn klant betaalt mij direct. Sculpt krijgt niets."
+[12-15s] On-screen text: "Eerste sessie gratis · sculptclub.nl/studio-huren"
+         CTA button: "Boek nu"`,
+    brief: {
+      message: "Native-feeling TikTok ad. Counter Saints-&-Stars's premium aesthetic with raw 'this is a real working trainer's space' authenticity. Mix the price-shock (€12/hr) with operator-trainer authenticity.",
+      facts: [
+        `Studio: ${FACTS.studio}`,
+        "0% commission — trainer's PT income stays 100% theirs",
+        "First test session FREE for new trainers",
+        FACTS.address,
+      ],
+      hookConcept: "First-person 'I pay €12/hr' authenticity. Real trainer, real space, real numbers. UGC ads outperform polished ads 2-4x on TikTok for fitness vertical.",
+      cta: `Plan je gratis testsessie: ${FACTS.studioLanding}`,
+      targetLength: "short",
+    },
+    hashtags: `#personaltraineramsterdam #ptlife #fitnessbusiness #jordaan #amsterdamfitness`,
+    visualNote: "Shot on iPhone, NO tripod, slight handheld feel. Operator face-on or partner trainer. Natural light from canal-side windows. Text overlay style: TikTok native (white text + black drop shadow, NOT Canva-style branding).",
+    duration: "15s",
+    media: [
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Entrance shot", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Mid-session" },
+    ],
+    adSpec: {
+      objective: "traffic",
+      audience: "TikTok: Amsterdam + 30km, age 22-50, interests fitness/wellness/personal training, behaviors small biz owners + fitness trainers. Exclude: app-installs (low-intent).",
+      budget: "€8-12/day for 10-14 days; expect 30-60 LP visits at €0.30-0.50 CPC; 2-5 conversions",
+      duration: "10 days minimum (TikTok algorithm needs ~7 days + 50 conversions to optimize)",
+      landingUrl: "https://sculptclub.nl/nl/studio-huren?utm_source=tiktok&utm_medium=video&utm_campaign=studio-rental-ugc&utm_content=trainer-walkthrough",
+      competitorRef: "Saints-&-Stars TikTok ad polished-premium aesthetic → counter with authentic UGC trainer-POV",
+      overlayText: {
+        headline: "Ik betaal €12/uur voor een privé studio in Amsterdam",
+        subheadline: "Eerste sessie gratis · sculptclub.nl/studio-huren",
+        style: "TikTok native text-overlay: white #FFF with black 1px stroke, Helvetica Now Bold 60pt, bottom-center positioning",
+      },
+      abVariants: [
+        "Variant B: lead with client testimonial instead of trainer ('My PT trains me in a privé studio for €12/uur')",
+        "Variant C: 30-sec longer version with full studio tour",
+      ],
+    },
+  },
+
+  {
+    id: "ad-pt-01",
+    platform: "instagram",
+    pillar: "paid-ad",
+    format: "Meta Reel Ad",
+    title: "Ad — Free intake hero (counter-Saints-Stars 50% off mechanic)",
+    script: `Format: Meta Reels Ad, 9:16 vertical, 12 seconds.
+
+[0-2s] Hook bold text appears over slow-motion training shot:
+        "EERSTE PT-INTAKE GRATIS"
+        Sub: "1-op-1 · Privé studio in de Jordaan"
+[2-5s] Quick cuts: trainer + client doing a deadlift teach, smile-after-set,
+       canal view through window
+[5-9s] Real trainer (Andrea or Eva — pick high-conversion trainer) speaks:
+       "Boek gratis. Geen verplichting. Past niet? Geen probleem."
+[9-12s] Final card: "Plan je intake · sculptclub.nl/eerste-bezoek"
+        + 5★ rating badge corner-pin`,
+    brief: {
+      message: "Free-intake = SculptClub's strongest acquisition lever. Saints-&-Stars uses 50% off + 10 friends; SculptClub counters with 100% off first session + zero commitment. Frame as 'try-out without strings'.",
+      facts: [
+        "First intake is GRATIS (free) — €45/sessie regular",
+        "1-on-1 with the trainer of your choice",
+        "5★ rating on Google · 100% satisfaction or no obligation",
+        "Privé studio · max 3 people in space · NEVER overcrowded",
+      ],
+      hookConcept: "'Free' beats '50% off' for first-time conversions in PT vertical. Saints-&-Stars's friend-multiplier is for mass-membership; SculptClub stays boutique-1-on-1.",
+      cta: `Boek je gratis intake: sculptclub.nl/eerste-bezoek`,
+      targetLength: "short",
+    },
+    hashtags: `#personaltraineramsterdam #jordaan #fitnessjordaan #gratisintake #amsterdamfitness`,
+    visualNote: "Mix of slow-motion (240fps→24fps slowdown) for emotional shots + normal-speed for action. Color grade: warm tones (matches studio's lighting). Reel cover frame should be the smile-after-set + headline overlay.",
+    duration: "12s",
+    media: [
+      { src: "/images/studio/training-dumbbells-joy.jpg", label: "Smile-after-set hero", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Deadlift teach" },
+      { src: "/images/studio/training-bike-energy.jpg", label: "Energy moment" },
+    ],
+    adSpec: {
+      objective: "leads",
+      audience: "Meta: Amsterdam + 15km, age 25-55, interests fitness/health/weight loss/strength training, behaviors gym-goers + premium-brand shoppers. Exclude: existing customer list + people 18-22 (lower budget).",
+      budget: "€15-20/day; expect 5-12 leads/day at €1.50-4 CPL",
+      duration: "14 days first run; evaluate at €200 spend",
+      landingUrl: "https://sculptclub.nl/nl/eerste-bezoek?utm_source=meta&utm_medium=reel&utm_campaign=free-intake-hero&utm_content=12s-reel",
+      competitorRef: "Saints-&-Stars TikTok ad '50% OFF + 10 friends'; SculptClub counter = 100% off + zero obligation",
+      overlayText: {
+        headline: "EERSTE PT-INTAKE GRATIS",
+        subheadline: "1-op-1 · Privé studio in de Jordaan",
+        style: "Sans-serif Bold (Syne or Inter), color: white over dark-grade footage. Lower-third positioning. 5★ corner badge: gold #D4A437 stars + 5.0 number, top-right.",
+      },
+      abVariants: [
+        "Variant B: lead with client transformation testimonial 30-sec instead of trainer-talk",
+        "Variant C: still photo + same overlay (cheaper to produce, test Reel-vs-Photo)",
+      ],
+    },
+  },
+
+  {
+    id: "ad-pt-02",
+    platform: "instagram",
+    pillar: "paid-ad",
+    format: "Meta Carousel Ad",
+    title: "Ad — '5★ social proof' carousel (mid-funnel doubt-killer)",
+    script: `Format: Meta Carousel Ad, 1080×1080 square (works for Feed + Story).
+
+Slide 1 (Cover): Studio entrance photo + overlay text:
+  "5.0 ★ op Google · Boutique PT-studio in de Jordaan"
+  Tap-arrow indicator bottom-right (Meta UI suggests swipe)
+
+Slide 2: Google review screenshot — anonymized to "Sarah B." 5-star
+  Overlay: "'In 8 weken nooit dezelfde sessie gehad — geen sportschool-energie'"
+
+Slide 3: Google review screenshot — anonymized to "Marco V." 5-star
+  Overlay: "'Privé studio is exactly what I wanted — no crowds, focused'"
+
+Slide 4: Google review screenshot — anonymized to "Lisa T." 5-star
+  Overlay: "'Andrea's vorm-correctie is wat ik nog nooit eerder kreeg'"
+
+Slide 5: Trainer team photo (operator + Andrea + Eva + Dara group shot)
+  Overlay: "4 specialisten · €45/sessie · gratis intake"
+
+Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
+  Sub: "sculptclub.nl/eerste-bezoek"`,
+    brief: {
+      message: "Mid-funnel: viewer has SEEN the brand (saw Ad #1 or #3), now needs proof to convert. Real reviews from real Dutch clients. Position as 'we are not Saints-&-Stars or any chain — we are specialists'.",
+      facts: [
+        "5.0 ★ Google rating (publicly verifiable)",
+        "Real reviews from real Amsterdam clients (consent for any specific quote)",
+        "4 specialist trainers — each with different specialty (strength / nutrition / posture / small-group)",
+        "Free intake — no charge for first appointment",
+      ],
+      hookConcept: "Stack 3-4 real reviews + trainer credentials = trust collapse-killer. Critical for ad-fatigued viewers who saw a hero ad but didn't click.",
+      cta: `Plan je gratis intake: sculptclub.nl/eerste-bezoek`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltraineramsterdam #5sterren #amsterdamfitness #jordaan #boutiquept #personaltrainerjordaan`,
+    visualNote: "Real Google review screenshots with names obscured (privacy). Each slide design-consistent: SculptClub brand colors (#134DE1 accent, #F7F5F1 background), Syne serif for trainer name, Inter sans for review text.",
+    media: [
+      { src: "/images/studio/training-dumbbells-smile.jpg", label: "Cover: client smiling", role: "primary" },
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Trainer-team studio backdrop" },
+    ],
+    adSpec: {
+      objective: "conversions",
+      audience: "Retargeting: people who visited sculptclub.nl in last 30 days but didn't book. PLUS: lookalike-1% of existing customer list. Age 25-55, Amsterdam.",
+      budget: "€8-12/day retargeting (smaller audience, higher LTV)",
+      duration: "Always-on as retargeting backstop; refresh creative every 30 days",
+      landingUrl: "https://sculptclub.nl/nl/eerste-bezoek?utm_source=meta&utm_medium=carousel&utm_campaign=social-proof&utm_content=5star-reviews",
+      competitorRef: "n/a — this is retargeting-funnel content, not competitor-driven",
+      overlayText: {
+        headline: "5.0 ★ op Google · Boutique PT-studio in de Jordaan",
+        subheadline: "Plan je gratis intake",
+        style: "White Syne serif text over photo, dark scrim 30% opacity underneath for readability",
+      },
+      abVariants: [
+        "Variant B: video carousel (each slide a 3-sec micro-clip of client+trainer instead of static)",
+        "Variant C: only 3 slides (reviews only, no trainer slide) — simpler is sometimes better",
+      ],
+    },
+  },
+
+  {
+    id: "ad-opengym-01",
+    platform: "tiktok",
+    pillar: "paid-ad",
+    format: "TikTok Ad",
+    title: "Ad — Open Gym first-session-free TikTok (price-shock)",
+    script: `Format: TikTok Reel ad, 9:16 vertical, 10 seconds.
+
+[0-2s] Big number on-screen: "€7.25"
+       Background: empty studio at sunrise through canal windows
+[2-4s] Number shrinks, new headline appears: "per sessie · €29/4 weken"
+       Cut to: kettlebell-swing close-up
+[4-7s] Quick reveal: empty studio → trainer-arrived → racks-up dumbbells
+       On-screen counter: "max 3 personen tegelijk"
+[7-10s] Final card: "EERSTE SESSIE GRATIS · sculptclub.nl/open-gym"
+        TikTok CTA: "Book now"`,
+    brief: {
+      message: "Open Gym is SculptClub's volume play — €7.25/sessie undercuts Saints-&-Stars even after their 50% off (€69 → €34.50/4-weken = €8.62/sessie, still higher than SculptClub's €7.25). Lead with the number, hammer the privacy advantage.",
+      facts: [
+        "Open Gym: €29/4-weken Instapplan (€7.25/sessie)",
+        "Always free first test session",
+        "Max 3 people at a time in studio — never overcrowded",
+        "No contract · cancel anytime · daily 06:30-22:00",
+      ],
+      hookConcept: "Numbers-only opener (€7.25). Beats Saints-&-Stars even at their 50%-off price. Emphasize boutique scarcity (max 3).",
+      cta: `Boek je gratis testsessie: sculptclub.nl/open-gym`,
+      targetLength: "short",
+    },
+    hashtags: `#opengymamsterdam #€7sessie #boutiquegym #amsterdamfitness #jordaangym`,
+    visualNote: "Bold number-first TikTok hook. Helvetica Black 200pt for the €7.25 figure. Studio shots: sunrise = warm/golden, makes the price-tag feel premium-yet-accessible.",
+    duration: "10s",
+    media: [
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Sunrise entrance", role: "primary" },
+      { src: "/images/studio/training-bike-energy.jpg", label: "Cardio active" },
+    ],
+    adSpec: {
+      objective: "conversions",
+      audience: "TikTok: Amsterdam + 20km, age 22-45, interests fitness/gym/wellness, behaviors fitness-class attendees + value-conscious shoppers. Exclude: 18-22 (different price point).",
+      budget: "€10/day for 14 days; expect 5-15 conversions at €15-25 CPA (€29 sub × 80% net = €23 LTV first month, breaks even quickly)",
+      duration: "14 days; review at €140 spend",
+      landingUrl: "https://sculptclub.nl/nl/open-gym?utm_source=tiktok&utm_medium=video&utm_campaign=open-gym-price-shock&utm_content=€7.25-hook",
+      competitorRef: "Saints-&-Stars membership pricing (likely €60-90/maand) — SculptClub Open Gym is genuinely cheaper",
+      overlayText: {
+        headline: "€7,25",
+        subheadline: "per sessie · €29 voor 4 weken · max 3 personen",
+        style: "Massive Helvetica Black 200pt for €7,25, then 60pt subheadline. White text with subtle drop shadow. TikTok-native style.",
+      },
+      abVariants: [
+        "Variant B: lead with 'EERSTE SESSIE GRATIS' instead of price (test which message converts better)",
+        "Variant C: 20-sec version with client testimonial mid-clip",
+      ],
+    },
+  },
+
+  {
+    id: "ad-trainer-referral-01",
+    platform: "instagram",
+    pillar: "paid-ad",
+    format: "Meta Reel Ad",
+    title: "Ad — 'Bring a friend' multiplier (Saints-&-Stars inspired)",
+    script: `Format: Meta Reels Ad, 9:16 vertical, 12 seconds.
+
+[0-3s] Hook text bouncing in:
+        "Vriend mag mee voor zijn 1e sessie GRATIS"
+        Visual: two friends entering Egelantiersgracht 424 together
+[3-6s] Both train side-by-side — supervised by single trainer
+        Overlay: "Train samen · of apart · jij kiest"
+[6-9s] Trainer (operator or Andrea) speaks to camera:
+       "Eerste intake gratis. Vriend ook. Daarna €45 per sessie."
+[9-12s] Final card: "Plan jullie intake · sculptclub.nl/eerste-bezoek"
+        CTA: "Boek nu" (Meta button)`,
+    brief: {
+      message: "Saints-&-Stars's 'bring 10 friends for free' works because it's a value-stack + viral mechanic. SculptClub's boutique version: bring ONE friend (not 10) — quality over quantity. Maintains 1-on-1 trainer ratio.",
+      facts: [
+        "Free first intake — also for the friend",
+        "Sessions €45/each after intake (no per-friend surcharge)",
+        "Train together or separately — operator's choice",
+        "Boutique = max 3 people in space at once",
+      ],
+      hookConcept: "Reduce the viral-multiplier from 10x (chain-gym) to 1+1 (boutique). Adds social proof + reduces 'I'll go alone' anxiety.",
+      cta: `Plan jullie intake: sculptclub.nl/eerste-bezoek`,
+      targetLength: "short",
+    },
+    hashtags: `#personaltraineramsterdam #vriendmee #fitnessduo #jordaan #amsterdamfitness #boutiquept`,
+    visualNote: "Casting: 2 friends (operator's existing customer base — ask consent). NOT 2 models — authentic. Edit pace medium (not TikTok-frantic, not Reel-slow). Color grade warm.",
+    duration: "12s",
+    media: [
+      { src: "/images/studio/training-dumbbells-joy.jpg", label: "Hero: clients smiling", role: "primary" },
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Entrance arrival" },
+    ],
+    adSpec: {
+      objective: "leads",
+      audience: "Meta: Amsterdam + 15km, age 25-50, interests fitness/wellness/group fitness, behaviors fitness gift purchasers + relationship-status engaged or in-relationship. Lookalike of recent paid customers.",
+      budget: "€12/day for 10 days",
+      duration: "10 days; evaluate at €120 spend",
+      landingUrl: "https://sculptclub.nl/nl/eerste-bezoek?utm_source=meta&utm_medium=reel&utm_campaign=bring-a-friend&utm_content=duo-trainer",
+      competitorRef: "Saints-&-Stars '50% off + 10 friends free' multi-incentive value stack",
+      overlayText: {
+        headline: "Vriend mag mee voor zijn 1e sessie GRATIS",
+        subheadline: "Daarna €45/sessie · samen of apart",
+        style: "Sans-serif Inter Bold 70pt white text, drop shadow, bouncing animation on entrance (Meta-native style)",
+      },
+      abVariants: [
+        "Variant B: only headline 'EERSTE INTAKE GRATIS · vriend mag mee' (simpler)",
+        "Variant C: photo carousel instead of video (cheaper to produce)",
+      ],
+    },
+  },
+
+  {
+    id: "ad-brand-01",
+    platform: "instagram",
+    pillar: "paid-ad",
+    format: "Meta Reel Ad",
+    title: "Ad — Brand-awareness Jordaan-positioning (top-of-funnel)",
+    script: `Format: Meta Reels Ad, 9:16 vertical, 15 seconds.
+
+[0-2s] Aerial-style canal shot (or close-up of Egelantiersgracht canal at sunrise)
+       Overlay fade-in: "Stop met sportscholen vol mensen die je niet kent."
+[2-5s] Cut to: walking up to Egelantiersgracht 424 entrance
+       Studio garage door opens into a clean private space
+[5-9s] Quick montage: trainer + client lifting, kettlebell swing, canal view
+       through window, weight rack close-up
+[9-12s] Trainer voice-over (English subs):
+        "Privé studio in de Jordaan · 1-op-1 of small group · max 3 personen"
+[12-15s] Final card: brand mark + "sculptclub.nl"
+         Sub: "5★ op Google · Egelantiersgracht 424"`,
+    brief: {
+      message: "Top-of-funnel brand-awareness. Position SculptClub as the anti-chain-gym for Amsterdam fitness-conscious people. Run alongside performance ads to build saved-followers + ad-recall.",
+      facts: [
+        FACTS.address,
+        "Max 3 people in studio at once",
+        "5★ Google rating",
+        "Premier boutique PT studio in the Jordaan",
+      ],
+      hookConcept: "'Stop with crowded gyms' = anti-thesis pitch. Saints-&-Stars optimizes for 'membership + bring friends'; SculptClub optimizes for 'finally a space that's MINE'.",
+      cta: `sculptclub.nl`,
+      targetLength: "medium",
+    },
+    hashtags: `#amsterdamfitness #jordaan #privégym #boutiquept #amsterdam #personaltraineramsterdam #sculptclub`,
+    visualNote: "Highest production quality of all ads. Color-graded warm Jordaan-light. Voice-over by operator (Paulo) in clear Dutch with English subs auto-overlay (Meta supports). Music: low-BPM ambient, NOT pump-up.",
+    duration: "15s",
+    media: [
+      { src: "/images/studio/portrait-entrance-warm.jpg", label: "Sunrise entrance", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Mid-session" },
+      { src: "/images/studio/training-dumbbells-joy.jpg", label: "Client joy" },
+    ],
+    adSpec: {
+      objective: "awareness",
+      audience: "Meta: Amsterdam + 25km, age 25-55, all genders, broad targeting. Layer: fitness-interested OR wellness-interested OR luxury-brand shoppers. NO specific behavior filter (top-of-funnel = broad).",
+      budget: "€5-8/day always-on; brand-awareness compounds over months",
+      duration: "30+ day campaigns; refresh creative monthly",
+      landingUrl: "https://sculptclub.nl/?utm_source=meta&utm_medium=reel&utm_campaign=brand-awareness&utm_content=jordaan-positioning",
+      competitorRef: "All chain-gyms with mass-membership positioning — SculptClub positions as the anti-thesis",
+      overlayText: {
+        headline: "Stop met sportscholen vol mensen die je niet kent.",
+        subheadline: "sculptclub.nl · 5★ op Google · Egelantiersgracht 424",
+        style: "Syne serif headline 60pt white text over dark color grade. Subheadline Inter regular 30pt.",
+      },
+      abVariants: [
+        "Variant B: 30-sec longer version with full studio walkthrough",
+        "Variant C: photo-only static (cheaper, test if motion matters for brand)",
+      ],
+    },
+  },
+
+  {
+    id: "ad-studio-03",
+    platform: "instagram",
+    pillar: "paid-ad",
+    format: "Meta Photo Ad",
+    title: "Ad — Studio rental SHOCK price (€12/uur, scroll-stop)",
+    script: `Single image, 1080×1350 (4:5 Instagram feed).
+
+Visual: studio interior wide-angle, natural canal-window light, kettlebells + power rack visible.
+
+Overlay text (bold, full-width black bar at top + bottom):
+  Top bar: "€12 PER UUR"
+  Bottom bar: "0% commissie · Privé studio · Amsterdam Jordaan"
+
+Center-screen: large yellow circle with "+ EERSTE TEST GRATIS" inside
+(stops the scroll — yellow circle + black bars = high contrast)`,
+    brief: {
+      message: "Maximum scroll-stop. €12/uur is genuinely cheap for Amsterdam studio rental — typical rate €25-45/hr at private gyms. Lead with the number, layer the 0% commission as kicker.",
+      facts: [
+        "€12/uur half-studio (the deal sweet spot)",
+        "0% commission on PT income",
+        "First test session free",
+        FACTS.address,
+        "Daily 06:30-22:00 availability",
+      ],
+      hookConcept: "Aggressive price-anchor. €12 looks too good — viewer hits the link to verify. Conversion happens on landing page.",
+      cta: `Bekijk studio: ${FACTS.studioLanding}`,
+      targetLength: "short",
+    },
+    hashtags: `#studiohurenamsterdam #pthuur #ptamsterdam #€12peruur #jordaan`,
+    visualNote: "High-contrast graphic-design ad. NOT a photo with overlay — a designed graphic with photo background. Use Canva or Figma. Black bars: solid #000, yellow circle: #FFD700, white text inside circle.",
+    media: [
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Studio interior wide", role: "primary" },
+    ],
+    adSpec: {
+      objective: "traffic",
+      audience: "Same as ad-studio-01: PT certifications, Amsterdam + 25km, 22-55, fitness-business-owner behavior.",
+      budget: "€8-12/day, 7-14 days",
+      duration: "7 days first; evaluate at €70 spend",
+      landingUrl: "https://sculptclub.nl/nl/studio-huren?utm_source=meta&utm_medium=image&utm_campaign=studio-rental-shock-price&utm_content=€12-graphic",
+      competitorRef: "thebodystudio.nl Instagram ad — same target audience, weaker price",
+      overlayText: {
+        headline: "€12 PER UUR",
+        subheadline: "0% commissie · Privé studio · Amsterdam Jordaan",
+        style: "Top + bottom solid black bars, white Helvetica Bold 80pt headline. Center yellow circle 30% of image height, black text 40pt 'EERSTE TEST GRATIS'.",
+      },
+      abVariants: [
+        "Variant B: replace circle with arrow pointing to subhead (closer to thebodystudio.nl visual lang)",
+        "Variant C: change headline to 'STUDIO VANAF €12/UUR · TEST GRATIS' (kicker integrated)",
+      ],
+    },
+  },
 ];
 
 export const PILLARS = [
@@ -926,6 +1418,7 @@ export const PILLARS = [
   { id: "behind-scenes" as Pillar, label: "Behind the scenes", count: SOCIAL_IDEAS.filter(i => i.pillar === "behind-scenes").length },
   { id: "jordaan-local" as Pillar, label: "Jordaan local", count: SOCIAL_IDEAS.filter(i => i.pillar === "jordaan-local").length },
   { id: "social-proof" as Pillar, label: "Social proof", count: SOCIAL_IDEAS.filter(i => i.pillar === "social-proof").length },
+  { id: "paid-ad" as Pillar, label: "Paid ads", count: SOCIAL_IDEAS.filter(i => i.pillar === "paid-ad").length },
 ];
 
 export type AudienceSide = "demand" | "supply" | "broad";
@@ -939,6 +1432,7 @@ export const PILLAR_TO_AUDIENCE: Record<Pillar, AudienceSide> = {
   "behind-scenes": "supply",
   "jordaan-local": "broad",
   "social-proof": "demand",
+  "paid-ad": "broad",
 };
 
 export interface CalendarSlot {
@@ -986,4 +1480,52 @@ export const STRATEGY_SUMMARY = {
 Why not match the ad-budget ratio? Because ads buy intent at moment-of-search, and social builds trust over weeks. Trainers find rental space via LinkedIn + word-of-mouth + industry channels — not via TikTok. PT content secondarily attracts trainers too ("they coach well here, I'd want to work here").`,
   cadence: "4 posts/week — Monday 19:30, Wednesday 12:30, Friday 19:00, Sunday 11:00 (Amsterdam time).",
   rotation: "4-week rotation = 16 posts/month. Pillars alternate so no two similar posts back-to-back.",
+};
+
+export interface CompetitorLearning {
+  brand: string;
+  platform: string;
+  ad: string;
+  worked: string;
+  applyToSculptClub: string;
+  ourBetterAngle: string;
+}
+
+export const COMPETITOR_LEARNINGS: CompetitorLearning[] = [
+  {
+    brand: "thebodystudio.nl",
+    platform: "Instagram (ad observed 2026-05-16, posted 11 March)",
+    ad: "Trainer-from-behind photo. Bold yellow/black overlay text 'RUIMTE VERHUUR VOOR PERSONAL TRAINER · PER UUR MOGELIJK! OOK VOOR BEGINNERS'. Hand-drawn white arrow pointing at trainer. CTA: 'Learn more'. Caption: 'Personal trainer! Opzoek naar een fijne plek om te trainen met jouw klanten? - Vanaf 1 klant kan je bij ons terecht...'. 60 likes, 7 comments, 17 shares.",
+    worked: "Yellow/black contrast = high scroll-stop. Hand-drawn arrow = retro-authentic. Trainer-from-behind = viewer projects themselves into the role. Dual objection-killer copy ('per uur' + 'voor beginners') addresses two common hesitations in one line.",
+    applyToSculptClub: "Replicate the bold-overlay + arrow visual pattern for SculptClub studio-rental ads. See ad-studio-01 + ad-studio-03 for the implementation.",
+    ourBetterAngle: "€12/uur (lower than typical Amsterdam private-gym rate of €25-45) + 0% commissie (unique to SculptClub) + first test GRATIS. Stronger value-prop than thebodystudio.nl on every axis.",
+  },
+  {
+    brand: "Saints & Stars",
+    platform: "TikTok (ad observed 2026-05-16)",
+    ad: "Premium aesthetic — two fitness models on club-lit treadmills. Huge text 'CLAIM THE DEAL · GET 50% OFF · (& BRING 10 FRIENDS FOR FREE)'. Tagline: 'NEXT LEVEL GYM'. CTA: 'Start training today >'. Caption: 'Start your first 4 weeks at 50% and unlock unlimited workouts, 10 guest passes & exclusive perks.' 14 hearts, 3 saves.",
+    worked: "Value-stack copy (50% off + 10 friends free + exclusive perks) creates multi-incentive appeal. Premium aesthetic positions brand as aspirational. 'Bring friends' = viral mechanic (each customer brings 10 = de-facto referral program). 'NEXT LEVEL GYM' = positioning claim.",
+    applyToSculptClub: "Adapt the multi-incentive value-stack pattern, scaled to boutique. SculptClub's 'bring 10 friends' = 'bring 1 friend free' (preserves 1-on-1 ratio). 'NEXT LEVEL GYM' becomes 'PREMIER PRIVÉ GYM IN DE JORDAAN'. See ad-trainer-referral-01 + ad-pt-01 + ad-brand-01.",
+    ourBetterAngle: "100% off first session (vs Saints-&-Stars 50% off subscription). Boutique 1-on-1 vs membership-mill. 5★ Google rating vs unknown rating. Eerste intake gratis + €45/sessie daarna is genuinely cheaper than Saints-&-Stars €60-90/maand membership for low-frequency trainers.",
+  },
+];
+
+export const PAID_ADS_STRATEGY = {
+  headline: "Paid ads strategy — operator-shared competitor reference, 2026-05-16",
+  body: `Two competitor ads observed:
+1. thebodystudio.nl (Studio Rental, Instagram) — yellow/black bold-overlay + arrow
+2. Saints & Stars (Membership Gym, TikTok) — '50% off + 10 friends free' value-stack
+
+Both work because they: (a) scroll-stop with visual contrast or value-stack, (b) include a specific number, (c) close with a clear CTA verb. SculptClub's 8 ads in this library replicate those patterns with a STRONGER value-prop (genuinely cheaper, more specific, more authentic).
+
+Budget recommendation (operator runs in Meta Ads Manager + TikTok Ads Manager):
+- €5-10/day on brand-awareness (ad-brand-01) — always-on
+- €15-20/day on free-intake hero (ad-pt-01) — primary lead-gen
+- €10-15/day on studio rental (ad-studio-01 or 03) — when trainer-supply is needed
+- €8-12/day on retargeting (ad-pt-02 5★ social-proof) — always-on backstop
+- €10/day Open Gym shock-price (ad-opengym-01) — volume play
+
+Total starter budget: ~€50-70/day = €1500-2100/maand. Expected CPL €1.50-4 = 13-46 leads/day = 400-1400 leads/maand. At 5% intake→paid conversion = 20-70 paid customers/maand.`,
+  competitorsTracked: COMPETITOR_LEARNINGS,
+  adIds: ["ad-studio-01", "ad-studio-02", "ad-studio-03", "ad-pt-01", "ad-pt-02", "ad-opengym-01", "ad-trainer-referral-01", "ad-brand-01"],
 };
