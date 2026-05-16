@@ -102,7 +102,7 @@ export default function AboutPage() {
           as="h1"
           overline="About SculptClub"
           title="Where disciplined ambition meets refined transformation"
-          description="SculptClub is a boutique personal training studio in the heart of Amsterdam\u2019s Jordaan. Founded in 2025 with a simple mission: to provide the best private training space in Amsterdam."
+          description="SculptClub is a boutique personal training studio in the heart of Amsterdam’s Jordaan. Founded in 2025 with a simple mission: to provide the best private training space in Amsterdam."
         />
       </Section>
 

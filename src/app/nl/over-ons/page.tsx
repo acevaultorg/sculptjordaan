@@ -102,7 +102,7 @@ export default function OverOnsPage() {
           as="h1"
           overline="Over SculptClub"
           title="Waar gedisciplineerde ambitie verfijnde transformatie ontmoet"
-          description="SculptClub is een boutique personal training studio in het hart van Amsterdam\u2019s Jordaan. Opgericht in 2025 met een simpele missie: de beste priv\u00e9 trainingsruimte van Amsterdam bieden."
+          description="SculptClub is een boutique personal training studio in het hart van Amsterdam’s Jordaan. Opgericht in 2025 met een simpele missie: de beste privé trainingsruimte van Amsterdam bieden."
         />
       </Section>
 
@@ -153,7 +153,7 @@ export default function OverOnsPage() {
         <SectionHeader
           overline="Wat wij bieden"
           title="Drie pijlers"
-          description="Personal Training, Open Gym en Studio Verhuur — alles onder \u00e9\u00e9n dak."
+          description="Personal Training, Open Gym en Studio Verhuur — alles onder één dak."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (

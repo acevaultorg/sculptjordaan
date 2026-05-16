@@ -253,7 +253,7 @@ export default function PricingPageNL() {
         <SectionHeader
           overline="Open Gym"
           title="Train Zelfstandig"
-          description="Losse sessie of lidmaatschap per 4 weken. Sessies van 60 minuten in onze priv\u00e9 studio."
+          description="Losse sessie of lidmaatschap per 4 weken. Sessies van 60 minuten in onze privé studio."
         />
 
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
@@ -329,7 +329,7 @@ export default function PricingPageNL() {
         <SectionHeader
           overline="Studio Verhuur"
           title="Huur de Studio (voor personal trainers)"
-          description="Voor freelance trainers en fysiotherapeuten. Train je klanten in een volledig uitgeruste priv\u00e9 studio. 0% commissie, flexibel per uur, kortingspakketten tot 23%."
+          description="Voor freelance trainers en fysiotherapeuten. Train je klanten in een volledig uitgeruste privé studio. 0% commissie, flexibel per uur, kortingspakketten tot 23%."
         />
 
         {/* Rate table */}
