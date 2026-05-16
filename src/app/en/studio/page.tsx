@@ -147,34 +147,45 @@ export default function StudioPageEN() {
         </div>
       </Section>
 
+      {/* Dual-audience CTA — see NL version comment. Consumer-first primary
+          CTA + ZZP trainer rental secondary + WhatsApp tertiary. */}
       <Section bg="muted">
         <FadeIn>
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               Come see the studio
             </h2>
             <p className="text-muted-foreground mb-8">
-              Curious about the space? Book a free trial session or send us a
-              message on WhatsApp. We&apos;d love to show you around.
+              Book a free intro with one of our trainers — or, if you&apos;re a
+              personal trainer yourself, book a free studio test session.
+              WhatsApp is always open for questions.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <ButtonLink
-                href={"/en/studio-rental#schedule"}
+                href="/en/find-personal-trainer"
                 size="lg"
                 className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                Book free trial
+                Book free intro with trainer
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink
-                href={siteConfig.whatsapp}
-                external
+                href={"/en/studio-rental#schedule"}
                 variant="outline"
                 size="lg"
                 className="rounded-xl"
               >
+                Rent studio (trainers)
+              </ButtonLink>
+              <ButtonLink
+                href={siteConfig.whatsapp}
+                external
+                variant="ghost"
+                size="lg"
+                className="rounded-xl"
+              >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp us
+                WhatsApp
               </ButtonLink>
             </div>
           </div>

@@ -153,34 +153,49 @@ export default function StudioPageNL() {
         </div>
       </Section>
 
+      {/* Dual-audience CTA section — /nl/studio is reached by BOTH consumer
+          visitors (via hero secondary CTA "Bekijk de studio" from 2026-05-16)
+          AND ZZP trainers (via "Studio Huren" nav). Before 2026-05-16 the
+          bottom CTA only served the ZZP audience ("Boek gratis proefles"
+          → /studio-huren). Now consumer visitors get a primary path to
+          trainer-intake AND ZZP trainers retain the rental-trial path. */}
       <Section bg="muted">
         <FadeIn>
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
               Kom de studio bekijken
             </h2>
             <p className="text-muted-foreground mb-8">
-              Benieuwd naar de ruimte? Boek een gratis proefles of stuur ons een
-              bericht via WhatsApp. We laten je graag rondkijken.
+              Plan een gratis intake met een van onze trainers, of — als je
+              zelf personal trainer bent — boek een gratis testsessie van de
+              studio. WhatsApp blijft altijd open voor vragen.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <ButtonLink
-                href={"/nl/studio-huren#schedule"}
+                href="/nl/vind-jouw-personal-trainer"
                 size="lg"
                 className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                Boek gratis proefles
+                Plan gratis intake met trainer
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink
-                href={siteConfig.whatsapp}
-                external
+                href={"/nl/studio-huren#schedule"}
                 variant="outline"
                 size="lg"
                 className="rounded-xl"
               >
+                Studio huren (ZZP trainer)
+              </ButtonLink>
+              <ButtonLink
+                href={siteConfig.whatsapp}
+                external
+                variant="ghost"
+                size="lg"
+                className="rounded-xl"
+              >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp ons
+                WhatsApp
               </ButtonLink>
             </div>
           </div>
