@@ -97,7 +97,7 @@ export function ReviewsPreview({ locale }: { locale: Locale }) {
                       </svg>
                     </div>
                     {("badge" in review && review.badge) && (
-                      <p className="text-[10px] text-muted-foreground">⭐ {review.badge}</p>
+                      <p className="text-[11px] text-muted-foreground">⭐ {review.badge}</p>
                     )}
                   </div>
                 </div>

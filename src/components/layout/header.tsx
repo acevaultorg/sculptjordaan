@@ -202,7 +202,7 @@ export function Header() {
             {/* Nieuw hier? */}
             <Link
               href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="h-11 sm:h-9 flex items-center px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
+              className="h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
             >
               {locale === "nl" ? "Try-Out" : "Try-Out"}
             </Link>
@@ -211,7 +211,7 @@ export function Header() {
             <button
               onClick={handleBookClick}
               className={cn(
-                "h-11 sm:h-9 flex items-center gap-1.5 px-3 sm:px-4 rounded-xl text-[11px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                "h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen
                   ? "bg-brand-dark text-white"
                   : "bg-brand text-white hover:bg-brand-dark active:scale-95"

@@ -61,7 +61,15 @@ export function Hero({ locale }: { locale: Locale }) {
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
+        {/* Two-layer overlay for mobile text legibility against bright image
+            areas (sky, skin, equipment reflections). The first gradient gives
+            the top/bottom dark veil for nav + bottom CTAs. The second adds a
+            radial darkening centered on the content cluster (~50% down + 40%
+            opacity) so PRIVATE GYM headline + CTAs stay readable on ANY image
+            section. Tried text-shadow alone first — insufficient on phones in
+            full sunlight against bright torso/sky regions. */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/15 to-black/50" />
+        <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0)_55%)]" />
       </div>
 
       {/* Inner container — flex column with top cluster anchored near top

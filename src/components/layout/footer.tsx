@@ -34,13 +34,15 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="overline mb-4">{title}</h3>
-      <ul className="space-y-2.5">
+      <h3 className="overline mb-3 sm:mb-4">{title}</h3>
+      <ul className="-my-1.5 sm:space-y-2.5 sm:my-0">
         {items.map((item) => (
           <li key={item.href}>
             <Link
               href={item.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              // Mobile: py-2 gives ≥40px tap target (text-sm line-height ~20px + 16px padding)
+              // Desktop (sm+): revert to inline link with space-y-2.5 between items
+              className="block py-2 sm:py-0 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
             </Link>
@@ -91,12 +93,14 @@ export function Footer() {
                 {siteConfig.address.zip} {siteConfig.address.city}
               </p>
               <p>{t.hours}</p>
-              <div className="flex items-center gap-3 pt-1">
+              {/* Mobile: -ml-2 + p-2 on each anchor = 36×36 tap area without
+                  shifting visual icon-row layout. Desktop unchanged. */}
+              <div className="flex items-center gap-1 sm:gap-3 pt-1 -ml-2 sm:ml-0">
                 <a
                   href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -105,7 +109,7 @@ export function Footer() {
                   href={siteConfig.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="Instagram"
                 >
                   <InstagramIcon className="w-5 h-5" />
@@ -114,7 +118,7 @@ export function Footer() {
                   href={siteConfig.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="TikTok"
                 >
                   <TikTokIcon className="w-5 h-5" />
@@ -123,7 +127,7 @@ export function Footer() {
                   href={siteConfig.google}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="Google Maps"
                 >
                   <MapPin className="w-5 h-5" />
@@ -143,7 +147,7 @@ export function Footer() {
           <p>
             {siteConfig.address.street}, {siteConfig.address.city}
           </p>
-          <p className="opacity-40 text-[10px]">Powered by AcePilot</p>
+          <p className="opacity-40 text-[11px]">Powered by AcePilot</p>
         </div>
       </div>
     </footer>
