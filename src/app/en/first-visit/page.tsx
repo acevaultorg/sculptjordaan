@@ -27,6 +27,12 @@ import {
   Train,
   ParkingCircle,
   CheckCircle2,
+  Star,
+  Lock,
+  Globe,
+  Heart,
+  Sparkles,
+  Clock,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -79,20 +85,52 @@ const bringItems = [
 
 const faqs = [
   {
+    q: "What does the first time cost?",
+    a: "For Personal Training your first intake is always free — you meet your trainer, discuss your goals and (if you want) do a kick-off training right away. No commitment after. For Open Gym you can book a free 60-minute trial session. Studio rental starts at €12 per hour for half studio.",
+  },
+  {
     q: "Do I need to be fit to start?",
-    a: "Absolutely not. Our trainers work with people of every level, from complete beginners to advanced athletes. Your trainer will fully adapt the session to your current level and goals. There is no threshold — everyone is welcome.",
+    a: "No. Our trainers work with every level — complete beginners to advanced athletes. Your trainer adapts every session to your current level and goals. There is no threshold.",
+  },
+  {
+    q: "Can I come alone, or do I need to sign up somewhere?",
+    a: "No registration, no membership, no contract. You book your session and arrive at the agreed time. The studio is fully private during your session — no strangers, no waiting for equipment, no one watching.",
+  },
+  {
+    q: "I don't speak Dutch — is that okay?",
+    a: "Yes. Our trainers speak NL and EN, some also Portuguese or Russian. You can filter trainers by language on the trainer page. The entire site is available in English too.",
+  },
+  {
+    q: "What equipment is available?",
+    a: "A fully equipped private studio: Rogue power rack, barbell with plates, dumbbells, cable machine, benches, kettlebells, mat, foam roller. Not 50 different machines — but everything you actually need for a complete training session.",
   },
   {
     q: "How long is a session?",
-    a: "A personal training session typically lasts 45 to 60 minutes, depending on your trainer. Open Gym sessions are always 60 minutes. We recommend arriving 5 minutes early so you can start at a relaxed pace.",
+    a: "Personal Training is 45 to 60 minutes, depending on your trainer. Open Gym and studio sessions are 60 or 90 minutes. Arrive 5 minutes early so you can start at a relaxed pace.",
+  },
+  {
+    q: "What if I have an injury or limitation?",
+    a: "Mention it in your WhatsApp message to your trainer or in the contact form. Some trainers (Andrea — posture & technique, Sergei — recovery & posture correction) are explicitly specialized here. Your trainer always adapts the session to what is safe for you.",
   },
   {
     q: "Can I cancel or reschedule?",
-    a: "Yes — for Open Gym and studio sessions via the booking system (Acuity); for Personal Training contact your trainer directly. Both always free.",
+    a: "Always free. No time limit. For Open Gym and studio cancel via the booking system (Acuity); for Personal Training directly with your trainer via WhatsApp. No fees, no hassle.",
   },
   {
-    q: "What if I cannot find the studio?",
-    a: "The evening before your session, you will receive a WhatsApp with the exact address and directions. For PT your trainer arranges studio access; for Open Gym and studio rental you will receive your personal door code. Still having trouble? Send us a WhatsApp and we will guide you.",
+    q: "Can I bring someone along?",
+    a: "Yes. Open Gym allows up to 3 people in the studio at once — so you can come with a training buddy or friend. Personal Training is standard 1-on-1, but many trainers also offer duo or small-group sessions at adjusted rates.",
+  },
+  {
+    q: "What do I bring?",
+    a: "Sportswear that allows free movement, a towel, a water bottle and clean indoor sports shoes (flat sole ideal). Water is also available in the studio. There is a changing area; showering is not available.",
+  },
+  {
+    q: "What if I can't find the studio?",
+    a: "The evening before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 83 17 89 34 — we usually reply within an hour.",
+  },
+  {
+    q: "How clean is the studio?",
+    a: "We clean after every session. Equipment and benches are disinfected between sessions. The studio is a private space without foot traffic — not comparable to a busy commercial gym.",
   },
 ];
 
@@ -107,8 +145,57 @@ export default function FirstVisitPage() {
           as="h1"
           overline="First visit"
           title="Your first time at SculptClub"
-          description="No sign-up forms. No obligations. Here is exactly what to expect."
+          description="No sign-up. No contract. First intake free. Here is exactly what to expect."
         />
+
+        {/* Trust strip — 4 quick signals below the H1 */}
+        <FadeIn delay={0.1}>
+          <div className="mx-auto mt-8 max-w-3xl">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 rounded-2xl border border-border/60 bg-card/40 px-5 py-4">
+              <div className="flex items-center gap-1.5">
+                <span className="flex">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </span>
+                <span className="text-sm font-semibold">5.0 on Google</span>
+              </div>
+              <span aria-hidden className="h-4 w-px bg-border" />
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="text-sm font-medium">First intake free</span>
+              </div>
+              <span aria-hidden className="h-4 w-px bg-border" />
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium">Daily 06:30–22:00</span>
+              </div>
+              <span aria-hidden className="h-4 w-px bg-border" />
+              <div className="flex items-center gap-1.5">
+                <MapPin className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium">Jordaan</span>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Anxiety-killer badges */}
+        <FadeIn delay={0.15}>
+          <div className="mx-auto mt-4 flex max-w-3xl flex-wrap items-center justify-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+              <Sparkles className="h-3 w-3" /> Beginners welcome
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
+              <Lock className="h-3 w-3" /> Private studio · no one watching
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
+              <Globe className="h-3 w-3" /> NL · EN · PT · RU
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-rose-500/30 bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-600 dark:text-rose-400">
+              <Heart className="h-3 w-3" /> All levels
+            </span>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* 3 Service Options */}
@@ -120,48 +207,58 @@ export default function FirstVisitPage() {
         />
         <div className="grid gap-6 sm:grid-cols-3">
           <FadeIn delay={0}>
-            <Card className="h-full flex flex-col">
+            <Card className="relative h-full flex flex-col">
+              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+                Free intake
+              </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
                   <Users className="h-5 w-5 text-blue-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
-                <CardDescription>1-on-1 with a trainer who fits your goals. First intro always free.</CardDescription>
+                <CardDescription>1-on-1 with a trainer that fits you. 45 min intro + training. From €45/session after.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Browse trainers</ButtonLink>
+                <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer →</ButtonLink>
+                <p className="text-center text-[11px] text-muted-foreground">8 trainers · filter by specialty + language</p>
               </CardFooter>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <Card className="h-full flex flex-col">
+            <Card className="relative h-full flex flex-col">
+              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+                Free trial
+              </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
                   <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
                 <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train independently in a private studio. Max 3 people. From €29/4 weeks.</CardDescription>
+                <CardDescription>Train independently in a private studio. 60 min free trial. Max 3 people. Then from €29 per 4 weeks.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/open-gym" variant="outline" size="lg" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Free trial</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Book free trial →</ButtonLink>
+                <ButtonLink href="/en/open-gym" variant="outline" size="lg" className="w-full">See plans</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <Card className="h-full flex flex-col">
+            <Card className="relative h-full flex flex-col">
+              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+                Free tour
+              </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
                   <Building2 className="h-5 w-5 text-purple-600" />
                 </div>
                 <CardTitle>Studio Rental</CardTitle>
-                <CardDescription>For trainers. Rent by the hour for your clients. From €12/hour, 0% commission.</CardDescription>
+                <CardDescription>For trainers with their own clients. Half studio €12/hr, full studio €17/hr. 0% commission, no contract.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/en/studio-rental" variant="outline" size="lg" className="w-full">More info</ButtonLink>
-                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Free tour</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Book tour →</ButtonLink>
+                <ButtonLink href="/en/studio-rental" variant="outline" size="lg" className="w-full">Rates + packages</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -342,18 +439,18 @@ export default function FirstVisitPage() {
         <FadeIn>
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Book your first session
+              Ready to start?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Book your first session or send us a WhatsApp.
+              First intake free. No contract. Cancel anytime, no fees.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
-                href="/en/book"
+                href="/en/find-personal-trainer"
                 size="lg"
                 className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                Book your first session
+                Find your trainer
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink
@@ -367,6 +464,9 @@ export default function FirstVisitPage() {
                 WhatsApp us
               </ButtonLink>
             </div>
+            <p className="mt-6 text-xs text-white/55">
+              Questions? +31 6 83 17 89 34 · we usually reply within an hour
+            </p>
           </div>
         </FadeIn>
       </Section>

@@ -27,6 +27,12 @@ import {
   Train,
   ParkingCircle,
   CheckCircle2,
+  Star,
+  Lock,
+  Globe,
+  Heart,
+  Sparkles,
+  Clock,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -79,20 +85,52 @@ const bringItems = [
 
 const faqs = [
   {
+    q: "Wat kost het de eerste keer?",
+    a: "Bij Personal Training is je eerste intake altijd gratis — je maakt kennis met je trainer, bespreekt je doelen en doet (als je wilt) direct een kennismakingstraining. Geen verplichting daarna. Voor Open Gym kun je een gratis proefles van 60 minuten boeken. Studio huren start vanaf €12 per uur voor de halve studio.",
+  },
+  {
     q: "Moet ik al fit zijn om te beginnen?",
-    a: "Absoluut niet. Onze trainers werken met mensen van elk niveau, van complete beginners tot gevorderde sporters. Je trainer past de sessie volledig aan op jouw huidige niveau en doelen. Er is geen drempel — iedereen is welkom.",
+    a: "Nee. Onze trainers werken met mensen van elk niveau — van complete beginners tot gevorderde sporters. Je trainer past elke sessie aan op jouw huidige niveau en doelen. Er is geen drempel.",
+  },
+  {
+    q: "Kan ik alleen komen, of moet ik me ergens aanmelden?",
+    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen vreemden, geen wachten op apparatuur, geen afkijken.",
+  },
+  {
+    q: "Ik spreek geen Nederlands — kan dat?",
+    a: "Ja. Onze trainers spreken NL en EN, een aantal ook Portugees of Russisch. Je kunt op de trainer-pagina filteren op taal. De hele site is ook in het Engels beschikbaar.",
+  },
+  {
+    q: "Welke apparatuur is er?",
+    a: "Een volledig uitgeruste privé studio: Rogue power rack, halterstang met gewichten, dumbbells, kabelmachine, banken, kettlebells, mat, foam roller. Niet 50 verschillende machines — wel alles wat je echt nodig hebt voor een complete training.",
   },
   {
     q: "Hoe lang duurt een sessie?",
-    a: "Een personal training sessie duurt doorgaans 45 tot 60 minuten, afhankelijk van je trainer. Open Gym sessies zijn altijd 60 minuten. We raden aan om 5 minuten eerder te komen zodat je rustig kunt beginnen.",
+    a: "Personal Training duurt 45 tot 60 minuten, afhankelijk van je trainer. Open Gym en studio-sessies zijn standaard 60 of 90 minuten. Kom 5 minuten eerder zodat je rustig kunt beginnen.",
+  },
+  {
+    q: "Wat als ik een blessure heb of beperking?",
+    a: "Vermeld het in je WhatsApp-bericht aan je trainer of in het contactformulier. Sommige trainers (Andrea — houding & techniek, Sergei — herstel & houdingscorrectie) zijn hier expliciet in gespecialiseerd. Je trainer past de sessie altijd aan op wat veilig is voor jou.",
   },
   {
     q: "Kan ik annuleren of verplaatsen?",
-    a: "Ja, voor Open Gym en studio-sessies via het boekingssysteem (Acuity); voor Personal Training direct met je trainer. Beide altijd gratis.",
+    a: "Altijd gratis. Geen tijdslimiet. Voor Open Gym en studio annuleer je via het boekingssysteem (Acuity); voor Personal Training direct met je trainer via WhatsApp. Geen boetes, geen gedoe.",
+  },
+  {
+    q: "Kan ik samen met iemand komen?",
+    a: "Ja. Open Gym is max 3 personen tegelijk in de studio — je kunt dus met een trainingsmaatje of vriend(in) komen. Personal Training is standaard 1-op-1, maar veel trainers bieden ook duo- of small-group sessies aan tegen een aangepast tarief.",
+  },
+  {
+    q: "Wat moet ik meenemen?",
+    a: "Sportkleding waarin je vrij beweegt, een handdoek, een waterfles en schone indoor sportschoenen (platte zool ideaal). Water is ook in de studio aanwezig. Er is een kleedruimte; douchen is niet mogelijk.",
   },
   {
     q: "Wat als ik de studio niet kan vinden?",
-    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Kom je er niet uit? Stuur ons een WhatsApp en we helpen je verder.",
+    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 83 17 89 34 — meestal reageren we binnen het uur.",
+  },
+  {
+    q: "Hoe schoon is de studio?",
+    a: "We maken na elke sessie schoon. Apparatuur en banken worden tussen sessies door gedesinfecteerd. De studio is een privé-ruimte zonder doorloop — niet vergelijkbaar met een drukke commerciële sportschool.",
   },
 ];
 
@@ -107,8 +145,57 @@ export default function EersteBezoekPage() {
           as="h1"
           overline="Eerste bezoek"
           title="Je eerste keer bij SculptClub"
-          description="Geen inschrijfformulieren. Geen verplichtingen. Hieronder staat precies wat je kunt verwachten."
+          description="Geen inschrijving. Geen contract. Eerste intake gratis. Hieronder precies wat je kunt verwachten."
         />
+
+        {/* Trust strip — 4 quick signals just below the H1 */}
+        <FadeIn delay={0.1}>
+          <div className="mx-auto mt-8 max-w-3xl">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 rounded-2xl border border-border/60 bg-card/40 px-5 py-4">
+              <div className="flex items-center gap-1.5">
+                <span className="flex">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </span>
+                <span className="text-sm font-semibold">5,0 op Google</span>
+              </div>
+              <span aria-hidden className="h-4 w-px bg-border" />
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="text-sm font-medium">Eerste intake gratis</span>
+              </div>
+              <span aria-hidden className="h-4 w-px bg-border" />
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium">Dagelijks 06:30–22:00</span>
+              </div>
+              <span aria-hidden className="h-4 w-px bg-border" />
+              <div className="flex items-center gap-1.5">
+                <MapPin className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium">Jordaan</span>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Anxiety-killer badges — destigmatize the gym for newcomers */}
+        <FadeIn delay={0.15}>
+          <div className="mx-auto mt-4 flex max-w-3xl flex-wrap items-center justify-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+              <Sparkles className="h-3 w-3" /> Beginners welkom
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
+              <Lock className="h-3 w-3" /> Privé studio · geen afkijken
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
+              <Globe className="h-3 w-3" /> NL · EN · PT · RU
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-rose-500/30 bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-600 dark:text-rose-400">
+              <Heart className="h-3 w-3" /> Alle niveaus
+            </span>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* 3 Service Options — choose your path */}
@@ -120,48 +207,58 @@ export default function EersteBezoekPage() {
         />
         <div className="grid gap-6 sm:grid-cols-3">
           <FadeIn delay={0}>
-            <Card className="h-full flex flex-col">
+            <Card className="relative h-full flex flex-col">
+              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+                Gratis intake
+              </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
                   <Users className="h-5 w-5 text-blue-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
-                <CardDescription>1-op-1 met een trainer die bij je past. Eerste intake altijd gratis.</CardDescription>
+                <CardDescription>1-op-1 met een trainer die bij je past. 45 min kennismaking + training. Vanaf €45/sessie daarna.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Bekijk trainers</ButtonLink>
+                <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Vind jouw trainer →</ButtonLink>
+                <p className="text-center text-[11px] text-muted-foreground">8 trainers · filter op specialiteit + taal</p>
               </CardFooter>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <Card className="h-full flex flex-col">
+            <Card className="relative h-full flex flex-col">
+              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+                Gratis proefles
+              </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
                   <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
                 <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train zelfstandig in een privé studio. Max 3 personen. Vanaf €29/4 weken.</CardDescription>
+                <CardDescription>Train zelfstandig in een privé studio. 60 min proefles. Max 3 personen. Daarna vanaf €29 per 4 weken.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/open-gym" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Gratis proefles</ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Boek gratis proefles →</ButtonLink>
+                <ButtonLink href="/nl/open-gym" variant="outline" size="lg" className="w-full">Plannen bekijken</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <Card className="h-full flex flex-col">
+            <Card className="relative h-full flex flex-col">
+              <span className="absolute -top-2 right-4 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+                Gratis rondleiding
+              </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-950/30">
                   <Building2 className="h-5 w-5 text-purple-600" />
                 </div>
                 <CardTitle>Studio Huren</CardTitle>
-                <CardDescription>Voor trainers. Huur per uur voor jouw klanten. Vanaf €12/uur, 0% commissie.</CardDescription>
+                <CardDescription>Voor trainers met eigen klanten. Halve studio €12/uur, hele studio €17/uur. 0% commissie, geen contract.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href="/nl/studio-huren" variant="outline" size="lg" className="w-full">Meer informatie</ButtonLink>
-                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Gratis rondleiding</ButtonLink>
+                <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Boek rondleiding →</ButtonLink>
+                <ButtonLink href="/nl/studio-huren" variant="outline" size="lg" className="w-full">Tarieven + pakketten</ButtonLink>
               </CardFooter>
             </Card>
           </FadeIn>
@@ -342,18 +439,18 @@ export default function EersteBezoekPage() {
         <FadeIn>
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Boek je eerste sessie
+              Klaar om te beginnen?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Plan je eerste sessie of stuur ons een WhatsApp.
+              Eerste intake gratis. Geen contract. Annuleren altijd gratis.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
-                href="/nl/boek"
+                href="/nl/vind-jouw-personal-trainer"
                 size="lg"
                 className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                Boek je eerste sessie
+                Vind jouw trainer
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink
@@ -367,6 +464,9 @@ export default function EersteBezoekPage() {
                 WhatsApp ons
               </ButtonLink>
             </div>
+            <p className="mt-6 text-xs text-white/55">
+              Vragen? +31 6 83 17 89 34 · meestal antwoorden we binnen het uur
+            </p>
           </div>
         </FadeIn>
       </Section>
