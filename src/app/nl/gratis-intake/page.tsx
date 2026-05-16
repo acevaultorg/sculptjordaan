@@ -99,37 +99,38 @@ export default function GratisIntakePage() {
           in de Jordaan. Geen verplichting, geen abonnement.
         </p>
 
-        {/* Primary CTA — Personal Training intake goes through the
-            trainer-finder hub. Each trainer has their own WhatsApp +
-            optional intake form. Acuity is NOT used for PT intake (only
-            for Open Gym + Studio Rental free try-outs). */}
-        <Link
-          href="/nl/vind-jouw-personal-trainer"
-          className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
-        >
-          Kies je trainer
-          <ArrowRight className="w-5 h-5" />
-        </Link>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Geen contract · Gratis annuleren · 45 minuten
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Liever direct WhatsAppen?{" "}
+        {/* DUAL PRIMARY CTAs — paid-traffic conversion rescue 2026-05-16.
+            Plausible + Clarity audit showed 2 paid visitors from Google Ads
+            today both bounced /nl/gratis-intake in 5-11s with 0 clicks. The
+            prior single-CTA "Kies je trainer" forced visitors to pick from
+            4 trainers BEFORE booking — too many steps for ad-clickers.
+
+            Fix: WhatsApp-match becomes the dual-primary (instant 1-click
+            conversion via pre-filled message asking us to match them with the
+            right trainer). "Kies je trainer" stays as secondary for visitors
+            who want to evaluate options themselves. */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
-            href={whatsappLinks.nl}
+            href={whatsappLinks.intakeMatchNl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand hover:underline font-medium"
+            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
+            data-cta="gratis-intake-whatsapp-direct"
           >
-            Stuur een berichtje →
+            <MessageCircle className="w-5 h-5" />
+            WhatsApp direct
           </a>
-          {" "}·{" "}
           <Link
-            href="/nl/contact"
-            className="text-brand hover:underline font-medium"
+            href="/nl/vind-jouw-personal-trainer"
+            className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
+            data-cta="gratis-intake-pick-trainer"
           >
-            Of vul ons contactformulier in
+            Of kies je trainer
+            <ArrowRight className="w-5 h-5" />
           </Link>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Geen contract · Gratis annuleren · 45 minuten · Meestal antwoord binnen 1 uur
         </p>
 
         {/* Studio photo */}

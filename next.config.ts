@@ -76,6 +76,11 @@ const nextConfig: NextConfig = {
       // Campaign landing pages — short URLs for Instagram bio / TikTok / ads
       { source: "/gratis-intake", destination: "/nl/gratis-intake", permanent: false },
       { source: "/free-intro", destination: "/en/free-intro", permanent: false },
+      // /social → /nl/social (3 visitors today landed on /social → 404 → bounced
+      // per Plausible audit 2026-05-16). External source unknown; redirect prevents
+      // future bounces. Soft-redirect (not permanent) so we can move the canonical
+      // location later if needed.
+      { source: "/social", destination: "/nl/social", permanent: false },
       // /start is handled by middleware (language detection) — not here
 
       // Shortlinks (migrated from Hostinger redirects)

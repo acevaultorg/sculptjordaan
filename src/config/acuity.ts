@@ -162,6 +162,13 @@ export const whatsappLinks = {
   /** Studio rental interest */
   studioNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over studio huren bij SculptClub")}`,
   studioEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to know more about renting the studio at SculptClub")}`,
+  /** PT free-intake — "match me with a trainer" path for paid traffic landing on
+      /nl/gratis-intake + /en/free-intro. Shortcuts the trainer-finder hub flow
+      (which was driving 100% bounces from Google Ads visitors per Clarity
+      recordings audit 2026-05-16: 2 paid visitors / both 5-11s bounce / 0 clicks).
+      One-click direct conversion via WhatsApp pre-filled with intake intent. */
+  intakeMatchNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?")}`,
+  intakeMatchEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?")}`,
   /** Trainer intake — per trainer. Opens WhatsApp with pre-filled free-intro enquiry. */
   trainerIntake: (name: string, locale: "nl" | "en", baseUrl?: string) => {
     const base = baseUrl ?? "https://wa.me/31683178934";

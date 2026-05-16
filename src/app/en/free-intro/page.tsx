@@ -99,37 +99,31 @@ export default function FreeIntroPage() {
           Jordaan. No obligation, no membership.
         </p>
 
-        {/* Primary CTA — Personal Training intake goes through the
-            trainer-finder hub. Each trainer has their own WhatsApp +
-            optional intake form. Acuity is NOT used for PT intake (only
-            for Open Gym + Studio Rental free try-outs). */}
-        <Link
-          href="/en/find-personal-trainer"
-          className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
-        >
-          Pick your trainer
-          <ArrowRight className="w-5 h-5" />
-        </Link>
-        <p className="mt-3 text-sm text-muted-foreground">
-          No contract · Cancel anytime · 45 minutes
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Prefer to message us directly?{" "}
+        {/* DUAL PRIMARY CTAs — paid-traffic conversion rescue 2026-05-16
+            (mirror of NL /gratis-intake fix; same root cause: paid Google Ads
+            visitors bouncing because single-CTA forced multi-step trainer pick). */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
-            href={whatsappLinks.en}
+            href={whatsappLinks.intakeMatchEn}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand hover:underline font-medium"
+            className="inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
+            data-cta="free-intro-whatsapp-direct"
           >
-            WhatsApp us →
+            <MessageCircle className="w-5 h-5" />
+            WhatsApp us now
           </a>
-          {" "}·{" "}
           <Link
-            href="/en/contact"
-            className="text-brand hover:underline font-medium"
+            href="/en/find-personal-trainer"
+            className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
+            data-cta="free-intro-pick-trainer"
           >
-            Or use our contact form
+            Or pick your trainer
+            <ArrowRight className="w-5 h-5" />
           </Link>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          No contract · Cancel anytime · 45 minutes · Usually reply within 1 hour
         </p>
 
         {/* Studio photo */}
