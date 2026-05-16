@@ -148,7 +148,7 @@ export function Header() {
             : "bg-transparent border-b border-transparent"
         )}
       >
-        <nav className="flex items-center justify-between gap-2 px-4 py-3 sm:px-5 sm:py-3.5 mx-auto max-w-7xl min-w-0">
+        <nav className="flex items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-3.5 mx-auto max-w-7xl min-w-0">
           {/* Logo — bigger for brand presence */}
           <Link
             href={locale === "nl" ? "/" : "/en"}
@@ -160,7 +160,7 @@ export function Header() {
               alt="SculptClub"
               width={162}
               height={30}
-              className="h-8 sm:h-9 w-auto invert select-none"
+              className="h-9 sm:h-10 w-auto invert select-none"
               loading="eager"
               fetchPriority="high"
             />
