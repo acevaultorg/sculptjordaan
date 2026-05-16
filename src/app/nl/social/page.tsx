@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Card, CardContent } from "@/components/ui/card";
-import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle, Users } from "lucide-react";
+import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle, Users, ArrowRight } from "lucide-react";
 import {
   SOCIAL_IDEAS,
   PILLARS,
@@ -323,7 +323,8 @@ Vragen? Stuur mij een appje. — Paulo`;
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand/85"
                         >
-                          Send to {trainer.name} via WhatsApp →
+                          Send to {trainer.name} via WhatsApp
+                          <ArrowRight className="h-3 w-3" />
                         </a>
                         <a
                           href={trainer.instagram}
@@ -331,7 +332,8 @@ Vragen? Stuur mij een appje. — Paulo`;
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80 transition hover:bg-white/15"
                         >
-                          {trainer.instagramHandle} →
+                          {trainer.instagramHandle}
+                          <ArrowRight className="h-3 w-3" />
                         </a>
                       </div>
                     </CardContent>
