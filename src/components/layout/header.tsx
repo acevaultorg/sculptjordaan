@@ -228,7 +228,7 @@ export function Header() {
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center sm:flex-col p-0.5 rounded-lg bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all touch-manipulation"
+              className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center sm:flex-col p-0.5 rounded-xl bg-muted/40 border border-border hover:bg-accent active:scale-95 transition-all touch-manipulation"
             >
               {/* Mobile: globe icon */}
               <Globe className="w-4 h-4 sm:hidden text-foreground" aria-hidden="true" />
@@ -261,7 +261,7 @@ export function Header() {
             <button
               onClick={handleLoginClick}
               className={cn(
-                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
+                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border border-border transition-all cursor-pointer touch-manipulation",
                 loginOpen
                   ? "text-foreground bg-accent"
                   : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
@@ -276,7 +276,7 @@ export function Header() {
             <button
               onClick={handleMenuClick}
               className={cn(
-                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg border border-border transition-all cursor-pointer touch-manipulation",
+                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border border-border transition-all cursor-pointer touch-manipulation",
                 menuOpen
                   ? "text-foreground bg-accent"
                   : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
