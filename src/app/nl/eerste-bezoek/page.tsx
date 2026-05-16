@@ -161,8 +161,8 @@ export default function EersteBezoekPage() {
         <div className="mx-auto mt-8 max-w-3xl">
           <div className="relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-xl">
             <Image
-              src="/images/hero/canal-view.jpg"
-              alt="Egelantiersgracht in de Amsterdamse Jordaan — gracht-locatie van SculptClub privé studio"
+              src="/images/og-default.jpg"
+              alt="De ingang van SculptClub — Egelantiersgracht 424, Amsterdamse Jordaan — precies waar je naartoe loopt voor je eerste bezoek"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 768px"

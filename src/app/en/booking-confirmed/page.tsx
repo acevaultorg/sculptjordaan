@@ -137,8 +137,8 @@ export default function BookingConfirmedEN() {
               fits the 16:7 banner cleanly. */}
           <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/hero/training-session.jpg"
-              alt="See you soon — training session at the SculptClub private studio in the Jordaan"
+              src="/images/hero/homepage-hero.jpg"
+              alt="See you soon — SculptClub private studio interior with brand wall, Rogue power rack, and agility ladder"
               fill
               className="object-cover"
               sizes="(max-width: 672px) 100vw, 672px"

@@ -158,8 +158,8 @@ export default function BookingConfirmedNL() {
               booking and visit (no-show rate reduction). */}
           <div className="mt-10 relative aspect-[16/9] sm:aspect-[16/7] overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/images/hero/training-session.jpg"
-              alt="Tot snel — trainingsessie in de SculptClub privé studio in de Jordaan"
+              src="/images/hero/homepage-hero.jpg"
+              alt="Tot snel — SculptClub privé studio interieur met merkmuur, Rogue power rack en agility ladder"
               fill
               className="object-cover"
               sizes="(max-width: 672px) 100vw, 672px"
