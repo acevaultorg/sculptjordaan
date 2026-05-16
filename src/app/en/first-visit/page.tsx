@@ -230,7 +230,7 @@ export default function FirstVisitPage() {
         <div className="grid gap-6 sm:grid-cols-3">
           <FadeIn delay={0}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-md">
                 Free intake
               </span>
               <CardHeader>
@@ -249,7 +249,7 @@ export default function FirstVisitPage() {
 
           <FadeIn delay={0.1}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-md">
                 Free trial
               </span>
               <CardHeader>
@@ -268,7 +268,7 @@ export default function FirstVisitPage() {
 
           <FadeIn delay={0.2}>
             <Card className="relative h-full flex flex-col">
-              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
+              <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-md">
                 Free tour
               </span>
               <CardHeader>

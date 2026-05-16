@@ -248,7 +248,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                         value={formState.name}
                         onChange={(e) => setFormState((s) => ({ ...s, name: e.target.value }))}
                         placeholder={t.namePlaceholder}
-                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       />
                     </div>
 
@@ -263,7 +263,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                         value={formState.phone}
                         onChange={(e) => setFormState((s) => ({ ...s, phone: e.target.value }))}
                         placeholder={t.phonePlaceholder}
-                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       />
                     </div>
 
@@ -277,7 +277,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                         value={formState.message}
                         onChange={(e) => setFormState((s) => ({ ...s, message: e.target.value }))}
                         placeholder={t.messagePlaceholder}
-                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand resize-none"
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand resize-none"
                       />
                     </div>
 
