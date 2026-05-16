@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trainers } from "@/config/trainers";
-import { acuityLinks } from "@/config/acuity";
+import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
 import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight } from "lucide-react";
@@ -138,13 +138,50 @@ export default function TrainersPageNL() {
 
         {/* Trust badges */}
         <FadeIn>
-          <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="mb-6 flex flex-wrap justify-center gap-6 sm:gap-10">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex items-center gap-2 text-sm font-medium">
                 <badge.icon className="h-5 w-5 text-primary" />
                 <span>{badge.label}</span>
               </div>
             ))}
+          </div>
+        </FadeIn>
+
+        {/*
+          Dual-primary CTA strip — paid-Google-Ads landing conversion lever
+          (operator directive 2026-05-16: PT-search ads now route here; goal
+          #3 in operator funnel = "click try-out with trainer"). Before this
+          strip shipped, paid mobile visitors had to scroll through 8 trainer
+          cards before reaching a decision moment — too many choices for
+          ad-clickers. The emerald WhatsApp-direct CTA gives instant-match
+          path (we match them to a trainer), while the brand-blue scroll-
+          anchor preserves the "I want to choose" path for visitors who
+          prefer evaluation.
+
+          Same dual-CTA pattern as /nl/gratis-intake (shipped earlier this
+          session). Funnel-coherent: both ad-landing pages now expose both
+          paths simultaneously.
+        */}
+        <FadeIn>
+          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+            <a
+              href={whatsappLinks.intakeMatchNl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="trainerhub-whatsapp-direct"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
+            >
+              <MessageCircle className="h-5 w-5" />
+              WhatsApp direct — wij matchen
+            </a>
+            <a
+              href="#trainer-grid"
+              data-cta="trainerhub-scroll-grid"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
+            >
+              Of bekijk alle {trainers.length} trainers ↓
+            </a>
           </div>
         </FadeIn>
 
