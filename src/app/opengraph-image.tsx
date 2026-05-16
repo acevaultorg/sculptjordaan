@@ -1,26 +1,21 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 
-// Edge runtime can't read filesystem — use Node runtime so brand fonts (Syne
-// for display + Instrument Sans for body) load reliably into the OG image.
-// Without these, ImageResponse falls back to a generic sans-serif and the
-// social preview looks off-brand on Twitter/LinkedIn/WhatsApp shares.
-export const runtime = "nodejs";
+// Satori (next/og's underlying renderer) only supports TTF/OTF, not WOFF2.
+// Loading brand fonts from /public/fonts/*.woff2 fails with "Unsupported
+// OpenType signature wOF2". Verified 2026-05-16 deploy ERROR. Falling back
+// to system sans-serif with explicit weight + letter-spacing styling that
+// approximates the brand feel (Inter is the macOS/Windows default sans for
+// most users, which is what InstrumentSans is based on anyway). For now this
+// is the right trade — getting brand fonts into OG images would require
+// converting woff2→ttf + checking-in a duplicate font asset, which doubles
+// the font cost for a small social-share polish gain.
+export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt =
   "SculptClub — Private gym in Amsterdam Jordaan · €12/hour studio rental · 0% commission for trainers";
 
-export default async function OgImage() {
-  // Load brand fonts from /public/fonts so the OG image text matches site typography.
-  const syneFont = await readFile(
-    path.join(process.cwd(), "public/fonts/Syne-Variable.woff2"),
-  );
-  const instrumentSansFont = await readFile(
-    path.join(process.cwd(), "public/fonts/InstrumentSans-Variable.woff2"),
-  );
-
+export default function OgImage() {
   return new ImageResponse(
     (
       <div
@@ -34,7 +29,7 @@ export default async function OgImage() {
           background:
             "radial-gradient(ellipse at top right, rgba(19, 77, 225, 0.22) 0%, rgba(10, 10, 10, 0) 55%), linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%)",
           color: "#ffffff",
-          fontFamily: "InstrumentSans, sans-serif",
+          fontFamily: "sans-serif",
           position: "relative",
         }}
       >
@@ -63,8 +58,7 @@ export default async function OgImage() {
               display: "flex",
               fontSize: 38,
               fontWeight: 700,
-              fontFamily: "Syne, sans-serif",
-              letterSpacing: 1.5,
+              letterSpacing: 4,
               color: "#ffffff",
             }}
           >
@@ -75,12 +69,12 @@ export default async function OgImage() {
               display: "flex",
               alignItems: "center",
               gap: 10,
-              padding: "10px 18px",
-              background: "rgba(255, 215, 0, 0.12)",
+              padding: "12px 22px",
+              background: "rgba(255, 215, 0, 0.14)",
               borderRadius: 999,
-              border: "1px solid rgba(255, 215, 0, 0.45)",
+              border: "1px solid rgba(255, 215, 0, 0.5)",
               color: "#fde68a",
-              fontSize: 22,
+              fontSize: 24,
               fontWeight: 600,
             }}
           >
@@ -93,26 +87,25 @@ export default async function OgImage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: 22,
+            gap: 24,
             maxWidth: 1040,
           }}
         >
-          {/* Price hook — biggest text on the page, brand-blue accent */}
+          {/* Price hook — biggest text on the page */}
           <div
             style={{
               display: "flex",
               alignItems: "baseline",
-              gap: 22,
+              gap: 24,
             }}
           >
             <div
               style={{
                 display: "flex",
-                fontSize: 132,
-                fontWeight: 800,
-                fontFamily: "Syne, sans-serif",
+                fontSize: 140,
+                fontWeight: 900,
                 lineHeight: 0.9,
-                letterSpacing: -4,
+                letterSpacing: -5,
                 color: "#ffffff",
               }}
             >
@@ -121,9 +114,8 @@ export default async function OgImage() {
             <div
               style={{
                 display: "flex",
-                fontSize: 46,
+                fontSize: 48,
                 fontWeight: 600,
-                fontFamily: "Syne, sans-serif",
                 color: "#94a3b8",
                 letterSpacing: -1,
               }}
@@ -135,12 +127,12 @@ export default async function OgImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 38,
+              fontSize: 40,
               fontWeight: 500,
               color: "#cbd5e1",
               letterSpacing: -0.5,
               lineHeight: 1.2,
-              maxWidth: 920,
+              maxWidth: 960,
             }}
           >
             Privé studio voor personal trainers in de Jordaan, Amsterdam.
@@ -161,9 +153,9 @@ export default async function OgImage() {
               style={{
                 display: "flex",
                 padding: "12px 22px",
-                background: "rgba(19, 77, 225, 0.18)",
+                background: "rgba(19, 77, 225, 0.22)",
                 borderRadius: 999,
-                border: "1px solid rgba(19, 77, 225, 0.55)",
+                border: "1px solid rgba(19, 77, 225, 0.6)",
                 color: "#ffffff",
                 fontWeight: 600,
               }}
@@ -174,9 +166,9 @@ export default async function OgImage() {
               style={{
                 display: "flex",
                 padding: "12px 22px",
-                background: "rgba(16, 185, 129, 0.12)",
+                background: "rgba(16, 185, 129, 0.14)",
                 borderRadius: 999,
-                border: "1px solid rgba(16, 185, 129, 0.4)",
+                border: "1px solid rgba(16, 185, 129, 0.5)",
                 color: "#86efac",
                 fontWeight: 600,
               }}
@@ -200,11 +192,10 @@ export default async function OgImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 26,
+              fontSize: 28,
               fontWeight: 700,
-              fontFamily: "Syne, sans-serif",
               color: "#ffffff",
-              letterSpacing: 0.5,
+              letterSpacing: 1,
             }}
           >
             sculptclub.nl
@@ -212,22 +203,6 @@ export default async function OgImage() {
         </div>
       </div>
     ),
-    {
-      ...size,
-      fonts: [
-        {
-          name: "Syne",
-          data: syneFont,
-          style: "normal",
-          weight: 700,
-        },
-        {
-          name: "InstrumentSans",
-          data: instrumentSansFont,
-          style: "normal",
-          weight: 500,
-        },
-      ],
-    },
+    { ...size }
   );
 }
