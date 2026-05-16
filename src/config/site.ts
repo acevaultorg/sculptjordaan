@@ -42,6 +42,10 @@ export const siteConfig = {
     ga4: "G-QYW5H4XTXW",
     googleAds: "AW-18011741633",
     googleAdsConversion: "NwwsCNGZlp8cEMG71YxD",
+    // Purchase conversion (high-value, booking actually completed) — separate label
+    // from the 'Submit lead form' label above which fires on contact-form + trainer-intake.
+    // Verified 2026-05-16 via Chrome MCP against Google Ads 511-161-9582 conversion action editor.
+    googleAdsConversionPurchase: "wBmPCNKywIccEMG71YxD",
     fbPixel: "4350118535216982",
     clarity: "vx7zcg6zys",
     tiktokPixel: "D75710BC77UDBCCMHF60",

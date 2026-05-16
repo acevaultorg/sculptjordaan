@@ -49,7 +49,7 @@ export default function BookingConfirmedEN() {
 
       if (typeof w.gtag === "function") {
         w.gtag("event", "conversion", {
-          send_to: `${siteConfig.analytics.googleAds}/${siteConfig.analytics.googleAdsConversion}`,
+          send_to: `${siteConfig.analytics.googleAds}/${siteConfig.analytics.googleAdsConversionPurchase}`,
           value,
           currency: "EUR",
           transaction_id: params.get("id") ?? `bk-${Date.now()}`,

@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
-const { ga4, googleAds, googleAdsConversion, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
+const { ga4, googleAds, googleAdsConversion, googleAdsConversionPurchase, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
 const PLAUSIBLE_DOMAIN = "sculptclub.nl";
 
 export function Analytics() {
@@ -477,8 +477,10 @@ export function Analytics() {
                 return;
               }
               if (typeof window.gtag === 'function') {
+                // Fire the Purchase conversion action (not Submit-lead-form) — booking-confirmed
+                // pages represent completed paid bookings, the highest-value conversion class.
                 window.gtag('event', 'conversion', {
-                  send_to: '${googleAds}/${googleAdsConversion}',
+                  send_to: '${googleAds}/${googleAdsConversionPurchase}',
                   value: value, currency: 'EUR', transaction_id: id
                 });
                 window.gtag('event', 'Book_appointment_1', {
