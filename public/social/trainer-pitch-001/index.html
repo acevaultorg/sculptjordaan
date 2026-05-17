@@ -376,7 +376,10 @@ const COPY = {
   },
   instagram: {
     caption: "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.\n\nProbeer gratis · sculptclub.nl/voor-trainers",
-    hashtags: "#personaltrainer #amsterdam #jordaan #ptamsterdam #personaltraineramsterdam #studiohuren #ptstudio #freelancetrainer #zzpfitness #amsterdamfitness #boutiquegym"
+    // 5 hashtags (was 11) — operator directive 2026-05-17: Mosseri/IG algorithm shifted away
+    // from 11-30 hashtag spam to 3-5 focused. Same 5 as TikTok = consistent discovery pool
+    // across both platforms, same high-intent trainer-acquisition signal.
+    hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam"
   }
 };
 
@@ -422,7 +425,7 @@ function renderCopySection(platform) {
         <button class="copy-btn" onclick="copyById('copy-caption-text', this)">📋 Kopieer caption</button>
       </div>
 
-      <h2>🏷️ Hashtags <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— 11 voor Instagram</span></h2>
+      <h2>🏷️ Hashtags <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— 5 max voor Instagram (zelfde set als TikTok)</span></h2>
       <div class="card">
         <div class="text hashtags" id="copy-hashtags-text"></div>
         <button class="copy-btn" onclick="copyById('copy-hashtags-text', this)">📋 Kopieer hashtags</button>
