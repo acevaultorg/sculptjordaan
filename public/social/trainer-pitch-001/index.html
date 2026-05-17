@@ -484,30 +484,39 @@ function renderFormatGuide(platform) {
   }
 }
 
-// ─── Robust copy: Clipboard API → execCommand fallback → manual-select hint ───
+// ─── Robust copy: execCommand FIRST (synchronous, never hangs) → Clipboard API enhancement ───
+//
+// Why execCommand first and NOT navigator.clipboard.writeText first?
+//
+// Real bug observed live (2026-05-17): writeText() can HANG indefinitely (no resolve, no
+// reject) when the user-activation flag isn't propagated to the Promise — this happens on
+// iOS Safari in-app browsers (TikTok, Instagram), some Chrome automation contexts, and
+// when called outside the synchronous click handler frame. An `await` on a hanging Promise
+// freezes the whole copy() function before flash() ever runs → operator sees zero feedback,
+// concludes "buttons don't work."
+//
+// execCommand('copy') is SYNCHRONOUS — runs inside the user-gesture window with zero
+// Promise nonsense. Returns true/false immediately. Yes, deprecated, but every browser
+// still supports it for copy operations and will for years (no removal scheduled). Modern
+// Clipboard API is added as a best-effort enhancement with a hard 800ms timeout race so
+// it can NEVER block visual feedback.
 const isIOS = /ipad|iphone|ipod/i.test(navigator.userAgent);
 
-async function copy(text, btn) {
-  // Tier 1 — modern Clipboard API (HTTPS + secure context)
+function copy(text, btn) {
+  // ─── Tier 1: synchronous execCommand inside user-gesture window ───
+  let ok = false;
+  let ta = null;
   try {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-      flash(btn, '✅ Gekopieerd!', 'copied');
-      return;
-    }
-  } catch (_) { /* fall through to tier 2 */ }
-
-  // Tier 2 — legacy execCommand via hidden textarea (works on older Safari / non-secure)
-  try {
-    const ta = document.createElement('textarea');
+    ta = document.createElement('textarea');
     ta.value = text;
     ta.setAttribute('readonly', '');
-    // Visible but tiny + off-flow; iOS needs visible-and-focused for execCommand to fire.
-    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:none;background:transparent;font-size:16px;opacity:0;';
+    // Tiny + off-flow but NOT display:none and NOT zero-opacity — iOS Safari refuses
+    // to copy from invisible textareas. font-size:16px keeps iOS from auto-zooming.
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:2em;height:2em;padding:0;border:none;outline:none;box-shadow:none;background:transparent;font-size:16px;color:transparent;';
     document.body.appendChild(ta);
 
     if (isIOS) {
-      // iOS Safari needs Range-based selection on textareas (regular .select() is unreliable).
+      // iOS Safari needs Range-based selection on textareas — plain .select() is unreliable
       const range = document.createRange();
       range.selectNodeContents(ta);
       const sel = window.getSelection();
@@ -519,16 +528,38 @@ async function copy(text, btn) {
       ta.select();
     }
 
-    const ok = document.execCommand('copy');
-    document.body.removeChild(ta);
-    if (ok) {
-      flash(btn, '✅ Gekopieerd!', 'copied');
-      return;
-    }
-  } catch (_) { /* fall through to tier 3 */ }
+    ok = document.execCommand('copy');
+  } catch (_) {
+    ok = false;
+  } finally {
+    if (ta && ta.parentNode) ta.parentNode.removeChild(ta);
+  }
 
-  // Tier 3 — both methods failed; instruct manual long-press select.
-  flash(btn, '⚠️ Long-press de tekst om te selecteren', 'failed', 3500);
+  if (ok) {
+    flash(btn, '✅ Gekopieerd!', 'copied');
+    // Tier 2 enhancement (fire-and-forget): also write via Clipboard API so modern
+    // browsers' richer clipboard semantics get used too. Don't await; don't error.
+    if (navigator.clipboard && window.isSecureContext) {
+      try { navigator.clipboard.writeText(text).catch(() => {}); } catch (_) {}
+    }
+    return;
+  }
+
+  // ─── Tier 2: Clipboard API with 800ms timeout race — never hangs the UI ───
+  if (navigator.clipboard && window.isSecureContext) {
+    Promise.race([
+      navigator.clipboard.writeText(text),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('clipboard_timeout_800ms')), 800))
+    ]).then(() => {
+      flash(btn, '✅ Gekopieerd!', 'copied');
+    }).catch(() => {
+      flash(btn, '⚠️ Long-press de tekst hierboven om te kopiëren', 'failed', 3500);
+    });
+    return;
+  }
+
+  // ─── Tier 3: nothing worked → instruct manual long-press select ───
+  flash(btn, '⚠️ Long-press de tekst hierboven om te kopiëren', 'failed', 3500);
 }
 
 function flash(btn, msg, cls, duration = 2000) {
