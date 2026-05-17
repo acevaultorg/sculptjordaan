@@ -76,15 +76,18 @@ const nextConfig: NextConfig = {
       // Campaign landing pages — short URLs for Instagram bio / TikTok / ads
       { source: "/gratis-intake", destination: "/nl/gratis-intake", permanent: false },
       { source: "/free-intro", destination: "/en/free-intro", permanent: false },
-      // /social → /nl/social (3 visitors today landed on /social → 404 → bounced
-      // per Plausible audit 2026-05-16). External source unknown; redirect prevents
-      // future bounces. Soft-redirect (not permanent) so we can move the canonical
-      // location later if needed.
-      { source: "/social", destination: "/nl/social", permanent: false },
       // Social-post URL migration (2026-05-17): flat /social/post.html consolidated
       // into directory-per-post layout (/social/<post-id>/). Permanent because the
       // new structure is the long-term canonical — every future post gets its own
       // directory, no more /social/post-N.html collisions.
+      //
+      // Note: the previous `/social → /nl/social` soft-redirect (2026-05-16, 3
+      // bouncing visitors) was removed in the same ship — Next.js normalizes
+      // /social/ to /social, so that redirect was catching the new hub URL and
+      // sending it to the marketing page instead of serving public/social/index.html.
+      // The original bounce concern is moot now: the hub IS the content at /social/
+      // (and is noindex'd, so random visitors get an operator-facing posts list
+      // instead of a 404 — cleaner outcome than the redirect).
       { source: "/social/post.html", destination: "/social/trainer-pitch-001/", permanent: true },
       // /start is handled by middleware (language detection) — not here
 
