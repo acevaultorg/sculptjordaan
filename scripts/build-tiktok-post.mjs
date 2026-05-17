@@ -71,6 +71,7 @@ async function buildSlide(opts) {
     price,
     usp,
     cta,
+    heroScale = 1,         // per-slide hero-text scale (1.0 = full 108px on 9:16)
     width = W,
     height = H,
   } = opts;
@@ -115,7 +116,7 @@ async function buildSlide(opts) {
 
     <text x="${cx}" y="${eyebrowY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="${Math.round(44 * scale)}" letter-spacing="${10 * scale}" text-anchor="middle" fill="${BRAND}">${eyebrow}</text>
 
-    <text x="${cx}" y="${heroY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(108 * scale)}" letter-spacing="-2" text-anchor="middle" fill="${WARM_OFF_WHITE}">${hero}</text>
+    <text x="${cx}" y="${heroY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(108 * scale * heroScale)}" letter-spacing="-2" text-anchor="middle" fill="${WARM_OFF_WHITE}">${hero}</text>
 
     <text x="${cx}" y="${priceY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(180 * scale)}" letter-spacing="-6" text-anchor="middle" fill="${BRAND}">${price}</text>
 
@@ -163,7 +164,10 @@ const slides = [
     name: "usp-focus",
     photoPath: STUDIO_INTERIOR,
     eyebrow: "ZERO COMMISSIE",
-    hero: "Houd 100%",
+    // "Houd 100%" alone reads as a fragment in Dutch — "Houd 100% zelf"
+    // makes the trainer-keeps-everything meaning explicit + complete.
+    hero: "Houd 100% zelf",
+    heroScale: 0.85,  // 14 chars (vs 9 in "Houd 100%") needs slight downscale to clear 96px edges
     price: "€12 / uur",
     usp: "Jouw klanten · jouw tarief · jouw studio",
     cta: "sculptclub.nl/voor-trainers",
@@ -186,6 +190,7 @@ for (let i = 0; i < slides.length; i++) {
     photoPath: slides[i].photoPath,
     eyebrow: slides[i].eyebrow,
     hero: slides[i].hero,
+    heroScale: slides[i].heroScale,
     price: slides[i].price,
     usp: slides[i].usp,
     cta: slides[i].cta,
@@ -201,6 +206,7 @@ for (let i = 0; i < slides.length; i++) {
     photoPath: slides[i].photoPath,
     eyebrow: slides[i].eyebrow,
     hero: slides[i].hero,
+    heroScale: slides[i].heroScale,
     price: slides[i].price,
     usp: slides[i].usp,
     cta: slides[i].cta,
