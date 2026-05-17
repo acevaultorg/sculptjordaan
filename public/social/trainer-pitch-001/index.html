@@ -497,8 +497,11 @@ function renderSoundContext(platform) {
     `;
   } else {
     el.innerHTML = `
-      <p style="margin: 0; padding: 8px 10px; background: rgba(234,88,12,0.05); border-left: 3px solid var(--muted); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
-        <strong>Voor IG feed carousel: skip deze sectie.</strong> <span style="color: var(--muted)">Instagram feed posts spelen muted af — sound is alleen relevant voor Reels &amp; Stories. Wil je een Reel maken? Switch naar de <strong style="color: var(--fg)">TikTok 9:16 tab</strong> en gebruik dan deze sound-picks.</span>
+      <p style="margin: 0 0 0.5rem; padding: 8px 10px; background: rgba(234,88,12,0.05); border-left: 3px solid var(--muted); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Voor IG feed carousel: muziek is <em>optioneel</em>.</strong> <span style="color: var(--muted)">Carousels spelen muted in feed — muziek speelt pas als iemand de post tapt. Klein discovery-laagje, geen algoritme-boost zoals op TikTok. Werkt prima zonder. Als je toch wilt: zoek de picks hieronder in IG's music library (let op: andere catalogus dan TikTok — niet alles is beschikbaar).</span>
+      </p>
+      <p style="margin: 0; padding: 8px 10px; background: rgba(234,88,12,0.08); border-left: 3px solid var(--brand); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Echte IG reach-play:</strong> <span style="color: var(--muted)">post deze slides óók als een <strong style="color: var(--fg)">Reel</strong> (gebruik de TikTok 9:16 versies + muziek). Reels = Reels-tab discovery = bereikt non-followers. Carousels = vooral je bestaande followers. Beide posten = dubbele reach.</span>
       </p>
     `;
   }
