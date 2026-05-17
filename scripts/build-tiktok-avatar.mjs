@@ -29,14 +29,14 @@ const SRC = path.join(root, "public/images/logo-sculptclub.png");
 const OUT = path.join(root, "public/images/tiktok-avatar.png");
 
 const SIZE = 1080;
-// SculptClub Orange #FF6B00 — new brand primary as of 2026-05-17.
-// Replaces #134DE1 SaaS-blue (off-brand per BRAND-STRATEGY.md "darkroom +
-// music-studio + after-hours" DNA). Orange pops on both TikTok dark feed
-// AND Instagram mixed light/dark feed. Cultural resonance with Oranje (NL).
-// Penguin-Classics-style black-on-orange wordmark beats white-on-orange:
-//   - White on #FF6B00 = 2.94:1 (fails WCAG AA)
-//   - Black on #FF6B00 = 9.4:1 (passes AAA)
-const BG = { r: 255, g: 107, b: 0, alpha: 1 }; // #FF6B00
+// SculptClub Orange #EA580C — brand primary (refined 2026-05-17).
+// Was #134DE1 SaaS-blue → #FF6B00 saturated-mandarin (same day) → #EA580C
+// burnt-tangerine (Tailwind orange-600). #EA580C reads more "premium-tool"
+// vs #FF6B00 "consumer-energy" — matches 90%-trainer-rental revenue model +
+// BRAND-STRATEGY.md "darkroom + music-studio + after-hours" DNA. Penguin
+// Classics + Hermès lineage. Pairs gracefully with Tailwind orange-50→950.
+// Black-on-#EA580C = 5.41:1 (passes WCAG AA + AAA Large at avatar size).
+const BG = { r: 234, g: 88, b: 12, alpha: 1 }; // #EA580C
 
 // Pixel coordinates of "SCULPT" and "CLUB" within the 2560×199 source.
 const SCULPT = { left: 0, top: 0, width: 1486, height: 199 };

@@ -19,10 +19,10 @@ These come from `src/app/globals.css` (`.dark` block).
 | **Card / Panel background** | `#1A1D28` | Cards, form fields, dropdown panels |
 | **Text color** | `#EDEDF0` | Body copy, form labels, titles |
 | **Muted / Secondary text** | `#8A8D9B` | Timestamps, help text, inactive labels |
-| **Primary / Button color** | `#FF8533` | Book / Continue / Confirm buttons (dark-mode orange) |
-| **Button hover** | `#E25C2A` | Button hover state (if separate field exists) |
-| **Button text** | `#0A0A0A` | Text on primary buttons (near-black on orange = 9.4:1 AA contrast) |
-| **Accent / Link color** | `#FF8533` | Inline links, active tab underlines |
+| **Primary / Button color** | `#F97316` | Book / Continue / Confirm buttons (dark-mode orange = Tailwind orange-500) |
+| **Button hover** | `#EA580C` | Button hover state (Tailwind orange-600) |
+| **Button text** | `#0A0A0A` | Text on primary buttons (near-black on orange = AA Large contrast) |
+| **Accent / Link color** | `#F97316` | Inline links, active tab underlines |
 | **Border** | `#2A2A35` | Dividers, input borders |
 | **Error / Alert** | `#EF4444` | Validation errors |
 
@@ -46,8 +46,8 @@ If your plan includes **Custom CSS**, paste this in **Customize Appearance → A
   --sc-card: #1A1D28;
   --sc-fg: #EDEDF0;
   --sc-muted: #8A8D9B;
-  --sc-brand: #FF8533;
-  --sc-brand-hover: #E25C2A;
+  --sc-brand: #F97316;
+  --sc-brand-hover: #EA580C;
   --sc-border: #2A2A35;
 }
 
@@ -118,5 +118,5 @@ The production site is dark-only (see `CLAUDE.md`). Light mode tokens exist in `
 
 1. Visit https://sculptclub.nl/en/book-gym on production
 2. Click **Book a session** — a new tab opens Acuity
-3. The scheduler should use `#0F1118` background, `#FF8533` buttons, near-black text on buttons
+3. The scheduler should use `#0F1118` background, `#F97316` buttons, near-black text on buttons
 4. If colors don't update, hard-reload Acuity (Cmd+Shift+R) — Acuity caches styles aggressively

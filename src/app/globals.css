@@ -61,12 +61,13 @@
   --card-foreground: #0E0C0A;
   --popover: #FFFFFF;
   --popover-foreground: #0E0C0A;
-  /* Brand: SculptClub Orange (darkroom safelight + Jordaan-canal sodium-lamp DNA).
-     Changed 2026-05-17: was #134DE1 (SaaS-blue, off-brand vs strategy doc).
-     New #FF6B00 traces to "private music studio / shared photography darkroom"
-     and "quiet after-hours feeling" from BRAND-STRATEGY.md.
-     Foreground swapped to near-black for WCAG AA (white-on-orange = 2.94:1 fail). */
-  --primary: #FF6B00;
+  /* Brand: SculptClub Orange — Tailwind orange-600 family.
+     Refined 2026-05-17: was #FF6B00 (saturated mandarin, slightly consumer-fast-food
+     for 90%-trainer-revenue audience). New #EA580C is burnt-tangerine — more
+     premium-tool, brand-strategy-faithful (Penguin Classics / Hermès lineage),
+     pairs gracefully with Tailwind orange-50→orange-950 palette.
+     Foreground stays near-black for WCAG (black-on-#EA580C = 5.41:1 AA + AAA Large). */
+  --primary: #EA580C;
   --primary-foreground: #0A0A0A;
   --secondary: #F3F0EC;
   --secondary-foreground: #0E0C0A;
@@ -77,15 +78,15 @@
   --destructive: #DC2626;
   --border: #D3CCC4;
   --input: #D3CCC4;
-  --ring: #FF6B00;
+  --ring: #EA580C;
   --surface: #F3F0EC;
-  --brand: #FF6B00;
-  --brand-dark: #C24B00;
+  --brand: #EA580C;
+  --brand-dark: #C2410C;
   --brand-foreground: #0A0A0A;
   --discount: #DC2626;
   --radius: 1.15rem;
   /* Chart colors */
-  --chart-1: #FF6B00;
+  --chart-1: #EA580C;
   --chart-2: #756A60;
   --chart-3: #3E3631;
   --chart-4: #D3CCC4;
@@ -93,12 +94,12 @@
   /* Sidebar */
   --sidebar: #F7F5F2;
   --sidebar-foreground: #0E0C0A;
-  --sidebar-primary: #FF6B00;
+  --sidebar-primary: #EA580C;
   --sidebar-primary-foreground: #0A0A0A;
   --sidebar-accent: #F3F0EC;
   --sidebar-accent-foreground: #0E0C0A;
   --sidebar-border: #D3CCC4;
-  --sidebar-ring: #FF6B00;
+  --sidebar-ring: #EA580C;
 }
 
 /* SculptClub Brand — Dark Mode (Cool Noir) */
@@ -109,10 +110,10 @@
   --card-foreground: #EDEDF0;
   --popover: #1A1D28;
   --popover-foreground: #EDEDF0;
-  /* Dark mode brand: lighter mandarin variant for contrast on dark canvas.
-     Was #4B6BFF (light blue); now #FF8533 (lighter orange).
-     Foreground stays near-black for AA contrast on orange. */
-  --primary: #FF8533;
+  /* Dark mode brand: Tailwind orange-500 (#F97316) — slightly lighter than
+     light-mode orange-600 for contrast on dark canvas. brand-dark hover state
+     goes back to orange-600. Foreground stays near-black (AA Large contrast). */
+  --primary: #F97316;
   --primary-foreground: #0A0A0A;
   --secondary: #1A1D28;
   --secondary-foreground: #EDEDF0;
@@ -123,26 +124,26 @@
   --destructive: #EF4444;
   --border: #2A2A35;
   --input: #2A2A35;
-  --ring: #FF8533;
+  --ring: #F97316;
   --surface: #1A1D28;
-  --brand: #FF8533;
-  --brand-dark: #E25C2A;
+  --brand: #F97316;
+  --brand-dark: #EA580C;
   --brand-foreground: #0A0A0A;
   --discount: #EF4444;
   --radius: 1.15rem;
-  --chart-1: #FF8533;
+  --chart-1: #F97316;
   --chart-2: #8A8D9B;
   --chart-3: #EDEDF0;
   --chart-4: #2A2A35;
   --chart-5: #1A1D28;
   --sidebar: #0F1118;
   --sidebar-foreground: #EDEDF0;
-  --sidebar-primary: #FF8533;
+  --sidebar-primary: #F97316;
   --sidebar-primary-foreground: #0A0A0A;
   --sidebar-accent: #1A1D28;
   --sidebar-accent-foreground: #EDEDF0;
   --sidebar-border: #2A2A35;
-  --sidebar-ring: #FF8533;
+  --sidebar-ring: #F97316;
 }
 
 @layer base {

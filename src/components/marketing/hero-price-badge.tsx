@@ -13,7 +13,7 @@
  * value-prop in <0.5s — what visitors from "studio huren amsterdam" Google
  * Ads search for.
  *
- * Stays on-brand (#FF6B00 SculptClub orange, 2026-05-17+) instead of
+ * Stays on-brand (#EA580C SculptClub orange, refined 2026-05-17) instead of
  * competitor's yellow — preserves boutique premium aesthetic while gaining
  * ad-style scroll-stop. Penguin-Classics-style orange+black pattern.
  *

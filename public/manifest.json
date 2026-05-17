@@ -4,7 +4,7 @@
   "description": "Boutique Personal Training — Amsterdam Jordaan",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#FF6B00",
+  "theme_color": "#EA580C",
   "background_color": "#FAF8F5",
   "icons": [
     {

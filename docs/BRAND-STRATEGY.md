@@ -84,13 +84,13 @@ It's closer to a private music studio or a shared photography darkroom than to a
 
 ### The color-clickability contract
 **If it's orange, it MUST be clickable. If it's not clickable, it MUST NOT be orange.**
-- Buttons, links, CTAs, focus rings → brand orange (`#FF6B00` light / `#FF8533` dark mode)
+- Buttons, links, CTAs, focus rings → brand orange (`#EA580C` light / `#F97316` dark mode — Tailwind orange-600/-500)
 - Headings, body text, labels → foreground/neutral only
 - Navigation text (default state) → foreground, not brand color
-- Button TEXT on orange surfaces → near-black `#0A0A0A` (9.4:1 AA contrast; never white-on-orange)
+- Button TEXT on orange surfaces → near-black `#0A0A0A` (5.41:1 AA + AAA Large contrast; never white-on-orange)
 
-### Why orange (changed from blue 2026-05-17)
-Brand primary changed from `#134DE1` blue to `#FF6B00` orange. The blue read SaaS/fintech-corporate — exactly what this strategy says SculptClub is NOT. Orange traces to the doc's existing "private music studio / shared photography darkroom" + "after-hours sodium-canal-lamp" DNA:
+### Why orange (changed from blue 2026-05-17, refined later same day)
+Brand primary changed from `#134DE1` blue to `#EA580C` orange (Tailwind orange-600). The blue read SaaS/fintech-corporate — exactly what this strategy says SculptClub is NOT. The 90%-trainer-rental revenue model also demands a "premium-tool" feel over "consumer-energy-drink" — `#EA580C` burnt-tangerine reads sophisticated where `#FF6B00` saturated-mandarin (initial pick, same day) read consumer. Orange traces to the doc's existing "private music studio / shared photography darkroom" + "after-hours sodium-canal-lamp" DNA:
 - **Darkroom-coded** — real darkrooms use red/orange safelight; the wordmark sits inside that lineage
 - **Honest, operational** — Penguin Classics + Hermès pattern; tool-brand not lifestyle-brand
 - **Dutch-resonant** — Oranje is the NL national color; free cultural recognition with local audience
