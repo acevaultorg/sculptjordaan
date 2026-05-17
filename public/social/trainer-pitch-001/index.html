@@ -7,6 +7,13 @@
   <meta name="theme-color" content="#EA580C">
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="/favicon.png">
+  <!-- Resolve relative URLs against THIS post's directory.
+       Next.js strips trailing slashes (/social/trainer-pitch-001/ → /social/trainer-pitch-001),
+       which would otherwise make the browser treat "trainer-pitch-001" as a file segment
+       and resolve `<img src="tiktok-main-offer.png">` to /social/tiktok-main-offer.png (404).
+       The <base> tag pins resolution to the actual directory. Future posts: update this
+       href to match the post-id directory name. -->
+  <base href="/social/trainer-pitch-001/">
   <style>
     :root {
       --brand: #EA580C;
