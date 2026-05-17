@@ -44,6 +44,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { getLocaleFromPath } from "@/lib/locale";
 
@@ -194,6 +195,24 @@ export function MobileBottomCTABar() {
   const locale = getLocaleFromPath(pathname);
   const cta = pickCTA(pathname, locale);
 
+  // Scroll-aware visibility — bar hides while hero / top-of-page is in view; appears
+  // only after the user scrolls past ~60% of viewport height. Prevents 'orange button
+  // overload' on hero (operator screenshot 2026-05-17: hero's primary orange CTA AND
+  // sticky bar's orange CTA were both visible at once = two big oranges fighting for
+  // attention on the same screen). Pattern matches Equinox / Barry's / boutique fitness
+  // sites — one primary CTA visible per viewport, always.
+  //
+  // Threshold uses viewport-height-relative (not fixed pixels) so it adapts to phone
+  // height. 60% lands past the hero fold on phones; tablet+ hides the bar entirely
+  // (md:hidden in the wrapper) so this only matters on mobile.
+  const [revealed, setRevealed] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setRevealed(window.scrollY > window.innerHeight * 0.6);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   if (!cta) return null;
 
   return (
@@ -203,10 +222,15 @@ export function MobileBottomCTABar() {
           spacer so iOS Safari home-indicator + the bar both clear content. */}
       <div className="h-20 md:hidden" aria-hidden />
 
-      {/* The bar */}
+      {/* The bar — fades in only once user scrolls past hero (revealed = true).
+          Transition is short (200ms) + uses opacity + pointer-events so the bar is
+          truly inert when hidden (no accidental taps on invisible orange button). */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden"
+        className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-opacity duration-200 ${
+          revealed ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         role="region"
+        aria-hidden={!revealed}
         aria-label={locale === "nl" ? "Snelle actie" : "Quick action"}
       >
         {/* Backdrop with blur — sits above page content; semi-transparent so
