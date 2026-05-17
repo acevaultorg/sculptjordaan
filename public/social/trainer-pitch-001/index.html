@@ -163,6 +163,13 @@
     .btn:disabled { opacity: 0.55; cursor: wait; }
     /* Primary "save all" CTA — slightly larger + bottom margin to anchor as the main action */
     .save-all-btn { margin: 0 0 1rem; padding: 18px 20px; font-size: 1.05rem; }
+    /* Format guide — small reference card showing where these slides work */
+    .format-guide { margin: 0 0 0.6rem; padding: 12px 14px; font-size: 0.85rem; line-height: 1.55; }
+    .format-guide .fg-title { color: var(--brand); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 6px; }
+    .format-guide .fg-primary { color: var(--fg); font-weight: 600; margin: 0 0 6px; }
+    .format-guide .fg-list { color: var(--muted); margin: 0; padding-left: 1.1em; line-height: 1.6; }
+    .format-guide .fg-list li { margin-bottom: 1px; }
+    .format-guide .fg-list strong { color: var(--fg); font-weight: 600; }
     .save-all-btn.copied { background: #15803D; color: #F0FDF4; }
     .save-all-btn.failed { background: #991B1B; color: #FEF2F2; }
     .btn-group { display: grid; gap: 8px; padding: 0 16px 16px; }
@@ -272,17 +279,28 @@
   </div>
 
   <h2>📷 3 slides → Foto's</h2>
-  <p style="color: var(--muted); font-size: 0.85rem; margin: 0 0 0.8rem">Eén tap → iOS share sheet opent → kies <strong>Bewaar afbeelding</strong>. Slides verschijnen direct in je Foto's.</p>
-  <!-- Primary action: save all 3 in one share-sheet operation. -->
+
+  <!-- Format-guide card: tells operator exactly which post formats THIS slide set works for.
+       Rendered platform-aware by renderFormatGuide() because TikTok-9:16 ≠ Instagram-1:1. -->
+  <div class="card format-guide" id="format-guide"></div>
+
+  <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0">Eén tap → iOS share sheet opent → kies <strong>Bewaar afbeelding</strong>. Slides verschijnen direct in je Foto's.</p>
+  <!-- PRIMARY ACTION 1: save all 3 in one share-sheet operation. -->
   <button class="btn save-all-btn" id="save-all-btn" onclick="saveAllSlides(this)">📷 Bewaar alle 3 in Foto's</button>
+
+  <!-- PRIMARY ACTION 2 (moved up — was below slide thumbnails): copy text for the platform.
+       Operator's flow: tap Bewaar → confirm share sheet → tap Kopieer alles → switch to app.
+       Putting these two actions adjacent removes scroll friction. -->
+  <div id="copy-section"></div>
+
+  <!-- Slide thumbnails moved DOWN — visual reference + individual-download fallback.
+       The primary actions live above; this section is for "did I save the right images?"
+       confidence + per-slide retry if 'alle 3' didn't work. -->
+  <h2>👁️ Preview & losse downloads</h2>
+  <p style="color: var(--muted); font-size: 0.85rem; margin: 0 0 0.8rem">Visuele check + losse download per slide als 'alle 3' niet werkte.</p>
   <div class="slides" id="slides-container">
     <!-- Slides rendered dynamically by switchPlatform() -->
   </div>
-
-  <!-- Copy section — platform-aware, rendered by switchPlatform().
-       TikTok wants: title + description + 5 hashtags (algorithm prefers 3-5 focused).
-       Instagram wants: caption + up to 11 hashtags (tolerates more). -->
-  <div id="copy-section"></div>
 
   <h2>🎵 Suggested sound</h2>
   <div class="card">
@@ -417,6 +435,9 @@ function switchPlatform(platform) {
 
   document.getElementById('platform-app').textContent = platform === 'tiktok' ? 'TikTok' : 'Instagram';
 
+  // Render the format-guide card so operator knows EXACTLY which post formats these slides fit
+  renderFormatGuide(platform);
+
   // Render slide thumbnails for the chosen platform
   const container = document.getElementById('slides-container');
   const aspect = platform === 'tiktok' ? 'aspect-vertical' : 'aspect-square';
@@ -434,6 +455,33 @@ function switchPlatform(platform) {
 
   // Render platform-aware copy cards (TikTok: title+description+5 hashtags; Instagram: caption+11)
   renderCopySection(platform);
+}
+
+// Format-guide content — tells operator what each slide set works for AND what's primary.
+// Honest about reuse: TikTok 9:16 slides also fit IG Story / IG Reel cover / FB Story etc.
+function renderFormatGuide(platform) {
+  const el = document.getElementById('format-guide');
+  if (platform === 'tiktok') {
+    el.innerHTML = `
+      <p class="fg-title">1080 × 1920 · Vertical 9:16</p>
+      <p class="fg-primary">→ Primair: <strong>TikTok feed</strong> carousel post (3 slides)</p>
+      <ul class="fg-list">
+        <li><strong>TikTok Story</strong> — 1 slide per keer als swipe-stack</li>
+        <li><strong>Instagram Story</strong> — werkt rechtstreeks (zelfde formaat)</li>
+        <li><strong>Instagram Reel</strong> — cover frame (statisch)</li>
+        <li><strong>Facebook Story</strong> — werkt rechtstreeks</li>
+      </ul>
+    `;
+  } else {
+    el.innerHTML = `
+      <p class="fg-title">1080 × 1080 · Square 1:1</p>
+      <p class="fg-primary">→ Primair: <strong>Instagram feed</strong> carousel post (3 slides)</p>
+      <ul class="fg-list">
+        <li><strong>Facebook feed</strong> carousel — werkt rechtstreeks</li>
+        <li>Voor IG Story / Reel: gebruik de <strong>TikTok 9:16</strong> tab</li>
+      </ul>
+    `;
+  }
 }
 
 // ─── Robust copy: Clipboard API → execCommand fallback → manual-select hint ───
