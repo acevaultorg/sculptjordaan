@@ -44,3 +44,8 @@ next-env.d.ts
 /photos
 /.claude/worktrees
 /.image-backups
+
+# Playwright mobile audit (generated artifacts — see tests/mobile.spec.ts)
+playwright-screenshots/
+playwright-report/
+test-results/
