@@ -228,7 +228,6 @@ export function MobileBottomCTABar() {
               className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex w-full items-center justify-center gap-2
                          rounded-2xl bg-brand px-5 py-3.5
                          text-base font-bold text-brand-foreground
-                         shadow-lg shadow-brand/30
                          transition-all active:scale-[0.98]
                          pr-20`}
             >
@@ -242,7 +241,6 @@ export function MobileBottomCTABar() {
               className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex w-full items-center justify-center gap-2
                          rounded-2xl bg-brand px-5 py-3.5
                          text-base font-bold text-brand-foreground
-                         shadow-lg shadow-brand/30
                          transition-all active:scale-[0.98]
                          pr-20`}
             >
