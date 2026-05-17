@@ -85,9 +85,19 @@ export function Hero({ locale }: { locale: Locale }) {
 
             <h1 className="text-white">
               {/* Hero headline — single line on all viewports 320px+.
-                  clamp(1.875rem, 8vw, 4rem) = 30px → 64px (cap at 800px viewport).
-                  Measured ratio: PRIVATE GYM = 9.09 × font-size at +0.12em tracking. */}
-              <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(1.875rem,8vw,4rem)]">
+                  2026-05-17: was clamp(1.875rem,8vw,4rem). Headless iPhone 14
+                  Pro screenshot (393×852) showed "PRIVATE GY..." clipped at
+                  right — Syne Bold +0.12em tracking renders ~11.5× font-size,
+                  not the 9.09× the prior comment claimed. At 393px viewport
+                  the 31.44px font produced ~370px text width inside a 361px
+                  inner container (px-4 = 16px gutters), and parent section's
+                  overflow-hidden cut the "M".
+                  New: clamp(1.5rem, 7vw, 4rem) — 24px min → 27.5px @ iPhone
+                  → 56px @ 800px → 64px max @ 914px+. At 393px: 27.5 × 11.5
+                  = 316px in 361px container = 45px headroom. Same dramatic
+                  cap on desktop (64px @ 914px+), only mobile/small-tablet
+                  shrinks ~12.5%. */}
+              <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(1.5rem,7vw,4rem)]">
                 PRIVATE GYM
               </span>
               <span className="block mt-4 sm:mt-5 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
