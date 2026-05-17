@@ -113,6 +113,159 @@ const FACTS = {
 
 export const SOCIAL_IDEAS: SocialIdea[] = [
   // ─── TIKTOK · STUDIO TOUR ───────────────────────────────────────────
+  //
+  // WINNING-PATTERN NOTE (operator observed 2026-05-17):
+  // The 10.5K-view top post on @sculptclub.jordaan was a static studio-floor
+  // shot with BOLD UPPERCASE PRICE OVERLAY ("YOUR PRIVATE GYM RENT FROM €12/HOUR
+  // TRY FIRST SESSION FREE"). 3.5× the views of any other post. Pattern: no
+  // actors, no script, ~10-20s, all caption-overlay, numbered rubber flooring
+  // as the visual anchor. Below ideas replicate this formula across all 3
+  // product tiers (Open Gym · PT · Studio Full). Operator can shoot all 4
+  // variants in one 30-minute studio session.
+  //
+  {
+    id: "tt-pricetag-opengym",
+    platform: "tiktok",
+    pillar: "studio-tour",
+    format: "TikTok Video",
+    title: "Price-tag · Open Gym from €5.75/session",
+    script: `[0-3s] Static shot of studio floor (numbered rubber flooring visible)
+[3-10s] Slow pan or zoom toward equipment
+[10-15s] BOLD OVERLAY appears: "OPEN GYM" line 1
+[15-20s] BOLD OVERLAY: "FROM €5.75 / SESSION"
+[20-25s] BOLD OVERLAY: "TRY FIRST SESSION FREE"
+[25-30s] Small text: "Jordaan · No membership · Cancel anytime"`,
+    brief: {
+      message: "Replicate the 10.5K-view winning format. Static studio shot + bold price overlay + free-trial CTA. Open Gym tier: €5.75/session is the lowest price-point on the entire roster — make the headline punch.",
+      facts: [
+        "Open Gym Instapplan: €29 / 4 weeks (4 sessions = €7.25/session)",
+        "Open Gym Populair: €49 / 4 weeks (8 sessions = €6.13/session)",
+        "Open Gym Intensief: €69 / 4 weeks (12 sessions = €5.75/session)",
+        "Open Gym Onbeperkt: €89 / 4 weeks unlimited",
+        "Max 3 people per slot",
+        "Door code via WhatsApp the night before",
+        "First session free",
+        "No contract · cancel anytime",
+      ],
+      hookConcept: "€5.75/session for a private gym in the Jordaan — read that again",
+      cta: `Book first free session · ${FACTS.website}/nl/open-gym`,
+      targetLength: "short",
+    },
+    hashtags: `#opengym #amsterdam #jordaan #gymamsterdam #privegym #goedkopegym #budgetgym #amsterdamfitness #boutiquegym #fitnesstudio`,
+    visualNote: "MAX 30s. No people in shot. Numbered rubber flooring as anchor. Bold uppercase overlay matches winning post style. Use a punchy beat — silence-then-drop or trending audio.",
+    duration: "30s",
+    media: [
+      { src: "/images/studio/studio-overview.jpeg", label: "Studio floor + numbered flooring", role: "primary" },
+      { src: "/images/studio/studio-interior-1.jpeg", label: "Interior" },
+      { src: "/images/studio/power-rack.jpeg", label: "Power rack" },
+      { src: "/images/studio/dumbbell-rack.jpeg", label: "Dumbbells" },
+    ],
+  },
+  {
+    id: "tt-pricetag-pt",
+    platform: "tiktok",
+    pillar: "studio-tour",
+    format: "TikTok Video",
+    title: "Price-tag · Personal Training from €45/session",
+    script: `[0-3s] Static shot of studio floor + equipment in background
+[3-10s] Slow zoom on dumbbell rack or power rack
+[10-15s] BOLD OVERLAY: "PERSONAL TRAINING"
+[15-20s] BOLD OVERLAY: "FROM €45 / SESSION"
+[20-25s] BOLD OVERLAY: "FIRST INTAKE FREE"
+[25-30s] Small text: "8 trainers · 0% commission · Jordaan"`,
+    brief: {
+      message: "Same winning formula as €12 studio-rental post but for the PT tier. Lead with the most accessible rate (Andrea €45/45min) to anchor low price. Sub-line clarifies '0% commission' which IS the differentiator.",
+      facts: [
+        "Andrea: €45 per 45 min — lowest rate on roster",
+        "8 trainers, varied specialisms",
+        "0% commission to SculptClub — full rate goes to trainer",
+        "First intake free · no obligation",
+        "Trainers set their own rates · trainer-led pricing",
+      ],
+      hookConcept: "€45 personal trainer in Amsterdam Jordaan — and the trainer keeps 100%",
+      cta: `Pick a trainer · ${FACTS.ptLanding}`,
+      targetLength: "short",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #ptamsterdam #personaltrainingamsterdam #affordablept #ptkosten #amsterdamfitness #boutiquegym #freelancer`,
+    visualNote: "MAX 30s. Optionally show a trainer's hands/shoulders only (not face) to suggest the human side without committing to a specific trainer. Bold uppercase overlay style.",
+    duration: "30s",
+    media: [
+      { src: "/images/studio/pt-session-barbell.jpg", label: "PT session anchor", role: "primary" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Coaching focus" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Form coaching" },
+    ],
+  },
+  {
+    id: "tt-pricetag-studiofull",
+    platform: "tiktok",
+    pillar: "studio-tour",
+    format: "TikTok Video",
+    title: "Price-tag · Full Studio Rental from €17/hour (variant of €12 winner)",
+    script: `[0-3s] Static shot of full studio (wider angle than the €12 winner)
+[3-10s] Slow pan: dumbbells → rack → cardio corner
+[10-15s] BOLD OVERLAY: "FULL STUDIO"
+[15-20s] BOLD OVERLAY: "RENT FROM €17 / HOUR"
+[20-25s] BOLD OVERLAY: "FOR PT WITH 2-5 CLIENTS"
+[25-30s] Small text: "First session free · Jordaan · No commission"`,
+    brief: {
+      message: "Variant of the €12 winning post — same exact format but full-studio tier for trainers running small-group sessions. Different audience (trainers running 2-5 person classes), same exact visual playbook.",
+      facts: [
+        "Full studio: €17/60min, €24/90min",
+        "Half studio (1 trainer + 1 client): €12/60min",
+        "Packages: Starter €89 (10% off), Routine €199 (15% off), Pro €349 (20% off), Volume €549 (23% off)",
+        "First session free for new trainers",
+        "Includes all equipment + wifi + music + cleaning",
+        "Free cancellation",
+      ],
+      hookConcept: "Full studio for your group of 5 — €17/hour in the Jordaan",
+      cta: `${FACTS.studioLanding}`,
+      targetLength: "short",
+    },
+    hashtags: `#studiohuren #amsterdam #jordaan #personaltrainer #freelancetrainer #ptamsterdam #fitnessstudio #zzpfitness #studiorental #fitnessrental`,
+    visualNote: "MIRROR the €12 winning post visual style — same camera angle, same uppercase overlay style. Difference: WIDER angle to show the 'group' feel + the €17 sublime.",
+    duration: "30s",
+    media: [
+      { src: "/images/studio/studio-overview.jpeg", label: "Full studio wide", role: "primary" },
+      { src: "/images/studio/studio-interior-2.jpeg", label: "Group-friendly angle" },
+      { src: "/images/studio/echo-bike-corner.jpg", label: "Equipment range" },
+      { src: "/images/studio/sculpt-wall-logo.jpeg", label: "Brand mark" },
+    ],
+  },
+  {
+    id: "ig-pricetag-trio",
+    platform: "instagram",
+    pillar: "studio-tour",
+    format: "Carousel",
+    title: "Carousel — Price-tag trio (Open Gym · PT · Studio Rental)",
+    script: `Carousel (4 slides — IG variant of the 10.5K-view TikTok winning formula):
+1. Cover: dark studio shot + BOLD OVERLAY "YOUR PRIVATE GYM" + sublime "3 ways in · 1 first session free"
+2. Slide: "OPEN GYM · from €5.75/session · Try free · No contract"
+3. Slide: "PERSONAL TRAINING · from €45/session · 8 trainers · 0% commission · First intake free"
+4. Slide: "STUDIO RENTAL · from €12/hour · For freelance trainers · First session free"
+5. CTA: "Pick your option · sculptclub.nl · Jordaan, Amsterdam"`,
+    brief: {
+      message: "Instagram variant of the TikTok winning pattern. Same overlay-on-studio-floor visual style. Carousel lets viewer swipe through ALL THREE tiers — they self-select which one fits their budget/need.",
+      facts: [
+        "Open Gym from €5.75/session",
+        "Personal Training from €45/session",
+        "Studio Rental from €12/hour",
+        "All three: first session free",
+        "Jordaan, Egelantiersgracht 424",
+        "Daily 06:30-22:00",
+      ],
+      hookConcept: "3 ways to use SculptClub — all under €50, all first-free",
+      cta: FACTS.website,
+      targetLength: "short",
+    },
+    hashtags: `#amsterdam #jordaan #amsterdamfitness #boutiquegym #privegym #personaltrainer #studiohuren #opengym #ptamsterdam #fitnessamsterdam`,
+    visualNote: "Slide design: high contrast, bold uppercase price, minimal copy. Brand color (#134DE1) optional accent. NUMBERED RUBBER FLOORING as visual anchor across all slides for continuity.",
+    media: [
+      { src: "/images/studio/studio-overview.jpeg", label: "Cover", role: "primary" },
+      { src: "/images/studio/power-rack.jpeg", label: "Open Gym slide bg" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "PT slide bg" },
+      { src: "/images/studio/studio-interior-2.jpeg", label: "Rental slide bg" },
+    ],
+  },
   {
     id: "tt-tour-01",
     platform: "tiktok",
