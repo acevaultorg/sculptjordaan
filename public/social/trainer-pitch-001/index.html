@@ -304,6 +304,8 @@
 
   <h2>🎵 Sound — top 3 voor workout-vibe + premium brand</h2>
   <div class="card">
+    <!-- Platform-aware sound banner — rendered by renderSoundContext() -->
+    <div id="sound-context" style="margin: 0 0 0.8rem"></div>
     <p style="color: var(--muted); font-size: 0.85rem; margin: 0 0 0.8rem">Dit is een <strong style="color: var(--fg)">gym sell voor trainers</strong> — geen interior-design content. FitTok-algoritme tagt phonk + premium hip-hop als "fitness/workout" en pusht naar trainer-audience. Aesthetic / lofi / piano klinkt premium maar krijgt nul push naar deze doelgroep. Drie tracks die zowel <em>workout-energy</em> als <em>boutique premium</em> dragen:</p>
 
     <p style="margin: 0 0 0.8rem; padding: 10px 12px; background: rgba(234,88,12,0.10); border-left: 3px solid var(--brand); border-radius: 4px;">
@@ -346,15 +348,8 @@
 
   <h2>🚀 Workflow (2 min)</h2>
   <div class="card" id="workflow-card">
-    <ol style="padding-left: 1.4em; margin: 0; line-height: 1.7" id="workflow-list">
-      <li>Kies platform tab boven (TikTok of Instagram)</li>
-      <li>Tap <strong>"Bewaar alle 3 in Foto's"</strong> → bevestig in share sheet</li>
-      <li>Open <strong id="platform-app">TikTok</strong> app → tap "+"</li>
-      <li>Photos mode → Camera roll → selecteer alle 3 slides in volgorde</li>
-      <li>Sound toevoegen (zie hierboven)</li>
-      <li>Tap <strong>Kopieer alles</strong> (onderaan) → plak in caption field</li>
-      <li>Post</li>
-    </ol>
+    <!-- Platform-aware workflow — rendered by renderWorkflow() (TT vs IG have different posting UI) -->
+    <ol style="padding-left: 1.4em; margin: 0; line-height: 1.7" id="workflow-list"></ol>
   </div>
 
   <div class="footer">
@@ -457,10 +452,15 @@ function switchPlatform(platform) {
   document.getElementById('tab-instagram').classList.toggle('active', platform === 'instagram');
   document.getElementById('tab-instagram').setAttribute('aria-selected', platform === 'instagram');
 
-  document.getElementById('platform-app').textContent = platform === 'tiktok' ? 'TikTok' : 'Instagram';
+  // (platform-app text-swap removed — workflow is now fully platform-aware via renderWorkflow)
 
   // Render the format-guide card so operator knows EXACTLY which post formats these slides fit
   renderFormatGuide(platform);
+
+  // Render platform-aware sound context banner + workflow steps
+  // (TikTok and IG have different posting UI + different sound semantics for feed carousel)
+  renderSoundContext(platform);
+  renderWorkflow(platform);
 
   // Render slide thumbnails for the chosen platform
   const container = document.getElementById('slides-container');
@@ -479,6 +479,57 @@ function switchPlatform(platform) {
 
   // Render platform-aware copy cards (TikTok: title+description+5 hashtags; Instagram: caption+11)
   renderCopySection(platform);
+}
+
+// Sound context banner — appears above the 3 phonk picks. Sound semantics
+// differ per platform: TikTok feed shows sound prominently (algorithm signal);
+// IG feed carousel posts play SILENT in feed (sound only on Reels/Stories).
+// So for IG mode we tell the operator to SKIP the sound step entirely unless
+// they're re-using these visuals as a Reel via the TikTok 9:16 tab.
+function renderSoundContext(platform) {
+  const el = document.getElementById('sound-context');
+  if (!el) return;
+  if (platform === 'tiktok') {
+    el.innerHTML = `
+      <p style="margin: 0; padding: 8px 10px; background: rgba(234,88,12,0.08); border-left: 3px solid var(--brand); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Voor TikTok feed:</strong> sound is een algoritme-signaal. Kies één hieronder.
+      </p>
+    `;
+  } else {
+    el.innerHTML = `
+      <p style="margin: 0; padding: 8px 10px; background: rgba(234,88,12,0.05); border-left: 3px solid var(--muted); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Voor IG feed carousel: skip deze sectie.</strong> <span style="color: var(--muted)">Instagram feed posts spelen muted af — sound is alleen relevant voor Reels &amp; Stories. Wil je een Reel maken? Switch naar de <strong style="color: var(--fg)">TikTok 9:16 tab</strong> en gebruik dan deze sound-picks.</span>
+      </p>
+    `;
+  }
+}
+
+// Platform-aware workflow — TikTok and IG have different posting UI labels.
+// TikTok: Photos mode → Camera roll. IG: + → Post → multi-select icon.
+function renderWorkflow(platform) {
+  const list = document.getElementById('workflow-list');
+  if (!list) return;
+  const tt = platform === 'tiktok';
+  const steps = tt
+    ? [
+        'Kies platform tab boven (nu: <strong>TikTok</strong>)',
+        'Tap <strong>"Bewaar alle 3 in Foto\'s"</strong> → bevestig in share sheet',
+        'Open <strong>TikTok</strong> app → tap "+"',
+        '<strong>Photos mode</strong> → Camera roll → selecteer alle 3 slides in volgorde',
+        'Search sound: <strong>Metamorphosis INTERWORLD</strong> (zie sound-sectie)',
+        'Tap <strong>Kopieer titel</strong> → plak in Titel-veld · daarna <strong>Kopieer description + hashtags</strong> → plak in Description-veld',
+        'Post',
+      ]
+    : [
+        'Kies platform tab boven (nu: <strong>Instagram</strong>)',
+        'Tap <strong>"Bewaar alle 3 in Foto\'s"</strong> → bevestig in share sheet',
+        'Open <strong>Instagram</strong> app → tap "+"',
+        'Tap <strong>"Post"</strong> → tap multi-select icoon → kies alle 3 slides in volgorde',
+        'Tap <strong>Volgende</strong> → skip filter → Volgende',
+        'Tap <strong>Kopieer caption + hashtags samen</strong> → plak in caption veld',
+        'Tap <strong>Delen</strong>',
+      ];
+  list.innerHTML = steps.map(s => `<li>${s}</li>`).join('');
 }
 
 // Format-guide content — tells operator what each slide set works for AND what's primary.
