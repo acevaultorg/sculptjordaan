@@ -421,27 +421,22 @@ function renderCopySection(platform) {
     // One paste fills the entire TikTok caption field correctly.
     document.getElementById('copy-description-text').textContent = c.description + '\n\n' + c.hashtags;
   } else {
+    // Instagram has ONE caption field — caption + hashtags go in the same paste target.
+    // So we mirror the TikTok-description pattern: one card showing caption body + blank
+    // line + 5 hashtags joined, with a single 'Kopieer' button that fills the whole IG
+    // caption field in one tap. Cleaner UX than the prior 3-card split (Caption +
+    // Hashtags + 'samen').
     container.innerHTML = `
-      <h2>📝 Caption</h2>
+      <h2>📝 Caption <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— incl. 5 hashtags · in IG caption-veld</span></h2>
       <div class="card">
         <div class="text" id="copy-caption-text"></div>
-        <button class="copy-btn" onclick="copyById('copy-caption-text', this)">📋 Kopieer caption</button>
-      </div>
-
-      <h2>🏷️ Hashtags <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— 5 max voor Instagram (zelfde set als TikTok)</span></h2>
-      <div class="card">
-        <div class="text hashtags" id="copy-hashtags-text"></div>
-        <button class="copy-btn" onclick="copyById('copy-hashtags-text', this)">📋 Kopieer hashtags</button>
-      </div>
-
-      <h2>⚡ Snelste pad</h2>
-      <div class="card">
-        <button class="copy-btn" onclick="copyAllForPlatform(this)">📋 Kopieer caption + hashtags samen</button>
+        <button class="copy-btn" onclick="copyById('copy-caption-text', this)">📋 Kopieer caption + hashtags</button>
         ${hintHtml}
       </div>
     `;
-    document.getElementById('copy-caption-text').textContent = c.caption;
-    document.getElementById('copy-hashtags-text').textContent = c.hashtags;
+    // Caption card holds caption body + blank line + 5 hashtags as one block.
+    // One paste fills the IG caption field correctly.
+    document.getElementById('copy-caption-text').textContent = c.caption + '\n\n' + c.hashtags;
   }
 }
 
