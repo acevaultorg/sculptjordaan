@@ -163,7 +163,10 @@ const slides = [
   {
     name: "usp-focus",
     photoPath: STUDIO_INTERIOR,
-    eyebrow: "ZERO COMMISSIE",
+    // Was "ZERO COMMISSIE" — mixed English+Dutch and inconsistent with the caption
+    // (which uses "0% commissie") + slide 1 USP (also "0% commissie"). "0% COMMISSIE"
+    // matches both surfaces + reads pure Dutch.
+    eyebrow: "0% COMMISSIE",
     // "Houd 100%" alone reads as a fragment in Dutch — "Houd 100% zelf"
     // makes the trainer-keeps-everything meaning explicit + complete.
     hero: "Houd 100% zelf",
