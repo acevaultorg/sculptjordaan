@@ -47,17 +47,23 @@ export const metadata: Metadata = {
   generator: "Next.js",
   publisher: siteConfig.name,
   category: "fitness",
-  // Brand icons — refreshed 2026-05-17 to match #EA580C primary.
-  // favicon.png = "SC" black-on-orange monogram (legible at 16-32px browser tab).
-  // apple-touch + icon-192/512 = full SCULPT/CLUB stacked wordmark on orange.
+  // Brand icons — refreshed 2026-05-17 (rev 2 — Google-favicon-compliant).
+  // SVG primary = scalable single bold "S" on orange #EA580C (renders crisp
+  // at any size; modern browsers prefer this).
+  // 48px PNG = Google Search's preferred favicon spec (renders at ~20px
+  // circle-clipped in search results; bold S stays legible).
+  // Multi-resolution chain: 48 → 96 → 192 → 512 for browser/device variants.
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.png", type: "image/png", sizes: "256x256" },
       { url: "/images/icon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/images/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.ico",
   },
   manifest: "/manifest.json",
   alternates: {

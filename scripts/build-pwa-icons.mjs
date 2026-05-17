@@ -45,18 +45,40 @@ await sharp(SOURCE_AVATAR)
   .toFile(APPLE_TOUCH);
 console.log(`✓ apple-touch-icon.png · 180×180 · ${APPLE_TOUCH}`);
 
-// 2. Favicon: generate "SC" monogram via SVG (legible at browser-tab 16-32px)
-// At small sizes the stacked SCULPT/CLUB wordmark becomes unreadable smudge,
-// so favicon uses single-line "SC" — Maximum legibility, brand-orange BG.
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#EA580C" rx="10" ry="10"/>
-  <text x="32" y="44" font-family="system-ui, -apple-system, Arial, sans-serif" font-weight="900" font-size="34" text-anchor="middle" fill="#0A0A0A" letter-spacing="-1">SC</text>
+// 2. Favicon: SINGLE bold "S" via SVG — redesign 2026-05-17 (rev 2).
+// Reason: Google search results render favicon at ~20px circle-clipped. A
+// 2-letter "SC" gets squished into illegible smudge at that size. A single
+// big bold "S" filling the canvas reads instantly at any rendering size +
+// keeps brand recognition (orange = SculptClub).
+// Renders at 256x256 base for crisp downscaling to all favicon sizes.
+// Letter fills ~75% of canvas (vs ~50% for two-letter SC) = much more
+// visible at 16-20px tab/search-result size.
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="#EA580C"/>
+  <text x="128" y="190" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="220" text-anchor="middle" fill="#0E0C0A" letter-spacing="-8">S</text>
 </svg>`;
 
 await sharp(Buffer.from(faviconSvg))
+  .resize({ width: 256, height: 256 })
   .png({ compressionLevel: 9 })
   .toFile(FAVICON_PNG);
-console.log(`✓ favicon.png · 64×64 · ${FAVICON_PNG}`);
+console.log(`✓ favicon.png · 256×256 single-S · ${FAVICON_PNG}`);
+
+// Also generate explicit 48px (Google's preferred favicon spec is multiple of 48)
+const FAVICON_48 = path.join(root, "public/favicon-48.png");
+await sharp(Buffer.from(faviconSvg))
+  .resize({ width: 48, height: 48 })
+  .png({ compressionLevel: 9 })
+  .toFile(FAVICON_48);
+console.log(`✓ favicon-48.png · 48×48 (Google preferred) · ${FAVICON_48}`);
+
+// Explicit 96px for Google search results (rendered at ~20-32px circle clip)
+const FAVICON_96 = path.join(root, "public/favicon-96.png");
+await sharp(Buffer.from(faviconSvg))
+  .resize({ width: 96, height: 96 })
+  .png({ compressionLevel: 9 })
+  .toFile(FAVICON_96);
+console.log(`✓ favicon-96.png · 96×96 · ${FAVICON_96}`);
 
 // 3. Multi-resolution favicon.ico from favicon.png (browsers fall back to
 // /favicon.ico when metadata icons aren't honored — Safari quirks, legacy).
