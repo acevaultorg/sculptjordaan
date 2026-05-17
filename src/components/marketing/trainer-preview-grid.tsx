@@ -165,10 +165,14 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
           already exposes the third path: per-trainer WhatsApp intake. */}
       <FadeIn delay={PREVIEW_COUNT * 0.08}>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          {/* Primary action — clean orange fill, no brand-tinted halo shadow.
+              Was 'shadow-lg shadow-primary/30 hover:shadow-brand-lg' which produced
+              the same orange aura we removed from the sticky bottom bar. Reduces
+              total orange real-estate per viewport. */}
           <Link
             href={c.viewAllHref}
             data-cta="home-trainer-view-all"
-            className="plausible-event-name=home_trainer_view_all inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-brand-lg active:scale-[0.98]"
+            className="plausible-event-name=home_trainer_view_all inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground transition-all hover:bg-primary/90 active:scale-[0.98]"
           >
             {c.ctaAll}
             <ArrowRight className="h-5 w-5" />

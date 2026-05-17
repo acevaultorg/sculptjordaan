@@ -35,12 +35,17 @@ export function TrainerSignalBand({ locale }: { locale: Locale }) {
           </div>
         </div>
         <div className="flex flex-shrink-0">
+          {/* Outlined-style button (not filled). The panel itself is already orange-coded:
+              bg-primary/5 background, primary-tinted border, primary-color icon + badge
+              heading + body text. A filled-orange button HERE doubles the orange-on-orange
+              and makes the section feel shout-y. Outlined button keeps the action emphasis
+              (visible border, hover-fill on tap) without contributing to orange overload. */}
           <Link
             href={c.href}
-            className="plausible-event-name=trainer_band_studio_click inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+            className="plausible-event-name=trainer_band_studio_click inline-flex items-center justify-center gap-2 rounded-lg border border-primary/60 bg-transparent px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/10 hover:border-primary"
           >
             {c.cta}
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4 text-primary" />
           </Link>
         </div>
       </div>
