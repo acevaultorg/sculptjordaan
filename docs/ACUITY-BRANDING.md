@@ -15,15 +15,15 @@ These come from `src/app/globals.css` (`.dark` block).
 
 | Acuity field | Hex | Role |
 |---|---|---|
-| **Main / Background** | `#0F1118` | Page background |
-| **Card / Panel background** | `#1A1D28` | Cards, form fields, dropdown panels |
-| **Text color** | `#EDEDF0` | Body copy, form labels, titles |
-| **Muted / Secondary text** | `#8A8D9B` | Timestamps, help text, inactive labels |
+| **Main / Background** | `#0B0907` | Page background |
+| **Card / Panel background** | `#1A1410` | Cards, form fields, dropdown panels |
+| **Text color** | `#EDE5DA` | Body copy, form labels, titles |
+| **Muted / Secondary text** | `#8A8073` | Timestamps, help text, inactive labels |
 | **Primary / Button color** | `#F97316` | Book / Continue / Confirm buttons (dark-mode orange = Tailwind orange-500) |
 | **Button hover** | `#EA580C` | Button hover state (Tailwind orange-600) |
-| **Button text** | `#0A0A0A` | Text on primary buttons (near-black on orange = AA Large contrast) |
+| **Button text** | `#0E0C0A` | Text on primary buttons (near-black on orange = AA Large contrast) |
 | **Accent / Link color** | `#F97316` | Inline links, active tab underlines |
-| **Border** | `#2A2A35` | Dividers, input borders |
+| **Border** | `#2A2620` | Dividers, input borders |
 | **Error / Alert** | `#EF4444` | Validation errors |
 
 ## Fonts
@@ -42,13 +42,13 @@ If your plan includes **Custom CSS**, paste this in **Customize Appearance → A
 ```css
 /* Match sculptclub.nl dark noir theme */
 :root {
-  --sc-bg: #0F1118;
-  --sc-card: #1A1D28;
-  --sc-fg: #EDEDF0;
-  --sc-muted: #8A8D9B;
+  --sc-bg: #0B0907;
+  --sc-card: #1A1410;
+  --sc-fg: #EDE5DA;
+  --sc-muted: #8A8073;
   --sc-brand: #F97316;
   --sc-brand-hover: #EA580C;
-  --sc-border: #2A2A35;
+  --sc-border: #2A2620;
 }
 
 body,
@@ -73,7 +73,7 @@ textarea {
 button[type="submit"],
 .book-button {
   background: var(--sc-brand) !important;
-  color: #0A0A0A !important;
+  color: #0E0C0A !important;
   border: none !important;
   border-radius: 12px !important;
   padding: 14px 28px !important;
@@ -118,5 +118,5 @@ The production site is dark-only (see `CLAUDE.md`). Light mode tokens exist in `
 
 1. Visit https://sculptclub.nl/en/book-gym on production
 2. Click **Book a session** — a new tab opens Acuity
-3. The scheduler should use `#0F1118` background, `#F97316` buttons, near-black text on buttons
+3. The scheduler should use `#0B0907` background, `#F97316` buttons, near-black text on buttons
 4. If colors don't update, hard-reload Acuity (Cmd+Shift+R) — Acuity caches styles aggressively

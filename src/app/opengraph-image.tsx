@@ -27,8 +27,8 @@ export default function OgImage() {
           justifyContent: "space-between",
           padding: "72px 80px 72px 96px",
           background:
-            "radial-gradient(ellipse at top right, rgba(19, 77, 225, 0.22) 0%, rgba(10, 10, 10, 0) 55%), linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%)",
-          color: "#ffffff",
+            "radial-gradient(ellipse at top right, rgba(234, 88, 12, 0.22) 0%, rgba(14, 12, 10, 0) 55%), linear-gradient(135deg, #0B0907 0%, #1A1410 50%, #0B0907 100%)",
+          color: "#EDE5DA",
           fontFamily: "sans-serif",
           position: "relative",
         }}
@@ -59,7 +59,7 @@ export default function OgImage() {
               fontSize: 38,
               fontWeight: 700,
               letterSpacing: 4,
-              color: "#ffffff",
+              color: "#FFFFFF",
             }}
           >
             SCULPT CLUB
@@ -123,7 +123,7 @@ export default function OgImage() {
                 fontWeight: 900,
                 lineHeight: 0.9,
                 letterSpacing: -5,
-                color: "#ffffff",
+                color: "#FFFFFF",
               }}
             >
               €12
@@ -146,7 +146,7 @@ export default function OgImage() {
               display: "flex",
               fontSize: 40,
               fontWeight: 500,
-              color: "#cbd5e1",
+              color: "#A69D98",
               letterSpacing: -0.5,
               lineHeight: 1.2,
               maxWidth: 960,
@@ -173,7 +173,7 @@ export default function OgImage() {
                 background: "rgba(19, 77, 225, 0.22)",
                 borderRadius: 999,
                 border: "1px solid rgba(19, 77, 225, 0.6)",
-                color: "#ffffff",
+                color: "#FFFFFF",
                 fontWeight: 600,
               }}
             >
@@ -199,7 +199,7 @@ export default function OgImage() {
                 background: "rgba(255,255,255,0.06)",
                 borderRadius: 999,
                 border: "1px solid rgba(255,255,255,0.14)",
-                color: "#cbd5e1",
+                color: "#A69D98",
                 fontWeight: 500,
               }}
             >
@@ -211,7 +211,7 @@ export default function OgImage() {
               display: "flex",
               fontSize: 28,
               fontWeight: 700,
-              color: "#ffffff",
+              color: "#FFFFFF",
               letterSpacing: 1,
             }}
           >

@@ -61,14 +61,16 @@
   --card-foreground: #0E0C0A;
   --popover: #FFFFFF;
   --popover-foreground: #0E0C0A;
-  /* Brand: SculptClub Orange — Tailwind orange-600 family.
-     Refined 2026-05-17: was #FF6B00 (saturated mandarin, slightly consumer-fast-food
-     for 90%-trainer-revenue audience). New #EA580C is burnt-tangerine — more
-     premium-tool, brand-strategy-faithful (Penguin Classics / Hermès lineage),
-     pairs gracefully with Tailwind orange-50→orange-950 palette.
-     Foreground stays near-black for WCAG (black-on-#EA580C = 5.41:1 AA + AAA Large). */
+  /* ─── SculptClub Unified Warm-Neutral Palette (2026-05-17) ───
+     Every shade harmonized: brand orange + warm-cream cream + warm-grey
+     scale + warm near-black. Cool-grey legacy from blue-brand era purged.
+     Single foreground token #0E0C0A across all surfaces.
+     WCAG: black-on-#EA580C = 5.65:1 (AA Normal + AAA Large).
+     Warm-grey scale: 50/100/200/300/400/500/600/700/800/900/950/1000
+       = #FAF8F5 / F3F0EC / E8E1D8 / D3CCC4 / A69D98 / 8A8073 / 756A60
+         / 544A40 / 3E3631 / 2A2620 / 1A1410 / 0E0C0A */
   --primary: #EA580C;
-  --primary-foreground: #0A0A0A;
+  --primary-foreground: #0E0C0A;
   --secondary: #F3F0EC;
   --secondary-foreground: #0E0C0A;
   --muted: #F3F0EC;
@@ -82,7 +84,7 @@
   --surface: #F3F0EC;
   --brand: #EA580C;
   --brand-dark: #C2410C;
-  --brand-foreground: #0A0A0A;
+  --brand-foreground: #0E0C0A;
   --discount: #DC2626;
   --radius: 1.15rem;
   /* Chart colors */
@@ -95,54 +97,55 @@
   --sidebar: #F7F5F2;
   --sidebar-foreground: #0E0C0A;
   --sidebar-primary: #EA580C;
-  --sidebar-primary-foreground: #0A0A0A;
+  --sidebar-primary-foreground: #0E0C0A;
   --sidebar-accent: #F3F0EC;
   --sidebar-accent-foreground: #0E0C0A;
   --sidebar-border: #D3CCC4;
   --sidebar-ring: #EA580C;
 }
 
-/* SculptClub Brand — Dark Mode (Cool Noir) */
+/* SculptClub Brand — Dark Mode (Warm Noir — refined 2026-05-17)
+   Cool-grey palette (#0F1118 / #1A1D28 / #EDEDF0 / #8A8D9B / #2A2A35)
+   purged. Every dark-mode shade now warm-tonal: matches
+   BRAND-STRATEGY.md "darkroom safelight + sodium-canal-lamp + after-hours
+   warm interior" DNA and harmonizes with #F97316/#EA580C orange brand. */
 .dark {
-  --background: #0F1118;
-  --foreground: #EDEDF0;
-  --card: #1A1D28;
-  --card-foreground: #EDEDF0;
-  --popover: #1A1D28;
-  --popover-foreground: #EDEDF0;
-  /* Dark mode brand: Tailwind orange-500 (#F97316) — slightly lighter than
-     light-mode orange-600 for contrast on dark canvas. brand-dark hover state
-     goes back to orange-600. Foreground stays near-black (AA Large contrast). */
+  --background: #0B0907;
+  --foreground: #EDE5DA;
+  --card: #1A1410;
+  --card-foreground: #EDE5DA;
+  --popover: #1A1410;
+  --popover-foreground: #EDE5DA;
   --primary: #F97316;
-  --primary-foreground: #0A0A0A;
-  --secondary: #1A1D28;
-  --secondary-foreground: #EDEDF0;
-  --muted: #1A1D28;
-  --muted-foreground: #8A8D9B;
-  --accent: #1A1D28;
-  --accent-foreground: #EDEDF0;
+  --primary-foreground: #0E0C0A;
+  --secondary: #1A1410;
+  --secondary-foreground: #EDE5DA;
+  --muted: #1A1410;
+  --muted-foreground: #8A8073;
+  --accent: #1A1410;
+  --accent-foreground: #EDE5DA;
   --destructive: #EF4444;
-  --border: #2A2A35;
-  --input: #2A2A35;
+  --border: #2A2620;
+  --input: #2A2620;
   --ring: #F97316;
-  --surface: #1A1D28;
+  --surface: #1A1410;
   --brand: #F97316;
   --brand-dark: #EA580C;
-  --brand-foreground: #0A0A0A;
+  --brand-foreground: #0E0C0A;
   --discount: #EF4444;
   --radius: 1.15rem;
   --chart-1: #F97316;
-  --chart-2: #8A8D9B;
-  --chart-3: #EDEDF0;
-  --chart-4: #2A2A35;
-  --chart-5: #1A1D28;
-  --sidebar: #0F1118;
-  --sidebar-foreground: #EDEDF0;
+  --chart-2: #8A8073;
+  --chart-3: #EDE5DA;
+  --chart-4: #2A2620;
+  --chart-5: #1A1410;
+  --sidebar: #0B0907;
+  --sidebar-foreground: #EDE5DA;
   --sidebar-primary: #F97316;
-  --sidebar-primary-foreground: #0A0A0A;
-  --sidebar-accent: #1A1D28;
-  --sidebar-accent-foreground: #EDEDF0;
-  --sidebar-border: #2A2A35;
+  --sidebar-primary-foreground: #0E0C0A;
+  --sidebar-accent: #1A1410;
+  --sidebar-accent-foreground: #EDE5DA;
+  --sidebar-border: #2A2620;
   --sidebar-ring: #F97316;
 }
 

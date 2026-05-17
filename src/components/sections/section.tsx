@@ -15,7 +15,7 @@ const bgMap = {
   default: "",
   muted: "bg-secondary/50",
   surface: "bg-surface",
-  dark: "bg-[#0A0C12] text-white",
+  dark: "bg-[#0B0907] text-[#EDE5DA]",
 };
 
 export function Section({ children, className, bg = "default", id, wide }: SectionProps) {

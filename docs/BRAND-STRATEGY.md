@@ -87,7 +87,7 @@ It's closer to a private music studio or a shared photography darkroom than to a
 - Buttons, links, CTAs, focus rings → brand orange (`#EA580C` light / `#F97316` dark mode — Tailwind orange-600/-500)
 - Headings, body text, labels → foreground/neutral only
 - Navigation text (default state) → foreground, not brand color
-- Button TEXT on orange surfaces → near-black `#0A0A0A` (5.41:1 AA + AAA Large contrast; never white-on-orange)
+- Button TEXT on orange surfaces → near-black `#0E0C0A` (5.41:1 AA + AAA Large contrast; never white-on-orange)
 
 ### Why orange (changed from blue 2026-05-17, refined later same day)
 Brand primary changed from `#134DE1` blue to `#EA580C` orange (Tailwind orange-600). The blue read SaaS/fintech-corporate — exactly what this strategy says SculptClub is NOT. The 90%-trainer-rental revenue model also demands a "premium-tool" feel over "consumer-energy-drink" — `#EA580C` burnt-tangerine reads sophisticated where `#FF6B00` saturated-mandarin (initial pick, same day) read consumer. Orange traces to the doc's existing "private music studio / shared photography darkroom" + "after-hours sodium-canal-lamp" DNA:
