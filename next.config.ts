@@ -81,6 +81,11 @@ const nextConfig: NextConfig = {
       // future bounces. Soft-redirect (not permanent) so we can move the canonical
       // location later if needed.
       { source: "/social", destination: "/nl/social", permanent: false },
+      // Social-post URL migration (2026-05-17): flat /social/post.html consolidated
+      // into directory-per-post layout (/social/<post-id>/). Permanent because the
+      // new structure is the long-term canonical — every future post gets its own
+      // directory, no more /social/post-N.html collisions.
+      { source: "/social/post.html", destination: "/social/trainer-pitch-001/", permanent: true },
       // /start is handled by middleware (language detection) — not here
 
       // Shortlinks (migrated from Hostinger redirects)

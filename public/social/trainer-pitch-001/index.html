@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SculptClub — Social Post Pack</title>
+  <title>SculptClub · Voor Trainers — Huur de Studio (trainer-pitch-001)</title>
   <meta name="theme-color" content="#EA580C">
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="/favicon.png">
@@ -333,14 +333,16 @@ function switchPlatform(platform) {
 
   const container = document.getElementById('slides-container');
   const aspect = platform === 'tiktok' ? 'aspect-vertical' : 'aspect-square';
+  // Image files live in the same directory as this HTML — use relative paths.
+  // Download attribute carries the post-id for clean Files/Photos roll labels.
   container.innerHTML = slidesData.map(s => `
     <div class="slide">
-      <img src="/social/${platform}-${s.name}.png" class="slide-img ${aspect}" alt="Slide ${s.label} — ${s.title}" loading="lazy">
+      <img src="${platform}-${s.name}.png" class="slide-img ${aspect}" alt="Slide ${s.label} — ${s.title}" loading="lazy">
       <div class="slide-meta">
         <span class="slide-label"><span class="slide-num">${s.label}</span>${s.title}</span>
       </div>
       <div class="btn-group">
-        <a href="/social/${platform}-${s.name}.png" download="sculptclub-${platform}-slide-${s.label}.png" class="btn">📥 Download slide ${s.label}</a>
+        <a href="${platform}-${s.name}.png" download="sculptclub-trainer-pitch-001-${platform}-slide-${s.label}.png" class="btn">📥 Download slide ${s.label}</a>
       </div>
     </div>
   `).join('');

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// scripts/build-tiktok-post.mjs (rev 2 — readstacks-grade craft)
+// scripts/build-tiktok-post.mjs (rev 3 — directory-per-post layout)
 //
 // Design principles applied per industry-best social-card design:
 //   1. 96px consistent edge margins (no text touches edges)
@@ -10,13 +10,17 @@
 //   6. High contrast (AA Large minimum on every text/bg pair)
 //   7. Photo + dark gradient stacked layer model
 //
-// Outputs (all 1080×1920 vertical TikTok-spec):
-//   public/social/best-tiktok-post.png       (slide 1 · main offer)
-//   public/social/best-tiktok-post-2.png     (slide 2 · USP detail)
-//   public/social/best-tiktok-post-3.png     (slide 3 · location pitch)
+// Usage:
+//   node scripts/build-tiktok-post.mjs [post-id]
+//   (defaults to "trainer-pitch-001" when no arg passed)
+//
+// Outputs land in   public/social/<post-id>/  alongside that post's index.html:
+//   tiktok-main-offer.png    instagram-main-offer.png   (1080×1920 vs 1080×1080)
+//   tiktok-usp-focus.png     instagram-usp-focus.png
+//   tiktok-location.png      instagram-location.png
 //
 // Phone workflow:
-//   Operator opens sculptclub.nl/social/post.html → downloads → posts to TikTok.
+//   Operator opens sculptclub.nl/social/<post-id>/ → downloads → posts to TikTok / Instagram.
 
 import sharp from "sharp";
 import path from "node:path";
@@ -31,7 +35,10 @@ const STUDIO_INTERIOR = path.join(root, "public/images/studio/studio-interior-2.
 const STUDIO_CANAL = path.join(root, "public/images/studio/canal-view-doors.jpg");
 const WORDMARK_PNG = path.join(root, "public/images/logo-sculptclub.png");
 
-const OUT_DIR = path.join(root, "public/social");
+// Post identifier — drives output directory under public/social/<post-id>/.
+// Override via CLI: `node scripts/build-tiktok-post.mjs trainer-pitch-002`.
+const POST_ID = process.argv[2] || "trainer-pitch-001";
+const OUT_DIR = path.join(root, "public/social", POST_ID);
 await mkdir(OUT_DIR, { recursive: true });
 
 const W = 1080;
@@ -202,10 +209,5 @@ for (let i = 0; i < slides.length; i++) {
   });
 }
 
-// Keep legacy filenames for backward-compatibility with prior posts referencing them
-await sharp(path.join(OUT_DIR, "tiktok-main-offer.png")).toFile(path.join(OUT_DIR, "best-tiktok-post.png"));
-await sharp(path.join(OUT_DIR, "tiktok-usp-focus.png")).toFile(path.join(OUT_DIR, "best-tiktok-post-2.png"));
-await sharp(path.join(OUT_DIR, "tiktok-location.png")).toFile(path.join(OUT_DIR, "best-tiktok-post-3.png"));
-
 console.log(`\n✅ ${slides.length} slides × 2 formats (TT vertical + IG square) = ${slides.length * 2} images built.`);
-console.log("Phone-download hub: /social/post.html");
+console.log(`Phone-download hub: /social/${POST_ID}/`);
