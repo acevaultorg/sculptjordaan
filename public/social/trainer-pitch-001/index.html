@@ -367,6 +367,11 @@ function renderCopySection(platform) {
   const hintHtml = '<p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar. Werkt de knop niet? Long-press de tekst hierboven om te selecteren.</p>';
 
   if (platform === 'tiktok') {
+    // TikTok's posting UI has TWO fields:
+    //   1. Title    — short hook, separate input
+    //   2. Description (caption) — body text + hashtags live together here
+    // So we expose exactly 2 paste targets matching those 2 fields. The
+    // description card already contains the 5 hashtags joined at the bottom.
     container.innerHTML = `
       <h2>📝 Titel <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— eerste regel · valt op in feed</span></h2>
       <div class="card">
@@ -374,16 +379,10 @@ function renderCopySection(platform) {
         <button class="copy-btn" onclick="copyById('copy-title-text', this)">📋 Kopieer titel</button>
       </div>
 
-      <h2>📝 Description</h2>
+      <h2>📝 Description <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— incl. 5 hashtags · in TikTok caption-veld</span></h2>
       <div class="card">
         <div class="text" id="copy-description-text"></div>
-        <button class="copy-btn" onclick="copyById('copy-description-text', this)">📋 Kopieer description</button>
-      </div>
-
-      <h2>🏷️ Hashtags <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— 5 max voor TikTok</span></h2>
-      <div class="card">
-        <div class="text hashtags" id="copy-hashtags-text"></div>
-        <button class="copy-btn" onclick="copyById('copy-hashtags-text', this)">📋 Kopieer hashtags</button>
+        <button class="copy-btn" onclick="copyById('copy-description-text', this)">📋 Kopieer description + hashtags</button>
       </div>
 
       <h2>⚡ Snelste pad</h2>
@@ -393,8 +392,9 @@ function renderCopySection(platform) {
       </div>
     `;
     document.getElementById('copy-title-text').textContent = c.title;
-    document.getElementById('copy-description-text').textContent = c.description;
-    document.getElementById('copy-hashtags-text').textContent = c.hashtags;
+    // Description card holds description body + blank line + 5 hashtags as a single block.
+    // One paste fills the entire TikTok caption field correctly.
+    document.getElementById('copy-description-text').textContent = c.description + '\n\n' + c.hashtags;
   } else {
     container.innerHTML = `
       <h2>📝 Caption</h2>
