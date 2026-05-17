@@ -342,6 +342,290 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       { src: "/images/studio/training-dumbbells-focus.jpg", label: "Coaching action" },
     ],
   },
+  {
+    id: "tt-spotlight-gezina",
+    platform: "tiktok",
+    pillar: "trainer-spotlight",
+    format: "TikTok Video",
+    title: "Meet Gezina — Women's strength specialist",
+    script: `[0-3s] Hook: "She trains women — really trains them"
+[3-12s] Gezina coaching a deadlift, encouraging cue
+[12-22s] Talking-head: why she only trains women
+[22-32s] B-roll: small group of 2-3 women, energetic
+[32-42s] Gezina on cycle-aware programming (1-line, plain language)
+[42-52s] Client smile after a PR (with consent)
+[52-60s] CTA: ${FACTS.website}`,
+    brief: {
+      message: "Position Gezina as the trainer for women who want STRONG, not 'toned'. Cycle-aware programming is the differentiator.",
+      facts: [
+        "Specialism: Women's training · Strength · Performance",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Trains 1-on-1 AND small group",
+        "Cycle-aware programming — strength volume aligned to your cycle",
+      ],
+      hookConcept: "The only PT in the Jordaan who programs strength around your cycle",
+      cta: `DM Gezina @gezfitness · book via ${FACTS.website}`,
+      targetLength: "medium",
+    },
+    hashtags: `#womenwholift #vrouwentraining #personaltrainer #amsterdam #jordaan #strengthtraining #womenshealth #cycletraining #fitnesscoachamsterdam #ptamsterdam`,
+    visualNote: "Real, not aesthetic-empowerment-cliché. Gezina coaching focus + 1 PR moment. No mirror selfies.",
+    duration: "60s",
+    media: [
+      { src: "/images/trainers/gezina.jpg", label: "Gezina portrait", role: "primary" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Coaching deadlift" },
+      { src: "/images/studio/training-dumbbells-smile.jpg", label: "PR moment" },
+    ],
+  },
+  {
+    id: "tt-spotlight-jearmey",
+    platform: "tiktok",
+    pillar: "trainer-spotlight",
+    format: "TikTok Video",
+    title: "Meet Jearmey — Strength · Fat loss · Athletic performance",
+    script: `[0-3s] Hook: "Want to lose fat without losing strength?"
+[3-12s] Jearmey demoing a power clean
+[12-22s] Talking-head: his three-pillar approach (strength · fat loss · pain-free)
+[22-32s] B-roll: client mid-session, sweat + form
+[32-42s] Jearmey on why "athletic" beats "fitness"
+[42-52s] Quick montage: sprint · lift · stretch
+[52-60s] CTA: ${FACTS.website}`,
+    brief: {
+      message: "Jearmey is for people who want to PERFORM, not just look better. Strength + fat loss + pain-free movement = athletic body.",
+      facts: [
+        "Specialism: Strength · Fat Loss · Athletic Performance",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Programmes built to deliver measurable result",
+      ],
+      hookConcept: "Train like an athlete — even if you're 38 and sit at a desk",
+      cta: `DM @jer.proformance · book via ${FACTS.website}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #strengthtraining #fatloss #athleticperformance #ptamsterdam #fitcoachamsterdam #performancetraining #afvallen`,
+    visualNote: "High-intensity edit. Power, speed, technique. No before/after weight-loss frames — show CAPABILITY gains.",
+    duration: "60s",
+    media: [
+      { src: "/images/trainers/jearmey.jpg", label: "Jearmey portrait", role: "primary" },
+      { src: "/images/studio/training-barbell-dramatic.jpg", label: "Power lift" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "Power moment" },
+    ],
+  },
+  {
+    id: "tt-spotlight-sergei",
+    platform: "tiktok",
+    pillar: "trainer-spotlight",
+    format: "TikTok Video",
+    title: "Meet Sergei — 10+ years · Body recomposition specialist",
+    script: `[0-3s] Hook: "Posture · body composition · busy professional"
+[3-12s] Sergei talking-head intro (English — his market)
+[12-22s] B-roll: Sergei coaching a deadlift with precise setup cues
+[22-32s] Quick reference to 10+ years experience + structured programming
+[32-42s] Posture-fix demo: before-shot ↔ after one session
+[42-52s] Sergei on 1:1 / duo / small group options
+[52-60s] CTA: "DM @transformbst · ${FACTS.website}"`,
+    brief: {
+      message: "Sergei is the trainer for busy English-speaking professionals who want a structured plan, not a session-by-session improvise. 10+ years experience.",
+      facts: [
+        "Specialism: Body Recomposition · Posture Correction · Strength & Movement · Recovery",
+        "Languages: EN · RU (English-first audience)",
+        "Rate: €80 per 60 min",
+        "First intake free",
+        "10+ years of personal training experience",
+        "1:1, duo or small group format",
+      ],
+      hookConcept: "Structured, evidence-based programming — built around your week, not against it",
+      cta: `DM @transformbst · book via ${FACTS.website}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #bodyrecomposition #postureimprovement #strengthcoach #personaltraineramsterdam #ptamsterdam #englishspeaking #expatfitness`,
+    visualNote: "English-only captions on screen. Sergei's expat-professional market — avoid Dutch overlay text.",
+    duration: "60s",
+    media: [
+      { src: "/images/trainers/sergei.jpg", label: "Sergei portrait", role: "primary" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Coaching deadlift" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Posture cue" },
+    ],
+  },
+  {
+    id: "tt-spotlight-joey",
+    platform: "tiktok",
+    pillar: "trainer-spotlight",
+    format: "TikTok Video",
+    title: "Meet Joey — The Ascend Method (strength + breath + nervous system)",
+    script: `[0-3s] Hook: "What if your strength came from your nervous system?"
+[3-12s] Joey: 1-line intro of The Ascend Method
+[12-22s] B-roll: Joey coaching slow, intentional movement
+[22-32s] Breathwork micro-demo (3 breath cycles, on-screen)
+[32-42s] Joey on the high-performer who feels disconnected
+[42-52s] Quote overlay: "Wisdom isn't studied, it's embodied."
+[52-60s] CTA: ${FACTS.website}`,
+    brief: {
+      message: "Joey is for high-performers who are strong but stuck. Position The Ascend Method as the differentiator — body + mind + breath aligned.",
+      facts: [
+        "Specialism: Strength · Breathwork · Nervous System · Self-Inquiry",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Method: The Ascend Method — Inner Alignment System",
+        "For high-performers who feel stuck, stressed, or disconnected",
+      ],
+      hookConcept: "Train your body AND your nervous system in one hour",
+      cta: `DM @joaonomad137 · book via ${FACTS.website}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #breathwork #nervoussystem #mindbodyconnection #ascendmethod #strengthtraining #embodiment #ptamsterdam`,
+    visualNote: "Calmer pacing than other spotlights. Cinematic, intentional. Joey's brand = depth, not intensity.",
+    duration: "60s",
+    media: [
+      { src: "/images/trainers/joey.jpg", label: "Joey portrait", role: "primary" },
+      { src: "/images/trainers/joey-wp.jpg", label: "Joey wp" },
+      { src: "/images/studio/training-dead-hang.jpg", label: "Intentional movement" },
+    ],
+  },
+  {
+    id: "tt-spotlight-andrea",
+    platform: "tiktok",
+    pillar: "trainer-spotlight",
+    format: "TikTok Video",
+    title: "Meet Andrea — €45/45 min · Technique-first",
+    script: `[0-3s] Hook on-screen: "€45 · 45 min · best-priced PT in Amsterdam"
+[3-12s] Andrea coaching a squat, slow-motion form correction
+[12-22s] Andrea talking-head: why technique-first beats "feel the burn"
+[22-32s] B-roll: a posture-fix on a real client (with consent)
+[32-42s] Andrea on her ideal client: beginners + post-injury return
+[42-52s] On-screen: "First intake free · €45 from there"
+[52-60s] CTA: ${FACTS.website}`,
+    brief: {
+      message: "Andrea is the most accessible PT on the roster (price) AND the safest pick for beginners + post-injury. Position both clearly.",
+      facts: [
+        "Specialism: Strength · Posture · Technique",
+        "Languages: NL · EN",
+        "Rate: €45 per 45 min — most accessible rate on roster",
+        "First intake free",
+        "Best fit: beginners + post-injury comeback",
+      ],
+      hookConcept: "She rebuilds lower backs in four sessions — start with a free intake",
+      cta: `DM @grskiiii · book via ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #posturecoach #strengthtraining #techniquefirst #personaltraineramsterdam #ptamsterdam #affordablept #beginnerfriendly`,
+    visualNote: "Calm + competent. Lead with the price hook because it's the genuine differentiator.",
+    duration: "60s",
+    media: [
+      { src: "/images/trainers/andrea.jpg", label: "Andrea portrait", role: "primary" },
+      { src: "/images/trainers/andrea-wp.jpg", label: "Andrea wp" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Technique" },
+    ],
+  },
+  {
+    id: "tt-spotlight-dara",
+    platform: "tiktok",
+    pillar: "trainer-spotlight",
+    format: "TikTok Video",
+    title: "Meet Dara — Train as a pair, same focus",
+    script: `[0-3s] Hook: "Train as a pair — split the cost, keep the focus"
+[3-12s] Dara coaching two clients in sync
+[12-22s] Dara talking-head: small-group as her differentiator
+[22-32s] B-roll: pair high-fives after a set
+[32-42s] Dara on choosing 1-on-1 vs duo (1 sentence)
+[42-52s] Energy montage: cardio + strength back-to-back
+[52-60s] CTA: ${FACTS.website}`,
+    brief: {
+      message: "Dara's offer = bring a friend, train together. Same coaching, halved cost, accountability. Differentiator on the roster.",
+      facts: [
+        "Specialism: Personal Training · Small Group · Strength & Conditioning",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Trains 1-on-1 AND pairs/small groups (rare in the Jordaan)",
+      ],
+      hookConcept: "Bring a friend — same session, half the cost each",
+      cta: `DM Dara via WhatsApp · book via ${FACTS.website}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #smallgrouptraining #duotraining #strengthcoach #personaltrainingamsterdam #fitnesscoach #ptamsterdam`,
+    visualNote: "Show TWO people training together — that's the visual hook. Energy, accountability, fun.",
+    duration: "60s",
+    media: [
+      { src: "/images/trainers/dara.jpg", label: "Dara portrait", role: "primary" },
+      { src: "/images/trainers/dara-wp.jpg", label: "Dara wp" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Duo session" },
+    ],
+  },
+
+  // ─── TIKTOK · JORDAAN LOCAL ─────────────────────────────────────────
+  {
+    id: "tt-local-01",
+    platform: "tiktok",
+    pillar: "jordaan-local",
+    format: "TikTok Video",
+    title: "Walking to the studio · POV through the Jordaan",
+    script: `[0-3s] POV walking on Egelantiersgracht, canal-side
+[3-12s] Cyclists pass, cafés open, neighbourhood texture
+[12-22s] Approach the studio: green door + sign reveal
+[22-32s] Inside: lights on, music low, equipment ready
+[32-42s] Trainer fist-bump on entry
+[42-52s] Quick training cut: barbell setup
+[52-60s] CTA: "${FACTS.address} · ${FACTS.website}"`,
+    brief: {
+      message: "Jordaan-local POV — builds neighbourhood + 'private gym' feel. High retention via location curiosity.",
+      facts: [
+        FACTS.address,
+        "5 min walk from Anne Frank House",
+        "Tram 13/17 stop: Marnixstraat",
+        "First session of day is the quietest",
+      ],
+      hookConcept: "POV: walking through the Jordaan to your private gym",
+      cta: `${FACTS.address} · ${FACTS.website}`,
+      targetLength: "short",
+    },
+    hashtags: `#jordaan #amsterdam #amsterdamlife #pov #jordaanamsterdam #amsterdamfitness #boutiquegym #ptamsterdam #amsterdammornings #fitnessjordaan`,
+    visualNote: "Steadicam or stabilized phone. Natural light. Trending TikTok POV sound. Show the WALK as much as the destination.",
+    duration: "60s",
+    media: [
+      { src: "/images/hero/canal-view.jpg", label: "Canal POV", role: "primary" },
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Studio facade" },
+      { src: "/images/studio/entrance-smile.jpg", label: "Entrance" },
+      { src: "/images/studio/power-rack.jpeg", label: "Inside" },
+    ],
+  },
+  {
+    id: "tt-local-02",
+    platform: "tiktok",
+    pillar: "jordaan-local",
+    format: "TikTok Video",
+    title: "Why a gym IN the Jordaan matters (vs. a chain across town)",
+    script: `[0-3s] Hook: "Why train in the Jordaan?"
+[3-12s] Quick comparison: 30-min commute to chain gym ↔ 5-min walk to private studio
+[12-22s] Pan over Egelantiersgracht — canal, cafés, neighbours
+[22-32s] Inside the studio: max 3 people · quiet · curated equipment
+[32-42s] Trainer cue overlay: "When the gym is on your block, you actually go"
+[42-52s] B-roll: client leaving, walking home along canal
+[52-60s] CTA: "${FACTS.address} · first intake free · ${FACTS.website}"`,
+    brief: {
+      message: "Frictionless = sustainable. A 5-minute walk is the single biggest retention lever a gym can offer. Make THAT the brand.",
+      facts: [
+        "5-min walk from most Jordaan addresses",
+        "Max 3 people per Open Gym slot",
+        "Curated equipment: Rogue, Echo Bike, free weights",
+        "First intake free",
+      ],
+      hookConcept: "The shortest commute to a real workout in Amsterdam",
+      cta: `${FACTS.address} · ${FACTS.website}`,
+      targetLength: "medium",
+    },
+    hashtags: `#jordaan #amsterdam #jordaanlife #amsterdamfitness #boutiquegym #neighbourhoodgym #commute #wellbeing #jordaanlocal #amsterdammornings`,
+    visualNote: "Show the 5-min walk visually — that IS the value prop.",
+    duration: "60s",
+    media: [
+      { src: "/images/hero/canal-view.jpg", label: "Canal walk", role: "primary" },
+      { src: "/images/studio/facade-sculptclub.jpg", label: "Studio facade" },
+      { src: "/images/studio/power-rack.jpeg", label: "Inside power rack" },
+    ],
+  },
 
   // ─── TIKTOK · BEFORE/AFTER ──────────────────────────────────────────
   {
@@ -738,6 +1022,212 @@ Reel: 30s — intro + coaching demo`,
       { src: "/images/studio/pt-session-barbell.jpg", label: "Coaching session" },
     ],
   },
+  {
+    id: "ig-spotlight-gezina",
+    platform: "instagram",
+    pillar: "trainer-spotlight",
+    format: "Carousel",
+    title: "Meet Gezina — Women's strength specialist",
+    script: `Carousel (5 slides):
+1. Portrait of Gezina in studio (action, not pose)
+2. Coaching shot: deadlift with female client
+3. Small-group dynamic shot (2-3 women)
+4. Quote slide: "Cycle-aware programming — your strength volume aligned to your cycle"
+5. CTA slide: "DM @gezfitness · sculptclub.nl/vind-jouw-personal-trainer"`,
+    brief: {
+      message: "Differentiate Gezina on women-only programming AND cycle-aware approach. Both rare in the Jordaan.",
+      facts: [
+        "Specialism: Women's Training · Strength · Performance",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "1-on-1 + small group format",
+        "Cycle-aware programming — strength scaled to your cycle phase",
+      ],
+      hookConcept: "The only PT in the Jordaan who programs strength around your cycle",
+      cta: `DM Gezina · ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#womenwholift #vrouwentraining #personaltrainer #amsterdam #jordaan #strengthtraining #womenshealth #cycletraining #ptamsterdam #amsterdamfitness`,
+    visualNote: "Color grading: warm, confident. Avoid pink/sparkles cliché. Real strength = the aesthetic.",
+    media: [
+      { src: "/images/trainers/gezina.jpg", label: "Gezina portrait", role: "primary" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Coaching deadlift" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Focus moment" },
+    ],
+  },
+  {
+    id: "ig-spotlight-jearmey",
+    platform: "instagram",
+    pillar: "trainer-spotlight",
+    format: "Reel",
+    title: "Meet Jearmey — Train like an athlete",
+    script: `Reel (45s):
+[0-3s] Hook overlay: "Train like an athlete — even if you sit at a desk"
+[3-15s] Jearmey demoing 3 athletic moves (power clean · jump · sprint setup)
+[15-27s] Talking-head: 3-pillar approach (strength · fat loss · pain-free)
+[27-37s] Quick client B-roll: someone mid-session, full effort
+[37-45s] CTA: "DM @jer.proformance · sculptclub.nl"`,
+    brief: {
+      message: "Jearmey for the person who wants PERFORMANCE not just looking-better. Position the 3-pillar model clearly.",
+      facts: [
+        "Specialism: Strength · Fat Loss · Athletic Performance",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Builds programmes for measurable results",
+      ],
+      hookConcept: "Lose fat without losing strength — that's the brief",
+      cta: `DM Jearmey · ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #strengthtraining #fatloss #athleticperformance #ptamsterdam #performancetraining #afvallen #fitcoachamsterdam`,
+    visualNote: "High energy. Trap-music tempo. Show power moments, not gym-vibe lifestyle shots.",
+    duration: "45s",
+    media: [
+      { src: "/images/trainers/jearmey.jpg", label: "Jearmey portrait", role: "primary" },
+      { src: "/images/studio/training-barbell-dramatic.jpg", label: "Power lift" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "Power moment" },
+    ],
+  },
+  {
+    id: "ig-spotlight-sergei",
+    platform: "instagram",
+    pillar: "trainer-spotlight",
+    format: "Carousel",
+    title: "Meet Sergei — 10+ years · For busy professionals",
+    script: `Carousel (6 slides, English captions only — Sergei's market):
+1. Portrait of Sergei in studio
+2. "10+ years of personal training experience"
+3. Specialisms list (Body Recomp · Posture · Strength · Recovery)
+4. "Structured, evidence-based programming — not session-by-session improvise"
+5. "1-on-1, duo, or small group · €80/60 min · first intake free"
+6. CTA: "DM @transformbst — book via sculptclub.nl"`,
+    brief: {
+      message: "Sergei = the trainer for English-speaking busy professionals who want a STRUCTURED plan + experienced coach. 10+ yrs is the proof.",
+      facts: [
+        "Specialism: Body Recomposition · Posture Correction · Strength & Movement · Recovery",
+        "Languages: EN · RU (English-first audience)",
+        "Rate: €80 per 60 min",
+        "First intake free",
+        "10+ years personal training experience",
+        "Format: 1:1 · duo · small group",
+      ],
+      hookConcept: "Evidence-based programming, built around YOUR week",
+      cta: `DM @transformbst · ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #bodyrecomposition #postureimprovement #strengthcoach #personaltraineramsterdam #ptamsterdam #englishspeakingpt #expatfitness`,
+    visualNote: "Clean professional crops — no muscle-bro shots. Glasses optional but premium feel. ENGLISH overlays only.",
+    media: [
+      { src: "/images/trainers/sergei.jpg", label: "Sergei portrait", role: "primary" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Coaching cue" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Posture cue" },
+    ],
+  },
+  {
+    id: "ig-spotlight-joey",
+    platform: "instagram",
+    pillar: "trainer-spotlight",
+    format: "Reel",
+    title: "Meet Joey — The Ascend Method",
+    script: `Reel (45s, cinematic pace):
+[0-3s] Slow zoom on Joey in studio, calm gaze
+[3-15s] Joey: "The Ascend Method — body, breath, awareness in one session"
+[15-27s] B-roll: slow squat with intentional breathing overlay
+[27-37s] Quote on screen: "Wisdom isn't studied, it's embodied."
+[37-45s] CTA: "DM @joaonomad137 — book via sculptclub.nl"`,
+    brief: {
+      message: "Joey is high-end positioned for high-performers who feel stuck. The Ascend Method = his unique brand. Pacing must feel different from other trainers.",
+      facts: [
+        "Specialism: Strength · Breathwork · Nervous System · Self-Inquiry",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Method: The Ascend Method — Inner Alignment System",
+        "For high-performers feeling stuck, stressed or disconnected",
+      ],
+      hookConcept: "Train your body AND your nervous system in one hour",
+      cta: `DM @joaonomad137 · book via ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#personaltrainer #amsterdam #jordaan #breathwork #nervoussystem #mindbodyconnection #ascendmethod #strengthtraining #embodiment #amsterdamhealth`,
+    visualNote: "Slower edits. Cinematic. Joey's brand = depth, not intensity. Trust the quiet.",
+    duration: "45s",
+    media: [
+      { src: "/images/trainers/joey.jpg", label: "Joey portrait", role: "primary" },
+      { src: "/images/trainers/joey-wp.jpg", label: "Joey wp" },
+      { src: "/images/studio/training-dead-hang.jpg", label: "Intentional movement" },
+    ],
+  },
+  {
+    id: "ig-spotlight-alex",
+    platform: "instagram",
+    pillar: "trainer-spotlight",
+    format: "Reel",
+    title: "Meet Alex — Strength · Calisthenics · €69/60 min",
+    script: `Reel (45s):
+[0-3s] Hook: "He'll teach you the muscle-up — even if you can't do a pull-up yet"
+[3-15s] Alex coaching a calisthenics progression
+[15-27s] Alex talking-head: NL/EN/PT — three languages
+[27-37s] Quick montage: dead hang → muscle-up
+[37-45s] CTA: "DM @almeidalexjr · sculptclub.nl"`,
+    brief: {
+      message: "Alex's calisthenics specialty is rare in Amsterdam — lead with it. Trilingual is the secondary differentiator.",
+      facts: [
+        "Specialism: Strength · Calisthenics · Recovery",
+        "Languages: NL · EN · PT",
+        "Rate: €69 per 60 min",
+        "First intake free",
+        "Calisthenics specialist — uncommon in Amsterdam PT scene",
+      ],
+      hookConcept: "Calisthenics teacher who'll get you to your first muscle-up",
+      cta: `DM @almeidalexjr · ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#calisthenics #personaltrainer #amsterdam #jordaan #strengthtraining #muscleup #bodyweight #ptamsterdam #fitcoachamsterdam #calisthenicsamsterdam`,
+    visualNote: "Mix dynamic calisthenics moves + studio b-roll. Don't lean on Alex-as-influencer; show TEACHING.",
+    duration: "45s",
+    media: [
+      { src: "/images/trainers/alex.jpg", label: "Alex portrait", role: "primary" },
+      { src: "/images/trainers/alex-wp.jpg", label: "Alex wp" },
+      { src: "/images/studio/training-dead-hang.jpg", label: "Calisthenics action" },
+    ],
+  },
+  {
+    id: "ig-spotlight-eva",
+    platform: "instagram",
+    pillar: "trainer-spotlight",
+    format: "Carousel",
+    title: "Meet Eva — Dietitian + PT (rare combo)",
+    script: `Carousel (5 slides):
+1. Portrait: Eva in studio
+2. "Registered dietitian AND personal trainer — one of very few in Amsterdam"
+3. Coaching shot: form correction on a lift
+4. "Strength + nutrition under one coach — no more conflicting advice"
+5. CTA: "First intake free · DM @sportieefnl · sculptclub.nl"`,
+    brief: {
+      message: "Eva's dietitian credential is the moat. Carousel lets you show both sides — coaching AND nutrition advice.",
+      facts: [
+        "Specialism: Strength + Nutrition advice",
+        "Languages: NL · EN",
+        "Rate: on request",
+        "First intake free",
+        "Credential: Diëtist / Dietitian (registered)",
+        "Strength + nutrition under ONE coach is rare in Amsterdam",
+      ],
+      hookConcept: "Stop getting conflicting advice from your PT and your dietitian — Eva is both",
+      cta: `DM @sportieefnl · ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#dietist #personaltrainer #amsterdam #jordaan #voedingsadvies #nutritioncoach #strengthtraining #fitcoach #womenwholift #amsterdamhealth`,
+    visualNote: "Show BOTH roles: coaching AND nutrition framing. Don't reduce Eva to either alone.",
+    media: [
+      { src: "/images/trainers/eva.jpg", label: "Eva portrait", role: "primary" },
+      { src: "/images/trainers/eva-wp.jpg", label: "Eva wp" },
+      { src: "/images/studio/training-dumbbells-focus.jpg", label: "Coaching action" },
+    ],
+  },
 
   // ─── INSTAGRAM · FITNESS TIPS ───────────────────────────────────────
   {
@@ -880,6 +1370,44 @@ Reel: 30s — intro + coaching demo`,
       { src: "/images/studio/canal-view-doors.jpg", label: "Studio on canal" },
     ],
   },
+  {
+    id: "ig-ba-01",
+    platform: "instagram",
+    pillar: "before-after",
+    format: "Carousel",
+    title: "Carousel — 12 weeks · Real client · No miracle diet",
+    script: `Carousel (7 slides):
+1. Cover: "12 weeks · 2-3 sessions/week · €45 from there"
+2. Week 1 — first session photo + form-cue overlay
+3. Week 4 — better execution shot
+4. Week 8 — load increase visualization (weights at week 1 vs week 8)
+5. Week 12 — PR moment (with consent)
+6. Client quote (1 sentence, in own words): "I came for the strength, I stayed for how it made me feel"
+7. CTA: "First intake free · sculptclub.nl/vind-jouw-personal-trainer"`,
+    brief: {
+      message: "Real 12-week client journey — focus on the PROCESS not just the after-photo. Honest framing builds trust.",
+      facts: [
+        "Duration: 12 weeks",
+        "Frequency: 2-3 sessions per week",
+        "Weeks 1-4: technique foundation",
+        "Weeks 5-8: progressive load",
+        "Weeks 9-12: hit PRs",
+        "No miracle diet",
+        "First intake free",
+      ],
+      hookConcept: "12 weeks, real client, real process — not a body-transformation ad",
+      cta: `First intake free · ${FACTS.ptLanding}`,
+      targetLength: "medium",
+    },
+    hashtags: `#transformation #personaltrainer #amsterdam #jordaan #strengthtraining #fitnessjourney #realresults #pt #beforeafter #ptamsterdam`,
+    visualNote: "ESSENTIAL: written consent for client image. If unsure: use animation/stock with 'example result' disclaimer. Avoid scale/weight-focus — show CAPABILITY gains.",
+    media: [
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Week 1 squat", role: "primary" },
+      { src: "/images/studio/training-squat-cinematic.jpg", label: "Week 12 squat" },
+      { src: "/images/studio/training-dumbbells-power.jpg", label: "PR moment" },
+      { src: "/images/studio/training-dumbbells-smile.jpg", label: "Success" },
+    ],
+  },
 
   // ─── INSTAGRAM · BEHIND SCENES ──────────────────────────────────────
   {
@@ -947,6 +1475,85 @@ Reel: 30s — intro + coaching demo`,
       { src: "/images/studio/training-dumbbells-joy.jpg", label: "Cover: happy client", role: "primary" },
       { src: "/images/studio/training-dumbbells-smile.jpg", label: "Real smile" },
       { src: "/images/studio/training-bike-smile.jpg", label: "Cardio happy" },
+    ],
+  },
+
+  // ─── INSTAGRAM · COMMERCIAL-INTENT (AEO answer-format) ──────────────
+  {
+    id: "ig-aeo-cost",
+    platform: "instagram",
+    pillar: "social-proof",
+    format: "Carousel",
+    title: "Carousel — How much does PT cost in Amsterdam (2026)",
+    script: `Carousel (8 slides — answer-engine optimized):
+1. Cover: "Personal training in Amsterdam — what does it cost in 2026?"
+2. Chain gyms (David Lloyd, Basic-Fit Premium): €70-100/session, contracts
+3. Independent freelance PTs in studios: €45-95/session, no contract
+4. SculptClub trainers: from €45/session · trainers set own rates · 0% commission
+5. Bullet table: low end (€45 Andrea, 45 min) → high end (€80 Sergei, 60 min) → premium specialism (Joey, Eva on request)
+6. What's included: equipment, studio, programming, technique coaching, sometimes nutrition advice
+7. Hidden costs to ASK about: session length difference (45 vs 60 min), package discounts, intake fee, cancellation policy
+8. CTA: "First intake free at SculptClub · sculptclub.nl/vind-jouw-personal-trainer"`,
+    brief: {
+      message: "Cost transparency = trust. People search this exact query before booking — own the answer with HONEST framing including competitor range.",
+      facts: [
+        "Amsterdam PT market: €45-100/session typical",
+        "Chain gyms typically require monthly membership ON TOP of session cost",
+        "Freelance PTs in private studios: €45-95/session range",
+        "SculptClub: from €45/session · first intake free · no contract",
+        "Trainer-set rates · SculptClub takes 0% commission",
+        "Session length varies: 45 min (Andrea) vs 60 min (most others)",
+      ],
+      hookConcept: "Honest comparison: what PT actually costs in Amsterdam (and what's hidden)",
+      cta: `Compare trainer rates · ${FACTS.ptLanding}`,
+      targetLength: "long",
+    },
+    hashtags: `#personaltrainer #amsterdam #personaltraineramsterdam #ptamsterdam #fitnesscost #amsterdamfitness #ptkosten #personaltrainingkosten #jordaan #fitnessbudget`,
+    visualNote: "Information-dense but scannable. Light type, lots of whitespace. NUMBERS pop. This carousel is the closer for cost-conscious leads.",
+    media: [
+      { src: "/images/studio/power-rack.jpeg", label: "Cover: studio shot", role: "primary" },
+      { src: "/images/studio/pt-session-barbell.jpg", label: "Session in action" },
+      { src: "/images/studio/training-barbell-squat.jpg", label: "Technique" },
+    ],
+  },
+  {
+    id: "ig-aeo-howtofind",
+    platform: "instagram",
+    pillar: "social-proof",
+    format: "Carousel",
+    title: "Carousel — How to find a personal trainer in Amsterdam (2026)",
+    script: `Carousel (9 slides — answer-engine optimized):
+1. Cover: "How to find a personal trainer in Amsterdam — actually good one"
+2. Step 1: Define what you want (strength · fat loss · posture · specialism)
+3. Step 2: Check certification + experience (years working, specialism alignment)
+4. Step 3: Free intake is non-negotiable — never pay to meet a PT
+5. Step 4: Match languages (NL/EN at minimum; multilingual is plus)
+6. Step 5: Studio matters too — private vs chain · 5-min walk vs cross-town
+7. Step 6: Reviews on Google (not just Instagram clout)
+8. Quick filter: SculptClub has 8 trainers across 5+ specialisms · free intake · NL/EN · 5⭐ on Google
+9. CTA: "Use our trainer finder · sculptclub.nl/vind-jouw-personal-trainer"`,
+    brief: {
+      message: "How-to-find-PT is one of the highest-volume queries. Own it with a HONEST guide that incidentally points to our trainer finder.",
+      facts: [
+        "Step 1: Define your goal — match specialism, not vibes",
+        "Step 2: Verify certification + years of experience",
+        "Step 3: Free intake is industry standard — never pay just to meet",
+        "Step 4: Language match prevents miscommunication on form cues",
+        "Step 5: Studio location predicts attendance — pick within 10 min of home/work",
+        "Step 6: Google reviews > Instagram followers as quality signal",
+        "SculptClub: 8 trainers · 5+ specialisms · all free intake · NL+EN",
+      ],
+      hookConcept: "The 6 questions to ask before booking any PT in Amsterdam",
+      cta: `Compare 8 trainers · ${FACTS.ptLanding}`,
+      targetLength: "long",
+    },
+    hashtags: `#personaltrainer #amsterdam #personaltraineramsterdam #ptamsterdam #fitnessjordaan #amsterdamfitness #howtofindapt #ptzoeken #personaltrainerzoeken #jordaan`,
+    visualNote: "Use checklist visuals — numbered, clean. Each step gets its own slide. No clipart. Photos of trainers from roster as visual anchors.",
+    media: [
+      { src: "/images/trainers/eva.jpg", label: "Trainer 1", role: "primary" },
+      { src: "/images/trainers/alex.jpg", label: "Trainer 2" },
+      { src: "/images/trainers/gezina.jpg", label: "Trainer 3" },
+      { src: "/images/trainers/sergei.jpg", label: "Trainer 4" },
     ],
   },
 
