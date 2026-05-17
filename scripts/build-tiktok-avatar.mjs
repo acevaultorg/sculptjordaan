@@ -29,7 +29,11 @@ const SRC = path.join(root, "public/images/logo-sculptclub.png");
 const OUT = path.join(root, "public/images/tiktok-avatar.png");
 
 const SIZE = 1080;
-const BG = { r: 10, g: 10, b: 10, alpha: 1 }; // #0A0A0A
+// Brand primary #134DE1 — pops in TikTok's default-dark feed UI where a
+// near-black avatar would visually disappear into the surrounding chrome.
+// Operator-verified 2026-05-17: brand-color avatar outperforms minimalist
+// dark for accessible-boutique gym positioning.
+const BG = { r: 19, g: 77, b: 225, alpha: 1 }; // #134DE1
 
 // Pixel coordinates of "SCULPT" and "CLUB" within the 2560×199 source.
 const SCULPT = { left: 0, top: 0, width: 1486, height: 199 };
