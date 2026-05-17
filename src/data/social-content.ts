@@ -258,7 +258,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       targetLength: "short",
     },
     hashtags: `#amsterdam #jordaan #amsterdamfitness #boutiquegym #privegym #personaltrainer #studiohuren #opengym #ptamsterdam #fitnessamsterdam`,
-    visualNote: "Slide design: high contrast, bold uppercase price, minimal copy. Brand color (#134DE1) optional accent. NUMBERED RUBBER FLOORING as visual anchor across all slides for continuity.",
+    visualNote: "Slide design: high contrast, bold uppercase price, minimal copy. Brand color (#FF6B00) optional accent. NUMBERED RUBBER FLOORING as visual anchor across all slides for continuity.",
     media: [
       { src: "/images/studio/studio-overview.jpeg", label: "Cover", role: "primary" },
       { src: "/images/studio/power-rack.jpeg", label: "Open Gym slide bg" },
@@ -1066,7 +1066,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       targetLength: "long",
     },
     hashtags: `#personaltrainer #amsterdam #jordaan #personaltraining #ptamsterdam #pricetransparency #fitnesscoach #strengthtraining #amsterdamlife`,
-    visualNote: "Consistent visual style across 7 slides. Brand color (#134DE1) on swipe indicator.",
+    visualNote: "Consistent visual style across 7 slides. Brand color (#FF6B00) on swipe indicator.",
     media: [
       { src: "/images/studio/pt-session-barbell.jpg", label: "Cover: coaching moment", role: "primary" },
       { src: "/images/studio/training-chest-press.jpg", label: "Chest press" },
@@ -1924,7 +1924,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
       targetLength: "medium",
     },
     hashtags: `#personaltraineramsterdam #5sterren #amsterdamfitness #jordaan #boutiquept #personaltrainerjordaan`,
-    visualNote: "Real Google review screenshots with names obscured (privacy). Each slide design-consistent: SculptClub brand colors (#134DE1 accent, #F7F5F1 background), Syne serif for trainer name, Inter sans for review text.",
+    visualNote: "Real Google review screenshots with names obscured (privacy). Each slide design-consistent: SculptClub brand colors (#FF6B00 accent, #F7F5F1 background), Syne serif for trainer name, Inter sans for review text.",
     media: [
       { src: "/images/studio/training-dumbbells-smile.jpg", label: "Cover: client smiling", role: "primary" },
       { src: "/images/studio/portrait-entrance-warm.jpg", label: "Trainer-team studio backdrop" },

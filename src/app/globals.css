@@ -61,9 +61,13 @@
   --card-foreground: #0E0C0A;
   --popover: #FFFFFF;
   --popover-foreground: #0E0C0A;
-  /* Brand blue as primary */
-  --primary: #134DE1;
-  --primary-foreground: #FFFFFF;
+  /* Brand: SculptClub Orange (darkroom safelight + Jordaan-canal sodium-lamp DNA).
+     Changed 2026-05-17: was #134DE1 (SaaS-blue, off-brand vs strategy doc).
+     New #FF6B00 traces to "private music studio / shared photography darkroom"
+     and "quiet after-hours feeling" from BRAND-STRATEGY.md.
+     Foreground swapped to near-black for WCAG AA (white-on-orange = 2.94:1 fail). */
+  --primary: #FF6B00;
+  --primary-foreground: #0A0A0A;
   --secondary: #F3F0EC;
   --secondary-foreground: #0E0C0A;
   --muted: #F3F0EC;
@@ -73,15 +77,15 @@
   --destructive: #DC2626;
   --border: #D3CCC4;
   --input: #D3CCC4;
-  --ring: #134DE1;
+  --ring: #FF6B00;
   --surface: #F3F0EC;
-  --brand: #134DE1;
-  --brand-dark: #0A31A7;
-  --brand-foreground: #FFFFFF;
+  --brand: #FF6B00;
+  --brand-dark: #C24B00;
+  --brand-foreground: #0A0A0A;
   --discount: #DC2626;
   --radius: 1.15rem;
   /* Chart colors */
-  --chart-1: #134DE1;
+  --chart-1: #FF6B00;
   --chart-2: #756A60;
   --chart-3: #3E3631;
   --chart-4: #D3CCC4;
@@ -89,12 +93,12 @@
   /* Sidebar */
   --sidebar: #F7F5F2;
   --sidebar-foreground: #0E0C0A;
-  --sidebar-primary: #134DE1;
-  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-primary: #FF6B00;
+  --sidebar-primary-foreground: #0A0A0A;
   --sidebar-accent: #F3F0EC;
   --sidebar-accent-foreground: #0E0C0A;
   --sidebar-border: #D3CCC4;
-  --sidebar-ring: #134DE1;
+  --sidebar-ring: #FF6B00;
 }
 
 /* SculptClub Brand — Dark Mode (Cool Noir) */
@@ -105,8 +109,11 @@
   --card-foreground: #EDEDF0;
   --popover: #1A1D28;
   --popover-foreground: #EDEDF0;
-  --primary: #4B6BFF;
-  --primary-foreground: #FFFFFF;
+  /* Dark mode brand: lighter mandarin variant for contrast on dark canvas.
+     Was #4B6BFF (light blue); now #FF8533 (lighter orange).
+     Foreground stays near-black for AA contrast on orange. */
+  --primary: #FF8533;
+  --primary-foreground: #0A0A0A;
   --secondary: #1A1D28;
   --secondary-foreground: #EDEDF0;
   --muted: #1A1D28;
@@ -116,26 +123,26 @@
   --destructive: #EF4444;
   --border: #2A2A35;
   --input: #2A2A35;
-  --ring: #4B6BFF;
+  --ring: #FF8533;
   --surface: #1A1D28;
-  --brand: #4B6BFF;
-  --brand-dark: #3450CC;
-  --brand-foreground: #FFFFFF;
+  --brand: #FF8533;
+  --brand-dark: #E25C2A;
+  --brand-foreground: #0A0A0A;
   --discount: #EF4444;
   --radius: 1.15rem;
-  --chart-1: #4B6BFF;
+  --chart-1: #FF8533;
   --chart-2: #8A8D9B;
   --chart-3: #EDEDF0;
   --chart-4: #2A2A35;
   --chart-5: #1A1D28;
   --sidebar: #0F1118;
   --sidebar-foreground: #EDEDF0;
-  --sidebar-primary: #4B6BFF;
-  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-primary: #FF8533;
+  --sidebar-primary-foreground: #0A0A0A;
   --sidebar-accent: #1A1D28;
   --sidebar-accent-foreground: #EDEDF0;
   --sidebar-border: #2A2A35;
-  --sidebar-ring: #4B6BFF;
+  --sidebar-ring: #FF8533;
 }
 
 @layer base {

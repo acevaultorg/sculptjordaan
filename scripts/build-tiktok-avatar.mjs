@@ -29,11 +29,14 @@ const SRC = path.join(root, "public/images/logo-sculptclub.png");
 const OUT = path.join(root, "public/images/tiktok-avatar.png");
 
 const SIZE = 1080;
-// Brand primary #134DE1 — pops in TikTok's default-dark feed UI where a
-// near-black avatar would visually disappear into the surrounding chrome.
-// Operator-verified 2026-05-17: brand-color avatar outperforms minimalist
-// dark for accessible-boutique gym positioning.
-const BG = { r: 19, g: 77, b: 225, alpha: 1 }; // #134DE1
+// SculptClub Orange #FF6B00 — new brand primary as of 2026-05-17.
+// Replaces #134DE1 SaaS-blue (off-brand per BRAND-STRATEGY.md "darkroom +
+// music-studio + after-hours" DNA). Orange pops on both TikTok dark feed
+// AND Instagram mixed light/dark feed. Cultural resonance with Oranje (NL).
+// Penguin-Classics-style black-on-orange wordmark beats white-on-orange:
+//   - White on #FF6B00 = 2.94:1 (fails WCAG AA)
+//   - Black on #FF6B00 = 9.4:1 (passes AAA)
+const BG = { r: 255, g: 107, b: 0, alpha: 1 }; // #FF6B00
 
 // Pixel coordinates of "SCULPT" and "CLUB" within the 2560×199 source.
 const SCULPT = { left: 0, top: 0, width: 1486, height: 199 };
@@ -75,14 +78,12 @@ const clubTop = blockTop + sculptH + GAP;
 const sculptBuf = await sharp(SRC)
   .extract(SCULPT)
   .ensureAlpha()
-  .negate({ alpha: false })
   .resize({ width: sculptW })
   .toBuffer();
 
 const clubBuf = await sharp(SRC)
   .extract(CLUB)
   .ensureAlpha()
-  .negate({ alpha: false })
   .resize({ width: clubW })
   .toBuffer();
 

@@ -90,8 +90,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   other: {
-    "theme-color": "#134DE1",
-    "msapplication-TileColor": "#134DE1",
+    "theme-color": "#FF6B00",
+    "msapplication-TileColor": "#FF6B00",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-title": siteConfig.name,

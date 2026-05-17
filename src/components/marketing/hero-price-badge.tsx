@@ -9,11 +9,13 @@
  * scroll-stop fast enough.
  *
  * This badge overlays directly onto the hero image (top-left, tilted -3°)
- * with a brand-blue background + bold white price. Communicates the value-prop
- * in <0.5s — what visitors from "studio huren amsterdam" Google Ads search for.
+ * with a brand-orange background + bold near-black price. Communicates the
+ * value-prop in <0.5s — what visitors from "studio huren amsterdam" Google
+ * Ads search for.
  *
- * Stays on-brand (#134DE1 SculptClub blue) instead of competitor's yellow —
- * preserves boutique premium aesthetic while gaining ad-style scroll-stop.
+ * Stays on-brand (#FF6B00 SculptClub orange, 2026-05-17+) instead of
+ * competitor's yellow — preserves boutique premium aesthetic while gaining
+ * ad-style scroll-stop. Penguin-Classics-style orange+black pattern.
  *
  * Text rendering best-practices baked in (2026-05-16 polish pass):
  * - Solid high-contrast background (WCAG AAA against white text)
