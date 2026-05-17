@@ -279,23 +279,10 @@
     <!-- Slides rendered dynamically by switchPlatform() -->
   </div>
 
-  <h2>📝 Caption</h2>
-  <div class="card">
-    <div class="text" id="caption-text"></div>
-    <button class="copy-btn" onclick="copyCaption(this)">📋 Kopieer caption</button>
-  </div>
-
-  <h2>🏷️ Hashtags</h2>
-  <div class="card">
-    <div class="text hashtags" id="hashtags-text"></div>
-    <button class="copy-btn" onclick="copyHashtags(this)">📋 Kopieer hashtags</button>
-  </div>
-
-  <h2>⚡ Snelste pad</h2>
-  <div class="card">
-    <button class="copy-btn" onclick="copyCombined(this)">📋 Kopieer caption + hashtags samen</button>
-    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar. Werkt de knop niet? Long-press de tekst hierboven om te selecteren.</p>
-  </div>
+  <!-- Copy section — platform-aware, rendered by switchPlatform().
+       TikTok wants: title + description + 5 hashtags (algorithm prefers 3-5 focused).
+       Instagram wants: caption + up to 11 hashtags (tolerates more). -->
+  <div id="copy-section"></div>
 
   <h2>🎵 Suggested sound</h2>
   <div class="card">
@@ -323,7 +310,7 @@
       <li>Open <strong id="platform-app">TikTok</strong> app → tap "+"</li>
       <li>Photos mode → Camera roll → selecteer alle 3 slides in volgorde</li>
       <li>Sound toevoegen (zie hierboven)</li>
-      <li>Kopieer caption + hashtags samen → plak</li>
+      <li>Tap <strong>Kopieer alles</strong> (onderaan) → plak in caption field</li>
       <li>Post</li>
     </ol>
   </div>
@@ -333,18 +320,87 @@
   </div>
 
 <script>
-// ─── Canonical copy text (single source of truth — DOM rendered FROM these) ───
-const CAPTION = `Privé personal training studio in de Jordaan 🧡
+// ─── Canonical copy text — platform-aware (TT and IG have different post structures) ───
+//
+// TikTok photo posts: the caption field accepts everything in one paste, but the
+// first line renders larger in feed preview (acts as a "title"). Algorithm prefers
+// 3–5 focused hashtags over the spray-and-pray pattern. We split into title +
+// description + 5 hashtags for clarity, but the combined copy joins all 3 with
+// blank lines so a single paste lands in the caption field correctly.
+//
+// Instagram: single caption field, supports up to 30 hashtags. We use 11 — a
+// balanced mix of broad (#amsterdam) + niche (#personaltraineramsterdam) +
+// audience-defining (#zzpfitness) + format (#boutiquegym).
+const COPY = {
+  tiktok: {
+    title: "🧡 Huur jouw eigen PT-studio in de Jordaan — €12/uur",
+    description: "Trainers — eigen sleutel, eigen tarief, eigen klanten.\n\n0% commissie · geen contract · 06:30–22:00 vrij in te plannen.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
+    hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam"
+  },
+  instagram: {
+    caption: "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.\n\nProbeer gratis · sculptclub.nl/voor-trainers",
+    hashtags: "#personaltrainer #amsterdam #jordaan #ptamsterdam #personaltraineramsterdam #studiohuren #ptstudio #freelancetrainer #zzpfitness #amsterdamfitness #boutiquegym"
+  }
+};
 
-Trainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.
+function renderCopySection(platform) {
+  const c = COPY[platform];
+  const container = document.getElementById('copy-section');
+  const hintHtml = '<p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar. Werkt de knop niet? Long-press de tekst hierboven om te selecteren.</p>';
 
-Probeer gratis · sculptclub.nl/voor-trainers`;
+  if (platform === 'tiktok') {
+    container.innerHTML = `
+      <h2>📝 Titel <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— eerste regel · valt op in feed</span></h2>
+      <div class="card">
+        <div class="text" id="copy-title-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-title-text', this)">📋 Kopieer titel</button>
+      </div>
 
-const HASHTAGS = '#personaltrainer #amsterdam #jordaan #ptamsterdam #personaltraineramsterdam #studiohuren #ptstudio #freelancetrainer #zzpfitness #amsterdamfitness #boutiquegym';
+      <h2>📝 Description</h2>
+      <div class="card">
+        <div class="text" id="copy-description-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-description-text', this)">📋 Kopieer description</button>
+      </div>
 
-// Render canonical text into the visible cards so what the user sees IS what they copy.
-document.getElementById('caption-text').textContent = CAPTION;
-document.getElementById('hashtags-text').textContent = HASHTAGS;
+      <h2>🏷️ Hashtags <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— 5 max voor TikTok</span></h2>
+      <div class="card">
+        <div class="text hashtags" id="copy-hashtags-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-hashtags-text', this)">📋 Kopieer hashtags</button>
+      </div>
+
+      <h2>⚡ Snelste pad</h2>
+      <div class="card">
+        <button class="copy-btn" onclick="copyAllForPlatform(this)">📋 Kopieer alles voor TikTok</button>
+        ${hintHtml}
+      </div>
+    `;
+    document.getElementById('copy-title-text').textContent = c.title;
+    document.getElementById('copy-description-text').textContent = c.description;
+    document.getElementById('copy-hashtags-text').textContent = c.hashtags;
+  } else {
+    container.innerHTML = `
+      <h2>📝 Caption</h2>
+      <div class="card">
+        <div class="text" id="copy-caption-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-caption-text', this)">📋 Kopieer caption</button>
+      </div>
+
+      <h2>🏷️ Hashtags <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— 11 voor Instagram</span></h2>
+      <div class="card">
+        <div class="text hashtags" id="copy-hashtags-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-hashtags-text', this)">📋 Kopieer hashtags</button>
+      </div>
+
+      <h2>⚡ Snelste pad</h2>
+      <div class="card">
+        <button class="copy-btn" onclick="copyAllForPlatform(this)">📋 Kopieer caption + hashtags samen</button>
+        ${hintHtml}
+      </div>
+    `;
+    document.getElementById('copy-caption-text').textContent = c.caption;
+    document.getElementById('copy-hashtags-text').textContent = c.hashtags;
+  }
+}
 
 // ─── Slide rendering ───
 const slidesData = [
@@ -361,11 +417,9 @@ function switchPlatform(platform) {
 
   document.getElementById('platform-app').textContent = platform === 'tiktok' ? 'TikTok' : 'Instagram';
 
+  // Render slide thumbnails for the chosen platform
   const container = document.getElementById('slides-container');
   const aspect = platform === 'tiktok' ? 'aspect-vertical' : 'aspect-square';
-  // Each slide renders its own image + a SAVE button calling saveSlide().
-  // We pass the platform + slide-name + label so the same function works
-  // for either platform without DOM-attribute archaeology.
   container.innerHTML = slidesData.map(s => `
     <div class="slide">
       <img src="${platform}-${s.name}.png" class="slide-img ${aspect}" alt="Slide ${s.label} — ${s.title}" loading="lazy">
@@ -377,6 +431,9 @@ function switchPlatform(platform) {
       </div>
     </div>
   `).join('');
+
+  // Render platform-aware copy cards (TikTok: title+description+5 hashtags; Instagram: caption+11)
+  renderCopySection(platform);
 }
 
 // ─── Robust copy: Clipboard API → execCommand fallback → manual-select hint ───
@@ -438,11 +495,25 @@ function flash(btn, msg, cls, duration = 2000) {
   }, duration);
 }
 
-// Buttons copy directly from the canonical constants — never from DOM.
-// Eliminates innerText whitespace drift + ensures display ≡ clipboard contents.
-function copyCaption(btn)  { copy(CAPTION, btn); }
-function copyHashtags(btn) { copy(HASHTAGS, btn); }
-function copyCombined(btn) { copy(CAPTION + '\n\n' + HASHTAGS, btn); }
+// Copy helpers — read from canonical COPY object (rendered into DOM by renderCopySection).
+// copyById passes the textContent of a specific element to the robust copy() chain.
+// copyAllForPlatform joins the active platform's pieces in the right order for one paste:
+//   TikTok    → title + description + hashtags     (3 blocks, separated by blank lines)
+//   Instagram → caption + hashtags                  (2 blocks)
+function copyById(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  copy(el.textContent, btn);
+}
+
+function copyAllForPlatform(btn) {
+  const platform = _activePlatform();
+  const c = COPY[platform];
+  const combined = platform === 'tiktok'
+    ? c.title + '\n\n' + c.description + '\n\n' + c.hashtags
+    : c.caption + '\n\n' + c.hashtags;
+  copy(combined, btn);
+}
 
 // ─── Save-to-Photos: Web Share API (iOS 15+ → Photos) → blob download → long-press hint ───
 //
