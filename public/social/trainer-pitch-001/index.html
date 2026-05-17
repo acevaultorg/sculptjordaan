@@ -375,7 +375,10 @@ const COPY = {
     hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam"
   },
   instagram: {
-    caption: "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.\n\nProbeer gratis · sculptclub.nl/voor-trainers",
+    // IG caption convention: URLs aren't clickable in captions → use 'link in bio' instead.
+    // Operator should set IG bio link to sculptclub.nl/voor-trainers for the duration of
+    // this campaign so the bio tap routes to the trainer-acquisition page.
+    caption: "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.\n\nProbeer gratis · link in bio 👆",
     // 5 hashtags (was 11) — operator directive 2026-05-17: Mosseri/IG algorithm shifted away
     // from 11-30 hashtag spam to 3-5 focused. Same 5 as TikTok = consistent discovery pool
     // across both platforms, same high-intent trainer-acquisition signal.

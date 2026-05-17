@@ -76,6 +76,12 @@ const nextConfig: NextConfig = {
       // Campaign landing pages — short URLs for Instagram bio / TikTok / ads
       { source: "/gratis-intake", destination: "/nl/gratis-intake", permanent: false },
       { source: "/free-intro", destination: "/en/free-intro", permanent: false },
+      // Trainer-acquisition landing — used in trainer-pitch social posts (TT + IG carousels).
+      // Without this redirect, sculptclub.nl/voor-trainers 404'd; slide-2 image CTA + TikTok
+      // caption end-line both point to the un-prefixed slug. Permanent 301 keeps any existing
+      // TikTok post (already shipped 2026-05-17) resolving cleanly without regenerating images.
+      { source: "/voor-trainers", destination: "/nl/voor-trainers", permanent: true },
+      { source: "/for-trainers", destination: "/en/for-trainers", permanent: true },
       // Social-post URL migration (2026-05-17): flat /social/post.html consolidated
       // into directory-per-post layout (/social/<post-id>/). Permanent because the
       // new structure is the long-term canonical — every future post gets its own
