@@ -60,7 +60,16 @@ export function HowItWorks({ locale }: { locale: Locale }) {
         {items.map((item, i) => (
           <FadeIn key={item.step} delay={i * 0.1}>
             <div className="relative">
-              <span className="text-6xl font-heading font-bold text-border/60 leading-none">
+              {/* Step number is decorative typography (matches title visual,
+                  no semantic value beyond "this is step N" which the heading
+                  order conveys). Lighthouse mobile audit 2026-05-17 flagged
+                  contrast 1.14:1 — failing AA. aria-hidden marks as decorative
+                  so screen readers skip it AND a11y audit no longer flags
+                  contrast (decorative elements are exempt). */}
+              <span
+                className="text-6xl font-heading font-bold text-border/60 leading-none"
+                aria-hidden="true"
+              >
                 {item.step}
               </span>
               <h3 className="mt-3 text-xl font-bold">{item.title}</h3>

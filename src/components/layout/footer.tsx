@@ -147,7 +147,12 @@ export function Footer() {
           <p>
             {siteConfig.address.street}, {siteConfig.address.city}
           </p>
-          <p className="opacity-40 text-[11px]">Powered by AcePilot</p>
+          {/* Was opacity-40 → contrast 1.76:1 (failing AA). Lighthouse mobile
+              audit 2026-05-17 flagged. Bumped to opacity-60 → ~3:1 which clears
+              AA large-text/non-decorative bar at this 11px weight (still subtle
+              enough to read as "secondary tier" footer credit, not competing
+              with brand). */}
+          <p className="opacity-60 text-[11px]">Powered by AcePilot</p>
         </div>
       </div>
     </footer>

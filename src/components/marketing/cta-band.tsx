@@ -91,13 +91,18 @@ export function CtaBand({ locale }: { locale: Locale }) {
                 external={opt.external}
                 className={
                   isPrimary
-                    ? "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl bg-brand hover:bg-brand-dark text-brand-foreground px-5 py-6 text-center shadow-brand-md hover:shadow-brand-lg transition-all group"
+                    ? "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl bg-brand hover:bg-brand-dark text-brand-foreground px-5 py-6 text-center transition-all group"
                     : "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl border border-white/25 bg-white/10 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/15 hover:border-white/40 transition-all group"
                 }
               >
-                <opt.icon className={isPrimary ? "w-6 h-6 text-white" : "w-6 h-6 text-white/85"} />
-                <span className="text-sm font-semibold text-white">{opt.label}</span>
-                <span className={isPrimary ? "text-xs text-white/85" : "text-xs text-white/65"}>
+                {/* Icon + text colored brand-foreground (near-black #0E0C0A) on the
+                    primary orange button — white-on-orange was 2.8:1 (Lighthouse mobile
+                    audit 2026-05-17). brand-foreground on bg-brand = 5.65:1 (AA pass). */}
+                <opt.icon className={isPrimary ? "w-6 h-6 text-brand-foreground" : "w-6 h-6 text-white/85"} />
+                <span className={isPrimary ? "text-sm font-semibold text-brand-foreground" : "text-sm font-semibold text-white"}>
+                  {opt.label}
+                </span>
+                <span className={isPrimary ? "text-xs text-brand-foreground/75" : "text-xs text-white/65"}>
                   {opt.description}
                 </span>
               </ButtonLink>

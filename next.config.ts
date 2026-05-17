@@ -350,11 +350,20 @@ const nextConfig: NextConfig = {
       // blocked → 0 sessions recorded for 3+ days while Plausible captured
       // 152 UV/7d. Switching to `*.clarity.ms` wildcard covers all
       // current + future Microsoft Clarity subdomains.
-      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net connect.facebook.net *.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com",
+      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com *.clarity.ms www.facebook.com www.google.com wa.me",
+      // pagead2.googlesyndication.com + googleads.g.doubleclick.net → Google Ads
+      // remarketing/conversion pixels load 1×1 tracking images; were blocked
+      // pre-2026-05-17 (Lighthouse console errors).
+      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com *.clarity.ms www.facebook.com www.google.com pagead2.googlesyndication.com googleads.g.doubleclick.net wa.me",
       "font-src 'self'",
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net connect.facebook.net *.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com cloudflareinsights.com *.cloudflareinsights.com",
+      // 2026-05-17 additions per Lighthouse mobile audit: TikTok Events API
+      // ships its pixel data to tiktokw.us subdomains (web-events flow);
+      // Meta Conversions API Gateway uses conversionsapigateway.com for
+      // server-side pixel forwarding; Google Ads pagead2 endpoint posts
+      // back conversion data. All three were blocked → console errors +
+      // attribution loss for paid campaigns.
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com *.clarity.ms app.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com",
       "frame-src app.acuityscheduling.com www.google.com maps.google.com",
       "base-uri 'self'",
       "form-action 'self' https://wa.me",

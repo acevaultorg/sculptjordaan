@@ -100,7 +100,13 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
               href={whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)}
               target="_blank"
               rel="noopener"
-              aria-label={c.ariaIntake(trainer.name)}
+              // WCAG 2.5.3 (Label in Name) — aria-label removed 2026-05-17 after
+              // Lighthouse mobile audit flagged label-content-name-mismatch. The
+              // computed accessible name now comes from visible text content
+              // (trainer name + specialty + rate + CTA chip), which is RICHER
+              // than the prior "Plan gratis intake met X via WhatsApp" string
+              // AND matches what speech-input users (Dragon, Voice Control) say
+              // to invoke the control.
               data-cta={`home-trainer-${trainer.id}`}
               className={`plausible-event-name=home_trainer_${trainer.id} group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-primary/60 hover:shadow-brand-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
             >
@@ -127,7 +133,13 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                   <p className="mt-1 line-clamp-1 text-xs text-muted-foreground sm:text-sm">
                     {trainer.specialization[locale][0]}
                     {trainer.specialization[locale].length > 1 && (
-                      <span className="text-muted-foreground/70">
+                      // Was text-muted-foreground/70 → contrast 2.94:1 (fails
+                      // WCAG AA 4.5:1 small text). Lighthouse mobile audit
+                      // 2026-05-17 flagged. Bumped to base text-muted-foreground
+                      // (4.5:1+) — still visually distinct from the primary
+                      // specialty (no extra opacity needed; this is the "+ N"
+                      // counter, secondary by virtue of being shorter).
+                      <span className="text-muted-foreground">
                         {" "}+ {trainer.specialization[locale].length - 1}
                       </span>
                     )}
