@@ -149,7 +149,7 @@ export default function RootLayout({
         */}
         <a
           href="#main-content"
-          className="absolute left-4 -top-[9999px] z-[100] px-4 py-2 bg-brand text-white rounded-lg text-sm font-semibold outline-none focus:top-4 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-all"
+          className="absolute left-4 -top-[9999px] z-[100] px-4 py-2 bg-brand text-brand-foreground rounded-lg text-sm font-semibold outline-none focus:top-4 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-all"
         >
           Skip to main content
         </a>

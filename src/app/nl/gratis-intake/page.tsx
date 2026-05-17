@@ -122,7 +122,7 @@ export default function GratisIntakePage() {
           </a>
           <Link
             href="/nl/vind-jouw-personal-trainer"
-            className="plausible-event-name=gratis_intake_pick_trainer inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
+            className="plausible-event-name=gratis_intake_pick_trainer inline-flex items-center gap-2 bg-brand text-brand-foreground px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
             data-cta="gratis-intake-pick-trainer"
           >
             Of kies je trainer
@@ -155,7 +155,7 @@ export default function GratisIntakePage() {
                 key={item.step}
                 className="flex items-start gap-4 p-4 rounded-xl bg-secondary border border-border/50"
               >
-                <div className="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center text-sm font-bold shrink-0">
+                <div className="w-8 h-8 rounded-full bg-brand text-brand-foreground flex items-center justify-center text-sm font-bold shrink-0">
                   {item.step}
                 </div>
                 <div>
@@ -240,7 +240,7 @@ export default function GratisIntakePage() {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-16 p-8 rounded-2xl bg-brand text-white text-center">
+        <div className="mt-16 p-8 rounded-2xl bg-brand text-brand-foreground text-center">
           <h2 className="text-2xl font-bold mb-2">Klaar om te beginnen?</h2>
           <p className="text-white/80 mb-6">
             Plan nu je gratis intake. Duurt 2 minuten.

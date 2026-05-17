@@ -136,7 +136,7 @@ export default function BookingConfirmedNL() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/nl"
-              className="inline-flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand/85"
+              className="inline-flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition hover:bg-brand/85"
             >
               Terug naar home
               <ArrowRight className="h-3.5 w-3.5" />

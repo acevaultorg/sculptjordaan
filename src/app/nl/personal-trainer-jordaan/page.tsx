@@ -102,7 +102,7 @@ export default function PersonalTrainerJordaanPage() {
           href={"/nl/vind-jouw-personal-trainer"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
+          className="inline-flex items-center gap-2 bg-brand text-brand-foreground px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
         >
           Plan je gratis intake
           <ArrowRight className="w-5 h-5" />
@@ -144,7 +144,7 @@ export default function PersonalTrainerJordaanPage() {
                 key={item.step}
                 className="flex items-start gap-4 p-4 rounded-xl bg-secondary border border-border/50"
               >
-                <div className="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center text-sm font-bold shrink-0">
+                <div className="w-8 h-8 rounded-full bg-brand text-brand-foreground flex items-center justify-center text-sm font-bold shrink-0">
                   {item.step}
                 </div>
                 <div>
@@ -230,7 +230,7 @@ export default function PersonalTrainerJordaanPage() {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-16 p-8 rounded-2xl bg-brand text-white text-center">
+        <div className="mt-16 p-8 rounded-2xl bg-brand text-brand-foreground text-center">
           <h2 className="text-2xl font-bold mb-2">Train met een personal trainer in de Jordaan</h2>
           <p className="text-white/80 mb-6">
             Plan nu je gratis intake. Duurt 2 minuten.

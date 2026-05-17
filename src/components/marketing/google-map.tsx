@@ -75,7 +75,7 @@ export function GoogleMap({ locale }: { locale: Locale }) {
               href={`https://www.google.com/maps/dir/?api=1&destination=${siteConfig.geo.lat},${siteConfig.geo.lng}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center rounded-xl bg-brand hover:bg-brand-dark text-white py-3 text-sm font-semibold transition-all"
+              className="block w-full text-center rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground py-3 text-sm font-semibold transition-all"
             >
               {t.directions}
             </a>

@@ -133,7 +133,7 @@ export default function OgImage() {
                 display: "flex",
                 fontSize: 48,
                 fontWeight: 600,
-                color: "#94a3b8",
+                color: "#A69D98",
                 letterSpacing: -1,
               }}
             >
@@ -170,10 +170,10 @@ export default function OgImage() {
               style={{
                 display: "flex",
                 padding: "12px 22px",
-                background: "rgba(19, 77, 225, 0.22)",
+                background: "rgba(234, 88, 12, 0.22)",
                 borderRadius: 999,
-                border: "1px solid rgba(19, 77, 225, 0.6)",
-                color: "#FFFFFF",
+                border: "1px solid rgba(234, 88, 12, 0.6)",
+                color: "#EDE5DA",
                 fontWeight: 600,
               }}
             >

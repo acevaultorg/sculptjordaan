@@ -37,7 +37,7 @@ const reviews = [
   {
     name: "Dara Thompson",
     initial: "D",
-    color: "bg-blue-600",
+    color: "bg-amber-600",
     text: {
       nl: "Great space to train my clients. Private, fully equipped, and always clean. Booking made easy with credits.",
       en: "Great space to train my clients. Private, fully equipped, and always clean. Booking made easy with credits.",

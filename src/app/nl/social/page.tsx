@@ -192,7 +192,7 @@ export default function SocialPage() {
             onClick={() => setView("ideas")}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
               view === "ideas"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -204,7 +204,7 @@ export default function SocialPage() {
             onClick={() => setView("calendar")}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
               view === "calendar"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -216,7 +216,7 @@ export default function SocialPage() {
             onClick={() => setView("strategy")}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
               view === "strategy"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -228,7 +228,7 @@ export default function SocialPage() {
             onClick={() => setView("trainers")}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
               view === "trainers"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -321,7 +321,7 @@ Vragen? Stuur mij een appje. — Paulo`;
                           href={`${trainerWa}?text=${encodeURIComponent(introMessage)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand/85"
+                          className="inline-flex items-center gap-1.5 rounded-md bg-brand px-3 py-1.5 text-xs font-semibold text-brand-foreground transition hover:bg-brand/85"
                         >
                           Send to {trainer.name} via WhatsApp
                           <ArrowRight className="h-3 w-3" />
@@ -371,7 +371,7 @@ Vragen? Stuur mij een appje. — Paulo`;
                 const pct = Math.round((ideasForSide.length / SOCIAL_IDEAS.length) * 100);
                 const colors = {
                   demand: "border-emerald-500/30 bg-emerald-500/5",
-                  supply: "border-blue-500/30 bg-blue-500/5",
+                  supply: "border-amber-500/30 bg-amber-500/5",
                   broad: "border-purple-500/30 bg-purple-500/5",
                 };
                 const labels = {
@@ -429,7 +429,7 @@ Vragen? Stuur mij een appje. — Paulo`;
                         {nextSlot.platform.toUpperCase()} · {nextIdea.format} · Week {nextSlot.weekNumber}
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 self-start rounded-full border border-brand/40 bg-brand/20 px-3 py-1.5 text-xs font-semibold text-white sm:self-auto">
+                    <span className="inline-flex items-center gap-1.5 self-start rounded-full border border-brand/40 bg-brand/20 px-3 py-1.5 text-xs font-semibold text-brand-foreground sm:self-auto">
                       Jump to post ↓
                     </span>
                   </div>
@@ -489,7 +489,7 @@ Vragen? Stuur mij een appje. — Paulo`;
                         const side = PILLAR_TO_AUDIENCE[idea.pillar];
                         const sideBadge = {
                           demand: { bg: "bg-emerald-500/20", text: "text-emerald-300", label: "demand" },
-                          supply: { bg: "bg-blue-500/20", text: "text-blue-300", label: "supply" },
+                          supply: { bg: "bg-amber-500/20", text: "text-amber-300", label: "supply" },
                           broad: { bg: "bg-purple-500/20", text: "text-purple-300", label: "broad" },
                         }[side];
                         const sKey = slotKey(slot.weekNumber, slot.weekday, slot.ideaId);
@@ -665,7 +665,7 @@ Vragen? Stuur mij een appje. — Paulo`;
                                           loading="lazy"
                                         />
                                         {asset.role === "primary" && (
-                                          <span className="absolute left-1.5 top-1.5 rounded-full bg-brand px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+                                          <span className="absolute left-1.5 top-1.5 rounded-full bg-brand px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand-foreground">
                                             Primary
                                           </span>
                                         )}
@@ -707,7 +707,7 @@ Vragen? Stuur mij een appje. — Paulo`;
             onClick={() => setPlatform("all")}
             className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
               platform === "all"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -718,7 +718,7 @@ Vragen? Stuur mij een appje. — Paulo`;
             onClick={() => setPlatform("tiktok")}
             className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
               platform === "tiktok"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -730,7 +730,7 @@ Vragen? Stuur mij een appje. — Paulo`;
             onClick={() => setPlatform("instagram")}
             className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
               platform === "instagram"
-                ? "border-brand bg-brand text-white"
+                ? "border-brand bg-brand text-brand-foreground"
                 : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
             }`}
           >
@@ -903,7 +903,7 @@ Vragen? Stuur mij een appje. — Paulo`;
                                 loading="lazy"
                               />
                               {asset.role === "primary" && (
-                                <span className="absolute left-1.5 top-1.5 rounded-full bg-brand px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+                                <span className="absolute left-1.5 top-1.5 rounded-full bg-brand px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand-foreground">
                                   Primary
                                 </span>
                               )}

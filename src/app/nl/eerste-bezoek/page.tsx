@@ -248,7 +248,7 @@ export default function EersteBezoekPage() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
               <Lock className="h-3 w-3" /> Privé studio · geen toeschouwers
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-600 dark:text-amber-400">
               <Globe className="h-3 w-3" /> NL · EN · PT · RU
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-rose-500/30 bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-600 dark:text-rose-400">
@@ -272,8 +272,8 @@ export default function EersteBezoekPage() {
                 Gratis intake
               </span>
               <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950/30">
-                  <Users className="h-5 w-5 text-blue-600" />
+                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-950/30">
+                  <Users className="h-5 w-5 text-amber-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
                 <CardDescription>1-op-1 met een trainer die bij je past. 45 min kennismaking + training. Vanaf €45/sessie daarna.</CardDescription>

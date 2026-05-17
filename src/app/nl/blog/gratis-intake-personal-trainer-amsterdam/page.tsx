@@ -228,7 +228,7 @@ export default function GratisIntakeBlogNL() {
             </div>
 
             {/* CTA */}
-            <div className="mt-12 rounded-2xl bg-brand p-8 text-center text-white">
+            <div className="mt-12 rounded-2xl bg-brand p-8 text-center text-brand-foreground">
               <h2 className="mb-2 text-2xl font-bold">Plan je gratis intake</h2>
               <p className="mb-6 text-white/80">
                 Kies een trainer die bij jou past en boek direct online. Duurt 2 minuten.

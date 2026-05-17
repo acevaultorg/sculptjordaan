@@ -186,7 +186,7 @@ export default function BecomeTrainerEN() {
           {steps.map((s, i) => (
             <FadeIn key={s.step} delay={i * 0.15}>
               <div className="text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white text-xl font-bold">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand text-brand-foreground text-xl font-bold">
                   {s.step}
                 </div>
                 <h3 className="mb-2 text-lg font-semibold">{s.title}</h3>

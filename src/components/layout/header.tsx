@@ -213,8 +213,8 @@ export function Header() {
               className={cn(
                 "h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen
-                  ? "bg-brand-dark text-white"
-                  : "bg-brand text-white hover:bg-brand-dark active:scale-95"
+                  ? "bg-brand-dark text-brand-foreground"
+                  : "bg-brand text-brand-foreground hover:bg-brand-dark active:scale-95"
               )}
             >
               <CalendarCheck className="w-3.5 h-3.5" />

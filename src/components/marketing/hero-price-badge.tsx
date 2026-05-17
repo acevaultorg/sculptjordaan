@@ -72,7 +72,7 @@ export function HeroPriceBadge({
 
   const variantClasses = {
     brand: [
-      "bg-brand text-white",
+      "bg-brand text-brand-foreground",
       // brand-blue radial-glow under the badge for depth
       "shadow-[0_8px_24px_-4px_rgba(19,77,225,0.55),0_0_0_1px_rgba(255,255,255,0.10)_inset]",
     ].join(" "),

@@ -312,7 +312,7 @@ export default function TrainersPageNL() {
           <ButtonLink
             href="#trainer-grid"
             size="lg"
-            className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-white rounded-xl px-8 py-6 text-base font-semibold"
+            className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
           >
             Bekijk de trainers
             <ArrowRight className="ml-2 w-4 h-4" />

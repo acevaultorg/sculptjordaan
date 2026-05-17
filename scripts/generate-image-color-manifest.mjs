@@ -111,7 +111,7 @@ async function main() {
 export const IMAGE_COLOR_MANIFEST: Record<string, string> = ${JSON.stringify(sorted, null, 2)};
 
 /** Fallback color for images not in the manifest. Matches site dark theme. */
-export const FALLBACK_COLOR = "#0a0c12";
+export const FALLBACK_COLOR = "#0B0907";
 
 /** Get dominant color for an image path. Falls back to dark theme color. */
 export function getColor(src: string): string {

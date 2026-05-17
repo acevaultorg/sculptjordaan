@@ -209,7 +209,7 @@ export default function ReviewsPageNL() {
               <ButtonLink
                 href={"/nl/vind-jouw-personal-trainer"}
                 size="lg"
-                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-white rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
+                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
                 Boek Gratis Proefles
                 <ArrowRight className="ml-2 w-4 h-4" />

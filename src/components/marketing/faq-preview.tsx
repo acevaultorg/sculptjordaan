@@ -121,7 +121,7 @@ export function FaqPreview({ locale }: { locale: Locale }) {
             href={whatsappLinks.generic}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-dark text-white px-6 py-3 text-sm font-semibold shadow-brand-md hover:shadow-brand-lg transition-all"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-dark text-brand-foreground px-6 py-3 text-sm font-semibold shadow-brand-md hover:shadow-brand-lg transition-all"
           >
             <MessageCircle className="w-4 h-4" />
             {t.whatsappCta}

@@ -54,7 +54,7 @@ export default function Error({
             <div className="mt-8 flex items-center justify-center gap-3">
               <button
                 onClick={reset}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand text-white font-semibold hover:bg-brand-dark transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand text-brand-foreground font-semibold hover:bg-brand-dark transition-colors cursor-pointer"
               >
                 <RefreshCw className="w-4 h-4" />
                 {t.retry}

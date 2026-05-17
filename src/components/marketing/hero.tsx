@@ -109,7 +109,7 @@ export function Hero({ locale }: { locale: Locale }) {
                   size="lg"
                   className={
                     cta.primary
-                      ? `plausible-event-name=hero_cta_${i + 1}_primary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-white border border-brand transition-all shadow-brand-lg [text-shadow:none]`
+                      ? `plausible-event-name=hero_cta_${i + 1}_primary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg [text-shadow:none]`
                       : `plausible-event-name=hero_cta_${i + 1}_secondary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-black/55 hover:bg-black/65 text-white border border-white/30 backdrop-blur transition-all [text-shadow:none]`
                   }
                   onClick={() => trackHeroClick(cta.label, i + 1, locale)}

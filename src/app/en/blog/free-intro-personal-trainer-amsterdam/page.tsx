@@ -224,7 +224,7 @@ export default function FreeIntroBlogEN() {
             </div>
 
             {/* CTA */}
-            <div className="mt-12 rounded-2xl bg-brand p-8 text-center text-white">
+            <div className="mt-12 rounded-2xl bg-brand p-8 text-center text-brand-foreground">
               <h2 className="mb-2 text-2xl font-bold">Book your free intro</h2>
               <p className="mb-6 text-white/80">
                 Find a trainer that fits your goals and book directly online. Takes 2 minutes.
