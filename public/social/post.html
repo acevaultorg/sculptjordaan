@@ -182,6 +182,9 @@
     }
     .copy-btn:active { background: var(--brand-dark); }
     .copy-btn.copied { background: #16A34A; color: white; }
+    .copy-btn.failed { background: #DC2626; color: white; }
+    /* Long-press select fallback: keep text natively selectable */
+    .card .text { user-select: text; -webkit-user-select: text; }
     .meta-row {
       display: flex;
       justify-content: space-between;
@@ -248,24 +251,20 @@
 
   <h2>📝 Caption</h2>
   <div class="card">
-    <div class="text" id="caption-text">Privé personal training studio in de Jordaan 🧡
-
-Trainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.
-
-Probeer gratis · sculptclub.nl/voor-trainers</div>
-    <button class="copy-btn" onclick="copyText('caption-text', this)">📋 Kopieer caption</button>
+    <div class="text" id="caption-text"></div>
+    <button class="copy-btn" onclick="copyCaption(this)">📋 Kopieer caption</button>
   </div>
 
   <h2>🏷️ Hashtags</h2>
   <div class="card">
-    <div class="text hashtags" id="hashtags-text">#personaltrainer #amsterdam #jordaan #ptamsterdam #personaltraineramsterdam #studiohuren #ptstudio #freelancetrainer #zzpfitness #amsterdamfitness #boutiquegym</div>
-    <button class="copy-btn" onclick="copyText('hashtags-text', this)">📋 Kopieer hashtags</button>
+    <div class="text hashtags" id="hashtags-text"></div>
+    <button class="copy-btn" onclick="copyHashtags(this)">📋 Kopieer hashtags</button>
   </div>
 
   <h2>⚡ Snelste pad</h2>
   <div class="card">
     <button class="copy-btn" onclick="copyCombined(this)">📋 Kopieer caption + hashtags samen</button>
-    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar.</p>
+    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar. Werkt de knop niet? Long-press de tekst hierboven om te selecteren.</p>
   </div>
 
   <h2>🎵 Suggested sound</h2>
@@ -304,6 +303,20 @@ Probeer gratis · sculptclub.nl/voor-trainers</div>
   </div>
 
 <script>
+// ─── Canonical copy text (single source of truth — DOM rendered FROM these) ───
+const CAPTION = `Privé personal training studio in de Jordaan 🧡
+
+Trainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · vrij beschikbaar 06:30–22:00.
+
+Probeer gratis · sculptclub.nl/voor-trainers`;
+
+const HASHTAGS = '#personaltrainer #amsterdam #jordaan #ptamsterdam #personaltraineramsterdam #studiohuren #ptstudio #freelancetrainer #zzpfitness #amsterdamfitness #boutiquegym';
+
+// Render canonical text into the visible cards so what the user sees IS what they copy.
+document.getElementById('caption-text').textContent = CAPTION;
+document.getElementById('hashtags-text').textContent = HASHTAGS;
+
+// ─── Slide rendering ───
 const slidesData = [
   { name: "main-offer", label: "1", title: "Main offer · €12/uur" },
   { name: "usp-focus",  label: "2", title: "USP · 0% commissie" },
@@ -311,16 +324,13 @@ const slidesData = [
 ];
 
 function switchPlatform(platform) {
-  // Update tab states
   document.getElementById('tab-tiktok').classList.toggle('active', platform === 'tiktok');
   document.getElementById('tab-tiktok').setAttribute('aria-selected', platform === 'tiktok');
   document.getElementById('tab-instagram').classList.toggle('active', platform === 'instagram');
   document.getElementById('tab-instagram').setAttribute('aria-selected', platform === 'instagram');
 
-  // Update workflow text
   document.getElementById('platform-app').textContent = platform === 'tiktok' ? 'TikTok' : 'Instagram';
 
-  // Re-render slides
   const container = document.getElementById('slides-container');
   const aspect = platform === 'tiktok' ? 'aspect-vertical' : 'aspect-square';
   container.innerHTML = slidesData.map(s => `
@@ -336,27 +346,70 @@ function switchPlatform(platform) {
   `).join('');
 }
 
-function copyText(elId, btn) {
-  const text = document.getElementById(elId).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    const original = btn.innerHTML;
-    btn.innerHTML = '✅ Gekopieerd!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = original; btn.classList.remove('copied'); }, 2000);
-  });
+// ─── Robust copy: Clipboard API → execCommand fallback → manual-select hint ───
+const isIOS = /ipad|iphone|ipod/i.test(navigator.userAgent);
+
+async function copy(text, btn) {
+  // Tier 1 — modern Clipboard API (HTTPS + secure context)
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      flash(btn, '✅ Gekopieerd!', 'copied');
+      return;
+    }
+  } catch (_) { /* fall through to tier 2 */ }
+
+  // Tier 2 — legacy execCommand via hidden textarea (works on older Safari / non-secure)
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    // Visible but tiny + off-flow; iOS needs visible-and-focused for execCommand to fire.
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:none;background:transparent;font-size:16px;opacity:0;';
+    document.body.appendChild(ta);
+
+    if (isIOS) {
+      // iOS Safari needs Range-based selection on textareas (regular .select() is unreliable).
+      const range = document.createRange();
+      range.selectNodeContents(ta);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      ta.setSelectionRange(0, text.length);
+    } else {
+      ta.focus();
+      ta.select();
+    }
+
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (ok) {
+      flash(btn, '✅ Gekopieerd!', 'copied');
+      return;
+    }
+  } catch (_) { /* fall through to tier 3 */ }
+
+  // Tier 3 — both methods failed; instruct manual long-press select.
+  flash(btn, '⚠️ Long-press de tekst om te selecteren', 'failed', 3500);
 }
 
-function copyCombined(btn) {
-  const caption = document.getElementById('caption-text').innerText;
-  const hashtags = document.getElementById('hashtags-text').innerText;
-  const combined = caption + '\n\n' + hashtags;
-  navigator.clipboard.writeText(combined).then(() => {
-    const original = btn.innerHTML;
-    btn.innerHTML = '✅ Gekopieerd!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = original; btn.classList.remove('copied'); }, 2000);
-  });
+function flash(btn, msg, cls, duration = 2000) {
+  if (!btn.dataset.orig) btn.dataset.orig = btn.innerHTML;
+  btn.innerHTML = msg;
+  btn.classList.remove('copied', 'failed');
+  btn.classList.add(cls);
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => {
+    btn.innerHTML = btn.dataset.orig;
+    btn.classList.remove(cls);
+  }, duration);
 }
+
+// Buttons copy directly from the canonical constants — never from DOM.
+// Eliminates innerText whitespace drift + ensures display ≡ clipboard contents.
+function copyCaption(btn)  { copy(CAPTION, btn); }
+function copyHashtags(btn) { copy(HASHTAGS, btn); }
+function copyCombined(btn) { copy(CAPTION + '\n\n' + HASHTAGS, btn); }
 
 // Initialize with TikTok view
 switchPlatform('tiktok');
