@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SculptClub — Social Posts Hub</title>
+  <meta name="theme-color" content="#EA580C">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    :root { --brand: #EA580C; --bg: #0B0907; --card: #1A1410; --fg: #EDE5DA; --muted: #8A8073; --border: #2A2620; --near-black: #0E0C0A; }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; -webkit-font-smoothing: antialiased; }
+    body { padding: max(env(safe-area-inset-top), 1rem) 1rem max(env(safe-area-inset-bottom), 1rem); max-width: 560px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; margin: 0.5rem 0 0.25rem; letter-spacing: -0.02em; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0; line-height: 1.5; }
+    .pill { display: inline-block; padding: 4px 10px; background: var(--brand); color: var(--near-black); border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .post-card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s;
+    }
+    .post-card:active { border-color: var(--brand); }
+    .post-name { font-size: 1.05rem; font-weight: 800; color: var(--fg); margin: 0 0 6px; letter-spacing: -0.01em; }
+    .post-meta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .post-meta span { font-size: 0.8rem; color: var(--muted); }
+    .post-meta span strong { color: var(--fg); font-weight: 600; }
+    .post-status {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .status-ready { background: rgba(234,88,12,0.15); color: var(--brand); }
+    .status-posted { background: rgba(22,163,74,0.15); color: #4ade80; }
+    .status-draft { background: rgba(138,128,115,0.15); color: var(--muted); }
+    .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+    .footer a { color: var(--brand); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="pill">Social Posts</div>
+  <h1>SculptClub Content Hub</h1>
+  <p class="subtitle">Alle social posts · klaar om te plaatsen op TikTok of Instagram. Tap een post voor download + caption + hashtags.</p>
+
+  <!-- POST 1: Trainer pitch (current) -->
+  <a href="/social/post.html" class="post-card">
+    <p class="post-name">Voor Trainers · Huur de Studio</p>
+    <div class="post-meta">
+      <span><strong>ID:</strong> trainer-pitch-001</span>
+      <span><strong>Datum:</strong> 17 mei 2026</span>
+      <span><strong>Slides:</strong> 3</span>
+      <span><strong>Doel:</strong> Trainer acquisitie</span>
+    </div>
+    <span class="post-status status-ready">Klaar om te plaatsen</span>
+  </a>
+
+  <!-- Future posts will appear here -->
+  <p style="color: var(--muted); font-size: 0.85rem; margin: 2rem 0 0; text-align: center; font-style: italic;">
+    Volgende posts komen hier — sneller dan je denkt.
+  </p>
+
+  <div class="footer">
+    Made by SculptClub · <a href="https://sculptclub.nl">sculptclub.nl</a>
+  </div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SculptClub — TikTok Post Pack</title>
+  <title>SculptClub — Social Post Pack</title>
   <meta name="theme-color" content="#EA580C">
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="/favicon.png">
@@ -24,6 +24,67 @@
     h1 { font-size: 1.6rem; margin: 0.5rem 0 0.25rem; letter-spacing: -0.02em; }
     h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand); margin: 2rem 0 0.6rem; font-weight: 700; }
     .subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0; line-height: 1.5; }
+
+    /* Post header — name + date */
+    .post-header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+    .post-name {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--fg);
+      margin: 0;
+    }
+    .post-meta {
+      display: flex;
+      gap: 14px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .post-meta span { font-size: 0.78rem; color: var(--muted); }
+    .post-meta span strong { color: var(--fg); font-weight: 600; }
+
+    /* Platform tabs */
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 1.25rem;
+      padding: 4px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .tab {
+      padding: 12px 14px;
+      background: transparent;
+      color: var(--muted);
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      -webkit-appearance: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .tab.active {
+      background: var(--brand);
+      color: var(--near-black);
+    }
+    .tab .tab-meta {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    /* Slide cards */
     .slides {
       display: grid;
       gap: 16px;
@@ -38,9 +99,11 @@
     .slide-img {
       display: block;
       width: 100%;
-      aspect-ratio: 9 / 16;
       object-fit: cover;
+      background: var(--near-black);
     }
+    .slide-img.aspect-vertical { aspect-ratio: 9 / 16; }
+    .slide-img.aspect-square { aspect-ratio: 1 / 1; }
     .slide-meta {
       padding: 12px 16px;
       display: flex;
@@ -69,12 +132,12 @@
     .btn {
       display: block;
       width: 100%;
-      padding: 18px 20px;
+      padding: 16px 20px;
       background: var(--brand);
       color: var(--near-black);
       border: none;
-      border-radius: 14px;
-      font-size: 1.05rem;
+      border-radius: 12px;
+      font-size: 1rem;
       font-weight: 800;
       text-align: center;
       cursor: pointer;
@@ -85,15 +148,6 @@
       font-family: inherit;
     }
     .btn:active { background: var(--brand-dark); transform: scale(0.98); }
-    .btn-secondary {
-      background: var(--card);
-      color: var(--fg);
-      border: 1px solid var(--border);
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 12px 16px;
-    }
-    .btn-secondary:active { background: var(--border); }
     .btn-group { display: grid; gap: 8px; padding: 0 16px 16px; }
     .card {
       background: var(--card);
@@ -102,7 +156,7 @@
       padding: 16px;
       margin-top: 12px;
     }
-    .card pre, .card .text {
+    .card .text {
       margin: 0;
       white-space: pre-wrap;
       word-break: break-word;
@@ -138,9 +192,6 @@
     .meta-row:last-child { border-bottom: none; }
     .meta-key { color: var(--muted); font-size: 0.85rem; }
     .meta-val { font-weight: 600; font-size: 0.9rem; text-align: right; }
-    .steps { padding-left: 1.4em; margin: 0; }
-    .steps li { margin: 8px 0; line-height: 1.5; }
-    .steps li::marker { color: var(--brand); font-weight: 800; }
     .pill {
       display: inline-block;
       padding: 4px 10px;
@@ -165,43 +216,34 @@
 </head>
 <body>
 
-  <div class="pill">3-slide carousel · klaar om te plaatsen</div>
+  <div class="pill">Social Post Pack</div>
   <h1>Voor Trainers · Huur de Studio</h1>
-  <p class="subtitle">Post als TikTok Photo Mode carousel — viewers swipen door 3 slides van offer → USP → locatie. Replicates het 10.5K-view winnende formaat met readstacks-grade typografie + 96px margins.</p>
+  <p class="subtitle">Trainer-acquisition post · 3 slides · klaar om te plaatsen op TikTok of Instagram.</p>
+
+  <div class="post-header">
+    <p class="post-name">📌 trainer-pitch-001</p>
+    <div class="post-meta">
+      <span><strong>Datum:</strong> 17 mei 2026</span>
+      <span><strong>Doel:</strong> Trainer-acquisitie</span>
+      <span><strong>Versie:</strong> v2</span>
+    </div>
+  </div>
+
+  <!-- PLATFORM TABS -->
+  <div class="tabs" role="tablist" aria-label="Platform">
+    <button class="tab active" id="tab-tiktok" onclick="switchPlatform('tiktok')" role="tab" aria-selected="true">
+      🎵 TikTok
+      <span class="tab-meta">1080×1920 vertical</span>
+    </button>
+    <button class="tab" id="tab-instagram" onclick="switchPlatform('instagram')" role="tab" aria-selected="false">
+      📷 Instagram
+      <span class="tab-meta">1080×1080 square</span>
+    </button>
+  </div>
 
   <h2>📱 3 slides · download alle</h2>
-  <div class="slides">
-
-    <div class="slide">
-      <img src="/social/best-tiktok-post.png" class="slide-img" alt="Slide 1 — Huur de studio €12/uur">
-      <div class="slide-meta">
-        <span class="slide-label"><span class="slide-num">1</span>Main offer · €12/uur</span>
-      </div>
-      <div class="btn-group">
-        <a href="/social/best-tiktok-post.png" download="sculptclub-slide-1.png" class="btn">📥 Download slide 1</a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="/social/best-tiktok-post-2.png" class="slide-img" alt="Slide 2 — Houd 100% · 0% commissie">
-      <div class="slide-meta">
-        <span class="slide-label"><span class="slide-num">2</span>USP · 0% commissie</span>
-      </div>
-      <div class="btn-group">
-        <a href="/social/best-tiktok-post-2.png" download="sculptclub-slide-2.png" class="btn">📥 Download slide 2</a>
-      </div>
-    </div>
-
-    <div class="slide">
-      <img src="/social/best-tiktok-post-3.png" class="slide-img" alt="Slide 3 — Jordaan locatie">
-      <div class="slide-meta">
-        <span class="slide-label"><span class="slide-num">3</span>Location · Jordaan</span>
-      </div>
-      <div class="btn-group">
-        <a href="/social/best-tiktok-post-3.png" download="sculptclub-slide-3.png" class="btn">📥 Download slide 3</a>
-      </div>
-    </div>
-
+  <div class="slides" id="slides-container">
+    <!-- Slides rendered dynamically by switchPlatform() -->
   </div>
 
   <h2>📝 Caption</h2>
@@ -223,18 +265,18 @@ Probeer gratis · sculptclub.nl/voor-trainers</div>
   <h2>⚡ Snelste pad</h2>
   <div class="card">
     <button class="copy-btn" onclick="copyCombined(this)">📋 Kopieer caption + hashtags samen</button>
-    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in TikTok caption field → klaar.</p>
+    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar.</p>
   </div>
 
   <h2>🎵 Suggested sound</h2>
   <div class="card">
-    <p style="margin:0 0 0.5rem"><strong>Zoek in TikTok's sound library:</strong></p>
+    <p style="margin:0 0 0.5rem"><strong>Zoek in TikTok/Reels sound library:</strong></p>
     <ul style="margin: 0; padding-left: 1.2em; line-height: 1.7">
       <li>Top-trending NL fitness sound (check For You feed van vandaag)</li>
-      <li>Deep house / electronic instrumental (matcht boutique gym vibe)</li>
-      <li>Carousel-friendly sounds: zoek "carousel template"</li>
+      <li>Deep house / electronic instrumental</li>
+      <li>Carousel-friendly transitions (zoek "carousel template")</li>
     </ul>
-    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">⚠️ Alleen TikTok's library — geen externe muziek (copyright strike risk).</p>
+    <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">⚠️ Alleen platform's eigen library — geen externe muziek.</p>
   </div>
 
   <h2>⏰ Beste post-tijd</h2>
@@ -244,30 +286,17 @@ Probeer gratis · sculptclub.nl/voor-trainers</div>
     <div class="meta-row"><span class="meta-key">Vermijd</span><span class="meta-val">Vrijdag/Zaterdag avond</span></div>
   </div>
 
-  <h2>🚀 Workflow (carousel · 2 min)</h2>
-  <div class="card">
-    <ol class="steps">
-      <li>Download alle 3 slides bovenaan (één tap per slide → Photos)</li>
-      <li>Open <strong>TikTok app</strong> → tap "+" onderin</li>
-      <li>Switch naar <strong>"Photos"</strong> mode (rechts onderin)</li>
-      <li>Tap <strong>"Camera roll"</strong> → select alle 3 SculptClub slides in volgorde (1 → 2 → 3)</li>
-      <li>Tap <strong>"Next"</strong> → kies template/transition (TikTok suggesteert auto)</li>
-      <li>Tap <strong>"Sound"</strong> → kies trending sound (zie hierboven)</li>
-      <li>Tap <strong>"Next"</strong> → plak caption + hashtags (kopieer-knop hierboven)</li>
-      <li>Tap <strong>"Post"</strong> · klaar</li>
+  <h2>🚀 Workflow (2 min)</h2>
+  <div class="card" id="workflow-card">
+    <ol style="padding-left: 1.4em; margin: 0; line-height: 1.7" id="workflow-list">
+      <li>Kies platform tab boven (TikTok of Instagram)</li>
+      <li>Download alle 3 slides (één tap per knop)</li>
+      <li>Open <strong id="platform-app">TikTok</strong> app → tap "+"</li>
+      <li>Photos mode → Camera roll → select alle 3 slides in volgorde</li>
+      <li>Sound toevoegen (zie hierboven)</li>
+      <li>Kopieer caption + hashtags samen → plak</li>
+      <li>Post</li>
     </ol>
-  </div>
-
-  <h2>🎨 Design details (voor de geinteresseerde)</h2>
-  <div class="card" style="font-size: 0.85rem; color: var(--muted); line-height: 1.6">
-    <div class="meta-row"><span class="meta-key">Formaat</span><span class="meta-val" style="color: var(--fg)">1080 × 1920 (9:16)</span></div>
-    <div class="meta-row"><span class="meta-key">Marges</span><span class="meta-val" style="color: var(--fg)">96px consistent rondom</span></div>
-    <div class="meta-row"><span class="meta-key">Brand kleur</span><span class="meta-val" style="color: var(--brand)">#EA580C</span></div>
-    <div class="meta-row"><span class="meta-key">Foreground</span><span class="meta-val" style="color: var(--fg)">#EDE5DA warm-off-white</span></div>
-    <div class="meta-row"><span class="meta-key">Hero font</span><span class="meta-val" style="color: var(--fg)">Helvetica Black 108px</span></div>
-    <div class="meta-row"><span class="meta-key">Price font</span><span class="meta-val" style="color: var(--fg)">Helvetica Black 180px</span></div>
-    <div class="meta-row"><span class="meta-key">Eyebrow</span><span class="meta-val" style="color: var(--fg)">Tracking 10 · brand orange</span></div>
-    <div class="meta-row"><span class="meta-key">Contrast</span><span class="meta-val" style="color: var(--fg)">5.65:1 AA + AAA Large</span></div>
   </div>
 
   <div class="footer">
@@ -275,6 +304,38 @@ Probeer gratis · sculptclub.nl/voor-trainers</div>
   </div>
 
 <script>
+const slidesData = [
+  { name: "main-offer", label: "1", title: "Main offer · €12/uur" },
+  { name: "usp-focus",  label: "2", title: "USP · 0% commissie" },
+  { name: "location",   label: "3", title: "Locatie · Jordaan" }
+];
+
+function switchPlatform(platform) {
+  // Update tab states
+  document.getElementById('tab-tiktok').classList.toggle('active', platform === 'tiktok');
+  document.getElementById('tab-tiktok').setAttribute('aria-selected', platform === 'tiktok');
+  document.getElementById('tab-instagram').classList.toggle('active', platform === 'instagram');
+  document.getElementById('tab-instagram').setAttribute('aria-selected', platform === 'instagram');
+
+  // Update workflow text
+  document.getElementById('platform-app').textContent = platform === 'tiktok' ? 'TikTok' : 'Instagram';
+
+  // Re-render slides
+  const container = document.getElementById('slides-container');
+  const aspect = platform === 'tiktok' ? 'aspect-vertical' : 'aspect-square';
+  container.innerHTML = slidesData.map(s => `
+    <div class="slide">
+      <img src="/social/${platform}-${s.name}.png" class="slide-img ${aspect}" alt="Slide ${s.label} — ${s.title}" loading="lazy">
+      <div class="slide-meta">
+        <span class="slide-label"><span class="slide-num">${s.label}</span>${s.title}</span>
+      </div>
+      <div class="btn-group">
+        <a href="/social/${platform}-${s.name}.png" download="sculptclub-${platform}-slide-${s.label}.png" class="btn">📥 Download slide ${s.label}</a>
+      </div>
+    </div>
+  `).join('');
+}
+
 function copyText(elId, btn) {
   const text = document.getElementById(elId).innerText;
   navigator.clipboard.writeText(text).then(() => {
@@ -296,6 +357,9 @@ function copyCombined(btn) {
     setTimeout(() => { btn.innerHTML = original; btn.classList.remove('copied'); }, 2000);
   });
 }
+
+// Initialize with TikTok view
+switchPlatform('tiktok');
 </script>
 
 </body>

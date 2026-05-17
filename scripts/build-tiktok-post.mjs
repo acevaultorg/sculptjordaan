@@ -54,7 +54,7 @@ const wordmarkWhite = await sharp(WORDMARK_PNG)
   .resize({ width: 480 })
   .toBuffer({ resolveWithObject: true });
 
-// Build one slide given a base photo + content config
+// Build one slide given a base photo + content config + target dimensions
 async function buildSlide(opts) {
   const {
     out,
@@ -64,16 +64,33 @@ async function buildSlide(opts) {
     price,
     usp,
     cta,
+    width = W,
+    height = H,
   } = opts;
 
   // 1. Photo base: full-bleed cover, slight darken for text-zone contrast
   const photoBuf = await sharp(photoPath)
-    .resize({ width: W, height: H, fit: "cover", position: "center" })
-    .modulate({ brightness: 0.75, saturation: 0.92 })
+    .resize({ width, height, fit: "cover", position: "center" })
+    .modulate({ brightness: 0.72, saturation: 0.92 })
     .toBuffer();
 
+  // Compute positions proportionally so both vertical (9:16) + square (1:1) work
+  const cx = width / 2;
+  const isSquare = Math.abs(width - height) < 50;
+
+  // Content zone vertical positions (relative to canvas height)
+  const wordmarkTop = isSquare ? 75 : 140;
+  const eyebrowY = isSquare ? height * 0.45 : 1180;
+  const heroY = isSquare ? height * 0.55 : 1340;
+  const priceY = isSquare ? height * 0.72 : 1530;
+  const uspY = isSquare ? height * 0.82 : 1660;
+  const ctaY = isSquare ? height * 0.92 : 1770;
+
+  // Font scale: square slides have less vertical room, scale headlines smaller
+  const scale = isSquare ? 0.65 : 1;
+
   // 2. SVG overlay: gradients + typography
-  const overlaySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  const overlaySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <defs>
       <linearGradient id="topfade" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#0B0907" stop-opacity="0.85"/>
@@ -86,121 +103,109 @@ async function buildSlide(opts) {
       </linearGradient>
     </defs>
 
-    <!-- Top fade for wordmark legibility -->
-    <rect x="0" y="0" width="${W}" height="${H * 0.25}" fill="url(#topfade)"/>
+    <rect x="0" y="0" width="${width}" height="${height * 0.25}" fill="url(#topfade)"/>
+    <rect x="0" y="${height * 0.4}" width="${width}" height="${height * 0.6}" fill="url(#botfade)"/>
 
-    <!-- Bottom fade for text legibility (covers lower 55% of canvas) -->
-    <rect x="0" y="${H * 0.45}" width="${W}" height="${H * 0.55}" fill="url(#botfade)"/>
+    <text x="${cx}" y="${eyebrowY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="${Math.round(44 * scale)}" letter-spacing="${10 * scale}" text-anchor="middle" fill="${BRAND}">${eyebrow}</text>
 
-    <!-- EYEBROW · ALL-CAPS · brand-orange · tracking-wide -->
-    <text
-      x="${W / 2}"
-      y="1180"
-      font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-      font-weight="700"
-      font-size="44"
-      letter-spacing="10"
-      text-anchor="middle"
-      fill="${BRAND}"
-    >${eyebrow}</text>
+    <text x="${cx}" y="${heroY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(108 * scale)}" letter-spacing="-2" text-anchor="middle" fill="${WARM_OFF_WHITE}">${hero}</text>
 
-    <!-- HERO HEADLINE · warm-off-white · large but balanced -->
-    <text
-      x="${W / 2}"
-      y="1340"
-      font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-      font-weight="900"
-      font-size="108"
-      letter-spacing="-2"
-      text-anchor="middle"
-      fill="${WARM_OFF_WHITE}"
-    >${hero}</text>
+    <text x="${cx}" y="${priceY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(180 * scale)}" letter-spacing="-6" text-anchor="middle" fill="${BRAND}">${price}</text>
 
-    <!-- PRICE · BIG · brand-orange · the single focal element -->
-    <text
-      x="${W / 2}"
-      y="1530"
-      font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-      font-weight="900"
-      font-size="180"
-      letter-spacing="-6"
-      text-anchor="middle"
-      fill="${BRAND}"
-    >${price}</text>
+    <text x="${cx}" y="${uspY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="${Math.round(48 * scale)}" letter-spacing="0.5" text-anchor="middle" fill="${WARM_OFF_WHITE}">${usp}</text>
 
-    <!-- USP · warm-off-white · supporting -->
-    <text
-      x="${W / 2}"
-      y="1660"
-      font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-      font-weight="600"
-      font-size="48"
-      letter-spacing="0.5"
-      text-anchor="middle"
-      fill="${WARM_OFF_WHITE}"
-    >${usp}</text>
-
-    <!-- CTA + URL · warm-muted · small -->
-    <text
-      x="${W / 2}"
-      y="1770"
-      font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-      font-weight="500"
-      font-size="34"
-      letter-spacing="3"
-      text-anchor="middle"
-      fill="${WARM_MUTED}"
-    >${cta}</text>
+    <text x="${cx}" y="${ctaY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="${Math.round(34 * scale)}" letter-spacing="3" text-anchor="middle" fill="${WARM_MUTED}">${cta}</text>
   </svg>`;
+
+  // Resize wordmark proportionally for square slides (smaller)
+  const wmTargetWidth = isSquare ? 280 : 480;
+  const wmResized = await sharp(WORDMARK_PNG)
+    .ensureAlpha()
+    .negate({ alpha: false })
+    .resize({ width: wmTargetWidth })
+    .toBuffer({ resolveWithObject: true });
 
   // 3. Composite: photo → overlay → wordmark
   await sharp(photoBuf)
     .composite([
       { input: Buffer.from(overlaySvg), top: 0, left: 0 },
       {
-        // Wordmark centered top, with consistent MARGIN from top edge
-        input: wordmarkWhite.data,
-        top: 140,
-        left: Math.round((W - wordmarkWhite.info.width) / 2),
+        input: wmResized.data,
+        top: wordmarkTop,
+        left: Math.round((width - wmResized.info.width) / 2),
       },
     ])
     .png({ compressionLevel: 9 })
     .toFile(out);
 
-  console.log(`✓ ${path.basename(out)} · ${W}×${H}`);
+  console.log(`✓ ${path.basename(out)} · ${width}×${height}`);
 }
 
-// === SLIDE 1 · Main offer (trainer-acquisition primary) ===
-await buildSlide({
-  out: path.join(OUT_DIR, "best-tiktok-post.png"),
-  photoPath: STUDIO_OVERVIEW,
-  eyebrow: "VOOR TRAINERS",
-  hero: "Huur de Studio",
-  price: "€12 / uur",
-  usp: "0% commissie · geen contract",
-  cta: "Probeer gratis · sculptclub.nl",
-});
+// Slide content — same copy used for both TT (9:16) + IG (1:1) variants.
+const slides = [
+  {
+    name: "main-offer",
+    photoPath: STUDIO_OVERVIEW,
+    eyebrow: "VOOR TRAINERS",
+    hero: "Huur de Studio",
+    price: "€12 / uur",
+    usp: "0% commissie · geen contract",
+    cta: "Probeer gratis · sculptclub.nl",
+  },
+  {
+    name: "usp-focus",
+    photoPath: STUDIO_INTERIOR,
+    eyebrow: "ZERO COMMISSIE",
+    hero: "Houd 100%",
+    price: "€12 / uur",
+    usp: "Jouw klanten · jouw tarief · jouw studio",
+    cta: "sculptclub.nl/voor-trainers",
+  },
+  {
+    name: "location",
+    photoPath: STUDIO_CANAL,
+    eyebrow: "AAN DE GRACHT",
+    hero: "Jordaan",
+    price: "€12 / uur",
+    usp: "Privé studio · 06:30 – 22:00",
+    cta: "sculptclub.nl · Egelantiersgracht 424",
+  },
+];
 
-// === SLIDE 2 · USP focus (why this beats other studios) ===
-await buildSlide({
-  out: path.join(OUT_DIR, "best-tiktok-post-2.png"),
-  photoPath: STUDIO_INTERIOR,
-  eyebrow: "ZERO COMMISSIE",
-  hero: "Houd 100%",
-  price: "€12 / uur",
-  usp: "Jouw klanten · jouw tarief · jouw studio",
-  cta: "sculptclub.nl/voor-trainers",
-});
+// Build vertical (1080×1920) for TikTok feed + IG Reels/Stories
+for (let i = 0; i < slides.length; i++) {
+  await buildSlide({
+    out: path.join(OUT_DIR, `tiktok-${slides[i].name}.png`),
+    photoPath: slides[i].photoPath,
+    eyebrow: slides[i].eyebrow,
+    hero: slides[i].hero,
+    price: slides[i].price,
+    usp: slides[i].usp,
+    cta: slides[i].cta,
+    width: W,
+    height: H,
+  });
+}
 
-// === SLIDE 3 · Location pitch (jordaan canal-side) ===
-await buildSlide({
-  out: path.join(OUT_DIR, "best-tiktok-post-3.png"),
-  photoPath: STUDIO_CANAL,
-  eyebrow: "AAN DE GRACHT",
-  hero: "Jordaan",
-  price: "€12 / uur",
-  usp: "Privé studio · 06:30 – 22:00",
-  cta: "sculptclub.nl · Egelantiersgracht 424",
-});
+// Build square (1080×1080) for Instagram Feed
+for (let i = 0; i < slides.length; i++) {
+  await buildSlide({
+    out: path.join(OUT_DIR, `instagram-${slides[i].name}.png`),
+    photoPath: slides[i].photoPath,
+    eyebrow: slides[i].eyebrow,
+    hero: slides[i].hero,
+    price: slides[i].price,
+    usp: slides[i].usp,
+    cta: slides[i].cta,
+    width: 1080,
+    height: 1080,
+  });
+}
 
-console.log("\n✅ 3 carousel slides built. Phone-download: /social/post.html");
+// Keep legacy filenames for backward-compatibility with prior posts referencing them
+await sharp(path.join(OUT_DIR, "tiktok-main-offer.png")).toFile(path.join(OUT_DIR, "best-tiktok-post.png"));
+await sharp(path.join(OUT_DIR, "tiktok-usp-focus.png")).toFile(path.join(OUT_DIR, "best-tiktok-post-2.png"));
+await sharp(path.join(OUT_DIR, "tiktok-location.png")).toFile(path.join(OUT_DIR, "best-tiktok-post-3.png"));
+
+console.log(`\n✅ ${slides.length} slides × 2 formats (TT vertical + IG square) = ${slides.length * 2} images built.`);
+console.log("Phone-download hub: /social/post.html");
