@@ -32,9 +32,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
       <!-- Primary CTA -->
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
         <tr>
-          <td style="border-radius:12px;background:#134DE1;">
+          <td style="border-radius:12px;background:#EA580C;">
             <a href="https://app.acuityscheduling.com/schedule.php?owner=36720238&appointmentType=83513953"
-               style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:12px;">
+               style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:600;color:#0A0A0A;text-decoration:none;border-radius:12px;">
               Boek volgende sessie →
             </a>
           </td>
@@ -55,9 +55,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
         <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155888"
-             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #134DE1;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
+             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #EA580C;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Populair</strong> — 8 sessies
-            <span style="display:inline-block;background:#134DE1;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
+            <span style="display:inline-block;background:#EA580C;color:#0A0A0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
             <span style="display:block;color:#4a5062;font-size:13px;margin-top:2px;">€49 / 4 weken — €6,13 per sessie</span>
           </a>
         </td></tr>
@@ -76,7 +76,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
       </table>
 
-      <p style="margin:24px 0 0 0;font-size:12px;color:#7a8296;">Vragen? <a href="https://wa.me/31683178934" style="color:#134DE1;text-decoration:underline;">WhatsApp ons</a></p>
+      <p style="margin:24px 0 0 0;font-size:12px;color:#7a8296;">Vragen? <a href="https://wa.me/31683178934" style="color:#EA580C;text-decoration:underline;">WhatsApp ons</a></p>
     </td>
   </tr>
 </table>
@@ -95,9 +95,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
 
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
         <tr>
-          <td style="border-radius:12px;background:#134DE1;">
+          <td style="border-radius:12px;background:#EA580C;">
             <a href="https://app.acuityscheduling.com/schedule.php?owner=36720238&appointmentType=83513953"
-               style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:12px;">
+               style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:600;color:#0A0A0A;text-decoration:none;border-radius:12px;">
               Book next session →
             </a>
           </td>
@@ -117,9 +117,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
         <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155888"
-             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #134DE1;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
+             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #EA580C;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Popular</strong> — 8 sessions
-            <span style="display:inline-block;background:#134DE1;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
+            <span style="display:inline-block;background:#EA580C;color:#0A0A0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
             <span style="display:block;color:#4a5062;font-size:13px;margin-top:2px;">€49 / 4 weeks — €6.13 per session</span>
           </a>
         </td></tr>
@@ -138,7 +138,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
       </table>
 
-      <p style="margin:24px 0 0 0;font-size:12px;color:#7a8296;">Questions? <a href="https://wa.me/31683178934" style="color:#134DE1;text-decoration:underline;">WhatsApp us</a></p>
+      <p style="margin:24px 0 0 0;font-size:12px;color:#7a8296;">Questions? <a href="https://wa.me/31683178934" style="color:#EA580C;text-decoration:underline;">WhatsApp us</a></p>
     </td>
   </tr>
 </table>
@@ -165,17 +165,17 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
         <tr>
           <td style="padding:0 6px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#134DE1;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#EA580C;">
               <a href="https://app.acuityscheduling.com/schedule.php?owner=36720238&appointmentType=84032351"
-                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:12px;">
+                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;border-radius:12px;">
                 Half Studio (60 min) →
               </a>
             </td></tr></table>
           </td>
           <td style="padding:0 6px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#134DE1;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#EA580C;">
               <a href="https://app.acuityscheduling.com/schedule.php?owner=36720238&appointmentType=82553655"
-                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:12px;">
+                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;border-radius:12px;">
                 Full Studio (60 min) →
               </a>
             </td></tr></table>
@@ -198,9 +198,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
         <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149358"
-             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #134DE1;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
+             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #EA580C;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Routine</strong>
-            <span style="display:inline-block;background:#134DE1;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
+            <span style="display:inline-block;background:#EA580C;color:#0A0A0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
             &nbsp;·&nbsp; <span style="color:#4a5062;">€199</span>
             <span style="color:#7a8296;text-decoration:line-through;font-size:12px;">&nbsp;€234</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Bespaar 15%</span>
@@ -230,7 +230,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
       <p style="margin:20px 0 0 0;font-size:13px;color:#4a5062;">
         Liever betalen via factuur?
         <a href="https://wa.me/31683178934?text=Hoi%21%20Ik%20wil%20graag%20een%20studio%20pakket%20kopen%20en%20betalen%20via%20factuur.%20Mijn%20naam%3A"
-           style="color:#134DE1;text-decoration:underline;font-weight:600;">WhatsApp ons voor een bankoverschrijving →</a>
+           style="color:#EA580C;text-decoration:underline;font-weight:600;">WhatsApp ons voor een bankoverschrijving →</a>
       </p>
     </td>
   </tr>
@@ -251,17 +251,17 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
         <tr>
           <td style="padding:0 6px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#134DE1;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#EA580C;">
               <a href="https://app.acuityscheduling.com/schedule.php?owner=36720238&appointmentType=84032351"
-                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:12px;">
+                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;border-radius:12px;">
                 Half Studio (60 min) →
               </a>
             </td></tr></table>
           </td>
           <td style="padding:0 6px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#134DE1;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#EA580C;">
               <a href="https://app.acuityscheduling.com/schedule.php?owner=36720238&appointmentType=82553655"
-                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:12px;">
+                 style="display:inline-block;padding:14px 22px;font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;border-radius:12px;">
                 Full Studio (60 min) →
               </a>
             </td></tr></table>
@@ -283,9 +283,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
         <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149358"
-             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #134DE1;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
+             style="display:block;padding:14px 16px;background:#f5f6fa;border:2px solid #EA580C;border-radius:10px;color:#0b0d14;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Routine</strong>
-            <span style="display:inline-block;background:#134DE1;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
+            <span style="display:inline-block;background:#EA580C;color:#0A0A0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
             &nbsp;·&nbsp; <span style="color:#4a5062;">€199</span>
             <span style="color:#7a8296;text-decoration:line-through;font-size:12px;">&nbsp;€234</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Save 15%</span>
@@ -314,7 +314,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
       <p style="margin:20px 0 0 0;font-size:13px;color:#4a5062;">
         Prefer bank transfer / invoice?
         <a href="https://wa.me/31683178934?text=Hi%21%20I%27d%20like%20to%20buy%20a%20studio%20pack%20and%20pay%20by%20invoice.%20My%20name%3A"
-           style="color:#134DE1;text-decoration:underline;font-weight:600;">WhatsApp us for an invoice →</a>
+           style="color:#EA580C;text-decoration:underline;font-weight:600;">WhatsApp us for an invoice →</a>
       </p>
     </td>
   </tr>

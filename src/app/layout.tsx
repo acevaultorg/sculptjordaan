@@ -47,6 +47,19 @@ export const metadata: Metadata = {
   generator: "Next.js",
   publisher: siteConfig.name,
   category: "fitness",
+  // Brand icons — refreshed 2026-05-17 to match #EA580C primary.
+  // favicon.png = "SC" black-on-orange monogram (legible at 16-32px browser tab).
+  // apple-touch + icon-192/512 = full SCULPT/CLUB stacked wordmark on orange.
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/images/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/images/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: "/favicon.png",
+  },
+  manifest: "/manifest.json",
   alternates: {
     canonical: "/",
     languages: {
