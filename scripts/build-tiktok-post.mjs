@@ -267,16 +267,16 @@ const POSTS = {
       name: "no-pressure",
       photoPath: TRAINING_JOY,
       eyebrow: "8 TRAINERS · 5.0 ★ GOOGLE",
-      // 2026-05-18 v3 (third iteration on this slot — operator "do what's best,
-      // don't be biased"). Klikken = native Dutch chemistry idiom, only-Dutch
-      // language pattern. Trainer-match is fundamentally a person-chemistry
-      // decision — this is the exact word native Dutch speakers use. Beats:
-      //   - "Vind jouw trainer." (action, no objection-addressing)
-      //   - "Probeer eerst. Beslis dan." (transactional/commitment-defensive)
-      //   - "Test eerst. Beslis dan." (anglicism + commitment-defensive)
-      // Boutique-emotional register: pulls feeling, not transaction.
-      hero: "Voel of het klikt.",
-      heroScale: 0.8,  // 18 chars at 0.8 scale = 86px × 18 × 0.55 ≈ 852px in 888
+      // 2026-05-18 v4 — operator caught that "Voel of het klikt." reads as
+      // dating-app copy in Dutch (klikken defaults to romantic-chemistry
+      // register in marketing context, regardless of dictionary breadth).
+      // Native instinct beat my taxonomy on that one.
+      // "Ontmoet de trainers." — plural "de trainers" (not "jouw trainer")
+      // = browse-the-roster invitation, no soulmate/match coding. "Ontmoet"
+      // is boutique vocabulary (Equinox: "meet your community"). Period-stop
+      // rhythm matches slide 1 "Privé. 1-op-1." for carousel consistency.
+      hero: "Ontmoet de trainers.",
+      heroScale: 0.7,  // 20 chars · 76 × 20 × 0.55 ≈ 836 in 888 — safe fit
       price: "",
       usp: "Kracht · Voeding · Houding · Calisthenics",
       cta: "Geen contract · sculptclub.nl/gratis-intake",
