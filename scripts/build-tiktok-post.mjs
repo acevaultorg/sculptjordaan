@@ -49,6 +49,17 @@ const TRAINING_JOY = path.join(root, "public/images/studio/training-dumbbells-jo
 //                         of the broader Open Gym audience (less premium than PT)
 const STUDIO_INTERIOR_1 = path.join(root, "public/images/studio/studio-interior-1.jpeg");
 const TRAINING_BIKE_SMILE = path.join(root, "public/images/studio/training-bike-smile.jpg");
+
+// Education photo set (education-squat-mistakes-001):
+//   TRAINING_BARBELL_SQUAT  → reuse hero image · familiar SculptClub brand cue
+//   TRAINING_SQUAT_CINEMATIC → dramatic squat shot · pairs with the "fault breakdown" slide
+const TRAINING_BARBELL_SQUAT = path.join(root, "public/images/studio/training-barbell-squat.jpg");
+const TRAINING_SQUAT_CINEMATIC = path.join(root, "public/images/studio/training-squat-cinematic.jpg");
+
+// Trainer-spotlight photo set: reads from src/config/trainers.ts image paths.
+// One constant per trainer keeps the POSTS map declarative. Add new trainer
+// = add new path constant + new spotlight key.
+const ALEX_PORTRAIT = path.join(root, "public/images/trainers/alex.jpg");
 const WORDMARK_PNG = path.join(root, "public/images/logo-sculptclub.png");
 
 // Post identifier — drives output directory under public/social/<post-id>/.
@@ -329,6 +340,99 @@ const POSTS = {
       price: "",
       usp: "Dagelijks 06:30 – 22:00 · privé studio",
       cta: "Boek je proefles · sculptclub.nl",
+    },
+  ],
+
+  // 2026-05-18: first education-category post. Education content compounds
+  // brand authority + serves PT-find funnel indirectly (squat-form-conscious
+  // visitor → "let me get a trainer to check my form" → /gratis-intake).
+  // Premium register throughout (no GRATIS shouts, "vrijblijvend" not "gratis").
+  // Calendar slot: Week 1 Wed 20 May 08:00.
+  "education-squat-mistakes-001": [
+    {
+      name: "hook",
+      photoPath: TRAINING_BARBELL_SQUAT,
+      eyebrow: "EDUCATION · KRACHT",
+      hero: "3 fouten in je squat.",
+      heroScale: 0.7,  // 21 chars; same scale family as other premium slides
+      price: "",
+      usp: "Wat de meeste mensen verkeerd doen.",
+      cta: "Welke maak jij? ↓",
+    },
+    {
+      name: "faults",
+      photoPath: TRAINING_SQUAT_CINEMATIC,
+      eyebrow: "DE 3 FOUTEN",
+      // Three-noun list as period-stops — premium register pattern from
+      // intake-pitch slide 2 ("Test eerst. Beslis dan."). Each noun is
+      // the body part affected; the usp line explains.
+      hero: "Knieën. Romp. Hielen.",
+      heroScale: 0.7,
+      price: "",
+      // USP shortened 2026-05-18 (first render clipped at "hielen lo[s]" on
+      // both edges — Helvetica at 48px renders Dutch lowercase wider than
+      // estimated; ~38 chars is the safe limit for one-liner at this scale).
+      usp: "Knieën in · romp voor · hielen los",
+      cta: "Een trainer ziet het meteen.",
+    },
+    {
+      name: "cta",
+      photoPath: PT_SESSION_BARBELL,
+      eyebrow: "PERSONAL TRAINING",
+      hero: "Laat je squat checken.",
+      heroScale: 0.7,
+      price: "",
+      usp: "Eerste sessie 1-op-1 · 45 minuten · vrijblijvend",
+      cta: "Plan je gratis intake · sculptclub.nl/gratis-intake",
+    },
+  ],
+
+  // 2026-05-18: first trainer-spotlight post. Opens the 8-post series
+  // (8 trainers × 1 post each ≈ 2 months of biweekly PT-find content
+  // with zero brand-pitch fatigue). Each post pulls real bio + rate +
+  // specialty from src/config/trainers.ts. Calendar slot: Week 2 Fri 30 May.
+  //
+  // Alex first in series because:
+  //   - Strong specialty stack (Kracht + Calisthenics + Herstel) covers
+  //     3 common-search intents in one post
+  //   - €69/60min concrete rate = signals real PT, not "rate on request"
+  //   - 3 languages (NL/EN/PT) = broader audience reach
+  //   - Photo asset already production-ready at /images/trainers/alex.jpg
+  "trainer-spotlight-alex-001": [
+    {
+      name: "intro",
+      photoPath: ALEX_PORTRAIT,
+      eyebrow: "PERSONAL TRAINER · KRACHT",
+      hero: "Alex.",  // single-word hero — confident introduction
+      heroScale: 1.5,  // upscale for solo-word impact (single short word
+                       // needs extra weight to anchor the slide). 5 chars
+                       // × 1.5 × 0.55 ≈ 70px wide — well within 888px content.
+      price: "",
+      usp: "Kracht · Calisthenics · Herstel",
+      cta: "NL · EN · PT · sculptclub.nl",
+    },
+    {
+      name: "approach",
+      photoPath: PT_SESSION_BARBELL,  // generic PT action shot (workout context)
+      eyebrow: "ALEX'S AANPAK",
+      // Two-stop hero in same register as intake-pitch slide 1 ("Privé. 1-op-1.")
+      hero: "Functioneel. Doelgericht.",
+      heroScale: 0.6,
+      price: "",
+      // USP shortened 2026-05-18 (first render clipped both edges — was 73
+      // chars, which exceeds the ~38-char safe limit at this font/scale).
+      usp: "Functioneel · meetbaar resultaat",
+      cta: "€69 / 60 min · vrijblijvende intake",
+    },
+    {
+      name: "cta",
+      photoPath: STUDIO_CANAL,
+      eyebrow: "SCULPT CLUB · JORDAAN",
+      hero: "Plan een sessie met Alex.",
+      heroScale: 0.6,
+      price: "",
+      usp: "45 minuten · 1-op-1 · privé studio aan de gracht",
+      cta: "sculptclub.nl/nl/plan-gratis-intake-met-alex",
     },
   ],
 };
