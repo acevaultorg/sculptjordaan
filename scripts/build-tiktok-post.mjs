@@ -41,6 +41,14 @@ const STUDIO_CANAL = path.join(root, "public/images/studio/canal-view-doors.jpg"
 //                         "every SculptClub post closes on the door" brand signature)
 const PT_SESSION_BARBELL = path.join(root, "public/images/studio/pt-session-barbell.jpg");
 const TRAINING_JOY = path.join(root, "public/images/studio/training-dumbbells-joy.jpg");
+
+// Open-Gym photo set (open-gym-pitch-001):
+//   STUDIO_INTERIOR_1  → empty private studio shot (literal "your own gym" framing
+//                        — visitors think "I could train there alone, no crowd")
+//   TRAINING_BIKE_SMILE → cardio + smile · matches "accessible fun training" vibe
+//                         of the broader Open Gym audience (less premium than PT)
+const STUDIO_INTERIOR_1 = path.join(root, "public/images/studio/studio-interior-1.jpeg");
+const TRAINING_BIKE_SMILE = path.join(root, "public/images/studio/training-bike-smile.jpg");
 const WORDMARK_PNG = path.join(root, "public/images/logo-sculptclub.png");
 
 // Post identifier — drives output directory under public/social/<post-id>/.
@@ -246,6 +254,57 @@ const POSTS = {
       price: "Gratis",      // ties back to slide 1 focal (gratis = leitmotif)
       usp: "Egelantiersgracht 424 · 06:30 – 22:00",
       cta: "Plan je intake · sculptclub.nl",
+    },
+  ],
+
+  // 2026-05-18: third post in the series. Open Gym = low-friction entry
+  // product (vs intake-pitch's PT = premium). Same brand chassis, broader
+  // audience including DIY-lifters, training duos (max 3/slot), and
+  // budget-conscious gym-shoppers.
+  //
+  // Slide arc:
+  //   1. Hook (free first session · 60 min private studio)
+  //   2. Substance (post-trial price · €7,25/session via 4-pack)
+  //   3. Location anchor (canal door close — brand-consistent with prior posts)
+  //
+  // Funnel: TikTok/IG → sculptclub.nl/open-gym → "Gratis proefles boeken" CTA.
+  "open-gym-pitch-001": [
+    {
+      name: "main-offer",
+      // Empty studio interior makes the "you'd have the place to yourself"
+      // privacy promise literal before the eye reads the copy.
+      photoPath: STUDIO_INTERIOR_1,
+      eyebrow: "🧡 EERSTE LES",
+      hero: "Open Gym proefles",
+      heroScale: 0.85,  // 17 chars · same downscale as intake slide 1
+      price: "Gratis",
+      usp: "60 min · max 3 personen · privé",
+      cta: "sculptclub.nl/open-gym",
+    },
+    {
+      name: "price-substance",
+      // Cardio-smile photo conveys "this is fun" — matches Open Gym's
+      // accessible-entry framing (vs the more intense PT post imagery).
+      photoPath: TRAINING_BIKE_SMILE,
+      eyebrow: "NA DE PROEFLES",
+      hero: "Vanaf €7,25",
+      heroScale: 0.85,  // 12 chars but euro-comma adds visual weight
+      price: "/ sessie",       // small focal subscript — mirrors trainer-pitch
+                               // "/uur" treatment; reads as one unit with hero
+      usp: "4 sessies · €29 / 4 weken · geen contract",
+      cta: "Gratis annuleren · sculptclub.nl",
+    },
+    {
+      name: "location",
+      photoPath: STUDIO_CANAL,
+      eyebrow: "AAN DE GRACHT",
+      hero: "In de Jordaan",
+      heroScale: 0.95,
+      // Soft framing — "gratis proeven" reinforces the slide 1 leitmotif
+      // (the trial is free) without literally repeating "Gratis" again.
+      price: "06:30 – 22:00",
+      usp: "Egelantiersgracht 424 · privé studio",
+      cta: "Boek je proefles · sculptclub.nl",
     },
   ],
 };
