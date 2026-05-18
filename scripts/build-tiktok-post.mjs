@@ -269,8 +269,12 @@ const POSTS = {
       // Social proof moves from 180px-orange focal to small eyebrow position.
       // Confident, not shouty. The "8 trainers · 5.0 ★" is positioning, not pitch.
       eyebrow: "8 TRAINERS · 5.0 ★ GOOGLE",
-      hero: "Test eerst. Beslis dan.",
-      heroScale: 0.65,
+      // 2026-05-18 swap from "Test eerst. Beslis dan." per operator iteration:
+      // hero now compounds with the trainer-hub URL slug /vind-jouw-personal-trainer
+      // and the "8 TRAINERS" eyebrow → "find yours" flows naturally. Native-Dutch
+      // imperative + possessive, ~17 chars (room for confident heroScale).
+      hero: "Vind jouw trainer.",
+      heroScale: 0.85,
       price: "",
       usp: "Kracht · Voeding · Houding · Calisthenics",
       cta: "Geen contract · sculptclub.nl/gratis-intake",
