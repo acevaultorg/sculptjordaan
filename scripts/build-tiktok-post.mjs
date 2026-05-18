@@ -60,6 +60,12 @@ const TRAINING_SQUAT_CINEMATIC = path.join(root, "public/images/studio/training-
 // One constant per trainer keeps the POSTS map declarative. Add new trainer
 // = add new path constant + new spotlight key.
 const ALEX_PORTRAIT = path.join(root, "public/images/trainers/alex.jpg");
+
+// Education photo set (pt-how-to-choose-001):
+//   TRAINING_BARBELL_SKYLIGHT → dramatic training shot (premium-aspirational hook)
+//   TRAINING_DUMBBELLS_FOCUS  → focused training detail (criteria-substance slide)
+const TRAINING_BARBELL_SKYLIGHT = path.join(root, "public/images/studio/training-barbell-skylight.jpg");
+const TRAINING_DUMBBELLS_FOCUS = path.join(root, "public/images/studio/training-dumbbells-focus.jpg");
 const WORDMARK_PNG = path.join(root, "public/images/logo-sculptclub.png");
 
 // Post identifier — drives output directory under public/social/<post-id>/.
@@ -391,6 +397,45 @@ const POSTS = {
       price: "",
       usp: "Eerste sessie 1-op-1 · 45 minuten · vrijblijvend",
       cta: "Plan je gratis intake · sculptclub.nl/gratis-intake",
+    },
+  ],
+
+  // 2026-05-18: 2nd education post (Wk 2 Mon 26 May slot). Funnels to PT-find
+  // by answering the audience's actual question ("how do I pick a good PT?").
+  // Brand-authority + soft-funnel — visitor learns from us, then taps to find
+  // a trainer at SculptClub specifically.
+  "pt-how-to-choose-001": [
+    {
+      name: "hook",
+      photoPath: TRAINING_BARBELL_SKYLIGHT,
+      eyebrow: "EDUCATION · PT KIEZEN",
+      hero: "Hoe kies je een PT?",
+      heroScale: 0.75,  // 19 chars · 81 × 19 × 0.55 ≈ 846 in 888 — fits
+      price: "",
+      usp: "Drie dingen die ertoe doen.",
+      cta: "Welke past bij jou? ↓",
+    },
+    {
+      name: "criteria",
+      photoPath: TRAINING_DUMBBELLS_FOCUS,
+      eyebrow: "DE DRIE DINGEN",
+      // Three-noun list with period-stops (matches the squat-mistakes
+      // "Knieën. Romp. Hielen." pattern — consistent education-post rhythm)
+      hero: "Doel. Stijl. Tijd.",
+      heroScale: 0.8,  // 18 chars · 86 × 18 × 0.55 ≈ 852 in 888 — fits
+      price: "",
+      usp: "Jouw doel · jouw stijl · jouw tijd",
+      cta: "8 trainers · 4 specialisaties",
+    },
+    {
+      name: "cta",
+      photoPath: STUDIO_CANAL,
+      eyebrow: "PERSONAL TRAINING · JORDAAN",
+      hero: "Vind jouw trainer.",
+      heroScale: 0.85,
+      price: "",
+      usp: "Privé studio · 1-op-1 · vrijblijvend",
+      cta: "sculptclub.nl/gratis-intake",
     },
   ],
 
