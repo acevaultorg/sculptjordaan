@@ -266,15 +266,17 @@ const POSTS = {
     {
       name: "no-pressure",
       photoPath: TRAINING_JOY,
-      // Social proof moves from 180px-orange focal to small eyebrow position.
-      // Confident, not shouty. The "8 trainers · 5.0 ★" is positioning, not pitch.
       eyebrow: "8 TRAINERS · 5.0 ★ GOOGLE",
-      // 2026-05-18 swap from "Test eerst. Beslis dan." per operator iteration:
-      // hero now compounds with the trainer-hub URL slug /vind-jouw-personal-trainer
-      // and the "8 TRAINERS" eyebrow → "find yours" flows naturally. Native-Dutch
-      // imperative + possessive, ~17 chars (room for confident heroScale).
-      hero: "Vind jouw trainer.",
-      heroScale: 0.85,
+      // 2026-05-18 v3 (third iteration on this slot — operator "do what's best,
+      // don't be biased"). Klikken = native Dutch chemistry idiom, only-Dutch
+      // language pattern. Trainer-match is fundamentally a person-chemistry
+      // decision — this is the exact word native Dutch speakers use. Beats:
+      //   - "Vind jouw trainer." (action, no objection-addressing)
+      //   - "Probeer eerst. Beslis dan." (transactional/commitment-defensive)
+      //   - "Test eerst. Beslis dan." (anglicism + commitment-defensive)
+      // Boutique-emotional register: pulls feeling, not transaction.
+      hero: "Voel of het klikt.",
+      heroScale: 0.8,  // 18 chars at 0.8 scale = 86px × 18 × 0.55 ≈ 852px in 888
       price: "",
       usp: "Kracht · Voeding · Houding · Calisthenics",
       cta: "Geen contract · sculptclub.nl/gratis-intake",
@@ -283,14 +285,15 @@ const POSTS = {
       name: "location",
       photoPath: STUDIO_CANAL,
       eyebrow: "SCULPT CLUB · JORDAAN",
-      // The address IS the value prop — gracht location, premium neighborhood,
-      // adjacency to brand. No price-style focal needed; the address carries
-      // brand weight by itself.
-      hero: "Egelantiersgracht 424",
-      heroScale: 0.7,
+      // 2026-05-18 v2: hero was "Egelantiersgracht 424" — brand anchor but no
+      // CTA energy at the carousel close. Visitors hit the last slide with no
+      // action prompt. Swapped to action-shaped phrase; address is implicit
+      // via the canal-door photo + brand identity at this point in the arc.
+      hero: "Plan je eerste sessie.",
+      heroScale: 0.65,  // 22 chars · 70 × 22 × 0.55 ≈ 847 in 888 — fits
       price: "",
-      usp: "Dagelijks 06:30 – 22:00 · privé studio",
-      cta: "Plan je gratis intake · sculptclub.nl",
+      usp: "45 min · vrijblijvend · privé studio",
+      cta: "sculptclub.nl/gratis-intake",
     },
   ],
 

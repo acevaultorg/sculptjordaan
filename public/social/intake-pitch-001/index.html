@@ -370,8 +370,11 @@
 // — informational + matches the URL slug, not shouty.
 const COPY = {
   tiktok: {
-    title: "Personal Training in de Jordaan · privé studio · 1-op-1",
-    description: "Een eerste sessie met je personal trainer in onze privé studio aan de Egelantiersgracht.\n\n45 minuten · vrijblijvend · 8 trainers · 5.0 ★ Google.\n\nPlan je gratis intake → sculptclub.nl/gratis-intake",
+    // v3 title (2026-05-18) — curiosity hook beats descriptive list. The
+    // specific number "acht" creates "wait, only 8?" scarcity-pull. Old
+    // title was scrollable; this prompts pause-and-read on FitTok feed.
+    title: "Acht trainers, één privé studio aan de Egelantiersgracht.",
+    description: "Een eerste sessie 1-op-1 met je personal trainer in onze privé studio aan de Egelantiersgracht.\n\n45 minuten · vrijblijvend · 8 trainers · 5.0 ★ Google.\n\nPlan je gratis intake → sculptclub.nl/gratis-intake",
     hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #pt #fitamsterdam"
   },
   instagram: {
@@ -430,8 +433,8 @@ function renderCopySection(platform) {
 // Slide names match the keys in scripts/build-tiktok-post.mjs POSTS["intake-pitch-001"].
 const slidesData = [
   { name: "main-offer",  label: "1", title: "Privé · 1-op-1 · 45 min" },
-  { name: "no-pressure", label: "2", title: "Vind jouw trainer · 8 trainers" },
-  { name: "location",    label: "3", title: "Egelantiersgracht 424 · Jordaan" }
+  { name: "no-pressure", label: "2", title: "Voel of het klikt · 8 trainers" },
+  { name: "location",    label: "3", title: "Plan je eerste sessie · /gratis-intake" }
 ];
 
 function switchPlatform(platform) {
