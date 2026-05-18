@@ -103,13 +103,28 @@ async function buildSlide(opts) {
   const cx = width / 2;
   const isSquare = Math.abs(width - height) < 50;
 
+  // Premium-register escape hatch (2026-05-18): when `price` is empty/null,
+  // skip the 180px-orange focal slot entirely and shift usp+cta up by ~130px
+  // so the composition doesn't have a dead-air gap. Used when the slide's
+  // value-prop is qualitative ("vrijblijvend", "privé", a confident statement)
+  // rather than a competitive numeric price. Trainer-pitch-001 keeps the 180px
+  // price slot (€12/uur IS the news for trainer audience); intake-pitch and
+  // open-gym-pitch use the premium register (the giant "GRATIS" was reading as
+  // Black Friday flyer, not boutique-Jordaan).
+  const hasPrice = price != null && String(price).trim().length > 0;
+
   // Content zone vertical positions (relative to canvas height)
   const wordmarkTop = isSquare ? 75 : 140;
   const eyebrowY = isSquare ? height * 0.45 : 1180;
   const heroY = isSquare ? height * 0.55 : 1340;
   const priceY = isSquare ? height * 0.72 : 1530;
-  const uspY = isSquare ? height * 0.82 : 1660;
-  const ctaY = isSquare ? height * 0.92 : 1770;
+  // When no price slot, usp+cta move up into the void to fill the composition.
+  const uspY = hasPrice
+    ? (isSquare ? height * 0.82 : 1660)
+    : (isSquare ? height * 0.72 : 1530);
+  const ctaY = hasPrice
+    ? (isSquare ? height * 0.92 : 1770)
+    : (isSquare ? height * 0.82 : 1640);
 
   // Font scale: square slides have less vertical room, scale headlines smaller
   const scale = isSquare ? 0.65 : 1;
@@ -135,7 +150,7 @@ async function buildSlide(opts) {
 
     <text x="${cx}" y="${heroY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(108 * scale * heroScale)}" letter-spacing="-2" text-anchor="middle" fill="${WARM_OFF_WHITE}">${hero}</text>
 
-    <text x="${cx}" y="${priceY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(180 * scale)}" letter-spacing="-6" text-anchor="middle" fill="${BRAND}">${price}</text>
+    ${hasPrice ? `<text x="${cx}" y="${priceY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${Math.round(180 * scale)}" letter-spacing="-6" text-anchor="middle" fill="${BRAND}">${price}</text>` : ''}
 
     <text x="${cx}" y="${uspY}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="${Math.round(48 * scale)}" letter-spacing="0.5" text-anchor="middle" fill="${WARM_OFF_WHITE}">${usp}</text>
 
@@ -216,44 +231,51 @@ const POSTS = {
   //   3. Location anchor + soft CTA (Jordaan · gratis · gracht-door brand cue)
   //
   // Funnel: TikTok/IG → sculptclub.nl/gratis-intake → WhatsApp/trainer-picker.
+  // 2026-05-18 v2 (premium-register rewrite per operator feedback): the v1
+  // "GRATIS" at 180px orange read as Black Friday flyer, not boutique-Jordaan.
+  // Equinox/Barry's-tier brands never lead with FREE in big type — they let
+  // the architecture + one confident statement do the work. "Vrijblijvend"
+  // replaces "gratis" wherever possible (same no-obligation promise, premium
+  // register). Word "gratis" appears once per post (URL slug + CTA line), not
+  // 180px-orange-screamed three times.
   "intake-pitch-001": [
     {
       name: "main-offer",
-      // PT session photo (trainer + client) makes the "1-op-1" framing literal
-      // before the eye even reads the hero text.
       photoPath: PT_SESSION_BARBELL,
-      eyebrow: "🧡 EERSTE INTAKE",
-      hero: "Probeer 1-op-1 PT",
-      heroScale: 0.85,  // "Probeer 1-op-1 PT" = 17 chars; same downscale ratio
-                        // as trainer-pitch slide 2 ("Houd 100% zelf" = 14 chars
-                        // with same heroScale). Empirically clears 96px edges.
-      price: "100% gratis",  // focal value — matches /nl/gratis-intake page hero
-      usp: "45 min · in onze privé studio",
-      cta: "sculptclub.nl/gratis-intake",
+      eyebrow: "PERSONAL TRAINING",
+      // Two-stop confident hero. Says PT (audience signal) + Privé +
+      // 1-op-1 (differentiators vs commercial gym group classes).
+      hero: "Privé. 1-op-1.",
+      heroScale: 0.85,
+      price: "",  // premium register — empty = no 180px shout
+      // Free is in here via "vrijblijvend" — premium synonym, no flyer feel.
+      usp: "Eerste sessie vrijblijvend · 45 minuten",
+      cta: "Plan je gratis intake · sculptclub.nl",
     },
     {
       name: "no-pressure",
       photoPath: TRAINING_JOY,
-      eyebrow: "GEEN VERPLICHTING",
-      // "Test eerst. Beslis dan." addresses the #1 conversion objection in
-      // boutique-fitness sales (commitment fear). Period-separator beats
-      // comma because it implies two equal-weight clauses, both reassuring.
+      // Social proof moves from 180px-orange focal to small eyebrow position.
+      // Confident, not shouty. The "8 trainers · 5.0 ★" is positioning, not pitch.
+      eyebrow: "8 TRAINERS · 5.0 ★ GOOGLE",
       hero: "Test eerst. Beslis dan.",
-      heroScale: 0.65,  // 23 chars → smaller heroScale needed than slide 1
-      price: "8 trainers",  // focal — social proof number; matches site's
-                            // "8 trainers" trust badge on /vind-jouw-personal-trainer
-      usp: "Persoonlijk plan · 5.0 ★ Google",
-      cta: "Geen contract · gratis annuleren",
+      heroScale: 0.65,
+      price: "",
+      usp: "Kracht · Voeding · Houding · Calisthenics",
+      cta: "Geen contract · sculptclub.nl/gratis-intake",
     },
     {
       name: "location",
       photoPath: STUDIO_CANAL,
-      eyebrow: "AAN DE GRACHT",
-      hero: "In de Jordaan",
-      heroScale: 0.95,  // 13 chars · slight downscale for clean side margins
-      price: "Gratis",      // ties back to slide 1 focal (gratis = leitmotif)
-      usp: "Egelantiersgracht 424 · 06:30 – 22:00",
-      cta: "Plan je intake · sculptclub.nl",
+      eyebrow: "SCULPT CLUB · JORDAAN",
+      // The address IS the value prop — gracht location, premium neighborhood,
+      // adjacency to brand. No price-style focal needed; the address carries
+      // brand weight by itself.
+      hero: "Egelantiersgracht 424",
+      heroScale: 0.7,
+      price: "",
+      usp: "Dagelijks 06:30 – 22:00 · privé studio",
+      cta: "Plan je gratis intake · sculptclub.nl",
     },
   ],
 
@@ -268,42 +290,44 @@ const POSTS = {
   //   3. Location anchor (canal door close — brand-consistent with prior posts)
   //
   // Funnel: TikTok/IG → sculptclub.nl/open-gym → "Gratis proefles boeken" CTA.
+  // 2026-05-18 v2 (premium-register rewrite — same rationale as intake-pitch-001).
+  // "Gratis" word-shouts removed; the cheap-vs-premium price (€7,25/sessie) stays
+  // in the hero slot at hero size (108px), NOT 180px-orange focal. Real price is
+  // OK to show — it's "GRATIS" the WORD at promo scale that reads cheap.
   "open-gym-pitch-001": [
     {
       name: "main-offer",
-      // Empty studio interior makes the "you'd have the place to yourself"
-      // privacy promise literal before the eye reads the copy.
       photoPath: STUDIO_INTERIOR_1,
-      eyebrow: "🧡 EERSTE LES",
-      hero: "Open Gym proefles",
-      heroScale: 0.85,  // 17 chars · same downscale as intake slide 1
-      price: "Gratis",
-      usp: "60 min · max 3 personen · privé",
-      cta: "sculptclub.nl/open-gym",
+      eyebrow: "OPEN GYM",
+      // Two-stop confident hero, mirrors intake-pitch slide 1.
+      hero: "Solo trainen. Privé.",
+      heroScale: 0.75,
+      price: "",  // premium register
+      usp: "60 min · max 3 personen · in de Jordaan",
+      cta: "Eerste les vrijblijvend · sculptclub.nl/open-gym",
     },
     {
       name: "price-substance",
-      // Cardio-smile photo conveys "this is fun" — matches Open Gym's
-      // accessible-entry framing (vs the more intense PT post imagery).
       photoPath: TRAINING_BIKE_SMILE,
-      eyebrow: "NA DE PROEFLES",
-      hero: "Vanaf €7,25",
-      heroScale: 0.85,  // 12 chars but euro-comma adds visual weight
-      price: "/ sessie",       // small focal subscript — mirrors trainer-pitch
-                               // "/uur" treatment; reads as one unit with hero
+      eyebrow: "OPEN GYM",
+      // Price stays — but consolidated into hero size, not split between
+      // hero "Vanaf €7,25" + 180px focal "/ sessie". One confident line.
+      hero: "Vanaf €7,25 / sessie.",
+      heroScale: 0.6,  // 22 chars including punctuation
+      price: "",
       usp: "4 sessies · €29 / 4 weken · geen contract",
-      cta: "Gratis annuleren · sculptclub.nl",
+      cta: "Boek je proefles · sculptclub.nl",
     },
     {
       name: "location",
       photoPath: STUDIO_CANAL,
-      eyebrow: "AAN DE GRACHT",
-      hero: "In de Jordaan",
-      heroScale: 0.95,
-      // Soft framing — "gratis proeven" reinforces the slide 1 leitmotif
-      // (the trial is free) without literally repeating "Gratis" again.
-      price: "06:30 – 22:00",
-      usp: "Egelantiersgracht 424 · privé studio",
+      eyebrow: "SCULPT CLUB · JORDAAN",
+      // Same brand-anchor close as intake-pitch slide 3 — building visual
+      // recognition across the series. Different CTA line per post.
+      hero: "Egelantiersgracht 424",
+      heroScale: 0.7,
+      price: "",
+      usp: "Dagelijks 06:30 – 22:00 · privé studio",
       cta: "Boek je proefles · sculptclub.nl",
     },
   ],

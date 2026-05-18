@@ -250,15 +250,15 @@
 <body>
 
   <div class="pill">Social Post Pack</div>
-  <h1>Eerste Intake Gratis</h1>
-  <p class="subtitle">Consumer-acquisition post · 3 slides · klaar om te plaatsen op TikTok of Instagram.</p>
+  <h1>Personal Training Intake</h1>
+  <p class="subtitle">Consumer-acquisition post · premium register · 3 slides · klaar om te plaatsen op TikTok of Instagram.</p>
 
   <div class="post-header">
     <p class="post-name">📌 intake-pitch-001</p>
     <div class="post-meta">
       <span><strong>Datum:</strong> 18 mei 2026</span>
-      <span><strong>Doel:</strong> Consumer-acquisitie · gratis intake</span>
-      <span><strong>Versie:</strong> v1</span>
+      <span><strong>Doel:</strong> Consumer-acquisitie · plan je gratis intake</span>
+      <span><strong>Versie:</strong> v2 (premium)</span>
     </div>
   </div>
 
@@ -362,17 +362,23 @@
 //
 // CTA destination: sculptclub.nl/gratis-intake (the existing paid-Google-Ads landing
 // — instrumented with conversion events, mobile-perfect verified 2026-05-17).
+// v2 (2026-05-18) — premium register rewrite. Removed:
+//   - 🧡 emoji-hook from title (premium boutique brands don't lead with emoji)
+//   - Multi-instance "gratis" word-shouts (read as Black Friday flyer)
+//   - "GEEN VERPLICHTING" all-caps (replaced by elevated "vrijblijvend")
+// Word "gratis" appears once in the established offer name "gratis intake"
+// — informational + matches the URL slug, not shouty.
 const COPY = {
   tiktok: {
-    title: "🧡 45 min gratis Personal Training in de Jordaan",
-    description: "Probeer 1-op-1 PT in onze privé studio aan de Egelantiersgracht.\n\n45 min · gratis · geen verplichting · 8 trainers om uit te kiezen.\n\nPlan je intake → sculptclub.nl/gratis-intake",
+    title: "Personal Training in de Jordaan · privé studio · 1-op-1",
+    description: "Een eerste sessie met je personal trainer in onze privé studio aan de Egelantiersgracht.\n\n45 minuten · vrijblijvend · 8 trainers · 5.0 ★ Google.\n\nPlan je gratis intake → sculptclub.nl/gratis-intake",
     hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #pt #fitamsterdam"
   },
   instagram: {
     // IG caption convention: URLs aren't clickable in captions → use 'link in bio' instead.
     // Operator should set IG bio link to sculptclub.nl/gratis-intake for the duration of
     // this campaign so the bio tap routes to the consumer-intake landing.
-    caption: "Probeer 1-op-1 Personal Training in onze privé studio aan de Egelantiersgracht — 45 min, gratis, geen verplichting 🧡\n\n8 trainers · 5.0 ★ Google · Jordaan.\n\nPlan je intake · link in bio 👆",
+    caption: "Een eerste sessie 1-op-1 met je personal trainer in onze privé studio aan de Egelantiersgracht.\n\n45 minuten · vrijblijvend · 8 trainers · 5.0 ★ Google · Jordaan.\n\nPlan je gratis intake · link in bio 👆",
     hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #pt #fitamsterdam"
   }
 };
@@ -423,9 +429,9 @@ function renderCopySection(platform) {
 // ─── Slide rendering ───
 // Slide names match the keys in scripts/build-tiktok-post.mjs POSTS["intake-pitch-001"].
 const slidesData = [
-  { name: "main-offer",  label: "1", title: "Hook · 1-op-1 PT · 100% gratis" },
-  { name: "no-pressure", label: "2", title: "Geen verplichting · 8 trainers" },
-  { name: "location",    label: "3", title: "Locatie · Jordaan · Gratis" }
+  { name: "main-offer",  label: "1", title: "Privé · 1-op-1 · 45 min" },
+  { name: "no-pressure", label: "2", title: "Test eerst, beslis dan · 8 trainers" },
+  { name: "location",    label: "3", title: "Egelantiersgracht 424 · Jordaan" }
 ];
 
 function switchPlatform(platform) {

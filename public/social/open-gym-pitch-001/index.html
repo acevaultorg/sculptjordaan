@@ -82,15 +82,15 @@
 <body>
 
   <div class="pill">Social Post Pack</div>
-  <h1>Open Gym Proefles Gratis</h1>
-  <p class="subtitle">Open Gym entry-product post · 3 slides · klaar om te plaatsen op TikTok of Instagram.</p>
+  <h1>Open Gym · Privé Studio</h1>
+  <p class="subtitle">Open Gym entry-product post · premium register · 3 slides · klaar om te plaatsen op TikTok of Instagram.</p>
 
   <div class="post-header">
     <p class="post-name">📌 open-gym-pitch-001</p>
     <div class="post-meta">
       <span><strong>Datum:</strong> 18 mei 2026</span>
-      <span><strong>Doel:</strong> Open Gym-acquisitie · gratis proefles</span>
-      <span><strong>Versie:</strong> v1</span>
+      <span><strong>Doel:</strong> Open Gym-acquisitie · boek je proefles</span>
+      <span><strong>Versie:</strong> v2 (premium)</span>
     </div>
   </div>
 
@@ -176,14 +176,18 @@
 // Open Gym = entry product. CTA destination: sculptclub.nl/open-gym
 // (existing page with "Gratis proefles boeken" + "Al lid? Reserveer jouw uur"
 // CTAs above the fold — mobile-perfect verified via Playwright 2026-05-17).
+// v2 (2026-05-18) — premium register rewrite. Same rationale as intake-pitch v2:
+// dropped 🧡 emoji-hook + "Gratis" word-shouts. Word "gratis" removed entirely
+// (Open Gym calls the trial "eerste les vrijblijvend"); the actual price €7,25
+// stays prominent because real prices are info, not shouts.
 const COPY = {
   tiktok: {
-    title: "🧡 Gratis Open Gym proefles in onze privé studio (Jordaan)",
-    description: "Train 60 min solo in onze privé studio aan de Egelantiersgracht.\n\nEerste les gratis · max 3 personen per slot · daarna vanaf €7,25 per sessie · geen contract.\n\nBoek je proefles → sculptclub.nl/open-gym",
+    title: "Open Gym · privé studio in de Jordaan · solo trainen 60 minuten",
+    description: "Boek je eerste les Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 3 personen per slot · vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nsculptclub.nl/open-gym",
     hashtags: "#opengym #amsterdamgym #privegym #jordaan #fitamsterdam"
   },
   instagram: {
-    caption: "Gratis Open Gym proefles in onze privé studio aan de Egelantiersgracht 🧡\n\n60 min · max 3 personen per slot · daarna vanaf €7,25 per sessie · geen contract.\n\nBoek je proefles · link in bio 👆",
+    caption: "Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 3 personen per slot · eerste les vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nBoek je proefles · link in bio 👆",
     hashtags: "#opengym #amsterdamgym #privegym #jordaan #fitamsterdam"
   }
 };
@@ -229,9 +233,9 @@ function renderCopySection(platform) {
 }
 
 const slidesData = [
-  { name: "main-offer",      label: "1", title: "Hook · Open Gym proefles · Gratis" },
-  { name: "price-substance", label: "2", title: "Prijs · Vanaf €7,25 / sessie" },
-  { name: "location",        label: "3", title: "Locatie · Jordaan · 06:30 – 22:00" }
+  { name: "main-offer",      label: "1", title: "Solo trainen · privé · 60 min" },
+  { name: "price-substance", label: "2", title: "Vanaf €7,25 / sessie" },
+  { name: "location",        label: "3", title: "Egelantiersgracht 424 · Jordaan" }
 ];
 
 function switchPlatform(platform) {
