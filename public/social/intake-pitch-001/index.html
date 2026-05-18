@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SculptClub · Eerste Intake Gratis (intake-pitch-001)</title>
+  <meta name="theme-color" content="#EA580C">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/favicon.png">
+  <!-- Resolve relative URLs against THIS post's directory.
+       Next.js strips trailing slashes (/social/intake-pitch-001/ → /social/intake-pitch-001),
+       which would otherwise make the browser treat "intake-pitch-001" as a file segment
+       and resolve `<img src="tiktok-main-offer.png">` to /social/tiktok-main-offer.png (404).
+       The <base> tag pins resolution to the actual directory. Future posts: update this
+       href to match the post-id directory name. -->
+  <base href="/social/intake-pitch-001/">
+  <style>
+    :root {
+      --brand: #EA580C;
+      --brand-dark: #C2410C;
+      --bg: #0B0907;
+      --card: #1A1410;
+      --fg: #EDE5DA;
+      --muted: #8A8073;
+      --border: #2A2620;
+      --near-black: #0E0C0A;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    /* Font: modernized system stack (system-ui first = OS default on every platform;
+       -apple-system = SF Pro on iOS Safari; rest = explicit fallbacks).
+       Zero font fetches by design — this is a noindex'd operator-tool page, every
+       KB of font weight is 10× the rest of the page. Brand identity lives in the
+       SCULPT CLUB wordmark inside the generated images, not in the tool chrome. */
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { padding: max(env(safe-area-inset-top), 1rem) 1rem max(env(safe-area-inset-bottom), 1rem); max-width: 560px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; margin: 0.5rem 0 0.25rem; letter-spacing: -0.02em; }
+    h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand); margin: 2rem 0 0.6rem; font-weight: 700; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0; line-height: 1.5; }
+
+    /* Post header — name + date */
+    .post-header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+    .post-name {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--fg);
+      margin: 0;
+    }
+    .post-meta {
+      display: flex;
+      gap: 14px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+    .post-meta span { font-size: 0.78rem; color: var(--muted); }
+    .post-meta span strong { color: var(--fg); font-weight: 600; }
+
+    /* Platform tabs */
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 1.25rem;
+      padding: 4px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .tab {
+      padding: 12px 14px;
+      background: transparent;
+      color: var(--muted);
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      -webkit-appearance: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .tab.active {
+      background: var(--brand);
+      color: var(--near-black);
+    }
+    .tab .tab-meta {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    /* Slide cards */
+    .slides {
+      display: grid;
+      gap: 16px;
+      margin: 1.5rem 0;
+    }
+    .slide {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .slide-img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      background: var(--near-black);
+    }
+    .slide-img.aspect-vertical { aspect-ratio: 9 / 16; }
+    .slide-img.aspect-square { aspect-ratio: 1 / 1; }
+    .slide-meta {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .slide-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .slide-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: var(--brand);
+      color: var(--near-black);
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-align: center;
+      line-height: 28px;
+      margin-right: 6px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      background: var(--brand);
+      color: var(--near-black);
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.15s ease, transform 0.1s ease;
+      -webkit-appearance: none;
+      font-family: inherit;
+    }
+    .btn:active { background: var(--brand-dark); transform: scale(0.98); }
+    .btn:disabled { opacity: 0.55; cursor: wait; }
+    /* Primary "save all" CTA — slightly larger + bottom margin to anchor as the main action */
+    .save-all-btn { margin: 0 0 1rem; padding: 18px 20px; font-size: 1.05rem; }
+    /* Format guide — small reference card showing where these slides work */
+    .format-guide { margin: 0 0 0.6rem; padding: 12px 14px; font-size: 0.85rem; line-height: 1.55; }
+    .format-guide .fg-title { color: var(--brand); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 6px; }
+    .format-guide .fg-primary { color: var(--fg); font-weight: 600; margin: 0 0 6px; }
+    .format-guide .fg-list { color: var(--muted); margin: 0; padding-left: 1.1em; line-height: 1.6; }
+    .format-guide .fg-list li { margin-bottom: 1px; }
+    .format-guide .fg-list strong { color: var(--fg); font-weight: 600; }
+    .save-all-btn.copied { background: #15803D; color: #F0FDF4; }
+    .save-all-btn.failed { background: #991B1B; color: #FEF2F2; }
+    .btn-group { display: grid; gap: 8px; padding: 0 16px 16px; }
+    /* Per-slide save button — secondary tone (lower-emphasis than save-all) */
+    .btn.btn-slide { background: var(--card); color: var(--fg); border: 1px solid var(--brand); padding: 12px 16px; font-size: 0.9rem; font-weight: 600; }
+    .btn.btn-slide:active { background: var(--near-black); }
+    .btn.btn-slide.copied { background: #15803D; color: #F0FDF4; border-color: #15803D; }
+    .btn.btn-slide.failed { background: #991B1B; color: #FEF2F2; border-color: #991B1B; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .card .text {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: inherit;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--fg);
+    }
+    .hashtags { color: var(--brand); font-weight: 500; }
+    .copy-btn {
+      margin-top: 12px;
+      padding: 14px 16px;
+      min-height: 44px;
+      background: var(--brand);
+      color: var(--near-black);
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+      font-family: inherit;
+      -webkit-appearance: none;
+    }
+    .copy-btn:active { background: var(--brand-dark); }
+    .copy-btn.copied { background: #15803D; color: #F0FDF4; }
+    .copy-btn.failed { background: #991B1B; color: #FEF2F2; }
+    /* Long-press select fallback: keep text natively selectable */
+    .card .text { user-select: text; -webkit-user-select: text; }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .meta-row:last-child { border-bottom: none; }
+    .meta-key { color: var(--muted); font-size: 0.85rem; }
+    .meta-val { font-weight: 600; font-size: 0.9rem; text-align: right; }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--brand);
+      color: var(--near-black);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    .footer a { color: var(--brand); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="pill">Social Post Pack</div>
+  <h1>Eerste Intake Gratis</h1>
+  <p class="subtitle">Consumer-acquisition post · 3 slides · klaar om te plaatsen op TikTok of Instagram.</p>
+
+  <div class="post-header">
+    <p class="post-name">📌 intake-pitch-001</p>
+    <div class="post-meta">
+      <span><strong>Datum:</strong> 18 mei 2026</span>
+      <span><strong>Doel:</strong> Consumer-acquisitie · gratis intake</span>
+      <span><strong>Versie:</strong> v1</span>
+    </div>
+  </div>
+
+  <!-- PLATFORM TABS -->
+  <div class="tabs" role="tablist" aria-label="Platform">
+    <button class="tab active" id="tab-tiktok" onclick="switchPlatform('tiktok')" role="tab" aria-selected="true">
+      🎵 TikTok
+      <span class="tab-meta">1080×1920 vertical</span>
+    </button>
+    <button class="tab" id="tab-instagram" onclick="switchPlatform('instagram')" role="tab" aria-selected="false">
+      📷 Instagram
+      <span class="tab-meta">1080×1080 square</span>
+    </button>
+  </div>
+
+  <h2>📷 3 slides → Foto's</h2>
+
+  <!-- Format-guide card: tells operator exactly which post formats THIS slide set works for.
+       Rendered platform-aware by renderFormatGuide() because TikTok-9:16 ≠ Instagram-1:1. -->
+  <div class="card format-guide" id="format-guide"></div>
+
+  <p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0">Eén tap → iOS share sheet opent → kies <strong>Bewaar afbeelding</strong>. Slides verschijnen direct in je Foto's.</p>
+  <!-- PRIMARY ACTION 1: save all 3 in one share-sheet operation. -->
+  <button class="btn save-all-btn" id="save-all-btn" onclick="saveAllSlides(this)">📷 Bewaar alle 3 in Foto's</button>
+
+  <!-- PRIMARY ACTION 2: copy text for the platform. -->
+  <div id="copy-section"></div>
+
+  <!-- Slide thumbnails: visual reference + individual-download fallback. -->
+  <h2>👁️ Preview & losse downloads</h2>
+  <p style="color: var(--muted); font-size: 0.85rem; margin: 0 0 0.8rem">Visuele check + losse download per slide als 'alle 3' niet werkte.</p>
+  <div class="slides" id="slides-container">
+    <!-- Slides rendered dynamically by switchPlatform() -->
+  </div>
+
+  <h2>🎵 Sound — top 3 voor consumer-PT vibe</h2>
+  <div class="card">
+    <!-- Platform-aware sound banner — rendered by renderSoundContext() -->
+    <div id="sound-context" style="margin: 0 0 0.8rem"></div>
+    <p style="color: var(--muted); font-size: 0.85rem; margin: 0 0 0.8rem">Dit is een <strong style="color: var(--fg)">consumer PT sell</strong> — mensen die overwegen om een trainer te boeken. FitTok-algoritme tagt phonk als "fitness/workout" en pusht naar deze audience. Brand-consistentie met trainer-pitch-001 (zelfde sonic identity) versterkt herkenning bij tweede exposure. Drie tracks die zowel <em>workout-energy</em> als <em>boutique aspirational</em> dragen:</p>
+
+    <p style="margin: 0 0 0.8rem; padding: 10px 12px; background: rgba(234,88,12,0.10); border-left: 3px solid var(--brand); border-radius: 4px;">
+      <strong style="color: var(--brand)">#1 — "Sahara"</strong> <span style="color: var(--fg); font-size: 0.85rem">— Hensonn</span><br>
+      <span style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; display: block; margin-top: 4px">DE gym TikTok anthem van de afgelopen 2 jaar. Algoritme tagt content met deze sound instant als "fitness / lifting / workout" → maximale push naar fit-curious consumers. Dark atmospheric phonk · dramatisch zonder bro-meme energie. Pairt met dark gym aesthetic + warm-orange brand. Veel gebruikt op FitTok = bewezen native (algoritme-win), niet zwak.</span>
+    </p>
+
+    <p style="margin: 0 0 0.8rem; padding: 10px 12px; background: var(--card); border-left: 3px solid var(--border); border-radius: 4px;">
+      <strong style="color: var(--fg)">#2 — "Close Eyes"</strong> <span style="color: var(--muted); font-size: 0.85rem">— DVRST</span><br>
+      <span style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; display: block; margin-top: 4px">Melodische phonk · iets zachter dan Sahara/Murder in My Mind. Goede pick voor mixed-gender audience (boutique-PT skews 55/45 female). Premium gevoel · gym-coded zonder agressie. Werkt als "ik wil hard trainen maar ook ademen tussen sets" framing.</span>
+    </p>
+
+    <p style="margin: 0 0 0.8rem; padding: 10px 12px; background: var(--card); border-left: 3px solid var(--border); border-radius: 4px;">
+      <strong style="color: var(--fg)">#3 — "goosebumps — Remix by HVME"</strong> <span style="color: var(--muted); font-size: 0.85rem">(Travis Scott electronic remix)</span><br>
+      <span style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; display: block; margin-top: 4px">Premium hip-hop × electronic crossover. Equinox/Barry's-tier creators gebruiken deze voor consumer-facing PT content. Donker + premium productie · herkenbare Travis vocal. Pick deze als phonk te hard voelt voor "test eerst, beslis dan" no-pressure framing.</span>
+    </p>
+
+    <p style="margin: 1rem 0 0.4rem"><strong>Decision filter (10s preview per track):</strong></p>
+    <ul style="margin: 0; padding-left: 1.2em; line-height: 1.6; color: var(--muted); font-size: 0.85rem">
+      <li>Maakt de slide voelen als <strong style="color: var(--fg)">"ik wil daar trainen"</strong> → ✅ gebruik</li>
+      <li>Maakt de slide voelen als <strong style="color: var(--fg)">Barry's / Equinox TikTok</strong> → ✅ gebruik</li>
+      <li>Maakt de slide voelen als <strong>interior-design account</strong> → ❌ wrong audience</li>
+      <li>Maakt de slide voelen als <strong>er een meme aankomt</strong> → ❌ skip</li>
+      <li>Maakt de slide voelen als <strong>club playlist</strong> → ❌ wrong context</li>
+    </ul>
+
+    <p style="margin: 1rem 0 0.3rem; padding: 8px 10px; background: rgba(234,88,12,0.05); border-radius: 4px; color: var(--fg); font-size: 0.85rem"><strong>Mijn pick als je één moet kiezen:</strong> "Sahara" — Hensonn. Wisselt af van trainer-pitch-001's "Metamorphosis" (verschillende tracks = beide algorithm-pools tapped) + breder herkend in consumer-PT FitTok-feed + matched de "harder werken, snel resultaat" framing van de gratis-intake.</p>
+
+    <p style="margin: 0.8rem 0 0.3rem; color: var(--muted); font-size: 0.8rem"><strong>Alternatief sterkste optie:</strong> eigen voice-over (5–7s in TikTok voice-over): <em>"Probeer 1-op-1 personal training. Vijfenveertig minuten. Helemaal gratis."</em> Original audio = extra algoritme-boost bovenop welke sound je ook kiest.</p>
+
+    <p style="color: var(--muted); font-size: 0.8rem; margin: 0.6rem 0 0">⚠️ Skip de Hot list (dance/lip-sync memes) én skip aesthetic/lofi/piano (interior design audience, niet fitness). Voor workout content: phonk + premium hip-hop. Alleen TikTok's eigen library.</p>
+  </div>
+
+  <h2>⏰ Beste post-tijd</h2>
+  <div class="card">
+    <div class="meta-row"><span class="meta-key">Dag</span><span class="meta-val">Maandag of dinsdag</span></div>
+    <div class="meta-row"><span class="meta-key">Tijd</span><span class="meta-val">17:30 – 19:30 NL</span></div>
+    <div class="meta-row"><span class="meta-key">Vermijd</span><span class="meta-val">Vrijdag- of zaterdagavond</span></div>
+    <div class="meta-row"><span class="meta-key">Cooldown</span><span class="meta-val">7+ dagen na trainer-pitch-001</span></div>
+  </div>
+
+  <h2>🚀 Workflow (2 min)</h2>
+  <div class="card" id="workflow-card">
+    <!-- Platform-aware workflow — rendered by renderWorkflow() (TT vs IG have different posting UI) -->
+    <ol style="padding-left: 1.4em; margin: 0; line-height: 1.7" id="workflow-list"></ol>
+  </div>
+
+  <div class="footer">
+    Made by SculptClub · <a href="https://sculptclub.nl">sculptclub.nl</a>
+  </div>
+
+<script>
+// ─── Canonical copy text — platform-aware (TT and IG have different post structures) ───
+//
+// TikTok photo posts: caption accepts everything in one paste, but first line renders
+// larger in feed preview (acts as a "title"). Algorithm prefers 3–5 focused hashtags
+// over spray-and-pray. Split into title + description + 5 hashtags for clarity.
+//
+// Instagram: single caption field. 5 hashtags (down from the 11+ spam era — Mosseri/IG
+// 2024+ algorithm shifted hard toward 3-5 focused). Same 5 as TikTok = consistent
+// discovery pool across both platforms.
+//
+// CTA destination: sculptclub.nl/gratis-intake (the existing paid-Google-Ads landing
+// — instrumented with conversion events, mobile-perfect verified 2026-05-17).
+const COPY = {
+  tiktok: {
+    title: "🧡 45 min gratis Personal Training in de Jordaan",
+    description: "Probeer 1-op-1 PT in onze privé studio aan de Egelantiersgracht.\n\n45 min · gratis · geen verplichting · 8 trainers om uit te kiezen.\n\nPlan je intake → sculptclub.nl/gratis-intake",
+    hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #pt #fitamsterdam"
+  },
+  instagram: {
+    // IG caption convention: URLs aren't clickable in captions → use 'link in bio' instead.
+    // Operator should set IG bio link to sculptclub.nl/gratis-intake for the duration of
+    // this campaign so the bio tap routes to the consumer-intake landing.
+    caption: "Probeer 1-op-1 Personal Training in onze privé studio aan de Egelantiersgracht — 45 min, gratis, geen verplichting 🧡\n\n8 trainers · 5.0 ★ Google · Jordaan.\n\nPlan je intake · link in bio 👆",
+    hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #pt #fitamsterdam"
+  }
+};
+
+function renderCopySection(platform) {
+  const c = COPY[platform];
+  const container = document.getElementById('copy-section');
+  const hintHtml = '<p style="color: var(--muted); font-size: 0.85rem; margin: 0.8rem 0 0">Eén tap → plak in caption field → klaar. Werkt de knop niet? Long-press de tekst hierboven om te selecteren.</p>';
+
+  if (platform === 'tiktok') {
+    // TikTok's posting UI has TWO fields: Title (short hook) + Description (caption body + hashtags).
+    // Expose exactly 2 paste targets matching those 2 fields.
+    container.innerHTML = `
+      <h2>📝 Titel <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— eerste regel · valt op in feed</span></h2>
+      <div class="card">
+        <div class="text" id="copy-title-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-title-text', this)">📋 Kopieer titel</button>
+      </div>
+
+      <h2>📝 Description <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— incl. 5 hashtags · in TikTok caption-veld</span></h2>
+      <div class="card">
+        <div class="text" id="copy-description-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-description-text', this)">📋 Kopieer description + hashtags</button>
+      </div>
+
+      <h2>⚡ Snelste pad</h2>
+      <div class="card">
+        <button class="copy-btn" onclick="copyAllForPlatform(this)">📋 Kopieer alles voor TikTok</button>
+        ${hintHtml}
+      </div>
+    `;
+    document.getElementById('copy-title-text').textContent = c.title;
+    document.getElementById('copy-description-text').textContent = c.description + '\n\n' + c.hashtags;
+  } else {
+    // Instagram has ONE caption field — caption + hashtags joined into one paste.
+    container.innerHTML = `
+      <h2>📝 Caption <span style="color:var(--muted);font-size:0.65rem;letter-spacing:0.06em;">— incl. 5 hashtags · in IG caption-veld</span></h2>
+      <div class="card">
+        <div class="text" id="copy-caption-text"></div>
+        <button class="copy-btn" onclick="copyById('copy-caption-text', this)">📋 Kopieer caption + hashtags</button>
+        ${hintHtml}
+      </div>
+    `;
+    document.getElementById('copy-caption-text').textContent = c.caption + '\n\n' + c.hashtags;
+  }
+}
+
+// ─── Slide rendering ───
+// Slide names match the keys in scripts/build-tiktok-post.mjs POSTS["intake-pitch-001"].
+const slidesData = [
+  { name: "main-offer",  label: "1", title: "Hook · 1-op-1 PT · 100% gratis" },
+  { name: "no-pressure", label: "2", title: "Geen verplichting · 8 trainers" },
+  { name: "location",    label: "3", title: "Locatie · Jordaan · Gratis" }
+];
+
+function switchPlatform(platform) {
+  document.getElementById('tab-tiktok').classList.toggle('active', platform === 'tiktok');
+  document.getElementById('tab-tiktok').setAttribute('aria-selected', platform === 'tiktok');
+  document.getElementById('tab-instagram').classList.toggle('active', platform === 'instagram');
+  document.getElementById('tab-instagram').setAttribute('aria-selected', platform === 'instagram');
+
+  renderFormatGuide(platform);
+  renderSoundContext(platform);
+  renderWorkflow(platform);
+
+  const container = document.getElementById('slides-container');
+  const aspect = platform === 'tiktok' ? 'aspect-vertical' : 'aspect-square';
+  container.innerHTML = slidesData.map(s => `
+    <div class="slide">
+      <img src="${platform}-${s.name}.png" class="slide-img ${aspect}" alt="Slide ${s.label} — ${s.title}" loading="lazy">
+      <div class="slide-meta">
+        <span class="slide-label"><span class="slide-num">${s.label}</span>${s.title}</span>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-slide" onclick="saveSlide('${platform}', '${s.name}', '${s.label}', this)">📷 Bewaar slide ${s.label}</button>
+      </div>
+    </div>
+  `).join('');
+
+  renderCopySection(platform);
+}
+
+function renderSoundContext(platform) {
+  const el = document.getElementById('sound-context');
+  if (!el) return;
+  if (platform === 'tiktok') {
+    el.innerHTML = `
+      <p style="margin: 0; padding: 8px 10px; background: rgba(234,88,12,0.08); border-left: 3px solid var(--brand); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Voor TikTok feed:</strong> sound is een algoritme-signaal. Kies één hieronder.
+      </p>
+    `;
+  } else {
+    el.innerHTML = `
+      <p style="margin: 0 0 0.5rem; padding: 8px 10px; background: rgba(234,88,12,0.05); border-left: 3px solid var(--muted); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Voor IG feed carousel: muziek is <em>optioneel</em>.</strong> <span style="color: var(--muted)">Carousels spelen muted in feed — muziek speelt pas als iemand de post tapt. Klein discovery-laagje, geen algoritme-boost zoals op TikTok. Werkt prima zonder. Als je toch wilt: zoek de picks hieronder in IG's music library (let op: andere catalogus dan TikTok — niet alles is beschikbaar).</span>
+      </p>
+      <p style="margin: 0; padding: 8px 10px; background: rgba(234,88,12,0.08); border-left: 3px solid var(--brand); border-radius: 4px; color: var(--fg); font-size: 0.85rem; line-height: 1.5;">
+        <strong>Echte IG reach-play:</strong> <span style="color: var(--muted)">post deze slides óók als een <strong style="color: var(--fg)">Reel</strong> (gebruik de TikTok 9:16 versies + muziek). Reels = Reels-tab discovery = bereikt non-followers. Carousels = vooral je bestaande followers. Beide posten = dubbele reach.</span>
+      </p>
+    `;
+  }
+}
+
+function renderWorkflow(platform) {
+  const list = document.getElementById('workflow-list');
+  if (!list) return;
+  const tt = platform === 'tiktok';
+  const steps = tt
+    ? [
+        'Kies platform tab boven (nu: <strong>TikTok</strong>)',
+        'Tap <strong>"Bewaar alle 3 in Foto\'s"</strong> → bevestig in share sheet',
+        'Open <strong>TikTok</strong> app → tap "+"',
+        '<strong>Photos mode</strong> → Camera roll → selecteer alle 3 slides in volgorde',
+        'Search sound: <strong>Sahara Hensonn</strong> (zie sound-sectie)',
+        'Tap <strong>Kopieer titel</strong> → plak in Titel-veld · daarna <strong>Kopieer description + hashtags</strong> → plak in Description-veld',
+        'Check: link-in-bio routeert naar <strong>sculptclub.nl/gratis-intake</strong> voor de campagne-duur',
+        'Post',
+      ]
+    : [
+        'Kies platform tab boven (nu: <strong>Instagram</strong>)',
+        'Tap <strong>"Bewaar alle 3 in Foto\'s"</strong> → bevestig in share sheet',
+        'Open <strong>Instagram</strong> app → tap "+"',
+        'Tap <strong>"Post"</strong> → tap multi-select icoon → kies alle 3 slides in volgorde',
+        'Tap <strong>Volgende</strong> → skip filter → Volgende',
+        'Tap <strong>Kopieer caption + hashtags</strong> → plak in caption veld',
+        'Check: link-in-bio routeert naar <strong>sculptclub.nl/gratis-intake</strong> voor de campagne-duur',
+        'Tap <strong>Delen</strong>',
+      ];
+  list.innerHTML = steps.map(s => `<li>${s}</li>`).join('');
+}
+
+function renderFormatGuide(platform) {
+  const el = document.getElementById('format-guide');
+  if (platform === 'tiktok') {
+    el.innerHTML = `
+      <p class="fg-title">1080 × 1920 · Vertical 9:16</p>
+      <p class="fg-primary">→ Primair: <strong>TikTok feed</strong> carousel post (3 slides)</p>
+      <ul class="fg-list">
+        <li><strong>TikTok Story</strong> — 1 slide per keer als swipe-stack</li>
+        <li><strong>Instagram Story</strong> — werkt rechtstreeks (zelfde formaat)</li>
+        <li><strong>Instagram Reel</strong> — cover frame (statisch)</li>
+        <li><strong>Facebook Story</strong> — werkt rechtstreeks</li>
+      </ul>
+    `;
+  } else {
+    el.innerHTML = `
+      <p class="fg-title">1080 × 1080 · Square 1:1</p>
+      <p class="fg-primary">→ Primair: <strong>Instagram feed</strong> carousel post (3 slides)</p>
+      <ul class="fg-list">
+        <li><strong>Facebook feed</strong> carousel — werkt rechtstreeks</li>
+        <li>Voor IG Story / Reel: gebruik de <strong>TikTok 9:16</strong> tab</li>
+      </ul>
+    `;
+  }
+}
+
+// ─── Robust copy: execCommand FIRST (synchronous, never hangs) → Clipboard API enhancement ───
+const isIOS = /ipad|iphone|ipod/i.test(navigator.userAgent);
+
+function copy(text, btn) {
+  let ok = false;
+  let ta = null;
+  try {
+    ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:2em;height:2em;padding:0;border:none;outline:none;box-shadow:none;background:transparent;font-size:16px;color:transparent;';
+    document.body.appendChild(ta);
+
+    if (isIOS) {
+      const range = document.createRange();
+      range.selectNodeContents(ta);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      ta.setSelectionRange(0, text.length);
+    } else {
+      ta.focus();
+      ta.select();
+    }
+
+    ok = document.execCommand('copy');
+  } catch (_) {
+    ok = false;
+  } finally {
+    if (ta && ta.parentNode) ta.parentNode.removeChild(ta);
+  }
+
+  if (ok) {
+    flash(btn, '✅ Gekopieerd!', 'copied');
+    if (navigator.clipboard && window.isSecureContext) {
+      try { navigator.clipboard.writeText(text).catch(() => {}); } catch (_) {}
+    }
+    return;
+  }
+
+  if (navigator.clipboard && window.isSecureContext) {
+    Promise.race([
+      navigator.clipboard.writeText(text),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('clipboard_timeout_800ms')), 800))
+    ]).then(() => {
+      flash(btn, '✅ Gekopieerd!', 'copied');
+    }).catch(() => {
+      flash(btn, '⚠️ Long-press de tekst hierboven om te kopiëren', 'failed', 3500);
+    });
+    return;
+  }
+
+  flash(btn, '⚠️ Long-press de tekst hierboven om te kopiëren', 'failed', 3500);
+}
+
+function flash(btn, msg, cls, duration = 2000) {
+  if (!btn.dataset.orig) btn.dataset.orig = btn.innerHTML;
+  btn.innerHTML = msg;
+  btn.classList.remove('copied', 'failed');
+  btn.classList.add(cls);
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => {
+    btn.innerHTML = btn.dataset.orig;
+    btn.classList.remove(cls);
+  }, duration);
+}
+
+function copyById(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  copy(el.textContent, btn);
+}
+
+function copyAllForPlatform(btn) {
+  const platform = _activePlatform();
+  const c = COPY[platform];
+  const combined = platform === 'tiktok'
+    ? c.title + '\n\n' + c.description + '\n\n' + c.hashtags
+    : c.caption + '\n\n' + c.hashtags;
+  copy(combined, btn);
+}
+
+// ─── Save-to-Photos: Web Share API (iOS 15+ → Photos) → blob download → long-press hint ───
+
+async function _fetchAsFile(url, filename) {
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`fetch ${url} failed: ${resp.status}`);
+  const blob = await resp.blob();
+  return new File([blob], filename, { type: blob.type || 'image/png' });
+}
+
+function _downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+}
+
+function _activePlatform() {
+  return document.getElementById('tab-tiktok').classList.contains('active') ? 'tiktok' : 'instagram';
+}
+
+async function saveSlide(platform, slideName, slideLabel, btn) {
+  const url = `${platform}-${slideName}.png`;
+  const filename = `sculptclub-intake-pitch-001-${platform}-slide-${slideLabel}.png`;
+
+  try {
+    if (navigator.canShare) {
+      const file = await _fetchAsFile(url, filename);
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file] });
+        flash(btn, '✅ Bewaard in Foto\'s', 'copied');
+        return;
+      }
+    }
+  } catch (err) {
+    if (err && err.name === 'AbortError') return;
+  }
+
+  try {
+    const file = await _fetchAsFile(url, filename);
+    _downloadBlob(file, filename);
+    flash(btn, '✅ Gedownload', 'copied');
+    return;
+  } catch (_) { /* fall through */ }
+
+  window.open(url, '_blank', 'noopener');
+  flash(btn, '👆 Long-press afbeelding → Bewaar', 'failed', 4500);
+}
+
+async function saveAllSlides(btn) {
+  const platform = _activePlatform();
+  btn.disabled = true;
+
+  try {
+    const files = await Promise.all(slidesData.map(s =>
+      _fetchAsFile(`${platform}-${s.name}.png`, `sculptclub-intake-pitch-001-${platform}-slide-${s.label}.png`)
+    ));
+    if (navigator.canShare && navigator.canShare({ files })) {
+      await navigator.share({ files });
+      flash(btn, '✅ 3 slides → Foto\'s', 'copied');
+      btn.disabled = false;
+      return;
+    }
+    throw new Error('multi-file share unsupported');
+  } catch (err) {
+    if (err && err.name === 'AbortError') { btn.disabled = false; return; }
+  }
+
+  try {
+    let shared = 0;
+    for (const s of slidesData) {
+      const file = await _fetchAsFile(`${platform}-${s.name}.png`, `sculptclub-intake-pitch-001-${platform}-slide-${s.label}.png`);
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file] });
+        shared++;
+      } else {
+        _downloadBlob(file, file.name);
+        shared++;
+      }
+    }
+    if (shared === slidesData.length) {
+      flash(btn, '✅ 3 slides bewaard', 'copied');
+      btn.disabled = false;
+      return;
+    }
+  } catch (err) {
+    if (err && err.name === 'AbortError') { btn.disabled = false; return; }
+  }
+
+  try {
+    for (const s of slidesData) {
+      const file = await _fetchAsFile(`${platform}-${s.name}.png`, `sculptclub-intake-pitch-001-${platform}-slide-${s.label}.png`);
+      _downloadBlob(file, file.name);
+      await new Promise(r => setTimeout(r, 350));
+    }
+    flash(btn, '✅ 3 slides gedownload', 'copied');
+  } catch (_) {
+    flash(btn, '👆 Tap individuele slides hieronder', 'failed', 4500);
+  }
+  btn.disabled = false;
+}
+
+switchPlatform('tiktok');
+</script>
+
+</body>
+</html>

@@ -33,10 +33,19 @@ const root = path.resolve(__dirname, "..");
 const STUDIO_OVERVIEW = path.join(root, "public/images/studio/studio-overview.jpeg");
 const STUDIO_INTERIOR = path.join(root, "public/images/studio/studio-interior-2.jpeg");
 const STUDIO_CANAL = path.join(root, "public/images/studio/canal-view-doors.jpg");
+// Consumer-pitch photo set (intake-pitch-001):
+//   PT_SESSION_BARBELL  → trainer + client mid-set (matches "1-op-1 PT" framing)
+//   TRAINING_JOY        → smiling-during-training (matches "8 trainers · 5.0 ★" social proof)
+//   STUDIO_CANAL reused → location anchor close (same brand recognition cue as
+//                         trainer-pitch-001 slide 3 — canal-view-doors becomes the
+//                         "every SculptClub post closes on the door" brand signature)
+const PT_SESSION_BARBELL = path.join(root, "public/images/studio/pt-session-barbell.jpg");
+const TRAINING_JOY = path.join(root, "public/images/studio/training-dumbbells-joy.jpg");
 const WORDMARK_PNG = path.join(root, "public/images/logo-sculptclub.png");
 
 // Post identifier — drives output directory under public/social/<post-id>/.
-// Override via CLI: `node scripts/build-tiktok-post.mjs trainer-pitch-002`.
+// Override via CLI: `node scripts/build-tiktok-post.mjs intake-pitch-001`.
+// Available posts: see POSTS map further down.
 const POST_ID = process.argv[2] || "trainer-pitch-001";
 const OUT_DIR = path.join(root, "public/social", POST_ID);
 await mkdir(OUT_DIR, { recursive: true });
@@ -150,41 +159,103 @@ async function buildSlide(opts) {
 }
 
 // Slide content — same copy used for both TT (9:16) + IG (1:1) variants.
-const slides = [
-  {
-    name: "main-offer",
-    photoPath: STUDIO_OVERVIEW,
-    eyebrow: "VOOR TRAINERS",
-    hero: "Huur de Studio",
-    price: "€12 / uur",
-    usp: "0% commissie · geen contract",
-    cta: "Probeer gratis · sculptclub.nl",
-  },
-  {
-    name: "usp-focus",
-    photoPath: STUDIO_INTERIOR,
-    // Was "ZERO COMMISSIE" — mixed English+Dutch and inconsistent with the caption
-    // (which uses "0% commissie") + slide 1 USP (also "0% commissie"). "0% COMMISSIE"
-    // matches both surfaces + reads pure Dutch.
-    eyebrow: "0% COMMISSIE",
-    // "Houd 100%" alone reads as a fragment in Dutch — "Houd 100% zelf"
-    // makes the trainer-keeps-everything meaning explicit + complete.
-    hero: "Houd 100% zelf",
-    heroScale: 0.85,  // 14 chars (vs 9 in "Houd 100%") needs slight downscale to clear 96px edges
-    price: "€12 / uur",
-    usp: "Jouw klanten · jouw tarief · jouw studio",
-    cta: "sculptclub.nl/voor-trainers",
-  },
-  {
-    name: "location",
-    photoPath: STUDIO_CANAL,
-    eyebrow: "AAN DE GRACHT",
-    hero: "Jordaan",
-    price: "€12 / uur",
-    usp: "Privé studio · 06:30 – 22:00",
-    cta: "sculptclub.nl · Egelantiersgracht 424",
-  },
-];
+// Keyed by POST_ID so one build script handles every post in the campaign series.
+// Add a new post: append a new key here, then run `node scripts/build-tiktok-post.mjs <new-id>`.
+const POSTS = {
+  "trainer-pitch-001": [
+    {
+      name: "main-offer",
+      photoPath: STUDIO_OVERVIEW,
+      eyebrow: "VOOR TRAINERS",
+      hero: "Huur de Studio",
+      price: "€12 / uur",
+      usp: "0% commissie · geen contract",
+      cta: "Probeer gratis · sculptclub.nl",
+    },
+    {
+      name: "usp-focus",
+      photoPath: STUDIO_INTERIOR,
+      // Was "ZERO COMMISSIE" — mixed English+Dutch and inconsistent with the caption
+      // (which uses "0% commissie") + slide 1 USP (also "0% commissie"). "0% COMMISSIE"
+      // matches both surfaces + reads pure Dutch.
+      eyebrow: "0% COMMISSIE",
+      // "Houd 100%" alone reads as a fragment in Dutch — "Houd 100% zelf"
+      // makes the trainer-keeps-everything meaning explicit + complete.
+      hero: "Houd 100% zelf",
+      heroScale: 0.85,  // 14 chars (vs 9 in "Houd 100%") needs slight downscale to clear 96px edges
+      price: "€12 / uur",
+      usp: "Jouw klanten · jouw tarief · jouw studio",
+      cta: "sculptclub.nl/voor-trainers",
+    },
+    {
+      name: "location",
+      photoPath: STUDIO_CANAL,
+      eyebrow: "AAN DE GRACHT",
+      hero: "Jordaan",
+      price: "€12 / uur",
+      usp: "Privé studio · 06:30 – 22:00",
+      cta: "sculptclub.nl · Egelantiersgracht 424",
+    },
+  ],
+
+  // 2026-05-17: consumer-side complement to trainer-pitch-001. Same brand
+  // language + 3-slide arc + canal-door close. Different audience: consumers
+  // considering PT, not ZZP-trainers looking for rental space.
+  //
+  // Slide arc:
+  //   1. Hook + offer (1-op-1 PT, 100% gratis)
+  //   2. Address objection + social proof (test eerst, 8 trainers, 5.0 ★)
+  //   3. Location anchor + soft CTA (Jordaan · gratis · gracht-door brand cue)
+  //
+  // Funnel: TikTok/IG → sculptclub.nl/gratis-intake → WhatsApp/trainer-picker.
+  "intake-pitch-001": [
+    {
+      name: "main-offer",
+      // PT session photo (trainer + client) makes the "1-op-1" framing literal
+      // before the eye even reads the hero text.
+      photoPath: PT_SESSION_BARBELL,
+      eyebrow: "🧡 EERSTE INTAKE",
+      hero: "Probeer 1-op-1 PT",
+      heroScale: 0.85,  // "Probeer 1-op-1 PT" = 17 chars; same downscale ratio
+                        // as trainer-pitch slide 2 ("Houd 100% zelf" = 14 chars
+                        // with same heroScale). Empirically clears 96px edges.
+      price: "100% gratis",  // focal value — matches /nl/gratis-intake page hero
+      usp: "45 min · in onze privé studio",
+      cta: "sculptclub.nl/gratis-intake",
+    },
+    {
+      name: "no-pressure",
+      photoPath: TRAINING_JOY,
+      eyebrow: "GEEN VERPLICHTING",
+      // "Test eerst. Beslis dan." addresses the #1 conversion objection in
+      // boutique-fitness sales (commitment fear). Period-separator beats
+      // comma because it implies two equal-weight clauses, both reassuring.
+      hero: "Test eerst. Beslis dan.",
+      heroScale: 0.65,  // 23 chars → smaller heroScale needed than slide 1
+      price: "8 trainers",  // focal — social proof number; matches site's
+                            // "8 trainers" trust badge on /vind-jouw-personal-trainer
+      usp: "Persoonlijk plan · 5.0 ★ Google",
+      cta: "Geen contract · gratis annuleren",
+    },
+    {
+      name: "location",
+      photoPath: STUDIO_CANAL,
+      eyebrow: "AAN DE GRACHT",
+      hero: "In de Jordaan",
+      heroScale: 0.95,  // 13 chars · slight downscale for clean side margins
+      price: "Gratis",      // ties back to slide 1 focal (gratis = leitmotif)
+      usp: "Egelantiersgracht 424 · 06:30 – 22:00",
+      cta: "Plan je intake · sculptclub.nl",
+    },
+  ],
+};
+
+const slides = POSTS[POST_ID];
+if (!slides) {
+  console.error(`Unknown POST_ID: ${POST_ID}`);
+  console.error(`Available: ${Object.keys(POSTS).join(", ")}`);
+  process.exit(1);
+}
 
 // Build vertical (1080×1920) for TikTok feed + IG Reels/Stories
 for (let i = 0; i < slides.length; i++) {
