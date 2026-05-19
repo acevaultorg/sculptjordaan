@@ -232,7 +232,10 @@ export default function FreeIntroPage() {
           </div>
         </div>
 
-        {/* Final CTA */}
+        {/* Final CTA — see /nl/gratis-intake parallel for rationale. Primary
+            "Pick your trainer" + secondary WhatsApp shortcut so visitors who
+            scrolled through the page don't lose the quick-path at the moment
+            of decision. */}
         <div className="mt-16 p-8 rounded-2xl bg-brand text-brand-foreground text-center">
           <h2 className="text-2xl font-bold mb-2">Ready to get started?</h2>
           <p className="text-white/80 mb-6">
@@ -246,6 +249,18 @@ export default function FreeIntroPage() {
             Pick your trainer
             <ArrowRight className="w-5 h-5" />
           </Link>
+          <div className="mt-4">
+            <a
+              href={whatsappLinks.intakeMatchEn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="plausible-event-name=free_intro_final_whatsapp_direct inline-flex items-center gap-1.5 text-sm font-semibold text-white/90 hover:text-white underline-offset-4 hover:underline transition-colors"
+              data-cta="free-intro-final-whatsapp-direct"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Or WhatsApp directly
+            </a>
+          </div>
         </div>
 
         {/* Address */}
