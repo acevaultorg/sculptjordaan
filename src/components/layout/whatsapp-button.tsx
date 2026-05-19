@@ -34,7 +34,10 @@ const messages = {
   },
 } as const;
 
-function pickMessage(pathname: string, locale: "nl" | "en"): string {
+// Exported so MobileBottomCTABar can reuse the same context-aware
+// message-picking when it renders an integrated WhatsApp circle inside
+// the sticky bar (mobile only — the floating button below is desktop only).
+export function pickMessage(pathname: string, locale: "nl" | "en"): string {
   const m = messages[locale];
   // Trainer-acquisition pages (highest revenue per click)
   if (/\/(studio-huren|studio-rental)(\/|$)/.test(pathname)) return m.studio;
@@ -51,7 +54,9 @@ function pickMessage(pathname: string, locale: "nl" | "en"): string {
   return m.default;
 }
 
-function WhatsAppIcon({ className }: { className?: string }) {
+// Exported so the bottom CTA bar can render the same WA logo at smaller
+// size inside its sticky bar — visual brand-language consistency.
+export function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -79,7 +84,15 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105 animate-pulse-once"
+      // 2026-05-19: floating circle is now DESKTOP-ONLY (`hidden md:flex`).
+      // On mobile the WhatsApp action is integrated into the sticky
+      // MobileBottomCTABar to avoid the layering issue where this circle
+      // was obscured behind the bar's orange CTA (operator screenshot of
+      // homepage + trainer-hub bottom-right showed only a green sliver
+      // peeking through behind the orange pill). The bar uses the same
+      // pickMessage + WhatsAppIcon exported from this file, so behaviour
+      // stays identical — just rehoused.
+      className="hidden md:flex fixed bottom-6 right-6 z-40 h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105 animate-pulse-once"
     >
       <WhatsAppIcon className="h-7 w-7" />
     </a>

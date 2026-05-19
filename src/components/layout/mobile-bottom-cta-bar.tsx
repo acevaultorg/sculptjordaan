@@ -47,6 +47,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { getLocaleFromPath } from "@/lib/locale";
+import { WhatsAppIcon, pickMessage } from "./whatsapp-button";
+
+// Operator's WhatsApp number. Kept inline to avoid restructuring whatsapp-button.tsx
+// (which owns its own PHONE const). Single number value used in both files.
+const WA_PHONE = "31683178934";
 
 interface CTAConfig {
   label: string;
@@ -240,38 +245,71 @@ export function MobileBottomCTABar() {
                      px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]
                      shadow-[0_-4px_16px_-2px_rgba(0,0,0,0.35)]"
         >
-          {/* Primary CTA takes (almost) full width — leaves room for the
-              floating WhatsApp circle at bottom-right (it's at right-6
-              with size 14×14, so we keep right margin pr-20 to clear it). */}
-          {cta.external ? (
-            <a
-              href={cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta={cta.ctaId}
-              className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex w-full items-center justify-center gap-2
-                         rounded-2xl bg-brand px-5 py-3.5
-                         text-base font-bold text-brand-foreground
-                         transition-all active:scale-[0.98]
-                         pr-20`}
-            >
-              {cta.label}
-              <ArrowRight className="h-5 w-5 -mr-2" />
-            </a>
-          ) : (
-            <Link
-              href={cta.href}
-              data-cta={cta.ctaId}
-              className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex w-full items-center justify-center gap-2
-                         rounded-2xl bg-brand px-5 py-3.5
-                         text-base font-bold text-brand-foreground
-                         transition-all active:scale-[0.98]
-                         pr-20`}
-            >
-              {cta.label}
-              <ArrowRight className="h-5 w-5 -mr-2" />
-            </Link>
-          )}
+          {/* Two-element row: primary CTA (flex-1) + integrated WhatsApp circle.
+              Replaces the prior pattern of "full-width orange button + pr-20
+              padding to clear the floating WA circle" — that visually layered
+              the green circle BEHIND the orange button background (operator
+              screenshot 2026-05-19 showed only a green sliver peeking through
+              behind the orange pill on homepage + trainer-hub). Now the WA
+              action lives INSIDE the bar as a sibling element. The floating
+              WhatsApp circle in whatsapp-button.tsx is mobile-hidden so it
+              doesn't compete with this integrated one (desktop still keeps
+              the floating circle since the bar is mobile-only). */}
+          <div className="flex items-center gap-2">
+            {cta.external ? (
+              <a
+                href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta={cta.ctaId}
+                className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex-1 flex items-center justify-center gap-2
+                           rounded-2xl bg-brand px-5 py-3.5
+                           text-base font-bold text-brand-foreground
+                           transition-all active:scale-[0.98]`}
+              >
+                {cta.label}
+                <ArrowRight className="h-5 w-5 -mr-1" />
+              </a>
+            ) : (
+              <Link
+                href={cta.href}
+                data-cta={cta.ctaId}
+                className={`plausible-event-name=${cta.ctaId.replace(/-/g, "_")} flex-1 flex items-center justify-center gap-2
+                           rounded-2xl bg-brand px-5 py-3.5
+                           text-base font-bold text-brand-foreground
+                           transition-all active:scale-[0.98]`}
+              >
+                {cta.label}
+                <ArrowRight className="h-5 w-5 -mr-1" />
+              </Link>
+            )}
+
+            {/* Integrated WhatsApp circle — rendered only when the primary
+                CTA is NOT itself a WhatsApp link. On /nl/gratis-intake and
+                /nl/vind-jouw-personal-trainer the bar IS already a WhatsApp
+                call (cta.href starts with https://wa.me/...), so a second
+                WhatsApp circle next to it would be a redundant duplicate.
+                On every other page (homepage, blog, studio-huren, open-gym,
+                eerste-bezoek, voor-trainers, etc.) the primary CTA goes
+                somewhere else, so the WA circle provides a fast quick-chat
+                alternative path right alongside it.
+                Size h-12 w-12 = 48×48px — clears WCAG 2.5.5 44×44 target floor
+                + visually balanced against the ~52px primary CTA height.
+                Uses pickMessage() so the pre-filled chat opener is the same
+                context-aware message the desktop floating button shows. */}
+            {!cta.href.includes("wa.me") && (
+              <a
+                href={`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(pickMessage(pathname, locale))}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={locale === "nl" ? "Chat via WhatsApp" : "Chat via WhatsApp"}
+                data-cta="mobile-cta-wa-integrated"
+                className="plausible-event-name=mobile_cta_wa_integrated shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors active:scale-95"
+              >
+                <WhatsAppIcon className="h-6 w-6" />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </>
