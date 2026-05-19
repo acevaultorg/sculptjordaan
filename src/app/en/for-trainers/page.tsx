@@ -133,20 +133,10 @@ export default function ForTrainersHubEN() {
           description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, zero commission on your clients, own profile on our site. Start with hourly rental — or join as a regular trainer and get clients through us."
           center={false}
         />
-        <FadeIn>
-          <div className="mb-6">
-            <PhotoSlideshow
-              images={[
-                { src: "/images/studio/training-squat-cinematic.jpg", alt: "Private squat rack in the SculptClub studio in Jordaan" },
-                { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio in the Jordaan" },
-                { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer running a session at SculptClub" },
-                { src: "/images/studio/canal-view-doors.jpg", alt: "Canal view from inside the SculptClub studio" },
-                { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub facade on Egelantiersgracht in the Jordaan" },
-              ]}
-              aspect="aspect-[16/9]"
-            />
-          </div>
-        </FadeIn>
+        {/* CTAs moved ABOVE the slideshow 2026-05-19 (parallel to NL
+            /voor-trainers). Mobile fold at iPhone 14 Pro put the first
+            CTA at y=673 — 13 px below the 660 px fold. Action-first;
+            slideshow as supporting evidence below. */}
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink
             href={acuityFreeTrials.studioRentalTryout}
@@ -179,6 +169,20 @@ export default function ForTrainersHubEN() {
           <p className="mt-5 text-sm text-muted-foreground">
             From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
           </p>
+        </FadeIn>
+        <FadeIn>
+          <div className="mt-8">
+            <PhotoSlideshow
+              images={[
+                { src: "/images/studio/training-squat-cinematic.jpg", alt: "Private squat rack in the SculptClub studio in Jordaan" },
+                { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio in the Jordaan" },
+                { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer running a session at SculptClub" },
+                { src: "/images/studio/canal-view-doors.jpg", alt: "Canal view from inside the SculptClub studio" },
+                { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub facade on Egelantiersgracht in the Jordaan" },
+              ]}
+              aspect="aspect-[16/9]"
+            />
+          </div>
         </FadeIn>
       </Section>
 

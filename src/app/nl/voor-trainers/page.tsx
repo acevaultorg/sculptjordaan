@@ -133,20 +133,14 @@ export default function VoorTrainersHubNL() {
           description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, geen commissie op jouw klanten, eigen profiel op onze site. Begin met uur-huur — of word trainer bij SculptClub en krijg klanten via ons."
           center={false}
         />
-        <FadeIn>
-          <div className="mb-6">
-            <PhotoSlideshow
-              images={[
-                { src: "/images/studio/training-squat-cinematic.jpg", alt: "Privé squat rack in de SculptClub studio in Jordaan" },
-                { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio in de Jordaan" },
-                { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer geeft een sessie bij SculptClub" },
-                { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht op de gracht vanuit de SculptClub studio" },
-                { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub gevel aan de Egelantiersgracht in de Jordaan" },
-              ]}
-              aspect="aspect-[16/9]"
-            />
-          </div>
-        </FadeIn>
+        {/* CTAs moved ABOVE the slideshow 2026-05-19. Mobile fold audit
+            on iPhone 14 Pro (660 px viewport) showed first CTA "Plan gratis
+            rondleiding" at y=674 — 14 px below the fold. The 16:9
+            PhotoSlideshow (~210 px tall on mobile) was pushing the action
+            row past the visitor's first frame.
+            Action-first order: CTAs + trust line → slideshow as supporting
+            evidence below. Trainer-prospect lands → sees action options
+            immediately → slideshow validates the offer when they scroll. */}
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink
             href={acuityFreeTrials.studioRentalTryout}
@@ -179,6 +173,20 @@ export default function VoorTrainersHubNL() {
           <p className="mt-5 text-sm text-muted-foreground">
             Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
           </p>
+        </FadeIn>
+        <FadeIn>
+          <div className="mt-8">
+            <PhotoSlideshow
+              images={[
+                { src: "/images/studio/training-squat-cinematic.jpg", alt: "Privé squat rack in de SculptClub studio in Jordaan" },
+                { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio in de Jordaan" },
+                { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer geeft een sessie bij SculptClub" },
+                { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht op de gracht vanuit de SculptClub studio" },
+                { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub gevel aan de Egelantiersgracht in de Jordaan" },
+              ]}
+              aspect="aspect-[16/9]"
+            />
+          </div>
         </FadeIn>
       </Section>
 
