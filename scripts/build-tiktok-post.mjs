@@ -66,6 +66,12 @@ const ALEX_PORTRAIT = path.join(root, "public/images/trainers/alex.jpg");
 //   TRAINING_DUMBBELLS_FOCUS  → focused training detail (criteria-substance slide)
 const TRAINING_BARBELL_SKYLIGHT = path.join(root, "public/images/studio/training-barbell-skylight.jpg");
 const TRAINING_DUMBBELLS_FOCUS = path.join(root, "public/images/studio/training-dumbbells-focus.jpg");
+
+// Trainer-commission-math photo set (trainer-commission-math-001):
+//   TRAINING_BARBELL_DRAMATIC → effort/sweat shot for slide 1 ("what trainers lose")
+//   STUDIO_INTERIOR_3        → empty premium studio for slide 2 ("what they keep")
+const TRAINING_BARBELL_DRAMATIC = path.join(root, "public/images/studio/training-barbell-dramatic.jpg");
+const STUDIO_INTERIOR_3 = path.join(root, "public/images/studio/studio-interior-3.jpeg");
 const WORDMARK_PNG = path.join(root, "public/images/logo-sculptclub.png");
 
 // Post identifier — drives output directory under public/social/<post-id>/.
@@ -436,6 +442,45 @@ const POSTS = {
       price: "",
       usp: "Privé studio · 1-op-1 · vrijblijvend",
       cta: "sculptclub.nl/gratis-intake",
+    },
+  ],
+
+  // 2026-05-19: trainer-rental funnel — math angle.
+  // Wk 2 Wed 28 May calendar slot. Audience: ZZP trainers comparing studio
+  // rental options. The pitch is the math itself — most NL gym models take
+  // 15-30% commission from PT session fees. SculptClub charges €12/hour flat
+  // rental, 0% commission. Single-number focals (30% then 100%) make the
+  // comparison legible in a 1-second scan.
+  "trainer-commission-math-001": [
+    {
+      name: "loss",
+      photoPath: TRAINING_BARBELL_DRAMATIC,
+      eyebrow: "TYPISCH GYM-MODEL",
+      hero: "Wat trainers verliezen.",
+      heroScale: 0.6,  // 23 chars · 65 × 23 × 0.55 ≈ 822 in 888 — fits
+      price: "30%",    // legitimate numeric focal (matches trainer-pitch-001 €12 use case)
+      usp: "Commissie per sessie. Elke maand.",
+      cta: "Wat is jouw alternatief? ↓",
+    },
+    {
+      name: "keep",
+      photoPath: STUDIO_INTERIOR_3,
+      eyebrow: "SCULPTCLUB MODEL",
+      hero: "Wat trainers houden.",
+      heroScale: 0.7,  // 20 chars · 76 × 20 × 0.55 ≈ 836 in 888 — fits
+      price: "100%",
+      usp: "0% commissie · €12 huur per uur",
+      cta: "Eigen klanten. Eigen profiel.",
+    },
+    {
+      name: "cta",
+      photoPath: STUDIO_CANAL,
+      eyebrow: "AAN DE GRACHT · JORDAAN",
+      hero: "Bekijk de studio.",
+      heroScale: 0.85,  // 17 chars · 92 × 17 × 0.55 ≈ 860 in 888 — fits
+      price: "",
+      usp: "Egelantiersgracht 424 · 06:30 – 22:00",
+      cta: "sculptclub.nl/voor-trainers",
     },
   ],
 
