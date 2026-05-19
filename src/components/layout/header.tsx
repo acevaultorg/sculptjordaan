@@ -160,7 +160,13 @@ export function Header() {
               alt="SculptClub"
               width={162}
               height={30}
-              className="h-9 sm:h-10 w-auto invert select-none"
+              // 2026-05-18: mobile logo bumped from h-9 (36px) → h-11 (44px)
+              // after globe icon moved into hamburger menu on mobile (line ~234
+              // — `hidden sm:flex`). Frees ~44px horizontal room for the
+              // wordmark to read at brand-strength size, matching the h-11
+              // Try-Out + Boek button height for clean vertical rhythm.
+              // Desktop (sm+) unchanged at h-10.
+              className="h-11 sm:h-10 w-auto invert select-none"
               loading="eager"
               fetchPriority="high"
             />
@@ -221,17 +227,18 @@ export function Header() {
               {booking.label}
             </button>
 
-            {/* Language toggle — globe icon all viewports.
-                Previously: desktop showed stacked NL/EN inside a tiny chip
-                which rendered as two awkward overlapping circles. Single
-                globe icon matches the chip system (rounded-xl 36-44px) and
-                the action ("switch language") is clear from context +
-                aria-label. */}
+            {/* Language toggle — desktop only (sm+).
+                Mobile: globe is hidden here and lives inside the hamburger
+                dropdown (see Switch to NL/EN row at the bottom of the menu
+                below). Frees ~44px of horizontal room on phones so the logo
+                can render at h-11 instead of h-9 — operator directive
+                2026-05-18 "place the globe in menu, so the logo can be made
+                bigger on mobile". Desktop behaviour unchanged. */}
             <a
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className="w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-muted/40 border border-border text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
+              className="hidden sm:flex w-11 h-11 sm:w-9 sm:h-9 items-center justify-center rounded-xl bg-muted/40 border border-border text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
             >
               <Globe className="w-4 h-4" aria-hidden="true" />
               <span className="sr-only">
