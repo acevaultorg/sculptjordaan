@@ -118,12 +118,17 @@ export default function BecomeTrainerEN() {
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to know more about working at SculptClub")}`}
                   external
                   size="lg"
-                  className="bg-brand hover:bg-brand-dark text-brand-foreground"
+                  className="plausible-event-name=become_trainer_hero_whatsapp bg-brand hover:bg-brand-dark text-brand-foreground"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp us
                 </ButtonLink>
-                <ButtonLink href="/en/studio-rental" variant="outline" size="lg">
+                <ButtonLink
+                  href="/en/studio-rental"
+                  variant="outline"
+                  size="lg"
+                  className="plausible-event-name=become_trainer_hero_studio_rental"
+                >
                   View studio & rates
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
@@ -218,7 +223,12 @@ export default function BecomeTrainerEN() {
           </div>
         </FadeIn>
         <FadeIn delay={0.2} className="mt-8 flex justify-center">
-          <ButtonLink href="/en/studio" variant="outline" size="lg">
+          <ButtonLink
+            href="/en/studio"
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=become_trainer_studio_gallery"
+          >
             <MapPin className="w-4 h-4" />
             View the studio
           </ButtonLink>
@@ -298,7 +308,7 @@ export default function BecomeTrainerEN() {
                 href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to see the studio")}`}
                 external
                 size="lg"
-                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
+                className="plausible-event-name=become_trainer_bottom_whatsapp w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp us
@@ -307,7 +317,7 @@ export default function BecomeTrainerEN() {
                 href="/en/studio-rental"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+                className="plausible-event-name=become_trainer_bottom_studio_rental w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
                 View rates
                 <ArrowRight className="ml-2 w-4 h-4" />

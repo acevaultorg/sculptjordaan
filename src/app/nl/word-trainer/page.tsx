@@ -119,12 +119,17 @@ export default function WordTrainerNL() {
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
                   external
                   size="lg"
-                  className="bg-brand hover:bg-brand-dark text-brand-foreground"
+                  className="plausible-event-name=word_trainer_hero_whatsapp bg-brand hover:bg-brand-dark text-brand-foreground"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp ons
                 </ButtonLink>
-                <ButtonLink href="/nl/studio-huren" variant="outline" size="lg">
+                <ButtonLink
+                  href="/nl/studio-huren"
+                  variant="outline"
+                  size="lg"
+                  className="plausible-event-name=word_trainer_hero_studio_huren"
+                >
                   Bekijk studio & tarieven
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
@@ -219,7 +224,12 @@ export default function WordTrainerNL() {
           </div>
         </FadeIn>
         <FadeIn delay={0.2} className="mt-8 flex justify-center">
-          <ButtonLink href="/nl/studio" variant="outline" size="lg">
+          <ButtonLink
+            href="/nl/studio"
+            variant="outline"
+            size="lg"
+            className="plausible-event-name=word_trainer_studio_gallery"
+          >
             <MapPin className="w-4 h-4" />
             Bekijk de studio
           </ButtonLink>
@@ -299,7 +309,7 @@ export default function WordTrainerNL() {
                 href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag de studio bekijken")}`}
                 external
                 size="lg"
-                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
+                className="plausible-event-name=word_trainer_bottom_whatsapp w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp ons
@@ -308,7 +318,7 @@ export default function WordTrainerNL() {
                 href="/nl/studio-huren"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+                className="plausible-event-name=word_trainer_bottom_studio_huren w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
                 Bekijk tarieven
                 <ArrowRight className="ml-2 w-4 h-4" />
