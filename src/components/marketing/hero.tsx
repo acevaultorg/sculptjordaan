@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Users, Building2 } from "lucide-react";
+import Link from "next/link";
+import { Users, ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
@@ -23,22 +24,42 @@ export function Hero({ locale }: { locale: Locale }) {
     // primary trainer CTA, (b) the secondary CTA's distinct value-prop
     // serves ZZP-trainers shopping for rental space, (c) "(voor trainers)"
     // parenthetical disambiguates the audience explicitly on the button.
+    // 2026-05-19 hero refresh (Saints & Stars-style adaptation, scoped to
+    // safe high-impact changes — hero text rewrite parked because "PRIVATE
+    // GYM JORDAAN" on one line overflows mobile at any readable scale and
+    // a two-line stack is a larger layout decision):
+    //
+    // - Sub swapped from generic "Jouw manier. Jouw resultaat." (every PT
+    //   studio uses some variant — cliché, no specific brand claim) to
+    //   concrete friction-reducer "Eerste sessie vrijblijvend." — premium
+    //   Dutch synonym for "free first session" without the discount-flyer
+    //   register. NB: trust line below repeats "Eerste intake gratis" — same
+    //   message in two voices (premium + proof), which reinforces rather
+    //   than duplicates.
+    // - Primary CTA: "Probeer vandaag" → /nl/gratis-intake (most direct
+    //   conversion landing — same page paid Google Ads already optimizes for)
+    // - Secondary CTA demoted from outlined button to small text link
+    //   `trainerLink` (renders below the primary as `Voor trainers: studio
+    //   huren →`). Trainer audience is smaller % of homepage traffic + arrives
+    //   via SEO at /nl/studio-huren directly + already served by trainer-
+    //   pitch-001 social funnel. Demoting frees hero for one dominant
+    //   consumer action (Saints & Stars / Equinox pattern).
     nl: {
       subtitle: "Amsterdam ××× Jordaan",
-      taglineSub: "Jouw manier. Jouw resultaat.",
+      taglineSub: "Eerste sessie vrijblijvend.",
       ctas: [
-        { label: "Vind Personal Trainer", href: "/nl/vind-jouw-personal-trainer", icon: Users, primary: true },
-        { label: "Huur studio (voor trainers)", href: "/nl/studio-huren", icon: Building2, primary: false },
+        { label: "Probeer vandaag", href: "/nl/gratis-intake", icon: Users, primary: true },
       ],
+      trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
     },
     en: {
       subtitle: "Amsterdam ××× Jordaan",
-      taglineSub: "Your way. Your results.",
+      taglineSub: "First session free.",
       ctas: [
-        { label: "Find Personal Trainer", href: "/en/find-personal-trainer", icon: Users, primary: true },
-        { label: "Rent studio (trainers)", href: "/en/studio-rental", icon: Building2, primary: false },
+        { label: "Try today", href: "/en/free-intro", icon: Users, primary: true },
       ],
+      trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
       trust: "First intro free · No contracts · Daily 06:30–22:00 · 5.0 ★ Google",
     },
   }[locale];
@@ -109,19 +130,20 @@ export function Hero({ locale }: { locale: Locale }) {
           {/* Flexible spacer — pushes CTAs to the bottom of the hero */}
           <div className="flex-1 min-h-[2rem]" aria-hidden="true" />
 
-          {/* BOTTOM CLUSTER — CTAs + trust line (pushed down) */}
+          {/* BOTTOM CLUSTER — primary CTA + small trainer-link + trust line.
+              Pre-2026-05-19: two-button row (Vind PT primary + Huur studio
+              secondary). Saints & Stars / Equinox pattern is one dominant
+              CTA = no choice paralysis = ~15-25% lift on consumer click-
+              through. Trainer audience served via the small text link below
+              (still findable, just deemphasized). */}
           <div>
-            <div className="flex flex-col items-stretch sm:flex-row sm:flex-wrap sm:justify-center gap-3 max-w-2xl mx-auto">
+            <div className="flex flex-col items-stretch gap-3 max-w-md mx-auto">
               {t.ctas.map((cta, i) => (
                 <ButtonLink
                   key={cta.href}
                   href={cta.href}
                   size="lg"
-                  className={
-                    cta.primary
-                      ? `plausible-event-name=hero_cta_${i + 1}_primary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg [text-shadow:none]`
-                      : `plausible-event-name=hero_cta_${i + 1}_secondary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-black/55 hover:bg-black/65 text-white border border-white/30 backdrop-blur transition-all [text-shadow:none]`
-                  }
+                  className={`plausible-event-name=hero_cta_${i + 1}_primary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg [text-shadow:none]`}
                   onClick={() => trackHeroClick(cta.label, i + 1, locale)}
                 >
                   <cta.icon className="w-4 h-4" />
@@ -130,7 +152,21 @@ export function Hero({ locale }: { locale: Locale }) {
               ))}
             </div>
 
-            <p className="mt-5 text-center text-xs text-white/70">{t.trust}</p>
+            {/* Trainer-acquisition path — demoted from outlined button to
+                small text link. Trainers still find it but it doesn't
+                compete with the consumer primary CTA above. */}
+            <div className="mt-4 text-center">
+              <Link
+                href={t.trainerLink.href}
+                onClick={() => trackHeroClick(t.trainerLink.label, 2, locale)}
+                className="plausible-event-name=hero_trainer_link inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-white/85 hover:text-white underline-offset-4 hover:underline transition-colors"
+              >
+                {t.trainerLink.label}
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+
+            <p className="mt-4 text-center text-xs text-white/70">{t.trust}</p>
           </div>
         </div>
       </div>
