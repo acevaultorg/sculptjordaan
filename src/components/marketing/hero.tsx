@@ -36,8 +36,18 @@ export function Hero({ locale }: { locale: Locale }) {
     //   register. NB: trust line below repeats "Eerste intake gratis" — same
     //   message in two voices (premium + proof), which reinforces rather
     //   than duplicates.
-    // - Primary CTA: "Probeer vandaag" → /nl/gratis-intake (most direct
-    //   conversion landing — same page paid Google Ads already optimizes for)
+    // - Primary CTA: "Probeer Personal training" → /nl/gratis-intake (most
+    //   direct conversion landing — same page paid Google Ads optimizes for).
+    //   2026-05-19 (same-day refinement): swapped from "Probeer vandaag" per
+    //   operator. "Vandaag" was urgency-vague — visitor didn't know WHAT they
+    //   were trying. "Personal training" anchors the offer specifically +
+    //   disambiguates from the demoted "Voor trainers" link below (consumer vs
+    //   ZZP trainer split is now explicit at the action layer). Urgency is
+    //   already carried by the subhero ("Eerste sessie vrijblijvend.") + trust
+    //   line ("Eerste intake gratis"), so the CTA didn't need to repeat it.
+    //   Casing matches operator's intent ("Personal training" P-cap + t-lower
+    //   — Dutch-relaxed register for a borrowed-English service name; matches
+    //   blog headers and codebase usage of this variant).
     // - Secondary CTA demoted from outlined button to small text link
     //   `trainerLink` (renders below the primary as `Voor trainers: studio
     //   huren →`). Trainer audience is smaller % of homepage traffic + arrives
@@ -48,7 +58,7 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Eerste sessie vrijblijvend.",
       ctas: [
-        { label: "Probeer vandaag", href: "/nl/gratis-intake", icon: Users, primary: true },
+        { label: "Probeer Personal training", href: "/nl/gratis-intake", icon: Users, primary: true },
       ],
       trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
       trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
@@ -57,7 +67,7 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "First session free.",
       ctas: [
-        { label: "Try today", href: "/en/free-intro", icon: Users, primary: true },
+        { label: "Try Personal training", href: "/en/free-intro", icon: Users, primary: true },
       ],
       trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
       trust: "First intro free · No contracts · Daily 06:30–22:00 · 5.0 ★ Google",
