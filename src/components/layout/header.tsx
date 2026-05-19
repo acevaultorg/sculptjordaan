@@ -62,11 +62,24 @@ const bookingMenu = {
   },
 } as const;
 
+// Trainer-funnel routes — the audience here is ZZP trainers, not consumers.
+// Hiding the consumer-facing "Try-Out" CTA on these routes removes mental
+// noise that competes with the page's trainer-specific actions (audit
+// 2026-05-19: 25 IG-trainer-prospects landed on /en/become-trainer today
+// and saw the consumer-targeted "Try-Out" header CTA right alongside the
+// trainer pitch — wrong-audience signal at the moment of arrival).
+// Keep "Boek" + globe + login + hamburger on these routes since those are
+// shared / universal-utility chrome, not audience-specific.
+function isTrainerFunnelPath(pathname: string): boolean {
+  return /\/(studio-huren|studio-rental|word-trainer|become-trainer|voor-trainers|for-trainers)(\/|$)/.test(pathname);
+}
+
 export function Header() {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname);
   const altLocale = getAlternateLocale(locale);
   const altPath = getAlternatePath(pathname);
+  const hideConsumerCta = isTrainerFunnelPath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookOpen, setBookOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
@@ -205,13 +218,18 @@ export function Header() {
               })}
             </div>
 
-            {/* Nieuw hier? */}
-            <Link
-              href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-              className="h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
-            >
-              {locale === "nl" ? "Try-Out" : "Try-Out"}
-            </Link>
+            {/* Nieuw hier? — audience-conditional. Consumer-targeted CTA;
+                hidden on trainer-funnel pages (isTrainerFunnelPath()) so the
+                trainer audience there sees a cleaner header focused on their
+                own offer instead of competing with a wrong-audience pitch. */}
+            {!hideConsumerCta && (
+              <Link
+                href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
+                className="h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
+              >
+                {locale === "nl" ? "Try-Out" : "Try-Out"}
+              </Link>
+            )}
 
             {/* Boek */}
             <button
