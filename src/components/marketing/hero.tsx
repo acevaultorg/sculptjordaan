@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Users, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
@@ -69,6 +70,22 @@ export function Hero({ locale }: { locale: Locale }) {
     //   match `/nl/studio-huren`; operator typed "Studio huren" but that was
     //   phone auto-capitalize — corrected per operator's "fix my prompts"
     //   delegation).
+    // Trust line is an array of segments so the action-suggesting bullets can
+    // become real <Link>s instead of staying as flat text. Clarity 3d-mobile
+    // heatmap on /nl/ (2026-05-19): the `P.text-sm.text-muted-foreground[2]`
+    // element accumulated 3 clicks / 5.45 % of all taps as DEAD CLICKS — visitors
+    // were tapping the trust bullets expecting an action. The two segments that
+    // promise the action ("Eerste intake gratis" + "5.0 ★ Google") get hrefs;
+    // the static factual segments ("Geen contracten" / "Dagelijks 06:30–22:00")
+    // stay as spans. Each clickable bullet ships a distinct Plausible event
+    // (hero_trust_intake / hero_trust_reviews) so we can measure if the
+    // dead-click signal converts into a real conversion path.
+    //
+    // Google reviews URL: maps.app.goo.gl share-link to the SculptClub place
+    // listing. Opens Google Maps directly on the reviews tab on mobile;
+    // browser fallback for desktop. (Operator can swap to a precise Place ID
+    // URL by editing the href below — current link is the canonical share-link
+    // returned by Google's own share dialog for the listing.)
     nl: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Eerste sessie vrijblijvend.",
@@ -76,7 +93,12 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Probeer Personal training", href: "/nl/gratis-intake", icon: Users, primary: true },
       ],
       trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
-      trust: "Eerste intake gratis · Geen contracten · Dagelijks 06:30–22:00 · 5.0 ★ Google",
+      trustParts: [
+        { text: "Eerste intake gratis", href: "/nl/gratis-intake", event: "hero_trust_intake" },
+        { text: "Geen contracten" },
+        { text: "Dagelijks 06:30–22:00" },
+        { text: "5.0 ★ Google", href: "https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam", event: "hero_trust_reviews", external: true },
+      ],
     },
     en: {
       subtitle: "Amsterdam ××× Jordaan",
@@ -85,7 +107,12 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Try Personal training", href: "/en/free-intro", icon: Users, primary: true },
       ],
       trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
-      trust: "First intro free · No contracts · Daily 06:30–22:00 · 5.0 ★ Google",
+      trustParts: [
+        { text: "First intro free", href: "/en/free-intro", event: "hero_trust_intake" },
+        { text: "No contracts" },
+        { text: "Daily 06:30–22:00" },
+        { text: "5.0 ★ Google", href: "https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam", event: "hero_trust_reviews", external: true },
+      ],
     },
   }[locale];
 
@@ -195,7 +222,33 @@ export function Hero({ locale }: { locale: Locale }) {
               </ButtonLink>
             </div>
 
-            <p className="mt-4 text-center text-xs text-white/70">{t.trust}</p>
+            {/* Trust line — mixed clickable + static bullets.
+                Clickable segments get subtle underline-on-hover + same color
+                register as static (no visual jump that would distract from the
+                primary action). Visitors who tap "Eerste intake gratis" hit the
+                same destination as the primary CTA — same goal, different
+                surface — so a tap from the trust line is a real conversion not
+                a leak. */}
+            <p className="mt-4 text-center text-xs text-white/70">
+              {t.trustParts.map((part, i) => (
+                <span key={part.text}>
+                  {i > 0 && <span aria-hidden> · </span>}
+                  {part.href ? (
+                    <Link
+                      href={part.href}
+                      target={part.external ? "_blank" : undefined}
+                      rel={part.external ? "noopener noreferrer" : undefined}
+                      onClick={() => trackHeroClick(part.text, i + 100, locale)}
+                      className={`plausible-event-name=${part.event} underline-offset-4 decoration-white/30 hover:text-white hover:underline hover:decoration-white/70 transition-colors`}
+                    >
+                      {part.text}
+                    </Link>
+                  ) : (
+                    <span>{part.text}</span>
+                  )}
+                </span>
+              ))}
+            </p>
           </div>
         </div>
       </div>
