@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Users, ArrowRight } from "lucide-react";
+import { Users, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
@@ -48,12 +47,28 @@ export function Hero({ locale }: { locale: Locale }) {
     //   Casing matches operator's intent ("Personal training" P-cap + t-lower
     //   — Dutch-relaxed register for a borrowed-English service name; matches
     //   blog headers and codebase usage of this variant).
-    // - Secondary CTA demoted from outlined button to small text link
-    //   `trainerLink` (renders below the primary as `Voor trainers: studio
-    //   huren →`). Trainer audience is smaller % of homepage traffic + arrives
-    //   via SEO at /nl/studio-huren directly + already served by trainer-
-    //   pitch-001 social funnel. Demoting frees hero for one dominant
-    //   consumer action (Saints & Stars / Equinox pattern).
+    // - Secondary CTA: re-promoted to outline button 2026-05-19 (same-day
+    //   refinement). The 2026-05-19 demotion to small text link cited Saints &
+    //   Stars / Equinox single-CTA conversion math (~15-25% lift on consumer
+    //   click-through from removing choice paralysis). That math is correct for
+    //   single-funnel boutique gyms — but SculptClub runs TWO equal-importance
+    //   funnels:
+    //     · Consumer (PT bookings) — revenue per session
+    //     · ZZP trainer (studio rental) — recurring monthly + EACH trainer
+    //       brings a client roster (the highest-LTV channel by far)
+    //   Demoting ZZP trainer surface to a text link undersells the funnel that
+    //   actually compounds. Outline-button (transparent bg + white border)
+    //   restores prominence while preserving visual hierarchy via fill-vs-
+    //   outline contrast — primary action still wins the eye, secondary still
+    //   reads as clearly tappable. Building2 icon back (matches historical
+    //   pre-2026-05-19 convention + signals "studio/building" semantically).
+    //   Audience-first framing kept ("Voor trainers: studio huren") because
+    //   that disambiguation MUST hit before the action when sitting below a
+    //   "Personal training" primary — otherwise reader confuses two trainer
+    //   contexts. Casing: "studio huren" lowercase (Dutch grammar + URL slug
+    //   match `/nl/studio-huren`; operator typed "Studio huren" but that was
+    //   phone auto-capitalize — corrected per operator's "fix my prompts"
+    //   delegation).
     nl: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Eerste sessie vrijblijvend.",
@@ -140,12 +155,15 @@ export function Hero({ locale }: { locale: Locale }) {
           {/* Flexible spacer — pushes CTAs to the bottom of the hero */}
           <div className="flex-1 min-h-[2rem]" aria-hidden="true" />
 
-          {/* BOTTOM CLUSTER — primary CTA + small trainer-link + trust line.
-              Pre-2026-05-19: two-button row (Vind PT primary + Huur studio
-              secondary). Saints & Stars / Equinox pattern is one dominant
-              CTA = no choice paralysis = ~15-25% lift on consumer click-
-              through. Trainer audience served via the small text link below
-              (still findable, just deemphasized). */}
+          {/* BOTTOM CLUSTER — primary (fill) + secondary (outline) + trust.
+              Two equal-height buttons stacked, distinguished by fill vs
+              outline. Primary still wins the eye (orange fill on warm gradient
+              = high color anchor); secondary clearly tappable (full button
+              footprint, 44×44 WCAG, white border at 50% opacity = visible but
+              subordinate). The audience-distinct value-props remove choice
+              paralysis: visitor decides "am I here to train, or here to rent
+              the studio?" in one read — no internal ranking of two equivalent
+              consumer offers needed. */}
           <div>
             <div className="flex flex-col items-stretch gap-3 max-w-md mx-auto">
               {t.ctas.map((cta, i) => (
@@ -160,20 +178,21 @@ export function Hero({ locale }: { locale: Locale }) {
                   {cta.label}
                 </ButtonLink>
               ))}
-            </div>
 
-            {/* Trainer-acquisition path — demoted from outlined button to
-                small text link. Trainers still find it but it doesn't
-                compete with the consumer primary CTA above. */}
-            <div className="mt-4 text-center">
-              <Link
+              {/* ZZP-trainer acquisition CTA — outline variant for hierarchy
+                  via fill-vs-outline (not size). Same min-height + padding +
+                  font as primary so both feel like first-class actions.
+                  Border at white/50 + hover bg white/10 reads on the warm
+                  hero gradient without competing with the orange anchor. */}
+              <ButtonLink
                 href={t.trainerLink.href}
+                size="lg"
+                className="plausible-event-name=hero_trainer_cta rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-transparent hover:bg-white/10 text-white border border-white/50 hover:border-white transition-all [text-shadow:none]"
                 onClick={() => trackHeroClick(t.trainerLink.label, 2, locale)}
-                className="plausible-event-name=hero_trainer_link inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-white/85 hover:text-white underline-offset-4 hover:underline transition-colors"
               >
+                <Building2 className="w-4 h-4" />
                 {t.trainerLink.label}
-                <ArrowRight className="w-3 h-3" />
-              </Link>
+              </ButtonLink>
             </div>
 
             <p className="mt-4 text-center text-xs text-white/70">{t.trust}</p>
