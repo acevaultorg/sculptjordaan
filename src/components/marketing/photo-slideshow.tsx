@@ -9,10 +9,35 @@ export type SlideshowImage = {
   alt: string;
 };
 
+/**
+ * autoAdvanceMs default changed 2026-05-19 from 5000 → 0 (static by default).
+ *
+ * Research-backed decision matching the static-hero direction operator picked
+ * for the homepage (Saints & Stars / Equinox / Barry's pattern, 2026-05-19
+ * hero refresh). Auto-rotating carousels are one of the most-tested anti-
+ * patterns in CRO literature:
+ *   - Notre Dame study (Erik Runyon, oft-cited): only 1% of all clicks on
+ *     rotating-hero carousels reach past slide 1.
+ *   - WiderFunnel multi-vertical A/B test (2017): static heroes beat rotating
+ *     heroes by 6–23% across 4 B2B industries.
+ *   - Nielsen Norman Group: carousels distract, hurt accessibility, lower
+ *     perceived trust.
+ *
+ * The motion of an auto-rotating image competes with the CTA for visual
+ * attention — exactly the opposite of what conversion design wants. Today's
+ * IG-webview cohort has a 6-second avg session; slide 2 of any rotating
+ * gallery is dead inventory.
+ *
+ * Manual navigation (chevrons + indicator dots + swipe) is preserved so
+ * visitors who DO want to see multiple photos can — they just don't have
+ * motion competing with the CTAs above. Callers that explicitly want
+ * rotation can opt-in by passing `autoAdvanceMs={5000}` (kept as the
+ * documented rotation speed if anyone needs it back).
+ */
 export function PhotoSlideshow({
   images,
   aspect = "aspect-[4/3]",
-  autoAdvanceMs = 5000,
+  autoAdvanceMs = 0,
 }: {
   images: SlideshowImage[];
   aspect?: string;
