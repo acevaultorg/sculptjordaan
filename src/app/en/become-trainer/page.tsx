@@ -107,12 +107,16 @@ export default function BecomeTrainerEN() {
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 A private studio in the Jordaan where you keep 100% of what you charge. Rent by the hour from €12, pay only when you train, and get a free profile on sculptclub.nl to help you fill your calendar.
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                <li>✓ 0% commission — the rate you charge is the rate you keep</li>
-                <li>✓ Rent by the hour from €12, or save up to 23% with a pack</li>
-                <li>✓ Free profile + WhatsApp CTA on our website</li>
-                <li>✓ No membership, no fixed overhead, cancel anytime</li>
-              </ul>
+              {/* CTAs moved ABOVE the bullet list 2026-05-19. Clarity probe
+                  on iPhone 14 Pro (660px viewport) measured the WhatsApp
+                  button at y=661 — one pixel below the fold. 25 visitors
+                  from today's IG-burst landed and 0 clicked any CTA over
+                  3 days. The 6-second IG-webview audience doesn't scroll;
+                  if the action button isn't in the first viewport, it
+                  doesn't exist for them. Swap order: action first, bullets
+                  as supporting proof below (visitors who DO scroll see the
+                  full value-prop case; visitors who don't at least see the
+                  WhatsApp option in their initial frame). */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <ButtonLink
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to know more about working at SculptClub")}`}
@@ -133,6 +137,12 @@ export default function BecomeTrainerEN() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
               </div>
+              <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
+                <li>✓ 0% commission — the rate you charge is the rate you keep</li>
+                <li>✓ Rent by the hour from €12, or save up to 23% with a pack</li>
+                <li>✓ Free profile + WhatsApp CTA on our website</li>
+                <li>✓ No membership, no fixed overhead, cancel anytime</li>
+              </ul>
               <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-green-500" />Free tour</span>
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-green-500" />No contract</span>

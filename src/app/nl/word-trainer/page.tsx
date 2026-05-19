@@ -108,12 +108,12 @@ export default function WordTrainerNL() {
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 Een privé studio in de Jordaan waar je 100% houdt van wat je rekent. Huur per uur vanaf €12, betaal alleen wanneer je traint, en krijg een gratis profiel op sculptclub.nl om je agenda te vullen.
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                <li>✓ 0% commissie — wat jij rekent, hou jij</li>
-                <li>✓ Huur per uur vanaf €12, of bespaar tot 23% met een pakket</li>
-                <li>✓ Gratis profiel + WhatsApp-CTA op onze website</li>
-                <li>✓ Geen lidmaatschap, geen vaste lasten, altijd opzegbaar</li>
-              </ul>
+              {/* CTAs moved ABOVE the bullet list 2026-05-19 (parallel to
+                  /en/become-trainer). Mobile fold at iPhone 14 Pro put the
+                  WhatsApp button at y=661 px in a 660 px viewport — exactly
+                  1 px below the fold. IG-webview audience (6s avg duration)
+                  doesn't scroll, so the action button effectively didn't
+                  exist for them. Action first, bullets as proof below. */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <ButtonLink
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
@@ -134,6 +134,12 @@ export default function WordTrainerNL() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
               </div>
+              <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
+                <li>✓ 0% commissie — wat jij rekent, hou jij</li>
+                <li>✓ Huur per uur vanaf €12, of bespaar tot 23% met een pakket</li>
+                <li>✓ Gratis profiel + WhatsApp-CTA op onze website</li>
+                <li>✓ Geen lidmaatschap, geen vaste lasten, altijd opzegbaar</li>
+              </ul>
               <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-green-500" />Gratis kennismaking</span>
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-green-500" />Geen contract</span>
