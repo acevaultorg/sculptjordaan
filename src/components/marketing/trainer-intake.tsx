@@ -172,8 +172,16 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
 
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-10">
-              {/* Trainer info */}
-              <div className="space-y-5">
+              {/* Trainer info — mobile order: 2 (below contact). Desktop order: 1 (left column).
+                  Mobile fold audit 2026-05-19: original 1-column stack put the WhatsApp CTA at
+                  y=1147 px on iPhone 14 Pro — almost 2 viewports below the fold. Visitors who
+                  reached this page ALREADY chose this trainer (high intent) and were forced to
+                  scroll through bio + photo + specs + languages before they could act.
+                  Fix: swap mobile order via Tailwind order-2 / md:order-1. Visitor lands → sees
+                  H1 ("Plan je gratis intake met Andrea") naming the trainer → WhatsApp button
+                  + form immediately below → bio/photo/specs as supporting validation when they
+                  scroll. Desktop 2-col grid unaffected (still trainer-info left, contact right). */}
+              <div className="space-y-5 order-2 md:order-1">
                 <div className="relative w-full aspect-[4/5] max-w-xs rounded-2xl overflow-hidden">
                   <Image
                     src={trainer.image}
@@ -215,8 +223,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                 </div>
               </div>
 
-              {/* Contact form + WhatsApp */}
-              <div className="space-y-6">
+              {/* Contact form + WhatsApp — mobile order: 1 (above bio). Desktop order: 2 (right column). */}
+              <div className="space-y-6 order-1 md:order-2">
                 <h3 className="text-lg font-bold">{t.contactTitle}</h3>
 
                 {/* WhatsApp CTA — goes to trainer directly */}
