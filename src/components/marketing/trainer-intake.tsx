@@ -44,8 +44,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     namePlaceholder: "Je volledige naam",
     phoneLabel: "Telefoon",
     phonePlaceholder: "+31 6 1234 5678",
-    messageLabel: "Bericht (optioneel)",
-    messagePlaceholder: "Vertel ons over je doelen...",
+    goalLabel: "Mijn doel",
+    goalOptions: ["Kracht", "Afvallen", "Mobiliteit", "Sport", "Algehele fitness", "Anders"] as const,
+    experienceLabel: "Ervaring",
+    experienceOptions: ["Beginner", "Gemiddeld", "Gevorderd"] as const,
+    frequencyLabel: "Hoe vaak per week?",
+    frequencyOptions: ["1×", "2×", "3+×", "Weet ik nog niet"] as const,
+    messageLabel: "Iets dat we moeten weten? (optioneel)",
+    messagePlaceholder: "Blessures, eerdere ervaring, of wat dan ook...",
     submitLabel: "Verstuur bericht",
     whatsappLabel: `WhatsApp ${trainer.name} direct`,
     emailLabel: "Of stuur een e-mail",
@@ -66,8 +72,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     namePlaceholder: "Your full name",
     phoneLabel: "Phone",
     phonePlaceholder: "+31 6 1234 5678",
-    messageLabel: "Message (optional)",
-    messagePlaceholder: "Tell us about your goals...",
+    goalLabel: "My goal",
+    goalOptions: ["Strength", "Weight loss", "Mobility", "Sports", "General fitness", "Other"] as const,
+    experienceLabel: "Experience",
+    experienceOptions: ["Beginner", "Intermediate", "Advanced"] as const,
+    frequencyLabel: "How often per week?",
+    frequencyOptions: ["1×", "2×", "3+×", "Not sure yet"] as const,
+    messageLabel: "Anything else we should know? (optional)",
+    messagePlaceholder: "Injuries, prior experience, or anything else...",
     submitLabel: "Send message",
     whatsappLabel: `WhatsApp ${trainer.name} directly`,
     emailLabel: "Or send an email",
@@ -77,7 +89,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     otherTrainerCta: "Not sure yet? Browse all trainers and find your match.",
   };
 
-  const [formState, setFormState] = useState({ name: "", phone: "", message: "" });
+  const [formState, setFormState] = useState({
+    name: "",
+    phone: "",
+    message: "",
+    goal: "" as string,
+    experience: "" as string,
+    frequency: "" as string,
+  });
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
@@ -85,10 +104,16 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     const greeting = locale === "nl"
       ? `Hoi ${trainer.name}! Ik wil graag een gratis intake boeken.`
       : `Hi ${trainer.name}! I'd like to book a free intro.`;
+    const lbl = locale === "nl"
+      ? { name: "Naam", phone: "Tel", goal: "Doel", exp: "Ervaring", freq: "Frequentie" }
+      : { name: "Name", phone: "Phone", goal: "Goal", exp: "Experience", freq: "Frequency" };
     const parts = [
       greeting,
-      formState.name ? (locale === "nl" ? `Naam: ${formState.name}` : `Name: ${formState.name}`) : "",
-      formState.phone ? (locale === "nl" ? `Tel: ${formState.phone}` : `Phone: ${formState.phone}`) : "",
+      formState.name ? `${lbl.name}: ${formState.name}` : "",
+      formState.phone ? `${lbl.phone}: ${formState.phone}` : "",
+      formState.goal ? `${lbl.goal}: ${formState.goal}` : "",
+      formState.experience ? `${lbl.exp}: ${formState.experience}` : "",
+      formState.frequency ? `${lbl.freq}: ${formState.frequency}` : "",
       formState.message ? formState.message : "",
     ].filter(Boolean);
     // Fire full conversion stack BEFORE window.open (popup blockers can clip async work).
@@ -118,6 +143,9 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
         trainer: trainer.id,
         locale,
         booking_source: path,
+        intake_goal: formState.goal || "(unset)",
+        intake_experience: formState.experience || "(unset)",
+        intake_frequency: formState.frequency || "(unset)",
       });
     }
     if (typeof w.fbq === "function") {
@@ -132,7 +160,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     }
     if (typeof w.plausible === "function") {
       w.plausible("Trainer Intake Submit", {
-        props: { trainer: trainer.id, locale, source_page: path },
+        props: {
+          trainer: trainer.id,
+          locale,
+          source_page: path,
+          intake_goal: formState.goal || "(unset)",
+          intake_experience: formState.experience || "(unset)",
+          intake_frequency: formState.frequency || "(unset)",
+        },
       });
       w.plausible("Lead Generated", {
         props: { method: "trainer_intake_form", value: 45, source_page: path },
@@ -273,6 +308,80 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                         placeholder={t.phonePlaceholder}
                         className="w-full rounded-xl border border-border bg-background px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       />
+                    </div>
+
+                    {/* Qualifying questions — added 2026-05-20 per operator
+                        "what are good intake questions to ask client? so i can
+                        make the best match with trainer". 3 single-tap radio-
+                        pills (not native radios — better mobile target). Field
+                        count stays ≤6 (best-practice cap before drop-off
+                        spike). All 3 optional — high-intent visitors who skip
+                        still convert; visitors who answer give trainer + ops
+                        the qualifying signal to prep + route. Answers pre-fill
+                        into WhatsApp greeting + log to gtag/Plausible props so
+                        operator can segment which goals/levels/frequencies
+                        convert best across the fleet. */}
+                    <div>
+                      <label className="block text-sm font-semibold mb-1.5">{t.goalLabel}</label>
+                      <div className="flex flex-wrap gap-1.5">
+                        {t.goalOptions.map((opt) => (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setFormState((s) => ({ ...s, goal: s.goal === opt ? "" : opt }))}
+                            aria-pressed={formState.goal === opt}
+                            className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                              formState.goal === opt
+                                ? "border-brand bg-brand text-brand-foreground"
+                                : "border-border bg-background text-muted-foreground hover:border-brand/60 hover:text-foreground"
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold mb-1.5">{t.experienceLabel}</label>
+                      <div className="flex flex-wrap gap-1.5">
+                        {t.experienceOptions.map((opt) => (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setFormState((s) => ({ ...s, experience: s.experience === opt ? "" : opt }))}
+                            aria-pressed={formState.experience === opt}
+                            className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                              formState.experience === opt
+                                ? "border-brand bg-brand text-brand-foreground"
+                                : "border-border bg-background text-muted-foreground hover:border-brand/60 hover:text-foreground"
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold mb-1.5">{t.frequencyLabel}</label>
+                      <div className="flex flex-wrap gap-1.5">
+                        {t.frequencyOptions.map((opt) => (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setFormState((s) => ({ ...s, frequency: s.frequency === opt ? "" : opt }))}
+                            aria-pressed={formState.frequency === opt}
+                            className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+                              formState.frequency === opt
+                                ? "border-brand bg-brand text-brand-foreground"
+                                : "border-border bg-background text-muted-foreground hover:border-brand/60 hover:text-foreground"
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        ))}
+                      </div>
                     </div>
 
                     <div>
