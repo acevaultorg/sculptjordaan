@@ -250,6 +250,18 @@ export default function ForTrainersHubEN() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
+            {/* Bottom-CTA trust strip — closes the decision loop. Visitor
+                scrolled through reasons + steps + FAQ; this is the moment
+                they decide. Pair the dark "Not sure yet?" headline with the
+                same 5★ + value-prop they saw at top so trust persists. */}
+            <div className="mb-4 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm">
+              <span className="flex items-center gap-1.5">
+                <span className="text-amber-400" aria-hidden>★★★★★</span>
+                <span className="font-semibold text-white">5.0 on Google</span>
+              </span>
+              <span aria-hidden className="text-white/40">·</span>
+              <span className="text-white/70">From €12/hour · 0% commission · Free cancellation anytime</span>
+            </div>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Not sure yet? Come visit for free first.
             </h2>

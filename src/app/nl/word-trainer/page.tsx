@@ -317,6 +317,16 @@ export default function WordTrainerNL() {
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
+            {/* Bottom-CTA trust strip — closes the decision loop at the
+                exact moment visitor decides. Same 5★ + value-prop as hero. */}
+            <div className="mb-4 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm">
+              <span className="flex items-center gap-1.5">
+                <span className="text-amber-400" aria-hidden>★★★★★</span>
+                <span className="font-semibold text-white">5,0 op Google</span>
+              </span>
+              <span aria-hidden className="text-white/40">·</span>
+              <span className="text-white/70">0% commissie · Geen contract · Altijd gratis annuleren</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Klaar om te starten?
             </h2>
