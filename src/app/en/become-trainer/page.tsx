@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
+import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
+import { getColor } from "@/lib/image-color-manifest";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
@@ -39,6 +41,13 @@ export const metadata: Metadata = {
     },
   },
 };
+
+const HERO_IMAGES = [
+  { src: "/images/studio/model-facade-full.jpg", alt: "Athlete at the entrance of SculptClub Private Gym at Egelantiersgracht 424" },
+  { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer running a session at SculptClub" },
+  { src: "/images/studio/training-barbell-skylight.jpg", alt: "Athlete training with barbell under the skylight at SculptClub" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio in the Jordaan" },
+];
 
 const benefits = [
   {
@@ -165,15 +174,18 @@ export default function BecomeTrainerEN() {
             </div>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/studio/model-facade-full.jpg"
-                alt="Athlete at the entrance of SculptClub Private Gym at Egelantiersgracht 424"
-                fill
-                className="object-cover object-top"
-                loading="eager"
-                fetchPriority="high"
+            {/* Hero slideshow — crossfade through 4 "trainer at SculptClub"
+                angles every 4.8s. Same RotatingImageStack pattern as
+                homepage + rental hero + hub hero. ZZP-trainer prospect
+                lands → sees rotating "this could be you working here" mix. */}
+            <div
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+              style={{ backgroundColor: getColor(HERO_IMAGES[0].src) }}
+            >
+              <RotatingImageStack
+                images={HERO_IMAGES}
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                objectPositionClass="object-top"
               />
             </div>
           </FadeIn>
