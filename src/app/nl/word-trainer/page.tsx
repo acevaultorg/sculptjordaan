@@ -148,7 +148,7 @@ export default function WordTrainerNL() {
                 </ButtonLink>
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
-                <li><strong className="text-foreground">✓ Privé studio</strong> — geen drukte, geen wachten op apparatuur, geen vreemden die meekijken</li>
+                <li><strong className="text-foreground">✓ Privé studio</strong> — geen drukte, wacht niet op apparatuur, train zonder afleiding</li>
                 <li>✓ 0% commissie — wat jij rekent, hou jij</li>
                 <li>✓ Huur per uur vanaf €12, of bespaar tot 23% met een pakket</li>
                 <li>✓ Gratis profiel + WhatsApp-CTA op onze website</li>

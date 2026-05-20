@@ -105,7 +105,7 @@ export default function BlogPostFysioStudioNL() {
                 na een blessure weer beginnen met zwaardere oefeningen. In een grote sportschool is dat
                 lastig — er zijn afleiders, er staat muziek op en andere sporters kijken mee. In een
                 privé studio kan je patiënt zich volledig concentreren op de oefening. Maximaal 3
-                personen tegelijk, geen wachten op apparaten, geen ongemakkelijke situaties.
+                personen tegelijk, geen wachttijd voor apparaten, geen ongemakkelijke situaties.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en businessmodel</h2>

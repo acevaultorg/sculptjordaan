@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "Kan ik alleen komen, of moet ik me ergens aanmelden?",
-    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen vreemden, geen wachten op apparatuur, geen toeschouwers.",
+    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen drukte, geen wachttijd, train zonder afleiding.",
   },
   {
     q: "Ik spreek geen Nederlands — kan dat?",
