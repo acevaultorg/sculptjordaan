@@ -11,6 +11,7 @@ import {
 import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
+import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import {
   Dumbbell,
   Lock,
@@ -548,24 +549,13 @@ export default function StudioRentalPageNL() {
         </div>
       </Section>
 
-      {/* Gallery */}
+      {/* Gallery — clickable thumbs, opens fullscreen lightbox slider on tap.
+          Operator directive 2026-05-20: "if people click this photos they
+          should get enlarged slider". See PhotoGalleryLightbox for the
+          ←/→/Esc + swipe + scroll-lock + focus-trap mechanics. */}
       <Section bg="muted">
         <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {galleryImages.map((img, i) => (
-            <FadeIn key={img.src} delay={i * 0.1}>
-              <div className="relative aspect-square overflow-hidden rounded-xl">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <PhotoGalleryLightbox images={galleryImages} locale="nl" />
       </Section>
 
       {/* FAQ */}
