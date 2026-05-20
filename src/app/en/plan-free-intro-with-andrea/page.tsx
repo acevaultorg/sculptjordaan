@@ -1,12 +1,18 @@
 import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
+import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
+
+const title = "Book free intro with Andrea";
+const description = "Book a free intro with Andrea — posture, technique and strength specialist at SculptClub Amsterdam Jordaan. From €45/session.";
+const canonical = "/en/plan-free-intro-with-andrea";
 
 export const metadata: Metadata = {
-  title: "Book free intro with Andrea",
-  description: "Book a free intro with Andrea — posture, technique and strength specialist at SculptClub Amsterdam Jordaan. From €45/session.",
+  title,
+  description,
   // Noindex: conversion-funnel route, not editorial. Templated trainer-intake pages = doorway-pattern risk.
   robots: { index: false, follow: true },
-  alternates: { canonical: "/en/plan-free-intro-with-andrea", languages: { nl: "/nl/plan-gratis-intake-met-andrea", en: "/en/plan-free-intro-with-andrea" } },
+  alternates: { canonical, languages: { nl: "/nl/plan-gratis-intake-met-andrea", en: "/en/plan-free-intro-with-andrea" } },
+  ...trainerIntakeOg("andrea", "en", { title, description, canonical }),
 };
 
 export default function Page() {

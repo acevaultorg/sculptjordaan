@@ -1,15 +1,21 @@
 import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
+import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
+
+const title = "Plan gratis intake met Alex";
+const description = "Gratis intake met Alex — specialist in kracht, calisthenics en hersteltraining bij SculptClub Amsterdam Jordaan. Geen verplichtingen.";
+const canonical = "/nl/plan-gratis-intake-met-alex";
 
 export const metadata: Metadata = {
-  title: "Plan gratis intake met Alex",
-  description: "Gratis intake met Alex — specialist in kracht, calisthenics en hersteltraining bij SculptClub Amsterdam Jordaan. Geen verplichtingen.",
+  title,
+  description,
   // Noindex: this is a conversion-funnel route (Acuity booking entry), not editorial
   // content. Indexing 14 templated trainer-intake pages would trigger Google's
   // doorway-pattern flag (rules/adsense-thin-content-prevention.md Gate 3).
   // The page stays live for the booking flow; only search-indexing is suppressed.
   robots: { index: false, follow: true },
-  alternates: { canonical: "/nl/plan-gratis-intake-met-alex", languages: { nl: "/nl/plan-gratis-intake-met-alex", en: "/en/plan-free-intro-with-alex" } },
+  alternates: { canonical, languages: { nl: "/nl/plan-gratis-intake-met-alex", en: "/en/plan-free-intro-with-alex" } },
+  ...trainerIntakeOg("alex", "nl", { title, description, canonical }),
 };
 
 export default function Page() {
