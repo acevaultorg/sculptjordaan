@@ -143,15 +143,18 @@ export function TrainerChoiceGrid({ locale }: { locale: Locale }) {
                 {trainer.languages.join(" · ")}
               </p>
 
-              {/* Rate + CTA row. When rate is null we surface "Intake gratis ·
-                  prijs op aanvraag" so the FREE-intake floor stays visible
-                  regardless. Visitors who would-otherwise-skip "on request"
-                  trainers see they can still get the free intake. */}
-              <div className="mt-auto flex items-center justify-between gap-2 pt-2">
+              {/* Rate + CTA stacked vertically — was side-by-side flex but the
+                  175px-wide mobile cards forced both to wrap awkwardly ("Plan
+                  gratis intake" splitting into 3 lines on Eva's "Intake gratis
+                  · Prijs op aanvraag" pairing). Stacking gives each its own
+                  full-card-width row, so neither wraps. */}
+              <div className="mt-auto flex flex-col gap-1.5 pt-2">
                 <span className="text-xs font-semibold text-foreground sm:text-sm">
                   {trainer.rate ?? `${c.intakeFree} · ${c.rateOnRequest}`}
                 </span>
-                {/* CTA chip visible-at-rest on mobile — no hover state on touch. */}
+                {/* Full-width CTA chip — visual affordance that card is tappable.
+                    Arrow nudges right on hover (mouse) + stays visible at rest
+                    on touch devices (no hover state). */}
                 <span
                   className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
                   aria-hidden
