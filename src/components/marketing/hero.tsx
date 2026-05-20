@@ -2,13 +2,66 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Users, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
 import type { Locale } from "@/config/site";
 
-const HERO_SRC = "/images/studio/training-barbell-squat.jpg";
+/**
+ * Hero background slideshow — operator directive 2026-05-20: "make this
+ * picture slide show / new trainers should get a great impressions of the
+ * space quickly". A single static photo undersells the studio breadth for
+ * the ZZP-trainer audience who actively shop on visible space + equipment.
+ *
+ * Discipline (preserves the static-CTA principle from photo-slideshow.tsx
+ * anti-pattern documentation): ONLY the background image crossfades. All
+ * text overlay — overline, h1 "PRIVATE GYM", taglineSub, both CTAs, trust
+ * line — stays 100% static. The motion never competes with the CTA layer.
+ * It's the equivalent of a slow Ken Burns slideshow across the same H1.
+ *
+ * LCP protection:
+ *   - First image keeps priority + fetchPriority="high" (current hero shot,
+ *     unchanged LCP candidate).
+ *   - Additional images mount after a 2-second delay so they don't compete
+ *     for the initial network budget.
+ *   - Rotation starts only after secondary images are mounted.
+ *
+ * Accessibility:
+ *   - Respects prefers-reduced-motion (rotation paused if user opts out).
+ *   - Pauses when tab is hidden (no compute spent off-screen).
+ *
+ * Why operator wants this on the homepage despite the earlier static-hero
+ * decision: SculptClub has TWO audiences with opposite needs —
+ *   · IG-burst consumer (6s session): wants single clear CTA, static helps.
+ *   · ZZP trainer (longer session, evaluating "is this a space I'd rent?"):
+ *     wants visible space breadth, slideshow helps.
+ * The overlay (CTAs + headline) serves the consumer; the rotating background
+ * serves the trainer. Both audiences hit the same homepage; this addresses
+ * the trainer-acquisition gap operator surfaced 2026-05-20.
+ */
+const HERO_IMAGES = [
+  {
+    src: "/images/studio/training-barbell-squat.jpg",
+    alt: "Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack",
+  },
+  {
+    src: "/images/studio/studio-overview.jpeg",
+    alt: "Full overview of the SculptClub private studio in Amsterdam Jordaan — sprint lane, dumbbell rack, power rack",
+  },
+  {
+    src: "/images/studio/canal-view-doors.jpg",
+    alt: "View from inside SculptClub onto the Egelantiersgracht canal in Amsterdam Jordaan",
+  },
+  {
+    src: "/images/studio/power-rack.jpeg",
+    alt: "Rogue power rack with Olympic barbell at SculptClub private gym in Amsterdam Jordaan",
+  },
+];
+
+const ROTATION_MS = 6000;
+const SECONDARY_MOUNT_DELAY_MS = 2000;
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
@@ -116,31 +169,84 @@ export function Hero({ locale }: { locale: Locale }) {
     },
   }[locale];
 
+  // Slideshow state — see HERO_IMAGES JSDoc above for the discipline.
+  const [active, setActive] = useState(0);
+  const [secondaryMounted, setSecondaryMounted] = useState(false);
+  const [paused, setPaused] = useState(false);
+
+  // Mount images 2..N after a short delay so they don't compete for the
+  // initial LCP-critical network budget (the first photo + above-fold text
+  // owns the first ~2 seconds).
+  useEffect(() => {
+    const t = window.setTimeout(() => setSecondaryMounted(true), SECONDARY_MOUNT_DELAY_MS);
+    return () => window.clearTimeout(t);
+  }, []);
+
+  // Respect prefers-reduced-motion + pause when tab is hidden.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePause = () => setPaused(mq.matches || document.hidden);
+    updatePause();
+    mq.addEventListener("change", updatePause);
+    document.addEventListener("visibilitychange", updatePause);
+    return () => {
+      mq.removeEventListener("change", updatePause);
+      document.removeEventListener("visibilitychange", updatePause);
+    };
+  }, []);
+
+  // Auto-advance the active image — only after secondary images mount + not
+  // paused + multiple images exist. Slow enough (6s) to let each photo breathe.
+  useEffect(() => {
+    if (!secondaryMounted || paused || HERO_IMAGES.length < 2) return;
+    const id = window.setInterval(() => {
+      setActive((cur) => (cur + 1) % HERO_IMAGES.length);
+    }, ROTATION_MS);
+    return () => window.clearInterval(id);
+  }, [secondaryMounted, paused]);
+
   return (
     <section className="relative overflow-hidden -mt-20 min-h-[90vh] sm:min-h-[88vh] lg:min-h-[92vh] flex flex-col">
-      {/* Background image — minimal overlay so the gym stays visible.
-          Text contrast comes from text-shadow on the hero container.
-          backgroundColor renders BEFORE the image fetches: zero-paint-cost
-          dominant-color preview (matched to image via build-time manifest).
-          Replaces the reverted blur-SVG approach (see
-          docs/PERF-EXPERIMENTS-2026-05-07.md). */}
-      <div className="absolute inset-0 z-0" style={{ backgroundColor: getColor(HERO_SRC) }}>
-        <Image
-          src={HERO_SRC}
-          alt="Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack"
-          fill
-          className="object-cover [object-position:center_25%] [transform:translateZ(0)]"
-          sizes="100vw"
-          loading="eager"
-          fetchPriority="high"
-        />
+      {/* Background slideshow — only the image crossfades; text overlay below
+          stays 100% static. backgroundColor renders BEFORE the first image
+          fetches: zero-paint-cost dominant-color preview (matched via
+          build-time manifest). Replaces the reverted blur-SVG approach
+          (see docs/PERF-EXPERIMENTS-2026-05-07.md). */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ backgroundColor: getColor(HERO_IMAGES[0].src) }}
+        aria-hidden="true"
+      >
+        {HERO_IMAGES.map((img, i) => {
+          // Mount only the first image initially; rest after delay to protect
+          // LCP. Each image stays mounted once shown — crossfade swaps opacity,
+          // not the DOM node, so the network fetch happens once per image.
+          if (i > 0 && !secondaryMounted) return null;
+          return (
+            <Image
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              fill
+              className={`object-cover [object-position:center_25%] [transform:translateZ(0)] transition-opacity duration-1000 ease-in-out ${
+                i === active ? "opacity-100" : "opacity-0"
+              }`}
+              sizes="100vw"
+              loading={i === 0 ? "eager" : "lazy"}
+              priority={i === 0}
+              fetchPriority={i === 0 ? "high" : "auto"}
+            />
+          );
+        })}
         {/* Two-layer overlay for mobile text legibility against bright image
             areas (sky, skin, equipment reflections). The first gradient gives
             the top/bottom dark veil for nav + bottom CTAs. The second adds a
             radial darkening centered on the content cluster (~50% down + 40%
             opacity) so PRIVATE GYM headline + CTAs stay readable on ANY image
             section. Tried text-shadow alone first — insufficient on phones in
-            full sunlight against bright torso/sky regions. */}
+            full sunlight against bright torso/sky regions. Overlays stay
+            on top of all slideshow images via z-stack order. */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/15 to-black/50" />
         <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0)_55%)]" />
       </div>
