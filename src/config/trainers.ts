@@ -45,7 +45,7 @@ export interface Trainer {
 // (strongest niche first), not by booking volume. Busy trainers have
 // less availability, which hurts conversion. Clear specialties convert
 // best because visitors pick on need-match, not on who's most popular.
-const DISPLAY_ORDER = ["eva", "joey", "alex", "gezina", "andrea", "sergei", "dara", "jearmey"] as const;
+const DISPLAY_ORDER = ["eva", "bryan", "joey", "alex", "gezina", "andrea", "sergei", "dara", "jearmey"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -93,6 +93,28 @@ const trainersRaw: Trainer[] = [
       en: "As a certified dietitian and personal trainer, Eva offers a unique combination of strength training and nutritional guidance for a holistic approach.",
     },
     image: "/images/trainers/eva.jpg",
+  },
+  {
+    id: "bryan",
+    name: "Bryan",
+    slug: {
+      nl: "plan-gratis-intake-met-bryan",
+      en: "plan-free-intro-with-bryan",
+    },
+    specialization: {
+      nl: ["Calisthenics", "Skills", "Mobiliteit"],
+      en: ["Calisthenics", "Skills", "Mobility"],
+    },
+    languages: ["NL", "EN"],
+    rate: "vanaf €55 / 60 min",
+    instagram: "https://instagram.com/calisthenics_skilllab",
+    instagramHandle: "@calisthenics_skilllab",
+    bio: {
+      nl: "Calisthenics-specialist. Van eerste push-up tot handstand, muscle-up en human flag — Bryan leert je je eigen lichaamsgewicht beheersen met heldere progressies, sterke fundamenten en gerichte mobiliteit.",
+      en: "Calisthenics specialist. From your first push-up to handstand, muscle-up and human flag — Bryan teaches you to master your own bodyweight with clear progressions, strong foundations and targeted mobility.",
+    },
+    image: "/images/trainers/bryan.jpg",
+    whatsapp: "https://wa.me/31642267007",
   },
   {
     id: "gezina",
