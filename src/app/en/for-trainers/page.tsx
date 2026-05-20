@@ -175,7 +175,7 @@ export default function ForTrainersHubEN() {
             </span>
             <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
             <span className="text-muted-foreground">
-              From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
+              <strong className="text-foreground">Private studio</strong> · From €12/hour · 0% commission · No contract · Free cancellation anytime
             </span>
           </div>
         </FadeIn>
@@ -260,7 +260,7 @@ export default function ForTrainersHubEN() {
                 <span className="font-semibold text-white">5.0 on Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70">From €12/hour · 0% commission · Free cancellation anytime</span>
+              <span className="text-white/70"><strong className="text-white/90">Private studio</strong> · From €12/hour · 0% commission · Free cancellation anytime</span>
             </div>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Not sure yet? Come visit for free first.

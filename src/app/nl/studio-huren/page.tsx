@@ -169,6 +169,8 @@ export default function StudioRentalPageNL() {
                   <span className="font-semibold">5,0 Google</span>
                 </span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-semibold text-foreground">Privé studio</span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="font-medium text-muted-foreground">vanaf €12/uur</span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>

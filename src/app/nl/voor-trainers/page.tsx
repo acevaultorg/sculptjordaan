@@ -182,7 +182,7 @@ export default function VoorTrainersHubNL() {
             </span>
             <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
             <span className="text-muted-foreground">
-              Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
+              <strong className="text-foreground">Privé studio</strong> · Vanaf €12/uur · 0% commissie · Geen contract · Altijd gratis annuleren
             </span>
           </div>
         </FadeIn>
@@ -267,7 +267,7 @@ export default function VoorTrainersHubNL() {
                 <span className="font-semibold text-white">5,0 op Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70">Vanaf €12/uur · 0% commissie · Altijd gratis annuleren</span>
+              <span className="text-white/70"><strong className="text-white/90">Privé studio</strong> · Vanaf €12/uur · 0% commissie · Altijd gratis annuleren</span>
             </div>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Twijfel je? Kom eerst gratis langs.

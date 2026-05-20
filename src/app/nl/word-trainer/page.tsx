@@ -118,7 +118,7 @@ export default function WordTrainerNL() {
                 </span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="text-muted-foreground">
-                  Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
+                  <strong className="text-foreground">Privé studio</strong> · Vanaf €12/uur · 0% commissie · Geen contract · Altijd gratis annuleren
                 </span>
               </div>
               {/* CTAs moved ABOVE the bullet list 2026-05-19 (parallel to
@@ -148,6 +148,7 @@ export default function WordTrainerNL() {
                 </ButtonLink>
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
+                <li><strong className="text-foreground">✓ Privé studio</strong> — geen drukte, geen wachten op apparatuur, geen vreemden die meekijken</li>
                 <li>✓ 0% commissie — wat jij rekent, hou jij</li>
                 <li>✓ Huur per uur vanaf €12, of bespaar tot 23% met een pakket</li>
                 <li>✓ Gratis profiel + WhatsApp-CTA op onze website</li>
@@ -325,7 +326,7 @@ export default function WordTrainerNL() {
                 <span className="font-semibold text-white">5,0 op Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70">0% commissie · Geen contract · Altijd gratis annuleren</span>
+              <span className="text-white/70"><strong className="text-white/90">Privé studio</strong> · 0% commissie · Geen contract · Altijd gratis annuleren</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Klaar om te starten?

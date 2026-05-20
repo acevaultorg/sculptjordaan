@@ -117,7 +117,7 @@ export default function BecomeTrainerEN() {
                 </span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="text-muted-foreground">
-                  From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
+                  <strong className="text-foreground">Private studio</strong> · From €12/hour · 0% commission · No contract · Free cancellation anytime
                 </span>
               </div>
               {/* CTAs moved ABOVE the bullet list 2026-05-19. Clarity probe
@@ -151,6 +151,7 @@ export default function BecomeTrainerEN() {
                 </ButtonLink>
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
+                <li><strong className="text-foreground">✓ Private studio</strong> — no crowds, no waiting for equipment, no strangers watching</li>
                 <li>✓ 0% commission — the rate you charge is the rate you keep</li>
                 <li>✓ Rent by the hour from €12, or save up to 23% with a pack</li>
                 <li>✓ Free profile + WhatsApp CTA on our website</li>
@@ -328,7 +329,7 @@ export default function BecomeTrainerEN() {
                 <span className="font-semibold text-white">5.0 on Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70">0% commission · No contract · Free cancellation anytime</span>
+              <span className="text-white/70"><strong className="text-white/90">Private studio</strong> · 0% commission · No contract · Free cancellation anytime</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Ready to get started?

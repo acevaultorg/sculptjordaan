@@ -166,6 +166,8 @@ export default function StudioRentalPageEN() {
                   <span className="font-semibold">5.0 Google</span>
                 </span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="font-semibold text-foreground">Private studio</span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="font-medium text-muted-foreground">from €12/hr</span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>

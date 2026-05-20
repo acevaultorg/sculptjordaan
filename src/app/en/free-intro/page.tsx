@@ -123,7 +123,7 @@ export default function FreeIntroPage() {
         </div>
 
         <p className="mt-6 text-sm text-muted-foreground">
-          No contract · Cancel anytime · 45 minutes · Usually reply within 1 hour
+          Private studio · No contract · Cancel anytime · 45 minutes · Reply within 1 hour
         </p>
 
         {/* Studio photo */}
