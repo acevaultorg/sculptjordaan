@@ -4,9 +4,18 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
+import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
+import { getColor } from "@/lib/image-color-manifest";
 import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar } from "lucide-react";
 import { acuityFreeTrials } from "@/config/acuity";
+
+const HERO_IMAGES = [
+  { src: "/images/studio/training-squat-cinematic.jpg", alt: "Private squat rack in the SculptClub studio in Jordaan" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio in the Jordaan" },
+  { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer running a session at SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Canal view from inside the SculptClub studio" },
+  { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub facade on Egelantiersgracht in the Jordaan" },
+];
 
 export const metadata: Metadata = {
   title: { absolute: "For Personal Trainers in Amsterdam | SculptClub Jordaan" },
@@ -181,16 +190,20 @@ export default function ForTrainersHubEN() {
         </FadeIn>
         <FadeIn>
           <div className="mt-8">
-            <PhotoSlideshow
-              images={[
-                { src: "/images/studio/training-squat-cinematic.jpg", alt: "Private squat rack in the SculptClub studio in Jordaan" },
-                { src: "/images/studio/studio-overview.jpeg", alt: "Full overview of the SculptClub private studio in the Jordaan" },
-                { src: "/images/studio/pt-session-barbell.jpg", alt: "Personal trainer running a session at SculptClub" },
-                { src: "/images/studio/canal-view-doors.jpg", alt: "Canal view from inside the SculptClub studio" },
-                { src: "/images/studio/facade-sculptclub.jpg", alt: "SculptClub facade on Egelantiersgracht in the Jordaan" },
-              ]}
-              aspect="aspect-[16/9]"
-            />
+            {/* Hero slideshow — crossfade through 5 studio angles every 6s.
+                Same RotatingImageStack pattern used on homepage + rental hero
+                (commits 0d594e7 + 9ea1a93). Trainer-funnel consistency: every
+                hero on every trainer page now shows space breadth via slow
+                crossfade. Text/CTA above stays 100% static. */}
+            <div
+              className="relative aspect-[16/9] overflow-hidden rounded-2xl"
+              style={{ backgroundColor: getColor(HERO_IMAGES[0].src) }}
+            >
+              <RotatingImageStack
+                images={HERO_IMAGES}
+                sizes="(max-width: 768px) 100vw, 60vw"
+              />
+            </div>
           </div>
         </FadeIn>
       </Section>
