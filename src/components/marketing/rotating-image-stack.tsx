@@ -37,7 +37,11 @@ export type RotatingStackImage = {
 export function RotatingImageStack({
   images,
   sizes,
-  rotationMs = 6000,
+  // Default 4800ms (20% faster than the initial 6000ms — operator directive
+  // 2026-05-20 "make speed 20% faster of it"). Callers can still pass a
+  // custom rotationMs prop to override per-surface (e.g., if a lower-fold
+  // gallery wants a slower dwell). Crossfade transition stays 1000ms.
+  rotationMs = 4800,
   secondaryMountDelayMs = 2000,
   objectPositionClass = "",
 }: {

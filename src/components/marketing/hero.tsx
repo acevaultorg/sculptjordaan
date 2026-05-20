@@ -60,7 +60,11 @@ const HERO_IMAGES = [
   },
 ];
 
-const ROTATION_MS = 6000;
+// Rotation cadence: 4800ms (20% faster than the initial 6000ms — operator
+// directive 2026-05-20 "make speed 20% faster of it"). Crossfade duration
+// stays at 1000ms (Tailwind duration-1000) — faster transitions would feel
+// jarring on the full-bleed hero; only the dwell-per-slide shortened.
+const ROTATION_MS = 4800;
 const SECONDARY_MOUNT_DELAY_MS = 2000;
 
 export function Hero({ locale }: { locale: Locale }) {
