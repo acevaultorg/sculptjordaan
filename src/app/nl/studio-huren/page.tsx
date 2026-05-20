@@ -12,6 +12,7 @@ import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
+import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import {
   Dumbbell,
   Lock,
@@ -21,11 +22,24 @@ import {
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
-import Image from "next/image";
 import { getColor } from "@/lib/image-color-manifest";
 import type { Metadata } from "next";
 
 const HERO_SRC = "/images/studio/gym-latest.jpg";
+
+/**
+ * Hero side-panel rotates through 4 angles of the studio (per operator
+ * directive 2026-05-20: "new trainers should get a great impressions of
+ * the space quickly"). Same RotatingImageStack discipline as the homepage
+ * hero — only the photo crossfades, the CTAs + headline stay static.
+ * First image keeps LCP-priority; rest mount after 2s delay.
+ */
+const HERO_IMAGES = [
+  { src: HERO_SRC, alt: "Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine" },
+  { src: "/images/studio/turf-lane-canal.jpg", alt: "Turf lane met SCULPT muur-logo en grachtenuitzicht bij SculptClub" },
+  { src: "/images/studio/back-room-full.jpg", alt: "Achterruimte met sled, Rogue rack en bank onder lichtkoepel bij SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht vanuit SculptClub op de Egelantiersgracht in Amsterdam" },
+];
 import {
   Accordion,
   AccordionItem,
@@ -197,13 +211,8 @@ export default function StudioRentalPageNL() {
               className="relative aspect-[4/3] overflow-hidden rounded-2xl"
               style={{ backgroundColor: getColor(HERO_SRC) }}
             >
-              <Image
-                src={HERO_SRC}
-                alt="Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine"
-                fill
-                className="object-cover"
-                loading="eager"
-                fetchPriority="high"
+              <RotatingImageStack
+                images={HERO_IMAGES}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Scroll-stop badge — paid-traffic conversion lever per Clarity 2026-05-16 audit */}

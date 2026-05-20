@@ -12,6 +12,8 @@ import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
+import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
+import { getColor } from "@/lib/image-color-manifest";
 import {
   Dumbbell,
   Lock,
@@ -21,7 +23,6 @@ import {
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
-import Image from "next/image";
 import type { Metadata } from "next";
 import {
   Accordion,
@@ -73,6 +74,19 @@ const galleryImages = [
   { src: "/images/studio/turf-lane-canal.jpg", alt: "Turf lane with SCULPT wall logo and canal view at SculptClub" },
   { src: "/images/studio/back-room-full.jpg", alt: "Back room with sled, Rogue rack and bench under skylight at SculptClub" },
   { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack with plants and vinyl player at SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "View from SculptClub to Egelantiersgracht canal Amsterdam" },
+];
+
+/**
+ * Hero side-panel rotates through 4 studio angles. Same RotatingImageStack
+ * discipline as homepage hero — only the photo crossfades, CTAs + headline
+ * stay static. Per operator directive 2026-05-20: "new trainers should get
+ * a great impressions of the space quickly".
+ */
+const HERO_IMAGES = [
+  { src: "/images/studio/gym-latest.jpg", alt: "Private studio interior at SculptClub Jordaan — personal training equipment, dumbbells, power rack and cable machine" },
+  { src: "/images/studio/turf-lane-canal.jpg", alt: "Turf lane with SCULPT wall logo and canal view at SculptClub" },
+  { src: "/images/studio/back-room-full.jpg", alt: "Back room with sled, Rogue rack and bench under skylight at SculptClub" },
   { src: "/images/studio/canal-view-doors.jpg", alt: "View from SculptClub to Egelantiersgracht canal Amsterdam" },
 ];
 
@@ -190,14 +204,12 @@ export default function StudioRentalPageEN() {
             </FadeIn>
           </div>
           <FadeIn delay={0.2}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image
-                src="/images/studio/gym-latest.jpg"
-                alt="Private studio interior at SculptClub Jordaan — personal training equipment, dumbbells, power rack and cable machine"
-                fill
-                className="object-cover"
-                loading="eager"
-                fetchPriority="high"
+            <div
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+              style={{ backgroundColor: getColor(HERO_IMAGES[0].src) }}
+            >
+              <RotatingImageStack
+                images={HERO_IMAGES}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Scroll-stop badge — paid-traffic conversion lever per Clarity 2026-05-16 audit */}
