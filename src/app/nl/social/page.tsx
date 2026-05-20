@@ -137,7 +137,13 @@ export default function SocialPage() {
   const [postedKeys, setPostedKeys] = useState<Set<string>>(new Set());
   const [now, setNow] = useState<Date | null>(null);
 
-  // Hydrate posted-keys from localStorage on mount + capture client date
+  // Hydrate posted-keys from localStorage on mount + capture client date.
+  // Also auto-switch view to "calendar" / "strategy" / "trainers" when the URL
+  // includes ?view=X OR a #slot-N-N hash (deep-link from an operator-side
+  // social-post share). 2026-05-20: lets the operator paste a single URL
+  // (sculptclub.nl/nl/social?view=calendar#slot-1-3) and land directly on
+  // a specific post slot scrolled into view, instead of opening the page +
+  // clicking Calendar + scrolling.
   useEffect(() => {
     setNow(new Date());
     try {
@@ -145,6 +151,32 @@ export default function SocialPage() {
       if (raw) setPostedKeys(new Set(JSON.parse(raw)));
     } catch {
       /* ignore */
+    }
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const viewParam = params.get("view");
+      const hash = window.location.hash;
+      if (viewParam === "calendar" || viewParam === "strategy" || viewParam === "trainers" || viewParam === "ideas") {
+        setView(viewParam as View);
+      } else if (hash.startsWith("#slot-")) {
+        // A slot anchor only makes sense in the calendar view.
+        setView("calendar");
+      } else if (hash.startsWith("#idea-")) {
+        setView("ideas");
+      }
+      // After view switches + rerender, re-scroll to the anchor (browsers
+      // run hash-scroll on initial load before React mounts the calendar
+      // markup — without this, deep-links land at the top of the page).
+      if (hash) {
+        // Two RAFs: first one waits for view state to apply, second one waits
+        // for the calendar's children to render into the DOM.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const el = document.getElementById(hash.slice(1));
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+      }
     }
   }, []);
 
