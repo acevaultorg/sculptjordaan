@@ -169,10 +169,22 @@ export default function VoorTrainersHubNL() {
             Alleen ruimte huren
           </ButtonLink>
         </FadeIn>
+        {/* 5★ Google trust signal — matches the studio-huren hero pattern.
+            Audit 2026-05-20 found this page (and its EN parallel + the
+            recruitment pages) lacked the rating signal that studio-huren
+            has, costing parity with the most authoritative trust cue for
+            boutique-gym audiences. */}
         <FadeIn>
-          <p className="mt-5 text-sm text-muted-foreground">
-            Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
-          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+            <span className="flex items-center gap-1.5">
+              <span className="text-amber-400" aria-hidden>★★★★★</span>
+              <span className="font-semibold">5,0 op Google</span>
+            </span>
+            <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+            <span className="text-muted-foreground">
+              Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
+            </span>
+          </div>
         </FadeIn>
         <FadeIn>
           <div className="mt-8">

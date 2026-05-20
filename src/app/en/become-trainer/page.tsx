@@ -107,6 +107,19 @@ export default function BecomeTrainerEN() {
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 A private studio in the Jordaan where you keep 100% of what you charge. Rent by the hour from €12, pay only when you train, and get a free profile on sculptclub.nl to help you fill your calendar.
               </p>
+              {/* 5★ Google trust signal — trainer-funnel parity 2026-05-20.
+                  Studio-rental + for-trainers already had this rating; become-trainer
+                  was missing it. Same pattern, same position. */}
+              <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-amber-400" aria-hidden>★★★★★</span>
+                  <span className="font-semibold">5.0 on Google</span>
+                </span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="text-muted-foreground">
+                  From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
+                </span>
+              </div>
               {/* CTAs moved ABOVE the bullet list 2026-05-19. Clarity probe
                   on iPhone 14 Pro (660px viewport) measured the WhatsApp
                   button at y=661 — one pixel below the fold. 25 visitors

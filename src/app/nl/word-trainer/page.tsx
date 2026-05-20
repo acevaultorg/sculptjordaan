@@ -108,6 +108,19 @@ export default function WordTrainerNL() {
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 Een privé studio in de Jordaan waar je 100% houdt van wat je rekent. Huur per uur vanaf €12, betaal alleen wanneer je traint, en krijg een gratis profiel op sculptclub.nl om je agenda te vullen.
               </p>
+              {/* 5★ Google trust signal — trainer-funnel parity 2026-05-20.
+                  Studio-huren + voor-trainers already had this rating; word-trainer
+                  was missing it. Same pattern, same position. */}
+              <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="text-amber-400" aria-hidden>★★★★★</span>
+                  <span className="font-semibold">5,0 op Google</span>
+                </span>
+                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+                <span className="text-muted-foreground">
+                  Vanaf €12/uur · 0% commissie · Geen contract · <strong className="text-foreground">Altijd gratis annuleren</strong> · Dagelijks 06:30–22:00
+                </span>
+              </div>
               {/* CTAs moved ABOVE the bullet list 2026-05-19 (parallel to
                   /en/become-trainer). Mobile fold at iPhone 14 Pro put the
                   WhatsApp button at y=661 px in a 660 px viewport — exactly

@@ -165,10 +165,19 @@ export default function ForTrainersHubEN() {
             Just rent the space
           </ButtonLink>
         </FadeIn>
+        {/* 5★ Google trust signal — parallel to NL /voor-trainers; matches the
+            studio-rental hero pattern. Trust-signal parity 2026-05-20. */}
         <FadeIn>
-          <p className="mt-5 text-sm text-muted-foreground">
-            From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
-          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+            <span className="flex items-center gap-1.5">
+              <span className="text-amber-400" aria-hidden>★★★★★</span>
+              <span className="font-semibold">5.0 on Google</span>
+            </span>
+            <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+            <span className="text-muted-foreground">
+              From €12/hour · 0% commission · No contract · <strong className="text-foreground">Free cancellation anytime</strong> · Daily 06:30–22:00
+            </span>
+          </div>
         </FadeIn>
         <FadeIn>
           <div className="mt-8">
