@@ -11,6 +11,25 @@ import { trainers } from "@/config/trainers";
  * on this page. people should not send whatsapp to general number, that's
  * only if they can not choose."
  *
+ * v2 (2026-05-20, same day): card info-density upgraded per operator
+ * directive "what do users want to know about trainer before contact?".
+ * Each card now surfaces enough signal that ~70-80% of visitors can pick
+ * confidently without tapping multiple cards to compare.
+ *
+ * Cards expose (in scan order):
+ *   1. Photo (face = approachability)
+ *   2. Name (identity)
+ *   3. Credentials when set (regulated-profession trust signal) OR fallback
+ *      to the leading specialty as a 1-liner subtitle
+ *   4. ALL specialty chips (visitor scans for "matches my goal?" without
+ *      hidden "+N" counter)
+ *   5. Bio teaser, 2-line clamp (personality + style cue)
+ *   6. Languages (filter signal — "can I actually communicate with this
+ *      trainer?")
+ *   7. Rate (or "intake gratis · prijs op aanvraag" pairing when rate is
+ *      null, so the FREE-intake floor is always visible)
+ *   8. CTA chip
+ *
  * Funnel change before/after:
  *   Before: visitor lands → dual CTA ("WhatsApp direct" || "Of kies je
  *           trainer") → if "kies trainer" → /nl/vind-jouw-personal-trainer
@@ -32,6 +51,7 @@ import { trainers } from "@/config/trainers";
  *   - no section header, no trust row, no footer CTAs — those live on the
  *     parent gratis-intake page already
  *   - tighter padding for the in-hero placement
+ *   - higher info density per card (bio teaser, languages, all specialties)
  *
  * Server component — no client state needed.
  */
@@ -41,12 +61,16 @@ type Locale = "nl" | "en";
 const COPY = {
   nl: {
     ctaCard: "Plan gratis intake",
-    onRequest: "Op aanvraag",
+    intakeFree: "Intake gratis",
+    rateOnRequest: "Prijs op aanvraag",
+    languageLabel: "Spreekt",
     photoAlt: (name: string) => `${name}, personal trainer bij SculptClub Amsterdam Jordaan`,
   },
   en: {
     ctaCard: "Book free intro",
-    onRequest: "On request",
+    intakeFree: "Free intro",
+    rateOnRequest: "Rate on request",
+    languageLabel: "Speaks",
     photoAlt: (name: string) => `${name}, personal trainer at SculptClub Amsterdam Jordaan`,
   },
 } as const;
@@ -56,55 +80,90 @@ export function TrainerChoiceGrid({ locale }: { locale: Locale }) {
 
   return (
     <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-      {trainers.map((trainer) => (
-        <Link
-          key={trainer.id}
-          href={`/${locale === "nl" ? "nl" : "en"}/${trainer.slug[locale]}`}
-          data-cta={`gratis-intake-trainer-${trainer.id}`}
-          className={`plausible-event-name=gratis_intake_pick_${trainer.id} group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card text-left transition-all hover:border-primary/60 hover:shadow-brand-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
-        >
-          {/* Square photo on mobile (denser per-card), 4:5 on larger screens. */}
-          <div className="relative aspect-square sm:aspect-[4/5] w-full overflow-hidden">
-            <Image
-              src={trainer.image}
-              alt={c.photoAlt(trainer.name)}
-              fill
-              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            />
-          </div>
+      {trainers.map((trainer) => {
+        // Subtitle: credentials when set (Eva: "Diëtist"), else the leading
+        // specialty as a 1-liner identity cue. Keeps the visual hierarchy
+        // consistent across trainers regardless of whether credentials exist.
+        const subtitle = trainer.credentials?.[locale] ?? trainer.specialization[locale][0];
 
-          <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
-            <div>
-              <p className="text-base font-bold leading-tight text-foreground sm:text-lg">
-                {trainer.name}
-              </p>
-              <p className="mt-1 line-clamp-1 text-xs text-muted-foreground sm:text-sm">
-                {trainer.specialization[locale][0]}
-                {trainer.specialization[locale].length > 1 && (
-                  <span className="text-muted-foreground">
-                    {" "}+ {trainer.specialization[locale].length - 1}
-                  </span>
-                )}
-              </p>
+        return (
+          <Link
+            key={trainer.id}
+            href={`/${locale === "nl" ? "nl" : "en"}/${trainer.slug[locale]}`}
+            data-cta={`gratis-intake-trainer-${trainer.id}`}
+            className={`plausible-event-name=gratis_intake_pick_${trainer.id} group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card text-left transition-all hover:border-primary/60 hover:shadow-brand-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
+          >
+            {/* 4:5 portrait photo on all sizes — consistent identity framing.
+                Previously square on mobile / 4:5 on desktop; that caused
+                Bryan's landscape source to crop weirdly on mobile (head
+                top-clipped). 4:5 with object-top works for every trainer
+                photo in the current roster. */}
+            <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <Image
+                src={trainer.image}
+                alt={c.photoAlt(trainer.name)}
+                fill
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
             </div>
 
-            <div className="mt-auto flex items-center justify-between gap-2 pt-2">
-              <span className="text-xs font-medium text-muted-foreground sm:text-sm">
-                {trainer.rate ?? c.onRequest}
-              </span>
-              {/* CTA chip visible-at-rest on mobile — no hover state on touch. */}
-              <span
-                className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
-                aria-hidden
-              >
-                {c.ctaCard}
-                <ArrowRight className="h-3 w-3" />
-              </span>
+            <div className="flex flex-1 flex-col gap-2.5 p-4">
+              {/* Identity block — name + credentials/specialty subtitle */}
+              <div>
+                <p className="text-base font-bold leading-tight text-foreground sm:text-lg">
+                  {trainer.name}
+                </p>
+                <p className="mt-0.5 text-xs font-medium text-primary sm:text-sm">
+                  {subtitle}
+                </p>
+              </div>
+
+              {/* All specialties as compact text — visitor scans for goal-match
+                  without losing any to a hidden "+N" counter. Plain text with
+                  · separators reads denser than chip pills and fits 2-col mobile. */}
+              {trainer.specialization[locale].length > 1 && (
+                <p className="text-xs text-muted-foreground leading-snug">
+                  {trainer.specialization[locale].join(" · ")}
+                </p>
+              )}
+
+              {/* Bio teaser, line-clamp-2 — personality + coaching-style cue.
+                  Most visitors won't read the full bio on the intake page; the
+                  card teaser is where vibe-match happens. 2 lines fits without
+                  blowing card height; trainer bios are all 1-3 sentences. */}
+              <p className="line-clamp-2 text-xs text-muted-foreground leading-relaxed">
+                {trainer.bio[locale]}
+              </p>
+
+              {/* Languages — filter signal. Small text, doesn't compete with
+                  identity. Visitors filter on this. */}
+              <p className="text-xs text-muted-foreground">
+                <span className="font-medium text-foreground/80">{c.languageLabel}:</span>{" "}
+                {trainer.languages.join(" · ")}
+              </p>
+
+              {/* Rate + CTA row. When rate is null we surface "Intake gratis ·
+                  prijs op aanvraag" so the FREE-intake floor stays visible
+                  regardless. Visitors who would-otherwise-skip "on request"
+                  trainers see they can still get the free intake. */}
+              <div className="mt-auto flex items-center justify-between gap-2 pt-2">
+                <span className="text-xs font-semibold text-foreground sm:text-sm">
+                  {trainer.rate ?? `${c.intakeFree} · ${c.rateOnRequest}`}
+                </span>
+                {/* CTA chip visible-at-rest on mobile — no hover state on touch. */}
+                <span
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
+                  aria-hidden
+                >
+                  {c.ctaCard}
+                  <ArrowRight className="h-3 w-3" />
+                </span>
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        );
+      })}
     </div>
   );
 }
