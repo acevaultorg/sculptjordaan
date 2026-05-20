@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
+import { TrainerChoiceGrid } from "@/components/marketing/trainer-choice-grid";
 
 export const metadata: Metadata = {
   title: { absolute: "Gratis Intake Personal Training — SculptClub Jordaan" },
@@ -99,37 +100,46 @@ export default function GratisIntakePage() {
           in de Jordaan. Geen verplichting, geen abonnement.
         </p>
 
-        {/* DUAL PRIMARY CTAs — paid-traffic conversion rescue 2026-05-16.
-            Plausible + Clarity audit showed 2 paid visitors from Google Ads
-            today both bounced /nl/gratis-intake in 5-11s with 0 clicks. The
-            prior single-CTA "Kies je trainer" forced visitors to pick from
-            4 trainers BEFORE booking — too many steps for ad-clickers.
+        {/* PRIMARY ACTION: TRAINER GRID — operator directive 2026-05-20:
+            "let people choose their trainers directly on this page. people
+            should not send whatsapp to general number, that's only if they
+            can not choose."
 
-            Fix: WhatsApp-match becomes the dual-primary (instant 1-click
-            conversion via pre-filled message asking us to match them with the
-            right trainer). "Kies je trainer" stays as secondary for visitors
-            who want to evaluate options themselves. */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            Replaces the prior dual-CTA pattern (WhatsApp-direct emerald +
+            "Of kies je trainer" orange button). The dual-CTA gave equal
+            visual weight to the trainer-match-via-general-WhatsApp path
+            and the pick-your-trainer path — visitors who tapped WhatsApp
+            sent to the general number, operator routed manually. Friction
+            + operator workload + slower handoff.
+
+            Now: trainers visible directly on this page → visitor picks
+            → /nl/plan-gratis-intake-met-<id> (their intake page with the
+            trainer's own WA number + form). General-WhatsApp survives as
+            a small fallback link below the grid for visitors who can't
+            decide and want the operator to route them.
+
+            Cards link to the per-trainer INTAKE PAGE (not direct WA) so
+            visitor sees the trainer's bio + photo + per-trainer WA + form
+            before committing. Identity validation step preserved. */}
+        <TrainerChoiceGrid locale="nl" />
+
+        <div className="mt-6 text-center">
+          <p className="text-xs text-muted-foreground mb-2">
+            Niet zeker welke trainer? We matchen je graag.
+          </p>
           <a
             href={whatsappLinks.intakeMatchNl}
             target="_blank"
             rel="noopener noreferrer"
-            className="plausible-event-name=gratis_intake_whatsapp_direct inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
-            data-cta="gratis-intake-whatsapp-direct"
+            className="plausible-event-name=gratis_intake_whatsapp_match_fallback inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-700 underline-offset-4 hover:underline transition-colors"
+            data-cta="gratis-intake-whatsapp-match-fallback"
           >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp direct
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp ons en wij matchen
           </a>
-          <Link
-            href="/nl/vind-jouw-personal-trainer"
-            className="plausible-event-name=gratis_intake_pick_trainer inline-flex items-center gap-2 bg-brand text-brand-foreground px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
-            data-cta="gratis-intake-pick-trainer"
-          >
-            Of kies je trainer
-            <ArrowRight className="w-5 h-5" />
-          </Link>
         </div>
-        <p className="mt-4 text-sm text-muted-foreground">
+
+        <p className="mt-6 text-sm text-muted-foreground">
           Geen contract · Gratis annuleren · 45 minuten · Meestal antwoord binnen 1 uur
         </p>
 

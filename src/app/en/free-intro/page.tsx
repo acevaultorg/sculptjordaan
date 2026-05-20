@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
+import { TrainerChoiceGrid } from "@/components/marketing/trainer-choice-grid";
 
 export const metadata: Metadata = {
   title: { absolute: "Free Intro Personal Training — SculptClub Jordaan" },
@@ -99,30 +100,29 @@ export default function FreeIntroPage() {
           Jordaan. No obligation, no membership.
         </p>
 
-        {/* DUAL PRIMARY CTAs — paid-traffic conversion rescue 2026-05-16
-            (mirror of NL /gratis-intake fix; same root cause: paid Google Ads
-            visitors bouncing because single-CTA forced multi-step trainer pick). */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        {/* PRIMARY ACTION: TRAINER GRID — see /nl/gratis-intake parallel
+            for the full rationale (operator directive 2026-05-20). Visitors
+            choose their trainer directly on this page instead of routing
+            via a general-WA fallback or a separate find-trainer page. */}
+        <TrainerChoiceGrid locale="en" />
+
+        <div className="mt-6 text-center">
+          <p className="text-xs text-muted-foreground mb-2">
+            Not sure which trainer? We'll happily match you.
+          </p>
           <a
             href={whatsappLinks.intakeMatchEn}
             target="_blank"
             rel="noopener noreferrer"
-            className="plausible-event-name=free_intro_whatsapp_direct inline-flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-700 transition-all active:scale-95 shadow-lg shadow-emerald-600/30"
-            data-cta="free-intro-whatsapp-direct"
+            className="plausible-event-name=free_intro_whatsapp_match_fallback inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-700 underline-offset-4 hover:underline transition-colors"
+            data-cta="free-intro-whatsapp-match-fallback"
           >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp us now
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp us and we'll match
           </a>
-          <Link
-            href="/en/find-personal-trainer"
-            className="plausible-event-name=free_intro_pick_trainer inline-flex items-center gap-2 bg-brand text-brand-foreground px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all active:scale-95 shadow-lg"
-            data-cta="free-intro-pick-trainer"
-          >
-            Or pick your trainer
-            <ArrowRight className="w-5 h-5" />
-          </Link>
         </div>
-        <p className="mt-4 text-sm text-muted-foreground">
+
+        <p className="mt-6 text-sm text-muted-foreground">
           No contract · Cancel anytime · 45 minutes · Usually reply within 1 hour
         </p>
 
