@@ -13,7 +13,7 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Train 1-op-1 met een trainer die bij jouw doel past. Gratis intake, geen contract. Vanaf €45 per sessie.",
+        "Train 1-op-1 in een privé studio met een trainer die bij jouw doel past. Gratis intake, geen contract. Vanaf €45 per sessie.",
       href: "/nl/vind-jouw-personal-trainer",
       cta: "Vind je trainer",
       image: "/images/studio/pt-session-barbell.jpg",
@@ -23,7 +23,7 @@ const services = {
       icon: Building2,
       title: "Studio Huren",
       description:
-        "Voor freelance personal trainers en fysiotherapeuten. Huur de studio per uur, behoud je klanten, 0% commissie. Vanaf €12/60 min.",
+        "Privé trainingsruimte voor freelance personal trainers en fysiotherapeuten. Huur per uur, behoud je klanten, 0% commissie. Vanaf €12/60 min.",
       href: "/nl/studio-huren",
       cta: "Bekijk studio & tarieven",
       image: "/images/studio/studio-overview.jpeg",
@@ -35,7 +35,7 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Train 1-on-1 with a trainer who fits your goals. Free intro, no contract. From €45 per session.",
+        "Train 1-on-1 in a private studio with a trainer who fits your goals. Free intro, no contract. From €45 per session.",
       href: "/en/find-personal-trainer",
       cta: "Find your trainer",
       image: "/images/studio/pt-session-barbell.jpg",
@@ -45,7 +45,7 @@ const services = {
       icon: Building2,
       title: "Studio Rental",
       description:
-        "For freelance personal trainers and physiotherapists. Rent the studio per hour, keep your clients, 0% commission. From €12/60 min.",
+        "Private training space for freelance personal trainers and physiotherapists. Rent per hour, keep your clients, 0% commission. From €12/60 min.",
       href: "/en/studio-rental",
       cta: "View studio & rates",
       image: "/images/studio/studio-overview.jpeg",
