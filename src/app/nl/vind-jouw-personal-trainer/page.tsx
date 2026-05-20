@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 };
 
 const trustBadges = [
+  { icon: Building2, label: "Privé studio" },
   { icon: Star, label: "5.0 op Google" },
   { icon: Users, label: `${trainers.length} trainers` },
   { icon: Gift, label: "Gratis intake" },
@@ -133,7 +134,7 @@ export default function TrainersPageNL() {
           as="h1"
           overline="Personal Trainers"
           title="Vind Jouw Personal Trainer"
-          description="Eerste intake gratis · Sessies vanaf €45 · Kies je trainer, of laat ons matchen."
+          description="Privé studio · Eerste intake gratis · Sessies vanaf €45 · Kies je trainer, of laat ons matchen."
         />
 
         {/* Trust badges */}

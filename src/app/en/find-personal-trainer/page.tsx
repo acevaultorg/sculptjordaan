@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 };
 
 const trustBadges = [
+  { icon: Building2, label: "Private studio" },
   { icon: Star, label: "5.0 on Google" },
   { icon: Users, label: `${trainers.length} trainers` },
   { icon: Gift, label: "Free intro" },
@@ -133,7 +134,7 @@ export default function TrainersPageEN() {
           as="h1"
           overline="Personal Trainers"
           title="Find Your Personal Trainer"
-          description="First intro free · Sessions from €45 · Pick your trainer, or let us match."
+          description="Private studio · First intro free · Sessions from €45 · Pick your trainer, or let us match."
         />
 
         {/* Trust badges */}
