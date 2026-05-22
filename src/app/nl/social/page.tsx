@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Card, CardContent } from "@/components/ui/card";
-import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle, Users, ArrowRight } from "lucide-react";
+import { Copy, Check, Clock, Image as ImageIcon, Video, Download, Calendar, Sparkles, CheckCircle2, Circle, Users, ArrowRight, LayoutGrid, Link as LinkIcon } from "lucide-react";
 import {
   SOCIAL_IDEAS,
   PILLARS,
@@ -17,7 +17,7 @@ import {
 import { trainers } from "@/config/trainers";
 
 type Filter = "all" | Pillar;
-type View = "ideas" | "calendar" | "strategy" | "trainers";
+type View = "overview" | "ideas" | "calendar" | "strategy" | "trainers";
 
 // Which pillars a trainer can authentically post about themselves
 const TRAINER_PILLARS: Pillar[] = ["pt-showcase", "trainer-spotlight", "fitness-tip", "before-after"];
@@ -131,7 +131,13 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
 }
 
 export default function SocialPage() {
-  const [view, setView] = useState<View>("ideas");
+  // Default landing view is "overview" — operator directive 2026-05-22:
+  // "structure /social better, 1 good overview of all posts". The overview
+  // shows today's post as a hero card + a flat sortable table of all 16
+  // posts (real next-date) — 0 clicks to see what to post today + the next
+  // 7-30 days at a glance. Previously default was "ideas" which forced an
+  // extra tap to reach the calendar.
+  const [view, setView] = useState<View>("overview");
   const [platform, setPlatform] = useState<Platform | "all">("all");
   const [pillar, setPillar] = useState<Filter>("all");
   const [postedKeys, setPostedKeys] = useState<Set<string>>(new Set());
@@ -156,7 +162,7 @@ export default function SocialPage() {
       const params = new URLSearchParams(window.location.search);
       const viewParam = params.get("view");
       const hash = window.location.hash;
-      if (viewParam === "calendar" || viewParam === "strategy" || viewParam === "trainers" || viewParam === "ideas") {
+      if (viewParam === "overview" || viewParam === "calendar" || viewParam === "strategy" || viewParam === "trainers" || viewParam === "ideas") {
         setView(viewParam as View);
       } else if (hash.startsWith("#slot-")) {
         // A slot anchor only makes sense in the calendar view.
@@ -217,8 +223,20 @@ export default function SocialPage() {
           <strong className="font-semibold">Why is this tool in English?</strong> Because AI-generated Dutch invents words no native would say. So this library is honest about its limits: brain delivers the <em>brief</em> (what to communicate, what facts to mention, what CTA, what length) in English. You translate to natural Dutch in your own voice. Photos, scripts, hashtags don't need translation.
         </FadeIn>
 
-        {/* View toggle: Ideas / Calendar / Strategy */}
+        {/* View toggle: Overview / Ideas / Calendar / Strategy / Trainers */}
         <FadeIn className="mt-6 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setView("overview")}
+            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition ${
+              view === "overview"
+                ? "border-brand bg-brand text-brand-foreground"
+                : "border-white/20 bg-white/5 text-white/80 hover:bg-white/10"
+            }`}
+          >
+            <LayoutGrid className="h-3.5 w-3.5" />
+            Overview
+          </button>
           <button
             type="button"
             onClick={() => setView("ideas")}
@@ -268,6 +286,208 @@ export default function SocialPage() {
             Per trainer ({trainers.length})
           </button>
         </FadeIn>
+
+        {/* Overview — operator-facing dashboard. One scannable surface
+            showing TODAY's post (hero card) + a flat table of all 16
+            posts sorted by next-occurrence date. Each row is a 1-tap
+            deep-link to the calendar view scrolled to that exact slot,
+            plus a "Copy share link" affordance so operator can save
+            individual slot URLs to phone shortcuts.
+
+            Operator directive 2026-05-22: "structure /social better,
+            1 good overview of all posts". Previously the calendar view
+            grouped posts into 4-week rotation buckets requiring scroll
+            to find specific slots; ?view=calendar#slot-1-3 deep-links
+            were technically reachable but operationally hidden. */}
+        {view === "overview" && now && (() => {
+          // Build flat sorted list of all 16 slots with real next-date
+          type EnrichedSlot = (typeof POSTING_CALENDAR)[number] & {
+            realDate: Date | null;
+            daysFromNow: number | null;
+            idea: typeof SOCIAL_IDEAS[number] | undefined;
+            sKey: string;
+            isPosted: boolean;
+          };
+          const enriched: EnrichedSlot[] = POSTING_CALENDAR.map((s) => {
+            const realDate = realDateForSlot(now, s.weekNumber, s.weekday);
+            const daysFromNow = realDate
+              ? Math.round((realDate.setHours(0, 0, 0, 0) - new Date(now).setHours(0, 0, 0, 0)) / 86400000)
+              : null;
+            const idea = SOCIAL_IDEAS.find((i) => i.id === s.ideaId);
+            const sKey = slotKey(s.weekNumber, s.weekday, s.ideaId);
+            return { ...s, realDate: realDate ? new Date(realDate.setHours(0, 0, 0, 0)) : null, daysFromNow, idea, sKey, isPosted: postedKeys.has(sKey) };
+          });
+          enriched.sort((a, b) => (a.daysFromNow ?? 999) - (b.daysFromNow ?? 999));
+          const todaySlot = enriched.find((s) => s.daysFromNow === 0 && !s.isPosted) ?? enriched[0];
+
+          const goToSlot = (s: EnrichedSlot) => {
+            setView("calendar");
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                const el = document.getElementById(`slot-${s.weekNumber}-${s.weekday}`);
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              });
+            });
+          };
+
+          const copyShareLink = async (s: EnrichedSlot) => {
+            const url = `https://sculptclub.nl/nl/social?view=calendar#slot-${s.weekNumber}-${s.weekday}`;
+            try {
+              await navigator.clipboard.writeText(url);
+            } catch { /* ignore */ }
+          };
+
+          const sideColor = (pillar: Pillar | undefined) => {
+            if (!pillar) return "";
+            const side = PILLAR_TO_AUDIENCE[pillar];
+            return side === "demand" ? "text-emerald-300" : side === "supply" ? "text-amber-300" : "text-purple-300";
+          };
+
+          return (
+            <FadeIn className="mt-8 space-y-6">
+              {/* TODAY hero — biggest visual hit */}
+              {todaySlot?.idea && (
+                <Card className="border-brand/40 bg-brand/10">
+                  <CardContent className="space-y-4 p-6">
+                    <div className="flex flex-wrap items-baseline justify-between gap-3">
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-wider text-brand">
+                          {todaySlot.daysFromNow === 0 ? "Today · post now" : todaySlot.daysFromNow === 1 ? "Tomorrow" : todaySlot.realDate ? `In ${todaySlot.daysFromNow}d · ${MONTH_NL[todaySlot.realDate.getMonth()]} ${todaySlot.realDate.getDate()}` : "Up next"}
+                          {" · "}{todaySlot.weekdayLabel} {todaySlot.bestTime} · {todaySlot.platform.toUpperCase()} {todaySlot.idea.format}
+                        </p>
+                        <h2 className="mt-1 text-xl font-bold text-white">{todaySlot.idea.title}</h2>
+                        <p className="mt-1 text-sm italic text-white/65">{todaySlot.rationale}</p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => goToSlot(todaySlot)}
+                        className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-brand-foreground transition hover:bg-brand/90"
+                      >
+                        Open full brief
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </button>
+                    </div>
+                    <div className="rounded-lg bg-black/30 p-3">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-white/55">Hook concept</p>
+                      <p className="mt-1 text-sm text-white/90 italic">{todaySlot.idea.brief.hookConcept}</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-white/60">
+                      <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold">{todaySlot.idea.pillar.replace("-", " ")}</span>
+                      <span className={`font-semibold ${sideColor(todaySlot.idea.pillar)}`}>
+                        {PILLAR_TO_AUDIENCE[todaySlot.idea.pillar]}
+                      </span>
+                      {todaySlot.idea.duration && (<span><Clock className="inline h-3 w-3" /> {todaySlot.idea.duration}</span>)}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* All-posts table */}
+              <Card>
+                <CardContent className="p-0">
+                  <div className="border-b border-white/10 px-5 py-4">
+                    <h3 className="text-base font-bold text-white">All posts ({enriched.length})</h3>
+                    <p className="mt-1 text-xs text-white/55">
+                      Sorted by next occurrence · {postedKeys.size} of {enriched.length} marked posted ·
+                      tap any row to open the full brief in the Calendar view
+                    </p>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-white/10 bg-white/[0.03] text-left text-[10px] font-semibold uppercase tracking-wider text-white/55">
+                          <th className="px-4 py-2.5">When</th>
+                          <th className="px-2 py-2.5">Platform</th>
+                          <th className="px-2 py-2.5">Pillar</th>
+                          <th className="px-2 py-2.5">Title</th>
+                          <th className="px-2 py-2.5 text-center">Status</th>
+                          <th className="px-2 py-2.5 text-right">Link</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {enriched.map((s) => {
+                          if (!s.idea) return null;
+                          const dayLabel =
+                            s.daysFromNow === 0 ? "Today" :
+                            s.daysFromNow === 1 ? "Tomorrow" :
+                            s.realDate ? `${MONTH_NL[s.realDate.getMonth()]} ${s.realDate.getDate()}` : "—";
+                          return (
+                            <tr
+                              key={s.sKey}
+                              className={`border-b border-white/5 transition hover:bg-white/[0.04] ${s.isPosted ? "opacity-50" : ""}`}
+                            >
+                              <td className="px-4 py-3 align-top">
+                                <button
+                                  type="button"
+                                  onClick={() => goToSlot(s)}
+                                  className="text-left"
+                                >
+                                  <p className="text-xs font-semibold text-white">{dayLabel}</p>
+                                  <p className="text-[11px] text-white/50">{s.weekdayLabel} {s.bestTime}</p>
+                                </button>
+                              </td>
+                              <td className="px-2 py-3 align-top">
+                                <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${s.platform === "tiktok" ? "bg-pink-500/20 text-pink-300" : "bg-purple-500/20 text-purple-300"}`}>
+                                  {s.platform}
+                                </span>
+                              </td>
+                              <td className="px-2 py-3 align-top">
+                                <span className={`text-[11px] font-semibold uppercase tracking-wider ${sideColor(s.idea.pillar)}`}>
+                                  {s.idea.pillar.replace("-", " ")}
+                                </span>
+                              </td>
+                              <td className="px-2 py-3 align-top">
+                                <button type="button" onClick={() => goToSlot(s)} className="text-left text-sm text-white/90 hover:text-brand">
+                                  {s.idea.title}
+                                </button>
+                              </td>
+                              <td className="px-2 py-3 text-center align-top">
+                                <button
+                                  type="button"
+                                  onClick={() => togglePosted(s.sKey)}
+                                  aria-label={s.isPosted ? "Mark not posted" : "Mark posted"}
+                                  className={`inline-flex h-6 w-6 items-center justify-center rounded-full transition ${s.isPosted ? "bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30" : "bg-white/5 text-white/40 hover:bg-white/10 hover:text-white/70"}`}
+                                >
+                                  {s.isPosted ? <CheckCircle2 className="h-3.5 w-3.5" /> : <Circle className="h-3.5 w-3.5" />}
+                                </button>
+                              </td>
+                              <td className="px-2 py-3 text-right align-top">
+                                <div className="flex items-center justify-end gap-1">
+                                  <button
+                                    type="button"
+                                    onClick={() => copyShareLink(s)}
+                                    aria-label="Copy share link"
+                                    className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white/40 transition hover:bg-white/10 hover:text-white"
+                                    title={`Copy share link to clipboard`}
+                                  >
+                                    <LinkIcon className="h-3.5 w-3.5" />
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={() => goToSlot(s)}
+                                    aria-label="Open full brief"
+                                    className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white/60 transition hover:bg-white/10 hover:text-brand"
+                                  >
+                                    <ArrowRight className="h-3.5 w-3.5" />
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <p className="text-center text-xs text-white/45">
+                Tip: bookmark <code className="rounded bg-white/10 px-1.5 py-0.5">sculptclub.nl/nl/social</code> as a home-screen
+                shortcut on your phone — overview opens by default with today&apos;s post highlighted.
+              </p>
+            </FadeIn>
+          );
+        })()}
 
         {view === "trainers" && (
           <FadeIn className="mt-8 space-y-6">
