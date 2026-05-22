@@ -282,6 +282,19 @@ export default function SocialPage() {
           <strong className="font-semibold">Why is this tool in English?</strong> Because AI-generated Dutch invents words no native would say. So this library is honest about its limits: brain delivers the <em>brief</em> (what to communicate, what facts to mention, what CTA, what length) in English. You translate to natural Dutch in your own voice. Photos, scripts, hashtags don't need translation.
         </FadeIn>
 
+        {/* Sibling-surface cross-link — operator 2026-05-22 navigated to
+            /social by mistake and didn't see this dashboard. /social is the
+            static-HTML post-asset gallery; this is the planner. */}
+        <FadeIn className="mt-3 flex flex-wrap items-center gap-2 text-xs text-white/55">
+          <span>Looking for ready-to-post slide previews (IG carousels)?</span>
+          <a
+            href="/social"
+            className="inline-flex items-center gap-1 rounded-md border border-white/15 bg-white/5 px-2.5 py-1 font-semibold text-brand transition hover:bg-white/10"
+          >
+            📁 Open /social gallery
+          </a>
+        </FadeIn>
+
         {/* View toggle: Overview / Ideas / Calendar / Strategy / Trainers */}
         <FadeIn className="mt-6 flex flex-wrap gap-2">
           <button
