@@ -141,8 +141,8 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: null,
-    // Instagram intentionally omitted — operator needs to supply Ibrahim's
-    // personal IG handle. Empty fields gracefully skip the IG-icon render.
+    instagram: "https://www.instagram.com/beter_dan_gister_/",
+    instagramHandle: "@beter_dan_gister_",
     bio: {
       nl: "Als personal trainer help ik mensen doelgericht werken aan een fitter en gezonder lichaam. Mijn specialisatie ligt in voeding en afvallen, waarbij ik praktische en haalbare plannen maak die passen bij jouw levensstijl. Daarnaast begeleid ik ook bij revalidatie, zodat je op een veilige en verantwoorde manier weer sterker en pijnvrij kunt bewegen.",
       en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss — I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
