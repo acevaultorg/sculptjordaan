@@ -779,83 +779,76 @@ Vragen? Stuur mij een appje. — Paulo`;
               );
             })()}
             <p className="text-sm text-white/70">
-              4-week rotation · 16 posts/month · everything you need for each post is inline below — hook, script, brief, hashtags, visuals (click to download), and a one-click "Copy everything" button per post.
+              16 posts sorted by upcoming date. Each card below has the full brief — hook, script, caption brief, hashtags, downloadable visuals + one-tap copy buttons. Operator 2026-05-22: "date based calendar, so for example, 22 may" — week-rotation grouping replaced with flat date-sorted layout.
             </p>
             {(() => {
-              const currentRotation = now ? getRotationWeek(now) : 1;
-              const orderedWeeks = [0, 1, 2, 3].map(
-                (offset) => ((((currentRotation - 1 + offset) % 4) + 1) as 1 | 2 | 3 | 4),
-              );
-              return orderedWeeks.map((weekNum, idx) => {
-              const weekSlots = POSTING_CALENDAR.filter((s) => s.weekNumber === weekNum);
-              const weekFirstSlot = weekSlots[0];
-              const weekDate = now && weekFirstSlot
-                ? realDateForSlot(now, weekNum, weekFirstSlot.weekday)
-                : null;
-              const weekLabel = idx === 0 ? "This week" : idx === 1 ? "Next week" : `In ${idx} weeks`;
-              return (
-                <Card key={`${weekNum}-${idx}`} className="border-white/10 bg-white/[0.02]">
-                  <CardContent className="p-5">
-                    <div className="mb-4 flex items-baseline justify-between gap-3 flex-wrap">
-                      <h3 className="text-base font-bold uppercase tracking-wider text-brand">
-                        {weekLabel}
-                        {weekDate && (
-                          <span className="ml-2 text-xs font-normal normal-case tracking-normal text-white/55">
-                            week of {formatShortDate(weekDate)}
-                          </span>
+              // Same enriched-sorted pattern as Overview view — flat list,
+              // ascending by next-occurrence real date. Replaces the previous
+              // 4-week-Card grouping (operator-confusing for date-driven
+              // workflow).
+              type EnrichedSlot = (typeof POSTING_CALENDAR)[number] & {
+                realDate: Date | null;
+                daysFromNow: number | null;
+                idea: typeof SOCIAL_IDEAS[number] | undefined;
+                sKey: string;
+                isPosted: boolean;
+              };
+              const enriched: EnrichedSlot[] = POSTING_CALENDAR.map((s) => {
+                const realDate = now ? realDateForSlot(now, s.weekNumber, s.weekday) : null;
+                const daysFromNow = realDate && now
+                  ? Math.round((new Date(realDate).setHours(0, 0, 0, 0) - new Date(now).setHours(0, 0, 0, 0)) / 86400000)
+                  : null;
+                const idea = SOCIAL_IDEAS.find((i) => i.id === s.ideaId);
+                const sKey = slotKey(s.weekNumber, s.weekday, s.ideaId);
+                return { ...s, realDate, daysFromNow, idea, sKey, isPosted: postedKeys.has(sKey) };
+              });
+              enriched.sort((a, b) => (a.daysFromNow ?? 999) - (b.daysFromNow ?? 999));
+
+              return enriched.map((slot) => {
+                const idea = slot.idea;
+                if (!idea) return null;
+                const side = PILLAR_TO_AUDIENCE[idea.pillar];
+                const sideBadge = {
+                  demand: { bg: "bg-emerald-500/20", text: "text-emerald-300", label: "demand" },
+                  supply: { bg: "bg-amber-500/20", text: "text-amber-300", label: "supply" },
+                  broad: { bg: "bg-purple-500/20", text: "text-purple-300", label: "broad" },
+                }[side];
+                const sKey = slot.sKey;
+                const isPosted = slot.isPosted;
+                const realDate = slot.realDate;
+                const dayBig = realDate ? realDate.getDate() : "?";
+                const monthShort = realDate ? MONTH_NL[realDate.getMonth()] : "—";
+                const tagDateLabel =
+                  slot.daysFromNow === 0
+                    ? "Today"
+                    : slot.daysFromNow === 1
+                      ? "Tomorrow"
+                      : slot.daysFromNow !== null && slot.daysFromNow >= 0
+                        ? `+${slot.daysFromNow}d`
+                        : "";
+                return (
+                  <div
+                    key={slot.sKey}
+                    id={`slot-${slot.weekNumber}-${slot.weekday}`}
+                    className={`rounded-xl border p-4 space-y-4 transition ${
+                      isPosted
+                        ? "border-emerald-500/30 bg-emerald-500/[0.04] opacity-60"
+                        : slot.daysFromNow === 0 && !isPosted
+                          ? "border-brand/40 bg-brand/[0.06]"
+                          : "border-white/10 bg-white/[0.03]"
+                    }`}
+                  >
+                    {/* Slot header — date is now the dominant visual */}
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+                      <div className="flex flex-shrink-0 flex-col items-center justify-center rounded-lg bg-brand/15 border border-brand/30 px-3 py-3 sm:w-28">
+                        <p className="text-3xl font-bold text-white leading-none">{dayBig}</p>
+                        <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-brand">{monthShort}</p>
+                        <p className="mt-1.5 text-[10px] text-white/60">{slot.weekdayLabel}</p>
+                        <p className="mt-1 text-sm font-bold text-white">{slot.bestTime}</p>
+                        {tagDateLabel && (
+                          <p className="mt-1 text-[9px] font-semibold uppercase tracking-wider text-brand/85">{tagDateLabel}</p>
                         )}
-                      </h3>
-                      <div className="flex items-center gap-2">
-                        <CopyButton
-                          label="Copy week schedule"
-                          text={`📅 SculptClub social — ${weekLabel.toLowerCase()}${weekDate ? ` (${formatShortDate(weekDate)})` : ""}\n\n${weekSlots
-                            .map((s) => {
-                              const i = SOCIAL_IDEAS.find((x) => x.id === s.ideaId);
-                              const d = now ? realDateForSlot(now, s.weekNumber, s.weekday) : null;
-                              return `${s.weekdayLabel}${d ? ` ${formatShortDate(d)}` : ""} · ${s.bestTime} · ${s.platform.toUpperCase()} ${i?.format ?? ""}\n   ${i?.title ?? ""}`;
-                            })
-                            .join("\n\n")}\n\nFull briefs + visuals: sculptclub.nl/nl/social`}
-                        />
-                        <span className="text-[10px] uppercase tracking-wider text-white/40">
-                          rotation {weekNum}/4
-                        </span>
                       </div>
-                    </div>
-                    <div className="space-y-6">
-                      {weekSlots.map((slot) => {
-                        const idea = SOCIAL_IDEAS.find((i) => i.id === slot.ideaId);
-                        if (!idea) return null;
-                        const side = PILLAR_TO_AUDIENCE[idea.pillar];
-                        const sideBadge = {
-                          demand: { bg: "bg-emerald-500/20", text: "text-emerald-300", label: "demand" },
-                          supply: { bg: "bg-amber-500/20", text: "text-amber-300", label: "supply" },
-                          broad: { bg: "bg-purple-500/20", text: "text-purple-300", label: "broad" },
-                        }[side];
-                        const sKey = slotKey(slot.weekNumber, slot.weekday, slot.ideaId);
-                        const isPosted = postedKeys.has(sKey);
-                        return (
-                          <div
-                            key={`${weekNum}-${slot.weekday}`}
-                            id={`slot-${slot.weekNumber}-${slot.weekday}`}
-                            className={`rounded-xl border p-4 space-y-4 transition ${
-                              isPosted
-                                ? "border-emerald-500/30 bg-emerald-500/[0.04] opacity-60"
-                                : "border-white/10 bg-white/[0.03]"
-                            }`}
-                          >
-                            {/* Slot header */}
-                            <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
-                              <div className="flex flex-shrink-0 flex-col items-center justify-center rounded-lg bg-brand/15 border border-brand/30 p-3 sm:w-28">
-                                <p className="text-[10px] font-semibold uppercase tracking-wider text-brand">{slot.weekdayLabel}</p>
-                                {(() => {
-                                  const realDate = now ? realDateForSlot(now, slot.weekNumber, slot.weekday) : null;
-                                  return realDate ? (
-                                    <p className="text-[11px] font-medium text-white/75">{formatShortDate(realDate)}</p>
-                                  ) : null;
-                                })()}
-                                <p className="text-lg font-bold text-white">{slot.bestTime}</p>
-                                <p className="text-[9px] text-white/50">Amsterdam</p>
-                              </div>
                               <div className="flex-1">
                                 <div className="mb-2 flex justify-end">
                                   <button
@@ -1019,21 +1012,20 @@ Vragen? Stuur mij een appje. — Paulo`;
                               </div>
                             )}
 
-                            {/* Copy everything */}
-                            <div className="border-t border-white/10 pt-3">
-                              <CopyButton
-                                text={`${slot.weekdayLabel} ${slot.bestTime} · ${slot.platform.toUpperCase()} · ${idea.format}\n\nHook concept: ${idea.brief.hookConcept}\n\nScript:\n${idea.script}\n\nCaption message:\n${idea.brief.message}\n\nFacts to include:\n${idea.brief.facts.map(f => `• ${f}`).join("\n")}\n\nCTA: ${idea.brief.cta}\nLength: ${idea.brief.targetLength}\n\nHashtags:\n${idea.hashtags}\n\nVisual notes:\n${idea.visualNote}`}
-                                label="Copy everything for this post"
-                              />
-                            </div>
-                          </div>
-                        );
-                      })}
+                    {/* Copy everything */}
+                    <div className="border-t border-white/10 pt-3 flex flex-wrap gap-2">
+                      <CopyButton
+                        text={buildPlatformCopy(idea, slot.platform)}
+                        label={slot.platform === "tiktok" ? "Copy title + description + #" : "Copy caption + #"}
+                      />
+                      <CopyButton
+                        text={`${slot.weekdayLabel} ${slot.bestTime} · ${slot.platform.toUpperCase()} · ${idea.format}\n\nHook concept: ${idea.brief.hookConcept}\n\nScript:\n${idea.script}\n\nCaption message:\n${idea.brief.message}\n\nFacts to include:\n${idea.brief.facts.map(f => `• ${f}`).join("\n")}\n\nCTA: ${idea.brief.cta}\nLength: ${idea.brief.targetLength}\n\nHashtags:\n${idea.hashtags}\n\nVisual notes:\n${idea.visualNote}`}
+                        label="Copy everything"
+                      />
                     </div>
-                  </CardContent>
-                </Card>
-              );
-            });
+                  </div>
+                );
+              });
             })()}
           </FadeIn>
         )}
