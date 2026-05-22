@@ -563,6 +563,128 @@ export default function SocialPage() {
                 </CardContent>
               </Card>
 
+              {/* Unscheduled ideas pool — operator 2026-05-22: "i think a lot
+                  of posts you made are missing on /social". The data set has
+                  52 SOCIAL_IDEAS but POSTING_CALENDAR only schedules 16. The
+                  other 36 (trainer-spotlights for newer trainers, ads,
+                  before/after, AEO posts, pricetag variants, alt tour/local
+                  posts) are now surfaced here as an "evergreen pool" —
+                  postable any time, not tied to a specific calendar slot. */}
+              {(() => {
+                const scheduledIds = new Set(POSTING_CALENDAR.map((s) => s.ideaId));
+                const unscheduledIdeas = SOCIAL_IDEAS.filter((i) => !scheduledIds.has(i.id))
+                  .sort((a, b) => {
+                    // Ads at the bottom (different posting flow — paid not organic)
+                    if (a.pillar === "paid-ad" && b.pillar !== "paid-ad") return 1;
+                    if (b.pillar === "paid-ad" && a.pillar !== "paid-ad") return -1;
+                    return a.id.localeCompare(b.id);
+                  });
+                if (unscheduledIdeas.length === 0) return null;
+
+                const goToIdea = (ideaId: string) => {
+                  setView("ideas");
+                  requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                      const el = document.getElementById(`idea-${ideaId}`);
+                      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    });
+                  });
+                };
+
+                const copyShareLinkIdea = async (ideaId: string) => {
+                  try {
+                    await navigator.clipboard.writeText(`https://sculptclub.nl/nl/social?view=ideas#idea-${ideaId}`);
+                  } catch { /* ignore */ }
+                };
+
+                const sideColorPillar = (pillar: Pillar) => {
+                  const side = PILLAR_TO_AUDIENCE[pillar];
+                  return side === "demand" ? "text-emerald-300" : side === "supply" ? "text-amber-300" : "text-purple-300";
+                };
+
+                const adCount = unscheduledIdeas.filter((i) => i.pillar === "paid-ad").length;
+                const organicCount = unscheduledIdeas.length - adCount;
+
+                return (
+                  <Card>
+                    <CardContent className="p-0">
+                      <div className="border-b border-white/10 px-5 py-4">
+                        <h3 className="text-base font-bold text-white">Evergreen pool ({unscheduledIdeas.length})</h3>
+                        <p className="mt-1 text-xs text-white/55">
+                          Posts that exist but aren&apos;t on the 4-week rotation. Post any time — no fixed date.
+                          {organicCount > 0 && ` ${organicCount} organic`}
+                          {adCount > 0 && ` · ${adCount} paid ad${adCount === 1 ? "" : "s"} (separate posting flow via Meta Ads)`}
+                        </p>
+                      </div>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead>
+                            <tr className="border-b border-white/10 bg-white/[0.03] text-left text-[10px] font-semibold uppercase tracking-wider text-white/55">
+                              <th className="px-4 py-2.5">Type</th>
+                              <th className="px-2 py-2.5">Platform</th>
+                              <th className="px-2 py-2.5">Pillar</th>
+                              <th className="px-2 py-2.5">Title</th>
+                              <th className="px-2 py-2.5 text-right">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {unscheduledIdeas.map((idea) => (
+                              <tr key={idea.id} className="border-b border-white/5 transition hover:bg-white/[0.04]">
+                                <td className="px-4 py-3 align-top">
+                                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${idea.pillar === "paid-ad" ? "bg-orange-500/20 text-orange-300" : "bg-white/10 text-white/70"}`}>
+                                    {idea.pillar === "paid-ad" ? "Ad" : "Evergreen"}
+                                  </span>
+                                </td>
+                                <td className="px-2 py-3 align-top">
+                                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${idea.platform === "tiktok" ? "bg-pink-500/20 text-pink-300" : "bg-purple-500/20 text-purple-300"}`}>
+                                    {idea.platform}
+                                  </span>
+                                </td>
+                                <td className="px-2 py-3 align-top">
+                                  <span className={`text-[11px] font-semibold uppercase tracking-wider ${sideColorPillar(idea.pillar)}`}>
+                                    {idea.pillar.replace("-", " ")}
+                                  </span>
+                                </td>
+                                <td className="px-2 py-3 align-top">
+                                  <button type="button" onClick={() => goToIdea(idea.id)} className="text-left text-sm text-white/90 hover:text-brand">
+                                    {idea.title}
+                                  </button>
+                                </td>
+                                <td className="px-2 py-3 text-right align-top">
+                                  <div className="flex items-center justify-end gap-1">
+                                    <CopyIconButton
+                                      text={buildPlatformCopy(idea, idea.platform)}
+                                      title={idea.platform === "tiktok" ? "Copy title + description + 5 hashtags" : "Copy caption + 5 hashtags"}
+                                    />
+                                    <button
+                                      type="button"
+                                      onClick={() => copyShareLinkIdea(idea.id)}
+                                      aria-label="Copy share link"
+                                      title="Copy share link to clipboard"
+                                      className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white/40 transition hover:bg-white/10 hover:text-white"
+                                    >
+                                      <LinkIcon className="h-3.5 w-3.5" />
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => goToIdea(idea.id)}
+                                      aria-label="Open full brief"
+                                      className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white/60 transition hover:bg-white/10 hover:text-brand"
+                                    >
+                                      <ArrowRight className="h-3.5 w-3.5" />
+                                    </button>
+                                  </div>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })()}
+
               <p className="text-center text-xs text-white/45">
                 Tip: bookmark <code className="rounded bg-white/10 px-1.5 py-0.5">sculptclub.nl/nl/social</code> as a home-screen
                 shortcut on your phone — overview opens by default with today&apos;s post highlighted.
