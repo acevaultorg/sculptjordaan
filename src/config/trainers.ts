@@ -23,8 +23,15 @@ export interface Trainer {
   specialization: Record<Locale, string[]>;
   languages: string[];
   rate: string | null;
-  instagram: string;
-  instagramHandle: string;
+  /**
+   * Trainer's personal Instagram URL. Optional — operator-confirmed
+   * handles only. Empty/missing skips IG link rendering on cards
+   * (per trainer-filter-grid + social tool conditional logic).
+   * Added optional 2026-05-22 to support restoring Ibrahim (legacy WP
+   * roster trainer whose IG handle wasn't migrated to this repo).
+   */
+  instagram?: string;
+  instagramHandle?: string;
   /**
    * Localized credential string shown under the trainer's name on cards
    * and intake pages. Use the locale-appropriate professional title:
@@ -45,7 +52,12 @@ export interface Trainer {
 // (strongest niche first), not by booking volume. Busy trainers have
 // less availability, which hurts conversion. Clear specialties convert
 // best because visitors pick on need-match, not on who's most popular.
-const DISPLAY_ORDER = ["eva", "bryan", "joey", "alex", "gezina", "andrea", "sergei", "dara", "jearmey"] as const;
+// Ibrahim re-added 2026-05-22 (legacy WP-roster trainer; image was in
+// .image-backups but his entry never got migrated to trainers.ts).
+// Positioned at #4 (after Joey, before Alex) — his Voeding/Afvallen/
+// Revalidatie profile fits between the strength-focused trainers and
+// the holistic-focused ones. Operator can reorder freely.
+const DISPLAY_ORDER = ["eva", "bryan", "joey", "ibrahim", "alex", "gezina", "andrea", "sergei", "dara", "jearmey"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -115,6 +127,30 @@ const trainersRaw: Trainer[] = [
     },
     image: "/images/trainers/bryan.jpg",
     whatsapp: "https://wa.me/31642267007",
+  },
+  {
+    id: "ibrahim",
+    name: "Ibrahim",
+    slug: {
+      nl: "plan-gratis-intake-met-ibrahim",
+      en: "plan-free-intro-with-ibrahim",
+    },
+    specialization: {
+      nl: ["Voeding", "Afvallen", "Revalidatie"],
+      en: ["Nutrition", "Weight Loss", "Rehabilitation"],
+    },
+    languages: ["NL", "EN"],
+    rate: null,
+    // Instagram intentionally omitted — operator needs to supply Ibrahim's
+    // personal IG handle. Empty fields gracefully skip the IG-icon render.
+    bio: {
+      nl: "Als personal trainer help ik mensen doelgericht werken aan een fitter en gezonder lichaam. Mijn specialisatie ligt in voeding en afvallen, waarbij ik praktische en haalbare plannen maak die passen bij jouw levensstijl. Daarnaast begeleid ik ook bij revalidatie, zodat je op een veilige en verantwoorde manier weer sterker en pijnvrij kunt bewegen.",
+      en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss — I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
+    },
+    image: "/images/trainers/ibrahim.jpg",
+    // whatsapp intentionally omitted — falls back to siteConfig.whatsapp
+    // (studio general number) until operator provides Ibrahim's personal
+    // WhatsApp link.
   },
   {
     id: "gezina",

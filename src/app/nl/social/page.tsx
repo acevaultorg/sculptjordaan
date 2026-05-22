@@ -315,7 +315,10 @@ Vragen? Stuur mij een appje. — Paulo`;
                           <p className="text-base font-bold text-white">{trainer.name}</p>
                           <p className="text-xs text-white/55">{trainer.specialization.nl.join(" · ")}</p>
                           <p className="mt-1 text-[11px] text-white/45">
-                            IG: <span className="text-brand">{trainer.instagramHandle}</span> · {trainer.languages.join("/")}
+                            {trainer.instagramHandle && (
+                              <>IG: <span className="text-brand">{trainer.instagramHandle}</span> · </>
+                            )}
+                            {trainer.languages.join("/")}
                           </p>
                         </div>
                       </div>
@@ -358,15 +361,17 @@ Vragen? Stuur mij een appje. — Paulo`;
                           Send to {trainer.name} via WhatsApp
                           <ArrowRight className="h-3 w-3" />
                         </a>
-                        <a
-                          href={trainer.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80 transition hover:bg-white/15"
-                        >
-                          {trainer.instagramHandle}
-                          <ArrowRight className="h-3 w-3" />
-                        </a>
+                        {trainer.instagram && trainer.instagramHandle && (
+                          <a
+                            href={trainer.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80 transition hover:bg-white/15"
+                          >
+                            {trainer.instagramHandle}
+                            <ArrowRight className="h-3 w-3" />
+                          </a>
+                        )}
                       </div>
                     </CardContent>
                   </Card>

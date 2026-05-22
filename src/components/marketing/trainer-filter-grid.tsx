@@ -245,15 +245,17 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                         <CardDescription>{trainer.credentials[locale]}</CardDescription>
                       )}
                     </div>
-                    <a
-                      href={trainer.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t.ariaInstagram(trainer.instagramHandle)}
-                      className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                    >
-                      <InstagramIcon className="w-4 h-4" />
-                    </a>
+                    {trainer.instagram && trainer.instagramHandle && (
+                      <a
+                        href={trainer.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t.ariaInstagram(trainer.instagramHandle)}
+                        className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                      >
+                        <InstagramIcon className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </CardHeader>
 

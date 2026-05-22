@@ -129,10 +129,10 @@ const nlPages = [
   "/nl/privacybeleid",
   "/nl/cookiebeleid",
   "/nl/toegankelijkheid",
-  // Removed from sitemap (still live for booking funnel; noindex'd — 14 templated
+  // Removed from sitemap (still live for booking funnel; noindex'd — 20 templated
   // trainer-intake pages = doorway pattern per rules/adsense-thin-content-prevention.md
   // Gate 3. Conversion funnel preserved via /nl/vind-jouw-personal-trainer + /nl/boek-trainer):
-  //   /nl/plan-gratis-intake-met-{alex,eva,andrea,dara,gezina,jearmey,joey}
+  //   /nl/plan-gratis-intake-met-{alex,eva,andrea,bryan,dara,gezina,ibrahim,jearmey,joey,sergei}
   "/nl/boek-trainer",
   "/nl/boek-studio",
   "/nl/boek-gym",
@@ -217,10 +217,10 @@ const enPages = [
   "/en/privacy-policy",
   "/en/cookie-policy",
   "/en/accessibility-statement",
-  // Removed from sitemap (still live for booking funnel; noindex'd — 14 templated
+  // Removed from sitemap (still live for booking funnel; noindex'd — 20 templated
   // trainer-intake pages = doorway pattern. Conversion funnel preserved via
   // /en/find-personal-trainer + /en/book-trainer):
-  //   /en/plan-free-intro-with-{alex,eva,andrea,dara,gezina,jearmey,joey}
+  //   /en/plan-free-intro-with-{alex,eva,andrea,bryan,dara,gezina,ibrahim,jearmey,joey,sergei}
   "/en/book-trainer",
   "/en/book-studio",
   "/en/book-gym",
