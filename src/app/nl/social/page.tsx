@@ -130,6 +130,65 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
   );
 }
 
+/** Icon-only variant for tight rows (Overview table). Tooltip via `title`. */
+function CopyIconButton({ text, title }: { text: string; title: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch { /* ignore */ }
+  };
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      aria-label={title}
+      title={title}
+      className="inline-flex h-7 w-7 items-center justify-center rounded-md text-white/40 transition hover:bg-white/10 hover:text-white"
+    >
+      {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
+    </button>
+  );
+}
+
+/**
+ * buildPlatformCopy — formats a paste-ready post block per platform.
+ * Operator directive 2026-05-22: "easy to copy relevant thing. For
+ * tiktok: Title + description and 5 hashtags. instagram: caption
+ * including 5 hashtags."
+ *
+ * Hashtag-slicing: takes the first 5 from idea.hashtags (typically
+ * 10-12 in SOCIAL_IDEAS). Algorithm-meta on first 5 = niche-specific
+ * + branded — see rules/seo-geo-mastery.md (hashtag-stuffing-dead
+ * principle: 5-7 niche-specific outperforms 20+ generic in 2026).
+ */
+function buildPlatformCopy(idea: typeof SOCIAL_IDEAS[number], platform: "tiktok" | "instagram"): string {
+  const hashtags = idea.hashtags.split(/\s+/).filter(Boolean).slice(0, 5).join(" ");
+  if (platform === "tiktok") {
+    // TikTok: Title (becomes overlay text + on-screen first frame) +
+    // description (caption under the video) + 5 hashtags.
+    return [
+      idea.title,
+      "",
+      idea.brief.message,
+      "",
+      idea.brief.cta,
+      "",
+      hashtags,
+    ].join("\n");
+  }
+  // Instagram: single caption block + 5 hashtags inline (or trailing).
+  return [
+    idea.brief.message,
+    "",
+    idea.brief.cta,
+    "",
+    hashtags,
+  ].join("\n");
+}
+
 export default function SocialPage() {
   // Default landing view is "overview" — operator directive 2026-05-22:
   // "structure /social better, 1 good overview of all posts". The overview
@@ -371,6 +430,21 @@ export default function SocialPage() {
                       <p className="text-xs font-semibold uppercase tracking-wider text-white/55">Hook concept</p>
                       <p className="mt-1 text-sm text-white/90 italic">{todaySlot.idea.brief.hookConcept}</p>
                     </div>
+                    {/* Big copy button on the hero — operator's main "act now"
+                        affordance. Copies platform-tailored block:
+                          tiktok    = title + description + 5 hashtags
+                          instagram = caption + 5 hashtags                  */}
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      <CopyButton
+                        text={buildPlatformCopy(todaySlot.idea, todaySlot.platform)}
+                        label={todaySlot.platform === "tiktok" ? "Copy title + description + #" : "Copy caption + #"}
+                      />
+                      <span className="text-[11px] text-white/45">
+                        {todaySlot.platform === "tiktok"
+                          ? "Title + description + 5 hashtags → ready to paste into TikTok"
+                          : "Caption + 5 hashtags → ready to paste into Instagram"}
+                      </span>
+                    </div>
                     <div className="flex flex-wrap items-center gap-2 text-xs text-white/60">
                       <span className="rounded-full bg-white/10 px-2 py-0.5 font-semibold">{todaySlot.idea.pillar.replace("-", " ")}</span>
                       <span className={`font-semibold ${sideColor(todaySlot.idea.pillar)}`}>
@@ -453,6 +527,14 @@ export default function SocialPage() {
                               </td>
                               <td className="px-2 py-3 text-right align-top">
                                 <div className="flex items-center justify-end gap-1">
+                                  {/* Copy platform-tailored post block (title+desc+# for TikTok,
+                                      caption+# for Instagram) — operator 2026-05-22 */}
+                                  <CopyIconButton
+                                    text={buildPlatformCopy(s.idea, s.platform)}
+                                    title={s.platform === "tiktok"
+                                      ? "Copy title + description + 5 hashtags"
+                                      : "Copy caption + 5 hashtags"}
+                                  />
                                   <button
                                     type="button"
                                     onClick={() => copyShareLink(s)}
