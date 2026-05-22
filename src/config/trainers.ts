@@ -148,9 +148,7 @@ const trainersRaw: Trainer[] = [
       en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss — I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
     },
     image: "/images/trainers/ibrahim.jpg",
-    // whatsapp intentionally omitted — falls back to siteConfig.whatsapp
-    // (studio general number) until operator provides Ibrahim's personal
-    // WhatsApp link.
+    whatsapp: "https://wa.me/31636091780",
   },
   {
     id: "gezina",
