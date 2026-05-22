@@ -341,6 +341,63 @@ const posts = [
     href: "/en/blog/improve-body-composition-amsterdam",
     date: "April 16, 2026",
   },
+  // Supply-side ship 2026-05-20 — 7 new long-form posts for freelance trainers
+  {
+    title: "Cost of Private Studio Rental vs Opening Your Own Gym in Amsterdam",
+    excerpt:
+      "Full cost comparison between renting a private studio per hour, leasing space, or opening your own gym — with real 2026 numbers.",
+    category: "For Trainers",
+    href: "/en/blog/cost-private-studio-rental-vs-opening-own-gym-amsterdam",
+    date: "May 20, 2026",
+  },
+  {
+    title: "First 10 Clients as a Freelance Personal Trainer in Amsterdam",
+    excerpt:
+      "Concrete roadmap with what works and doesn't in 2026. Clients 1-3, 4-6, 7-10 — honest timeline + which channels convert.",
+    category: "For Trainers",
+    href: "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
+    date: "May 20, 2026",
+  },
+  {
+    title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026)",
+    excerpt:
+      "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, liability, AOV, pension and bookkeeping.",
+    category: "For Trainers",
+    href: "/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension",
+    date: "May 20, 2026",
+  },
+  {
+    title: "Personal Trainer Packages — Pricing Strategy for Freelancers",
+    excerpt:
+      "Which packs, what discount, how long valid? Pricing psychology and anchor pricing for freelance trainers in Amsterdam 2026.",
+    category: "For Trainers",
+    href: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
+    date: "May 20, 2026",
+  },
+  {
+    title: "How Many Clients Does a Personal Trainer in Amsterdam Need?",
+    excerpt:
+      "Honest math: how many paying clients to make a living, earn a median income, or support a family? Three scenarios with concrete numbers.",
+    category: "For Trainers",
+    href: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage",
+    date: "May 20, 2026",
+  },
+  {
+    title: "Studio Rental vs Commercial Gym as a Personal Trainer",
+    excerpt:
+      "Working at a commercial gym (Optimum, Sportcity) or renting a private studio? Commissions, client ownership and brand positioning compared.",
+    category: "For Trainers",
+    href: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam",
+    date: "May 20, 2026",
+  },
+  {
+    title: "Personal Trainer Marketing on Instagram — What Works in Jordaan",
+    excerpt:
+      "Reel length, hashtags, post times, DM strategy. What drives 95% of SculptClub bookings via Instagram in 2026.",
+    category: "For Trainers",
+    href: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
+    date: "May 20, 2026",
+  },
 ];
 
 export default function BlogPageEN() {

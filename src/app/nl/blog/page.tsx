@@ -341,6 +341,63 @@ const posts = [
     href: "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
     date: "16 april 2026",
   },
+  // Supply-side ship 2026-05-20 — 7 nieuwe long-form posts voor ZZP trainers
+  {
+    title: "Kosten Privé Studio Huren vs Eigen Gym Openen in Amsterdam",
+    excerpt:
+      "De volledige kostenvergelijking tussen privé studio per uur huren, een ruimte leasen of een eigen gym openen — met echte cijfers voor 2026.",
+    category: "Voor Trainers",
+    href: "/nl/blog/kosten-prive-studio-huren-vs-eigen-gym-openen-amsterdam",
+    date: "20 mei 2026",
+  },
+  {
+    title: "Eerste 10 Klanten Krijgen als ZZP Personal Trainer in Amsterdam",
+    excerpt:
+      "Concrete roadmap met de tactieken die wel en niet werken in 2026. Klant 1-3, 4-6, 7-10 — eerlijke timeline + welke kanalen converteren.",
+    category: "Voor Trainers",
+    href: "/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam",
+    date: "20 mei 2026",
+  },
+  {
+    title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026)",
+    excerpt:
+      "Complete gids voor wie ZZP personal trainer wordt: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding — met de actuele cijfers.",
+    category: "Voor Trainers",
+    href: "/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen",
+    date: "20 mei 2026",
+  },
+  {
+    title: "Personal Trainer Pakketten — Prijsstrategie voor ZZP Trainers",
+    excerpt:
+      "Welke pakketten + welke korting + hoe lang geldig? Prijspsychologie en anchor-pricing voor freelance trainers in Amsterdam 2026.",
+    category: "Voor Trainers",
+    href: "/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam",
+    date: "20 mei 2026",
+  },
+  {
+    title: "Hoeveel Klanten heb je nodig als Personal Trainer in Amsterdam?",
+    excerpt:
+      "Eerlijke rekensom: hoeveel betalende klanten heb je nodig om rond te komen, modaal te verdienen of een gezin te onderhouden? Drie scenario's met cijfers.",
+    category: "Voor Trainers",
+    href: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen",
+    date: "20 mei 2026",
+  },
+  {
+    title: "Studio Huren vs Commerciële Gym als Personal Trainer",
+    excerpt:
+      "Werken in een commerciële gym (Optimum, Sportcity) of een privé studio huren? Commissies, klantenbinding en brand-positionering vergeleken.",
+    category: "Voor Trainers",
+    href: "/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam",
+    date: "20 mei 2026",
+  },
+  {
+    title: "Personal Trainer Marketing op Instagram — Wat werkt in Jordaan",
+    excerpt:
+      "Reels-lengte, hashtags, post-tijden, DM-strategie. Wat doet 95% van SculptClub-boekingen via Instagram laten lopen in 2026.",
+    category: "Voor Trainers",
+    href: "/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
+    date: "20 mei 2026",
+  },
 ];
 
 export default function BlogPageNL() {
