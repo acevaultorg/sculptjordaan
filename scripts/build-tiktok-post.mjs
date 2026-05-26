@@ -510,7 +510,14 @@ const POSTS = {
     },
     {
       name: "approach",
-      photoPath: PT_SESSION_BARBELL,  // generic PT action shot (workout context)
+      // Photo swap 2026-05-26: was PT_SESSION_BARBELL, which features a
+      // visible bearded trainer (Ibrahim) spotting a client. On a slide
+      // labeled "ALEX'S AANPAK" that's a mismatch — viewers reasonably
+      // interpret the photographed trainer AS Alex. TRAINING_SQUAT_CINEMATIC
+      // is the safe replacement: back-view client mid-rep, no trainer
+      // visible, brand-recognizable studio environment (skylight + rack).
+      // Frames the slide as "the work" rather than "the trainer's face".
+      photoPath: TRAINING_SQUAT_CINEMATIC,
       eyebrow: "ALEX'S AANPAK",
       // Two-stop hero in same register as intake-pitch slide 1 ("Privé. 1-op-1.")
       hero: "Functioneel. Doelgericht.",
