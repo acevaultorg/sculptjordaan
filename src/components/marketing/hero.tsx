@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Users, Building2 } from "lucide-react";
+import { Users, Building2, MessageCircle } from "lucide-react";
+import { whatsappLinks } from "@/config/acuity";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
@@ -143,31 +144,42 @@ export function Hero({ locale }: { locale: Locale }) {
     // browser fallback for desktop. (Operator can swap to a precise Place ID
     // URL by editing the href below — current link is the canonical share-link
     // returned by Google's own share dialog for the listing.)
+    // 2026-05-26 lead-cap refinement — added price-anchor chip "vanaf €45"
+    // directly under taglineSub (catches the 40% of mobile visitors who
+    // bounce before scrolling past the headline → price unknown is a
+    // primary bounce cause for boutique-PT pricing audiences). WhatsApp
+    // CTA promoted from the sticky bar into the hero CTA cluster as a
+    // 3rd outline button — gives Audience B (curious browser, 40% of
+    // traffic) a 0-scroll path to async chat. Trust line tightened from
+    // 4 bullets → 3 (hours dropped — already shown in sticky bar; price
+    // moved into anchor chip).
     nl: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Eerste sessie vrijblijvend.",
+      priceAnchor: "vanaf €45 · privé studio Jordaan",
       ctas: [
         { label: "Probeer Personal training", href: "/nl/gratis-intake", icon: Users, primary: true },
       ],
       trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
+      whatsappLink: { label: "Of stel 1 vraag via WhatsApp", href: whatsappLinks.intakeMatchNl },
       trustParts: [
         { text: "Eerste intake gratis", href: "/nl/gratis-intake", event: "hero_trust_intake" },
         { text: "Geen contracten" },
-        { text: "Dagelijks 06:30–22:00" },
         { text: "5.0 ★ Google", href: "https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam", event: "hero_trust_reviews", external: true },
       ],
     },
     en: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "First session free.",
+      priceAnchor: "from €45 · private studio in Jordaan",
       ctas: [
         { label: "Try Personal training", href: "/en/free-intro", icon: Users, primary: true },
       ],
       trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
+      whatsappLink: { label: "Or ask one question via WhatsApp", href: whatsappLinks.intakeMatchEn },
       trustParts: [
         { text: "First intro free", href: "/en/free-intro", event: "hero_trust_intake" },
         { text: "No contracts" },
-        { text: "Daily 06:30–22:00" },
         { text: "5.0 ★ Google", href: "https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam", event: "hero_trust_reviews", external: true },
       ],
     },
@@ -286,6 +298,12 @@ export function Hero({ locale }: { locale: Locale }) {
               <span className="block mt-4 sm:mt-5 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
                 {t.taglineSub}
               </span>
+              {/* Price anchor — added 2026-05-26 lead-cap (task A). Catches
+                  the price-curious visitor before bounce. Subtle white/70
+                  weight so it reads as informational, not a sales-shout. */}
+              <span className="block mt-2 sm:mt-3 text-sm sm:text-base text-white/70 font-medium">
+                {t.priceAnchor}
+              </span>
             </h1>
           </div>
 
@@ -330,6 +348,25 @@ export function Hero({ locale }: { locale: Locale }) {
                 <Building2 className="w-4 h-4" />
                 {t.trainerLink.label}
               </ButtonLink>
+
+              {/* WhatsApp CTA — added 2026-05-26 lead-cap (task A). 0-scroll
+                  async-chat path for Audience B (curious browser, ~40% of
+                  traffic). Distinct visual register from the other two CTAs:
+                  emerald-tinted outline (matches WhatsApp brand) so it
+                  reads as "low-commitment fallback" not "another primary
+                  competing for attention". Sticky lead bar (mobile) and
+                  hero (desktop+mobile) both surface this path — chat-first
+                  audience is served from every viewport. */}
+              <a
+                href={t.whatsappLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackHeroClick(t.whatsappLink.label, 3, locale)}
+                className="plausible-event-name=hero_whatsapp_cta inline-flex items-center justify-center gap-2 rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-white border border-emerald-400/50 hover:border-emerald-400 transition-all [text-shadow:none]"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                {t.whatsappLink.label}
+              </a>
             </div>
 
             {/* Trust line — mixed clickable + static bullets.

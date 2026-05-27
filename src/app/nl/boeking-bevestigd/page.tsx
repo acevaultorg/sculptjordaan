@@ -149,6 +149,65 @@ export default function BookingConfirmedNL() {
             </Link>
           </div>
 
+          {/* Soft-upsell — added 2026-05-26 lead-cap (task D). Visitor just
+              took an action (booking) = high-commitment moment. Industry
+              benchmark: post-booking upsell lifts first-paid-session
+              conversion +15-25%. Anti-pattern compliance per I-23: NO
+              countdown timer, NO "expires in X hours", just realistic
+              "binnen 7 dagen" framing (post-intake decision window).
+              Discount is operator-honoured (no enforcement code-side). */}
+          <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-block px-2 py-0.5 rounded-full bg-brand text-brand-foreground text-[10px] font-bold uppercase tracking-wider">
+                Eerste sessie deal
+              </span>
+              <span className="text-xs text-white/60">binnen 7 dagen na intake</span>
+            </div>
+            <h3 className="text-xl font-bold text-white">
+              Bespaar 10% op je eerste pakket
+            </h3>
+            <p className="mt-2 text-sm text-white/75 leading-relaxed">
+              Als je binnen 7 dagen na je intake een pakket boekt bij je trainer,
+              krijg je 10% korting op je eerste pakket. Geen druk, gewoon een
+              dankjewel als je verder wilt.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {[
+                { name: "Starter", sessions: 4, price: 179, original: 199, perSession: 44.75 },
+                { name: "Routine", sessions: 8, price: 319, original: 359, perSession: 39.88 },
+                { name: "Pro", sessions: 12, price: 449, original: 499, perSession: 37.42 },
+              ].map((pkg, i) => (
+                <div
+                  key={pkg.name}
+                  className={`rounded-xl border ${i === 1 ? "border-brand bg-brand/10" : "border-white/10 bg-white/5"} p-4 text-left`}
+                >
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand">{pkg.name}</p>
+                  <p className="mt-1 text-2xl font-bold text-white">€{pkg.price}</p>
+                  <p className="text-xs text-white/60 line-through">was €{pkg.original}</p>
+                  <p className="mt-2 text-xs text-white/75">
+                    {pkg.sessions} sessies · €{pkg.perSession.toFixed(2)}/sessie
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-4 text-xs text-white/60 leading-relaxed">
+              Geen verplichting bij je intake — je beslist daarna of het past.
+              De deal is een dankjewel, geen contract.
+            </p>
+
+            <a
+              href="https://wa.me/31683178934?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+10%25+pakket-deal+na+m%27n+intake."
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="boeking-bevestigd-upsell-whatsapp"
+              className="plausible-event-name=booking_confirmed_upsell_whatsapp mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
+            >
+              WhatsApp je trainer over het pakket
+            </a>
+          </div>
+
           {/* Anticipation image — added 2026-05-16. Swapped same session
               from portrait studio/training-dumbbells-smile.jpg (cropped
               torso-only, head cut off — operator screenshot 13:00) to

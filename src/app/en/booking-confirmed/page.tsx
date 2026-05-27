@@ -132,6 +132,60 @@ export default function BookingConfirmedEN() {
             </Link>
           </div>
 
+          {/* Soft-upsell — added 2026-05-26 lead-cap (task D). See NL
+              parallel for rationale + I-23 anti-pattern compliance. */}
+          <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-block px-2 py-0.5 rounded-full bg-brand text-brand-foreground text-[10px] font-bold uppercase tracking-wider">
+                First-package deal
+              </span>
+              <span className="text-xs text-white/60">within 7 days of your intro</span>
+            </div>
+            <h3 className="text-xl font-bold text-white">
+              Save 10% on your first package
+            </h3>
+            <p className="mt-2 text-sm text-white/75 leading-relaxed">
+              If you book a package with your trainer within 7 days of your intro,
+              you get 10% off your first package. No pressure — just a thank-you
+              if you decide to continue.
+            </p>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {[
+                { name: "Starter", sessions: 4, price: 179, original: 199, perSession: 44.75 },
+                { name: "Routine", sessions: 8, price: 319, original: 359, perSession: 39.88 },
+                { name: "Pro", sessions: 12, price: 449, original: 499, perSession: 37.42 },
+              ].map((pkg, i) => (
+                <div
+                  key={pkg.name}
+                  className={`rounded-xl border ${i === 1 ? "border-brand bg-brand/10" : "border-white/10 bg-white/5"} p-4 text-left`}
+                >
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand">{pkg.name}</p>
+                  <p className="mt-1 text-2xl font-bold text-white">€{pkg.price}</p>
+                  <p className="text-xs text-white/60 line-through">was €{pkg.original}</p>
+                  <p className="mt-2 text-xs text-white/75">
+                    {pkg.sessions} sessions · €{pkg.perSession.toFixed(2)}/session
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-4 text-xs text-white/60 leading-relaxed">
+              No commitment at your intro — you decide afterwards if it fits.
+              The deal is a thank-you, not a contract.
+            </p>
+
+            <a
+              href="https://wa.me/31683178934?text=Hi%21+I%27d+like+to+know+more+about+the+10%25+package+deal+after+my+intro."
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="booking-confirmed-upsell-whatsapp"
+              className="plausible-event-name=booking_confirmed_upsell_whatsapp mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
+            >
+              WhatsApp your trainer about the package
+            </a>
+          </div>
+
           {/* Anticipation image — see NL parallel comment. Swapped same
               session from portrait studio image (cropped torso-only) to
               landscape-native hero/training-session.jpg (1.91:1) which
