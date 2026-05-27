@@ -8,8 +8,25 @@ import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight, 
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
 import { cn } from "@/lib/utils";
+import { acuityFreeTrials } from "@/config/acuity";
 
-const bookingMenu = {
+type MenuCategory = {
+  icon: typeof Building2;
+  title: string;
+  description: string;
+  href: string;
+  external?: boolean;
+};
+
+type MenuConfig = {
+  label: string;
+  title: string;
+  subtitle?: string;
+  categories: readonly MenuCategory[];
+  returning: string;
+};
+
+const bookingMenu: { nl: MenuConfig; en: MenuConfig } = {
   nl: {
     label: "Boek",
     title: "Wat wil je doen?",
@@ -60,7 +77,77 @@ const bookingMenu = {
     ],
     returning: "Already a member? My bookings",
   },
-} as const;
+};
+
+// Try-Out menu — distinct from Boek. Operator 2026-05-27: when visitor
+// clicks Try-Out, the disambiguator sheet should be CONTEXTUALIZED for
+// the try-out funnel (free first-time experience), not generic booking.
+// Same visual layout (3 product cards + "Al lid?" link) but every
+// category routes to the FREE try-out flow:
+//   Studio Huren → Acuity Free Studio Rental Tryout (free 60min slot)
+//   Personal Trainer → /nl/gratis-intake (PT free-intake landing)
+//   Open Gym → Acuity Free Open Gym Tryout (free session)
+// All free-tryout destinations are pre-existing + wired in
+// src/config/acuity.ts (acuityFreeTrials.*) — this menu just routes
+// to them from a single canonical disambiguator.
+const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
+  nl: {
+    label: "Try-Out",
+    title: "Wat wil je proberen?",
+    subtitle: "Eerste keer altijd gratis.",
+    categories: [
+      {
+        icon: Building2,
+        title: "Studio Huren",
+        description: "Gratis test sessie · 60 min",
+        href: acuityFreeTrials.studioRentalTryout,
+        external: true,
+      },
+      {
+        icon: Users,
+        title: "Personal Trainer",
+        description: "Gratis kennismaking · 45 min",
+        href: "/nl/gratis-intake",
+      },
+      {
+        icon: Dumbbell,
+        title: "Open Gym",
+        description: "Gratis eerste sessie",
+        href: acuityFreeTrials.openGymTryout,
+        external: true,
+      },
+    ],
+    returning: "Al lid? Mijn boekingen",
+  },
+  en: {
+    label: "Try-Out",
+    title: "What would you like to try?",
+    subtitle: "First time is always free.",
+    categories: [
+      {
+        icon: Building2,
+        title: "Studio Rental",
+        description: "Free test session · 60 min",
+        href: acuityFreeTrials.studioRentalTryout,
+        external: true,
+      },
+      {
+        icon: Users,
+        title: "Personal Trainer",
+        description: "Free intro · 45 min",
+        href: "/en/free-intro",
+      },
+      {
+        icon: Dumbbell,
+        title: "Open Gym",
+        description: "Free first session",
+        href: acuityFreeTrials.openGymTryout,
+        external: true,
+      },
+    ],
+    returning: "Already a member? My bookings",
+  },
+};
 
 // Trainer-funnel routes — the audience here is ZZP trainers, not consumers.
 // Hiding the consumer-facing "Try-Out" CTA on these routes removes mental
@@ -82,6 +169,11 @@ export function Header() {
   const hideConsumerCta = isTrainerFunnelPath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookOpen, setBookOpen] = useState(false);
+  // bookMode: tracks which sheet content to render when bookOpen=true.
+  // "book" = canonical Boek menu (3 booking entry points).
+  // "tryout" = Try-Out menu with free-first-time variants of the same
+  // 3 product paths. Same modal chrome, distinct content + destinations.
+  const [bookMode, setBookMode] = useState<"book" | "tryout">("book");
   const [loginOpen, setLoginOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
   const [scrolled, setScrolled] = useState(false);
@@ -109,6 +201,9 @@ export function Header() {
   const navItems = mainNav[locale];
   const moreItems = secondaryNav[locale];
   const booking = bookingMenu[locale];
+  // Active menu = bookingMenu OR tryoutMenu depending on which button
+  // opened the sheet. Modal renders `activeMenu.title/categories/etc`.
+  const activeMenu = bookMode === "tryout" ? tryoutMenu[locale] : booking;
 
   // Close hamburger when clicking outside (book panel has its own backdrop)
   useEffect(() => {
@@ -132,6 +227,24 @@ export function Header() {
   }, [bookOpen, loginOpen]);
 
   function handleBookClick() {
+    // If sheet is open in tryout mode and user taps Boek, switch mode
+    // (keep sheet open, swap content). Cleaner than close-reopen flash.
+    if (bookOpen && bookMode === "tryout") {
+      setBookMode("book");
+      return;
+    }
+    setBookMode("book");
+    setBookOpen(!bookOpen);
+    setMenuOpen(false);
+    setLoginOpen(false);
+  }
+
+  function handleTryoutClick() {
+    if (bookOpen && bookMode === "book") {
+      setBookMode("tryout");
+      return;
+    }
+    setBookMode("tryout");
     setBookOpen(!bookOpen);
     setMenuOpen(false);
     setLoginOpen(false);
@@ -240,9 +353,9 @@ export function Header() {
             {!hideConsumerCta && (
               <button
                 type="button"
-                onClick={handleBookClick}
+                onClick={handleTryoutClick}
                 aria-haspopup="dialog"
-                aria-expanded={bookOpen}
+                aria-expanded={bookOpen && bookMode === "tryout"}
                 className="plausible-event-name=header_tryout_open h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap cursor-pointer"
               >
                 Try-Out
@@ -266,9 +379,11 @@ export function Header() {
                 in-app (~37% of traffic). */}
             <button
               onClick={handleBookClick}
+              aria-haspopup="dialog"
+              aria-expanded={bookOpen && bookMode === "book"}
               className={cn(
                 "h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
-                bookOpen
+                bookOpen && bookMode === "book"
                   ? "bg-brand-dark text-brand-foreground"
                   : [
                       // Mobile: brand-orange outline (border + text are brand
@@ -515,55 +630,82 @@ export function Header() {
                   <div className="w-10 h-1 rounded-full bg-border" />
                 </div>
 
-                {/* Close + Title */}
-                <div className="flex items-center justify-between px-6 py-4">
-                  <h2 className="text-xl sm:text-2xl font-bold tracking-tight">{booking.title}</h2>
+                {/* Close + Title (+ optional subtitle, used by Try-Out
+                    menu to flag "first time always free" so visitor knows
+                    every card below routes to a no-cost option). */}
+                <div className="flex items-start justify-between px-6 py-4 gap-4">
+                  <div className="min-w-0">
+                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight">{activeMenu.title}</h2>
+                    {activeMenu.subtitle && (
+                      <p className="mt-1 text-sm text-brand font-medium">{activeMenu.subtitle}</p>
+                    )}
+                  </div>
                   <button
                     onClick={() => setBookOpen(false)}
-                    className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors cursor-pointer"
+                    aria-label={locale === "nl" ? "Sluiten" : "Close"}
+                    className="shrink-0 w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors cursor-pointer"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
 
-                {/* 3 big booking cards */}
+                {/* 3 product cards. Handles internal (<Link>) AND external
+                    (acuityFreeTrials.* — direct to Acuity calendar in new
+                    tab) destinations. The Try-Out menu uses external for
+                    Studio Huren + Open Gym so the visitor lands on the
+                    free-tryout Acuity slot picker directly (no extra
+                    landing page in between). */}
                 <div className="flex-1 overflow-y-auto px-4 sm:px-6 pb-6">
                   <div className="grid gap-3 sm:gap-4">
-                    {booking.categories.map((cat, i) => (
-                      <div
-                        key={cat.href}
-                        // Staggered fade-in via CSS animation-delay (i × 0.08s).
-                        // Replaces framer-motion's `transition={{ delay: i * 0.08, duration: 0.3 }}`.
-                        style={{
-                          animation: "panel-card-fade-in 0.3s ease-out both",
-                          animationDelay: `${i * 0.08}s`,
-                        }}
-                      >
-                        <Link
-                          href={cat.href}
-                          className={cn(
-                            "group flex items-center gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl transition-all duration-200",
-                            "border border-border/50 hover:border-brand/30",
-                            "hover:shadow-brand-lg active:scale-[0.98]",
-                            "bg-muted/50 hover:bg-muted"
-                          )}
-                        >
-                          {/* Icon circle */}
+                    {activeMenu.categories.map((cat, i) => {
+                      const cardClass = cn(
+                        "group flex items-center gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl transition-all duration-200",
+                        "border border-border/50 hover:border-brand/30",
+                        "hover:shadow-brand-lg active:scale-[0.98]",
+                        "bg-muted/50 hover:bg-muted"
+                      );
+                      const inner = (
+                        <>
                           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shrink-0 bg-brand/10 text-brand">
                             <cat.icon className="w-7 h-7 sm:w-8 sm:h-8" />
                           </div>
-
-                          {/* Text */}
                           <div className="flex-1 min-w-0">
                             <p className="text-lg sm:text-xl font-bold text-foreground">{cat.title}</p>
                             <p className="text-sm text-muted-foreground mt-0.5">{cat.description}</p>
                           </div>
-
-                          {/* Arrow */}
                           <ArrowRight className="w-5 h-5 text-muted-foreground/40 group-hover:text-foreground group-hover:translate-x-1 transition-all shrink-0" />
-                        </Link>
-                      </div>
-                    ))}
+                        </>
+                      );
+                      return (
+                        <div
+                          key={cat.href}
+                          style={{
+                            animation: "panel-card-fade-in 0.3s ease-out both",
+                            animationDelay: `${i * 0.08}s`,
+                          }}
+                        >
+                          {cat.external ? (
+                            <a
+                              href={cat.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`plausible-event-name=header_${bookMode}_${cat.title.toLowerCase().replace(/[^a-z]+/g, "_")}_click ${cardClass}`}
+                              onClick={() => setBookOpen(false)}
+                            >
+                              {inner}
+                            </a>
+                          ) : (
+                            <Link
+                              href={cat.href}
+                              className={`plausible-event-name=header_${bookMode}_${cat.title.toLowerCase().replace(/[^a-z]+/g, "_")}_click ${cardClass}`}
+                              onClick={() => setBookOpen(false)}
+                            >
+                              {inner}
+                            </Link>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
 
                   {/* Returning client */}
@@ -575,7 +717,7 @@ export function Header() {
                       className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand transition-colors"
                     >
                       <CalendarCheck className="w-4 h-4" />
-                      {booking.returning}
+                      {activeMenu.returning}
                       <ArrowRight className="w-3.5 h-3.5" />
                     </a>
                   </div>
