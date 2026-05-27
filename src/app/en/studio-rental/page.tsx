@@ -8,7 +8,7 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
+import { acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
@@ -279,6 +279,10 @@ export default function StudioRentalPageEN() {
             </div>
           </FadeIn>
 
+          {/* 2026-05-27: removed 4 inline "Book" buttons. NL parity at
+              src/app/nl/studio-huren/page.tsx. Rate table is now pure
+              reference; "Go to booking" link below routes to the
+              #schedule embed which handles all 4 appointment types. */}
           <FadeIn>
             <div className="overflow-hidden rounded-xl border bg-card">
               <table className="w-full text-sm">
@@ -292,52 +296,28 @@ export default function StudioRentalPageEN() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 font-medium">Half studio (1:1)</td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;12</span>
-                      <ButtonLink
-                        href={acuityLinks.halfStudio60}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Book
-                      </ButtonLink>
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;17</span>
-                      <ButtonLink
-                        href={acuityLinks.halfStudio90}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Book
-                      </ButtonLink>
-                    </td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;12</td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;17</span>
-                      <ButtonLink
-                        href={acuityLinks.fullStudio60}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Book
-                      </ButtonLink>
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;24</span>
-                      <ButtonLink
-                        href={acuityLinks.fullStudio90}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Book
-                      </ButtonLink>
-                    </td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;24</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div className="mt-5 flex justify-center">
+              <a
+                href="#schedule"
+                className="plausible-event-name=studio_rental_rate_table_to_schedule inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+              >
+                Go to booking form
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </FadeIn>
 
@@ -634,9 +614,13 @@ export default function StudioRentalPageEN() {
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Try the studio for free with a trial session. No obligations.
             </p>
+            {/* 2026-05-27: primary CTA was acuityLinks.studioTrial =
+                external Acuity opening a new tab. Hero primary + mobile
+                sticky bar both route to #schedule (in-page embed).
+                Unified destination for consistent funnel. NL parity. */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <ButtonLink href={acuityLinks.studioTrial} size="lg">
-                Book a free trial session
+              <ButtonLink href="#schedule" size="lg">
+                Book your free trial
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

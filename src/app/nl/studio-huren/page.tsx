@@ -8,7 +8,7 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
+import { acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
@@ -281,6 +281,15 @@ export default function StudioRentalPageNL() {
             </div>
           </FadeIn>
 
+          {/* 2026-05-27: removed 4 inline "Boek" buttons (one per rate
+              cell). Operator: "al de verschillende cta's op deze pagina
+              vind ik verwarrend." The #schedule Acuity embed above is
+              the single canonical booking surface — having 4 extra
+              direct-Acuity URLs in the rate table created duplicate
+              booking paths + 4 competing CTAs in a section meant to
+              communicate prices. Table is now pure rate-reference;
+              the single "Naar boeking" link below routes everyone to
+              the same embed. */}
           <FadeIn>
             <div className="overflow-hidden rounded-xl border bg-card">
               <table className="w-full text-sm">
@@ -294,52 +303,28 @@ export default function StudioRentalPageNL() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 font-medium">Halve studio (1:1)</td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;12</span>
-                      <ButtonLink
-                        href={acuityLinks.halfStudio60}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Boek
-                      </ButtonLink>
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;17</span>
-                      <ButtonLink
-                        href={acuityLinks.halfStudio90}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Boek
-                      </ButtonLink>
-                    </td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;12</td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;17</span>
-                      <ButtonLink
-                        href={acuityLinks.fullStudio60}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Boek
-                      </ButtonLink>
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="font-semibold">&euro;24</span>
-                      <ButtonLink
-                        href={acuityLinks.fullStudio90}
-                        size="default"
-                        className="ml-3"
-                      >
-                        Boek
-                      </ButtonLink>
-                    </td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
+                    <td className="px-4 py-3 text-center font-semibold">&euro;24</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div className="mt-5 flex justify-center">
+              <a
+                href="#schedule"
+                className="plausible-event-name=studio_huren_rate_table_to_schedule inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+              >
+                Naar boekingsformulier
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </FadeIn>
 
@@ -637,9 +622,14 @@ export default function StudioRentalPageNL() {
               Probeer de studio gratis uit met een proefsessie. Geen
               verplichtingen.
             </p>
+            {/* 2026-05-27: primary CTA was acuityLinks.studioTrial =
+                external Acuity URL opening a new tab. The hero primary
+                CTA + mobile sticky bar both route to #schedule (in-page
+                AcuityEmbed). Same destination for the same action,
+                consistent across the page. Operator: "verwarrend." */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <ButtonLink href={acuityLinks.studioTrial} size="lg">
-                Boek een gratis proefsessie
+              <ButtonLink href="#schedule" size="lg">
+                Boek je gratis proefsessie
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink
