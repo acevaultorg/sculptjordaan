@@ -231,14 +231,33 @@ export function Header() {
               </Link>
             )}
 
-            {/* Boek */}
+            {/* Boek — mobile = outline (glass over hero), desktop = solid brand.
+                Pre-2026-05-27 the button was bg-brand on every breakpoint.
+                Clarity audit (last 3 days, project vx7zcg6zys): "Boek" got
+                12.77% of homepage clicks (6 of 47) while the hero PT primary
+                CTA "Probeer Personal training" got only 4.26% (2 of 47).
+                3 orange-filled CTAs competed on mobile first-paint (cookie +
+                header Boek + hero PT) — Hick's Law decision-paralysis kicked
+                in, and Boek (closest to thumb) stole clicks from the
+                lead-funnel-deeper hero CTA. Mobile outline treatment
+                subordinates the header chrome so the brand-orange-primary
+                chain is reserved for the revenue-funnel CTAs (hero PT button
+                + mobile sticky lead bar WhatsApp). Desktop keeps the fill —
+                no cookie/lead-bar competition there + Boek is still
+                primary-action on demand-side traffic that's not InstagramApp
+                in-app (~37% of traffic). */}
             <button
               onClick={handleBookClick}
               className={cn(
                 "h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen
                   ? "bg-brand-dark text-brand-foreground"
-                  : "bg-brand text-brand-foreground hover:bg-brand-dark active:scale-95"
+                  : [
+                      // Mobile: glass-outline over hero image
+                      "border border-white/30 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/40 active:scale-95",
+                      // Desktop (sm+): switch to solid brand
+                      "sm:border-0 sm:text-brand-foreground sm:bg-brand sm:hover:bg-brand-dark sm:backdrop-blur-none",
+                    ].join(" ")
               )}
             >
               <CalendarCheck className="w-3.5 h-3.5" />

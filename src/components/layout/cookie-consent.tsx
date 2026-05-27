@@ -77,13 +77,34 @@ export function CookieConsent() {
   function handleAccept() {
     setCookie("sc_consent", "all", 365);
     updateConsent(true);
+    notifyConsentChanged();
     dismiss();
   }
 
   function handleEssential() {
     setCookie("sc_consent", "essential", 365);
     updateConsent(false);
+    notifyConsentChanged();
     dismiss();
+  }
+
+  // Wired 2026-05-27 to let MobileLeadBar appear immediately after consent
+  // is given without a full-page reload. MobileLeadBar listens for this on
+  // mount + window-level so the sticky lead-CTA reveals cleanly the moment
+  // the cookie banner dismisses, instead of stacking z-40 vs z-50 on first
+  // paint (Clarity audit showed 19.15% of homepage clicks were on the
+  // cookie banner's Accept — visitors wanted the bottom-blocker gone before
+  // engaging with anything else). Custom event keeps the cross-tab `storage`
+  // listener as a fallback path too.
+  function notifyConsentChanged() {
+    if (typeof window === "undefined") return;
+    try {
+      window.dispatchEvent(new CustomEvent("sc:consent-updated"));
+    } catch {
+      // Older browsers without CustomEvent constructor — silent skip; the
+      // bar will appear on next navigation when readConsentCookie() picks
+      // up the cookie regardless.
+    }
   }
 
   function dismiss() {
@@ -125,9 +146,22 @@ export function CookieConsent() {
               >
                 {t.essential}
               </button>
+              {/* Accept button — was bg-brand (orange) until 2026-05-27 Clarity
+                  audit. Clarity dashboard (last 3 days, project vx7zcg6zys)
+                  showed "Accepteren" attracting 19.15% of all homepage clicks
+                  (9 of 47) — by far the top click destination, stealing
+                  attention from the hero PT primary CTA (only 4.26% of
+                  clicks). Root cause: 3 orange-filled CTAs competing on mobile
+                  first-paint (cookie + header Boek + hero PT). Fix: neutral
+                  outline treatment keeps the cookie banner visible but
+                  visually subordinate so the brand-orange-primary chain is
+                  reserved for revenue-driving actions (hero PT button +
+                  mobile sticky lead bar WhatsApp). Cookie compliance still
+                  works — visitors who want to accept have a clear, accessible
+                  button. They just stop misclicking it as the primary CTA. */}
               <button
                 onClick={handleAccept}
-                className="rounded-full bg-brand px-5 py-2.5 min-h-[44px] text-sm font-medium text-brand-foreground hover:bg-brand/90 transition-colors cursor-pointer"
+                className="rounded-full bg-foreground/10 border border-foreground/20 hover:bg-foreground/15 hover:border-foreground/40 px-5 py-2.5 min-h-[44px] text-sm font-semibold text-foreground transition-colors cursor-pointer"
               >
                 {t.accept}
               </button>

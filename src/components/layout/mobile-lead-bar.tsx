@@ -30,6 +30,7 @@
  * Mobile-only via Tailwind: `md:hidden` (below 768px).
  */
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Phone, Calendar } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
@@ -49,8 +50,40 @@ const HIDDEN_EXACT = new Set<string>([
   "/500",
 ]);
 
+function readConsentCookie(): boolean {
+  if (typeof document === "undefined") return false;
+  return /(?:^|; )sc_consent=/.test(document.cookie);
+}
+
 export function MobileLeadBar() {
   const pathname = usePathname() ?? "/";
+
+  // Hide while cookie consent dialog is still showing (z-50 cookie banner
+  // overlaps z-40 lead bar otherwise — visitor sees a stack of two bars on
+  // first paint and neither reads as primary). Clarity audit 2026-05-27:
+  // cookie banner Accept got 19.15% of homepage clicks because visitors
+  // wanted to dismiss the bottom-of-screen blocker before engaging with
+  // anything else. By hiding the lead bar until consent fires, the cookie
+  // banner becomes a one-step gate (tap Accept) rather than a two-bar
+  // visual conflict — and the lead bar gets a clean stage when it appears
+  // 300ms after consent. Listens to the storage + custom event so the bar
+  // appears immediately after consent (no full-page reload needed).
+  const [consented, setConsented] = useState(false);
+
+  useEffect(() => {
+    setConsented(readConsentCookie());
+    function recheck() { setConsented(readConsentCookie()); }
+    // Custom event fired by cookie-consent.tsx handlers (added 2026-05-27)
+    window.addEventListener("sc:consent-updated", recheck);
+    // Cross-tab updates (if user accepts in another tab)
+    window.addEventListener("storage", recheck);
+    return () => {
+      window.removeEventListener("sc:consent-updated", recheck);
+      window.removeEventListener("storage", recheck);
+    };
+  }, []);
+
+  if (!consented) return null;
 
   // Hide on booking-in-progress / confirmation / 404 / 500 / operator pages.
   for (const prefix of HIDDEN_ROUTE_PREFIXES) {

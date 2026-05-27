@@ -156,8 +156,17 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Eerste sessie vrijblijvend.",
       priceAnchor: "vanaf €45 · privé studio Jordaan",
+      // 2026-05-27 Clarity audit lesson — heatmap shows "Voor trainers"
+      // (4 clicks) beats "Probeer Personal training" (2 clicks) on the same
+      // hero. Hypothesis: "Probeer" is a vague verb that signals commit-
+      // ment without showing the next step. "Match je trainer in 30 sec"
+      // tells the visitor EXACTLY what happens + signals low time-cost +
+      // routes directly to the just-shipped match quiz (highest-converting
+      // path for cold IG traffic — 63% of visits). Destination changed
+      // from /nl/gratis-intake (trainer-grid landing) to /nl/match-trainer
+      // (3-question quiz that outputs top-2 trainer match).
       ctas: [
-        { label: "Probeer Personal training", href: "/nl/gratis-intake", icon: Users, primary: true },
+        { label: "Match je trainer in 30 sec", href: "/nl/match-trainer", icon: Users, primary: true },
       ],
       trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
       // whatsappLink removed 2026-05-27 — see comment in BOTTOM CLUSTER.
@@ -171,8 +180,9 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "First session free.",
       priceAnchor: "from €45 · private studio in Jordaan",
+      // See NL parallel comment (2026-05-27 Clarity audit).
       ctas: [
-        { label: "Try Personal training", href: "/en/free-intro", icon: Users, primary: true },
+        { label: "Match your trainer in 30 sec", href: "/en/match-trainer", icon: Users, primary: true },
       ],
       trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
       // whatsappLink removed 2026-05-27 — see NL comment.
@@ -222,7 +232,7 @@ export function Hero({ locale }: { locale: Locale }) {
   }, [secondaryMounted, paused]);
 
   return (
-    <section className="relative overflow-hidden -mt-20 min-h-[90vh] sm:min-h-[88vh] lg:min-h-[92vh] flex flex-col">
+    <section className="relative overflow-hidden -mt-20 min-h-[72vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
       {/* Background slideshow — only the image crossfades; text overlay below
           stays 100% static. backgroundColor renders BEFORE the first image
           fetches: zero-paint-cost dominant-color preview (matched via
