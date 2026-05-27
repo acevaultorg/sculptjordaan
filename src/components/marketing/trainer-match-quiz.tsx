@@ -135,7 +135,10 @@ const COPY_NL: QuizCopy = {
     title: "Jouw top-2 match",
     sub: "Op basis van je doel, frequentie en taalvoorkeur.",
     bookLabel: (name) => `Plan gratis intake met ${name} →`,
-    whatsappLabel: "Of liever WhatsApp?",
+    // Parity with lead-rescue-popup.tsx fix (2026-05-27) — "Of liever
+    // WhatsApp?" had the same gek-taalgebruik issue as the rescue label.
+    // Direct active form fits Dutch operator-action register.
+    whatsappLabel: "Of WhatsApp ons",
     reset: "↺ Doe de match opnieuw",
     findOther: "Bekijk alle 10 trainers",
     specialty: "Specialisatie",

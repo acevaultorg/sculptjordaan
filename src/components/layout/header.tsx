@@ -253,9 +253,20 @@ export function Header() {
                 bookOpen
                   ? "bg-brand-dark text-brand-foreground"
                   : [
-                      // Mobile: glass-outline over hero image
-                      "border border-white/30 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/40 active:scale-95",
-                      // Desktop (sm+): switch to solid brand
+                      // Mobile: brand-orange outline (border + text are brand
+                      // color; fill stays glass for hero-overlay legibility).
+                      // 2026-05-27 followup: pre-followup the button was a
+                      // generic white-outline pill identical to "Try-Out"
+                      // beside it — visitors couldn't read it as "the
+                      // booking entry". Brand-tinted outline restores Boek's
+                      // identity without re-creating the solid-orange that
+                      // competes with the hero PT primary (the original
+                      // 2026-05-27 audit problem). Now: Boek = brand color
+                      // but not filled = visually adjacent to but
+                      // subordinate to the hero CTA.
+                      "border border-brand/60 text-brand bg-black/30 backdrop-blur-md hover:bg-brand/10 hover:border-brand active:scale-95",
+                      // Desktop (sm+): switch to solid brand (no competition
+                      // at desktop CSS — cookie + lead bar don't show).
                       "sm:border-0 sm:text-brand-foreground sm:bg-brand sm:hover:bg-brand-dark sm:backdrop-blur-none",
                     ].join(" ")
               )}
