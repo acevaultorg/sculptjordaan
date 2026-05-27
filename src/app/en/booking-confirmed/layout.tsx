@@ -25,6 +25,14 @@ export const metadata: Metadata = {
       "Your booking is confirmed. Confirmation email follows within 5 minutes.",
     url: "/en/booking-confirmed",
     type: "website",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SculptClub private personal training studio in Amsterdam Jordaan",
+      },
+    ],
   },
 };
 

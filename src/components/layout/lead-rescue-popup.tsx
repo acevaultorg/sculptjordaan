@@ -180,8 +180,12 @@ export function LeadRescuePopup() {
         eyebrow: "Wacht — 1 vraag?",
         title: "Match in 30 seconden",
         sub: "3-vragen quiz · top-2 trainer match · geen signup",
-        quiz: "Doe de 30 sec match-quiz",
-        wa: "Liever WhatsApp",
+        // "Liever WhatsApp" felt grammatically odd to operator
+        // (2026-05-27 — "beetje gek taalgebruik"). It reads as a
+        // half-sentence in Dutch (literally "rather WhatsApp" with no
+        // verb). Replaced with "WhatsApp ons" — natural, action-oriented,
+        // matches Dutch operator-action register.
+        wa: "WhatsApp ons",
         intake: "Plan direct gratis intake",
         close: "Sluiten",
       };

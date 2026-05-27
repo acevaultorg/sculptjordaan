@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, MessageCircle, ArrowRight, Phone } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
+import { Footer } from "@/components/layout/footer";
 
 /**
  * /nl/gratis-intake-ads — lean landing page variant for paid Google Ads traffic.
@@ -152,6 +153,7 @@ export default function GratisIntakeAdsPage() {
           Egelantiersgracht 424 · 1015 RR Amsterdam · Dagelijks 06:30–22:00
         </p>
       </main>
+      <Footer />
     </div>
   );
 }

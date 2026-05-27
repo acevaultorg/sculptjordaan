@@ -155,7 +155,11 @@ export function Hero({ locale }: { locale: Locale }) {
     nl: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "Eerste sessie vrijblijvend.",
-      priceAnchor: "vanaf €45 · privé studio Jordaan",
+      // Was: "vanaf €45 · privé studio Jordaan" — operator audit 2026-05-27
+      // flagged as duplicate ("Jordaan" repeats overline, "privé studio"
+      // repeats h1 "PRIVATE GYM"). New copy adds genuinely-new value:
+      // 1-op-1 attention = the differentiator from chain-gym group trainers.
+      priceAnchor: "vanaf €45 · 1-op-1 met je trainer",
       // 2026-05-27 Clarity audit lesson — heatmap shows "Voor trainers"
       // (4 clicks) beats "Probeer Personal training" (2 clicks) on the same
       // hero. Hypothesis: "Probeer" is a vague verb that signals commit-
@@ -179,7 +183,9 @@ export function Hero({ locale }: { locale: Locale }) {
     en: {
       subtitle: "Amsterdam ××× Jordaan",
       taglineSub: "First session free.",
-      priceAnchor: "from €45 · private studio in Jordaan",
+      // See NL parallel — was "private studio in Jordaan" (duplicate of
+      // overline + h1). New copy: 1-on-1 differentiator.
+      priceAnchor: "from €45 · 1-on-1 with your trainer",
       // See NL parallel comment (2026-05-27 Clarity audit).
       ctas: [
         { label: "Match your trainer in 30 sec", href: "/en/match-trainer", icon: Users, primary: true },

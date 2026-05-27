@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
 import { TrainerChoiceGrid } from "@/components/marketing/trainer-choice-grid";
+import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: { absolute: "Free Intro Personal Training — SculptClub Jordaan" },
@@ -284,6 +285,7 @@ export default function FreeIntroPage() {
           Egelantiersgracht 424, Amsterdam Jordaan
         </p>
       </main>
+      <Footer />
     </div>
   );
 }

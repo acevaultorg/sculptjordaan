@@ -30,6 +30,14 @@ export const metadata: Metadata = {
       "Je boeking is bevestigd. Bevestigingsmail volgt binnen 5 minuten.",
     url: "/nl/boeking-bevestigd",
     type: "website",
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SculptClub privé personal training studio in Amsterdam Jordaan",
+      },
+    ],
   },
 };
 

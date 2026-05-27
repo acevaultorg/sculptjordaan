@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam Jordaan — SculptClub Private Studio" },
@@ -259,6 +260,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
           </a>
         </p>
       </main>
+      <Footer />
     </div>
   );
 }
