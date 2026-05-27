@@ -74,12 +74,16 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // showed "Boek gratis try-out → →" — duplicate-arrow bug from labels
   // containing trailing → plus JSX-rendered icon. Stripped from all labels.
 
-  // Studio-rental — visitors are PT-trainers shopping rental space
+  // Studio-rental — visitors are PT-trainers shopping rental space.
+  // 2026-05-27: route changed from #schedule (deleted free-trial
+  // embed) to #book (top booking widget on /nl/studio-huren). Page
+  // now leads with the canonical booking widget; mobile sticky bar
+  // returns visitor there after deep-scroll.
   if (/\/(studio-huren|studio-rental)(\/|$)/.test(pathname)) {
     return {
-      label: locale === "nl" ? "Boek gratis test sessie" : "Book free test session",
-      href: "#schedule",
-      ctaId: "mobile-cta-studio-test",
+      label: locale === "nl" ? "Naar boeking" : "Go to booking",
+      href: "#book",
+      ctaId: "mobile-cta-studio-book",
     };
   }
 

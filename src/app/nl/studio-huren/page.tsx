@@ -8,11 +8,10 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
-import { acuityPackages, acuityFreeTrials, whatsappLinks } from "@/config/acuity";
-import { AcuityEmbed } from "@/components/marketing/acuity-embed";
-import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
+import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
+import { RentalTabs } from "@/components/marketing/rental-tabs";
 import {
   Dumbbell,
   Lock,
@@ -159,324 +158,223 @@ export default function StudioRentalPageNL() {
         priceRange="Vanaf €12 per uur"
       />
       <FaqJsonLd faqs={faqJsonLdData} />
-      {/* Hero */}
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <SectionHeader
-          as="h1"
-              overline="Studio Verhuur"
-              title="Studio huren voor personal trainers in Amsterdam"
-              description="Train je klanten op jouw manier in een privé studio in de Jordaan. Betaal per sessie of bespaar 10-23% met een kortingspakket. Geen abonnement. Geen commissie."
-              center={false}
-            />
-            <FadeIn className="flex flex-col sm:flex-row gap-3">
-              {/* Free studio try-out → embedded scheduler below
-                  (in-page #schedule anchor; visitor stays on sculptclub.nl). */}
-              <ButtonLink href="#schedule" size="lg">
-                Boek een gratis proefsessie
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </ButtonLink>
-              <ButtonLink href="#tarieven" variant="outline" size="lg">
-                Bekijk tarieven
-              </ButtonLink>
-            </FadeIn>
+      {/* ═══ Top: booking widget — operator directive 2026-05-27:
+          "this page should start with the same UX element as on the
+          picture" (operator screenshotted /nl/boek-studio's centered
+          tabs widget). Page now LEADS with the canonical booking
+          surface — visitor lands → sees Per uur ⇄ Pakketten tabs with
+          live rates + Boek/Koop buttons → can book instantly. The
+          previous hero (slideshow + dual CTAs) + standalone Tarieven
+          section + standalone Pakketten section + #schedule embed
+          have all been consolidated into ONE widget. SEO-strong h1
+          retained ("Studio huren voor personal trainers in Amsterdam"
+          — head query winner). Slideshow imagery moves below in the
+          existing TrainerValueProp + Bekijk de Ruimte sections.
+          ═══ */}
+      <Section id="book">
+        <div className="mb-6 text-center">
+          <p className="overline text-primary">Voor Personal Trainers</p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+            Studio huren voor personal trainers in Amsterdam
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Vanaf €12/uur · 0% commissie · Gratis annuleren · Dagelijks 06:30–22:00
+          </p>
+        </div>
 
-            {/* Trust strip — 5★ Google + price anchor + key benefits */}
-            <FadeIn delay={0.1} className="mt-6">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-                <span className="flex items-center gap-1.5">
-                  <span className="text-amber-400">★★★★★</span>
-                  <span className="font-semibold">5,0 Google</span>
-                </span>
-                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-                <span className="font-semibold text-foreground">Privé studio</span>
-                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-                <span className="font-medium text-muted-foreground">vanaf €12/uur</span>
-                <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-                <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>
+        <RentalTabs
+          locale="nl"
+          packages={
+            <div className="mx-auto max-w-5xl">
+              <p className="mb-4 text-center text-sm text-muted-foreground">
+                Strippenkaart kopen en besparen. 1 jaar geldig.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <Card className="h-full text-center">
+                  <CardHeader>
+                    <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
+                    <CardTitle className="text-xl">Starter</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;99</p>
+                    <p className="text-3xl font-bold">&euro;89</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 10%</p>
+                    <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
+                      Koop Starter
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
+
+                <Card className="h-full text-center ring-2 ring-primary">
+                  <CardHeader>
+                    <Badge className="mx-auto mb-2">Meest gekozen</Badge>
+                    <CardTitle className="text-xl">Routine</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;234</p>
+                    <p className="text-3xl font-bold">&euro;199</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 15%</p>
+                    <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
+                      Koop Routine
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
+
+                <Card className="h-full text-center">
+                  <CardHeader>
+                    <Badge aria-hidden className="invisible mx-auto mb-2">placeholder</Badge>
+                    <CardTitle className="text-xl">Pro</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;436</p>
+                    <p className="text-3xl font-bold">&euro;349</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 20%</p>
+                    <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
+                      Koop Pro
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
+
+                <Card className="h-full text-center">
+                  <CardHeader>
+                    <Badge className="mx-auto mb-2" variant="secondary">Beste deal</Badge>
+                    <CardTitle className="text-xl">Volume</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground line-through">&euro;713</p>
+                    <p className="text-3xl font-bold">&euro;549</p>
+                    <p className="mt-2 text-sm text-discount font-medium">Bespaar 23%</p>
+                    <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
+                      Koop Volume
+                    </ButtonLink>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
-                  0% commissie
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-400">
-                  Geen abonnement
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
-                  Gratis annuleren
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2.5 py-0.5 text-xs font-medium text-rose-700 dark:text-rose-400">
-                  Eigen profielpagina
-                </span>
+
+              <p className="mt-6 text-center text-sm text-muted-foreground">
+                Laagste tarief: <span className="text-discount font-medium">&euro;9,24/sessie</span> · Liever per bank?{" "}
+                <a href={whatsappLinks.bankTransferNl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
+                  WhatsApp ons
+                </a>
+              </p>
+            </div>
+          }
+          hourly={
+            <div className="mx-auto max-w-3xl">
+              <p className="mb-4 text-center text-sm text-muted-foreground">
+                Reserveer per sessie. Geen abonnement, geen contract,{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer gebruikt worden).{" "}
+                <strong className="text-foreground">Hele studio</strong> = volledig privé (max 6 personen).
+              </p>
+              <div className="overflow-hidden rounded-xl border bg-card">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="px-4 py-3 text-left font-medium">Ruimte</th>
+                      <th className="px-4 py-3 text-center font-medium">60 min</th>
+                      <th className="px-4 py-3 text-center font-medium">90 min</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="px-4 py-3 font-medium">Halve studio (max 2)</td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;12</span>
+                          <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;17</span>
+                          <ButtonLink href={acuityLinks.halfStudio90} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;17</span>
+                          <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
+                          <span className="font-semibold">&euro;24</span>
+                          <ButtonLink href={acuityLinks.fullStudio90} size="sm">Boek</ButtonLink>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </FadeIn>
+              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <CreditCard className="h-3.5 w-3.5" />
+                <span>CreditCard, Apple Pay, Google Pay of factuur</span>
+              </div>
+            </div>
+          }
+        />
+      </Section>
+
+      {/* Indecisive-capture: low-friction WhatsApp before commitment */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center sm:flex sm:items-center sm:justify-between sm:text-left">
+            <div>
+              <p className="text-base font-semibold">Niet zeker welke optie?</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                WhatsApp ons je situatie — we adviseren binnen 1 uur.
+              </p>
+            </div>
+            <ButtonLink
+              href={whatsappLinks.studioNl}
+              external
+              size="lg"
+              variant="outline"
+              className="mt-4 sm:mt-0 plausible-event-name=studio_huren_uncertain_whatsapp"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp ons
+            </ButtonLink>
           </div>
-          <FadeIn delay={0.2}>
+        </FadeIn>
+      </Section>
+
+      {/* Slideshow + trust strip — moves below the booking widget per
+          operator's "start with booking" directive. Imagery still earns
+          its place (shows the room visitors are about to book) but no
+          longer competes with the conversion surface. */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
             <div
-              className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+              className="relative aspect-[16/9] overflow-hidden rounded-2xl"
               style={{ backgroundColor: getColor(HERO_SRC) }}
             >
               <RotatingImageStack
                 images={HERO_IMAGES}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              {/* Scroll-stop badge — paid-traffic conversion lever per Clarity 2026-05-16 audit */}
-              <HeroPriceBadge
-                price="€12/uur"
-                label="0% commissie"
-                subLabel="Gratis proefsessie"
+                sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </div>
-          </FadeIn>
-        </div>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
+              <span className="flex items-center gap-1.5">
+                <span className="text-amber-400">★★★★★</span>
+                <span className="font-semibold">5,0 Google</span>
+              </span>
+              <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+              <span className="font-semibold text-foreground">Privé studio</span>
+              <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
+              <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>
+            </div>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Client-growth value prop — what trainers GET beyond the room */}
       <TrainerValueProp locale="nl" />
-
-      {/* Embedded Acuity scheduler — free Studio Rental try-out stays on sculptclub.nl */}
-      <Section id="schedule">
-        <SectionHeader
-          overline="Gratis proefsessie"
-          title="Plan je gratis proefsessie"
-          description="60 minuten in onze studio — kennismaken met de ruimte, geen verplichting. Geen commissie, geen contract, altijd gratis annuleren."
-        />
-        <AcuityEmbed
-          url={acuityFreeTrials.studioRentalTryout}
-          title="Boek je gratis Studio Rental proefsessie bij SculptClub"
-          height={900}
-          className="rounded-2xl overflow-hidden bg-white max-w-3xl mx-auto"
-        />
-      </Section>
-
-      {/* Pricing table */}
-      <Section bg="muted" id="tarieven">
-        <SectionHeader
-          overline="Tarieven"
-          title="Uurtarieven"
-          description="De studio is opgedeeld in twee zones — kies wat past bij hoe je traint."
-        />
-
-        <div className="mx-auto max-w-3xl">
-          {/* Quick explainer: what's the difference between the two options? */}
-          <FadeIn>
-            <div className="grid gap-4 sm:grid-cols-2 mb-6">
-              <div className="rounded-xl border border-border bg-card p-4">
-                <p className="text-sm font-semibold mb-1">Halve studio</p>
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  Voor maximaal <strong className="text-foreground">2 personen</strong> totaal.
-                  Perfect voor 1-op-1 personal training. De andere helft van de studio kan
-                  tegelijk door een andere trainer gebruikt worden.
-                </p>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-4">
-                <p className="text-sm font-semibold mb-1">Hele studio</p>
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  Volledig privé — de hele ruimte voor jou en je klant(en).
-                  We adviseren <strong className="text-foreground">maximaal 6 personen</strong>.
-                  Voor duo-, semi-private of kleine groepstraining.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
-
-          {/* 2026-05-27: removed 4 inline "Boek" buttons (one per rate
-              cell). Operator: "al de verschillende cta's op deze pagina
-              vind ik verwarrend." The #schedule Acuity embed above is
-              the single canonical booking surface — having 4 extra
-              direct-Acuity URLs in the rate table created duplicate
-              booking paths + 4 competing CTAs in a section meant to
-              communicate prices. Table is now pure rate-reference;
-              the single "Naar boeking" link below routes everyone to
-              the same embed. */}
-          <FadeIn>
-            <div className="overflow-hidden rounded-xl border bg-card">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b bg-muted/50">
-                    <th className="px-4 py-3 text-left font-medium">Ruimte</th>
-                    <th className="px-4 py-3 text-center font-medium">60 min</th>
-                    <th className="px-4 py-3 text-center font-medium">90 min</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="px-4 py-3 font-medium">Halve studio (1:1)</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;12</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;24</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.1}>
-            <div className="mt-5 flex justify-center">
-              <a
-                href="#schedule"
-                className="plausible-event-name=studio_huren_rate_table_to_schedule inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
-              >
-                Naar boekingsformulier
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.15}>
-            <p className="mt-5 text-center text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">Inbegrepen:</span> alle apparatuur (Rogue rack, dumbbells, kabelmachine, sleds, banken, bands, cardio), wifi, muziek, klimaatbeheersing en schoonmaak. Deurcode via WhatsApp de avond ervoor.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <CreditCard className="h-4 w-4" />
-              <span>Betaal met CreditCard, Apple Pay, Google Pay of per factuur</span>
-            </div>
-          </FadeIn>
-        </div>
-      </Section>
-
-      {/* Discount packages */}
-      <Section>
-        <SectionHeader
-          overline="Voordeelpakketten"
-          title="Meer Trainen, Meer Besparen"
-          description="Koop een strippenkaart en bespaar op elke sessie. Pakketten zijn 1 jaar geldig."
-        />
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Starter */}
-          <FadeIn delay={0}>
-            <Card className="h-full text-center">
-              <CardHeader>
-                <CardTitle className="text-xl">Starter</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;99</span>
-                </p>
-                <p className="text-3xl font-bold">&euro;89</p>
-                <p className="mt-2 text-sm">
-                  <span className="sc-discount">Bespaar 10%</span>
-                </p>
-                <ButtonLink
-                  href={acuityPackages.studio.starter}
-                  size="lg"
-                  className="mt-4"
-                >
-                  Koop Starter
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-
-          {/* Routine */}
-          <FadeIn delay={0.1}>
-            <Card className="h-full text-center ring-2 ring-primary">
-              <CardHeader>
-                <Badge className="mx-auto mb-2">Meest gekozen</Badge>
-                <CardTitle className="text-xl">Routine</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;234</span>
-                </p>
-                <p className="text-3xl font-bold">&euro;199</p>
-                <p className="mt-2 text-sm">
-                  <span className="sc-discount">Bespaar 15%</span>
-                </p>
-                <ButtonLink
-                  href={acuityPackages.studio.routine}
-                  size="lg"
-                  className="mt-4"
-                >
-                  Koop Routine
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-
-          {/* Pro */}
-          <FadeIn delay={0.2}>
-            <Card className="h-full text-center">
-              <CardHeader>
-                <CardTitle className="text-xl">Pro</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;436</span>
-                </p>
-                <p className="text-3xl font-bold">&euro;349</p>
-                <p className="mt-2 text-sm">
-                  <span className="sc-discount">Bespaar 20%</span>
-                </p>
-                <ButtonLink
-                  href={acuityPackages.studio.pro}
-                  size="lg"
-                  className="mt-4"
-                >
-                  Koop Pro
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-
-          {/* Volume */}
-          <FadeIn delay={0.3}>
-            <Card className="h-full text-center">
-              <CardHeader>
-                <Badge className="mx-auto mb-2" variant="secondary">Beste deal</Badge>
-                <CardTitle className="text-xl">Volume</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;713</span>
-                </p>
-                <p className="text-3xl font-bold">&euro;549</p>
-                <p className="mt-2 text-sm">
-                  <span className="sc-discount">Bespaar 23%</span>
-                </p>
-                <ButtonLink
-                  href={acuityPackages.studio.volume}
-                  size="lg"
-                  className="mt-4"
-                >
-                  Koop Volume
-                </ButtonLink>
-              </CardContent>
-            </Card>
-          </FadeIn>
-        </div>
-
-        <FadeIn delay={0.3}>
-          <p className="mt-6 text-center text-sm text-muted-foreground">
-            Geldig 1 jaar. Laagste effectieve tarief:{" "}
-            <span className="sc-discount">&euro;9,24/sessie</span>
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.35}>
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            Liever per bankoverschrijving?{" "}
-            <a
-              href={whatsappLinks.bankTransferNl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
-            >
-              <MessageCircle className="h-3.5 w-3.5" />
-              Stuur ons een WhatsApp
-            </a>
-          </p>
-        </FadeIn>
-      </Section>
 
       {/* Features */}
       <Section bg="muted">
@@ -622,14 +520,13 @@ export default function StudioRentalPageNL() {
               Probeer de studio gratis uit met een proefsessie. Geen
               verplichtingen.
             </p>
-            {/* 2026-05-27: primary CTA was acuityLinks.studioTrial =
-                external Acuity URL opening a new tab. The hero primary
-                CTA + mobile sticky bar both route to #schedule (in-page
-                AcuityEmbed). Same destination for the same action,
-                consistent across the page. Operator: "verwarrend." */}
+            {/* 2026-05-27 final: page now LEADS with the booking widget
+                (top of page). Bottom CTA = scroll-to-top of booking
+                widget so a visitor who scrolled through 7 sections gets
+                back to the conversion surface in one tap. */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <ButtonLink href="#schedule" size="lg">
-                Boek je gratis proefsessie
+              <ButtonLink href="#book" size="lg">
+                Naar boekingsformulier
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink
