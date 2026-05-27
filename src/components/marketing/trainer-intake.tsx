@@ -218,12 +218,27 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   scroll. Desktop 2-col grid unaffected (still trainer-info left, contact right). */}
               <div className="space-y-5 order-2 md:order-1">
                 <div className="relative w-full aspect-[4/5] max-w-xs rounded-2xl overflow-hidden">
+                  {/* `priority` (not the default `loading="lazy"`) because the
+                      trainer photo IS the primary above-fold proof on this page.
+                      The visitor has either (a) finished the match-quiz and
+                      clicked "Plan gratis intake met <name>", or (b) tapped a
+                      trainer card from the grid — either way they EXPECT to see
+                      this trainer's face immediately, not a black rectangle that
+                      pops in after scroll. Chrome MCP audit 2026-05-27: image
+                      was lazy-loaded; landing on the page showed an empty
+                      portrait container that filled in only after the visitor
+                      scrolled, which is exactly the wrong moment to introduce
+                      doubt ("is this trainer real? is this site broken?"). One
+                      Image per per-trainer intake page = negligible LCP impact;
+                      conversion impact = preserving the warm-handoff from
+                      quiz/grid → intake-form. */}
                   <Image
                     src={trainer.image}
                     alt={`Photo of ${trainer.name}, personal trainer at SculptClub Amsterdam`}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 320px"
+                    priority
                   />
                 </div>
 
