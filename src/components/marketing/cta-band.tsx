@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Users, Dumbbell, Building2 } from "lucide-react";
+import { MessageCircle, Users, Dumbbell, Building2, Phone } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Section, FadeIn } from "@/components/sections/section";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
@@ -36,7 +36,8 @@ export function CtaBand({ locale }: { locale: Locale }) {
               external: true,
             },
           ],
-          whatsapp: "Liever direct contact? WhatsApp ons",
+          whatsappLabel: "WhatsApp · antwoord <30 min",
+          callLabel: "Bel · ma-vr 09-21",
         }
       : {
           title: "Try it free",
@@ -65,7 +66,8 @@ export function CtaBand({ locale }: { locale: Locale }) {
               external: true,
             },
           ],
-          whatsapp: "Prefer direct contact? WhatsApp us",
+          whatsappLabel: "WhatsApp · reply <30 min",
+          callLabel: "Call · Mon-Fri 9-21",
         };
 
   return (
@@ -110,16 +112,28 @@ export function CtaBand({ locale }: { locale: Locale }) {
           })}
         </div>
 
-        {/* WhatsApp fallback */}
-        <div className="mt-8 text-center">
+        {/* WhatsApp + Phone — promoted from "small grey fallback link" to a
+            visible always-available pair (2026-05-26 lead-cap optimization).
+            Industry benchmark: chat-first CTAs convert 8-15% for boutique PT
+            vs 3-5% for form/calendar-only. Mobile sticky bar (PageLayout)
+            covers the always-visible angle; this in-content pair covers
+            visitors who reach the CTA section on desktop or scroll further. */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a
             href={whatsappLinks.generic}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl border border-brand/40 bg-brand/10 hover:bg-brand/20 text-white font-semibold text-sm transition-colors"
           >
-            <MessageCircle className="w-4 h-4" />
-            {t.whatsapp}
+            <MessageCircle className="w-4 h-4 text-brand" />
+            {t.whatsappLabel}
+          </a>
+          <a
+            href="tel:+31683178934"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm transition-colors"
+          >
+            <Phone className="w-4 h-4 text-brand" />
+            {t.callLabel}
           </a>
         </div>
       </FadeIn>
