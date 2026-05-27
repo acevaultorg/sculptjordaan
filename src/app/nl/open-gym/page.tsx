@@ -114,10 +114,15 @@ const steps = [
   },
 ];
 
+// Gallery must NOT include training-dumbbells-focus.jpg — that's the hero
+// image at line ~250 below. Same-page dup audit 2026-05-27 caught the
+// repeat (operator was seeing similar-looking shots back-to-back on
+// mobile). Swapped to training-bike-energy.jpg for visual variety
+// (cardio shot complementing the strength-focused hero).
 const studioImages = [
   { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press op bank bij SculptClub" },
   { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang aan de pull-up bar bij SculptClub" },
-  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Geconcentreerd trainen met dumbbells bij SculptClub" },
+  { src: "/images/studio/training-bike-energy.jpg", alt: "Cardio op de assault bike bij SculptClub" },
   { src: "/images/studio/back-room-full.jpg", alt: "Volledige achterruimte met slee, rack en bank bij SculptClub" },
 ];
 

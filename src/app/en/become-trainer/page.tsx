@@ -246,11 +246,21 @@ export default function BecomeTrainerEN() {
           description="Centrally located private studio with professional equipment. Open daily from 06:30 to 22:00."
         />
         <FadeIn>
+          {/* Studio gallery — 3 visually distinct shots covering people +
+              equipment + place. Audit 2026-05-27 found prior set
+              (bike-smile + barbell-dramatic + barbell-skylight) shipped 2
+              near-identical dark barbell shots stacked on mobile + the
+              barbell-skylight one was ALSO in HERO_IMAGES line 48 (same
+              image twice on one page). Swapped to: bike-smile (person
+              energy) + dumbbells-power (equipment variety) +
+              canal-view-doors (place identity, reinforces the
+              "Egelantiersgracht 424, Jordaan" caption above). NL parity
+              at src/app/nl/word-trainer/page.tsx. */}
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { src: "/images/studio/training-bike-smile.jpg", alt: "Smiling on assault bike at SculptClub" },
-              { src: "/images/studio/training-barbell-dramatic.jpg", alt: "Dramatic barbell close-up at SculptClub" },
-              { src: "/images/studio/training-barbell-skylight.jpg", alt: "Barbell training under skylight at SculptClub" },
+              { src: "/images/studio/training-dumbbells-power.jpg", alt: "Dumbbell training at SculptClub" },
+              { src: "/images/studio/canal-view-doors.jpg", alt: "Egelantiersgracht canal view from inside the SculptClub studio" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
                 <Image src={img.src} alt={img.alt} fill className="object-cover object-top" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />

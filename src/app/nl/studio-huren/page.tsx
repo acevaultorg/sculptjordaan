@@ -86,11 +86,17 @@ const features = [
   },
 ];
 
+// Lightbox gallery — MUST NOT duplicate the hero rotation above
+// (HERO_IMAGES line 38-43). Same-page dup audit 2026-05-27 found
+// turf-lane-canal + back-room-full + canal-view-doors were rendered
+// in both the hero crossfade AND this gallery — visitor saw the same
+// 3 shots twice per page. Swapped to equipment-focused angles that
+// complement the hero's spatial overviews.
 const galleryImages = [
-  { src: "/images/studio/turf-lane-canal.jpg", alt: "Turf lane met SCULPT wandlogo en uitzicht op de gracht bij SculptClub" },
-  { src: "/images/studio/back-room-full.jpg", alt: "Achterruimte met slee, Rogue rack en bank onder daklicht bij SculptClub" },
+  { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack met Olympic barbell bij SculptClub" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Volledige dumbbell-set tot 32 kg bij SculptClub" },
   { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack met planten en vinyl speler bij SculptClub" },
-  { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht vanuit SculptClub op de Egelantiersgracht" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio in de Jordaan" },
 ];
 
 const faqs = [

@@ -114,10 +114,14 @@ const steps = [
   },
 ];
 
+// Gallery must NOT include training-dumbbells-focus.jpg — that's the hero
+// image at line ~250 below. Same-page dup audit 2026-05-27. Swapped to
+// training-bike-energy.jpg for cardio variety. NL parity at
+// src/app/nl/open-gym/page.tsx.
 const studioImages = [
   { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press on bench at SculptClub" },
   { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang on pull-up bar at SculptClub" },
-  { src: "/images/studio/training-dumbbells-focus.jpg", alt: "Focused dumbbell training at SculptClub" },
+  { src: "/images/studio/training-bike-energy.jpg", alt: "Cardio on the assault bike at SculptClub" },
   { src: "/images/studio/back-room-full.jpg", alt: "Full back room with sled, Rogue rack and bench at SculptClub" },
 ];
 
