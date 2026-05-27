@@ -508,35 +508,46 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
         })}
       </div>
 
+      {/* 2026-05-27: "Bekijk alle 10 trainers" promoted from a tiny
+          text-xs muted link to a full outlined button next to WhatsApp.
+          Operator: "maak die knop meer prominent." Reasoning: the match
+          quiz surfaces 2 trainers, but the operator has 10 — a visitor
+          who doesn't click with either match needs a visible escape to
+          browse the full set. Previously this CTA was equally weak as
+          the "reset quiz" link, both buried at small font with a `·`
+          separator. Now it's a real button parallel to WhatsApp; reset
+          drops to a small text link below. */}
       <div className="mt-6 text-center">
         <p className="text-xs text-muted-foreground mb-3">{t.result.whatsappLabel}</p>
-        <a
-          href={
-            locale === "nl"
-              ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik twijfel tussen ${matches.map((m) => m.trainer.name).join(" en ")} voor een gratis intake.`)}`
-              : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'm torn between ${matches.map((m) => m.trainer.name).join(" and ")} for a free intro.`)}`
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-brand/40 bg-brand/10 hover:bg-brand/20 text-foreground text-sm font-semibold transition-colors"
-        >
-          <MessageCircle className="w-4 h-4 text-brand" />
-          WhatsApp
-        </a>
-        <div className="mt-4 flex items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={
+              locale === "nl"
+                ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik twijfel tussen ${matches.map((m) => m.trainer.name).join(" en ")} voor een gratis intake.`)}`
+                : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'm torn between ${matches.map((m) => m.trainer.name).join(" and ")} for a free intro.`)}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-brand/40 bg-brand/10 hover:bg-brand/20 text-foreground text-sm font-semibold transition-colors"
+          >
+            <MessageCircle className="w-4 h-4 text-brand" />
+            WhatsApp
+          </a>
+          <Link
+            href={locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer"}
+            className="plausible-event-name=match_quiz_see_all_trainers inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-brand bg-transparent hover:bg-brand/10 text-foreground text-sm font-semibold transition-colors"
+          >
+            {t.result.findOther}
+            <ArrowRight className="w-4 h-4 text-brand" />
+          </Link>
+        </div>
+        <div className="mt-4">
           <button
             onClick={reset}
             className="text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors"
           >
             {t.result.reset}
           </button>
-          <span aria-hidden className="text-muted-foreground">·</span>
-          <Link
-            href={locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer"}
-            className="text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors"
-          >
-            {t.result.findOther}
-          </Link>
         </div>
       </div>
     </div>
