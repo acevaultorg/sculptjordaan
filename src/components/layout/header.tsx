@@ -8,7 +8,6 @@ import { Menu, X, Globe, CalendarCheck, Users, Dumbbell, Building2, ArrowRight, 
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
 import { cn } from "@/lib/utils";
-import { acuityFreeTrials } from "@/config/acuity";
 
 type MenuCategory = {
   icon: typeof Building2;
@@ -95,13 +94,25 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
     label: "Try-Out",
     title: "Wat wil je proberen?",
     subtitle: "Eerste keer altijd gratis.",
+    // 2026-05-27 update — operator: "also the steps afterwards."
+    // Pre-update: Studio Huren + Open Gym routed to external Acuity
+    // calendars in a new tab. Visitor left sculptclub.nl mid-funnel,
+    // landed on the bare Acuity scheduler with no SculptClub context,
+    // then had to come back if confused. Continuity broken.
+    // Now: in-page #schedule anchors on /nl/studio-huren and /nl/open-gym
+    // (which both ship an <AcuityEmbed> wired to the SAME free-tryout
+    // appointmentType as the previous external URLs). Visitor lands on
+    // a SculptClub-branded page, the page auto-scrolls to the
+    // "Gratis proefsessie" / "Gratis proefles" section + embedded
+    // scheduler, books in-place. End-to-end on sculptclub.nl. Personal
+    // Trainer continues to /nl/gratis-intake (already a dedicated
+    // PT-free-intake landing page).
     categories: [
       {
         icon: Building2,
         title: "Studio Huren",
         description: "Gratis test sessie · 60 min",
-        href: acuityFreeTrials.studioRentalTryout,
-        external: true,
+        href: "/nl/studio-huren#schedule",
       },
       {
         icon: Users,
@@ -113,8 +124,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
         icon: Dumbbell,
         title: "Open Gym",
         description: "Gratis eerste sessie",
-        href: acuityFreeTrials.openGymTryout,
-        external: true,
+        href: "/nl/open-gym#schedule",
       },
     ],
     returning: "Al lid? Mijn boekingen",
@@ -128,8 +138,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
         icon: Building2,
         title: "Studio Rental",
         description: "Free test session · 60 min",
-        href: acuityFreeTrials.studioRentalTryout,
-        external: true,
+        href: "/en/studio-rental#schedule",
       },
       {
         icon: Users,
@@ -141,8 +150,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
         icon: Dumbbell,
         title: "Open Gym",
         description: "Free first session",
-        href: acuityFreeTrials.openGymTryout,
-        external: true,
+        href: "/en/open-gym#schedule",
       },
     ],
     returning: "Already a member? My bookings",
