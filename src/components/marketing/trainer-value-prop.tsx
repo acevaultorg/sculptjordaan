@@ -33,7 +33,7 @@ const COPY = {
         text: "Bezoekers komen, boeken via Acuity, blijven. Geen commissie. Jij behoudt 100% van je tarief; wij verdienen alleen aan de huur.",
       },
     ],
-    ctaLabel: "Word trainer met profiel",
+    ctaLabel: "Word SculptClub-trainer",
     ctaHref: "/nl/word-trainer",
     secondaryLabel: "Alleen ruimte huren",
     secondaryHref: "#tarieven",

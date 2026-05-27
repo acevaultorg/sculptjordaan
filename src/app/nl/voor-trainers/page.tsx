@@ -41,7 +41,7 @@ const pillars = [
   },
   {
     icon: Users,
-    title: "Word trainer met profiel",
+    title: "Word SculptClub-trainer",
     href: "/nl/word-trainer",
     text:
       "Eigen profiel op sculptclub.nl + klantenmatch via /vind-jouw-personal-trainer. Voor trainers die hun praktijk willen groeien, niet alleen ruimte willen.",
