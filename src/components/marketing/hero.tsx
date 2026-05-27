@@ -161,7 +161,7 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Probeer Personal training", href: "/nl/gratis-intake", icon: Users, primary: true },
       ],
       trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
-      whatsappLink: { label: "Vraag het via WhatsApp", href: whatsappLinks.intakeMatchNl },
+      whatsappLink: { label: "Liever WhatsApp?", href: whatsappLinks.intakeMatchNl },
       trustParts: [
         { text: "Eerste intake gratis", href: "/nl/gratis-intake", event: "hero_trust_intake" },
         { text: "Geen contracten" },
@@ -176,7 +176,7 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Try Personal training", href: "/en/free-intro", icon: Users, primary: true },
       ],
       trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
-      whatsappLink: { label: "Ask via WhatsApp", href: whatsappLinks.intakeMatchEn },
+      whatsappLink: { label: "Prefer WhatsApp?", href: whatsappLinks.intakeMatchEn },
       trustParts: [
         { text: "First intro free", href: "/en/free-intro", event: "hero_trust_intake" },
         { text: "No contracts" },
