@@ -30,7 +30,7 @@
  * Mobile-only via Tailwind: `md:hidden` (below 768px).
  */
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Phone, Calendar } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
@@ -55,6 +55,19 @@ function readConsentCookie(): boolean {
   return /(?:^|; )sc_consent=/.test(document.cookie);
 }
 
+// useSyncExternalStore subscriber + getSnapshot pair for the consent
+// cookie. Allocated at module-scope so identity is stable across renders
+// (per React 19 rules — passing a new function every render would tear).
+function subscribeToConsent(cb: () => void): () => void {
+  window.addEventListener("sc:consent-updated", cb);
+  window.addEventListener("storage", cb);
+  return () => {
+    window.removeEventListener("sc:consent-updated", cb);
+    window.removeEventListener("storage", cb);
+  };
+}
+const consentServerSnapshot = () => false; // SSR: no document.cookie
+
 export function MobileLeadBar() {
   const pathname = usePathname() ?? "/";
 
@@ -66,22 +79,18 @@ export function MobileLeadBar() {
   // anything else. By hiding the lead bar until consent fires, the cookie
   // banner becomes a one-step gate (tap Accept) rather than a two-bar
   // visual conflict — and the lead bar gets a clean stage when it appears
-  // 300ms after consent. Listens to the storage + custom event so the bar
-  // appears immediately after consent (no full-page reload needed).
-  const [consented, setConsented] = useState(false);
-
-  useEffect(() => {
-    setConsented(readConsentCookie());
-    function recheck() { setConsented(readConsentCookie()); }
-    // Custom event fired by cookie-consent.tsx handlers (added 2026-05-27)
-    window.addEventListener("sc:consent-updated", recheck);
-    // Cross-tab updates (if user accepts in another tab)
-    window.addEventListener("storage", recheck);
-    return () => {
-      window.removeEventListener("sc:consent-updated", recheck);
-      window.removeEventListener("storage", recheck);
-    };
-  }, []);
+  // 300ms after consent.
+  //
+  // useSyncExternalStore is the React 19 idiomatic way to subscribe to
+  // external (window-level) state. cookie-consent.tsx dispatches
+  // `sc:consent-updated` after Accept/Essential; cross-tab updates fire
+  // `storage`. Refactored 2026-05-27 from useState+useEffect after the
+  // react-hooks/set-state-in-effect lint rule flagged the prior pattern.
+  const consented = useSyncExternalStore(
+    subscribeToConsent,
+    readConsentCookie,
+    consentServerSnapshot
+  );
 
   if (!consented) return null;
 

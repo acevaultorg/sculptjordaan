@@ -245,8 +245,12 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
 
   const [step, setStep] = useState<0 | 1 | 2 | 3 | 4>(0); // 0=intro, 4=result
   const [goal, setGoal] = useState<GoalKey | null>(null);
+  // FreqKey is tracked but never read — Q2 is signal-only and sent inside
+  // the Quiz Step plausible event; nothing else in the component consumes
+  // it. Keep the setter to fire telemetry; drop the read value to satisfy
+  // @typescript-eslint/no-unused-vars (was a leftover from the pre-Plausible
+  // draft where Q2 fed into trainer scoring). Refactored 2026-05-27.
   const [, setFreq] = useState<FreqKey | null>(null);
-  const [freqKey, setFreqKey] = useState<FreqKey | null>(null);
   const [lang, setLang] = useState<LangKey | null>(null);
 
   // Fire Quiz Start on mount
@@ -269,7 +273,6 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
 
   function pickFreq(f: FreqKey) {
     setFreq(f);
-    setFreqKey(f);
     setStep(3);
     track("Quiz Step", { step: 2, freq: f });
   }
@@ -283,7 +286,6 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
   function reset() {
     setGoal(null);
     setFreq(null);
-    setFreqKey(null);
     setLang(null);
     setStep(0);
     track("Quiz Reset", {});
@@ -317,7 +319,14 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
           <Sparkles className="w-3.5 h-3.5" />
           <span>{locale === "nl" ? "10 trainers · 30 sec match" : "10 trainers · 30 sec match"}</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold mb-3">{t.intro.title}</h2>
+        {/* h1 (not h2) because the quiz is the ONLY content on /match-trainer
+            — the page has no preceding SectionHeader. Without an h1, screen
+            readers + Google's structured-page parsing both treat the heading
+            tree as level-skipped (page → h2 with no h1). Component is only
+            rendered on /nl/match-trainer + /en/match-trainer (grep-verified
+            2026-05-27); no other usages exist that would conflict with a
+            page-level h1. */}
+        <h1 className="text-2xl sm:text-3xl font-bold mb-3">{t.intro.title}</h1>
         <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-md mx-auto">{t.intro.sub}</p>
         <button
           onClick={() => setStep(1)}

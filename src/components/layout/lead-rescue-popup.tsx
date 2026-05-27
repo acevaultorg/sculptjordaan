@@ -26,7 +26,7 @@
  *   - plausible('Rescue Action', { action: 'whatsapp' | 'intake' | 'dismiss' })
  */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { X, MessageCircle, Calendar, Sparkles } from "lucide-react";
@@ -48,10 +48,38 @@ const SESSION_FLAG = "sculptclub-rescue-shown";
 const TIMED_TRIGGER_MS = 30000;   // 30s engaged before timed trigger
 const TIMED_MIN_SCROLL_PX = 200;  // must scroll at least this much before timed
 
+function readConsentCookie(): boolean {
+  if (typeof document === "undefined") return false;
+  return /(?:^|; )sc_consent=/.test(document.cookie);
+}
+
+// useSyncExternalStore stable references — see MobileLeadBar parallel.
+function subscribeToConsent(cb: () => void): () => void {
+  window.addEventListener("sc:consent-updated", cb);
+  window.addEventListener("storage", cb);
+  return () => {
+    window.removeEventListener("sc:consent-updated", cb);
+    window.removeEventListener("storage", cb);
+  };
+}
+const consentServerSnapshot = () => false;
+
 export function LeadRescuePopup() {
   const pathname = usePathname() ?? "/";
   const [open, setOpen] = useState(false);
   const [trigger, setTrigger] = useState<"exit" | "timed" | null>(null);
+  // Cookie-consent gate (wired 2026-05-27 — mirrors MobileLeadBar gate).
+  // If visitor hasn't dismissed the cookie banner yet, the rescue popup
+  // would stack visually on top of the cookie banner (z-61 vs z-50) at
+  // the bottom of viewport — two competing modals. useSyncExternalStore
+  // is React 19's idiomatic external-state subscription; the rescue
+  // effect re-runs the moment consent fires (visitor accepts → 30s timer
+  // starts from that moment for late-engagement audiences).
+  const consented = useSyncExternalStore(
+    subscribeToConsent,
+    readConsentCookie,
+    consentServerSnapshot
+  );
 
   const isEn = pathname.startsWith("/en");
 
@@ -60,6 +88,7 @@ export function LeadRescuePopup() {
 
   useEffect(() => {
     if (hidden) return;
+    if (!consented) return; // Gate: see useState declaration above.
 
     // Already shown this session — never re-fire
     if (typeof sessionStorage !== "undefined" && sessionStorage.getItem(SESSION_FLAG)) {
@@ -107,7 +136,7 @@ export function LeadRescuePopup() {
       window.clearTimeout(timedTimer);
       document.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, [hidden, pathname]);
+  }, [hidden, pathname, consented]);
 
   // Escape key closes
   useEffect(() => {
