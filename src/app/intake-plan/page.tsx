@@ -201,7 +201,7 @@ export default async function IntakePlanPage({ searchParams }: PageProps) {
           <h2 className="text-sm font-bold mb-2 print:text-xs">Bereik ons direct</h2>
           <div className="text-xs space-y-1 print:text-[11px]">
             <p>📱 WhatsApp: +31 6 83 17 89 34</p>
-            <p>📞 Bel: +31 6 83 17 89 34 (ma-vr 09-21)</p>
+            <p>📞 Bel: +31 6 83 17 89 34 (dagelijks 09-21)</p>
             <p>📍 Egelantiersgracht 424 · 1015 RR Amsterdam</p>
             <p>🌐 sculptclub.nl</p>
           </div>

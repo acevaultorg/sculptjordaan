@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trainers } from "@/config/trainers";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
 import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
@@ -153,9 +153,8 @@ export default function TrainersPageEN() {
             landing conversion lever; emerald WhatsApp-direct gives instant-
             match path, brand-blue anchor preserves "I'll choose" path. */}
         <FadeIn>
-          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:flex-wrap sm:gap-3">
-            {/* PRIMARY: match-quiz — decision-paralysis killer for 10 trainers
-                (shipped 2026-05-26 lead-cap). See /nl parallel for full rationale. */}
+          {/* 2-CTA strip — see /nl parallel comment (2026-05-27 UX audit). */}
+          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
             <a
               href="/en/match-trainer"
               data-cta="trainerhub-quiz"
@@ -163,16 +162,6 @@ export default function TrainersPageEN() {
             >
               <Sparkles className="h-5 w-5" />
               Match your trainer — 3 questions
-            </a>
-            <a
-              href={whatsappLinks.intakeMatchEn}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="trainerhub-whatsapp-direct"
-              className="plausible-event-name=trainerhub_whatsapp_direct inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
-            >
-              <MessageCircle className="h-5 w-5" />
-              WhatsApp us
             </a>
             <a
               href="#trainer-grid"

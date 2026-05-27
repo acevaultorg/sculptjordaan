@@ -116,7 +116,7 @@ export default function GratisIntakeAdsPage() {
           className="inline-flex items-center justify-center gap-1.5 mt-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
         >
           <Phone className="w-3.5 h-3.5" />
-          Of bel direct · +31 6 83 17 89 34 · ma-vr 09-21
+          Of bel direct · +31 6 83 17 89 34 · dagelijks 09-21
         </a>
 
         {/* Trust strip — below fold but in viewport on most mobile */}

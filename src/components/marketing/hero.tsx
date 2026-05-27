@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Users, Building2, MessageCircle } from "lucide-react";
-import { whatsappLinks } from "@/config/acuity";
+import { Users, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
@@ -161,7 +160,7 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Probeer Personal training", href: "/nl/gratis-intake", icon: Users, primary: true },
       ],
       trainerLink: { label: "Voor trainers: studio huren", href: "/nl/studio-huren" },
-      whatsappLink: { label: "Liever WhatsApp?", href: whatsappLinks.intakeMatchNl },
+      // whatsappLink removed 2026-05-27 — see comment in BOTTOM CLUSTER.
       trustParts: [
         { text: "Eerste intake gratis", href: "/nl/gratis-intake", event: "hero_trust_intake" },
         { text: "Geen contracten" },
@@ -176,7 +175,7 @@ export function Hero({ locale }: { locale: Locale }) {
         { label: "Try Personal training", href: "/en/free-intro", icon: Users, primary: true },
       ],
       trainerLink: { label: "For trainers: studio rental", href: "/en/studio-rental" },
-      whatsappLink: { label: "Prefer WhatsApp?", href: whatsappLinks.intakeMatchEn },
+      // whatsappLink removed 2026-05-27 — see NL comment.
       trustParts: [
         { text: "First intro free", href: "/en/free-intro", event: "hero_trust_intake" },
         { text: "No contracts" },
@@ -349,24 +348,17 @@ export function Hero({ locale }: { locale: Locale }) {
                 {t.trainerLink.label}
               </ButtonLink>
 
-              {/* WhatsApp CTA — added 2026-05-26 lead-cap (task A). 0-scroll
-                  async-chat path for Audience B (curious browser, ~40% of
-                  traffic). Distinct visual register from the other two CTAs:
-                  emerald-tinted outline (matches WhatsApp brand) so it
-                  reads as "low-commitment fallback" not "another primary
-                  competing for attention". Sticky lead bar (mobile) and
-                  hero (desktop+mobile) both surface this path — chat-first
-                  audience is served from every viewport. */}
-              <a
-                href={t.whatsappLink.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackHeroClick(t.whatsappLink.label, 3, locale)}
-                className="plausible-event-name=hero_whatsapp_cta inline-flex items-center justify-center gap-2 rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-white border border-emerald-400/50 hover:border-emerald-400 transition-all [text-shadow:none]"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
-                {t.whatsappLink.label}
-              </a>
+              {/* WhatsApp CTA REMOVED from hero 2026-05-27 — UX audit per
+                  operator directive "too many buttons, too many primary
+                  CTA colors". WhatsApp is already always-available via the
+                  fixed MobileLeadBar (bottom sticky on every demand page,
+                  including this one) + the CtaBand below fold. Stacking
+                  3 hero CTAs (orange + outline + emerald) on mobile was
+                  decision-paralysis + color-competition. Two-CTA hero
+                  reads cleaner: ONE primary (PT intake = largest audience)
+                  + ONE secondary (trainer rental = highest LTV audience).
+                  Visitors who want chat first see it in the sticky bar
+                  bottom-of-viewport, always within thumb reach. */}
             </div>
 
             {/* Trust line — mixed clickable + static bullets.

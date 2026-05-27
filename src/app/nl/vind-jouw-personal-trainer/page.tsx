@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trainers } from "@/config/trainers";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
 import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
@@ -165,12 +165,14 @@ export default function TrainersPageNL() {
           paths simultaneously.
         */}
         <FadeIn>
-          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:flex-wrap sm:gap-3">
-            {/* PRIMARY: match-quiz — decision-paralysis killer for 10 trainers
-                (shipped 2026-05-26 lead-cap). 3 questions × 30s → top-2 match.
-                Pushed ahead of WhatsApp-direct because the quiz captures the
-                undecided segment that previously bounced; WhatsApp-direct
-                still serves visitors who want the operator to route. */}
+          {/* 2-CTA strip — UX audit 2026-05-27. Previously 3 CTAs (Match
+              quiz + WhatsApp + browse-all). WhatsApp removed: it's
+              always-available in the sticky lead bar at the bottom of
+              every viewport on mobile. Keeping it here was duplicate
+              + competed with the orange Match-quiz primary (both bright
+              fills next to each other). Match-quiz primary (orange) +
+              browse-all outline = clean choice for the undecided. */}
+          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
             <a
               href="/nl/match-trainer"
               data-cta="trainerhub-quiz"
@@ -178,16 +180,6 @@ export default function TrainersPageNL() {
             >
               <Sparkles className="h-5 w-5" />
               Match je trainer — 3 vragen
-            </a>
-            <a
-              href={whatsappLinks.intakeMatchNl}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="trainerhub-whatsapp-direct"
-              className="plausible-event-name=trainerhub_whatsapp_direct inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
-            >
-              <MessageCircle className="h-5 w-5" />
-              WhatsApp ons
             </a>
             <a
               href="#trainer-grid"

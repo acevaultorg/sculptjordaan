@@ -1,9 +1,9 @@
 "use client";
 
-import { MessageCircle, Users, Dumbbell, Building2, Phone } from "lucide-react";
+import { Users, Dumbbell, Building2 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Section, FadeIn } from "@/components/sections/section";
-import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { acuityLinks } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
 export function CtaBand({ locale }: { locale: Locale }) {
@@ -36,8 +36,8 @@ export function CtaBand({ locale }: { locale: Locale }) {
               external: true,
             },
           ],
-          whatsappLabel: "WhatsApp · antwoord <30 min",
-          callLabel: "Bel · ma-vr 09-21",
+          // whatsappLabel + callLabel removed 2026-05-27 — sticky lead
+          // bar now owns WhatsApp + Phone (no duplicate in CtaBand).
         }
       : {
           title: "Try it free",
@@ -66,8 +66,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
               external: true,
             },
           ],
-          whatsappLabel: "WhatsApp · reply <30 min",
-          callLabel: "Call · Mon-Fri 9-21",
+          // see NL comment.
         };
 
   return (
@@ -82,59 +81,41 @@ export function CtaBand({ locale }: { locale: Locale }) {
           </p>
         </div>
 
-        {/* 3 clear options — primary first, glass for the rest */}
-        <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-          {t.options.map((opt, i) => {
-            const isPrimary = i === 0;
-            return (
-              <ButtonLink
-                key={opt.label}
-                href={opt.href}
-                external={opt.external}
-                className={
-                  isPrimary
-                    ? "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl bg-brand hover:bg-brand-dark text-brand-foreground px-5 py-6 text-center transition-all group"
-                    : "h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl border border-white/25 bg-white/10 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/15 hover:border-white/40 transition-all group"
-                }
-              >
-                {/* Icon + text colored brand-foreground (near-black #0E0C0A) on the
-                    primary orange button — white-on-orange was 2.8:1 (Lighthouse mobile
-                    audit 2026-05-17). brand-foreground on bg-brand = 5.65:1 (AA pass). */}
-                <opt.icon className={isPrimary ? "w-6 h-6 text-brand-foreground" : "w-6 h-6 text-white/85"} />
-                <span className={isPrimary ? "text-sm font-semibold text-brand-foreground" : "text-sm font-semibold text-white"}>
-                  {opt.label}
-                </span>
-                <span className={isPrimary ? "text-xs text-brand-foreground/75" : "text-xs text-white/65"}>
-                  {opt.description}
-                </span>
-              </ButtonLink>
-            );
-          })}
-        </div>
+        {/* 3 equal-weight option cards — UX audit 2026-05-27 per operator
+            directive "too many primary CTA colors". Previously card #1
+            (Intake) was orange-filled, competing with hero PT-orange +
+            sticky-bar WhatsApp-orange (3 orange anchors visible on mobile
+            at once = decision-paralysis + color-noise). Now all 3 cards
+            use the same glass-outline treatment so the user picks by
+            CONTENT not by COLOR. The orange brand-anchor is reserved
+            for the hero PT-button (only top-of-page primary). Sticky bar
+            (mobile) and per-page hero buttons retain the orange CTA
+            convention so the brand color still signals "primary action"
+            — just no longer at 3 stacked positions on the same viewport.
 
-        {/* WhatsApp + Phone — promoted from "small grey fallback link" to a
-            visible always-available pair (2026-05-26 lead-cap optimization).
-            Industry benchmark: chat-first CTAs convert 8-15% for boutique PT
-            vs 3-5% for form/calendar-only. Mobile sticky bar (PageLayout)
-            covers the always-visible angle; this in-content pair covers
-            visitors who reach the CTA section on desktop or scroll further. */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <a
-            href={whatsappLinks.generic}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl border border-brand/40 bg-brand/10 hover:bg-brand/20 text-white font-semibold text-sm transition-colors"
-          >
-            <MessageCircle className="w-4 h-4 text-brand" />
-            {t.whatsappLabel}
-          </a>
-          <a
-            href="tel:+31683178934"
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-white font-semibold text-sm transition-colors"
-          >
-            <Phone className="w-4 h-4 text-brand" />
-            {t.callLabel}
-          </a>
+            The WhatsApp + Phone button-pair below the cards (shipped
+            2026-05-26) was REMOVED in the same audit — the fixed sticky
+            lead bar already provides WhatsApp + Phone in every mobile
+            viewport, and CtaBand visitors on desktop reach the in-page
+            content anyway. Removing the duplicate cuts CtaBand from 5
+            actions to 3 — cleaner choice architecture. */}
+        <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {t.options.map((opt) => (
+            <ButtonLink
+              key={opt.label}
+              href={opt.href}
+              external={opt.external}
+              className="h-auto min-h-[9rem] flex flex-col items-center justify-center gap-2 whitespace-normal rounded-2xl border border-white/25 bg-white/10 backdrop-blur-sm px-5 py-6 text-center hover:bg-white/15 hover:border-white/40 transition-all group"
+            >
+              <opt.icon className="w-6 h-6 text-brand" />
+              <span className="text-sm font-semibold text-white">
+                {opt.label}
+              </span>
+              <span className="text-xs text-white/65">
+                {opt.description}
+              </span>
+            </ButtonLink>
+          ))}
         </div>
       </FadeIn>
     </Section>
