@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "Hoe werkt de gratis intake?",
-    a: "Je stuurt je gekozen trainer een WhatsApp via zijn/haar profielpagina. Jullie spreken af op een moment dat past, je komt naar de studio in de Jordaan, en je doet samen een kennismakingstraining van 30 tot 45 minuten. Daarna beslis je zelf of je verder wilt.",
+    a: "Je stuurt je gekozen trainer een WhatsApp via zijn/haar profielpagina. Jullie spreken af op een moment dat past, je komt naar de studio in de Jordaan, en je doet samen een vrijblijvende kennismakingstraining — de duur stem je samen af. Daarna beslis je zelf of je verder wilt.",
   },
   {
     q: "Wat als het niet klikt met de trainer?",

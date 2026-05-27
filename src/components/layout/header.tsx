@@ -39,7 +39,7 @@ const bookingMenu: { nl: MenuConfig; en: MenuConfig } = {
       {
         icon: Users,
         title: "Personal Trainer",
-        description: "Gratis kennismaking · 45 min",
+        description: "Gratis kennismaking",
         href: "/nl/vind-jouw-personal-trainer",
       },
       {
@@ -64,7 +64,7 @@ const bookingMenu: { nl: MenuConfig; en: MenuConfig } = {
       {
         icon: Users,
         title: "Personal Trainer",
-        description: "Free intro · 45 min",
+        description: "Free intro",
         href: "/en/find-personal-trainer",
       },
       {
@@ -117,7 +117,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
       {
         icon: Users,
         title: "Personal Trainer",
-        description: "Gratis kennismaking · 45 min",
+        description: "Gratis kennismaking",
         href: "/nl/gratis-intake",
       },
       {
@@ -143,7 +143,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
       {
         icon: Users,
         title: "Personal Trainer",
-        description: "Free intro · 45 min",
+        description: "Free intro",
         href: "/en/free-intro",
       },
       {

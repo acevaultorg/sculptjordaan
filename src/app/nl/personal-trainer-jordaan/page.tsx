@@ -28,7 +28,7 @@ const steps = [
   {
     step: "2",
     title: "Plan je gratis intake",
-    desc: "45 minuten kennismaking, 100% gratis. Bespreek je doelen en ervaar de privé studio aan de gracht.",
+    desc: "Vrijblijvende kennismaking, 100% gratis. Bespreek je doelen en ervaar de privé studio aan de gracht.",
   },
   {
     step: "3",

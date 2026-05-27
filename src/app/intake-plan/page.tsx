@@ -179,7 +179,7 @@ export default async function IntakePlanPage({ searchParams }: PageProps) {
             <li>Bevestig je intake-afspraak via WhatsApp met {trainer}.</li>
             <li>Kom 5 min vroeger voor een rondleiding (Egelantiersgracht 424).</li>
             <li>Draag comfortabele kleding · waterfles · doe optioneel je sportschoenen aan vóór je komt.</li>
-            <li>Na de 45-min intake: je beslist of je verder wilt. Geen verplichting.</li>
+            <li>Na de intake: je beslist of je verder wilt. Geen verplichting.</li>
           </ol>
         </section>
 

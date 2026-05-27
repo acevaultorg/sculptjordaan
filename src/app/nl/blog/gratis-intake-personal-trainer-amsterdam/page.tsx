@@ -44,7 +44,7 @@ export default function GratisIntakeBlogNL() {
         datePublished="2026-04-01"
       />
       <FaqJsonLd faqs={[
-        { question: "Wat is een gratis intake bij een personal trainer?", answer: "Een gratis intake is een eerste kennismaking tussen jou en een personal trainer. In 30 tot 45 minuten bespreken jullie je doelen, je huidige conditie en wat je verwacht van de samenwerking. De trainer legt uit hoe hij of zij werkt en of de aanpak bij jou past." },
+        { question: "Wat is een gratis intake bij een personal trainer?", answer: "Een gratis intake is een eerste kennismaking tussen jou en een personal trainer. Jullie bespreken je doelen, je huidige conditie en wat je verwacht van de samenwerking. De trainer legt uit hoe hij of zij werkt en of de aanpak bij jou past. De duur stem je samen af — geen rigide tijdslot." },
         { question: "Waarom biedt een personal trainer een gratis intake aan?", answer: "Goede trainers weten dat een succesvolle samenwerking begint met een klik. De intake is net zo goed voor jou als voor de trainer: ook hij of zij wil weten of jullie goed bij elkaar passen. Een gratis kennismaking verlaagt de drempel om die eerste stap te zetten — zonder dat je meteen ergens aan vastzit." },
         { question: "Wat gebeurt er tijdens de intake?", answer: "Elke trainer heeft zijn eigen stijl, maar een gratis intake bij SculptClub ziet er doorgaans zo uit:" },
         { question: "Hoe bereid je je voor op een gratis intake?", answer: "Geen uitgebreide voorbereiding nodig. Maar een paar dingen helpen om er meer uit te halen:" },
@@ -86,7 +86,7 @@ export default function GratisIntakeBlogNL() {
                 samenwerking. De trainer legt uit hoe hij of zij werkt en of de aanpak bij jou past.
               </p>
               <p>
-                Bij SculptClub duurt de <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">gratis intake</Link> 45 minuten. Je hoeft niets voor te bereiden —
+                Bij SculptClub is de <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">gratis intake</Link> vrijblijvend — de duur stem je samen met je trainer af. Je hoeft niets voor te bereiden —
                 kom gewoon langs in je sportkleding. Er is geen receptie en geen wachtrij: je trainer regelt de studio en
                 zorgt dat je binnen kunt — bij de deur of via WhatsApp.
               </p>
@@ -202,7 +202,7 @@ export default function GratisIntakeBlogNL() {
               <div className="not-prose my-8 rounded-xl border border-border/50 bg-secondary p-6">
                 <ul className="space-y-3">
                   {[
-                    "45 minuten gratis — geen tijdslimiet op de kennismaking",
+                    "Gratis kennismaking — geen tijdsdruk",
                     "Geen contract, geen abonnement, geen verplichting",
                     "Privé studio — geen drukte, geen wachtrijen",
                     "Trainers vanaf €45/sessie, 0% commissie",

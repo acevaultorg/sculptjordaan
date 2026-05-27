@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { icon: Calendar, title: "Plan je intake", description: "Kies een trainer en boek je gratis kennismaking van 45 min." },
+  { icon: Calendar, title: "Plan je intake", description: "Kies een trainer en boek je gratis kennismaking." },
   { icon: Users, title: "Ontmoet je trainer", description: "Bespreek je doelen en niveau. Je trainer maakt een persoonlijk plan." },
   { icon: Dumbbell, title: "Start met trainen", description: "Begin in een privé studio. Flexibel boeken, op jouw tempo." },
 ];
@@ -60,7 +60,7 @@ export default function BoekTrainerPageNL() {
           <p className="overline text-primary">Personal Training · Jordaan, Amsterdam</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek je Personal Trainer</h1>
           <p className="mt-3 text-muted-foreground">
-            Gratis kennismaking van 45 min. Geen abonnement, altijd gratis annuleren.
+            Gratis kennismaking. Geen abonnement, altijd gratis annuleren.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <ButtonLink href="/nl/vind-jouw-personal-trainer" size="xl" className="w-full sm:w-auto">
@@ -103,7 +103,7 @@ export default function BoekTrainerPageNL() {
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
               {[
-                "Gratis intake van 45 minuten — vrijblijvend",
+                "Gratis intake — vrijblijvend",
                 "Persoonlijk trainingsplan op basis van jouw doel",
                 "Privé studio aan de gracht — alleen jij en je trainer",
                 "Professionele apparatuur (Rogue, Concept2, kabelmachine)",

@@ -77,7 +77,7 @@ export default function HomePageEN() {
           },
           {
             name: "Free intro",
-            description: "A 45-minute intro session with a personal trainer where you discuss goals, get to know the approach, and feel out the fit — with no obligation and no cost. At SculptClub the first intro is always 100% free, with no credit card required.",
+            description: "An open-ended intro session with a personal trainer where you discuss goals, get to know the approach, and feel out the fit — with no obligation and no cost. At SculptClub the first intro is always 100% free, with no credit card required. Duration is up to you and your trainer.",
             url: "/en/free-intro",
           },
         ]}

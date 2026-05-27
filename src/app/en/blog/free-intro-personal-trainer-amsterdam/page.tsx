@@ -86,7 +86,7 @@ export default function FreeIntroBlogEN() {
                 together. The trainer explains how they work and whether their approach is a good fit.
               </p>
               <p>
-                At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> lasts 45 minutes. No preparation needed — just show up
+                At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> is open-ended — duration is up to you and your trainer. No preparation needed — just show up
                 in your workout clothes. There&apos;s no reception desk and no waiting: you receive a
                 your trainer arranges the studio and gets you in — meeting you at the door or sending instructions via WhatsApp beforehand.
               </p>
@@ -198,7 +198,7 @@ export default function FreeIntroBlogEN() {
               <div className="not-prose my-8 rounded-xl border border-border/50 bg-secondary p-6">
                 <ul className="space-y-3">
                   {[
-                    "45 minutes free — no time pressure on the intro",
+                    "Free intro — no time pressure",
                     "No contract, no membership, no obligation",
                     "Private studio — no crowds, no waiting",
                     "Trainers from €45/session, 0% commission",

@@ -163,7 +163,7 @@ export default function EersteBezoekPage() {
             url: "/nl/gratis-intake",
           },
           {
-            name: "45 minuten gratis kennismaking",
+            name: "Gratis kennismaking",
             text: "Ontmoet je trainer in onze privé studio op Egelantiersgracht 424, Amsterdam Jordaan. Bespreek je doelen, leer de aanpak kennen, en voel of het klikt. Geen verplichting, geen verborgen kosten. Na de intake beslis je zelf of je verder wilt.",
             url: "/nl/eerste-bezoek",
           },
@@ -279,7 +279,7 @@ export default function EersteBezoekPage() {
                   <Users className="h-5 w-5 text-amber-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
-                <CardDescription>1-op-1 met een trainer die bij je past. 45 min kennismaking + training. Vanaf €45/sessie daarna.</CardDescription>
+                <CardDescription>1-op-1 met een trainer die bij je past. Gratis kennismaking + training. Vanaf €45/sessie daarna.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Vind jouw trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

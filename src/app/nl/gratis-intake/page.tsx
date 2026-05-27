@@ -33,7 +33,7 @@ const steps = [
   },
   {
     step: "3",
-    title: "45 minuten gratis kennismaking",
+    title: "Gratis kennismaking",
     desc: "Ontmoet je trainer in onze privé studio in de Jordaan. Bespreek je doelen, leer de aanpak kennen, voel of het klikt. Geen verplichting, geen verborgen kosten.",
   },
 ];
@@ -47,7 +47,7 @@ const trustItems = [
 const faqs = [
   {
     q: "Kost de intake echt niets?",
-    a: "Ja. De eerste kennismaking van 45 minuten is altijd gratis — geen creditcard vereist.",
+    a: "Ja. De eerste kennismaking is altijd gratis — geen creditcard vereist. De duur stem je samen met je trainer af.",
   },
   {
     q: "Ben ik ergens aan gebonden na de intake?",
@@ -215,7 +215,7 @@ export default function GratisIntakePage() {
           <h2 className="text-xl font-bold mb-4">Wat krijg je?</h2>
           <ul className="space-y-3">
             {[
-              "45 minuten gratis persoonlijke kennismaking",
+              "Gratis persoonlijke kennismaking",
               "Privé studio — geen drukte, geen afleidingen",
               "Inzicht in jouw doelen en de beste aanpak",
               "Direct contact met je trainer — geen tussenpersoon",

@@ -160,7 +160,7 @@ export default function FirstVisitPage() {
             url: "/en/free-intro",
           },
           {
-            name: "45-minute free intro",
+            name: "Free intro",
             text: "Meet your trainer in our private studio at Egelantiersgracht 424, Amsterdam Jordaan. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs. After the intro, you decide whether to continue.",
             url: "/en/first-visit",
           },
@@ -264,7 +264,7 @@ export default function FirstVisitPage() {
                   <Users className="h-5 w-5 text-amber-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
-                <CardDescription>1-on-1 with a trainer that fits you. 45 min intro + training. From €45/session after.</CardDescription>
+                <CardDescription>1-on-1 with a trainer that fits you. Free intro + training. From €45/session after.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

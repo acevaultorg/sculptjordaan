@@ -80,7 +80,7 @@ export default function HomePage() {
           },
           {
             name: "Gratis intake",
-            description: "Een 45-minuten kennismakingssessie met een personal trainer waar je doelen bespreekt, de aanpak leert kennen, en voelt of er een klik is — zonder verplichting en zonder kosten. Bij SculptClub is de eerste intake altijd 100% gratis, met geen creditcard vereist.",
+            description: "Een vrijblijvende kennismakingssessie met een personal trainer waar je doelen bespreekt, de aanpak leert kennen, en voelt of er een klik is — zonder verplichting en zonder kosten. Bij SculptClub is de eerste intake altijd 100% gratis, met geen creditcard vereist. De duur stem je samen met je trainer af.",
             url: "/nl/gratis-intake",
           },
         ]}

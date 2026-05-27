@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "How much does a personal trainer in Amsterdam Jordaan cost?",
-    a: "Sessions start from €45. Trainers set their own rates and we charge them 0% commission, so what you pay goes straight to your trainer. The first 45-minute intro is free.",
+    a: "Sessions start from €45. Trainers set their own rates and we charge them 0% commission, so what you pay goes straight to your trainer. The first intro is free.",
   },
   {
     q: "Can I choose my own personal trainer?",
@@ -179,7 +179,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
             {[
               "Private canal-side studio on the Egelantiersgracht",
               "5 personal trainers — your match for goal and style",
-              "First 45-minute intro free, no credit card needed",
+              "First intro free, no credit card needed",
               "From €45 per session — 0% trainer commission",
               "Open daily 06:30–22:00 — train when it suits you",
               "Door code via WhatsApp the night before — no reception",

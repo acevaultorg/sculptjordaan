@@ -33,7 +33,7 @@ const steps = [
   },
   {
     step: "3",
-    title: "45-minute free intro",
+    title: "Free intro",
     desc: "Meet your trainer in our private studio in the Jordaan. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs.",
   },
 ];
@@ -47,7 +47,7 @@ const trustItems = [
 const faqs = [
   {
     q: "Is the intro really free?",
-    a: "Yes. Your first 45-minute intro is always free — no credit card required.",
+    a: "Yes. Your first intro is always free — no credit card required. Duration is up to you and your trainer.",
   },
   {
     q: "Am I committing to anything after the intro?",
@@ -197,7 +197,7 @@ export default function FreeIntroPage() {
           <h2 className="text-xl font-bold mb-4">What&apos;s included?</h2>
           <ul className="space-y-3">
             {[
-              "45-minute free personal intro",
+              "Free personal intro",
               "Private studio — no crowds, no distractions",
               "Clarity on your goals and the best approach",
               "Direct contact with your trainer — no middleman",

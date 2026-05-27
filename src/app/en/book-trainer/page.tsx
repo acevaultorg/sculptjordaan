@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { icon: Calendar, title: "Book your intro", description: "Choose a trainer and book your free 45-min introduction." },
+  { icon: Calendar, title: "Book your intro", description: "Choose a trainer and book your free introduction." },
   { icon: Users, title: "Meet your trainer", description: "Discuss your goals and level. Your trainer creates a personal plan." },
   { icon: Dumbbell, title: "Start training", description: "Begin in a private studio. Flexible booking, at your own pace." },
 ];
@@ -49,7 +49,7 @@ export default function BookTrainerPageEN() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="overline text-primary">Personal Training · Jordaan, Amsterdam</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book Your Personal Trainer</h1>
-          <p className="mt-3 text-muted-foreground">Free 45-minute introduction. No membership, always free cancellation.</p>
+          <p className="mt-3 text-muted-foreground">Free introduction. No membership, always free cancellation.</p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <ButtonLink href="/en/find-personal-trainer" size="xl" className="w-full sm:w-auto">Meet our trainers<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
             <ButtonLink href={whatsappLinks.en} size="lg" variant="outline" className="w-full sm:w-auto" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
@@ -78,7 +78,7 @@ export default function BookTrainerPageEN() {
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
-              {["Free 45-minute introduction — no obligation", "Personal training plan based on your goals", "Private canal-side studio — just you and your trainer", "Professional equipment (Rogue, Concept2, cable machine)", "No membership — always free cancellation", "Direct contact with your trainer — no middleman"].map((b, i) => (
+              {["Free introduction — no obligation", "Personal training plan based on your goals", "Private canal-side studio — just you and your trainer", "Professional equipment (Rogue, Concept2, cable machine)", "No membership — always free cancellation", "Direct contact with your trainer — no middleman"].map((b, i) => (
                 <li key={i} className="flex items-start gap-3"><CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span className="text-sm">{b}</span></li>
               ))}
             </ul>

@@ -122,7 +122,7 @@ export function MobileLeadBar() {
         tel: "Call",
         telSub: "Daily 9-21",
         intake: "Free intake",
-        intakeSub: "45 min · book",
+        intakeSub: "Book your slot",
         srOnly: "Quick contact options",
       }
     : {
@@ -131,7 +131,7 @@ export function MobileLeadBar() {
         tel: "Bel",
         telSub: "Dagelijks 9-21",
         intake: "Gratis intake",
-        intakeSub: "45 min · plan",
+        intakeSub: "Plan je slot",
         srOnly: "Snel contact opties",
       };
 
