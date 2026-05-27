@@ -265,7 +265,7 @@ export default function BookStudioPageEN() {
             <div>
               <p className="text-base font-semibold">Not sure which option?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp us your situation — we&apos;ll advise within 1 hour.
+                WhatsApp us your situation — we usually advise within 1 hour.
               </p>
             </div>
             <ButtonLink

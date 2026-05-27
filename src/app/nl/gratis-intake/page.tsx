@@ -158,7 +158,7 @@ export default function GratisIntakePage() {
         </div>
 
         <p className="mt-6 text-sm text-muted-foreground">
-          Privé studio · Geen contract · Gratis annuleren · 45 minuten · Antwoord binnen 1 uur
+          Privé studio · Geen contract · Gratis annuleren · Antwoord meestal binnen 1 uur
         </p>
 
         {/* Studio photo */}
