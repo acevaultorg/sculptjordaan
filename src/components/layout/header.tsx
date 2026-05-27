@@ -218,17 +218,32 @@ export function Header() {
               })}
             </div>
 
-            {/* Nieuw hier? — audience-conditional. Consumer-targeted CTA;
+            {/* Try-Out — audience-conditional. Consumer-targeted CTA;
                 hidden on trainer-funnel pages (isTrainerFunnelPath()) so the
                 trainer audience there sees a cleaner header focused on their
-                own offer instead of competing with a wrong-audience pitch. */}
+                own offer instead of competing with a wrong-audience pitch.
+
+                2026-05-27: changed from Link → button that opens the same
+                "Wat wil je doen?" sheet as the Boek button. Operator
+                directive: "als iemand tryout klikt is er daarna een
+                scherm zoals dit nodig zodat user daarna de juiste try-out
+                kan boeken." Visitor lands on a marketing-content page
+                (/nl/eerste-bezoek) when they clicked a verb-action label
+                ("Try-Out" = "try the studio"). The information-page route
+                created a mental-model mismatch — visitor clicked an
+                action expecting action. Now: same modal that disambiguates
+                Studio Huren / Personal Trainer / Open Gym intent → user
+                self-routes to the right try-out booking flow within 1 tap. */}
             {!hideConsumerCta && (
-              <Link
-                href={locale === "nl" ? "/nl/eerste-bezoek" : "/en/first-visit"}
-                className="h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap"
+              <button
+                type="button"
+                onClick={handleBookClick}
+                aria-haspopup="dialog"
+                aria-expanded={bookOpen}
+                className="plausible-event-name=header_tryout_open h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap cursor-pointer"
               >
-                {locale === "nl" ? "Try-Out" : "Try-Out"}
-              </Link>
+                Try-Out
+              </button>
             )}
 
             {/* Boek — mobile = outline (glass over hero), desktop = solid brand.
