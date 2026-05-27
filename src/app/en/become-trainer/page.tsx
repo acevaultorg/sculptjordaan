@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { TrainerReferralBanner } from "@/components/marketing/trainer-referral-banner";
 import { TrainerApplicationForm } from "@/components/marketing/trainer-application-form";
+import { RentalTabs } from "@/components/marketing/rental-tabs";
 import {
   ArrowRight,
   MessageCircle,
@@ -289,36 +290,62 @@ export default function BecomeTrainerEN() {
         </FadeIn>
       </Section>
 
-      {/* Pricing */}
+      {/* Pricing — Hourly / Packages tabs. Operator-pointed pattern from
+          /en/book-studio. Same <RentalTabs> component; trainer context =
+          no inline Acuity booking buttons (booking action = the application
+          form below). NL parity at src/app/nl/word-trainer/page.tsx. */}
       <Section>
         <SectionHeader
           overline="Pricing"
-          title="Transparent prices, no surprises"
-          description="Book per hour or buy a package with a discount. No long-term contract."
+          title="What you pay"
+          description="Book per hour or buy a package. No contract, free cancellation anytime."
         />
         <FadeIn>
-          <div className="grid gap-6 sm:grid-cols-3 max-w-3xl mx-auto">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <p className="text-3xl font-bold">€12</p>
-                <p className="text-sm text-muted-foreground mt-1">per 60 min</p>
-                <p className="text-xs text-muted-foreground mt-2">Half studio</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-brand">
-              <CardContent className="pt-6">
-                <p className="text-3xl font-bold">€10.20</p>
-                <p className="text-sm text-muted-foreground mt-1">per 60 min</p>
-                <p className="text-xs text-muted-foreground mt-2">10-hour package · 15% off</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <p className="text-3xl font-bold">€9.24</p>
-                <p className="text-sm text-muted-foreground mt-1">per 60 min</p>
-                <p className="text-xs text-muted-foreground mt-2">20-hour package · 23% off</p>
-              </CardContent>
-            </Card>
+          <div className="max-w-2xl mx-auto">
+            <RentalTabs
+              locale="en"
+              hourly={
+                <div className="rounded-2xl border border-border bg-card/30 overflow-hidden">
+                  <div className="grid grid-cols-3 text-sm font-medium text-muted-foreground border-b border-border px-5 py-3">
+                    <div>Space</div>
+                    <div className="text-right">60 min</div>
+                    <div className="text-right">90 min</div>
+                  </div>
+                  <div className="grid grid-cols-3 items-center px-5 py-4 border-b border-border/50">
+                    <div className="font-semibold">Half studio</div>
+                    <div className="text-right text-lg font-bold">€12</div>
+                    <div className="text-right text-lg font-bold">€17</div>
+                  </div>
+                  <div className="grid grid-cols-3 items-center px-5 py-4">
+                    <div className="font-semibold">Full studio</div>
+                    <div className="text-right text-lg font-bold">€17</div>
+                    <div className="text-right text-lg font-bold">€24</div>
+                  </div>
+                </div>
+              }
+              packages={
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
+                    <p className="text-3xl font-bold">€10.20</p>
+                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
+                    <p className="text-sm mt-2">10-hour pack</p>
+                    <p className="text-xs text-brand mt-1">15% off</p>
+                  </div>
+                  <div className="rounded-2xl border border-brand bg-brand/5 px-5 py-5 text-center">
+                    <p className="text-3xl font-bold">€9.24</p>
+                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
+                    <p className="text-sm mt-2">20-hour pack</p>
+                    <p className="text-xs text-brand mt-1 font-semibold">23% off</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
+                    <p className="text-3xl font-bold">€11.40</p>
+                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
+                    <p className="text-sm mt-2">5-hour pack</p>
+                    <p className="text-xs text-brand mt-1">5% off</p>
+                  </div>
+                </div>
+              }
+            />
           </div>
         </FadeIn>
         <FadeIn delay={0.2} className="mt-6 text-center">

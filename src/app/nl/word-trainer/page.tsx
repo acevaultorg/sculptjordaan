@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { TrainerReferralBanner } from "@/components/marketing/trainer-referral-banner";
 import { TrainerApplicationForm } from "@/components/marketing/trainer-application-form";
+import { RentalTabs } from "@/components/marketing/rental-tabs";
 import {
   ArrowRight,
   MessageCircle,
@@ -60,7 +61,7 @@ const benefits = [
   {
     icon: Building2,
     title: "Premium privé studio",
-    description: "Volledig uitgeruste studio aan de Egelantiersgracht. Powerrack, kabelmachine, dumbbells, cardio. Alles aanwezig.",
+    description: "Powerrack, kabelmachine, dumbbells tot 32 kg, cardio. Alles staat klaar in onze studio aan de Egelantiersgracht.",
   },
   {
     icon: Globe,
@@ -164,12 +165,15 @@ export default function WordTrainerNL() {
                   WhatsApp ons
                 </ButtonLink>
               </div>
+              {/* 2026-05-27: copy lifted to natural NL ("wees bewust van AI
+                  taalgebruik" — operator). Replaced em-dash chains + 3-clause
+                  bullets with normal sentences. Each line ≤8 words, no "—". */}
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
-                <li><strong className="text-foreground">✓ Privé studio</strong> — geen drukte, wacht niet op apparatuur, train zonder afleiding</li>
-                <li>✓ 0% commissie — wat jij rekent, hou jij</li>
-                <li>✓ Huur per uur vanaf €12, of bespaar tot 23% met een pakket</li>
-                <li>✓ Gratis profiel + WhatsApp-CTA op onze website</li>
-                <li>✓ Geen lidmaatschap, geen vaste lasten, altijd opzegbaar</li>
+                <li><strong className="text-foreground">✓ Privé studio</strong>. Geen wachtrij, geen pottenkijkers.</li>
+                <li>✓ 0% commissie. Jouw tarief is voor jou.</li>
+                <li>✓ Per uur vanaf €12, of bespaar 23% met een pakket.</li>
+                <li>✓ Gratis profielpagina op sculptclub.nl.</li>
+                <li>✓ Geen contract. Altijd opzegbaar.</li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-green-500" />Gratis kennismaking</span>
@@ -287,36 +291,66 @@ export default function WordTrainerNL() {
         </FadeIn>
       </Section>
 
-      {/* Pricing snapshot */}
+      {/* Pricing — Per uur / Pakketten tabs.
+          Operator 2026-05-27: pointed at /nl/boek-studio's tabbed
+          Per uur ⇄ Pakketten + "bespaar tot 23%" badge as the design
+          to use here too ("this one is better, with also the packages
+          slider"). Same <RentalTabs> component as boek-studio; trainer
+          context = no Acuity-booking buttons inline (the booking action
+          for trainers = sign up via the form below). Read-only rate
+          table per tab is enough at this stage of the funnel. */}
       <Section>
         <SectionHeader
           overline="Tarieven"
-          title="Transparante prijzen, geen verrassingen"
-          description="Boek per uur of koop een pakket met korting. Geen langetermijncontract."
+          title="Wat je betaalt"
+          description="Reserveer per uur of koop een pakket. Geen contract, altijd gratis annuleren."
         />
         <FadeIn>
-          <div className="grid gap-6 sm:grid-cols-3 max-w-3xl mx-auto">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <p className="text-3xl font-bold">€12</p>
-                <p className="text-sm text-muted-foreground mt-1">per 60 min</p>
-                <p className="text-xs text-muted-foreground mt-2">Halve studio</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center border-brand">
-              <CardContent className="pt-6">
-                <p className="text-3xl font-bold">€10,20</p>
-                <p className="text-sm text-muted-foreground mt-1">per 60 min</p>
-                <p className="text-xs text-muted-foreground mt-2">10-uren pakket · 15% korting</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <p className="text-3xl font-bold">€9,24</p>
-                <p className="text-sm text-muted-foreground mt-1">per 60 min</p>
-                <p className="text-xs text-muted-foreground mt-2">20-uren pakket · 23% korting</p>
-              </CardContent>
-            </Card>
+          <div className="max-w-2xl mx-auto">
+            <RentalTabs
+              locale="nl"
+              hourly={
+                <div className="rounded-2xl border border-border bg-card/30 overflow-hidden">
+                  <div className="grid grid-cols-3 text-sm font-medium text-muted-foreground border-b border-border px-5 py-3">
+                    <div>Ruimte</div>
+                    <div className="text-right">60 min</div>
+                    <div className="text-right">90 min</div>
+                  </div>
+                  <div className="grid grid-cols-3 items-center px-5 py-4 border-b border-border/50">
+                    <div className="font-semibold">Halve studio</div>
+                    <div className="text-right text-lg font-bold">€12</div>
+                    <div className="text-right text-lg font-bold">€17</div>
+                  </div>
+                  <div className="grid grid-cols-3 items-center px-5 py-4">
+                    <div className="font-semibold">Hele studio</div>
+                    <div className="text-right text-lg font-bold">€17</div>
+                    <div className="text-right text-lg font-bold">€24</div>
+                  </div>
+                </div>
+              }
+              packages={
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
+                    <p className="text-3xl font-bold">€10,20</p>
+                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
+                    <p className="text-sm mt-2">10-uren pakket</p>
+                    <p className="text-xs text-brand mt-1">15% korting</p>
+                  </div>
+                  <div className="rounded-2xl border border-brand bg-brand/5 px-5 py-5 text-center">
+                    <p className="text-3xl font-bold">€9,24</p>
+                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
+                    <p className="text-sm mt-2">20-uren pakket</p>
+                    <p className="text-xs text-brand mt-1 font-semibold">23% korting</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
+                    <p className="text-3xl font-bold">€11,40</p>
+                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
+                    <p className="text-sm mt-2">5-uren pakket</p>
+                    <p className="text-xs text-brand mt-1">5% korting</p>
+                  </div>
+                </div>
+              }
+            />
           </div>
         </FadeIn>
         <FadeIn delay={0.2} className="mt-6 text-center">
@@ -382,7 +416,7 @@ export default function WordTrainerNL() {
               Klaar om te starten?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Stuur een WhatsApp en plan een gratis rondleiding. Geen verplichtingen — gewoon kijken of het past.
+              Stuur een WhatsApp en plan een gratis rondleiding. Geen verplichtingen. Even kijken of het past.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink

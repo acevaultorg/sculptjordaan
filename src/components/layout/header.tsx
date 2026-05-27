@@ -173,13 +173,16 @@ export function Header() {
               alt="SculptClub"
               width={162}
               height={30}
-              // 2026-05-18: mobile logo bumped from h-9 (36px) → h-11 (44px)
-              // after globe icon moved into hamburger menu on mobile (line ~234
-              // — `hidden sm:flex`). Frees ~44px horizontal room for the
-              // wordmark to read at brand-strength size, matching the h-11
-              // Try-Out + Boek button height for clean vertical rhythm.
-              // Desktop (sm+) unchanged at h-10.
-              className="h-11 sm:h-10 w-auto invert select-none"
+              // 2026-05-27: mobile h-11 (44px) → h-8 (32px).
+              // Operator: "grove fout!! logo ander formaat" — at h-11 the
+              // 5.4-aspect SVG wordmark renders ~238px wide on a 390px
+              // viewport = ~61% of viewport width, competing with Try-Out
+              // + Boek buttons (both h-11 = 44px) for visual weight. Drop
+              // to h-8 = ~173px wide = ~44% viewport. Wordmark = brand
+              // anchor (lower weight), buttons = primary action (higher
+              // weight). Proper visual hierarchy restored.
+              // Desktop (sm+) stays h-10 — wide-viewport layout has room.
+              className="h-8 sm:h-10 w-auto invert select-none"
               loading="eager"
               fetchPriority="high"
             />

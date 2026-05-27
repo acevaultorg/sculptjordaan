@@ -188,17 +188,20 @@ export default function EersteBezoekPage() {
             location — confirms WHERE the visitor is going + builds
             excitement vs anxiety about a "new gym". */}
         <div className="mx-auto mt-8 max-w-3xl">
-          {/* aspect-[1200/630] matches og-default.jpg native ratio exactly
-              (1.905:1) — zero object-cover stretching, zero crop. Previous
-              aspect-[16/7] (2.29:1) was wider than source, causing horizontal
-              crop + perceptual perspective distortion (image content has
-              vanishing-point recession; combined with shadow on a too-wide
-              rounded container, eye read full frame as tapered). Operator
-              feedback 2026-05-16 "picture looks distorted". */}
-          <div className="relative aspect-[1200/630] overflow-hidden rounded-2xl shadow-xl">
+          {/* 2026-05-27: src swapped og-default.jpg → canal-view.jpg.
+              Operator: "foto nog steeds lelijk uitgerekt." og-default.jpg
+              is the SOCIAL-SHARE OG card (1200×630 with embedded brand-
+              text overlay designed for tiny social previews). Rendering
+              it full-width as the page hero made it look like a
+              repurposed OG card, not a clean editorial photo —
+              what visitors perceived as "stretched." /en/first-visit
+              already used /images/hero/canal-view.jpg (1376×720, 1.91:1
+              native canal-view-of-Amsterdam-Jordaan landscape shot) for
+              the same hero slot — NL/EN parity restored. */}
+          <div className="relative aspect-[1376/720] overflow-hidden rounded-2xl shadow-xl">
             <Image
-              src="/images/og-default.jpg"
-              alt="De ingang van SculptClub — Egelantiersgracht 424, Amsterdamse Jordaan — precies waar je naartoe loopt voor je eerste bezoek"
+              src="/images/hero/canal-view.jpg"
+              alt="Egelantiersgracht in de Amsterdamse Jordaan — de gracht waar SculptClub aan ligt, op nummer 424"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 768px"
