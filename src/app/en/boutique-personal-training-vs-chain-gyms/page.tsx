@@ -32,6 +32,15 @@ export const metadata: Metadata = {
       "What fits you: a boutique personal training studio or a big chain gym? An honest comparison.",
     url: "/en/boutique-personal-training-vs-chain-gyms",
     type: "website",
+    // OG image added 2026-05-27 page-content audit fix — see NL parallel.
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SculptClub private personal training studio in Amsterdam Jordaan",
+      },
+    ],
   },
 };
 

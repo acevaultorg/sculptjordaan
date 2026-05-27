@@ -273,6 +273,7 @@ export default function SocialPage() {
     <PageLayout>
       <Section className="pt-32">
         <SectionHeader
+          as="h1"
           overline="Content Studio"
           title="Social Content voor TikTok & Instagram"
           description="Briefs (English) · shotlists · hashtags · downloadable visuals. Brain provides the structure + facts. You write the Dutch in your own voice."

@@ -32,6 +32,16 @@ export const metadata: Metadata = {
       "Wat past bij jou: een boutique personal training studio of een grote sportschoolketen? Een eerlijke vergelijking.",
     url: "/nl/boutique-personal-training-vs-keten",
     type: "website",
+    // OG image added 2026-05-27 page-content audit fix — was missing,
+    // causing fallback-to-no-preview when shared on WhatsApp/Slack/X.
+    images: [
+      {
+        url: "/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SculptClub privé personal training studio in Amsterdam Jordaan",
+      },
+    ],
   },
 };
 

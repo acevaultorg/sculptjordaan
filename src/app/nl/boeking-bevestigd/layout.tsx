@@ -1,20 +1,42 @@
 import type { Metadata } from "next";
 
 /**
- * Booking-confirmed pages are transactional success surfaces. They fire
- * conversion events (Google Ads / Meta / TikTok / GA4 / Plausible) on every
- * pageview, so we MUST keep search engines out — otherwise:
- *  - Googlebot crawls fire spurious conversions
- *  - Random search visitors land on a "Your booking is confirmed" page they
- *    never actually completed, fire conversion, then confuse the dashboards
- *  - Acuity URL params (?type=, ?value=, ?id=) leak into search results
+ * Server-component layout pair for the client-rendered booking-confirmed
+ * page. Carries metadata (canonical + noindex + alternates) since
+ * "use client" pages can't `export const metadata`.
+ *
+ * Created 2026-05-27 after page-content audit found no-canonical on
+ * /nl/boeking-bevestigd and /en/booking-confirmed.
+ *
+ * The page is post-conversion → robots noindex (no SEO value in indexing;
+ * also prevents leaking ?type=… ?value=… URL params into Google index).
+ * Canonical still declared so any accidental share goes to the clean URL.
  */
 export const metadata: Metadata = {
-  title: "Bevestigd — SculptClub",
-  robots: { index: false, follow: false, nocache: true },
-  alternates: { canonical: undefined },
+  title: { absolute: "Boeking bevestigd — SculptClub" },
+  description:
+    "Je boeking is bevestigd. Je ontvangt binnen 5 minuten een bevestigingsmail met alle details voor je bezoek aan SculptClub Amsterdam Jordaan.",
+  robots: { index: false, follow: false },
+  alternates: {
+    canonical: "/nl/boeking-bevestigd",
+    languages: {
+      nl: "/nl/boeking-bevestigd",
+      en: "/en/booking-confirmed",
+    },
+  },
+  openGraph: {
+    title: "Boeking bevestigd — SculptClub",
+    description:
+      "Je boeking is bevestigd. Bevestigingsmail volgt binnen 5 minuten.",
+    url: "/nl/boeking-bevestigd",
+    type: "website",
+  },
 };
 
-export default function BoekingBevestigdLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+export default function BookingConfirmedNLLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
 }

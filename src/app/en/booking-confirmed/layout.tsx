@@ -1,17 +1,37 @@
 import type { Metadata } from "next";
 
 /**
- * Booking-confirmed pages are transactional success surfaces. See companion
- * NL layout for full rationale — kept out of search index because conversion
- * events fire on every pageview, and search visitors who land here without
- * actually booking would fire spurious conversions + corrupt dashboards.
+ * Server-component layout pair for the client-rendered booking-confirmed
+ * page. Carries metadata (canonical + noindex + alternates) since
+ * "use client" pages can't `export const metadata`.
+ *
+ * See sibling NL layout.tsx for full rationale.
  */
 export const metadata: Metadata = {
-  title: "Confirmed — SculptClub",
-  robots: { index: false, follow: false, nocache: true },
-  alternates: { canonical: undefined },
+  title: { absolute: "Booking confirmed — SculptClub" },
+  description:
+    "Your booking is confirmed. You'll receive a confirmation email with all details within 5 minutes for your visit to SculptClub Amsterdam Jordaan.",
+  robots: { index: false, follow: false },
+  alternates: {
+    canonical: "/en/booking-confirmed",
+    languages: {
+      nl: "/nl/boeking-bevestigd",
+      en: "/en/booking-confirmed",
+    },
+  },
+  openGraph: {
+    title: "Booking confirmed — SculptClub",
+    description:
+      "Your booking is confirmed. Confirmation email follows within 5 minutes.",
+    url: "/en/booking-confirmed",
+    type: "website",
+  },
 };
 
-export default function BookingConfirmedLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+export default function BookingConfirmedENLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
 }
