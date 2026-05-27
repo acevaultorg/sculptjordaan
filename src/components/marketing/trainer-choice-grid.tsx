@@ -80,7 +80,7 @@ export function TrainerChoiceGrid({ locale }: { locale: Locale }) {
 
   return (
     <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-      {trainers.map((trainer) => {
+      {trainers.map((trainer, index) => {
         // Subtitle: credentials when set (Eva: "Diëtist"), else the leading
         // specialty as a 1-liner identity cue. Keeps the visual hierarchy
         // consistent across trainers regardless of whether credentials exist.
@@ -99,12 +99,22 @@ export function TrainerChoiceGrid({ locale }: { locale: Locale }) {
                 top-clipped). 4:5 with object-top works for every trainer
                 photo in the current roster. */}
             <div className="relative aspect-[4/5] w-full overflow-hidden">
+              {/* First 3 trainers above-fold = `priority` (eager load).
+                  /nl/gratis-intake renders this grid as the primary lead-
+                  cap action. Chrome MCP audit 2026-05-27 confirmed the
+                  first row of trainer cards rendered as dark rectangles
+                  on initial paint (Next.js Image default = lazy when
+                  `priority` not set). Visitor on /gratis-intake lands
+                  expecting to SEE trainer faces immediately to pick
+                  one — black-rectangles for 1-2s = activation gap.
+                  Below-fold trainers stay lazy. */}
               <Image
                 src={trainer.image}
                 alt={c.photoAlt(trainer.name)}
                 fill
                 className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority={index < 3}
               />
             </div>
 

@@ -449,13 +449,23 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 </div>
               )}
               <div className="aspect-[4/3] relative">
+                {/* `priority` (not `loading="lazy"`) — these 2 trainer
+                    photos ARE the primary content of the result screen.
+                    The visitor just spent 30s answering 3 questions
+                    expecting to SEE their top-2 match. Lazy-load made
+                    the cards render as black rectangles until the
+                    visitor scrolled (Chrome MCP audit 2026-05-27
+                    confirmed the gap). Eager-load via `priority` ensures
+                    the result is visible the moment the quiz completes,
+                    preserving the "wow" moment. Only 2 images max, no
+                    LCP impact. */}
                 <Image
                   src={trainer.image}
                   alt={trainer.name}
                   fill
                   className="object-cover"
                   sizes="(max-width: 672px) 100vw, 336px"
-                  loading="lazy"
+                  priority
                 />
               </div>
               <div className="p-4">

@@ -229,12 +229,21 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
             <FadeIn key={trainer.id} delay={i * 0.1}>
               <Card className="h-full flex flex-col overflow-hidden !rounded-none hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
                 <div className="relative aspect-[4/3] w-full">
+                  {/* First 3 trainers above-fold get `priority` to render
+                      immediately. /vind-jouw-personal-trainer is the SEO-
+                      indexed hub + organic traffic destination — Chrome
+                      MCP audit 2026-05-27 confirmed the first row of
+                      trainer cards rendered as dark rectangles for
+                      ~1-2s on initial paint (Next.js Image default =
+                      lazy). Below-fold trainers stay lazy to preserve
+                      LCP budget. Index from filteredTrainers map below. */}
                   <Image
                     src={trainer.image}
                     alt={t.photoAlt(trainer.name)}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={i < 3}
                   />
                 </div>
                 <CardHeader>
