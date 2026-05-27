@@ -95,10 +95,27 @@ export default function GratisIntakePage() {
           Eerste intake{" "}
           <span className="text-brand">100% gratis</span>
         </h1>
-        <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
+        <p className="text-lg text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
           Maak kennis met je personal trainer in ons privé studio aan de gracht
           in de Jordaan. Geen verplichting, geen abonnement.
         </p>
+
+        {/* Decision-paralysis killer — 10 trainers in the grid below is a lot
+            to scan. Quiz entry point gives the undecided visitor a fast-path:
+            3 questions × 30s → top-2 match. Shipped 2026-05-26 lead-cap. */}
+        <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
+          <p className="text-sm text-foreground">
+            <strong className="font-semibold">10 trainers</strong> — niet zeker welke past?
+          </p>
+          <Link
+            href="/nl/match-trainer"
+            className="plausible-event-name=gratis_intake_quiz_entry inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand text-brand-foreground font-semibold text-sm hover:bg-brand-dark transition-colors"
+            data-cta="gratis-intake-quiz-entry"
+          >
+            <ArrowRight className="w-4 h-4" />
+            Match-quiz · 3 vragen · 30 sec
+          </Link>
+        </div>
 
         {/* PRIMARY ACTION: TRAINER GRID — operator directive 2026-05-20:
             "let people choose their trainers directly on this page. people

@@ -95,10 +95,26 @@ export default function FreeIntroPage() {
           First intro{" "}
           <span className="text-brand">100% free</span>
         </h1>
-        <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
+        <p className="text-lg text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
           Meet your personal trainer in our private studio on the canal in the
           Jordaan. No obligation, no membership.
         </p>
+
+        {/* Decision-paralysis killer — see /nl/gratis-intake parallel.
+            Shipped 2026-05-26 lead-cap. */}
+        <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
+          <p className="text-sm text-foreground">
+            <strong className="font-semibold">10 trainers</strong> — not sure which fits?
+          </p>
+          <Link
+            href="/en/match-trainer"
+            className="plausible-event-name=free_intro_quiz_entry inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand text-brand-foreground font-semibold text-sm hover:bg-brand-dark transition-colors"
+            data-cta="free-intro-quiz-entry"
+          >
+            <ArrowRight className="w-4 h-4" />
+            Match quiz · 3 questions · 30 sec
+          </Link>
+        </div>
 
         {/* PRIMARY ACTION: TRAINER GRID — see /nl/gratis-intake parallel
             for the full rationale (operator directive 2026-05-20). Visitors

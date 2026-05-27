@@ -5,7 +5,7 @@ import { trainers } from "@/config/trainers";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
-import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight } from "lucide-react";
+import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import {
@@ -153,23 +153,33 @@ export default function TrainersPageEN() {
             landing conversion lever; emerald WhatsApp-direct gives instant-
             match path, brand-blue anchor preserves "I'll choose" path. */}
         <FadeIn>
-          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:flex-wrap sm:gap-3">
+            {/* PRIMARY: match-quiz — decision-paralysis killer for 10 trainers
+                (shipped 2026-05-26 lead-cap). See /nl parallel for full rationale. */}
+            <a
+              href="/en/match-trainer"
+              data-cta="trainerhub-quiz"
+              className="plausible-event-name=trainerhub_quiz inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]"
+            >
+              <Sparkles className="h-5 w-5" />
+              Match your trainer — 3 questions
+            </a>
             <a
               href={whatsappLinks.intakeMatchEn}
               target="_blank"
               rel="noopener noreferrer"
               data-cta="trainerhub-whatsapp-direct"
-              className="plausible-event-name=trainerhub_whatsapp_direct inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
+              className="plausible-event-name=trainerhub_whatsapp_direct inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700 active:scale-[0.98]"
             >
               <MessageCircle className="h-5 w-5" />
-              WhatsApp us — we&apos;ll match
+              WhatsApp us
             </a>
             <a
               href="#trainer-grid"
               data-cta="trainerhub-scroll-grid"
               className="plausible-event-name=trainerhub_scroll_grid inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
             >
-              Or browse all {trainers.length} trainers ↓
+              Or browse all {trainers.length} ↓
             </a>
           </div>
         </FadeIn>

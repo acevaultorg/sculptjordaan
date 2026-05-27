@@ -1,6 +1,7 @@
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { MobileLeadBar } from "./mobile-lead-bar";
+import { LeadRescuePopup } from "./lead-rescue-popup";
 
 export function PageLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,10 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
       <main id="main-content" className="flex-1 pt-20 pb-20 md:pb-0">{children}</main>
       <Footer />
       <MobileLeadBar />
+      {/* LeadRescuePopup — second-chance lead-cap; fires on exit-intent
+          (desktop mouseleave) or 30s+timed (mobile fallback). Once per
+          session. Routes to match-quiz primary + WhatsApp + Acuity. */}
+      <LeadRescuePopup />
     </>
   );
 }
