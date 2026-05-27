@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { TrainerReferralBanner } from "@/components/marketing/trainer-referral-banner";
+import { TrainerApplicationForm } from "@/components/marketing/trainer-application-form";
 import {
   ArrowRight,
   MessageCircle,
@@ -136,24 +137,31 @@ export default function WordTrainerNL() {
                   1 px below the fold. IG-webview audience (6s avg duration)
                   doesn't scroll, so the action button effectively didn't
                   exist for them. Action first, bullets as proof below. */}
+              {/* Hero CTAs (2026-05-27): primary = aanmeld-form (on-page,
+                  structured data capture); secondary = WhatsApp (instant
+                  chat for trainers who prefer not to fill anything).
+                  Pre-fix: primary was WhatsApp + secondary "Bekijk studio
+                  & tarieven" → sent trainer AWAY to studio-huren losing
+                  the trainer-funnel context. Operator: "vage funnels!!"
+                  Now: structured first-touch via form, WA stays available. */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <ButtonLink
+                  href="#aanmelden"
+                  size="lg"
+                  className="plausible-event-name=word_trainer_hero_aanmelden bg-brand hover:bg-brand-dark text-brand-foreground"
+                >
+                  Meld je aan
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </ButtonLink>
                 <ButtonLink
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
                   external
+                  variant="outline"
                   size="lg"
-                  className="plausible-event-name=word_trainer_hero_whatsapp bg-brand hover:bg-brand-dark text-brand-foreground"
+                  className="plausible-event-name=word_trainer_hero_whatsapp"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp ons
-                </ButtonLink>
-                <ButtonLink
-                  href="/nl/studio-huren"
-                  variant="outline"
-                  size="lg"
-                  className="plausible-event-name=word_trainer_hero_studio_huren"
-                >
-                  Bekijk studio & tarieven
-                  <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
@@ -313,6 +321,25 @@ export default function WordTrainerNL() {
         </FadeIn>
         <FadeIn delay={0.2} className="mt-6 text-center">
           <p className="text-sm text-muted-foreground">Alle pakketten zijn 3 maanden geldig. <a href="/nl/prijzen" className="text-brand hover:underline">Bekijk alle tarieven</a></p>
+        </FadeIn>
+      </Section>
+
+      {/* Aanmelden — primary conversion section.
+          Operator directive 2026-05-27: trainer must be able to leave
+          their info on the page OR send a WhatsApp. Form does both:
+          captures structured data (name + phone required, email +
+          message optional) and opens WhatsApp with that data pre-filled
+          so the trainer reviews + sends. No backend, no spam-filter
+          deliverability risk. Anchor #aanmelden — hero primary CTA
+          + MobileBottomCTABar route here. */}
+      <Section id="aanmelden">
+        <SectionHeader
+          overline="Aanmelden"
+          title="Stuur je gegevens — we bellen je binnen 24 uur"
+          description="Vul kort je naam en nummer in. We openen WhatsApp met je gegevens — jij verstuurt zelf. Geen verplichtingen."
+        />
+        <FadeIn>
+          <TrainerApplicationForm locale="nl" />
         </FadeIn>
       </Section>
 

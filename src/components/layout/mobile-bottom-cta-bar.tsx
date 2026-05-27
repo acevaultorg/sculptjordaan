@@ -156,18 +156,40 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
         };
   }
 
-  // Word-trainer / become-trainer — for-trainers funnel
-  if (/\/(word-trainer|become-trainer|voor-trainers|for-trainers)(\/|$)/.test(pathname)) {
+  // Word-trainer / become-trainer — direct trainer-conversion page.
+  // Sticky bar routes to on-page aanmeld-form (operator directive
+  // 2026-05-27 "vage funnels!! zorg dat trainer dan op de pagina zijn
+  // gegevens achterlaat"). Pre-fix routed AWAY to /nl/studio-huren —
+  // the trainer landed on a consumer-pricing page and lost trainer-
+  // funnel context. Form lives at #aanmelden (nl) / #apply (en).
+  if (/\/(word-trainer|become-trainer)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "Bekijk de studio",
-          href: "/nl/studio-huren",
-          ctaId: "mobile-cta-trainer-studio",
+          label: "Meld je aan",
+          href: "#aanmelden",
+          ctaId: "mobile-cta-trainer-apply",
         }
       : {
-          label: "See the studio",
-          href: "/en/studio-rental",
-          ctaId: "mobile-cta-trainer-studio",
+          label: "Apply now",
+          href: "#apply",
+          ctaId: "mobile-cta-trainer-apply",
+        };
+  }
+
+  // Voor-trainers / for-trainers — hub page (no on-page form, sends
+  // to the dedicated word-trainer/become-trainer page which has the
+  // form). Two-step bar = hub → trainer page → form anchor.
+  if (/\/(voor-trainers|for-trainers)(\/|$)/.test(pathname)) {
+    return locale === "nl"
+      ? {
+          label: "Word SculptClub-trainer",
+          href: "/nl/word-trainer#aanmelden",
+          ctaId: "mobile-cta-trainerhub-apply",
+        }
+      : {
+          label: "Become a trainer",
+          href: "/en/become-trainer#apply",
+          ctaId: "mobile-cta-trainerhub-apply",
         };
   }
 

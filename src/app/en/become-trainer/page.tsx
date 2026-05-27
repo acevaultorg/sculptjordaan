@@ -8,6 +8,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { TrainerReferralBanner } from "@/components/marketing/trainer-referral-banner";
+import { TrainerApplicationForm } from "@/components/marketing/trainer-application-form";
 import {
   ArrowRight,
   MessageCircle,
@@ -139,24 +140,31 @@ export default function BecomeTrainerEN() {
                   as supporting proof below (visitors who DO scroll see the
                   full value-prop case; visitors who don't at least see the
                   WhatsApp option in their initial frame). */}
+              {/* Hero CTAs (2026-05-27): primary = on-page application form
+                  (structured data capture); secondary = WhatsApp (instant
+                  chat for trainers who prefer not to fill anything).
+                  Pre-fix: primary was WhatsApp + secondary "View studio &
+                  rates" → sent trainer AWAY losing trainer-funnel context.
+                  Operator: "vage funnels!!" NL parity at
+                  src/app/nl/word-trainer/page.tsx. */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <ButtonLink
+                  href="#apply"
+                  size="lg"
+                  className="plausible-event-name=become_trainer_hero_apply bg-brand hover:bg-brand-dark text-brand-foreground"
+                >
+                  Apply now
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </ButtonLink>
                 <ButtonLink
                   href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to know more about working at SculptClub")}`}
                   external
+                  variant="outline"
                   size="lg"
-                  className="plausible-event-name=become_trainer_hero_whatsapp bg-brand hover:bg-brand-dark text-brand-foreground"
+                  className="plausible-event-name=become_trainer_hero_whatsapp"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp us
-                </ButtonLink>
-                <ButtonLink
-                  href="/en/studio-rental"
-                  variant="outline"
-                  size="lg"
-                  className="plausible-event-name=become_trainer_hero_studio_rental"
-                >
-                  View studio & rates
-                  <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
@@ -315,6 +323,22 @@ export default function BecomeTrainerEN() {
         </FadeIn>
         <FadeIn delay={0.2} className="mt-6 text-center">
           <p className="text-sm text-muted-foreground">All packages are valid for 3 months. <a href="/en/pricing" className="text-brand hover:underline">View all rates</a></p>
+        </FadeIn>
+      </Section>
+
+      {/* Apply — primary conversion section.
+          Operator directive 2026-05-27. Form captures name + phone
+          (required) + email + message (optional) → opens WhatsApp with
+          structured pre-filled message. Anchor #apply. NL parity at
+          src/app/nl/word-trainer/page.tsx. */}
+      <Section id="apply">
+        <SectionHeader
+          overline="Apply"
+          title="Send your details — we'll get back within 24 hours"
+          description="Drop your name and phone number. We open WhatsApp with your info — you send it yourself. No obligations."
+        />
+        <FadeIn>
+          <TrainerApplicationForm locale="en" />
         </FadeIn>
       </Section>
 
