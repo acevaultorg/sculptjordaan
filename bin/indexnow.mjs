@@ -53,21 +53,40 @@ async function main() {
     urlList: urls,
   };
 
-  const res = await fetch("https://api.indexnow.org/indexnow", {
-    method: "POST",
-    headers: { "Content-Type": "application/json; charset=utf-8" },
-    body: JSON.stringify(payload),
-  });
+  // IndexNow is a shared network: a submission accepted by ANY participating
+  // endpoint propagates to all members (Bing, Yandex, Naver, Seznam). So we
+  // try endpoints in order and succeed on the first acceptance — a single
+  // operator's outage doesn't fail the ship. (2026-05-29: Bing-operated
+  // api.indexnow.org + bing.com/indexnow returned 502/503 for hours; Yandex
+  // accepted the same payload with 202. Without this fallback the ship step
+  // failed on a purely external outage.)
+  //
+  // Accept codes: 200 ok · 202 queued · 422 accepted-with-some-invalid-URLs.
+  const ENDPOINTS = [
+    "https://api.indexnow.org/indexnow", // neutral aggregator (Bing-operated)
+    "https://www.bing.com/indexnow",     // Bing direct
+    "https://yandex.com/indexnow",       // Yandex (independent operator)
+  ];
 
-  // 200 = accepted. 202 = accepted (queued). 422 = some URLs were invalid
-  // but the rest were accepted. 4xx other = real error.
-  if (res.ok || res.status === 202 || res.status === 422) {
-    console.log(`✓ IndexNow → HTTP ${res.status} (${urls.length} URLs)`);
-    process.exit(0);
+  const failures = [];
+  for (const endpoint of ENDPOINTS) {
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok || res.status === 202 || res.status === 422) {
+        console.log(`✓ IndexNow → HTTP ${res.status} via ${endpoint} (${urls.length} URLs)`);
+        process.exit(0);
+      }
+      failures.push(`${endpoint} → HTTP ${res.status}`);
+    } catch (err) {
+      failures.push(`${endpoint} → ${err.message}`);
+    }
   }
 
-  console.error(`✗ IndexNow → HTTP ${res.status}`);
-  console.error(await res.text());
+  console.error(`✗ IndexNow: all endpoints failed:\n  ${failures.join("\n  ")}`);
   process.exit(1);
 }
 
