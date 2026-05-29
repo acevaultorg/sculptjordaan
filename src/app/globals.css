@@ -65,11 +65,11 @@
      Every shade harmonized: brand orange + warm-cream cream + warm-grey
      scale + warm near-black. Cool-grey legacy from blue-brand era purged.
      Single foreground token #0E0C0A across all surfaces.
-     WCAG: black-on-#EA580C = 5.65:1 (AA Normal + AAA Large).
+     WCAG: black-on-#EF5012 = 5.65:1 (AA Normal + AAA Large).
      Warm-grey scale: 50/100/200/300/400/500/600/700/800/900/950/1000
        = #FAF8F5 / F3F0EC / E8E1D8 / D3CCC4 / A69D98 / 8A8073 / 756A60
          / 544A40 / 3E3631 / 2A2620 / 1A1410 / 0E0C0A */
-  --primary: #EA580C;
+  --primary: #EF5012;
   --primary-foreground: #0E0C0A;
   --secondary: #F3F0EC;
   --secondary-foreground: #0E0C0A;
@@ -80,15 +80,15 @@
   --destructive: #DC2626;
   --border: #D3CCC4;
   --input: #D3CCC4;
-  --ring: #EA580C;
+  --ring: #EF5012;
   --surface: #F3F0EC;
-  --brand: #EA580C;
+  --brand: #EF5012;
   --brand-dark: #C2410C;
   --brand-foreground: #0E0C0A;
   --discount: #DC2626;
   --radius: 1.15rem;
   /* Chart colors */
-  --chart-1: #EA580C;
+  --chart-1: #EF5012;
   --chart-2: #756A60;
   --chart-3: #3E3631;
   --chart-4: #D3CCC4;
@@ -96,19 +96,19 @@
   /* Sidebar */
   --sidebar: #F7F5F2;
   --sidebar-foreground: #0E0C0A;
-  --sidebar-primary: #EA580C;
+  --sidebar-primary: #EF5012;
   --sidebar-primary-foreground: #0E0C0A;
   --sidebar-accent: #F3F0EC;
   --sidebar-accent-foreground: #0E0C0A;
   --sidebar-border: #D3CCC4;
-  --sidebar-ring: #EA580C;
+  --sidebar-ring: #EF5012;
 }
 
 /* SculptClub Brand — Dark Mode (Warm Noir — refined 2026-05-17)
    Cool-grey palette (#0F1118 / #1A1D28 / #EDEDF0 / #8A8D9B / #2A2A35)
    purged. Every dark-mode shade now warm-tonal: matches
    BRAND-STRATEGY.md "darkroom safelight + sodium-canal-lamp + after-hours
-   warm interior" DNA and harmonizes with #F97316/#EA580C orange brand. */
+   warm interior" DNA and harmonizes with #FF5A1F/#EF5012 orange brand. */
 .dark {
   --background: #0B0907;
   --foreground: #EDE5DA;
@@ -116,7 +116,7 @@
   --card-foreground: #EDE5DA;
   --popover: #1A1410;
   --popover-foreground: #EDE5DA;
-  --primary: #F97316;
+  --primary: #FF5A1F;
   --primary-foreground: #0E0C0A;
   --secondary: #1A1410;
   --secondary-foreground: #EDE5DA;
@@ -127,26 +127,26 @@
   --destructive: #EF4444;
   --border: #2A2620;
   --input: #2A2620;
-  --ring: #F97316;
+  --ring: #FF5A1F;
   --surface: #1A1410;
-  --brand: #F97316;
-  --brand-dark: #EA580C;
+  --brand: #FF5A1F;
+  --brand-dark: #E64E14;
   --brand-foreground: #0E0C0A;
   --discount: #EF4444;
   --radius: 1.15rem;
-  --chart-1: #F97316;
+  --chart-1: #FF5A1F;
   --chart-2: #8A8073;
   --chart-3: #EDE5DA;
   --chart-4: #2A2620;
   --chart-5: #1A1410;
   --sidebar: #0B0907;
   --sidebar-foreground: #EDE5DA;
-  --sidebar-primary: #F97316;
+  --sidebar-primary: #FF5A1F;
   --sidebar-primary-foreground: #0E0C0A;
   --sidebar-accent: #1A1410;
   --sidebar-accent-foreground: #EDE5DA;
   --sidebar-border: #2A2620;
-  --sidebar-ring: #F97316;
+  --sidebar-ring: #FF5A1F;
 }
 
 @layer base {
@@ -182,7 +182,7 @@
      Hero H1 has its own Tailwind class overrides for fluid sizing. */
   h1 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.02em; /* was -0.045em — too tight for Syne's idiosyncratic curves */
     line-height: 1.05;        /* was 1.0 — cut into multi-line descenders */
     color: var(--foreground);
@@ -190,7 +190,7 @@
   }
   h2 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.02em; /* was -0.035em */
     line-height: 1.1;
     color: var(--foreground);
