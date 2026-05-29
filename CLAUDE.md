@@ -58,7 +58,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 
 ## Brand & Design
 - Brand strategy, voice, and design principles: `docs/BRAND-STRATEGY.md`
-- Dark theme only — intentional for brand (never add light mode)
+- Automatic light/dark mode via system preference (added 2026-05-29, operator directive). Both palettes live in `src/app/globals.css` (`:root` = light warm-bone, `.dark` = dark near-black), switched by a flash-free `prefers-color-scheme` script in `layout.tsx`. Build for BOTH modes — use theme tokens (`bg-card`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-brand`), never hardcoded `text-white`/`bg-black` on token surfaces (white text is only OK over photos or on the orange brand button). (Supersedes the prior "dark only — never add light mode" rule.)
 - Color-clickability contract: if it's blue, it MUST be clickable
 - Fonts: Syne (headings) + Instrument Sans (body)
 - Primary brand color: #134DE1
