@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Cookie } from "lucide-react";
 import { getLocaleFromPath } from "@/lib/locale";
 
 const copy = {
@@ -65,13 +66,15 @@ export function CookieConsent() {
       updateConsent(existing === "all");
       return;
     }
-    // Show banner after next frame (async → not a synchronous effect setState)
-    const raf1 = requestAnimationFrame(() => {
+    // Show after a short delay so the hero owns the first impression — the
+    // banner slides up ~700ms in rather than competing on first paint (analytics
+    // + ad cookies are Consent-Mode default-denied, so delaying the prompt is
+    // safe). Then a rAF flips animateIn for the slide+fade transition.
+    const showTimer = window.setTimeout(() => {
       setVisible(true);
-      const raf2 = requestAnimationFrame(() => setAnimateIn(true));
-      return () => cancelAnimationFrame(raf2);
-    });
-    return () => cancelAnimationFrame(raf1);
+      requestAnimationFrame(() => setAnimateIn(true));
+    }, 700);
+    return () => window.clearTimeout(showTimer);
   }, []);
 
   function handleAccept() {
@@ -116,56 +119,55 @@ export function CookieConsent() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 transition-transform duration-300 ease-out ${
-        animateIn ? "translate-y-0" : "translate-y-full"
+      className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-300 ease-out ${
+        animateIn ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
       role="dialog"
       aria-label={t.title}
     >
-      <div className="bg-card/95 backdrop-blur-md border-t border-border rounded-t-2xl md:rounded-t-none">
-        <div className="mx-auto max-w-4xl px-4 py-4 sm:px-6 sm:py-5">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            {/* Text */}
-            <div className="flex-1 min-w-0">
-              <p className="text-sm text-foreground">
-                {t.text}{" "}
-                <Link
-                  href={t.policyLink}
-                  className="underline text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {t.policyLabel}
-                </Link>
-              </p>
-            </div>
+      {/* Floating compact card with inset margins — the prior full-bleed bar
+          covered the hero CTA + "ONZE TRAINERS" section, which reads as a
+          content-blocker and raises bounce. A small card that sits ABOVE the
+          fold's content (not over it) gets out of the way fast: visitors
+          resolve it in one tap and engage with the real page. */}
+      <div className="mx-auto w-full max-w-md sm:max-w-2xl p-3 sm:p-4">
+        <div className="rounded-2xl bg-card/95 backdrop-blur-md border border-border shadow-2xl px-4 py-4 sm:px-5">
+          <div className="flex items-start gap-3">
+            <Cookie className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
+            <p className="flex-1 text-sm leading-snug text-foreground">
+              {t.text}{" "}
+              <Link
+                href={t.policyLink}
+                className="underline underline-offset-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {t.policyLabel}
+              </Link>
+            </p>
+          </div>
 
-            {/* Buttons */}
-            <div className="flex items-center gap-3 shrink-0">
-              <button
-                onClick={handleEssential}
-                className="rounded-full border border-border bg-transparent px-5 py-2.5 min-h-[44px] text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer"
-              >
-                {t.essential}
-              </button>
-              {/* Accept button — was bg-brand (orange) until 2026-05-27 Clarity
-                  audit. Clarity dashboard (last 3 days, project vx7zcg6zys)
-                  showed "Accepteren" attracting 19.15% of all homepage clicks
-                  (9 of 47) — by far the top click destination, stealing
-                  attention from the hero PT primary CTA (only 4.26% of
-                  clicks). Root cause: 3 orange-filled CTAs competing on mobile
-                  first-paint (cookie + header Boek + hero PT). Fix: neutral
-                  outline treatment keeps the cookie banner visible but
-                  visually subordinate so the brand-orange-primary chain is
-                  reserved for revenue-driving actions (hero PT button +
-                  mobile sticky lead bar WhatsApp). Cookie compliance still
-                  works — visitors who want to accept have a clear, accessible
-                  button. They just stop misclicking it as the primary CTA. */}
-              <button
-                onClick={handleAccept}
-                className="rounded-full bg-foreground/10 border border-foreground/20 hover:bg-foreground/15 hover:border-foreground/40 px-5 py-2.5 min-h-[44px] text-sm font-semibold text-foreground transition-colors cursor-pointer"
-              >
-                {t.accept}
-              </button>
-            </div>
+          {/* Two equal-width, single-tap choices. Reject (essential) on the
+              left, accept on the right — both ≥44px with identical footprint,
+              because EU/ACM rules require reject to be as easy as accept (and a
+              symmetric choice is what keeps trust + resolution rate high).
+              Accept is a light FILLED button: a clear affirmative that resolves
+              the banner fast — deliberately NOT brand-orange, so it doesn't
+              steal the eye from the hero "Match je trainer" CTA (2026-05-27
+              Clarity decision preserved; orange stays reserved for revenue
+              actions). The earlier double-grey pair read as two equally-muted
+              options, which slows the decision; one clear affirmative speeds it. */}
+          <div className="mt-3.5 grid grid-cols-2 gap-2.5 sm:flex sm:justify-end">
+            <button
+              onClick={handleEssential}
+              className="rounded-full border border-border bg-transparent px-5 py-2.5 min-h-[44px] text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer sm:min-w-[150px]"
+            >
+              {t.essential}
+            </button>
+            <button
+              onClick={handleAccept}
+              className="rounded-full bg-foreground px-5 py-2.5 min-h-[44px] text-sm font-semibold text-background hover:bg-foreground/90 transition-colors cursor-pointer sm:min-w-[150px]"
+            >
+              {t.accept}
+            </button>
           </div>
         </div>
       </div>
