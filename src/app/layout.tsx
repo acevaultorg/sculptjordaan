@@ -125,13 +125,20 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`dark ${syne.variable} ${instrumentSans.variable} h-full antialiased`}
+      className={`${syne.variable} ${instrumentSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
+        {/* Both palettes live in globals.css (:root = light, .dark = dark) and
+            share token names, so token-based components adapt automatically.
+            This blocking script runs before first paint: it sets the theme from
+            the visitor's OS preference (automatic light/dark) with zero flash,
+            and keeps it in sync if they change the system theme live. Falls back
+            to dark (brand default) if matchMedia is unavailable. */}
+        <meta name="color-scheme" content="light dark" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.documentElement.lang=location.pathname.startsWith("/en")?"en":"nl"`,
+            __html: `(function(){try{var m=matchMedia("(prefers-color-scheme: dark)");var a=function(d){document.documentElement.classList.toggle("dark",d)};a(m.matches);m.addEventListener("change",function(e){a(e.matches)})}catch(e){document.documentElement.classList.add("dark")}})();document.documentElement.lang=location.pathname.startsWith("/en")?"en":"nl"`,
           }}
         />
         <link rel="manifest" href="/manifest.json" />
