@@ -119,55 +119,55 @@ export function CookieConsent() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-300 ease-out ${
-        animateIn ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+      className={`fixed inset-x-0 bottom-0 z-50 transition-transform duration-300 ease-out ${
+        animateIn ? "translate-y-0" : "translate-y-full"
       }`}
       role="dialog"
       aria-label={t.title}
     >
-      {/* Floating compact card with inset margins — the prior full-bleed bar
-          covered the hero CTA + "ONZE TRAINERS" section, which reads as a
-          content-blocker and raises bounce. A small card that sits ABOVE the
-          fold's content (not over it) gets out of the way fast: visitors
-          resolve it in one tap and engage with the real page. */}
-      <div className="mx-auto w-full max-w-md sm:max-w-2xl p-3 sm:p-4">
-        <div className="rounded-2xl bg-card/95 backdrop-blur-md border border-border shadow-2xl px-4 py-4 sm:px-5">
-          <div className="flex items-start gap-3">
-            <Cookie className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
-            <p className="flex-1 text-sm leading-snug text-foreground">
-              {t.text}{" "}
-              <Link
-                href={t.policyLink}
-                className="underline underline-offset-2 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {t.policyLabel}
-              </Link>
-            </p>
-          </div>
+      {/* Solid, edge-to-edge bottom bar. It MUST be opaque + full-width so that
+          content scrolling underneath disappears against a clean sealed edge.
+          The earlier floating semi-transparent card (bg-card/95 + blur + inset
+          margins) let section photos show through + around it, so as you
+          scrolled past the studio section it looked like two panels colliding.
+          Kept compact (single row on desktop, tight stack on mobile) so it
+          still covers minimal content — the size issue that retired the
+          original tall bar. */}
+      <div className="bg-card border-t border-border shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+        <div className="mx-auto w-full max-w-3xl px-4 py-3.5 sm:px-6 sm:py-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-2.5 sm:items-center">
+              <Cookie className="mt-0.5 sm:mt-0 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
+              <p className="text-sm leading-snug text-foreground">
+                {t.text}{" "}
+                <Link
+                  href={t.policyLink}
+                  className="underline underline-offset-2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {t.policyLabel}
+                </Link>
+              </p>
+            </div>
 
-          {/* Two equal-width, single-tap choices. Reject (essential) on the
-              left, accept on the right — both ≥44px with identical footprint,
-              because EU/ACM rules require reject to be as easy as accept (and a
-              symmetric choice is what keeps trust + resolution rate high).
-              Accept is a light FILLED button: a clear affirmative that resolves
-              the banner fast — deliberately NOT brand-orange, so it doesn't
-              steal the eye from the hero "Match je trainer" CTA (2026-05-27
-              Clarity decision preserved; orange stays reserved for revenue
-              actions). The earlier double-grey pair read as two equally-muted
-              options, which slows the decision; one clear affirmative speeds it. */}
-          <div className="mt-3.5 grid grid-cols-2 gap-2.5 sm:flex sm:justify-end">
-            <button
-              onClick={handleEssential}
-              className="rounded-full border border-border bg-transparent px-5 py-2.5 min-h-[44px] text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer sm:min-w-[150px]"
-            >
-              {t.essential}
-            </button>
-            <button
-              onClick={handleAccept}
-              className="rounded-full bg-foreground px-5 py-2.5 min-h-[44px] text-sm font-semibold text-background hover:bg-foreground/90 transition-colors cursor-pointer sm:min-w-[150px]"
-            >
-              {t.accept}
-            </button>
+            {/* Reject (essential) + accept — both ≥44px, one-tap, equal
+                footprint (EU/ACM: reject as easy as accept). Accept is
+                light-filled (clear affirmative, fast resolution), deliberately
+                NOT brand-orange so it doesn't steal the eye from the hero CTA
+                (2026-05-27 Clarity decision preserved). */}
+            <div className="grid grid-cols-2 gap-2.5 shrink-0 sm:flex">
+              <button
+                onClick={handleEssential}
+                className="rounded-full border border-border bg-transparent px-5 py-2.5 min-h-[44px] text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer sm:min-w-[150px]"
+              >
+                {t.essential}
+              </button>
+              <button
+                onClick={handleAccept}
+                className="rounded-full bg-foreground px-5 py-2.5 min-h-[44px] text-sm font-semibold text-background hover:bg-foreground/90 transition-colors cursor-pointer sm:min-w-[150px]"
+              >
+                {t.accept}
+              </button>
+            </div>
           </div>
         </div>
       </div>
