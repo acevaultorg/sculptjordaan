@@ -14,7 +14,7 @@ import { Star } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Match yourself with a personal trainer — SculptClub" },
   description:
-    "3 questions, 30 seconds. We show your top-2 trainer match from 10 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
+    "3 questions, 30 seconds. We show your top-2 trainer match from 11 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
   robots: { index: false, follow: true },
   alternates: {
     canonical: "/en/match-trainer",

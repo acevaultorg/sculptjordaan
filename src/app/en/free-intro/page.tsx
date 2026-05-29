@@ -105,7 +105,7 @@ export default function FreeIntroPage() {
             Shipped 2026-05-26 lead-cap. */}
         <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
           <p className="text-sm text-foreground">
-            <strong className="font-semibold">10 trainers</strong> — not sure which fits?
+            <strong className="font-semibold">11 trainers</strong> — not sure which fits?
           </p>
           <Link
             href="/en/match-trainer"

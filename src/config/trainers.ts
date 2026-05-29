@@ -57,7 +57,7 @@ export interface Trainer {
 // Positioned at #4 (after Joey, before Alex) — his Voeding/Afvallen/
 // Revalidatie profile fits between the strength-focused trainers and
 // the holistic-focused ones. Operator can reorder freely.
-const DISPLAY_ORDER = ["eva", "bryan", "joey", "ibrahim", "alex", "gezina", "andrea", "sergei", "dara", "jearmey"] as const;
+const DISPLAY_ORDER = ["eva", "bryan", "joey", "ibrahim", "alex", "gezina", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -286,6 +286,28 @@ const trainersRaw: Trainer[] = [
     },
     image: "/images/trainers/joey.jpg",
     whatsapp: "https://wa.me/31639175337",
+  },
+  {
+    id: "hamish",
+    name: "Hamish",
+    slug: {
+      nl: "plan-gratis-intake-met-hamish",
+      en: "plan-free-intro-with-hamish",
+    },
+    specialization: {
+      nl: ["Kracht", "High Performance", "Afvallen"],
+      en: ["Strength", "High Performance", "Fat Loss"],
+    },
+    languages: ["NL", "EN"],
+    rate: "€72 / 60 min",
+    instagram: "https://instagram.com/hamishleijer",
+    instagramHandle: "@hamishleijer",
+    bio: {
+      nl: "Als ervaren personal trainer helpt Hamish je om fysieke grenzen te doorbreken. Met een scherpe focus op functionele kracht, metabole optimalisatie en een resultaatgerichte aanpak zorgt hij dat je training naadloos aansluit op een high-performance levensstijl. Geen shortcuts, alleen structurele progressie.",
+      en: "As an experienced personal trainer, Hamish helps you break through physical barriers. With a sharp focus on functional strength, metabolic optimization, and a results-driven approach, he ensures your training seamlessly aligns with a high-performance lifestyle. No shortcuts, just structural progress.",
+    },
+    image: "/images/trainers/hamish.jpg",
+    whatsapp: "https://wa.me/31613326221",
   },
 ];
 

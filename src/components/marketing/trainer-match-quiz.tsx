@@ -4,8 +4,8 @@
  * Trainer-Match Quiz — 3-question interactive matcher.
  *
  * Lead-cap optimization shipped 2026-05-26 per @strategist analysis:
- * 10 trainers on /nl/gratis-intake = decision paralysis. The current
- * TrainerChoiceGrid shows all 10 + asks visitor to pick → many bounce
+ * 11 trainers on /nl/gratis-intake = decision paralysis. The current
+ * TrainerChoiceGrid shows all 11 + asks visitor to pick → many bounce
  * undecided. This quiz collapses choice to 1 tap × 3 questions →
  * recommends top-2 trainers with photos + per-trainer intake CTAs.
  *
@@ -140,7 +140,7 @@ const COPY_NL: QuizCopy = {
     // Direct active form fits Dutch operator-action register.
     whatsappLabel: "Of WhatsApp ons",
     reset: "↺ Doe de match opnieuw",
-    findOther: "Bekijk alle 10 trainers",
+    findOther: "Bekijk alle 11 trainers",
     specialty: "Specialisatie",
     languages: "Talen",
     rate: "Tarief",
@@ -195,7 +195,7 @@ const COPY_EN: QuizCopy = {
     bookLabel: (name) => `Book free intro with ${name} →`,
     whatsappLabel: "Or WhatsApp us?",
     reset: "↺ Run the match again",
-    findOther: "See all 10 trainers",
+    findOther: "See all 11 trainers",
     specialty: "Specialty",
     languages: "Languages",
     rate: "Rate",
@@ -320,7 +320,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
       <div className="rounded-2xl border border-border/40 bg-secondary p-6 sm:p-8 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/30 text-xs font-semibold text-brand mb-4">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>{locale === "nl" ? "10 trainers · 30 sec match" : "10 trainers · 30 sec match"}</span>
+          <span>{locale === "nl" ? "11 trainers · 30 sec match" : "11 trainers · 30 sec match"}</span>
         </div>
         {/* h1 (not h2) because the quiz is the ONLY content on /match-trainer
             — the page has no preceding SectionHeader. Without an h1, screen
@@ -508,7 +508,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
         })}
       </div>
 
-      {/* 2026-05-27: "Bekijk alle 10 trainers" promoted from a tiny
+      {/* 2026-05-27: "Bekijk alle 11 trainers" promoted from a tiny
           text-xs muted link to a full outlined button next to WhatsApp.
           Operator: "maak die knop meer prominent." Reasoning: the match
           quiz surfaces 2 trainers, but the operator has 10 — a visitor

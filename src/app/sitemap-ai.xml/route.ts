@@ -57,9 +57,9 @@ const aiPriorityPages = [
   // Trainer profile pages — Person schema, citation-worthy when LLMs answer
   // "who are personal trainers in jordaan amsterdam". Both NL + EN versions
   // for each trainer so AI engines surface them per-locale. Roster matches
-  // src/config/trainers.ts (10 trainers — Ibrahim restored 2026-05-22,
-  // Bryan added 2026-05-19, Sergei added 2026-05-12, Hamish removed
-  // 2026-05-08).
+  // src/config/trainers.ts (11 trainers — Hamish re-added 2026-05-29,
+  // Ibrahim restored 2026-05-22, Bryan added 2026-05-19, Sergei added
+  // 2026-05-12).
   { path: "/nl/plan-gratis-intake-met-alex", priority: 0.75 },
   { path: "/en/plan-free-intro-with-alex", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-eva", priority: 0.75 },
@@ -80,6 +80,8 @@ const aiPriorityPages = [
   { path: "/en/plan-free-intro-with-jearmey", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-joey", priority: 0.75 },
   { path: "/en/plan-free-intro-with-joey", priority: 0.75 },
+  { path: "/nl/plan-gratis-intake-met-hamish", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-hamish", priority: 0.75 },
 ];
 
 export function GET() {
