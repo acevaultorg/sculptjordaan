@@ -41,14 +41,19 @@ import type { Locale } from "@/config/site";
  * serves the trainer. Both audiences hit the same homepage; this addresses
  * the trainer-acquisition gap operator surfaced 2026-05-20.
  */
+// Order: the SPACE leads (operator directive 2026-05-28 "show the best
+// picture of the space first"). studio-overview.jpeg is the signature shot —
+// branded SCULPT wall + numbered turf sprint-lane + exposed brick + canal
+// light — so the first thing every visitor (consumer AND trainer) sees is the
+// actual studio, not a person. The action shot follows in rotation.
 const HERO_IMAGES = [
+  {
+    src: "/images/studio/studio-overview.jpeg",
+    alt: "Full overview of the SculptClub private studio in Amsterdam Jordaan — branded sprint lane, dumbbell rack, power rack and canal light",
+  },
   {
     src: "/images/studio/training-barbell-squat.jpg",
     alt: "Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack",
-  },
-  {
-    src: "/images/studio/studio-overview.jpeg",
-    alt: "Full overview of the SculptClub private studio in Amsterdam Jordaan — sprint lane, dumbbell rack, power rack",
   },
   {
     src: "/images/studio/canal-view-doors.jpg",
