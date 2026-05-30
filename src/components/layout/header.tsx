@@ -213,6 +213,14 @@ export function Header() {
   // opened the sheet. Modal renders `activeMenu.title/categories/etc`.
   const activeMenu = bookMode === "tryout" ? tryoutMenu[locale] : booking;
 
+  // Only the homepage (/ and /en) renders a full-bleed dark <Hero> photo
+  // behind the transparent header. There, white nav text + a shadow is
+  // legible at the top. EVERY other page has a light/theme top section, so
+  // white-on-transparent was low-contrast + the shadow read as a fuzzy halo
+  // (operator audit 2026-05-29). `overDarkHero` gates the white treatment to
+  // the only place it's correct; elsewhere the header uses theme colors.
+  const overDarkHero = !scrolled && (pathname === "/" || pathname === "/en");
+
   // Close hamburger when clicking outside (book panel has its own backdrop)
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -303,7 +311,11 @@ export function Header() {
               // anchor (lower weight), buttons = primary action (higher
               // weight). Proper visual hierarchy restored.
               // Desktop (sm+) stays h-10 — wide-viewport layout has room.
-              className="h-8 sm:h-10 w-auto invert select-none"
+              // Logo ink is #333. Invert (→ light) only when behind it is
+              // dark: over the homepage dark hero, OR in dark mode. On light
+              // pages the un-inverted dark wordmark reads clearly on the bone
+              // background (was previously inverted-to-light = near-invisible).
+              className={cn("h-8 sm:h-10 w-auto select-none", overDarkHero ? "invert" : "dark:invert")}
               loading="eager"
               fetchPriority="high"
             />
@@ -326,8 +338,8 @@ export function Header() {
                     className={cn(
                       "relative px-3 h-9 flex items-center rounded-lg text-sm font-medium transition-colors",
                       "hover:bg-accent",
-                      !scrolled
-                        ? "text-white [text-shadow:_0_1px_10px_rgba(0,0,0,0.85),0_0_4px_rgba(0,0,0,0.6)]"
+                      overDarkHero
+                        ? "text-white [text-shadow:_0_1px_6px_rgba(0,0,0,0.5)]"
                         : isActive
                           ? "text-foreground"
                           : "text-muted-foreground"
