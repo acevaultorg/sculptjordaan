@@ -85,6 +85,9 @@
   --brand: #EF5012;
   --brand-dark: #C2410C;
   --brand-foreground: #0E0C0A;
+  /* Overline accent — deeper than --brand so 12px/600 uppercase clears WCAG
+     AA on the bone background (#F7F5F2). Verified empirically via preview. */
+  --overline: #B23C0E;
   --discount: #DC2626;
   --radius: 1.15rem;
   /* Chart colors */
@@ -132,6 +135,8 @@
   --brand: #FF5A1F;
   --brand-dark: #E64E14;
   --brand-foreground: #0E0C0A;
+  /* Overline accent — molten brand orange glows on the warm-noir canvas. */
+  --overline: #FF5A1F;
   --discount: #EF4444;
   --radius: 1.15rem;
   --chart-1: #FF5A1F;
@@ -296,7 +301,13 @@
     text-transform: uppercase;
     letter-spacing: 0.18em;
     line-height: 1;
-    color: var(--muted-foreground);
+    /* Brand-orange accent (2026-05-29 bold-accent restyle). The uppercase
+       letter-spaced overline above every section headline is the site's
+       signature accent label (Saints/On pattern). Driven by --overline which
+       is the molten orange in dark mode (#FF5A1F — glows on noir) and a
+       deeper orange in light mode (#C8410E) chosen so 12px/600 still clears
+       WCAG AA on the bone background. Token-driven so all 165 usages update. */
+    color: var(--overline);
     /* Must be !important: Tailwind v4's built-in .overline utility (text-decoration-line: overline)
        lives in the utilities layer which beats @layer base by cascade order. Without !important
        the Tailwind utility draws a visible line ABOVE the text. */
