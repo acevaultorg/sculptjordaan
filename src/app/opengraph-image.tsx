@@ -41,7 +41,7 @@ export default function OgImage() {
             top: 0,
             bottom: 0,
             width: 16,
-            background: "linear-gradient(180deg, #EA580C 0%, #9A3412 100%)",
+            background: "linear-gradient(180deg, #EF5012 0%, #9A3412 100%)",
           }}
         />
 

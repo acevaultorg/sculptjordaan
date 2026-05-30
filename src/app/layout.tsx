@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   publisher: siteConfig.name,
   category: "fitness",
   // Brand icons — refreshed 2026-05-17 (rev 2 — Google-favicon-compliant).
-  // SVG primary = scalable single bold "S" on orange #EA580C (renders crisp
+  // SVG primary = scalable single bold "S" on orange #EF5012 (renders crisp
   // at any size; modern browsers prefer this).
   // 48px PNG = Google Search's preferred favicon spec (renders at ~20px
   // circle-clipped in search results; bold S stays legible).
@@ -109,8 +109,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   other: {
-    "theme-color": "#EA580C",
-    "msapplication-TileColor": "#EA580C",
+    "theme-color": "#EF5012",
+    "msapplication-TileColor": "#EF5012",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
     "apple-mobile-web-app-title": siteConfig.name,
