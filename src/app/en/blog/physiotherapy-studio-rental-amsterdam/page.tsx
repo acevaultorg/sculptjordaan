@@ -78,7 +78,7 @@ export default function BlogPostPhysioStudioEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                As a physiotherapist in Amsterdam, you know that rehabilitation doesn&apos;t end at the
+                As a physiotherapist in Amsterdam, you know that rehabilitation doesn’t end at the
                 treatment table. More and more patients need strength training as part of their recovery.
                 But not every physiotherapy practice has the space or equipment for serious training
                 guidance. Renting a training studio offers the solution — professional equipment, privacy
@@ -91,7 +91,7 @@ export default function BlogPostPhysioStudioEN() {
                 Patients with back pain, shoulder injuries or knee problems benefit enormously from
                 structured strength training under guidance. But a typical physiotherapy practice often
                 lacks the space and equipment for functional exercises. A treatment table, a few loose
-                weights and a TRX aren&apos;t enough for serious rehabilitation.
+                weights and a TRX aren’t enough for serious rehabilitation.
               </p>
               <p>
                 By renting a training space you get access to a power rack, cable machine, dumbbells
@@ -102,8 +102,8 @@ export default function BlogPostPhysioStudioEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Privacy and focus</h2>
               <p>
                 Rehabilitation training demands concentration. Your patient needs to feel safe,
-                especially when they&apos;re getting back to heavier exercises after an injury. In a big
-                gym that&apos;s difficult — there are distractions, loud music and other people watching.
+                especially when they’re getting back to heavier exercises after an injury. In a big
+                gym that’s difficult — there are distractions, loud music and other people watching.
                 In a private studio, your patient can fully concentrate on the exercise. Maximum 3
                 people at a time, no waiting for equipment, no uncomfortable situations.
               </p>
@@ -133,13 +133,13 @@ export default function BlogPostPhysioStudioEN() {
                 <li><strong>Resistance bands:</strong> Complementary to free weights</li>
               </ul>
               <p>
-                All of this equipment is available at SculptClub. You don&apos;t need to bring anything
+                All of this equipment is available at SculptClub. You don’t need to bring anything
                 except your expertise.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Collaboration with personal trainers</h2>
               <p>
-                SculptClub isn&apos;t just a studio — it&apos;s a place where physiotherapists and personal
+                SculptClub isn’t just a studio — it’s a place where physiotherapists and personal
                 trainers work together. When your patient completes their rehabilitation programme, you
                 can refer them to one of the resident trainers. Your patient gets continuity in the same
                 trusted environment. And you build a professional network.
@@ -147,7 +147,7 @@ export default function BlogPostPhysioStudioEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Get started</h2>
               <p>
-                Get in touch for a studio viewing. We&apos;re happy to discuss how the space fits your
+                Get in touch for a studio viewing. We’re happy to discuss how the space fits your
                 practice. Bookable by the hour, no long-term contract and always free cancellation.
               </p>
             </div>

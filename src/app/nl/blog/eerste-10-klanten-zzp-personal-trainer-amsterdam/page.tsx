@@ -68,7 +68,7 @@ export default function BlogPostEerste10Klanten() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">De realiteit — meestal 6 tot 12 maanden tot je eerste 10</h2>
               <p>
-                Eerst de tijdlijn. Wie roept &ldquo;in 30 dagen 10 betalende klanten&rdquo;, verkoopt jou meestal een cursus van €497. De realiteit is langzamer.
+                Eerst de tijdlijn. Wie roept “in 30 dagen 10 betalende klanten”, verkoopt jou meestal een cursus van €497. De realiteit is langzamer.
               </p>
               <p>
                 Een eerlijke verdeling die we bij SculptClub zien onder trainers die hier per uur huren:
@@ -76,7 +76,7 @@ export default function BlogPostEerste10Klanten() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Maand 1-2", "Klant 1-2. Meestal vrienden of bekenden uit je eigen sport-omgeving."],
-                  ["Maand 3-5", "Klant 3-5. Eerste &ldquo;koud&rdquo; geworven klanten via Instagram, lokale netwerken of fysio-doorverwijzing."],
+                  ["Maand 3-5", "Klant 3-5. Eerste “koud” geworven klanten via Instagram, lokale netwerken of fysio-doorverwijzing."],
                   ["Maand 6-9", "Klant 6-8. Het netwerk begint te werken: klanten brengen vrienden, fysio's vertrouwen je."],
                   ["Maand 10-12", "Klant 9-10. Je bent door de starters-fase. Vanaf hier groeit het netwerk zichzelf."],
                 ].map(([phase, desc]) => (
@@ -87,7 +87,7 @@ export default function BlogPostEerste10Klanten() {
                 ))}
               </ul>
               <p>
-                Wie sneller wil, heeft meestal een asset: bestaand publiek (Instagram-volgers uit een sport-rol), bestaand netwerk (oud-collega&apos;s uit een commerciële gym), of een specifieke niche-expertise (postnataal, rugklachten, calisthenics). Zonder die asset is 6-12 maanden eerlijk.
+                Wie sneller wil, heeft meestal een asset: bestaand publiek (Instagram-volgers uit een sport-rol), bestaand netwerk (oud-collega’s uit een commerciële gym), of een specifieke niche-expertise (postnataal, rugklachten, calisthenics). Zonder die asset is 6-12 maanden eerlijk.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Klant 1-3 — je eigen netwerk eerlijk benutten</h2>
@@ -125,9 +125,9 @@ export default function BlogPostEerste10Klanten() {
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  "Reels van 7-15 seconden over één specifieke beweging of correctie. Beter dan 60-seconden &ldquo;mijn dag als trainer&rdquo;-content.",
+                  "Reels van 7-15 seconden over één specifieke beweging of correctie. Beter dan 60-seconden “mijn dag als trainer”-content.",
                   "Hooks in de eerste 2 seconden — een vraag of een verkeerde vorm die gecorrigeerd wordt.",
-                  "Captions met één concrete tip en één duidelijke CTA: &ldquo;DM me voor een gratis intake.&rdquo;",
+                  "Captions met één concrete tip en één duidelijke CTA: “DM me voor een gratis intake.”",
                   "Posttijd 19:00-21:00 voor Amsterdam-bereik. Lunchtijd 12:30 werkt ook (cross-platform met TikTok).",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2">
@@ -143,7 +143,7 @@ export default function BlogPostEerste10Klanten() {
                 <strong className="text-foreground">Lokale Facebook-groepen.</strong> Onderschat, vooral voor specifieke wijken (Jordaan, De Pijp, Noord, West). Geen spam — wel: 1× per maand een hulpvraag beantwoorden in een wijk-groep waar je actief bent. Mensen onthouden helpzame mensen.
               </p>
               <p>
-                Wat NIET werkt: cold DMs op LinkedIn naar &ldquo;sportieve professionals&rdquo;, Groupon-aanbiedingen, of betaalde flyers in lokale sportwinkels.
+                Wat NIET werkt: cold DMs op LinkedIn naar “sportieve professionals”, Groupon-aanbiedingen, of betaalde flyers in lokale sportwinkels.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Klant 7-10 — doorverwijzingen + samenwerkingen</h2>
@@ -152,7 +152,7 @@ export default function BlogPostEerste10Klanten() {
               </p>
               <ol className="space-y-2 list-decimal pl-6">
                 {[
-                  "Vraag elke tevreden klant na 8-12 sessies expliciet om een doorverwijzing. Niet impliciet (&ldquo;vertel het door als je wil&rdquo;) — letterlijk: &ldquo;Ken jij iemand die hier baat bij zou hebben? Ik geef ze een gratis intake.&rdquo;",
+                  "Vraag elke tevreden klant na 8-12 sessies expliciet om een doorverwijzing. Niet impliciet (“vertel het door als je wil”) — letterlijk: “Ken jij iemand die hier baat bij zou hebben? Ik geef ze een gratis intake.”",
                   "Bouw 2-3 relaties met lokale fysiotherapeuten. Niet als vraag om doorverwijzing — als professionele samenwerking. Een fysio die jou vertrouwt = de hoogste-converterende lead-bron die bestaat (~50% conversie).",
                   "Samenwerkingen met voedingscoaches, sportwinkels en zelfs psychologen (postpartum, burn-out). Verwijs door waar het past, en de doorverwijzing komt terug.",
                 ].map((line) => (
@@ -172,8 +172,8 @@ export default function BlogPostEerste10Klanten() {
                   ["Cold LinkedIn DMs", "Conversie onder 1%. Beschadigt je profiel. Stop."],
                   ["Groupon / SocialDeal", "Trekt korting-jagers die niet bij je passen en weglopen na sessie 4."],
                   ["Flyers in gyms / sportwinkels", "Werkt al jaren niet meer. Mensen zoeken online, niet op een papiertje."],
-                  ["Generieke Instagram-quotes", "&ldquo;No pain no gain&rdquo;-stijl content krijgt zero engagement van mensen die écht een trainer overwegen."],
-                  ["Fake transformaties", "Voor-en-na foto&apos;s met overdreven claims. Google penaliseert + klanten doorzien het."],
+                  ["Generieke Instagram-quotes", "“No pain no gain”-stijl content krijgt zero engagement van mensen die écht een trainer overwegen."],
+                  ["Fake transformaties", "Voor-en-na foto’s met overdreven claims. Google penaliseert + klanten doorzien het."],
                 ].map(([type, why]) => (
                   <li key={type} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />

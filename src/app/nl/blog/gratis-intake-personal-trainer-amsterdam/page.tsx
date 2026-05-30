@@ -76,7 +76,7 @@ export default function GratisIntakeBlogNL() {
               <p className="lead text-xl text-muted-foreground">
                 Je wilt aan de slag met personal training, maar weet niet zeker of het iets voor jou is.
                 Een gratis intake is de perfecte manier om erachter te komen — zonder verplichtingen en
-                zonder kosten. Maar wat gebeurt er eigenlijk tijdens zo&apos;n kennismaking?
+                zonder kosten. Maar wat gebeurt er eigenlijk tijdens zo’n kennismaking?
               </p>
 
               <h2>Wat is een gratis intake bij een personal trainer?</h2>
@@ -141,8 +141,8 @@ export default function GratisIntakeBlogNL() {
               <ul>
                 <li>
                   <strong>Weet wat je wilt bereiken.</strong> Denk van tevoren na over je doelen.
-                  &ldquo;Fitter worden&rdquo; is een begin, maar &ldquo;ik wil over 3 maanden 10 kg
-                  kwijt zijn en minder rugpijn hebben&rdquo; geeft de trainer veel meer om mee te werken.
+                  “Fitter worden” is een begin, maar “ik wil over 3 maanden 10 kg
+                  kwijt zijn en minder rugpijn hebben” geeft de trainer veel meer om mee te werken.
                 </li>
                 <li>
                   <strong>Wees eerlijk over je niveau.</strong> Heb je al eerder gesport? Heb je

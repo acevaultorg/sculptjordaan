@@ -37,7 +37,7 @@ export default function BoutiqueGymVsChainEN() {
           <article className="mx-auto max-w-3xl">
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Boutique Gym vs Big Chain Gym: What&apos;s Right for You?</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Boutique Gym vs Big Chain Gym: What’s Right for You?</h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><User className="w-4 h-4" />SculptClub</span>
                 <span className="flex items-center gap-1"><CalendarDays className="w-4 h-4" />April 2, 2026</span>
@@ -51,14 +51,14 @@ export default function BoutiqueGymVsChainEN() {
             <div className="prose prose-lg max-w-none">
               <p>
                 You want to start working out. Or you already train at a big chain and are considering
-                something different. The choice between a boutique gym and a big chain isn&apos;t just
-                about price — it&apos;s about what you need to actually get results.
+                something different. The choice between a boutique gym and a big chain isn’t just
+                about price — it’s about what you need to actually get results.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Big chain: the familiar model</h2>
               <p>
                 Basic-Fit, TrainMore, Fit For Free — you know them. Advantages: low monthly fee
-                (€20-€40), many locations, 24/7 access. But there&apos;s a flip side. During peak hours
+                (€20-€40), many locations, 24/7 access. But there’s a flip side. During peak hours
                 you queue for the leg press. The music is loud. You train among 50 others. And personal
                 guidance? Not included.
               </p>
@@ -97,7 +97,7 @@ export default function BoutiqueGymVsChainEN() {
                 A boutique gym fits you if you value quiet, quality over quantity and an environment
                 where you actually get results. If you just need a treadmill and price is your only
                 criterion, a chain is fine. But if you want to train seriously, with or without a
-                trainer, and don&apos;t want to wait or be distracted, a boutique gym is the better
+                trainer, and don’t want to wait or be distracted, a boutique gym is the better
                 investment.
               </p>
 

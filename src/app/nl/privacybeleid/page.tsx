@@ -84,7 +84,7 @@ export default function PrivacyPageNL() {
               1.4 Websitegebruik
             </h3>
             <p className="text-muted-foreground">
-              IP-adres, browsertype, bezochte pagina&apos;s, verwijzende
+              IP-adres, browsertype, bezochte pagina’s, verwijzende
               websites en sessieduur — via cookies en analysetools. Zie ons{" "}
               <Link
                 href="/nl/cookiebeleid"
@@ -335,7 +335,7 @@ export default function PrivacyPageNL() {
             <p className="text-muted-foreground">
               In de gemeenschappelijke ruimtes van het pand kan cameratoezicht
               aanwezig zijn. Dit is noodzakelijk voor de beveiliging van het pand
-              en de veiligheid van onze bezoekers. Er zijn geen camera&apos;s in
+              en de veiligheid van onze bezoekers. Er zijn geen camera’s in
               de trainingsruimte. Beelden worden maximaal 4 weken bewaard en
               zijn uitsluitend toegankelijk voor geautoriseerd personeel. De
               rechtsgrond hiervoor is ons gerechtvaardigd belang (beveiliging).

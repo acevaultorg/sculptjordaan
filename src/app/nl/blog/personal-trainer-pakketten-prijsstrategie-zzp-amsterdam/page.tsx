@@ -117,12 +117,12 @@ export default function BlogPostPakkettenPrijsstrategie() {
                 </table>
               </div>
               <p>
-                <strong className="text-foreground">Pro-tip:</strong> maak het Routine pakket visueel iets prominenter (badge: &ldquo;populair&rdquo;). Klanten kiezen het middelste pakket in 50-60% van de gevallen — dit heet het decoy effect.
+                <strong className="text-foreground">Pro-tip:</strong> maak het Routine pakket visueel iets prominenter (badge: “populair”). Klanten kiezen het middelste pakket in 50-60% van de gevallen — dit heet het decoy effect.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Welke korting werkt — en waarom niet hoger</h2>
               <p>
-                Veel beginnende PT&apos;s denken: hoe hoger de korting, hoe sneller de verkoop. Onzin. Te hoge korting devalueert je dienst.
+                Veel beginnende PT’s denken: hoe hoger de korting, hoe sneller de verkoop. Onzin. Te hoge korting devalueert je dienst.
               </p>
               <p>
                 De prikkel-curve in Amsterdam:
@@ -130,7 +130,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["0-5% korting", "Geen prikkel. Klant pakt gewoon losse sessies."],
-                  ["10-15% korting (sweet spot)", "Voelt als &ldquo;deal&rdquo; zonder dat het goedkoop overkomt."],
+                  ["10-15% korting (sweet spot)", "Voelt als “deal” zonder dat het goedkoop overkomt."],
                   ["20-25% korting (alleen voor grote pakketten)", "Werkt voor 20+ sessies. Bij kleinere pakketten cheap signaal."],
                   ["30%+ korting", "Voelt als wanhoop. Premium-klanten haken juist af."],
                 ].map(([range, desc]) => (
@@ -190,7 +190,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Drempelprijzen", "€45 of €49 niet €50. €99 niet €100. Het scheelt 1 euro maar voelt 5-10% goedkoper."],
-                  ["Bundle-economics zichtbaar", "Toon altijd de prijs per sessie binnen het pakket: &ldquo;€199 / 10 sessies = €19,90 per sessie&rdquo;. Klant ziet de besparing."],
+                  ["Bundle-economics zichtbaar", "Toon altijd de prijs per sessie binnen het pakket: “€199 / 10 sessies = €19,90 per sessie”. Klant ziet de besparing."],
                   ["Decoy pricing", "Drie opties met middelste-best-deal positie. Starter (lekker laag) · Routine (best value) · Pro (premium). 50-60% kiest middelste."],
                 ].map(([type, desc]) => (
                   <li key={type} className="flex items-start gap-2">
@@ -205,7 +205,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
                 Een veelgemaakte fout: een PT die zijn losse-uur tarief op €45 heeft, vergelijkt zichzelf alleen met andere €45-trainers. Maar de klant vergelijkt jou met luxe-merken (Equinox €150/sessie, hotel-spa PT €120). Door géén premium-anker in je menu te tonen, zet je jezelf onder.
               </p>
               <p>
-                Concrete fix: voeg een &ldquo;Premium 1-op-1 intensief&rdquo; optie toe op je menu (~€95-120/sessie). Niet dat veel klanten dit kiezen — maar je middelste pakket voelt nu een &ldquo;deal&rdquo; in vergelijking. Anchor effect = +15-25% conversie op je middelste pakket.
+                Concrete fix: voeg een “Premium 1-op-1 intensief” optie toe op je menu (~€95-120/sessie). Niet dat veel klanten dit kiezen — maar je middelste pakket voelt nu een “deal” in vergelijking. Anchor effect = +15-25% conversie op je middelste pakket.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">SculptClub als case study — hoe wij het hebben opgebouwd</h2>
@@ -245,7 +245,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Hoe communiceer je een prijsverhoging?</h2>
               <p>
-                Elke 12-18 maanden zou je een prijsverhoging moeten doen. Klanten verwachten dat. Trainers die nooit hun prijzen aanpassen, voelen onbetrouwbaar (&ldquo;wat doet hij hier dan voor zichzelf?&rdquo;).
+                Elke 12-18 maanden zou je een prijsverhoging moeten doen. Klanten verwachten dat. Trainers die nooit hun prijzen aanpassen, voelen onbetrouwbaar (“wat doet hij hier dan voor zichzelf?”).
               </p>
               <p>
                 Drie regels:
@@ -253,7 +253,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
               <ol className="space-y-2 list-decimal pl-6">
                 {[
                   "Geef bestaande klanten minimaal 30 dagen vooraf bericht. Persoonlijk, niet via bulk-mail.",
-                  "Bied bestaande klanten een kans om voor de prijsverhoging nog een pakket aan oude tarief te kopen. &ldquo;Als je voor 1 juni nog een Pro afsluit, geldt het oude tarief.&rdquo;",
+                  "Bied bestaande klanten een kans om voor de prijsverhoging nog een pakket aan oude tarief te kopen. “Als je voor 1 juni nog een Pro afsluit, geldt het oude tarief.”",
                   "Nieuwe klanten betalen direct het nieuwe tarief. Geen uitzonderingen — anders devalueert je nieuwe prijs vanaf dag 1.",
                 ].map((line) => (
                   <li key={line} className="leading-relaxed">{line}</li>

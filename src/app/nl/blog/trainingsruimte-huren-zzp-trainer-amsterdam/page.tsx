@@ -161,7 +161,7 @@ export default function BlogPostZZPTrainerNL() {
               <p>
                 Een van de onderschatte voordelen van een vaste trainingslocatie is het effect op je merk.
                 Je klanten weten waar ze naartoe moeten, je kunt een consistente ervaring bieden en je
-                kunt de locatie gebruiken in je marketing. Foto&apos;s van de studio op je Instagram, je
+                kunt de locatie gebruiken in je marketing. Foto’s van de studio op je Instagram, je
                 adres op Google Maps, reviews die verwijzen naar de ruimte — het maakt je merk tastbaarder
                 dan een trainer die overal en nergens traint.
               </p>
@@ -176,7 +176,7 @@ export default function BlogPostZZPTrainerNL() {
                 <li>Sluit een beroepsaansprakelijkheidsverzekering af</li>
                 <li>Bekijk de studio en test de apparatuur</li>
                 <li>Start met een paar uur per week en schaal op naarmate je klantenbestand groeit</li>
-                <li>Gebruik de locatie in je marketing — foto&apos;s, Google profiel, social media</li>
+                <li>Gebruik de locatie in je marketing — foto’s, Google profiel, social media</li>
               </ol>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Aan de slag bij SculptClub</h2>

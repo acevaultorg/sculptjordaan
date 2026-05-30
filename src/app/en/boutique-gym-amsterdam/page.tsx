@@ -211,7 +211,7 @@ export default function BoutiqueGymAmsterdamPage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-sm leading-relaxed">&ldquo;{r.text}&rdquo;</p>
+              <p className="text-sm leading-relaxed">“{r.text}”</p>
               <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
             </div>
           ))}

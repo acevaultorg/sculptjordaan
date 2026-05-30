@@ -52,12 +52,12 @@ export default function PTAfterInjuryEN() {
             <div className="prose prose-lg max-w-none">
               <p>
                 An injury changes everything. Months without training. Muscle loss. And then
-                the uncertainty: will I move like I used to? The road back doesn&apos;t start with
-                training harder — it starts with training smarter. That&apos;s exactly where a
+                the uncertainty: will I move like I used to? The road back doesn’t start with
+                training harder — it starts with training smarter. That’s exactly where a
                 personal trainer makes the difference.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Why you can&apos;t just pick up where you left off</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Why you can’t just pick up where you left off</h2>
               <p>
                 After a knee injury, back problem or shoulder surgery, your body has changed.
                 Muscles have weakened, movement patterns have shifted, and compensations have
@@ -76,13 +76,13 @@ export default function PTAfterInjuryEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Physiotherapy first, training second</h2>
               <p>
-                We don&apos;t currently have a physiotherapist on staff. For the medical
+                We don’t currently have a physiotherapist on staff. For the medical
                 side of rehabilitation we refer you to a licensed physiotherapist — they
                 make the diagnosis, set load tolerance, and give the green light for
-                progressive loading. That&apos;s their expertise, not a personal trainer&apos;s.
+                progressive loading. That’s their expertise, not a personal trainer’s.
               </p>
               <p>
-                Our trainers take over once you&apos;re cleared to move: strength work,
+                Our trainers take over once you’re cleared to move: strength work,
                 posture, progressive build toward full sport load. During the <a href="/en/free-intro" className="text-brand hover:underline">free
                 intro session</a> you discuss your situation and find the trainer that best
                 matches your recovery phase.

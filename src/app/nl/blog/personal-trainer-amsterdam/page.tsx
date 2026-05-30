@@ -117,7 +117,7 @@ export default function PersonalTrainerAmsterdamNL() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Geen intake of assessment</strong> — Een serieuze trainer begint altijd met een intake om je doelen, medische achtergrond en fitnessniveau te bespreken.</li>
                 <li><strong>Lange contracten zonder proefperiode</strong> — Wees voorzichtig met trainers die direct een contract van 6 of 12 maanden eisen zonder dat je eerst kunt proberen.</li>
-                <li><strong>One-size-fits-all programma&apos;s</strong> — Als iedereen hetzelfde schema krijgt, is er geen sprake van personal training.</li>
+                <li><strong>One-size-fits-all programma’s</strong> — Als iedereen hetzelfde schema krijgt, is er geen sprake van personal training.</li>
                 <li><strong>Geen aandacht voor techniek</strong> — Een trainer die niet corrigeert of uitlegt, brengt je dichter bij een blessure dan bij je doel.</li>
                 <li><strong>Onrealistische beloftes</strong> — &quot;10 kilo afvallen in 2 weken&quot; is geen serieuze trainer. Goede resultaten kosten tijd.</li>
               </ul>
@@ -125,7 +125,7 @@ export default function PersonalTrainerAmsterdamNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Waarom een gratis intake zo belangrijk is</h2>
               <p>
                 De beste manier om te weten of een trainer bij je past, is door het gewoon te ervaren. Daarom bieden
-                steeds meer studio&apos;s een gratis intake of kennismakingsgesprek aan. Tijdens zo&apos;n sessie kun je:
+                steeds meer studio’s een gratis intake of kennismakingsgesprek aan. Tijdens zo’n sessie kun je:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>De trainer en de locatie leren kennen</li>

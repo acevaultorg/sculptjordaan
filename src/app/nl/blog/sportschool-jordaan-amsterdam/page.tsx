@@ -97,10 +97,10 @@ export default function SportschoolJordaanNL() {
                 <li><strong>Grote ketens in de buurt:</strong> Basic-Fit en TrainMore hebben vestigingen op
                   loopafstand van de Jordaan (Haarlemmerstraat, Rozengracht). Voordeel: laag instaptarief.
                   Nadeel: druk, onpersoonlijk, wachten op apparaten.</li>
-                <li><strong>Yoga- en pilatesstudio&apos;s:</strong> De Jordaan heeft meerdere yoga- en
-                  pilatesstudio&apos;s. Ideaal voor flexibiliteit en ontspanning, maar geen optie als je
+                <li><strong>Yoga- en pilatesstudio’s:</strong> De Jordaan heeft meerdere yoga- en
+                  pilatesstudio’s. Ideaal voor flexibiliteit en ontspanning, maar geen optie als je
                   serieus aan krachttraining wilt doen.</li>
-                <li><strong>Privé en boutique studio&apos;s:</strong> Kleine, volledig uitgeruste
+                <li><strong>Privé en boutique studio’s:</strong> Kleine, volledig uitgeruste
                   trainingsruimtes waar je alleen of met een kleine groep traint. Duurder per sessie,
                   maar je deelt de ruimte met niemand.</li>
               </ul>

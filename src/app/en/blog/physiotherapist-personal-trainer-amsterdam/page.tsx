@@ -88,7 +88,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
                   <div className="text-sm leading-relaxed">
                     <strong className="block mb-1">Honest: we are not physiotherapists.</strong>
                     <span className="text-muted-foreground">
-                      SculptClub doesn&apos;t currently have a physiotherapist on staff.
+                      SculptClub doesn’t currently have a physiotherapist on staff.
                       For diagnosis, treatment and rehabilitation we recommend consulting
                       a licensed physiotherapist first. What our personal trainers do
                       offer: progressive strength training under supervision once your
@@ -99,8 +99,8 @@ export default function PhysiotherapistPersonalTrainerEN() {
               </div>
 
               <p>
-                Back pain, a knee niggle, or an old shoulder injury that just won&apos;t
-                resolve. You want to train (again) — but you don&apos;t know how to build
+                Back pain, a knee niggle, or an old shoulder injury that just won’t
+                resolve. You want to train (again) — but you don’t know how to build
                 back up safely. Below we explain how we approach the transition from
                 treatment to independent training, in coordination with your physiotherapist.
               </p>
@@ -108,14 +108,14 @@ export default function PhysiotherapistPersonalTrainerEN() {
               <h2>Physiotherapy first, training second</h2>
               <p>
                 The roles are different. A <strong>physiotherapist</strong> diagnoses,
-                treats where needed, and decides when you&apos;re cleared to load. A{" "}
+                treats where needed, and decides when you’re cleared to load. A{" "}
                 <strong>personal trainer</strong> takes it from there: progressive
                 strength, technique, building load tolerance. Both are necessary — but
-                they&apos;re not the same job, and we only do the second one.
+                they’re not the same job, and we only do the second one.
               </p>
               <p>
                 Still in active treatment? We ask your trainer to coordinate with your
-                physiotherapist. Which movements are safe? What&apos;s your current load
+                physiotherapist. Which movements are safe? What’s your current load
                 tolerance? What should programming avoid for now? That prevents
                 contradictory advice.
               </p>
@@ -125,13 +125,13 @@ export default function PhysiotherapistPersonalTrainerEN() {
                 <li><strong>Watch your technique</strong> — faulty movement patterns are often the cause of complaints. Your trainer corrects them session after session.</li>
                 <li><strong>Programmed progression</strong> — no generic plan, but a build that accounts for your situation and your goals.</li>
                 <li><strong>Dose the load</strong> — recovery and strength built simultaneously, at a pace that works for your body.</li>
-                <li><strong>Prevent relapse</strong> — once recovered, we make sure you don&apos;t make the same mistake twice.</li>
+                <li><strong>Prevent relapse</strong> — once recovered, we make sure you don’t make the same mistake twice.</li>
               </ul>
 
               <h2>A private studio helps</h2>
               <p>
                 In a busy gym you train anonymously. Nobody sees your compensation
-                pattern getting worse, or that you&apos;re bracing wrong. At SculptClub
+                pattern getting worse, or that you’re bracing wrong. At SculptClub
                 you train <a href="/en/studio-rental" className="text-brand hover:underline">one-on-one in a private studio</a> — just
                 you and your trainer. Full attention on your movement, every session.
               </p>
@@ -140,7 +140,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
               <p>
                 Still in active treatment? Talk to your physiotherapist first about
                 whether strength training is right for you now. With the green light,
-                book a free intro with us — no obligations, no cost. We&apos;ll discuss
+                book a free intro with us — no obligations, no cost. We’ll discuss
                 your situation, goals and options, and figure out together which trainer
                 is the best match.
               </p>
@@ -160,7 +160,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
               <h2 className="text-xl font-bold mb-2">Book a free intro</h2>
               <p className="text-muted-foreground mb-6">
                 Tell us your situation. We listen, think along, and point you toward
-                the right trainer — or, if it&apos;s a better fit, toward a physiotherapist.
+                the right trainer — or, if it’s a better fit, toward a physiotherapist.
               </p>
               <ButtonLink href="/en/find-personal-trainer">
                 Find your personal trainer <ArrowRight className="w-4 h-4" />

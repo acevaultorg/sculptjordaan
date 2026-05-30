@@ -131,7 +131,7 @@ export default function AfvallenMetKrachttrainingNL() {
                 <li><strong>Progressieve overbelasting</strong> — Verhoog geleidelijk het gewicht of het aantal herhalingen. Zo blijft je lichaam zich aanpassen en groeien.</li>
                 <li><strong>Combineer met eiwitrijke voeding</strong> — Eiwitten zijn essentieel voor spierherstel en geven een langdurig verzadigd gevoel.</li>
                 <li><strong>Slaap voldoende</strong> — Tijdens de slaap herstellen je spieren en reguleert je lichaam de hormonen die vetverbranding beïnvloeden.</li>
-                <li><strong>Wees geduldig</strong> — De weegschaal kan in het begin hetzelfde blijven of zelfs stijgen, omdat spieren zwaarder zijn dan vet. Meet je voortgang ook met foto&apos;s en hoe je kleding zit.</li>
+                <li><strong>Wees geduldig</strong> — De weegschaal kan in het begin hetzelfde blijven of zelfs stijgen, omdat spieren zwaarder zijn dan vet. Meet je voortgang ook met foto’s en hoe je kleding zit.</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Waarom een personal trainer helpt bij afvallen</h2>

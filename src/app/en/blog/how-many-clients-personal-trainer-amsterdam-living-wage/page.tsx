@@ -38,7 +38,7 @@ export default function BlogPostHowManyClients() {
               <p className="text-lg text-foreground">Every starting freelance PT asks themselves: how many clients do I need to be financially independent? No abstract percentages — concrete math with Amsterdam 2026 numbers. Three scenarios: median income, supporting a family, or deliberately choosing part-time.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">The math — gross vs net vs household budget</h2>
-              <p>Before you can calculate what you need, understand what &ldquo;median&rdquo; means in 2026:</p>
+              <p>Before you can calculate what you need, understand what “median” means in 2026:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Median gross income NL", "~€44,000/year (CBS 2026 estimate)"],
@@ -57,7 +57,7 @@ export default function BlogPostHowManyClients() {
                   <tbody>{[["Apartment rent Amsterdam", "€1,400"], ["Groceries", "€400"], ["Transport (OV + bike)", "€80"], ["Phone + internet + Netflix", "€90"], ["Health insurance", "€140"], ["Professional liability", "€40"], ["MoneyMonk bookkeeping", "€15"], ["Social life + clothing", "€350"], ["Savings (10% of net)", "€300"], ["TOTAL net needed", "€2,815"]].map(([k, v], idx, arr) => (<tr key={k} className={`border-b last:border-0 ${idx === arr.length - 1 ? "bg-brand/5 font-semibold text-foreground" : ""}`}><td className="px-4 py-3">{k}</td><td className="px-4 py-3 text-right">{v}</td></tr>))}</tbody>
                 </table>
               </div>
-              <p>For €2,815 net you need gross profit of ~€4,200/month (after zelfstandigenaftrek + MKB-vrijstelling). Add SculptClub studio rental (~€200/month at 8 sessions/week with Routine pack) and you&apos;re at €4,400 gross revenue/month.</p>
+              <p>For €2,815 net you need gross profit of ~€4,200/month (after zelfstandigenaftrek + MKB-vrijstelling). Add SculptClub studio rental (~€200/month at 8 sessions/week with Routine pack) and you’re at €4,400 gross revenue/month.</p>
               <p>At €60/session: <strong className="text-foreground">~73 sessions/month = ~18 sessions/week</strong>.</p>
               <p>At €45/session (starter rate): <strong className="text-foreground">~98 sessions/month = ~24 sessions/week</strong>.</p>
               <p>At €80/session (premium): <strong className="text-foreground">~55 sessions/month = ~14 sessions/week</strong>.</p>
@@ -100,7 +100,7 @@ export default function BlogPostHowManyClients() {
               </ul>
               <p>With SculptClub as your studio: ~€350-500/month total fixed costs. With own space: €4,200-5,500. That difference is why 95% of Amsterdam freelance trainers rent per-hour until they have 25+ stable sessions/week.</p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-8">What if you can&apos;t hit your session target?</h2>
+              <h2 className="text-2xl font-bold text-foreground mt-8">What if you can’t hit your session target?</h2>
               <p>Reality: not every PT hits 18-22 sessions/week. Average Amsterdam freelance PT sits at 10-15/week. Four solutions:</p>
               <ol className="space-y-2 list-decimal pl-6">
                 {["Raise your rate — €60 → €75 = 25% more income at same session count", "Add online coaching — nutrition plans or video feedback for €49-99/month", "Specialize — niche expertise (back pain, prenatal, calisthenics) attracts paying premium clients", "Group classes — 4-6 people at €15-20 each = €60-120/hour, same margin as a premium 1-on-1"].map((line) => (<li key={line} className="leading-relaxed">{line}</li>))}

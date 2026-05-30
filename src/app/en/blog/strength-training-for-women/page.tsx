@@ -51,8 +51,8 @@ export default function StrengthTrainingForWomenEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                Strength training isn&apos;t just for men. It&apos;s the most underrated investment in
-                women&apos;s health. Stronger bones, better posture, more energy, and a body that
+                Strength training isn’t just for men. It’s the most underrated investment in
+                women’s health. Stronger bones, better posture, more energy, and a body that
                 stays functionally fit well into old age. Yet many women still stick to cardio
                 only. Time to change that.
               </p>
@@ -71,7 +71,7 @@ export default function StrengthTrainingForWomenEN() {
                 <li><strong>Functional strength:</strong> Carrying groceries, climbing stairs, lifting children — everything becomes easier</li>
               </ul>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">&quot;Won&apos;t I get too bulky?&quot;</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">&quot;Won’t I get too bulky?&quot;</h2>
               <p>
                 No. Women produce a fraction of the testosterone that men have. The images of
                 extremely muscular women you see online are the result of years of highly
@@ -100,7 +100,7 @@ export default function StrengthTrainingForWomenEN() {
                 SculptClub has seven trainers with diverse specialisations. From{" "}
                 <a href="/en/blog/nutrition-coach-amsterdam" className="text-brand hover:underline">nutrition coaching</a> to{" "}
                 <a href="/en/blog/physiotherapist-personal-trainer-amsterdam" className="text-brand hover:underline">physiotherapy</a> —
-                you&apos;ll find the expertise that suits you.
+                you’ll find the expertise that suits you.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">How to start</h2>

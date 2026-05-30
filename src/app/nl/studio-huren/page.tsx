@@ -196,8 +196,8 @@ export default function StudioRentalPageNL() {
                     <CardTitle className="text-xl">Starter</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;99</p>
-                    <p className="text-3xl font-bold">&euro;89</p>
+                    <p className="text-sm text-muted-foreground line-through">€99</p>
+                    <p className="text-3xl font-bold">€89</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 10%</p>
                     <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                       Koop Starter
@@ -211,8 +211,8 @@ export default function StudioRentalPageNL() {
                     <CardTitle className="text-xl">Routine</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;234</p>
-                    <p className="text-3xl font-bold">&euro;199</p>
+                    <p className="text-sm text-muted-foreground line-through">€234</p>
+                    <p className="text-3xl font-bold">€199</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 15%</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Koop Routine
@@ -226,8 +226,8 @@ export default function StudioRentalPageNL() {
                     <CardTitle className="text-xl">Pro</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;436</p>
-                    <p className="text-3xl font-bold">&euro;349</p>
+                    <p className="text-sm text-muted-foreground line-through">€436</p>
+                    <p className="text-3xl font-bold">€349</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 20%</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Koop Pro
@@ -241,8 +241,8 @@ export default function StudioRentalPageNL() {
                     <CardTitle className="text-xl">Volume</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;713</p>
-                    <p className="text-3xl font-bold">&euro;549</p>
+                    <p className="text-sm text-muted-foreground line-through">€713</p>
+                    <p className="text-3xl font-bold">€549</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 23%</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Koop Volume
@@ -252,7 +252,7 @@ export default function StudioRentalPageNL() {
               </div>
 
               <p className="mt-6 text-center text-sm text-muted-foreground">
-                Laagste tarief: <span className="text-discount font-medium">&euro;9,24/sessie</span> · Liever per bank?{" "}
+                Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
                 <a href={whatsappLinks.bankTransferNl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   WhatsApp ons
                 </a>
@@ -281,13 +281,13 @@ export default function StudioRentalPageNL() {
                       <td className="px-4 py-3 font-medium">Halve studio (max 2)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;12</span>
+                          <span className="font-semibold">€12</span>
                           <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;17</span>
+                          <span className="font-semibold">€17</span>
                           <ButtonLink href={acuityLinks.halfStudio90} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
@@ -296,13 +296,13 @@ export default function StudioRentalPageNL() {
                       <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;17</span>
+                          <span className="font-semibold">€17</span>
                           <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;24</span>
+                          <span className="font-semibold">€24</span>
                           <ButtonLink href={acuityLinks.fullStudio90} size="sm">Boek</ButtonLink>
                         </div>
                       </td>

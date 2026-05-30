@@ -110,7 +110,7 @@ export default function PersonalTrainerAmsterdamNorthEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What does Noord actually offer locally?</h2>
               <p>
-                You&apos;ll mostly find <a href="/en/blog/private-gym-vs-big-box-gym" className="text-brand hover:underline">chain gyms</a> in
+                You’ll mostly find <a href="/en/blog/private-gym-vs-big-box-gym" className="text-brand hover:underline">chain gyms</a> in
                 Noord. Basic-Fit operates several locations, TrainMore is expanding, and there are a
                 handful of CrossFit boxes and bootcamp groups. Great if you like group energy, busy
                 floors and flexible opening hours at low prices. For someone who wants one-on-one
@@ -122,18 +122,18 @@ export default function PersonalTrainerAmsterdamNorthEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Why consider a trainer across the IJ?</h2>
               <p>
                 Noord and the Jordaan feel far apart, but the map lies. From NDSM the ferry drops you
-                at Centraal in five minutes. Bike from there and you&apos;re at the Egelantiersgracht in
-                ten. From Buiksloterweg it&apos;s even quicker — two minutes on the ferry, then straight
-                into the Jordaan via Haarlemmerstraat. That&apos;s often no longer than driving from one
+                at Centraal in five minutes. Bike from there and you’re at the Egelantiersgracht in
+                ten. From Buiksloterweg it’s even quicker — two minutes on the ferry, then straight
+                into the Jordaan via Haarlemmerstraat. That’s often no longer than driving from one
                 end of Noord to the other to reach a strip-mall gym. And instead of a chain location,
-                you arrive at a private studio where it&apos;s just you and your trainer.
+                you arrive at a private studio where it’s just you and your trainer.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What Noord-based clients say about the Jordaan studio</h2>
               <p>
                 A recurring compliment from clients commuting from Noord: the ferry-to-studio transition
                 feels like a small reset. You leave the Centraal Station crowds behind, the Jordaan
-                opens up with canals and quiet side streets, and within fifteen minutes you&apos;re lifting
+                opens up with canals and quiet side streets, and within fifteen minutes you’re lifting
                 in a room with no mirrored eyes and no waiting lists. For people who spend the workday
                 staring at a screen, that physical switch is often more valuable than a five-minute
                 walk to a packed gym near home.
@@ -141,7 +141,7 @@ export default function PersonalTrainerAmsterdamNorthEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Travel time, parking and ferries</h2>
               <p>
-                The IJ ferries run 24/7 and they&apos;re free. From NDSM the ferry to Centraal departs every
+                The IJ ferries run 24/7 and they’re free. From NDSM the ferry to Centraal departs every
                 ten minutes during daytime hours. From Buiksloterweg and IJplein the frequency is higher
                 still. Bring your bike on board and you have zero transit stress. Prefer to drive? The
                 Jordaan is a paid-parking zone, but the Markthal garage and the Marnixstraat garage are
@@ -151,9 +151,9 @@ export default function PersonalTrainerAmsterdamNorthEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Seven trainers, one studio, no contract</h2>
               <p>
-                SculptClub has seven independent trainers covering strength, nutrition, women&apos;s
-                training, posture and movement technique. For physiotherapy we&apos;ll refer you out —
-                we don&apos;t have a physiotherapist on staff. You pick the trainer that fits your goal — not the
+                SculptClub has seven independent trainers covering strength, nutrition, women’s
+                training, posture and movement technique. For physiotherapy we’ll refer you out —
+                we don’t have a physiotherapist on staff. You pick the trainer that fits your goal — not the
                 other way round. Rates start at €45 per session and we keep an{" "}
                 <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of what personal training costs in Amsterdam</a>.
                 The first intro is always free. No membership, no long contracts, no hidden fees.
@@ -170,7 +170,7 @@ export default function PersonalTrainerAmsterdamNorthEN() {
                 same private studio for 60-minute solo sessions. Four sessions per month start at €29.
                 Unlimited access runs from €89 per four weeks. No contract, no notice period — a
                 practical middle ground for people who live in Noord and pass through the centre
-                regularly for work or appointments. If you&apos;re commuting from further afield,
+                regularly for work or appointments. If you’re commuting from further afield,
                 our <a href="/en/blog/gym-without-membership-amsterdam" className="text-brand hover:underline">no-membership gym guide</a>{" "}
                 explains how the pricing compares.
               </p>

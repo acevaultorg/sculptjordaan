@@ -69,15 +69,15 @@ export default function BlogPostZzpKvkBtw() {
                 <em>Belangrijk: dit artikel is informatief, geen belasting- of juridisch advies. Voor jouw specifieke situatie: ga naar een belastingadviseur, accountant, of de Belastingdienst zelf.</em>
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-8">Stap 1 — Wanneer ben je formeel ZZP&apos;er?</h2>
+              <h2 className="text-2xl font-bold text-foreground mt-8">Stap 1 — Wanneer ben je formeel ZZP’er?</h2>
               <p>
-                Je bent ZZP&apos;er zodra je je inschrijft bij de KvK als eenmanszaak. Vóór die inschrijving mag je geen facturen sturen — geld ontvangen voor diensten zonder KvK-nummer en btw-nummer is technisch zwartwerk.
+                Je bent ZZP’er zodra je je inschrijft bij de KvK als eenmanszaak. Vóór die inschrijving mag je geen facturen sturen — geld ontvangen voor diensten zonder KvK-nummer en btw-nummer is technisch zwartwerk.
               </p>
               <p>
                 Een grijs gebied: af en toe een vriend helpen tegen kostprijs van koffie of een dinertje is geen handel. Maar zodra je structureel diensten levert voor geld, ben je formeel een ondernemer en moet je je inschrijven.
               </p>
               <p>
-                De praktische definitie van &ldquo;structureel&rdquo;: meer dan 3-4 betaalde sessies per maand, of een vooraf afgesproken klant-relatie met facturen.
+                De praktische definitie van “structureel”: meer dan 3-4 betaalde sessies per maand, of een vooraf afgesproken klant-relatie met facturen.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Stap 2 — KvK-inschrijving (€82,25, 1 dag)</h2>
@@ -109,10 +109,10 @@ export default function BlogPostZzpKvkBtw() {
                 Voorbeeld: jouw netto tarief is €50/sessie. Op je factuur staat dan €50 + €10,50 btw = €60,50. De €10,50 draag je af aan de Belastingdienst.
               </p>
               <p>
-                Een veelvoorkomende verwarring: er bestaat een &ldquo;sport-vrijstelling&rdquo; van btw, maar die geldt alleen voor verenigingen en sportclubs zonder winstoogmerk. Individuele commerciële personal training valt daar niet onder.
+                Een veelvoorkomende verwarring: er bestaat een “sport-vrijstelling” van btw, maar die geldt alleen voor verenigingen en sportclubs zonder winstoogmerk. Individuele commerciële personal training valt daar niet onder.
               </p>
               <p>
-                Btw-aangifte doe je per kwartaal (of per maand als je meer dan ~€100k omzet hebt). De Kleine Ondernemersregeling (KOR) is een optie als je onder de €20.000 omzet/jaar blijft — dan hoef je geen btw te rekenen, maar je mag dan ook geen btw aftrekken. Voor de meeste PT&apos;s die ambitieus zijn, is KOR niet de juiste keuze.
+                Btw-aangifte doe je per kwartaal (of per maand als je meer dan ~€100k omzet hebt). De Kleine Ondernemersregeling (KOR) is een optie als je onder de €20.000 omzet/jaar blijft — dan hoef je geen btw te rekenen, maar je mag dan ook geen btw aftrekken. Voor de meeste PT’s die ambitieus zijn, is KOR niet de juiste keuze.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Stap 4 — Beroepsaansprakelijkheidsverzekering (~€25-50/maand)</h2>
@@ -120,14 +120,14 @@ export default function BlogPostZzpKvkBtw() {
                 Als personal trainer ben je verantwoordelijk voor de fysieke veiligheid van je klanten. Als iemand zich blesseert tijdens jouw sessie en jou daarvoor aansprakelijk stelt, kan dat enorme financiële gevolgen hebben.
               </p>
               <p>
-                Een beroepsaansprakelijkheidsverzekering (BA) dekt schade die jij als professional bij anderen veroorzaakt. Verzekeraars die polissen voor PT&apos;s in Nederland aanbieden:
+                Een beroepsaansprakelijkheidsverzekering (BA) dekt schade die jij als professional bij anderen veroorzaakt. Verzekeraars die polissen voor PT’s in Nederland aanbieden:
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Centraal Beheer", "Bekend bij ZZP&apos;ers, flexibele dekking"],
+                  ["Centraal Beheer", "Bekend bij ZZP’ers, flexibele dekking"],
                   ["Univé", "Vaak goedkoper voor sport-beroepen"],
                   ["Aon (zakelijk)", "Hogere dekking voor wie ook in gyms werkt"],
-                  ["Specialistische sportverzekeraars (zoals NL Sportverzekeringen)", "Pakketten specifiek voor PT&apos;s, fysio&apos;s en fitness-instructeurs"],
+                  ["Specialistische sportverzekeraars (zoals NL Sportverzekeringen)", "Pakketten specifiek voor PT’s, fysio’s en fitness-instructeurs"],
                 ].map(([name, desc]) => (
                   <li key={name} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
@@ -144,14 +144,14 @@ export default function BlogPostZzpKvkBtw() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Stap 5 — Arbeidsongeschiktheidsverzekering (AOV)</h2>
               <p>
-                Een AOV vangt jouw inkomen op als je zelf niet meer kan werken (door blessure, ziekte of mentale uitval). Voor ZZP&apos;ers is dit géén wettelijke verplichting, maar wel een belangrijke afweging.
+                Een AOV vangt jouw inkomen op als je zelf niet meer kan werken (door blessure, ziekte of mentale uitval). Voor ZZP’ers is dit géén wettelijke verplichting, maar wel een belangrijke afweging.
               </p>
               <p>
                 Drie hoofdroutes:
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Broodfonds", "Collectief van ZZP&apos;ers die elkaar bij ziekte uitkeren. €50-100/maand. Dekt typisch 2 jaar. Geen medische keuring vooraf. Solidair, niet commercieel."],
+                  ["Broodfonds", "Collectief van ZZP’ers die elkaar bij ziekte uitkeren. €50-100/maand. Dekt typisch 2 jaar. Geen medische keuring vooraf. Solidair, niet commercieel."],
                   ["Commerciële AOV", "Verzekering bij De Goudse, Klaverblad, Movir of vergelijkbaar. €150-300/maand. Dekt langer, hoger uitkeringsbedrag, met medische keuring."],
                   ["Niets (zelfverzekering)", "Je bouwt zelf een buffer op. Pas een goed idee als je 12+ maanden vaste lasten op de bank hebt en lage vaste kosten."],
                 ].map(([type, desc]) => (
@@ -162,12 +162,12 @@ export default function BlogPostZzpKvkBtw() {
                 ))}
               </ul>
               <p>
-                Voor beginnende PT&apos;s met lage vaste lasten (geen hypotheek, geen kinderen) is een Broodfonds vaak de slimste keuze. Voor PT&apos;s met gezin + eigen woning is een commerciële AOV vaak nodig.
+                Voor beginnende PT’s met lage vaste lasten (geen hypotheek, geen kinderen) is een Broodfonds vaak de slimste keuze. Voor PT’s met gezin + eigen woning is een commerciële AOV vaak nodig.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Stap 6 — Pensioen — geen werkgever, dus zelf regelen</h2>
               <p>
-                Als ZZP&apos;er bouw je geen pensioen op via een werkgever. AOW krijg je later wel (vanaf 67 jaar), maar dat is in 2026 ongeveer €1.200 netto/maand — niet genoeg om van te leven. Aanvullend pensioen regel je zelf.
+                Als ZZP’er bouw je geen pensioen op via een werkgever. AOW krijg je later wel (vanaf 67 jaar), maar dat is in 2026 ongeveer €1.200 netto/maand — niet genoeg om van te leven. Aanvullend pensioen regel je zelf.
               </p>
               <p>
                 Drie populaire routes voor ZZP-pensioen:
@@ -176,7 +176,7 @@ export default function BlogPostZzpKvkBtw() {
                 {[
                   ["Lijfrente bij ABN AMRO / Brand New Day / Bright Pensions", "Stort jaarlijks (tot ~€16k per jaar fiscaal aftrekbaar). Geld zit vast tot pensioenleeftijd."],
                   ["Banksparen (lijfrente-rekening)", "Vergelijkbaar met lijfrente maar bij een bank. Vaak iets lagere kosten dan beleggings-lijfrente."],
-                  ["Vrij beleggen (ETF&apos;s via DEGIRO / Saxo)", "Geen fiscale aftrek, maar geld blijft beschikbaar. Riskanter — vereist discipline om niet te tappen."],
+                  ["Vrij beleggen (ETF’s via DEGIRO / Saxo)", "Geen fiscale aftrek, maar geld blijft beschikbaar. Riskanter — vereist discipline om niet te tappen."],
                 ].map(([type, desc]) => (
                   <li key={type} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
@@ -195,7 +195,7 @@ export default function BlogPostZzpKvkBtw() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Excel / Numbers (€0)", "Werkt tot ~€20-30k omzet. Je vult zelf facturen + kostenposten in. Btw-aangifte doe je via mijnBelastingdienst.nl. Veel werk, foutgevoelig, maar gratis."],
-                  ["MoneyMonk / Tellow / Jortt (€10-25/maand)", "Cloud-boekhouding voor ZZP&apos;ers. Automatische bankkoppeling, btw-aangiftes met één klik, jaarrekening exporteerbaar. Aangeraden vanaf €30k omzet."],
+                  ["MoneyMonk / Tellow / Jortt (€10-25/maand)", "Cloud-boekhouding voor ZZP’ers. Automatische bankkoppeling, btw-aangiftes met één klik, jaarrekening exporteerbaar. Aangeraden vanaf €30k omzet."],
                   ["Accountant (€50-150/maand)", "Volledig uit handen. Aangeraden vanaf €70k omzet of zodra je een complexe situatie krijgt (bv. ook online verkoop, internationale facturen, of partner-administratie)."],
                 ].map(([type, desc]) => (
                   <li key={type} className="flex items-start gap-2">
@@ -205,12 +205,12 @@ export default function BlogPostZzpKvkBtw() {
                 ))}
               </ul>
               <p>
-                Voor 90% van de startende PT&apos;s is <strong className="text-foreground">MoneyMonk</strong> de sweet spot. Maandelijks ~€15, scheelt je een dag werk per kwartaal aan btw, en de jaarrekening is geautomatiseerd. Investering die zichzelf terugverdient.
+                Voor 90% van de startende PT’s is <strong className="text-foreground">MoneyMonk</strong> de sweet spot. Maandelijks ~€15, scheelt je een dag werk per kwartaal aan btw, en de jaarrekening is geautomatiseerd. Investering die zichzelf terugverdient.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Stap 8 — Eerste belastingaangifte</h2>
               <p>
-                Je doet één keer per jaar inkomstenbelasting-aangifte als ZZP&apos;er. Belangrijke aftrekposten:
+                Je doet één keer per jaar inkomstenbelasting-aangifte als ZZP’er. Belangrijke aftrekposten:
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[

@@ -64,7 +64,7 @@ export default function PTWordenAmsterdamNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat heb je nodig om te starten?</h2>
               <ul>
                 <li><strong>Certificering:</strong> Een erkend diploma (NASM, EREPS, ALO, CIOS of vergelijkbaar). Zonder certificering kun je geen verzekering afsluiten.</li>
-                <li><strong>KvK-inschrijving:</strong> Als ZZP&apos;er schrijf je je in bij de Kamer van Koophandel. Dit is binnen een dag geregeld.</li>
+                <li><strong>KvK-inschrijving:</strong> Als ZZP’er schrijf je je in bij de Kamer van Koophandel. Dit is binnen een dag geregeld.</li>
                 <li><strong>Verzekering:</strong> Beroepsaansprakelijkheidsverzekering is verplicht. Kost circa €15-30/maand.</li>
                 <li><strong>Trainingslocatie:</strong> Dit is het grootste obstakel. Een eigen studio huren kost €1.500-3.000/maand in Amsterdam. Of je huurt per uur.</li>
                 <li><strong>Klanten:</strong> Instagram, mond-tot-mond, Google en platforms zijn de belangrijkste kanalen.</li>

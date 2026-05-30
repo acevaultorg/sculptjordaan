@@ -54,10 +54,10 @@ export default function PostpartumPTAmsterdamEN() {
               <p>
                 Getting back to training after birth is rarely straightforward. Your body has
                 been through nine months of change, then a delivery, then often months of
-                broken sleep, altered muscle tone, and a core/pelvic floor that don&apos;t do
+                broken sleep, altered muscle tone, and a core/pelvic floor that don’t do
                 what they used to without thinking. In a big-box gym you end up in the same
                 room as 20-year-olds on bench presses — fine in principle, but the context
-                doesn&apos;t help.
+                doesn’t help.
               </p>
               <p>
                 SculptClub in the Jordaan offers a quieter alternative: a private studio, no
@@ -70,9 +70,9 @@ export default function PostpartumPTAmsterdamEN() {
               <p>
                 The standard first benchmark is the 6-week check with your GP or midwife after
                 an uncomplicated birth (longer after a C-section or complications). Green light
-                there means you can begin gentle training — not that you&apos;re back to your
+                there means you can begin gentle training — not that you’re back to your
                 pre-pregnancy level. Building back progressively usually takes 3 to 9 months,
-                depending on the delivery, how recovery is going, and whether you&apos;re
+                depending on the delivery, how recovery is going, and whether you’re
                 breastfeeding.
               </p>
               <p>
@@ -85,15 +85,15 @@ export default function PostpartumPTAmsterdamEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">What a postpartum-aware trainer watches for</h2>
               <ul>
                 <li><strong>Diastasis recti:</strong> Avoid exercises that push the abdominal wall forward (classic crunches, full planks) until the gap closes. Instead: breath-led core activation, dead bugs, mindful side planks.</li>
-                <li><strong>Pelvic floor:</strong> Leaking when you jump or cough isn&apos;t "just part of motherhood" — it signals the pelvic floor needs attention. Often done alongside a pelvic-floor physiotherapist.</li>
-                <li><strong>Joints:</strong> Relaxin (the pregnancy hormone) stays in your system for weeks to months, especially if you&apos;re breastfeeding. Joints are slightly looser and less stable — technique matters more.</li>
-                <li><strong>Energy and sleep:</strong> A programme that assumes 8 hours&apos; sleep doesn&apos;t work. Gradual intensity, shorter sessions, lots of breathing room.</li>
+                <li><strong>Pelvic floor:</strong> Leaking when you jump or cough isn’t "just part of motherhood" — it signals the pelvic floor needs attention. Often done alongside a pelvic-floor physiotherapist.</li>
+                <li><strong>Joints:</strong> Relaxin (the pregnancy hormone) stays in your system for weeks to months, especially if you’re breastfeeding. Joints are slightly looser and less stable — technique matters more.</li>
+                <li><strong>Energy and sleep:</strong> A programme that assumes 8 hours’ sleep doesn’t work. Gradual intensity, shorter sessions, lots of breathing room.</li>
                 <li><strong>Mental side:</strong> Returning to training is often emotional too. Small, achievable goals build confidence faster than ambitious plans.</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why a female trainer tips the balance</h2>
               <p>
-                Not because male trainers can&apos;t learn this — but because conversations
+                Not because male trainers can’t learn this — but because conversations
                 about pelvic floor, C-section recovery, sexuality and breastfeeding are easier
                 and more precise with someone who can speak from experience. The{" "}
                 <a href="/en/blog/female-personal-trainer-amsterdam" className="text-brand hover:underline">female-trainer guide</a>{" "}
@@ -104,7 +104,7 @@ export default function PostpartumPTAmsterdamEN() {
                 SculptClub has three female trainers on the roster:
               </p>
               <ul>
-                <li><strong><a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">Gezina</a></strong> — specialises in women&apos;s training, strength and cycle-aware programming. First pick for postpartum clients.</li>
+                <li><strong><a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">Gezina</a></strong> — specialises in women’s training, strength and cycle-aware programming. First pick for postpartum clients.</li>
                 <li><strong>Eva</strong> — certified dietitian and personal trainer. Combine nutrition recovery (including breastfeeding) with strength training.</li>
                 <li><strong>Andrea</strong> — strength, posture and technique. Gradual ramp, detailed cueing.</li>
               </ul>
@@ -126,18 +126,18 @@ export default function PostpartumPTAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Practical — training with a baby</h2>
               <ul>
-                <li><strong>Open 06:30-22:00 daily:</strong> Fit a session before partner leaves for work, during afternoon nap, or evening when someone&apos;s home.</li>
+                <li><strong>Open 06:30-22:00 daily:</strong> Fit a session before partner leaves for work, during afternoon nap, or evening when someone’s home.</li>
                 <li><strong>Cancellation is always free:</strong> No 24-hour rule. Rough night? You cancel and we rebook. No hassle.</li>
                 <li><strong>Private studio:</strong> No changing-room logistics. WhatsApp door code, trainer waiting.</li>
-                <li><strong>No contract:</strong> Buy a package when you&apos;re ready. Pause for months if you need to.</li>
+                <li><strong>No contract:</strong> Buy a package when you’re ready. Pause for months if you need to.</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Working with a pelvic-floor physiotherapist</h2>
               <p>
-                For many postpartum clients, a pelvic-floor physio is the first stop. If you&apos;re
+                For many postpartum clients, a pelvic-floor physio is the first stop. If you’re
                 already being treated, our trainers coordinate with your therapist so the
-                programmes reinforce rather than conflict. We don&apos;t currently have a
-                physiotherapist on staff — for the medical side we&apos;re happy to refer you
+                programmes reinforce rather than conflict. We don’t currently have a
+                physiotherapist on staff — for the medical side we’re happy to refer you
                 out, and our strength training picks up where their treatment ends.
               </p>
 
@@ -147,7 +147,7 @@ export default function PostpartumPTAmsterdamEN() {
                   <a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">free intro with Gezina</a>{" "}
                   (or another female trainer). 45-60 minutes, no cost.</li>
                 <li>During the intro you discuss the birth, your recovery, your goals and any limitations. Open and without judgement.</li>
-                <li>Trainer builds a first plan together with you. First session is booked when you&apos;re ready.</li>
+                <li>Trainer builds a first plan together with you. First session is booked when you’re ready.</li>
               </ol>
             </div>
 

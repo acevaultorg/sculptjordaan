@@ -261,7 +261,7 @@ export default function TermsPageNL() {
             <p className="text-muted-foreground">
               In de gemeenschappelijke ruimtes van het pand kan cameratoezicht
               aanwezig zijn ten behoeve van de veiligheid. Er zijn geen
-              camera&apos;s in de trainingsruimte zelf. Camerabeelden worden
+              camera’s in de trainingsruimte zelf. Camerabeelden worden
               maximaal 4 weken bewaard en zijn alleen toegankelijk voor
               geautoriseerd personeel. Het cameratoezicht is aangegeven met
               borden bij de ingang. Voor meer informatie, zie ons{" "}
@@ -286,7 +286,7 @@ export default function TermsPageNL() {
             </h2>
             <p className="text-muted-foreground">
               Alle intellectuele eigendomsrechten met betrekking tot de
-              SculptClub website, branding, logo&apos;s, content en
+              SculptClub website, branding, logo’s, content en
               marketingmaterialen berusten bij SculptClub. Het is niet
               toegestaan om zonder voorafgaande schriftelijke toestemming
               materialen van SculptClub te kopiëren, verspreiden of te

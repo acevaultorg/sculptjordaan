@@ -82,7 +82,7 @@ export default function VoedingscoachAmsterdamNL() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                Je traint regelmatig, eet &ldquo;redelijk gezond&rdquo; — maar resultaten blijven uit. Of je wilt afvallen maar weet niet hoe je voeding en training op elkaar afstemt. Dit is precies het moment dat een voedingscoach of diëtist in Amsterdam het verschil maakt.
+                Je traint regelmatig, eet “redelijk gezond” — maar resultaten blijven uit. Of je wilt afvallen maar weet niet hoe je voeding en training op elkaar afstemt. Dit is precies het moment dat een voedingscoach of diëtist in Amsterdam het verschil maakt.
               </p>
 
               <h2>Voedingscoach of diëtist: wat is het verschil?</h2>
@@ -113,7 +113,7 @@ export default function VoedingscoachAmsterdamNL() {
                 De meeste mensen werken met een personal trainer óf met een diëtist. Zelden met beide. Het probleem: training en voeding zijn onlosmakelijk verbonden. Wat je eet bepaalt mede hoe je presteert, hoe je herstelt en hoe snel je resultaat ziet.
               </p>
               <p>
-                Als je trainer ook je voeding begrijpt — of beter nog, ook diëtist is — hoef je niet twee aparte programma&apos;s te laten aansluiten. Alles wordt op elkaar afgestemd: je trainingsbelasting, je caloriebehoefte, je eiwitinname, je herstelplan.
+                Als je trainer ook je voeding begrijpt — of beter nog, ook diëtist is — hoef je niet twee aparte programma’s te laten aansluiten. Alles wordt op elkaar afgestemd: je trainingsbelasting, je caloriebehoefte, je eiwitinname, je herstelplan.
               </p>
 
               <h2>Wat kost een voedingsconsult in Amsterdam?</h2>

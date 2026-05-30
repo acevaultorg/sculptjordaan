@@ -199,8 +199,8 @@ export default function BookGymPageEN() {
       <Section>
         <SectionHeader overline="Members" title="What Members Say" />
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
-          <FadeIn><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">&ldquo;No crowds, no waiting. I book an hour, do my workout and I&apos;m done. Exactly what I was looking for.&rdquo;</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
-          <FadeIn delay={0.1}><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">&ldquo;The focus and calm in a private studio is a real game changer. Never going back to a regular gym.&rdquo;</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
+          <FadeIn><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">“No crowds, no waiting. I book an hour, do my workout and I’m done. Exactly what I was looking for.”</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
+          <FadeIn delay={0.1}><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">“The focus and calm in a private studio is a real game changer. Never going back to a regular gym.”</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
         </div>
       </Section>
 

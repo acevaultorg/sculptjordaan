@@ -84,7 +84,7 @@ export default function BlogPostEN1() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                The Jordaan is one of Amsterdam&apos;s most sought-after neighborhoods. Picturesque canals, cozy cafes, and a
+                The Jordaan is one of Amsterdam’s most sought-after neighborhoods. Picturesque canals, cozy cafes, and a
                 relaxed atmosphere make it an ideal place to live and work. But did you know the Jordaan is also becoming a
                 hotspot for personal training? In this article, we cover everything you need to know about personal training
                 in Amsterdam Jordaan.
@@ -118,7 +118,7 @@ export default function BlogPostEN1() {
               <h2 className="text-2xl font-bold mt-10 mb-4">How much does personal training in the Jordaan cost?</h2>
               <p>
                 Prices for personal training in Amsterdam Jordaan vary by trainer. Generally, you can expect rates between
-                <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">from 45 euros per session</Link>, depending on the trainer&apos;s experience, session duration, and any packages.
+                <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">from 45 euros per session</Link>, depending on the trainer’s experience, session duration, and any packages.
                 At SculptClub, trainers set their own rates, and the first intro session is always free. This lets you get
                 to know a trainer before committing.
               </p>

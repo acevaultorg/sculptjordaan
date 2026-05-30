@@ -125,7 +125,7 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
                 of niet komen opdagen.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Flexibele tijden voor drukke agenda&apos;s</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Flexibele tijden voor drukke agenda’s</h2>
               <p>
                 De studio is dagelijks geopend van 06:30 tot 22:00. Dat klinkt logisch, maar in de
                 praktijk maakt het uit. Voor executives in{" "}
@@ -141,7 +141,7 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Discretie en privacy</h2>
               <p>
                 Je traint één-op-één in een gesloten studio. Geen ramen op straatniveau, geen
-                medeklanten, geen camera&apos;s gericht op de vloer. Voor publieke figuren, executives en
+                medeklanten, geen camera’s gericht op de vloer. Voor publieke figuren, executives en
                 mensen die liever niet gefotografeerd willen worden tijdens het zweten is dat vaak
                 doorslaggevend. Het is geen luxe — het is praktisch. Je kunt vol gas trainen zonder
                 bezig te zijn met wie er meekijkt.
@@ -161,10 +161,10 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
                 laat zien waar je op kan rekenen.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Small-group voor teams en collega&apos;s</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Small-group voor teams en collega’s</h2>
               <p>
                 Niet iedereen wil alleen trainen. Verschillende trainers bieden small-group sessies aan
-                voor 2 tot 4 personen — handig voor collega&apos;s die samen willen sporten of een vast
+                voor 2 tot 4 personen — handig voor collega’s die samen willen sporten of een vast
                 duo dat de drempel liever deelt. Voor bedrijven die hun team een wellness-traject
                 willen aanbieden kunnen we ook periodiek de{" "}
                 <a href="/nl/blog/gym-huren-per-uur-amsterdam" className="text-brand hover:underline">hele studio per uur reserveren</a>,

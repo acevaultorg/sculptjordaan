@@ -62,7 +62,7 @@ export default function PrenatalPTAmsterdamEN() {
                 That said: a big-box gym is rarely a comfortable place to train while
                 pregnant. SculptClub in the Jordaan is a quiet alternative — a private
                 studio, no crowds, and female trainers experienced with prenatal clients.
-                This guide covers what&apos;s safe, what changes trimester by trimester, and
+                This guide covers what’s safe, what changes trimester by trimester, and
                 how to start.
               </p>
 
@@ -114,7 +114,7 @@ export default function PrenatalPTAmsterdamEN() {
                 <li><strong>Adapts compound lifts:</strong> Squats, deadlifts and pulling variations usually stay safe with moderate load; we avoid the Valsalva manoeuvre (breath-holding).</li>
                 <li><strong>Core emphasis:</strong> No classic crunches or full planks in the back half — instead, breath-led core activation and dead bugs.</li>
                 <li><strong>Pelvic-floor work:</strong> Both relaxation and activation. Overactive pelvic floor can make labour harder; underactive leads to postpartum problems.</li>
-                <li><strong>Cardio within comfort:</strong> Walking, light bike, swimming — heart rate isn&apos;t a hard line any more (old 140 rule); we go by "can I still talk?" (Borg 6-7).</li>
+                <li><strong>Cardio within comfort:</strong> Walking, light bike, swimming — heart rate isn’t a hard line any more (old 140 rule); we go by "can I still talk?" (Borg 6-7).</li>
                 <li><strong>Hip mobility:</strong> Preparing for birth by maintaining hip and lower-back range.</li>
                 <li><strong>Balance and fall prevention:</strong> Centre of gravity shifts; single-leg work only with support.</li>
               </ul>
@@ -131,7 +131,7 @@ export default function PrenatalPTAmsterdamEN() {
                 SculptClub has three female trainers:
               </p>
               <ul>
-                <li><strong><a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">Gezina</a></strong> — women&apos;s training, strength, performance. First pick for prenatal clients.</li>
+                <li><strong><a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">Gezina</a></strong> — women’s training, strength, performance. First pick for prenatal clients.</li>
                 <li><strong>Eva</strong> — certified dietitian and PT. Nutrition adjustments during pregnancy plus strength work.</li>
                 <li><strong>Andrea</strong> — strength, posture, technique. Detailed cueing, controlled pace.</li>
               </ul>

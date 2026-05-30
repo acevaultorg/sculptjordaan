@@ -53,10 +53,10 @@ export default function EnglishSpeakingPTAmsterdamEN() {
               <p>
                 About one in five people living in Amsterdam is a non-Dutch national, and most
                 of them work and socialise in English. The city is bilingual in practice — but
-                its gyms aren&apos;t always. Big-box gyms typically list "some staff speak English"
-                and then hand you a contract in Dutch. If you&apos;re looking for coaching that
+                its gyms aren’t always. Big-box gyms typically list "some staff speak English"
+                and then hand you a contract in Dutch. If you’re looking for coaching that
                 actually lands — cues, questions, progression, nutrition conversations — a
-                trainer whose English is equal to yours matters more than you&apos;d expect.
+                trainer whose English is equal to yours matters more than you’d expect.
               </p>
               <p>
                 At SculptClub in the Jordaan every trainer on the roster coaches fluently in
@@ -69,15 +69,15 @@ export default function EnglishSpeakingPTAmsterdamEN() {
               <p>
                 When a squat goes sideways, a good trainer gives three cues in five seconds:
                 "sit back," "chest up," "drive through your heel." In your second language, that
-                same cue-stream becomes guesswork. You lose the session&apos;s tempo. Small
+                same cue-stream becomes guesswork. You lose the session’s tempo. Small
                 technique errors accumulate into bigger ones. Over months this is the difference
                 between steady progress and stalled progress.
               </p>
               <p>
                 English matters even more in the surrounding conversations: sleep, stress,
                 nutrition, cycle-tracking, injury history. These shape the programme as much as
-                the lifting does. If you can&apos;t explain a back twinge precisely in Dutch,
-                you&apos;ll under-describe it — and the trainer plans the next session without
+                the lifting does. If you can’t explain a back twinge precisely in Dutch,
+                you’ll under-describe it — and the trainer plans the next session without
                 the full picture.
               </p>
 
@@ -89,7 +89,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
                 <li><strong>Alex</strong> — Strength, calisthenics, recovery. NL/EN/PT. €69/60 min.</li>
                 <li><strong>Eva</strong> — Certified dietitian + personal trainer. Strength and nutrition. NL/EN.</li>
                 <li><strong>Joey</strong> — Strength, breathwork, nervous system, self-inquiry. NL/EN.</li>
-                <li><strong>Gezina</strong> — Women&apos;s training, strength, performance. NL/EN. See the{" "}
+                <li><strong>Gezina</strong> — Women’s training, strength, performance. NL/EN. See the{" "}
                   <a href="/en/blog/female-personal-trainer-amsterdam" className="text-brand hover:underline">female-trainer guide</a>.</li>
                 <li><strong>Andrea</strong> — Strength, posture, technique. NL/EN. €45/45 min.</li>
                 <li><strong>Dara</strong> — Personal training + small group. NL/EN.</li>
@@ -142,7 +142,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
                 <a href="/en/blog/personal-trainer-amsterdam-west" className="text-brand hover:underline">West</a>.
               </p>
 
-              <h3 className="text-xl font-bold mt-8 mb-3">"What if I&apos;m only here for 3 months?"</h3>
+              <h3 className="text-xl font-bold mt-8 mb-3">"What if I’m only here for 3 months?"</h3>
               <p>
                 Short-stay works. No contract, no notice period. You pay per session (or a
                 short package) and stop when you leave. The{" "}
@@ -163,7 +163,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
               <ol>
                 <li>Browse trainers — pick one whose specialisation matches your goal.</li>
                 <li>Book a <a href="/en/free-intro" className="text-brand hover:underline">free intro session</a>. No obligation.</li>
-                <li>Decide after. If the trainer doesn&apos;t click, try another. If the schedule doesn&apos;t work, use <a href="/en/open-gym" className="text-brand hover:underline">Open Gym</a> to train solo.</li>
+                <li>Decide after. If the trainer doesn’t click, try another. If the schedule doesn’t work, use <a href="/en/open-gym" className="text-brand hover:underline">Open Gym</a> to train solo.</li>
               </ol>
             </div>
 

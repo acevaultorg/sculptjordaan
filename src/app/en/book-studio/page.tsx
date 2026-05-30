@@ -135,8 +135,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Starter</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;99</p>
-                    <p className="text-3xl font-bold">&euro;89</p>
+                    <p className="text-sm text-muted-foreground line-through">€99</p>
+                    <p className="text-3xl font-bold">€89</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 10%</p>
                     <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                       Buy Starter
@@ -150,8 +150,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Routine</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;234</p>
-                    <p className="text-3xl font-bold">&euro;199</p>
+                    <p className="text-sm text-muted-foreground line-through">€234</p>
+                    <p className="text-3xl font-bold">€199</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Buy Routine
@@ -165,8 +165,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Pro</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;436</p>
-                    <p className="text-3xl font-bold">&euro;349</p>
+                    <p className="text-sm text-muted-foreground line-through">€436</p>
+                    <p className="text-3xl font-bold">€349</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 20%</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Buy Pro
@@ -180,8 +180,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Volume</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">&euro;713</p>
-                    <p className="text-3xl font-bold">&euro;549</p>
+                    <p className="text-sm text-muted-foreground line-through">€713</p>
+                    <p className="text-3xl font-bold">€549</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Buy Volume
@@ -191,7 +191,7 @@ export default function BookStudioPageEN() {
               </div>
 
               <p className="mt-6 text-center text-sm text-muted-foreground">
-                Lowest rate: <span className="text-discount font-medium">&euro;9.24/session</span> · Prefer bank transfer?{" "}
+                Lowest rate: <span className="text-discount font-medium">€9.24/session</span> · Prefer bank transfer?{" "}
                 <a href={whatsappLinks.bankTransferEn} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   WhatsApp us
                 </a>
@@ -220,13 +220,13 @@ export default function BookStudioPageEN() {
                       <td className="px-4 py-3 font-medium">Half studio (max 2)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;12</span>
+                          <span className="font-semibold">€12</span>
                           <ButtonLink href={acuityLinks.halfStudio60} size="sm">Book</ButtonLink>
                         </div>
                       </td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;17</span>
+                          <span className="font-semibold">€17</span>
                           <ButtonLink href={acuityLinks.halfStudio90} size="sm">Book</ButtonLink>
                         </div>
                       </td>
@@ -235,13 +235,13 @@ export default function BookStudioPageEN() {
                       <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;17</span>
+                          <span className="font-semibold">€17</span>
                           <ButtonLink href={acuityLinks.fullStudio60} size="sm">Book</ButtonLink>
                         </div>
                       </td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">&euro;24</span>
+                          <span className="font-semibold">€24</span>
                           <ButtonLink href={acuityLinks.fullStudio90} size="sm">Book</ButtonLink>
                         </div>
                       </td>
@@ -317,7 +317,7 @@ export default function BookStudioPageEN() {
           <FadeIn>
             <div className="rounded-xl border bg-card p-6">
               <p className="text-[1.05rem] leading-relaxed">
-                &ldquo;Finally a studio where I can train my clients in peace. Great equipment, beautiful location, no hassle.&rdquo;
+                “Finally a studio where I can train my clients in peace. Great equipment, beautiful location, no hassle.”
               </p>
               <p className="mt-3 text-sm text-muted-foreground">— Personal trainer</p>
             </div>
@@ -325,7 +325,7 @@ export default function BookStudioPageEN() {
           <FadeIn delay={0.1}>
             <div className="rounded-xl border bg-card p-6">
               <p className="text-[1.05rem] leading-relaxed">
-                &ldquo;I rent here weekly. My clients love the calm and privacy. Booking system works smoothly.&rdquo;
+                “I rent here weekly. My clients love the calm and privacy. Booking system works smoothly.”
               </p>
               <p className="mt-3 text-sm text-muted-foreground">— Physiotherapist</p>
             </div>

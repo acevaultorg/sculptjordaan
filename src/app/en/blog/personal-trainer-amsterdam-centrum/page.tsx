@@ -76,15 +76,15 @@ export default function PersonalTrainerCentrumEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why not train at a big gym?</h2>
               <p>
-                In the centre you&apos;ll find Basic-Fit Kalverstraat and TrainMore Leidseplein.
+                In the centre you’ll find Basic-Fit Kalverstraat and TrainMore Leidseplein.
                 Advantage: easy to reach. Disadvantage: during rush hours, you queue for every machine.
                 Personal training in a big gym means training among dozens of other people — not the
-                attention you&apos;re looking for when hiring a trainer.
+                attention you’re looking for when hiring a trainer.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">A private studio around the corner</h2>
               <p>
-                SculptClub is on the Egelantiersgracht in the Jordaan. From Centraal Station it&apos;s
+                SculptClub is on the Egelantiersgracht in the Jordaan. From Centraal Station it’s
                 a 10-minute bike ride. From Dam Square, 5 minutes. Tram 13 and 17 stop at Westermarkt,
                 2 minutes walk. You train in a fully equipped private studio — power rack, cable machine,
                 dumbbells up to 50 kg — just you and your trainer.
@@ -93,10 +93,10 @@ export default function PersonalTrainerCentrumEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Seven trainers, free intro</h2>
               <p>
                 SculptClub has seven independent trainers specialising in strength training, nutrition,
-                women&apos;s training and posture. The first introduction is always free. Rates from
+                women’s training and posture. The first introduction is always free. Rates from
                 €45 per session. No membership, no contract — book per session and always cancel for
-                free. We charge 0% commission. For physiotherapy we&apos;ll refer you out — we
-                don&apos;t have a physiotherapist on staff.
+                free. We charge 0% commission. For physiotherapy we’ll refer you out — we
+                don’t have a physiotherapist on staff.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Train independently too</h2>

@@ -90,10 +90,10 @@ export default function PersonalTrainerAmsterdamEN() {
                 Personal training is personal. You share your goals, insecurities, and physical limitations with
                 someone who guides you. Research shows that the relationship between trainer and client is one of
                 the most important factors for long-term results. A trainer who is technically excellent but
-                doesn&apos;t match your personality will deliver fewer results than a trainer you genuinely connect with.
+                doesn’t match your personality will deliver fewer results than a trainer you genuinely connect with.
               </p>
               <p>
-                That doesn&apos;t mean qualifications don&apos;t matter. It&apos;s the combination of expertise and personal
+                That doesn’t mean qualifications don’t matter. It’s the combination of expertise and personal
                 chemistry that produces the best outcomes. Always look for both.
               </p>
 
@@ -117,14 +117,14 @@ export default function PersonalTrainerAmsterdamEN() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>No intake or assessment</strong> — A serious trainer always starts with an intake to discuss your goals, medical history, and fitness level.</li>
                 <li><strong>Long contracts without a trial</strong> — Be cautious with trainers who immediately require a 6 or 12-month contract without letting you try first.</li>
-                <li><strong>One-size-fits-all programs</strong> — If everyone gets the same plan, it&apos;s not personal training.</li>
-                <li><strong>No attention to technique</strong> — A trainer who doesn&apos;t correct or explain brings you closer to injury than to your goals.</li>
+                <li><strong>One-size-fits-all programs</strong> — If everyone gets the same plan, it’s not personal training.</li>
+                <li><strong>No attention to technique</strong> — A trainer who doesn’t correct or explain brings you closer to injury than to your goals.</li>
                 <li><strong>Unrealistic promises</strong> — &quot;Lose 10 kg in 2 weeks&quot; is not a serious trainer. Real results take time.</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why a free intro session is essential</h2>
               <p>
-                The best way to know if a trainer is right for you is to experience it firsthand. That&apos;s why more
+                The best way to know if a trainer is right for you is to experience it firsthand. That’s why more
                 and more studios offer a free intro or consultation session. During this session, you can:
               </p>
               <ul className="list-disc pl-6 space-y-2">
@@ -135,7 +135,7 @@ export default function PersonalTrainerAmsterdamEN() {
               </ul>
               <p>
                 At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first intro is always free</Link> and no-obligation. You choose which trainer you want
-                to meet based on their profile, specialization, and availability. There&apos;s no sales pitch and no
+                to meet based on their profile, specialization, and availability. There’s no sales pitch and no
                 pressure to sign up immediately.
               </p>
 
@@ -147,15 +147,15 @@ export default function PersonalTrainerAmsterdamEN() {
                 your trainer, without distractions.
               </p>
               <p>
-                This is especially beneficial if you&apos;re just starting out, have specific goals, or simply prefer
+                This is especially beneficial if you’re just starting out, have specific goals, or simply prefer
                 training in peace. All equipment is fully available and your trainer can structure the session
                 exactly as needed.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Get started today</h2>
               <p>
-                <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">Finding the right personal trainer</Link> in Amsterdam doesn&apos;t have to be complicated. Define your
-                criteria, do your research, and book a free intro. You&apos;ll quickly discover if there&apos;s a match,
+                <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">Finding the right personal trainer</Link> in Amsterdam doesn’t have to be complicated. Define your
+                criteria, do your research, and book a free intro. You’ll quickly discover if there’s a match,
                 with zero risk.
               </p>
             </div>

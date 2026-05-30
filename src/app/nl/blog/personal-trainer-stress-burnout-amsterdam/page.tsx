@@ -116,15 +116,15 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               </div>
 
               <p>
-                Je staat continu &ldquo;aan&rdquo;. Druk werk, beslissingen nemen, mensen aansturen,
+                Je staat continu “aan”. Druk werk, beslissingen nemen, mensen aansturen,
                 deadlines halen. Op papier draait alles, maar je merkt dat je energie afneemt, je
-                focus versnippert en je &lsquo;s avonds niet meer echt aanwezig bent. Een reguliere
+                focus versnippert en je ‘s avonds niet meer echt aanwezig bent. Een reguliere
                 sportschool maakt dat vaak erger: harder pushen, meer prikkels, een training die
                 voelt als nóg een afspraak in een al overvolle agenda.
               </p>
               <p>
                 Bij SculptClub in de Jordaan werkt <strong>Joey</strong> met een andere aanpak:
-                <em> The Ascend Method &mdash; Inner Alignment System</em>. Voor ondernemers en
+                <em> The Ascend Method — Inner Alignment System</em>. Voor ondernemers en
                 high performers die niet alleen sterker willen worden, maar weer in controle
                 willen zijn over hun eigen systeem.
               </p>
@@ -132,22 +132,22 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Voor wie is deze aanpak?</h2>
               <p>
                 Ondernemers, leidinggevenden, creatieve professionals en andere high
-                performers &mdash; mannen en vrouwen &mdash; die veel verantwoordelijkheid dragen
+                performers — mannen en vrouwen — die veel verantwoordelijkheid dragen
                 en merken dat hun lichaam meegeeft voordat hun agenda dat doet. Herken je een
                 van deze signalen?
               </p>
               <ul>
-                <li>Je hoofd staat &lsquo;s avonds niet uit, slapen lukt minder goed</li>
-                <li>Workouts geven je niet meer de energie die ze vroeger gaven &mdash; eerder andersom</li>
+                <li>Je hoofd staat ‘s avonds niet uit, slapen lukt minder goed</li>
+                <li>Workouts geven je niet meer de energie die ze vroeger gaven — eerder andersom</li>
                 <li>Je traint maar mist focus, of slaat juist door en raakt geblesseerd</li>
-                <li>Je voelt je vaak &ldquo;wired but tired&rdquo; &mdash; gespannen maar uitgeput</li>
+                <li>Je voelt je vaak “wired but tired” — gespannen maar uitgeput</li>
                 <li>Je weet rationeel wat je moet doen maar krijgt het niet meer gedaan</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Hoe ziet een sessie eruit?</h2>
               <p>
                 Een sessie van 60 minuten, volledig afgestemd op jouw staat en energie van dat
-                moment. Geen vast schema dat je doorploetert &mdash; we beginnen bij waar je nu
+                moment. Geen vast schema dat je doorploetert — we beginnen bij waar je nu
                 bent en bouwen vanaf daar op.
               </p>
               <ol>
@@ -158,12 +158,12 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
                 <li>
                   <strong>Mobiliteit en ademhaling.</strong> Gerichte ademwerk- en
                   beweegoefeningen die je zenuwstelsel reguleren en je terugbrengen naar
-                  focus &mdash; voordat we gaan trainen, niet erna.
+                  focus — voordat we gaan trainen, niet erna.
                 </li>
                 <li>
                   <strong>Krachttraining op maat.</strong> Functionele kracht- en
                   mobiliteitsoefeningen, afgestemd op wat jouw lichaam vandaag kan
-                  verdragen. Geen ego, geen onnodige prikkels &mdash; kwaliteit boven volume.
+                  verdragen. Geen ego, geen onnodige prikkels — kwaliteit boven volume.
                 </li>
                 <li>
                   <strong>Herstel en regulatie.</strong> Ademhalings- en regulatietechnieken
@@ -176,7 +176,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
                 </li>
               </ol>
               <p>
-                Je verlaat de studio met meer energie dan waarmee je binnenkwam &mdash; niet
+                Je verlaat de studio met meer energie dan waarmee je binnenkwam — niet
                 uitgeput, maar gereguleerd. Dat is de toets.
               </p>
 
@@ -184,7 +184,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               <p>
                 The Ascend Method is een geïntegreerde aanpak waarin fysieke training, ademhaling
                 en zenuwstelselregulatie samenkomen. In plaats van alleen het lichaam te trainen,
-                optimaliseer je hoe je hele systeem functioneert &mdash; zodat je niet alleen
+                optimaliseer je hoe je hele systeem functioneert — zodat je niet alleen
                 sterker wordt, maar ook meer rust, focus en controle ervaart in je dagelijks
                 leven.
               </p>
@@ -196,12 +196,12 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
                 we waar de focus van het traject ligt.
               </p>
               <p>
-                Het idee is bewegen van overleven naar flow &mdash; van constant denken naar
+                Het idee is bewegen van overleven naar flow — van constant denken naar
                 weer voelen en aanwezig zijn in je lichaam. Niet via meditatie als losse
                 discipline, maar via training waarin dat is verweven.
               </p>
               <p className="text-muted-foreground italic">
-                &ldquo;Wisdom isn&apos;t studied, it&apos;s embodied.&rdquo; &mdash; Joey
+                “Wisdom isn’t studied, it’s embodied.” — Joey
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Waarom dit anders is dan reguliere personal training</h2>
@@ -216,7 +216,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
                 <li>Je traint zonder jezelf verder uit te putten</li>
                 <li>Je leert je stressniveau actief reguleren tijdens en buiten de sessie</li>
                 <li>Je bouwt energie op in plaats van het te verliezen</li>
-                <li>Je ontwikkelt fysieke én mentale veerkracht &mdash; niet de een tegen de ander</li>
+                <li>Je ontwikkelt fysieke én mentale veerkracht — niet de een tegen de ander</li>
               </ul>
               <p>
                 Het is training voor mensen die niet alleen sterker willen worden, maar beter
@@ -226,7 +226,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Praktisch</h2>
               <p>
                 <strong>Locatie:</strong> SculptClub aan de Egelantiersgracht 424 in de Jordaan,
-                Amsterdam. Privé studio &mdash; geen receptie, geen drukte, geen andere klanten
+                Amsterdam. Privé studio — geen receptie, geen drukte, geen andere klanten
                 tegelijk. Deurcode ontvang je de avond ervoor via WhatsApp.
               </p>
               <p>
@@ -234,7 +234,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               </p>
               <p>
                 <strong>Tarief:</strong> op aanvraag. Joey werkt met een beperkte klantkring
-                zodat elke sessie de aandacht krijgt die de aanpak vraagt &mdash; kwaliteit
+                zodat elke sessie de aandacht krijgt die de aanpak vraagt — kwaliteit
                 boven volume.
               </p>
               <p>
@@ -248,10 +248,10 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               <p>
                 De eerste stap is een gratis intakegesprek. Daarin breng je samen in kaart waar
                 je nu staat op de SQ-ladder, wat je doelen zijn en hoe een traject eruit zou
-                kunnen zien. Geen verplichtingen &mdash; je beslist zelf of het past.
+                kunnen zien. Geen verplichtingen — je beslist zelf of het past.
               </p>
               <p>
-                Plan je intake via Joey&apos;s{" "}
+                Plan je intake via Joey’s{" "}
                 <Link href="/nl/plan-gratis-intake-met-joey" className="text-brand hover:underline">
                   pagina
                 </Link>{" "}
@@ -289,7 +289,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Klaar voor een rustiger systeem?</h3>
               <p className="text-muted-foreground mb-6">
-                Plan een gratis intake met Joey. Geen verplichtingen &mdash; we bespreken waar je
+                Plan een gratis intake met Joey. Geen verplichtingen — we bespreken waar je
                 staat en wat haalbaar is.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

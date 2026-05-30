@@ -197,16 +197,16 @@ export default function BoutiquePTvsChainEN() {
             </h2>
             <p>
               A big chain gym is built on volume. The more members per square
-              meter, the better the business model works. That isn&apos;t
-              necessarily a problem if you know what you&apos;re doing and you
-              train when it&apos;s quiet. But if you&apos;re just starting,
+              meter, the better the business model works. That isn’t
+              necessarily a problem if you know what you’re doing and you
+              train when it’s quiet. But if you’re just starting,
               want to progress technically, or are coming back from an injury,
               that anonymity is a trap. Nobody corrects your form. Nobody
-              notices you&apos;ve been running the same program for three
+              notices you’ve been running the same program for three
               weeks. Nobody asks whether today is a good day to lift heavy.
             </p>
             <p>
-              In a boutique studio, that&apos;s the whole starting point. Your
+              In a boutique studio, that’s the whole starting point. Your
               trainer knows your history, your goals and your recovery
               pattern. At SculptClub trainers work on 0% commission — meaning
               they set their own rates and take the time you need, with no
@@ -219,28 +219,28 @@ export default function BoutiquePTvsChainEN() {
             <p>
               A chain costs €20-€40 a month. A boutique studio costs more per
               hour, but you get a private space in return — sometimes
-              one-on-one coaching too. The question isn&apos;t which option is
+              one-on-one coaching too. The question isn’t which option is
               cheaper, but which option gets you to your goal cheaper. For
-              some people that&apos;s a chain with a treadmill. For others
-              it&apos;s one well-structured hour a week with a trainer who
+              some people that’s a chain with a treadmill. For others
+              it’s one well-structured hour a week with a trainer who
               actually knows where you are.
             </p>
             <p>
               Do the math: a year of training twice a week at a chain plus a
               trainer (booked separately) often costs more than a boutique
               studio at the same frequency — and in the boutique studio you
-              don&apos;t queue.
+              don’t queue.
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold mt-12 mb-4">
               Equipment: less is often more
             </h2>
             <p>
-              A chain advertises &ldquo;200+ machines.&rdquo; Sounds
+              A chain advertises “200+ machines.” Sounds
               impressive. In practice you use about eight of them. A boutique
               studio chooses those eight carefully: power rack, dumbbells,
               cable machine, a few kettlebells, room to move. Nothing more,
-              nothing less. The difference: you don&apos;t wait, and
+              nothing less. The difference: you don’t wait, and
               everything you need is within reach.
             </p>
 
@@ -251,7 +251,7 @@ export default function BoutiquePTvsChainEN() {
               People underestimate how much atmosphere affects whether you
               actually show up. A loud, crowded floor with mirror-wall selfies
               attracts some people. Others bounce off it instantly. A quiet,
-              small space where your name is known and the music doesn&apos;t
+              small space where your name is known and the music doesn’t
               shout is, for many people, the difference between training
               consistently and dropping off after three weeks.
             </p>
@@ -263,7 +263,7 @@ export default function BoutiquePTvsChainEN() {
               Honestly: a chain is fine if you mostly do cardio, you already
               know your way around the technique, and you value 24/7 hours or
               having multiple locations across the city. If your budget is
-              tight and you don&apos;t need coaching, a chain is a logical
+              tight and you don’t need coaching, a chain is a logical
               start. Nobody gets worse off using a treadmill at a chain.
             </p>
 
@@ -273,8 +273,8 @@ export default function BoutiquePTvsChainEN() {
             <p>
               A boutique studio is the right choice if you want serious
               results, you value quiet and privacy, you want help with
-              technique or programming, or you&apos;re returning after an
-              injury. Also if you don&apos;t want to be locked into a long
+              technique or programming, or you’re returning after an
+              injury. Also if you don’t want to be locked into a long
               contract or sign-up fees, and you just want to be able to stop
               whenever it suits you. SculptClub is open daily 06:30 to 22:00
               at Egelantiersgracht 424 in the Jordaan.

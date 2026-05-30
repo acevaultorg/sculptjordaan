@@ -54,7 +54,7 @@ export default function SmallGroupTrainingAmsterdamNL() {
               <p>
                 Niet iedereen wil solo trainen. Voor veel mensen werkt training beter met
                 iemand erbij — een partner die dezelfde ochtend vrij heeft, een vriend(in)
-                met dezelfde doelen, twee of drie collega&apos;s die de werkweek willen
+                met dezelfde doelen, twee of drie collega’s die de werkweek willen
                 onderbreken. Small group training bij SculptClub in de Jordaan geeft je de
                 kwaliteit van personal training tegen een lagere prijs per persoon, zonder
                 de drukte van een grote sportschool.
@@ -83,7 +83,7 @@ export default function SmallGroupTrainingAmsterdamNL() {
               <ul>
                 <li><strong>Stellen / partners:</strong> Gezamenlijke beschikbaarheid, vergelijkbare fitheidsdoelen, accountability ingebouwd.</li>
                 <li><strong>Vriend(inn)en:</strong> Twee of drie mensen die elkaar al motiveren. Kosten delen maakt het toegankelijker.</li>
-                <li><strong>Collega&apos;s:</strong> Vaste afspraak in de week, korte afstand tot Centrum en Zuidas, factuur op bedrijfsnaam mogelijk (zie{" "}
+                <li><strong>Collega’s:</strong> Vaste afspraak in de week, korte afstand tot Centrum en Zuidas, factuur op bedrijfsnaam mogelijk (zie{" "}
                   <a href="/nl/blog/zakelijk-personal-training-amsterdam" className="text-brand hover:underline">zakelijke personal training</a>).</li>
                 <li><strong>Familie:</strong> Moeder-dochter, broers, ouders-met-volwassen-kinderen. Trainen samen is een andere band-versterker dan koffie drinken.</li>
                 <li><strong>Kleine teams (3-4):</strong> Startups, marketing-teams, kleine zaken. Een wekelijkse "energize"-sessie in plaats van pizza-lunch.</li>
@@ -135,9 +135,9 @@ export default function SmallGroupTrainingAmsterdamNL() {
               <ul>
                 <li><strong><a href="/nl/plan-gratis-intake-met-dara" className="text-brand hover:underline">Dara</a></strong> — specialist in small group. Energieke aanpak, goed voor gemengde groepen en collega-teams.</li>
                 <li><strong>Alex</strong> — kracht en calisthenics in duo of trio. Geschikt als iedereen in de groep al basisconditie heeft.</li>
-                <li><strong>Andrea</strong> — technische opbouw, goede pasvorm voor duo&apos;s die samen kracht willen leren.</li>
+                <li><strong>Andrea</strong> — technische opbouw, goede pasvorm voor duo’s die samen kracht willen leren.</li>
                 <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — vrouwentraining in klein groepje (2-3 vrouwen).</li>
-                <li><strong>Jearmey</strong> — kracht en atletische prestatie; populair voor duo&apos;s met sportachtergrond.</li>
+                <li><strong>Jearmey</strong> — kracht en atletische prestatie; populair voor duo’s met sportachtergrond.</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Praktisch — hoe plan je samen?</h2>

@@ -35,10 +35,10 @@ export default function BlogPostHoeveelKlanten() {
               <div className="flex items-center gap-4 text-sm text-muted-foreground"><span className="flex items-center gap-1.5"><CalendarDays className="w-4 h-4" />20 mei 2026</span><span className="flex items-center gap-1.5"><User className="w-4 h-4" />SculptClub</span></div>
             </div>
             <div className="prose prose-invert max-w-none space-y-6 text-muted-foreground leading-relaxed">
-              <p className="text-lg text-foreground">De vraag die elke startende PT zichzelf stelt: hoeveel klanten moet ik hebben om financieel zelfstandig te zijn? Geen abstracte percentages — wel een concrete rekensom met de cijfers voor Amsterdam 2026. Drie scenario&apos;s: rondkomen op modaal, een gezin onderhouden, of bewust voor part-time kiezen.</p>
+              <p className="text-lg text-foreground">De vraag die elke startende PT zichzelf stelt: hoeveel klanten moet ik hebben om financieel zelfstandig te zijn? Geen abstracte percentages — wel een concrete rekensom met de cijfers voor Amsterdam 2026. Drie scenario’s: rondkomen op modaal, een gezin onderhouden, of bewust voor part-time kiezen.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">De rekensom — bruto vs netto vs huishoudbudget</h2>
-              <p>Voor je kunt rekenen wat je nodig hebt, moet je begrijpen wat &ldquo;modaal&rdquo; eigenlijk betekent in 2026:</p>
+              <p>Voor je kunt rekenen wat je nodig hebt, moet je begrijpen wat “modaal” eigenlijk betekent in 2026:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Modaal bruto inkomen", "~€44.000/jaar (CBS 2026 schatting)"],
@@ -123,7 +123,7 @@ export default function BlogPostHoeveelKlanten() {
                   ["Jaar 3+", "Stabiele 20-30 sessies/week + scale-paden actief."],
                 ].map(([phase, d]) => (<li key={phase} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{phase}:</strong> {d}</span></li>))}
               </ul>
-              <p>Sommige PT&apos;s halen dit sneller (sterk bestaand netwerk, sport-celebrity). Sommige langzamer (oververzadigde wijk, geen onderscheid). 12-24 maanden tot stabiliteit is de mediaan.</p>
+              <p>Sommige PT’s halen dit sneller (sterk bestaand netwerk, sport-celebrity). Sommige langzamer (oververzadigde wijk, geen onderscheid). 12-24 maanden tot stabiliteit is de mediaan.</p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Meer lezen</h3>

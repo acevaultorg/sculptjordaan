@@ -98,8 +98,8 @@ export default function BookTrainerPageEN() {
       <Section>
         <SectionHeader overline="Clients" title="What Clients Say" />
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
-          <FadeIn><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">&ldquo;No crowded gym, just a quiet studio with a trainer who actually listens. After 3 months I can already see a difference.&rdquo;</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
-          <FadeIn delay={0.1}><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">&ldquo;Personal attention without a membership. My trainer adjusts the schedule to fit my busy work week.&rdquo;</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
+          <FadeIn><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">“No crowded gym, just a quiet studio with a trainer who actually listens. After 3 months I can already see a difference.”</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
+          <FadeIn delay={0.1}><div className="rounded-xl border bg-card p-5"><p className="text-sm leading-relaxed">“Personal attention without a membership. My trainer adjusts the schedule to fit my busy work week.”</p><p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p></div></FadeIn>
         </div>
       </Section>
 

@@ -156,7 +156,7 @@ export default function StudioPageEN() {
               Come see the studio
             </h2>
             <p className="text-muted-foreground mb-8">
-              Book a free intro with one of our trainers — or, if you&apos;re a
+              Book a free intro with one of our trainers — or, if you’re a
               personal trainer yourself, book a free studio test session.
               WhatsApp is always open for questions.
             </p>

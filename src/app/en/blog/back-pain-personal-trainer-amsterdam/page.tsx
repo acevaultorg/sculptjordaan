@@ -55,7 +55,7 @@ export default function BackPainPersonalTrainerAmsterdam() {
                   <div className="text-sm leading-relaxed">
                     <strong className="block mb-1">Medical side first.</strong>
                     <span className="text-muted-foreground">
-                      We don&apos;t have a physiotherapist on staff. If you have acute
+                      We don’t have a physiotherapist on staff. If you have acute
                       back pain, a herniated disc, recent surgery, or no diagnosis yet —
                       start with a licensed physiotherapist or doctor. Our trainers take
                       over once they give the green light.
@@ -74,7 +74,7 @@ export default function BackPainPersonalTrainerAmsterdam() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why back pain and exercise are tricky</h2>
               <p>
-                Most people with back pain are told: rest and be careful. That&apos;s
+                Most people with back pain are told: rest and be careful. That’s
                 partly right — wrong loading at the wrong moment makes it worse. But too
                 much rest weakens the stabilising muscles around the spine, which
                 amplifies pain over time.
@@ -190,7 +190,7 @@ export default function BackPainPersonalTrainerAmsterdam() {
 
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Train safely, even with back pain</h3>
-              <p className="text-muted-foreground mb-6">With clearance from your clinician, we&apos;ll build you up. Book a free intro and we&apos;ll discuss what&apos;s achievable.</p>
+              <p className="text-muted-foreground mb-6">With clearance from your clinician, we’ll build you up. Book a free intro and we’ll discuss what’s achievable.</p>
               <ButtonLink href="/en/find-personal-trainer" size="lg">Book free intro<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
             </div>
           </article>

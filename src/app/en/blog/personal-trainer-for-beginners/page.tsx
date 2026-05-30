@@ -51,10 +51,10 @@ export default function PTForBeginnersEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                You want to start exercising, but you don&apos;t know where to begin. Maybe you&apos;ve
-                never set foot in a gym. Or it&apos;s been years and you feel insecure. That&apos;s
-                exactly when a personal trainer makes the biggest difference — not when you&apos;re
-                advanced, but when you&apos;re starting.
+                You want to start exercising, but you don’t know where to begin. Maybe you’ve
+                never set foot in a gym. Or it’s been years and you feel insecure. That’s
+                exactly when a personal trainer makes the biggest difference — not when you’re
+                advanced, but when you’re starting.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why beginners benefit most from a trainer</h2>
@@ -73,10 +73,10 @@ export default function PTForBeginnersEN() {
                 <li><strong>Build confidence:</strong> In a private studio you feel safe to learn</li>
               </ul>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">You don&apos;t need to be fit to start</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">You don’t need to be fit to start</h2>
               <p>
                 The biggest misconception: &quot;I need to get fitter before I go to a trainer.&quot;
-                That&apos;s like saying &quot;I need to get healthy before I see a doctor.&quot; A
+                That’s like saying &quot;I need to get healthy before I see a doctor.&quot; A
                 trainer exists to take you from zero to your first result. At SculptClub, all five
                 trainers work with beginners. No judgement, no pressure — just start.
               </p>
@@ -84,7 +84,7 @@ export default function PTForBeginnersEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Private studio vs big gym</h2>
               <p>
                 Many beginners feel uncomfortable in a big gym. The crowds, the stares, the feeling
-                that everyone knows what they&apos;re doing except you. At SculptClub you train in a
+                that everyone knows what they’re doing except you. At SculptClub you train in a
                 private studio — just you and your trainer. No audience, no pressure.
                 Your trainer arranges the studio and gets you in.
               </p>

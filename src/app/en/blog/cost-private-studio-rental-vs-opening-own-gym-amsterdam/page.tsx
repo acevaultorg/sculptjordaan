@@ -177,7 +177,7 @@ export default function BlogPostCostStudioVsOwnGym() {
                 </table>
               </div>
               <p>
-                Plus the startup investment: equipment (power rack, benches, dumbbells, cable machine, flooring) runs €15,000 to €40,000 depending on how serious you go. Build-out and acoustics another €5,000 to €25,000. Realistically you&apos;re <strong className="text-foreground">€30,000 to €60,000 in before you take your first client</strong>.
+                Plus the startup investment: equipment (power rack, benches, dumbbells, cable machine, flooring) runs €15,000 to €40,000 depending on how serious you go. Build-out and acoustics another €5,000 to €25,000. Realistically you’re <strong className="text-foreground">€30,000 to €60,000 in before you take your first client</strong>.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Opening your own gym — investment math + payback time</h2>
@@ -185,21 +185,21 @@ export default function BlogPostCostStudioVsOwnGym() {
                 Say you open a gym with €5,050 in monthly fixed costs and a €45,000 startup investment. What do you need to break even?
               </p>
               <p>
-                Break-even on fixed costs first: at €65 per session you need <strong className="text-foreground">78 sessions per month</strong> just to cover fixed costs. That&apos;s ~18 sessions per week — five workdays, three-plus sessions per day. Zero room for your own income.
+                Break-even on fixed costs first: at €65 per session you need <strong className="text-foreground">78 sessions per month</strong> just to cover fixed costs. That’s ~18 sessions per week — five workdays, three-plus sessions per day. Zero room for your own income.
               </p>
               <p>
                 To also pay yourself a Dutch median income (≈€3,000 net/month, so ≈€4,500 gross profit/month), add ~70 sessions per month on top. Total: <strong className="text-foreground">~148 sessions/month, ~34 sessions/week</strong>.
               </p>
               <p>
-                Add depreciation on your investment (€45,000 over 5 years = €750/month) and that&apos;s another ~12 sessions per month. <strong className="text-foreground">Realistic break-even for a healthy own gym: 38-40 sessions per week.</strong>
+                Add depreciation on your investment (€45,000 over 5 years = €750/month) and that’s another ~12 sessions per month. <strong className="text-foreground">Realistic break-even for a healthy own gym: 38-40 sessions per week.</strong>
               </p>
               <p>
-                That&apos;s achievable for established trainers with a full client book and a waitlist. For starters or mid-career trainers it&apos;s an aggressive target with serious risk.
+                That’s achievable for established trainers with a full client book and a waitlist. For starters or mid-career trainers it’s an aggressive target with serious risk.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Which option fits which trainer</h2>
               <p>
-                The choice isn&apos;t really about what you want — it&apos;s about where you currently are. An honest matrix:
+                The choice isn’t really about what you want — it’s about where you currently are. An honest matrix:
               </p>
               <div className="overflow-hidden rounded-xl border border-border bg-card my-6">
                 <table className="w-full text-sm">
@@ -213,7 +213,7 @@ export default function BlogPostCostStudioVsOwnGym() {
                     {[
                       ["1-5 sessions", "Studio per hour (SculptClub). Fixed costs are dead weight here."],
                       ["6-15 sessions", "Studio per hour with a session pack. Pro/Volume packs give 20-23% off."],
-                      ["16-25 sessions", "Sweet spot for per-hour rental. Own space doesn&apos;t pencil yet."],
+                      ["16-25 sessions", "Sweet spot for per-hour rental. Own space doesn’t pencil yet."],
                       ["26-35 sessions", "Grey zone. Run the math yourself — sometimes leasing works, often not."],
                       ["36+ sessions", "Own gym becomes attractive, assuming your client book is stable."],
                     ].map(([range, advice]) => (
@@ -256,7 +256,7 @@ export default function BlogPostCostStudioVsOwnGym() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   "Trainer A (3 years in, ~12 sessions/week): rents at SculptClub per hour. Took the Pro pack. Saves ~€200/month vs renting their own space.",
-                  "Trainer B (8 years in, ~30 sessions/week): opened their own 60 m² studio in West last year. Fixed costs €4,200/month. It works — but it&apos;s hard.",
+                  "Trainer B (8 years in, ~30 sessions/week): opened their own 60 m² studio in West last year. Fixed costs €4,200/month. It works — but it’s hard.",
                   "Trainer C (5 years in, ~22 sessions/week): keeps renting per hour, even though they could afford their own space. Reason: \"With no fixed costs I sleep better. No client = no expense.\"",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2">
@@ -266,7 +266,7 @@ export default function BlogPostCostStudioVsOwnGym() {
                 ))}
               </ul>
               <p>
-                The thread: an own gym is not a status symbol — it&apos;s an operational decision with immediate cashflow consequences. Those who can carry it, do. Those who hesitate rent per hour and build their book first.
+                The thread: an own gym is not a status symbol — it’s an operational decision with immediate cashflow consequences. Those who can carry it, do. Those who hesitate rent per hour and build their book first.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Three concrete scenarios</h2>
@@ -276,7 +276,7 @@ export default function BlogPostCostStudioVsOwnGym() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   "You have 4 regular clients and run 8 sessions/week. → Studio per hour with Starter pack (€89 for 10 sessions). Your fixed costs stay at zero.",
-                  "You have 12 regular clients and run 22 sessions/week. → Studio per hour with Pro or Volume pack (~€10/hour). Own space doesn&apos;t pencil yet.",
+                  "You have 12 regular clients and run 22 sessions/week. → Studio per hour with Pro or Volume pack (~€10/hour). Own space doesn’t pencil yet.",
                   "You have 25 regular clients + waitlist and run 38 sessions/week. → Own gym is mathematically interesting. Investment pays back within 2-3 years with stable utilization.",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2">

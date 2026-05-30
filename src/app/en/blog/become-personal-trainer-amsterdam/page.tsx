@@ -63,7 +63,7 @@ export default function BecomePTAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What do you need to get started?</h2>
               <ul>
-                <li><strong>Certification:</strong> A recognised diploma (NASM, EREPS, or equivalent). Without certification you can&apos;t get insurance.</li>
+                <li><strong>Certification:</strong> A recognised diploma (NASM, EREPS, or equivalent). Without certification you can’t get insurance.</li>
                 <li><strong>Business registration:</strong> Register as a freelancer with the Dutch Chamber of Commerce (KvK). Done in a day.</li>
                 <li><strong>Insurance:</strong> Professional liability insurance is mandatory. Costs around €15-30/month.</li>
                 <li><strong>Training location:</strong> This is the biggest hurdle. Renting your own studio costs €1,500-3,000/month in Amsterdam. Or you rent by the hour.</li>
@@ -102,7 +102,7 @@ export default function BecomePTAmsterdamEN() {
                 keep €48 net — no commission, no fixed costs.
               </p>
               <p>
-                With 4 sessions per day, 5 days per week, that&apos;s €960 net per week on
+                With 4 sessions per day, 5 days per week, that’s €960 net per week on
                 studio rental alone. Compare that to renting your own studio at €2,000/month
                 plus equipment and maintenance.
               </p>
@@ -112,7 +112,7 @@ export default function BecomePTAmsterdamEN() {
                 The main channels for personal trainers in Amsterdam:
               </p>
               <ul>
-                <li><strong>Google:</strong> Make sure you&apos;re findable. A profile on the SculptClub website helps — we rank highly for &quot;personal trainer amsterdam&quot;</li>
+                <li><strong>Google:</strong> Make sure you’re findable. A profile on the SculptClub website helps — we rank highly for &quot;personal trainer amsterdam&quot;</li>
                 <li><strong>Instagram:</strong> Share workouts, results and behind-the-scenes content</li>
                 <li><strong>Word of mouth:</strong> Satisfied clients are your best marketing</li>
                 <li><strong>Free intro:</strong> Offer a free first session. Lowering the barrier is the best conversion tactic</li>
@@ -121,7 +121,7 @@ export default function BecomePTAmsterdamEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Free tour at SculptClub</h2>
               <p>
                 Curious? <a href="/en/become-trainer" className="text-brand hover:underline">See the
-                full information</a> or send a WhatsApp directly. We&apos;ll schedule a free
+                full information</a> or send a WhatsApp directly. We’ll schedule a free
                 tour — see if the studio is right for you. No obligations.
               </p>
             </div>

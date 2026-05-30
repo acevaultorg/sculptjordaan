@@ -87,7 +87,7 @@ export default function PersonalTrainerAmsterdamWestNL() {
               <p>
                 Amsterdam West en Oud-West zijn geweldige buurten om te wonen, maar het aanbod aan
                 serieuze personal training is beperkt. De meeste opties zijn grote ketens (Basic-Fit,
-                TrainMore) of kleine yogastudio&apos;s. Voor krachttraining met een gediplomeerde
+                TrainMore) of kleine yogastudio’s. Voor krachttraining met een gediplomeerde
                 personal trainer moet je iets verder kijken. De Jordaan grenst direct aan West — via
                 de Rozengracht of het Vondelpark ben je er in een paar minuten.
               </p>

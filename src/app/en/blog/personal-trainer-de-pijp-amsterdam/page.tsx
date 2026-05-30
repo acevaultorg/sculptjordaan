@@ -54,7 +54,7 @@ export default function PersonalTrainerDePijpEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                De Pijp is one of Amsterdam&apos;s liveliest neighbourhoods. Known for the Albert Cuyp
+                De Pijp is one of Amsterdam’s liveliest neighbourhoods. Known for the Albert Cuyp
                 market, cozy terraces and a young, active population. But if you want serious personal
                 training, options in De Pijp itself are limited. Most gyms are big chains without
                 personal attention. SculptClub in the Jordaan offers the alternative — a private studio
@@ -65,13 +65,13 @@ export default function PersonalTrainerDePijpEN() {
               <p>
                 The distance feels bigger than it is. Through the Vondelpark, you cycle from Ferdinand
                 Bolstraat to Egelantiersgracht in about 10 minutes. Tram 2 to Leidseplein plus a
-                5-minute walk also works. And when you arrive, there&apos;s no waiting — the studio is
+                5-minute walk also works. And when you arrive, there’s no waiting — the studio is
                 yours.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why a private studio?</h2>
               <p>
-                In De Pijp you&apos;ll find Basic-Fit and TrainMore on Ceintuurbaan and Ferdinand
+                In De Pijp you’ll find Basic-Fit and TrainMore on Ceintuurbaan and Ferdinand
                 Bolstraat. Crowded, impersonal, and you share every machine. At SculptClub you train
                 in a fully equipped private studio — power rack, cable machine, dumbbells up to 50 kg.
                 Maximum 3 people at a time. During personal training, just you and your trainer.
@@ -79,10 +79,10 @@ export default function PersonalTrainerDePijpEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers and rates</h2>
               <p>
-                Seven independent trainers. Specialisations: strength, nutrition, women&apos;s training,
+                Seven independent trainers. Specialisations: strength, nutrition, women’s training,
                 posture, technique and small group. Rates from €45 per session. First intro always free.
                 0% commission — you pay your trainer directly. No membership, no contract. For
-                rehabilitation or physiotherapy we&apos;ll refer you out — we don&apos;t have a
+                rehabilitation or physiotherapy we’ll refer you out — we don’t have a
                 physiotherapist on staff.
               </p>
 

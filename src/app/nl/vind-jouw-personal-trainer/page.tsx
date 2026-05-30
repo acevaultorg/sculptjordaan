@@ -224,7 +224,7 @@ export default function TrainersPageNL() {
             </a>
             <a href="/nl/blog/small-group-training-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Samen trainen (2–4 personen)</p>
-              <p className="text-sm text-muted-foreground">Duo of klein groepje met partner, vriend of collega&apos;s. Kosten delen, privé studio.</p>
+              <p className="text-sm text-muted-foreground">Duo of klein groepje met partner, vriend of collega’s. Kosten delen, privé studio.</p>
             </a>
             <a href="/nl/blog/personal-trainer-voor-senioren-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Voor senioren (50+)</p>

@@ -161,11 +161,11 @@ export default function LocationPageEN() {
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              The Jordaan — Amsterdam&apos;s Most Beloved Neighbourhood
+              The Jordaan — Amsterdam’s Most Beloved Neighbourhood
             </h2>
             <p className="text-muted-foreground mb-4">
               Our studio is located on the Egelantiersgracht, one of
-              Amsterdam&apos;s most beautiful canals. The Jordaan is known for
+              Amsterdam’s most beautiful canals. The Jordaan is known for
               its charming canal houses, cosy terraces and creative energy.
               Train in a neighbourhood that feels like home.
             </p>

@@ -248,7 +248,7 @@ export default function BoekGymPageNL() {
           <FadeIn>
             <div className="rounded-xl border bg-card p-5">
               <p className="text-sm leading-relaxed">
-                &ldquo;Geen drukte, geen wachten. Ik boek een uur, doe mijn workout en ben klaar. Precies wat ik zocht.&rdquo;
+                “Geen drukte, geen wachten. Ik boek een uur, doe mijn workout en ben klaar. Precies wat ik zocht.”
               </p>
               <p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p>
             </div>
@@ -256,7 +256,7 @@ export default function BoekGymPageNL() {
           <FadeIn delay={0.1}>
             <div className="rounded-xl border bg-card p-5">
               <p className="text-sm leading-relaxed">
-                &ldquo;De rust en focus in een privé studio is echt een gamechanger. Nooit meer terug naar een gewone gym.&rdquo;
+                “De rust en focus in een privé studio is echt een gamechanger. Nooit meer terug naar een gewone gym.”
               </p>
               <p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p>
             </div>

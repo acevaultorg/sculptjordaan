@@ -144,7 +144,7 @@ export default function ReviewsPageNL() {
               <div className="h-full rounded-2xl border border-border/50 bg-card p-6 shadow-brand-sm">
                 <StarRating rating={review.rating} />
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  &ldquo;{review.text}&rdquo;
+                  “{review.text}”
                 </p>
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">

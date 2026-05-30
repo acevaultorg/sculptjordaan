@@ -53,7 +53,7 @@ export default function SmallGroupTrainingAmsterdamEN() {
             <div className="prose prose-lg max-w-none">
               <p>
                 Not everyone wants to train solo. For many people, training works better with
-                someone alongside — a partner who&apos;s free the same morning, a friend with
+                someone alongside — a partner who’s free the same morning, a friend with
                 the same goals, two or three colleagues looking to break up the work week.
                 Small group training at SculptClub in the Jordaan gives you the quality of
                 personal coaching at a lower cost per person, without the crowd of a big-box
@@ -68,7 +68,7 @@ export default function SmallGroupTrainingAmsterdamEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">What is small group at SculptClub?</h2>
               <p>
                 Small group = 2 to 4 people training with one trainer in our private studio.
-                You choose who&apos;s in your group — these are always closed, fixed groups.
+                You choose who’s in your group — these are always closed, fixed groups.
                 No strangers, no queue for a rack, no announced workout-of-the-day.
               </p>
               <p>
@@ -109,10 +109,10 @@ export default function SmallGroupTrainingAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why not a CrossFit box or bootcamp?</h2>
               <p>
-                Nothing wrong with CrossFit or bootcamp if that&apos;s your thing. But they are:
+                Nothing wrong with CrossFit or bootcamp if that’s your thing. But they are:
               </p>
               <ul>
-                <li><strong>Open groups:</strong> You don&apos;t pick who&apos;s in. Energy varies session to session.</li>
+                <li><strong>Open groups:</strong> You don’t pick who’s in. Energy varies session to session.</li>
                 <li><strong>Fixed programme:</strong> Workout of the day, not tailored to your goal.</li>
                 <li><strong>High-intensity default:</strong> Works for conditioning; less for progressive squat technique or injury recovery.</li>
                 <li><strong>Not private:</strong> Coaching is shared across the whole class; technique mistakes can go unnoticed.</li>
@@ -131,7 +131,7 @@ export default function SmallGroupTrainingAmsterdamEN() {
                 <li><strong><a href="/en/plan-free-intro-with-dara" className="text-brand hover:underline">Dara</a></strong> — small group specialist. Energetic approach, strong fit for mixed groups and colleague teams.</li>
                 <li><strong>Alex</strong> — strength and calisthenics in duo or trio. Good fit when the whole group already has a baseline.</li>
                 <li><strong>Andrea</strong> — technical skill building. Suits duos who want to learn strength together.</li>
-                <li><strong><a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">Gezina</a></strong> — women&apos;s training in small groups (2-3 women).</li>
+                <li><strong><a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">Gezina</a></strong> — women’s training in small groups (2-3 women).</li>
                 <li><strong>Jearmey</strong> — strength and athletic performance; popular for duos with a sports background.</li>
               </ul>
 

@@ -126,7 +126,7 @@ export default function AboutPage() {
               <p>
                 SculptClub was born out of frustration with overcrowded gyms and
                 long-term contracts. We believe training should be personal
-                &mdash; without crowds, without obligations, without compromises.
+                — without crowds, without obligations, without compromises.
               </p>
               <p>
                 Our studio on the Egelantiersgracht offers an intimate training
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <p>
                 Whether you train with a personal trainer, come for an
                 independent Open Gym session, or rent our studio as a freelance
-                trainer for your own clients &mdash; at SculptClub it&apos;s all about
+                trainer for your own clients — at SculptClub it’s all about
                 quality over quantity.
               </p>
             </div>

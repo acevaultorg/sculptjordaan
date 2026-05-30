@@ -108,7 +108,7 @@ export default function SportschoolZonderAbonnementNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Optie 2: Strippenkaarten en rittenkaarten</h2>
               <p>
-                Sommige studio&apos;s en sportscholen werken met strippenkaarten. Je koopt een bundel van bijvoorbeeld
+                Sommige studio’s en sportscholen werken met strippenkaarten. Je koopt een bundel van bijvoorbeeld
                 10 of 20 sessies en gebruikt ze wanneer je wilt. Het voordeel: je betaalt alleen voor wat je
                 daadwerkelijk gebruikt. Het nadeel: strippenkaarten hebben vaak een vervaldatum en de prijs per sessie
                 kan hoger liggen dan bij een abonnement.
@@ -116,7 +116,7 @@ export default function SportschoolZonderAbonnementNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Optie 3: Pay-per-session apps</h2>
               <p>
-                Apps zoals OneFit en ClassPass bieden toegang tot meerdere sportscholen en studio&apos;s in Amsterdam
+                Apps zoals OneFit en ClassPass bieden toegang tot meerdere sportscholen en studio’s in Amsterdam
                 via een flexibel credits-systeem. Je betaalt per sessie of les en hebt toegang tot een breed aanbod.
                 Dit is ideaal als je van afwisseling houdt. Maar let op: populaire lessen zijn snel vol en de kosten
                 kunnen oplopen als je vaak traint.

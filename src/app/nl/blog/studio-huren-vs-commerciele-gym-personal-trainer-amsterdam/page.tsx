@@ -52,7 +52,7 @@ export default function BlogPostStudioVsCommercieleGym() {
                 {[
                   ["Toegang tot ledenbestand", "Direct potentiële klanten in de zaal. Je hoeft niet zelf aan acquisitie."],
                   ["Gym-uniform / branding", "Je draagt vaak een gym-shirt; je communiceert namens de gym, niet namens jezelf."],
-                  ["Verplichte uren", "Een aantal &ldquo;floor hours&rdquo; per week waarin je beschikbaar bent voor leden (vaak onbetaald of laag betaald)."],
+                  ["Verplichte uren", "Een aantal “floor hours” per week waarin je beschikbaar bent voor leden (vaak onbetaald of laag betaald)."],
                   ["Commissie 30-50%", "De gym pakt 30-50% van je sessietarief. €60 sessie → €30-42 voor jou."],
                   ["Geen klantcontact buiten sessie", "Communicatie buiten de gym (DMs, planning) loopt vaak via het gym-systeem."],
                   ["Lock-in via klantbestand", "Klanten zijn van de gym. Als je vertrekt, mag je ze niet meenemen (contractueel)."],
@@ -105,11 +105,11 @@ export default function BlogPostStudioVsCommercieleGym() {
               <p>Een commerciële gym branding doet je merk vaak meer kwaad dan goed:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["In commerciële gym", "&ldquo;Trainer bij Optimum Vondelpark&rdquo; — je bent onderdeel van een merk waar mensen ook een 5-euro maand-abonnement nemen. Je premium-status verdunt automatisch."],
-                  ["Bij privé studio", "&ldquo;Trainer bij SculptClub Jordaan&rdquo; OF gewoon &ldquo;Personal Trainer in Jordaan&rdquo; — je bent een onafhankelijke professional, niet een gym-werknemer."],
+                  ["In commerciële gym", "“Trainer bij Optimum Vondelpark” — je bent onderdeel van een merk waar mensen ook een 5-euro maand-abonnement nemen. Je premium-status verdunt automatisch."],
+                  ["Bij privé studio", "“Trainer bij SculptClub Jordaan” OF gewoon “Personal Trainer in Jordaan” — je bent een onafhankelijke professional, niet een gym-werknemer."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
-              <p>Voor wie premium-tarieven wil rekenen (€75+/sessie), is brand-positionering kritiek. Premium klanten betalen voor een onafhankelijk expert, niet voor &ldquo;de PT van de gym waar ik traint&rdquo;.</p>
+              <p>Voor wie premium-tarieven wil rekenen (€75+/sessie), is brand-positionering kritiek. Premium klanten betalen voor een onafhankelijk expert, niet voor “de PT van de gym waar ik traint”.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Wanneer commerciële gym tóch beter is</h2>
               <p>Dit blog doet niet alsof er nul rationale is om voor commerciële gym te kiezen. Voor sommige profielen werkt het:</p>

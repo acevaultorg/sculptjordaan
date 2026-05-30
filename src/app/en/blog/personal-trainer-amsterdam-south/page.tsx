@@ -52,8 +52,8 @@ export default function PTAmsterdamSouthEN() {
             <div className="prose prose-lg max-w-none">
               <p>
                 Amsterdam South — home to the Vondelpark, Beethovenstraat and the Zuidas
-                business district. One of the city&apos;s most popular residential areas. But
-                when it comes to personal training, you don&apos;t need to look far. SculptClub
+                business district. One of the city’s most popular residential areas. But
+                when it comes to personal training, you don’t need to look far. SculptClub
                 in the Jordaan is a 10-minute bike ride and offers something hard to find in
                 South: a private studio with no membership required.
               </p>
@@ -67,8 +67,8 @@ export default function PTAmsterdamSouthEN() {
                 a quiet canal in the heart of the Jordaan.
               </p>
               <p>
-                From the Vondelpark or Overtoom, cycle via the Nassaukade and you&apos;re there
-                in 10 minutes. From the Zuidas it&apos;s 15 minutes by bike or a quick tram ride
+                From the Vondelpark or Overtoom, cycle via the Nassaukade and you’re there
+                in 10 minutes. From the Zuidas it’s 15 minutes by bike or a quick tram ride
                 (lines 2 or 12 towards Centraal, get off at Elandsgracht).
               </p>
 
@@ -77,13 +77,13 @@ export default function PTAmsterdamSouthEN() {
                 <li><strong>Private studio:</strong> Train alone with your trainer — no other clients at the same time</li>
                 <li><strong>No membership:</strong> Book per session, cancel any time for free</li>
                 <li><strong>Free intro:</strong> The first session costs nothing</li>
-                <li><strong>Seven trainers:</strong> From strength training and nutrition to women&apos;s training and posture</li>
+                <li><strong>Seven trainers:</strong> From strength training and nutrition to women’s training and posture</li>
                 <li><strong>Door code via WhatsApp:</strong> The evening before, no reception needed</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Our trainers</h2>
               <p>
-                At SculptClub, trainers set their own specialisation and rates. You&apos;ll find
+                At SculptClub, trainers set their own specialisation and rates. You’ll find
                 the full profile of each trainer on our{" "}
                 <a href="/en/find-personal-trainer" className="text-brand hover:underline">trainers page</a>.
                 Personal training starts from €45 per session.
@@ -92,7 +92,7 @@ export default function PTAmsterdamSouthEN() {
                 <a href="/en/blog/nutrition-coach-amsterdam" className="text-brand hover:underline">Eva</a> combines
                 strength training with nutrition coaching as a certified dietitian. Joey
                 works with breathwork and self-inquiry alongside strength training. For
-                rehabilitation or physiotherapy we&apos;ll refer you out — we don&apos;t
+                rehabilitation or physiotherapy we’ll refer you out — we don’t
                 currently have a physiotherapist on staff.
               </p>
 
@@ -100,7 +100,7 @@ export default function PTAmsterdamSouthEN() {
               <p>
                 Prefer to train on your own? With <a href="/en/open-gym" className="text-brand hover:underline">Open
                 Gym</a> you get access to the same private studio, without a trainer. From
-                €5.75 per session, in 4-week cycles. Maximum 3 people at a time, so there&apos;s
+                €5.75 per session, in 4-week cycles. Maximum 3 people at a time, so there’s
                 always space.
               </p>
 

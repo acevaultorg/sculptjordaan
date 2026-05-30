@@ -625,7 +625,7 @@ export default function SocialPage() {
                       <div className="border-b border-white/10 px-5 py-4">
                         <h3 className="text-base font-bold text-white">Evergreen pool ({unscheduledIdeas.length})</h3>
                         <p className="mt-1 text-xs text-white/55">
-                          Posts that exist but aren&apos;t on the 4-week rotation. Post any time — no fixed date.
+                          Posts that exist but aren’t on the 4-week rotation. Post any time — no fixed date.
                           {organicCount > 0 && ` ${organicCount} organic`}
                           {adCount > 0 && ` · ${adCount} paid ad${adCount === 1 ? "" : "s"} (separate posting flow via Meta Ads)`}
                         </p>
@@ -701,7 +701,7 @@ export default function SocialPage() {
 
               <p className="text-center text-xs text-white/45">
                 Tip: bookmark <code className="rounded bg-white/10 px-1.5 py-0.5">sculptclub.nl/nl/social</code> as a home-screen
-                shortcut on your phone — overview opens by default with today&apos;s post highlighted.
+                shortcut on your phone — overview opens by default with today’s post highlighted.
               </p>
             </FadeIn>
           );

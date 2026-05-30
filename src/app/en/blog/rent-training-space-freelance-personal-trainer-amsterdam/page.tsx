@@ -82,10 +82,10 @@ export default function BlogPostFreelanceTrainerEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                You&apos;re registered as a freelance personal trainer, your first clients are coming in,
-                and now you need somewhere to train them. Training at their homes doesn&apos;t scale. Renting
+                You’re registered as a freelance personal trainer, your first clients are coming in,
+                and now you need somewhere to train them. Training at their homes doesn’t scale. Renting
                 your own place is too expensive. An hourly studio rental is the sweet spot — professional,
-                flexible and affordable. Here&apos;s everything you need to know about renting training
+                flexible and affordable. Here’s everything you need to know about renting training
                 space in Amsterdam as a freelance PT.
               </p>
 
@@ -102,7 +102,7 @@ export default function BlogPostFreelanceTrainerEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">What does training space cost in Amsterdam?</h2>
               <p>
                 Leasing your own studio in Amsterdam starts at €1,500 to €3,000 per month, excluding
-                equipment, cleaning and maintenance. For a freelance trainer just starting out, that&apos;s
+                equipment, cleaning and maintenance. For a freelance trainer just starting out, that’s
                 a huge risk.
               </p>
               <p>
@@ -110,7 +110,7 @@ export default function BlogPostFreelanceTrainerEN() {
                 half the studio from €12 per 60 minutes, or the full studio from €17 per hour. With
                 discount packages you save up to 23%. The math: if you run 20 sessions per week at €50
                 each, your studio space at SculptClub costs roughly 15 to 20 percent of revenue —
-                compare that to the 40 to 60 percent you&apos;d give up at a big gym chain.
+                compare that to the 40 to 60 percent you’d give up at a big gym chain.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Tax benefits for freelance trainers in the Netherlands</h2>
@@ -138,7 +138,7 @@ export default function BlogPostFreelanceTrainerEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What to look for in a training space</h2>
               <p>
-                Not every space is suitable for personal training. Here&apos;s what to check:
+                Not every space is suitable for personal training. Here’s what to check:
               </p>
               <ul>
                 <li><strong>Equipment:</strong> Power rack, cable machine, dumbbells, bench — the essentials for any PT session</li>
@@ -165,7 +165,7 @@ export default function BlogPostFreelanceTrainerEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Step-by-step: how to get started</h2>
               <p>
-                Ready to go? Here&apos;s how to start renting training space as a freelance PT:
+                Ready to go? Here’s how to start renting training space as a freelance PT:
               </p>
               <ol>
                 <li>Make sure your Chamber of Commerce registration is in order</li>
@@ -177,7 +177,7 @@ export default function BlogPostFreelanceTrainerEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Get started at SculptClub</h2>
               <p>
-                SculptClub in Amsterdam&apos;s Jordaan neighbourhood is built for independent trainers.
+                SculptClub in Amsterdam’s Jordaan neighbourhood is built for independent trainers.
                 A fully equipped private studio, bookable by the hour, no long-term contract and always
                 free cancellation. Studio rental from €12 per hour, with discount packages up to 23% off.
                 0% commission — what you earn, you keep.

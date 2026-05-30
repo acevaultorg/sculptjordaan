@@ -63,7 +63,7 @@ export default function BlogPostFreelanceTrainerTax() {
 
             <div className="prose prose-invert max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg text-foreground">
-                You&apos;re starting as a personal trainer in the Netherlands. Before your first invoice goes out, there&apos;s a handful of formal steps you cannot skip: KvK registration, VAT administration, professional liability, and over time pension. This guide walks through each, with current 2026 numbers.
+                You’re starting as a personal trainer in the Netherlands. Before your first invoice goes out, there’s a handful of formal steps you cannot skip: KvK registration, VAT administration, professional liability, and over time pension. This guide walks through each, with current 2026 numbers.
               </p>
               <p>
                 <em>Note: this article is informational, not tax or legal advice. For your specific situation, consult a Dutch tax advisor, accountant, or the Belastingdienst directly.</em>
@@ -71,13 +71,13 @@ export default function BlogPostFreelanceTrainerTax() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Step 1 — When are you formally a freelancer (ZZP)?</h2>
               <p>
-                You&apos;re a freelancer once you register at the Chamber of Commerce (Kamer van Koophandel, KvK) as a sole trader (eenmanszaak). Before that registration, you cannot legally invoice — receiving money for services without a KvK and VAT number is technically undeclared work.
+                You’re a freelancer once you register at the Chamber of Commerce (Kamer van Koophandel, KvK) as a sole trader (eenmanszaak). Before that registration, you cannot legally invoice — receiving money for services without a KvK and VAT number is technically undeclared work.
               </p>
               <p>
-                Grey area: occasionally helping a friend in exchange for a coffee or dinner isn&apos;t commerce. But the moment you structurally deliver paid services, you&apos;re formally an entrepreneur and need to register.
+                Grey area: occasionally helping a friend in exchange for a coffee or dinner isn’t commerce. But the moment you structurally deliver paid services, you’re formally an entrepreneur and need to register.
               </p>
               <p>
-                Practical definition of &ldquo;structural&rdquo;: more than 3-4 paid sessions per month, or pre-arranged client relationships with invoices.
+                Practical definition of “structural”: more than 3-4 paid sessions per month, or pre-arranged client relationships with invoices.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Step 2 — KvK registration (€82.25, 1 day)</h2>
@@ -109,15 +109,15 @@ export default function BlogPostFreelanceTrainerTax() {
                 Example: your net rate is €50/session. Your invoice reads €50 + €10.50 VAT = €60.50. You remit the €10.50 to the Belastingdienst.
               </p>
               <p>
-                A common confusion: there is a &ldquo;sport VAT exemption&rdquo; but it only applies to non-profit clubs and associations. Commercial 1-on-1 PT does not qualify.
+                A common confusion: there is a “sport VAT exemption” but it only applies to non-profit clubs and associations. Commercial 1-on-1 PT does not qualify.
               </p>
               <p>
-                VAT filing is quarterly (or monthly above ~€100k revenue). The Small Business Scheme (KOR) is an option below €20,000 annual revenue — no VAT charged, but you also cannot deduct input VAT. For most ambitious PTs, KOR isn&apos;t the right choice.
+                VAT filing is quarterly (or monthly above ~€100k revenue). The Small Business Scheme (KOR) is an option below €20,000 annual revenue — no VAT charged, but you also cannot deduct input VAT. For most ambitious PTs, KOR isn’t the right choice.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Step 4 — Professional liability insurance (~€25-50/month)</h2>
               <p>
-                As a PT you&apos;re responsible for your clients&apos; physical safety. If someone injures during your session and holds you liable, the financial consequences can be enormous.
+                As a PT you’re responsible for your clients’ physical safety. If someone injures during your session and holds you liable, the financial consequences can be enormous.
               </p>
               <p>
                 Professional liability insurance (beroepsaansprakelijkheidsverzekering, BA) covers damage you cause as a professional to others. Insurers offering PT policies in the Netherlands:
@@ -136,15 +136,15 @@ export default function BlogPostFreelanceTrainerTax() {
                 ))}
               </ul>
               <p>
-                Expect ~€25-50/month for €1-€2.5M coverage. Significantly lower amounts barely exist seriously. Significantly higher isn&apos;t needed without a large schedule.
+                Expect ~€25-50/month for €1-€2.5M coverage. Significantly lower amounts barely exist seriously. Significantly higher isn’t needed without a large schedule.
               </p>
               <p>
-                <strong className="text-foreground">At SculptClub:</strong> we require a valid BA policy if you rent our studio. Not because we take commission (we don&apos;t — 0%), but because we want the risk pyramid clean for everyone.
+                <strong className="text-foreground">At SculptClub:</strong> we require a valid BA policy if you rent our studio. Not because we take commission (we don’t — 0%), but because we want the risk pyramid clean for everyone.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Step 5 — Disability insurance (AOV)</h2>
               <p>
-                An AOV covers your income when you cannot work yourself (injury, illness, mental health). It&apos;s NOT legally required for freelancers, but it&apos;s an important consideration.
+                An AOV covers your income when you cannot work yourself (injury, illness, mental health). It’s NOT legally required for freelancers, but it’s an important consideration.
               </p>
               <p>
                 Three main paths:
@@ -167,7 +167,7 @@ export default function BlogPostFreelanceTrainerTax() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Step 6 — Pension — no employer, so you arrange it</h2>
               <p>
-                Freelancers don&apos;t build pension via an employer. You&apos;ll get state pension (AOW) from age 67, but in 2026 that&apos;s about €1,200 net/month — not enough to live on. Supplementary pension is on you.
+                Freelancers don’t build pension via an employer. You’ll get state pension (AOW) from age 67, but in 2026 that’s about €1,200 net/month — not enough to live on. Supplementary pension is on you.
               </p>
               <p>
                 Three popular routes for freelancer pension:
@@ -205,7 +205,7 @@ export default function BlogPostFreelanceTrainerTax() {
                 ))}
               </ul>
               <p>
-                For 90% of starting PTs, <strong className="text-foreground">MoneyMonk</strong> is the sweet spot. ~€15/month, saves a day&apos;s work per quarter on VAT, and annual statement is automated. Investment that pays back.
+                For 90% of starting PTs, <strong className="text-foreground">MoneyMonk</strong> is the sweet spot. ~€15/month, saves a day’s work per quarter on VAT, and annual statement is automated. Investment that pays back.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Step 8 — First income tax filing</h2>

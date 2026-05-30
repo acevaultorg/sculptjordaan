@@ -80,8 +80,8 @@ export default function GymWithoutMembershipEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                You want to work out in Amsterdam, but you don&apos;t want to commit to a yearly membership at a
-                crowded gym costing 30 to 50 euros per month. Sound familiar? You&apos;re not alone. More and more
+                You want to work out in Amsterdam, but you don’t want to commit to a yearly membership at a
+                crowded gym costing 30 to 50 euros per month. Sound familiar? You’re not alone. More and more
                 people in Amsterdam are looking for flexible fitness options without long-term contracts. In this
                 article, we break down the best alternatives.
               </p>
@@ -90,7 +90,7 @@ export default function GymWithoutMembershipEN() {
               <p>
                 There are plenty of valid reasons to avoid a fixed membership. Maybe you travel frequently for
                 work, have an irregular schedule, or want to explore different types of exercise before committing.
-                Or perhaps you&apos;ve experienced paying for months at a gym you barely visited.
+                Or perhaps you’ve experienced paying for months at a gym you barely visited.
               </p>
               <p>
                 The good news: Amsterdam offers an increasing number of ways to work out flexibly. From day passes
@@ -139,7 +139,7 @@ export default function GymWithoutMembershipEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Cost comparison per month</h2>
               <p>
-                Let&apos;s compare costs for someone who wants to train 3 times per week (12 sessions per month):
+                Let’s compare costs for someone who wants to train 3 times per week (12 sessions per month):
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Large gym membership</strong> — 30 to 50 euros per month (limited flexibility)</li>
@@ -179,7 +179,7 @@ export default function GymWithoutMembershipEN() {
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Try Open Gym for free</h3>
               <p className="text-muted-foreground mb-6">
-                Experience what it&apos;s like to train in a private studio. First session free.
+                Experience what it’s like to train in a private studio. First session free.
               </p>
               <ButtonLink href="/en/open-gym" size="lg">
                 More about Open Gym

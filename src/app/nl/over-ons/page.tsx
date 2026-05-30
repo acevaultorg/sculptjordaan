@@ -128,7 +128,7 @@ export default function OverOnsPage() {
               <p>
                 SculptClub is ontstaan uit frustratie met overvolle sportscholen
                 en lange contracten. Wij geloven dat trainen persoonlijk hoort
-                te zijn &mdash; zonder drukte, zonder verplichtingen, zonder
+                te zijn — zonder drukte, zonder verplichtingen, zonder
                 compromissen.
               </p>
               <p>
@@ -140,7 +140,7 @@ export default function OverOnsPage() {
               <p>
                 Of je nu traint met een personal trainer, zelfstandig komt
                 trainen via Open Gym, of als ZZP-trainer onze studio huurt voor
-                je eigen klanten &mdash; bij SculptClub draait alles om kwaliteit
+                je eigen klanten — bij SculptClub draait alles om kwaliteit
                 boven kwantiteit.
               </p>
             </div>

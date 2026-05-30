@@ -161,7 +161,7 @@ export default function LocationPageNL() {
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              De Jordaan — Amsterdam&apos;s meest geliefde buurt
+              De Jordaan — Amsterdam’s meest geliefde buurt
             </h2>
             <p className="text-muted-foreground mb-4">
               Onze studio ligt aan de Egelantiersgracht, een van de mooiste

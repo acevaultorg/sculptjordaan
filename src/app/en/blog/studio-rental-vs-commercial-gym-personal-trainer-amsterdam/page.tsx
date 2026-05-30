@@ -49,7 +49,7 @@ export default function BlogPostStudioVsCommercialGym() {
                 {[
                   ["Access to member base", "Direct potential clients on the floor. You don't have to do all acquisition yourself."],
                   ["Gym uniform / branding", "You often wear a gym shirt; you communicate on behalf of the gym, not yourself."],
-                  ["Mandatory hours", "A number of &ldquo;floor hours&rdquo; per week you're available for members (often unpaid or low-paid)."],
+                  ["Mandatory hours", "A number of “floor hours” per week you're available for members (often unpaid or low-paid)."],
                   ["30-50% commission", "The gym takes 30-50% of your session rate. €60 session → €30-42 for you."],
                   ["No client contact outside session", "Communication outside the gym (DMs, planning) often runs via the gym system."],
                   ["Lock-in via client base", "Clients belong to the gym. When you leave, you can't take them (contractually)."],
@@ -100,11 +100,11 @@ export default function BlogPostStudioVsCommercialGym() {
               <p>Commercial gym branding often hurts your brand more than helps:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["In commercial gym", "&ldquo;Trainer at Optimum Vondelpark&rdquo; — you're part of a brand where people also take €5/month memberships. Your premium status dilutes automatically."],
-                  ["At private studio", "&ldquo;Trainer at SculptClub Jordaan&rdquo; OR simply &ldquo;Personal Trainer in Jordaan&rdquo; — you're an independent professional, not a gym employee."],
+                  ["In commercial gym", "“Trainer at Optimum Vondelpark” — you're part of a brand where people also take €5/month memberships. Your premium status dilutes automatically."],
+                  ["At private studio", "“Trainer at SculptClub Jordaan” OR simply “Personal Trainer in Jordaan” — you're an independent professional, not a gym employee."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
-              <p>For trainers who want to charge premium rates (€75+/session), brand positioning is critical. Premium clients pay for an independent expert, not for &ldquo;the PT at the gym where I work out&rdquo;.</p>
+              <p>For trainers who want to charge premium rates (€75+/session), brand positioning is critical. Premium clients pay for an independent expert, not for “the PT at the gym where I work out”.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">When commercial gym IS still better</h2>
               <p>This blog doesn't pretend there's zero rationale for commercial gym. For some profiles it works:</p>

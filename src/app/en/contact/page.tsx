@@ -178,7 +178,7 @@ export default function ContactPageEN() {
                     <CheckCircle className="w-12 h-12 text-brand mx-auto mb-3" />
                     <p className="font-semibold text-lg mb-1">Message ready!</p>
                     <p className="text-sm text-muted-foreground mb-4">
-                      You&apos;re being redirected to WhatsApp to send your message. We usually reply within 1 hour.
+                      You’re being redirected to WhatsApp to send your message. We usually reply within 1 hour.
                     </p>
                     <button
                       type="button"

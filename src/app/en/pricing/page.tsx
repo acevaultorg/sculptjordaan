@@ -230,12 +230,12 @@ export default function PricingPageEN() {
         <FadeIn>
           <Card className="mx-auto max-w-lg text-center">
             <CardHeader>
-              <CardTitle className="text-2xl">From &euro;45 / session</CardTitle>
+              <CardTitle className="text-2xl">From €45 / session</CardTitle>
               <CardDescription>Trainers set their own rates</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">
-                First intro always free. 0% commission &mdash; the price your trainer quotes is what you pay.
+                First intro always free. 0% commission — the price your trainer quotes is what you pay.
               </p>
             </CardContent>
             <CardFooter className="justify-center">
@@ -347,13 +347,13 @@ export default function PricingPageEN() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 font-medium">Half studio (1:1)</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;12</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
+                    <td className="px-4 py-3 text-center font-semibold">€12</td>
+                    <td className="px-4 py-3 text-center font-semibold">€17</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;17</td>
-                    <td className="px-4 py-3 text-center font-semibold">&euro;24</td>
+                    <td className="px-4 py-3 text-center font-semibold">€17</td>
+                    <td className="px-4 py-3 text-center font-semibold">€24</td>
                   </tr>
                 </tbody>
               </table>
@@ -371,9 +371,9 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;99</span>
+                  <span className="sc-price-old">€99</span>
                 </p>
-                <p className="text-3xl font-bold">&euro;89</p>
+                <p className="text-3xl font-bold">€89</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 10%</span>
                 </p>
@@ -394,9 +394,9 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;234</span>
+                  <span className="sc-price-old">€234</span>
                 </p>
-                <p className="text-3xl font-bold">&euro;199</p>
+                <p className="text-3xl font-bold">€199</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 15%</span>
                 </p>
@@ -417,9 +417,9 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;436</span>
+                  <span className="sc-price-old">€436</span>
                 </p>
-                <p className="text-3xl font-bold">&euro;349</p>
+                <p className="text-3xl font-bold">€349</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 20%</span>
                 </p>
@@ -440,9 +440,9 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">&euro;713</span>
+                  <span className="sc-price-old">€713</span>
                 </p>
-                <p className="text-3xl font-bold">&euro;549</p>
+                <p className="text-3xl font-bold">€549</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 23%</span>
                 </p>

@@ -90,7 +90,7 @@ export default function LichaamssamenstllingVerbeterenAmsterdam() {
                 van je lichaamsgewicht bestaat uit vet, spier, bot en water. Een hoog vetpercentage
                 bij normaal gewicht — ook wel <em>skinny fat</em> — is een even groot
                 gezondheidsrisico als overgewicht op de weegschaal. Omgekeerd kunnen mensen met
-                relatief veel spiermassa zwaarder wegen dan het &ldquo;ideale gewicht&rdquo; terwijl
+                relatief veel spiermassa zwaarder wegen dan het “ideale gewicht” terwijl
                 ze uitstekend gezond zijn.
               </p>
               <p>
@@ -142,7 +142,7 @@ export default function LichaamssamenstllingVerbeterenAmsterdam() {
               </h2>
               <p>
                 Training en voeding zijn onlosmakelijk verbonden. Je kunt niet trainen tegen een
-                slecht voedingspatroon. Maar &ldquo;minder eten&rdquo; is ook niet het antwoord —
+                slecht voedingspatroon. Maar “minder eten” is ook niet het antwoord —
                 het gaat om de <em>samenstelling</em> van je voeding:
               </p>
               <ul>
@@ -154,7 +154,7 @@ export default function LichaamssamenstllingVerbeterenAmsterdam() {
                 <li>
                   <strong>Caloriebalans:</strong> Body recomposition werkt het beste bij een
                   lichte calorietekort of onderhoudscalorieën — niet bij extreme restricties die
-                  je lichaam in &ldquo;hongermodus&rdquo; brengen.
+                  je lichaam in “hongermodus” brengen.
                 </li>
                 <li>
                   <strong>Timing:</strong> Eten rondom je training — voor energie, na training voor
@@ -183,7 +183,7 @@ export default function LichaamssamenstllingVerbeterenAmsterdam() {
               </p>
               <ul>
                 <li>Omvangmetingen (taille, heup, bovenbeen, bovenarmen)</li>
-                <li>Voor- en nafoto&rsquo;s elke 4 weken</li>
+                <li>Voor- en nafoto’s elke 4 weken</li>
                 <li>Hoe kleding zit</li>
                 <li>Prestaties in de training (meer gewicht, meer herhalingen)</li>
                 <li>Energieniveau en slaapkwaliteit</li>

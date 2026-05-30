@@ -141,7 +141,7 @@ export default function BoekTrainerPageNL() {
           <FadeIn>
             <div className="rounded-xl border bg-card p-5">
               <p className="text-sm leading-relaxed">
-                &ldquo;Geen drukke sportschool, gewoon een rustige studio met een trainer die echt naar je luistert. Na 3 maanden zie ik al verschil.&rdquo;
+                “Geen drukke sportschool, gewoon een rustige studio met een trainer die echt naar je luistert. Na 3 maanden zie ik al verschil.”
               </p>
               <p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p>
             </div>
@@ -149,7 +149,7 @@ export default function BoekTrainerPageNL() {
           <FadeIn delay={0.1}>
             <div className="rounded-xl border bg-card p-5">
               <p className="text-sm leading-relaxed">
-                &ldquo;Persoonlijke aandacht zonder abonnement. Mijn trainer past het schema aan op mijn drukke werkweek.&rdquo;
+                “Persoonlijke aandacht zonder abonnement. Mijn trainer past het schema aan op mijn drukke werkweek.”
               </p>
               <p className="mt-2 text-xs text-muted-foreground">— Google Review, ★★★★★</p>
             </div>

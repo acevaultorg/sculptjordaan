@@ -55,7 +55,7 @@ export default function FemalePTAmsterdamEN() {
                 out of principle, but for practical reasons: technique coaching from someone
                 who has the same body, questions about hormones or cycle phase without the
                 awkwardness, and a training space that feels like your space rather than
-                somebody else&apos;s gym. At SculptClub in the Jordaan we have three female
+                somebody else’s gym. At SculptClub in the Jordaan we have three female
                 trainers. No crowded gym floor, no unsolicited staring — just you, your trainer
                 and the private studio.
               </p>
@@ -70,34 +70,34 @@ export default function FemalePTAmsterdamEN() {
                 <li><strong>Body understanding:</strong> Cueing for hips, core and lower back from lived experience often lands faster</li>
                 <li><strong>Hormonal context:</strong> Training around your cycle, pregnancy, postpartum or menopause is easier to talk through with a woman who has been there</li>
                 <li><strong>Comfort with strength work:</strong> Not everyone feels at ease doing a heavy squat or deadlift for the first time with a man watching</li>
-                <li><strong>Role model:</strong> Seeing a woman move heavy weight, be stronger than you&apos;d expect, and navigate the weight rack without hesitation — that changes how you see yourself</li>
+                <li><strong>Role model:</strong> Seeing a woman move heavy weight, be stronger than you’d expect, and navigate the weight rack without hesitation — that changes how you see yourself</li>
               </ul>
               <p>
-                These points don&apos;t apply to every woman. For some it really doesn&apos;t matter
-                and they&apos;re equally happy training with a male coach. That&apos;s fine too. But if
-                it does matter to you, it&apos;s good to know you don&apos;t have to compromise.
+                These points don’t apply to every woman. For some it really doesn’t matter
+                and they’re equally happy training with a male coach. That’s fine too. But if
+                it does matter to you, it’s good to know you don’t have to compromise.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">The three female trainers at SculptClub</h2>
               <p>
                 SculptClub has three female trainers. Each one is independent and sets her own
-                approach. Pick based on what you&apos;re looking for, not on who&apos;s available first.
+                approach. Pick based on what you’re looking for, not on who’s available first.
               </p>
 
-              <h3 className="text-xl font-bold mt-8 mb-3">Gezina — Women&apos;s training, strength, performance</h3>
+              <h3 className="text-xl font-bold mt-8 mb-3">Gezina — Women’s training, strength, performance</h3>
               <p>
                 Gezina specifically specialises in training women. She works with women who
                 want to get serious about strength training, train for performance, or build a
                 long-term progression plan. Her approach is technical, structured and
                 challenging without being performative. Book a{" "}
                 <a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">free intro with Gezina</a>{" "}
-                if you&apos;re ready to actually get stronger.
+                if you’re ready to actually get stronger.
               </p>
 
               <h3 className="text-xl font-bold mt-8 mb-3">Eva — Strength and nutrition</h3>
               <p>
                 Eva is both a certified dietitian and a personal trainer. A rare combination:
-                she doesn&apos;t just coach you in the studio — she also looks at what you eat and
+                she doesn’t just coach you in the studio — she also looks at what you eat and
                 how it affects your training and recovery. Useful if your goals involve fat
                 loss, body composition, energy or building muscle. More on the nutrition side?
                 See <a href="/en/blog/nutrition-coach-amsterdam" className="text-brand hover:underline">nutrition coach in Amsterdam</a>.
@@ -106,18 +106,18 @@ export default function FemalePTAmsterdamEN() {
               <h3 className="text-xl font-bold mt-8 mb-3">Andrea — Strength, posture, technique</h3>
               <p>
                 Andrea works with 45-minute sessions at €45. Her focus is posture, movement
-                technique and building a strong foundation. A good match if you&apos;re new to
+                technique and building a strong foundation. A good match if you’re new to
                 strength training, have a desk job, or want to nail technique before loading
                 the bar.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Private studio — why this tips the balance for many women</h2>
               <p>
-                A large gym isn&apos;t always a comfortable place for women to learn strength
+                A large gym isn’t always a comfortable place for women to learn strength
                 training. The bench area is claimed by men cheering each other on, the squat
                 rack queue feels like an exam, and unsolicited advice is more frustrating than
                 useful. A <a href="/en/blog/private-gym-vs-big-box-gym" className="text-brand hover:underline">private gym versus a big-box gym</a> is
-                a different universe: your trainer arranges the studio for your session and you&apos;re there alone
+                a different universe: your trainer arranges the studio for your session and you’re there alone
                 with your trainer (or alone in <a href="/en/open-gym" className="text-brand hover:underline">Open Gym</a>),
                 and nobody is watching your form.
               </p>
@@ -136,7 +136,7 @@ export default function FemalePTAmsterdamEN() {
               </p>
               <p>
                 No membership, no contract, no notice period. Cancellation is always free — even
-                ten minutes before the session. That&apos;s more relaxing than it sounds: you book
+                ten minutes before the session. That’s more relaxing than it sounds: you book
                 when you can and step back without negotiating a policy.
               </p>
 
@@ -147,7 +147,7 @@ export default function FemalePTAmsterdamEN() {
                   take the short matching quiz.</li>
                 <li><strong>Book a free intro.</strong> First session is always free. You
                   discuss your goal, show your movement, and check if the fit feels right.</li>
-                <li><strong>Decide after.</strong> No pressure. If it doesn&apos;t click, try
+                <li><strong>Decide after.</strong> No pressure. If it doesn’t click, try
                   another trainer — or start on your own time with{" "}
                   <a href="/en/blog/strength-training-beginners-guide" className="text-brand hover:underline">strength training for beginners</a>{" "}
                   in Open Gym.</li>

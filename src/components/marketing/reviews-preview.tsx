@@ -78,7 +78,7 @@ export function ReviewsPreview({ locale }: { locale: Locale }) {
                   ))}
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  &ldquo;{review.text[locale]}&rdquo;
+                  “{review.text[locale]}”
                 </p>
                 <div className="mt-4 flex items-center gap-3">
                   {/* Avatar circle with initial (like Google) */}

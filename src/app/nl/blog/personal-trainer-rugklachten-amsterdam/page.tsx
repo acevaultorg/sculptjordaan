@@ -92,7 +92,7 @@ export default function PersonalTrainerRugklachtenAmsterdam() {
                 <li><strong>Techniek bewaken:</strong> Compensatiepatronen — de manier waarop je tilt, opstaat, een been belast — sluipen er onbewust in. Je trainer corrigeert ze sessie voor sessie.</li>
                 <li><strong>Opbouwende belasting:</strong> Geen oefeningen die je klachten provoceren, wel een progressief programma dat de spieren traint die jouw rug ondersteunen.</li>
                 <li><strong>Houding en bewegingspatroon:</strong> Andrea is bij SculptClub gespecialiseerd in techniek, houding en kracht — een logische match als rugpijn voortkomt uit langdurig zitten of verkeerde belasting.</li>
-                <li><strong>Afstemming met je behandelaar:</strong> Loop je nog onder behandeling? Dan stemt je trainer af met je fysiotherapeut zodat de programma&apos;s elkaar versterken, niet tegenwerken.</li>
+                <li><strong>Afstemming met je behandelaar:</strong> Loop je nog onder behandeling? Dan stemt je trainer af met je fysiotherapeut zodat de programma’s elkaar versterken, niet tegenwerken.</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Hoe een opbouw eruit kan zien</h2>

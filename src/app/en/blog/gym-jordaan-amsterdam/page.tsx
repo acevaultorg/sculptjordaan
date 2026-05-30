@@ -82,16 +82,16 @@ export default function GymJordaanEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                The Jordaan is one of Amsterdam&apos;s most popular neighbourhoods to live and work.
-                But if you&apos;re looking for a gym here, you&apos;ll quickly notice the options are
+                The Jordaan is one of Amsterdam’s most popular neighbourhoods to live and work.
+                But if you’re looking for a gym here, you’ll quickly notice the options are
                 different from areas like Zuid or Oost. The neighbourhood is compact, buildings are
-                small, and big fitness chains simply don&apos;t fit. That makes the Jordaan interesting
+                small, and big fitness chains simply don’t fit. That makes the Jordaan interesting
                 for anyone looking for a more personal training experience.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What types of gyms are in the Jordaan?</h2>
               <p>
-                In the Jordaan, you&apos;ll mainly find three types of places to train:
+                In the Jordaan, you’ll mainly find three types of places to train:
               </p>
               <ul>
                 <li><strong>Big chains nearby:</strong> Basic-Fit and TrainMore have locations within
@@ -107,7 +107,7 @@ export default function GymJordaanEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why are more people choosing a private studio?</h2>
               <p>
-                The trend is clear: people don&apos;t want to stand in a crowded gym anymore. They want
+                The trend is clear: people don’t want to stand in a crowded gym anymore. They want
                 to train at their own pace, without waiting, without busy changing rooms and without the
                 social pressure that many beginners feel. A private studio offers exactly that. You book
                 a time slot, receive a door code and train in peace.
@@ -132,7 +132,7 @@ export default function GymJordaanEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Personal training in the Jordaan</h2>
               <p>
-                If you&apos;re looking for guidance, several trainers in the Jordaan offer personal
+                If you’re looking for guidance, several trainers in the Jordaan offer personal
                 training. At SculptClub, <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">seven independent trainers</Link> work with rates from €45 per
                 session. The first intro is always free with no obligation. Each trainer sets their
                 own rate — we charge 0% commission, so what you pay goes entirely to your trainer.
@@ -151,7 +151,7 @@ export default function GymJordaanEN() {
               <p>
                 Curious if a private studio is right for you? Book a free trial at Open Gym or
                 schedule a free intro with a personal trainer. No obligations, no membership — just
-                come and see if it&apos;s for you.
+                come and see if it’s for you.
               </p>
             </div>
 

@@ -67,7 +67,7 @@ export default function BlogPostGymRentalPerHour() {
 
             <div className="prose prose-invert max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg text-foreground">
-                As a freelance personal trainer or physiotherapist in Amsterdam, you face one major challenge: you need a professional space, but you don&apos;t want fixed monthly costs for a gym you only use part of the time. The solution? Renting a gym or training studio by the hour.
+                As a freelance personal trainer or physiotherapist in Amsterdam, you face one major challenge: you need a professional space, but you don’t want fixed monthly costs for a gym you only use part of the time. The solution? Renting a gym or training studio by the hour.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Why hourly rental beats a fixed gym</h2>
@@ -93,7 +93,7 @@ export default function BlogPostGymRentalPerHour() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What does gym rental per hour cost in Amsterdam?</h2>
               <p>
-                Prices for renting a training space by the hour in Amsterdam vary widely. Here&apos;s an overview:
+                Prices for renting a training space by the hour in Amsterdam vary widely. Here’s an overview:
               </p>
               <div className="overflow-hidden rounded-xl border border-border bg-card my-6">
                 <table className="w-full text-sm">
@@ -140,7 +140,7 @@ export default function BlogPostGymRentalPerHour() {
                 ))}
               </ul>
               <p>
-                There&apos;s no lengthy selection process or waiting list. Book a trial session, see the space, and start reserving slots from there.
+                There’s no lengthy selection process or waiting list. Book a trial session, see the space, and start reserving slots from there.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What equipment is in the studio?</h2>
@@ -176,7 +176,7 @@ export default function BlogPostGymRentalPerHour() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Location: private studio in Amsterdam Jordaan</h2>
               <p>
-                SculptClub is located on the Egelantiersgracht in the Jordaan, one of Amsterdam&apos;s most central and well-connected neighbourhoods. Easy to reach by bike, public transport, or car. The quiet canal-side setting of the Jordaan suits the private, boutique feel of the studio perfectly.
+                SculptClub is located on the Egelantiersgracht in the Jordaan, one of Amsterdam’s most central and well-connected neighbourhoods. Easy to reach by bike, public transport, or car. The quiet canal-side setting of the Jordaan suits the private, boutique feel of the studio perfectly.
               </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">

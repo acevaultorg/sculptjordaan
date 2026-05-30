@@ -90,12 +90,12 @@ export default function ImproveBodyCompositionAmsterdam() {
                 muscle, bone, and water. A high body fat percentage at a normal weight —
                 sometimes called <em>skinny fat</em> — carries the same health risks as
                 overweight on the scale. Conversely, people with significant muscle mass may
-                weigh more than the &ldquo;ideal weight&rdquo; while being in excellent health.
+                weigh more than the “ideal weight” while being in excellent health.
               </p>
               <p>
                 Reducing body fat while building muscle simultaneously is called{" "}
                 <strong>body recomposition</strong>. It requires two things at once: the right
-                training and nutrition that supports that process. That&rsquo;s exactly why
+                training and nutrition that supports that process. That’s exactly why
                 random cardio or a crash diet rarely works — you also lose muscle mass, which
                 slows your metabolism and makes results harder to maintain.
               </p>
@@ -105,7 +105,7 @@ export default function ImproveBodyCompositionAmsterdam() {
               </h2>
               <p>
                 Strength training is the most effective method to improve body composition.
-                Here&rsquo;s why:
+                Here’s why:
               </p>
               <ul>
                 <li>
@@ -139,20 +139,20 @@ export default function ImproveBodyCompositionAmsterdam() {
                 Nutrition as the second pillar
               </h2>
               <p>
-                Training and nutrition are inseparable. You can&rsquo;t out-train a poor diet.
-                But &ldquo;eating less&rdquo; isn&rsquo;t the answer either — it&rsquo;s about
+                Training and nutrition are inseparable. You can’t out-train a poor diet.
+                But “eating less” isn’t the answer either — it’s about
                 the <em>composition</em> of your diet:
               </p>
               <ul>
                 <li>
                   <strong>Protein intake:</strong> Sufficient protein (1.6–2.2 g per kg body
                   weight per day) is essential for muscle recovery and growth. Without that
-                  signal, your body won&rsquo;t build muscle — even if you train hard.
+                  signal, your body won’t build muscle — even if you train hard.
                 </li>
                 <li>
                   <strong>Calorie balance:</strong> Body recomposition works best at a slight
                   calorie deficit or maintenance calories — not extreme restrictions that put your
-                  body into &ldquo;starvation mode.&rdquo;
+                  body into “starvation mode.”
                 </li>
                 <li>
                   <strong>Timing:</strong> Eating around your training — fuel before, recovery
@@ -173,8 +173,8 @@ export default function ImproveBodyCompositionAmsterdam() {
               </h2>
               <p>
                 Improving body composition takes patience — and the right measurement methods.
-                The scale is a poor gauge: if you&rsquo;re simultaneously losing fat and building
-                muscle, weight can stay stable for weeks while you&rsquo;re visibly changing.
+                The scale is a poor gauge: if you’re simultaneously losing fat and building
+                muscle, weight can stay stable for weeks while you’re visibly changing.
               </p>
               <p>
                 Better indicators:

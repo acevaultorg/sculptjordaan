@@ -74,7 +74,7 @@ export default function FreeIntroBlogEN() {
 
             <div className="prose prose-lg prose-invert max-w-none">
               <p className="lead text-xl text-muted-foreground">
-                You want to try personal training but you&apos;re not sure if it&apos;s right for you.
+                You want to try personal training but you’re not sure if it’s right for you.
                 A free intro is the perfect way to find out — no commitment, no cost. But what
                 actually happens during one of these sessions?
               </p>
@@ -87,7 +87,7 @@ export default function FreeIntroBlogEN() {
               </p>
               <p>
                 At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> is open-ended — duration is up to you and your trainer. No preparation needed — just show up
-                in your workout clothes. There&apos;s no reception desk and no waiting: you receive a
+                in your workout clothes. There’s no reception desk and no waiting: you receive a
                 your trainer arranges the studio and gets you in — meeting you at the door or sending instructions via WhatsApp beforehand.
               </p>
 
@@ -95,7 +95,7 @@ export default function FreeIntroBlogEN() {
               <p>
                 Good trainers know that a successful working relationship starts with the right fit.
                 The intro is as much for you as it is for the trainer — they also want to know if
-                you&apos;re a good match. A free session removes the barrier to taking that first step,
+                you’re a good match. A free session removes the barrier to taking that first step,
                 without locking you into anything.
               </p>
               <p>
@@ -112,7 +112,7 @@ export default function FreeIntroBlogEN() {
               <ul>
                 <li>
                   <strong>Getting to know each other:</strong> You meet the trainer and share a bit
-                  about yourself. What&apos;s your fitness background? What have you tried before?
+                  about yourself. What’s your fitness background? What have you tried before?
                 </li>
                 <li>
                   <strong>Discussing your goals:</strong> Do you want to lose weight, build muscle,
@@ -124,11 +124,11 @@ export default function FreeIntroBlogEN() {
                   methods they use, and what you can expect from the sessions.
                 </li>
                 <li>
-                  <strong>Studio tour:</strong> You see the space. At SculptClub, that&apos;s a private
+                  <strong>Studio tour:</strong> You see the space. At SculptClub, that’s a private
                   studio on the Egelantiersgracht in the Jordaan — no crowds, no queues.
                 </li>
                 <li>
-                  <strong>Rates and scheduling:</strong> If there&apos;s a good fit, you discuss the
+                  <strong>Rates and scheduling:</strong> If there’s a good fit, you discuss the
                   practical side: how often, when, and what it costs. No pressure to decide right away.
                 </li>
               </ul>
@@ -140,20 +140,20 @@ export default function FreeIntroBlogEN() {
               <ul>
                 <li>
                   <strong>Know what you want to achieve.</strong> Think about your goals beforehand.
-                  &ldquo;Getting fitter&rdquo; is a start, but &ldquo;I want to lose 10 kg in 3 months
-                  and have less back pain&rdquo; gives the trainer much more to work with.
+                  “Getting fitter” is a start, but “I want to lose 10 kg in 3 months
+                  and have less back pain” gives the trainer much more to work with.
                 </li>
                 <li>
                   <strong>Be honest about your level.</strong> Have you trained before? Do you have
                   any injuries or conditions? The more the trainer knows, the better the advice.
                 </li>
                 <li>
-                  <strong>Ask questions.</strong> It&apos;s a two-way conversation. Ask how the trainer
+                  <strong>Ask questions.</strong> It’s a two-way conversation. Ask how the trainer
                   handles progress tracking, what happens if you want to skip a session, or what their
                   speciality is.
                 </li>
                 <li>
-                  <strong>Arrive on time.</strong> Your trainer will tell you in advance how to get in — usually they&apos;ll meet you at the door. Information arrives via
+                  <strong>Arrive on time.</strong> Your trainer will tell you in advance how to get in — usually they’ll meet you at the door. Information arrives via
                   WhatsApp. Allow 5 extra minutes to find the studio and get changed.
                 </li>
               </ul>
@@ -173,7 +173,7 @@ export default function FreeIntroBlogEN() {
 
               <h2>After the intro: how do you decide?</h2>
               <p>
-                You don&apos;t need to decide on the spot. Take time to think it over. A few questions
+                You don’t need to decide on the spot. Take time to think it over. A few questions
                 that help:
               </p>
               <ul>
@@ -183,7 +183,7 @@ export default function FreeIntroBlogEN() {
                 <li>Are you comfortable with the rate?</li>
               </ul>
               <p>
-                If the answers are yes, you&apos;re probably in the right place. If you&apos;re unsure,
+                If the answers are yes, you’re probably in the right place. If you’re unsure,
                 book a free intro with another trainer. You can do that too — SculptClub has <Link href="/en/find-personal-trainer" className="text-brand underline-offset-2 hover:underline">five
                 trainers, each with their own speciality</Link>.
               </p>

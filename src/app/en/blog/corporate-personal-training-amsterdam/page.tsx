@@ -117,11 +117,11 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Why a private studio works for corporate clients</h2>
               <p>
                 The difference between exercising and exercising consistently is rarely motivation.
-                It&apos;s friction. The more steps between you and your workout, the faster a busy week
+                It’s friction. The more steps between you and your workout, the faster a busy week
                 kills it. A private studio removes almost all of that friction: no waiting, no crowds,
                 no small talk, no re-explaining your goals. You walk in, your trainer is ready, your
-                programme is loaded, and in 60 minutes you&apos;ve trained properly. For people whose
-                calendar runs in 30-minute blocks, that&apos;s the difference between showing up and
+                programme is loaded, and in 60 minutes you’ve trained properly. For people whose
+                calendar runs in 30-minute blocks, that’s the difference between showing up and
                 cancelling.
               </p>
 
@@ -131,17 +131,17 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
                 practice. For <a href="/en/blog/personal-trainer-amsterdam-south" className="text-brand hover:underline">Zuidas</a> executives
                 with an 08:00 first call, a 06:45 session is realistic — train, shower, coffee, on time
                 at the office. For consultants leaving the office at 19:00, a 19:30 or 20:00 session
-                is normal. We don&apos;t book in fixed slots; you and your trainer agree what fits.
-                Consistency compounds over a year of these sessions — here&apos;s how to{" "}
+                is normal. We don’t book in fixed slots; you and your trainer agree what fits.
+                Consistency compounds over a year of these sessions — here’s how to{" "}
                 <a href="/en/blog/stay-consistent-exercise" className="text-brand hover:underline">stay consistent when work gets busy</a>.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Discretion and privacy</h2>
               <p>
                 You train one-on-one in a closed studio. No street-level windows, no other clients, no
-                cameras pointed at the floor. For public figures, executives and anyone who&apos;d rather
-                not be photographed mid-set, that&apos;s often decisive. It&apos;s not luxury — it&apos;s practical.
-                You can train hard without thinking about who&apos;s watching.
+                cameras pointed at the floor. For public figures, executives and anyone who’d rather
+                not be photographed mid-set, that’s often decisive. It’s not luxury — it’s practical.
+                You can train hard without thinking about who’s watching.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Invoicing and accounting</h2>
@@ -164,17 +164,17 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
                 accountability. For companies offering their team a wellness programme we can also{" "}
                 <a href="/en/blog/gym-rental-per-hour-amsterdam" className="text-brand hover:underline">reserve the entire studio by the hour</a>,
                 optionally combined with a short education block on strength, nutrition or posture.
-                That&apos;s not an off-the-shelf package — call or email and we&apos;ll build something that
+                That’s not an off-the-shelf package — call or email and we’ll build something that
                 fits.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why the Jordaan works for centre and Zuidas professionals</h2>
               <p>
-                Egelantiersgracht is well placed. From Damrak you&apos;re here in 5 minutes by bike. From
-                Leidseplein, 7. From Zuidas via metro 52, you&apos;re at Rokin in 15 minutes, then 5 minutes
+                Egelantiersgracht is well placed. From Damrak you’re here in 5 minutes by bike. From
+                Leidseplein, 7. From Zuidas via metro 52, you’re at Rokin in 15 minutes, then 5 minutes
                 walking or biking. For people who want to train between meetings, or cycle home along
-                the canals after work, the location is a real advantage that a ring-road gym can&apos;t
-                match. And during your session you&apos;re in a quiet side street, not a shopping plaza.
+                the canals after work, the location is a real advantage that a ring-road gym can’t
+                match. And during your session you’re in a quiet side street, not a shopping plaza.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Frequently asked questions</h2>

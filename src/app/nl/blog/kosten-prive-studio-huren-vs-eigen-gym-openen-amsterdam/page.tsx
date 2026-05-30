@@ -67,7 +67,7 @@ export default function BlogPostKostenStudioVsEigenGym() {
 
             <div className="prose prose-invert max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg text-foreground">
-                Je hebt als personal trainer in Amsterdam drie keuzes: studio per uur huren, een ruimte leasen, of een eigen gym openen. Elke optie heeft compleet andere kosten, andere risico&apos;s en een ander break-even punt. Geen sales-praatje — pure rekensom met de echte Amsterdam-cijfers van 2026.
+                Je hebt als personal trainer in Amsterdam drie keuzes: studio per uur huren, een ruimte leasen, of een eigen gym openen. Elke optie heeft compleet andere kosten, andere risico’s en een ander break-even punt. Geen sales-praatje — pure rekensom met de echte Amsterdam-cijfers van 2026.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">De drie opties op een rij</h2>
@@ -269,7 +269,7 @@ export default function BlogPostKostenStudioVsEigenGym() {
                 De rode draad: een eigen gym is geen status-symbool maar een operationele beslissing met directe cashflow-gevolgen. Wie het kan dragen, doet het. Wie twijfelt, huurt per uur en bouwt eerst zijn klantenbestand op.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-8">Drie scenario&apos;s — wat zou jij doen?</h2>
+              <h2 className="text-2xl font-bold text-foreground mt-8">Drie scenario’s — wat zou jij doen?</h2>
               <p>
                 Drie concrete situaties:
               </p>

@@ -96,10 +96,10 @@ export default function PersonalTrainingCostAmsterdam() {
                 general overview of what you can expect:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Budget trainers (freelance, outdoor or at your home):</strong> 30 &ndash; 50 euros per session</li>
-                <li><strong>Mid-range (large gym or shared studio):</strong> 50 &ndash; 80 euros per session</li>
-                <li><strong>Premium (private boutique studio):</strong> 70 &ndash; 120 euros per session</li>
-                <li><strong>Top-tier (high-profile trainers):</strong> 120 &ndash; 200+ euros per session</li>
+                <li><strong>Budget trainers (freelance, outdoor or at your home):</strong> 30 – 50 euros per session</li>
+                <li><strong>Mid-range (large gym or shared studio):</strong> 50 – 80 euros per session</li>
+                <li><strong>Premium (private boutique studio):</strong> 70 – 120 euros per session</li>
+                <li><strong>Top-tier (high-profile trainers):</strong> 120 – 200+ euros per session</li>
               </ul>
               <p>
                 At SculptClub, <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">rates start from 45 euros per session</Link> depending on which trainer you choose. Each

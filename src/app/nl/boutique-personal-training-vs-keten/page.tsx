@@ -237,7 +237,7 @@ export default function BoutiquePTvsKetenNL() {
               Apparatuur: minder is vaak meer
             </h2>
             <p>
-              Een keten pronkt met &ldquo;200+ toestellen&rdquo;. Klinkt
+              Een keten pronkt met “200+ toestellen”. Klinkt
               indrukwekkend. In de praktijk gebruik je er hooguit acht. Een
               boutique studio kiest die acht zorgvuldig: power rack, halters,
               kabelmachine, een paar kettlebells, ruimte om te bewegen.

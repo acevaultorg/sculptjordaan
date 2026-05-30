@@ -63,12 +63,12 @@ export default function BlogPostFirst10Clients() {
 
             <div className="prose prose-invert max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg text-foreground">
-                Every freelance PT starting in Amsterdam asks the same question: how do I get clients? No abstract theory below — a concrete roadmap split by client number. Clients 1-3, 4-6, 7-10. Per stage: what works, what doesn&apos;t, why.
+                Every freelance PT starting in Amsterdam asks the same question: how do I get clients? No abstract theory below — a concrete roadmap split by client number. Clients 1-3, 4-6, 7-10. Per stage: what works, what doesn’t, why.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">The reality — usually 6-12 months to your first 10</h2>
               <p>
-                Timeline first. Anyone shouting &ldquo;10 paying clients in 30 days&rdquo; is usually selling you a €497 course. Reality is slower.
+                Timeline first. Anyone shouting “10 paying clients in 30 days” is usually selling you a €497 course. Reality is slower.
               </p>
               <p>
                 Honest distribution among SculptClub-renting trainers:
@@ -76,9 +76,9 @@ export default function BlogPostFirst10Clients() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Month 1-2", "Clients 1-2. Usually friends or contacts from your existing sport circle."],
-                  ["Month 3-5", "Clients 3-5. First &ldquo;cold&rdquo;-acquired clients via Instagram, local networks, or physio referrals."],
+                  ["Month 3-5", "Clients 3-5. First “cold”-acquired clients via Instagram, local networks, or physio referrals."],
                   ["Month 6-9", "Clients 6-8. Your network starts compounding: clients bring friends, physios start trusting you."],
-                  ["Month 10-12", "Clients 9-10. You&apos;re past the starter phase. From here the network grows itself."],
+                  ["Month 10-12", "Clients 9-10. You’re past the starter phase. From here the network grows itself."],
                 ].map(([phase, desc]) => (
                   <li key={phase} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
@@ -99,9 +99,9 @@ export default function BlogPostFirst10Clients() {
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  "A short announcement on your personal Instagram + LinkedIn that you&apos;ve started as freelance PT. Once, not weekly.",
-                  "A 1-on-1 message to 5-10 people you know are interested in sport. Don&apos;t ask them to become a client — ask if they want a free intro to test your new approach.",
-                  "A short personal explanation: why you&apos;re doing this, what you offer, what they get. No sales pitch, just an honest update.",
+                  "A short announcement on your personal Instagram + LinkedIn that you’ve started as freelance PT. Once, not weekly.",
+                  "A 1-on-1 message to 5-10 people you know are interested in sport. Don’t ask them to become a client — ask if they want a free intro to test your new approach.",
+                  "A short personal explanation: why you’re doing this, what you offer, what they get. No sales pitch, just an honest update.",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
@@ -113,7 +113,7 @@ export default function BlogPostFirst10Clients() {
                 Conversion rate from this approach is typically 20-40%. Ten targeted messages produce 2-4 intros. A decent intro converts at least 2 of those to paying clients.
               </p>
               <p>
-                <strong className="text-foreground">Important:</strong> don&apos;t give friends a friends-rate. Your price is your price. Discount for referrals later — fine. But giving a session away for free or for €25 now anchors you forever. Once someone pays €25, they&apos;ll never pay €65.
+                <strong className="text-foreground">Important:</strong> don’t give friends a friends-rate. Your price is your price. Discount for referrals later — fine. But giving a session away for free or for €25 now anchors you forever. Once someone pays €25, they’ll never pay €65.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Clients 4-6 — Instagram, TikTok + local Facebook groups</h2>
@@ -125,9 +125,9 @@ export default function BlogPostFirst10Clients() {
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  "7-15 second Reels on one specific movement or correction. Better than 60-second &ldquo;day in the life&rdquo; content.",
+                  "7-15 second Reels on one specific movement or correction. Better than 60-second “day in the life” content.",
                   "Hooks in the first 2 seconds — a question or a wrong form being corrected.",
-                  "Captions with one concrete tip and one clear CTA: &ldquo;DM me for a free intro.&rdquo;",
+                  "Captions with one concrete tip and one clear CTA: “DM me for a free intro.”",
                   "Post time 19:00-21:00 for Amsterdam reach. Lunch (12:30) also works (cross-post to TikTok).",
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2">
@@ -140,10 +140,10 @@ export default function BlogPostFirst10Clients() {
                 <strong className="text-foreground">TikTok.</strong> Currently works better than Instagram for sport content because the algorithm pushes new creators faster. Same content can cross-post. Lunch (12:30) and evening (19:00) are sweet spots.
               </p>
               <p>
-                <strong className="text-foreground">Local Facebook groups.</strong> Underrated, especially for specific neighborhoods (Jordaan, De Pijp, Noord, West). No spam — once a month answer a question in a neighborhood group where you&apos;re active. People remember helpful people.
+                <strong className="text-foreground">Local Facebook groups.</strong> Underrated, especially for specific neighborhoods (Jordaan, De Pijp, Noord, West). No spam — once a month answer a question in a neighborhood group where you’re active. People remember helpful people.
               </p>
               <p>
-                What does NOT work: cold LinkedIn DMs to &ldquo;sporty professionals&rdquo;, Groupon deals, or paid flyers in local sport shops.
+                What does NOT work: cold LinkedIn DMs to “sporty professionals”, Groupon deals, or paid flyers in local sport shops.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Clients 7-10 — referrals + partnerships</h2>
@@ -152,7 +152,7 @@ export default function BlogPostFirst10Clients() {
               </p>
               <ol className="space-y-2 list-decimal pl-6">
                 {[
-                  "Ask every happy client after 8-12 sessions explicitly for a referral. Not implicit (&ldquo;tell people if you want&rdquo;) — literally: &ldquo;Do you know anyone who would benefit from this? I&apos;ll give them a free intro.&rdquo;",
+                  "Ask every happy client after 8-12 sessions explicitly for a referral. Not implicit (“tell people if you want”) — literally: “Do you know anyone who would benefit from this? I’ll give them a free intro.”",
                   "Build 2-3 relationships with local physiotherapists. Not as a referral ask — as a professional partnership. A physio who trusts you = the highest-converting lead source there is (~50% conversion).",
                   "Partnerships with nutrition coaches, sport shops, even psychologists (postpartum, burnout). Refer out where it fits and the referral comes back.",
                 ].map((line) => (
@@ -170,9 +170,9 @@ export default function BlogPostFirst10Clients() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Cold LinkedIn DMs", "Conversion under 1%. Damages your profile. Stop."],
-                  ["Groupon / SocialDeal", "Attracts discount-hunters who don&apos;t fit you and churn after session 4."],
-                  ["Flyers in gyms / sport shops", "Hasn&apos;t worked for years. People search online, not on a paper."],
-                  ["Generic motivational quotes", "&ldquo;No pain no gain&rdquo;-style content gets zero engagement from people actually considering a trainer."],
+                  ["Groupon / SocialDeal", "Attracts discount-hunters who don’t fit you and churn after session 4."],
+                  ["Flyers in gyms / sport shops", "Hasn’t worked for years. People search online, not on a paper."],
+                  ["Generic motivational quotes", "“No pain no gain”-style content gets zero engagement from people actually considering a trainer."],
                   ["Fake transformations", "Before-after photos with overdone claims. Google penalizes + clients see through it."],
                 ].map(([type, why]) => (
                   <li key={type} className="flex items-start gap-2">
@@ -184,7 +184,7 @@ export default function BlogPostFirst10Clients() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Pricing — keep your early clients from anchoring you low</h2>
               <p>
-                Your first clients set the anchor for your whole practice. If you start at €40/session, that client stays €40 — even two years later when you&apos;re worth €70.
+                Your first clients set the anchor for your whole practice. If you start at €40/session, that client stays €40 — even two years later when you’re worth €70.
               </p>
               <p>
                 Three smart pricing moves for starters:
@@ -204,7 +204,7 @@ export default function BlogPostFirst10Clients() {
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Client 11+ — when do you scale?</h2>
               <p>
-                Once you&apos;re past 10 stable clients, a new question hits: do I scale or keep this size?
+                Once you’re past 10 stable clients, a new question hits: do I scale or keep this size?
               </p>
               <p>
                 Three growth paths, increasing in commitment:

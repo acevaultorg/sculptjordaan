@@ -104,11 +104,11 @@ export default function BurnoutPersonalTrainerAmsterdam() {
                   <div className="text-sm leading-relaxed">
                     <strong className="block mb-1">Important: this is not a substitute for medical care.</strong>
                     <span className="text-muted-foreground">
-                      If you&apos;ve been clinically diagnosed with burnout, experience severe
+                      If you’ve been clinically diagnosed with burnout, experience severe
                       exhaustion or depression, or are currently under the care of a GP,
                       occupational doctor, psychologist or psychiatrist, follow their advice
                       first. The Ascend Method is performance and nervous-system coaching for
-                      people who are still functional but whose system is overloaded &mdash; a
+                      people who are still functional but whose system is overloaded — a
                       complement to clinical care, not a replacement.
                     </span>
                   </div>
@@ -116,55 +116,55 @@ export default function BurnoutPersonalTrainerAmsterdam() {
               </div>
 
               <p>
-                You&apos;re constantly &ldquo;on.&rdquo; Busy work, decisions, leading people,
+                You’re constantly “on.” Busy work, decisions, leading people,
                 hitting deadlines. On paper everything runs, but you notice your energy is
-                fading, your focus fragments, and in the evening you&apos;re not really present
+                fading, your focus fragments, and in the evening you’re not really present
                 anymore. A regular gym often makes this worse: push harder, more stimuli, a
                 workout that feels like yet another appointment in an already overcrowded
                 calendar.
               </p>
               <p>
                 At SculptClub in the Jordaan, <strong>Joey</strong> works with a different
-                approach: <em>The Ascend Method &mdash; Inner Alignment System</em>. For
-                entrepreneurs and high performers who don&apos;t just want to get stronger, but
+                approach: <em>The Ascend Method — Inner Alignment System</em>. For
+                entrepreneurs and high performers who don’t just want to get stronger, but
                 want to be back in control of their own system.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Who is this approach for?</h2>
               <p>
                 Entrepreneurs, executives, creative professionals and other high
-                performers &mdash; men and women &mdash; who carry significant responsibility
+                performers — men and women — who carry significant responsibility
                 and notice their body giving in before their calendar does. Recognise any of
                 these signals?
               </p>
               <ul>
-                <li>Your mind doesn&apos;t switch off in the evening, sleep gets harder</li>
-                <li>Workouts no longer give you the energy they used to &mdash; if anything, the opposite</li>
+                <li>Your mind doesn’t switch off in the evening, sleep gets harder</li>
+                <li>Workouts no longer give you the energy they used to — if anything, the opposite</li>
                 <li>You train but lack focus, or push too hard and get injured</li>
-                <li>You feel &ldquo;wired but tired&rdquo; &mdash; tense and exhausted at the same time</li>
-                <li>You know rationally what to do but can&apos;t seem to do it anymore</li>
+                <li>You feel “wired but tired” — tense and exhausted at the same time</li>
+                <li>You know rationally what to do but can’t seem to do it anymore</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What does a session look like?</h2>
               <p>
                 A 60-minute session, fully tailored to your state and energy in that moment. No
-                fixed programme you grind through &mdash; we start where you are right now and
+                fixed programme you grind through — we start where you are right now and
                 build from there.
               </p>
               <ol>
                 <li>
-                  <strong>Check-in.</strong> What&apos;s going on this week? How have you slept?
+                  <strong>Check-in.</strong> What’s going on this week? How have you slept?
                   Where is tension sitting in your body? This sets the tone of the session.
                 </li>
                 <li>
                   <strong>Mobility and breathwork.</strong> Targeted breathing and movement to
-                  regulate your nervous system and bring you back to focus &mdash; before we
+                  regulate your nervous system and bring you back to focus — before we
                   train, not after.
                 </li>
                 <li>
                   <strong>Strength training, tailored.</strong> Functional strength and mobility
                   work, adjusted to what your body can handle today. No ego, no unnecessary
-                  stimuli &mdash; quality over volume.
+                  stimuli — quality over volume.
                 </li>
                 <li>
                   <strong>Recovery and regulation.</strong> Breathing and regulation techniques
@@ -176,15 +176,15 @@ export default function BurnoutPersonalTrainerAmsterdam() {
                 </li>
               </ol>
               <p>
-                You leave the studio with more energy than you came in with &mdash; not depleted,
-                but regulated. That&apos;s the test.
+                You leave the studio with more energy than you came in with — not depleted,
+                but regulated. That’s the test.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What is The Ascend Method?</h2>
               <p>
                 The Ascend Method is an integrated approach where physical training, breathwork
                 and nervous-system regulation come together. Instead of just training the body,
-                we optimise how your entire system functions &mdash; so you don&apos;t just get
+                we optimise how your entire system functions — so you don’t just get
                 stronger, but also experience more calm, focus and control in daily life.
               </p>
               <p>
@@ -195,19 +195,19 @@ export default function BurnoutPersonalTrainerAmsterdam() {
                 point, we determine where the focus of the journey lies.
               </p>
               <p>
-                The idea is to move from survival to flow &mdash; from constant thinking to
+                The idea is to move from survival to flow — from constant thinking to
                 feeling and being present in your body again. Not via meditation as a separate
                 discipline, but via training where this is woven in.
               </p>
               <p className="text-muted-foreground italic">
-                &ldquo;Wisdom isn&apos;t studied, it&apos;s embodied.&rdquo; &mdash; Joey
+                “Wisdom isn’t studied, it’s embodied.” — Joey
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why this is different from regular personal training</h2>
               <p>
                 Standard personal training rarely accounts for chronic stress, overload and
                 mental pressure. The assumption: more training = more results. For high
-                performers with an overloaded system, that&apos;s wrong. More stimulus on an
+                performers with an overloaded system, that’s wrong. More stimulus on an
                 already overloaded nervous system = more exhaustion, not more strength.
               </p>
               <p>The Ascend Method works on your full system:</p>
@@ -215,17 +215,17 @@ export default function BurnoutPersonalTrainerAmsterdam() {
                 <li>You train without depleting yourself further</li>
                 <li>You learn to actively regulate your stress level during and outside the session</li>
                 <li>You build energy instead of losing it</li>
-                <li>You develop physical and mental resilience &mdash; not one against the other</li>
+                <li>You develop physical and mental resilience — not one against the other</li>
               </ul>
               <p>
-                It&apos;s training for people who don&apos;t just want to get stronger, but to
+                It’s training for people who don’t just want to get stronger, but to
                 function better on every level.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Practicalities</h2>
               <p>
                 <strong>Location:</strong> SculptClub at Egelantiersgracht 424 in the Jordaan,
-                Amsterdam. Private studio &mdash; no reception, no crowds, no other clients at
+                Amsterdam. Private studio — no reception, no crowds, no other clients at
                 the same time. You receive the door code the evening before via WhatsApp.
               </p>
               <p>
@@ -233,7 +233,7 @@ export default function BurnoutPersonalTrainerAmsterdam() {
               </p>
               <p>
                 <strong>Rate:</strong> on request. Joey works with a limited client base so each
-                session gets the attention this approach requires &mdash; quality over volume.
+                session gets the attention this approach requires — quality over volume.
               </p>
               <p>
                 <strong>Languages:</strong> Dutch &amp; English.
@@ -246,10 +246,10 @@ export default function BurnoutPersonalTrainerAmsterdam() {
               <p>
                 The first step is a free intro session. We map together where you are on the
                 SQ-ladder, what your goals are, and what a journey might look like. No
-                obligations &mdash; you decide if it fits.
+                obligations — you decide if it fits.
               </p>
               <p>
-                Book your intro via Joey&apos;s{" "}
+                Book your intro via Joey’s{" "}
                 <Link href="/en/plan-free-intro-with-joey" className="text-brand hover:underline">
                   page
                 </Link>{" "}
@@ -287,8 +287,8 @@ export default function BurnoutPersonalTrainerAmsterdam() {
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Ready for a calmer system?</h3>
               <p className="text-muted-foreground mb-6">
-                Book a free intro with Joey. No obligations &mdash; we discuss where you are
-                and what&apos;s feasible.
+                Book a free intro with Joey. No obligations — we discuss where you are
+                and what’s feasible.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <ButtonLink href="/en/plan-free-intro-with-joey" size="lg">

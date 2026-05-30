@@ -94,7 +94,7 @@ export default function BlogPostNL1() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Waarom personal training in de Jordaan?</h2>
               <p>
                 De Jordaan biedt iets wat de meeste grote sportscholen in Amsterdam niet kunnen: rust en privacy. In plaats van
-                drukke fitnesszalen met wachtrijen bij de apparaten, vind je hier boutique studio&apos;s waar je in alle rust kunt
+                drukke fitnesszalen met wachtrijen bij de apparaten, vind je hier boutique studio’s waar je in alle rust kunt
                 trainen. Dat maakt een enorm verschil voor je motivatie en resultaten.
               </p>
               <p>
@@ -112,7 +112,7 @@ export default function BlogPostNL1() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Volledige privacy</strong> — geen kijkers, geen wachttijden, geen afleiding.</li>
                 <li><strong>Persoonlijke aandacht</strong> — je trainer focust 100% op jou.</li>
-                <li><strong>Flexibele planning</strong> — boek sessies wanneer het jou uitkomt, vaak ook &apos;s ochtends vroeg of &apos;s avonds laat.</li>
+                <li><strong>Flexibele planning</strong> — boek sessies wanneer het jou uitkomt, vaak ook ’s ochtends vroeg of ’s avonds laat.</li>
                 <li><strong>Professionele apparatuur</strong> — alles wat je nodig hebt voor een complete training, van power racks tot kabelmachines.</li>
               </ul>
 

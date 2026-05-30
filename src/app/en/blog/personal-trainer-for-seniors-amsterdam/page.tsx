@@ -54,7 +54,7 @@ export default function PTForSeniorsEN() {
                 After fifty, your body changes. Muscle mass decreases, bones become more
                 fragile and balance gradually deteriorates. But the good news: with the right
                 training you can slow and even reverse this process. Strength training is
-                the most effective tool — and it&apos;s never too late to start.
+                the most effective tool — and it’s never too late to start.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why strength training is essential after 50</h2>
@@ -86,12 +86,12 @@ export default function PTForSeniorsEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Health concerns? Get medical clearance first</h2>
               <p>
-                We don&apos;t currently have a physiotherapist on staff. If you have heart
+                We don’t currently have a physiotherapist on staff. If you have heart
                 or vascular issues, joint problems, or a recent surgery, talk to your GP
                 or physiotherapist about whether strength training is right for you now.
                 With the green light, book a{" "}
                 <a href="/en/free-intro" className="text-brand hover:underline">free intro</a> and
-                we&apos;ll discuss how to build training around your situation.
+                we’ll discuss how to build training around your situation.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What to expect</h2>

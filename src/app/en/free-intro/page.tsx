@@ -194,7 +194,7 @@ export default function FreeIntroPage() {
 
         {/* What you get */}
         <div className="mt-16 text-left p-6 rounded-2xl bg-secondary border border-border/50">
-          <h2 className="text-xl font-bold mb-4">What&apos;s included?</h2>
+          <h2 className="text-xl font-bold mb-4">What’s included?</h2>
           <ul className="space-y-3">
             {[
               "Free personal intro",
@@ -230,7 +230,7 @@ export default function FreeIntroPage() {
                   <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-sm leading-relaxed">&ldquo;{r.text}&rdquo;</p>
+              <p className="text-sm leading-relaxed">“{r.text}”</p>
               <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
             </div>
           ))}

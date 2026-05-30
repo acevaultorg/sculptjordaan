@@ -137,7 +137,7 @@ export default function PTNaBevallingAmsterdamNL() {
               <p>
                 Voor veel postpartum-cliënten is een bekkenfysiotherapeut de eerste stop. Als
                 je al onder behandeling bent, werken onze trainers graag in overleg met je
-                behandelend therapeut zodat jullie programma&apos;s elkaar versterken, niet
+                behandelend therapeut zodat jullie programma’s elkaar versterken, niet
                 tegenwerken. Wij hebben zelf geen fysiotherapeut in dienst — voor de medische
                 kant verwijzen we je graag door, en onze krachttraining sluit daar op aan.
               </p>

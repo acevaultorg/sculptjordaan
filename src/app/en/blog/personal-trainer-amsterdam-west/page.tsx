@@ -89,14 +89,14 @@ export default function PersonalTrainerAmsterdamWestEN() {
                 serious personal training are limited. Most options are big chains (Basic-Fit,
                 TrainMore) or small yoga studios. For strength training with a qualified personal
                 trainer, you need to look a bit further. The Jordaan borders directly on West — via
-                Rozengracht or the Vondelpark, you&apos;re there in minutes.
+                Rozengracht or the Vondelpark, you’re there in minutes.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What makes a private studio different?</h2>
               <p>
-                At SculptClub you don&apos;t train in a busy gym. You get a full private studio with
+                At SculptClub you don’t train in a busy gym. You get a full private studio with
                 professional equipment — power rack, cable machine, dumbbells up to 50 kg, assault
-                bike. Maximum 3 people at a time, but during personal training it&apos;s just you and
+                bike. Maximum 3 people at a time, but during personal training it’s just you and
                 your trainer. No waiting for equipment, no distractions. Door code via WhatsApp the
                 evening before.
               </p>
@@ -106,7 +106,7 @@ export default function PersonalTrainerAmsterdamWestEN() {
                 SculptClub has independent trainers with different backgrounds. Alex
                 specialises in strength and calisthenics. Eva combines personal training
                 with nutritional advice as a certified dietitian. Joey works with breathwork,
-                self-inquiry and strength training. Gezina specialises in women&apos;s
+                self-inquiry and strength training. Gezina specialises in women’s
                 training. Andrea focuses on technique and posture. Dara offers personal
                 training and small-group sessions. Jearmey focuses on strength and athletic
                 performance. Each with their own rates, each with a free intro.
@@ -122,13 +122,13 @@ export default function PersonalTrainerAmsterdamWestEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">How to get here from West</h2>
               <p>
-                SculptClub is at Egelantiersgracht 424. From Kinkerstraat it&apos;s a 5-minute bike
-                ride via Rozengracht. From Westerpark it&apos;s 8 minutes via Haarlemmerstraat. By
+                SculptClub is at Egelantiersgracht 424. From Kinkerstraat it’s a 5-minute bike
+                ride via Rozengracht. From Westerpark it’s 8 minutes via Haarlemmerstraat. By
                 tram (line 13 or 17) get off at Westermarkt, 2 minutes walk. Bike parking directly
                 in front of the door.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Train independently? That&apos;s possible too</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Train independently? That’s possible too</h2>
               <p>
                 Not everyone needs a personal trainer. If you want to train independently in a quiet
                 setting, SculptClub offers Open Gym. Book a 60-minute session with access to all

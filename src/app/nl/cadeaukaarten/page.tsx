@@ -100,7 +100,7 @@ export default function GiftCardsPageNL() {
                     {card.sessions}
                   </p>
                   <p className="text-4xl font-bold mt-3">
-                    &euro;{card.price}
+                    €{card.price}
                   </p>
                 </div>
                 <ul className="space-y-2 flex-1">

@@ -55,7 +55,7 @@ export default function PersonalTrainerEastEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                Amsterdam East is one of the city&apos;s fastest growing neighbourhoods. Young, active
+                Amsterdam East is one of the city’s fastest growing neighbourhoods. Young, active
                 and full of new residents looking for a good place to train. But serious personal training
                 in East itself is scarce. SculptClub in the Jordaan offers the alternative — a private
                 studio 15 minutes by bike through the centre.

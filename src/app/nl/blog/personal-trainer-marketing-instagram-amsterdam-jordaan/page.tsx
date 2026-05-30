@@ -35,7 +35,7 @@ export default function BlogPostInstagramMarketing() {
               <div className="flex items-center gap-4 text-sm text-muted-foreground"><span className="flex items-center gap-1.5"><CalendarDays className="w-4 h-4" />20 mei 2026</span><span className="flex items-center gap-1.5"><User className="w-4 h-4" />SculptClub</span></div>
             </div>
             <div className="prose prose-invert max-w-none space-y-6 text-muted-foreground leading-relaxed">
-              <p className="text-lg text-foreground">95% van de SculptClub-boekingen begint via Instagram (Clarity 30d data, 2026). Voor Amsterdam-PT&apos;s is Instagram dé acquisitie-engine. Maar het algoritme is in 2025-2026 fors verschoven — wat 2 jaar geleden werkte (lange video&apos;s, motivational quotes, 30 hashtags) doet nu zero. Hier is wat in 2026 daadwerkelijk werkt.</p>
+              <p className="text-lg text-foreground">95% van de SculptClub-boekingen begint via Instagram (Clarity 30d data, 2026). Voor Amsterdam-PT’s is Instagram dé acquisitie-engine. Maar het algoritme is in 2025-2026 fors verschoven — wat 2 jaar geleden werkte (lange video’s, motivational quotes, 30 hashtags) doet nu zero. Hier is wat in 2026 daadwerkelijk werkt.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Wat veranderd is in 2026 — Reels dominant, lange posts dood</h2>
               <p>De grote shifts:</p>
@@ -44,19 +44,19 @@ export default function BlogPostInstagramMarketing() {
                   ["Reels > posts > stories", "Instagram pusht Reels naar nieuwe ogen. Gewone foto-posts krijgen 30-50% minder bereik dan in 2024."],
                   ["Korter is beter", "7-15 seconden Reels presteren beter dan 30-60s. Algoritme rewards complete-watches."],
                   ["Hashtag-stuffing dood", "20+ hashtags worden gestraft. 5-7 niche-specifiek werkt nu."],
-                  ["Saves > likes", "Algoritme weegt &ldquo;saves&rdquo; en &ldquo;shares&rdquo; zwaarder dan likes. Content waar mensen later op terug willen komen presteert."],
+                  ["Saves > likes", "Algoritme weegt “saves” en “shares” zwaarder dan likes. Content waar mensen later op terug willen komen presteert."],
                   ["DMs zijn de conversie-laag", "Likes worden geen klanten. DMs worden klanten. Optimaliseer voor DMs."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
 
-              <h2 className="text-2xl font-bold text-foreground mt-8">De 4 content pillars die werken voor Amsterdam PT&apos;s</h2>
+              <h2 className="text-2xl font-bold text-foreground mt-8">De 4 content pillars die werken voor Amsterdam PT’s</h2>
               <p>Verspreid je content over 4 pillars in een 4-weken rotatie:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Workouts (40%)", "Korte form-demonstraties of correction-Reels. &ldquo;Hier doe je het verkeerd; hier is hoe het wel moet.&rdquo; Specifiek > generiek."],
-                  ["Tips (25%)", "Een concrete, technische tip per Reel. &ldquo;5 seconden positie-correctie die je deadlift omhoog brengt.&rdquo;"],
+                  ["Workouts (40%)", "Korte form-demonstraties of correction-Reels. “Hier doe je het verkeerd; hier is hoe het wel moet.” Specifiek > generiek."],
+                  ["Tips (25%)", "Een concrete, technische tip per Reel. “5 seconden positie-correctie die je deadlift omhoog brengt.”"],
                   ["Behind-the-scenes (20%)", "Jij in de studio, een klant die net iets bereikt heeft, een gesprek over wat een sessie inhoudt. Bouwt vertrouwen."],
-                  ["Transformations (15%)", "Met écht consent. Subtiele voor-en-na shots, eerlijke timeline. &ldquo;6 maanden, 1× per week, dit is wat er gebeurde.&rdquo; Geen fake claims."],
+                  ["Transformations (15%)", "Met écht consent. Subtiele voor-en-na shots, eerlijke timeline. “6 maanden, 1× per week, dit is wat er gebeurde.” Geen fake claims."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
 
@@ -65,9 +65,9 @@ export default function BlogPostInstagramMarketing() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Lengte 7-15 seconden", "Sweet spot voor PT-content. Algoritme rewards complete-watches; korter = hogere completion rate."],
-                  ["Hook in seconde 0-2", "Eerste frame: een verkeerde vorm, een schokkende stat, of een specifieke vraag. &ldquo;Doe jij je squat zo? Stop.&rdquo;"],
+                  ["Hook in seconde 0-2", "Eerste frame: een verkeerde vorm, een schokkende stat, of een specifieke vraag. “Doe jij je squat zo? Stop.”"],
                   ["Visual on-screen tekst", "Mensen scrollen vaak zonder geluid. Captions in de Reel zelf, niet alleen in de beschrijving."],
-                  ["Caption met 1 tip + 1 CTA", "&ldquo;Dit is 5-seconden cue die je squat fixt. Wil je intake? DM me.&rdquo; Geen verhaal, geen 200 woorden."],
+                  ["Caption met 1 tip + 1 CTA", "“Dit is 5-seconden cue die je squat fixt. Wil je intake? DM me.” Geen verhaal, geen 200 woorden."],
                   ["Posttijd 19:00-21:00 Amsterdam", "Lokaal bereik piek. Lunch (12:30) ook ok als secundaire slot."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
@@ -88,9 +88,9 @@ export default function BlogPostInstagramMarketing() {
               <p>Likes worden geen klanten. DMs worden klanten. Drie types DM-conversaties:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Inbound DM van warm publiek", "Iemand stuurt je een DM na een Reel. Reageer binnen 1 uur. Beantwoord hun vraag specifiek, niet generiek. Eindig met: &ldquo;Wil je een gratis intake? Geen verplichtingen.&rdquo;"],
-                  ["Cold DM na engagement", "Iemand liket meerdere posts. Stuur na 7-14 dagen een persoonlijk berichtje: &ldquo;Hé, ik zie dat je mijn content volgt. Train je nu zelf, of overweeg je een PT?&rdquo; Geen pitch, gewoon vraag."],
-                  ["Post-intake follow-up", "Na een gratis intake-sessie: 24 uur later een DM met &ldquo;Dank voor de intake. Hier zijn de 3 dingen waar we mee zouden beginnen.&rdquo; Concreet, gepersonaliseerd. Verkoop niet — herhaal de waarde."],
+                  ["Inbound DM van warm publiek", "Iemand stuurt je een DM na een Reel. Reageer binnen 1 uur. Beantwoord hun vraag specifiek, niet generiek. Eindig met: “Wil je een gratis intake? Geen verplichtingen.”"],
+                  ["Cold DM na engagement", "Iemand liket meerdere posts. Stuur na 7-14 dagen een persoonlijk berichtje: “Hé, ik zie dat je mijn content volgt. Train je nu zelf, of overweeg je een PT?” Geen pitch, gewoon vraag."],
+                  ["Post-intake follow-up", "Na een gratis intake-sessie: 24 uur later een DM met “Dank voor de intake. Hier zijn de 3 dingen waar we mee zouden beginnen.” Concreet, gepersonaliseerd. Verkoop niet — herhaal de waarde."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
               <p>DM-strategie schaalt niet automatisch. Plan 30-45 min per dag voor DMs. Veel converteren niet — maar van de 2-3 echte DM-gesprekken per week wordt er gemiddeld 1 een klant.</p>
@@ -108,11 +108,11 @@ export default function BlogPostInstagramMarketing() {
               <p>Lijst van content-vormen die je tijd verspillen:</p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Generieke motivational quotes (&ldquo;No pain no gain&rdquo;-stijl)", "Krijgt zero engagement van mensen die écht een trainer overwegen."],
+                  ["Generieke motivational quotes (“No pain no gain”-stijl)", "Krijgt zero engagement van mensen die écht een trainer overwegen."],
                   ["Fake before-and-after met overdreven claims", "Algorithm penaliseert + klanten doorzien het direct."],
-                  ["Lange video&apos;s van 60+ seconden zonder hook", "Completion rate gaat onder 20%, algorithm distribueert niet verder."],
+                  ["Lange video’s van 60+ seconden zonder hook", "Completion rate gaat onder 20%, algorithm distribueert niet verder."],
                   ["20+ hashtags onder elke post", "2024-tactiek. Werkt nu averechts."],
-                  ["Cold DMs zonder context", "&ldquo;Hey willen je sporten met mij?&rdquo; werkt niet. Reageer altijd op een specifieke trigger (recente post, engagement, intake)."],
+                  ["Cold DMs zonder context", "“Hey willen je sporten met mij?” werkt niet. Reageer altijd op een specifieke trigger (recente post, engagement, intake)."],
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
 

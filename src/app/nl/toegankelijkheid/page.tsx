@@ -19,7 +19,7 @@ export default function AccessibilityNL() {
 
           <h2>Digitale toegankelijkheid</h2>
           <ul>
-            <li>Toetsenbordnavigatie op alle pagina&apos;s</li>
+            <li>Toetsenbordnavigatie op alle pagina’s</li>
             <li>Ondersteuning voor schermlezers</li>
             <li>Voldoende kleurcontrast (WCAG AA)</li>
             <li>Alt-teksten op alle afbeeldingen</li>

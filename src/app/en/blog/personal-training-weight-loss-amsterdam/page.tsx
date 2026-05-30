@@ -82,10 +82,10 @@ export default function PersonalTrainingWeightLossEN() {
 
             <div className="prose prose-lg max-w-none">
               <p>
-                You want to lose weight. You&apos;ve tried diets, running, counting calories — but the
-                results don&apos;t stick. You&apos;re not alone. Many people in Amsterdam are looking for
+                You want to lose weight. You’ve tried diets, running, counting calories — but the
+                results don’t stick. You’re not alone. Many people in Amsterdam are looking for
                 a more effective approach. More and more are choosing personal training focused on weight
-                loss. Not because it&apos;s easier, but because it works.
+                loss. Not because it’s easier, but because it works.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why strength training beats cardio for weight loss</h2>
@@ -113,10 +113,10 @@ export default function PersonalTrainingWeightLossEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Nutrition and training: the combination</h2>
               <p>
-                Weight loss happens in the kitchen, muscles are built in the gym — it&apos;s a cliche,
-                but it&apos;s true. A trainer can guide you, but if your nutrition isn&apos;t in order,
+                Weight loss happens in the kitchen, muscles are built in the gym — it’s a cliche,
+                but it’s true. A trainer can guide you, but if your nutrition isn’t in order,
                 results will lag. At SculptClub, Eva is a certified dietitian and personal trainer. She
-                combines strength training with personal nutritional guidance. That&apos;s unique in
+                combines strength training with personal nutritional guidance. That’s unique in
                 Amsterdam.
               </p>
 
@@ -142,7 +142,7 @@ export default function PersonalTrainingWeightLossEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Start today</h2>
               <p>
-                You don&apos;t have to wait until Monday, until January or until you&apos;re
+                You don’t have to wait until Monday, until January or until you’re
                 &quot;ready.&quot; Book a <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> with one of our trainers. Discuss your goal, your
                 trainer makes a plan and you begin. No threshold, no membership, no excuses.
               </p>
