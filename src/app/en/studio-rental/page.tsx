@@ -189,7 +189,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€99</p>
                     <p className="text-3xl font-bold">€89</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 10%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 8 half / 6 full sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 8 half / 6 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                       Buy Starter
                     </ButtonLink>
@@ -205,7 +205,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€234</p>
                     <p className="text-3xl font-bold">€199</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 19 half / 14 full sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 19 half / 14 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Buy Routine
                     </ButtonLink>
@@ -221,7 +221,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€436</p>
                     <p className="text-3xl font-bold">€349</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 20%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 36 half / 26 full sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 36 half / 26 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Buy Pro
                     </ButtonLink>
@@ -237,7 +237,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€713</p>
                     <p className="text-3xl font-bold">€549</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 59 half / 42 full sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 59 half / 42 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Buy Volume
                     </ButtonLink>

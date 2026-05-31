@@ -377,7 +377,7 @@ export default function PricingPageNL() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 10%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 8 halve / 6 hele sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 8 halve / 6 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.starter} size="lg" className="w-full">
@@ -401,7 +401,7 @@ export default function PricingPageNL() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 15%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 19 halve / 14 hele sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 19 halve / 14 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.routine} size="lg" className="w-full">
@@ -425,7 +425,7 @@ export default function PricingPageNL() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 20%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 36 halve / 26 hele sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 36 halve / 26 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.pro} size="lg" className="w-full">
@@ -449,7 +449,7 @@ export default function PricingPageNL() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 23%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 59 halve / 42 hele sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 59 halve / 42 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.volume} size="lg" className="w-full">
