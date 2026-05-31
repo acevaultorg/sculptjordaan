@@ -292,7 +292,14 @@ export function Hero({ locale }: { locale: Locale }) {
           height at top and gives breathing room at bottom. */}
       <div className="relative z-10 flex-1 flex flex-col mx-auto max-w-6xl w-full px-4 sm:px-6 pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16">
         <div
-          className="text-center flex-1 flex flex-col [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)] [animation:hero-content-fade-in_0.6s_ease-out]"
+          // Mobile/tablet (base + sm): top-anchored headline, flex-1 spacer
+          // pushes CTAs to the bottom (near-thumb) — unchanged, this is the
+          // tuned mobile layout for the 89% mobile audience.
+          // Desktop (lg+): center the whole cluster vertically instead. The
+          // tall 88vh hero + bottom-anchored CTAs left a big dead-zone of empty
+          // photo between the headline and the CTAs on wide screens; centering
+          // composes them as one tight group (operator audit 2026-05-29).
+          className="text-center flex-1 flex flex-col lg:justify-center [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)] [animation:hero-content-fade-in_0.6s_ease-out]"
         >
           {/* TOP CLUSTER — overline + h1 + taglineSub (tight group, pulled up) */}
           <div>
@@ -327,8 +334,11 @@ export function Hero({ locale }: { locale: Locale }) {
             </h1>
           </div>
 
-          {/* Flexible spacer — pushes CTAs to the bottom of the hero */}
-          <div className="flex-1 min-h-[2rem]" aria-hidden="true" />
+          {/* Spacer. Mobile/tablet: flex-1 grows to push CTAs to the bottom.
+              Desktop (lg+): fixed 64px gap (flex-none) so the parent's
+              lg:justify-center can center the headline+CTA group together
+              instead of the spacer eating all the vertical space. */}
+          <div className="flex-1 min-h-[2rem] lg:flex-none lg:h-16" aria-hidden="true" />
 
           {/* BOTTOM CLUSTER — primary (fill) + secondary (outline) + trust.
               Two equal-height buttons stacked, distinguished by fill vs
