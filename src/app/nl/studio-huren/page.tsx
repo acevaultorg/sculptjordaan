@@ -187,7 +187,7 @@ export default function StudioRentalPageNL() {
           packages={
             <div className="mx-auto max-w-5xl">
               <p className="mb-4 text-center text-sm text-muted-foreground">
-                Strippenkaart kopen en besparen. 1 jaar geldig.
+                Een strippenkaart is boektegoed voor losse studiosessies — de doorgestreepte prijs is je tegoed. 1 jaar geldig.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <Card className="h-full text-center">
@@ -199,6 +199,7 @@ export default function StudioRentalPageNL() {
                     <p className="text-sm text-muted-foreground line-through">€99</p>
                     <p className="text-3xl font-bold">€89</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 10%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 8 halve / 6 hele sessies</p>
                     <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                       Koop Starter
                     </ButtonLink>
@@ -214,6 +215,7 @@ export default function StudioRentalPageNL() {
                     <p className="text-sm text-muted-foreground line-through">€234</p>
                     <p className="text-3xl font-bold">€199</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 15%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 19 halve / 14 hele sessies</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Koop Routine
                     </ButtonLink>
@@ -229,6 +231,7 @@ export default function StudioRentalPageNL() {
                     <p className="text-sm text-muted-foreground line-through">€436</p>
                     <p className="text-3xl font-bold">€349</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 20%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 36 halve / 26 hele sessies</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Koop Pro
                     </ButtonLink>
@@ -244,6 +247,7 @@ export default function StudioRentalPageNL() {
                     <p className="text-sm text-muted-foreground line-through">€713</p>
                     <p className="text-3xl font-bold">€549</p>
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 23%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 59 halve / 42 hele sessies</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Koop Volume
                     </ButtonLink>
@@ -251,7 +255,10 @@ export default function StudioRentalPageNL() {
                 </Card>
               </div>
 
-              <p className="mt-6 text-center text-sm text-muted-foreground">
+              <p className="mt-4 text-center text-xs text-muted-foreground">
+                Sessies van 60 min — halve studio (max 2) €12 · hele studio (max 6) €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal.
+              </p>
+              <p className="mt-3 text-center text-sm text-muted-foreground">
                 Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
                 <a href={whatsappLinks.bankTransferNl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   WhatsApp ons

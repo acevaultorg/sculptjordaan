@@ -177,7 +177,7 @@ export default function StudioRentalPageEN() {
           packages={
             <div className="mx-auto max-w-5xl">
               <p className="mb-4 text-center text-sm text-muted-foreground">
-                Buy a credit package and save. Valid 1 year.
+                A credit package is booking credit for individual studio sessions — the struck-through price is your credit. Valid 1 year.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <Card className="h-full text-center">
@@ -189,6 +189,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€99</p>
                     <p className="text-3xl font-bold">€89</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 10%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 8 half / 6 full sessions</p>
                     <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                       Buy Starter
                     </ButtonLink>
@@ -204,6 +205,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€234</p>
                     <p className="text-3xl font-bold">€199</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 19 half / 14 full sessions</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Buy Routine
                     </ButtonLink>
@@ -219,6 +221,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€436</p>
                     <p className="text-3xl font-bold">€349</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 20%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 36 half / 26 full sessions</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Buy Pro
                     </ButtonLink>
@@ -234,6 +237,7 @@ export default function StudioRentalPageEN() {
                     <p className="text-sm text-muted-foreground line-through">€713</p>
                     <p className="text-3xl font-bold">€549</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 59 half / 42 full sessions</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Buy Volume
                     </ButtonLink>
@@ -241,7 +245,10 @@ export default function StudioRentalPageEN() {
                 </Card>
               </div>
 
-              <p className="mt-6 text-center text-sm text-muted-foreground">
+              <p className="mt-4 text-center text-xs text-muted-foreground">
+                Sessions of 60 min — half studio (max 2) €12 · full studio (max 6) €17. 90 min or a mix is fine; your credit sets the count.
+              </p>
+              <p className="mt-3 text-center text-sm text-muted-foreground">
                 Lowest rate: <span className="text-discount font-medium">€9.24/session</span> · Prefer bank transfer?{" "}
                 <a href={whatsappLinks.bankTransferEn} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   WhatsApp us
