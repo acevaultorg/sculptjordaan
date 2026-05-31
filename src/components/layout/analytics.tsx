@@ -406,6 +406,12 @@ export function Analytics() {
                   }
                 }
               }
+              // INP hygiene (2026-05-31): once all 4 milestones fire, stop
+              // listening — no reason to run this handler on every subsequent
+              // scroll event for the rest of the session.
+              if (fired[25] && fired[50] && fired[75] && fired[100]) {
+                window.removeEventListener('scroll', onScroll);
+              }
             }
             window.addEventListener('scroll', onScroll, { passive: true });
             document.addEventListener('click', function(e) {
@@ -427,8 +433,12 @@ export function Analytics() {
         `}
       </Script>
 
-      {/* Google Ads remarketing — page category signals for audience building */}
-      <Script id="gads-remarketing" strategy="afterInteractive">
+      {/* Google Ads remarketing — page category signals for audience building.
+          lazyOnload (2026-05-31): fire-and-forget audience tag, not time-
+          sensitive — moved off the afterInteractive critical path to free the
+          main thread during the early-interaction window (INP). gtag is always
+          defined by lazyOnload time. Conversion tags stay afterInteractive. */}
+      <Script id="gads-remarketing" strategy="lazyOnload">
         {`
           (function() {
             if (typeof gtag !== 'function') return;
