@@ -22,10 +22,14 @@ import type { Locale } from "@/config/site";
  * It's the equivalent of a slow Ken Burns slideshow across the same H1.
  *
  * LCP protection:
- *   - First image keeps priority + fetchPriority="high" (current hero shot,
- *     unchanged LCP candidate).
- *   - Additional images mount after a 2-second delay so they don't compete
- *     for the initial network budget.
+ *   - First image keeps priority + fetchPriority="high" (the LCP candidate).
+ *   - Additional images mount only AFTER the first image's real onLoad fires,
+ *     so on slow connections they never steal bandwidth from the LCP image
+ *     before it paints. A fixed 2s timer mounted them too early on slow-4G —
+ *     images 2-4 began fetching while the LCP image was still downloading,
+ *     pushing LCP to a measured 10.2s on Lighthouse mobile (2026-05-31).
+ *     Secondary images also fetch at fetchPriority="low". A generous fallback
+ *     timer still starts the slideshow if onLoad is ever missed.
  *   - Rotation starts only after secondary images are mounted.
  *
  * Accessibility:
@@ -70,7 +74,11 @@ const HERO_IMAGES = [
 // stays at 1000ms (Tailwind duration-1000) — faster transitions would feel
 // jarring on the full-bleed hero; only the dwell-per-slide shortened.
 const ROTATION_MS = 4800;
-const SECONDARY_MOUNT_DELAY_MS = 2000;
+// Fallback only — secondary images normally mount on the first image's real
+// onLoad (see Hero). This timer just guarantees the slideshow eventually
+// starts if onLoad never fires (broken/detached image). Set well past a
+// slow-4G LCP so it never pre-empts the first image's bandwidth on slow links.
+const SECONDARY_MOUNT_FALLBACK_MS = 6000;
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = {
@@ -210,11 +218,11 @@ export function Hero({ locale }: { locale: Locale }) {
   const [secondaryMounted, setSecondaryMounted] = useState(false);
   const [paused, setPaused] = useState(false);
 
-  // Mount images 2..N after a short delay so they don't compete for the
-  // initial LCP-critical network budget (the first photo + above-fold text
-  // owns the first ~2 seconds).
+  // Mount images 2..N only after the first (LCP) image has actually loaded —
+  // see onLoad on image 0 below. This timer is a fallback that starts the
+  // slideshow even if that onLoad never fires (cached-broken / detached node).
   useEffect(() => {
-    const t = window.setTimeout(() => setSecondaryMounted(true), SECONDARY_MOUNT_DELAY_MS);
+    const t = window.setTimeout(() => setSecondaryMounted(true), SECONDARY_MOUNT_FALLBACK_MS);
     return () => window.clearTimeout(t);
   }, []);
 
@@ -271,7 +279,8 @@ export function Hero({ locale }: { locale: Locale }) {
               sizes="100vw"
               loading={i === 0 ? "eager" : "lazy"}
               priority={i === 0}
-              fetchPriority={i === 0 ? "high" : "auto"}
+              fetchPriority={i === 0 ? "high" : "low"}
+              onLoad={i === 0 ? () => setSecondaryMounted(true) : undefined}
             />
           );
         })}
