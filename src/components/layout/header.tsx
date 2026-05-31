@@ -376,7 +376,15 @@ export function Header() {
                 onClick={handleTryoutClick}
                 aria-haspopup="dialog"
                 aria-expanded={bookOpen && bookMode === "tryout"}
-                className="plausible-event-name=header_tryout_open h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30 transition-all whitespace-nowrap cursor-pointer"
+                className={cn(
+                  "plausible-event-name=header_tryout_open h-11 sm:h-9 flex items-center px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer",
+                  overDarkHero
+                    // Over the homepage dark hero: dark glass + white text.
+                    ? "border border-white/20 text-white bg-black/30 backdrop-blur-md hover:bg-black/40 hover:border-white/30"
+                    // Light/dark theme pages: clean secondary pill (the dark
+                    // glass read as a muddy grey pill on the bone background).
+                    : "border border-border text-foreground bg-secondary hover:bg-accent"
+                )}
               >
                 Try-Out
               </button>
@@ -405,23 +413,18 @@ export function Header() {
                 "h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen && bookMode === "book"
                   ? "bg-brand-dark text-brand-foreground"
-                  : [
-                      // Mobile: brand-orange outline (border + text are brand
-                      // color; fill stays glass for hero-overlay legibility).
-                      // 2026-05-27 followup: pre-followup the button was a
-                      // generic white-outline pill identical to "Try-Out"
-                      // beside it — visitors couldn't read it as "the
-                      // booking entry". Brand-tinted outline restores Boek's
-                      // identity without re-creating the solid-orange that
-                      // competes with the hero PT primary (the original
-                      // 2026-05-27 audit problem). Now: Boek = brand color
-                      // but not filled = visually adjacent to but
-                      // subordinate to the hero CTA.
-                      "border border-brand/60 text-brand bg-black/30 backdrop-blur-md hover:bg-brand/10 hover:border-brand active:scale-95",
-                      // Desktop (sm+): switch to solid brand (no competition
-                      // at desktop CSS — cookie + lead bar don't show).
-                      "sm:border-0 sm:text-brand-foreground sm:bg-brand sm:hover:bg-brand-dark sm:backdrop-blur-none",
-                    ].join(" ")
+                  : overDarkHero
+                    // HOMEPAGE hero only: mobile = brand-tinted glass (kept
+                    // subordinate to the hero PT primary CTA per the
+                    // 2026-05-27 Clarity audit — 3 orange CTAs competing on
+                    // mobile first-paint stole clicks from the lead-funnel
+                    // hero CTA), desktop = solid brand (no competition there).
+                    ? "border border-brand/60 text-brand bg-black/30 backdrop-blur-md hover:bg-brand/10 hover:border-brand active:scale-95 sm:border-0 sm:text-brand-foreground sm:bg-brand sm:hover:bg-brand-dark sm:backdrop-blur-none"
+                    // EVERYWHERE ELSE: solid brand on every breakpoint. Off the
+                    // homepage there's no competing hero PT CTA, so Boek is the
+                    // primary action and should read as solid orange (the glass
+                    // treatment looked like a muddy grey pill on light pages).
+                    : "bg-brand text-brand-foreground hover:bg-brand-dark active:scale-95"
               )}
             >
               <CalendarCheck className="w-3.5 h-3.5" />
