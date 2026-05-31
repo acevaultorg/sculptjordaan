@@ -80,6 +80,12 @@ const trainersRaw: Trainer[] = [
       en: "Specializing in strength training, calisthenics and recovery. Alex combines functional movements with targeted programming for measurable results.",
     },
     image: "/images/trainers/alex.jpg",
+    // Alex = Alexandre de Almeida. Portuguese mobile (+351 917 397 700) —
+    // operator-confirmed 2026-05-31 via his WhatsApp contact card. Was MISSING,
+    // so his intake WhatsApp button fell back to the SculptClub studio number
+    // (31683178934) instead of reaching Alex directly. wa.me uses the full
+    // international number with no '+' or spaces: 351917397700.
+    whatsapp: "https://wa.me/351917397700",
   },
   {
     id: "eva",
