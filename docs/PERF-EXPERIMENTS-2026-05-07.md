@@ -133,3 +133,31 @@ Median LCP 13,637ms (only -1.8s vs 15,453ms pre-warm). **But Run 1 at 3.4s LCP /
 - **Vercel `_next/image` cold-transform cost** is a real LCP contributor on mobile and explains a chunk of the "real-user LCP" Lighthouse measures. Pre-warming after deploy is a high-leverage operational fix.
 - A change that **adds CPU paint work** (SVG filters, complex CSS animations on critical-path elements) can regress perceived perf on throttled mobile **even when it helps perceived perf on desktop**. Always measure on slow CPU before shipping.
 - A change that adds **zero paint cost** (flat CSS color, single property style attribute) does not regress LCP even when measurements appear noisy. Trust the math, but get the data anyway.
+
+---
+
+## 2026-05-31 — Hero slideshow secondary-image gating (LCP 10.2s → 3.0s) ⭐ LOAD-BEARING, DO NOT REVERT
+
+**Trigger.** Operator-shared PageSpeed mobile run (Moto G Power, slow-4G): Performance **46**, **LCP 10.2s**, FCP 4.1s, SI 6.5s. CLS 0. The homepage was failing CWV on mobile.
+
+**Root cause.** `src/components/marketing/hero.tsx` runs a 4-image background slideshow. Images 2–4 mounted on a fixed `SECONDARY_MOUNT_DELAY_MS = 2000` timer. On slow-4G the first (LCP) image is NOT finished in 2s — so when the timer fired, images 2–4 began fetching **mid-download of the LCP image** and stole its bandwidth, pushing the LCP paint out to ~10s. All 4 images are full-bleed `fill` above-the-fold, so `loading="lazy"` does NOT defer them (browsers fetch above-fold lazy images).
+
+**Fix (commit b4cf137).** Mount secondary images on the first image's **real `onLoad`**, not a blind timer:
+- `onLoad={i === 0 ? () => setSecondaryMounted(true) : undefined}` on the LCP image.
+- Old 2s timer → `SECONDARY_MOUNT_FALLBACK_MS = 6000` (fallback only, fires if onLoad is ever missed — set past a slow-4G LCP so it never pre-empts).
+- Secondary images `fetchPriority` `auto` → `low` (belt-and-suspenders).
+
+**Result (verified, local Lighthouse mobile, simulated slow-4G — same engine as PSI):**
+| | Before (PSI) | After |
+|---|---|---|
+| Performance | 46 | **84** |
+| LCP | 10.2s | **3.0s** |
+| FCP | 4.1s | 2.2s |
+| Speed Index | 6.5s | 3.5s |
+| TBT | 580ms | 340ms |
+
+The 7.2s LCP delta dwarfs single-run Lighthouse variance (±~1.5s), so this is real despite being a 1-run measurement. The Lighthouse-after run also shows the image opportunities (`uses-optimized-images`, `prioritize-lcp-image`, `render-blocking`) all GONE — confirms bandwidth contention was the cause.
+
+**⚠️ WHY THIS IS LOAD-BEARING.** The hero is a hot-iteration file (slideshow cadence, CTA copy, layout all change often). If a future edit "simplifies" the secondary-image mounting back to a fixed timer (or mounts all 4 images eagerly), mobile LCP regresses straight back to ~10s. The onLoad-gating MUST stay. On fast connections it's invisible (image 0 loads <0.5s); the win is entirely on slow links — exactly what Lighthouse/PSI measure.
+
+**Calibration note.** `npx lighthouse --form-factor=mobile --throttling-method=simulate` against the LIVE url is the quota-independent way to get a real PSI-equivalent number when the PSI API/web-UI is quota-blocked (it was, 2026-05-31). Same engine, same simulated slow-4G.
