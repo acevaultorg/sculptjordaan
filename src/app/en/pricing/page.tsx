@@ -377,6 +377,7 @@ export default function PricingPageEN() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 10%</span>
                 </p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 8 half / 6 full sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.starter} size="lg" className="w-full">
@@ -400,6 +401,7 @@ export default function PricingPageEN() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 15%</span>
                 </p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 19 half / 14 full sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.routine} size="lg" className="w-full">
@@ -423,6 +425,7 @@ export default function PricingPageEN() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 20%</span>
                 </p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 36 half / 26 full sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.pro} size="lg" className="w-full">
@@ -446,6 +449,7 @@ export default function PricingPageEN() {
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 23%</span>
                 </p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 59 half / 42 full sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.volume} size="lg" className="w-full">
@@ -455,6 +459,12 @@ export default function PricingPageEN() {
             </Card>
           </FadeIn>
         </div>
+
+        <FadeIn delay={0.28}>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
+            A credit package is studio credit — the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio (max 6) €17. 90 min or a mix is fine; your credit sets the count. Valid 1 year.
+          </p>
+        </FadeIn>
 
         <FadeIn delay={0.3}>
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
