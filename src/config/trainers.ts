@@ -252,6 +252,10 @@ const trainersRaw: Trainer[] = [
       en: "Jearmey helps you build strength, lose fat and move pain-free. With a focus on strength and athletic performance, he builds programmes that deliver results.",
     },
     image: "/images/trainers/jearmey.jpg",
+    // Jearmey ("Jer", @jer.proformance) — operator-confirmed 2026-05-31 via
+    // WhatsApp contact card: +31 6 21582581. Was missing → intake button fell
+    // back to the studio number. wa.me/31621582581.
+    whatsapp: "https://wa.me/31621582581",
   },
   {
     id: "sergei",
@@ -277,6 +281,10 @@ const trainersRaw: Trainer[] = [
       en: "Sergei helps busy professionals and beginners build a stronger body, better posture, more confidence, and long-term healthy habits through structured personal training. 1:1, duo or small group training.",
     },
     image: "/images/trainers/sergei.jpg",
+    // Sergei Novozhilov (@transformbst) — operator-confirmed 2026-05-31 via
+    // WhatsApp contact card: +31 6 39382800. Was missing → intake button fell
+    // back to the studio number. wa.me/31639382800.
+    whatsapp: "https://wa.me/31639382800",
   },
   {
     id: "joey",
