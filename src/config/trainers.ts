@@ -68,16 +68,25 @@ const trainersRaw: Trainer[] = [
       en: "plan-free-intro-with-alex",
     },
     specialization: {
-      nl: ["Kracht", "Calisthenics", "Herstel"],
-      en: ["Strength", "Calisthenics", "Recovery"],
+      nl: ["Static Calisthenics", "Gymnastiek", "Prestatie"],
+      en: ["Static Calisthenics", "Gymnastics", "Performance"],
     },
     languages: ["NL", "EN", "PT"],
     rate: "€69 / 60 min",
     instagram: "https://instagram.com/almeidalexjr",
     instagramHandle: "@almeidalexjr",
+    // Bio + specialization corrected 2026-06-01 per Alex's own description
+    // (operator relayed via WhatsApp): he is a STATIC calisthenics specialist
+    // with a gymnastics background / fitness instructor — not generic "strength
+    // training" as the prior copy stated. Phrasing cleaned from his non-native
+    // English; meaning preserved. Brand-voice compliant (no banned words).
+    credentials: {
+      nl: "Fitnessinstructeur",
+      en: "Fitness Instructor",
+    },
     bio: {
-      nl: "Gespecialiseerd in krachttraining, calisthenics en hersteltraining. Alex combineert functionele bewegingen met doelgerichte programmering voor meetbare resultaten.",
-      en: "Specializing in strength training, calisthenics and recovery. Alex combines functional movements with targeted programming for measurable results.",
+      nl: "Static calisthenics-specialist met een achtergrond in gymnastiek. Als fitnessinstructeur richt Alex zich op prestatie, afvallen, spieropbouw en herstel met functionele, skill-gerichte bewegingen — van je eerste push-up tot een beheerste handstand, terwijl je je atletisch vermogen opbouwt met meetbare resultaten.",
+      en: "Static calisthenics specialist with a background in gymnastics. As a fitness instructor, Alex coaches performance, weight loss, muscle gain and recovery through functional, skill-based movement — from your first push-up to a clean handstand, building real athletic ability and measurable results.",
     },
     image: "/images/trainers/alex.jpg",
     // Alex = Alexandre de Almeida. Portuguese mobile (+351 917 397 700) —
