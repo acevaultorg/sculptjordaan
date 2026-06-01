@@ -162,7 +162,18 @@ export function LeadRescuePopup() {
 
   if (hidden || !open) return null;
 
-  const waHref = isEn ? whatsappLinks.intakeMatchEn : whatsappLinks.intakeMatchNl;
+  // Page-context-aware pre-fill (mirrors mobile-lead-bar): homepage + generic
+  // pages serve both PT clients and studio-rental trainers → neutral pre-fill;
+  // only intent-specific pages get an intent-matched message.
+  const waHref = (() => {
+    if (/\/(studio-huren|studio-rental|voor-trainers|for-trainers|word-trainer|become-trainer)(\/|$)/.test(pathname))
+      return isEn ? whatsappLinks.studioEn : whatsappLinks.studioNl;
+    if (/\/(open-gym)(\/|$)/.test(pathname))
+      return isEn ? whatsappLinks.openGymEn : whatsappLinks.openGymNl;
+    if (/\/(vind-jouw-personal-trainer|find-personal-trainer|gratis-intake|free-intro)(\/|$)/.test(pathname))
+      return isEn ? whatsappLinks.intakeMatchEn : whatsappLinks.intakeMatchNl;
+    return isEn ? whatsappLinks.en : whatsappLinks.nl;
+  })();
   const intakeHref = isEn ? "/en/free-intro" : "/nl/gratis-intake";
   const matchHref = isEn ? "/en/match-trainer" : "/nl/match-trainer";
 
