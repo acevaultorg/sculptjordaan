@@ -184,7 +184,7 @@ export default function BlogPostFysioStudioNL() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href="https://wa.me/31683178934?text=Hoi%2C%20ik%20ben%20fysiotherapeut%20en%20ge%C3%AFnteresseerd%20in%20het%20huren%20van%20de%20studio"
+                  href="https://wa.me/31615147952?text=Hoi%2C%20ik%20ben%20fysiotherapeut%20en%20ge%C3%AFnteresseerd%20in%20het%20huren%20van%20de%20studio"
                   size="lg"
                   variant="outline"
                   external

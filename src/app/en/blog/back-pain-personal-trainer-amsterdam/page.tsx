@@ -171,8 +171,8 @@ export default function BackPainPersonalTrainerAmsterdam() {
                 <a href="/en/find-personal-trainer" className="text-brand hover:underline">
                   trainers page
                 </a>. Prefer to call or message first? Reach us via WhatsApp:{" "}
-                <a href="https://wa.me/31683178934" className="text-brand hover:underline" target="_blank" rel="noopener noreferrer">
-                  +31 6 83 17 89 34
+                <a href="https://wa.me/31615147952" className="text-brand hover:underline" target="_blank" rel="noopener noreferrer">
+                  +31 6 15 14 79 52
                 </a>.
               </p>
             </div>

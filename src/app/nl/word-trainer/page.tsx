@@ -155,7 +155,7 @@ export default function WordTrainerNL() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
+                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
                   external
                   variant="outline"
                   size="lg"
@@ -420,7 +420,7 @@ export default function WordTrainerNL() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
-                href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag de studio bekijken")}`}
+                href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag de studio bekijken")}`}
                 external
                 size="lg"
                 className="plausible-event-name=word_trainer_bottom_whatsapp w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"

@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "Wat als ik de studio niet kan vinden?",
-    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 83 17 89 34 — meestal reageren we binnen het uur.",
+    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 15 14 79 52 — meestal reageren we binnen het uur.",
   },
   {
     q: "Hoe schoon is de studio?",
@@ -528,7 +528,7 @@ export default function EersteBezoekPage() {
               </ButtonLink>
             </div>
             <p className="mt-6 text-xs text-white/55">
-              Vragen? +31 6 83 17 89 34 · meestal antwoorden we binnen het uur
+              Vragen? +31 6 15 14 79 52 · meestal antwoorden we binnen het uur
             </p>
           </div>
         </FadeIn>

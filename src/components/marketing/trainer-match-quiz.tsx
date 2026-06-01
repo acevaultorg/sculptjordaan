@@ -398,8 +398,8 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
     // Hard-fail: visitor's language pref isn't covered by any trainer.
     // Send them to general WhatsApp with the operator for manual match.
     const waUrl = locale === "nl"
-      ? `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik zocht een trainer maar geen match in mijn taal. Kunnen jullie me helpen?")}`
-      : `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I was looking for a trainer but no match in my language. Can you help?")}`;
+      ? `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik zocht een trainer maar geen match in mijn taal. Kunnen jullie me helpen?")}`
+      : `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I was looking for a trainer but no match in my language. Can you help?")}`;
 
     return (
       <div className="rounded-2xl border border-border/40 bg-secondary p-6 sm:p-8 text-center">
@@ -523,8 +523,8 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
           <a
             href={
               locale === "nl"
-                ? `https://wa.me/31683178934?text=${encodeURIComponent(`Hoi! Ik twijfel tussen ${matches.map((m) => m.trainer.name).join(" en ")} voor een gratis intake.`)}`
-                : `https://wa.me/31683178934?text=${encodeURIComponent(`Hi! I'm torn between ${matches.map((m) => m.trainer.name).join(" and ")} for a free intro.`)}`
+                ? `https://wa.me/31615147952?text=${encodeURIComponent(`Hoi! Ik twijfel tussen ${matches.map((m) => m.trainer.name).join(" en ")} voor een gratis intake.`)}`
+                : `https://wa.me/31615147952?text=${encodeURIComponent(`Hi! I'm torn between ${matches.map((m) => m.trainer.name).join(" and ")} for a free intro.`)}`
             }
             target="_blank"
             rel="noopener noreferrer"

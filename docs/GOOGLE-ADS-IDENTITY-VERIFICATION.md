@@ -45,7 +45,7 @@ Google will ask you to pick ONE path. The answer depends on how you pay for the 
 | Legal business name | _(the exact name on KvK uittreksel — NOT "SculptClub" if it's registered under an eenmanszaak/BV with a different legal name)_ |
 | Country/region | Netherlands |
 | Business address | Egelantiersgracht 424, 1015 RR Amsterdam, Netherlands |
-| Phone | +31 6 83 17 89 34 |
+| Phone | +31 6 15 14 79 52 |
 | Website | https://sculptclub.nl |
 | Registration number | _(KvK number from uittreksel)_ |
 | Document type | Business registration document |
@@ -65,7 +65,7 @@ Google will ask you to pick ONE path. The answer depends on how you pay for the 
 | Legal name | _(your full legal name as on your ID)_ |
 | Country/region | Netherlands |
 | Address | _(your home address OR Egelantiersgracht 424 if that's your registered address)_ |
-| Phone | +31 6 83 17 89 34 |
+| Phone | +31 6 15 14 79 52 |
 | Document type | Passport / Identiteitskaart / Rijbewijs (pick what matches) |
 | Upload | Clear photo of the ID (front + back if it's the ID card) |
 
@@ -110,7 +110,7 @@ If you later hit Google Business Profile verification or Google Merchant Center,
 Entity type:       Individual OR Organisation (depends on billing setup)
 Legal business:    SculptClub (trade name) + KvK legal name if organisation
 Trade name:        SculptClub
-Phone:             +31 6 83 17 89 34
+Phone:             +31 6 15 14 79 52
 Email (billing):   paulomdevries@gmail.com
 Email (business):  contact@sculptclub.nl
 Address:           Egelantiersgracht 424, 1015 RR Amsterdam, Netherlands

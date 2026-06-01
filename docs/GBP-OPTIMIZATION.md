@@ -11,7 +11,7 @@ Or: search "SculptClub" while logged in as manager → click the management stri
 ## Operator checklist (15 items, ~60-75 min total)
 
 ### Profile basics (~5 min)
-- [ ] **Edit profile → Contact → Phone:** reformat to `+31 6 83 17 89 34`
+- [ ] **Edit profile → Contact → Phone:** reformat to `+31 6 15 14 79 52`
 - [ ] **Edit profile → Location → Address:** edit postcode `1015RR` → `1015 RR`
 - [ ] **Edit profile → Contact → Social profiles → Add:** Instagram → `https://instagram.com/sculptclubjordaan`
 - [ ] **Services → Add another business category → Personal trainer**
@@ -314,10 +314,10 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 
 | Surface | Format | Why |
 |---|---|---|
-| Site (CLAUDE.md canonical) | `+31 6 83 17 89 34` | Pair-grouping = Dutch reading convention |
-| GBP Phone field | `+31 6 83 17 89 34` | Same as site for parity |
-| WhatsApp link | `https://wa.me/31683178934` | Already correct |
-| Schema.org telephone | `+31683178934` | E.164 format (no spaces) |
+| Site (CLAUDE.md canonical) | `+31 6 15 14 79 52` | Pair-grouping = Dutch reading convention |
+| GBP Phone field | `+31 6 15 14 79 52` | Same as site for parity |
+| WhatsApp link | `https://wa.me/31615147952` | Already correct |
+| Schema.org telephone | `+31615147952` | E.164 format (no spaces) |
 
 ---
 

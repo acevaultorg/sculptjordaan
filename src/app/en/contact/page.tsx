@@ -71,7 +71,7 @@ export default function ContactPageEN() {
       message.trim(),
     ].filter(Boolean);
 
-    const whatsappUrl = `https://wa.me/31683178934?text=${encodeURIComponent(parts.join("\n"))}`;
+    const whatsappUrl = `https://wa.me/31615147952?text=${encodeURIComponent(parts.join("\n"))}`;
     // Fire conversion + lead events BEFORE window.open (popup blockers can clip async work)
     if (typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
       const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag!;

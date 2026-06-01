@@ -154,24 +154,24 @@ export const acuityLinks = {
 // /nl/contact + /en/contact form pages.
 export const whatsappLinks = {
   /** Generic question */
-  nl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik heb een vraag over SculptClub")}`,
-  en: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I have a question about SculptClub")}`,
+  nl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik heb een vraag over SculptClub")}`,
+  en: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I have a question about SculptClub")}`,
   /** Open Gym interest */
-  openGymNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik heb interesse in Open Gym bij SculptClub")}`,
-  openGymEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm interested in Open Gym at SculptClub")}`,
+  openGymNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik heb interesse in Open Gym bij SculptClub")}`,
+  openGymEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm interested in Open Gym at SculptClub")}`,
   /** Studio rental interest */
-  studioNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over studio huren bij SculptClub")}`,
-  studioEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to know more about renting the studio at SculptClub")}`,
+  studioNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over studio huren bij SculptClub")}`,
+  studioEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to know more about renting the studio at SculptClub")}`,
   /** PT free-intake — "match me with a trainer" path for paid traffic landing on
       /nl/gratis-intake + /en/free-intro. Shortcuts the trainer-finder hub flow
       (which was driving 100% bounces from Google Ads visitors per Clarity
       recordings audit 2026-05-16: 2 paid visitors / both 5-11s bounce / 0 clicks).
       One-click direct conversion via WhatsApp pre-filled with intake intent. */
-  intakeMatchNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?")}`,
-  intakeMatchEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?")}`,
+  intakeMatchNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?")}`,
+  intakeMatchEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?")}`,
   /** Trainer intake — per trainer. Opens WhatsApp with pre-filled free-intro enquiry. */
   trainerIntake: (name: string, locale: "nl" | "en", baseUrl?: string) => {
-    const base = baseUrl ?? "https://wa.me/31683178934";
+    const base = baseUrl ?? "https://wa.me/31615147952";
     const text =
       locale === "nl"
         ? `Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`
@@ -180,7 +180,7 @@ export const whatsappLinks = {
   },
   /** Trainer price request — per trainer. Opens WhatsApp with pre-filled rate enquiry + free intro. */
   trainerPriceRequest: (name: string, locale: "nl" | "en", baseUrl?: string) => {
-    const base = baseUrl ?? "https://wa.me/31683178934";
+    const base = baseUrl ?? "https://wa.me/31615147952";
     const text =
       locale === "nl"
         ? `Hoi! Ik wil graag het tarief weten van ${name} en een gratis intake plannen.`
@@ -188,10 +188,10 @@ export const whatsappLinks = {
     return `${base}?text=${encodeURIComponent(text)}`;
   },
   /** Generic (no pre-filled text) */
-  generic: "https://wa.me/31683178934",
+  generic: "https://wa.me/31615147952",
   /** Bank transfer for Volume pack */
-  bankTransferNl: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! Ik wil graag het Volume pakket (€549) kopen en betalen via bankoverschrijving. Mijn naam:")}`,
-  bankTransferEn: `https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€549) and pay via bank transfer. My name:")}`,
+  bankTransferNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! Ik wil graag het Volume pakket (€549) kopen en betalen via bankoverschrijving. Mijn naam:")}`,
+  bankTransferEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€549) and pay via bank transfer. My name:")}`,
   /** Dara has her own WhatsApp number */
   dara: "https://wa.me/31645658213",
 } as const;

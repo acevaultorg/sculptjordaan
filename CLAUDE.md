@@ -5,7 +5,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 ## Business Facts (NEVER contradict these)
 - **Name:** SculptClub (not Sculpt Jordaan, not sculptjordaan)
 - **Address:** Egelantiersgracht 424, 1015 RR Amsterdam
-- **Phone:** +31 6 83 17 89 34
+- **Phone / WhatsApp:** +31 6 15 14 79 52 (`wa.me/31615147952`) — single public number for calls AND WhatsApp Business (auto-replies live on this line). Replaced old `0683178934` fleet-wide on 2026-06-01 per operator. NEVER revert to 0683178934 even if older context/memory references it.
 - **Email:** contact@sculptclub.nl
 - **Hours:** Daily 06:30–22:00
 - **Founded:** 2025
@@ -75,6 +75,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Never say door code comes by email — it comes **via WhatsApp the night before**
 - Never list iDEAL as a standalone payment method
 - Never use "sculptjordaan" or "Sculpt Jordaan" as the business name — it's **SculptClub**
+- Never use **0683178934** — the public number is now **+31 6 15 14 79 52** / `wa.me/31615147952` (the WhatsApp Business line with auto-replies). 0683178934 was retired 2026-06-01.
 - Never add light mode — dark theme only is intentional for brand
 - Always create both NL and EN versions of any new page or blog post
 

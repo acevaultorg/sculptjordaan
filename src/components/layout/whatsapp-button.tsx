@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { getLocaleFromPath } from "@/lib/locale";
 
-const PHONE = "31683178934";
+const PHONE = "31615147952";
 
 const messages = {
   nl: {

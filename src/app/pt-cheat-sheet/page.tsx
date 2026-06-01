@@ -49,7 +49,7 @@ const COPY_NL = {
   nextSub: "Doe de 30-sec match-quiz en je krijgt 2 trainers die bij jouw doel passen.",
   matchUrl: "/nl/match-trainer",
   matchLabel: "Match je trainer →",
-  contact: "Of stel je vraag direct via WhatsApp · +31 6 83 17 89 34",
+  contact: "Of stel je vraag direct via WhatsApp · +31 6 15 14 79 52",
   footerNote: "Wil je deze cheat sheet bewaren? Browser → Bestand → Print → 'Save as PDF'.",
   printLabel: "📄 Print of bewaar als PDF",
 };
@@ -78,7 +78,7 @@ const COPY_EN = {
   nextSub: "Take the 30-sec match quiz and you'll get 2 trainers that match your goal.",
   matchUrl: "/en/match-trainer",
   matchLabel: "Match your trainer →",
-  contact: "Or ask your question directly via WhatsApp · +31 6 83 17 89 34",
+  contact: "Or ask your question directly via WhatsApp · +31 6 15 14 79 52",
   footerNote: "Want to save this cheat sheet? Browser → File → Print → 'Save as PDF'.",
   printLabel: "📄 Print or save as PDF",
 };

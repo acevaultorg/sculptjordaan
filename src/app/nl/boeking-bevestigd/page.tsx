@@ -126,7 +126,7 @@ export default function BookingConfirmedNL() {
                   <ul className="mt-3 space-y-2 text-sm text-white/85">
                     <li>• Je krijgt een bevestigingsmail van Acuity met de details.</li>
                     <li>• De deurcode sturen we de avond ervoor via WhatsApp.</li>
-                    <li>• Vragen? App naar +31 6 83 17 89 34 — meestal reageren we binnen 1 uur.</li>
+                    <li>• Vragen? App naar +31 6 15 14 79 52 — meestal reageren we binnen 1 uur.</li>
                   </ul>
                 </div>
               </div>
@@ -198,7 +198,7 @@ export default function BookingConfirmedNL() {
             </p>
 
             <a
-              href="https://wa.me/31683178934?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+10%25+pakket-deal+na+m%27n+intake."
+              href="https://wa.me/31615147952?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+10%25+pakket-deal+na+m%27n+intake."
               target="_blank"
               rel="noopener noreferrer"
               data-cta="boeking-bevestigd-upsell-whatsapp"

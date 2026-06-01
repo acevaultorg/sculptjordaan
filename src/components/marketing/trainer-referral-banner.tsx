@@ -9,13 +9,13 @@ const COPY = {
     badge: "Voor huidige trainers",
     title: "Ken je een trainer die ruimte zoekt?",
     body: "Stuur ze naar SculptClub. Boekt je collega 5+ studio-uren? Dan krijg je 1 uur huur cadeau. Geen limiet — verwijs zoveel collega's als je wilt.",
-    cta: "WhatsApp ons hun naam: +31 6 83 17 89 34. Goede trainers herkennen goede trainers.",
+    cta: "WhatsApp ons hun naam: +31 6 15 14 79 52. Goede trainers herkennen goede trainers.",
   },
   en: {
     badge: "For current trainers",
     title: "Know a trainer looking for a studio?",
     body: "Send them to SculptClub. When your colleague books 5+ rental hours, you get 1 hour free. No cap — refer as many trainers as you want.",
-    cta: "WhatsApp us their name: +31 6 83 17 89 34. Good trainers recognize good trainers.",
+    cta: "WhatsApp us their name: +31 6 15 14 79 52. Good trainers recognize good trainers.",
   },
 } as const;
 

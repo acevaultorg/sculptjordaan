@@ -173,7 +173,7 @@ export default function BlogPostPhysioStudioEN() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href="https://wa.me/31683178934?text=Hi%2C%20I%27m%20a%20physiotherapist%20interested%20in%20renting%20the%20studio"
+                  href="https://wa.me/31615147952?text=Hi%2C%20I%27m%20a%20physiotherapist%20interested%20in%20renting%20the%20studio"
                   size="lg"
                   variant="outline"
                   external

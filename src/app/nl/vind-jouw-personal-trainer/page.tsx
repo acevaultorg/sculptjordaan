@@ -275,7 +275,7 @@ export default function TrainersPageNL() {
             Bekijk voor-trainers info
           </ButtonLink>
           <ButtonLink
-            href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
+            href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
             size="lg"
             variant="outline"
           >
@@ -324,7 +324,7 @@ export default function TrainersPageNL() {
             <ArrowRight className="ml-2 w-4 h-4" />
           </ButtonLink>
           <ButtonLink
-            href={`https://wa.me/31683178934?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake plannen bij SculptClub.")}`}
+            href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake plannen bij SculptClub.")}`}
             external
             size="lg"
             variant="outline"
@@ -336,7 +336,7 @@ export default function TrainersPageNL() {
         </FadeIn>
         <FadeIn>
           <p className="mt-6 text-center text-xs text-white/55">
-            +31 6 83 17 89 34 · meestal antwoorden we binnen het uur
+            +31 6 15 14 79 52 · meestal antwoorden we binnen het uur
           </p>
         </FadeIn>
       </Section>

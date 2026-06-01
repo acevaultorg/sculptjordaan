@@ -76,7 +76,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
       </table>
 
-      <p style="margin:24px 0 0 0;font-size:12px;color:#8A8073;">Vragen? <a href="https://wa.me/31683178934" style="color:#EA580C;text-decoration:underline;">WhatsApp ons</a></p>
+      <p style="margin:24px 0 0 0;font-size:12px;color:#8A8073;">Vragen? <a href="https://wa.me/31615147952" style="color:#EA580C;text-decoration:underline;">WhatsApp ons</a></p>
     </td>
   </tr>
 </table>
@@ -138,7 +138,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
         </td></tr>
       </table>
 
-      <p style="margin:24px 0 0 0;font-size:12px;color:#8A8073;">Questions? <a href="https://wa.me/31683178934" style="color:#EA580C;text-decoration:underline;">WhatsApp us</a></p>
+      <p style="margin:24px 0 0 0;font-size:12px;color:#8A8073;">Questions? <a href="https://wa.me/31615147952" style="color:#EA580C;text-decoration:underline;">WhatsApp us</a></p>
     </td>
   </tr>
 </table>
@@ -229,7 +229,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
       <!-- WhatsApp invoice fallback -->
       <p style="margin:20px 0 0 0;font-size:13px;color:#544A40;">
         Liever betalen via factuur?
-        <a href="https://wa.me/31683178934?text=Hoi%21%20Ik%20wil%20graag%20een%20studio%20pakket%20kopen%20en%20betalen%20via%20factuur.%20Mijn%20naam%3A"
+        <a href="https://wa.me/31615147952?text=Hoi%21%20Ik%20wil%20graag%20een%20studio%20pakket%20kopen%20en%20betalen%20via%20factuur.%20Mijn%20naam%3A"
            style="color:#EA580C;text-decoration:underline;font-weight:600;">WhatsApp ons voor een bankoverschrijving →</a>
       </p>
     </td>
@@ -313,7 +313,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
 
       <p style="margin:20px 0 0 0;font-size:13px;color:#544A40;">
         Prefer bank transfer / invoice?
-        <a href="https://wa.me/31683178934?text=Hi%21%20I%27d%20like%20to%20buy%20a%20studio%20pack%20and%20pay%20by%20invoice.%20My%20name%3A"
+        <a href="https://wa.me/31615147952?text=Hi%21%20I%27d%20like%20to%20buy%20a%20studio%20pack%20and%20pay%20by%20invoice.%20My%20name%3A"
            style="color:#EA580C;text-decoration:underline;font-weight:600;">WhatsApp us for an invoice →</a>
       </p>
     </td>

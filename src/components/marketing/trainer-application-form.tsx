@@ -36,7 +36,7 @@
 import { useId, useState } from "react";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-const PHONE = "31683178934";
+const PHONE = "31615147952";
 
 type Locale = "nl" | "en";
 

@@ -51,10 +51,10 @@ import { WhatsAppIcon, pickMessage } from "./whatsapp-button";
 
 // Operator's WhatsApp number. Kept inline to avoid restructuring whatsapp-button.tsx
 // (which owns its own PHONE const). Single number value used in both files.
-const WA_PHONE = "31683178934";
+const WA_PHONE = "31615147952";
 // E.164 form for tel: links (with leading "+"); WA_PHONE above omits the +
 // because wa.me URLs require the country-code-with-no-plus format.
-const TEL_PHONE = "+31683178934";
+const TEL_PHONE = "+31615147952";
 
 interface CTAConfig {
   label: string;
@@ -101,14 +101,14 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
     return locale === "nl"
       ? {
           label: "WhatsApp direct",
-          href: "https://wa.me/31683178934?text=" +
+          href: "https://wa.me/31615147952?text=" +
             encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?"),
           external: true,
           ctaId: "mobile-cta-intake-whatsapp",
         }
       : {
           label: "WhatsApp us now",
-          href: "https://wa.me/31683178934?text=" +
+          href: "https://wa.me/31615147952?text=" +
             encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?"),
           external: true,
           ctaId: "mobile-cta-intake-whatsapp",
@@ -131,14 +131,14 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
     return locale === "nl"
       ? {
           label: "WhatsApp direct — wij matchen",
-          href: "https://wa.me/31683178934?text=" +
+          href: "https://wa.me/31615147952?text=" +
             encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?"),
           external: true,
           ctaId: "mobile-cta-trainerhub-whatsapp",
         }
       : {
           label: "WhatsApp us — we'll match",
-          href: "https://wa.me/31683178934?text=" +
+          href: "https://wa.me/31615147952?text=" +
             encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?"),
           external: true,
           ctaId: "mobile-cta-trainerhub-whatsapp",

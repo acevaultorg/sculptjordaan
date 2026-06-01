@@ -170,7 +170,7 @@ export default function PersonalTrainingAfvallenNL() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href="https://wa.me/31683178934?text=Hoi%2C%20ik%20wil%20graag%20afvallen%20met%20begeleiding.%20Kunnen%20jullie%20me%20helpen%3F"
+                  href="https://wa.me/31615147952?text=Hoi%2C%20ik%20wil%20graag%20afvallen%20met%20begeleiding.%20Kunnen%20jullie%20me%20helpen%3F"
                   size="lg"
                   variant="outline"
                   external

@@ -158,7 +158,7 @@ export default function BecomeTrainerEN() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to know more about working at SculptClub")}`}
+                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to know more about working at SculptClub")}`}
                   external
                   variant="outline"
                   size="lg"
@@ -412,7 +412,7 @@ export default function BecomeTrainerEN() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink
-                href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to see the studio")}`}
+                href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to see the studio")}`}
                 external
                 size="lg"
                 className="plausible-event-name=become_trainer_bottom_whatsapp w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"

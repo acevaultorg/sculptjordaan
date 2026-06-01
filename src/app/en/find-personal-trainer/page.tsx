@@ -257,7 +257,7 @@ export default function TrainersPageEN() {
             See For-Trainers info
           </ButtonLink>
           <ButtonLink
-            href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and I'd like to know more about working at SculptClub")}`}
+            href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm a personal trainer and I'd like to know more about working at SculptClub")}`}
             size="lg"
             variant="outline"
           >
@@ -306,7 +306,7 @@ export default function TrainersPageEN() {
             <ArrowRight className="ml-2 w-4 h-4" />
           </ButtonLink>
           <ButtonLink
-            href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'd like to book a free intro at SculptClub.")}`}
+            href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to book a free intro at SculptClub.")}`}
             external
             size="lg"
             variant="outline"
@@ -318,7 +318,7 @@ export default function TrainersPageEN() {
         </FadeIn>
         <FadeIn>
           <p className="mt-6 text-center text-xs text-white/55">
-            +31 6 83 17 89 34 · we usually reply within an hour
+            +31 6 15 14 79 52 · we usually reply within an hour
           </p>
         </FadeIn>
       </Section>

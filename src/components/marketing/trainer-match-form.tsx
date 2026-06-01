@@ -77,7 +77,7 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
       locale === "nl"
         ? `Hoi! Ik zoek een personal trainer bij SculptClub.\n\nNaam: ${name}\nWhatsApp: ${whatsapp}\nDoel: ${selectedGoalLabel}${message ? `\nBericht: ${message}` : ""}`
         : `Hi! I'm looking for a personal trainer at SculptClub.\n\nName: ${name}\nWhatsApp: ${whatsapp}\nGoal: ${selectedGoalLabel}${message ? `\nMessage: ${message}` : ""}`;
-    return `https://wa.me/31683178934?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/31615147952?text=${encodeURIComponent(text)}`;
   };
 
   return (

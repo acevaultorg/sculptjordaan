@@ -246,7 +246,7 @@ export default function ForTrainersHubEN() {
         <SectionHeader
           overline="Trainer questions"
           title="Frequently asked questions"
-          description="Practical answers to what trainers ask before starting. Missing something? WhatsApp +31 6 83 17 89 34."
+          description="Practical answers to what trainers ask before starting. Missing something? WhatsApp +31 6 15 14 79 52."
         />
         <div className="mx-auto max-w-3xl space-y-0">
           {trainerFaqs.map((faq, i) => (
@@ -292,7 +292,7 @@ export default function ForTrainersHubEN() {
                 Schedule a free tour
               </ButtonLink>
               <ButtonLink
-                href={`https://wa.me/31683178934?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to see the studio")}`}
+                href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm a personal trainer and would like to see the studio")}`}
                 external
                 variant="outline"
                 size="lg"

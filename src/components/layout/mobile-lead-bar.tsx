@@ -104,7 +104,7 @@ export function MobileLeadBar() {
   const isEn = pathname.startsWith("/en");
 
   // Phone number stays the same — only label varies by locale.
-  const TEL = "+31683178934";
+  const TEL = "+31615147952";
 
   // Acuity intake landing (locale-aware): visitors get the right-language
   // hub page; the page itself routes them to either Acuity or trainer-match.

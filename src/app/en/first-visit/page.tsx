@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "What if I can't find the studio?",
-    a: "The evening before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 83 17 89 34 — we usually reply within an hour.",
+    a: "The evening before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 15 14 79 52 — we usually reply within an hour.",
   },
   {
     q: "How clean is the studio?",
@@ -513,7 +513,7 @@ export default function FirstVisitPage() {
               </ButtonLink>
             </div>
             <p className="mt-6 text-xs text-white/55">
-              Questions? +31 6 83 17 89 34 · we usually reply within an hour
+              Questions? +31 6 15 14 79 52 · we usually reply within an hour
             </p>
           </div>
         </FadeIn>

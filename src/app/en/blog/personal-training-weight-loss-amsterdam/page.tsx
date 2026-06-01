@@ -169,7 +169,7 @@ export default function PersonalTrainingWeightLossEN() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
                 <ButtonLink
-                  href="https://wa.me/31683178934?text=Hi%2C%20I%20want%20to%20lose%20weight%20with%20personal%20training.%20Can%20you%20help%3F"
+                  href="https://wa.me/31615147952?text=Hi%2C%20I%20want%20to%20lose%20weight%20with%20personal%20training.%20Can%20you%20help%3F"
                   size="lg"
                   variant="outline"
                   external

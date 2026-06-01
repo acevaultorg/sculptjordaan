@@ -726,7 +726,7 @@ export default function SocialPage() {
             <div className="grid gap-4 md:grid-cols-2">
               {trainers.map((trainer) => {
                 const packIdeas = SOCIAL_IDEAS.filter((i) => TRAINER_PILLARS.includes(i.pillar)).slice(0, 6);
-                const trainerWa = trainer.whatsapp ?? `https://wa.me/31683178934`;
+                const trainerWa = trainer.whatsapp ?? `https://wa.me/31615147952`;
                 const intakeUrl = `https://sculptclub.nl/nl/${trainer.slug.nl}`;
                 const introMessage = `Hi ${trainer.name}! Hier zijn een paar content-ideeën die jij zelf naar Instagram kunt posten — voor jouw eigen leads + SculptClub bookings.
 
