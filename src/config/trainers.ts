@@ -111,6 +111,10 @@ const trainersRaw: Trainer[] = [
       en: "As a certified dietitian and personal trainer, Eva offers a unique combination of strength training and nutritional guidance for a holistic approach.",
     },
     image: "/images/trainers/eva.jpg",
+    // Eva = Eva Pt (~SportieefCoaching). Operator-confirmed 2026-05-31 via her
+    // WhatsApp contact card: +31 6 23232640. Was missing → her intake button
+    // fell back to the SculptClub studio number. wa.me/31623232640.
+    whatsapp: "https://wa.me/31623232640",
   },
   {
     id: "bryan",
