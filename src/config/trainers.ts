@@ -180,6 +180,10 @@ const trainersRaw: Trainer[] = [
       en: "Gezina is a certified personal trainer specializing in women's training. She helps women build strength through personal training and small group sessions, designed to work in sync with the body and cycle.",
     },
     image: "/images/trainers/gezina.jpg",
+    // Gezina — operator-confirmed 2026-05-31 via WhatsApp contact card:
+    // +31 6 13440302. Was missing → intake button fell back to the studio
+    // number. wa.me/31613440302.
+    whatsapp: "https://wa.me/31613440302",
   },
   {
     id: "andrea",
