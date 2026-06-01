@@ -110,10 +110,21 @@ export function MobileLeadBar() {
   // hub page; the page itself routes them to either Acuity or trainer-match.
   const intakeHref = isEn ? "/en/free-intro" : "/nl/gratis-intake";
 
-  // WhatsApp pre-filled with intake-intent (one-click → operator can match
-  // them with a trainer in 2 messages). Pulls from existing whatsappLinks
-  // map so the message stays in sync if the source-of-truth copy changes.
-  const waHref = isEn ? whatsappLinks.intakeMatchEn : whatsappLinks.intakeMatchNl;
+  // WhatsApp pre-fill is page-context-aware so the message isn't presumptuous.
+  // The homepage + generic pages serve BOTH PT clients AND trainers looking to
+  // rent the studio, so they get a neutral "I have a question" pre-fill; only
+  // intent-specific pages get an intent-matched message. (Fix 2026-06-01: a
+  // studio-rental visitor on the homepage previously got a "match me with a
+  // trainer" pre-fill, which was wrong for them.)
+  const waHref = (() => {
+    if (/\/(studio-huren|studio-rental|voor-trainers|for-trainers|word-trainer|become-trainer)(\/|$)/.test(pathname))
+      return isEn ? whatsappLinks.studioEn : whatsappLinks.studioNl;
+    if (/\/(open-gym)(\/|$)/.test(pathname))
+      return isEn ? whatsappLinks.openGymEn : whatsappLinks.openGymNl;
+    if (/\/(vind-jouw-personal-trainer|find-personal-trainer|gratis-intake|free-intro)(\/|$)/.test(pathname))
+      return isEn ? whatsappLinks.intakeMatchEn : whatsappLinks.intakeMatchNl;
+    return isEn ? whatsappLinks.en : whatsappLinks.nl;
+  })();
 
   const t = isEn
     ? {
