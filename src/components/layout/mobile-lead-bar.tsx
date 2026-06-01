@@ -106,9 +106,17 @@ export function MobileLeadBar() {
   // Phone number stays the same — only label varies by locale.
   const TEL = "+31615147952";
 
-  // Acuity intake landing (locale-aware): visitors get the right-language
-  // hub page; the page itself routes them to either Acuity or trainer-match.
-  const intakeHref = isEn ? "/en/free-intro" : "/nl/gratis-intake";
+  // Booking button is page-aware too: studio/trainer pages → book the studio,
+  // open-gym pages → Open Gym, everything else (incl. homepage + PT) → the PT
+  // free intake. Completes the mixed-audience-bar fix — a studio-renter no
+  // longer gets a PT "Gratis intake" as their booking CTA on studio pages.
+  const booking = (() => {
+    if (/\/(studio-huren|studio-rental|voor-trainers|for-trainers|word-trainer|become-trainer)(\/|$)/.test(pathname))
+      return { href: isEn ? "/en/book-studio" : "/nl/boek-studio", label: isEn ? "Book studio" : "Boek studio" };
+    if (/\/(open-gym)(\/|$)/.test(pathname))
+      return { href: isEn ? "/en/open-gym" : "/nl/open-gym", label: "Open Gym" };
+    return { href: isEn ? "/en/free-intro" : "/nl/gratis-intake", label: isEn ? "Free intake" : "Gratis intake" };
+  })();
 
   // WhatsApp pre-fill is page-context-aware so the message isn't presumptuous.
   // The homepage + generic pages serve BOTH PT clients AND trainers looking to
@@ -184,12 +192,12 @@ export function MobileLeadBar() {
 
         {/* Intake — calendar route (high-intent) */}
         <a
-          href={intakeHref}
+          href={booking.href}
           className="flex flex-col items-center justify-center gap-0.5 py-2.5 px-2 text-white bg-white/5 active:bg-white/10 transition-colors min-h-[60px]"
           data-mobile-bar="intake"
         >
           <Calendar className="w-5 h-5 text-brand" aria-hidden="true" />
-          <span className="text-[11px] font-bold leading-tight">{t.intake}</span>
+          <span className="text-[11px] font-bold leading-tight">{booking.label}</span>
           <span className="text-[9px] leading-tight text-white/65">{t.intakeSub}</span>
         </a>
       </div>
