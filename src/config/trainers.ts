@@ -205,6 +205,10 @@ const trainersRaw: Trainer[] = [
       en: "Andrea focuses on posture, technique and strength. With attention to proper form, she helps you build a strong, functional foundation.",
     },
     image: "/images/trainers/andrea.jpg",
+    // Andrea Grskii (female trainer, @grskiiii) — operator-confirmed 2026-05-31
+    // via WhatsApp contact card: +31 6 22730864. Was missing → intake button
+    // fell back to the studio number. wa.me/31622730864.
+    whatsapp: "https://wa.me/31622730864",
   },
   {
     id: "dara",
