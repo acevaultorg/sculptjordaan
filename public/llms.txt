@@ -69,8 +69,8 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 
 - [Homepage (NL)](https://sculptclub.nl/): https://sculptclub.nl/
 - [Homepage (EN)](https://sculptclub.nl/en): https://sculptclub.nl/en
-- [Find a personal trainer (NL)](https://sculptclub.nl/nl/vind-jouw-personal-trainer): book a free intro with one of 9 independent trainers
-- [Find a personal trainer (EN)](https://sculptclub.nl/en/find-personal-trainer): book a free intro with one of 9 independent trainers
+- [Find a personal trainer (NL)](https://sculptclub.nl/nl/vind-jouw-personal-trainer): book a free intro with one of the independent trainers
+- [Find a personal trainer (EN)](https://sculptclub.nl/en/find-personal-trainer): book a free intro with one of the independent trainers
 - [Open Gym (NL)](https://sculptclub.nl/nl/open-gym): self-train without a membership, 4-week cycles
 - [Open Gym (EN)](https://sculptclub.nl/en/open-gym): self-train without a membership, 4-week cycles
 - [Studio rental (NL)](https://sculptclub.nl/nl/studio-huren): private studio rental for freelance trainers and physiotherapists
