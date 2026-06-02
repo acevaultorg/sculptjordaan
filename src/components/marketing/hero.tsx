@@ -166,13 +166,44 @@ export function Hero({ locale }: { locale: Locale }) {
     // 4 bullets → 3 (hours dropped — already shown in sticky bar; price
     // moved into anchor chip).
     nl: {
-      subtitle: "Amsterdam ××× Jordaan",
-      taglineSub: "Eerste sessie vrijblijvend.",
-      // Was: "vanaf €45 · privé studio Jordaan" — operator audit 2026-05-27
-      // flagged as duplicate ("Jordaan" repeats overline, "privé studio"
-      // repeats h1 "PRIVATE GYM"). New copy adds genuinely-new value:
-      // 1-op-1 attention = the differentiator from chain-gym group trainers.
-      priceAnchor: "vanaf €45 · 1-op-1 met je trainer",
+      // 2026-06-02 hero v3 refresh — operator screenshot compared SculptClub
+      // hero to RUSH ("CHASE THE RUSH") + Saints & Stars ("NEXT LEVEL GYM" +
+      // €1 promo) and proposed: "PRIVATE GYM JORDAAN / Find your trainer and
+      // become / [Match with trainer] [rent the studio]". Direction: tighter
+      // above-fold + emotional anchor (vs prior static-positioning hero).
+      //
+      // Couldn't ship "PRIVATE GYM JORDAAN" on one line: at iPhone 14 Pro
+      // (393×3DPR) the 19-char string at clamp(1.5rem,7vw,4rem) + tracking
+      // 0.12em = ~547px width inside a 361px inner container → overflow.
+      // The math is the same calibration the 2026-05-17 fix landed on for
+      // "PRIVATE GYM" alone (11 chars, ~316px @ 27.5px font, fits with 45px
+      // headroom). Adding JORDAAN to the same line breaks that headroom.
+      //
+      // Synthesis: stack JORDAAN as a smaller H1 sub-line below PRIVATE GYM
+      // (carries location INTO the brand visual identity, not chrome above
+      // it). The overline "Amsterdam ××× Jordaan" is dropped — net 0 lines
+      // vs current, but JORDAAN now reads as part of the brand name rather
+      // than a faded location label.
+      //
+      // taglineSub swapped from "Eerste sessie vrijblijvend." (2026-05-19
+      // premium friction-reducer) → "Vind je trainer. Word sterker." —
+      // emotional anchor matching the RUSH single-emotion ruthlessness the
+      // brain audit praised. "Word sterker" is brand-pointed (PRIVATE GYM =
+      // strength-oriented voice). Friction-reduction is preserved via trust
+      // line bullet "Eerste intake gratis" (clickable link added 2026-04-XX,
+      // already above-fold).
+      //
+      // priceAnchor condensed: "vanaf €45 · 1-op-1 met je trainer" →
+      // "vanaf €45 · 1-op-1" — "met je trainer" is implied by primary CTA
+      // "Match je trainer in 30 sec" so condensing removes redundancy
+      // without losing the lead-cap signal (40% mobile pre-scroll bounce
+      // cause per 2026-05-26 operator audit).
+      //
+      // Subtitle field kept in shape with null so the destructuring/render
+      // sites stay stable (the JSX guards on `t.subtitle` to skip rendering).
+      subtitle: null,
+      taglineSub: "Vind je trainer. Word sterker.",
+      priceAnchor: "vanaf €45 · 1-op-1",
       // 2026-05-27 Clarity audit lesson — heatmap shows "Voor trainers"
       // (4 clicks) beats "Probeer Personal training" (2 clicks) on the same
       // hero. Hypothesis: "Probeer" is a vague verb that signals commit-
@@ -199,11 +230,12 @@ export function Hero({ locale }: { locale: Locale }) {
       ],
     },
     en: {
-      subtitle: "Amsterdam ××× Jordaan",
-      taglineSub: "First session free.",
-      // See NL parallel — was "private studio in Jordaan" (duplicate of
-      // overline + h1). New copy: 1-on-1 differentiator.
-      priceAnchor: "from €45 · 1-on-1 with your trainer",
+      // See NL parallel for full 2026-06-02 hero v3 reasoning. EN matches
+      // structure exactly: overline dropped, JORDAAN moves into H1 stack,
+      // taglineSub becomes emotional anchor, priceAnchor condensed.
+      subtitle: null,
+      taglineSub: "Find your trainer. Get stronger.",
+      priceAnchor: "from €45 · 1-on-1",
       // See NL parallel comment (2026-05-27 Clarity audit).
       ctas: [
         { label: "Match your trainer in 30 sec", href: "/en/match-trainer", icon: Users, primary: true },
@@ -316,9 +348,15 @@ export function Hero({ locale }: { locale: Locale }) {
           // composes them as one tight group (operator audit 2026-05-29).
           className="text-center flex-1 flex flex-col lg:justify-center [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)] [animation:hero-content-fade-in_0.6s_ease-out]"
         >
-          {/* TOP CLUSTER — overline + h1 + taglineSub (tight group, pulled up) */}
+          {/* TOP CLUSTER — h1 (with JORDAAN sub-line) + taglineSub.
+              2026-06-02: overline removed; JORDAAN moved INTO the H1 stack
+              as a smaller second line below PRIVATE GYM. See `nl:` strings
+              comment for the full rationale (overflow math + visual-hierarchy
+              shift from location-as-chrome to location-as-brand). */}
           <div>
-            <p className="overline mb-4 !text-white/85 tracking-[0.18em]">{t.subtitle}</p>
+            {t.subtitle && (
+              <p className="overline mb-4 !text-white/85 tracking-[0.18em]">{t.subtitle}</p>
+            )}
 
             <h1 className="text-white">
               {/* Hero headline — single line on all viewports 320px+.
@@ -333,9 +371,21 @@ export function Hero({ locale }: { locale: Locale }) {
                   → 56px @ 800px → 64px max @ 914px+. At 393px: 27.5 × 11.5
                   = 316px in 361px container = 45px headroom. Same dramatic
                   cap on desktop (64px @ 914px+), only mobile/small-tablet
-                  shrinks ~12.5%. */}
+                  shrinks ~12.5%.
+
+                  2026-06-02 PRIVATE GYM stays solo on line 1; JORDAAN renders
+                  as a smaller second span below — see next span. */}
               <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(1.5rem,7vw,4rem)]">
                 PRIVATE GYM
+              </span>
+              {/* JORDAAN — 2026-06-02 second H1 line replacing the dropped
+                  overline. Smaller clamp (1rem→1.875rem, ~4vw) keeps it
+                  visibly subordinate to PRIVATE GYM. Wider tracking
+                  (0.22em) gives it the spaced location-label register the
+                  old overline carried. Same white/85 tint matches the
+                  visual hierarchy used elsewhere in the page. */}
+              <span className="block mt-1 sm:mt-2 font-bold tracking-[0.22em] leading-[1] text-[clamp(1rem,4vw,1.875rem)] text-white/85">
+                JORDAAN
               </span>
               <span className="block mt-4 sm:mt-5 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
                 {t.taglineSub}
