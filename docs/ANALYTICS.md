@@ -1,10 +1,44 @@
 # Analytics — event taxonomy + Plausible setup
 
 Last verified end-to-end via real click testing 2026-05-08.
+Dashboard-hygiene section + business-outcomes mapping added 2026-06-02.
 
-## What fires where
+## TL;DR — what each goal MEANS in plain language
 
-Every CTA click is intercepted by the global handler in [src/components/layout/analytics.tsx](../src/components/layout/analytics.tsx). The handler classifies the click + fans out to 5 trackers (Plausible · GA4 · Google Ads · Meta Pixel · TikTok Pixel · Clarity captures via session). Plausible is the canonical source of truth for goal counts; the rest are for ad-platform conversion attribution.
+When you open https://plausible.io/sculptclub.nl, the Goals tab should show the **7 canonical goals below**. Each maps to a clear business outcome — read this table left-to-right to know what a goal-count is telling you:
+
+| Goal name (Plausible) | Plain-language meaning | Funnel stage | Revenue tied to |
+|---|---|---|---|
+| **WhatsApp Click** | Someone tapped "chat with us / a trainer" via WhatsApp | Top-of-funnel lead | Pre-conversion intent |
+| **Acuity Click** | Someone opened an Acuity booking page (Open Gym / Studio Rental / PT package — NOT first intake) | Mid-funnel | Paid booking initiated |
+| **Free Intake: Click** | Someone clicked through to schedule a FREE first-intake with a trainer | Mid-funnel HIGH-INTENT | Future PT revenue (~€45+/session, recurring) |
+| **Phone Click** | Someone tapped "call us" via `tel:` | Top-of-funnel lead | Pre-conversion intent |
+| **Email Click** | Someone clicked our contact email (`mailto:`) | Top-of-funnel lead | Pre-conversion intent |
+| **Lead Generated** | Aggregate "they reached out" — fires on every WhatsApp / Free-Intake / Phone / Email click. **This is the single number you check daily.** | Mid-funnel rollup | All channels combined |
+| **Outbound Link: Click** | Any external click (Google Maps, Instagram, etc.) — auto-tracked by Plausible | Engagement signal | Indirect (mostly noise; useful for IG follow-through) |
+
+**To answer "what happened?" questions on the dashboard:**
+- *"How many free intake bookings did we get this week?"* → `Free Intake: Click` (split by `intent` if you want trainer-specific)
+- *"How many WhatsApp leads about studio rental?"* → `WhatsApp Click` → Properties tab → filter `intent = studio_rental`
+- *"How many free try-outs were booked (Open Gym, Studio, PT)?"* → `Acuity Click` → Properties tab → filter `pricing = free` OR `booking_type = trial`
+- *"Total leads today across all channels?"* → `Lead Generated` (single number)
+- *"Which trainer is getting the most WhatsApp interest?"* → `WhatsApp Click` → Properties tab → filter by `trainer_name` (when present) or `intent` (always)
+
+## Dashboard hygiene — only these 7 goals should be promoted
+
+The Goals tab currently shows some legacy ad-hoc goals (`mobile_cta_default_intake`, `hero_cta_1_primary`) that were added during early CTA wiring. **These are technical event names, not business outcomes.** The events still fire and accumulate (Plausible records ALL custom events whether or not they're configured as goals — they appear under Properties tab once fired enough times). Archiving them as goals doesn't lose data; it just stops them cluttering the primary dashboard view.
+
+**Operator action:**
+1. Open https://plausible.io/sculptclub.nl/settings#goals
+2. Confirm the 7 canonical goals in the table above all exist (they do per 2026-05-08 verification — confirm they haven't been deleted)
+3. **Archive these legacy ad-hoc goals** so the Goals tab only shows the 7 canonical:
+   - `mobile_cta_default_intake` — was a one-off; its data is now captured by `Lead Generated` via the global click handler
+   - `hero_cta_1_primary` — same reason; the hero match-quiz primary CTA fires through the global handler now (also captured under `Lead Generated`)
+   - Any other event name in the list that doesn't appear in the 7-goal table above
+4. (Optional) Add these CONTEXT goals if you want hero-specific or quiz-specific funnels — they're not strictly needed because `Lead Generated` + properties filtering gives the same info, but they show up as standalone in the Goals widget:
+   - `Quiz Complete` (trainer-match-quiz finish event)
+   - `Booking Confirmed` (post-Acuity confirmation page)
+   - `Trainer Intake Submit` (specific-trainer intake form submit)
 
 ## Plausible goals + where they fire
 
