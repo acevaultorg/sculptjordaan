@@ -97,7 +97,7 @@ export default function GratisIntakePage() {
           <span className="text-brand">100% gratis</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
-          Maak kennis met je personal trainer in ons privé studio aan de gracht
+          Maak kennis met je personal trainer in onze privé studio aan de gracht
           in de Jordaan. Geen verplichting, geen abonnement.
         </p>
 

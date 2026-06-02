@@ -211,7 +211,7 @@ export default function BoutiquePTvsKetenNL() {
               je geschiedenis, je doelen en je herstelpatroon. Bij SculptClub
               werken trainers met 0% commissie — dat betekent dat ze hun eigen
               tarieven bepalen en de tijd nemen die nodig is, zonder
-              verkoopdruk uit het studio.
+              verkoopdruk uit de studio.
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold mt-12 mb-4">
