@@ -61,7 +61,7 @@ export default function PTNaBevallingAmsterdamNL() {
               </p>
               <p>
                 Bij SculptClub in de Jordaan bestaat er een rustig alternatief: een privé
-                studio, geen publiek, en vrouwelijke trainers die met postpartum-vrouwen werken.
+                studio, geen meekijkers, en vrouwelijke trainers die met postpartum-vrouwen werken.
                 Dit artikel legt uit waar je op moet letten, wanneer je kunt beginnen, en hoe
                 een personal trainer je proces veiliger en sneller maakt.
               </p>

@@ -22,12 +22,26 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               icon: Percent,
               title: "Trainers verdienen hun volle tarief.",
-              body: "Wij rekenen 0% commissie. De prijs die je ziet is wat de trainer krijgt — wij nemen niets. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
+              // 2026-06-02 honesty fix per operator: "this is not the full
+              // story, trainers pay rent". Previous body only mentioned 0%
+              // commission on session rates without disclosing the studio-
+              // rental side. Now explicitly states both sides: trainer keeps
+              // 100% of their session fee + SculptClub revenue comes from
+              // studio rental (transparent two-sided model, removes the
+              // implied "we work for free" trust gap that ZZP trainers would
+              // hit on the pricing page anyway).
+              body: "Wij rekenen 0% commissie op trainer-tarieven. De prijs die je ziet is wat de trainer krijgt — wij nemen niets van hun sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), niet uit hun werk. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
             },
             {
               icon: Lock,
               title: "Je traint harder in privé.",
-              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen publiek, geen receptie. Je traint zonder afleiding — alleen jij en je werk.",
+              // 2026-06-02: "geen publiek" → "geen meekijkers". Operator
+              // flagged "geen publiek" as not natural Dutch (literal but reads
+              // formal; Dutch native register for "no on-lookers / no people
+              // watching you" is the compound noun "meekijkers" which fits the
+              // rhythm "geen wachtrij · geen meekijkers · geen receptie"
+              // cleanly).
+              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen meekijkers, geen receptie. Je traint zonder afleiding — alleen jij en je werk.",
             },
             {
               icon: Calendar,
@@ -45,7 +59,9 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               icon: Percent,
               title: "Trainers deserve their full rate.",
-              body: "We take 0% commission. The rate you see is what the trainer charges — we don't mark it up. That's why the best independent trainers in Amsterdam work here.",
+              // EN parallel — see NL comment for full 2026-06-02 honesty fix
+              // reasoning. Two-sided transparency on the financial model.
+              body: "We take 0% commission on trainer rates. The rate you see is what the trainer charges — we don't touch their session fee. Our revenue comes from studio rental (from €12/hour), not their work. That's why the best independent trainers in Amsterdam work here.",
             },
             {
               icon: Lock,

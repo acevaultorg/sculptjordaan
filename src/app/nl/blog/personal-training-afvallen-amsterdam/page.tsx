@@ -136,7 +136,7 @@ export default function PersonalTrainingAfvallenNL() {
               <p>
                 Veel mensen die willen afvallen voelen zich oncomfortabel in een grote sportschool. De
                 blikken, de drukte, het wachten op apparaten. Bij SculptClub train je in een privé studio
-                aan de gracht in de Jordaan. Alleen jij en je trainer. Geen publiek, geen afleiding. Dat
+                aan de gracht in de Jordaan. Alleen jij en je trainer. Geen meekijkers, geen afleiding. Dat
                 maakt het voor veel klanten het verschil — ze durven harder te werken en voelen zich
                 veilig om te beginnen.
               </p>

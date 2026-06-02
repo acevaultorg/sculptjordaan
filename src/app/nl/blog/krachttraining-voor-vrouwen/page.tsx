@@ -86,7 +86,7 @@ export default function KrachttrainingVoorVrouwenNL() {
                 De dominantie van mannen, de blikken, het gevoel bekeken te worden. Bij SculptClub
                 train je in een <a href="/nl/studio" className="text-brand hover:underline">privé
                 studio</a> — alleen jij en je trainer. Je trainer regelt de studio
-                en zorgt dat je binnen kunt. Geen receptie, geen wachttijden, geen publiek.
+                en zorgt dat je binnen kunt. Geen receptie, geen wachttijden, geen meekijkers.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Een programma op maat</h2>
