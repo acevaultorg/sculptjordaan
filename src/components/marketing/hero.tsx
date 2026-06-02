@@ -432,12 +432,21 @@ export function Hero({ locale }: { locale: Locale }) {
               {/* ZZP-trainer acquisition CTA — outline variant for hierarchy
                   via fill-vs-outline (not size). Same min-height + padding +
                   font as primary so both feel like first-class actions.
-                  Border at white/50 + hover bg white/10 reads on the warm
-                  hero gradient without competing with the orange anchor. */}
+                  2026-06-02 legibility fix: pure transparent bg failed against
+                  bright photos in the hero rotation (canal-view-doors.jpg has
+                  sky + light-tree areas; white-on-beige washes out, operator
+                  screenshot caught it). Switched to glass-blur over a black
+                  veil — same pattern the proven Try-Out header button uses
+                  — guaranteed readable against ANY rotation slide while
+                  staying visually subordinate to the orange primary CTA.
+                  Border bumped to white/60 for slightly stronger definition
+                  and `[text-shadow:none]` REMOVED so the button text inherits
+                  the hero parent's text-shadow (double insurance against
+                  bright-background contrast failure). */}
               <ButtonLink
                 href={t.trainerLink.href}
                 size="lg"
-                className="plausible-event-name=hero_trainer_cta rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-transparent hover:bg-white/10 text-white border border-white/50 hover:border-white transition-all [text-shadow:none]"
+                className="plausible-event-name=hero_trainer_cta rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-black/35 backdrop-blur-md hover:bg-black/45 text-white border border-white/60 hover:border-white active:scale-95 transition-all"
                 onClick={() => trackHeroClick(t.trainerLink.label, 2, locale)}
               >
                 <Building2 className="w-4 h-4" />
