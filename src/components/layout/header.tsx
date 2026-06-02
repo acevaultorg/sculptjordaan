@@ -122,7 +122,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
       {
         icon: Building2,
         title: "Studio Huren",
-        description: "Gratis test sessie · 60 min",
+        description: "Gratis proefsessie · 60 min",
         href: "/nl/studio-huren/gratis-test",
       },
       {
@@ -453,7 +453,14 @@ export function Header() {
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className="hidden sm:flex w-11 h-11 sm:w-9 sm:h-9 items-center justify-center rounded-xl bg-muted/40 border border-border text-muted-foreground hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
+              // 2026-05-27 contrast fix: was `bg-muted/40 text-muted-foreground
+              // border-border` → too low-contrast in light mode (operator
+              // screenshot showed icons almost invisible against light-cream
+              // page bg). Now opaque `bg-muted` (no /40) + `text-foreground/75`
+              // + `border-foreground/15` — readable in both light + dark per
+              // CLAUDE.md token-safety rules (no hardcoded text-white/bg-black
+              // on chrome elements; whites only over photos or on brand fills).
+              className="hidden sm:flex w-11 h-11 sm:w-9 sm:h-9 items-center justify-center rounded-xl bg-muted border border-foreground/15 text-foreground/75 hover:text-foreground hover:bg-accent active:scale-95 transition-all touch-manipulation"
             >
               <Globe className="w-4 h-4" aria-hidden="true" />
               <span className="sr-only">
@@ -465,10 +472,10 @@ export function Header() {
             <button
               onClick={handleLoginClick}
               className={cn(
-                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border border-border transition-all cursor-pointer touch-manipulation",
+                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
                 loginOpen
-                  ? "text-foreground bg-accent"
-                  : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
+                  ? "text-foreground bg-accent border-border"
+                  : "text-foreground/75 hover:text-foreground bg-muted hover:bg-accent border-foreground/15 active:scale-95"
               )}
               aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
               title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
@@ -480,10 +487,10 @@ export function Header() {
             <button
               onClick={handleMenuClick}
               className={cn(
-                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border border-border transition-all cursor-pointer touch-manipulation",
+                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
                 menuOpen
-                  ? "text-foreground bg-accent"
-                  : "text-muted-foreground hover:text-foreground bg-muted/40 hover:bg-accent active:scale-95"
+                  ? "text-foreground bg-accent border-border"
+                  : "text-foreground/75 hover:text-foreground bg-muted hover:bg-accent border-foreground/15 active:scale-95"
               )}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >

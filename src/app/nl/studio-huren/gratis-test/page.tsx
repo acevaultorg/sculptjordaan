@@ -29,9 +29,9 @@ import { ArrowRight, MessageCircle, Building2, Ban, CreditCard, Clock } from "lu
  */
 
 export const metadata: Metadata = {
-  title: { absolute: "Gratis test sessie — Studio Huren | SculptClub Jordaan" },
+  title: { absolute: "Gratis proefsessie — Studio Huren | SculptClub Jordaan" },
   description:
-    "Boek je gratis 60-minuten test sessie in onze privé studio in Amsterdam Jordaan. Geen creditcard, geen contract, gratis annuleren. Voor nieuwe trainers.",
+    "Boek je gratis 60-minuten proefsessie in onze privé studio in Amsterdam Jordaan. Geen creditcard, geen contract, gratis annuleren. Voor nieuwe trainers.",
   alternates: {
     canonical: "/nl/studio-huren/gratis-test",
     languages: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   // page just needs to be findable via the Try-Out funnel and direct links).
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Gratis test sessie — Studio Huren bij SculptClub",
+    title: "Gratis proefsessie — Studio Huren bij SculptClub",
     description: "60 minuten in de privé studio. Geen creditcard, geen contract.",
     url: "/nl/studio-huren/gratis-test",
     type: "website",
@@ -66,7 +66,7 @@ export default function GratisTestStudioHurenNL() {
         items={[
           { name: "Home", url: "/" },
           { name: "Studio Huren", url: "/nl/studio-huren" },
-          { name: "Gratis test sessie", url: "/nl/studio-huren/gratis-test" },
+          { name: "Gratis proefsessie", url: "/nl/studio-huren/gratis-test" },
         ]}
       />
 
@@ -75,7 +75,7 @@ export default function GratisTestStudioHurenNL() {
         <div className="mb-6 text-center max-w-2xl mx-auto">
           <p className="overline text-primary">Voor nieuwe trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Gratis test sessie — Studio Huren
+            Gratis proefsessie — Studio Huren
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
             60 minuten in onze privé studio in de Jordaan. Geen creditcard, geen contract, altijd gratis annuleren. Daarna kies je zelf of je verder wilt.
@@ -103,7 +103,7 @@ export default function GratisTestStudioHurenNL() {
         <div id="book">
           <AcuityEmbed
             url={acuityFreeTrials.studioRentalTryout}
-            title="Boek je gratis Studio Rental test sessie bij SculptClub"
+            title="Boek je gratis Studio Rental proefsessie bij SculptClub"
             height={900}
             className="rounded-2xl overflow-hidden bg-white max-w-3xl mx-auto"
           />
@@ -117,7 +117,7 @@ export default function GratisTestStudioHurenNL() {
             <div>
               <p className="text-base font-semibold">Vragen vooraf?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp ons — we adviseren meestal binnen 1 uur.
+                WhatsApp ons — we reageren meestal binnen 1 uur.
               </p>
             </div>
             <ButtonLink

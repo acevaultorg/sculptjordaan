@@ -265,7 +265,7 @@ export default function BoekStudioPageNL() {
             <div>
               <p className="text-base font-semibold">Niet zeker welke optie?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp ons je situatie — we adviseren meestal binnen 1 uur.
+                WhatsApp ons je situatie — we reageren meestal binnen 1 uur.
               </p>
             </div>
             <ButtonLink
