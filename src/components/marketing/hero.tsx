@@ -189,7 +189,12 @@ export function Hero({ locale }: { locale: Locale }) {
       // whatsappLink removed 2026-05-27 — see comment in BOTTOM CLUSTER.
       trustParts: [
         { text: "Eerste intake gratis", href: "/nl/gratis-intake", event: "hero_trust_intake" },
-        { text: "Geen contracten" },
+        // 2026-06-02: was static text. Clarity 2026-05-19 audit showed 5.45% of
+        // trust-line taps were dead clicks; v19 fix promoted 2 of 3 bullets to
+        // links but missed this middle one. Routes to /nl/prijzen which opens
+        // with the no-contract / cancel-anytime policy — single coherent
+        // destination, no surprise. Closes the residual dead-click leak.
+        { text: "Geen contracten", href: "/nl/prijzen", event: "hero_trust_no_contracts" },
         { text: "5.0 ★ Google", href: "https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam", event: "hero_trust_reviews", external: true },
       ],
     },
@@ -207,7 +212,8 @@ export function Hero({ locale }: { locale: Locale }) {
       // whatsappLink removed 2026-05-27 — see NL comment.
       trustParts: [
         { text: "First intro free", href: "/en/free-intro", event: "hero_trust_intake" },
-        { text: "No contracts" },
+        // See NL parallel — same dead-click closure.
+        { text: "No contracts", href: "/en/pricing", event: "hero_trust_no_contracts" },
         { text: "5.0 ★ Google", href: "https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam", event: "hero_trust_reviews", external: true },
       ],
     },
