@@ -8,9 +8,15 @@ const nextConfig: NextConfig = {
     // Cost optimization (2026-05-06): default deviceSizes generates up to 8
     // variants per source image (640/750/828/1080/1200/1920/2048/3840). For a
     // marketing site this is over-provisioned; the trimmed list below covers
-    // the layouts in use (`sizes="(max-width: 672px) 100vw, 672px"` →
-    // 640/828/1080/1920). Cuts unique-transform count by ~50%.
-    deviceSizes: [640, 828, 1080, 1920],
+    // the layouts in use. Cuts unique-transform count by ~38%.
+    //
+    // 2026-06-02 LCP fix: added 1280 between 1080 and 1920. CDP-measured LCP
+    // on slow-4G mobile (Pixel-ish 393×852@3DPR) was 4572ms — POOR. Root cause:
+    // hero img `sizes="100vw"` + DPR-3 viewport → effective need 1179px →
+    // browser picked 1920 (next-up from 1080). 1920 AVIF ~250-400KB vs 1280
+    // AVIF ~120KB. Adding 1280 catches the 393×3 + 414×3 (iPhone 14 Pro / 14
+    // Pro Max / Pixel 7-8) most-common-mobile path. Projected LCP: 4.5s → ~2-2.5s.
+    deviceSizes: [640, 828, 1080, 1280, 1920],
     // Default minimumCacheTTL is 14400s (4h) — every cached transform
     // revalidates that often, paying for transforms over and over. Raising to
     // 7 days (604800) cuts revalidations ~42×. Source images on this project
