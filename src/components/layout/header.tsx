@@ -94,25 +94,36 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
     label: "Try-Out",
     title: "Wat wil je proberen?",
     subtitle: "Eerste keer altijd gratis.",
-    // 2026-05-27 update — operator: "also the steps afterwards."
-    // Pre-update: Studio Huren + Open Gym routed to external Acuity
-    // calendars in a new tab. Visitor left sculptclub.nl mid-funnel,
-    // landed on the bare Acuity scheduler with no SculptClub context,
-    // then had to come back if confused. Continuity broken.
-    // Now: in-page #schedule anchors on /nl/studio-huren and /nl/open-gym
-    // (which both ship an <AcuityEmbed> wired to the SAME free-tryout
-    // appointmentType as the previous external URLs). Visitor lands on
-    // a SculptClub-branded page, the page auto-scrolls to the
-    // "Gratis proefsessie" / "Gratis proefles" section + embedded
-    // scheduler, books in-place. End-to-end on sculptclub.nl. Personal
-    // Trainer continues to /nl/gratis-intake (already a dedicated
-    // PT-free-intake landing page).
+    // 2026-05-27 update — operator: "also the steps afterwards" +
+    // "user for studio huren try-out should not go to booking page,
+    // best special page for trainers that are new, so they can book
+    // try out (for free) easily with acuity."
+    //
+    // History: Studio Huren + Open Gym originally routed to external
+    // Acuity calendars in a new tab (visitor left sculptclub.nl
+    // mid-funnel). Mid-day update routed both to in-page #schedule
+    // anchors on the full /studio-huren + /open-gym pages, but those
+    // pages now lead with paid pricing (post-CTA-simplification),
+    // which is wrong-context for a free-tryout visitor.
+    //
+    // Now: dedicated lean free-tryout landing pages with embedded
+    // Acuity scheduler:
+    //   Studio Huren → /nl/studio-huren/gratis-test (new)
+    //   Open Gym    → /nl/open-gym#schedule (still has dedicated
+    //                  Gratis proefles section + embed on the main
+    //                  open-gym page — works for now; could spin off
+    //                  if the same friction surfaces there)
+    //   Personal Trainer → /nl/gratis-intake (existing dedicated page)
+    //
+    // Result: every Try-Out card lands on a page focused exclusively
+    // on booking the free first session — no paid pricing competing
+    // for attention.
     categories: [
       {
         icon: Building2,
         title: "Studio Huren",
         description: "Gratis test sessie · 60 min",
-        href: "/nl/studio-huren#schedule",
+        href: "/nl/studio-huren/gratis-test",
       },
       {
         icon: Users,
@@ -138,7 +149,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
         icon: Building2,
         title: "Studio Rental",
         description: "Free test session · 60 min",
-        href: "/en/studio-rental#schedule",
+        href: "/en/studio-rental/free-trial",
       },
       {
         icon: Users,
