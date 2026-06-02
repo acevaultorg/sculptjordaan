@@ -38,7 +38,7 @@ const steps = [
 ];
 
 const trustItems = [
-  { icon: Shield, text: "Geen contract" },
+  { icon: Shield, text: "Altijd opzegbaar" },
   { icon: Clock, text: "Dagelijks 06:30–22:00" },
   { icon: MessageCircle, text: "Direct contact via WhatsApp" },
 ];

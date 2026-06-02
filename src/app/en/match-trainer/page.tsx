@@ -59,7 +59,7 @@ export default function MatchTrainerPage() {
 
           <div className="mt-8 text-center text-xs text-muted-foreground max-w-lg mx-auto">
             <p>
-              Private studio · Egelantiersgracht 424 · No contract · First intro free · Reply <strong className="text-foreground font-semibold">usually within 1 hour</strong> via WhatsApp
+              Private studio · Egelantiersgracht 424 · Cancel anytime · First intro free · Reply <strong className="text-foreground font-semibold">usually within 1 hour</strong> via WhatsApp
             </p>
           </div>
         </FadeIn>

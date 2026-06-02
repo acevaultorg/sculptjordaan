@@ -69,7 +69,7 @@ export default function MatchTrainerPage() {
           {/* Trust strip below the quiz — visible on result screen + intro */}
           <div className="mt-8 text-center text-xs text-muted-foreground max-w-lg mx-auto">
             <p>
-              Privé studio · Egelantiersgracht 424 · Geen contract · Eerste intake gratis · Antwoord <strong className="text-foreground font-semibold">meestal binnen 1 uur</strong> via WhatsApp
+              Privé studio · Egelantiersgracht 424 · Altijd opzegbaar · Eerste intake gratis · Antwoord <strong className="text-foreground font-semibold">meestal binnen 1 uur</strong> via WhatsApp
             </p>
           </div>
         </FadeIn>

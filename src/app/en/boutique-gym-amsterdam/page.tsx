@@ -38,7 +38,7 @@ const steps = [
 ];
 
 const trustItems = [
-  { icon: Shield, text: "No contract" },
+  { icon: Shield, text: "Cancel anytime" },
   { icon: Clock, text: "Daily 06:30–22:00" },
   { icon: MessageCircle, text: "Quick reply on WhatsApp" },
 ];
