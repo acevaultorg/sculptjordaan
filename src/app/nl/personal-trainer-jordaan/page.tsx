@@ -109,7 +109,7 @@ export default function PersonalTrainerJordaanPage() {
           <ArrowRight className="w-5 h-5" />
         </a>
         <p className="mt-3 text-sm text-muted-foreground">
-          Geen contract · Gratis annuleren · 45 minuten
+          Geen contract · Gratis annuleren · 100% vrijblijvend
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Liever even appen?{" "}

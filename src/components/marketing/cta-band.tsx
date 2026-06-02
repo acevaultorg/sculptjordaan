@@ -17,7 +17,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
             {
               icon: Users,
               label: "Intake met een trainer",
-              description: "45 min · gratis · vrijblijvend",
+              description: "gratis · vrijblijvend",
               href: "/nl/boek-trainer",
               external: false,
             },
@@ -47,7 +47,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
             {
               icon: Users,
               label: "Intro with a trainer",
-              description: "45 min · free · no obligation",
+              description: "free · no obligation",
               href: "/en/book-trainer",
               external: false,
             },

@@ -44,7 +44,7 @@ export default function FreeIntroBlogEN() {
         datePublished="2026-04-01"
       />
       <FaqJsonLd faqs={[
-        { question: "What is a free intro with a personal trainer?", answer: "A free intro is a first meeting between you and a personal trainer. In 30 to 45 minutes, you discuss your goals, your current fitness level, and what you expect from working together. The trainer explains how they work and whether their approach is a good fit." },
+        { question: "What is a free intro with a personal trainer?", answer: "A free intro is a first meeting between you and a personal trainer. You discuss your goals, your current fitness level, and what you expect from working together. The trainer explains how they work and whether their approach is a good fit. The duration is up to you and your trainer." },
         { question: "Why do personal trainers offer a free intro?", answer: "Good trainers know that a successful working relationship starts with the right fit. The intro is as much for you as it is for the trainer — they also want to know if you're a good match. A free session removes the barrier to taking that first step, without locking you into anything." },
         { question: "What happens during the intro?", answer: "Every trainer has their own style, but a free intro at SculptClub typically looks like this:" },
         { question: "How do you prepare for a free intro?", answer: "No extensive preparation needed. But a few things help you get more out of it:" },
@@ -81,9 +81,10 @@ export default function FreeIntroBlogEN() {
 
               <h2>What is a free intro with a personal trainer?</h2>
               <p>
-                A free intro is a first meeting between you and a personal trainer. In 30 to 45 minutes,
-                you discuss your goals, your current fitness level, and what you expect from working
-                together. The trainer explains how they work and whether their approach is a good fit.
+                A free intro is a first meeting between you and a personal trainer. You discuss your goals,
+                your current fitness level, and what you expect from working together. The trainer explains
+                how they work and whether their approach is a good fit. The duration is up to you and your
+                trainer.
               </p>
               <p>
                 At SculptClub, the <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">free intro</Link> is open-ended — duration is up to you and your trainer. No preparation needed — just show up

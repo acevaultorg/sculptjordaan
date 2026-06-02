@@ -28,7 +28,7 @@ const steps = [
   {
     step: "2",
     title: "Book a free intro",
-    desc: "45 minutes, 100% free. Meet your personal trainer and see the private studio on the Amsterdam Egelantiersgracht. No commitment.",
+    desc: "100% free. Meet your personal trainer and see the private studio on the Amsterdam Egelantiersgracht. No commitment.",
   },
   {
     step: "3",
@@ -109,7 +109,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
           <ArrowRight className="w-5 h-5" />
         </a>
         <p className="mt-3 text-sm text-muted-foreground">
-          No contract · Free cancellation · 45 minutes
+          No contract · Free cancellation · 100% no commitment
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Prefer WhatsApp?{" "}

@@ -127,7 +127,7 @@ export default function GratisIntakeAdsPage() {
             <p className="text-[10px] text-muted-foreground mt-0.5">altijd opzegbaar</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-secondary border border-border/30">
-            <p className="text-xs font-semibold text-foreground">45 minuten</p>
+            <p className="text-xs font-semibold text-foreground">Gratis</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">vrijblijvend</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-secondary border border-border/30">

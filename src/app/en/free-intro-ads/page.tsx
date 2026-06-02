@@ -94,7 +94,7 @@ export default function FreeIntroAdsPage() {
             <p className="text-[10px] text-muted-foreground mt-0.5">cancel anytime</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-secondary border border-border/30">
-            <p className="text-xs font-semibold text-foreground">45 minutes</p>
+            <p className="text-xs font-semibold text-foreground">Free</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">no obligation</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-secondary border border-border/30">

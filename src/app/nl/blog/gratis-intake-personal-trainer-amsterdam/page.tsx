@@ -81,9 +81,10 @@ export default function GratisIntakeBlogNL() {
 
               <h2>Wat is een gratis intake bij een personal trainer?</h2>
               <p>
-                Een gratis intake is een eerste kennismaking tussen jou en een personal trainer. In 30 tot
-                45 minuten bespreken jullie je doelen, je huidige conditie en wat je verwacht van de
-                samenwerking. De trainer legt uit hoe hij of zij werkt en of de aanpak bij jou past.
+                Een gratis intake is een eerste kennismaking tussen jou en een personal trainer. Jullie
+                bespreken je doelen, je huidige conditie en wat je verwacht van de samenwerking. De trainer
+                legt uit hoe hij of zij werkt en of de aanpak bij jou past. De duur stem je samen met je
+                trainer af.
               </p>
               <p>
                 Bij SculptClub is de <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">gratis intake</Link> vrijblijvend — de duur stem je samen met je trainer af. Je hoeft niets voor te bereiden —

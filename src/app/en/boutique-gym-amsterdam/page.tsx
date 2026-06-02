@@ -23,7 +23,7 @@ const steps = [
   {
     step: "1",
     title: "Book a free intro",
-    desc: "45 minutes, on us. Meet a trainer and see the private studio on the Egelantiersgracht — no commitment.",
+    desc: "On us. Meet a trainer and see the private studio on the Egelantiersgracht — no commitment.",
   },
   {
     step: "2",
@@ -109,7 +109,7 @@ export default function BoutiqueGymAmsterdamPage() {
           <ArrowRight className="w-5 h-5" />
         </a>
         <p className="mt-3 text-sm text-muted-foreground">
-          No contract · Free cancellation · 45 minutes
+          No contract · Free cancellation · 100% no commitment
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Prefer WhatsApp?{" "}
