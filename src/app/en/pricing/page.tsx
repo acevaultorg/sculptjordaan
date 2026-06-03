@@ -519,6 +519,9 @@ export default function PricingPageEN() {
               { q: "Can I pause?", a: "There's no membership to pause. Open Gym simply ends after each 4-week cycle — book the next one whenever suits you, at no cost. Personal training is booked per session, so 'pausing' just means not booking for a while." },
               { q: "How long is my studio package valid?", a: "Studio packages are valid for 1 year. Use your credit whenever it suits you — no rush, no expiry within the year." },
               { q: "How do I pay?", a: "Credit card, Apple Pay and Google Pay. Studio rental also accepts invoice. iDEAL via Apple Pay." },
+              // U (2026-06-02) — business/reimbursement. See NL for accuracy notes.
+              { q: "Can I pay via invoice or for business?", a: "Yes. Studio rental and packages can be invoiced — handy for freelance trainers (ZZP) and companies. Via the werkkostenregeling or a corporate-fitness scheme your employer may (partly) contribute; ask your employer." },
+              { q: "Does my health insurance cover personal training?", a: "Sometimes partially: certain supplementary policies reimburse lifestyle or exercise coaching. Whether it applies in your case, check with your health insurer — we can provide an invoice in your name." },
               { q: "What if the trainer isn't right for me?", a: "The first intro is free and no-obligation. Not a match? No worries. You can always try a different trainer." },
               { q: "Are there hidden costs?", a: "No. The prices on this page are all-inclusive. No sign-up fee, no admin charges, no surprises." },
               { q: "How does the door code work?", a: "The evening before your session you receive a unique door code via WhatsApp. No reception, no keys — walk straight in." },

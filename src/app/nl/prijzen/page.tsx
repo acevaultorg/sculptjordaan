@@ -521,6 +521,12 @@ export default function PricingPageNL() {
               { q: "Kan ik pauzeren?", a: "Er is geen abonnement om te pauzeren. Open Gym stopt vanzelf na elke 4-weken cyclus — boek de volgende wanneer het jou uitkomt, zonder kosten. Personal training boek je per sessie, dus 'pauzeren' is simpelweg even niet boeken." },
               { q: "Hoe lang is mijn strippenkaart geldig?", a: "Studio-strippenkaarten zijn 1 jaar geldig. Gebruik je tegoed wanneer het jou uitkomt — geen haast, geen verloop binnen het jaar." },
               { q: "Hoe betaal ik?", a: "CreditCard, Apple Pay en Google Pay. Studio huur ook per factuur. iDEAL via Apple Pay." },
+              // U (2026-06-02) — zakelijk/vergoeding. Accurate + hedged: PT stays
+              // trainer-arranged (only studio/packages "op factuur"); insurance
+              // line directs to the insurer (NL basic insurance doesn't cover PT —
+              // never promise coverage, YMYL-safe).
+              { q: "Kan ik zakelijk of op factuur betalen?", a: "Ja. Studiohuur en pakketten kunnen op factuur — handig voor ZZP-trainers en bedrijven. Via de werkkostenregeling of een bedrijfsfitnessregeling kan je werkgever soms (deels) bijdragen; vraag het na bij je werkgever." },
+              { q: "Vergoedt mijn zorgverzekering personal training?", a: "Soms gedeeltelijk: bepaalde aanvullende verzekeringen vergoeden leefstijl- of beweegcoaching. Of dit in jouw geval geldt, vraag je na bij je zorgverzekeraar — wij kunnen een factuur op naam leveren." },
               { q: "Wat als de trainer niet bij me past?", a: "De eerste intake is gratis en vrijblijvend. Bevalt het niet? Geen verplichtingen. Je kunt altijd een andere trainer proberen." },
               { q: "Zijn er verborgen kosten?", a: "Nee. De prijzen op deze pagina zijn alles-inclusief. Geen inschrijfgeld, geen administratiekosten, geen verrassingen." },
               { q: "Hoe werkt de deurcode?", a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode. Geen receptie, geen sleutels — je loopt direct naar binnen." },
