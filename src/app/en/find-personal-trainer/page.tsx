@@ -227,6 +227,11 @@ export default function TrainersPageEN() {
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">For seniors (50+)</p>
               <p className="text-sm text-muted-foreground">Stay strong, keep balance, prevent falls. Gradual build in a quiet space.</p>
             </a>
+            {/* S-finish (2026-06-02): injury-recovery niche — EN parallel. */}
+            <a href="/en/blog/personal-trainer-after-injury-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Recovering from injury</p>
+              <p className="text-sm text-muted-foreground">Safely rebuild after an injury or surgery. Rehab-experienced trainers, calm pace, technique first.</p>
+            </a>
           </div>
         </FadeIn>
       </Section>

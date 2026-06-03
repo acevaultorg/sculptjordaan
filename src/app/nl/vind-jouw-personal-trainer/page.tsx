@@ -250,6 +250,14 @@ export default function TrainersPageNL() {
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Voor senioren (50+)</p>
               <p className="text-sm text-muted-foreground">Sterker blijven, balans behouden, valpreventie. Rustig opbouwen in een rustige ruimte.</p>
             </a>
+            {/* S-finish (2026-06-02): injury-recovery niche — the gap in the
+                router, validated by Studio Performance Boost's injury segment.
+                Trainers Alex (herstel), Ibrahim (revalidatie), Andrea (techniek)
+                cover this. Links to the existing na-blessure blog. */}
+            <a href="/nl/blog/personal-trainer-na-blessure-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Herstel na een blessure</p>
+              <p className="text-sm text-muted-foreground">Veilig terug opbouwen na een blessure of operatie. Revalidatie-ervaren trainers, rustig tempo, techniek eerst.</p>
+            </a>
           </div>
         </FadeIn>
       </Section>
