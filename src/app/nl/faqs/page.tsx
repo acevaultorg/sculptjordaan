@@ -115,7 +115,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Welke apparatuur is beschikbaar?",
-        a: "Onze studio is volledig uitgerust met professionele apparatuur: squat rack, verstelbare bank, dumbbells, kabelmachine, cardio equipment en accessoires. Alles wat je nodig hebt voor een volledige training.",
+        a: "Onze studio is volledig uitgerust met professionele apparatuur van Rogue, Eleiko en Concept2: squat rack, verstelbare bank, dumbbells, kabelmachine, cardio en accessoires. Alles wat je nodig hebt voor een volledige training.",
       },
       {
         q: "Hoe werkt de deurcode?",

@@ -133,7 +133,7 @@ const faqs = [
   },
   {
     q: "Welke apparatuur is beschikbaar?",
-    a: "De studio is volledig uitgerust met een powerrack, verstelbare bank, dumbbells, kabelmachine, cardio apparatuur en meer. Alles wat je nodig hebt voor een complete training.",
+    a: "De studio is volledig uitgerust met professionele apparatuur van Rogue, Eleiko en Concept2: powerrack, verstelbare bank, dumbbells, kabelmachine, cardio en meer. Alles wat je nodig hebt voor een complete training.",
   },
   {
     q: "Hoe lang duurt een sessie?",

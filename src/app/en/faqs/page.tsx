@@ -111,7 +111,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What equipment is available?",
-        a: "Our studio is fully equipped with professional equipment: squat rack, adjustable bench, dumbbells, cable machine, cardio equipment and accessories. Everything you need for a complete workout.",
+        a: "Our studio is fully equipped with professional gear from Rogue, Eleiko and Concept2: squat rack, adjustable bench, dumbbells, cable machine, cardio and accessories. Everything you need for a complete workout.",
       },
       {
         q: "How does the door code work?",

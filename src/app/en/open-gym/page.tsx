@@ -132,7 +132,7 @@ const faqs = [
   },
   {
     q: "What equipment is available?",
-    a: "The studio is fully equipped with a power rack, adjustable bench, dumbbells, cable machine, cardio equipment and more. Everything you need for a complete workout.",
+    a: "The studio is fully equipped with professional gear from Rogue, Eleiko and Concept2: power rack, adjustable bench, dumbbells, cable machine, cardio and more. Everything you need for a complete workout.",
   },
   {
     q: "How long is a session?",
