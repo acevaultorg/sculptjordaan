@@ -81,6 +81,25 @@ const faqCategories: FaqCategory[] = [
         q: "Wat als de trainer niet bij me past?",
         a: "Geen probleem. De intake is gratis en vrijblijvend. Je zit nergens aan vast. Wil je een andere trainer proberen? Dat kan altijd.",
       },
+      {
+        // T (2026-06-02) first-timer gap — beginner nervousness, the #1 reason
+        // people hesitate to start PT (validated across competitor FAQs).
+        q: "Ik heb nog nooit personal training gedaan — is dit iets voor mij?",
+        a: "Zeker. Veel klanten beginnen zonder ervaring. Je trainer start bij jouw niveau, legt elke oefening rustig uit en bouwt op in jouw tempo — in een privé studio, met volledige focus. Juist als je nieuw bent, is 1-op-1 begeleiding de veiligste en snelste manier om goed te beginnen.",
+      },
+      {
+        // T — expat / English (every Jordaan rival chases this; we have 4+
+        // bilingual trainers but never answered it at FAQ level).
+        q: "Spreken de trainers Engels?",
+        a: "Ja. Al onze trainers coachen vloeiend in het Engels — geen Nederlands nodig. Op de trainerspagina zie je per trainer welke talen ze spreken.",
+      },
+      {
+        // T — injury-safe. Grounded: Alex (herstel), Ibrahim (revalidatie),
+        // Andrea (techniek) cover this. Honest about no in-house physio
+        // (consistent with the /nl/personal-trainer-jordaan FAQ).
+        q: "Kan ik trainen met een blessure of na revalidatie?",
+        a: "Ja, met de juiste trainer. Verschillende trainers hebben ervaring met herstel en revalidatie en bouwen veilig op — techniek eerst, rustig tempo. Bespreek je situatie tijdens de gratis intake; bij medische klachten werken we waar nodig samen met je fysiotherapeut. Wij hebben zelf geen fysiotherapeut in dienst.",
+      },
     ],
   },
   {

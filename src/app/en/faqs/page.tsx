@@ -81,6 +81,21 @@ const faqCategories: FaqCategory[] = [
         q: "What if the trainer isn't a good fit?",
         a: "No problem. The intro is free and no-obligation. You're not tied to anything. Want to try a different trainer? You always can.",
       },
+      {
+        // T (2026-06-02) first-timer gap — beginner nervousness.
+        q: "I've never done personal training before — is this for me?",
+        a: "Absolutely. Many clients start with zero experience. Your trainer begins at your level, explains every exercise calmly, and builds at your pace — in a private studio, with full focus. Especially if you're new, 1-on-1 coaching is the safest and fastest way to start well.",
+      },
+      {
+        // T — expat / English.
+        q: "Do the trainers speak English?",
+        a: "Yes. All our trainers coach fluently in English — no Dutch required. Each trainer's profile shows which languages they speak.",
+      },
+      {
+        // T — injury-safe. Honest about no in-house physio.
+        q: "Can I train with an injury or after rehab?",
+        a: "Yes, with the right trainer. Several trainers have experience with recovery and rehab and build up safely — technique first, calm pace. Discuss your situation during the free intro; for medical issues we work with your physiotherapist where needed. We don't have an in-house physiotherapist.",
+      },
     ],
   },
   {
