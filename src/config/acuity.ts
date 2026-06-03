@@ -162,6 +162,13 @@ export const whatsappLinks = {
   /** Studio rental interest */
   studioNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag meer weten over studio huren bij SculptClub")}`,
   studioEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to know more about renting the studio at SculptClub")}`,
+  /** Tour request (Q, 2026-06-02) — lower-friction "see the space first" entry,
+      validated by Vondelgym's "Boek rondleiding". Routes to the WhatsApp Business
+      line (auto-replies live) — NOT a new Acuity type (Acuity types are operator-
+      only per CLAUDE.md). Especially strong for the ZZP-trainer funnel: trainers
+      want to see equipment + the room before committing to hourly rental. */
+  tourNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag een rondleiding plannen bij SculptClub (15 min, vrijblijvend).")}`,
+  tourEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to book a tour of SculptClub (15 min, no obligation).")}`,
   /** PT free-intake — "match me with a trainer" path for paid traffic landing on
       /nl/gratis-intake + /en/free-intro. Shortcuts the trainer-finder hub flow
       (which was driving 100% bounces from Google Ads visitors per Clarity

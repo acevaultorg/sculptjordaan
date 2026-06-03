@@ -333,7 +333,18 @@ export default function StudioRentalPageNL() {
             <div>
               <p className="text-base font-semibold">Niet zeker welke optie?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp ons je situatie — we reageren meestal binnen 1 uur.
+                WhatsApp ons je situatie — we reageren meestal binnen 1 uur.{" "}
+                {/* Q (2026-06-02) tour option — ZZP trainers want to see the
+                    room + equipment before committing to hourly rental. */}
+                Liever eerst de ruimte zien?{" "}
+                <a
+                  href={whatsappLinks.tourNl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="plausible-event-name=studio_huren_tour font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Plan een gratis rondleiding (15 min)
+                </a>.
               </p>
             </div>
             <ButtonLink

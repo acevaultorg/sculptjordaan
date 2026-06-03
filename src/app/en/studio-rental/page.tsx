@@ -323,7 +323,19 @@ export default function StudioRentalPageEN() {
             <div>
               <p className="text-base font-semibold">Not sure which option?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp us your situation — we usually advise within 1 hour.
+                {/* "advise" → "reply" mirrors the NL "we reageren" correction
+                    (operator, earlier this session). */}
+                WhatsApp us your situation — we usually reply within 1 hour.{" "}
+                {/* Q tour option — EN parallel. */}
+                Rather see the space first?{" "}
+                <a
+                  href={whatsappLinks.tourEn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="plausible-event-name=studio_rental_tour font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Book a free tour (15 min)
+                </a>.
               </p>
             </div>
             <ButtonLink
