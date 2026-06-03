@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { trainers } from "@/config/trainers";
+import { FaqJsonLd } from "@/components/seo/json-ld";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Amsterdam Jordaan — SculptClub Private Studio" },
+  title: { absolute: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio" },
   description:
-    "Find your personal trainer in Amsterdam Jordaan. 5 English-speaking trainers, private canal-side studio. From €45 per session. No contract. First intro free.",
+    "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €45 per session, no contract, first intro free.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/en/personal-trainer-amsterdam-jordaan",
@@ -23,7 +25,8 @@ const steps = [
   {
     step: "1",
     title: "Pick your personal trainer",
-    desc: "7 trainers in the Jordaan — Eva, Joey, Alex, Gezina, Andrea, Dara and Jearmey. Each with a different specialty: nutrition, breathwork, strength, women's training, posture, small-group, athletic performance.",
+    // 2026-06-02 (K): dynamic count (was hardcoded "7" + drifted names).
+    desc: `${trainers.length} English-speaking personal trainers in the Jordaan, each with a different specialty — nutrition, strength, women's training, posture, recovery, small-group and athletic performance.`,
   },
   {
     step: "2",
@@ -46,7 +49,15 @@ const trustItems = [
 const faqs = [
   {
     q: "Where in Amsterdam Jordaan is the studio?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan, walking distance from the Westerstraat, Lindengracht, and the Negen Straatjes.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan, walking distance from the Centrum, Westerstraat, Lindengracht, the Negen Straatjes and the Westerpark.",
+  },
+  {
+    q: "Is it easy to reach from the Centrum?",
+    a: "Yes. Tram 13 or 17 drops you at the Marnixstraat, and bus 18 and 21 stop around the corner. Most clients walk or cycle from the Jordaan, Centrum or Westerpark — no parking stress.",
+  },
+  {
+    q: "Is there parking?",
+    a: "Paid street parking nearby; most clients come by bike or on foot. Ask your trainer for the easiest option if you're driving.",
   },
   {
     q: "How much does a personal trainer in Amsterdam Jordaan cost?",
@@ -54,7 +65,7 @@ const faqs = [
   },
   {
     q: "Can I choose my own personal trainer?",
-    a: "Yes. You pick from 5 personal trainers in the Amsterdam Jordaan studio, each with a different specialty and style. All speak English fluently. Browse their profiles on our trainers page.",
+    a: `Yes. You pick from ${trainers.length} personal trainers in the Amsterdam Jordaan studio, each with a different specialty and style. All speak English fluently. Browse their profiles on our trainers page.`,
   },
   {
     q: "Do I need a membership or contract?",
@@ -65,6 +76,8 @@ const faqs = [
 export default function PersonalTrainerAmsterdamJordaanPage() {
   return (
     <div className="min-h-screen bg-background">
+      {/* FAQPage schema (K, 2026-06-02) — EN parallel. LocalBusiness is global. */}
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       {/* Minimal header */}
       <header className="flex items-center justify-center py-6 px-4 border-b border-border/30">
         <Link href="/en" aria-label="Back to homepage">
@@ -94,7 +107,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
           <span className="text-brand">in Amsterdam Jordaan</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          5 English-speaking trainers. One private studio on the
+          {trainers.length} English-speaking trainers. One private studio on the
           Egelantiersgracht. From €45 per session. First intro free.
         </p>
 
@@ -178,7 +191,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
           <ul className="space-y-3">
             {[
               "Private canal-side studio on the Egelantiersgracht",
-              "5 personal trainers — your match for goal and style",
+              `${trainers.length} personal trainers — your match for goal and style`,
               "First intro free, no credit card needed",
               "From €45 per session — 0% trainer commission",
               "Open daily 06:30–22:00 — train when it suits you",
@@ -215,6 +228,30 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
             </div>
           ))}
+        </div>
+
+        {/* Neighbourhood content (K, 2026-06-02) — EN parallel local-SEO
+            rank-driver: Jordaan + Centrum + accessibility + ZZP angle. */}
+        <div className="mt-16 text-left">
+          <h2 className="text-2xl font-bold mb-5">Personal training in the Jordaan and Centrum</h2>
+          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              Our private studio sits at <strong className="text-foreground">Egelantiersgracht 424</strong>, in the heart of the Jordaan — walking distance from the Centrum, Westerpark and the Western Islands. Whether you live in the Jordaan, work along the canals, or come in from the Centrum, you train within a few minutes, no hassle.
+            </p>
+            <p>
+              <strong className="text-foreground">Easy to reach.</strong> Tram 13 or 17 drops you at the Marnixstraat; bus 18 and 21 stop around the corner. Most clients walk or cycle — no hunt for a parking spot, no traffic. Train before work, on your lunch break, or in the evening: we're open daily 06:30–22:00.
+            </p>
+            <p>
+              <strong className="text-foreground">Quiet, not crowded.</strong> Unlike a big gym in the Centrum, you train here in a calm, fully-equipped private studio on the canal — with Rogue, Eleiko and Concept2. No queue, full focus. Just you and your trainer, or a small group.
+            </p>
+            <p>
+              <strong className="text-foreground">Who it's for.</strong> Whether you're starting out, returning after an injury, building strength, or just getting fitter: your trainer builds a plan around your goal, level and schedule. All trainers speak English fluently.
+            </p>
+            <p>
+              <strong className="text-foreground">Are you a trainer yourself?</strong> Personal trainers and physiotherapists rent our studio from €12/hour — 0% commission, no contract. Ideal if you're looking for your own space in the Jordaan or Centrum.{" "}
+              <Link href="/en/studio-rental" className="text-brand hover:underline font-medium">See studio rental →</Link>
+            </p>
+          </div>
         </div>
 
         {/* FAQ */}

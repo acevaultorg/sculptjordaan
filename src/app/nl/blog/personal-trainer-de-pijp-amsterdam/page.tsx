@@ -79,7 +79,7 @@ export default function PersonalTrainerDePijpNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers en tarieven</h2>
               <p>
-                Zeven onafhankelijke trainers. Specialisaties: kracht, voeding, vrouwentraining,
+                Zeven onafhankelijke trainers. Specialisaties: kracht, voeding, training voor vrouwen,
                 houding, techniek en small group. Tarieven vanaf €45 per sessie. Eerste intake altijd
                 gratis. 0% commissie — je betaalt je trainer direct. Geen abonnement, geen contract.
                 Voor revalidatie of fysiotherapie verwijzen we je door — wij hebben geen fysiotherapeut

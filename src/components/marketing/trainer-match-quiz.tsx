@@ -60,7 +60,7 @@ const GOAL_TOKENS_NL: Record<GoalKey, string[]> = {
   afvallen: ["Afvallen", "Voeding", "Lichaamsrecompositie"],
   kracht: ["Kracht", "Calisthenics", "Skills", "Atletische"],
   herstel: ["Herstel", "Revalidatie", "Houding", "Mobiliteit", "Ademwerk"],
-  vrouwen: ["Vrouwentraining"],
+  vrouwen: ["Training voor vrouwen"],
   skills: ["Calisthenics", "Skills", "Mobiliteit", "Techniek"],
   algemeen: [], // matches everyone via +1 fallback
 };
@@ -108,7 +108,7 @@ const COPY_NL: QuizCopy = {
       { key: "afvallen", label: "Afvallen", sub: "Vetpercentage omlaag, fitter voelen" },
       { key: "kracht", label: "Spiermassa & kracht", sub: "Sterker, gespierder, betere prestaties" },
       { key: "herstel", label: "Herstel & houding", sub: "Na blessure, klacht of bureauwerk" },
-      { key: "vrouwen", label: "Vrouwentraining", sub: "Training afgestemd op vrouwen" },
+      { key: "vrouwen", label: "Training voor vrouwen", sub: "Training afgestemd op vrouwen" },
       { key: "skills", label: "Skills & calisthenics", sub: "Handstand, muscle-up, mobiliteit" },
       { key: "algemeen", label: "Algemeen fit blijven", sub: "Routine, energie, vol leven" },
     ],

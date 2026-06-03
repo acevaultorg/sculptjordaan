@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
+import { trainers } from "@/config/trainers";
+import { FaqJsonLd } from "@/components/seo/json-ld";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Jordaan — SculptClub Privé Studio Amsterdam" },
+  title: { absolute: "Personal Trainer Jordaan & Centrum — SculptClub Privé Studio Amsterdam" },
   description:
-    "Vind jouw personal trainer in de Jordaan. Privé studio aan de Egelantiersgracht. Vanaf €45 per sessie. Geen contract, geen abonnement. Eerste intake gratis.",
+    "Personal training in de Jordaan en het Centrum van Amsterdam. Privé studio aan de Egelantiersgracht — vanaf €45 per sessie, geen contract, eerste intake gratis. Telefonisch of in de studio.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/nl/personal-trainer-jordaan",
@@ -23,7 +25,10 @@ const steps = [
   {
     step: "1",
     title: "Kies je personal trainer",
-    desc: "7 trainers in de Jordaan — Eva, Joey, Alex, Gezina, Andrea, Dara en Jearmey. Elk met een eigen specialisatie en stijl.",
+    // 2026-06-02 (K): count now dynamic via trainers.length (was hardcoded "7"
+    // + a drifted name list — canonical roster is larger). Names dropped to
+    // stay self-maintaining; specialties kept for SEO + intent.
+    desc: `${trainers.length} personal trainers in de Jordaan, elk met een eigen specialisatie en stijl — van krachttraining en voeding tot houding, herstel en small group.`,
   },
   {
     step: "2",
@@ -46,7 +51,15 @@ const trustItems = [
 const faqs = [
   {
     q: "Waar in de Jordaan vind ik SculptClub?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam — midden in de Jordaan, op loopafstand van de Westerstraat, Lindengracht en de Negen Straatjes.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam — midden in de Jordaan, op loopafstand van het Centrum, de Westerstraat, Lindengracht, de Negen Straatjes en het Westerpark.",
+  },
+  {
+    q: "Kom ik makkelijk vanuit het Centrum?",
+    a: "Ja. Met tram 13 of 17 sta je zo bij de Marnixstraat, en bus 18 en 21 stoppen om de hoek. De meeste klanten komen lopend of op de fiets vanuit de Jordaan, het Centrum of Westerpark — geen parkeerstress.",
+  },
+  {
+    q: "Is er parkeergelegenheid?",
+    a: "In de buurt geldt betaald parkeren; de meeste klanten komen op de fiets of lopend. Vraag je trainer naar de handigste optie als je met de auto komt.",
   },
   {
     q: "Wat kost een personal trainer in de Jordaan?",
@@ -54,7 +67,7 @@ const faqs = [
   },
   {
     q: "Kan ik mijn personal trainer zelf kiezen?",
-    a: "Ja. Je kiest uit zeven personal trainers in de Jordaan, elk met eigen specialisatie — krachttraining, voeding, vrouwentraining, houding of small group. Voor fysiotherapie verwijzen we je door (we hebben geen fysiotherapeut in dienst). Je vindt hun profielen op onze trainerspagina.",
+    a: `Ja. Je kiest uit ${trainers.length} personal trainers in de Jordaan, elk met eigen specialisatie — krachttraining, voeding, training voor vrouwen, houding of small group. Voor fysiotherapie verwijzen we je door (we hebben geen fysiotherapeut in dienst). Je vindt hun profielen op onze trainerspagina.`,
   },
   {
     q: "Moet ik een abonnement afsluiten?",
@@ -65,6 +78,9 @@ const faqs = [
 export default function PersonalTrainerJordaanPage() {
   return (
     <div className="min-h-screen bg-background">
+      {/* FAQPage schema (K, 2026-06-02) — page had FAQs but no schema. Enables
+          rich-result / PAA eligibility. LocalBusiness is already global (layout). */}
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       {/* Minimal header */}
       <header className="flex items-center justify-center py-6 px-4 border-b border-border/30">
         <Link href="/" aria-label="Terug naar homepage">
@@ -94,8 +110,8 @@ export default function PersonalTrainerJordaanPage() {
           <span className="text-brand">in de Jordaan</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          7 trainers, één privé studio aan de Egelantiersgracht. Vanaf €45 per
-          sessie. Geen contract. Eerste intake gratis.
+          {trainers.length} trainers, één privé studio aan de Egelantiersgracht.
+          Vanaf €45 per sessie. Geen contract. Eerste intake gratis.
         </p>
 
         {/* Primary CTA */}
@@ -215,6 +231,33 @@ export default function PersonalTrainerJordaanPage() {
               <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
             </div>
           ))}
+        </div>
+
+        {/* Neighbourhood content (K, 2026-06-02) — the local-SEO rank-driver.
+            ~280 words, Jordaan + Centrum keyword-dense + accessibility +
+            "rustig niet druk" + ZZP-rental angle. This is HOW U.P./Omnia rank
+            for "personal trainer Amsterdam Jordaan"; SculptClub had thin
+            content + zero Centrum coverage before this. */}
+        <div className="mt-16 text-left">
+          <h2 className="text-2xl font-bold mb-5">Personal training in de Jordaan én het Centrum</h2>
+          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              Onze privé studio ligt aan de <strong className="text-foreground">Egelantiersgracht 424</strong>, midden in de Jordaan — op loopafstand van het Centrum, het Westerpark en de Westelijke Eilanden. Of je nu in de Jordaan woont, in de grachtengordel werkt of vanuit het Centrum komt: je traint binnen een paar minuten, zonder gedoe.
+            </p>
+            <p>
+              <strong className="text-foreground">Makkelijk bereikbaar.</strong> Met tram 13 of 17 sta je zo bij de Marnixstraat; bus 18 en 21 stoppen om de hoek. De meeste klanten komen lopend of op de fiets — geen zoektocht naar een parkeerplek, geen file. Train vóór je werk, in je lunchpauze of 's avonds: we zijn dagelijks open van 06:30 tot 22:00.
+            </p>
+            <p>
+              <strong className="text-foreground">Rustig, niet druk.</strong> Anders dan een grote sportschool in het Centrum train je hier in een rustige, volledig uitgeruste privé studio aan de gracht — met Rogue, Eleiko en Concept2. Geen wachtrij, volledige focus. Alleen jij en je trainer, of een kleine groep.
+            </p>
+            <p>
+              <strong className="text-foreground">Voor wie.</strong> Of je nu begint, terugkomt na een blessure, sterker wilt worden of gewoon fitter: je trainer maakt een plan op maat rond jouw doel, niveau en agenda.
+            </p>
+            <p>
+              <strong className="text-foreground">Ben je zelf trainer?</strong> Personal trainers en fysiotherapeuten huren onze studio vanaf €12/uur — 0% commissie, geen contract. Ideaal als je eigen ruimte zoekt in de Jordaan of het Centrum.{" "}
+              <Link href="/nl/studio-huren" className="text-brand hover:underline font-medium">Bekijk studio huren →</Link>
+            </p>
+          </div>
         </div>
 
         {/* FAQ */}

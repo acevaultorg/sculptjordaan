@@ -87,7 +87,7 @@ export default function EngelsSprekendePTAmsterdamNL() {
                 <li><strong>Alex</strong> — Kracht, calisthenics, herstel. NL/EN/PT. €69/60 min.</li>
                 <li><strong>Eva</strong> — Diëtist én personal trainer. Kracht en voeding. NL/EN.</li>
                 <li><strong>Joey</strong> — Kracht, ademwerk, zenuwstelsel, zelfonderzoek. NL/EN.</li>
-                <li><strong>Gezina</strong> — Vrouwentraining, kracht, prestatie. NL/EN. Zie ook de{" "}
+                <li><strong>Gezina</strong> — Training voor vrouwen, kracht, prestatie. NL/EN. Zie ook de{" "}
                   <a href="/nl/blog/vrouwelijke-personal-trainer-amsterdam" className="text-brand hover:underline">gids voor een vrouwelijke trainer</a>.</li>
                 <li><strong>Andrea</strong> — Kracht, houding, techniek. NL/EN. €45/45 min.</li>
                 <li><strong>Dara</strong> — Personal training + small group. NL/EN.</li>

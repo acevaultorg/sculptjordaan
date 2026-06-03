@@ -93,7 +93,7 @@ export default function PersonalTrainerCentrumNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Zeven trainers, gratis intake</h2>
               <p>
                 Bij SculptClub werken zeven onafhankelijke trainers met specialisaties van krachttraining
-                tot voeding, vrouwentraining en houding. De eerste kennismaking is altijd gratis.
+                tot voeding, training voor vrouwen en houding. De eerste kennismaking is altijd gratis.
                 Tarieven vanaf €45 per sessie. Geen abonnement, geen contract — boek per sessie en
                 annuleer altijd gratis. Wij rekenen 0% commissie. Voor fysiotherapie verwijzen we je
                 door — we hebben geen fysiotherapeut in dienst.

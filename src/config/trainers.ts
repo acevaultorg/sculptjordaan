@@ -177,7 +177,7 @@ const trainersRaw: Trainer[] = [
       en: "plan-free-intro-with-gezina",
     },
     specialization: {
-      nl: ["Vrouwentraining", "Kracht", "Prestatie"],
+      nl: ["Training voor vrouwen", "Kracht", "Prestatie"],
       en: ["Women's Training", "Strength", "Performance"],
     },
     languages: ["NL", "EN"],
@@ -185,7 +185,7 @@ const trainersRaw: Trainer[] = [
     instagram: "https://www.instagram.com/gezfitness/",
     instagramHandle: "@gezfitness",
     bio: {
-      nl: "Gezina is een gecertificeerde personal trainer gespecialiseerd in vrouwentraining. Ze helpt vrouwen sterker worden door personal training en small group sessies, afgestemd op het lichaam en de cyclus.",
+      nl: "Gezina is een gecertificeerde personal trainer gespecialiseerd in training voor vrouwen. Ze helpt vrouwen sterker worden door personal training en small group sessies, afgestemd op het lichaam en de cyclus.",
       en: "Gezina is a certified personal trainer specializing in women's training. She helps women build strength through personal training and small group sessions, designed to work in sync with the body and cycle.",
     },
     image: "/images/trainers/gezina.jpg",

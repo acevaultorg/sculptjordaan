@@ -132,7 +132,7 @@ export default function PTZwangerschapAmsterdamNL() {
                 Bij SculptClub drie vrouwelijke trainers:
               </p>
               <ul>
-                <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — vrouwentraining, kracht, prestatie. Eerste keuze voor prenatale cliënten.</li>
+                <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — training voor vrouwen, kracht, prestatie. Eerste keuze voor prenatale cliënten.</li>
                 <li><strong>Eva</strong> — diëtist en PT. Voedingsaanpassingen tijdens de zwangerschap + krachtwerk.</li>
                 <li><strong>Andrea</strong> — kracht, houding, techniek. Veel aandacht voor uitvoering.</li>
               </ul>

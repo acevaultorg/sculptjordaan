@@ -107,7 +107,7 @@ export default function PersonalTrainerAmsterdamWestNL() {
                 Alex is gespecialiseerd in krachttraining en calisthenics. Eva combineert
                 personal training met voedingsadvies als gediplomeerd diëtist. Joey werkt met
                 ademwerk, zelfonderzoek en krachttraining. Gezina is gespecialiseerd in
-                vrouwentraining. Andrea focust op techniek en houding. Dara biedt personal
+                training voor vrouwen. Andrea focust op techniek en houding. Dara biedt personal
                 training en small group sessies aan. Jearmey richt zich op kracht en
                 atletische prestaties. Elk met eigen tarieven, elk met een gratis intake.
               </p>

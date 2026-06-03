@@ -105,7 +105,7 @@ export default function PTNaBevallingAmsterdamNL() {
                 Bij SculptClub werken drie vrouwelijke trainers:
               </p>
               <ul>
-                <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — gespecialiseerd in vrouwentraining, kracht en cyclus-afgestemd werken. Eerste keuze voor postpartum-cliënten.</li>
+                <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — gespecialiseerd in training voor vrouwen, kracht en cyclus-afgestemd werken. Eerste keuze voor postpartum-cliënten.</li>
                 <li><strong>Eva</strong> — diëtist en personal trainer. Combineer voedingsherstel (inclusief borstvoeding) met krachttraining.</li>
                 <li><strong>Andrea</strong> — kracht, houding en techniek. Rustige opbouw, veel aandacht voor uitvoering.</li>
               </ul>

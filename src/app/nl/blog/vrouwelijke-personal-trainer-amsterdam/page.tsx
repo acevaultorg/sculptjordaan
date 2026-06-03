@@ -86,9 +86,9 @@ export default function VrouwelijkePTAmsterdamNL() {
                 eerst beschikbaar is.
               </p>
 
-              <h3 className="text-xl font-bold mt-8 mb-3">Gezina — Vrouwentraining, kracht, prestatie</h3>
+              <h3 className="text-xl font-bold mt-8 mb-3">Gezina — Training voor vrouwen, kracht, prestatie</h3>
               <p>
-                Gezina is specifiek gespecialiseerd in vrouwentraining. Ze werkt met vrouwen
+                Gezina is specifiek gespecialiseerd in training voor vrouwen. Ze werkt met vrouwen
                 die serieus willen worden in krachttraining, prestatiegericht trainen of
                 samen een langetermijnpad willen uitstippelen. Haar aanpak is technisch,
                 gestructureerd en uitdagend zonder performatief te zijn. Boek een{" "}

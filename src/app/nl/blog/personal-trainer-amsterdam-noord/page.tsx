@@ -154,7 +154,7 @@ export default function PersonalTrainerAmsterdamNoordNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Zeven trainers, één studio, geen contract</h2>
               <p>
                 Bij SculptClub werken zeven onafhankelijke trainers met verschillende specialisaties:
-                krachttraining, voeding, vrouwentraining, houding en techniek. Voor fysiotherapie
+                krachttraining, voeding, training voor vrouwen, houding en techniek. Voor fysiotherapie
                 verwijzen we je door — we hebben geen fysiotherapeut in dienst. Je kiest de trainer die
                 bij jouw doel past — niet andersom. Tarieven beginnen bij €45 per sessie en we houden
                 een <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="text-brand hover:underline">eerlijk overzicht van wat personal training kost in Amsterdam</a>.

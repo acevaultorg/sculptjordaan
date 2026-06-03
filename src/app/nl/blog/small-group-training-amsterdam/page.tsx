@@ -136,7 +136,7 @@ export default function SmallGroupTrainingAmsterdamNL() {
                 <li><strong><a href="/nl/plan-gratis-intake-met-dara" className="text-brand hover:underline">Dara</a></strong> — specialist in small group. Energieke aanpak, goed voor gemengde groepen en collega-teams.</li>
                 <li><strong>Alex</strong> — kracht en calisthenics in duo of trio. Geschikt als iedereen in de groep al basisconditie heeft.</li>
                 <li><strong>Andrea</strong> — technische opbouw, goede pasvorm voor duo’s die samen kracht willen leren.</li>
-                <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — vrouwentraining in klein groepje (2-3 vrouwen).</li>
+                <li><strong><a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Gezina</a></strong> — training voor vrouwen in klein groepje (2-3 vrouwen).</li>
                 <li><strong>Jearmey</strong> — kracht en atletische prestatie; populair voor duo’s met sportachtergrond.</li>
               </ul>
 
