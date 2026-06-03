@@ -17,6 +17,8 @@ import {
   KeyRound,
   Clock,
   UserCheck,
+  Eye,
+  Handshake,
 } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
@@ -89,6 +91,22 @@ const uniqueFeatures = [
     title: "Capaciteit op maat",
     description:
       "Bij Open Gym beperken we de ruimte tot drie personen. Bij volledige studiohuur past de ruimte tot zes personen plus je trainer.",
+  },
+  // M (2026-06-02) — the 2 positioning PRINCIPLES the facility-logistics grid
+  // lacked: Transparant + Trainer-eerst (SculptClub's actual moats). Reuses
+  // operator-validated terms (transparant wedge, 0% commissie). The other 2
+  // M principles (Privé, Vrij≈Flexibel) are already in this grid.
+  {
+    icon: Eye,
+    title: "Transparant",
+    description:
+      "Je ziet vooraf wat het kost. Geen verborgen prijzen, geen 'bel ons voor een offerte'.",
+  },
+  {
+    icon: Handshake,
+    title: "Trainer-eerst",
+    description:
+      "Onze trainers houden 100% van hun tarief. Wij verhuren de ruimte — geen commissie.",
   },
 ];
 

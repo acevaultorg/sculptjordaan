@@ -17,6 +17,8 @@ import {
   KeyRound,
   Clock,
   UserCheck,
+  Eye,
+  Handshake,
 } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 
@@ -89,6 +91,20 @@ const uniqueFeatures = [
     title: "Tailored capacity",
     description:
       "During Open Gym we limit the space to three people. With a full studio rental the space fits up to six people plus your trainer.",
+  },
+  // M (2026-06-02) — EN parallel: the 2 positioning principles (Transparent +
+  // Trainer-first) the facility grid lacked.
+  {
+    icon: Eye,
+    title: "Transparent",
+    description:
+      "You see the price upfront. No hidden pricing, no 'contact us for a quote'.",
+  },
+  {
+    icon: Handshake,
+    title: "Trainer-first",
+    description:
+      "Our trainers keep 100% of their rate. We rent the space — no commission.",
   },
 ];
 
