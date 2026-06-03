@@ -136,7 +136,7 @@ export default function PersonalTrainingWeightLossEN() {
               <p>
                 Many people who want to lose weight feel uncomfortable in a big gym. The stares, the
                 crowds, waiting for equipment. At SculptClub you train in a private canal-side studio in
-                the Jordaan. Just you and your trainer. No audience, no distractions. For many clients
+                the Jordaan. Just you and your trainer. Full focus, no distractions. For many clients
                 that makes all the difference — they dare to work harder and feel safe to start.
               </p>
 

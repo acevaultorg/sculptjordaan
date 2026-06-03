@@ -86,7 +86,7 @@ export default function PTVoorBeginnersNL() {
               <p>
                 Veel beginners voelen zich ongemakkelijk in een grote sportschool. De drukte, de
                 blikken, het gevoel dat iedereen weet wat ze doen behalve jij. Bij SculptClub train
-                je in een privé studio — alleen jij en je trainer. Geen meekijkers, geen druk.
+                je in een privé studio — alleen jij en je trainer. Volledige focus, geen druk.
                 Je trainer regelt de studio en zorgt dat je binnen kunt.
               </p>
 

@@ -85,7 +85,7 @@ export default function PTForBeginnersEN() {
               <p>
                 Many beginners feel uncomfortable in a big gym. The crowds, the stares, the feeling
                 that everyone knows what they’re doing except you. At SculptClub you train in a
-                private studio — just you and your trainer. No audience, no pressure.
+                private studio — just you and your trainer. Full focus, no pressure.
                 Your trainer arranges the studio and gets you in.
               </p>
 

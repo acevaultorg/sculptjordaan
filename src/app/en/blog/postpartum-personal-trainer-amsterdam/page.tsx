@@ -60,8 +60,8 @@ export default function PostpartumPTAmsterdamEN() {
                 doesn’t help.
               </p>
               <p>
-                SculptClub in the Jordaan offers a quieter alternative: a private studio, no
-                audience, and female trainers experienced with postpartum clients. This guide
+                SculptClub in the Jordaan offers a quieter alternative: a private studio with
+                full focus, and female trainers experienced with postpartum clients. This guide
                 covers what to watch for, when you can start, and how a personal trainer makes
                 the process safer and faster.
               </p>

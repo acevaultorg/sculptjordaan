@@ -44,13 +44,11 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               icon: Lock,
               title: "Je traint harder in privé.",
-              // 2026-06-02: "geen publiek" → "geen meekijkers". Operator
-              // flagged "geen publiek" as not natural Dutch (literal but reads
-              // formal; Dutch native register for "no on-lookers / no people
-              // watching you" is the compound noun "meekijkers" which fits the
-              // rhythm "geen wachtrij · geen meekijkers · geen receptie"
-              // cleanly).
-              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen meekijkers, geen receptie. Je traint zonder afleiding — alleen jij en je werk.",
+              // 2026-06-02 (2nd pass): "geen meekijkers" → "volledige focus"
+              // per operator. Reframed the negative (no onlookers) as the
+              // positive payoff (full focus). Restructured so the positive
+              // lands at the end of the list rather than mid-sentence.
+              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen receptie — volledige focus. Je traint zonder afleiding, alleen jij en je werk.",
             },
             {
               icon: Calendar,
@@ -83,7 +81,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               icon: Lock,
               title: "You train harder in private.",
-              body: "Max 3 people at once. No queue, no audience, no reception desk. You train without distraction — just you and your work.",
+              body: "Max 3 people at once. No queue, no reception desk — full focus. You train without distraction, just you and your work.",
             },
             {
               icon: Calendar,
