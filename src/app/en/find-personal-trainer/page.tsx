@@ -179,6 +179,21 @@ export default function TrainersPageEN() {
         </div>
       </Section>
 
+      {/* The Private Session — names the FORMAT (R, 2026-06-02). EN parallel of
+          "De Privé Sessie". See NL for positioning rationale. */}
+      <Section bg="muted">
+        <SectionHeader
+          overline="The format"
+          title="The Private Session"
+          description="Every session is private: you, your trainer and the whole studio. No other clients, no queue, full focus."
+        />
+        <FadeIn>
+          <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
+            The format is always the same — private, tailored, from €45, no contract. Your trainer picks the method: from strength and posture to nutrition, recovery or small group. Some trainers work with their own distinct approach — like Joey&apos;s <em>Ascend Method</em> (strength, breathwork, self-inquiry). You&apos;ll find each trainer&apos;s specialty on their profile.
+          </p>
+        </FadeIn>
+      </Section>
+
       {/* Specific-need routing — self-segment for high-intent visitors */}
       <Section>
         <SectionHeader

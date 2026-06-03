@@ -197,6 +197,26 @@ export default function TrainersPageNL() {
         </div>
       </Section>
 
+      {/* De Privé Sessie — names the FORMAT (R, 2026-06-02), not a method.
+          Positioning-safe: names the experience constant across all independent
+          trainers (private, 1-on-1, full focus, no contract) AND amplifies that
+          each trainer brings their OWN method — celebrating roster diversity
+          rather than flattening it into one "SculptClub method" (which would
+          undermine the 0%-commission independent-trainer model). The per-trainer-
+          method framing is the net-new part vs the existing "privé studio" copy. */}
+      <Section bg="muted">
+        <SectionHeader
+          overline="Het format"
+          title="De Privé Sessie"
+          description="Elke sessie is privé: jij, je trainer en de hele studio. Geen andere klanten, geen wachtrij, volledige focus."
+        />
+        <FadeIn>
+          <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Het format is altijd hetzelfde — privé, op maat, vanaf €45, geen contract. Je trainer kiest de méthode: van kracht en houding tot voeding, herstel of small group. Sommige trainers werken met een eigen, herkenbare aanpak — zoals Joey&apos;s <em>Ascend Method</em> (kracht, ademwerk, zelfonderzoek). Je vindt de specialisatie van elke trainer op hun profiel.
+          </p>
+        </FadeIn>
+      </Section>
+
       {/* Specific-need routing — self-segment for high-intent visitors */}
       <Section>
         <SectionHeader
