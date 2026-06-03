@@ -164,7 +164,7 @@ export default function EersteBezoekPage() {
           },
           {
             name: "Gratis kennismaking",
-            text: "Ontmoet je trainer in onze privé studio op Egelantiersgracht 424, Amsterdam Jordaan. Bespreek je doelen, leer de aanpak kennen, en voel of het klikt. Geen verplichting, geen verborgen kosten. Na de intake beslis je zelf of je verder wilt.",
+            text: "Telefonisch of in onze privé studio op Egelantiersgracht 424, Amsterdam Jordaan — jouw trainer bepaalt wat het beste past. Bespreek je doelen, leer de aanpak kennen, en voel of het klikt. Geen verplichting, geen verborgen kosten. Na de intake beslis je zelf of je verder wilt.",
             url: "/nl/eerste-bezoek",
           },
         ]}

@@ -34,7 +34,7 @@ const steps = [
   {
     step: "3",
     title: "Free intro",
-    desc: "Meet your trainer in our private studio in the Jordaan. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs.",
+    desc: "By phone or in our private studio in the Jordaan — your trainer decides what fits best. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs.",
   },
 ];
 

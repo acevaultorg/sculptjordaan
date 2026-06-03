@@ -161,7 +161,7 @@ export default function FirstVisitPage() {
           },
           {
             name: "Free intro",
-            text: "Meet your trainer in our private studio at Egelantiersgracht 424, Amsterdam Jordaan. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs. After the intro, you decide whether to continue.",
+            text: "By phone or in our private studio at Egelantiersgracht 424, Amsterdam Jordaan — your trainer decides what fits best. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs. After the intro, you decide whether to continue.",
             url: "/en/first-visit",
           },
         ]}

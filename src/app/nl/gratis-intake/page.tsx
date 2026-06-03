@@ -34,7 +34,10 @@ const steps = [
   {
     step: "3",
     title: "Gratis kennismaking",
-    desc: "Ontmoet je trainer in onze privé studio in de Jordaan. Bespreek je doelen, leer de aanpak kennen, voel of het klikt. Geen verplichting, geen verborgen kosten.",
+    // 2026-06-02 (E) per operator: the free intake can be a PHONE call OR an
+    // in-studio session — the trainer decides what fits best. Previous copy
+    // implied studio-only ("ontmoet je trainer in onze privé studio").
+    desc: "Telefonisch of in onze privé studio in de Jordaan — jouw trainer bepaalt wat het beste past. Bespreek je doelen, leer de aanpak kennen, voel of het klikt. Geen verplichting, geen verborgen kosten.",
   },
 ];
 
