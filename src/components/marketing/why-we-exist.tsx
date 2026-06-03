@@ -16,8 +16,17 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
       ? {
           eyebrow: "Het verschil",
           title: "Geen contract. Geen commissie. Geen drukte.",
+          // 2026-06-02 intro rewrite per operator competitive-audit decisions:
+          //  · F ("PT en small group only") — opens by stating the model: alleen
+          //    personal training & small group, nooit een volle sportschool.
+          //  · C (pricing-transparency wedge, trainer-friendly framing) — "je ziet
+          //    vooraf wat het kost" + "geen 'neem contact op voor prijzen'".
+          //    DIRECTLY attacks the hidden-pricing of every Jordaan rival
+          //    (U.P. / Omnia / Staetsgeheim / Studio Performance Boost all hide
+          //    prices). Respects 0%-commission model — the FIRST card below
+          //    states trainers set their own rate; here we only claim transparency.
           intro:
-            "Klein, onafhankelijk, stil. De beste onafhankelijke trainers van Amsterdam werken hier omdat wij niet in de weg lopen.",
+            "Alleen personal training & small group — nooit een volle sportschool. Klein, onafhankelijk, stil. En je ziet vooraf wat het kost: geen 'neem contact op voor prijzen'.",
           beliefs: [
             {
               icon: Percent,
@@ -49,12 +58,20 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               body: "De eerste intake is gratis, Open Gym loopt in 4-weken cycli die je altijd kunt opzeggen, en PT boek je per sessie. Je blijft omdat het werkt, niet omdat je vast zit.",
             },
           ],
+          // N (equipment-brand validation) per operator: "Rogue Eleiko brands"
+          // (+ Concept2 per Google listing). NO towels/coffee — operator: "coffee
+          // around the corner". Equipment names are 3rd-party validation that
+          // ZZP-trainers + serious clients shop on. Slim line below the 3 cards.
+          equipmentLine:
+            "Uitgerust met Rogue, Eleiko en Concept2 — geen instapapparatuur.",
         }
       : {
           eyebrow: "What makes us different",
           title: "No contract. No commission. No crowds.",
+          // See NL parallel — 2026-06-02 intro rewrite: F (PT & small group only)
+          // + C (pricing-transparency wedge).
           intro:
-            "Small, independent, quiet. The best independent trainers in Amsterdam work here because we don't get in the way.",
+            "Personal training & small group only — never a crowded gym. Small, independent, quiet. And you see the price upfront: no 'contact us for pricing'.",
           beliefs: [
             {
               icon: Percent,
@@ -74,6 +91,8 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               body: "First intro is free, Open Gym runs in 4-week cycles you can cancel anytime, and PT is booked per session. You stay because it works, not because you're locked in.",
             },
           ],
+          equipmentLine:
+            "Equipped with Rogue, Eleiko and Concept2 — no entry-level kit.",
         };
 
   return (
@@ -98,6 +117,12 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             </div>
           ))}
         </div>
+
+        {/* Equipment-brand line (N) — 2026-06-02. Centered, muted, below the
+            cards so it reads as a credibility footnote not a 4th pillar. */}
+        <p className="mt-10 text-center text-sm font-medium text-muted-foreground">
+          {t.equipmentLine}
+        </p>
       </FadeIn>
     </Section>
   );
