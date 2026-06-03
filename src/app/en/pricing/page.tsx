@@ -515,6 +515,9 @@ export default function PricingPageEN() {
             {[
               { q: "Do I need a membership?", a: "No. Open Gym works in 4-week cycles you can cancel anytime. Personal training is booked per session. Studio rental per hour or via a package. No long-term contract." },
               { q: "Can I always cancel?", a: "Yes, cancellation is always free. No time limit, no fees." },
+              // V (2026-06-02) — pause/validity, model-correct (see NL prijzen).
+              { q: "Can I pause?", a: "There's no membership to pause. Open Gym simply ends after each 4-week cycle — book the next one whenever suits you, at no cost. Personal training is booked per session, so 'pausing' just means not booking for a while." },
+              { q: "How long is my studio package valid?", a: "Studio packages are valid for 1 year. Use your credit whenever it suits you — no rush, no expiry within the year." },
               { q: "How do I pay?", a: "Credit card, Apple Pay and Google Pay. Studio rental also accepts invoice. iDEAL via Apple Pay." },
               { q: "What if the trainer isn't right for me?", a: "The first intro is free and no-obligation. Not a match? No worries. You can always try a different trainer." },
               { q: "Are there hidden costs?", a: "No. The prices on this page are all-inclusive. No sign-up fee, no admin charges, no surprises." },

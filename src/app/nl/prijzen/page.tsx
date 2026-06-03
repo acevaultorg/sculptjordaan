@@ -515,6 +515,11 @@ export default function PricingPageNL() {
             {[
               { q: "Moet ik een abonnement afsluiten?", a: "Nee. Open Gym werkt in 4-weken cycli die je op elk moment kunt opzeggen. Personal training boek je per sessie. Studio huur per uur of via een pakket. Geen langetermijncontract." },
               { q: "Kan ik altijd annuleren?", a: "Ja, annuleren is altijd gratis. Geen tijdslimiet, geen kosten." },
+              // V (2026-06-02) — pause/validity, model-correct (no membership to
+              // pause; PT is trainer↔client direct; NO invented annual discount —
+              // the studio packages already ARE the volume discount).
+              { q: "Kan ik pauzeren?", a: "Er is geen abonnement om te pauzeren. Open Gym stopt vanzelf na elke 4-weken cyclus — boek de volgende wanneer het jou uitkomt, zonder kosten. Personal training boek je per sessie, dus 'pauzeren' is simpelweg even niet boeken." },
+              { q: "Hoe lang is mijn strippenkaart geldig?", a: "Studio-strippenkaarten zijn 1 jaar geldig. Gebruik je tegoed wanneer het jou uitkomt — geen haast, geen verloop binnen het jaar." },
               { q: "Hoe betaal ik?", a: "CreditCard, Apple Pay en Google Pay. Studio huur ook per factuur. iDEAL via Apple Pay." },
               { q: "Wat als de trainer niet bij me past?", a: "De eerste intake is gratis en vrijblijvend. Bevalt het niet? Geen verplichtingen. Je kunt altijd een andere trainer proberen." },
               { q: "Zijn er verborgen kosten?", a: "Nee. De prijzen op deze pagina zijn alles-inclusief. Geen inschrijfgeld, geen administratiekosten, geen verrassingen." },
