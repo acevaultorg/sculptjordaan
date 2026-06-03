@@ -20,21 +20,35 @@ export const metadata: Metadata = {
   },
 };
 
+// "The SculptClub Intake" — named 5-step process (L, 2026-06-02). EN parallel
+// of "De SculptClub Intake". Published methodology = trust anchor; steps 4+5
+// (plan + decide) reduce first-timer hesitation; step 3 phone-or-studio (E);
+// step 4 reinforces the transparency wedge (C).
 const steps = [
   {
     step: "1",
     title: "Pick your trainer",
-    desc: "Browse the trainers and pick the one who fits your goals, style and language.",
+    desc: "Browse the trainers or take the match quiz (30 sec). Choose who fits your goal, level and language.",
   },
   {
     step: "2",
-    title: "Send the trainer a message",
-    desc: "Via WhatsApp or our contact form. The trainer replies fast and you agree on a moment together — no rigid calendar, just on your terms.",
+    title: "Send a message",
+    desc: "Via WhatsApp or the form. Your trainer usually replies within an hour — together you pick a time that works.",
   },
   {
     step: "3",
     title: "Free intro",
-    desc: "By phone or in our private studio in the Jordaan — your trainer decides what fits best. Discuss your goals, get to know the approach, see if it clicks. No obligation, no hidden costs.",
+    desc: "By phone or in our private studio in the Jordaan — your trainer decides what fits best. Discuss your goal, your experience and what you're after. No obligation.",
+  },
+  {
+    step: "4",
+    title: "Your tailored approach",
+    desc: "Your trainer proposes a plan around your body, schedule and goal. You know exactly what to expect — and what it costs.",
+  },
+  {
+    step: "5",
+    title: "Train on your terms",
+    desc: "Clicks? Book your first session. Per session, from €45, no contract. Stop any time.",
   },
 ];
 
@@ -158,7 +172,8 @@ export default function FreeIntroPage() {
 
         {/* How it works */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">How does it work?</h2>
+          <h2 className="text-2xl font-bold text-center mb-2">The SculptClub Intake</h2>
+          <p className="text-center text-sm text-muted-foreground mb-8">In 5 steps — from intro to your first session.</p>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div

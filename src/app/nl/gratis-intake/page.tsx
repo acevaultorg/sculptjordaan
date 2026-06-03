@@ -20,24 +20,36 @@ export const metadata: Metadata = {
   },
 };
 
+// "De SculptClub Intake" — named 5-step process (L, 2026-06-02). Gives the
+// free intake a published methodology (like U.P.'s "U.P. Method") — a trust
+// anchor that reduces first-timer hesitation by setting expectations end-to-end.
+// Steps 4+5 (plan + decide) are the additions over the old lean 3-step; step 3
+// is phone-or-studio aware (E); step 4 reinforces the transparency wedge (C).
 const steps = [
   {
     step: "1",
     title: "Kies je trainer",
-    desc: "Bekijk de trainers en kies degene die past bij jouw doelen, stijl en taal.",
+    desc: "Bekijk de trainers of doe de match-quiz (30 sec). Je kiest wie past bij jouw doel, niveau en taal.",
   },
   {
     step: "2",
-    title: "Stuur de trainer een berichtje",
-    desc: "Via WhatsApp of het contactformulier. De trainer antwoordt snel en jullie stemmen samen een moment af — geen rigide agenda, gewoon op maat.",
+    title: "Stuur een berichtje",
+    desc: "Via WhatsApp of het formulier. Je trainer reageert meestal binnen 1 uur — samen kies je een moment dat past.",
   },
   {
     step: "3",
     title: "Gratis kennismaking",
-    // 2026-06-02 (E) per operator: the free intake can be a PHONE call OR an
-    // in-studio session — the trainer decides what fits best. Previous copy
-    // implied studio-only ("ontmoet je trainer in onze privé studio").
-    desc: "Telefonisch of in onze privé studio in de Jordaan — jouw trainer bepaalt wat het beste past. Bespreek je doelen, leer de aanpak kennen, voel of het klikt. Geen verplichting, geen verborgen kosten.",
+    desc: "Telefonisch of in onze privé studio in de Jordaan — jouw trainer bepaalt wat het beste past. Je bespreekt je doel, je ervaring en wat je zoekt. Geen verplichting.",
+  },
+  {
+    step: "4",
+    title: "Jouw aanpak op maat",
+    desc: "Je trainer stelt een plan voor dat past bij jouw lichaam, agenda en doel. Je weet precies wat je kunt verwachten — én wat het kost.",
+  },
+  {
+    step: "5",
+    title: "Train op jouw moment",
+    desc: "Klikt het? Dan plan je je eerste sessie. Per sessie, vanaf €45, geen contract. Stoppen kan altijd.",
   },
 ];
 
@@ -179,7 +191,8 @@ export default function GratisIntakePage() {
 
         {/* How it works */}
         <div className="mt-16 text-left">
-          <h2 className="text-2xl font-bold text-center mb-8">Hoe werkt het?</h2>
+          <h2 className="text-2xl font-bold text-center mb-2">De SculptClub Intake</h2>
+          <p className="text-center text-sm text-muted-foreground mb-8">In 5 stappen — van kennismaking tot je eerste sessie.</p>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div
