@@ -66,8 +66,28 @@ interface CTAConfig {
 }
 
 function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
-  // Don't show on conversion-completion pages
-  if (/\/(boeking-bevestigd|booking-confirmed)/.test(pathname)) return null;
+  // Hide on dedicated booking-STEP pages — the page IS the booking action, so a
+  // floating "go to booking" CTA is redundant and competes with the on-page
+  // widget's own button. Operator UX screenshot 2026-06-03 on
+  // /studio-huren/gratis-test showed TWO "Naar boeking" CTAs on one screen
+  // (the sticky bar + the inline AcuityEmbed's own button) = confusion. On the
+  // 22 per-trainer plan-* pages the bar was even worse: it fell to the default
+  // branch and MISDIRECTED the visitor away to the generic /gratis-intake — a
+  // funnel leak off a trainer-specific booking page. This finally realises the
+  // component's long-documented but never-implemented intent ("Hidden on:
+  // Acuity embed pages"). Content HUBS that merely contain a booking section
+  // (homepage, /studio-huren hub, /open-gym, /gratis-intake landing,
+  // /vind-jouw-personal-trainer) KEEP the bar — there it scrolls the visitor
+  // BACK to the widget instead of duplicating it.
+  if (
+    /\/(boeking-bevestigd|booking-confirmed)(\/|$)/.test(pathname) || // post-booking — already converted
+    /\/(studio-huren|studio-rental)\/(gratis-test|free-trial)(\/|$)/.test(pathname) || // free-trial step (the screenshot)
+    /\/plan-(gratis-intake-met|free-intro-with)-/.test(pathname) || // per-trainer intake step (×22)
+    /\/(boek-trainer|boek-gym|boek-studio|book-trainer|book-gym|book-studio)(\/|$)/.test(pathname) || // dedicated book pages
+    /\/(boek|book|start)(\/|$)/.test(pathname) // book/start booking endpoints
+  ) {
+    return null;
+  }
 
   // NOTE: labels NEVER end with " →" — the JSX renders an <ArrowRight /> icon
   // for both internal AND external CTAs. 2026-05-16: operator phone-shot

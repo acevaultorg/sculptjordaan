@@ -36,12 +36,23 @@ import { MessageCircle, Phone, Calendar } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
 
 const HIDDEN_ROUTE_PREFIXES = [
-  "/nl/boek",
-  "/en/book",
+  "/nl/boek", // boek-trainer / boek-gym / boek-studio / boeking-bevestigd
+  "/en/book", // book-trainer / book-gym / book-studio / book / booking-confirmed
   "/nl/contact",
   "/en/contact",
   "/nl/boeking-bevestigd",
   "/en/booking-confirmed",
+  // Dedicated booking-STEP pages — the scheduler/booking IS the page, so the
+  // lead bar is redundant and (on plan-* pages) MISDIRECTS the visitor away to
+  // a different booking flow. Matches the MobileBottomCTABar suppression added
+  // 2026-06-03 after the operator's /studio-huren/gratis-test UX screenshot.
+  // Content hubs (/open-gym, /studio-huren, /gratis-intake) keep the bar.
+  "/nl/studio-huren/gratis-test", // free-trial studio step (the screenshot)
+  "/en/studio-rental/free-trial",
+  "/nl/plan-gratis-intake-met-", // per-trainer intake step (×11)
+  "/en/plan-free-intro-with-", // per-trainer intake step (×11)
+  "/nl/start", // booking-redirect endpoint
+  "/en/start",
   "/social", // operator-facing static gallery
 ];
 
