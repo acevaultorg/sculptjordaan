@@ -161,7 +161,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">How to start</h2>
               <ol>
-                <li>Browse trainers — pick one whose specialisation matches your goal.</li>
+                <li>Not sure who fits? Take the <a href="/en/match-trainer" className="text-brand hover:underline">30-second match quiz</a> — or browse trainers and pick one whose specialisation matches your goal.</li>
                 <li>Book a <a href="/en/free-intro" className="text-brand hover:underline">free intro session</a>. No obligation.</li>
                 <li>Decide after. If the trainer doesn’t click, try another. If the schedule doesn’t work, use <a href="/en/open-gym" className="text-brand hover:underline">Open Gym</a> to train solo.</li>
               </ol>

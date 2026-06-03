@@ -46,7 +46,12 @@ const COPY = {
   en: {
     overline: "Our trainers",
     title: "Meet your trainer",
-    subtitle: `${trainers.length} personal trainers, distinct specialties, free intro — from €45 per session. 0% commission, no membership.`,
+    // 2026-06-02 (H) expat hook — every Jordaan rival (U.P., B-One, Omnia)
+    // targets expats hard; SculptClub has bilingual trainers but buried it.
+    // ALL trainers speak English (every roster entry has "EN" in languages),
+    // so "all English-speaking" is accurate. No-Dutch-required removes the
+    // single biggest hesitation for Amsterdam expats researching in English.
+    subtitle: `${trainers.length} personal trainers — all English-speaking, no Dutch required. Distinct specialties, free intro from €45 per session. 0% commission, no membership.`,
     ctaCard: "Book free intro",
     ctaAll: `View all ${trainers.length} trainers`,
     ctaSeeStudio: "See the studio",
@@ -143,6 +148,13 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                         {" "}+ {trainer.specialization[locale].length - 1}
                       </span>
                     )}
+                  </p>
+                  {/* Language line (H, 2026-06-02) — compact "NL · EN · PT"
+                      under the specialty. Expat signal at the decision point:
+                      every visitor sees which trainers speak their language.
+                      Light + small so it reads as metadata, not a 4th chip. */}
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground/80">
+                    {trainer.languages.join(" · ")}
                   </p>
                 </div>
 
