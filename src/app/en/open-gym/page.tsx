@@ -281,7 +281,7 @@ export default function OpenGymPageEN() {
           url={acuityFreeTrials.openGymTryout}
           title="Book your free Open Gym trial at SculptClub"
           height={900}
-          className="rounded-2xl overflow-hidden bg-white max-w-3xl mx-auto"
+          className="-mx-4 rounded-none overflow-hidden bg-white sm:mx-auto sm:max-w-3xl sm:rounded-2xl"
         />
       </Section>
 

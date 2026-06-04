@@ -7,10 +7,13 @@
  * close to signaling) "I'm about to leave without converting" → we show
  * one small slide-in with WhatsApp + Acuity options. Once per session.
  *
- * Trigger heuristics (one of):
- *   Desktop: mouseleave from viewport at y < 50px (toward URL bar / tabs)
- *   Mobile/all: 30s on page + scrollY > 200px + tab visible
- *               (proxy for "engaged then idle" before bounce)
+ * Trigger (2026-06-04: desktop exit-intent ONLY):
+ *   Desktop: mouseleave from viewport at y < 50px (toward URL bar / tabs) —
+ *   the visitor is already leaving, so it never interrupts active use.
+ *   Mobile: NOT shown — the always-present MobileLeadBar is the mobile funnel.
+ *   (The old 30s timed trigger was removed: data showed 87% dismiss for ~3
+ *   intake/quiz clicks/30d, and it interrupted engaged readers mid-scroll.)
+ *   NO full-screen dim/backdrop — it's a quiet corner toast, not a modal.
  *
  * Anti-patterns avoided (I-23 + the no-dark-patterns floor):
  *   - NO modal overlay that blocks scroll (annoying, AdSense policy)
@@ -32,21 +35,30 @@ import Link from "next/link";
 import { X, MessageCircle, Calendar, Sparkles } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
 
+// Never show the rescue where the visitor is ALREADY in a conversion flow — it
+// would be redundant + interruptive (operator screenshot 2026-06-04 caught it
+// firing ON the gratis-test booking widget). Covers booking steps, the intake
+// landings, the match flow, contact + confirmation.
 const HIDDEN_ROUTE_PREFIXES = [
-  "/nl/boek",
-  "/en/book",
-  "/nl/contact",
-  "/en/contact",
+  "/nl/boek",            // boek-trainer / boek-gym / boek-studio
+  "/en/book",            // book-* + booking-confirmed
   "/nl/boeking-bevestigd",
   "/en/booking-confirmed",
-  "/nl/match-trainer",  // visitor is already in the match flow
+  "/nl/contact",
+  "/en/contact",
+  "/nl/match-trainer",   // already in the match flow
   "/en/match-trainer",
+  "/nl/gratis-intake",   // intake landing (+ -ads) — visitor already deciding
+  "/en/free-intro",      // free-intro landing (+ -ads)
+  "/nl/studio-huren/gratis-test",  // dedicated booking step
+  "/en/studio-rental/free-trial",
+  "/nl/plan-gratis-intake-met-",   // per-trainer booking step
+  "/en/plan-free-intro-with-",
+  "/nl/start",
   "/social",
 ];
 
 const SESSION_FLAG = "sculptclub-rescue-shown";
-const TIMED_TRIGGER_MS = 30000;   // 30s engaged before timed trigger
-const TIMED_MIN_SCROLL_PX = 200;  // must scroll at least this much before timed
 
 function readConsentCookie(): boolean {
   if (typeof document === "undefined") return false;
@@ -101,39 +113,33 @@ export function LeadRescuePopup() {
       if (mq.matches) return;
     }
 
-    let timedFired = false;
-    let exitFired = false;
+    let firedOnce = false;
 
-    const fire = (which: "exit" | "timed") => {
-      if (timedFired || exitFired) return;
-      if (which === "timed") timedFired = true;
-      else exitFired = true;
+    const fire = () => {
+      if (firedOnce) return;
+      firedOnce = true;
       sessionStorage.setItem(SESSION_FLAG, "1");
-      setTrigger(which);
+      setTrigger("exit");
       setOpen(true);
       if (typeof window !== "undefined" && window.plausible) {
-        window.plausible("Rescue Shown", { props: { trigger: which, path: pathname } });
+        window.plausible("Rescue Shown", { props: { trigger: "exit", path: pathname } });
       }
     };
 
-    // ── Exit-intent (desktop) ──
+    // ── Desktop exit-intent ONLY ──
+    // The 30s timed trigger was removed 2026-06-04 (operator UX review + data:
+    // 87% dismiss for ~3 intake/quiz clicks in 30d, and it fired on ENGAGED
+    // readers mid-scroll — interruptive). It was also the only path that fired
+    // on mobile; mobile now relies on the always-present MobileLeadBar
+    // (WhatsApp/Bel/Intake) rather than an interrupting popup. Exit-intent fires
+    // only when a desktop visitor moves the cursor toward the tab/URL bar —
+    // they're already leaving — so it never interrupts active use.
     const onMouseLeave = (e: MouseEvent) => {
-      if (e.clientY < 50 && e.relatedTarget == null) {
-        fire("exit");
-      }
+      if (e.clientY < 50 && e.relatedTarget == null) fire();
     };
-
-    // ── Timed trigger (mobile + desktop fallback) ──
-    const timedTimer = window.setTimeout(() => {
-      if (window.scrollY >= TIMED_MIN_SCROLL_PX && document.visibilityState === "visible") {
-        fire("timed");
-      }
-    }, TIMED_TRIGGER_MS);
-
     document.addEventListener("mouseleave", onMouseLeave);
 
     return () => {
-      window.clearTimeout(timedTimer);
       document.removeEventListener("mouseleave", onMouseLeave);
     };
   }, [hidden, pathname, consented]);
@@ -203,12 +209,9 @@ export function LeadRescuePopup() {
 
   return (
     <>
-      {/* Backdrop — subtle, click-to-dismiss, no scroll lock */}
-      <div
-        className="fixed inset-0 z-[60] bg-black/30 backdrop-blur-[2px] animate-[rescue-fade_0.2s_ease-out]"
-        onClick={dismiss}
-        aria-hidden="true"
-      />
+      {/* Quiet corner toast — NO full-screen backdrop/dim (removed 2026-06-04:
+          the dim made a gentle slide-in feel like a blocking modal). It doesn't
+          lock scroll or dim the page; dismiss via the X or Escape. */}
 
       {/* Popup — fixed bottom on mobile, bottom-right on desktop */}
       <div
