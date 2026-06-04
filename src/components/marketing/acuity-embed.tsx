@@ -16,8 +16,14 @@ interface AcuityEmbedProps {
    */
   url: string;
   title?: string;
-  /** Initial height in px. Acuity's embed.js auto-adjusts as user navigates. */
+  /** Desktop height in px (md+). Acuity's modern embed does NOT post resize
+   * messages (verified live 2026-06-04), so this is a real fixed height — not
+   * an auto-resize seed. Desktop's side-by-side layout fits ~900px. */
   height?: number;
+  /** Mobile height in px (≤767px) — taller because Acuity stacks the
+   * appointment card + calendar + slots vertically. Default 2000 fits a busy
+   * free-trial day (~11 slots ≈ 1650px content) with buffer, no internal scroll. */
+  mobileHeight?: number;
   className?: string;
   /**
    * intent prop sent with the postMessage-driven `Lead Generated` event.
@@ -90,12 +96,36 @@ function detectIntentFromPath(path: string): "trainer" | "studio_rental" | "open
 export function AcuityEmbed({
   url,
   title = "Schedule your appointment",
-  height = 800,
+  height = 900,
+  mobileHeight = 2000,
   className,
   intent,
   pricing = "free",
 }: AcuityEmbedProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  // Responsive FIXED height. Verified live 2026-06-04 (Chrome MCP): Acuity's
+  // modern embed posts ZERO content-height messages (the listener captured
+  // nothing even after navigating the widget) — so embed.js / a postMessage
+  // listener can NOT auto-size it. The iframe sat at a fixed 900px and
+  // OVERFLOWED on mobile, where Acuity stacks the appointment card + calendar +
+  // slots vertically (operator's real-device screenshot showed an internal
+  // scrollbar = scroll-in-a-scroll). Measured mobile content for a busy day
+  // (11 slots) ≈ 1650px → default mobileHeight 2000 fits with buffer; desktop's
+  // side-by-side layout fits in `height` (~900). We do NOT set scrolling="no",
+  // so a rare very-long day degrades to a scrollbar instead of clipping.
+  // Re-applies on viewport change via matchMedia.
+  useEffect(() => {
+    const el = iframeRef.current;
+    if (!el || typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(max-width: 767px)");
+    const apply = () => {
+      el.style.height = `${mq.matches ? mobileHeight : height}px`;
+    };
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, [height, mobileHeight]);
 
   useEffect(() => {
     function onMessage(e: MessageEvent) {
@@ -115,28 +145,6 @@ export function AcuityEmbed({
         const d: unknown = e.data;
         const dStr = typeof d === "string" ? d : "";
         const dObj = (typeof d === "object" && d !== null) ? (d as Record<string, unknown>) : {};
-
-        // ── Auto-resize: grow the iframe to its FULL content height so the
-        // booking widget shows 100% with a single PAGE scroll — no scroll-in-a-
-        // scroll. Operator UX screenshot 2026-06-04: the fixed-height iframe
-        // (900px) was shorter than Acuity's calendar+slots view, so the iframe
-        // showed its own internal scrollbar. Acuity posts content-height
-        // messages as the visitor navigates the widget (service → calendar →
-        // slots → form → confirmation). embed.js (now afterInteractive) is the
-        // primary resizer; this is a self-contained backup that handles the
-        // common payload shapes in case embed.js's listener attaches too late.
-        // Clamp [200, 6000] so a junk message can't collapse or balloon it.
-        const heightCandidates = [
-          typeof d === "number" ? d : NaN,
-          typeof dObj.height === "number" ? dObj.height : (typeof dObj.height === "string" ? parseInt(dObj.height, 10) : NaN),
-          typeof dObj.acuityHeight === "number" ? dObj.acuityHeight : NaN,
-          typeof dObj.scrollHeight === "number" ? dObj.scrollHeight : NaN,
-          typeof dObj.documentHeight === "number" ? dObj.documentHeight : NaN,
-        ];
-        const newH = heightCandidates.find((n) => Number.isFinite(n) && n > 200 && n < 6000);
-        if (newH && iframeRef.current) {
-          iframeRef.current.style.height = `${Math.ceil(newH)}px`;
-        }
 
         const candidates = [
           dStr,
@@ -200,12 +208,11 @@ export function AcuityEmbed({
         height={height}
         frameBorder="0"
         loading="lazy"
-        // `height` is only the INITIAL value — the message listener above +
-        // Acuity's embed.js grow it to full content height, so the page has a
-        // single scroll instead of a nested iframe scroll. minHeight prevents a
-        // collapse before the first resize fires; display:block kills the
-        // inline-iframe descender gap.
-        style={{ minHeight: 600, border: 0, display: "block", width: "100%" }}
+        // Height is set responsively by the matchMedia effect above (mobile =
+        // mobileHeight, desktop = height). The `height` attr is just the SSR
+        // initial value before hydration. display:block kills the inline-iframe
+        // descender gap.
+        style={{ border: 0, display: "block", width: "100%" }}
       />
       <Script
         src="https://embed.acuityscheduling.com/js/embed.js"
