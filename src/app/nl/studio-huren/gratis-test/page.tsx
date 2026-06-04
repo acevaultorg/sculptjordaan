@@ -30,6 +30,11 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
  * conversion (NwwsCNGZlp8cEMG71YxD) with correct taxonomy. WhatsApp CTAs
  * carry plausible-event-name classes (tagged-events script is loaded).
  *
+ * 2026-06-04: added a "Bekijk de ruimte" studio gallery (PhotoGalleryLightbox,
+ * reused from /studio-huren) before the tour card so trainers can see the room
+ * on the page; the header Boek/Try-Out CTA is now suppressed on this
+ * booking-step route (see isBookingStepPath in header.tsx).
+ *
  * EN parity: src/app/en/studio-rental/free-trial/page.tsx (keep in sync).
  */
 
