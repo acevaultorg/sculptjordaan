@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
@@ -95,6 +95,8 @@ export function AcuityEmbed({
   intent,
   pricing = "free",
 }: AcuityEmbedProps) {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
     function onMessage(e: MessageEvent) {
       try {
@@ -113,6 +115,29 @@ export function AcuityEmbed({
         const d: unknown = e.data;
         const dStr = typeof d === "string" ? d : "";
         const dObj = (typeof d === "object" && d !== null) ? (d as Record<string, unknown>) : {};
+
+        // ── Auto-resize: grow the iframe to its FULL content height so the
+        // booking widget shows 100% with a single PAGE scroll — no scroll-in-a-
+        // scroll. Operator UX screenshot 2026-06-04: the fixed-height iframe
+        // (900px) was shorter than Acuity's calendar+slots view, so the iframe
+        // showed its own internal scrollbar. Acuity posts content-height
+        // messages as the visitor navigates the widget (service → calendar →
+        // slots → form → confirmation). embed.js (now afterInteractive) is the
+        // primary resizer; this is a self-contained backup that handles the
+        // common payload shapes in case embed.js's listener attaches too late.
+        // Clamp [200, 6000] so a junk message can't collapse or balloon it.
+        const heightCandidates = [
+          typeof d === "number" ? d : NaN,
+          typeof dObj.height === "number" ? dObj.height : (typeof dObj.height === "string" ? parseInt(dObj.height, 10) : NaN),
+          typeof dObj.acuityHeight === "number" ? dObj.acuityHeight : NaN,
+          typeof dObj.scrollHeight === "number" ? dObj.scrollHeight : NaN,
+          typeof dObj.documentHeight === "number" ? dObj.documentHeight : NaN,
+        ];
+        const newH = heightCandidates.find((n) => Number.isFinite(n) && n > 200 && n < 6000);
+        if (newH && iframeRef.current) {
+          iframeRef.current.style.height = `${Math.ceil(newH)}px`;
+        }
+
         const candidates = [
           dStr,
           typeof dObj.type === "string" ? dObj.type : "",
@@ -168,17 +193,23 @@ export function AcuityEmbed({
   return (
     <div className={className}>
       <iframe
+        ref={iframeRef}
         src={url}
         title={title}
         width="100%"
         height={height}
         frameBorder="0"
         loading="lazy"
-        style={{ minHeight: 600, border: 0 }}
+        // `height` is only the INITIAL value — the message listener above +
+        // Acuity's embed.js grow it to full content height, so the page has a
+        // single scroll instead of a nested iframe scroll. minHeight prevents a
+        // collapse before the first resize fires; display:block kills the
+        // inline-iframe descender gap.
+        style={{ minHeight: 600, border: 0, display: "block", width: "100%" }}
       />
       <Script
         src="https://embed.acuityscheduling.com/js/embed.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
     </div>
   );
