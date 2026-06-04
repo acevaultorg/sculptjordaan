@@ -180,12 +180,36 @@ function isTrainerFunnelPath(pathname: string): boolean {
   return /\/(studio-huren|studio-rental|word-trainer|become-trainer|voor-trainers|for-trainers)(\/|$)/.test(pathname);
 }
 
+// Dedicated booking-STEP pages — the page IS the booking action (an inline
+// Acuity scheduler / booking widget), so the header's "Boek" + "Try-Out"
+// disambiguator CTAs are redundant noise that competes with the on-page
+// widget's own button. Operator 2026-06-04 on /studio-huren/gratis-test:
+// "Boek button in menu bar is onnodige afleiding op deze pagina". Mirrors the
+// MobileBottomCTABar / MobileLeadBar suppression from commit 704d2c6 (same
+// route set). Content HUBS that merely CONTAIN a booking section (homepage,
+// /studio-huren hub, /open-gym, /gratis-intake, /vind-jouw-personal-trainer)
+// are intentionally NOT matched here — they keep the header CTAs.
+function isBookingStepPath(pathname: string): boolean {
+  return (
+    /\/(boeking-bevestigd|booking-confirmed)(\/|$)/.test(pathname) || // post-booking — already converted
+    /\/(studio-huren|studio-rental)\/(gratis-test|free-trial)(\/|$)/.test(pathname) || // free-trial step
+    /\/plan-(gratis-intake-met|free-intro-with)-/.test(pathname) || // per-trainer intake step (×22)
+    /\/(boek-trainer|boek-gym|boek-studio|book-trainer|book-gym|book-studio)(\/|$)/.test(pathname) || // dedicated book pages
+    /\/(boek|book|start)(\/|$)/.test(pathname) // book/start booking endpoints
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
   const locale = getLocaleFromPath(pathname);
   const altLocale = getAlternateLocale(locale);
   const altPath = getAlternatePath(pathname);
   const hideConsumerCta = isTrainerFunnelPath(pathname);
+  // On dedicated booking-step pages, suppress the header booking CTAs
+  // (Boek + Try-Out) — the page itself is the booking action. See
+  // isBookingStepPath() above. Universal chrome (logo, language, login,
+  // hamburger) stays; the hamburger still exposes full nav.
+  const onBookingStep = isBookingStepPath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookOpen, setBookOpen] = useState(false);
   // bookMode: tracks which sheet content to render when bookOpen=true.
@@ -381,7 +405,7 @@ export function Header() {
                 action expecting action. Now: same modal that disambiguates
                 Studio Huren / Personal Trainer / Open Gym intent → user
                 self-routes to the right try-out booking flow within 1 tap. */}
-            {!hideConsumerCta && (
+            {!hideConsumerCta && !onBookingStep && (
               <button
                 type="button"
                 onClick={handleTryoutClick}
@@ -415,7 +439,11 @@ export function Header() {
                 + mobile sticky lead bar WhatsApp). Desktop keeps the fill —
                 no cookie/lead-bar competition there + Boek is still
                 primary-action on demand-side traffic that's not InstagramApp
-                in-app (~37% of traffic). */}
+                in-app (~37% of traffic).
+                2026-06-04: hidden on dedicated booking-step pages
+                (onBookingStep) — the page IS the booking action there, so the
+                disambiguator CTA is redundant. */}
+            {!onBookingStep && (
             <button
               onClick={handleBookClick}
               aria-haspopup="dialog"
@@ -455,6 +483,7 @@ export function Header() {
               <CalendarCheck className="w-3.5 h-3.5" />
               {booking.label}
             </button>
+            )}
 
             {/* Language toggle — desktop only (sm+).
                 Mobile: globe is hidden here and lives inside the hamburger

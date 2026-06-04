@@ -3,6 +3,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarCheck, Eye } from "lucide-react";
@@ -61,6 +62,19 @@ const benefits = [
   { icon: Percent, text: "0% commissie · jouw klanten, jouw tarieven" },
   { icon: Clock, text: "Per uur vanaf €12 · geen contract" },
   { icon: Ban, text: "Gratis proefsessie · geen creditcard" },
+];
+
+// Studio gallery — lets trainers SEE the room before booking (the "Eerst de
+// ruimte zien" desire this page already speaks to). Reuses the same
+// PhotoGalleryLightbox + studio shots as /nl/studio-huren — tap a thumb for a
+// fullscreen slider. Space + equipment + canal-side atmosphere.
+const galleryImages = [
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de privé studio in de Jordaan — SCULPT muur, sprintbaan en apparatuur" },
+  { src: "/images/studio/studio-interior-1.jpeg", alt: "Krachtruimte met Rogue rack, sled en bumper plates onder de lichtkoepel" },
+  { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack, sled en bumper plates bij SculptClub" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell-rack met planten en platenspeler — de boutique-hoek van de studio" },
+  { src: "/images/studio/echo-bike-corner.jpg", alt: "Echo Bike en conditioning-hoek bij SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Open deuren met uitzicht op de Egelantiersgracht in de Jordaan" },
 ];
 
 export default function GratisTestStudioHurenNL() {
@@ -136,6 +150,25 @@ export default function GratisTestStudioHurenNL() {
             className="-mx-4 rounded-none overflow-hidden bg-white sm:mx-auto sm:max-w-3xl sm:rounded-2xl"
           />
         </div>
+      </Section>
+
+      {/* Studio gallery — let trainers SEE the room before booking. Sits right
+          before the "Eerst de ruimte zien" tour card so the photos + the tour
+          CTA reinforce each other. Reuses PhotoGalleryLightbox (tap = fullscreen
+          slider) from /nl/studio-huren. */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <p className="overline">De studio</p>
+              <h2 className="mt-2 text-xl font-semibold">Bekijk de ruimte</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Privé studio aan de Egelantiersgracht in de Jordaan — tik op een foto voor groot.
+              </p>
+            </div>
+            <PhotoGalleryLightbox images={galleryImages} locale="nl" />
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Chat-first block — TWO low-commitment paths for trainers who aren't

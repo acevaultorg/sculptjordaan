@@ -3,6 +3,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarCheck, Eye } from "lucide-react";
@@ -45,6 +46,19 @@ const benefits = [
   { icon: Percent, text: "0% commission · your clients, your rates" },
   { icon: Clock, text: "From €12/hr · no contract" },
   { icon: Ban, text: "Free trial · no credit card" },
+];
+
+// Studio gallery — lets trainers SEE the room before booking (the "see the
+// space first" desire this page already speaks to). Mirrors the NL page +
+// reuses the same PhotoGalleryLightbox + studio shots as /en/studio-rental —
+// tap a thumb for a fullscreen slider. Space + equipment + canal-side atmosphere.
+const galleryImages = [
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overview of the private studio in the Jordaan — SCULPT wall, sprint lane and equipment" },
+  { src: "/images/studio/studio-interior-1.jpeg", alt: "Strength room with Rogue rack, sled and bumper plates under the skylight" },
+  { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack, sled and bumper plates at SculptClub" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack with plants and record player — the studio's boutique corner" },
+  { src: "/images/studio/echo-bike-corner.jpg", alt: "Echo Bike and conditioning corner at SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Open doors overlooking the Egelantiersgracht canal in the Jordaan" },
 ];
 
 export default function FreeTrialStudioRentalEN() {
@@ -119,6 +133,25 @@ export default function FreeTrialStudioRentalEN() {
             className="-mx-4 rounded-none overflow-hidden bg-white sm:mx-auto sm:max-w-3xl sm:rounded-2xl"
           />
         </div>
+      </Section>
+
+      {/* Studio gallery — let trainers SEE the room before booking. Sits right
+          before the "See the space first" tour card so the photos + the tour
+          CTA reinforce each other. Reuses PhotoGalleryLightbox (tap = fullscreen
+          slider) from /en/studio-rental. */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <p className="overline">The studio</p>
+              <h2 className="mt-2 text-xl font-semibold">See the space</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Private canal-side studio in the Jordaan — tap a photo to enlarge.
+              </p>
+            </div>
+            <PhotoGalleryLightbox images={galleryImages} locale="en" />
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Chat-first block — two low-commitment paths for trainers who aren't
