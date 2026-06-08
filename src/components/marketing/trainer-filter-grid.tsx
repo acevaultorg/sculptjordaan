@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";
@@ -73,6 +73,40 @@ const copy = {
     ariaInstagram: (handle: string) => `View ${handle} on Instagram`,
   },
 } as const;
+
+/** Fires a one-time "Trainer Impression" Plausible event when a trainer card
+ *  first scrolls >=50% into view (IntersectionObserver, deduped per page load).
+ *  Exposure denominator for a fair per-trainer CTR — WhatsApp Click ÷ Trainer
+ *  Impression, both keyed on trainer_name so the two join. Set up 2026-06-08 to
+ *  replace raw click counts (which only reflected traffic + each trainer's own
+ *  following, not appeal at equal exposure). */
+function ImpressionCard({ name, children }: { name: string; children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const fired = useRef(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting && !fired.current) {
+          fired.current = true;
+          window.plausible?.("Trainer Impression", {
+            props: { trainer_name: name, source_page: window.location.pathname },
+          });
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.5 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [name]);
+  return (
+    <div ref={ref} className="h-full">
+      {children}
+    </div>
+  );
+}
 
 export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) {
   const t = copy[locale];
@@ -227,6 +261,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredTrainers.map((trainer, i) => (
             <FadeIn key={trainer.id} delay={i * 0.1}>
+              <ImpressionCard name={trainer.name}>
               <Card className="h-full flex flex-col overflow-hidden !rounded-none hover:shadow-brand-lg transition-shadow duration-300 !pt-0 !gap-0">
                 <div className="relative aspect-[4/3] w-full">
                   {/* First 3 trainers above-fold get `priority` to render
@@ -305,6 +340,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                   </Link>
                 </CardFooter>
               </Card>
+              </ImpressionCard>
             </FadeIn>
           ))}
         </div>
