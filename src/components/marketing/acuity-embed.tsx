@@ -114,6 +114,7 @@ export function AcuityEmbed({
   // paint, leaving a blank white box that reads as "broken" to paid
   // landing-page traffic. Hidden on the iframe's onLoad.
   const [loaded, setLoaded] = useState(false);
+  const startedFired = useRef(false);
 
   // Safety net: if the iframe load event is ever missed, reveal after 8s so the
   // skeleton can never get permanently stuck.
@@ -121,6 +122,21 @@ export function AcuityEmbed({
     const t = setTimeout(() => setLoaded(true), 8000);
     return () => clearTimeout(t);
   }, []);
+
+  // Fire a one-time "Booking Viewed" event when the calendar finishes loading —
+  // the funnel DENOMINATOR. Pairs with "Booking Confirmed" (postMessage on
+  // completion) to finally give an embed booking completion rate; before this
+  // only completions were tracked, with no "presented" count to divide by.
+  const handleLoad = () => {
+    setLoaded(true);
+    if (startedFired.current || typeof window === "undefined") return;
+    startedFired.current = true;
+    const path = window.location.pathname;
+    const plausible = (window as unknown as { plausible?: (e: string, o?: { props: Record<string, unknown> }) => void }).plausible;
+    plausible?.("Booking Viewed", {
+      props: { intent: intent || detectIntentFromPath(path), pricing, source_page: path },
+    });
+  };
 
   // Responsive FIXED height. Verified live 2026-06-04 (Chrome MCP): Acuity's
   // modern embed posts ZERO content-height messages (the listener captured
@@ -236,7 +252,7 @@ export function AcuityEmbed({
           height={height}
           frameBorder="0"
           loading="lazy"
-          onLoad={() => setLoaded(true)}
+          onLoad={handleLoad}
           // Height is set responsively by the matchMedia effect above (mobile =
           // mobileHeight, desktop = height). The `height` attr is just the SSR
           // initial value before hydration. display:block kills the inline-iframe
