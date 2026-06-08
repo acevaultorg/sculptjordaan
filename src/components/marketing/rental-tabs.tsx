@@ -56,9 +56,7 @@ export function RentalTabs({
         >
           <span>{c.packages}</span>
           <span
-            className={`rounded-full px-1.5 py-0.5 text-[10px] font-bold leading-none ${
-              tab === "packages" ? "bg-white/25 text-white" : "bg-discount text-white"
-            }`}
+            className="rounded-full bg-discount px-1.5 py-0.5 text-[10px] font-bold leading-none text-white"
           >
             {c.save}
           </span>
