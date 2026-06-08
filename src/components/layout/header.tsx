@@ -449,7 +449,7 @@ export function Header() {
               aria-haspopup="dialog"
               aria-expanded={bookOpen && bookMode === "book"}
               className={cn(
-                "h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
+                "plausible-event-name=header_boek_open h-11 sm:h-9 flex items-center gap-1.5 px-3.5 sm:px-4 rounded-xl text-[13px] sm:text-sm font-bold transition-all cursor-pointer whitespace-nowrap",
                 bookOpen && bookMode === "book"
                   // Active state — match Try-Out's structural border so the
                   // pressed-pill stays visually aligned (same 2px box rule).
@@ -515,7 +515,7 @@ export function Header() {
             <button
               onClick={handleLoginClick}
               className={cn(
-                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
+                "plausible-event-name=header_login_open w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
                 loginOpen
                   ? "text-foreground bg-accent border-border"
                   : "text-foreground/75 hover:text-foreground bg-muted hover:bg-accent border-foreground/15 active:scale-95"
@@ -530,7 +530,7 @@ export function Header() {
             <button
               onClick={handleMenuClick}
               className={cn(
-                "w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
+                "plausible-event-name=header_menu_open w-11 h-11 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
                 menuOpen
                   ? "text-foreground bg-accent border-border"
                   : "text-foreground/75 hover:text-foreground bg-muted hover:bg-accent border-foreground/15 active:scale-95"
