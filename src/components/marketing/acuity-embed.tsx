@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
@@ -42,6 +42,12 @@ interface AcuityEmbedProps {
    * caveat (don't).
    */
   pricing?: "free" | "paid" | "unknown";
+  /**
+   * Localized "calendar is loading" label shown over the loading skeleton until
+   * the Acuity iframe fires onLoad. Optional — the spinner shows regardless; the
+   * label just reassures. Pass the page's locale string.
+   */
+  loadingLabel?: string;
 }
 
 // Auto-detect intent from the current pathname when caller didn't pass one.
@@ -101,8 +107,20 @@ export function AcuityEmbed({
   className,
   intent,
   pricing = "free",
+  loadingLabel,
 }: AcuityEmbedProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  // Loading skeleton: the third-party Acuity iframe takes a few seconds to
+  // paint, leaving a blank white box that reads as "broken" to paid
+  // landing-page traffic. Hidden on the iframe's onLoad.
+  const [loaded, setLoaded] = useState(false);
+
+  // Safety net: if the iframe load event is ever missed, reveal after 8s so the
+  // skeleton can never get permanently stuck.
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 8000);
+    return () => clearTimeout(t);
+  }, []);
 
   // Responsive FIXED height. Verified live 2026-06-04 (Chrome MCP): Acuity's
   // modern embed posts ZERO content-height messages (the listener captured
@@ -200,20 +218,32 @@ export function AcuityEmbed({
 
   return (
     <div className={className}>
-      <iframe
-        ref={iframeRef}
-        src={url}
-        title={title}
-        width="100%"
-        height={height}
-        frameBorder="0"
-        loading="lazy"
-        // Height is set responsively by the matchMedia effect above (mobile =
-        // mobileHeight, desktop = height). The `height` attr is just the SSR
-        // initial value before hydration. display:block kills the inline-iframe
-        // descender gap.
-        style={{ border: 0, display: "block", width: "100%" }}
-      />
+      <div className="relative">
+        {!loaded && (
+          <div
+            aria-hidden
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-white"
+          >
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-black/10 border-t-primary" />
+            {loadingLabel && <p className="text-sm text-black/60">{loadingLabel}</p>}
+          </div>
+        )}
+        <iframe
+          ref={iframeRef}
+          src={url}
+          title={title}
+          width="100%"
+          height={height}
+          frameBorder="0"
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
+          // Height is set responsively by the matchMedia effect above (mobile =
+          // mobileHeight, desktop = height). The `height` attr is just the SSR
+          // initial value before hydration. display:block kills the inline-iframe
+          // descender gap.
+          style={{ border: 0, display: "block", width: "100%" }}
+        />
+      </div>
       <Script
         src="https://embed.acuityscheduling.com/js/embed.js"
         strategy="afterInteractive"

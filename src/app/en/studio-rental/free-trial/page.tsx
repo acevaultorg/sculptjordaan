@@ -6,7 +6,8 @@ import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
-import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarCheck, Eye } from "lucide-react";
+import { siteConfig } from "@/config/site";
+import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarCheck, Eye, Star } from "lucide-react";
 
 /**
  * Dedicated free-trial landing page for studio rental — also the paid
@@ -105,6 +106,15 @@ export default function FreeTrialStudioRentalEN() {
               Prefer to chat first?
             </ButtonLink>
           </div>
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm">
+            <span className="flex" aria-hidden>
+              {Array.from({ length: 5 }).map((_, s) => (
+                <Star key={s} className="h-4 w-4 fill-amber-400 text-amber-400" />
+              ))}
+            </span>
+            <span className="font-semibold">{siteConfig.rating.value}</span>
+            <span className="text-muted-foreground">on Google · {siteConfig.rating.count} reviews</span>
+          </div>
           <p className="mt-3 text-xs text-muted-foreground">
             Not ready to book? Send your question — we usually reply within 1 hour.
           </p>
@@ -131,6 +141,7 @@ export default function FreeTrialStudioRentalEN() {
             intent="studio_rental"
             pricing="free"
             height={900}
+            loadingLabel="Loading the calendar…"
             className="-mx-4 rounded-none overflow-hidden bg-white sm:mx-auto sm:max-w-3xl sm:rounded-2xl"
           />
         </div>
