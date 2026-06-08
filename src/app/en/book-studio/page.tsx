@@ -142,10 +142,10 @@ export default function BookStudioPageEN() {
                       Buy Starter
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Starter", 89, "en")}
+                      href={whatsappLinks.studioPackInvoice("Starter", 99, 89, "en")}
                       external
                       variant="outline"
-                      size="sm"
+                      size="lg"
                       className="mt-2 w-full plausible-event-name=book_studio_invoice_starter"
                     >
                       <Receipt className="mr-2 h-4 w-4" />
@@ -167,10 +167,10 @@ export default function BookStudioPageEN() {
                       Buy Routine
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Routine", 199, "en")}
+                      href={whatsappLinks.studioPackInvoice("Routine", 234, 199, "en")}
                       external
                       variant="outline"
-                      size="sm"
+                      size="lg"
                       className="mt-2 w-full plausible-event-name=book_studio_invoice_routine"
                     >
                       <Receipt className="mr-2 h-4 w-4" />
@@ -192,10 +192,10 @@ export default function BookStudioPageEN() {
                       Buy Pro
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Pro", 349, "en")}
+                      href={whatsappLinks.studioPackInvoice("Pro", 436, 349, "en")}
                       external
                       variant="outline"
-                      size="sm"
+                      size="lg"
                       className="mt-2 w-full plausible-event-name=book_studio_invoice_pro"
                     >
                       <Receipt className="mr-2 h-4 w-4" />
@@ -217,10 +217,10 @@ export default function BookStudioPageEN() {
                       Buy Volume
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Volume", 549, "en")}
+                      href={whatsappLinks.studioPackInvoice("Volume", 713, 549, "en")}
                       external
                       variant="outline"
-                      size="sm"
+                      size="lg"
                       className="mt-2 w-full plausible-event-name=book_studio_invoice_volume"
                     >
                       <Receipt className="mr-2 h-4 w-4" />

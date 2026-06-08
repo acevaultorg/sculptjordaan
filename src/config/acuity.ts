@@ -201,13 +201,15 @@ export const whatsappLinks = {
   bankTransferEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€549) and pay via bank transfer. My name:")}`,
   /** Studio pack — per-pack "Betaal per factuur" (pay by invoice) WhatsApp, the
       secondary action beside the Koop/Acuity button on each /boek-studio package
-      card (Q 2026-06-08). Wording includes "studio huren" / "renting the studio"
-      so detectWaIntent classifies these clicks as studio_rental/paid. */
-  studioPackInvoice: (pack: "Starter" | "Routine" | "Pro" | "Volume", price: number, locale: "nl" | "en") => {
+      card (Q 2026-06-08). Shows the strikethrough regular price via WhatsApp's
+      ~strikethrough~ syntax so the message mirrors the card (~€99~ €89). Wording
+      includes "studio huren" / "renting the studio" so detectWaIntent classifies
+      these clicks as studio_rental/paid. */
+  studioPackInvoice: (pack: "Starter" | "Routine" | "Pro" | "Volume", regularPrice: number, price: number, locale: "nl" | "en") => {
     const text =
       locale === "nl"
-        ? `Hoi! Ik wil graag het ${pack}-pakket voor studio huren (€${price}) kopen en per factuur betalen. Mijn naam:`
-        : `Hi! I'd like to buy the ${pack} studio-rental pack — renting the studio (€${price}) — and pay by invoice. My name:`;
+        ? `Hoi! Ik wil graag het ${pack}-pakket voor studio huren kopen en per factuur betalen — ~€${regularPrice}~ €${price}. Mijn naam:`
+        : `Hi! I'd like to buy the ${pack} pack for renting the studio and pay by invoice — ~€${regularPrice}~ €${price}. My name:`;
     return `https://wa.me/31615147952?text=${encodeURIComponent(text)}`;
   },
   /** Dara has her own WhatsApp number */
