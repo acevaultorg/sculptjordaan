@@ -20,10 +20,13 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
  *
  * What changed: WhatsApp was a below-the-fold *fallback*; now the two
  * operator goals are co-primary in the hero — [Boek gratis proefsessie]
- * + [Liever eerst even appen?]. A second, lower-commitment "see the room
- * first" path (15-min rondleiding via WhatsApp Business) is added because
- * ZZP trainers want to inspect the equipment + space before committing to
- * hourly rental (whatsappLinks.tourNl note in config/acuity.ts).
+ * + [Liever eerst even appen?]. A second "see the room first" card (Eerst
+ * de ruimte zien) opens the same free studio try-out in a NEW TAB
+ * (acuityFreeTrials.studioRentalTryout) — a free, no-obligation visit so
+ * ZZP trainers can inspect the equipment + space before committing to
+ * hourly rental. (Operator 2026-06-08: reuse the free try-out rather than
+ * a separate WhatsApp tour; copy softened so nobody expects a 15-min tour
+ * and lands on the 60-min trial calendar.)
  *
  * Conversion tracking: AcuityEmbed receives explicit intent="studio_rental"
  * + pricing="free" so a completed booking fires the Google Ads lead-form
@@ -203,16 +206,16 @@ export default function GratisTestStudioHurenNL() {
                 <Eye className="mx-auto h-5 w-5 text-brand" aria-hidden />
                 <p className="mt-2 text-base font-semibold">Eerst de ruimte zien</p>
                 <p className="mt-1 mb-4 text-sm text-muted-foreground grow">
-                  Plan een korte, vrijblijvende rondleiding (15 min). Bekijk de studio en de apparatuur.
+                  Bekijk de studio en apparatuur met eigen ogen tijdens een gratis, vrijblijvende proefsessie. Geen creditcard.
                 </p>
                 <ButtonLink
-                  href={whatsappLinks.tourNl}
+                  href={acuityFreeTrials.studioRentalTryout}
                   external
                   variant="outline"
                   className="w-full plausible-event-name=gratis_test_studio_tour"
                 >
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  Plan een rondleiding
+                  <CalendarCheck className="mr-2 h-4 w-4" />
+                  Boek je gratis bezoek
                 </ButtonLink>
               </div>
             </div>

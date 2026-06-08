@@ -13,9 +13,10 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
  * Google Ads landing page for the "Trainers" ad group.
  *
  * Two co-primary paths (operator directive 2026-06-03): book the free
- * try-out OR chat first via WhatsApp. A "see the room first" 15-min tour
- * path is added for ZZP trainers who want to inspect the space before
- * committing.
+ * try-out OR chat first via WhatsApp. A "see the room first" card opens
+ * the same free studio try-out in a NEW TAB (acuityFreeTrials.studioRentalTryout)
+ * so ZZP trainers can inspect the space before committing. (Operator
+ * 2026-06-08: reuse the free try-out rather than a separate WhatsApp tour.)
  *
  * NL parity at src/app/nl/studio-huren/gratis-test/page.tsx (keep in sync).
  */
@@ -181,16 +182,16 @@ export default function FreeTrialStudioRentalEN() {
                 <Eye className="mx-auto h-5 w-5 text-brand" aria-hidden />
                 <p className="mt-2 text-base font-semibold">See the space first</p>
                 <p className="mt-1 mb-4 text-sm text-muted-foreground grow">
-                  Book a short, no-obligation tour (15 min). See the studio and the equipment.
+                  See the studio and equipment for yourself during a free, no-obligation trial session. No credit card.
                 </p>
                 <ButtonLink
-                  href={whatsappLinks.tourEn}
+                  href={acuityFreeTrials.studioRentalTryout}
                   external
                   variant="outline"
                   className="w-full plausible-event-name=free_trial_studio_tour"
                 >
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  Book a tour
+                  <CalendarCheck className="mr-2 h-4 w-4" />
+                  Book your free visit
                 </ButtonLink>
               </div>
             </div>
