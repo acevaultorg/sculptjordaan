@@ -199,6 +199,17 @@ export const whatsappLinks = {
   /** Bank transfer for Volume pack */
   bankTransferNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! Ik wil graag het Volume pakket (€549) kopen en betalen via bankoverschrijving. Mijn naam:")}`,
   bankTransferEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€549) and pay via bank transfer. My name:")}`,
+  /** Studio pack — per-pack "Betaal per factuur" (pay by invoice) WhatsApp, the
+      secondary action beside the Koop/Acuity button on each /boek-studio package
+      card (Q 2026-06-08). Wording includes "studio huren" / "renting the studio"
+      so detectWaIntent classifies these clicks as studio_rental/paid. */
+  studioPackInvoice: (pack: "Starter" | "Routine" | "Pro" | "Volume", price: number, locale: "nl" | "en") => {
+    const text =
+      locale === "nl"
+        ? `Hoi! Ik wil graag het ${pack}-pakket voor studio huren (€${price}) kopen en per factuur betalen. Mijn naam:`
+        : `Hi! I'd like to buy the ${pack} studio-rental pack — renting the studio (€${price}) — and pay by invoice. My name:`;
+    return `https://wa.me/31615147952?text=${encodeURIComponent(text)}`;
+  },
   /** Dara has her own WhatsApp number */
   dara: "https://wa.me/31645658213",
 } as const;

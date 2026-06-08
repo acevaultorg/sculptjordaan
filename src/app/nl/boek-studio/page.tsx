@@ -18,7 +18,7 @@ import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
-import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight } from "lucide-react";
+import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -141,6 +141,16 @@ export default function BoekStudioPageNL() {
                     <ButtonLink href={acuityPackages.studio.starter} size="lg" className="mt-4 w-full">
                       Koop Starter
                     </ButtonLink>
+                    <ButtonLink
+                      href={whatsappLinks.studioPackInvoice("Starter", 89, "nl")}
+                      external
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 w-full plausible-event-name=boek_studio_invoice_starter"
+                    >
+                      <Receipt className="mr-2 h-4 w-4" />
+                      Betaal per factuur
+                    </ButtonLink>
                   </CardContent>
                 </Card>
 
@@ -155,6 +165,16 @@ export default function BoekStudioPageNL() {
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 15%</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Koop Routine
+                    </ButtonLink>
+                    <ButtonLink
+                      href={whatsappLinks.studioPackInvoice("Routine", 199, "nl")}
+                      external
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 w-full plausible-event-name=boek_studio_invoice_routine"
+                    >
+                      <Receipt className="mr-2 h-4 w-4" />
+                      Betaal per factuur
                     </ButtonLink>
                   </CardContent>
                 </Card>
@@ -171,6 +191,16 @@ export default function BoekStudioPageNL() {
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Koop Pro
                     </ButtonLink>
+                    <ButtonLink
+                      href={whatsappLinks.studioPackInvoice("Pro", 349, "nl")}
+                      external
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 w-full plausible-event-name=boek_studio_invoice_pro"
+                    >
+                      <Receipt className="mr-2 h-4 w-4" />
+                      Betaal per factuur
+                    </ButtonLink>
                   </CardContent>
                 </Card>
 
@@ -185,6 +215,16 @@ export default function BoekStudioPageNL() {
                     <p className="mt-2 text-sm text-discount font-medium">Bespaar 23%</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Koop Volume
+                    </ButtonLink>
+                    <ButtonLink
+                      href={whatsappLinks.studioPackInvoice("Volume", 549, "nl")}
+                      external
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 w-full plausible-event-name=boek_studio_invoice_volume"
+                    >
+                      <Receipt className="mr-2 h-4 w-4" />
+                      Betaal per factuur
                     </ButtonLink>
                   </CardContent>
                 </Card>
