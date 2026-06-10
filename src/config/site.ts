@@ -40,6 +40,7 @@ export const siteConfig = {
   },
   analytics: {
     ga4: "G-QYW5H4XTXW",
+    gtm: "GTM-PG592B5Q",
     googleAds: "AW-18011741633",
     googleAdsConversion: "NwwsCNGZlp8cEMG71YxD",
     // Purchase conversion (high-value, booking actually completed) — separate label

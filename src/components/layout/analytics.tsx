@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
-const { ga4, googleAds, googleAdsConversion, googleAdsConversionPurchase, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
+const { ga4, gtm, googleAds, googleAdsConversion, googleAdsConversionPurchase, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
 const PLAUSIBLE_DOMAIN = "sculptclub.nl";
 
 export function Analytics() {
@@ -64,6 +64,20 @@ export function Analytics() {
           gtag('set', 'ads_data_redaction', true);
           gtag('config', '${ga4}');
           gtag('config', '${googleAds}');
+        `}
+      </Script>
+
+      {/* Google Tag Manager — loaded AFTER the gtag consent-default block above so
+          GTM (container ${gtm}) reads the established Consent Mode v2 state from the
+          shared window.dataLayer. Canonical GTM snippet; pairs with the <noscript>
+          iframe placed right after <body> in layout.tsx. */}
+      <Script id="gtm-init" strategy="afterInteractive">
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${gtm}');
         `}
       </Script>
 

@@ -150,6 +150,16 @@ export default function RootLayout({
         <HreflangLinks />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {/* Google Tag Manager (noscript) — must be immediately after <body>.
+            JS GTM loader lives in <Analytics />. Container: GTM-PG592B5Q. */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${siteConfig.analytics.gtm}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {/*
           Skip-to-main-content link. Tailwind v4's `focus:not-sr-only` did not
           override the `sr-only` clip-path on focus (verified 2026-05-07: even
