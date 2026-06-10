@@ -140,7 +140,27 @@ If counter doesn't increment within 60s, debug — don't assume "ingestion delay
 ## Source-of-truth files
 
 - `src/components/layout/analytics.tsx` — global click handler + classifier + tracker fan-out
-- `src/config/site.ts` — analytics IDs (GA4, Google Ads, Meta, TikTok, Clarity)
+- `src/config/site.ts` — analytics IDs (GA4, GTM, Google Ads, Meta, TikTok, Clarity)
 - `src/config/acuity.ts` — Acuity appointmentType IDs + WhatsApp link templates
 - `src/config/trainers.ts` — trainer roster + per-trainer WhatsApp numbers
 - `CLAUDE.md` — tech-stack section has the IDs + event-taxonomy line
+
+## Google Tag Manager (GTM-PG592B5Q) — thin parallel container
+
+Installed 2026-06-10. Loaded as a **thin, empty parallel container** — it loads
+but fires nothing until tags are added in the GTM dashboard.
+
+**Where it's wired:**
+- JS loader: `src/components/layout/analytics.tsx` (`<Script id="gtm-init">`), placed
+  AFTER the Consent Mode v2 `gtag-init` block so GTM reads the established consent
+  state from the shared `window.dataLayer` (avoids a consent-mode race).
+- `<noscript>` iframe: `src/app/layout.tsx`, immediately after `<body>` (Google spec).
+- ID: `siteConfig.analytics.gtm` (source of truth).
+
+**DELIBERATE DECISION — do NOT migrate the existing pixels into GTM.**
+GA4, Google Ads (consent-mode-v2-advanced + lead/purchase conversion labels),
+Meta, TikTok, Clarity are all hardcoded in `analytics.tsx` and working. Migrating
+them into GTM tags would risk **double-firing conversions** (every event counted
+twice) unless the hardcoded snippet is removed in the exact same change. Only add
+*new* tags to GTM (e.g. a future tag an agency needs without a code deploy). If you
+ever do migrate a pixel into GTM, remove its hardcoded snippet here in the same PR.
