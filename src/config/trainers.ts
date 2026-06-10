@@ -46,6 +46,24 @@ export interface Trainer {
   image: string;
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
   whatsapp?: string;
+  /**
+   * Trainer's typical availability, short free-text per locale
+   * (e.g. nl: "Ma–vr ochtend + avond", en: "Mon–Fri mornings + evenings").
+   * 🚨 OPERATOR-SUPPLIED REAL DATA ONLY — ask the trainer; never guess or
+   * fabricate. Missing = the availability row simply doesn't render on the
+   * intake page. Added 2026-06-10 (richer trainer profiles, structural ship).
+   */
+  availability?: Record<Locale, string>;
+  /**
+   * Real client testimonials for this trainer.
+   * 🚨 REAL QUOTES ONLY — operator-collected, client-consented, attributed by
+   * first name or initials. NEVER fabricate: fake reviews violate Google
+   * policy + Dutch/EU consumer law and would poison the site's trust signals.
+   * Missing/empty = the testimonials block doesn't render. UI-only — do NOT
+   * add Review/AggregateRating schema for these (self-serving review markup
+   * is ignored/penalized by Google). Added 2026-06-10.
+   */
+  testimonials?: { quote: Record<Locale, string>; author: string }[];
 }
 
 // Display order — optimised for conversion by differentiation strength

@@ -38,6 +38,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     specializations: "Specialisaties",
     languages: "Talen",
     rate: "Tarief",
+    availability: "Beschikbaarheid",
+    testimonialsTitle: "Wat klanten zeggen",
     onRequest: "Op aanvraag",
     contactTitle: "Neem contact op",
     nameLabel: "Naam",
@@ -66,6 +68,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     specializations: "Specializations",
     languages: "Languages",
     rate: "Rate",
+    availability: "Availability",
+    testimonialsTitle: "What clients say",
     onRequest: "On request",
     contactTitle: "Get in touch",
     nameLabel: "Name",
@@ -271,6 +275,35 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                     <p className="text-muted-foreground">{trainer.rate || t.onRequest}</p>
                   </div>
                 </div>
+
+                {/* Availability — renders ONLY when operator supplied real data
+                    in trainers.ts (see Trainer.availability JSDoc). */}
+                {trainer.availability && (
+                  <div className="text-sm">
+                    <p className="font-semibold">{t.availability}</p>
+                    <p className="text-muted-foreground">{trainer.availability[locale]}</p>
+                  </div>
+                )}
+
+                {/* Real client testimonials — renders ONLY when operator supplied
+                    consented real quotes in trainers.ts (see Trainer.testimonials
+                    JSDoc). UI-only by design: no Review schema. */}
+                {trainer.testimonials && trainer.testimonials.length > 0 && (
+                  <div className="space-y-3">
+                    <p className="text-sm font-semibold">{t.testimonialsTitle}</p>
+                    {trainer.testimonials.map((tm, i) => (
+                      <blockquote
+                        key={i}
+                        className="border-l-2 border-brand pl-3 text-sm text-muted-foreground italic"
+                      >
+                        “{tm.quote[locale]}”
+                        <footer className="not-italic mt-1 text-xs font-medium text-foreground/70">
+                          — {tm.author}
+                        </footer>
+                      </blockquote>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Contact form + WhatsApp — mobile order: 1 (above bio). Desktop order: 2 (right column). */}
