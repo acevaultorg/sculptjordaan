@@ -82,4 +82,8 @@
 - [👤] `P1` GROWTH LinkedIn zero-click framework post on PT studio-rental model — full Clarity Card in `docs/TRAFFIC-GROWTH-2026-05-07.md` [id:linkedin-zero-click-pt] [score:4.0] 👤 ~20 min. Operator profile (not company page); template provided; no external link in post body. +65 Distribution Oracle multiplier
 - [👤] `P2` GROWTH Wikipedia citation as primary source for PT-rental fact — full Clarity Card in `docs/TRAFFIC-GROWTH-2026-05-07.md` [id:wikipedia-citation-pt] [score:3.0] 👤 ~40 min slow-compound. READ COI policy first. Single citation on uncited claim only — never create SculptClub article. +75 Distribution Oracle multiplier (highest payoff if it survives)
 
+## Shipped 2026-06-11 (match-trainer CRO + richer profiles)
+- [x] `P1` CRO Maximize /nl,/en/match-trainer conversions — removed intro "Start de match →" screen (lands directly on Q1; h1+sub moved to page header), added direct WhatsApp CTA per result card (pre-fills quiz goal+frequency → trainer's own wa.me; analytics catch-all auto-fires conversion stack; Quiz Lead now carries method:intake_page|whatsapp_direct), added Back button on Q2/Q3 (mis-tap no longer forces reset), freq now read into WA pre-fill, a11y h2 question titles + 44px back target. Verified: tsc clean · prod build compiles · both routes prerender · consistency check passes · LIVE on sculptclub.nl ("Start de match" = 0 occurrences, new h1 present NL+EN). Deploy dpl_FbME3nCkZ3EF (CLI workaround). Commit ccd9ef2. [id:match-trainer-cro]
+  - ⚠️ Click-through not exercised in preview harness (whole-page hydration didn't fire there — affected all 41 interactive els, not this change). Build+types+SSR+live-fingerprint are the verification basis.
+
 ## Blocked
