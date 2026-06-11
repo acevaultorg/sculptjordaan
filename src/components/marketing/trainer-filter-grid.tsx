@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -51,8 +51,10 @@ const copy = {
     rate: "Tarief",
     onRequest: "Op aanvraag",
     bookIntro: "Plan gratis intake",
+    viewProfile: "Bekijk profiel & beschikbaarheid",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
+    ariaProfile: (name: string) => `Bekijk het profiel van ${name}`,
     ariaInstagram: (handle: string) => `Bekijk ${handle} op Instagram`,
   },
   en: {
@@ -68,8 +70,10 @@ const copy = {
     rate: "Rate",
     onRequest: "On request",
     bookIntro: "Book free intro",
+    viewProfile: "View profile & availability",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,
+    ariaProfile: (name: string) => `View ${name}'s profile`,
     ariaInstagram: (handle: string) => `View ${handle} on Instagram`,
   },
 } as const;
@@ -328,7 +332,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                   </div>
                 </CardContent>
 
-                <CardFooter className="border-t-0 bg-transparent pt-2 pb-4">
+                <CardFooter className="flex-col gap-2 border-t-0 bg-transparent pt-2 pb-4">
                   <Link
                     href={whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)}
                     target="_blank"
@@ -337,6 +341,23 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                     className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
                     {t.bookIntro}
+                  </Link>
+                  {/* Secondary, low-weight path to the trainer's intake page —
+                      where bio detail, the structured intake form, and (when
+                      operator-supplied) availability + real testimonials live.
+                      The grid's primary CTA goes straight to WhatsApp (fewest
+                      taps); this text link captures the segment that wants to
+                      read more / fill a form before reaching out, without adding
+                      a second competing filled button (paralysis-safe). Added
+                      2026-06-11 to connect the richer-profiles work to the main
+                      discovery path (the grid previously bypassed intake pages). */}
+                  <Link
+                    href={`/${locale}/${trainer.slug[locale]}`}
+                    aria-label={t.ariaProfile(trainer.name)}
+                    className="inline-flex items-center justify-center gap-1 text-xs font-medium text-muted-foreground hover:text-brand transition-colors"
+                  >
+                    {t.viewProfile}
+                    <ArrowRight className="h-3 w-3" />
                   </Link>
                 </CardFooter>
               </Card>
