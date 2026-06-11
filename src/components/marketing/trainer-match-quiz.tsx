@@ -18,15 +18,27 @@
  *   Q2 FREQ    → signals commitment level (sent in WhatsApp pre-fill, no filter)
  *   Q3 LANG    → hard filter (operator's UX directive: respect language need)
  *
- * Output: top-2 trainer cards with [Plan intake met <name>] buttons. No
- * email-required gate. Visitor lands on /nl/plan-gratis-intake-met-<id>
- * (the trainer's existing intake page with their own WhatsApp + bio).
+ * Output: top-2 trainer cards, each with TWO conversion paths:
+ *   - [Plan intake met <name>] → /nl/plan-gratis-intake-met-<id> (bio + form)
+ *   - [WhatsApp <name>] → trainer's own wa.me with the quiz answers
+ *     pre-filled (goal + frequency) — the fastest path; added 2026-06-10
+ *     CRO pass. The site-wide analytics catch-all (analytics.tsx) fires
+ *     the full conversion stack on any wa.me click automatically.
+ * No email-required gate.
+ *
+ * 2026-06-10 CRO pass (operator: "maximum conversions"):
+ *   - Intro screen REMOVED — visitors arrive via an explicit "match je
+ *     trainer" link; the extra "Start →" tap was pure friction before Q1.
+ *     The page-level header (page.tsx) now carries the h1 + subtitle.
+ *   - Direct WhatsApp CTA on result cards with quiz-context pre-fill.
+ *   - Back button on Q2/Q3 (mis-taps previously forced a full reset).
  *
  * Tracking:
  *   - plausible('Quiz Start')                  (mount)
  *   - plausible('Quiz Step', { step: 1|2|3 })  (each answer tap)
  *   - plausible('Quiz Complete', { topMatch }) (final shown)
- *   - plausible('Quiz Lead', { trainer })      (CTA click — generate_lead also)
+ *   - plausible('Quiz Lead', { trainer, method }) (CTA click; method =
+ *     'intake_page' | 'whatsapp_direct')
  *
  * Mobile-first: cards are 44×44+ tap targets, 1-column on small screens,
  * 2-column on sm+. Auto-advances on selection (no Submit button).
@@ -35,7 +47,7 @@
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import { trainers, type Trainer } from "@/config/trainers";
 
 declare global {
@@ -75,8 +87,8 @@ const GOAL_TOKENS_EN: Record<GoalKey, string[]> = {
 };
 
 interface QuizCopy {
-  intro: { title: string; sub: string; start: string };
   step: (n: number, total: number) => string;
+  back: string;
   q1: { title: string; options: { key: GoalKey; label: string; sub: string }[] };
   q2: { title: string; options: { key: FreqKey; label: string; sub: string }[] };
   q3: { title: string; options: { key: LangKey; label: string }[] };
@@ -84,6 +96,7 @@ interface QuizCopy {
     title: string;
     sub: string;
     bookLabel: (name: string) => string;
+    waDirectLabel: (name: string) => string;
     whatsappLabel: string;
     reset: string;
     findOther: string;
@@ -96,12 +109,8 @@ interface QuizCopy {
 }
 
 const COPY_NL: QuizCopy = {
-  intro: {
-    title: "Match jezelf met de juiste trainer.",
-    sub: "3 vragen · 30 seconden · we tonen je top-2 match.",
-    start: "Start de match →",
-  },
   step: (n, total) => `Stap ${n} van ${total}`,
+  back: "← Terug",
   q1: {
     title: "Wat is je belangrijkste doel?",
     options: [
@@ -135,6 +144,7 @@ const COPY_NL: QuizCopy = {
     title: "Jouw top-2 match",
     sub: "Op basis van je doel, frequentie en taalvoorkeur.",
     bookLabel: (name) => `Plan gratis intake met ${name} →`,
+    waDirectLabel: (name) => `WhatsApp ${name} direct`,
     // Parity with lead-rescue-popup.tsx fix (2026-05-27) — "Of liever
     // WhatsApp?" had the same gek-taalgebruik issue as the rescue label.
     // Direct active form fits Dutch operator-action register.
@@ -154,12 +164,8 @@ const COPY_NL: QuizCopy = {
 };
 
 const COPY_EN: QuizCopy = {
-  intro: {
-    title: "Match yourself with the right trainer.",
-    sub: "3 questions · 30 seconds · we show your top-2 match.",
-    start: "Start the match →",
-  },
   step: (n, total) => `Step ${n} of ${total}`,
+  back: "← Back",
   q1: {
     title: "What's your main goal?",
     options: [
@@ -193,6 +199,7 @@ const COPY_EN: QuizCopy = {
     title: "Your top-2 match",
     sub: "Based on your goal, frequency and language preference.",
     bookLabel: (name) => `Book free intro with ${name} →`,
+    waDirectLabel: (name) => `WhatsApp ${name} directly`,
     whatsappLabel: "Or WhatsApp us?",
     reset: "↺ Run the match again",
     findOther: "See all 11 trainers",
@@ -246,14 +253,15 @@ function scoreTrainer(
 export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
   const t = locale === "nl" ? COPY_NL : COPY_EN;
 
-  const [step, setStep] = useState<0 | 1 | 2 | 3 | 4>(0); // 0=intro, 4=result
+  // Step starts at 1 (Q1) — the intro screen was removed in the 2026-06-10
+  // CRO pass: visitors arrive via an explicit "match je trainer" link, so
+  // the "Start →" tap was a pure drop-off point before the first question.
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(1); // 4=result
   const [goal, setGoal] = useState<GoalKey | null>(null);
-  // FreqKey is tracked but never read — Q2 is signal-only and sent inside
-  // the Quiz Step plausible event; nothing else in the component consumes
-  // it. Keep the setter to fire telemetry; drop the read value to satisfy
-  // @typescript-eslint/no-unused-vars (was a leftover from the pre-Plausible
-  // draft where Q2 fed into trainer scoring). Refactored 2026-05-27.
-  const [, setFreq] = useState<FreqKey | null>(null);
+  // freq is signal-only for matching (no filter weight) but IS read since
+  // 2026-06-10: it's included in the result cards' WhatsApp pre-fill so the
+  // trainer receives the visitor's intended frequency with the lead.
+  const [freq, setFreq] = useState<FreqKey | null>(null);
   const [lang, setLang] = useState<LangKey | null>(null);
 
   // Fire Quiz Start on mount
@@ -290,8 +298,14 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
     setGoal(null);
     setFreq(null);
     setLang(null);
-    setStep(0);
+    setStep(1);
     track("Quiz Reset", {});
+  }
+
+  function goBack() {
+    if (step === 2) setStep(1);
+    else if (step === 3) setStep(2);
+    track("Quiz Back", { from: step });
   }
 
   // Compute top-2 matches
@@ -314,35 +328,9 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
 
   const TOTAL = 3;
 
-  // ── Intro screen ──
-  if (step === 0) {
-    return (
-      <div className="rounded-2xl border border-border/40 bg-secondary p-6 sm:p-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/30 text-xs font-semibold text-brand mb-4">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>{locale === "nl" ? "11 trainers · 30 sec match" : "11 trainers · 30 sec match"}</span>
-        </div>
-        {/* h1 (not h2) because the quiz is the ONLY content on /match-trainer
-            — the page has no preceding SectionHeader. Without an h1, screen
-            readers + Google's structured-page parsing both treat the heading
-            tree as level-skipped (page → h2 with no h1). Component is only
-            rendered on /nl/match-trainer + /en/match-trainer (grep-verified
-            2026-05-27); no other usages exist that would conflict with a
-            page-level h1. */}
-        <h1 className="text-2xl sm:text-3xl font-bold mb-3">{t.intro.title}</h1>
-        <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-md mx-auto">{t.intro.sub}</p>
-        <button
-          onClick={() => setStep(1)}
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground font-bold text-sm shadow-brand-md transition-colors min-h-[48px]"
-        >
-          {t.intro.start}
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </div>
-    );
-  }
-
   // ── Question screens ──
+  // (No intro screen — visitor lands directly on Q1. The h1 + subtitle live
+  // in page.tsx since the 2026-06-10 CRO pass.)
   if (step === 1 || step === 2 || step === 3) {
     const question = step === 1 ? t.q1 : step === 2 ? t.q2 : t.q3;
     const isLang = step === 3;
@@ -364,7 +352,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
         <p className="text-xs uppercase tracking-widest text-muted-foreground text-center mb-2">
           {t.step(step, TOTAL)}
         </p>
-        <h3 className="text-xl sm:text-2xl font-bold text-center mb-6">{question.title}</h3>
+        <h2 className="text-xl sm:text-2xl font-bold text-center mb-6">{question.title}</h2>
 
         <div className={`grid gap-3 ${isLang ? "sm:grid-cols-2" : "sm:grid-cols-2"}`}>
           {question.options.map((opt) => {
@@ -389,6 +377,19 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
             );
           })}
         </div>
+
+        {/* Back affordance on Q2/Q3 — a mis-tap previously forced finishing
+            the quiz + full reset. 44px min tap height for thumb reach. */}
+        {step > 1 && (
+          <div className="mt-4 text-center">
+            <button
+              onClick={goBack}
+              className="inline-flex items-center justify-center min-h-[44px] px-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t.back}
+            </button>
+          </div>
+        )}
       </div>
     );
   }
@@ -438,6 +439,19 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
         {matches.map(({ trainer }, i) => {
           const intakeHref = `/${locale}/${trainer.slug[locale]}`;
           const isPrimary = i === 0;
+
+          // Direct WhatsApp with the quiz answers pre-filled — the visitor's
+          // goal + frequency travel with the lead, so the trainer opens the
+          // chat with full context. Falls back to the studio number when the
+          // trainer has no own wa.me configured (same fallback as intake page).
+          const goalLabel = t.q1.options.find((o) => o.key === goal)?.label ?? "";
+          const freqLabel = t.q2.options.find((o) => o.key === freq)?.label ?? "";
+          const waBase = trainer.whatsapp ?? "https://wa.me/31615147952";
+          const waText =
+            locale === "nl"
+              ? `Hoi ${trainer.name}! Uit de trainer-match — doel: ${goalLabel}, frequentie: ${freqLabel}. Ik wil graag een gratis intake plannen.`
+              : `Hi ${trainer.name}! From the trainer match — goal: ${goalLabel}, frequency: ${freqLabel}. I'd like to book a free intro.`;
+          const waHref = `${waBase}?text=${encodeURIComponent(waText)}`;
 
           return (
             <div
@@ -492,7 +506,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 <Link
                   href={intakeHref}
                   onClick={() =>
-                    track("Quiz Lead", { trainer: trainer.id, position: i + 1 })
+                    track("Quiz Lead", { trainer: trainer.id, position: i + 1, method: "intake_page" })
                   }
                   className={`mt-4 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-bold text-sm transition-colors min-h-[48px] ${
                     isPrimary
@@ -502,6 +516,23 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 >
                   {t.result.bookLabel(trainer.name)}
                 </Link>
+
+                {/* Fastest conversion path: skip the intake-page hop and open
+                    WhatsApp with the quiz context pre-filled. WhatsApp-green
+                    affordance (matches intake-page CTA). Site-wide analytics
+                    catch-all fires the full conversion stack on wa.me clicks. */}
+                <a
+                  href={waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    track("Quiz Lead", { trainer: trainer.id, position: i + 1, method: "whatsapp_direct" })
+                  }
+                  className="mt-2 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm transition-colors min-h-[48px]"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  {t.result.waDirectLabel(trainer.name)}
+                </a>
               </div>
             </div>
           );

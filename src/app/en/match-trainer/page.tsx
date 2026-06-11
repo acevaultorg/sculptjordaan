@@ -51,6 +51,14 @@ export default function MatchTrainerPage() {
               <span className="font-semibold text-foreground ml-1">5.0</span>
               <span>on Google</span>
             </div>
+            {/* h1 + sub moved here from the quiz's (removed) intro screen —
+                2026-06-10 CRO pass drops the visitor straight into Q1. */}
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2">
+              Match yourself with the right trainer
+            </h1>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              3 questions · 30 seconds · we show your top-2 match from 11 trainers.
+            </p>
           </div>
 
           <div className="max-w-2xl mx-auto">

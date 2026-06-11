@@ -59,9 +59,17 @@ export default function MatchTrainerPage() {
               <span className="font-semibold text-foreground ml-1">5.0</span>
               <span>op Google</span>
             </div>
+            {/* h1 + sub moved here from the quiz's (removed) intro screen —
+                2026-06-10 CRO pass drops the visitor straight into Q1. */}
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2">
+              Match jezelf met de juiste trainer
+            </h1>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              3 vragen · 30 seconden · we tonen je top-2 match uit 11 trainers.
+            </p>
           </div>
 
-          {/* Quiz — handles intro → 3 questions → result */}
+          {/* Quiz — 3 questions → result (no intro screen since 2026-06-10) */}
           <div className="max-w-2xl mx-auto">
             <TrainerMatchQuiz locale="nl" />
           </div>
