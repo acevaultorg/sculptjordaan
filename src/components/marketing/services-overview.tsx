@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Users, Building2, ArrowRight } from "lucide-react";
+import { Users, Building2, Dumbbell, ArrowRight } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import type { Locale } from "@/config/site";
@@ -18,6 +18,16 @@ const services = {
       cta: "Vind je trainer",
       image: "/images/studio/pt-session-barbell.jpg",
       imageAlt: "Trainer begeleidt een personal training sessie bij SculptClub",
+    },
+    {
+      icon: Dumbbell,
+      title: "Open Gym",
+      description:
+        "Zelfstandig trainen in een rustige privé studio met professionele apparatuur — max 3 personen. Lidmaatschap per 4 weken, geen contract, eerste les gratis. Vanaf €5,75 per sessie.",
+      href: "/nl/open-gym",
+      cta: "Bekijk Open Gym",
+      image: "/images/studio/training-dumbbells-focus.jpg",
+      imageAlt: "Zelfstandig trainen met dumbbells bij SculptClub Open Gym in de Jordaan",
     },
     {
       icon: Building2,
@@ -42,6 +52,16 @@ const services = {
       imageAlt: "Trainer spotting a personal training session at SculptClub",
     },
     {
+      icon: Dumbbell,
+      title: "Open Gym",
+      description:
+        "Train on your own in a calm private studio with pro equipment — max 3 people. 4-week membership, no contract, first session free. From €5.75 per session.",
+      href: "/en/open-gym",
+      cta: "View Open Gym",
+      image: "/images/studio/training-dumbbells-focus.jpg",
+      imageAlt: "Training solo with dumbbells at SculptClub Open Gym in the Jordaan",
+    },
+    {
       icon: Building2,
       title: "Studio Rental",
       description:
@@ -63,7 +83,7 @@ export function ServicesOverview({ locale }: { locale: Locale }) {
   return (
     <Section>
       <SectionHeader overline={t.overline} title={t.title} />
-      <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {items.map((service, i) => (
           <FadeIn key={service.title} delay={i * 0.1}>
             <Link href={service.href} className="block h-full">

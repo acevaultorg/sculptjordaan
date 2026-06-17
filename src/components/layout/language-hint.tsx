@@ -1,0 +1,126 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { Globe, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { getLocaleFromPath, getAlternatePath } from "@/lib/locale";
+
+const SEEN_KEY = "sc_lang_hint_seen";
+
+/**
+ * Device-language hint — a polite, one-time offer (never a forced redirect).
+ *
+ * The site deliberately does NOT auto-redirect by Accept-Language: auto-flipping
+ * English-device visitors to /en drove 28% off the Dutch-optimized landing page
+ * (see src/middleware.ts). So `/` always serves Dutch. This component is the
+ * non-destructive alternative — for a visitor whose device/browser language
+ * differs from the page they landed on, it OFFERS the matching version.
+ *
+ * UX is tuned to NOT annoy:
+ *  - shows at most ONCE per visitor (the header globe is the permanent switch);
+ *  - waits ~0.9s then gently slides in, so it never fights the first impression;
+ *  - auto-retires after ~10s if ignored, so it gets out of the way on its own;
+ *  - one tap dismiss; clicking it switches + preserves the current page
+ *    (getAlternatePath: /nl/open-gym → /en/open-gym, not just the homepage).
+ *
+ * Reads navigator.languages (the OS/browser language setting on every device —
+ * iOS, Android, desktop), so it works on the static export with zero server cost.
+ */
+export function LanguageHint() {
+  const pathname = usePathname() || "/";
+  const [hint, setHint] = useState<{ href: string; label: string } | null>(null);
+  const [visible, setVisible] = useState(false);
+  const timers = useRef<number[]>([]);
+
+  // Detect once on mount. pathname is intentionally NOT a dependency: the offer
+  // is one-time, so SPA navigation must not re-trigger it (the SEEN flag also
+  // guards this, but keeping the effect mount-only makes the single-offer
+  // guarantee explicit).
+  useEffect(() => {
+    let seen = false;
+    try {
+      seen = !!localStorage.getItem(SEEN_KEY);
+    } catch {
+      /* private mode / blocked storage — just proceed without the flag */
+    }
+    if (seen) return;
+
+    let primary = "";
+    try {
+      primary = (
+        (navigator.languages && navigator.languages[0]) ||
+        navigator.language ||
+        ""
+      ).toLowerCase();
+    } catch {
+      return;
+    }
+
+    const locale = getLocaleFromPath(pathname);
+    const prefersDutch = primary.startsWith("nl");
+    const alt = getAlternatePath(pathname);
+
+    let target: { href: string; label: string } | null = null;
+    if (locale === "nl" && !prefersDutch) {
+      target = { href: alt, label: "Continue in English" };
+    } else if (locale === "en" && prefersDutch) {
+      target = { href: alt, label: "Doorgaan in het Nederlands" };
+    }
+    if (!target) return;
+
+    // Mark seen immediately so it only ever appears once — even if the visitor
+    // navigates away during the entrance delay.
+    try {
+      localStorage.setItem(SEEN_KEY, "1");
+    } catch {
+      /* ignore */
+    }
+
+    setHint(target);
+    const tIn = window.setTimeout(() => setVisible(true), 900);
+    const tOut = window.setTimeout(() => setVisible(false), 10_000);
+    timers.current.push(tIn, tOut);
+
+    return () => {
+      timers.current.forEach((t) => clearTimeout(t));
+      timers.current = [];
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (!hint) return null;
+
+  const close = () => setVisible(false);
+
+  return (
+    <div
+      aria-hidden={!visible}
+      className={cn(
+        "fixed top-[58px] left-1/2 z-40 w-[calc(100%-1rem)] max-w-md -translate-x-1/2 px-2 sm:top-[72px] sm:w-auto",
+        "transition-all duration-300 ease-out motion-reduce:transition-none",
+        visible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-3 opacity-0"
+      )}
+    >
+      <div className="flex items-center gap-2 rounded-full border border-border bg-card/95 px-3 py-2 shadow-brand-lg backdrop-blur-md">
+        <Globe className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+        <a
+          href={hint.href}
+          className="plausible-event-name=lang_hint_switch min-w-0 flex-1 truncate text-sm font-semibold text-foreground transition-colors hover:text-brand"
+        >
+          {hint.label} →
+        </a>
+        <button
+          type="button"
+          onClick={close}
+          aria-label="Dismiss"
+          className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors touch-manipulation hover:bg-accent hover:text-foreground"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  );
+}

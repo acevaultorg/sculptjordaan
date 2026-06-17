@@ -267,7 +267,42 @@ export function MobileBottomCTABar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Anchor-aware visibility — hide the bar once its in-page anchor target is on
+  // screen. The in-page-anchor CTAs (#schedule / #book / #aanmelden / #apply)
+  // scroll the visitor to a section that already lives on this page. Once that
+  // section is actually in view the bar is redundant ("book the thing you're
+  // already booking") AND its fixed orange pill overlaps the live widget's own
+  // controls — the Acuity time-slot buttons sit at the bottom of #schedule,
+  // exactly where this bar sits. Operator UX screenshot 2026-06-17
+  // (/en/open-gym#schedule): the orange "Book free Open Gym" bar showing over the
+  // open Acuity scheduler read as "do the thing you're already doing". This
+  // extends the long-standing "Hidden on booking-step pages" intent to content
+  // HUBS that book inline (open-gym, studio hub) — by section visibility, not path.
+  const anchorTarget = cta?.href.startsWith("#") ? cta.href : null;
+  const [anchorInView, setAnchorInView] = useState(false);
+  useEffect(() => {
+    setAnchorInView(false);
+    if (!anchorTarget || typeof IntersectionObserver === "undefined") return;
+    const el = document.querySelector(anchorTarget);
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setAnchorInView(entry.isIntersecting),
+      // -25% bottom margin: the section must climb a quarter of the way up the
+      // screen before it counts as "in view", so the bar only hides once the
+      // visitor has genuinely scrolled INTO the schedule — not when its top edge
+      // merely peeks at the very bottom (where the bar is still doing its job of
+      // pulling them down to it).
+      { rootMargin: "0px 0px -25% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [anchorTarget]);
+
   if (!cta) return null;
+
+  // Shown after the hero is scrolled past, BUT hidden while the in-page anchor
+  // target (booking schedule / apply form) is on screen — see anchorInView above.
+  const showBar = revealed && !anchorInView;
 
   return (
     <>
@@ -281,10 +316,10 @@ export function MobileBottomCTABar() {
           truly inert when hidden (no accidental taps on invisible orange button). */}
       <div
         className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-opacity duration-200 ${
-          revealed ? "opacity-100" : "opacity-0 pointer-events-none"
+          showBar ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         role="region"
-        aria-hidden={!revealed}
+        aria-hidden={!showBar}
         aria-label={locale === "nl" ? "Snelle actie" : "Quick action"}
       >
         {/* Backdrop with blur — sits above page content; semi-transparent so

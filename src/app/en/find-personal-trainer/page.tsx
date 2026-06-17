@@ -18,8 +18,8 @@ import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Find Your Personal Trainer — SculptClub Amsterdam Jordaan" },
-  description: `Personal trainers in Amsterdam Jordaan — free intro, from €45/session. ${trainers.length} specialists, 0% commission. Find your match at SculptClub.`,
+  title: { absolute: "Personal Trainer Amsterdam — Find Your Match | SculptClub" },
+  description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, 0% commission. Find your match at SculptClub.`,
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {

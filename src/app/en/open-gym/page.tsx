@@ -20,14 +20,14 @@ import { acuityLinks, acuityFreeTrials } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
-import { Clock, Key, Dumbbell, Info } from "lucide-react";
+import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Open Gym — Private Studio Amsterdam | SculptClub Jordaan" },
+  title: { absolute: "Open Gym Amsterdam — Private Studio Jordaan | SculptClub" },
   description:
-    "Book 60-minute sessions in a quiet, fully equipped private studio in the Jordaan. Max. 3 people per slot. Membership from \u20ac29 per 4 weeks.",
+    "Open gym in Amsterdam: train independently in a quiet, fully equipped private studio in the Jordaan. Max. 3 people per slot. From \u20ac29 per 4 weeks.",
   alternates: {
     canonical: "/en/open-gym",
     languages: {
@@ -204,8 +204,8 @@ export default function OpenGymPageEN() {
             <SectionHeader
               as="h1"
               overline="Open Gym"
-              title="Open Gym in a Private Studio"
-              description="Book 60-minute sessions in a quiet, fully equipped studio in the Jordaan. Max. 3 people per slot."
+              title="Open Gym Amsterdam — train independently in a private studio"
+              description="Train freely in a quiet, fully equipped private studio in the Jordaan. 60-minute sessions, max. 3 people per slot. No annual contract, cancel anytime."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -347,6 +347,15 @@ export default function OpenGymPageEN() {
             </FadeIn>
           ))}
         </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+          {["Cancel anytime", "No contract", "Free cancellation", "First lesson free"].map((t) => (
+            <span key={t} className="inline-flex items-center gap-1.5">
+              <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
+              {t}
+            </span>
+          ))}
+        </div>
       </Section>
 
       {/* How it works */}
@@ -415,6 +424,43 @@ export default function OpenGymPageEN() {
               </AccordionItem>
             ))}
           </Accordion>
+        </FadeIn>
+      </Section>
+
+      {/* Read more — internal links into the Open Gym / gym-without-membership topical
+          cluster. Open Gym was under-linked; this funnels link authority + targets the
+          queries people actually search (gym without membership, open gym vs regular gym). */}
+      <Section>
+        <FadeIn>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">More about training on your own</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <a href="/en/blog/open-gym-vs-regular-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Open Gym vs. a regular gym: which fits you?</p>
+              </a>
+              <a href="/en/blog/gym-without-membership-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Gym without a membership in Amsterdam</p>
+              </a>
+              <a href="/en/blog/private-gym-vs-big-box-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Private gym vs. a big-box chain</p>
+              </a>
+              <a href="/en/blog/boutique-gym-vs-big-chain-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym vs. big chain gym</p>
+              </a>
+              <a href="/en/blog/gym-jordaan-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Gym in the Jordaan, Amsterdam</p>
+              </a>
+              <a href="/en/blog/first-time-gym-tips" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">First time at the gym: tips</p>
+              </a>
+            </div>
+          </div>
         </FadeIn>
       </Section>
 

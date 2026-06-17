@@ -7,6 +7,7 @@ import { LocalBusinessJsonLd } from "@/components/seo/json-ld";
 import { HreflangLinks } from "@/components/seo/hreflang";
 import { Analytics } from "@/components/layout/analytics";
 import { CookieConsent } from "@/components/layout/cookie-consent";
+import { LanguageHint } from "@/components/layout/language-hint";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { MobileBottomCTABar } from "@/components/layout/mobile-bottom-cta-bar";
 import { UtmCapture } from "@/components/layout/utm-capture";
@@ -178,6 +179,7 @@ export default function RootLayout({
         </a>
         <LocalBusinessJsonLd />
         {children}
+        <LanguageHint />
         <CookieConsent />
         <WhatsAppButton />
         <MobileBottomCTABar />

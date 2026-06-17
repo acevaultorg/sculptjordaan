@@ -18,7 +18,7 @@ import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
-import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt } from "lucide-react";
+import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt, Check } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -230,7 +230,16 @@ export default function BoekStudioPageNL() {
                 </Card>
               </div>
 
-              <p className="mt-6 text-center text-sm text-muted-foreground">
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                {["Altijd gratis annuleren", "Geen contract", "0% commissie", "Direct bevestigd"].map((t) => (
+                  <span key={t} className="inline-flex items-center gap-1.5">
+                    <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <p className="mt-4 text-center text-sm text-muted-foreground">
                 Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
                 <a href={whatsappLinks.bankTransferNl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline underline-offset-4 hover:text-primary/80">
                   WhatsApp ons
@@ -291,7 +300,7 @@ export default function BoekStudioPageNL() {
               </div>
               <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
                 <CreditCard className="h-3.5 w-3.5" />
-                <span>CreditCard, Apple Pay, Google Pay of factuur</span>
+                <span>Kies je tijd en betaal veilig met CreditCard, Apple Pay, Google Pay of factuur</span>
               </div>
             </div>
           }

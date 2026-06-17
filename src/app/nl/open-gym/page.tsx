@@ -20,14 +20,14 @@ import { acuityLinks, acuityFreeTrials } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
-import { Clock, Key, Dumbbell, Info } from "lucide-react";
+import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Open Gym — Privé Studio Amsterdam | SculptClub Jordaan" },
+  title: { absolute: "Open Gym Amsterdam — Privé Studio Jordaan | SculptClub" },
   description:
-    "Boek sessies van 60 minuten in een rustige, volledig uitgeruste priv\u00e9 studio in de Jordaan. Max. 3 personen per slot. Lidmaatschap vanaf \u20ac29 per 4 weken.",
+    "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste priv\u00e9 studio in de Jordaan. Max. 3 personen per slot. Vanaf \u20ac29 per 4 weken.",
   alternates: {
     canonical: "/nl/open-gym",
     languages: {
@@ -205,8 +205,8 @@ export default function OpenGymPageNL() {
             <SectionHeader
               as="h1"
               overline="Open Gym"
-              title="Open Gym in een Privé Studio"
-              description="Boek sessies van 60 minuten in een rustige, volledig uitgeruste studio in de Jordaan. Max. 3 personen per slot."
+              title="Open Gym Amsterdam — zelfstandig trainen in een privé studio"
+              description="Vrij trainen in een rustige, volledig uitgeruste privé studio in de Jordaan. Sessies van 60 minuten, max. 3 personen per slot. Geen jaarcontract, altijd opzegbaar."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -348,6 +348,15 @@ export default function OpenGymPageNL() {
             </FadeIn>
           ))}
         </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+          {["Altijd opzegbaar", "Geen contract", "Gratis annuleren", "Eerste les gratis"].map((t) => (
+            <span key={t} className="inline-flex items-center gap-1.5">
+              <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
+              {t}
+            </span>
+          ))}
+        </div>
       </Section>
 
       {/* How it works */}
@@ -413,6 +422,44 @@ export default function OpenGymPageNL() {
               </AccordionItem>
             ))}
           </Accordion>
+        </FadeIn>
+      </Section>
+
+      {/* Meer lezen — internal links into the Open Gym / sportschool-zonder-abonnement
+          topical cluster. Open Gym was under-linked (only 11 organic search entries/30d
+          vs studio-huren's 106). This funnels link authority + targets the Dutch queries
+          people actually search (sportschool zonder abonnement, open gym vs sportschool). */}
+      <Section>
+        <FadeIn>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Meer lezen over zelfstandig trainen</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <a href="/nl/blog/open-gym-vs-sportschool" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Open Gym vs. de sportschool: wat past bij jou?</p>
+              </a>
+              <a href="/nl/blog/sportschool-zonder-abonnement-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Sportschool zonder abonnement in Amsterdam</p>
+              </a>
+              <a href="/nl/blog/prive-sportschool-vs-grote-sportschool" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Privé sportschool vs. een grote keten</p>
+              </a>
+              <a href="/nl/blog/boutique-gym-vs-sportschool-keten" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym vs. ketensportschool</p>
+              </a>
+              <a href="/nl/blog/eerste-keer-sportschool-tips" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Voor het eerst naar de sportschool: tips</p>
+              </a>
+              <a href="/nl/blog/consistent-blijven-met-sporten" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Blog</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Consistent blijven met sporten</p>
+              </a>
+            </div>
+          </div>
         </FadeIn>
       </Section>
 

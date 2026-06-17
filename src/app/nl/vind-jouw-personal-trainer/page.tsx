@@ -18,8 +18,8 @@ import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Vind Jouw Personal Trainer — SculptClub Amsterdam Jordaan" },
-  description: `Personal trainers in Amsterdam Jordaan — gratis intake, tarieven vanaf €45/sessie. ${trainers.length} specialisten, 0% commissie. Vind jouw match bij SculptClub.`,
+  title: { absolute: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub" },
+  description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, 0% commissie. Vind jouw match bij SculptClub.`,
   alternates: {
     canonical: "/nl/vind-jouw-personal-trainer",
     languages: {
