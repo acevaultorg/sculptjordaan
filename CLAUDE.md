@@ -79,4 +79,11 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Build for BOTH light + dark mode via theme tokens — auto light/dark shipped 2026-05-29 (see "Brand & Design" above). The old "dark only — never add light mode" rule is RETIRED.
 - Always create both NL and EN versions of any new page or blog post
 
+## Killed investigations — DON'T re-propose (verified dead 2026-06-16; full memo in PromptPrio archive)
+- **NEVER re-add a device-language / Accept-Language auto-redirect on `/`** — `/` ALWAYS serves Dutch. An auto-flip previously drove **28% off the Dutch funnel**. Non-Dutch visitors get the dismissible `<LanguageHint/>` OFFER instead (reads navigator.languages, one-tap, never forces). See the comment in `src/middleware.ts`.
+- **DON'T "fix" the SSR `<html lang="nl">` on /en pages** — an inline head-script corrects it to "en" before paint (JS users + Googlebot + screen readers all see "en"). The only perfect fix is a 95-folder route-group refactor = high risk for a non-issue. The redundant `nl`+`nl-NL` hreflang and the `/start`→`/` route are harmless and intentional.
+- **DON'T build an Acuity→Google Ads pack-attribution webhook** — Google Ads Purchases = 0 (it drives trainer LEADS, not packs); offline import needs a gclid that Instagram/Direct bookings don't carry. Attributes ~nothing for multi-day dev cost. KILLED — only revisit if PAID pack campaigns start.
+- **DON'T blindly edit the global Acuity "Custom Conversion Tracking" script** — it's ONE global script (Integrations → boeking-bevestigd) firing for scheduled appointments. A wrong edit breaks the WORKING studio_rental tracking (the main revenue line). The real studio_rental leak is IN-Acuity (intake form / Apple-Pay prominence) = operator-side; the booking PAGE is already clean.
+- **Channel-mix truth:** bookings come from Direct + Instagram + organic search; Google Ads drives trainer leads only. Highest-ROI growth = operator-side Instagram (point Open-Gym content at `/nl/open-gym`).
+
 @AGENTS.md
