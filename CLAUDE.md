@@ -59,9 +59,9 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 ## Brand & Design
 - Brand strategy, voice, and design principles: `docs/BRAND-STRATEGY.md`
 - Automatic light/dark mode via system preference (added 2026-05-29, operator directive). Both palettes live in `src/app/globals.css` (`:root` = light warm-bone, `.dark` = dark near-black), switched by a flash-free `prefers-color-scheme` script in `layout.tsx`. Build for BOTH modes — use theme tokens (`bg-card`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-brand`), never hardcoded `text-white`/`bg-black` on token surfaces (white text is only OK over photos or on the orange brand button). (Supersedes the prior "dark only — never add light mode" rule.)
-- Color-clickability contract: if it's blue, it MUST be clickable
+- Color-clickability contract: if it's orange, it MUST be clickable (and if it's not clickable, it MUST NOT be orange)
 - Fonts: Syne (headings) + Instrument Sans (body)
-- Primary brand color: #134DE1
+- Primary brand color: #EF5012 (vibrant orange — changed from #134DE1 blue on 2026-05-17; source of truth: `--brand`/`--primary` in `src/app/globals.css`)
 
 ## Legacy WordPress Repo
 - **Repo:** github.com/pmdevries-rgb/sculptclub-site (archived)
@@ -76,7 +76,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Never list iDEAL as a standalone payment method
 - Never use "sculptjordaan" or "Sculpt Jordaan" as the business name — it's **SculptClub**
 - Never use **0683178934** — the public number is now **+31 6 15 14 79 52** / `wa.me/31615147952` (the WhatsApp Business line with auto-replies). 0683178934 was retired 2026-06-01.
-- Never add light mode — dark theme only is intentional for brand
+- Build for BOTH light + dark mode via theme tokens — auto light/dark shipped 2026-05-29 (see "Brand & Design" above). The old "dark only — never add light mode" rule is RETIRED.
 - Always create both NL and EN versions of any new page or blog post
 
 @AGENTS.md
