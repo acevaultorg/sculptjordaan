@@ -78,6 +78,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Never use **0683178934** — the public number is now **+31 6 15 14 79 52** / `wa.me/31615147952` (the WhatsApp Business line with auto-replies). 0683178934 was retired 2026-06-01.
 - Build for BOTH light + dark mode via theme tokens — auto light/dark shipped 2026-05-29 (see "Brand & Design" above). The old "dark only — never add light mode" rule is RETIRED.
 - Always create both NL and EN versions of any new page or blog post
+- **Paid-ads budget cap = max €2/day** (operator-set 2026-06-17) — applies to Google Ads + any paid channel. NEVER propose or set a higher ad budget without explicit operator approval. (The old Google Ads task said €15-30/day — corrected to €2/day.)
 
 ## Killed investigations — DON'T re-propose (verified dead 2026-06-16; full memo in PromptPrio archive)
 - **NEVER re-add a device-language / Accept-Language auto-redirect on `/`** — `/` ALWAYS serves Dutch. An auto-flip previously drove **28% off the Dutch funnel**. Non-Dutch visitors get the dismissible `<LanguageHint/>` OFFER instead (reads navigator.languages, one-tap, never forces). See the comment in `src/middleware.ts`.
