@@ -178,7 +178,7 @@ export default function PricingPageNL() {
         <SectionHeader
           as="h1"
           overline="Prijzen"
-          title="Alle Prijzen op een Rij"
+          title="Alle prijzen op een rij"
           description="Geen verborgen kosten, geen langlopende contracten. Studio huur vanaf €12/uur (0% commissie), personal training vanaf €45, Open Gym vanaf €29/4wk."
         />
         <FadeIn>
@@ -222,7 +222,7 @@ export default function PricingPageNL() {
       {/* Personal Training */}
       <Section bg="muted" id="personal-training">
         <SectionHeader
-          overline="Personal Training"
+          overline="Personal training"
           title="Train met een Personal Trainer"
           description="Gratis intake. Trainers bepalen hun eigen tarieven. 0% commissie."
         />
@@ -252,7 +252,7 @@ export default function PricingPageNL() {
       <Section id="open-gym">
         <SectionHeader
           overline="Open Gym"
-          title="Train Zelfstandig"
+          title="Train zelfstandig"
           description="Losse sessie of lidmaatschap per 4 weken. Sessies van 60 minuten in onze privé studio."
         />
 
@@ -327,7 +327,7 @@ export default function PricingPageNL() {
       {/* Studio Rental */}
       <Section bg="muted" id="studio-huur">
         <SectionHeader
-          overline="Studio Verhuur"
+          overline="Studio verhuur"
           title="Huur de Studio (voor personal trainers)"
           description="Voor freelance trainers en fysiotherapeuten. Train je klanten in een volledig uitgeruste privé studio. 0% commissie, flexibel per uur, kortingspakketten tot 23%."
         />
@@ -484,7 +484,7 @@ export default function PricingPageNL() {
       <Section>
         <SectionHeader
           overline="Inbegrepen"
-          title="Wat Is Altijd Inbegrepen"
+          title="Wat is altijd inbegrepen"
         />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -508,7 +508,7 @@ export default function PricingPageNL() {
       <Section>
         <SectionHeader
           overline="Veelgestelde vragen"
-          title="Over Prijzen & Betaling"
+          title="Over prijzen & betaling"
         />
         <FadeIn>
           <div className="max-w-2xl mx-auto space-y-0">

@@ -95,7 +95,7 @@ export default function StudioPageNL() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="De Studio"
+          overline="De studio"
           title="Volledig uitgerust voor jouw training"
           description="Alles wat je nodig hebt voor kracht, conditie en functionele training — in een privé setting aan de gracht."
         />

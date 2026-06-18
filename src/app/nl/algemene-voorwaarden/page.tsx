@@ -23,7 +23,7 @@ export default function TermsPageNL() {
         <SectionHeader
           as="h1"
           overline="Juridisch"
-          title="Algemene Voorwaarden"
+          title="Algemene voorwaarden"
           description="Versie: 23 februari 2026"
         />
       </Section>

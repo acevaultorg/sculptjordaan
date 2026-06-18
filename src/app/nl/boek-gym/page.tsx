@@ -148,7 +148,7 @@ export default function BoekGymPageNL() {
       <Section id="plannen">
         <SectionHeader
           overline="Open Gym"
-          title="Kies Jouw Plan"
+          title="Kies jouw plan"
           description="Losse sessie of lidmaatschap per 4 weken. Altijd opzegbaar."
         />
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
@@ -187,7 +187,7 @@ export default function BoekGymPageNL() {
 
       {/* How it works — compact */}
       <Section bg="muted">
-        <SectionHeader overline="Hoe het werkt" title="In 3 Stappen aan de Slag" />
+        <SectionHeader overline="Hoe het werkt" title="In 3 stappen aan de slag" />
         <div className="grid gap-8 sm:grid-cols-3">
           {steps.map((step, i) => (
             <FadeIn key={step.title} delay={i * 0.15}>
@@ -205,7 +205,7 @@ export default function BoekGymPageNL() {
 
       {/* What you get */}
       <Section>
-        <SectionHeader overline="Wat je krijgt" title="Train Zelfstandig in een Privé Studio" />
+        <SectionHeader overline="Wat je krijgt" title="Train zelfstandig in een privé studio" />
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
@@ -229,7 +229,7 @@ export default function BoekGymPageNL() {
 
       {/* Studio gallery */}
       <Section bg="muted">
-        <SectionHeader overline="De Studio" title="Volledig Uitgerust" />
+        <SectionHeader overline="De studio" title="Volledig uitgerust" />
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           {studioImages.map((img, i) => (
             <FadeIn key={img.src} delay={i * 0.1}>
@@ -243,7 +243,7 @@ export default function BoekGymPageNL() {
 
       {/* Social proof */}
       <Section>
-        <SectionHeader overline="Leden" title="Wat Leden Zeggen" />
+        <SectionHeader overline="Leden" title="Wat leden zeggen" />
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
           <FadeIn>
             <div className="rounded-xl border bg-card p-5">

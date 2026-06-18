@@ -80,7 +80,7 @@ export default function BoekTrainerPageNL() {
 
       {/* How it works — compact */}
       <Section bg="muted">
-        <SectionHeader overline="Hoe het werkt" title="In 3 Stappen aan de Slag" />
+        <SectionHeader overline="Hoe het werkt" title="In 3 stappen aan de slag" />
         <div className="grid gap-8 sm:grid-cols-3">
           {steps.map((step, i) => (
             <FadeIn key={step.title} delay={i * 0.15}>
@@ -98,7 +98,7 @@ export default function BoekTrainerPageNL() {
 
       {/* What you get */}
       <Section>
-        <SectionHeader overline="Wat je krijgt" title="Personal Training vanaf €45" />
+        <SectionHeader overline="Wat je krijgt" title="Personal training vanaf €45" />
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
@@ -122,7 +122,7 @@ export default function BoekTrainerPageNL() {
 
       {/* Studio gallery */}
       <Section bg="muted">
-        <SectionHeader overline="De Studio" title="Waar je Traint" />
+        <SectionHeader overline="De studio" title="Waar je traint" />
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           {studioImages.map((img, i) => (
             <FadeIn key={img.src} delay={i * 0.1}>
@@ -136,7 +136,7 @@ export default function BoekTrainerPageNL() {
 
       {/* Social proof */}
       <Section>
-        <SectionHeader overline="Klanten" title="Wat Klanten Zeggen" />
+        <SectionHeader overline="Klanten" title="Wat klanten zeggen" />
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
           <FadeIn>
             <div className="rounded-xl border bg-card p-5">
@@ -159,7 +159,7 @@ export default function BoekTrainerPageNL() {
 
       {/* FAQ */}
       <Section bg="muted">
-        <SectionHeader overline="Veelgestelde vragen" title="Heb je een Vraag?" />
+        <SectionHeader overline="Veelgestelde vragen" title="Heb je een vraag?" />
         <FadeIn>
           <Accordion className="mx-auto max-w-2xl">
             {faqs.map((faq, i) => (

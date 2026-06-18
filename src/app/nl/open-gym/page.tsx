@@ -320,7 +320,7 @@ export default function OpenGymPageNL() {
       <Section>
         <SectionHeader
           overline="Open Gym"
-          title="Kies Jouw Plan"
+          title="Kies jouw plan"
           description="Losse sessie of lidmaatschap per 4 weken. Altijd opzegbaar."
         />
 
@@ -378,7 +378,7 @@ export default function OpenGymPageNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Hoe het werkt"
-          title="In 3 Stappen aan de Slag"
+          title="In 3 stappen aan de slag"
         />
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -401,8 +401,8 @@ export default function OpenGymPageNL() {
       {/* Studio gallery */}
       <Section>
         <SectionHeader
-          overline="De Studio"
-          title="Volledig Uitgerust"
+          overline="De studio"
+          title="Volledig uitgerust"
           description="Powerrack, dumbbells, kabelmachine, cardio en meer. Alles wat je nodig hebt."
         />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -482,7 +482,7 @@ export default function OpenGymPageNL() {
       <Section bg="dark">
         <SectionHeader
           overline="Klaar om te starten?"
-          title="Kies Jouw Lidmaatschap"
+          title="Kies jouw lidmaatschap"
           description="Kies een lidmaatschap als je nieuw bent, of reserveer direct als je al lid bent."
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

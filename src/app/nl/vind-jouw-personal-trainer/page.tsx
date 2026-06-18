@@ -132,8 +132,8 @@ export default function TrainersPageNL() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="Personal Trainers"
-          title="Vind Jouw Personal Trainer"
+          overline="Personal trainers"
+          title="Vind jouw personal trainer"
           description="Privé studio · Eerste intake gratis · Sessies vanaf €45 · Kies je trainer, of laat ons matchen."
         />
 
@@ -207,7 +207,7 @@ export default function TrainersPageNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Het format"
-          title="De Privé Sessie"
+          title="De privé sessie"
           description="Elke sessie is privé: jij, je trainer en de hele studio. Geen andere klanten, geen wachtrij, volledige focus."
         />
         <FadeIn>
@@ -221,7 +221,7 @@ export default function TrainersPageNL() {
       <Section>
         <SectionHeader
           overline="Specifieke behoefte?"
-          title="Direct Naar Jouw Situatie"
+          title="Direct naar jouw situatie"
           description="Op zoek naar een trainer voor een specifieke levensfase of samenstelling? Gebruik de snelkoppelingen hieronder."
         />
         <FadeIn>
@@ -266,7 +266,7 @@ export default function TrainersPageNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Hulp nodig?"
-          title="Weet Je Niet Welke Trainer Bij Je Past?"
+          title="Weet je niet welke trainer bij je past?"
           description="Vul het formulier in en we helpen je de juiste trainer te vinden."
         />
         <FadeIn>
@@ -339,7 +339,7 @@ export default function TrainersPageNL() {
       <Section bg="dark">
         <SectionHeader
           overline="Klaar om te beginnen?"
-          title="Plan Je Gratis Intake"
+          title="Plan je gratis intake"
           description="Eerste intake gratis. Geen contract. Geen verplichting. Kies je trainer of stuur ons een WhatsApp."
         />
         <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">

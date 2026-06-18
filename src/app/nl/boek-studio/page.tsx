@@ -333,7 +333,7 @@ export default function BoekStudioPageNL() {
 
       {/* How it works */}
       <Section>
-        <SectionHeader overline="Hoe het werkt" title="In 3 Stappen Starten" />
+        <SectionHeader overline="Hoe het werkt" title="In 3 stappen starten" />
         <div className="grid gap-8 sm:grid-cols-3">
           {steps.map((step, i) => (
             <FadeIn key={step.title} delay={i * 0.15}>
@@ -351,7 +351,7 @@ export default function BoekStudioPageNL() {
 
       {/* Studio gallery */}
       <Section bg="muted">
-        <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
+        <SectionHeader overline="De studio" title="Bekijk de ruimte" />
         <FadeIn>
           <div className="mx-auto max-w-4xl">
             <PhotoSlideshow images={studioImages} aspect="aspect-[4/3]" />
@@ -361,7 +361,7 @@ export default function BoekStudioPageNL() {
 
       {/* Social proof */}
       <Section>
-        <SectionHeader overline="Trainers over SculptClub" title="Wat Collega-Trainers Zeggen" />
+        <SectionHeader overline="Trainers over SculptClub" title="Wat collega-trainers zeggen" />
         <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           <FadeIn>
             <div className="rounded-xl border bg-card p-6">

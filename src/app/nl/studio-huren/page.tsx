@@ -443,7 +443,7 @@ export default function StudioRentalPageNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Waarom SculptClub"
-          title="Alles Wat Je Nodig Hebt"
+          title="Alles wat je nodig hebt"
         />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -515,13 +515,13 @@ export default function StudioRentalPageNL() {
           should get enlarged slider". See PhotoGalleryLightbox for the
           ←/→/Esc + swipe + scroll-lock + focus-trap mechanics. */}
       <Section bg="muted">
-        <SectionHeader overline="De studio" title="Bekijk de Ruimte" />
+        <SectionHeader overline="De studio" title="Bekijk de ruimte" />
         <PhotoGalleryLightbox images={galleryImages} locale="nl" />
       </Section>
 
       {/* FAQ */}
       <Section>
-        <SectionHeader overline="Veelgestelde vragen" title="Studio Huren FAQ" />
+        <SectionHeader overline="Veelgestelde vragen" title="Studio huren FAQ" />
 
         <FadeIn>
           <Accordion className="mx-auto max-w-2xl">

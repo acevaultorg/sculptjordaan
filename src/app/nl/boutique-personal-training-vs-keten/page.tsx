@@ -107,7 +107,7 @@ export default function BoutiquePTvsKetenNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Naast elkaar"
-          title="De Eerlijke Vergelijking"
+          title="De eerlijke vergelijking"
           description="Geen aanvallen op concurrenten — gewoon de kenmerken naast elkaar."
         />
 
@@ -290,7 +290,7 @@ export default function BoutiquePTvsKetenNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Veelgestelde vragen"
-          title="Nog Vragen?"
+          title="Nog vragen?"
         />
         <FadeIn>
           <div className="max-w-2xl mx-auto">
