@@ -35,10 +35,10 @@ interface LandingVideoProps {
 
 /**
  * Perf-safe landing video. Never affects initial load / LCP:
- *  - preload="none" + src is only attached once the card scrolls near the viewport
- *    (IntersectionObserver, 50px rootMargin), so the file isn't fetched until needed —
- *    small margin so a near-fold video (e.g. studio-huren) doesn't preload its mp4 for
- *    the ~80% who bounce; it loads just as the user scrolls to it.
+ *  - preload="none" + src is only attached once the card actually enters the viewport
+ *    (IntersectionObserver, 0px rootMargin), so the file isn't fetched until needed.
+ *    A near-fold video (e.g. studio-huren measured ~18px below the fold) then does NOT
+ *    preload its 2.5MB mp4 for the ~80% who bounce — it loads as the user scrolls to it.
  *  - muted + playsInline + loop → mobile-safe autoplay once in view.
  *  - prefers-reduced-motion → no autoplay; poster + a tap-to-play affordance.
  *  - if the browser blocks autoplay (data-saver etc.), fall back to the same affordance.
@@ -84,7 +84,7 @@ export function LandingVideo({
           io.disconnect();
         }
       },
-      { rootMargin: "50px" }
+      { rootMargin: "0px" }
     );
     io.observe(el);
     return () => io.disconnect();
