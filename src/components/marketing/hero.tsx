@@ -56,16 +56,16 @@ const HERO_IMAGES = [
     alt: "Full overview of the SculptClub private studio in Amsterdam Jordaan — branded sprint lane, dumbbell rack, power rack and canal light",
   },
   {
-    src: "/images/studio/training-barbell-squat.jpg",
-    alt: "Personal training session at SculptClub private gym in Amsterdam Jordaan — barbell squat in Rogue power rack",
+    src: "/images/studio/entrance-smile.jpg",
+    alt: "A smiling SculptClub member in the warm-lit private studio in Amsterdam Jordaan",
   },
   {
     src: "/images/studio/canal-view-doors.jpg",
     alt: "View from inside SculptClub onto the Egelantiersgracht canal in Amsterdam Jordaan",
   },
   {
-    src: "/images/studio/power-rack.jpeg",
-    alt: "Rogue power rack with Olympic barbell at SculptClub private gym in Amsterdam Jordaan",
+    src: "/images/studio/boutique-corner.jpg",
+    alt: "Cosy corner of the SculptClub private studio — dumbbells, kettlebells and plants in warm Jordaan light",
   },
 ];
 
@@ -445,6 +445,18 @@ export function Hero({ locale }: { locale: Locale }) {
                   {cta.label}
                 </ButtonLink>
               ))}
+
+              {/* Direct-book path — clients prefer booking directly over the quiz
+                  (Plausible 30d: Acuity Click 159 ≫ Quiz-start 36). Kept as a quiet
+                  text link, NOT another button / primary-colour, per the operator's
+                  "too many buttons" hero directive (2026-05-27). */}
+              <Link
+                href={locale === "nl" ? "/nl/boek-trainer" : "/en/book-trainer"}
+                className="plausible-event-name=hero_direct_book self-center text-sm font-medium text-white/90 underline underline-offset-4 hover:text-white transition-colors"
+                onClick={() => trackHeroClick("hero direct book", 0, locale)}
+              >
+                {locale === "nl" ? "Of boek direct je gratis intake →" : "Or book your free intro directly →"}
+              </Link>
 
               {/* ZZP-trainer acquisition CTA — outline variant for hierarchy
                   via fill-vs-outline (not size). Same min-height + padding +
