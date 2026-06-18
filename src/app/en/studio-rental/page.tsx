@@ -172,6 +172,39 @@ export default function StudioRentalPageEN() {
           </p>
         </div>
 
+        {/* WhatsApp-first CTA — operator insight 2026-06-18: rent clients
+            message FIRST (ask availability/rate before committing). Data: ~135
+            calendar clicks → ~3 bookings last month, while the serious renters
+            WhatsApp. Lead with chat; self-serve booking stays right below. */}
+        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
+          <p className="text-lg font-bold">The fastest way into the studio: send us a WhatsApp</p>
+          <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
+            Ask about availability, your rate, or a fixed weekly schedule — usually answered within 1 hour. Feel free to bring your own clients.
+          </p>
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <ButtonLink
+              href={whatsappLinks.studioEn}
+              external
+              size="lg"
+              className="w-full sm:w-auto plausible-event-name=studio_rental_hero_whatsapp"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp us about studio rental
+            </ButtonLink>
+            <a
+              href={whatsappLinks.tourEn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_rental_hero_tour"
+            >
+              Or book a free 15-min tour first
+            </a>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Prefer to book yourself right away? Live rates &amp; availability below ↓
+          </p>
+        </div>
+
         <RentalTabs
           locale="en"
           packages={

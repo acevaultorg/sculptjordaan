@@ -182,6 +182,39 @@ export default function StudioRentalPageNL() {
           </p>
         </div>
 
+        {/* WhatsApp-first CTA — operator insight 2026-06-18: rent clients
+            message FIRST (ask availability/rate before committing). Data: ~135
+            calendar clicks → ~3 bookings last month, while the serious renters
+            WhatsApp. Lead with chat; self-serve booking stays right below. */}
+        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
+          <p className="text-lg font-bold">De snelste weg naar de studio: stuur ons een WhatsApp</p>
+          <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
+            Vraag beschikbaarheid, je tarief of een vast wekelijks rooster — meestal antwoord binnen 1 uur. Kom gerust met je eigen klanten.
+          </p>
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <ButtonLink
+              href={whatsappLinks.studioNl}
+              external
+              size="lg"
+              className="w-full sm:w-auto plausible-event-name=studio_huren_hero_whatsapp"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp ons over studio huren
+            </ButtonLink>
+            <a
+              href={whatsappLinks.tourNl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_huren_hero_tour"
+            >
+              Of plan eerst een gratis rondleiding (15 min)
+            </a>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Liever meteen zelf boeken? Live tarieven &amp; beschikbaarheid hieronder ↓
+          </p>
+        </div>
+
         <RentalTabs
           locale="nl"
           packages={
