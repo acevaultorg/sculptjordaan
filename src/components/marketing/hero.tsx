@@ -203,7 +203,7 @@ export function Hero({ locale }: { locale: Locale }) {
       // sites stay stable (the JSX guards on `t.subtitle` to skip rendering).
       subtitle: null,
       taglineSub: "Vind je trainer. Word sterker.",
-      priceAnchor: "vanaf €45 · 1-op-1",
+      priceAnchor: "Gratis intake · 1-op-1",
       // 2026-05-27 Clarity audit lesson — heatmap shows "Voor trainers"
       // (4 clicks) beats "Probeer Personal training" (2 clicks) on the same
       // hero. Hypothesis: "Probeer" is a vague verb that signals commit-
@@ -249,7 +249,7 @@ export function Hero({ locale }: { locale: Locale }) {
       // taglineSub becomes emotional anchor, priceAnchor condensed.
       subtitle: null,
       taglineSub: "Find your trainer. Get stronger.",
-      priceAnchor: "from €45 · 1-on-1",
+      priceAnchor: "Free intro · 1-on-1",
       // See NL parallel comment (2026-05-27 Clarity audit).
       ctas: [
         { label: "Match your trainer in 30 sec", href: "/en/match-trainer", icon: Users, primary: true },

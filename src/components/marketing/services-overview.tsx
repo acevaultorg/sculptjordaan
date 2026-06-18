@@ -13,7 +13,7 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Train 1-op-1 in een privé studio met een trainer die bij jouw doel past. Gratis intake, geen contract. Vanaf €45 per sessie.",
+        "Train 1-op-1 in een privé studio met een trainer die bij jouw doel past. Gratis intake, geen contract.",
       href: "/nl/vind-jouw-personal-trainer",
       cta: "Vind je trainer",
       image: "/images/studio/pt-session-barbell.jpg",
@@ -45,7 +45,7 @@ const services = {
       icon: Users,
       title: "Personal Training",
       description:
-        "Train 1-on-1 in a private studio with a trainer who fits your goals. Free intro, no contract. From €45 per session.",
+        "Train 1-on-1 in a private studio with a trainer who fits your goals. Free intro, no contract.",
       href: "/en/find-personal-trainer",
       cta: "Find your trainer",
       image: "/images/studio/pt-session-barbell.jpg",

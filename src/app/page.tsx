@@ -15,7 +15,7 @@ import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
-  { question: "Wat kost personal training bij SculptClub?", answer: "Trainers bepalen hun eigen tarieven, vanaf \u20AC45 per sessie. De intake is altijd gratis. Wij rekenen 0% commissie \u2014 de prijs die je ziet is wat je betaalt." },
+  { question: "Wat kost personal training bij SculptClub?", answer: "Elke trainer bepaalt zijn eigen tarief, te zien op het trainersprofiel. De intake is altijd gratis. Wij rekenen 0% commissie \u2014 de prijs die je ziet is wat je betaalt." },
   { question: "Hoe werkt Open Gym?", answer: "Je traint zelfstandig in onze priv\u00e9 studio met professionele apparatuur. Plan je sessies via ons boekingssysteem, ontvang een deurcode en train op jouw tijd. Vanaf \u20AC5,75 per sessie." },
   { question: "Moet ik een abonnement afsluiten?", answer: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract \u2014 opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten." },
   { question: "Kan ik de studio huren voor mijn eigen klanten?", answer: "Ja! Als ZZP-trainer of fysiotherapeut kun je onze studio huren vanaf \u20AC12 per 60 minuten. We bieden ook kortingspakketten tot 23% korting." },
@@ -25,7 +25,7 @@ const homeFaqs = [
 export const metadata: Metadata = {
   title: { absolute: "SculptClub — Personal Training Studio Amsterdam Jordaan" },
   description:
-    "Huur jouw eigen studio in de Jordaan vanaf €12/uur — 0% commissie, geen contract. Ook personal training vanaf €45 met gratis intake.",
+    "Huur jouw eigen studio in de Jordaan vanaf €12/uur — 0% commissie, geen contract. Ook personal training met gratis intake.",
   alternates: {
     canonical: "/",
     languages: {
