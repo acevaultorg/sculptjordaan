@@ -30,7 +30,7 @@ const COPY = {
       {
         icon: TrendingUp,
         title: "Bewezen funnel",
-        text: "Bezoekers komen, boeken via Acuity, blijven. Geen commissie. Jij behoudt 100% van je tarief; wij verdienen alleen aan de huur.",
+        text: "Bezoekers komen, boeken via Acuity, blijven. Jij behoudt 100% van je tarief; wij verdienen alleen aan de huur.",
       },
     ],
     ctaLabel: "Word SculptClub-trainer",
@@ -62,7 +62,7 @@ const COPY = {
       {
         icon: TrendingUp,
         title: "Proven funnel",
-        text: "Visitors arrive, book through Acuity, return. Zero commission. You keep 100% of your rate; we earn only on rental.",
+        text: "Visitors arrive, book through Acuity, return. You keep 100% of your rate; we earn only on rental.",
       },
     ],
     ctaLabel: "Join as a trainer",

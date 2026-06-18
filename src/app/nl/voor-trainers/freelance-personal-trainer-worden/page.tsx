@@ -101,7 +101,7 @@ export default function FreelancePTGuideNL() {
               <strong>Openbare parken (Vondelpark, Westerpark)</strong> — gratis, maar weersafhankelijk en niet voor zware krachttraining geschikt. Werkt 3–5 maanden per jaar in Nederland.
             </li>
             <li>
-              <strong>Studio huren per uur</strong> — vaste locatie, professionele apparatuur, premium-perceptie bij klanten. Vanaf €12 per uur bij <a href="/nl/studio-huren">SculptClub in Jordaan</a> (geen commissie, geen abonnement, alleen huur).
+              <strong>Studio huren per uur</strong> — vaste locatie, professionele apparatuur, premium-perceptie bij klanten. Vanaf €12 per uur bij <a href="/nl/studio-huren">SculptClub in Jordaan</a> (eigen tarief, geen abonnement, alleen huur).
             </li>
           </ul>
           <p>
@@ -151,7 +151,7 @@ export default function FreelancePTGuideNL() {
             Freelance PT worden in Amsterdam is haalbaar voor wie consistent werkt. De eerste 6 maanden zijn het zwaarst — daarna compoundt het door verwijzingen en reviews. De grootste hefbomen: vaste locatie, gespecialiseerde positionering, en een eerlijke prijs die je werk weerspiegelt.
           </p>
           <p>
-            Bij SculptClub in Jordaan kun je klein beginnen — studio huren per uur, geen abonnement, geen commissie op jouw klanten. Wanneer je groeit kun je trainer bij SculptClub worden en krijg je een eigen profiel op onze site + match met klanten die SculptClub zelf vinden.
+            Bij SculptClub in Jordaan kun je klein beginnen — studio huren per uur, geen abonnement — je houdt 100% van je tarief. Wanneer je groeit kun je trainer bij SculptClub worden en krijg je een eigen profiel op onze site + match met klanten die SculptClub zelf vinden.
           </p>
         </article>
       </Section>

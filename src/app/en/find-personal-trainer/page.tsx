@@ -19,7 +19,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam — Find Your Match | SculptClub" },
-  description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, 0% commission. Find your match at SculptClub.`,
+  description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, no middleman. Find your match at SculptClub.`,
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {
@@ -34,11 +34,11 @@ const trustBadges = [
   { icon: Star, label: "5.0 on Google" },
   { icon: Users, label: `${trainers.length} trainers` },
   { icon: Gift, label: "Free intro" },
-  { icon: Percent, label: "0% commission" },
+  { icon: MessageCircle, label: "Direct with your trainer" },
 ];
 
 const trainerBenefits = [
-  { icon: Percent, title: "0% commission", description: "Keep 100% of your income. We charge no commission on your sessions." },
+  { icon: Percent, title: "You keep 100%", description: "Your rates, your clients. You rent the studio and keep 100% of your income." },
   { icon: Building2, title: "Premium studio", description: "Train your clients in a fully equipped private studio in the Jordaan." },
   { icon: CalendarClock, title: "Flexible schedule", description: "Plan your sessions whenever it suits you. Full freedom over your schedule." },
 ];
@@ -253,7 +253,7 @@ export default function TrainersPageEN() {
         <SectionHeader
           overline="For trainers"
           title="Are you a personal trainer? Rent the studio."
-          description="0% commission, your own profile on this site, and matching with clients who find SculptClub directly. From €12/hour."
+          description="Your own clients and rates, your own profile on this site, and matching with clients who find SculptClub directly. From €12/hour."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">

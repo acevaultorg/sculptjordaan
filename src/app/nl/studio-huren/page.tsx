@@ -17,7 +17,7 @@ import {
   Dumbbell,
   Lock,
   Clock,
-  Ban,
+  Percent,
   CreditCard,
   ArrowRight,
   MessageCircle,
@@ -52,7 +52,7 @@ import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 export const metadata: Metadata = {
   title: { absolute: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan" },
   description:
-    "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — 0% commissie, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+    "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   alternates: {
     canonical: "/nl/studio-huren",
     languages: {
@@ -80,9 +80,9 @@ const features = [
     description: "Boek wanneer het jou uitkomt. Geen vaste tijden.",
   },
   {
-    icon: Ban,
-    title: "Geen commissie",
-    description: "Jij bepaalt je eigen tarieven. Wij rekenen alleen huur.",
+    icon: Percent,
+    title: "Jij houdt 100%",
+    description: "Jij bepaalt je eigen tarieven en klanten. Wij rekenen alleen huur.",
   },
 ];
 
@@ -126,7 +126,7 @@ const faqs = [
   },
   {
     q: "Krijg ik klanten via SculptClub?",
-    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen commissie op die boekingen — wij verbinden alleen.",
+    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen tussenpersoon bij die boekingen — wij verbinden alleen.",
   },
   {
     q: "Kan ik vaste tijdslots reserveren?",
@@ -154,7 +154,7 @@ export default function StudioRentalPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Studio Huren","url":"/nl/studio-huren"}]} />
       <ServiceJsonLd
         name="Studio Verhuur — Personal Trainer Amsterdam"
-        description="Huur een privé trainingsruimte in Amsterdam Jordaan voor freelance personal trainers en fysiotherapeuten. Professionele apparatuur, flexibel per uur, geen commissie."
+        description="Huur een privé trainingsruimte in Amsterdam Jordaan voor freelance personal trainers en fysiotherapeuten. Professionele apparatuur, flexibel per uur, eigen tarief en klanten."
         url="/nl/studio-huren"
         priceRange="Vanaf €12 per uur"
       />
@@ -179,7 +179,7 @@ export default function StudioRentalPageNL() {
             Studio huren voor personal trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · 0% commissie · Gratis annuleren · Dagelijks 06:30–22:00
+            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:30–22:00
           </p>
         </div>
 
@@ -468,7 +468,7 @@ export default function StudioRentalPageNL() {
         <SectionHeader
           overline="Voor ZZP-trainers & fysiotherapeuten"
           title="Jouw eigen studio, per uur"
-          description="Geen vaste huurkosten, geen commissie op je omzet. Huur alleen wanneer je een sessie hebt."
+          description="Geen vaste huurkosten. Jij huurt alleen wanneer je een sessie hebt en houdt 100% van je tarief."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <FadeIn>
@@ -494,7 +494,7 @@ export default function StudioRentalPageNL() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
                   "Volledig uitgeruste privé studio voor 1:1 en small group",
-                  "Geen commissie — jij houdt 100% van je sessietarief",
+                  "Jij houdt 100% van je sessietarief — wij rekenen alleen huur",
                   "Flexibel boeken: alleen wanneer jij een klant hebt",
                   "Deurcode per WhatsApp de avond van tevoren",
                   "Professionele apparatuur: squat rack, kabelmachine, dumbbells 4-40 kg, Echo Bike en meer",
@@ -561,7 +561,7 @@ export default function StudioRentalPageNL() {
               </a>
               <a href="/nl/word-trainer" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">Voor trainers</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Word trainer bij SculptClub — 0% commissie</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Word trainer bij SculptClub — eigen tarief & klanten</p>
               </a>
               <a href="/nl/blog/personal-trainer-worden-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

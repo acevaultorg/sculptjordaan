@@ -15,7 +15,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
     locale === "nl"
       ? {
           eyebrow: "Het verschil",
-          title: "Geen contract. Geen commissie. Geen drukte.",
+          title: "Geen contract. Volledige vrijheid. Geen drukte.",
           // 2026-06-02 intro rewrite per operator competitive-audit decisions:
           //  · F ("PT en small group only") — opens by stating the model: alleen
           //    personal training & small group, nooit een volle sportschool.
@@ -39,7 +39,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               // studio rental (transparent two-sided model, removes the
               // implied "we work for free" trust gap that ZZP trainers would
               // hit on the pricing page anyway).
-              body: "Wij rekenen 0% commissie op trainer-tarieven. De prijs die je ziet is wat de trainer krijgt — wij nemen niets van hun sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), niet uit hun werk. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
+              body: "Trainers huren de studio en houden 100% van hun tarief — de prijs die je ziet is wat de trainer krijgt, wij nemen niets van hun sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), niet uit hun werk. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
             },
             {
               icon: Lock,
@@ -65,7 +65,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
         }
       : {
           eyebrow: "What makes us different",
-          title: "No contract. No commission. No crowds.",
+          title: "No contract. Full freedom. No crowds.",
           // See NL parallel — 2026-06-02 intro rewrite: F (PT & small group only)
           // + C (pricing-transparency wedge).
           intro:
@@ -76,7 +76,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               title: "Trainers deserve their full rate.",
               // EN parallel — see NL comment for full 2026-06-02 honesty fix
               // reasoning. Two-sided transparency on the financial model.
-              body: "We take 0% commission on trainer rates. The rate you see is what the trainer charges — we don't touch their session fee. Our revenue comes from studio rental (from €12/hour), not their work. That's why the best independent trainers in Amsterdam work here.",
+              body: "Trainers rent the studio and keep 100% of their rate — the rate you see is what the trainer charges, we don't touch their session fee. Our revenue comes from studio rental (from €12/hour), not their work. That's why the best independent trainers in Amsterdam work here.",
             },
             {
               icon: Lock,

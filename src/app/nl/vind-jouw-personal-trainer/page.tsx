@@ -19,7 +19,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub" },
-  description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, 0% commissie. Vind jouw match bij SculptClub.`,
+  description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, geen tussenpersoon. Vind jouw match bij SculptClub.`,
   alternates: {
     canonical: "/nl/vind-jouw-personal-trainer",
     languages: {
@@ -34,11 +34,11 @@ const trustBadges = [
   { icon: Star, label: "5.0 op Google" },
   { icon: Users, label: `${trainers.length} trainers` },
   { icon: Gift, label: "Gratis intake" },
-  { icon: Percent, label: "0% commissie" },
+  { icon: MessageCircle, label: "Direct met je trainer" },
 ];
 
 const trainerBenefits = [
-  { icon: Percent, title: "0% commissie", description: "Houd 100% van je inkomsten. Wij rekenen geen commissie op jouw sessies." },
+  { icon: Percent, title: "Jij houdt 100%", description: "Eigen tarief, eigen klanten. Jij huurt de studio en houdt 100% van je inkomsten." },
   { icon: Building2, title: "Premium studio", description: "Train je cli\u00ebnten in een volledig uitgeruste priv\u00e9 studio in de Jordaan." },
   { icon: CalendarClock, title: "Flexibel rooster", description: "Plan je sessies wanneer het jou uitkomt. Volledige vrijheid over je agenda." },
 ];
@@ -279,7 +279,7 @@ export default function TrainersPageNL() {
         <SectionHeader
           overline="Voor trainers"
           title="Ben jij personal trainer? Huur de studio."
-          description="0% commissie, eigen profiel op deze site, en match met klanten die SculptClub zelf vinden. Vanaf €12/uur."
+          description="Eigen tarief en klanten, eigen profiel op deze site, en match met klanten die SculptClub zelf vinden. Vanaf €12/uur."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">

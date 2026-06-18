@@ -27,7 +27,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan" },
   description:
-    "Start or grow your personal training practice at SculptClub. 0% commission, your own profile on our website, private studio from €12/hour. Free tour.",
+    "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour. Free tour.",
   keywords: [
     "become personal trainer amsterdam",
     "personal trainer studio rental",
@@ -55,8 +55,8 @@ const HERO_IMAGES = [
 const benefits = [
   {
     icon: Percent,
-    title: "0% commission",
-    description: "Keep 100% of your income. We charge zero commission — none. Your rate is your rate.",
+    title: "You keep 100%",
+    description: "Your rates, your clients, your schedule. You rent the studio; we earn only on the rental.",
   },
   {
     icon: Building2,
@@ -123,7 +123,7 @@ export default function BecomeTrainerEN() {
             <div>
               <p className="overline mb-3 text-brand">For independent trainers</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
-                <span className="text-brand">0% commission.</span> Your clients, your rates, your schedule.
+                <span className="text-brand">You keep 100%.</span> Your clients, your rates, your schedule.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 A private studio in the Jordaan where you keep 100% of what you charge. Rent by the hour from €12, pay only when you train, and get a free profile on sculptclub.nl to help you fill your calendar.
@@ -138,7 +138,7 @@ export default function BecomeTrainerEN() {
                 </span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="text-muted-foreground">
-                  <strong className="text-foreground">Private studio</strong> · From €12/hour · 0% commission · No contract · Free cancellation anytime
+                  <strong className="text-foreground">Private studio</strong> · From €12/hour · Full freedom · No contract · Free cancellation anytime
                 </span>
               </div>
               {/* CTAs moved ABOVE the bullet list 2026-05-19. Clarity probe
@@ -180,7 +180,7 @@ export default function BecomeTrainerEN() {
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
                 <li><strong className="text-foreground">✓ Private studio</strong> — no crowds, no waiting for equipment, no strangers watching</li>
-                <li>✓ 0% commission — the rate you charge is the rate you keep</li>
+                <li>✓ The rate you charge is the rate you keep — you rent the studio, nothing more</li>
                 <li>✓ Rent by the hour from €12, or save up to 23% with a pack</li>
                 <li>✓ Free profile + WhatsApp CTA on our website</li>
                 <li>✓ No membership, no fixed overhead, cancel anytime</li>
@@ -216,7 +216,7 @@ export default function BecomeTrainerEN() {
         <SectionHeader
           overline="Why SculptClub"
           title="Everything you need, nothing you don't"
-          description="No own studio required. No fixed costs. No commission. Focus on what you do best: training."
+          description="No own studio required. No fixed costs. Full freedom. Focus on what you do best: training."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, i) => (
@@ -412,7 +412,7 @@ export default function BecomeTrainerEN() {
                 <span className="font-semibold text-white">5.0 on Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70"><strong className="text-white/90">Private studio</strong> · 0% commission · No contract · Free cancellation anytime</span>
+              <span className="text-white/70"><strong className="text-white/90">Private studio</strong> · Full freedom · No contract · Free cancellation anytime</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Ready to get started?
