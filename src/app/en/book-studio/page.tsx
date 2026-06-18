@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Book the Studio — Private Training Space | SculptClub Amsterdam" },
   description:
-    "Rent a private studio in the Jordaan. From €12/hour — 0% commission, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
+    "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
   alternates: {
     canonical: "/en/book-studio",
     languages: {
@@ -117,7 +117,7 @@ export default function BookStudioPageEN() {
           <p className="overline text-primary">For Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book the Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hour · 0% commission · Free cancellation · Daily 06:30–22:00
+            From €12/hour · Full freedom · Free cancellation · Daily 06:30–22:00
           </p>
         </div>
 
@@ -231,7 +231,7 @@ export default function BookStudioPageEN() {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["Always free cancellation", "No contract", "0% commission", "Instantly confirmed"].map((t) => (
+                {["Always free cancellation", "No contract", "Full freedom", "Instantly confirmed"].map((t) => (
                   <span key={t} className="inline-flex items-center gap-1.5">
                     <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
                     {t}

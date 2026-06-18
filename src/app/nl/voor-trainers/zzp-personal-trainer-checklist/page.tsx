@@ -130,7 +130,7 @@ export default function ZZPChecklistNL() {
             Pas als de administratie staat: kies je werkplek. Opties uitgewerkt in de <a href="/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten">vergelijking eigen studio vs thuis vs buiten</a>. Voor de meeste startende ZZP-PT's is uur-huur de logische keuze — lage vaste kosten, professionele uitstraling.
           </p>
           <p>
-            Bij <a href="/nl/studio-huren">SculptClub in Jordaan</a> begin je per uur (€12 voor halve studio, €17 voor hele). Geen abonnement, geen commissie op jouw klanten, alle apparatuur inbegrepen.
+            Bij <a href="/nl/studio-huren">SculptClub in Jordaan</a> begin je per uur (€12 voor halve studio, €17 voor hele). Geen abonnement, je houdt 100% van je tarief, alle apparatuur inbegrepen.
           </p>
 
           <h2>Stap 10 — Eerste klanten werven</h2>

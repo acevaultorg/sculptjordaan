@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "How much does a personal trainer in Amsterdam Jordaan cost?",
-    a: "Sessions start from €45. Trainers set their own rates and we charge them 0% commission, so what you pay goes straight to your trainer. The first intro is free.",
+    a: "Sessions start from €45. Trainers set their own rates and there's no middleman, so what you pay goes straight to your trainer. The first intro is free.",
   },
   {
     q: "Can I choose my own personal trainer?",
@@ -193,7 +193,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               "Private canal-side studio on the Egelantiersgracht",
               `${trainers.length} personal trainers — your match for goal and style`,
               "First intro free, no credit card needed",
-              "From €45 per session — 0% trainer commission",
+              "From €45 per session — you pay your trainer directly",
               "Open daily 06:30–22:00 — train when it suits you",
               "Door code via WhatsApp the night before — no reception",
             ].map((item) => (
@@ -248,7 +248,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               <strong className="text-foreground">Who it's for.</strong> Whether you're starting out, returning after an injury, building strength, or just getting fitter: your trainer builds a plan around your goal, level and schedule. All trainers speak English fluently.
             </p>
             <p>
-              <strong className="text-foreground">Are you a trainer yourself?</strong> Personal trainers and physiotherapists rent our studio from €12/hour — 0% commission, no contract. Ideal if you're looking for your own space in the Jordaan or Centrum.{" "}
+              <strong className="text-foreground">Are you a trainer yourself?</strong> Personal trainers and physiotherapists rent our studio from €12/hour — your own clients and rates, no contract. Ideal if you're looking for your own space in the Jordaan or Centrum.{" "}
               <Link href="/en/studio-rental" className="text-brand hover:underline font-medium">See studio rental →</Link>
             </p>
           </div>

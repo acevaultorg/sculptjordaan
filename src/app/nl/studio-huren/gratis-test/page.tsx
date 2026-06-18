@@ -45,7 +45,7 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
 export const metadata: Metadata = {
   title: { absolute: "Gratis proefsessie — Studio Huren | SculptClub Jordaan" },
   description:
-    "Boek je gratis 60-minuten proefsessie in onze privé studio in Amsterdam Jordaan — of stel eerst je vraag via WhatsApp. Geen creditcard, geen contract, 0% commissie. Voor personal trainers.",
+    "Boek je gratis 60-minuten proefsessie in onze privé studio in Amsterdam Jordaan — of stel eerst je vraag via WhatsApp. Geen creditcard, geen contract, eigen tarief & klanten. Voor personal trainers.",
   alternates: {
     canonical: "/nl/studio-huren/gratis-test",
     languages: {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 
 const benefits = [
   { icon: Building2, text: "Privé studio aan de gracht in de Jordaan" },
-  { icon: Percent, text: "0% commissie · jouw klanten, jouw tarieven" },
+  { icon: Percent, text: "Jouw klanten, jouw tarieven — jij houdt 100%" },
   { icon: Clock, text: "Per uur vanaf €12 · geen contract" },
   { icon: Ban, text: "Gratis proefsessie · geen creditcard" },
 ];
@@ -105,7 +105,7 @@ export default function GratisTestStudioHurenNL() {
             Gratis proefsessie — Studio Huren
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
-            60 minuten in onze privé studio in de Jordaan. Geen creditcard, geen contract, altijd gratis annuleren — en 0% commissie op je eigen klanten.
+            60 minuten in onze privé studio in de Jordaan. Geen creditcard, geen contract, altijd gratis annuleren — en je houdt 100% van je tarief.
           </p>
 
           {/* Two co-primary CTAs = the two operator goals, side by side */}

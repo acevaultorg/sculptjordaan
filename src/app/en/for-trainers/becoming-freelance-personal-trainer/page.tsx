@@ -100,7 +100,7 @@ export default function FreelancePTGuideEN() {
               <strong>Public parks (Vondelpark, Westerpark)</strong> — free, but weather-dependent and not suitable for heavy strength work. Works 3–5 months per year in the Netherlands.
             </li>
             <li>
-              <strong>Renting a studio by the hour</strong> — fixed location, professional equipment, premium perception. From €12/hour at <a href="/en/studio-rental">SculptClub in Jordaan</a> (zero commission, no membership, just rent).
+              <strong>Renting a studio by the hour</strong> — fixed location, professional equipment, premium perception. From €12/hour at <a href="/en/studio-rental">SculptClub in Jordaan</a> (no membership, just rent — you keep 100%).
             </li>
           </ul>
           <p>
@@ -150,7 +150,7 @@ export default function FreelancePTGuideEN() {
             Going freelance in Amsterdam is achievable for trainers who work consistently. The first 6 months are hardest — after that, it compounds through referrals and reviews. The biggest levers: fixed location, specialized positioning, and an honest price that reflects your work.
           </p>
           <p>
-            At SculptClub in Jordaan you can start small — rent the studio by the hour, no membership, no commission on your clients. When you grow, you can join as a trainer and get your own profile on our site plus matching with clients who find SculptClub directly.
+            At SculptClub in Jordaan you can start small — rent the studio by the hour, no membership — you keep 100% of your rate. When you grow, you can join as a trainer and get your own profile on our site plus matching with clients who find SculptClub directly.
           </p>
         </article>
       </Section>

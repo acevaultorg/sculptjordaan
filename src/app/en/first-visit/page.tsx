@@ -302,7 +302,7 @@ export default function FirstVisitPage() {
                   <Building2 className="h-5 w-5 text-purple-600" />
                 </div>
                 <CardTitle>Studio Rental</CardTitle>
-                <CardDescription>For trainers with their own clients. Half studio €12/hr, full studio €17/hr. 0% commission, no contract.</CardDescription>
+                <CardDescription>For trainers with their own clients. Half studio €12/hr, full studio €17/hr. Your own rates, no contract.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Book tour<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

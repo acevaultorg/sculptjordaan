@@ -209,7 +209,7 @@ export default function BoutiquePTvsKetenNL() {
             <p>
               In een boutique studio is dat het uitgangspunt. Je trainer kent
               je geschiedenis, je doelen en je herstelpatroon. Bij SculptClub
-              werken trainers met 0% commissie — dat betekent dat ze hun eigen
+              huren trainers de studio en houden 100% — dat betekent dat ze hun eigen
               tarieven bepalen en de tijd nemen die nodig is, zonder
               verkoopdruk uit de studio.
             </p>

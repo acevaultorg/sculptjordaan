@@ -49,7 +49,7 @@ const paths = [
   {
     icon: "Building2" as const,
     title: "I\u2019m a trainer looking for a studio",
-    description: "Fully equipped private studio for your clients. 0% commission. From \u20ac12/hour.",
+    description: "Fully equipped private studio for your clients. Your own rates. From \u20ac12/hour.",
     cta: "Book free studio tour",
     href: withUtm(acuityLinks.studioTrial, "studio_rental"),
     external: true,

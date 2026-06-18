@@ -208,7 +208,7 @@ export default function BoutiquePTvsChainEN() {
             <p>
               In a boutique studio, that’s the whole starting point. Your
               trainer knows your history, your goals and your recovery
-              pattern. At SculptClub trainers work on 0% commission — meaning
+              pattern. At SculptClub trainers rent the studio and keep 100% — meaning
               they set their own rates and take the time you need, with no
               sales pressure from the studio.
             </p>

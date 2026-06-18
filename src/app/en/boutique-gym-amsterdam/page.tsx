@@ -180,7 +180,7 @@ export default function BoutiqueGymAmsterdamPage() {
               "Private studio on the Egelantiersgracht in the Jordaan",
               "Small, calm space — never crowded, never queueing",
               "7 trainers, all English-speaking",
-              "Personal training from €45 per session, 0% trainer commission",
+              "Personal training from €45 per session, you pay your trainer directly",
               "Open Gym from €29 for 4 sessions — no membership lock-in",
               "Open daily 06:30–22:00, door code via WhatsApp",
             ].map((item) => (

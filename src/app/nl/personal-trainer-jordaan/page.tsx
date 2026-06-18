@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Wat kost een personal trainer in de Jordaan?",
-    a: "Bij SculptClub starten tarieven vanaf €45 per sessie. Trainers bepalen hun eigen tarief; wij rekenen 0% commissie. De eerste intake is gratis.",
+    a: "Bij SculptClub starten tarieven vanaf €45 per sessie. Trainers bepalen hun eigen tarief; je betaalt je trainer direct. De eerste intake is gratis.",
   },
   {
     q: "Kan ik mijn personal trainer zelf kiezen?",
@@ -254,7 +254,7 @@ export default function PersonalTrainerJordaanPage() {
               <strong className="text-foreground">Voor wie.</strong> Of je nu begint, terugkomt na een blessure, sterker wilt worden of gewoon fitter: je trainer maakt een plan op maat rond jouw doel, niveau en agenda.
             </p>
             <p>
-              <strong className="text-foreground">Ben je zelf trainer?</strong> Personal trainers en fysiotherapeuten huren onze studio vanaf €12/uur — 0% commissie, geen contract. Ideaal als je eigen ruimte zoekt in de Jordaan of het Centrum.{" "}
+              <strong className="text-foreground">Ben je zelf trainer?</strong> Personal trainers en fysiotherapeuten huren onze studio vanaf €12/uur — eigen tarief en klanten, geen contract. Ideaal als je eigen ruimte zoekt in de Jordaan of het Centrum.{" "}
               <Link href="/nl/studio-huren" className="text-brand hover:underline font-medium">Bekijk studio huren →</Link>
             </p>
           </div>

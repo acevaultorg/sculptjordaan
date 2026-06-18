@@ -25,7 +25,7 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
 export const metadata: Metadata = {
   title: { absolute: "Free Trial Session — Studio Rental | SculptClub Jordaan" },
   description:
-    "Book your free 60-minute trial session in our private studio in Amsterdam Jordaan — or just ask your question on WhatsApp first. No credit card, no contract, 0% commission. For personal trainers.",
+    "Book your free 60-minute trial session in our private studio in Amsterdam Jordaan — or just ask your question on WhatsApp first. No credit card, no contract, your own rates. For personal trainers.",
   alternates: {
     canonical: "/en/studio-rental/free-trial",
     languages: {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 const benefits = [
   { icon: Building2, text: "Private canal-side studio in the Jordaan" },
-  { icon: Percent, text: "0% commission · your clients, your rates" },
+  { icon: Percent, text: "Your clients, your rates — you keep 100%" },
   { icon: Clock, text: "From €12/hr · no contract" },
   { icon: Ban, text: "Free trial · no credit card" },
 ];
@@ -82,7 +82,7 @@ export default function FreeTrialStudioRentalEN() {
             Free Trial Session — Studio Rental
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
-            60 minutes in our private studio in the Jordaan. No credit card, no contract, free cancellation anytime — and 0% commission on your own clients.
+            60 minutes in our private studio in the Jordaan. No credit card, no contract, free cancellation anytime — and you keep 100% of your rate.
           </p>
 
           {/* Two co-primary CTAs = the two operator goals, side by side */}

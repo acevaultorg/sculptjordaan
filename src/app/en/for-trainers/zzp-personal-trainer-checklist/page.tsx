@@ -131,7 +131,7 @@ export default function ZZPChecklistEN() {
             Once admin is set: pick where you work. Options compared in <a href="/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor">own studio vs home vs outdoor</a>. For most starting ZZP-PTs, hourly rental is the logical choice — low fixed costs, professional appearance.
           </p>
           <p>
-            At <a href="/en/studio-rental">SculptClub in Jordaan</a> you start by the hour (€12 for half-studio, €17 for full). No membership, zero commission on your clients, all equipment included.
+            At <a href="/en/studio-rental">SculptClub in Jordaan</a> you start by the hour (€12 for half-studio, €17 for full). No membership, you keep 100% of your rate, all equipment included.
           </p>
 
           <h2>Step 10 — First clients</h2>

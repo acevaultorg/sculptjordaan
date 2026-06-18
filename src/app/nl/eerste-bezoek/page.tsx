@@ -317,7 +317,7 @@ export default function EersteBezoekPage() {
                   <Building2 className="h-5 w-5 text-purple-600" />
                 </div>
                 <CardTitle>Studio Huren</CardTitle>
-                <CardDescription>Voor trainers met eigen klanten. Halve studio €12/uur, hele studio €17/uur. 0% commissie, geen contract.</CardDescription>
+                <CardDescription>Voor trainers met eigen klanten. Halve studio €12/uur, hele studio €17/uur. Eigen tarief en klanten, geen contract.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href={acuityLinks.studioTrial} size="lg" className="w-full">Boek rondleiding<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam" },
   description:
-    "Huur een privé studio in de Jordaan. Vanaf €12/uur — 0% commissie, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
+    "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
   alternates: {
     canonical: "/nl/boek-studio",
     languages: {
@@ -117,7 +117,7 @@ export default function BoekStudioPageNL() {
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek de Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · 0% commissie · Gratis annuleren · Dagelijks 06:30–22:00
+            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:30–22:00
           </p>
         </div>
 
@@ -231,7 +231,7 @@ export default function BoekStudioPageNL() {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["Altijd gratis annuleren", "Geen contract", "0% commissie", "Direct bevestigd"].map((t) => (
+                {["Altijd gratis annuleren", "Geen contract", "Volledige vrijheid", "Direct bevestigd"].map((t) => (
                   <span key={t} className="inline-flex items-center gap-1.5">
                     <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
                     {t}
