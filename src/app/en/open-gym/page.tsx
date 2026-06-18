@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityLinks, acuityFreeTrials } from "@/config/acuity";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { LandingVideo } from "@/components/marketing/landing-video";
 import { HeroPriceBadge } from "@/components/marketing/hero-price-badge";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
@@ -271,6 +272,18 @@ export default function OpenGymPageEN() {
       </Section>
 
       {/* Embedded Acuity scheduler — free Open Gym try-out stays on sculptclub.nl */}
+      {/* Studio in motion — caption-free b-roll before the booking scheduler. */}
+      <Section bg="muted">
+        <SectionHeader overline="See it in action" title="Train in our private studio" />
+        <FadeIn>
+          <LandingVideo
+            src="/videos/studio-training.mp4"
+            poster="/videos/studio-training-poster.jpg"
+            label="People training in SculptClub's private studio in Amsterdam Jordaan"
+          />
+        </FadeIn>
+      </Section>
+
       <Section id="schedule">
         <SectionHeader
           overline="Free trial"
