@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan" },
   description:
-    "Start of groei je personal training praktijk bij SculptClub. 0% commissie, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
+    "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
   keywords: [
     "word personal trainer amsterdam",
     "personal trainer worden amsterdam",
@@ -55,8 +55,8 @@ const HERO_IMAGES = [
 const benefits = [
   {
     icon: Percent,
-    title: "0% commissie",
-    description: "Houd 100% van je inkomsten. Wij rekenen geen commissie — nul. Je tarief is je tarief.",
+    title: "Jij houdt 100%",
+    description: "Eigen tarief, eigen klanten, eigen agenda. Jij huurt de studio; wij verdienen alleen aan de huur.",
   },
   {
     icon: Building2,
@@ -114,7 +114,7 @@ export default function WordTrainerNL() {
             <div>
               <p className="overline mb-3 text-brand">Voor onafhankelijke trainers</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
-                <span className="text-brand">0% commissie.</span> Jouw klanten, jouw tarief, jouw agenda.
+                <span className="text-brand">Jij houdt 100%.</span> Jouw klanten, jouw tarief, jouw agenda.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 Een privé studio in de Jordaan waar je 100% houdt van wat je rekent. Huur per uur vanaf €12, betaal alleen wanneer je traint, en krijg een gratis profiel op sculptclub.nl om je agenda te vullen.
@@ -129,7 +129,7 @@ export default function WordTrainerNL() {
                 </span>
                 <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
                 <span className="text-muted-foreground">
-                  <strong className="text-foreground">Privé studio</strong> · Vanaf €12/uur · 0% commissie · Geen contract · Altijd gratis annuleren
+                  <strong className="text-foreground">Privé studio</strong> · Vanaf €12/uur · Volledige vrijheid · Geen contract · Altijd gratis annuleren
                 </span>
               </div>
               {/* CTAs moved ABOVE the bullet list 2026-05-19 (parallel to
@@ -170,7 +170,7 @@ export default function WordTrainerNL() {
                   bullets with normal sentences. Each line ≤8 words, no "—". */}
               <ul className="mt-8 space-y-2 text-sm text-muted-foreground">
                 <li><strong className="text-foreground">✓ Privé studio</strong>. Geen wachtrij, geen pottenkijkers.</li>
-                <li>✓ 0% commissie. Jouw tarief is voor jou.</li>
+                <li>✓ Jouw tarief is voor jou — jij huurt alleen de ruimte.</li>
                 <li>✓ Per uur vanaf €12, of bespaar 23% met een pakket.</li>
                 <li>✓ Gratis profielpagina op sculptclub.nl.</li>
                 <li>✓ Geen contract. Altijd opzegbaar.</li>
@@ -207,7 +207,7 @@ export default function WordTrainerNL() {
         <SectionHeader
           overline="Waarom SculptClub"
           title="Alles wat je nodig hebt, niets wat je niet nodig hebt"
-          description="Geen eigen studio nodig. Geen vaste lasten. Geen commissie. Focus op wat je het beste doet: trainen."
+          description="Geen eigen studio nodig. Geen vaste lasten. Volledige vrijheid. Focus op wat je het beste doet: trainen."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, i) => (
@@ -410,7 +410,7 @@ export default function WordTrainerNL() {
                 <span className="font-semibold text-white">5,0 op Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70"><strong className="text-white/90">Privé studio</strong> · 0% commissie · Geen contract · Altijd gratis annuleren</span>
+              <span className="text-white/70"><strong className="text-white/90">Privé studio</strong> · Volledige vrijheid · Geen contract · Altijd gratis annuleren</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
               Klaar om te starten?
