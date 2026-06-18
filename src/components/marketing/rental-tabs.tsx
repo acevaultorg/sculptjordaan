@@ -35,7 +35,7 @@ export function RentalTabs({
         <button
           type="button"
           onClick={() => setTab("hourly")}
-          className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          className={`plausible-event-name=rental_tab_hourly flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "hourly"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
@@ -47,7 +47,7 @@ export function RentalTabs({
         <button
           type="button"
           onClick={() => setTab("packages")}
-          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          className={`plausible-event-name=rental_tab_packages flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "packages"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
