@@ -31,7 +31,7 @@ const COPY = {
   nl: {
     overline: "Onze trainers",
     title: "Maak kennis met je trainer",
-    subtitle: `${trainers.length} personal trainers, eigen specialisatie, gratis intake. 0% commissie, geen abonnement.`,
+    subtitle: `${trainers.length} personal trainers, eigen specialisatie, gratis intake. Geen abonnement, geen tussenpersoon.`,
     ctaCard: "Plan gratis intake",
     ctaAll: `Bekijk alle ${trainers.length} trainers`,
     ctaSeeStudio: "Bekijk de studio",
@@ -51,7 +51,7 @@ const COPY = {
     // ALL trainers speak English (every roster entry has "EN" in languages),
     // so "all English-speaking" is accurate. No-Dutch-required removes the
     // single biggest hesitation for Amsterdam expats researching in English.
-    subtitle: `${trainers.length} personal trainers — all English-speaking, no Dutch required. Distinct specialties, free intro. 0% commission, no membership.`,
+    subtitle: `${trainers.length} personal trainers — all English-speaking, no Dutch required. Distinct specialties, free intro. No membership, no middleman.`,
     ctaCard: "Book free intro",
     ctaAll: `View all ${trainers.length} trainers`,
     ctaSeeStudio: "See the studio",

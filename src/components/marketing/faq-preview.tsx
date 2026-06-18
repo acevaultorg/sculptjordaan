@@ -16,7 +16,7 @@ const faqs = {
   nl: [
     {
       q: "Wat kost personal training bij SculptClub?",
-      a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. De intake is altijd gratis. Wij rekenen 0% commissie — de prijs die je ziet is wat je betaalt.",
+      a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. De intake is altijd gratis. De prijs die je ziet betaal je direct aan je trainer — geen tussenpersoon.",
     },
     {
       q: "Hoe werkt Open Gym?",
@@ -38,7 +38,7 @@ const faqs = {
   en: [
     {
       q: "How much does personal training cost at SculptClub?",
-      a: "Trainers set their own rates, starting from €45 per session. The intro is always free. We charge 0% commission — the price you see is what you pay.",
+      a: "Trainers set their own rates, starting from €45 per session. The intro is always free. The price you see you pay directly to your trainer — no middleman.",
     },
     {
       q: "How does Open Gym work?",

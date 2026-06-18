@@ -9,8 +9,8 @@ export const siteConfig = {
     en: "Personal Training & Private Studio — Amsterdam Jordaan",
   },
   description: {
-    nl: "Huur jouw eigen studio in de Jordaan vanaf €12/uur — 0% commissie, geen contract. Ook personal training met gratis intake.",
-    en: "Rent your own studio in the Jordaan from €12/hour — 0% commission, no contract. Also personal training with free intro session.",
+    nl: "Huur jouw eigen studio in de Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
+    en: "Rent your own studio in the Jordaan from €12/hour — your clients, your rates, no contract. Also personal training with free intro session.",
   },
   url: "https://sculptclub.nl",
   ogImage: "/images/og-default.jpg",

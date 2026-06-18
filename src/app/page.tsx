@@ -15,7 +15,7 @@ import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
-  { question: "Wat kost personal training bij SculptClub?", answer: "Elke trainer bepaalt zijn eigen tarief, te zien op het trainersprofiel. De intake is altijd gratis. Wij rekenen 0% commissie \u2014 de prijs die je ziet is wat je betaalt." },
+  { question: "Wat kost personal training bij SculptClub?", answer: "Elke trainer bepaalt zijn eigen tarief, te zien op het trainersprofiel. De intake is altijd gratis. De prijs die je ziet betaal je direct aan je trainer \u2014 geen tussenpersoon." },
   { question: "Hoe werkt Open Gym?", answer: "Je traint zelfstandig in onze priv\u00e9 studio met professionele apparatuur. Plan je sessies via ons boekingssysteem, ontvang een deurcode en train op jouw tijd. Vanaf \u20AC5,75 per sessie." },
   { question: "Moet ik een abonnement afsluiten?", answer: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract \u2014 opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten." },
   { question: "Kan ik de studio huren voor mijn eigen klanten?", answer: "Ja! Als ZZP-trainer of fysiotherapeut kun je onze studio huren vanaf \u20AC12 per 60 minuten. We bieden ook kortingspakketten tot 23% korting." },
@@ -25,7 +25,7 @@ const homeFaqs = [
 export const metadata: Metadata = {
   title: { absolute: "SculptClub — Personal Training Studio Amsterdam Jordaan" },
   description:
-    "Huur jouw eigen studio in de Jordaan vanaf €12/uur — 0% commissie, geen contract. Ook personal training met gratis intake.",
+    "Huur jouw eigen studio in de Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
   alternates: {
     canonical: "/",
     languages: {
@@ -56,7 +56,7 @@ export default function HomePage() {
           },
           {
             name: "Personal Training",
-            description: "1-op-1 training met een gecertificeerde personal trainer die je sessie ontwerpt rond jouw doelen, niveau en lichaam. Bij SculptClub in de Jordaan vanaf €45/sessie, eerste intake gratis, geen contract, geen lidmaatschap. Trainers werken zelfstandig (ZZP) met 0% commissie aan SculptClub.",
+            description: "1-op-1 training met een gecertificeerde personal trainer die je sessie ontwerpt rond jouw doelen, niveau en lichaam. Bij SculptClub in de Jordaan vanaf €45/sessie, eerste intake gratis, geen contract, geen lidmaatschap. Trainers werken zelfstandig (ZZP): ze huren de studio en houden 100% van hun tarief.",
             url: "/nl/vind-jouw-personal-trainer",
           },
           {
@@ -66,7 +66,7 @@ export default function HomePage() {
           },
           {
             name: "Studio huren",
-            description: "Privé trainingsruimte huren als freelance personal trainer of fysiotherapeut. Bij SculptClub vanaf €12/uur (halve studio) of €17/uur (hele studio). Geen commissie, geen contract, altijd gratis annuleren. Inclusief alle apparatuur, wifi, muziek en schoonmaak.",
+            description: "Privé trainingsruimte huren als freelance personal trainer of fysiotherapeut. Bij SculptClub vanaf €12/uur (halve studio) of €17/uur (hele studio). Eigen tarief en klanten, geen contract, altijd gratis annuleren. Inclusief alle apparatuur, wifi, muziek en schoonmaak.",
             url: "/nl/studio-huren",
           },
           {
@@ -76,7 +76,7 @@ export default function HomePage() {
           },
           {
             name: "ZZP personal trainer",
-            description: "Zelfstandige zonder personeel — een freelance personal trainer die zijn of haar eigen praktijk runt, eigen tarieven bepaalt, en cliënten direct factureert. Bij SculptClub huren ZZP-trainers de studio per uur of per pakket, met 0% commissie op hun trainingen.",
+            description: "Zelfstandige zonder personeel — een freelance personal trainer die zijn of haar eigen praktijk runt, eigen tarieven bepaalt, en cliënten direct factureert. Bij SculptClub huren ZZP-trainers de studio per uur of per pakket — ze houden 100% van hun tarief, SculptClub verdient alleen aan de huur.",
             url: "/nl/voor-trainers",
           },
           {

@@ -9,7 +9,7 @@ const COPY = {
   nl: {
     badge: "Voor trainers & fysiotherapeuten",
     heading: "Studio huren? WhatsApp ons voor meer informatie",
-    line: "Privé studio vanaf €12/uur — 0% commissie, gratis annuleren. Meestal antwoord binnen 1 uur.",
+    line: "Privé studio vanaf €12/uur — eigen klanten, eigen tarief, gratis annuleren. Meestal antwoord binnen 1 uur.",
     whatsapp: "WhatsApp ons",
     secondary: "Bekijk studio & tarieven",
     whatsappHref: whatsappLinks.studioNl,
@@ -19,7 +19,7 @@ const COPY = {
   en: {
     badge: "For trainers & physios",
     heading: "Renting the studio? WhatsApp us for info",
-    line: "Private studio from €12/hour — 0% commission, free cancellation. Usually a reply within 1 hour.",
+    line: "Private studio from €12/hour — your clients, your rates, free cancellation. Usually a reply within 1 hour.",
     whatsapp: "WhatsApp us",
     secondary: "See studio & rates",
     whatsappHref: whatsappLinks.studioEn,
