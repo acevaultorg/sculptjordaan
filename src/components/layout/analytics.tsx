@@ -405,6 +405,27 @@ export function Analytics() {
                 }
                 return;
               }
+
+              // ── Internal link → Nav Click (coverage for menu / footer / in-content links) ─
+              // Additive ONLY: booking/contact/external links already returned above; this
+              // never touches the Acuity/studio_rental logic. Closes the internal-link
+              // tracking blind spot so we can see which nav + footer + menu items get clicked.
+              // (2026-06-18 — every clickable now tracked.)
+              if (el.host === window.location.host) {
+                var navRaw = el.getAttribute('href') || '';
+                if (navRaw.charAt(0) !== '#') {            // skip same-page anchors
+                  var navSection = 'main';
+                  if (el.closest('header')) navSection = 'header';
+                  else if (el.closest('footer')) navSection = 'footer';
+                  else if (el.closest('nav')) navSection = 'nav';
+                  var navLabel = (el.textContent || '').trim().slice(0, 40);
+                  if (typeof window.plausible === 'function') {
+                    window.plausible('Nav Click', {
+                      props: { dest: el.pathname || navRaw, section: navSection, label: navLabel, source_page: window.location.pathname }
+                    });
+                  }
+                }
+              }
             }, true);
           })();
         `}
