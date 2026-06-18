@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
+import { AltLanguageOffer } from "@/components/layout/alt-language-offer";
 import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import { getColor } from "@/lib/image-color-manifest";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
@@ -105,6 +106,15 @@ export default function BecomeTrainerEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Become a Trainer", url: "/en/become-trainer" }]} />
+
+      {/* Dutch-visitor offer — this page is the landing for Dutch-targeted Meta ads
+          (Plausible 30d: 102/104 NL, 95% mobile bounce, ~4s). Offer the NL mirror
+          immediately to nl-language visitors. Never forces; tap-to-switch + dismissible.
+          (Root fix is repointing the ad to /nl/word-trainer — operator action.) */}
+      <AltLanguageOffer
+        nlHref="/nl/word-trainer"
+        label="Liever in het Nederlands? Bekijk de Nederlandse pagina"
+      />
 
       {/* Hero */}
       <Section>
