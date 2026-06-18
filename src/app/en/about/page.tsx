@@ -40,7 +40,7 @@ const pillars = [
     icon: Users,
     title: "Personal Training",
     description:
-      "Independent trainers with their own specialisations and rates. The intro is always free and we charge 0% commission.",
+      "Independent trainers with their own specialisations and rates. The intro is always free and you pay your trainer directly.",
   },
   {
     icon: Dumbbell,
@@ -104,7 +104,7 @@ const uniqueFeatures = [
     icon: Handshake,
     title: "Trainer-first",
     description:
-      "Our trainers keep 100% of their rate. We rent the space — no commission.",
+      "Our trainers keep 100% of their rate. We just rent the space.",
   },
 ];
 

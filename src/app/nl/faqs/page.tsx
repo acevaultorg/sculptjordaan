@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Wat kosten de trainers?",
-        a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. Wij rekenen 0% commissie — de prijs die je van je trainer hoort is wat je betaalt.",
+        a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. De prijs die je van je trainer hoort betaal je direct — zonder tussenpersoon.",
       },
       {
         q: "Hoe kies ik een trainer?",

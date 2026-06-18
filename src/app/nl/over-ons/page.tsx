@@ -40,7 +40,7 @@ const pillars = [
     icon: Users,
     title: "Personal Training",
     description:
-      "Onafhankelijke trainers met hun eigen specialisatie en tarieven. De intake is altijd gratis en wij rekenen 0% commissie.",
+      "Onafhankelijke trainers met hun eigen specialisatie en tarieven. De intake is altijd gratis en je betaalt je trainer direct.",
   },
   {
     icon: Dumbbell,
@@ -106,7 +106,7 @@ const uniqueFeatures = [
     icon: Handshake,
     title: "Trainer-eerst",
     description:
-      "Onze trainers houden 100% van hun tarief. Wij verhuren de ruimte — geen commissie.",
+      "Onze trainers houden 100% van hun tarief. Wij verhuren alleen de ruimte.",
   },
 ];
 

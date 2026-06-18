@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What do the trainers charge?",
-        a: "Trainers set their own rates, starting from €45 per session. We charge 0% commission — the price your trainer quotes is what you pay.",
+        a: "Trainers set their own rates, starting from €45 per session. The price your trainer quotes you pay directly — no middleman.",
       },
       {
         q: "How do I choose a trainer?",

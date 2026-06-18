@@ -20,7 +20,7 @@ const HERO_IMAGES = [
 export const metadata: Metadata = {
   title: { absolute: "Voor Personal Trainers in Amsterdam | SculptClub Jordaan" },
   description:
-    "Voor freelance personal trainers in Amsterdam: studio huren vanaf €12/uur. 0% commissie, geen contract, altijd gratis annuleren via SculptClub.",
+    "Voor freelance personal trainers in Amsterdam: studio huren vanaf €12/uur. Eigen tarief en klanten, geen contract, altijd gratis annuleren via SculptClub.",
   alternates: {
     canonical: "/nl/voor-trainers",
     languages: {
@@ -36,7 +36,7 @@ const pillars = [
     title: "Studio huren",
     href: "/nl/studio-huren",
     text:
-      "Privé trainingsruimte in Jordaan vanaf €12/uur. Geen commissie, flexibel per sessie, alles inbegrepen.",
+      "Privé trainingsruimte in Jordaan vanaf €12/uur. Volledige vrijheid, flexibel per sessie, alles inbegrepen.",
     cta: "Bekijk studio huur",
   },
   {
@@ -100,11 +100,11 @@ const trainerFaqs = [
   },
   {
     q: "Wat is het verschil tussen losse uur-huur en trainer bij SculptClub zijn?",
-    a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Met profiel: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Beide hebben 0% commissie op jouw klanten.",
+    a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Met profiel: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Bij beide huur je alleen de ruimte; je houdt 100% van je tarief.",
   },
   {
     q: "Rekenen jullie commissie over mijn klanten?",
-    a: "Nee. 0% commissie. Wij verdienen alleen aan de studio-huur. Wat jij rekent aan je klant — €45, €75, €120 — is volledig voor jou.",
+    a: "Nee. Wij verdienen alleen aan de studio-huur — wat jij rekent aan je klant (€45, €75, €120) is volledig voor jou.",
   },
   {
     q: "Welke verzekering heb ik nodig?",
@@ -139,7 +139,7 @@ export default function VoorTrainersHubNL() {
           as="h1"
           overline="Voor personal trainers"
           title="Bouw je personal training praktijk in Amsterdam"
-          description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, geen commissie op jouw klanten, eigen profiel op onze site. Begin met uur-huur — of word trainer bij SculptClub en krijg klanten via ons."
+          description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, eigen tarief en klanten, eigen profiel op onze site. Begin met uur-huur — of word trainer bij SculptClub en krijg klanten via ons."
           center={false}
         />
         {/* CTAs moved ABOVE the slideshow 2026-05-19. Mobile fold audit
@@ -191,7 +191,7 @@ export default function VoorTrainersHubNL() {
             </span>
             <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
             <span className="text-muted-foreground">
-              <strong className="text-foreground">Privé studio</strong> · Vanaf €12/uur · 0% commissie · Geen contract · Altijd gratis annuleren
+              <strong className="text-foreground">Privé studio</strong> · Vanaf €12/uur · Volledige vrijheid · Geen contract · Altijd gratis annuleren
             </span>
           </div>
         </FadeIn>
@@ -280,7 +280,7 @@ export default function VoorTrainersHubNL() {
                 <span className="font-semibold text-white">5,0 op Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70"><strong className="text-white/90">Privé studio</strong> · Vanaf €12/uur · 0% commissie · Altijd gratis annuleren</span>
+              <span className="text-white/70"><strong className="text-white/90">Privé studio</strong> · Vanaf €12/uur · Volledige vrijheid · Altijd gratis annuleren</span>
             </div>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Twijfel je? Kom eerst gratis langs.

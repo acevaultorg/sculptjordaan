@@ -20,7 +20,7 @@ const HERO_IMAGES = [
 export const metadata: Metadata = {
   title: { absolute: "For Personal Trainers in Amsterdam | SculptClub Jordaan" },
   description:
-    "For freelance personal trainers in Amsterdam: rent the studio from €12/hr via SculptClub. 0% commission, no contract, free cancellation anytime.",
+    "For freelance personal trainers in Amsterdam: rent the studio from €12/hr via SculptClub. Your clients, your rates, no contract, free cancellation anytime.",
   alternates: {
     canonical: "/en/for-trainers",
     languages: {
@@ -36,7 +36,7 @@ const pillars = [
     title: "Rent the studio",
     href: "/en/studio-rental",
     text:
-      "Private training space in Jordaan from €12/hour. Zero commission, flexible per session, everything included.",
+      "Private training space in Jordaan from €12/hour. Full freedom, flexible per session, everything included.",
     cta: "See studio rental",
   },
   {
@@ -100,11 +100,11 @@ const trainerFaqs = [
   },
   {
     q: "What's the difference between hourly rental and being a regular trainer?",
-    a: "Hourly rental: pay per session, BYO clients, no site listing. Regular trainer: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. Both have 0% commission on your clients.",
+    a: "Hourly rental: pay per session, BYO clients, no site listing. Regular trainer: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. With both you just rent the space; you keep 100% of your rate.",
   },
   {
     q: "Do you take commission on my clients?",
-    a: "No. 0% commission. We earn only from the studio rental. Whatever you charge your client — €45, €75, €120 — is entirely yours.",
+    a: "No. We earn only from the studio rental — whatever you charge your client (€45, €75, €120) is entirely yours.",
   },
   {
     q: "What insurance do I need?",
@@ -139,7 +139,7 @@ export default function ForTrainersHubEN() {
           as="h1"
           overline="For personal trainers"
           title="Build your personal training practice in Amsterdam"
-          description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, zero commission on your clients, own profile on our site. Start with hourly rental — or join as a regular trainer and get clients through us."
+          description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, your own clients and rates, own profile on our site. Start with hourly rental — or join as a regular trainer and get clients through us."
           center={false}
         />
         {/* CTAs moved ABOVE the slideshow 2026-05-19 (parallel to NL
@@ -184,7 +184,7 @@ export default function ForTrainersHubEN() {
             </span>
             <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
             <span className="text-muted-foreground">
-              <strong className="text-foreground">Private studio</strong> · From €12/hour · 0% commission · No contract · Free cancellation anytime
+              <strong className="text-foreground">Private studio</strong> · From €12/hour · Full freedom · No contract · Free cancellation anytime
             </span>
           </div>
         </FadeIn>
@@ -273,7 +273,7 @@ export default function ForTrainersHubEN() {
                 <span className="font-semibold text-white">5.0 on Google</span>
               </span>
               <span aria-hidden className="text-white/40">·</span>
-              <span className="text-white/70"><strong className="text-white/90">Private studio</strong> · From €12/hour · 0% commission · Free cancellation anytime</span>
+              <span className="text-white/70"><strong className="text-white/90">Private studio</strong> · From €12/hour · Full freedom · Free cancellation anytime</span>
             </div>
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
               Not sure yet? Come visit for free first.
