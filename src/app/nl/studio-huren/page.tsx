@@ -183,17 +183,6 @@ export default function StudioRentalPageNL() {
           </p>
         </div>
 
-        {/* Studio promo (operator's SculptClub film) — show the real studio +
-            Amsterdam location before the message-us CTA. Lazy + muted autoplay,
-            zero LCP impact (loads only when scrolled near). */}
-        <div className="mb-8">
-          <LandingVideo
-            src="/videos/studio-promo.mp4"
-            poster="/videos/studio-promo-poster.jpg"
-            label="SculptClub — de studio in hartje Amsterdam Jordaan, in beeld"
-          />
-        </div>
-
         {/* WhatsApp-first CTA — operator insight 2026-06-18: rent clients
             message FIRST (ask availability/rate before committing). Data: ~135
             calendar clicks → ~3 bookings last month, while the serious renters
@@ -225,6 +214,17 @@ export default function StudioRentalPageNL() {
           <p className="mt-3 text-xs text-muted-foreground">
             Liever meteen zelf boeken? Live tarieven &amp; beschikbaarheid hieronder ↓
           </p>
+        </div>
+
+        {/* Studio promo — conviction BELOW the WhatsApp CTA so the message-us button
+            stays near the mobile fold (page goal = message ASAP). Below-fold → lazy:
+            the mp4 loads only on scroll (verified: above-fold it auto-loaded 2.5MB). */}
+        <div className="mb-10">
+          <LandingVideo
+            src="/videos/studio-promo.mp4"
+            poster="/videos/studio-promo-poster.jpg"
+            label="SculptClub — de studio in hartje Amsterdam Jordaan, in beeld"
+          />
         </div>
 
         <RentalTabs
