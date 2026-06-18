@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
-import { TrainerMatchQuiz } from "@/components/marketing/trainer-match-quiz";
+import { TrainerMatchQuizClient } from "@/components/marketing/trainer-match-quiz-client";
 import { Star } from "lucide-react";
 
 /**
@@ -71,7 +71,7 @@ export default function MatchTrainerPage() {
 
           {/* Quiz — 3 questions → result (no intro screen since 2026-06-10) */}
           <div className="max-w-2xl mx-auto">
-            <TrainerMatchQuiz locale="nl" />
+            <TrainerMatchQuizClient locale="nl" />
           </div>
 
           {/* Trust strip below the quiz — visible on result screen + intro */}

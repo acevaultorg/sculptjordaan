@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
-import { TrainerMatchQuiz } from "@/components/marketing/trainer-match-quiz";
+import { TrainerMatchQuizClient } from "@/components/marketing/trainer-match-quiz-client";
 import { Star } from "lucide-react";
 
 /**
@@ -62,7 +62,7 @@ export default function MatchTrainerPage() {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <TrainerMatchQuiz locale="en" />
+            <TrainerMatchQuizClient locale="en" />
           </div>
 
           <div className="mt-8 text-center text-xs text-muted-foreground max-w-lg mx-auto">
