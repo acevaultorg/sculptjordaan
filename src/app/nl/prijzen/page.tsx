@@ -29,7 +29,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym" },
   description:
-    "Alle prijzen SculptClub Amsterdam: personal training €45 (gratis intake), studio huur €12/uur (0% commissie), Open Gym €29/4wk. Geen contract.",
+    "Alle prijzen SculptClub Amsterdam: personal training €45 (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
   alternates: {
     canonical: "/nl/prijzen",
     languages: {
@@ -128,7 +128,7 @@ export default function PricingPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Prijzen","url":"/nl/prijzen"}]} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, trainers vanaf €45/sessie, 0% commissie."
+        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, trainers vanaf €45/sessie, je betaalt je trainer direct."
         url="/nl/prijzen"
         priceRange="Vanaf €45/sessie"
       />
@@ -179,7 +179,7 @@ export default function PricingPageNL() {
           as="h1"
           overline="Prijzen"
           title="Alle prijzen op een rij"
-          description="Geen verborgen kosten, geen langlopende contracten. Studio huur vanaf €12/uur (0% commissie), personal training vanaf €45, Open Gym vanaf €29/4wk."
+          description="Geen verborgen kosten, geen langlopende contracten. Studio huur vanaf €12/uur (eigen tarief & klanten), personal training vanaf €45, Open Gym vanaf €29/4wk."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -224,7 +224,7 @@ export default function PricingPageNL() {
         <SectionHeader
           overline="Personal training"
           title="Train met een Personal Trainer"
-          description="Gratis intake. Trainers bepalen hun eigen tarieven. 0% commissie."
+          description="Gratis intake. Trainers bepalen hun eigen tarieven. Je betaalt je trainer direct."
         />
 
         <FadeIn>
@@ -235,7 +235,7 @@ export default function PricingPageNL() {
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">
-                Eerste kennismaking altijd gratis. 0% commissie — de prijs die je van je trainer hoort is wat je betaalt.
+                Eerste kennismaking altijd gratis. De prijs die je van je trainer hoort betaal je direct — zonder tussenpersoon.
               </p>
             </CardContent>
             <CardFooter className="justify-center">
@@ -329,7 +329,7 @@ export default function PricingPageNL() {
         <SectionHeader
           overline="Studio verhuur"
           title="Huur de Studio (voor personal trainers)"
-          description="Voor freelance trainers en fysiotherapeuten. Train je klanten in een volledig uitgeruste privé studio. 0% commissie, flexibel per uur, kortingspakketten tot 23%."
+          description="Voor freelance trainers en fysiotherapeuten. Train je klanten in een volledig uitgeruste privé studio. Eigen tarief en klanten, flexibel per uur, kortingspakketten tot 23%."
         />
 
         {/* Rate table */}

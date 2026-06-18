@@ -18,7 +18,7 @@ import {
   Dumbbell,
   Lock,
   Clock,
-  Ban,
+  Percent,
   CreditCard,
   ArrowRight,
   MessageCircle,
@@ -36,7 +36,7 @@ import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Studio Rental | SculptClub Jordaan" },
   description:
-    "Private training studio in Amsterdam Jordaan from €12/hour — 0% commission, no contract, free cancellation. For PT and physiotherapist. First session free.",
+    "Private training studio in Amsterdam Jordaan from €12/hour — your clients, your rates, no contract, free cancellation. For PT and physiotherapist. First session free.",
   alternates: {
     canonical: "/en/studio-rental",
     languages: {
@@ -64,9 +64,9 @@ const features = [
     description: "Book when it suits you. No fixed schedules.",
   },
   {
-    icon: Ban,
-    title: "No commission",
-    description: "You set your own rates. We only charge rent.",
+    icon: Percent,
+    title: "You keep 100%",
+    description: "You set your own rates and clients. We only charge rent.",
   },
 ];
 
@@ -124,7 +124,7 @@ const faqs = [
   },
   {
     q: "Will I get clients via SculptClub?",
-    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No commission on those bookings — we just connect.",
+    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No middleman on those bookings — we just connect.",
   },
   {
     q: "Can I reserve recurring time slots?",
@@ -152,7 +152,7 @@ export default function StudioRentalPageEN() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Studio Rental","url":"/en/studio-rental"}]} />
       <ServiceJsonLd
         name="Studio Rental — Personal Trainer Amsterdam"
-        description="Rent a private training studio in Amsterdam Jordaan for freelance personal trainers and physiotherapists. Professional equipment, flexible by the hour, no commission."
+        description="Rent a private training studio in Amsterdam Jordaan for freelance personal trainers and physiotherapists. Professional equipment, flexible by the hour, your own rates and clients."
         url="/en/studio-rental"
         priceRange="From €12 per hour"
       />
@@ -169,7 +169,7 @@ export default function StudioRentalPageEN() {
             Studio rental for personal trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hr · 0% commission · Free cancellation · Daily 06:30–22:00
+            From €12/hr · Full freedom · Free cancellation · Daily 06:30–22:00
           </p>
         </div>
 
@@ -455,7 +455,7 @@ export default function StudioRentalPageEN() {
         <SectionHeader
           overline="For freelance trainers & physiotherapists"
           title="Your own studio, by the hour"
-          description="No fixed rental costs, no commission on your revenue. Rent only when you have a session."
+          description="No fixed rental costs. You rent only when you have a session and keep 100% of your rate."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <FadeIn>
@@ -481,7 +481,7 @@ export default function StudioRentalPageEN() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
                   "Fully equipped private studio for 1:1 and small group",
-                  "Zero commission — you keep 100% of your session rate",
+                  "You keep 100% of your session rate — we only charge rent",
                   "Flexible booking: only when you have a client",
                   "Door code via WhatsApp the evening before",
                   "Professional equipment: squat rack, cable machine, dumbbells 4–40 kg, Echo Bike and more",
@@ -548,7 +548,7 @@ export default function StudioRentalPageEN() {
               </a>
               <a href="/en/become-trainer" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">For trainers</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Become a trainer at SculptClub — 0% commission</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Become a trainer at SculptClub — full freedom</p>
               </a>
               <a href="/en/blog/become-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

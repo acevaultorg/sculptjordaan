@@ -29,7 +29,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym" },
   description:
-    "All pricing SculptClub Amsterdam: personal training €45 (free intro), studio rental €12/hour (0% commission), Open Gym €29/4wk. No contract.",
+    "All pricing SculptClub Amsterdam: personal training €45 (free intro), studio rental €12/hour (your own rates), Open Gym €29/4wk. No contract.",
   alternates: {
     canonical: "/en/pricing",
     languages: {
@@ -128,7 +128,7 @@ export default function PricingPageEN() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Pricing","url":"/en/pricing"}]} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Personal training in a private studio in Amsterdam Jordaan. Free intro session, trainers from €45/session, 0% commission."
+        description="Personal training in a private studio in Amsterdam Jordaan. Free intro session, trainers from €45/session, you pay your trainer directly."
         url="/en/pricing"
         priceRange="From €45/session"
       />
@@ -179,7 +179,7 @@ export default function PricingPageEN() {
           as="h1"
           overline="Pricing"
           title="All Pricing at a Glance"
-          description="No hidden costs, no long-term contracts. Studio rental from €12/hour (0% commission), personal training from €45, Open Gym from €29/4wk."
+          description="No hidden costs, no long-term contracts. Studio rental from €12/hour (your own rates), personal training from €45, Open Gym from €29/4wk."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -224,7 +224,7 @@ export default function PricingPageEN() {
         <SectionHeader
           overline="Personal Training"
           title="Train with a Personal Trainer"
-          description="Free intro session. Trainers set their own rates. 0% commission."
+          description="Free intro session. Trainers set their own rates. You pay your trainer directly."
         />
 
         <FadeIn>
@@ -235,7 +235,7 @@ export default function PricingPageEN() {
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">
-                First intro always free. 0% commission — the price your trainer quotes is what you pay.
+                First intro always free. The price your trainer quotes you pay directly — no middleman.
               </p>
             </CardContent>
             <CardFooter className="justify-center">
@@ -329,7 +329,7 @@ export default function PricingPageEN() {
         <SectionHeader
           overline="Studio Rental"
           title="Rent the Studio (for personal trainers)"
-          description="For freelance trainers and physiotherapists. Train your clients in a fully equipped private studio. 0% commission, flexible by the hour, discount packs up to 23%."
+          description="For freelance trainers and physiotherapists. Train your clients in a fully equipped private studio. Your own rates and clients, flexible by the hour, discount packs up to 23%."
         />
 
         {/* Rate table */}
