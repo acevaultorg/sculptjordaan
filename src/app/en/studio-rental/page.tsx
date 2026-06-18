@@ -12,6 +12,7 @@ import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
+import { LandingVideo } from "@/components/marketing/landing-video";
 import { getColor } from "@/lib/image-color-manifest";
 import {
   Dumbbell,
@@ -170,6 +171,17 @@ export default function StudioRentalPageEN() {
           <p className="mt-2 text-sm text-muted-foreground">
             From €12/hr · 0% commission · Free cancellation · Daily 06:30–22:00
           </p>
+        </div>
+
+        {/* Studio promo (operator's SculptClub film) — show the real studio +
+            Amsterdam location before the message-us CTA. Lazy + muted autoplay,
+            zero LCP impact (loads only when scrolled near). */}
+        <div className="mb-8">
+          <LandingVideo
+            src="/videos/studio-promo.mp4"
+            poster="/videos/studio-promo-poster.jpg"
+            label="SculptClub — the studio in the heart of Amsterdam Jordaan, in motion"
+          />
         </div>
 
         {/* WhatsApp-first CTA — operator insight 2026-06-18: rent clients
