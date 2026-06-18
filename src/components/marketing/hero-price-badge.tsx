@@ -35,7 +35,7 @@ interface HeroPriceBadgeProps {
   price: string;
   /** Smaller label below the price (e.g. "per sessie", "Eerste intake") */
   label: string;
-  /** Optional third line (e.g. "0% commissie", "Geen verplichting") */
+  /** Optional third line (e.g. "Volledige vrijheid", "Geen verplichting") */
   subLabel?: string;
   /** Position: top-left (default), top-right, bottom-left, bottom-right */
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";

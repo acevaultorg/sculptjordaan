@@ -172,13 +172,13 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
 [10-15s] BOLD OVERLAY: "PERSONAL TRAINING"
 [15-20s] BOLD OVERLAY: "FROM €45 / SESSION"
 [20-25s] BOLD OVERLAY: "FIRST INTAKE FREE"
-[25-30s] Small text: "8 trainers · 0% commission · Jordaan"`,
+[25-30s] Small text: "8 trainers · independent · Jordaan"`,
     brief: {
-      message: "Same winning formula as €12 studio-rental post but for the PT tier. Lead with the most accessible rate (Andrea €45/45min) to anchor low price. Sub-line clarifies '0% commission' which IS the differentiator.",
+      message: "Same winning formula as €12 studio-rental post but for the PT tier. Lead with the most accessible rate (Andrea €45/45min) to anchor low price. Sub-line clarifies the trainers are independent — you pay them direct (rent-only model).",
       facts: [
         "Andrea: €45 per 45 min — lowest rate on roster",
         "8 trainers, varied specialisms",
-        "0% commission to SculptClub — full rate goes to trainer",
+        "Trainers rent the studio — the full rate goes to the trainer",
         "First intake free · no obligation",
         "Trainers set their own rates · trainer-led pricing",
       ],
@@ -206,7 +206,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
 [10-15s] BOLD OVERLAY: "FULL STUDIO"
 [15-20s] BOLD OVERLAY: "RENT FROM €17 / HOUR"
 [20-25s] BOLD OVERLAY: "FOR PT WITH 2-5 CLIENTS"
-[25-30s] Small text: "First session free · Jordaan · No commission"`,
+[25-30s] Small text: "First session free · Jordaan · keep 100%"`,
     brief: {
       message: "Variant of the €12 winning post — same exact format but full-studio tier for trainers running small-group sessions. Different audience (trainers running 2-5 person classes), same exact visual playbook.",
       facts: [
@@ -240,7 +240,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     script: `Carousel (4 slides — IG variant of the 10.5K-view TikTok winning formula):
 1. Cover: dark studio shot + BOLD OVERLAY "YOUR PRIVATE GYM" + sublime "3 ways in · 1 first session free"
 2. Slide: "OPEN GYM · from €5.75/session · Try free · No contract"
-3. Slide: "PERSONAL TRAINING · from €45/session · 8 trainers · 0% commission · First intake free"
+3. Slide: "PERSONAL TRAINING · from €45/session · 8 independent trainers · First intake free"
 4. Slide: "STUDIO RENTAL · from €12/hour · For freelance trainers · First session free"
 5. CTA: "Pick your option · sculptclub.nl · Jordaan, Amsterdam"`,
     brief: {
@@ -317,7 +317,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     script: `[0-3s] Hook: "5 things people don't expect"
 [3-12s] #5: Garage door onto the canal
 [12-22s] #4: No membership needed — hourly booking
-[22-32s] #3: 0% commission for trainers
+[22-32s] #3: trainers rent the space — they keep 100%
 [32-42s] #2: Private — just you + your trainer
 [42-55s] #1: ${FACTS.hours}
 [55-60s] CTA: First intake free`,
@@ -326,7 +326,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       facts: [
         "Garage door opens directly onto the canal (summer mode)",
         "No membership — book per hour",
-        "0% commission for trainers means honest pricing",
+        "Trainers rent the space and keep 100% — honest pricing",
         "Private sessions — no strangers next to you",
         FACTS.hours,
         FACTS.address,
@@ -406,7 +406,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Form corrections during the session",
         "Nutrition advice if wanted",
         "Next session adapted to previous one",
-        "No commission middleman — transparent pricing",
+        "No middleman — you pay your trainer direct, transparent pricing",
         "First intake free",
       ],
       hookConcept: "What do you actually get for €45?",
@@ -935,7 +935,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
 [3-12s] Trainer talking to camera: explanation
 [12-22s] Show: review screenshot 1
 [22-32s] Show: review screenshot 2
-[32-42s] Trainer: "0% commission = time for clients"
+[32-42s] Trainer: "I keep 100% = time for clients"
 [42-52s] Show: review screenshot 3
 [52-60s] CTA: "Book your own experience · sculptclub.nl"`,
     brief: {
@@ -1580,7 +1580,7 @@ Reel: 30s — intro + coaching demo`,
       message: "Show what a full PT day looks like at SculptClub. Dual purpose: humanizes brand + speaks to potential trainers.",
       facts: [
         "Trainer sets own rate, hours, clients",
-        "0% commission",
+        "Trainer keeps 100% (rent-only model)",
         "Private studio, own profile on site",
         "Location: Jordaan",
       ],
@@ -1642,7 +1642,7 @@ Reel: 30s — intro + coaching demo`,
 1. Cover: "Personal training in Amsterdam — what does it cost in 2026?"
 2. Chain gyms (David Lloyd, Basic-Fit Premium): €70-100/session, contracts
 3. Independent freelance PTs in studios: €45-95/session, no contract
-4. SculptClub trainers: from €45/session · trainers set own rates · 0% commission
+4. SculptClub trainers: from €45/session · trainers set own rates · pay your trainer direct
 5. Bullet table: low end (€45 Andrea, 45 min) → high end (€80 Sergei, 60 min) → premium specialism (Joey, Eva on request)
 6. What's included: equipment, studio, programming, technique coaching, sometimes nutrition advice
 7. Hidden costs to ASK about: session length difference (45 vs 60 min), package discounts, intake fee, cancellation policy
@@ -1654,7 +1654,7 @@ Reel: 30s — intro + coaching demo`,
         "Chain gyms typically require monthly membership ON TOP of session cost",
         "Freelance PTs in private studios: €45-95/session range",
         "SculptClub: from €45/session · first intake free · no contract",
-        "Trainer-set rates · SculptClub takes 0% commission",
+        "Trainer-set rates · you pay your trainer direct, no middleman",
         "Session length varies: 45 min (Andrea) vs 60 min (most others)",
       ],
       hookConcept: "Honest comparison: what PT actually costs in Amsterdam (and what's hidden)",
@@ -1717,7 +1717,7 @@ Reel: 30s — intro + coaching demo`,
   // objection-killer copy ("Per uur mogelijk! Ook voor beginners").
   // Reference: saints-and-stars (Membership Gym, TikTok) used "50% OFF + bring
   // 10 friends for free" — multi-incentive value stack + premium aesthetic.
-  // SculptClub's better deltas: €12/hr (genuinely cheap), 0% commission for
+  // SculptClub's better deltas: €12/hr (genuinely cheap), full freedom for
   // trainers, free first intake, 5★ Google rating, boutique vs membership-mill.
   //
   // Per-ad specs include audience, budget, A/B variants, overlay-text style.
@@ -1733,19 +1733,19 @@ Reel: 30s — intro + coaching demo`,
 Visual: trainer from behind, mid-session in SculptClub studio, canal-facing windows visible.
 Overlay text (yellow background, black text, bold sans-serif, dual layer):
   Top stripe: "STUDIO HUREN PER UUR"
-  Bottom stripe: "€12/uur · 0% commissie · ook voor beginnende trainers"
+  Bottom stripe: "€12/uur · volledige vrijheid · ook voor beginnende trainers"
 Hand-drawn white arrow pointing down at the trainer's shoulders (retro-authentic).
 Operator face/avatar bottom-left + small "❤️" emoji (replicates the engagement-bait pattern).`,
     brief: {
-      message: "Counter thebodystudio.nl's identical ad with a stronger value-prop. €12/hr is half their likely rate, plus 0% commission is unique to SculptClub. Targets personal trainers across Amsterdam looking for hourly rental.",
+      message: "Counter thebodystudio.nl's identical ad with a stronger value-prop. €12/hr is half their likely rate, plus full freedom (rent-only, trainer keeps 100%) is the SculptClub edge. Targets personal trainers across Amsterdam looking for hourly rental.",
       facts: [
         `Studio: ${FACTS.studio}`,
-        "0% commission on PT income (trainer keeps 100%)",
+        "Rent-only model — trainer keeps 100% of PT income",
         "Available daily 06:30-22:00, hourly bookings, no contract",
         "Egelantiersgracht 424 — central Jordaan",
         "Free first test session for new trainers",
       ],
-      hookConcept: "Bold yellow stripes over trainer-from-behind shot. Mimic the ad scroll-stop pattern verified by competitor; differentiate on price + commission.",
+      hookConcept: "Bold yellow stripes over trainer-from-behind shot. Mimic the ad scroll-stop pattern verified by competitor; differentiate on price + freedom.",
       cta: `Bekijk studio + boek je gratis test: ${FACTS.studioLanding}`,
       targetLength: "short",
     },
@@ -1764,7 +1764,7 @@ Operator face/avatar bottom-left + small "❤️" emoji (replicates the engageme
       competitorRef: "thebodystudio.nl Instagram ad (Mar 11), yellow/black overlay + arrow + trainer-from-behind",
       overlayText: {
         headline: "STUDIO HUREN PER UUR",
-        subheadline: "€12/uur · 0% commissie · ook voor beginnende trainers",
+        subheadline: "€12/uur · volledige vrijheid · ook voor beginnende trainers",
         style: "Two stacked yellow stripes (#FFD700), black bold text (Inter Black 80pt), white hand-drawn arrow pointing at trainer",
       },
       abVariants: [
@@ -1785,7 +1785,7 @@ Operator face/avatar bottom-left + small "❤️" emoji (replicates the engageme
 [0-2s] Hook text: "Ik betaal €12/uur voor een privé studio in Amsterdam"
         Visual: trainer walks up to Egelantiersgracht 424 entrance with kettlebells
 [2-5s]  Trainer (operator/Paulo or partner trainer) speaks to camera:
-        "Geen commissie, geen contract, gewoon een uur en je kan trainen"
+        "Volledige vrijheid, geen contract, gewoon een uur en je kan trainen"
 [5-9s]  Quick cuts: open garage door → canal view → power rack → kettlebells →
         client mid-session
 [9-12s] Trainer speaks again: "Mijn klant betaalt mij direct. Sculpt krijgt niets."
@@ -1795,7 +1795,7 @@ Operator face/avatar bottom-left + small "❤️" emoji (replicates the engageme
       message: "Native-feeling TikTok ad. Counter Saints-&-Stars's premium aesthetic with raw 'this is a real working trainer's space' authenticity. Mix the price-shock (€12/hr) with operator-trainer authenticity.",
       facts: [
         `Studio: ${FACTS.studio}`,
-        "0% commission — trainer's PT income stays 100% theirs",
+        "Rent-only — the trainer's PT income stays 100% theirs",
         "First test session FREE for new trainers",
         FACTS.address,
       ],
@@ -2126,15 +2126,15 @@ Visual: studio interior wide-angle, natural canal-window light, kettlebells + po
 
 Overlay text (bold, full-width black bar at top + bottom):
   Top bar: "€12 PER UUR"
-  Bottom bar: "0% commissie · Privé studio · Amsterdam Jordaan"
+  Bottom bar: "Volledige vrijheid · Privé studio · Amsterdam Jordaan"
 
 Center-screen: large yellow circle with "+ EERSTE TEST GRATIS" inside
 (stops the scroll — yellow circle + black bars = high contrast)`,
     brief: {
-      message: "Maximum scroll-stop. €12/uur is genuinely cheap for Amsterdam studio rental — typical rate €25-45/hr at private gyms. Lead with the number, layer the 0% commission as kicker.",
+      message: "Maximum scroll-stop. €12/uur is genuinely cheap for Amsterdam studio rental — typical rate €25-45/hr at private gyms. Lead with the number, layer the full-freedom (rent-only) as kicker.",
       facts: [
         "€12/uur half-studio (the deal sweet spot)",
-        "0% commission on PT income",
+        "Rent-only — trainer keeps 100% of PT income",
         "First test session free",
         FACTS.address,
         "Daily 06:30-22:00 availability",
@@ -2157,7 +2157,7 @@ Center-screen: large yellow circle with "+ EERSTE TEST GRATIS" inside
       competitorRef: "thebodystudio.nl Instagram ad — same target audience, weaker price",
       overlayText: {
         headline: "€12 PER UUR",
-        subheadline: "0% commissie · Privé studio · Amsterdam Jordaan",
+        subheadline: "Volledige vrijheid · Privé studio · Amsterdam Jordaan",
         style: "Top + bottom solid black bars, white Helvetica Bold 80pt headline. Center yellow circle 30% of image height, black text 40pt 'EERSTE TEST GRATIS'.",
       },
       abVariants: [
@@ -2258,7 +2258,7 @@ export const COMPETITOR_LEARNINGS: CompetitorLearning[] = [
     ad: "Trainer-from-behind photo. Bold yellow/black overlay text 'RUIMTE VERHUUR VOOR PERSONAL TRAINER · PER UUR MOGELIJK! OOK VOOR BEGINNERS'. Hand-drawn white arrow pointing at trainer. CTA: 'Learn more'. Caption: 'Personal trainer! Opzoek naar een fijne plek om te trainen met jouw klanten? - Vanaf 1 klant kan je bij ons terecht...'. 60 likes, 7 comments, 17 shares.",
     worked: "Yellow/black contrast = high scroll-stop. Hand-drawn arrow = retro-authentic. Trainer-from-behind = viewer projects themselves into the role. Dual objection-killer copy ('per uur' + 'voor beginners') addresses two common hesitations in one line.",
     applyToSculptClub: "Replicate the bold-overlay + arrow visual pattern for SculptClub studio-rental ads. See ad-studio-01 + ad-studio-03 for the implementation.",
-    ourBetterAngle: "€12/uur (lower than typical Amsterdam private-gym rate of €25-45) + 0% commissie (unique to SculptClub) + first test GRATIS. Stronger value-prop than thebodystudio.nl on every axis.",
+    ourBetterAngle: "€12/uur (lower than typical Amsterdam private-gym rate of €25-45) + volledige vrijheid (eigen tarief, eigen klanten) + first test GRATIS. Stronger value-prop than thebodystudio.nl on every axis.",
   },
   {
     brand: "Saints & Stars",
