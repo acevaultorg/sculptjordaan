@@ -8,12 +8,11 @@
  *     bouncing before reaching any in-content CTA. Sticky bar = always
  *     visible, always tappable, no scroll required.
  *
- * Three equally-visible buttons:
- *   1. WhatsApp  — primary for ~60% of traffic (Audience B + C: curious
- *                  browsers + comparison shoppers prefer async chat)
- *   2. Phone     — co-primary for Jordaan local 30-50 segment (NL
- *                  convention; 1-tap dialer; high-intent signal)
- *   3. Intake    — for ready-to-book (Audience A); calendar flow
+ * Two equally-visible buttons (Phone removed 2026-06-19 — only 2 Phone Click
+ * events in 30d vs WhatsApp 111 / Acuity 220; a boutique IG-led audience
+ * messages or books, it doesn't call):
+ *   1. WhatsApp  — primary for ~60% of traffic (async-chat preference)
+ *   2. Intake    — for ready-to-book (Audience A); calendar flow
  *
  * Click tracking auto-fires via the global delegate in analytics.tsx:
  *   - WhatsApp click → generate_lead + Plausible + Meta/TikTok pixels
@@ -32,7 +31,7 @@
 
 import { useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Phone, Calendar } from "lucide-react";
+import { MessageCircle, Calendar } from "lucide-react";
 import { whatsappLinks } from "@/config/acuity";
 
 const HIDDEN_ROUTE_PREFIXES = [
@@ -114,9 +113,6 @@ export function MobileLeadBar() {
   // Locale detection: /en/* → English, everything else → Dutch.
   const isEn = pathname.startsWith("/en");
 
-  // Phone number stays the same — only label varies by locale.
-  const TEL = "+31615147952";
-
   // Booking button is page-aware too: studio/trainer pages → book the studio,
   // open-gym pages → Open Gym, everything else (incl. homepage + PT) → the PT
   // free intake. Completes the mixed-audience-bar fix — a studio-renter no
@@ -149,8 +145,6 @@ export function MobileLeadBar() {
     ? {
         wa: "WhatsApp",
         waSub: "Reply <30 min",
-        tel: "Call",
-        telSub: "Daily 9-21",
         intake: "Free intake",
         intakeSub: "Book your slot",
         srOnly: "Quick contact options",
@@ -158,8 +152,6 @@ export function MobileLeadBar() {
     : {
         wa: "WhatsApp",
         waSub: "Reactie <30 min",
-        tel: "Bel",
-        telSub: "Dagelijks 9-21",
         intake: "Gratis intake",
         intakeSub: "Plan je slot",
         srOnly: "Snel contact opties",
@@ -176,7 +168,7 @@ export function MobileLeadBar() {
       // match with hero/footer instead of cool 'bg-black'.
       className="md:hidden fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#0E0C0A]/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)] shadow-[0_-8px_24px_rgba(0,0,0,0.4)]"
     >
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-2">
         {/* WhatsApp — primary brand color */}
         <a
           href={waHref}
@@ -190,21 +182,14 @@ export function MobileLeadBar() {
           <span className="text-[9px] leading-tight opacity-80">{t.waSub}</span>
         </a>
 
-        {/* Phone — neutral with brand underline (co-primary visual weight) */}
-        <a
-          href={`tel:${TEL}`}
-          className="flex flex-col items-center justify-center gap-0.5 py-2.5 px-2 text-white bg-white/5 active:bg-white/10 transition-colors min-h-[60px] border-x border-white/10"
-          data-mobile-bar="phone"
-        >
-          <Phone className="w-5 h-5 text-brand" aria-hidden="true" />
-          <span className="text-[11px] font-bold leading-tight">{t.tel}</span>
-          <span className="text-[9px] leading-tight text-white/65">{t.telSub}</span>
-        </a>
-
-        {/* Intake — calendar route (high-intent) */}
+        {/* Intake — calendar route (high-intent). Phone removed 2026-06-19:
+            only 2 Phone Click events in 30d (vs WhatsApp 111 · Acuity 220) —
+            a boutique IG-led audience messages/books, doesn't call. Dropping
+            it gives the two real actions 50% width each (bigger tap targets)
+            and removes the stale "Dagelijks 9-21" hours label. */}
         <a
           href={booking.href}
-          className="flex flex-col items-center justify-center gap-0.5 py-2.5 px-2 text-white bg-white/5 active:bg-white/10 transition-colors min-h-[60px]"
+          className="flex flex-col items-center justify-center gap-0.5 py-2.5 px-2 text-white bg-white/5 active:bg-white/10 transition-colors min-h-[60px] border-l border-white/10"
           data-mobile-bar="intake"
         >
           <Calendar className="w-5 h-5 text-brand" aria-hidden="true" />
