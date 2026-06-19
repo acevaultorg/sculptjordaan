@@ -530,6 +530,10 @@ export default function StudioRentalPageEN() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Read more about studio rental</h2>
             <div className="grid sm:grid-cols-2 gap-4">
+              <a href="/en/studio-rental/calculator" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
+                <p className="text-sm text-brand mb-1">Calculator</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">See what you keep vs a commission gym →</p>
+              </a>
               <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Studio rental for personal trainers in Amsterdam</p>

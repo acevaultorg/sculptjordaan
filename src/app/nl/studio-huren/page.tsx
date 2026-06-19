@@ -543,6 +543,10 @@ export default function StudioRentalPageNL() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Meer lezen over studio huur</h2>
             <div className="grid sm:grid-cols-2 gap-4">
+              <a href="/nl/studio-huren/rekentool" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
+                <p className="text-sm text-brand mb-1">Rekentool</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Bereken wat je overhoudt vs een commissie-gym →</p>
+              </a>
               <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Studio huren als personal trainer in Amsterdam</p>
