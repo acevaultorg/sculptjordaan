@@ -103,8 +103,8 @@ const trainerFaqs = [
     a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Met profiel: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Bij beide huur je alleen de ruimte; je houdt 100% van je tarief.",
   },
   {
-    q: "Rekenen jullie commissie over mijn klanten?",
-    a: "Nee. Wij verdienen alleen aan de studio-huur — wat jij rekent aan je klant (€45, €75, €120) is volledig voor jou.",
+    q: "Houd ik 100% van mijn tarief?",
+    a: "Ja. Wij verdienen alleen aan de studio-huur — wat jij rekent aan je klant (€45, €75, €120) is volledig voor jou.",
   },
   {
     q: "Welke verzekering heb ik nodig?",

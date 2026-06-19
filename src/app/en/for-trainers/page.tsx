@@ -103,8 +103,8 @@ const trainerFaqs = [
     a: "Hourly rental: pay per session, BYO clients, no site listing. Regular trainer: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. With both you just rent the space; you keep 100% of your rate.",
   },
   {
-    q: "Do you take commission on my clients?",
-    a: "No. We earn only from the studio rental — whatever you charge your client (€45, €75, €120) is entirely yours.",
+    q: "Do I keep 100% of my rate?",
+    a: "Yes. We earn only from the studio rental — whatever you charge your client (€45, €75, €120) is entirely yours.",
   },
   {
     q: "What insurance do I need?",

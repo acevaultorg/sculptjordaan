@@ -202,7 +202,7 @@ export default function TrainersPageNL() {
           trainers (private, 1-on-1, full focus, no contract) AND amplifies that
           each trainer brings their OWN method — celebrating roster diversity
           rather than flattening it into one "SculptClub method" (which would
-          undermine the 0%-commission independent-trainer model). The per-trainer-
+          undermine the rent-only independent-trainer model). The per-trainer-
           method framing is the net-new part vs the existing "privé studio" copy. */}
       <Section bg="muted">
         <SectionHeader
