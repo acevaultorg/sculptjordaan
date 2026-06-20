@@ -213,8 +213,13 @@ export function Hero({ locale }: { locale: Locale }) {
       // path for cold IG traffic — 63% of visits). Destination changed
       // from /nl/gratis-intake (trainer-grid landing) to /nl/match-trainer
       // (3-question quiz that outputs top-2 trainer match).
+      // 2026-06-20 copy fix (operator): "Match je trainer in 30 sec" →
+      // "Vind je trainer in 30 sec". "Match je trainer" is awkward Dutch —
+      // "match" doesn't read as a native transitive verb on "je trainer".
+      // "Vind je trainer" is natural + states the outcome; the proven
+      // "in 30 sec" low-time-cost signal + the match-quiz destination stay.
       ctas: [
-        { label: "Match je trainer in 30 sec", href: "/nl/match-trainer", icon: Users, primary: true },
+        { label: "Vind je trainer in 30 sec", href: "/nl/match-trainer", icon: Users, primary: true },
       ],
       // 2026-06-02 label reorder per operator: "Voor trainers: studio huren"
       // → "Studio huren voor trainers". Noun-first reads more natural in Dutch
@@ -250,9 +255,10 @@ export function Hero({ locale }: { locale: Locale }) {
       subtitle: null,
       taglineSub: "Find your trainer. Get stronger.",
       priceAnchor: "Free intro · 1-on-1",
-      // See NL parallel comment (2026-05-27 Clarity audit).
+      // See NL parallel comment (2026-05-27 Clarity audit + 2026-06-20 copy
+      // fix: "Match your trainer" had the same awkwardness as the Dutch).
       ctas: [
-        { label: "Match your trainer in 30 sec", href: "/en/match-trainer", icon: Users, primary: true },
+        { label: "Find your trainer in 30 sec", href: "/en/match-trainer", icon: Users, primary: true },
       ],
       // See NL parallel reorder (2026-06-02).
       trainerLink: { label: "Studio rental for trainers", href: "/en/studio-rental" },
