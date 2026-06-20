@@ -18,6 +18,22 @@ export const metadata: Metadata = {
       en: "/en/free-intro",
     },
   },
+  // Per-page OG/Twitter so direct + ad + Instagram-bio shares of THIS page
+  // preview the free-intro pitch + correct URL (not the homepage studio-rental
+  // default). noindex above only affects search crawling, not social previews.
+  openGraph: {
+    type: "website",
+    url: "/en/free-intro",
+    title: "Free Intro Personal Training — SculptClub Jordaan",
+    description:
+      "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Intro Personal Training — SculptClub Jordaan",
+    description:
+      "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
+  },
 };
 
 // "The SculptClub Intake" — named 5-step process (L, 2026-06-02). EN parallel

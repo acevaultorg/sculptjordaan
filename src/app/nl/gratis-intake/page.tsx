@@ -18,6 +18,22 @@ export const metadata: Metadata = {
       en: "/en/free-intro",
     },
   },
+  // Per-page OG/Twitter so direct + ad + Instagram-bio shares of THIS page
+  // preview the free-intake pitch + correct URL (not the homepage studio-rental
+  // default). noindex above only affects search crawling, not social previews.
+  openGraph: {
+    type: "website",
+    url: "/nl/gratis-intake",
+    title: "Gratis Intake Personal Training — SculptClub Jordaan",
+    description:
+      "Plan je gratis intake bij SculptClub. Privé personal training studio in de Jordaan. Geen contract, geen abonnement. Eerste kennismaking 100% gratis.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gratis Intake Personal Training — SculptClub Jordaan",
+    description:
+      "Plan je gratis intake bij SculptClub. Privé personal training studio in de Jordaan. Geen contract, geen abonnement. Eerste kennismaking 100% gratis.",
+  },
 };
 
 // "De SculptClub Intake" — named 5-step process (L, 2026-06-02). Gives the
