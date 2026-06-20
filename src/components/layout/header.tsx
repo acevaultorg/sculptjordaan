@@ -27,7 +27,7 @@ type MenuConfig = {
 
 const bookingMenu: { nl: MenuConfig; en: MenuConfig } = {
   nl: {
-    label: "Boek",
+    label: "Studio huren",
     title: "Wat wil je doen?",
     categories: [
       {
@@ -52,7 +52,7 @@ const bookingMenu: { nl: MenuConfig; en: MenuConfig } = {
     returning: "Al lid? Mijn boekingen",
   },
   en: {
-    label: "Book",
+    label: "Rent Studio",
     title: "What would you like to do?",
     categories: [
       {
@@ -91,7 +91,7 @@ const bookingMenu: { nl: MenuConfig; en: MenuConfig } = {
 // to them from a single canonical disambiguator.
 const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
   nl: {
-    label: "Try-Out",
+    label: "Bekijk studio",
     title: "Wat wil je proberen?",
     subtitle: "Eerste keer altijd gratis.",
     // 2026-05-27 update — operator: "also the steps afterwards" +
@@ -141,7 +141,7 @@ const tryoutMenu: { nl: MenuConfig; en: MenuConfig } = {
     returning: "Al lid? Mijn boekingen",
   },
   en: {
-    label: "Try-Out",
+    label: "View studio",
     title: "What would you like to try?",
     subtitle: "First time is always free.",
     categories: [
@@ -244,6 +244,7 @@ export function Header() {
   const navItems = mainNav[locale];
   const moreItems = secondaryNav[locale];
   const booking = bookingMenu[locale];
+  const tryout = tryoutMenu[locale];
   // Active menu = bookingMenu OR tryoutMenu depending on which button
   // opened the sheet. Modal renders `activeMenu.title/categories/etc`.
   const activeMenu = bookMode === "tryout" ? tryoutMenu[locale] : booking;
@@ -421,7 +422,7 @@ export function Header() {
                     : "border border-border text-foreground bg-secondary hover:bg-accent"
                 )}
               >
-                Try-Out
+                {tryout.label}
               </button>
             )}
 

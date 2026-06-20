@@ -1,7 +1,6 @@
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { MobileLeadBar } from "./mobile-lead-bar";
-import { LeadRescuePopup } from "./lead-rescue-popup";
 import { BlogEmailCaptureSlot } from "./blog-email-capture-slot";
 
 export function PageLayout({ children }: { children: React.ReactNode }) {
@@ -19,10 +18,6 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
       </main>
       <Footer />
       <MobileLeadBar />
-      {/* LeadRescuePopup — second-chance lead-cap; fires on exit-intent
-          (desktop mouseleave) or 30s+timed (mobile fallback). Once per
-          session. Routes to match-quiz primary + WhatsApp + Acuity. */}
-      <LeadRescuePopup />
     </>
   );
 }
