@@ -178,10 +178,17 @@
   }
   html {
     @apply scroll-smooth;
-    scroll-padding-top: 5rem;
+    /* 8rem clears the 2-row ~123px mobile header; sm+ (1-row ~68px) drops to
+       5rem in the media query below (2026-06-20 two-row mobile header). */
+    scroll-padding-top: 8rem;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 5rem;
+    }
   }
   /* H1 — content pages (non-hero).
      Hero H1 has its own Tailwind class overrides for fluid sizing. */

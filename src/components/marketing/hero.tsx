@@ -312,7 +312,7 @@ export function Hero({ locale }: { locale: Locale }) {
   }, [secondaryMounted, paused]);
 
   return (
-    <section className="relative overflow-hidden -mt-20 min-h-[78vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
+    <section className="relative overflow-hidden -mt-32 sm:-mt-20 min-h-[78vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
       {/* Background slideshow — only the image crossfades; text overlay below
           stays 100% static. backgroundColor renders BEFORE the first image
           fetches: zero-paint-cost dominant-color preview (matched via
