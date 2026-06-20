@@ -41,7 +41,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Source of truth: `src/config/site.ts` (analytics object). If you update an ID in code, update CLAUDE.md in the same commit.
 - Event taxonomy: every WhatsApp + Acuity click event includes `intent` (`trainer` | `studio_rental` | `open_gym` | `generic`) + `pricing` (`free` | `paid` | `unknown`). Splits Plausible goals by these props to see trainer-free-tryouts vs trainer-paid-packs vs studio-rental vs gym-subs. **Full reference: [docs/ANALYTICS.md](docs/ANALYTICS.md)** (goals, props, classification rules, Plausible UI navigation, naming-mismatch trap, verification protocol).
 - Tracking: FunnelPilot fp.js snippet
-- Deploy: Vercel
+- Deploy: Vercel. **MINIMIZE VERCEL BUILD COST (operator directive 2026-06-20): never trigger a paid Vercel build.** Rules: (1) BATCH — accumulate commits and deploy ONCE, never deploy per small change. (2) Prefer `vercel deploy --prebuilt --prod` (run `npm run build` LOCALLY first → Vercel skips the build = ~0 metered build minutes) over plain `vercel --prod` (rebuilds on Vercel = metered). (3) Agents COMMIT + leave staged; deploy is operator-initiated — never auto-deploy. (4) Don't push to trigger any git→Vercel auto-build. CSS/copy-only changes especially must ride one batched deploy, not their own build.
 
 ## URL Structure
 - Dutch: `/nl/vind-jouw-personal-trainer`, `/nl/open-gym`, `/nl/studio-huren`, `/nl/prijzen`, `/nl/blog/...`
