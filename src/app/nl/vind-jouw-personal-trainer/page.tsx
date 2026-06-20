@@ -179,7 +179,7 @@ export default function TrainersPageNL() {
               className="plausible-event-name=trainerhub_quiz inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]"
             >
               <Sparkles className="h-5 w-5" />
-              Match je trainer — 3 vragen
+              Vind je trainer — 3 vragen
             </a>
             <a
               href="#trainer-grid"

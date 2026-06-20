@@ -150,7 +150,7 @@ export function BlogEmailCapture() {
             href={isEn ? "/en/match-trainer" : "/nl/match-trainer"}
             className="font-semibold text-brand underline-offset-4 hover:underline"
           >
-            {isEn ? "Match your trainer in 30 sec →" : "Match je trainer in 30 sec →"}
+            {isEn ? "Find your trainer in 30 sec →" : "Vind je trainer in 30 sec →"}
           </a>
         </p>
       </aside>
