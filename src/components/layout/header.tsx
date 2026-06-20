@@ -326,41 +326,44 @@ export function Header() {
             : "bg-transparent border-b border-transparent"
         )}
       >
-        <nav className="flex items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-3.5 mx-auto max-w-7xl min-w-0">
+        <nav className="flex flex-wrap items-center gap-x-2 gap-y-2.5 px-3 py-3 sm:px-4 sm:py-3.5 mx-auto max-w-7xl min-w-0 sm:flex-nowrap sm:gap-y-0">
           {/* Logo — bigger for brand presence */}
           <Link
             href={locale === "nl" ? "/" : "/en"}
             aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
-            className="flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
+            className="order-1 shrink-0 flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
           >
             <Image
               src="/images/logo-sculptclub.svg"
               alt="SculptClub"
               width={162}
               height={30}
-              // 2026-05-27: mobile h-11 (44px) → h-8 (32px).
-              // Operator: "grove fout!! logo ander formaat" — at h-11 the
-              // 5.4-aspect SVG wordmark renders ~238px wide on a 390px
-              // viewport = ~61% of viewport width, competing with Try-Out
-              // + Boek buttons (both h-11 = 44px) for visual weight. Drop
-              // to h-8 = ~173px wide = ~44% viewport. Wordmark = brand
-              // anchor (lower weight), buttons = primary action (higher
-              // weight). Proper visual hierarchy restored.
+              // 2026-06-20: mobile h-8 → h-11 (44px). The 2026-05-27 shrink to
+              // h-8 was only because the wordmark competed with the Try-Out +
+              // Boek buttons IN ONE ROW. The header is now TWO rows on mobile
+              // (logo + icons = row 1, CTAs = row 2), so it no longer competes —
+              // restored to the bigger h-11 for brand presence (operator
+              // directive 2026-06-20: "two rows so logo can be bigger on mobile").
               // Desktop (sm+) stays h-10 — wide-viewport layout has room.
               // Logo ink is #333. Invert (→ light) only when behind it is
               // dark: over the homepage dark hero, OR in dark mode. On light
               // pages the un-inverted dark wordmark reads clearly on the bone
               // background (was previously inverted-to-light = near-invisible).
-              className={cn("h-8 sm:h-10 w-auto select-none", overDarkHero ? "invert" : "dark:invert")}
+              className={cn("h-11 sm:h-10 w-auto select-none", overDarkHero ? "invert" : "dark:invert")}
               loading="eager"
               fetchPriority="high"
             />
           </Link>
 
-          {/* Right side — single flat row, consistent gap between ALL items.
-              gap-2 sm:gap-3 makes every item-to-item distance match the
-              Nieuw hier ↔ Boek gap visually. */}
-          <div className="flex items-center gap-1 sm:gap-3 shrink-0">
+          {/* CTA cluster (nav links + Try-Out + Boek). Mobile: wraps to its own
+              full-width row 2 below the logo (order-3 + w-full, pills centered),
+              applied ONLY when CTAs are present — booking-step pages have none,
+              so no empty second row. Desktop: grouped on the right (sm:order-2 +
+              sm:ml-auto), single row. */}
+          <div className={cn(
+            "flex items-center gap-1 sm:gap-3 min-w-0 order-3 sm:order-2 sm:w-auto sm:ml-auto sm:justify-end",
+            !onBookingStep && "w-full justify-center"
+          )}>
             {/* Desktop nav links (md+ only) — text-shadow when header is transparent
                 so links stay legible over the hero image */}
             <div className="hidden md:flex items-center gap-0.5 mr-1">
@@ -485,7 +488,12 @@ export function Header() {
               {booking.label}
             </button>
             )}
+          </div>
 
+          {/* Icon cluster (language · login · menu). Mobile: sits on row 1 to the
+              right of the logo (order-2 + ml-auto). Desktop: grouped far-right
+              after the CTAs (sm:order-3 + sm:ml-0). */}
+          <div className="flex items-center gap-1 sm:gap-3 order-2 ml-auto shrink-0 sm:order-3 sm:ml-0">
             {/* Language toggle — desktop only (sm+).
                 Mobile: globe is hidden here and lives inside the hamburger
                 dropdown (see Switch to NL/EN row at the bottom of the menu
