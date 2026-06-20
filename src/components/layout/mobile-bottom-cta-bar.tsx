@@ -45,16 +45,13 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getLocaleFromPath } from "@/lib/locale";
 import { WhatsAppIcon, pickMessage } from "./whatsapp-button";
 
 // Operator's WhatsApp number. Kept inline to avoid restructuring whatsapp-button.tsx
 // (which owns its own PHONE const). Single number value used in both files.
 const WA_PHONE = "31615147952";
-// E.164 form for tel: links (with leading "+"); WA_PHONE above omits the +
-// because wa.me URLs require the country-code-with-no-plus format.
-const TEL_PHONE = "+31615147952";
 
 interface CTAConfig {
   label: string;
@@ -329,35 +326,22 @@ export function MobileBottomCTABar() {
                      px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]
                      shadow-[0_-4px_16px_-2px_rgba(0,0,0,0.35)]"
         >
-          {/* Three-slot row: phone-icon LEFT (tel:) + primary CTA MIDDLE (flex-1)
-              + WhatsApp circle RIGHT.
-              Phone slot added 2026-05-27 after operator UX audit of the
-              after-scroll bar: above-fold visitors get the 3-button
-              MobileLeadBar (WhatsApp/Bel/Gratis intake) which gave them
-              a 1-tap phone path; once the user scrolled past 60% of viewport
-              the MobileLeadBar got covered by this bar (single orange CTA
-              + WA circle) and the phone affordance vanished. The Jordaan-
-              local 30-50 segment + weekend phone-callers (operator
-              directive: "mensen mogen ook in het weekend bellen") need the
-              phone path preserved after scroll. Now: phone-circle on the
-              left, primary CTA still dominates the middle (flex-1), WA
-              circle on the right. All three targets are 48×48px (>WCAG 44).
-              Conditional logic: phone-circle shows when primary CTA is NOT
-              a tel: link (parallel pattern to the WA-circle conditional). */}
+          {/* Two-slot row: primary CTA (flex-1) + WhatsApp circle.
+              Phone slot REMOVED 2026-06-20 — operator flagged the 3-element bar
+              as a "super bad decision". Why it had to go:
+                (1) the phone item was already data-confirmed DEAD and dropped
+                    from the old MobileLeadBar in commit 94600f8 ("drop dead
+                    Phone item — data-driven"), but the same dead button
+                    survived here uncaught — a flip-flop regression;
+                (2) three tap-targets in two colours (grey phone + orange CTA +
+                    green WhatsApp) is exactly the "too many buttons / too many
+                    CTA colours" clutter the operator has repeatedly rejected;
+                (3) the grey circle read as a disabled/ugly element.
+              This WhatsApp-first audience chats, it doesn't cold-call; the phone
+              path still lives in the footer + /nl/contact for the rare weekend
+              caller. Clean result: ONE orange primary CTA + ONE green WhatsApp
+              circle. Do NOT re-add the phone here. */}
           <div className="flex items-center gap-2">
-            {/* Phone slot — 1-tap call. Hidden when the primary CTA is itself
-                a tel: link (no second-tap-to-call to avoid redundancy). */}
-            {!cta.href.startsWith("tel:") && (
-              <a
-                href={`tel:${TEL_PHONE}`}
-                aria-label={locale === "nl" ? "Bel SculptClub" : "Call SculptClub"}
-                data-cta="mobile-cta-tel-integrated"
-                className="plausible-event-name=mobile_cta_tel_integrated shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-foreground/10 border border-foreground/15 text-foreground hover:bg-foreground/15 transition-colors active:scale-95"
-              >
-                <Phone className="h-5 w-5" />
-              </a>
-            )}
-
             {cta.external ? (
               <a
                 href={cta.href}
