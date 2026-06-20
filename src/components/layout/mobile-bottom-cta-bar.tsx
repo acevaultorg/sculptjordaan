@@ -228,14 +228,18 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // on; consistent funnel architecture. Visitors who want the full
   // first-visit education can still reach /nl/eerste-bezoek via the
   // header "Try-Out" button or footer links.
+  // 2026-06-20 (operator): "Boek gratis intake" was VAGUE — intake for WHAT?
+  // (trainer / studio tour / become-a-trainer?). On a multi-funnel studio a
+  // bare "intake" makes the visitor guess. This default CTA goes to the
+  // personal-training free intro (/nl/gratis-intake), so name it: "met trainer".
   return locale === "nl"
     ? {
-        label: "Boek gratis intake",
+        label: "Gratis intake met trainer",
         href: "/nl/gratis-intake",
         ctaId: "mobile-cta-default-intake",
       }
     : {
-        label: "Book free intake",
+        label: "Free intro with a trainer",
         href: "/en/free-intro",
         ctaId: "mobile-cta-default-intake",
       };
