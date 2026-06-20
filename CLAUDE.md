@@ -31,7 +31,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Alex:** €69/60min, Strength/Calisthenics/Recovery, NL/EN/PT
 - **Eva:** Rate on request, Dietitian, Strength/Nutrition, NL/EN
 - **Andrea:** €45/45min, Strength/Posture/Technique, NL/EN
-- **Dara:** Rate on request, Personal Training/Small Group, NL/EN
+- **Dara:** Rate on request, Strength & Balance/Personal Training, NL/EN
 
 ## Tech Stack
 - Next.js 16, React 19, TypeScript
