@@ -36,6 +36,22 @@ export const metadata: Metadata = {
       en: "/en/open-gym",
     },
   },
+  // Per-page OG/Twitter so social shares of THIS page (esp. Instagram, the #1
+  // channel) preview the Open Gym pitch + the correct URL — instead of falling
+  // back to the root layout's studio-rental default + homepage URL.
+  openGraph: {
+    type: "website",
+    url: "/en/open-gym",
+    title: "Open Gym Amsterdam — Private Studio Jordaan | SculptClub",
+    description:
+      "Open gym in Amsterdam: train independently in a quiet, fully equipped private studio in the Jordaan. Max. 3 people per slot. From €29 per 4 weeks.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Open Gym Amsterdam — Private Studio Jordaan | SculptClub",
+    description:
+      "Open gym in Amsterdam: train independently in a quiet, fully equipped private studio in the Jordaan. Max. 3 people per slot. From €29 per 4 weeks.",
+  },
 };
 
 const plans = [
