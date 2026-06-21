@@ -33,8 +33,21 @@ export const metadata: Metadata = {
   },
 };
 
-/* ─── Real Google Reviews (verified from Google Maps, March 2026) ─── */
+/* ─── Real Google Reviews (verified from Google Maps, June 2026) ─── */
 const reviews = [
+  {
+    name: "Hamish Leijer",
+    text: "Lovely studio, great atmosphere, and new equipment! I've been training my clients here with great pleasure since it opened last summer, and Paulo is a top guy too.",
+    rating: 5,
+    date: "Jun 2026",
+    badge: "Local Guide",
+  },
+  {
+    name: "KAHA Coaching",
+    text: "Grateful for this beautiful place, and also that there's trust in the people and trainers. A place where people independently make sure to leave everything tidy and think of the next person using the space. The owner is a very friendly man and always open to improvement. Very satisfied.",
+    rating: 5,
+    date: "May 2026",
+  },
   {
     name: "Alina Gurzhapova",
     text: "I'm a trainer and I work with my clients in this wonderful fitness studio and I truly love it! Great location, well structured space, nice team work!",
