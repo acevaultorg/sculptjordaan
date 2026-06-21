@@ -195,10 +195,12 @@ export default function ReviewsPageNL() {
               Deel je ervaring en help anderen de juiste keuze te maken.
             </p>
             <ButtonLink
-              href="https://www.google.com/maps/place/SculptClub/@52.3759967,4.880676,17z"
+              href={siteConfig.googleReview}
               size="lg"
               variant="outline"
               external
+              className="plausible-event-name=leave_review_click"
+              data-cta="reviews-leave-review-google"
             >
               Laat een review achter op Google
               <ExternalLink className="ml-2 w-4 h-4" />

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { alternateRoutes } from "@/config/navigation";
+import { siteConfig } from "@/config/site";
 
 /**
  * Vanity domain routing map.
@@ -138,6 +139,16 @@ export function middleware(request: NextRequest) {
   }
 
   const { pathname } = request.nextUrl;
+
+  // /review — short, memorable, QR-able review shortcut. Redirects straight to
+  // the Google review destination (siteConfig.googleReview). Used on printed
+  // in-studio QR cards + WhatsApp "tap to review us" asks: the QR/link encodes
+  // the STABLE sculptclub.nl/review URL, so the operator can swap the Google
+  // target (e.g. to the GBP one-tap g.page/r/…/review link) without reprinting
+  // anything. 302 (temporary) since the off-site destination may change.
+  if (pathname === "/review" || pathname === "/nl/review" || pathname === "/en/review") {
+    return NextResponse.redirect(siteConfig.googleReview, 302);
+  }
 
   // Redirect wrong-locale slugs (e.g. /en/boek-studio → /en/book-studio)
   const redirect = wrongLocaleRedirects[pathname];

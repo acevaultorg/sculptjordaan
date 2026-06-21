@@ -31,6 +31,18 @@ export const siteConfig = {
   tiktok: "https://www.tiktok.com/@sculptclub.jordaan",
   tiktokHandle: "@sculptclub.jordaan",
   google: "https://www.google.com/maps/place/SculptClub/@52.3759967,4.880676,17z",
+  // Direct review destination — the single source of truth for every
+  // "leave a review" CTA + the /review short URL (middleware redirect).
+  // ⚠️ OPERATOR ONE-TAP UPGRADE: replace this with the Google Business Profile
+  // "Ask for reviews" short link (looks like `https://g.page/r/XXXXXXXX/review`,
+  // found in GBP → Home → "Get more reviews" / "Ask for reviews"). That link
+  // opens the star-rating + write form in ONE tap. Until then this Maps Search
+  // URL reliably opens the SculptClub place card (Reviews → Write a review).
+  // Because every CTA + the printable /review QR point at THIS constant via the
+  // stable /review redirect, swapping it here upgrades all of them at once —
+  // no QR reprint, no per-page edits.
+  googleReview:
+    "https://www.google.com/maps/search/?api=1&query=SculptClub%20Egelantiersgracht%20424%20Amsterdam",
   rating: { value: 5.0, count: 8 },
   founded: "2025",
   acuity: {
