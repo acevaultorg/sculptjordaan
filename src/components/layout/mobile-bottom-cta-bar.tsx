@@ -63,6 +63,22 @@ interface CTAConfig {
 }
 
 function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
+  // Homepage (/ · /nl · /en) — DE-AGGRESSION (operator directive 2026-06-21:
+  // "feel the site is too aggressive on sales → may have a counter-effect on
+  // conversions; want extreme-good UX that converts well but doesn't 'scream'").
+  // Plausible 30d data backs it: this default-branch sticky bar
+  // (`mobile_cta_default_intake`) earned just 8 clicks across ALL content pages —
+  // the loudest, most persistent, most screen-blocking element, yet the LEAST-
+  // clicked CTA surface — while the homepage's calm, always-visible header CTAs
+  // (`header_boek_open` 50 + `header_tryout_open` 38) + hero primary (31) + the
+  // CtaBand carry the conversion (Acuity Click 154 overall). The homepage bar was
+  // a nav-PUSH to /nl/gratis-intake (not a scroll-back to an on-page widget), so
+  // removing the permanent orange bottom pill from the flagship first-impression
+  // page calms the whole-page scroll WITHOUT removing a working conversion path.
+  // KEPT on genuine funnel pages (studio-huren / open-gym / trainer-hub) where it
+  // routes to a real booking widget. Reversible: delete this guard to restore.
+  if (/^\/(nl|en)?\/?$/.test(pathname)) return null;
+
   // Hide on dedicated booking-STEP pages — the page IS the booking action, so a
   // floating "go to booking" CTA is redundant and competes with the on-page
   // widget's own button. Operator UX screenshot 2026-06-03 on
