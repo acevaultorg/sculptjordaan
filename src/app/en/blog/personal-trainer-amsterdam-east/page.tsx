@@ -86,7 +86,7 @@ export default function PersonalTrainerEastEN() {
               <p>
                 A fully equipped private studio with professional equipment. Seven independent trainers
                 each with their own specialisation. Free intro. Rates from €45 per session. No
-                membership. Also Open Gym for independent training from €5.75 per session.
+                membership. Also Open Gym for independent training from €6.13 per session.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Studio rental for trainers from East</h2>

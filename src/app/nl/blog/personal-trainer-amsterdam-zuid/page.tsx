@@ -117,7 +117,7 @@ export default function PTAmsterdamZuidNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Ook Open Gym voor zelfstandig trainen</h2>
               <p>
                 Wil je liever zelfstandig trainen? Met <a href="/nl/open-gym" className="text-brand hover:underline">Open
-                Gym</a> heb je toegang tot dezelfde privé studio, zonder trainer. Vanaf €5,75
+                Gym</a> heb je toegang tot dezelfde privé studio, zonder trainer. Vanaf €6,13
                 per sessie, in cycli van 4 weken. Maximaal 3 personen tegelijk, dus altijd
                 ruimte.
               </p>

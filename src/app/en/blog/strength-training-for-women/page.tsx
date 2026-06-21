@@ -127,7 +127,7 @@ export default function StrengthTrainingForWomenEN() {
               </p>
               <p>
                 Prefer to train independently? With <a href="/en/open-gym" className="text-brand hover:underline">Open
-                Gym</a> you can train on your own in our private studio, from €5.75 per session.
+                Gym</a> you can train on your own in our private studio, from €6.13 per session.
               </p>
             </div>
 

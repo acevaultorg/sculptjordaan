@@ -88,7 +88,7 @@ export default function PersonalTrainerOostNL() {
               <p>
                 Een volledig uitgeruste privé studio met professionele apparatuur. Zeven onafhankelijke
                 trainers met elk hun eigen specialisatie. Gratis intake. Tarieven vanaf €45 per sessie.
-                Geen abonnement. Ook Open Gym voor zelfstandig trainen vanaf €5,75 per sessie.
+                Geen abonnement. Ook Open Gym voor zelfstandig trainen vanaf €6,13 per sessie.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Studio huren voor trainers uit Oost</h2>

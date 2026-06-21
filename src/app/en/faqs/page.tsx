@@ -55,7 +55,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "How does the SculptClub pricing model work?",
-        a: "SculptClub works without subscriptions. Open Gym is purchased per 4-week cycle (from \u20AC5.75/session). Personal training is booked and paid per session, directly to your trainer. Studio rental is per hour or via discount packages.",
+        a: "SculptClub works without subscriptions. Open Gym is purchased per 4-week cycle (from \u20AC6.13/session). Personal training is booked and paid per session, directly to your trainer. Studio rental is per hour or via discount packages.",
       },
       {
         q: "Do I need a membership?",

@@ -55,7 +55,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "Hoe werkt het prijsmodel van SculptClub?",
-        a: "SculptClub werkt zonder abonnementen. Open Gym koop je per 4-weken cyclus (vanaf \u20AC5,75/sessie). Personal training boek en betaal je per sessie, rechtstreeks aan je trainer. Studio verhuur is per uur of via kortingspakketten.",
+        a: "SculptClub werkt zonder abonnementen. Open Gym koop je per 4-weken cyclus (vanaf \u20AC6,13/sessie). Personal training boek en betaal je per sessie, rechtstreeks aan je trainer. Studio verhuur is per uur of via kortingspakketten.",
       },
       {
         q: "Heb ik een abonnement nodig?",

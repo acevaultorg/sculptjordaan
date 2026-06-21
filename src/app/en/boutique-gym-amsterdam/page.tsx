@@ -41,7 +41,7 @@ const steps = [
   {
     step: "2",
     title: "Pick your way to train",
-    desc: "Personal training from €45/session, Open Gym from €5.75/session, or rent the studio privately. No membership needed.",
+    desc: "Personal training from €45/session, Open Gym from €6.13/session, or rent the studio privately. No membership needed.",
   },
   {
     step: "3",

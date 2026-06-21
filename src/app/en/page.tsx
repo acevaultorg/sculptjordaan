@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 
 const homeFaqs = [
   { question: "How much does personal training cost at SculptClub?", answer: "Each trainer sets their own rate, shown on the trainer's profile. The intro is always free. The price you see you pay directly to your trainer \u2014 no middleman." },
-  { question: "How does Open Gym work?", answer: "You train independently in our private studio with professional equipment. Schedule your sessions via our booking system, receive a door code and train on your time. From \u20AC5.75 per session." },
+  { question: "How does Open Gym work?", answer: "You train independently in our private studio with professional equipment. Schedule your sessions via our booking system, receive a door code and train on your time. From \u20AC6.13 per session." },
   { question: "Do I need a subscription?", answer: "No. Open Gym works on a 4-week cycle with no contract \u2014 cancel anytime. Personal training is booked per session. Studio rental is per hour or via discount packages." },
   { question: "Can I rent the studio for my own clients?", answer: "Yes! As a freelance trainer or physiotherapist, you can rent our studio from \u20AC12 per 60 minutes. We also offer discount packages up to 23% off." },
   { question: "How do I cancel a session?", answer: "For Open Gym and studio sessions, you can always cancel or reschedule for free via our booking system (Acuity). For Personal Training, contact your trainer directly — also always free." },

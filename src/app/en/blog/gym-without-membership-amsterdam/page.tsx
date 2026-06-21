@@ -137,7 +137,7 @@ export default function GymWithoutMembershipEN() {
                 A relatively new concept in Amsterdam is Open Gym: you book a private gym space for a set time
                 and train independently with professional equipment. No crowds, no waiting, no distractions.
                 At SculptClub, <Link href="/en/open-gym" className="text-brand underline-offset-2 hover:underline">Open Gym</Link> operates on a 4-week cycle with no contract. You can cancel anytime and
-                pay from just 5.75 euros per session.
+                pay from 6.13 euros per session.
               </p>
               <p>
                 What makes Open Gym unique compared to regular gyms:

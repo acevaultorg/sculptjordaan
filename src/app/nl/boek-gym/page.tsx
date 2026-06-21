@@ -83,16 +83,6 @@ const plans = [
     link: acuityLinks.openGymPlans.populair,
   },
   {
-    name: "Intensief",
-    sessions: "12 sessies",
-    tagline: "3x / week trainen",
-    price: "€69",
-    period: "/ 4 weken",
-    perSession: "€5,75 / sessie",
-    badge: null,
-    link: acuityLinks.openGymPlans.intensief,
-  },
-  {
     name: "Onbeperkt",
     sessions: "Onbeperkt",
     tagline: "Maximale vrijheid",

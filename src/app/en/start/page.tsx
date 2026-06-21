@@ -8,7 +8,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "Welcome to SculptClub — Private Studio Amsterdam Jordaan" },
   description:
-    "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac5.75/session, studio rental from \u20ac12/hour. Free first session.",
+    "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/en/start",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/en/start",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac5.75/session, studio rental from \u20ac12/hour. Free first session.",
+      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac5.75/session, studio rental from \u20ac12/hour. Free first session.",
+      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
   },
 };
 
@@ -53,7 +53,7 @@ const paths = [
   {
     icon: "Dumbbell" as const,
     title: "I want to train solo",
-    description: "Book 60-min slots in a private studio. Max 3 people. From \u20ac5.75/session, no membership.",
+    description: "Book 60-min slots in a private studio. Max 3 people. From \u20ac6.13/session, no membership.",
     cta: "Try Open Gym free",
     href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,

@@ -41,7 +41,6 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 - Personal training: from €45/session — trainers set their own rates, first intake free
 - Open Gym Instapplan: 4 sessions, €29/4 weeks (€7.25/session)
 - Open Gym Populair: 8 sessions, €49/4 weeks (€6.13/session)
-- Open Gym Intensief: 12 sessions, €69/4 weeks (€5.75/session)
 - Open Gym Onbeperkt: unlimited, €59/4 weeks
 - Open Gym single session: €10
 - Studio rental half-studio: €12/60min, €17/90min

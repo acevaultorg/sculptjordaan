@@ -89,17 +89,6 @@ const plans = [
     link: acuityLinks.openGymPlans.populair,
   },
   {
-    name: "Intensief",
-    sessions: "12 sessies",
-    frequency: "3x / week",
-    tagline: "Serieus resultaat behalen",
-    price: "\u20ac69",
-    period: "/ 4 weken",
-    perSession: "\u20ac5,75 / sessie",
-    badge: null,
-    link: acuityLinks.openGymPlans.intensief,
-  },
-  {
     name: "Onbeperkt",
     sessions: "Onbeperkt",
     frequency: "Onbeperkt",
@@ -210,7 +199,6 @@ export default function OpenGymPageNL() {
         offers={[
           { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
           { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49 },
-          { name: "Intensief — 12 sessies", description: "12 sessies per 4 weken, €5,75 per sessie", price: 69 },
           { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 59 },
         ]}
       />

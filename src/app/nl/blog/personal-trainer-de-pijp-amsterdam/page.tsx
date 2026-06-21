@@ -101,7 +101,7 @@ export default function PersonalTrainerDePijpNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym voor zelfstandige sporters</h2>
               <p>
-                Liever zelf trainen? Open Gym biedt sessies van 60 minuten vanaf €5,75 per bezoek.
+                Liever zelf trainen? Open Gym biedt sessies van 60 minuten vanaf €6,13 per bezoek.
                 Boek een slot, ontvang je deurcode via WhatsApp en train in alle rust. Geen contract,
                 stop wanneer je wilt.
               </p>

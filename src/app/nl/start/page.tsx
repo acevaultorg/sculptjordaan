@@ -8,7 +8,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan" },
   description:
-    "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+    "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac6,13/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/nl/start",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/nl/start",
     title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
     description:
-      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac6,13/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
     description:
-      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac6,13/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
   },
 };
 
@@ -53,7 +53,7 @@ const paths = [
   {
     icon: "Dumbbell" as const,
     title: "Ik wil zelfstandig trainen",
-    description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Vanaf \u20ac5,75/sessie, geen abonnement.",
+    description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Vanaf \u20ac6,13/sessie, geen abonnement.",
     cta: "Probeer Open Gym gratis",
     href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,

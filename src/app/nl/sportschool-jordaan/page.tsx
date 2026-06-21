@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer";
 export const metadata: Metadata = {
   title: { absolute: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club" },
   description:
-    "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
+    "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €6,13 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/nl/sportschool-jordaan",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/nl/sportschool-jordaan",
     title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
     description:
-      "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
+      "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €6,13 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
     description:
-      "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
+      "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €6,13 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   },
 };
 
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Wat kost de sportschool in de Jordaan zonder abonnement?",
-    a: "Open Gym Instapplan is €29 per 4 weken (4 sessies, €7,25 per keer). Populair €49 per 4 weken (8 sessies). Intensief €69 (12 sessies). Onbeperkt €89. Geen lange contracten, geen opzegtermijn.",
+    a: "Open Gym Instapplan is €29 per 4 weken (4 sessies, €7,25 per keer). Populair €49 per 4 weken (8 sessies). Onbeperkt €59 per 4 weken (onbeperkt trainen). Geen lange contracten, geen opzegtermijn.",
   },
   {
     q: "Kan ik eerst een keer proberen?",
@@ -107,7 +107,7 @@ export default function SportschoolJordaanPage() {
           <span className="text-brand">zonder abonnement</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
-          Geen sportschool-deal, een privé club. Open Gym vanaf €5,75 per
+          Geen sportschool-deal, een privé club. Open Gym vanaf €6,13 per
           sessie. Geen contract, geen opzegtermijn. Eerste keer gratis.
         </p>
 

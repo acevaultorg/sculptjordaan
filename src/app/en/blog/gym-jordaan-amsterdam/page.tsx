@@ -138,8 +138,8 @@ export default function GymJordaanEN() {
               <p>
                 A membership at a big chain costs between €20 and €40 per month. A boutique studio
                 like SculptClub works differently: you pay per session or via a flexible membership.
-                Open Gym sessions start at €5.75 per visit with the Intensive plan (12 sessions per
-                4 weeks for €69). The Starter plan offers 4 sessions for €29 per 4 weeks. No
+                Open Gym sessions start at €6.13 per visit with the Popular plan (8 sessions per
+                4 weeks for €49), or unlimited for €59 per 4 weeks. The Starter plan offers 4 sessions for €29 per 4 weeks. No
                 contract, no annual membership — stop whenever you want.
               </p>
 
