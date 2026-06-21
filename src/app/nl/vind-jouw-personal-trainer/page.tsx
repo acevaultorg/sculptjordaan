@@ -27,6 +27,19 @@ export const metadata: Metadata = {
       en: "/en/find-personal-trainer",
     },
   },
+  // Per-page OG/Twitter so shares of THIS page (esp. Instagram) preview the
+  // PT-finder pitch + correct URL, not the homepage studio-rental default.
+  openGraph: {
+    type: "website",
+    url: "/nl/vind-jouw-personal-trainer",
+    title: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub",
+    description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, geen tussenpersoon. Vind jouw match bij SculptClub.`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub",
+    description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, geen tussenpersoon. Vind jouw match bij SculptClub.`,
+  },
 };
 
 const trustBadges = [

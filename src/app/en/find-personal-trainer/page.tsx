@@ -27,6 +27,19 @@ export const metadata: Metadata = {
       en: "/en/find-personal-trainer",
     },
   },
+  // Per-page OG/Twitter so shares of THIS page (esp. Instagram) preview the
+  // PT-finder pitch + correct URL, not the homepage studio-rental default.
+  openGraph: {
+    type: "website",
+    url: "/en/find-personal-trainer",
+    title: "Personal Trainer Amsterdam — Find Your Match | SculptClub",
+    description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, no middleman. Find your match at SculptClub.`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam — Find Your Match | SculptClub",
+    description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, no middleman. Find your match at SculptClub.`,
+  },
 };
 
 const trustBadges = [
