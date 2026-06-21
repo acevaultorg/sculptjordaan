@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import { getColor } from "@/lib/image-color-manifest";
-import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar, Check } from "lucide-react";
+import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar, Check, MessageCircle } from "lucide-react";
 import { acuityFreeTrials } from "@/config/acuity";
 
 // Studio Membership (operator 2026-06-21) — optional recurring plan for
@@ -22,6 +22,11 @@ const membershipPerks = [
   "Maandelijks opzegbaar, geen lang contract",
   "Jouw thuisbasis: de privé studio in de Jordaan",
 ];
+
+// Trainer referral (operator 2026-06-21) — the perk a referrer earns when a
+// trainer they send rents for the first time. Change this one line. Credited
+// manually at the referred trainer's first paid rental (no tracking backend).
+const REFERRAL_PERK = "1 uur studio gratis";
 
 const HERO_IMAGES = [
   { src: "/images/studio/training-squat-cinematic.jpg", alt: "Privé squat rack in de SculptClub studio in Jordaan" },
@@ -347,6 +352,35 @@ export default function VoorTrainersHubNL() {
             </div>
           </FadeIn>
         </div>
+      </Section>
+
+      {/* Trainer referral — operator 2026-06-21. The cheapest, warmest
+          acquisition channel: existing renters refer colleagues. "Deel via
+          WhatsApp" opens the share-to-contact flow with a ready pitch a
+          trainer can forward. Perk in REFERRAL_PERK (confirm before deploy);
+          credited manually at the referred trainer's first paid rental (MVP —
+          no tracking backend). Pairs with the operator's direct ask to
+          existing renters, which is the bigger channel. */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center sm:flex sm:items-center sm:justify-between sm:gap-6 sm:text-left">
+            <div>
+              <p className="text-base font-semibold">Ken je een collega-trainer? Breng &apos;m mee.</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Stuur &apos;m door. Huurt die hier z&apos;n eerste keer, dan krijg jij {REFERRAL_PERK}. Klein bedankje, geen gedoe.
+              </p>
+            </div>
+            <ButtonLink
+              href={`https://wa.me/?text=${encodeURIComponent("Hey! Ik train mijn klanten bij SculptClub — een privé studio in de Jordaan: €12/uur, eigen klanten en tarief, geen contract. Misschien iets voor jou? Eerste sessie gratis → https://sculptclub.nl/studio-huren")}`}
+              external
+              size="lg"
+              className="mt-4 shrink-0 sm:mt-0 plausible-event-name=trainer_referral_share"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              Deel via WhatsApp
+            </ButtonLink>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Trainer FAQ — schema-marked for SEO */}
