@@ -96,7 +96,7 @@ const openGymPlans = [
   {
     name: "Unlimited",
     sessions: "Unlimited",
-    price: "\u20ac89",
+    price: "\u20ac59",
     period: "/ 4 weeks",
     perSession: null,
     blurb: "No limits, no planning",
@@ -149,7 +149,7 @@ export default function PricingPageEN() {
         name="Open Gym"
         description="Independent training in a private studio in Amsterdam Jordaan. 60-minute sessions, max 3 people. From €29/4 weeks."
         url="/en/pricing"
-        priceRange="€29–€89/4 weeks"
+        priceRange="€29–€59/4 weeks"
       />
       <ServiceJsonLd
         name="Studio Rental"
@@ -167,7 +167,7 @@ export default function PricingPageEN() {
           { name: "Starter Plan — 4 sessions", description: "4 sessions per 4 weeks, €7.25 per session", price: 29 },
           { name: "Popular — 8 sessions", description: "8 sessions per 4 weeks, €6.13 per session", price: 49 },
           { name: "Intensive — 12 sessions", description: "12 sessions per 4 weeks, €5.75 per session", price: 69 },
-          { name: "Unlimited", description: "Unlimited training per 4 weeks", price: 89 },
+          { name: "Unlimited", description: "Unlimited training per 4 weeks", price: 59 },
         ]}
       />
       <OfferCatalogJsonLd

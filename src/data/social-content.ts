@@ -141,7 +141,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Open Gym Instapplan: €29 / 4 weeks (4 sessions = €7.25/session)",
         "Open Gym Populair: €49 / 4 weeks (8 sessions = €6.13/session)",
         "Open Gym Intensief: €69 / 4 weeks (12 sessions = €5.75/session)",
-        "Open Gym Onbeperkt: €89 / 4 weeks unlimited",
+        "Open Gym Onbeperkt: €59 / 4 weeks unlimited",
         "Max 3 people per slot",
         "Door code via WhatsApp the night before",
         "First session free",

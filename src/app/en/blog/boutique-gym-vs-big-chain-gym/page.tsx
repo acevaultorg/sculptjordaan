@@ -95,7 +95,7 @@ export default function BoutiqueGymVsChainEN() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Price</td><td className="py-2 pr-4">€20-€40/month</td><td className="py-2">€29-€89/4 weeks</td></tr>
+                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Price</td><td className="py-2 pr-4">€20-€40/month</td><td className="py-2">€29-€59/4 weeks</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Crowding</td><td className="py-2 pr-4">High (peak hours)</td><td className="py-2">Max 3 people</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Guidance</td><td className="py-2 pr-4">Not included</td><td className="py-2">Optional (PT from €45)</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Equipment</td><td className="py-2 pr-4">Many, often occupied</td><td className="py-2">Fewer, always available</td></tr>

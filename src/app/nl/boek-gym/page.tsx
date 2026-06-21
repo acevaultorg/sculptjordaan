@@ -96,7 +96,7 @@ const plans = [
     name: "Onbeperkt",
     sessions: "Onbeperkt",
     tagline: "Maximale vrijheid",
-    price: "€89",
+    price: "€59",
     period: "/ 4 weken",
     perSession: null,
     badge: null,
@@ -126,7 +126,7 @@ export default function BoekGymPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Boek Open Gym", url: "/nl/boek-gym" }]} />
-      <ServiceJsonLd name="Open Gym" description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam." url="/nl/boek-gym" priceRange="€29 - €89 per 4 weken" />
+      <ServiceJsonLd name="Open Gym" description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam." url="/nl/boek-gym" priceRange="€29 - €59 per 4 weken" />
       <FaqJsonLd faqs={faqJsonLdData} />
 
       {/* ═══ ABOVE THE FOLD: Title + CTA + trust — convert without scrolling ═══ */}
