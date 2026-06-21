@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { LandingVideo } from "@/components/marketing/landing-video";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
@@ -29,15 +29,21 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
  * a separate WhatsApp tour; copy softened so nobody expects a 15-min tour
  * and lands on the 60-min trial calendar.)
  *
- * Conversion tracking: AcuityEmbed receives explicit intent="studio_rental"
- * + pricing="free" so a completed booking fires the Google Ads lead-form
- * conversion (NwwsCNGZlp8cEMG71YxD) with correct taxonomy. WhatsApp CTAs
- * carry plausible-event-name classes (tagged-events script is loaded).
+ * 2026-06-21 (operator): NO iframe. The embedded Acuity calendar was replaced
+ * by buttons (hero + a dedicated booking card) that open the free Studio Rental
+ * try-out in a NEW TAB (acuityFreeTrials.studioRentalTryout). Acuity's own page
+ * is mobile-native + supports Apple Pay and avoids the fixed-height
+ * scroll-in-scroll the iframe had on mobile. Conversion tracking: ButtonLink
+ * auto-fires trackBeginBooking on the Acuity URL (begin-booking intent), and the
+ * global Acuity confirm script fires the Google Ads booking conversion on
+ * completion; WhatsApp CTAs carry plausible-event-name classes.
  *
- * 2026-06-04: added a "Bekijk de ruimte" studio gallery (PhotoGalleryLightbox,
- * reused from /studio-huren) before the tour card so trainers can see the room
- * on the page; the header Boek/Try-Out CTA is now suppressed on this
- * booking-step route (see isBookingStepPath in header.tsx).
+ * 2026-06-21: added a "Zo ziet het eruit" studio-promo video band (lazy
+ * LandingVideo, zero LCP impact) between the trust strip and the booking card —
+ * see it in action → book. The "Bekijk de ruimte" gallery (PhotoGalleryLightbox,
+ * reused from /studio-huren) still lets trainers see the room before the tour
+ * card; the header Boek/Try-Out CTA stays suppressed on this booking-step route
+ * (see isBookingStepPath in header.tsx).
  *
  * EN parity: src/app/en/studio-rental/free-trial/page.tsx (keep in sync).
  */
@@ -111,7 +117,8 @@ export default function GratisTestStudioHurenNL() {
           {/* Two co-primary CTAs = the two operator goals, side by side */}
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink
-              href="#book"
+              href={acuityFreeTrials.studioRentalTryout}
+              external
               size="lg"
               className="w-full sm:w-auto plausible-event-name=gratis_test_book_cta"
             >
@@ -155,20 +162,64 @@ export default function GratisTestStudioHurenNL() {
           </ul>
         </FadeIn>
 
-        {/* Booking surface — the canonical conversion. scroll-mt keeps the
-            heading clear of the sticky header when the Book CTA jumps here. */}
-        <div id="book" className="scroll-mt-24">
-          <h2 className="mb-4 text-center text-xl font-semibold">Boek je gratis proefsessie</h2>
-          <AcuityEmbed
-            url={acuityFreeTrials.studioRentalTryout}
-            title="Boek je gratis Studio Rental proefsessie bij SculptClub"
-            intent="studio_rental"
-            pricing="free"
-            height={900}
-            loadingLabel="Agenda wordt geladen…"
-            className="-mx-4 rounded-none overflow-hidden bg-white sm:mx-auto sm:max-w-3xl sm:rounded-2xl"
-          />
-        </div>
+      </Section>
+
+      {/* See-it-in-action — the studio promo (studio-promo.mp4 = the
+          trainer-recruitment clip per studio-video-band.tsx). Lazy LandingVideo:
+          zero LCP impact, the mp4 loads only on scroll. Sits between the trust
+          strip and the booking card so a trainer sees the room in motion, then
+          books (see it → act). */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <p className="overline">Zo ziet het eruit</p>
+              <h2 className="mt-2 text-xl font-semibold">Train in onze privé studio in de Jordaan</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                De studio, apparatuur en sfeer aan de gracht — in beeld.
+              </p>
+            </div>
+            <LandingVideo
+              src="/videos/studio-promo.mp4"
+              poster="/videos/studio-promo-poster.jpg"
+              label="SculptClub — de privé studio in Amsterdam Jordaan, in beeld"
+            />
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* Booking surface — the canonical conversion. NO iframe (operator
+          2026-06-21): the embedded Acuity calendar is replaced by a button that
+          opens our agenda in a NEW TAB. Acuity's own page is mobile-native +
+          supports Apple Pay, and avoids the fixed-height scroll-in-scroll the
+          iframe had on mobile. ButtonLink auto-fires trackBeginBooking on the
+          Acuity URL; the global Acuity confirm script still fires the booking
+          conversion. scroll-mt keeps the heading clear of the sticky header for
+          any #book deep links. */}
+      <Section>
+        <FadeIn>
+          <div id="book" className="scroll-mt-24">
+            <div className="mx-auto max-w-xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center sm:p-8">
+              <CalendarCheck className="mx-auto h-6 w-6 text-brand" aria-hidden />
+              <h2 className="mt-3 text-xl font-semibold">Boek je gratis proefsessie</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                60 minuten in de privé studio. Geen creditcard, geen contract — kies een tijd die jou uitkomt.
+              </p>
+              <ButtonLink
+                href={acuityFreeTrials.studioRentalTryout}
+                external
+                size="lg"
+                className="mt-5 w-full sm:w-auto plausible-event-name=gratis_test_book_cta_section"
+              >
+                <CalendarCheck className="mr-2 h-4 w-4" />
+                Boek gratis proefsessie
+              </ButtonLink>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Opent onze agenda in een nieuw tabblad · altijd gratis annuleren
+              </p>
+            </div>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Studio gallery — let trainers SEE the room before booking. Sits right

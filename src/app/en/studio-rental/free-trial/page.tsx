@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { AcuityEmbed } from "@/components/marketing/acuity-embed";
+import { LandingVideo } from "@/components/marketing/landing-video";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
@@ -18,6 +18,14 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
  * the same free studio try-out in a NEW TAB (acuityFreeTrials.studioRentalTryout)
  * so ZZP trainers can inspect the space before committing. (Operator
  * 2026-06-08: reuse the free try-out rather than a separate WhatsApp tour.)
+ *
+ * 2026-06-21 (operator): NO iframe. The embedded Acuity calendar was replaced
+ * by buttons (hero + a dedicated booking card) that open the free try-out in a
+ * NEW TAB — Acuity's own page is mobile-native + Apple Pay friendly and avoids
+ * the iframe's mobile scroll-in-scroll. A "see it in action" studio-promo video
+ * band (lazy LandingVideo, zero LCP) sits between the trust strip and the booking
+ * card. ButtonLink auto-fires trackBeginBooking on the Acuity URL; the global
+ * Acuity confirm script fires the booking conversion on completion.
  *
  * NL parity at src/app/nl/studio-huren/gratis-test/page.tsx (keep in sync).
  */
@@ -88,7 +96,8 @@ export default function FreeTrialStudioRentalEN() {
           {/* Two co-primary CTAs = the two operator goals, side by side */}
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink
-              href="#book"
+              href={acuityFreeTrials.studioRentalTryout}
+              external
               size="lg"
               className="w-full sm:w-auto plausible-event-name=free_trial_book_cta"
             >
@@ -132,19 +141,62 @@ export default function FreeTrialStudioRentalEN() {
           </ul>
         </FadeIn>
 
-        {/* Booking surface — the canonical conversion. */}
-        <div id="book" className="scroll-mt-24">
-          <h2 className="mb-4 text-center text-xl font-semibold">Book your free trial</h2>
-          <AcuityEmbed
-            url={acuityFreeTrials.studioRentalTryout}
-            title="Book your free Studio Rental trial at SculptClub"
-            intent="studio_rental"
-            pricing="free"
-            height={900}
-            loadingLabel="Loading the calendar…"
-            className="-mx-4 rounded-none overflow-hidden bg-white sm:mx-auto sm:max-w-3xl sm:rounded-2xl"
-          />
-        </div>
+      </Section>
+
+      {/* See-it-in-action — the studio promo (studio-promo.mp4 = the
+          trainer-recruitment clip). Lazy LandingVideo: zero LCP impact, loads
+          only on scroll. Between the trust strip and the booking card so a
+          trainer sees the room in motion, then books (see it → act). */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <p className="overline">See it in action</p>
+              <h2 className="mt-2 text-xl font-semibold">Train in our private studio in the Jordaan</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                The studio, equipment and canal-side atmosphere — in motion.
+              </p>
+            </div>
+            <LandingVideo
+              src="/videos/studio-promo.mp4"
+              poster="/videos/studio-promo-poster.jpg"
+              label="SculptClub — the private studio in Amsterdam Jordaan, in motion"
+            />
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* Booking surface — the canonical conversion. NO iframe (operator
+          2026-06-21): the embedded Acuity calendar is replaced by a button that
+          opens our calendar in a NEW TAB. Acuity's own page is mobile-native +
+          Apple Pay friendly, avoiding the iframe's mobile scroll-in-scroll.
+          ButtonLink auto-fires trackBeginBooking on the Acuity URL; the global
+          Acuity confirm script fires the booking conversion. scroll-mt keeps the
+          heading clear of the sticky header for any #book deep links. */}
+      <Section>
+        <FadeIn>
+          <div id="book" className="scroll-mt-24">
+            <div className="mx-auto max-w-xl rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center sm:p-8">
+              <CalendarCheck className="mx-auto h-6 w-6 text-brand" aria-hidden />
+              <h2 className="mt-3 text-xl font-semibold">Book your free trial</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                60 minutes in the private studio. No credit card, no contract — pick a time that suits you.
+              </p>
+              <ButtonLink
+                href={acuityFreeTrials.studioRentalTryout}
+                external
+                size="lg"
+                className="mt-5 w-full sm:w-auto plausible-event-name=free_trial_book_cta_section"
+              >
+                <CalendarCheck className="mr-2 h-4 w-4" />
+                Book free trial
+              </ButtonLink>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Opens our calendar in a new tab · free cancellation anytime
+              </p>
+            </div>
+          </div>
+        </FadeIn>
       </Section>
 
       {/* Studio gallery — let trainers SEE the room before booking. Sits right
