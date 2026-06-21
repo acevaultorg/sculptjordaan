@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/back-pain-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-rugklachten-amsterdam",
+    title: "Personal Trainer bij Rugklachten Amsterdam — SculptClub",
+    description:
+      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut. Gratis intake in Amsterdam Jordaan.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer bij Rugklachten Amsterdam — SculptClub",
+    description:
+      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut. Gratis intake in Amsterdam Jordaan.",
+  },
 };
 
 export default function PersonalTrainerRugklachtenAmsterdam() {

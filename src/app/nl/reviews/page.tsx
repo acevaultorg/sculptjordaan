@@ -18,6 +18,19 @@ export const metadata: Metadata = {
       en: "/en/reviews",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/reviews",
+    title: "Reviews — SculptClub Amsterdam Jordaan",
+    description:
+      "Lees wat onze klanten zeggen over SculptClub. 5.0 sterren op Google. Boutique personal training in Amsterdam Jordaan.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reviews — SculptClub Amsterdam Jordaan",
+    description:
+      "Lees wat onze klanten zeggen over SculptClub. 5.0 sterren op Google. Boutique personal training in Amsterdam Jordaan.",
+  },
 };
 
 /* ─── Real Google Reviews (verified from Google Maps, March 2026) ─── */

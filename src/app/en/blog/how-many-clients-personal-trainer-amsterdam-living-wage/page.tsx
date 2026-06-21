@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     canonical: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage",
     languages: { nl: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen", en: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage" },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage",
+    title: "How Many Clients Does a Personal Trainer in Amsterdam Need? — SculptClub",
+    description:
+      "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family? With 2026 numbers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How Many Clients Does a Personal Trainer in Amsterdam Need? — SculptClub",
+    description:
+      "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family? With 2026 numbers.",
+  },
 };
 
 export default function BlogPostHowManyClients() {

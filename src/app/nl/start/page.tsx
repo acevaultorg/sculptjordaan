@@ -17,6 +17,19 @@ export const metadata: Metadata = {
       en: "/en/start",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/start",
+    title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
+    description:
+      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
+    description:
+      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac45, Open Gym vanaf \u20ac5,75/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+  },
 };
 
 // UTM-tagged Instagram bio paths \u2014 attribution survives through to Acuity bookings.

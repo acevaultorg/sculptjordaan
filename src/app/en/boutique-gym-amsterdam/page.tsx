@@ -17,6 +17,19 @@ export const metadata: Metadata = {
       en: "/en/boutique-gym-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/boutique-gym-amsterdam",
+    title: "Boutique Gym Amsterdam — SculptClub Private Studio Jordaan",
+    description:
+      "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €45 per session. First intro free.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boutique Gym Amsterdam — SculptClub Private Studio Jordaan",
+    description:
+      "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €45 per session. First intro free.",
+  },
 };
 
 const steps = [

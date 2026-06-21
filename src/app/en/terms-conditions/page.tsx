@@ -14,6 +14,19 @@ export const metadata: Metadata = {
       en: "/en/terms-conditions",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/terms-conditions",
+    title: "Terms & Conditions — SculptClub Amsterdam Jordaan",
+    description:
+      "Terms and conditions of SculptClub. Information about bookings, cancellation, payment, house rules and liability.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions — SculptClub Amsterdam Jordaan",
+    description:
+      "Terms and conditions of SculptClub. Information about bookings, cancellation, payment, house rules and liability.",
+  },
 };
 
 export default function TermsPageEN() {

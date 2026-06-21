@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/physiotherapist-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/physiotherapist-personal-trainer-amsterdam",
+    title: "Training with an Injury or Pain in Amsterdam — SculptClub",
+    description:
+      "An injury doesn't have to mean the end of your training. How SculptClub approaches training-after-injury, alongside (not instead of) your physiotherapist.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Training with an Injury or Pain in Amsterdam — SculptClub",
+    description:
+      "An injury doesn't have to mean the end of your training. How SculptClub approaches training-after-injury, alongside (not instead of) your physiotherapist.",
+  },
 };
 
 export default function PhysiotherapistPersonalTrainerEN() {

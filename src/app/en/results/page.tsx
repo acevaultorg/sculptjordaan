@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/results",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/results",
+    title: "Results — SculptClub Amsterdam Jordaan",
+    description:
+      "See our clients' transformations and results. Personal training that works. Book your free trial at SculptClub.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Results — SculptClub Amsterdam Jordaan",
+    description:
+      "See our clients' transformations and results. Personal training that works. Book your free trial at SculptClub.",
+  },
 };
 
 const results = [

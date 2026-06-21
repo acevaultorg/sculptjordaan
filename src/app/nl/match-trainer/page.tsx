@@ -30,6 +30,19 @@ export const metadata: Metadata = {
       en: "/en/match-trainer",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/match-trainer",
+    title: "Match jezelf met je personal trainer — SculptClub",
+    description:
+      "3 vragen, 30 seconden. We tonen je top-2 trainer-match uit 11 trainers in Jordaan. Eerste intake gratis · vrijblijvend.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Match jezelf met je personal trainer — SculptClub",
+    description:
+      "3 vragen, 30 seconden. We tonen je top-2 trainer-match uit 11 trainers in Jordaan. Eerste intake gratis · vrijblijvend.",
+  },
 };
 
 export default function MatchTrainerPage() {

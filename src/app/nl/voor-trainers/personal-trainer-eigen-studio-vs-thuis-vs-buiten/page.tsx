@@ -27,6 +27,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten",
+    title: "Eigen Studio vs Thuis vs Buiten — waar werk je als personal trainer? | SculptClub",
+    description:
+      "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren. Kosten, marge, klantperceptie.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eigen Studio vs Thuis vs Buiten — waar werk je als personal trainer? | SculptClub",
+    description:
+      "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren. Kosten, marge, klantperceptie.",
+  },
 };
 
 export default function StudioVsThuisVsBuitenNL() {

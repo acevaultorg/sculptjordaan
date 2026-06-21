@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     canonical: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam",
     languages: { nl: "/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam", en: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam" },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam",
+    title: "Studio Rental vs Commercial Gym as a Personal Trainer — Amsterdam Comparison — SculptClub",
+    description:
+      "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio? Full comparison for freelance personal trainers in Amsterdam.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio Rental vs Commercial Gym as a Personal Trainer — Amsterdam Comparison — SculptClub",
+    description:
+      "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio? Full comparison for freelance personal trainers in Amsterdam.",
+  },
 };
 
 export default function BlogPostStudioVsCommercialGym() {

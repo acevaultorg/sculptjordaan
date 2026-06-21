@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/gym-rental-per-hour-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/gym-huren-per-uur-amsterdam",
+    title: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub",
+    description:
+      "Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub",
+    description:
+      "Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten.",
+  },
 };
 
 export default function BlogPostGymHurenPerUur() {

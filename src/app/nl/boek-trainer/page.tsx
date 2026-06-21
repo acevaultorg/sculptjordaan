@@ -21,6 +21,19 @@ export const metadata: Metadata = {
     canonical: "/nl/boek-trainer",
     languages: { nl: "/nl/boek-trainer", en: "/en/book-trainer" },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/boek-trainer",
+    title: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam",
+    description:
+      "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €45/sessie, geen abonnement, altijd gratis annuleren.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam",
+    description:
+      "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €45/sessie, geen abonnement, altijd gratis annuleren.",
+  },
 };
 
 const steps = [

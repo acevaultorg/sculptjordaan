@@ -32,6 +32,19 @@ export const metadata: Metadata = {
       en: "/en/book-studio",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/book-studio",
+    title: "Book the Studio — Private Training Space | SculptClub Amsterdam",
+    description:
+      "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book the Studio — Private Training Space | SculptClub Amsterdam",
+    description:
+      "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
+  },
 };
 
 const steps = [

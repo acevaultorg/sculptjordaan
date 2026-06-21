@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam-west",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-amsterdam-west",
+    title: "Personal Trainer Amsterdam West & Oud-West — SculptClub",
+    description:
+      "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €45/session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam West & Oud-West — SculptClub",
+    description:
+      "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €45/session.",
+  },
 };
 
 export default function PersonalTrainerAmsterdamWestEN() {

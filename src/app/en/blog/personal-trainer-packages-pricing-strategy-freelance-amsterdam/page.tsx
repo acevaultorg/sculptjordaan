@@ -17,6 +17,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
+    title: "Personal Trainer Packages — Pricing Strategy for Freelancers in Amsterdam — SculptClub",
+    description:
+      "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026? Concrete pricing strategy with numbers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Packages — Pricing Strategy for Freelancers in Amsterdam — SculptClub",
+    description:
+      "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026? Concrete pricing strategy with numbers.",
+  },
 };
 
 export default function BlogPostPackagesPricing() {

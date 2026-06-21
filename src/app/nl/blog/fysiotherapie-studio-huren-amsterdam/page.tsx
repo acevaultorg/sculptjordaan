@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/physiotherapy-studio-rental-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/fysiotherapie-studio-huren-amsterdam",
+    title: "Fysiotherapie Studio Huren in Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur. Ideaal voor ZZP-fysiotherapeuten.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fysiotherapie Studio Huren in Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur. Ideaal voor ZZP-fysiotherapeuten.",
+  },
 };
 
 export default function BlogPostFysioStudioNL() {

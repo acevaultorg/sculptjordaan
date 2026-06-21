@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam",
+    title: "Personal Trainer Pakketten — Prijsstrategie voor ZZP Trainers in Amsterdam — SculptClub",
+    description:
+      "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026? Concrete prijsstrategie met cijfers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Pakketten — Prijsstrategie voor ZZP Trainers in Amsterdam — SculptClub",
+    description:
+      "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026? Concrete prijsstrategie met cijfers.",
+  },
 };
 
 export default function BlogPostPakkettenPrijsstrategie() {

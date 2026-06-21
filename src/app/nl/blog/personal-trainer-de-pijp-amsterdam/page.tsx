@@ -28,6 +28,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-de-pijp-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-de-pijp-amsterdam",
+    title: "Personal Trainer De Pijp Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, trainers vanaf €45.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer De Pijp Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, trainers vanaf €45.",
+  },
 };
 
 export default function PersonalTrainerDePijpNL() {

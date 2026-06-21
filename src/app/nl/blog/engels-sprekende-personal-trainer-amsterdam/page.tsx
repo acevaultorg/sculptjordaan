@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/english-speaking-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/engels-sprekende-personal-trainer-amsterdam",
+    title: "Engels-sprekende Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Internationaal team, expat-collega's of zelf liever in het Engels trainen? Alle trainers bij SculptClub coachen vloeiend in het Engels. Gratis intake.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engels-sprekende Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Internationaal team, expat-collega's of zelf liever in het Engels trainen? Alle trainers bij SculptClub coachen vloeiend in het Engels. Gratis intake.",
+  },
 };
 
 export default function EngelsSprekendePTAmsterdamNL() {

@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/boutique-gym-vs-big-chain-gym",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/boutique-gym-vs-sportschool-keten",
+    title: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub",
+    description:
+      "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding. Ontdek wat het beste werkt voor jouw doelen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub",
+    description:
+      "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding. Ontdek wat het beste werkt voor jouw doelen.",
+  },
 };
 
 export default function BoutiqueGymVsKetenNL() {

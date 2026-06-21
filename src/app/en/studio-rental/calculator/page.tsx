@@ -17,6 +17,19 @@ export const metadata: Metadata = {
       en: "/en/studio-rental/calculator",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/studio-rental/calculator",
+    title: "Studio Rental Cost Calculator — Personal Trainer Amsterdam | SculptClub",
+    description:
+      "Calculate what you keep renting the studio from €12/hr and keeping 100% of your rate — vs a gym taking 30-50% commission. For personal trainers in Amsterdam Jordaan.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio Rental Cost Calculator — Personal Trainer Amsterdam | SculptClub",
+    description:
+      "Calculate what you keep renting the studio from €12/hr and keeping 100% of your rate — vs a gym taking 30-50% commission. For personal trainers in Amsterdam Jordaan.",
+  },
 };
 
 const faqs = [

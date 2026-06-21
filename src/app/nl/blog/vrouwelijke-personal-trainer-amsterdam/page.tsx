@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/female-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/vrouwelijke-personal-trainer-amsterdam",
+    title: "Vrouwelijke Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een vrouwelijke personal trainer in Amsterdam? Bij SculptClub train je met Gezina, Eva of Andrea in een privé studio. Gratis intake.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vrouwelijke Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een vrouwelijke personal trainer in Amsterdam? Bij SculptClub train je met Gezina, Eva of Andrea in een privé studio. Gratis intake.",
+  },
 };
 
 export default function VrouwelijkePTAmsterdamNL() {

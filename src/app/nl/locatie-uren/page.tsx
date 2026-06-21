@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/location-hours",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/locatie-uren",
+    title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
+    description:
+      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:30 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
+    description:
+      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:30 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+  },
 };
 
 const directions = [

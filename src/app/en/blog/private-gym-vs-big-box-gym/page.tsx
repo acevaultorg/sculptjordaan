@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/private-gym-vs-big-box-gym",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/private-gym-vs-big-box-gym",
+    title: "Private Gym vs Big Box Gym: The Key Differences — SculptClub",
+    description:
+      "What is the difference between a private gym and a big box gym? Compare atmosphere, equipment access, personal attention, hygiene and price.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Private Gym vs Big Box Gym: The Key Differences — SculptClub",
+    description:
+      "What is the difference between a private gym and a big box gym? Compare atmosphere, equipment access, personal attention, hygiene and price.",
+  },
 };
 
 export default function BlogPostPriveVsGrEN() {

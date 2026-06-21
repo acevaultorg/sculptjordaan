@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen",
+    title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026 gids) — SculptClub",
+    description:
+      "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding. Met cijfers voor 2026.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026 gids) — SculptClub",
+    description:
+      "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding. Met cijfers voor 2026.",
+  },
 };
 
 export default function BlogPostZzpKvkBtw() {

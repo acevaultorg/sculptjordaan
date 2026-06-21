@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/weight-loss-strength-training",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/afvallen-met-krachttraining",
+    title: "Afvallen met krachttraining: Waarom het werkt — SculptClub",
+    description:
+      "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect, metabolisme en praktische tips.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Afvallen met krachttraining: Waarom het werkt — SculptClub",
+    description:
+      "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect, metabolisme en praktische tips.",
+  },
 };
 
 export default function AfvallenMetKrachttrainingNL() {

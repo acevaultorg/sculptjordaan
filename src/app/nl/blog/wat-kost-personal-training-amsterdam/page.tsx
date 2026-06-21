@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-training-cost-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/wat-kost-personal-training-amsterdam",
+    title: "Wat kost personal training in Amsterdam? Prijzen & uitleg — SculptClub",
+    description:
+      "Wat kost personal training in Amsterdam? Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio als SculptClub vanaf €45 per sessie uitstekende waarde biedt.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wat kost personal training in Amsterdam? Prijzen & uitleg — SculptClub",
+    description:
+      "Wat kost personal training in Amsterdam? Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio als SculptClub vanaf €45 per sessie uitstekende waarde biedt.",
+  },
 };
 
 export default function WatKostPersonalTraining() {

@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/first-time-gym-tips",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/eerste-keer-sportschool-tips",
+    title: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub",
+    description:
+      "Zenuwachtig voor je eerste bezoek aan de sportschool? Deze 7 praktische tips helpen je om je voor te bereiden, zelfverzekerd binnen te stappen en direct een goede start te maken.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub",
+    description:
+      "Zenuwachtig voor je eerste bezoek aan de sportschool? Deze 7 praktische tips helpen je om je voor te bereiden, zelfverzekerd binnen te stappen en direct een goede start te maken.",
+  },
 };
 
 export default function EersteKeerSportschoolTips() {

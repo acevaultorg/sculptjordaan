@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/physiotherapy-studio-rental-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/physiotherapy-studio-rental-amsterdam",
+    title: "Physiotherapy Studio Rental in Amsterdam — SculptClub",
+    description:
+      "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Physiotherapy Studio Rental in Amsterdam — SculptClub",
+    description:
+      "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
+  },
 };
 
 export default function BlogPostPhysioStudioEN() {

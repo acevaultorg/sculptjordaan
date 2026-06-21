@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       nl: "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/improve-body-composition-amsterdam",
+    title: "Improve Body Composition Amsterdam — SculptClub",
+    description:
+      "Less fat, more muscle — without crash diets. Personal training focused on body recomposition at SculptClub Amsterdam Jordaan. Free intro session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Improve Body Composition Amsterdam — SculptClub",
+    description:
+      "Less fat, more muscle — without crash diets. Personal training focused on body recomposition at SculptClub Amsterdam Jordaan. Free intro session.",
+  },
 };
 
 export default function ImproveBodyCompositionAmsterdam() {

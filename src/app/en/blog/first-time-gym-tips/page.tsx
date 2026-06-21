@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/first-time-gym-tips",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/first-time-gym-tips",
+    title: "First Time at the Gym: 7 Tips for Beginners — SculptClub",
+    description:
+      "Nervous about your first gym visit? These 7 practical tips will help you prepare, walk in with confidence, and get off to a great start.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "First Time at the Gym: 7 Tips for Beginners — SculptClub",
+    description:
+      "Nervous about your first gym visit? These 7 practical tips will help you prepare, walk in with confidence, and get off to a great start.",
+  },
 };
 
 export default function FirstTimeGymTips() {

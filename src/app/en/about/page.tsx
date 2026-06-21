@@ -33,6 +33,19 @@ export const metadata: Metadata = {
       en: "/en/about",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/about",
+    title: "About Us — SculptClub Amsterdam Jordaan",
+    description:
+      "SculptClub is a boutique personal training studio on the Egelantiersgracht in Amsterdam Jordaan. Private training, Open Gym and studio rental. Founded in 2025.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — SculptClub Amsterdam Jordaan",
+    description:
+      "SculptClub is a boutique personal training studio on the Egelantiersgracht in Amsterdam Jordaan. Private training, Open Gym and studio rental. Founded in 2025.",
+  },
 };
 
 const pillars = [

@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog/gym-without-membership-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/gym-without-membership-amsterdam",
+    title: "Gym Without Membership in Amsterdam: Your Options — SculptClub",
+    description:
+      "Don't want a long-term gym membership? Discover your options in Amsterdam: pay-per-session, Open Gym, punch cards and more. Compare flexible fitness.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gym Without Membership in Amsterdam: Your Options — SculptClub",
+    description:
+      "Don't want a long-term gym membership? Discover your options in Amsterdam: pay-per-session, Open Gym, punch cards and more. Compare flexible fitness.",
+  },
 };
 
 export default function GymWithoutMembershipEN() {

@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/open-gym-vs-regular-gym",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/open-gym-vs-regular-gym",
+    title: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub",
+    description:
+      "What is the difference between Open Gym and a regular gym? Compare price, privacy, equipment, and atmosphere to make the best choice for your training.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub",
+    description:
+      "What is the difference between Open Gym and a regular gym? Compare price, privacy, equipment, and atmosphere to make the best choice for your training.",
+  },
 };
 
 export default function BlogPostEN3() {

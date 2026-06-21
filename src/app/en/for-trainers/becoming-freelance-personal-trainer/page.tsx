@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers/becoming-freelance-personal-trainer",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/for-trainers/becoming-freelance-personal-trainer",
+    title: "Becoming a Freelance Personal Trainer in Amsterdam — 2026 guide | SculptClub",
+    description:
+      "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan. Written by a trainer-studio.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Becoming a Freelance Personal Trainer in Amsterdam — 2026 guide | SculptClub",
+    description:
+      "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan. Written by a trainer-studio.",
+  },
 };
 
 export default function FreelancePTGuideEN() {

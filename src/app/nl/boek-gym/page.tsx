@@ -30,6 +30,19 @@ export const metadata: Metadata = {
     canonical: "/nl/boek-gym",
     languages: { nl: "/nl/boek-gym", en: "/en/book-gym" },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/boek-gym",
+    title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
+    description:
+      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie €10 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
+    description:
+      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie €10 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+  },
 };
 
 const steps = [

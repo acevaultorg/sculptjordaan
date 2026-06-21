@@ -28,6 +28,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/voor-trainers",
+    title: "Voor Personal Trainers in Amsterdam | SculptClub Jordaan",
+    description:
+      "Voor freelance personal trainers in Amsterdam: studio huren vanaf €12/uur. Eigen tarief en klanten, geen contract, altijd gratis annuleren via SculptClub.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Voor Personal Trainers in Amsterdam | SculptClub Jordaan",
+    description:
+      "Voor freelance personal trainers in Amsterdam: studio huren vanaf €12/uur. Eigen tarief en klanten, geen contract, altijd gratis annuleren via SculptClub.",
+  },
 };
 
 const pillars = [

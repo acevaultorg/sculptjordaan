@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/match-trainer",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/match-trainer",
+    title: "Match yourself with a personal trainer — SculptClub",
+    description:
+      "3 questions, 30 seconds. We show your top-2 trainer match from 11 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Match yourself with a personal trainer — SculptClub",
+    description:
+      "3 questions, 30 seconds. We show your top-2 trainer match from 11 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
+  },
 };
 
 export default function MatchTrainerPage() {

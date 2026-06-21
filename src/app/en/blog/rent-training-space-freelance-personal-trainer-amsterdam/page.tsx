@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
+    title: "Rent Training Space as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Practical guide for freelance personal trainers looking to rent training space in Amsterdam. Costs, insurance, tax benefits and how to get started.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rent Training Space as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Practical guide for freelance personal trainers looking to rent training space in Amsterdam. Costs, insurance, tax benefits and how to get started.",
+  },
 };
 
 export default function BlogPostFreelanceTrainerEN() {

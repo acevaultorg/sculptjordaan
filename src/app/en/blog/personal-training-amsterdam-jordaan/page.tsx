@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-training-amsterdam-jordaan",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-training-amsterdam-jordaan",
+    title: "Personal Training in Amsterdam Jordaan: What to Know — SculptClub",
+    description:
+      "Everything about personal training in the Jordaan, Amsterdam. Discover what a private studio offers, what to expect from a trainer, and why the Jordaan is the perfect location.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Training in Amsterdam Jordaan: What to Know — SculptClub",
+    description:
+      "Everything about personal training in the Jordaan, Amsterdam. Discover what a private studio offers, what to expect from a trainer, and why the Jordaan is the perfect location.",
+  },
 };
 
 export default function BlogPostEN1() {

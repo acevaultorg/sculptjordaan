@@ -10,6 +10,19 @@ export const metadata: Metadata = {
   title: "Boek een sessie",
   description: "Plan direct je sessie bij SculptClub. Personal training, Open Gym of studio huur in Amsterdam Jordaan.",
   alternates: { canonical: "/nl/boek", languages: { nl: "/nl/boek", en: "/en/book" } },
+  openGraph: {
+    type: "website",
+    url: "/nl/boek",
+    title: "Boek een sessie",
+    description:
+      "Plan direct je sessie bij SculptClub. Personal training, Open Gym of studio huur in Amsterdam Jordaan.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boek een sessie",
+    description:
+      "Plan direct je sessie bij SculptClub. Personal training, Open Gym of studio huur in Amsterdam Jordaan.",
+  },
 };
 
 const bookingOptions = [

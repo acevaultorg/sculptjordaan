@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-amsterdam",
+    title: "Personal Trainer in Amsterdam: How to Find the Best Match — SculptClub",
+    description:
+      "How do you find the right personal trainer in Amsterdam? Discover what to look for, red flags to avoid, and why a free intro session makes all the difference.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer in Amsterdam: How to Find the Best Match — SculptClub",
+    description:
+      "How do you find the right personal trainer in Amsterdam? Discover what to look for, red flags to avoid, and why a free intro session makes all the difference.",
+  },
 };
 
 export default function PersonalTrainerAmsterdamEN() {

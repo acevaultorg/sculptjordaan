@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/nutrition-coach-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/nutrition-coach-amsterdam",
+    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub",
+    description:
+      "What's the difference between a nutrition coach and a registered dietitian in Amsterdam? When does nutrition advice actually make a difference in your training results?",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub",
+    description:
+      "What's the difference between a nutrition coach and a registered dietitian in Amsterdam? When does nutrition advice actually make a difference in your training results?",
+  },
 };
 
 export default function NutritionCoachAmsterdamEN() {

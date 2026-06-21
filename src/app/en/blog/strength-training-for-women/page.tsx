@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/strength-training-for-women",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/strength-training-for-women",
+    title: "Strength Training for Women in Amsterdam — SculptClub",
+    description:
+      "Strength training is the best investment in your health. Personal training for women at SculptClub Amsterdam. Free intro session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Strength Training for Women in Amsterdam — SculptClub",
+    description:
+      "Strength training is the best investment in your health. Personal training for women at SculptClub Amsterdam. Free intro session.",
+  },
 };
 
 export default function StrengthTrainingForWomenEN() {

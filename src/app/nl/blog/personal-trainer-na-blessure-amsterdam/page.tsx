@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-after-injury-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-na-blessure-amsterdam",
+    title: "Personal Trainer na een Blessure in Amsterdam — SculptClub",
+    description:
+      "Veilig terugkeren naar sport na een blessure? Een personal trainer helpt met hersteltraining op maat. Gratis intake bij SculptClub Amsterdam.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer na een Blessure in Amsterdam — SculptClub",
+    description:
+      "Veilig terugkeren naar sport na een blessure? Een personal trainer helpt met hersteltraining op maat. Gratis intake bij SculptClub Amsterdam.",
+  },
 };
 
 export default function PTNaBlessureNL() {

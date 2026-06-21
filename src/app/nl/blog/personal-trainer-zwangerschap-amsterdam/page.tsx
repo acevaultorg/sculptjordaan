@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/prenatal-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-zwangerschap-amsterdam",
+    title: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub",
+    description:
+      "Veilig blijven trainen tijdens je zwangerschap. Privé studio in de Jordaan, vrouwelijke trainers met ervaring in prenatale kracht- en mobiliteitstraining.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub",
+    description:
+      "Veilig blijven trainen tijdens je zwangerschap. Privé studio in de Jordaan, vrouwelijke trainers met ervaring in prenatale kracht- en mobiliteitstraining.",
+  },
 };
 
 export default function PTZwangerschapAmsterdamNL() {

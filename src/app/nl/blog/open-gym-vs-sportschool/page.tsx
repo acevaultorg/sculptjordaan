@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/open-gym-vs-regular-gym",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/open-gym-vs-sportschool",
+    title: "Open Gym vs Sportschool: Wat past bij jou? — SculptClub",
+    description:
+      "Wat is het verschil tussen Open Gym en een reguliere sportschool? Vergelijk prijs, privacy, apparatuur en sfeer om de beste keuze te maken.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Open Gym vs Sportschool: Wat past bij jou? — SculptClub",
+    description:
+      "Wat is het verschil tussen Open Gym en een reguliere sportschool? Vergelijk prijs, privacy, apparatuur en sfeer om de beste keuze te maken.",
+  },
 };
 
 export default function BlogPostNL3() {

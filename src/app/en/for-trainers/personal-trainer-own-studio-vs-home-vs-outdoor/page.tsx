@@ -27,6 +27,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
+    title: "Own Studio vs Home vs Outdoor — where to work as a personal trainer | SculptClub",
+    description:
+      "Comparison for freelance personal trainers: own studio (lease), at client's home, in a park, or hourly studio rental. Costs, margins, client perception.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Own Studio vs Home vs Outdoor — where to work as a personal trainer | SculptClub",
+    description:
+      "Comparison for freelance personal trainers: own studio (lease), at client's home, in a park, or hourly studio rental. Costs, margins, client perception.",
+  },
 };
 
 export default function StudioVsHomeVsOutdoorEN() {

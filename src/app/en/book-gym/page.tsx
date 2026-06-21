@@ -14,6 +14,19 @@ export const metadata: Metadata = {
   title: { absolute: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam" },
   description: "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
   alternates: { canonical: "/en/book-gym", languages: { nl: "/nl/boek-gym", en: "/en/book-gym" } },
+  openGraph: {
+    type: "website",
+    url: "/en/book-gym",
+    title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
+    description:
+      "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
+    description:
+      "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+  },
 };
 
 const steps = [

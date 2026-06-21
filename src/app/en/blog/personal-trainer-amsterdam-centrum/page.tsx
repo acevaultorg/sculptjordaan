@@ -28,6 +28,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam-centrum",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-amsterdam-centrum",
+    title: "Personal Trainer Amsterdam Centrum — SculptClub",
+    description:
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, trainers from €45/session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam Centrum — SculptClub",
+    description:
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, trainers from €45/session.",
+  },
 };
 
 export default function PersonalTrainerCentrumEN() {

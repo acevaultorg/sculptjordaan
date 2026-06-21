@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog/small-group-training-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/small-group-training-amsterdam",
+    title: "Small Group Training in Amsterdam — SculptClub Jordaan",
+    description:
+      "Train samen met je partner, vriend(in) of collega's. Small group personal training in een privé studio in de Jordaan. Vanaf 2 personen, geen contract.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Small Group Training in Amsterdam — SculptClub Jordaan",
+    description:
+      "Train samen met je partner, vriend(in) of collega's. Small group personal training in een privé studio in de Jordaan. Vanaf 2 personen, geen contract.",
+  },
 };
 
 export default function SmallGroupTrainingAmsterdamNL() {

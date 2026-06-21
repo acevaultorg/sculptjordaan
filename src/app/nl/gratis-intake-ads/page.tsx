@@ -43,6 +43,19 @@ export const metadata: Metadata = {
       en: "/en/free-intro",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/gratis-intake",
+    title: "Personal Training Jordaan · Gratis Intake — SculptClub",
+    description:
+      "Privé personal training studio in Amsterdam Jordaan. Vanaf €45/sessie, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Training Jordaan · Gratis Intake — SculptClub",
+    description:
+      "Privé personal training studio in Amsterdam Jordaan. Vanaf €45/sessie, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
+  },
 };
 
 export default function GratisIntakeAdsPage() {

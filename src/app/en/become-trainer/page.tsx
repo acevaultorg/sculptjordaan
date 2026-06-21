@@ -43,6 +43,19 @@ export const metadata: Metadata = {
       en: "/en/become-trainer",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/become-trainer",
+    title: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan",
+    description:
+      "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour. Free tour.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan",
+    description:
+      "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour. Free tour.",
+  },
 };
 
 const HERO_IMAGES = [

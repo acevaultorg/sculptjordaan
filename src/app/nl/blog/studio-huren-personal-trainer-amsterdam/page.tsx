@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/studio-rental-personal-trainers-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/studio-huren-personal-trainer-amsterdam",
+    title: "Studio huren als personal trainer in Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een trainingsruimte om te huren als personal trainer in Amsterdam? Vergelijk kosten, flexibiliteit en voordelen van een eigen studio.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio huren als personal trainer in Amsterdam — SculptClub",
+    description:
+      "Op zoek naar een trainingsruimte om te huren als personal trainer in Amsterdam? Vergelijk kosten, flexibiliteit en voordelen van een eigen studio.",
+  },
 };
 
 export default function BlogPostStudioHurenNL() {

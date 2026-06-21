@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       nl: "/nl/blog/gratis-intake-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/free-intro-personal-trainer-amsterdam",
+    title: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub",
+    description:
+      "What happens during a free intro with a personal trainer in Amsterdam? Find out what to expect, how to prepare, and what questions to ask to find the right trainer for you.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub",
+    description:
+      "What happens during a free intro with a personal trainer in Amsterdam? Find out what to expect, how to prepare, and what questions to ask to find the right trainer for you.",
+  },
 };
 
 export default function FreeIntroBlogEN() {

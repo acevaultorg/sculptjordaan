@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/gym-jordaan-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/sportschool-jordaan-amsterdam",
+    title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub",
+    description:
+      "Op zoek naar een sportschool in de Jordaan, Amsterdam? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub",
+    description:
+      "Op zoek naar een sportschool in de Jordaan, Amsterdam? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
+  },
 };
 
 export default function SportschoolJordaanNL() {

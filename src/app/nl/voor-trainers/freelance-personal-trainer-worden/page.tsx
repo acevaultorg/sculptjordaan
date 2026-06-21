@@ -27,6 +27,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers/becoming-freelance-personal-trainer",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/voor-trainers/freelance-personal-trainer-worden",
+    title: "Freelance Personal Trainer worden in Amsterdam — gids 2026 | SculptClub",
+    description:
+      "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan. Geschreven door een trainer-studio.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freelance Personal Trainer worden in Amsterdam — gids 2026 | SculptClub",
+    description:
+      "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan. Geschreven door een trainer-studio.",
+  },
 };
 
 export default function FreelancePTGuideNL() {

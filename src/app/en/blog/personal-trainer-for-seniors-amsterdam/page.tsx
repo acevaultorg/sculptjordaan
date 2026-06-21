@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-for-seniors-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-for-seniors-amsterdam",
+    title: "Personal Trainer for Seniors in Amsterdam — SculptClub",
+    description:
+      "Stay fit and strong as you age. A personal trainer helps seniors train safely. Free intro session at SculptClub Amsterdam.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer for Seniors in Amsterdam — SculptClub",
+    description:
+      "Stay fit and strong as you age. A personal trainer helps seniors train safely. Free intro session at SculptClub Amsterdam.",
+  },
 };
 
 export default function PTForSeniorsEN() {

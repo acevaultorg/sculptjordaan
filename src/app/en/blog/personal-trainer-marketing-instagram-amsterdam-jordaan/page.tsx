@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     canonical: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
     languages: { nl: "/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan", en: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
+    title: "Personal Trainer Marketing on Instagram — What Works in Amsterdam (Jordaan) — SculptClub",
+    description:
+      "Which Instagram content actually brings PT clients in Amsterdam? Reel length, hashtags, post times, DM strategy — everything that works in 2026 for freelance personal trainers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Marketing on Instagram — What Works in Amsterdam (Jordaan) — SculptClub",
+    description:
+      "Which Instagram content actually brings PT clients in Amsterdam? Reel length, hashtags, post times, DM strategy — everything that works in 2026 for freelance personal trainers.",
+  },
 };
 
 export default function BlogPostInstagramMarketingEN() {

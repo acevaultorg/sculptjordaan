@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/strength-training-for-women",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/krachttraining-voor-vrouwen",
+    title: "Krachttraining voor Vrouwen in Amsterdam — SculptClub",
+    description:
+      "Krachttraining is de beste investering in je gezondheid. Personal training speciaal voor vrouwen bij SculptClub Amsterdam. Gratis intake.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Krachttraining voor Vrouwen in Amsterdam — SculptClub",
+    description:
+      "Krachttraining is de beste investering in je gezondheid. Personal training speciaal voor vrouwen bij SculptClub Amsterdam. Gratis intake.",
+  },
 };
 
 export default function KrachttrainingVoorVrouwenNL() {

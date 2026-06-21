@@ -17,6 +17,19 @@ export const metadata: Metadata = {
       en: "/en/boutique-gym-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/sportschool-jordaan",
+    title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
+    description:
+      "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
+    description:
+      "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €5,75 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
+  },
 };
 
 const steps = [

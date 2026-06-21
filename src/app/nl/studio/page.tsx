@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/studio",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/studio",
+    title: "Studio & Apparatuur — SculptClub Amsterdam Jordaan",
+    description:
+      "Volledig uitgeruste privé gym in de Jordaan. Squat rack, dumbbells, Echo Bike, slee, kettlebells en meer. Douches, kleedruimte en vinyl platenspeler.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio & Apparatuur — SculptClub Amsterdam Jordaan",
+    description:
+      "Volledig uitgeruste privé gym in de Jordaan. Squat rack, dumbbells, Echo Bike, slee, kettlebells en meer. Douches, kleedruimte en vinyl platenspeler.",
+  },
 };
 
 const equipmentCategories = [

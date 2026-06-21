@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
+    title: "First 10 Clients as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam? An honest roadmap with what works and what doesn't in 2026.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "First 10 Clients as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam? An honest roadmap with what works and what doesn't in 2026.",
+  },
 };
 
 export default function BlogPostFirst10Clients() {

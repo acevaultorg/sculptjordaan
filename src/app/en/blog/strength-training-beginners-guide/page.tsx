@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/strength-training-beginners-guide",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/strength-training-beginners-guide",
+    title: "Strength Training for Beginners: Complete Guide — SculptClub",
+    description:
+      "Start strength training the right way. Learn the fundamental exercises, how often to train, and how to avoid injuries in this complete beginner's guide.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Strength Training for Beginners: Complete Guide — SculptClub",
+    description:
+      "Start strength training the right way. Learn the fundamental exercises, how often to train, and how to avoid injuries in this complete beginner's guide.",
+  },
 };
 
 export default function BlogPostEN2() {

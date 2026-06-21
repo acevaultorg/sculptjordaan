@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/faqs",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/faqs",
+    title: "FAQ — SculptClub Amsterdam Jordaan",
+    description:
+      "Answers to frequently asked questions about personal training, Open Gym, studio rental, pricing and bookings at SculptClub Amsterdam.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ — SculptClub Amsterdam Jordaan",
+    description:
+      "Answers to frequently asked questions about personal training, Open Gym, studio rental, pricing and bookings at SculptClub Amsterdam.",
+  },
 };
 
 interface FaqItem {

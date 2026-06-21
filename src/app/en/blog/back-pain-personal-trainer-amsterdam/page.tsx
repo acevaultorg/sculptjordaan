@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/back-pain-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/back-pain-personal-trainer-amsterdam",
+    title: "Personal Trainer for Back Pain Amsterdam — SculptClub",
+    description:
+      "Back pain? Targeted strength training focused on technique, posture and progression can reduce back pain long-term — alongside (not instead of) your physiotherapist. Free intro in Amsterdam Jordaan.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer for Back Pain Amsterdam — SculptClub",
+    description:
+      "Back pain? Targeted strength training focused on technique, posture and progression can reduce back pain long-term — alongside (not instead of) your physiotherapist. Free intro in Amsterdam Jordaan.",
+  },
 };
 
 export default function BackPainPersonalTrainerAmsterdam() {

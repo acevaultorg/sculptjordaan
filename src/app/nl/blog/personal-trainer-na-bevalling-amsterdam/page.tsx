@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog/postpartum-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-na-bevalling-amsterdam",
+    title: "Personal Trainer na de Bevalling in Amsterdam — SculptClub",
+    description:
+      "Veilig weer beginnen met krachttraining na de bevalling. Persoonlijk, in een privé studio, met een vrouwelijke trainer die postpartum-training begrijpt.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer na de Bevalling in Amsterdam — SculptClub",
+    description:
+      "Veilig weer beginnen met krachttraining na de bevalling. Persoonlijk, in een privé studio, met een vrouwelijke trainer die postpartum-training begrijpt.",
+  },
 };
 
 export default function PTNaBevallingAmsterdamNL() {

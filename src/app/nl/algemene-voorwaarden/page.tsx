@@ -14,6 +14,19 @@ export const metadata: Metadata = {
       en: "/en/terms-conditions",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/algemene-voorwaarden",
+    title: "Algemene Voorwaarden — SculptClub Amsterdam Jordaan",
+    description:
+      "Algemene voorwaarden van SculptClub. Informatie over boekingen, annulering, betaling, huisregels en aansprakelijkheid.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Algemene Voorwaarden — SculptClub Amsterdam Jordaan",
+    description:
+      "Algemene voorwaarden van SculptClub. Informatie over boekingen, annulering, betaling, huisregels en aansprakelijkheid.",
+  },
 };
 
 export default function TermsPageNL() {

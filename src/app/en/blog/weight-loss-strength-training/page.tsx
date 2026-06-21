@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/weight-loss-strength-training",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/weight-loss-strength-training",
+    title: "Weight Loss Through Strength Training: Why It Works — SculptClub",
+    description:
+      "Want to lose weight? Discover why strength training is more effective than cardio for fat loss. The science behind the afterburn effect, metabolism, and practical tips.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Weight Loss Through Strength Training: Why It Works — SculptClub",
+    description:
+      "Want to lose weight? Discover why strength training is more effective than cardio for fat loss. The science behind the afterburn effect, metabolism, and practical tips.",
+  },
 };
 
 export default function WeightLossStrengthTrainingEN() {

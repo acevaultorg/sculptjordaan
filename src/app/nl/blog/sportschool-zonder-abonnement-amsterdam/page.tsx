@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog/gym-without-membership-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/sportschool-zonder-abonnement-amsterdam",
+    title: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub",
+    description:
+      "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer. Vergelijk flexibel sporten.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub",
+    description:
+      "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer. Vergelijk flexibel sporten.",
+  },
 };
 
 export default function SportschoolZonderAbonnementNL() {

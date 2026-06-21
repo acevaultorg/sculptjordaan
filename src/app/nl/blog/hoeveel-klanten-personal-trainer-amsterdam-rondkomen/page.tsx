@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     canonical: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen",
     languages: { nl: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen", en: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage" },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen",
+    title: "Hoeveel Klanten heb je nodig als Personal Trainer in Amsterdam? — SculptClub",
+    description:
+      "Eerlijke rekensom: hoeveel betalende klanten heeft een ZZP personal trainer nodig om in Amsterdam rond te komen, modaal te verdienen of een gezin te onderhouden? Met cijfers voor 2026.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hoeveel Klanten heb je nodig als Personal Trainer in Amsterdam? — SculptClub",
+    description:
+      "Eerlijke rekensom: hoeveel betalende klanten heeft een ZZP personal trainer nodig om in Amsterdam rond te komen, modaal te verdienen of een gezin te onderhouden? Met cijfers voor 2026.",
+  },
 };
 
 export default function BlogPostHoeveelKlanten() {

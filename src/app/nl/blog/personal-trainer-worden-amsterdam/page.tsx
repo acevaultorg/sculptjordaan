@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/become-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-worden-amsterdam",
+    title: "Personal Trainer Worden in Amsterdam — Zo Begin Je | SculptClub",
+    description:
+      "Wil je personal trainer worden in Amsterdam? Alles over starten als ZZP-trainer: studio, klanten, tarieven en hoe SculptClub je helpt groeien.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Worden in Amsterdam — Zo Begin Je | SculptClub",
+    description:
+      "Wil je personal trainer worden in Amsterdam? Alles over starten als ZZP-trainer: studio, klanten, tarieven en hoe SculptClub je helpt groeien.",
+  },
 };
 
 export default function PTWordenAmsterdamNL() {

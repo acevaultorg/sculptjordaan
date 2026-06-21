@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/gift-cards",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/gift-cards",
+    title: "Gift Cards — SculptClub Amsterdam Jordaan",
+    description:
+      "Give the gift of personal training. SculptClub gift cards from 75 euros. Valid for 12 months. Pay with Visa, Apple Pay or Google Pay.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gift Cards — SculptClub Amsterdam Jordaan",
+    description:
+      "Give the gift of personal training. SculptClub gift cards from 75 euros. Valid for 12 months. Pay with Visa, Apple Pay or Google Pay.",
+  },
 };
 
 const giftCards = [

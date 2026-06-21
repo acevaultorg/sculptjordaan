@@ -17,6 +17,19 @@ export const metadata: Metadata = {
       en: "/en/start",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/start",
+    title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
+    description:
+      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac5.75/session, studio rental from \u20ac12/hour. Free first session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
+    description:
+      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac5.75/session, studio rental from \u20ac12/hour. Free first session.",
+  },
 };
 
 // UTM-tagged Instagram bio paths \u2014 attribution survives through to Acuity bookings.

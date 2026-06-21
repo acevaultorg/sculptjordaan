@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam-south",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-amsterdam-zuid",
+    title: "Personal Trainer Amsterdam Zuid — SculptClub in de Jordaan",
+    description:
+      "Woon je in Amsterdam Zuid en zoek je een personal trainer? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, geen abonnement.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam Zuid — SculptClub in de Jordaan",
+    description:
+      "Woon je in Amsterdam Zuid en zoek je een personal trainer? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, geen abonnement.",
+  },
 };
 
 export default function PTAmsterdamZuidNL() {

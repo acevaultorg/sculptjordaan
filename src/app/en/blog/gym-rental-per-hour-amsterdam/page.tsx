@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/gym-rental-per-hour-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/gym-rental-per-hour-amsterdam",
+    title: "Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers — SculptClub",
+    description:
+      "Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers — SculptClub",
+    description:
+      "Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists.",
+  },
 };
 
 export default function BlogPostGymRentalPerHour() {

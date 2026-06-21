@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-training-weight-loss-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-training-weight-loss-amsterdam",
+    title: "Personal Training for Weight Loss in Amsterdam — SculptClub",
+    description:
+      "Want to lose weight with a personal trainer in Amsterdam? Discover why strength training beats cardio and how to get started with a free intro.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Training for Weight Loss in Amsterdam — SculptClub",
+    description:
+      "Want to lose weight with a personal trainer in Amsterdam? Discover why strength training beats cardio and how to get started with a free intro.",
+  },
 };
 
 export default function PersonalTrainingWeightLossEN() {

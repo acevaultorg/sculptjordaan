@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam",
+    title: "Eerste 10 Klanten Krijgen als ZZP Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam? Eerlijke roadmap met de tactieken die wel en niet werken in 2026.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eerste 10 Klanten Krijgen als ZZP Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam? Eerlijke roadmap met de tactieken die wel en niet werken in 2026.",
+  },
 };
 
 export default function BlogPostEerste10Klanten() {

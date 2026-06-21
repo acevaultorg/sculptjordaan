@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog/improve-body-composition-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
+    title: "Lichaamssamenstelling Verbeteren Amsterdam — SculptClub",
+    description:
+      "Minder vet, meer spier — zonder crashdieet. Personal training gericht op lichaamssamenstelling bij SculptClub Amsterdam Jordaan. Gratis intake.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lichaamssamenstelling Verbeteren Amsterdam — SculptClub",
+    description:
+      "Minder vet, meer spier — zonder crashdieet. Personal training gericht op lichaamssamenstelling bij SculptClub Amsterdam Jordaan. Gratis intake.",
+  },
 };
 
 export default function LichaamssamenstllingVerbeterenAmsterdam() {

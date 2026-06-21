@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/location-hours",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/location-hours",
+    title: "Location & Hours — SculptClub Amsterdam Jordaan",
+    description:
+      "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:30 to 22:00. Easy to reach by tram, metro, bike or on foot.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Location & Hours — SculptClub Amsterdam Jordaan",
+    description:
+      "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:30 to 22:00. Easy to reach by tram, metro, bike or on foot.",
+  },
 };
 
 const directions = [

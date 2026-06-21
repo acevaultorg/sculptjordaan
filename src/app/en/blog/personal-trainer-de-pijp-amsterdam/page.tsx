@@ -28,6 +28,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-de-pijp-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-de-pijp-amsterdam",
+    title: "Personal Trainer De Pijp Amsterdam — SculptClub",
+    description:
+      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, trainers from €45.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer De Pijp Amsterdam — SculptClub",
+    description:
+      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, trainers from €45.",
+  },
 };
 
 export default function PersonalTrainerDePijpEN() {

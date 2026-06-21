@@ -43,6 +43,19 @@ export const metadata: Metadata = {
       en: "/en/become-trainer",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/word-trainer",
+    title: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan",
+    description:
+      "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan",
+    description:
+      "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
+  },
 };
 
 const HERO_IMAGES = [

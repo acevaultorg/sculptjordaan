@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers/zzp-personal-trainer-checklist",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/voor-trainers/zzp-personal-trainer-checklist",
+    title: "ZZP Personal Trainer Checklist Amsterdam (2026) | SculptClub",
+    description:
+      "Stap-voor-stap checklist voor personal trainers die ZZP'er worden in Nederland. KvK, BTW, verzekering, bank, administratie, eerste factuur. ~30 min werk.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ZZP Personal Trainer Checklist Amsterdam (2026) | SculptClub",
+    description:
+      "Stap-voor-stap checklist voor personal trainers die ZZP'er worden in Nederland. KvK, BTW, verzekering, bank, administratie, eerste factuur. ~30 min werk.",
+  },
 };
 
 export default function ZZPChecklistNL() {

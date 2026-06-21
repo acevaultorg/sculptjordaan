@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-training-weight-loss-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-training-afvallen-amsterdam",
+    title: "Personal Training voor Afvallen in Amsterdam — SculptClub",
+    description:
+      "Wil je afvallen met begeleiding van een personal trainer in Amsterdam? Ontdek waarom krachttraining effectiever is dan cardio en hoe je begint.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Training voor Afvallen in Amsterdam — SculptClub",
+    description:
+      "Wil je afvallen met begeleiding van een personal trainer in Amsterdam? Ontdek waarom krachttraining effectiever is dan cardio en hoe je begint.",
+  },
 };
 
 export default function PersonalTrainingAfvallenNL() {

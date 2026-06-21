@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/prenatal-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/prenatal-personal-trainer-amsterdam",
+    title: "Prenatal Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Stay strong safely through pregnancy. Private studio in the Jordaan, female trainers experienced with prenatal strength, mobility and birth preparation.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prenatal Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Stay strong safely through pregnancy. Private studio in the Jordaan, female trainers experienced with prenatal strength, mobility and birth preparation.",
+  },
 };
 
 export default function PrenatalPTAmsterdamEN() {

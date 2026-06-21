@@ -33,6 +33,19 @@ export const metadata: Metadata = {
       en: "/en",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en",
+    title: "SculptClub — Personal Training Studio Amsterdam Jordaan",
+    description:
+      "Rent your own studio in the Jordaan from €12/hour — your clients, your rates, no contract. Also personal training with free intro session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SculptClub — Personal Training Studio Amsterdam Jordaan",
+    description:
+      "Rent your own studio in the Jordaan from €12/hour — your clients, your rates, no contract. Also personal training with free intro session.",
+  },
 };
 
 export default function HomePageEN() {

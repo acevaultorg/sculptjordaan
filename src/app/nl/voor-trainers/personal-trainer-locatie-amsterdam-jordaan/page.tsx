@@ -27,6 +27,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers/personal-trainer-location-amsterdam-jordaan",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/voor-trainers/personal-trainer-locatie-amsterdam-jordaan",
+    title: "Personal Trainer Locatie Amsterdam Jordaan — waarom het werkt | SculptClub",
+    description:
+      "Waarom Jordaan een sterke locatie is voor freelance personal trainers in Amsterdam. Demografie, klantprofiel, bereikbaarheid, en wat trainers hier verdienen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Locatie Amsterdam Jordaan — waarom het werkt | SculptClub",
+    description:
+      "Waarom Jordaan een sterke locatie is voor freelance personal trainers in Amsterdam. Demografie, klantprofiel, bereikbaarheid, en wat trainers hier verdienen.",
+  },
 };
 
 export default function LocatieJordaanNL() {

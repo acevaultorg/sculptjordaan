@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/private-gym-vs-big-box-gym",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/prive-sportschool-vs-grote-sportschool",
+    title: "Privé sportschool vs grote sportschool: De verschillen — SculptClub",
+    description:
+      "Wat is het verschil tussen een privé sportschool en een grote keten? Vergelijk sfeer, apparatuur, persoonlijke aandacht, hygiëne en prijs.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privé sportschool vs grote sportschool: De verschillen — SculptClub",
+    description:
+      "Wat is het verschil tussen een privé sportschool en een grote keten? Vergelijk sfeer, apparatuur, persoonlijke aandacht, hygiëne en prijs.",
+  },
 };
 
 export default function BlogPostPriveVsGrNL() {

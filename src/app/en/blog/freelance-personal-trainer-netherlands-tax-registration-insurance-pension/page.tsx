@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension",
+    title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026 Guide) — SculptClub",
+    description:
+      "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, professional liability, disability insurance, pension and bookkeeping. With 2026 numbers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026 Guide) — SculptClub",
+    description:
+      "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, professional liability, disability insurance, pension and bookkeeping. With 2026 numbers.",
+  },
 };
 
 export default function BlogPostFreelanceTrainerTax() {

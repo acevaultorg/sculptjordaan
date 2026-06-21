@@ -29,6 +29,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam-east",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-amsterdam-east",
+    title: "Personal Trainer Amsterdam East — SculptClub",
+    description:
+      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, trainers from €45.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam East — SculptClub",
+    description:
+      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, trainers from €45.",
+  },
 };
 
 export default function PersonalTrainerEastEN() {

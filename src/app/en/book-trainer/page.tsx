@@ -12,6 +12,19 @@ export const metadata: Metadata = {
   title: { absolute: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam" },
   description: "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €45/session, no membership, always free cancellation.",
   alternates: { canonical: "/en/book-trainer", languages: { nl: "/nl/boek-trainer", en: "/en/book-trainer" } },
+  openGraph: {
+    type: "website",
+    url: "/en/book-trainer",
+    title: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam",
+    description:
+      "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €45/session, no membership, always free cancellation.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam",
+    description:
+      "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €45/session, no membership, always free cancellation.",
+  },
 };
 
 const steps = [

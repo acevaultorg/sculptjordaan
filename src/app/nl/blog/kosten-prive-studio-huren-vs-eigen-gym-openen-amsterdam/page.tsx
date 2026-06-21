@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/cost-private-studio-rental-vs-opening-own-gym-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/kosten-prive-studio-huren-vs-eigen-gym-openen-amsterdam",
+    title: "Kosten Privé Studio Huren vs Eigen Gym Openen in Amsterdam — SculptClub",
+    description:
+      "ZZP personal trainer in Amsterdam? De volledige kostenvergelijking tussen privé studio per uur huren, een ruimte leasen of een eigen gym openen. Met echte cijfers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kosten Privé Studio Huren vs Eigen Gym Openen in Amsterdam — SculptClub",
+    description:
+      "ZZP personal trainer in Amsterdam? De volledige kostenvergelijking tussen privé studio per uur huren, een ruimte leasen of een eigen gym openen. Met echte cijfers.",
+  },
 };
 
 export default function BlogPostKostenStudioVsEigenGym() {

@@ -22,6 +22,19 @@ export const metadata: Metadata = {
       en: "/en/free-intro",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/free-intro",
+    title: "Personal Training Amsterdam · Free Intro — SculptClub",
+    description:
+      "Private personal training studio in Amsterdam Jordaan. From €45/session, first intro free. WhatsApp reply within 30 min.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Training Amsterdam · Free Intro — SculptClub",
+    description:
+      "Private personal training studio in Amsterdam Jordaan. From €45/session, first intro free. WhatsApp reply within 30 min.",
+  },
 };
 
 export default function FreeIntroAdsPage() {

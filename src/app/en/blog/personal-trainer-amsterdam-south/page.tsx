@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam-south",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-amsterdam-south",
+    title: "Personal Trainer Amsterdam South — SculptClub in the Jordaan",
+    description:
+      "Live in Amsterdam South and looking for a personal trainer? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, no membership.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam South — SculptClub in the Jordaan",
+    description:
+      "Live in Amsterdam South and looking for a personal trainer? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, no membership.",
+  },
 };
 
 export default function PTAmsterdamSouthEN() {

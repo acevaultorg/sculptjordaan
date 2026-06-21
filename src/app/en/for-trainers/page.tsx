@@ -28,6 +28,19 @@ export const metadata: Metadata = {
       en: "/en/for-trainers",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/for-trainers",
+    title: "For Personal Trainers in Amsterdam | SculptClub Jordaan",
+    description:
+      "For freelance personal trainers in Amsterdam: rent the studio from €12/hr via SculptClub. Your clients, your rates, no contract, free cancellation anytime.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "For Personal Trainers in Amsterdam | SculptClub Jordaan",
+    description:
+      "For freelance personal trainers in Amsterdam: rent the studio from €12/hr via SculptClub. Your clients, your rates, no contract, free cancellation anytime.",
+  },
 };
 
 const pillars = [

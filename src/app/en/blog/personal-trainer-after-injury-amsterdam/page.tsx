@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-after-injury-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-after-injury-amsterdam",
+    title: "Personal Trainer After an Injury in Amsterdam — SculptClub",
+    description:
+      "Returning to exercise after an injury? A personal trainer builds you back safely. Free intro session at SculptClub Amsterdam.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer After an Injury in Amsterdam — SculptClub",
+    description:
+      "Returning to exercise after an injury? A personal trainer builds you back safely. Free intro session at SculptClub Amsterdam.",
+  },
 };
 
 export default function PTAfterInjuryEN() {

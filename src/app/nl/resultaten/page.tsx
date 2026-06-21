@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/results",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/resultaten",
+    title: "Resultaten — SculptClub Amsterdam Jordaan",
+    description:
+      "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis proefles bij SculptClub.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resultaten — SculptClub Amsterdam Jordaan",
+    description:
+      "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis proefles bij SculptClub.",
+  },
 };
 
 const results = [

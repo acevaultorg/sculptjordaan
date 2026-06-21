@@ -14,6 +14,19 @@ export const metadata: Metadata = {
       en: "/en/privacy-policy",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/privacybeleid",
+    title: "Privacybeleid — SculptClub Amsterdam Jordaan",
+    description:
+      "Privacybeleid van SculptClub. Hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen conform de AVG.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacybeleid — SculptClub Amsterdam Jordaan",
+    description:
+      "Privacybeleid van SculptClub. Hoe wij jouw persoonsgegevens verzamelen, gebruiken en beschermen conform de AVG.",
+  },
 };
 
 export default function PrivacyPageNL() {

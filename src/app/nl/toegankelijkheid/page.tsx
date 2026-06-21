@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Toegankelijkheid",
   description: "SculptClub toegankelijkheidsverklaring. Onze inzet voor digitale en fysieke toegankelijkheid.",
   alternates: { canonical: "/nl/toegankelijkheid", languages: { nl: "/nl/toegankelijkheid", en: "/en/accessibility-statement" } },
+  openGraph: {
+    type: "website",
+    url: "/nl/toegankelijkheid",
+    title: "Toegankelijkheid",
+    description:
+      "SculptClub toegankelijkheidsverklaring. Onze inzet voor digitale en fysieke toegankelijkheid.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Toegankelijkheid",
+    description:
+      "SculptClub toegankelijkheidsverklaring. Onze inzet voor digitale en fysieke toegankelijkheid.",
+  },
 };
 
 export default function AccessibilityNL() {

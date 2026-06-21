@@ -10,6 +10,19 @@ export const metadata: Metadata = {
   title: "Book a Session",
   description: "Book your session at SculptClub. Personal training, Open Gym or studio rental in Amsterdam Jordaan.",
   alternates: { canonical: "/en/book", languages: { nl: "/nl/boek", en: "/en/book" } },
+  openGraph: {
+    type: "website",
+    url: "/en/book",
+    title: "Book a Session",
+    description:
+      "Book your session at SculptClub. Personal training, Open Gym or studio rental in Amsterdam Jordaan.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Session",
+    description:
+      "Book your session at SculptClub. Personal training, Open Gym or studio rental in Amsterdam Jordaan.",
+  },
 };
 
 const bookingOptions = [

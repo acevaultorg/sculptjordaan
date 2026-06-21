@@ -19,6 +19,19 @@ export const metadata: Metadata = {
       en: "/en/personal-trainer-amsterdam-jordaan",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/personal-trainer-jordaan",
+    title: "Personal Trainer Jordaan & Centrum — SculptClub Privé Studio Amsterdam",
+    description:
+      "Personal training in de Jordaan en het Centrum van Amsterdam. Privé studio aan de Egelantiersgracht — vanaf €45 per sessie, geen contract, eerste intake gratis. Telefonisch of in de studio.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Jordaan & Centrum — SculptClub Privé Studio Amsterdam",
+    description:
+      "Personal training in de Jordaan en het Centrum van Amsterdam. Privé studio aan de Egelantiersgracht — vanaf €45 per sessie, geen contract, eerste intake gratis. Telefonisch of in de studio.",
+  },
 };
 
 const steps = [

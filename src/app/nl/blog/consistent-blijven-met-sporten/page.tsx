@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/stay-consistent-exercise",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/consistent-blijven-met-sporten",
+    title: "Hoe blijf je consistent met sporten? 7 bewezen tips — SculptClub",
+    description:
+      "Moeite om vol te houden? Ontdek 7 praktische tips om consistent te blijven met sporten. Van routine opbouwen tot de juiste sportschool kiezen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hoe blijf je consistent met sporten? 7 bewezen tips — SculptClub",
+    description:
+      "Moeite om vol te houden? Ontdek 7 praktische tips om consistent te blijven met sporten. Van routine opbouwen tot de juiste sportschool kiezen.",
+  },
 };
 
 export default function BlogPostConsistentNL() {

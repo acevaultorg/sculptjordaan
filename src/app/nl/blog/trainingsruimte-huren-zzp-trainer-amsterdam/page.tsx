@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/trainingsruimte-huren-zzp-trainer-amsterdam",
+    title: "Trainingsruimte Huren als ZZP Personal Trainer — SculptClub",
+    description:
+      "Praktische gids voor ZZP personal trainers die een trainingsruimte willen huren in Amsterdam. Kosten, belasting, verzekering en hoe je begint.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trainingsruimte Huren als ZZP Personal Trainer — SculptClub",
+    description:
+      "Praktische gids voor ZZP personal trainers die een trainingsruimte willen huren in Amsterdam. Kosten, belasting, verzekering en hoe je begint.",
+  },
 };
 
 export default function BlogPostZZPTrainerNL() {

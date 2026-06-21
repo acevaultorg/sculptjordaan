@@ -37,6 +37,19 @@ export const metadata: Metadata = {
       en: "/en/pricing",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/pricing",
+    title: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym",
+    description:
+      "All pricing SculptClub Amsterdam: personal training €45 (free intro), studio rental €12/hour (your own rates), Open Gym €29/4wk. No contract.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym",
+    description:
+      "All pricing SculptClub Amsterdam: personal training €45 (free intro), studio rental €12/hour (your own rates), Open Gym €29/4wk. No contract.",
+  },
 };
 
 const openGymPlans = [

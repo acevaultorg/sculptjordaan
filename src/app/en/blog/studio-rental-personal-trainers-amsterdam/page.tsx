@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/studio-rental-personal-trainers-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/studio-rental-personal-trainers-amsterdam",
+    title: "Studio Rental for Personal Trainers in Amsterdam — SculptClub",
+    description:
+      "Looking for a training space to rent as a personal trainer in Amsterdam? Compare costs, flexibility and benefits of renting your own studio.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio Rental for Personal Trainers in Amsterdam — SculptClub",
+    description:
+      "Looking for a training space to rent as a personal trainer in Amsterdam? Compare costs, flexibility and benefits of renting your own studio.",
+  },
 };
 
 export default function BlogPostStudioRentalEN() {

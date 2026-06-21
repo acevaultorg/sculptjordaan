@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/nutrition-coach-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/voedingscoach-amsterdam",
+    title: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub",
+    description:
+      "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig? Ontdek hoe voeding en training samenkomen bij SculptClub.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub",
+    description:
+      "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig? Ontdek hoe voeding en training samenkomen bij SculptClub.",
+  },
 };
 
 export default function VoedingscoachAmsterdamNL() {

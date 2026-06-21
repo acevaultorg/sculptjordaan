@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/personal-trainer-amsterdam",
+    title: "Personal Trainer in Amsterdam: Zo vind je de beste match — SculptClub",
+    description:
+      "Hoe vind je de juiste personal trainer in Amsterdam? Ontdek waar je op moet letten, welke rode vlaggen je moet vermijden en waarom een gratis intake het verschil maakt.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer in Amsterdam: Zo vind je de beste match — SculptClub",
+    description:
+      "Hoe vind je de juiste personal trainer in Amsterdam? Ontdek waar je op moet letten, welke rode vlaggen je moet vermijden en waarom een gratis intake het verschil maakt.",
+  },
 };
 
 export default function PersonalTrainerAmsterdamNL() {

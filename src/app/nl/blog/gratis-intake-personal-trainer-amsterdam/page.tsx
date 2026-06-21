@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/free-intro-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/gratis-intake-personal-trainer-amsterdam",
+    title: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub",
+    description:
+      "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en waar je op let bij het kiezen van een trainer.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub",
+    description:
+      "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en waar je op let bij het kiezen van een trainer.",
+  },
 };
 
 export default function GratisIntakeBlogNL() {

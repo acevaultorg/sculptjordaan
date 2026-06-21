@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/english-speaking-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/english-speaking-personal-trainer-amsterdam",
+    title: "English-Speaking Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Expat or international in Amsterdam? Every trainer at SculptClub coaches fluently in English. Private studio in the Jordaan. Free intro session.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "English-Speaking Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Expat or international in Amsterdam? Every trainer at SculptClub coaches fluently in English. Private studio in the Jordaan. Free intro session.",
+  },
 };
 
 export default function EnglishSpeakingPTAmsterdamEN() {

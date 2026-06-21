@@ -20,6 +20,19 @@ export const metadata: Metadata = {
   description:
     "Fully equipped private gym in the Jordaan. Squat rack, dumbbells, Echo Bike, sled, kettlebells and more. Showers, changing area and vinyl record player.",
   alternates: { canonical: "/en/studio", languages: { nl: "/nl/studio", en: "/en/studio" } },
+  openGraph: {
+    type: "website",
+    url: "/en/studio",
+    title: "Studio & Equipment — SculptClub Amsterdam Jordaan",
+    description:
+      "Fully equipped private gym in the Jordaan. Squat rack, dumbbells, Echo Bike, sled, kettlebells and more. Showers, changing area and vinyl record player.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio & Equipment — SculptClub Amsterdam Jordaan",
+    description:
+      "Fully equipped private gym in the Jordaan. Squat rack, dumbbells, Echo Bike, sled, kettlebells and more. Showers, changing area and vinyl record player.",
+  },
 };
 
 const equipmentCategories = [

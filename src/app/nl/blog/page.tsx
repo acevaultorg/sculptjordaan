@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog",
+    title: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan",
+    description:
+      "Lees onze blog over personal training, open gym, fitness tips en meer vanuit onze studio in de Jordaan, Amsterdam.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan",
+    description:
+      "Lees onze blog over personal training, open gym, fitness tips en meer vanuit onze studio in de Jordaan, Amsterdam.",
+  },
 };
 
 const posts = [

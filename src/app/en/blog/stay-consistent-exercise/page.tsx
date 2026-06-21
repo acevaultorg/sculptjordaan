@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/stay-consistent-exercise",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/stay-consistent-exercise",
+    title: "How to Stay Consistent with Exercise: 7 Proven Tips — SculptClub",
+    description:
+      "Struggling to stick with your workouts? Discover 7 practical tips to stay consistent with exercise and build lasting fitness habits.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Stay Consistent with Exercise: 7 Proven Tips — SculptClub",
+    description:
+      "Struggling to stick with your workouts? Discover 7 practical tips to stay consistent with exercise and build lasting fitness habits.",
+  },
 };
 
 export default function BlogPostConsistentEN() {

@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/strength-training-beginners-guide",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/krachttraining-voor-beginners",
+    title: "Krachttraining voor Beginners: Complete Gids — SculptClub",
+    description:
+      "Begin met krachttraining: de complete gids voor beginners. Leer de basisoefeningen, hoe vaak je moet trainen en hoe je blessures voorkomt.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Krachttraining voor Beginners: Complete Gids — SculptClub",
+    description:
+      "Begin met krachttraining: de complete gids voor beginners. Leer de basisoefeningen, hoe vaak je moet trainen en hoe je blessures voorkomt.",
+  },
 };
 
 export default function BlogPostNL2() {

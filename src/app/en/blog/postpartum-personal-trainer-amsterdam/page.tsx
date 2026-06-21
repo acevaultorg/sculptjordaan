@@ -26,6 +26,19 @@ export const metadata: Metadata = {
       en: "/en/blog/postpartum-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/postpartum-personal-trainer-amsterdam",
+    title: "Postpartum Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Return to strength training safely after birth. Private studio in the Jordaan, female trainers with postpartum experience. Free intro, no contract.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Postpartum Personal Trainer in Amsterdam — SculptClub",
+    description:
+      "Return to strength training safely after birth. Private studio in the Jordaan, female trainers with postpartum experience. Free intro, no contract.",
+  },
 };
 
 export default function PostpartumPTAmsterdamEN() {

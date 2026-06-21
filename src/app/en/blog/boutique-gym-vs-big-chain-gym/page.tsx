@@ -24,6 +24,19 @@ export const metadata: Metadata = {
       en: "/en/blog/boutique-gym-vs-big-chain-gym",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/boutique-gym-vs-big-chain-gym",
+    title: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub",
+    description:
+      "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results. Find what works best for your goals.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub",
+    description:
+      "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results. Find what works best for your goals.",
+  },
 };
 
 export default function BoutiqueGymVsChainEN() {

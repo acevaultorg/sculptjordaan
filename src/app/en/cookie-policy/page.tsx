@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
   description: "SculptClub cookie policy. Learn what cookies we use, why we use them, and how to manage your preferences on our website.",
   alternates: { canonical: "/en/cookie-policy", languages: { nl: "/nl/cookiebeleid", en: "/en/cookie-policy" } },
+  openGraph: {
+    type: "website",
+    url: "/en/cookie-policy",
+    title: "Cookie Policy",
+    description:
+      "SculptClub cookie policy. Learn what cookies we use, why we use them, and how to manage your preferences on our website.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cookie Policy",
+    description:
+      "SculptClub cookie policy. Learn what cookies we use, why we use them, and how to manage your preferences on our website.",
+  },
 };
 
 export default function CookiePolicyEN() {

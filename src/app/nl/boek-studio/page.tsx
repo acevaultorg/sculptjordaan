@@ -32,6 +32,19 @@ export const metadata: Metadata = {
       en: "/en/book-studio",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/boek-studio",
+    title: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam",
+    description:
+      "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam",
+    description:
+      "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
+  },
 };
 
 const steps = [

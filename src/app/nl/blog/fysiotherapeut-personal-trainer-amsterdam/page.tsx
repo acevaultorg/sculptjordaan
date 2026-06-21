@@ -23,6 +23,19 @@ export const metadata: Metadata = {
       en: "/en/blog/physiotherapist-personal-trainer-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
+    title: "Trainen met een blessure of klachten in Amsterdam — SculptClub",
+    description:
+      "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Lees hoe SculptClub omgaat met training na blessure, in samenwerking met je fysiotherapeut.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trainen met een blessure of klachten in Amsterdam — SculptClub",
+    description:
+      "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Lees hoe SculptClub omgaat met training na blessure, in samenwerking met je fysiotherapeut.",
+  },
 };
 
 export default function FysiotherapeutPersonalTrainerNL() {

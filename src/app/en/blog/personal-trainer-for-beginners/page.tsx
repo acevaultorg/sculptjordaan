@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/personal-trainer-for-beginners",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/personal-trainer-for-beginners",
+    title: "Personal Trainer for Beginners in Amsterdam — SculptClub",
+    description:
+      "Never trained before or it's been years? A personal trainer helps beginners start safely. Free intro at SculptClub, no experience needed.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer for Beginners in Amsterdam — SculptClub",
+    description:
+      "Never trained before or it's been years? A personal trainer helps beginners start safely. Free intro at SculptClub, no experience needed.",
+  },
 };
 
 export default function PTForBeginnersEN() {

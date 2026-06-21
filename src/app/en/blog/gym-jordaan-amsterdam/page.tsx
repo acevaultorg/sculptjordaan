@@ -25,6 +25,19 @@ export const metadata: Metadata = {
       en: "/en/blog/gym-jordaan-amsterdam",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/blog/gym-jordaan-amsterdam",
+    title: "Gym in the Jordaan Amsterdam: Your Options Compared — SculptClub",
+    description:
+      "Looking for a gym in the Jordaan, Amsterdam? Compare big chains, boutique studios and private gyms. Find what fits your training style.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gym in the Jordaan Amsterdam: Your Options Compared — SculptClub",
+    description:
+      "Looking for a gym in the Jordaan, Amsterdam? Compare big chains, boutique studios and private gyms. Find what fits your training style.",
+  },
 };
 
 export default function GymJordaanEN() {

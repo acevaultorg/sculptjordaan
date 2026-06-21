@@ -19,6 +19,19 @@ export const metadata: Metadata = {
       en: "/en/personal-trainer-amsterdam-jordaan",
     },
   },
+  openGraph: {
+    type: "website",
+    url: "/en/personal-trainer-amsterdam-jordaan",
+    title: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio",
+    description:
+      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €45 per session, no contract, first intro free.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio",
+    description:
+      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €45 per session, no contract, first intro free.",
+  },
 };
 
 const steps = [
