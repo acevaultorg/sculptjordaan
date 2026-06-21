@@ -47,6 +47,21 @@ export const metadata: Metadata = {
       en: "/en/first-visit",
     },
   },
+  // Per-page OG/Twitter so social/direct shares of THIS page preview the
+  // page's own pitch + correct URL (not the homepage studio-rental default).
+  openGraph: {
+    type: "website",
+    url: "/nl/eerste-bezoek",
+    title: "Eerste Bezoek — SculptClub Amsterdam Jordaan",
+    description:
+      "Alles wat je moet weten voor je eerste bezoek aan SculptClub. Stap-voor-stap uitleg, wat je mee moet nemen, bereikbaarheid en veelgestelde vragen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eerste Bezoek — SculptClub Amsterdam Jordaan",
+    description:
+      "Alles wat je moet weten voor je eerste bezoek aan SculptClub. Stap-voor-stap uitleg, wat je mee moet nemen, bereikbaarheid en veelgestelde vragen.",
+  },
 };
 
 const steps = [

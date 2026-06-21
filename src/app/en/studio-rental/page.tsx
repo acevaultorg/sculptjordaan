@@ -44,6 +44,21 @@ export const metadata: Metadata = {
       en: "/en/studio-rental",
     },
   },
+  // Per-page OG/Twitter so social/direct shares of THIS page preview the
+  // page's own pitch + correct URL (not the homepage studio-rental default).
+  openGraph: {
+    type: "website",
+    url: "/en/studio-rental",
+    title: "Personal Trainer Studio Rental | SculptClub Jordaan",
+    description:
+      "Private training studio in Amsterdam Jordaan from €12/hour — your clients, your rates, no contract, free cancellation. For PT and physiotherapist. First session free.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Trainer Studio Rental | SculptClub Jordaan",
+    description:
+      "Private training studio in Amsterdam Jordaan from €12/hour — your clients, your rates, no contract, free cancellation. For PT and physiotherapist. First session free.",
+  },
 };
 
 const features = [
