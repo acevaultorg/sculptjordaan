@@ -6,8 +6,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import { getColor } from "@/lib/image-color-manifest";
-import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar } from "lucide-react";
+import { ArrowRight, Building2, Users, FileText, MapPin, CheckSquare, Scale, Calendar, Check } from "lucide-react";
 import { acuityFreeTrials } from "@/config/acuity";
+
+// Studio Membership (operator 2026-06-21) — optional recurring plan for
+// trainers who are here every week. MEMBERSHIP_FROM is an indicative "vanaf"
+// anchor; change this one line to adjust the public price. Billing is set up
+// manually via WhatsApp for now (no self-serve checkout yet).
+const MEMBERSHIP_FROM = "€199";
+const membershipPerks = [
+  "Eén vast maandbedrag — geen verrassingen",
+  "Jouw vaste trainingstijden gereserveerd",
+  "Lager effectief uurtarief dan losse huur",
+  "Pauzeer wanneer je weg bent — dan betaal je niet",
+  "Maandelijks opzegbaar, geen lang contract",
+  "Jouw thuisbasis: de privé studio in de Jordaan",
+];
 
 const HERO_IMAGES = [
   { src: "/images/studio/training-squat-cinematic.jpg", alt: "Privé squat rack in de SculptClub studio in Jordaan" },
@@ -97,7 +111,11 @@ const pillars = [
 const trainerFaqs = [
   {
     q: "Wat kost het écht om de studio te huren?",
-    a: "Halve studio (1:1 sessies) vanaf €12 per 60 min, €17 per 90 min. Hele studio (max 6 personen) €17/60 min, €24/90 min. Kortingspakketten besparen 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. Alle apparatuur, wifi, muziek en schoonmaak zijn inbegrepen. Geen abonnement of bemiddelingskosten.",
+    a: "Halve studio (1:1 sessies) vanaf €12 per 60 min, €17 per 90 min. Hele studio (max 6 personen) €17/60 min, €24/90 min. Kortingspakketten besparen 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. Alle apparatuur, wifi, muziek en schoonmaak zijn inbegrepen. Geen verplicht abonnement of bemiddelingskosten.",
+  },
+  {
+    q: "Is er ook een vast membership?",
+    a: "Ja, optioneel. Reken je per uur af, dan blijft dat zonder verplichting. Train je hier elke week? Dan kun je kiezen voor een Studio Membership: één vast maandbedrag, jouw vaste tijden gereserveerd, een lager effectief uurtarief, en pauzeren wanneer je weg bent. Maandelijks opzegbaar. We stemmen het af op jouw uren — een appje is genoeg.",
   },
   {
     q: "Hoe boek ik een sessie?",
@@ -257,6 +275,77 @@ export default function VoorTrainersHubNL() {
               </FadeIn>
             );
           })}
+        </div>
+      </Section>
+
+      {/* Studio Membership — optional recurring plan for regular trainers
+          (operator 2026-06-21). Converts weekly per-hour renters into
+          predictable monthly rent + fills quiet hours, WITHOUT breaking the
+          freedom promise: per-hour stays the no-commitment default; this is
+          the optional upgrade. The studio is one private room (capacity-
+          limited) → a fixed monthly block + reserved slots + pause, NOT
+          "unlimited". MVP = manual setup via WhatsApp (no self-serve billing
+          yet). Price lives in MEMBERSHIP_FROM up top — confirm before deploy. */}
+      <Section>
+        <SectionHeader
+          overline="Nieuw · Studio Membership"
+          title="Hier elke week? Betaal vast in plaats van per uur."
+          description="Per uur blijft per uur — geen verplichting. Maar train je hier wekelijks, dan is een vast maandbedrag voordeliger: jouw vaste tijden gereserveerd en pauzeren wanneer je weg bent."
+        />
+        <div className="grid items-start gap-6 lg:grid-cols-[1.05fr_1fr]">
+          <FadeIn>
+            <Card className="h-full border-primary/30">
+              <CardContent className="flex flex-col gap-5 p-7">
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground">Studio Membership</p>
+                  <p className="mt-1 flex items-baseline gap-1.5">
+                    <span className="text-sm text-muted-foreground">vanaf</span>
+                    <span className="text-4xl font-bold tracking-tight">{MEMBERSHIP_FROM}</span>
+                    <span className="text-muted-foreground">/ maand</span>
+                  </p>
+                  <p className="mt-1.5 text-sm text-muted-foreground">
+                    Afgestemd op jouw uren — ongeveer 5 uur per week tegen ~€10/uur. Meer uren nodig? We schalen mee.
+                  </p>
+                </div>
+                <ul className="space-y-2.5 text-sm">
+                  {membershipPerks.map((perk) => (
+                    <li key={perk} className="flex items-start gap-2.5">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                      <span>{perk}</span>
+                    </li>
+                  ))}
+                </ul>
+                <ButtonLink
+                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en heb interesse in een Studio Membership — ik train regelmatig en wil graag een vast maandbedrag.")}`}
+                  external
+                  size="lg"
+                  className="plausible-event-name=trainer_membership_whatsapp_click"
+                >
+                  Vraag je membership aan
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </ButtonLink>
+                <p className="text-xs text-muted-foreground">
+                  We rekenen alleen huur. Wat je je klant rekent, houd je 100%.
+                </p>
+              </CardContent>
+            </Card>
+          </FadeIn>
+          <FadeIn>
+            <div className="space-y-5 text-sm leading-relaxed text-muted-foreground lg:pt-2">
+              <div>
+                <p className="font-semibold text-foreground">Voor wie is dit?</p>
+                <p className="mt-1">Trainers die hier elke week zijn. Reken je liever per uur af? Dat blijft — zonder verplichting, altijd gratis annuleren.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-foreground">Pauzeren wanneer je weg bent</p>
+                <p className="mt-1">Op vakantie of een rustige week? Zet je membership op pauze en je betaalt niet. Maandelijks opzegbaar — geen lang contract.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-foreground">Hoe stellen we het op?</p>
+                <p className="mt-1">Eén appje. We stemmen het af op jouw uren en zetten het samen klaar. Geen gedoe.</p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </Section>
 
