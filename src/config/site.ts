@@ -43,7 +43,7 @@ export const siteConfig = {
   // /review redirect, so changing it here upgrades all of them at once.
   googleReview:
     "https://search.google.com/local/writereview?placeid=ChIJCXG6-WAJxkcRO-dqhcrQSgU",
-  rating: { value: 5.0, count: 8 },
+  rating: { value: 5.0, count: 20 },
   founded: "2025",
   acuity: {
     openGymId: "87017445",
