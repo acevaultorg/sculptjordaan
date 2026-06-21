@@ -43,7 +43,7 @@ const reviews = [
     badge: "Local Guide",
   },
   {
-    name: "KAHA Coaching",
+    name: "Joey",
     text: "Dankbaar voor deze mooie plek en ook dat er vertrouwen is in de mensen en trainers. Een plek waar mensen los van elkaar zien alles netjes achterlaten en denken aan de volgende persoon die de ruimte gebruikt. Eigenaar zeer vriendelijke man en altijd open staat voor verbetering. Zeer tevreden.",
     rating: 5,
     date: "mei 2026",
