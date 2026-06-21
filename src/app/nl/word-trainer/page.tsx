@@ -6,7 +6,7 @@ import { getColor } from "@/lib/image-color-manifest";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Card, CardContent } from "@/components/ui/card";
-import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerReferralBanner } from "@/components/marketing/trainer-referral-banner";
 import { TrainerApplicationForm } from "@/components/marketing/trainer-application-form";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
@@ -119,6 +119,9 @@ export default function WordTrainerNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Word Trainer", url: "/nl/word-trainer" }]} />
+      {/* FAQPage schema — page had visible FAQs but no schema. Enables AI-extraction /
+          citation for trainer-acquisition queries (the #1 revenue lever: studio rental). */}
+      <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
 
       {/* Hero */}
       <Section>
