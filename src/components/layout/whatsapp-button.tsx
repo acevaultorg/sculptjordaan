@@ -10,7 +10,7 @@ const messages = {
     studio:
       "Hoi! Ik ben personal trainer en wil graag de studio bekijken / huren",
     trainerMember:
-      "Hoi! Ik wil graag trainer bij SculptClub worden bij SculptClub",
+      "Hoi! Ik wil graag trainer worden bij SculptClub",
     trainerInfo:
       "Hoi! Ik ben personal trainer en heb een vraag over SculptClub",
     findTrainer:

@@ -189,6 +189,18 @@ export function Analytics() {
               if (text.indexOf('intake') !== -1 || text.indexOf('intro') !== -1 || text.indexOf('tarief') !== -1 || text.indexOf("'s rate") !== -1 || text.indexOf('afvallen') !== -1 || text.indexOf('begeleiding') !== -1 || text.indexOf('krachttraining') !== -1 || text.indexOf('rugklachten') !== -1) {
                 return { intent: 'trainer', pricing: 'free', trainer_name: '' };
               }
+              // Floating WhatsApp button + find/become-trainer messages mention
+              // "trainer" but not the canonical phrases above (e.g. "Ik ben personal
+              // trainer en wil graag de studio bekijken / huren", "trainer worden",
+              // "ik zoek een personal trainer"). Classify them so the highest-intent
+              // trainer/studio-rental clicks from the omnipresent floating button
+              // aren't logged as 'generic' (attribution fix 2026-06-21).
+              if (text.indexOf('trainer') !== -1) {
+                if (text.indexOf('studio') !== -1 || text.indexOf('huren') !== -1 || text.indexOf('rent the studio') !== -1) {
+                  return { intent: 'studio_rental', pricing: 'paid', trainer_name: '' };
+                }
+                return { intent: 'trainer', pricing: 'free', trainer_name: '' };
+              }
               return { intent: 'generic', pricing: 'unknown', trainer_name: '' };
             }
             document.addEventListener('click', function(e) {
