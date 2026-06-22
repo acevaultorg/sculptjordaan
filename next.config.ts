@@ -365,7 +365,21 @@ const nextConfig: NextConfig = {
       // server-side pixel forwarding; Google Ads pagead2 endpoint posts
       // back conversion data. All three were blocked → console errors +
       // attribution loss for paid campaigns.
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com",
+      // 2026-06-22: the Meta Pixel (connect.facebook.net/signals/config/<id>)
+      // forwards events to Meta's MANAGED server-side gateway hosted on Google
+      // Cloud Run + AWS — e.g. mpc-prod-<hash>.a.run.app/events?cee=no and
+      // <hash>.ecs.us-east-1.on.aws/event — NOT the *.conversionsapigateway.com
+      // domain allowlisted above. Those two were CSP-blocked, throwing
+      // SecurityPolicyViolation console errors on iOS Safari (~46% of iOS
+      // sessions / ~28% of homepage sessions per Microsoft Clarity, 2026-06-22)
+      // AND silently dropping the server-side conversion signal for Meta /
+      // Instagram ads (Instagram is a top traffic source). Allowlisting the
+      // managed-forwarder host patterns (https-scoped) COMPLETES the 2026-05-17
+      // "allow Meta CAPI forwarding" decision above — same goal, the real hosts.
+      // NOTE: broad subdomain wildcards = a mild CSP widening; Meta may rotate
+      // the cluster hash/region (would re-block → re-capture the source from a
+      // WebKit securitypolicyviolation listener and re-tighten).
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com https://*.a.run.app https://*.ecs.us-east-1.on.aws *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com",
       "frame-src app.acuityscheduling.com embed.acuityscheduling.com www.google.com maps.google.com",
       "base-uri 'self'",
       "form-action 'self' https://wa.me",
