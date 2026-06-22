@@ -379,7 +379,7 @@ const nextConfig: NextConfig = {
       // NOTE: broad subdomain wildcards = a mild CSP widening; Meta may rotate
       // the cluster hash/region (would re-block → re-capture the source from a
       // WebKit securitypolicyviolation listener and re-tighten).
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com https://*.a.run.app https://*.ecs.us-east-1.on.aws *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com",
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net ad.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com https://*.a.run.app https://*.ecs.us-east-1.on.aws *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com",
       "frame-src app.acuityscheduling.com embed.acuityscheduling.com www.google.com maps.google.com",
       "base-uri 'self'",
       "form-action 'self' https://wa.me",
