@@ -194,7 +194,7 @@ export default function StudioRentalPageEN() {
             from rent-via-chat (2026-06-18) to "come see it first"; the self-serve
             booking path stays right below. */}
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
-          <p className="text-lg font-bold">Want to see the studio first? Send us a WhatsApp</p>
+          <p className="text-lg font-bold">The fastest way to see the studio: send us a WhatsApp</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
             Plan a no-obligation tour, ask your questions and see if SculptClub is the right place for you and your clients — usually answered within 1 hour. Feel free to bring your own clients.
           </p>
@@ -206,7 +206,7 @@ export default function StudioRentalPageEN() {
               className="w-full sm:w-auto plausible-event-name=studio_rental_hero_whatsapp"
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              See the studio? WhatsApp us
+              WhatsApp us
             </ButtonLink>
             <a
               href={whatsappLinks.tourEn}
