@@ -198,14 +198,15 @@ export default function StudioRentalPageNL() {
           </p>
         </div>
 
-        {/* WhatsApp-first CTA — operator insight 2026-06-18: rent clients
-            message FIRST (ask availability/rate before committing). Data: ~135
-            calendar clicks → ~3 bookings last month, while the serious renters
-            WhatsApp. Lead with chat; self-serve booking stays right below. */}
+        {/* "Wil je de studio eerst zien?" CTA — operator correction 2026-06-23:
+            boeken gaat self-serve via Acuity (de live scheduler hieronder); WhatsApp
+            is voor de STUDIO BEKIJKEN (een vrijblijvende rondleiding), niet voor
+            huren/boeken. Reframe van "rent-via-chat" (2026-06-18) naar "kom eerst
+            kijken"; de self-serve boekingsflow staat direct hieronder. */}
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
-          <p className="text-lg font-bold">De snelste weg naar de studio: stuur ons een WhatsApp</p>
+          <p className="text-lg font-bold">Wil je de studio eerst zien? Stuur ons een WhatsApp</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            Vraag beschikbaarheid, je tarief of een vast wekelijks rooster — meestal antwoord binnen 1 uur. Kom gerust met je eigen klanten.
+            Plan een vrijblijvende rondleiding, stel je vragen en kijk of SculptClub de juiste plek is voor jou en je klanten — meestal antwoord binnen 1 uur. Kom gerust met je eigen klanten.
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink
@@ -215,7 +216,7 @@ export default function StudioRentalPageNL() {
               className="w-full sm:w-auto plausible-event-name=studio_huren_hero_whatsapp"
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              WhatsApp ons over studio huren
+              Studio bekijken? WhatsApp ons
             </ButtonLink>
             <a
               href={whatsappLinks.tourNl}

@@ -188,14 +188,15 @@ export default function StudioRentalPageEN() {
           </p>
         </div>
 
-        {/* WhatsApp-first CTA — operator insight 2026-06-18: rent clients
-            message FIRST (ask availability/rate before committing). Data: ~135
-            calendar clicks → ~3 bookings last month, while the serious renters
-            WhatsApp. Lead with chat; self-serve booking stays right below. */}
+        {/* "Want to see the studio first?" CTA — operator correction 2026-06-23:
+            booking is self-serve via Acuity (the live scheduler below); WhatsApp is
+            for VIEWING the studio (a free tour), not for renting/booking. Reframes
+            from rent-via-chat (2026-06-18) to "come see it first"; the self-serve
+            booking path stays right below. */}
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
-          <p className="text-lg font-bold">The fastest way into the studio: send us a WhatsApp</p>
+          <p className="text-lg font-bold">Want to see the studio first? Send us a WhatsApp</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            Ask about availability, your rate, or a fixed weekly schedule — usually answered within 1 hour. Feel free to bring your own clients.
+            Plan a no-obligation tour, ask your questions and see if SculptClub is the right place for you and your clients — usually answered within 1 hour. Feel free to bring your own clients.
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink
@@ -205,7 +206,7 @@ export default function StudioRentalPageEN() {
               className="w-full sm:w-auto plausible-event-name=studio_rental_hero_whatsapp"
             >
               <MessageCircle className="mr-2 h-4 w-4" />
-              WhatsApp us about studio rental
+              See the studio? WhatsApp us
             </ButtonLink>
             <a
               href={whatsappLinks.tourEn}
