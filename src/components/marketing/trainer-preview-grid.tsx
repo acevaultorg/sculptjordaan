@@ -153,7 +153,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                       under the specialty. Expat signal at the decision point:
                       every visitor sees which trainers speak their language.
                       Light + small so it reads as metadata, not a 4th chip. */}
-                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground/80">
+                  <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                     {trainer.languages.join(" · ")}
                   </p>
                 </div>
