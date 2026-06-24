@@ -137,7 +137,7 @@ export default function PricingPageNL() {
       />
       <ServiceJsonLd
         name="Open Gym"
-        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 3 personen. Vanaf €29/4 weken."
+        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 4 personen. Vanaf €29/4 weken."
         url="/nl/prijzen"
         priceRange="€29–€59/4 weken"
       />
@@ -149,7 +149,7 @@ export default function PricingPageNL() {
       />
       <OfferCatalogJsonLd
         catalogName="Open Gym Abonnementen"
-        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 3 personen."
+        description="Zelfstandig trainen in een privé studio in Amsterdam Jordaan. Sessies van 60 min, max 4 personen."
         url="/nl/prijzen"
         recurring
         offers={[

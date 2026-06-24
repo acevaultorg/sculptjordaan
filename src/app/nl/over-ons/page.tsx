@@ -73,7 +73,7 @@ const uniqueFeatures = [
   {
     icon: Lock,
     title: "Priv\u00e9",
-    description: "Maximaal 3 personen bij Open Gym. Geen drukte, geen wachten.",
+    description: "Maximaal 4 personen bij Open Gym. Geen drukte, geen wachten.",
   },
   {
     icon: MapPin,
@@ -164,7 +164,7 @@ export default function OverOnsPage() {
               </p>
               <p>
                 Onze studio aan de Egelantiersgracht biedt een intieme
-                trainingsruimte waar maximaal 3 personen tegelijk welkom zijn.
+                trainingsruimte waar maximaal 4 personen tegelijk welkom zijn.
                 Met professionele apparatuur, flexibele boekingen en deurcode
                 toegang kun je trainen op jouw voorwaarden.
               </p>

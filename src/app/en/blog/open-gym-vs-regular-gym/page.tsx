@@ -56,7 +56,7 @@ export default function BlogPostEN3() {
         datePublished="2026-03-24"
       />
       <FaqJsonLd faqs={[
-        { question: "What is Open Gym?", answer: "Open Gym is a concept where you train independently in a private or semi-private studio. You book a time slot of usually 60 minutes and during that time have access to professional equipment, without having to share the space with dozens of other people. At SculptClub, there are a maximum of 3 people in the studio at any time." },
+        { question: "What is Open Gym?", answer: "Open Gym is a concept where you train independently in a private or semi-private studio. You book a time slot of usually 60 minutes and during that time have access to professional equipment, without having to share the space with dozens of other people. At SculptClub, there are a maximum of 4 people in the studio at any time." },
         { question: "Who is Open Gym right for?", answer: "Open Gym is ideal for people who:" },
         { question: "Who is a regular gym better for?", answer: "A traditional gym might be a better fit if you:" },
       ]} />
@@ -106,7 +106,7 @@ export default function BlogPostEN3() {
               <p>
                 Open Gym is a concept where you train independently in a private or semi-private studio. You book a time
                 slot of usually 60 minutes and during that time have access to professional equipment, without having to
-                share the space with dozens of other people. At SculptClub, there are a maximum of 3 people in the studio
+                share the space with dozens of other people. At SculptClub, there are a maximum of 4 people in the studio
                 at any time.
               </p>
 

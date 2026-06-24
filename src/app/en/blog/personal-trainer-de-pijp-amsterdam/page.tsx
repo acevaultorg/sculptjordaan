@@ -87,7 +87,7 @@ export default function PersonalTrainerDePijpEN() {
                 In De Pijp you’ll find Basic-Fit and TrainMore on Ceintuurbaan and Ferdinand
                 Bolstraat. Crowded, impersonal, and you share every machine. At SculptClub you train
                 in a fully equipped private studio — power rack, cable machine, dumbbells up to 50 kg.
-                Maximum 3 people at a time. During personal training, just you and your trainer.
+                Maximum 4 people at a time. During personal training, just you and your trainer.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers and rates</h2>

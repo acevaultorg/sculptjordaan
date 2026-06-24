@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "Can I bring someone along?",
-    a: "Yes. Open Gym allows up to 3 people in the studio at once — so you can come with a training buddy or friend. Personal Training is standard 1-on-1, but many trainers also offer duo or small-group sessions at adjusted rates.",
+    a: "Yes. Open Gym allows up to 4 people in the studio at once — so you can come with a training buddy or friend. Personal Training is standard 1-on-1, but many trainers also offer duo or small-group sessions at adjusted rates.",
   },
   {
     q: "What do I bring?",
@@ -298,7 +298,7 @@ export default function FirstVisitPage() {
                   <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
                 <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train independently in a private studio. 60 min free trial. Max 3 people. Then from €29 per 4 weeks.</CardDescription>
+                <CardDescription>Train independently in a private studio. 60 min free trial. Max 4 people. Then from €29 per 4 weeks.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Book free trial<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

@@ -56,7 +56,7 @@ export default function BlogPostNL3() {
         datePublished="2026-03-24"
       />
       <FaqJsonLd faqs={[
-        { question: "Wat is Open Gym?", answer: "Open Gym is een concept waarbij je zelfstandig traint in een privé of semi-privé studio. Je boekt een tijdslot van meestal 60 minuten en hebt in die tijd toegang tot professionele apparatuur, zonder dat je de ruimte hoeft te delen met tientallen andere sporters. Bij SculptClub zijn er maximaal 3 personen tegelijk in de studio." },
+        { question: "Wat is Open Gym?", answer: "Open Gym is een concept waarbij je zelfstandig traint in een privé of semi-privé studio. Je boekt een tijdslot van meestal 60 minuten en hebt in die tijd toegang tot professionele apparatuur, zonder dat je de ruimte hoeft te delen met tientallen andere sporters. Bij SculptClub zijn er maximaal 4 personen tegelijk in de studio." },
         { question: "Voor wie is Open Gym geschikt?", answer: "Open Gym is ideaal voor mensen die:" },
         { question: "Voor wie is een sportschool beter?", answer: "Een traditionele sportschool kan beter passen als je:" },
       ]} />
@@ -106,7 +106,7 @@ export default function BlogPostNL3() {
               <p>
                 Open Gym is een concept waarbij je zelfstandig traint in een privé of semi-privé studio. Je boekt een
                 tijdslot van meestal 60 minuten en hebt in die tijd toegang tot professionele apparatuur, zonder dat
-                je de ruimte hoeft te delen met tientallen andere sporters. Bij SculptClub zijn er maximaal 3 personen
+                je de ruimte hoeft te delen met tientallen andere sporters. Bij SculptClub zijn er maximaal 4 personen
                 tegelijk in de studio.
               </p>
 

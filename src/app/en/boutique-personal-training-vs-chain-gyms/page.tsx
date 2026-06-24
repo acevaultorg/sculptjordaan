@@ -48,7 +48,7 @@ const faqs = [
   {
     question: "What is a boutique personal training studio exactly?",
     answer:
-      "A small, private training space where you train with at most a handful of people at a time. Personal coaching is the focus, not member volume. At SculptClub never more than 3 people train in the studio on the Egelantiersgracht at the same time.",
+      "A small, private training space where you train with at most a handful of people at a time. Personal coaching is the focus, not member volume. At SculptClub never more than 4 people train in the studio on the Egelantiersgracht at the same time.",
   },
   {
     question: "Is a boutique studio more expensive than a big chain?",
@@ -86,7 +86,7 @@ export default function BoutiquePTvsChainEN() {
       />
       <ServiceJsonLd
         name="Boutique Personal Training Amsterdam"
-        description="Private personal training studio in Amsterdam Jordaan. Max 3 people, free intake, no contract. Personal training from €45/session."
+        description="Private personal training studio in Amsterdam Jordaan. Max 4 people, free intake, no contract. Personal training from €45/session."
         url="/en/boutique-personal-training-vs-chain-gyms"
         priceRange="From €45/session"
       />
@@ -128,7 +128,7 @@ export default function BoutiquePTvsChainEN() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 font-medium">Group size</td>
-                    <td className="px-4 py-3">Max 3 people at a time</td>
+                    <td className="px-4 py-3">Max 4 people at a time</td>
                     <td className="px-4 py-3 text-muted-foreground">
                       50-200+ people at peak
                     </td>

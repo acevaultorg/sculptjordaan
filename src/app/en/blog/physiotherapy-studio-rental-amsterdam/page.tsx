@@ -117,7 +117,7 @@ export default function BlogPostPhysioStudioEN() {
                 Rehabilitation training demands concentration. Your patient needs to feel safe,
                 especially when they’re getting back to heavier exercises after an injury. In a big
                 gym that’s difficult — there are distractions, loud music and other people watching.
-                In a private studio, your patient can fully concentrate on the exercise. Maximum 3
+                In a private studio, your patient can fully concentrate on the exercise. Maximum 4
                 people at a time, no waiting for equipment, no uncomfortable situations.
               </p>
 

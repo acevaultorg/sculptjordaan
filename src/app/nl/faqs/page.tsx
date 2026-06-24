@@ -120,7 +120,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "Hoe werkt Open Gym?",
-        a: "Je boekt een tijdslot via ons boekingssysteem, ontvangt de avond ervoor je deurcode via WhatsApp, en traint zelfstandig in onze privé studio. Maximaal 3 personen tegelijk.",
+        a: "Je boekt een tijdslot via ons boekingssysteem, ontvangt de avond ervoor je deurcode via WhatsApp, en traint zelfstandig in onze privé studio. Maximaal 4 personen tegelijk.",
       },
       {
         q: "Wat zijn de 4-weken cycli?",

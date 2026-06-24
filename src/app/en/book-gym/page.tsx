@@ -89,7 +89,7 @@ const faqs = [
   { q: "How much does an Open Gym session cost?", a: "Single session €10. Or get a membership from €29/4 weeks (€7.25/session). Most popular: 2x/week for €49. You can always upgrade or downgrade." },
   { q: "Do I need a membership?", a: "No, you can book a single session for €10. Or get a 4-week membership for better value. Cancel anytime." },
   { q: "Is it really just for me?", a: "Yes. The entire studio to yourself during your booked 60-minute slot. No other gym-goers." },
-  { q: "Can I bring a friend?", a: "Up to 3 people can train together. Want to train together? Check our studio rental options." },
+  { q: "Can I bring a friend?", a: "Up to 4 people can train together. Want to train together? Check our studio rental options." },
   { q: "What if I need to cancel?", a: "Cancelling or rescheduling is always free through the booking system." },
   { q: "What equipment is available?", a: "Power rack, cable machine, Concept2 rower, dumbbells, adjustable bench, kettlebells, resistance bands and more." },
 ];

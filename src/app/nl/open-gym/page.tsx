@@ -27,7 +27,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Open Gym Amsterdam — Privé Studio Jordaan | SculptClub" },
   description:
-    "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste priv\u00e9 studio in de Jordaan. Max. 3 personen per slot. Vanaf \u20ac29 per 4 weken.",
+    "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste priv\u00e9 studio in de Jordaan. Max. 4 personen per slot. Vanaf \u20ac29 per 4 weken.",
   alternates: {
     canonical: "/nl/open-gym",
     languages: {
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: "/nl/open-gym",
     title: "Open Gym Amsterdam — Privé Studio Jordaan | SculptClub",
     description:
-      "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste privé studio in de Jordaan. Max. 3 personen per slot. Vanaf €29 per 4 weken.",
+      "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste privé studio in de Jordaan. Max. 4 personen per slot. Vanaf €29 per 4 weken.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Open Gym Amsterdam — Privé Studio Jordaan | SculptClub",
     description:
-      "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste privé studio in de Jordaan. Max. 3 personen per slot. Vanaf €29 per 4 weken.",
+      "Open gym in Amsterdam: train zelfstandig in een rustige, volledig uitgeruste privé studio in de Jordaan. Max. 4 personen per slot. Vanaf €29 per 4 weken.",
   },
 };
 
@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     q: "Kan ik een vriend meenemen?",
-    a: "Er mogen maximaal 3 personen tegelijk in de studio. Wil je samen trainen? Bekijk dan onze studio verhuur opties voor small group training.",
+    a: "Er mogen maximaal 4 personen tegelijk in de studio. Wil je samen trainen? Bekijk dan onze studio verhuur opties voor small group training.",
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
@@ -186,7 +186,7 @@ export default function OpenGymPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Open Gym","url":"/nl/open-gym"}]} />
       <ServiceJsonLd
         name="Open Gym"
-        description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam. Boek sessies van 60 minuten, max 3 personen tegelijk."
+        description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam. Boek sessies van 60 minuten, max 4 personen tegelijk."
         url="/nl/open-gym"
         priceRange="€29 - €59 per 4 weken"
       />
@@ -210,7 +210,7 @@ export default function OpenGymPageNL() {
               as="h1"
               overline="Open Gym"
               title="Open Gym Amsterdam — zelfstandig trainen in een privé studio"
-              description="Vrij trainen in een rustige, volledig uitgeruste privé studio in de Jordaan. Sessies van 60 minuten, max. 3 personen per slot. Geen jaarcontract, altijd opzegbaar."
+              description="Vrij trainen in een rustige, volledig uitgeruste privé studio in de Jordaan. Sessies van 60 minuten, max. 4 personen per slot. Geen jaarcontract, altijd opzegbaar."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -242,7 +242,7 @@ export default function OpenGymPageNL() {
                   Eerste les gratis
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
-                  Privé studio · max 3 personen
+                  Privé studio · max 4 personen
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-400">
                   Geen contract

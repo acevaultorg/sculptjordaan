@@ -122,7 +122,7 @@ export default function TermsPageNL() {
               Open Gym biedt je toegang tot de studio om zelfstandig te trainen
               tijdens geboekte tijdsloten. Open Gym werkt in cycli van 4 weken.
               Je kiest het aantal sessies per week en betaalt vooraf. Na elke
-              cyclus kun je opzeggen zonder verplichtingen. Maximaal 3 personen
+              cyclus kun je opzeggen zonder verplichtingen. Maximaal 4 personen
               mogen tegelijkertijd in de studio trainen.
             </p>
 
@@ -188,7 +188,7 @@ export default function TermsPageNL() {
             <h2 className="text-2xl font-bold mb-4">6. Huisregels</h2>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                Maximaal <strong>3 personen</strong> tegelijkertijd in de studio.
+                Maximaal <strong>4 personen</strong> tegelijkertijd in de studio.
               </li>
               <li>
                 Respecteer de apparatuur: gebruik handdoeken, plaats gewichten

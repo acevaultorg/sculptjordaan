@@ -96,7 +96,7 @@ export default function BoutiqueGymVsKetenNL() {
                   </thead>
                   <tbody>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Prijs</td><td className="py-2 pr-4">€20-€40/maand</td><td className="py-2">€29-€89/4 weken</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Drukte</td><td className="py-2 pr-4">Hoog (spitsuren)</td><td className="py-2">Max 3 personen</td></tr>
+                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Drukte</td><td className="py-2 pr-4">Hoog (spitsuren)</td><td className="py-2">Max 4 personen</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Begeleiding</td><td className="py-2 pr-4">Niet inbegrepen</td><td className="py-2">Optioneel (PT vanaf €45)</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Apparatuur</td><td className="py-2 pr-4">Veel, vaak bezet</td><td className="py-2">Minder, altijd beschikbaar</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Contract</td><td className="py-2 pr-4">Vaak 12 maanden</td><td className="py-2">Geen — stop wanneer je wilt</td></tr>

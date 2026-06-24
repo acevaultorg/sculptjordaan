@@ -81,7 +81,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             {
               icon: Lock,
               title: "You train harder in private.",
-              body: "Max 3 people at once. No queue, no reception desk — full focus. You train without distraction, just you and your work.",
+              body: "Max 4 people at once. No queue, no reception desk — full focus. You train without distraction, just you and your work.",
             },
             {
               icon: Calendar,

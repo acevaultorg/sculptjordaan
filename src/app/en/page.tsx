@@ -71,7 +71,7 @@ export default function HomePageEN() {
           },
           {
             name: "Open Gym",
-            description: "Independent training in a quiet, fully-equipped private studio with max 3 people per slot. At SculptClub in Amsterdam Jordaan from €29 per 4 weeks (Starter, 4 sessions). Includes all equipment, free coffee/tea, and door-code access via WhatsApp.",
+            description: "Independent training in a quiet, fully-equipped private studio with max 4 people per slot. At SculptClub in Amsterdam Jordaan from €29 per 4 weeks (Starter, 4 sessions). Includes all equipment, free coffee/tea, and door-code access via WhatsApp.",
             url: "/en/open-gym",
           },
           {

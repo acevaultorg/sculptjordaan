@@ -87,7 +87,7 @@ export default function BoutiquePTvsKetenNL() {
       />
       <ServiceJsonLd
         name="Boutique Personal Training Amsterdam"
-        description="Privé personal training studio in Amsterdam Jordaan. Maximaal 3 personen, gratis intake, geen contract. Personal training vanaf €45/sessie."
+        description="Privé personal training studio in Amsterdam Jordaan. Maximaal 4 personen, gratis intake, geen contract. Personal training vanaf €45/sessie."
         url="/nl/boutique-personal-training-vs-keten"
         priceRange="Vanaf €45/sessie"
       />
@@ -129,7 +129,7 @@ export default function BoutiquePTvsKetenNL() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 font-medium">Groepsgrootte</td>
-                    <td className="px-4 py-3">Max 3 personen tegelijk</td>
+                    <td className="px-4 py-3">Max 4 personen tegelijk</td>
                     <td className="px-4 py-3 text-muted-foreground">
                       50-200+ mensen in de spits
                     </td>

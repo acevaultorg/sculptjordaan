@@ -120,7 +120,7 @@ export default function TermsPageEN() {
               Open Gym provides access to the studio for independent training
               during booked time slots. Open Gym operates in 4-week cycles. You
               choose the number of sessions per week and pay in advance. After
-              each cycle, you can cancel without obligations. A maximum of 3
+              each cycle, you can cancel without obligations. A maximum of 4
               people may train in the studio simultaneously.
             </p>
 
@@ -184,7 +184,7 @@ export default function TermsPageEN() {
             <h2 className="text-2xl font-bold mb-4">6. House Rules</h2>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                Maximum <strong>3 people</strong> in the studio at the same time.
+                Maximum <strong>4 people</strong> in the studio at the same time.
               </li>
               <li>
                 Respect the equipment: use towels, re-rack weights, and report

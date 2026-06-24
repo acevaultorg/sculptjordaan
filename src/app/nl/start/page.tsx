@@ -53,7 +53,7 @@ const paths = [
   {
     icon: "Dumbbell" as const,
     title: "Ik wil zelfstandig trainen",
-    description: "Boek 60-min slots in een priv\u00e9 studio. Max 3 personen. Vanaf \u20ac6,13/sessie, geen abonnement.",
+    description: "Boek 60-min slots in een priv\u00e9 studio. Max 4 personen. Vanaf \u20ac6,13/sessie, geen abonnement.",
     cta: "Probeer Open Gym gratis",
     href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,

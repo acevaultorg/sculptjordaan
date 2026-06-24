@@ -141,7 +141,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Open Gym Instapplan: €29 / 4 weeks (4 sessions = €7.25/session)",
         "Open Gym Populair: €49 / 4 weeks (8 sessions = €6.13/session)",
         "Open Gym Onbeperkt: €59 / 4 weeks unlimited",
-        "Max 3 people per slot",
+        "Max 4 people per slot",
         "Door code via WhatsApp the night before",
         "First session free",
         "No contract · cancel anytime",
@@ -753,7 +753,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     script: `[0-3s] Hook: "Why train in the Jordaan?"
 [3-12s] Quick comparison: 30-min commute to chain gym ↔ 5-min walk to private studio
 [12-22s] Pan over Egelantiersgracht — canal, cafés, neighbours
-[22-32s] Inside the studio: max 3 people · quiet · curated equipment
+[22-32s] Inside the studio: max 4 people · quiet · curated equipment
 [32-42s] Trainer cue overlay: "When the gym is on your block, you actually go"
 [42-52s] B-roll: client leaving, walking home along canal
 [52-60s] CTA: "${FACTS.address} · first intake free · ${FACTS.website}"`,
@@ -761,7 +761,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       message: "Frictionless = sustainable. A 5-minute walk is the single biggest retention lever a gym can offer. Make THAT the brand.",
       facts: [
         "5-min walk from most Jordaan addresses",
-        "Max 3 people per Open Gym slot",
+        "Max 4 people per Open Gym slot",
         "Curated equipment: Rogue, Echo Bike, free weights",
         "First intake free",
       ],
@@ -1851,7 +1851,7 @@ Operator face/avatar bottom-left + small "❤️" emoji (replicates the engageme
         "First intake is GRATIS (free) — €45/sessie regular",
         "1-on-1 with the trainer of your choice",
         "5★ rating on Google · 100% satisfaction or no obligation",
-        "Privé studio · max 3 people in space · NEVER overcrowded",
+        "Privé studio · max 4 people in space · NEVER overcrowded",
       ],
       hookConcept: "'Free' beats '50% off' for first-time conversions in PT vertical. Saints-&-Stars's friend-multiplier is for mass-membership; SculptClub stays boutique-1-on-1.",
       cta: `Boek je gratis intake: sculptclub.nl/eerste-bezoek`,
@@ -1960,7 +1960,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
 [2-4s] Number shrinks, new headline appears: "per sessie · €29/4 weken"
        Cut to: kettlebell-swing close-up
 [4-7s] Quick reveal: empty studio → trainer-arrived → racks-up dumbbells
-       On-screen counter: "max 3 personen tegelijk"
+       On-screen counter: "max 4 personen tegelijk"
 [7-10s] Final card: "EERSTE SESSIE GRATIS · sculptclub.nl/open-gym"
         TikTok CTA: "Book now"`,
     brief: {
@@ -1968,7 +1968,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
       facts: [
         "Open Gym: €29/4-weken Instapplan (€7.25/sessie)",
         "Always free first test session",
-        "Max 3 people at a time in studio — never overcrowded",
+        "Max 4 people at a time in studio — never overcrowded",
         "No contract · cancel anytime · daily 06:30-22:00",
       ],
       hookConcept: "Numbers-only opener (€7.25). Beats Saints-&-Stars even at their 50%-off price. Emphasize boutique scarcity (max 3).",
@@ -1991,7 +1991,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
       competitorRef: "Saints-&-Stars membership pricing (likely €60-90/maand) — SculptClub Open Gym is genuinely cheaper",
       overlayText: {
         headline: "€7,25",
-        subheadline: "per sessie · €29 voor 4 weken · max 3 personen",
+        subheadline: "per sessie · €29 voor 4 weken · max 4 personen",
         style: "Massive Helvetica Black 200pt for €7,25, then 60pt subheadline. White text with subtle drop shadow. TikTok-native style.",
       },
       abVariants: [
@@ -2024,7 +2024,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
         "Free first intake — also for the friend",
         "Sessions €45/each after intake (no per-friend surcharge)",
         "Train together or separately — operator's choice",
-        "Boutique = max 3 people in space at once",
+        "Boutique = max 4 people in space at once",
       ],
       hookConcept: "Reduce the viral-multiplier from 10x (chain-gym) to 1+1 (boutique). Adds social proof + reduces 'I'll go alone' anxiety.",
       cta: `Plan jullie intake: sculptclub.nl/eerste-bezoek`,
@@ -2071,14 +2071,14 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
 [5-9s] Quick montage: trainer + client lifting, kettlebell swing, canal view
        through window, weight rack close-up
 [9-12s] Trainer voice-over (English subs):
-        "Privé studio in de Jordaan · 1-op-1 of small group · max 3 personen"
+        "Privé studio in de Jordaan · 1-op-1 of small group · max 4 personen"
 [12-15s] Final card: brand mark + "sculptclub.nl"
          Sub: "5★ op Google · Egelantiersgracht 424"`,
     brief: {
       message: "Top-of-funnel brand-awareness. Position SculptClub as the anti-chain-gym for Amsterdam fitness-conscious people. Run alongside performance ads to build saved-followers + ad-recall.",
       facts: [
         FACTS.address,
-        "Max 3 people in studio at once",
+        "Max 4 people in studio at once",
         "5★ Google rating",
         "Premier boutique PT studio in the Jordaan",
       ],

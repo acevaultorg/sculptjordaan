@@ -56,12 +56,12 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "Open Gym · privé studio in de Jordaan · solo trainen 60 minuten",
       description:
-        "Boek je eerste les Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 3 personen per slot · vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nsculptclub.nl/open-gym",
+        "Boek je eerste les Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 4 personen per slot · vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nsculptclub.nl/open-gym",
       hashtags: "#opengym #amsterdamgym #privegym #jordaan #fitamsterdam",
     },
     instagram: {
       caption:
-        "Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 3 personen per slot · eerste les vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nBoek je proefles · link in bio 👆",
+        "Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 4 personen per slot · eerste les vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nBoek je proefles · link in bio 👆",
       hashtags: "#opengym #amsterdamgym #privegym #jordaan #fitamsterdam",
     },
   },

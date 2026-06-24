@@ -53,7 +53,7 @@ const paths = [
   {
     icon: "Dumbbell" as const,
     title: "I want to train solo",
-    description: "Book 60-min slots in a private studio. Max 3 people. From \u20ac6.13/session, no membership.",
+    description: "Book 60-min slots in a private studio. Max 4 people. From \u20ac6.13/session, no membership.",
     cta: "Try Open Gym free",
     href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,

@@ -104,7 +104,7 @@ export default function SmallGroupTrainingAmsterdamEN() {
               <p>
                 Small group rates are per trainer per session, not per person. You split the
                 cost with your group. A duo session (2 people) with Andrea is €45 for 45
-                minutes — so €22.50 per person. A trio (3 people) drops that to €15 per
+                minutes — so €22.50 per person. A trio (4 people) drops that to €15 per
                 person at the same length.
               </p>
               <p>

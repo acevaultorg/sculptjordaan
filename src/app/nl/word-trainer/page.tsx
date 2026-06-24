@@ -107,7 +107,7 @@ const steps = [
 const faqs = [
   { q: "Wat kost het om de studio te huren?", a: "Vanaf €12 per 60 minuten. Met een 10-uren pakket betaal je €10,20/uur (15% korting). Met een 20-uren pakket €9,24/uur (23% korting). Pakketten zijn 3 maanden geldig." },
   { q: "Heb ik een eigen verzekering nodig?", a: "Ja, je dient een geldige beroepsaansprakelijkheidsverzekering te hebben. Dit is je eigen verantwoordelijkheid." },
-  { q: "Hoeveel klanten kan ik tegelijk trainen?", a: "De studio is geschikt voor 1-op-1 sessies en kleine groepen tot maximaal 3 personen." },
+  { q: "Hoeveel klanten kan ik tegelijk trainen?", a: "De studio is geschikt voor 1-op-1 sessies en kleine groepen tot maximaal 4 personen." },
   { q: "Krijg ik echt een profiel op de website?", a: "Ja. Je krijgt een eigen profielpagina met foto, bio, specialisaties, tarieven en een directe boekingslink. Dit is inbegrepen bij elk huurpakket." },
   { q: "Moet ik een contract tekenen?", a: "Nee. Je boekt per uur of koopt een pakket. Geen langetermijncontract, geen verplichtingen. Stop wanneer je wilt." },
   { q: "Welke apparatuur is beschikbaar?", a: "Powerrack, verstelbare bank, dumbbells (2-40 kg), kabelmachine, assault bike, roeier en accessoires. Alles wat je nodig hebt voor professionele sessies." },

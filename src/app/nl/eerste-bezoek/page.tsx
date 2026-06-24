@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "Kan ik samen met iemand komen?",
-    a: "Ja. Open Gym is max 3 personen tegelijk in de studio — je kunt dus met een trainingsmaatje of vriend(in) komen. Personal Training is standaard 1-op-1, maar veel trainers bieden ook duo- of small-group sessies aan tegen een aangepast tarief.",
+    a: "Ja. Open Gym is max 4 personen tegelijk in de studio — je kunt dus met een trainingsmaatje of vriend(in) komen. Personal Training is standaard 1-op-1, maar veel trainers bieden ook duo- of small-group sessies aan tegen een aangepast tarief.",
   },
   {
     q: "Wat moet ik meenemen?",
@@ -313,7 +313,7 @@ export default function EersteBezoekPage() {
                   <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
                 <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train zelfstandig in een privé studio. 60 min proefles. Max 3 personen. Daarna vanaf €29 per 4 weken.</CardDescription>
+                <CardDescription>Train zelfstandig in een privé studio. 60 min proefles. Max 4 personen. Daarna vanaf €29 per 4 weken.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Boek gratis proefles<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

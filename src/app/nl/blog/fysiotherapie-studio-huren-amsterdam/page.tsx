@@ -117,7 +117,7 @@ export default function BlogPostFysioStudioNL() {
                 Revalidatietraining vraagt om focus. Je patiënt moet zich veilig voelen, zeker als ze
                 na een blessure weer beginnen met zwaardere oefeningen. In een grote sportschool is dat
                 lastig — er zijn afleiders, er staat muziek op en andere sporters kijken mee. In een
-                privé studio kan je patiënt zich volledig concentreren op de oefening. Maximaal 3
+                privé studio kan je patiënt zich volledig concentreren op de oefening. Maximaal 4
                 personen tegelijk, geen wachttijd voor apparaten, geen ongemakkelijke situaties.
               </p>
 

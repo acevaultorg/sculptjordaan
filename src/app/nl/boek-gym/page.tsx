@@ -105,7 +105,7 @@ const faqs = [
   { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap vanaf €29/4 weken (€7,25/sessie). Populairste: 2x/week voor €49. Je kunt altijd upgraden of downgraden." },
   { q: "Heb ik een abonnement nodig?", a: "Nee, je kunt ook een losse sessie boeken voor €10. Of neem een lidmaatschap per 4 weken voor meer voordeel. Altijd opzegbaar." },
   { q: "Is het echt alleen voor mij?", a: "Ja. De hele studio voor jezelf tijdens je geboekte slot van 60 minuten. Geen andere sporters." },
-  { q: "Kan ik een vriend meenemen?", a: "Er mogen max 3 personen tegelijk in de studio. Samen trainen? Bekijk onze studio verhuur opties." },
+  { q: "Kan ik een vriend meenemen?", a: "Er mogen max 4 personen tegelijk in de studio. Samen trainen? Bekijk onze studio verhuur opties." },
   { q: "Wat als ik moet annuleren?", a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem." },
   { q: "Welke apparatuur is er?", a: "Powerrack, kabelmachine, Concept2 roeier, dumbbells, verstelbare bank, kettlebells, resistance bands en meer." },
 ];

@@ -10,6 +10,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Hours:** Daily 06:30–22:00
 - **Founded:** 2025
 - **Rating:** 5.0 stars on Google
+- **Open Gym capacity:** max **4 people** in the studio at a time (operator 2026-06-23, raised from 3). Use "max 4 personen / max 4 people" everywhere — never "3".
 
 ## Pricing (ALWAYS use these exact numbers)
 - **Personal Training:** from €45/session (trainers set own rates, 0% commission, first intake free)

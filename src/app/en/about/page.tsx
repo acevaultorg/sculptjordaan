@@ -73,7 +73,7 @@ const uniqueFeatures = [
   {
     icon: Lock,
     title: "Private",
-    description: "Maximum 3 people during Open Gym. No crowds, no waiting.",
+    description: "Maximum 4 people during Open Gym. No crowds, no waiting.",
   },
   {
     icon: MapPin,
@@ -159,7 +159,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Our studio on the Egelantiersgracht offers an intimate training
-                space where a maximum of 3 people are welcome at a time. With
+                space where a maximum of 4 people are welcome at a time. With
                 professional equipment, flexible bookings and door code access,
                 you can train on your own terms.
               </p>
