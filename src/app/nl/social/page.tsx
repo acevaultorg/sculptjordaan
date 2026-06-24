@@ -14,6 +14,7 @@ import {
   type AudienceSide,
 } from "@/data/social-content";
 import { saveSlidesToPhotos, saveOneSlide, copyText, type SlideFile } from "@/lib/social-studio";
+import { PostComposer } from "@/components/social/post-composer";
 import {
   Copy,
   Check,
@@ -392,8 +393,19 @@ export default function SocialPostingStudio() {
           Posting Studio
         </h1>
         <p className="mt-2 text-[0.92rem] text-muted-foreground leading-relaxed">
-          Jouw {total}{" "}post-klare packs voor TikTok &amp; Instagram. Open een pack → bewaar de slides → kopieer de
-          caption → post → vink af.
+          Genereer een nieuwe post in jouw stijl, of pak een kant-en-klaar pack. Onbeperkt materiaal voor TikTok &amp;
+          Instagram.
+        </p>
+
+        {/* generate mode — endless brand-safe drafts (no LLM, verified facts only) */}
+        <div className="mt-5">
+          <PostComposer />
+        </div>
+
+        {/* ── pack library ─────────────────────────────────────────────────── */}
+        <h2 className="mt-9 text-xl font-bold tracking-tight">Kant-en-klare packs</h2>
+        <p className="mt-1 text-[0.86rem] text-muted-foreground">
+          {total} uitgewerkte packs met kant-en-klare slides — open → bewaar → kopieer → post.
         </p>
 
         {/* progress */}
