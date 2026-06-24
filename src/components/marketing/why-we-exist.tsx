@@ -48,7 +48,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               // per operator. Reframed the negative (no onlookers) as the
               // positive payoff (full focus). Restructured so the positive
               // lands at the end of the list rather than mid-sentence.
-              body: "Maximaal 3 mensen tegelijk. Geen wachtrij, geen receptie — volledige focus. Je traint zonder afleiding, alleen jij en je werk.",
+              body: "Maximaal 4 mensen tegelijk. Geen wachtrij, geen receptie — volledige focus. Je traint zonder afleiding, alleen jij en je werk.",
             },
             {
               icon: Calendar,

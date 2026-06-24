@@ -1971,7 +1971,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
         "Max 4 people at a time in studio — never overcrowded",
         "No contract · cancel anytime · daily 06:30-22:00",
       ],
-      hookConcept: "Numbers-only opener (€7.25). Beats Saints-&-Stars even at their 50%-off price. Emphasize boutique scarcity (max 3).",
+      hookConcept: "Numbers-only opener (€7.25). Beats Saints-&-Stars even at their 50%-off price. Emphasize boutique scarcity (max 4).",
       cta: `Boek je gratis testsessie: sculptclub.nl/open-gym`,
       targetLength: "short",
     },

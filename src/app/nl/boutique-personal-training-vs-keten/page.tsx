@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "Wat is een boutique personal training studio precies?",
     answer:
-      "Een kleine, privé trainingsruimte waar je traint met maximaal een handvol mensen tegelijk. Persoonlijke begeleiding staat centraal, niet het volume aan leden. Bij SculptClub trainen er nooit meer dan 3 mensen tegelijk in de studio aan de Egelantiersgracht.",
+      "Een kleine, privé trainingsruimte waar je traint met maximaal een handvol mensen tegelijk. Persoonlijke begeleiding staat centraal, niet het volume aan leden. Bij SculptClub trainen er nooit meer dan 4 mensen tegelijk in de studio aan de Egelantiersgracht.",
   },
   {
     question: "Is een boutique studio duurder dan een grote keten?",
