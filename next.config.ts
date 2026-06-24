@@ -88,15 +88,16 @@ const nextConfig: NextConfig = {
       // into directory-per-post layout (/social/<post-id>/). Permanent because the
       // new structure is the long-term canonical — every future post gets its own
       // directory, no more /social/post-N.html collisions.
-      //
-      // Note: the previous `/social → /nl/social` soft-redirect (2026-05-16, 3
-      // bouncing visitors) was removed in the same ship — Next.js normalizes
-      // /social/ to /social, so that redirect was catching the new hub URL and
-      // sending it to the marketing page instead of serving public/social/index.html.
-      // The original bounce concern is moot now: the hub IS the content at /social/
-      // (and is noindex'd, so random visitors get an operator-facing posts list
-      // instead of a 404 — cleaner outcome than the redirect).
       { source: "/social/post.html", destination: "/social/trainer-pitch-001/", permanent: true },
+      // Single canonical Content Studio (operator decision 2026-06-24: "two pages
+      // super confusing"). There were TWO surfaces both called "social": the old
+      // static hub at /social/index.html ("Content Hub") AND the polished React
+      // Posting Studio at /nl/social. The studio is the real tool — so bare /social
+      // now redirects to it. EXACT match: this does NOT catch the deeper asset paths
+      // /social/<pack>/ or /social/<pack>/*.png (the slide PNGs the studio loads),
+      // which keep serving from public/social/<pack>/. (Supersedes the 2026-05-16
+      // removal of this same redirect — the "serve the hub" rationale is retired.)
+      { source: "/social", destination: "/nl/social", permanent: false },
       // /start is handled by middleware (language detection) — not here
 
       // Shortlinks (migrated from Hostinger redirects)
