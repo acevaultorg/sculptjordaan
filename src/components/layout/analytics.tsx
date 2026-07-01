@@ -151,7 +151,7 @@ export function Analytics() {
             }
             function detectWaIntent(href) {
               // Direct trainer numbers → trainer intent, free intake assumed.
-              // All 11 trainer WhatsApp numbers mapped 2026-05-31 so per-trainer
+              // All 12 trainer WhatsApp numbers mapped (Tom 2026-07-01) so per-trainer
               // lead attribution (trainer_name prop on whatsapp_click / generate_lead
               // / Trainer_Intake_Lead_1) works for EVERY trainer, not just Joey + Dara.
               // Numbers mirror the whatsapp fields in src/config/trainers.ts — keep in
@@ -161,7 +161,7 @@ export function Analytics() {
                 '351917397700': 'Alex', '31623232640': 'Eva', '31642267007': 'Bryan',
                 '31636091780': 'Ibrahim', '31613440302': 'Gezina', '31622730864': 'Andrea',
                 '31645658213': 'Dara', '31621582581': 'Jearmey', '31639382800': 'Sergei',
-                '31639175337': 'Joey', '31613326221': 'Hamish'
+                '31639175337': 'Joey', '31613326221': 'Hamish', '31615294322': 'Tom'
               };
               for (var waNum in TRAINER_WA) {
                 if (href.indexOf('wa.me/' + waNum) !== -1) return { intent: 'trainer', pricing: 'free', trainer_name: TRAINER_WA[waNum] };

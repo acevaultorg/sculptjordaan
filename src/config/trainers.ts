@@ -75,7 +75,9 @@ export interface Trainer {
 // Positioned at #4 (after Joey, before Alex) — his Voeding/Afvallen/
 // Revalidatie profile fits between the strength-focused trainers and
 // the holistic-focused ones. Operator can reorder freely.
-const DISPLAY_ORDER = ["eva", "bryan", "joey", "ibrahim", "alex", "gezina", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
+// Tom inserted at #3 (premium, highly-differentiated: 12yr high-end London PT +
+// military/rowing/BJJ). Operator can reorder freely. Added 2026-07-01.
+const DISPLAY_ORDER = ["eva", "bryan", "tom", "joey", "ibrahim", "alex", "gezina", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -361,6 +363,40 @@ const trainersRaw: Trainer[] = [
     },
     image: "/images/trainers/hamish.jpg",
     whatsapp: "https://wa.me/31613326221",
+  },
+  {
+    id: "tom",
+    name: "Tom",
+    slug: {
+      nl: "plan-gratis-intake-met-tom",
+      en: "plan-free-intro-with-tom",
+    },
+    specialization: {
+      nl: ["Kracht & Conditie", "Duurzame Training", "Brazilian Jiu-Jitsu"],
+      en: ["Strength & Conditioning", "Sustainable Training", "Brazilian Jiu-Jitsu"],
+    },
+    // Languages inferred (Amsterdam-based, Dutch mobile, common Dutch name);
+    // operator to confirm whether Tom also coaches in Dutch. Added 2026-07-01.
+    languages: ["NL", "EN"],
+    rate: "€100 / 60 min",
+    // Block of ten (€900 = €90/session) + monthly PAYG billing also offered, but
+    // the Trainer schema has a single `rate` field (no trainer shows block
+    // pricing). Per-session rate shown here; block/PAYG covered at the intake.
+    credentials: {
+      nl: "Personal trainer, 12 jaar ervaring (Mayfair & Soho, Londen)",
+      en: "Personal Trainer, 12 years' experience (Mayfair & Soho, London)",
+    },
+    bio: {
+      nl: "Tom heeft 12 jaar ervaring, opgebouwd op de sportvloeren van Mayfair en Soho in Londen, waar hij veeleisende cliënten trainde. Met een achtergrond in het leger, roeien en Brazilian Jiu-Jitsu combineert hij die ervaring met een heldere aanpak: je gezonder maken en je de middelen geven om ook met een druk leven duurzaam te blijven trainen.",
+      en: "Tom brings 12 years of experience from the gym floors of Mayfair and Soho in London, where he trained demanding, high-end clients — alongside a background in the military, rowing and Brazilian Jiu-Jitsu. His approach is clear: get you healthier, and give you the tools to train sustainably through a busy life.",
+    },
+    // ⚠️ PLACEHOLDER image (solid dark) — operator to drop Tom's real photo at
+    // public/images/trainers/tom.jpg (portrait ~1122×1200 like the others).
+    // 3 photos were provided 2026-07-01 but chat-pasted binaries can't be
+    // written to disk by the agent. Replace tom.jpg, rebuild, deploy.
+    image: "/images/trainers/tom.jpg",
+    // Tom — operator-provided direct contact 2026-07-01: +31 6 15294322.
+    whatsapp: "https://wa.me/31615294322",
   },
 ];
 
