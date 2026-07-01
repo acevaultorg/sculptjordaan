@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { MessageCircle, Mail, Send, ArrowLeft, ArrowRight } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button-link";
 import { PersonJsonLd } from "@/components/seo/json-ld";
+import { TrainerPhotoGallery } from "@/components/marketing/trainer-photo-gallery";
 import { trainers } from "@/config/trainers";
 import { siteConfig } from "@/config/site";
 import type { Locale } from "@/config/site";
@@ -221,30 +221,30 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   + form immediately below → bio/photo/specs as supporting validation when they
                   scroll. Desktop 2-col grid unaffected (still trainer-info left, contact right). */}
               <div className="space-y-5 order-2 md:order-1">
-                <div className="relative w-full aspect-[4/5] max-w-xs rounded-2xl overflow-hidden">
-                  {/* `priority` (not the default `loading="lazy"`) because the
-                      trainer photo IS the primary above-fold proof on this page.
-                      The visitor has either (a) finished the match-quiz and
-                      clicked "Plan gratis intake met <name>", or (b) tapped a
-                      trainer card from the grid — either way they EXPECT to see
-                      this trainer's face immediately, not a black rectangle that
-                      pops in after scroll. Chrome MCP audit 2026-05-27: image
-                      was lazy-loaded; landing on the page showed an empty
-                      portrait container that filled in only after the visitor
-                      scrolled, which is exactly the wrong moment to introduce
-                      doubt ("is this trainer real? is this site broken?"). One
-                      Image per per-trainer intake page = negligible LCP impact;
-                      conversion impact = preserving the warm-handoff from
-                      quiz/grid → intake-form. */}
-                  <Image
-                    src={trainer.image}
-                    alt={`Photo of ${trainer.name}, personal trainer at SculptClub Amsterdam`}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 320px"
-                    priority
-                  />
-                </div>
+                {/* `priority` on the hero photo (not the default `loading="lazy"`)
+                    because it's the primary above-fold proof on this page. The
+                    visitor has either (a) finished the match-quiz and clicked
+                    "Plan gratis intake met <name>", or (b) tapped a trainer card
+                    from the grid — either way they EXPECT to see this trainer's
+                    face immediately, not a black rectangle that pops in after
+                    scroll. Chrome MCP audit 2026-05-27: image was lazy-loaded;
+                    landing on the page showed an empty portrait container that
+                    filled in only after the visitor scrolled, which is exactly
+                    the wrong moment to introduce doubt ("is this trainer real?
+                    is this site broken?"). One priority Image per per-trainer
+                    intake page = negligible LCP impact; conversion impact =
+                    preserving the warm-handoff from quiz/grid → intake-form.
+                    TrainerPhotoGallery renders that same hero photo + (when
+                    trainer.gallery is set) a thumbnail strip below it; clicking
+                    either opens a fullscreen slider over all the trainer's
+                    photos (added 2026-07-01, Tom — 3 operator-provided shots). */}
+                <TrainerPhotoGallery
+                  locale={locale}
+                  images={[
+                    { src: trainer.image, alt: `${locale === "nl" ? "Foto van" : "Photo of"} ${trainer.name}, personal trainer bij/at SculptClub Amsterdam` },
+                    ...(trainer.gallery?.map((g) => ({ src: g.src, alt: g.alt[locale] })) ?? []),
+                  ]}
+                />
 
                 <h3 className="text-xl font-bold">
                   {trainer.name}

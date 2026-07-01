@@ -8,6 +8,14 @@
       "port": 3456,
       "autoPort": true,
       "cwd": "."
+    },
+    {
+      "name": "sculptjordaan-prod",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "export PATH=/Users/paulodevries/.nvm/versions/node/v24.14.0/bin:$PATH && npx next start -p 3457"],
+      "port": 3457,
+      "autoPort": true,
+      "cwd": "."
     }
   ]
 }

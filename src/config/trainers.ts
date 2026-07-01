@@ -64,6 +64,17 @@ export interface Trainer {
    * is ignored/penalized by Google). Added 2026-06-10.
    */
   testimonials?: { quote: Record<Locale, string>; author: string }[];
+  /**
+   * Optional extra photos shown as a thumbnail strip below the hero photo on
+   * the intake page. Clicking the hero OR any thumbnail opens a fullscreen
+   * lightbox slider covering the hero + all extra photos (see
+   * TrainerPhotoGallery). `image` above is always the hero (index 0) — this
+   * array is ONLY the additional photos, not a duplicate of `image`.
+   * Missing/empty = no thumbnail strip renders; page is pixel-identical to
+   * before (10 of 12 trainers have no gallery). Added 2026-07-01 (Tom, 3
+   * operator-provided photos).
+   */
+  gallery?: { src: string; alt: Record<Locale, string> }[];
 }
 
 // Display order — optimised for conversion by differentiation strength
@@ -390,11 +401,31 @@ const trainersRaw: Trainer[] = [
       nl: "Tom heeft 12 jaar ervaring, opgebouwd op de sportvloeren van Mayfair en Soho in Londen, waar hij veeleisende cliënten trainde. Met een achtergrond in het leger, roeien en Brazilian Jiu-Jitsu combineert hij die ervaring met een heldere aanpak: je gezonder maken en je de middelen geven om ook met een druk leven duurzaam te blijven trainen.",
       en: "Tom brings 12 years of experience from the gym floors of Mayfair and Soho in London, where he trained demanding, high-end clients — alongside a background in the military, rowing and Brazilian Jiu-Jitsu. His approach is clear: get you healthier, and give you the tools to train sustainably through a busy life.",
     },
-    // ⚠️ PLACEHOLDER image (solid dark) — operator to drop Tom's real photo at
-    // public/images/trainers/tom.jpg (portrait ~1122×1200 like the others).
-    // 3 photos were provided 2026-07-01 but chat-pasted binaries can't be
-    // written to disk by the agent. Replace tom.jpg, rebuild, deploy.
+    // Real photo — front-facing street portrait, cropped 1122×1200 (best card
+    // fit of the 3 operator-provided shots; see commit f602c7f).
     image: "/images/trainers/tom.jpg",
+    // 2 more of the 3 operator-provided photos — found in ~/Downloads (chat
+    // attachments land there, not written to disk automatically; the
+    // f602c7f comment saying "can't be written to disk" was wrong, corrected
+    // 2026-07-01). Renders as a thumbnail strip + fullscreen slider on the
+    // intake page (TrainerPhotoGallery) — operator asked to "see all 3
+    // photos when you click on profile".
+    gallery: [
+      {
+        src: "/images/trainers/tom-2.jpg",
+        alt: {
+          nl: "Tom, personal trainer bij SculptClub, tegen een bakstenen muur",
+          en: "Tom, personal trainer at SculptClub, against a brick wall",
+        },
+      },
+      {
+        src: "/images/trainers/tom-3.jpg",
+        alt: {
+          nl: "Tom traint een cliënt met stootkussens",
+          en: "Tom coaching a client with focus mitts",
+        },
+      },
+    ],
     // Tom — operator-provided direct contact 2026-07-01: +31 6 15294322.
     whatsapp: "https://wa.me/31615294322",
   },
