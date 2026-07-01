@@ -336,6 +336,40 @@ const nextConfig: NextConfig = {
       { source: "/nl/blog/personal-trainer-amsterdam-jordaan", destination: "/nl/personal-trainer-jordaan", permanent: true },
       { source: "/bookstudio", destination: "/nl/boek-studio", permanent: true },
       { source: "/about", destination: "/nl/over-ons", permanent: true },
+
+      // ─── GSC 404 cleanup — wave 5 (2026-07-01, sourced from Wayback Machine's
+      // CDX history of sculptclub.nl — cross-referenced against live curl checks,
+      // not guessed. These are the last confirmed-404 paths from the pre-Next.js
+      // WordPress era; every wave-1-4 sibling above already covers the rest) ───
+      // Bare unprefixed trainer intake (mirrors the /nl/andrea, /nl/hamish waves
+      // above, which only covered the NL-prefixed and EN-prefixed variants)
+      { source: "/andrea", destination: "/nl/plan-gratis-intake-met-andrea", permanent: true },
+      { source: "/hamish", destination: "/nl/plan-gratis-intake-met-hamish", permanent: true },
+      // No current trainer by these names — safe generic fallback (same pattern
+      // as /small-group-trainer -> the team page) rather than fabricating a match
+      { source: "/bob", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      { source: "/mare", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      // Booking-intent WP slugs (mirrors /try -> gratis-intake above)
+      { source: "/book-your-spot", destination: "/nl/gratis-intake", permanent: true },
+      { source: "/book", destination: "/nl/gratis-intake", permanent: true },
+      { source: "/firsttime", destination: "/nl/gratis-intake", permanent: true },
+      // WP comment-feed artifact (mirrors /feed -> /nl/blog above)
+      { source: "/comments/feed", destination: "/nl/blog", permanent: true },
+      // EN-side typos/duplicates (NL-side /author/:path* + home variants already
+      // covered; EN needs its own since Next.js redirect matching is locale-exact)
+      { source: "/en/about-enlgish", destination: "/en/about", permanent: true },
+      { source: "/en/author/:path*", destination: "/en", permanent: true },
+      { source: "/en/home-en", destination: "/en", permanent: true },
+      { source: "/en/home-eng", destination: "/en", permanent: true },
+      // Bare-no-hyphen / typo'd NL variants of already-redirected slugs
+      { source: "/nl/rentstudio", destination: "/nl/studio-huren", permanent: true },
+      { source: "/nl/training-studio-huren-amterdam", destination: "/nl/studio-huren", permanent: true },
+      { source: "/opengym", destination: "/nl/open-gym", permanent: true },
+      { source: "/personal-training-jordaan", destination: "/nl/vind-jouw-personal-trainer", permanent: true },
+      // Mirrors /sculptclub-partner -> / above
+      { source: "/partner", destination: "/", permanent: true },
+      // Bare undecorated privacy slug (mirrors /terms-conditions -> algemene-voorwaarden)
+      { source: "/privacy-policy", destination: "/nl/privacybeleid", permanent: true },
     ];
   },
 
