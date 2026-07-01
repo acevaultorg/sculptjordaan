@@ -130,10 +130,23 @@ const nlPages = [
   "/nl/privacybeleid",
   "/nl/cookiebeleid",
   "/nl/toegankelijkheid",
-  // Removed from sitemap (still live for booking funnel; noindex'd — 20 templated
-  // trainer-intake pages = doorway pattern per rules/adsense-thin-content-prevention.md
-  // Gate 3. Conversion funnel preserved via /nl/vind-jouw-personal-trainer + /nl/boek-trainer):
-  //   /nl/plan-gratis-intake-met-{alex,eva,andrea,bryan,dara,gezina,ibrahim,jearmey,joey,sergei}
+  // Re-added to sitemap 2026-07-01 (reversed — see the matching `robots` comment
+  // in each /nl/plan-gratis-intake-met-* route file for the full rationale):
+  // these are genuinely distinct staff/team-profile pages, not a templated
+  // location-swap doorway, and GSC confirmed they'd been noindex-excluded —
+  // suppressing the highest-intent conversion pages on the site.
+  "/nl/plan-gratis-intake-met-eva",
+  "/nl/plan-gratis-intake-met-bryan",
+  "/nl/plan-gratis-intake-met-tom",
+  "/nl/plan-gratis-intake-met-joey",
+  "/nl/plan-gratis-intake-met-ibrahim",
+  "/nl/plan-gratis-intake-met-alex",
+  "/nl/plan-gratis-intake-met-gezina",
+  "/nl/plan-gratis-intake-met-andrea",
+  "/nl/plan-gratis-intake-met-sergei",
+  "/nl/plan-gratis-intake-met-dara",
+  "/nl/plan-gratis-intake-met-jearmey",
+  "/nl/plan-gratis-intake-met-hamish",
   "/nl/boek-trainer",
   "/nl/boek-studio",
   "/nl/boek-gym",
@@ -219,10 +232,23 @@ const enPages = [
   "/en/privacy-policy",
   "/en/cookie-policy",
   "/en/accessibility-statement",
-  // Removed from sitemap (still live for booking funnel; noindex'd — 20 templated
-  // trainer-intake pages = doorway pattern. Conversion funnel preserved via
-  // /en/find-personal-trainer + /en/book-trainer):
-  //   /en/plan-free-intro-with-{alex,eva,andrea,bryan,dara,gezina,ibrahim,jearmey,joey,sergei}
+  // Re-added to sitemap 2026-07-01 (reversed — see the matching `robots` comment
+  // in each /en/plan-free-intro-with-* route file for the full rationale): these
+  // are genuinely distinct staff/team-profile pages, not a templated location-
+  // swap doorway, and GSC confirmed they'd been noindex-excluded — suppressing
+  // the highest-intent conversion pages on the site.
+  "/en/plan-free-intro-with-eva",
+  "/en/plan-free-intro-with-bryan",
+  "/en/plan-free-intro-with-tom",
+  "/en/plan-free-intro-with-joey",
+  "/en/plan-free-intro-with-ibrahim",
+  "/en/plan-free-intro-with-alex",
+  "/en/plan-free-intro-with-gezina",
+  "/en/plan-free-intro-with-andrea",
+  "/en/plan-free-intro-with-sergei",
+  "/en/plan-free-intro-with-dara",
+  "/en/plan-free-intro-with-jearmey",
+  "/en/plan-free-intro-with-hamish",
   "/en/book-trainer",
   "/en/book-studio",
   "/en/book-gym",
@@ -230,7 +256,15 @@ const enPages = [
 ];
 
 // High-intent money pages get max priority — everything else cascades down.
-const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym|studio-huren|studio-rental|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake|plan-free-intro|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
+// `plan-gratis-intake(-met-.+)?` / `plan-free-intro(-with-.+)?` are NOT exact-
+// anchored to the bare slug: this alternation is meant to also match the 24
+// per-trainer intake pages (/nl/plan-gratis-intake-met-tom, etc, re-added to
+// the sitemap 2026-07-01). Before this fix those 24 URLs silently fell through
+// to the 0.8 default priority / weekly changefreq — arguably the HIGHEST-
+// intent pages on the site (a visitor on a specific trainer's page is closer
+// to booking than one on the general listing), so they should get the same
+// money-page tier as /nl/gratis-intake itself.
+const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym|studio-huren|studio-rental|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake(-met-.+)?|plan-free-intro(-with-.+)?|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
 const LEGAL_RE = /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/;
 
 // Newest blog posts get a priority boost — signals freshness to Google.
