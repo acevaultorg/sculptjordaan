@@ -173,10 +173,15 @@ export function FirstTimeMenu({ locale }: { locale: Locale }) {
           <Icon className="w-5 h-5 text-brand" aria-hidden="true" />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-base">{opt.title}</span>
+          {/* flex-wrap so the badge drops to its own line as a whole pill when
+              it doesn't fit beside the title (e.g. "Personal Training" +
+              "Gratis intake" on a narrow phone) — instead of the badge text
+              fracturing into "Gratis" / "intake". Title + badge each stay on
+              one line (whitespace-nowrap); the badge never shrinks (shrink-0). */}
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="font-semibold text-base whitespace-nowrap">{opt.title}</span>
             {opt.badge && (
-              <span className="text-[11px] font-semibold text-brand bg-brand/10 rounded-full px-2 py-0.5">
+              <span className="shrink-0 whitespace-nowrap text-[11px] font-semibold text-brand bg-brand/10 rounded-full px-2 py-0.5">
                 {opt.badge}
               </span>
             )}
