@@ -387,12 +387,12 @@ const nextConfig: NextConfig = {
       // blocked → 0 sessions recorded for 3+ days while Plausible captured
       // 152 UV/7d. Switching to `*.clarity.ms` wildcard covers all
       // current + future Microsoft Clarity subdomains.
-      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com",
+      "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com static.cloudflareinsights.com www.instagram.com",
       "style-src 'self' 'unsafe-inline'",
       // pagead2.googlesyndication.com + googleads.g.doubleclick.net → Google Ads
       // remarketing/conversion pixels load 1×1 tracking images; were blocked
       // pre-2026-05-17 (Lighthouse console errors).
-      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com *.clarity.ms www.facebook.com www.google.com pagead2.googlesyndication.com googleads.g.doubleclick.net wa.me",
+      "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com *.clarity.ms www.facebook.com www.google.com pagead2.googlesyndication.com googleads.g.doubleclick.net wa.me *.cdninstagram.com *.fbcdn.net www.instagram.com scontent.cdninstagram.com",
       "font-src 'self'",
       // 2026-05-17 additions per Lighthouse mobile audit: TikTok Events API
       // ships its pixel data to tiktokw.us subdomains (web-events flow);
@@ -414,10 +414,10 @@ const nextConfig: NextConfig = {
       // NOTE: broad subdomain wildcards = a mild CSP widening; Meta may rotate
       // the cluster hash/region (would re-block → re-capture the source from a
       // WebKit securitypolicyviolation listener and re-tighten).
-      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net ad.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com https://*.a.run.app https://*.ecs.us-east-1.on.aws *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com",
-      "frame-src app.acuityscheduling.com embed.acuityscheduling.com www.google.com maps.google.com",
+      "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net ad.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com https://*.a.run.app https://*.ecs.us-east-1.on.aws *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com funnelpilot.app plausible.io analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com www.instagram.com",
+      "frame-src app.acuityscheduling.com embed.acuityscheduling.com www.google.com maps.google.com www.instagram.com instagram.com staticxx.facebook.com",
       "base-uri 'self'",
-      "form-action 'self' https://wa.me",
+      "form-action 'self' https://wa.me *.cdninstagram.com *.fbcdn.net www.instagram.com scontent.cdninstagram.com",
       "object-src 'none'",
       "frame-ancestors 'none'",
       "upgrade-insecure-requests",

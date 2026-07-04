@@ -7,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { CtaBand } from "@/components/marketing/cta-band";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { trainers } from "@/config/trainers";
+import { InstagramEmbeds } from "@/components/marketing/instagram-embeds";
 import { Users, Dumbbell, Sparkles, Gift, ArrowRight, MessageCircle } from "lucide-react";
 
 // Inline Instagram glyph — lucide-react@1.x doesn't export `Instagram`;
@@ -32,6 +33,16 @@ const coaches = SMALL_GROUP_COACHES.map((n) => trainers.find((t) => t.name === n
 );
 const dara = trainers.find((t) => t.name === "Dara");
 const daraWa = dara?.whatsapp ?? "https://wa.me/31645658213";
+const daraIg = dara?.instagram ?? "https://instagram.com/strengthandbalancecoaching";
+const daraIgHandle = dara?.instagramHandle ?? "@strengthandbalancecoaching";
+// Dara's real reels, pulled from her public profile @strengthandbalancecoaching,
+// embedded via Instagram's official embed (real playable video). Swap in newer
+// reels anytime — just replace the permalinks.
+const DARA_REELS = [
+  "https://www.instagram.com/reel/DaLIapsMLhI/",
+  "https://www.instagram.com/reel/DZ5ZVSUxOLi/",
+  "https://www.instagram.com/reel/DaINABBuK9K/",
+];
 
 export const metadata: Metadata = {
   title: { absolute: "Small Group Training in de Jordaan — SculptClub" },
@@ -216,6 +227,41 @@ export default function SmallGroupNL() {
                 </div>
               </div>
             ))}
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* Dara on Instagram — real reels (video previews) + clear contact */}
+      <Section bg="muted">
+        <SectionHeader
+          overline="Op Instagram"
+          title="Bekijk Dara in actie"
+          description="Een indruk van hoe Dara traint — kracht, balans en techniek. Zin om mee te doen aan een small group? Volg haar of stuur direct een WhatsApp."
+        />
+        <FadeIn>
+          <InstagramEmbeds
+            urls={DARA_REELS}
+            linkLabel="Bekijk op Instagram"
+            className="mx-auto max-w-4xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3 justify-items-center"
+          />
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={daraIg}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="plausible-event-name=smallgroup_dara_ig_profile inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 h-12 text-sm font-semibold hover:border-brand hover:bg-brand/5 transition-colors"
+            >
+              <InstagramIcon className="w-4 h-4" />
+              {daraIgHandle}
+            </a>
+            <ButtonLink
+              href={daraWa}
+              size="lg"
+              className="plausible-event-name=smallgroup_dara_wa_reels rounded-xl px-6"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp Dara
+            </ButtonLink>
           </div>
         </FadeIn>
       </Section>
