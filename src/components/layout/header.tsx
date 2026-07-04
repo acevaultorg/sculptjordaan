@@ -175,8 +175,13 @@ export function Header() {
                     // min-w-0 + overflow-hidden + truncate on the span below is a
                     // last-resort safety net only (extreme zoom/viewport), not
                     // the normal behavior.
-                    "min-w-0 overflow-hidden flex items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap transition-all",
-                    "h-9 sm:h-10 px-2 sm:px-5 text-xs sm:text-sm",
+                    // sm+: flex-col so a tile with a caption (below) stacks label
+                    // over caption; tiles without one just center their single
+                    // line same as before. Height goes auto+py-2 so items-stretch
+                    // on the <nav> grows every tile to match the tallest (the
+                    // captioned one), keeping the row visually uniform.
+                    "min-w-0 overflow-hidden flex sm:flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
+                    "h-9 sm:h-auto px-2 sm:px-5 sm:py-2 text-xs sm:text-sm",
                     isActive
                       // Active = brand fill (clickable, so orange is allowed per
                       // the color-clickability contract).
@@ -190,7 +195,14 @@ export function Header() {
                 >
                   {/* short label on phones, full label at sm+ */}
                   <span className="sm:hidden truncate max-w-full tracking-tight">{item.shortLabel ?? item.label}</span>
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:block">{item.label}</span>
+                  {/* Caption (e.g. "for trainers" on Rent Studio) — sm+ only,
+                      never shown on the mobile tile. */}
+                  {item.caption && (
+                    <span className="hidden sm:block text-[11px] font-normal opacity-70 leading-tight">
+                      {item.caption}
+                    </span>
+                  )}
                 </Link>
               );
             })}
