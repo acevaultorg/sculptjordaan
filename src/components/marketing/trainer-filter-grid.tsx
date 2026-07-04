@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, ArrowRight } from "lucide-react";
+import { X, ArrowRight, SlidersHorizontal, ChevronDown } from "lucide-react";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -40,6 +40,7 @@ interface TrainerFilterGridProps {
 const copy = {
   nl: {
     filterHeading: "Filter op specialiteit of taal",
+    filterToggle: "Filteren",
     specLabel: "Specialiteit",
     langLabel: "Taal",
     clearAll: "Alles wissen",
@@ -59,6 +60,7 @@ const copy = {
   },
   en: {
     filterHeading: "Filter by specialty or language",
+    filterToggle: "Filter",
     specLabel: "Specialty",
     langLabel: "Language",
     clearAll: "Clear all",
@@ -129,6 +131,10 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
 
   const [selectedSpecs, setSelectedSpecs] = useState<Set<string>>(new Set());
   const [selectedLangs, setSelectedLangs] = useState<Set<string>>(new Set());
+  // The specialty list is long (~25 tags); keep the filter folded by default so
+  // it doesn't push the trainer cards far down the page (operator 2026-07-04
+  // "this filters should be fold in fold out, its too long"). One tap expands it.
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const toggleSpec = (spec: string) => {
     setSelectedSpecs((prev) => {
@@ -175,10 +181,24 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
           className="mb-8 rounded-2xl border border-border/60 bg-muted/40 p-5 sm:p-6"
           aria-label={t.filterHeading}
         >
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <p className="text-sm font-medium text-muted-foreground">
-              {t.showing(filteredTrainers.length, trainers.length)}
-            </p>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            {/* Toggle: the whole "count + Filter" control folds the tag lists
+                in/out. aria-expanded/controls make it a proper disclosure. */}
+            <button
+              type="button"
+              onClick={() => setFiltersOpen((v) => !v)}
+              aria-expanded={filtersOpen}
+              aria-controls="trainer-filter-panel"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground"
+            >
+              <SlidersHorizontal className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <span>{t.filterToggle}</span>
+              <span className="text-muted-foreground">· {t.showing(filteredTrainers.length, trainers.length)}</span>
+              <ChevronDown
+                className={`h-4 w-4 text-muted-foreground transition-transform ${filtersOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
             {hasActiveFilters && (
               <button
                 type="button"
@@ -191,59 +211,61 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
             )}
           </div>
 
-          <div className="space-y-4">
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {t.specLabel}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {allSpecs.map((spec) => {
-                  const active = selectedSpecs.has(spec);
-                  return (
-                    <button
-                      key={spec}
-                      type="button"
-                      onClick={() => toggleSpec(spec)}
-                      aria-pressed={active}
-                      className={
-                        active
-                          ? "rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all"
-                          : "rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-muted"
-                      }
-                    >
-                      {spec}
-                    </button>
-                  );
-                })}
+          {filtersOpen && (
+            <div id="trainer-filter-panel" className="mt-4 space-y-4">
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {t.specLabel}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {allSpecs.map((spec) => {
+                    const active = selectedSpecs.has(spec);
+                    return (
+                      <button
+                        key={spec}
+                        type="button"
+                        onClick={() => toggleSpec(spec)}
+                        aria-pressed={active}
+                        className={
+                          active
+                            ? "rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all"
+                            : "rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-muted"
+                        }
+                      >
+                        {spec}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
 
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {t.langLabel}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {allLangs.map((lang) => {
-                  const active = selectedLangs.has(lang);
-                  return (
-                    <button
-                      key={lang}
-                      type="button"
-                      onClick={() => toggleLang(lang)}
-                      aria-pressed={active}
-                      className={
-                        active
-                          ? "rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all"
-                          : "rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-muted"
-                      }
-                    >
-                      {lang}
-                    </button>
-                  );
-                })}
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {t.langLabel}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {allLangs.map((lang) => {
+                    const active = selectedLangs.has(lang);
+                    return (
+                      <button
+                        key={lang}
+                        type="button"
+                        onClick={() => toggleLang(lang)}
+                        aria-pressed={active}
+                        className={
+                          active
+                            ? "rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-sm transition-all"
+                            : "rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-muted"
+                        }
+                      >
+                        {lang}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </FadeIn>
 

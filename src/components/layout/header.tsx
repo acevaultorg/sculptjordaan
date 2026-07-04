@@ -209,10 +209,13 @@ export function Header() {
                     // (justify-center) reads better on the wider row.
                     "flex-auto sm:flex-none min-w-0 overflow-hidden flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
                     "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-xs sm:text-sm",
-                    isActive
-                      // Active = brand fill (clickable, so orange is allowed per
-                      // the color-clickability contract).
-                      ? "bg-brand text-brand-foreground shadow-sm"
+                    isActive || item.highlight
+                      // Active OR a persistently-highlighted tile (Rent Studio)
+                      // = brand fill. Orange is allowed because the tile is
+                      // clickable (color-clickability contract). hover:bg-
+                      // brand-dark gives the highlighted-but-not-active tile a
+                      // little press feedback.
+                      ? "bg-brand text-brand-foreground shadow-sm hover:bg-brand-dark"
                       : overDarkHero
                         // Over the homepage dark hero: glass tiles.
                         ? "text-white/90 bg-white/10 border border-white/20 hover:bg-white/20 backdrop-blur-md"

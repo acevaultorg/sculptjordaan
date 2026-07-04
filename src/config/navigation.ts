@@ -12,6 +12,11 @@ export interface NavItem {
   // Same qualifier, shorter — used on the mobile tile instead of `caption` so
   // the "always fits 4, never scrolls" row guarantee still holds.
   captionShort?: string;
+  // Persistent highlight: render this tile with the orange brand fill at all
+  // times (not only when it's the active page) — used to keep the trainer
+  // studio-rental CTA visually prominent. Allowed to be orange because tiles
+  // are clickable (color-clickability contract).
+  highlight?: boolean;
 }
 
 // Primary categories — aligned to the operator's new header concept
@@ -24,13 +29,13 @@ export const mainNav: Record<Locale, NavItem[]> = {
     { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Personal Training", href: "/nl/vind-jouw-personal-trainer", shortLabel: "Personal trainer" },
-    { label: "Rent Studio", href: "/nl/studio-huren", caption: "(voor trainers)", captionShort: "(trainers)" },
+    { label: "Rent Studio", href: "/nl/studio-huren", caption: "(voor trainers)", captionShort: "(voor trainers)", highlight: true },
   ],
   en: [
     { label: "Small Group", href: "/en/small-group" },
     { label: "Open Gym", href: "/en/open-gym" },
     { label: "Personal Training", href: "/en/find-personal-trainer", shortLabel: "Personal trainer" },
-    { label: "Rent Studio", href: "/en/studio-rental", caption: "(For trainers)", captionShort: "(trainers)" },
+    { label: "Rent Studio", href: "/en/studio-rental", caption: "(For trainers)", captionShort: "(for trainers)", highlight: true },
   ],
 };
 

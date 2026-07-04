@@ -88,7 +88,7 @@ const copy: Record<
     trainer: {
       icon: Building2,
       title: "Studio huren",
-      description: "Huur de studio per uur. Vanaf €12/uur, volledige vrijheid.",
+      description: "Bekijk de studio en probeer een sessie gratis. Vanaf €12/uur.",
       href: "/nl/studio-huren",
       event: "first_time_rent_studio",
     },
@@ -127,7 +127,7 @@ const copy: Record<
     trainer: {
       icon: Building2,
       title: "Studio rental",
-      description: "Rent the studio by the hour. From €12/hr, full freedom.",
+      description: "See the studio and try a session for free. From €12/hr.",
       href: "/en/studio-rental",
       event: "first_time_rent_studio",
     },

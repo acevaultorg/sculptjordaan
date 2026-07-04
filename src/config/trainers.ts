@@ -88,7 +88,9 @@ export interface Trainer {
 // the holistic-focused ones. Operator can reorder freely.
 // Tom inserted at #3 (premium, highly-differentiated: 12yr high-end London PT +
 // military/rowing/BJJ). Operator can reorder freely. Added 2026-07-01.
-const DISPLAY_ORDER = ["eva", "bryan", "tom", "joey", "ibrahim", "alex", "gezina", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
+// Gezina moved up to #2 (operator 2026-07-04 "plaats gezina hoger op de pagina")
+// — women's-training specialist, given more prominence.
+const DISPLAY_ORDER = ["eva", "gezina", "bryan", "tom", "joey", "ibrahim", "alex", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
 
 const trainersRaw: Trainer[] = [
   {
