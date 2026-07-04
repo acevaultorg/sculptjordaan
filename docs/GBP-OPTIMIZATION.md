@@ -45,7 +45,7 @@ Add via **Services → Add more services**. Click "Add custom service" if not in
 
 | # | Service name | Category | Description (optional, ≤1000 chars) |
 |---|---|---|---|
-| 1 | **Open Gym** | Gym | Solo training in a private studio. Door code via WhatsApp. Max 3 people at a time. €29-89/4 weeks, no contract. |
+| 1 | **Open Gym** | Gym | Solo training in a private studio. Door code via WhatsApp. Max 4 people at a time. €29-59/4 weeks, no contract. |
 | 2 | **Studio rental** | Gym | Rent the full studio per session for your own clients. €12-24/hour. For trainers and physiotherapists. |
 | 3 | **Strength training** | Gym | Trainers specialized in compound lifts, progressive overload, technique. Free first intake. |
 | 4 | **Calisthenics coaching** | Gym | Bodyweight skill work, mobility, strength progressions. With trainer Alex. |
@@ -78,7 +78,7 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Photo:** `boutique-corner.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > 4 trainingen in 4 weken. €7,25 per sessie. Train zelfstandig in een privé gym met max 3 mensen. Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken. Dagelijks open 06:30-22:00. Eerste keer? Boek je gratis try-out.
+  > 4 trainingen in 4 weken. €7,25 per sessie. Train zelfstandig in een privé gym met max 4 mensen. Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken. Dagelijks open 06:30-22:00. Eerste keer? Boek je gratis try-out.
 
 ### 3. Open Gym — Populair (8 sessions)
 - **Category:** Open Gym
@@ -86,23 +86,23 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Photo:** `training-dumbbells-joy.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > 8 trainingen in 4 weken. €6,13 per sessie. Het populairste plan: ongeveer 2× per week trainen. Train zelfstandig in een privé gym (max 3 mensen). Deurcode via WhatsApp. Geen contract.
+  > 8 trainingen in 4 weken. €6,13 per sessie. Het populairste plan: ongeveer 2× per week trainen. Train zelfstandig in een privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract.
 
-### 4. Open Gym — Intensief (12 sessions)
+### 4. Open Gym — Losse sessie
 - **Category:** Open Gym
-- **Price:** €69 / 4 weeks
+- **Price:** €10 / session
 - **Photo:** `pt-session-barbell.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > 12 trainingen in 4 weken. €5,75 per sessie. Voor wie 3× per week traint. Train zelfstandig in een privé gym (max 3 mensen). Deurcode via WhatsApp. Geen contract.
+  > Eén losse Open Gym sessie van 60 minuten. €10, geen lidmaatschap nodig. Train zelfstandig in een privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract.
 
 ### 5. Open Gym — Onbeperkt
 - **Category:** Open Gym
-- **Price:** €89 / 4 weeks
+- **Price:** €59 / 4 weeks
 - **Photo:** `training-dumbbells-smile.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > Onbeperkt trainen, 7 dagen per week, 06:30-22:00. €89 per 4 weken. Voor wie er bijna elke dag is. Privé gym (max 3 mensen). Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
+  > Onbeperkt trainen, 7 dagen per week, 06:30-22:00. €59 per 4 weken. Voor wie er bijna elke dag is. Privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
 
 ### 6. Studio Rental — Half (per uur)
 - **Category:** Studio Rental
@@ -192,13 +192,13 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 **Button:** "Order online" → `https://sculptclub.nl/nl/open-gym`
 **Body:**
 
-> Train zelfstandig in een privé gym in de Jordaan. Max 3 mensen tegelijk. Deurcode via WhatsApp.
+> Train zelfstandig in een privé gym in de Jordaan. Max 4 mensen tegelijk. Deurcode via WhatsApp.
 >
-> 4 plannen, geen contract:
+> Geen contract:
 > · Instapplan — 4 sessies — €29/4w
 > · Populair — 8 sessies — €49/4w
-> · Intensief — 12 sessies — €69/4w
-> · Onbeperkt — onbeperkt — €89/4w
+> · Onbeperkt — onbeperkt — €59/4w
+> · Losse sessie — €10
 >
 > Dagelijks 06:30-22:00. Eerste keer gratis proberen.
 
@@ -262,7 +262,7 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 
 > SculptClub is a small private gym on the Egelantiersgracht in Amsterdam Jordaan. Open daily 06:30–22:00. No membership required.
 >
-> Three ways to train: **Open Gym** (you train alone with a door code, max 3 people at once), **Personal Training** (book your own trainer — first 45-min intake free), or **Studio Rental** (full studio for trainers and physiotherapists).
+> Three ways to train: **Open Gym** (you train alone with a door code, max 4 people at once), **Personal Training** (book your own trainer — first 45-min intake free), or **Studio Rental** (full studio for trainers and physiotherapists).
 >
 > Boutique scale, professional equipment, no waiting, no crowds. Quality over quantity. Founded 2025.
 

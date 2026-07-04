@@ -12,9 +12,9 @@ A small, independent private training studio on the Egelantiersgracht in the Jor
 2. **Open Gym members** train on their own in 4-week cycles with no membership lock-in.
 3. **Freelance trainers, physios and coaches** rent the studio by the hour or by the pack.
 
-No reception. No front desk. No membership cards. Door codes by WhatsApp the night before. Cancellation is always free. Max 3 people in the space at once.
+No reception. No front desk. No membership cards. Door codes by WhatsApp the night before. Cancellation is always free. Max 4 people in the space at once.
 
-This is a **boutique private gym**, not a premium lifestyle brand. Prices are honest: PT from €45, Open Gym from €5.75/session, studio rental from €12/hour. The room is beautiful but the economics are accessible.
+This is a **boutique private gym**, not a premium lifestyle brand. Prices are honest: PT from €45, Open Gym from €6.13/session, studio rental from €12/hour. The room is beautiful but the economics are accessible.
 
 ## Positioning (one sentence)
 
@@ -25,7 +25,7 @@ This is a **boutique private gym**, not a premium lifestyle brand. Prices are ho
 These are the four things the business actually believes, written the way a human would say them. They are the "why" behind every operational choice.
 
 1. **Trainers do their best work when they own their prices and their clients.** That's why we take 0% commission. The rate you see is the rate they charge — we don't mark it up.
-2. **People train harder in privacy.** That's why we cap at 3 people simultaneously and send door codes instead of having a reception desk.
+2. **People train harder in privacy.** That's why we cap at 4 people simultaneously and send door codes instead of having a reception desk.
 3. **Commitment doesn't equal results.** That's why Open Gym runs in 4-week cycles you can cancel anytime, and why the first intake is free with no pressure to book again.
 4. **Neighbourhood matters.** That's why we're on the canal in the Jordaan and not in a strip-mall fitness park.
 
