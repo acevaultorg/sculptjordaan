@@ -72,8 +72,9 @@ const copy: Record<
       {
         icon: Dumbbell,
         title: "Open Gym",
-        description: "Zelf trainen in de studio, max 4 personen. Vanaf €7,25 per sessie.",
+        description: "Zelf trainen in de studio, max 4 personen. Onbeperkt voor €59 per 4 weken.",
         href: "/nl/open-gym",
+        badge: "Gratis proefles",
         event: "first_time_open_gym",
       },
       {
@@ -110,8 +111,9 @@ const copy: Record<
       {
         icon: Dumbbell,
         title: "Open Gym",
-        description: "Train on your own in the studio, max 4 people. From €7.25 per session.",
+        description: "Train on your own in the studio, max 4 people. Unlimited for €59 per 4 weeks.",
         href: "/en/open-gym",
+        badge: "Free trial",
         event: "first_time_open_gym",
       },
       {

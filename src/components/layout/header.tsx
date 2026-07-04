@@ -154,7 +154,7 @@ export function Header() {
             (logo + icons on row 1, the full-width category tiles on row 2).
             Order classes drive the wrap: logo(1) · icons(2, ml-auto) · tiles(3,
             w-full) on mobile → logo(1) · tiles(2, flex-1) · icons(3) at md+. */}
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 px-3 py-2.5 sm:px-4 mx-auto max-w-7xl min-w-0 lg:flex-nowrap lg:gap-y-0 lg:gap-x-4">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 px-4 py-2.5 mx-auto max-w-7xl min-w-0 lg:flex-nowrap lg:gap-y-0 lg:gap-x-4">
           <Link
             href={locale === "nl" ? "/" : "/en"}
             aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
@@ -199,7 +199,15 @@ export function Header() {
                     // on the <nav> grows every tile to match the tallest (the
                     // captioned one), keeping the row visually uniform — at
                     // both mobile and desktop.
-                    "min-w-0 overflow-hidden flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
+                    // flex-auto on mobile: tiles GROW to fill the row width
+                    // (proportional to content, so no word truncates) instead
+                    // of sitting content-width + centered with a big margin.
+                    // This removes the ~15px centering slack so the row uses a
+                    // clean 16px gutter (the header's px-4) edge-to-edge and the
+                    // 4 tiles look balanced + fill the space. sm:flex-none →
+                    // natural content width at sm+ where the centered layout
+                    // (justify-center) reads better on the wider row.
+                    "flex-auto sm:flex-none min-w-0 overflow-hidden flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
                     "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-xs sm:text-sm",
                     isActive
                       // Active = brand fill (clickable, so orange is allowed per
