@@ -380,6 +380,20 @@ export function Hero({ locale }: { locale: Locale }) {
           // composes them as one tight group (operator audit 2026-05-29).
           className="text-center flex-1 flex flex-col lg:justify-center [text-shadow:_0_2px_24px_rgba(0,0,0,0.9),_0_0_12px_rgba(0,0,0,0.75)] [animation:hero-content-fade-in_0.6s_ease-out]"
         >
+          {/* Top spacer — operator 2026-07-04: "put PRIVATE GYM JORDAAN more
+              in the middle of the image". Pushes the headline down toward
+              vertical-middle of the hero photo area (which rotates across 4
+              differently-composed photos, so this targets the SECTION's
+              middle, not any one image's specific content — the existing
+              radial-gradient dark-vignette below is centered on the section
+              too, so legibility holds regardless of which photo is active).
+              Mobile/tablet only (lg:h-0) — desktop already centers the whole
+              headline+CTA cluster via lg:justify-center, this would double
+              up there. Doesn't touch the CTA-near-thumb bottom anchoring:
+              the flex-1 spacer between headline and CTAs (below) just
+              absorbs less space, so CTAs stay exactly where they were. */}
+          <div className="h-[13vh] sm:h-[15vh] lg:h-0" aria-hidden="true" />
+
           {/* TOP CLUSTER — h1 (with JORDAAN sub-line) + taglineSub.
               2026-06-02: overline removed; JORDAAN moved INTO the H1 stack
               as a smaller second line below PRIVATE GYM. See `nl:` strings
