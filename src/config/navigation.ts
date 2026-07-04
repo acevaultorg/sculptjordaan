@@ -4,6 +4,9 @@ export interface NavItem {
   label: string;
   href: string;
   children?: NavItem[];
+  // Shorter label used only where space is tight (the header category tiles on
+  // narrow phones), so all 4 categories fit at 375px without a scrollbar.
+  shortLabel?: string;
 }
 
 // Primary categories — aligned to the operator's new header concept
@@ -15,14 +18,14 @@ export const mainNav: Record<Locale, NavItem[]> = {
   nl: [
     { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
-    { label: "Trainer Vinden", href: "/nl/vind-jouw-personal-trainer" },
-    { label: "Studio Huren", href: "/nl/studio-huren" },
+    { label: "Trainer Vinden", href: "/nl/vind-jouw-personal-trainer", shortLabel: "Trainer" },
+    { label: "Studio Huren", href: "/nl/studio-huren", shortLabel: "Studio" },
   ],
   en: [
     { label: "Small Group", href: "/en/small-group" },
     { label: "Open Gym", href: "/en/open-gym" },
-    { label: "Find a Trainer", href: "/en/find-personal-trainer" },
-    { label: "Studio Rental", href: "/en/studio-rental" },
+    { label: "Find a Trainer", href: "/en/find-personal-trainer", shortLabel: "Trainer" },
+    { label: "Studio Rental", href: "/en/studio-rental", shortLabel: "Studio" },
   ],
 };
 

@@ -318,7 +318,7 @@ export function Hero({ locale }: { locale: Locale }) {
   }, [secondaryMounted, paused]);
 
   return (
-    <section className="relative overflow-hidden -mt-32 min-h-[78vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
+    <section className="relative overflow-hidden -mt-32 lg:-mt-20 min-h-[78vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
       {/* Background slideshow — only the image crossfades; text overlay below
           stays 100% static. backgroundColor renders BEFORE the first image
           fetches: zero-paint-cost dominant-color preview (matched via
@@ -369,7 +369,7 @@ export function Hero({ locale }: { locale: Locale }) {
           (utility + category tiles ≈ 122px) at EVERY breakpoint (was mobile-only
           before), so pt-36 (144px) now applies at sm+ too, with lg:pt-40 (160px)
           for large-screen rhythm. If the header height changes, re-tune. */}
-      <div className="relative z-10 flex-1 flex flex-col mx-auto max-w-6xl w-full px-4 sm:px-6 pt-36 pb-10 sm:pb-12 lg:pt-40 lg:pb-16">
+      <div className="relative z-10 flex-1 flex flex-col mx-auto max-w-6xl w-full px-4 sm:px-6 pt-36 pb-10 sm:pb-12 lg:pt-24 lg:pb-16">
         <div
           // Mobile/tablet (base + sm): top-anchored headline, flex-1 spacer
           // pushes CTAs to the bottom (near-thumb) — unchanged, this is the

@@ -131,12 +131,16 @@ export function Header() {
               : "bg-transparent border-b border-border/50"
         )}
       >
-        {/* ── Row 1: logo + utility icons ── */}
-        <div className="flex items-center gap-2 px-3 py-2.5 sm:px-4 sm:py-3 mx-auto max-w-7xl min-w-0">
+        {/* One flex-wrap row: at md+ everything fits on a SINGLE row
+            (logo · tiles-centered · icons); below md it wraps to two rows
+            (logo + icons on row 1, the full-width category tiles on row 2).
+            Order classes drive the wrap: logo(1) · icons(2, ml-auto) · tiles(3,
+            w-full) on mobile → logo(1) · tiles(2, flex-1) · icons(3) at md+. */}
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-2 px-3 py-2.5 sm:px-4 mx-auto max-w-7xl min-w-0 lg:flex-nowrap lg:gap-y-0 lg:gap-x-4">
           <Link
             href={locale === "nl" ? "/" : "/en"}
             aria-label={locale === "nl" ? "SculptClub — Naar home" : "SculptClub — Go to home"}
-            className="shrink-0 flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
+            className="order-1 shrink-0 flex items-center -mx-2 px-2 -my-2 py-2 rounded-lg hover:bg-accent/50 active:scale-95 transition-all min-h-[44px]"
           >
             <Image
               src="/images/logo-sculptclub.svg"
@@ -144,14 +148,51 @@ export function Header() {
               width={162}
               height={30}
               // Logo ink is #333. Invert (→ light) only when behind it is dark:
-              // over the homepage dark hero, OR in dark mode.
-              className={cn("h-9 sm:h-10 w-auto select-none", overDarkHero ? "invert" : "dark:invert")}
+              // over the homepage dark hero, OR in dark mode. Sized down a step
+              // (2026-07-04, operator) so the one-row layout fits comfortably.
+              className={cn("h-8 sm:h-9 w-auto select-none", overDarkHero ? "invert" : "dark:invert")}
               loading="eager"
               fetchPriority="high"
             />
           </Link>
 
-          <div className="flex items-center gap-1 sm:gap-2 ml-auto shrink-0">
+          {/* Category tiles */}
+          <nav
+            aria-label={locale === "nl" ? "Categorieën" : "Categories"}
+            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar min-w-0"
+          >
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "shrink-0 flex items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap transition-all",
+                    // Tighter on phones (short labels below) so all 4 fit at 375px.
+                    "h-9 sm:h-10 px-2.5 sm:px-5 text-xs sm:text-sm",
+                    isActive
+                      // Active = brand fill (clickable, so orange is allowed per
+                      // the color-clickability contract).
+                      ? "bg-brand text-brand-foreground shadow-sm"
+                      : overDarkHero
+                        // Over the homepage dark hero: glass tiles.
+                        ? "text-white/90 bg-white/10 border border-white/20 hover:bg-white/20 backdrop-blur-md"
+                        // Elsewhere / scrolled: solid theme tiles.
+                        : "text-foreground bg-muted border border-border/60 hover:border-brand hover:bg-brand/5"
+                  )}
+                >
+                  {/* short label on phones, full label at sm+ */}
+                  <span className="sm:hidden">{item.shortLabel ?? item.label}</span>
+                  <span className="hidden sm:inline">{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Utility icons */}
+          <div className="order-2 ml-auto lg:order-3 lg:ml-0 flex items-center gap-1 sm:gap-2 shrink-0">
             {/* Language toggle — desktop only (sm+). Mobile: globe lives inside
                 the hamburger dropdown (frees horizontal room on phones). */}
             <a
@@ -183,39 +224,6 @@ export function Header() {
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
-        </div>
-
-        {/* ── Row 2: persistent category tiles ── */}
-        <div className={cn("border-t", overDarkHero ? "border-white/15" : "border-border/40")}>
-          <nav
-            aria-label={locale === "nl" ? "Categorieën" : "Categories"}
-            className="flex items-stretch gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar px-3 sm:px-4 py-2 mx-auto max-w-7xl sm:justify-center"
-          >
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={cn(
-                    "shrink-0 flex items-center justify-center text-center px-3.5 sm:px-5 h-10 rounded-xl text-[13px] sm:text-sm font-semibold whitespace-nowrap transition-all",
-                    isActive
-                      // Active = brand fill (clickable, so orange is allowed per
-                      // the color-clickability contract).
-                      ? "bg-brand text-brand-foreground shadow-sm"
-                      : overDarkHero
-                        // Over the homepage dark hero: glass tiles.
-                        ? "text-white/90 bg-white/10 border border-white/20 hover:bg-white/20 backdrop-blur-md"
-                        // Elsewhere / scrolled: solid theme tiles.
-                        : "text-foreground bg-muted border border-border/60 hover:border-brand hover:bg-brand/5"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
         </div>
 
         {/* ─── Hamburger dropdown ─── */}
