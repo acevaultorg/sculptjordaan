@@ -198,51 +198,12 @@ export default function StudioRentalPageNL() {
           </p>
         </div>
 
-        {/* "Wil je de studio eerst zien?" CTA — operator correction 2026-06-23:
-            boeken gaat self-serve via Acuity (de live scheduler hieronder); WhatsApp
-            is voor de STUDIO BEKIJKEN (een vrijblijvende rondleiding), niet voor
-            huren/boeken. Reframe van "rent-via-chat" (2026-06-18) naar "kom eerst
-            kijken"; de self-serve boekingsflow staat direct hieronder. */}
-        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
-          <p className="text-lg font-bold">De snelste manier om de studio te bekijken: stuur ons een WhatsApp</p>
-          <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            Plan een vrijblijvende rondleiding, stel je vragen en kijk of SculptClub de juiste plek is voor jou en je klanten — meestal antwoord binnen 1 uur. Kom gerust met je eigen klanten.
-          </p>
-          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <ButtonLink
-              href={whatsappLinks.studioNl}
-              external
-              size="lg"
-              className="w-full sm:w-auto plausible-event-name=studio_huren_hero_whatsapp"
-            >
-              <MessageCircle className="mr-2 h-4 w-4" />
-              WhatsApp ons
-            </ButtonLink>
-            <a
-              href={whatsappLinks.tourNl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_huren_hero_tour"
-            >
-              Of plan eerst een gratis rondleiding (15 min)
-            </a>
-          </div>
-          <p className="mt-3 text-xs text-muted-foreground">
-            Liever meteen zelf boeken? Live tarieven &amp; beschikbaarheid hieronder ↓
-          </p>
-        </div>
-
-        {/* Studio promo — conviction BELOW the WhatsApp CTA so the message-us button
-            stays near the mobile fold (page goal = message ASAP). Below-fold → lazy:
-            the mp4 loads only on scroll (verified: above-fold it auto-loaded 2.5MB). */}
-        <div className="mb-10">
-          <LandingVideo
-            src="/videos/studio-promo.mp4"
-            poster="/videos/studio-promo-poster.jpg"
-            label="SculptClub — de studio in hartje Amsterdam Jordaan, in beeld"
-          />
-        </div>
-
+        {/* Booking table is now the FIRST thing after the header — operator
+            2026-07-04: /nl/studio-huren is PRIMARY for trainers who ALREADY rent
+            here, so they can book immediately (no scrolling past a tour CTA).
+            The "see the studio" content (WhatsApp tour + promo video) moved into
+            the "Eerste keer? Zie de studio" block BELOW the pricing, for
+            first-time trainers who want to see the room before committing. */}
         <RentalTabs
           locale="nl"
           packages={
@@ -385,6 +346,40 @@ export default function StudioRentalPageNL() {
             </div>
           }
         />
+
+        {/* "Eerste keer? Zie de studio" — operator 2026-07-04: the booking
+            table above is PRIMARY for trainers who already rent here; a
+            first-time trainer wants to SEE the studio before committing. This
+            block sits BELOW the booking and routes first-timers to the
+            free-trial / see-the-studio page (+ keeps the WhatsApp tour + the
+            studio promo video that used to sit above the pricing). */}
+        <div className="mx-auto mt-14 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center">
+          <p className="overline text-primary">Ben je hier voor het eerst?</p>
+          <p className="mt-2 text-xl font-bold">Eerste keer? Kom de studio zien.</p>
+          <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
+            Bekijk de ruimte + apparatuur en doe een gratis proefsessie voordat je huurt — vrijblijvend, geen verplichting.
+          </p>
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <ButtonLink href="/nl/studio-huren/gratis-test" size="lg" className="w-full sm:w-auto">
+              Zie de studio &amp; doe een gratis proefsessie
+            </ButtonLink>
+            <a
+              href={whatsappLinks.tourNl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_huren_hero_tour"
+            >
+              Of plan een gratis rondleiding (15 min) via WhatsApp
+            </a>
+          </div>
+          <div className="mt-6">
+            <LandingVideo
+              src="/videos/studio-promo.mp4"
+              poster="/videos/studio-promo-poster.jpg"
+              label="SculptClub — de studio in hartje Amsterdam Jordaan, in beeld"
+            />
+          </div>
+        </div>
       </Section>
 
       {/* Indecisive-capture: low-friction WhatsApp before commitment */}
