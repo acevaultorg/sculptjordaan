@@ -378,6 +378,15 @@
   .animate-pulse-once {
     animation: wa-pulse 2s ease-out 1;
   }
+  /* Hide scrollbar (used by the header category tile bar when it overflows
+     horizontally on narrow phones — swipe still works, no ugly track). */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes wa-pulse {

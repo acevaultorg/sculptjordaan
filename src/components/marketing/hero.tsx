@@ -318,7 +318,7 @@ export function Hero({ locale }: { locale: Locale }) {
   }, [secondaryMounted, paused]);
 
   return (
-    <section className="relative overflow-hidden -mt-32 sm:-mt-20 min-h-[78vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
+    <section className="relative overflow-hidden -mt-32 min-h-[78vh] sm:min-h-[80vh] lg:min-h-[88vh] flex flex-col">
       {/* Background slideshow — only the image crossfades; text overlay below
           stays 100% static. backgroundColor renders BEFORE the first image
           fetches: zero-paint-cost dominant-color preview (matched via
@@ -363,15 +363,13 @@ export function Hero({ locale }: { locale: Locale }) {
         <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0)_55%)]" />
       </div>
 
-      {/* Inner container — flex column with top cluster anchored near top
-          and bottom cluster anchored near bottom. Top padding clears the
-          FIXED header. NOTE the mobile pt (pt-36 / 144px) is intentionally
-          LARGER than the sm/lg pt: since 2026-06-20 (b593cc6) the MOBILE
-          header is TWO rows (logo+icons row + CTA row ≈ 122px), while sm+
-          collapses to a single ~64px row. Under-padding here re-clips the
-          "PRIVATE GYM" headline behind the two-row header (operator
-          screenshot 2026-06-20). If the header height changes, re-tune pt-36. */}
-      <div className="relative z-10 flex-1 flex flex-col mx-auto max-w-6xl w-full px-4 sm:px-6 pt-36 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16">
+      {/* Inner container — flex column with top cluster anchored near top and
+          bottom cluster anchored near bottom. Top padding clears the FIXED
+          header. Since the 2026-07-04 header redesign the header is TWO rows
+          (utility + category tiles ≈ 122px) at EVERY breakpoint (was mobile-only
+          before), so pt-36 (144px) now applies at sm+ too, with lg:pt-40 (160px)
+          for large-screen rhythm. If the header height changes, re-tune. */}
+      <div className="relative z-10 flex-1 flex flex-col mx-auto max-w-6xl w-full px-4 sm:px-6 pt-36 pb-10 sm:pb-12 lg:pt-40 lg:pb-16">
         <div
           // Mobile/tablet (base + sm): top-anchored headline, flex-1 spacer
           // pushes CTAs to the bottom (near-thumb) — unchanged, this is the
