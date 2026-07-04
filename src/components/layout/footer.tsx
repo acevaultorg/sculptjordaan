@@ -152,7 +152,15 @@ export function Footer() {
               AA large-text/non-decorative bar at this 11px weight (still subtle
               enough to read as "secondary tier" footer credit, not competing
               with brand). */}
-          <p className="opacity-60 text-[11px]">Powered by AcePilot</p>
+          {/* Build/version stamp (operator 2026-07-04): v + HHMM + DDMMYY in
+              Amsterdam time, generated at build in next.config.ts so it reflects
+              the deploy moment. Lets us tell at a glance which build is live. */}
+          <p className="opacity-60 text-[11px]">
+            Powered by AcePilot
+            {process.env.NEXT_PUBLIC_BUILD_VERSION ? (
+              <span className="ml-1.5 opacity-70">· {process.env.NEXT_PUBLIC_BUILD_VERSION}</span>
+            ) : null}
+          </p>
         </div>
       </div>
     </footer>

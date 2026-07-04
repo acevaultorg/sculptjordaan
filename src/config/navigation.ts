@@ -29,7 +29,7 @@ export const mainNav: Record<Locale, NavItem[]> = {
     { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Personal Training", href: "/nl/vind-jouw-personal-trainer", shortLabel: "Personal trainer" },
-    { label: "Rent Studio", href: "/nl/studio-huren", caption: "(voor trainers)", captionShort: "(voor trainers)" },
+    { label: "Huur Studio", href: "/nl/studio-huren", caption: "(voor trainers)", captionShort: "(voor trainers)" },
   ],
   en: [
     { label: "Small Group", href: "/en/small-group" },

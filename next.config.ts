@@ -2,7 +2,31 @@ import type { NextConfig } from "next";
 import bundleAnalyzer from "@next/bundle-analyzer";
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
 
+// Build-time version stamp shown in the footer (operator 2026-07-04). Format
+// `v` + HHMM + DDMMYY in Europe/Amsterdam local time, computed HERE (next.config
+// runs once per build in Node) so it reflects the DEPLOY moment — not the
+// visitor's clock. `vercel build` runs this locally right before every prebuilt
+// deploy, so the stamp = the upload time. Amsterdam TZ is forced via Intl so
+// it's correct regardless of the build machine's timezone. Exposed to the
+// client bundle via the `env` config below → process.env.NEXT_PUBLIC_BUILD_VERSION.
+const buildVersion = (() => {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Amsterdam",
+    hourCycle: "h23",
+    hour: "2-digit",
+    minute: "2-digit",
+    day: "2-digit",
+    month: "2-digit",
+    year: "2-digit",
+  }).formatToParts(new Date());
+  const g = (t: string) => parts.find((p) => p.type === t)?.value ?? "";
+  return `v${g("hour")}${g("minute")}${g("day")}${g("month")}${g("year")}`;
+})();
+
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_BUILD_VERSION: buildVersion,
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     // Cost optimization (2026-05-06): default deviceSizes generates up to 8
