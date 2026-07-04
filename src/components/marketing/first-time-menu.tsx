@@ -134,7 +134,15 @@ const copy: Record<
   },
 };
 
-export function FirstTimeMenu({ locale }: { locale: Locale }) {
+export function FirstTimeMenu({
+  locale,
+  placement = "hero",
+}: {
+  locale: Locale;
+  /** Where this wayfinder is rendered — drives the click-event name so a
+   *  bottom-of-page tap is distinguishable from the hero tap in analytics. */
+  placement?: "hero" | "bottom";
+}) {
   const t = copy[locale];
   const [open, setOpen] = useState(false);
 
@@ -155,7 +163,10 @@ export function FirstTimeMenu({ locale }: { locale: Locale }) {
 
   function handleOpen() {
     setOpen(true);
-    trackHeroClick(t.button, 1, locale);
+    // position 1 = hero, 2 = bottom-of-page (GA4 hero_cta_click distinguisher
+    // while Plausible is off; the plausible-event-name class below also carries
+    // the placement for when Plausible is re-enabled).
+    trackHeroClick(t.button, placement === "bottom" ? 2 : 1, locale);
   }
 
   function OptionCard({ opt }: { opt: FirstTimeOption }) {
@@ -214,7 +225,7 @@ export function FirstTimeMenu({ locale }: { locale: Locale }) {
           onClick={handleOpen}
           aria-haspopup="dialog"
           aria-expanded={open}
-          className="plausible-event-name=hero_first_time inline-flex items-center justify-center rounded-full px-8 py-3 min-h-[48px] text-base font-bold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg cursor-pointer active:scale-95 [text-shadow:none]"
+          className={`plausible-event-name=${placement}_first_time inline-flex items-center justify-center rounded-full px-8 py-3 min-h-[48px] text-base font-bold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg cursor-pointer active:scale-95 [text-shadow:none]`}
         >
           {t.button}
         </button>

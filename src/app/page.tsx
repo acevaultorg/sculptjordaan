@@ -11,6 +11,8 @@ import { FaqPreview } from "@/components/marketing/faq-preview";
 import { WhyWeExist } from "@/components/marketing/why-we-exist";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { StudioVideoBand } from "@/components/marketing/studio-video-band";
+import { FirstTimeMenu } from "@/components/marketing/first-time-menu";
+import { FadeIn } from "@/components/sections/section";
 import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
@@ -121,6 +123,27 @@ export default function HomePage() {
       <InstagramFeed locale="nl" />
       <GoogleMap locale="nl" />
       <FaqPreview locale="nl" />
+      {/* Bottom "Eerste keer?" wayfinder (operator 2026-07-04): a visitor who
+          scrolled all the way to the bottom gets one clear next action — the
+          SAME first-timer menu the hero opens (4 paths), framed for someone who
+          just finished reading. placement="bottom" so its taps track separately
+          from the hero button. Sits after the FAQ = the last thing before the
+          footer, exactly where a bottom-reacher lands. */}
+      <section className="border-t border-border bg-secondary/40 py-16 sm:py-20">
+        <FadeIn>
+          <div className="mx-auto max-w-2xl px-4 sm:px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+              Eerste keer bij SculptClub?
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Kies je startpunt — we helpen je op weg.
+            </p>
+            <div className="mt-7">
+              <FirstTimeMenu locale="nl" placement="bottom" />
+            </div>
+          </div>
+        </FadeIn>
+      </section>
     </PageLayout>
   );
 }
