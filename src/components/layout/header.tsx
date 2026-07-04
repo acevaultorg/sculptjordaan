@@ -177,7 +177,7 @@ export function Header() {
           {/* Category tiles */}
           <nav
             aria-label={locale === "nl" ? "Categorieën" : "Categories"}
-            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1 sm:gap-2 min-w-0"
+            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-0.5 sm:gap-2 min-w-0"
           >
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -200,7 +200,7 @@ export function Header() {
                     // captioned one), keeping the row visually uniform — at
                     // both mobile and desktop.
                     "min-w-0 overflow-hidden flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
-                    "h-auto py-1.5 sm:py-2 px-2 sm:px-5 text-xs sm:text-sm",
+                    "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-xs sm:text-sm",
                     isActive
                       // Active = brand fill (clickable, so orange is allowed per
                       // the color-clickability contract).
@@ -213,7 +213,7 @@ export function Header() {
                   )}
                 >
                   {/* short label on phones, full label at sm+ */}
-                  <span className="sm:hidden truncate max-w-full tracking-tight">{item.shortLabel ?? item.label}</span>
+                  <span className="sm:hidden truncate max-w-full tracking-tighter">{item.shortLabel ?? item.label}</span>
                   <span className="hidden sm:block">{item.label}</span>
                   {/* Caption (e.g. "for trainers" on Rent Studio) — the mobile
                       tile uses the shorter captionShort so the row still fits. */}
