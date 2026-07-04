@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { CtaBand } from "@/components/marketing/cta-band";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { trainers } from "@/config/trainers";
-import { Users, Dumbbell, Sparkles, Gift, ArrowRight } from "lucide-react";
+import { Users, Dumbbell, Sparkles, Gift, ArrowRight, MessageCircle } from "lucide-react";
 
 // Inline Instagram glyph — lucide-react@1.x doesn't export `Instagram`;
 // matches the InstagramIcon used in footer.tsx / instagram-feed.tsx.
@@ -21,25 +21,21 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-// See /nl/small-group for context. Small group training is coached by Dara —
-// "Strength & Balance Coaching" (@strengthandbalancecoaching), the Instagram
-// this page promotes (operator directive 2026-07-04). Coach facts pulled from
-// config/trainers.ts so they never drift.
+// See /nl/small-group. Coaches who offer small group — the goal is to send
+// people to each coach's Instagram / contact (WhatsApp). Dara ("Strength &
+// Balance Coaching", @strengthandbalancecoaching) featured first. Pulled from
+// config/trainers.ts so handles/numbers/photos never drift.
+const SMALL_GROUP_COACHES = ["Dara", "Gezina", "Sergei"];
+const coaches = SMALL_GROUP_COACHES.map((n) => trainers.find((t) => t.name === n)).filter(
+  (t): t is NonNullable<typeof t> => Boolean(t),
+);
 const dara = trainers.find((t) => t.name === "Dara");
-const daraImg = dara?.image ?? "/images/trainers/dara.jpg";
-const daraBio =
-  dara?.bio.en ??
-  "Dara coaches you in strength and balance, with personal attention and an approach that builds your confidence step by step.";
-const daraIg = dara?.instagram ?? "https://instagram.com/strengthandbalancecoaching";
-const daraIgHandle = dara?.instagramHandle ?? "@strengthandbalancecoaching";
 const daraWa = dara?.whatsapp ?? "https://wa.me/31645658213";
-const daraIntake = `/en/${dara?.slug.en ?? "plan-free-intro-with-dara"}`;
-const daraSpec = dara?.specialization.en ?? ["Strength & Balance", "Personal Training", "Beginner-friendly"];
 
 export const metadata: Metadata = {
   title: { absolute: "Small Group Training in the Jordaan — SculptClub" },
   description:
-    "Train together in a small group of 2 to 4, with one dedicated coach who actually sees you. Strength & balance with Dara, in a calm private studio in the Jordaan. First session free, no contract.",
+    "Train together in a small group of 2 to 4, with a coach who actually sees you. Strength & balance in a calm private studio in the Jordaan. Follow the coaches on Instagram or message them directly.",
   keywords: [
     "small group training amsterdam",
     "small group training jordaan",
@@ -57,13 +53,13 @@ export const metadata: Metadata = {
     url: "/en/small-group",
     title: "Small Group Training in the Jordaan — SculptClub",
     description:
-      "Train together in a small group of 2 to 4 with personal attention. Strength & balance with coach Dara in a calm private studio in the Jordaan.",
+      "Train together in a small group of 2 to 4 with personal attention. Strength & balance in a calm private studio in the Jordaan.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Small Group Training in the Jordaan — SculptClub",
     description:
-      "Small group, real attention. Strength & balance with coach Dara in the Jordaan. First session free.",
+      "Small group, real attention. Strength & balance with your own coaches in the Jordaan. Follow them on Instagram or message them directly.",
   },
 };
 
@@ -101,7 +97,7 @@ export default function SmallGroupEN() {
       />
       <ServiceJsonLd
         name="Small Group Training — SculptClub Jordaan"
-        description="Small group training (2–4 people) with personal attention in a private studio in the Jordaan, Amsterdam. Strength & balance with coach Dara."
+        description="Small group training (2–4 people) with personal attention in a private studio in the Jordaan, Amsterdam. Strength & balance with your own coaches."
         url="/en/small-group"
         priceRange="€€"
         areaServed="Amsterdam"
@@ -115,24 +111,25 @@ export default function SmallGroupEN() {
             Small group training in the Jordaan
           </h1>
           <p className="mt-5 text-lg text-muted-foreground text-balance">
-            Train with 2 to 4 people and one dedicated coach who actually sees you. Strength and
-            balance, at your own pace, in a calm private studio on the canal.
+            Train with 2 to 4 people and a coach who actually sees you. Strength and balance, at your
+            own pace, in a calm private studio on the canal.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink
-              href={daraIntake}
+              href="#coaches"
               size="lg"
-              className="plausible-event-name=smallgroup_intake rounded-xl px-6"
+              className="plausible-event-name=smallgroup_view_coaches rounded-xl px-6"
             >
-              Book a free intro
+              Meet the coaches
               <ArrowRight className="w-4 h-4" />
             </ButtonLink>
             <ButtonLink
               href={daraWa}
               size="lg"
               variant="outline"
-              className="plausible-event-name=smallgroup_whatsapp rounded-xl px-6"
+              className="plausible-event-name=smallgroup_whatsapp_dara rounded-xl px-6"
             >
+              <MessageCircle className="w-4 h-4" />
               WhatsApp Dara
             </ButtonLink>
           </div>
@@ -163,74 +160,61 @@ export default function SmallGroupEN() {
         </FadeIn>
       </Section>
 
-      {/* Coach — Dara / Strength & Balance Coaching (the account we promote) */}
-      <Section>
-        <SectionHeader overline="Your coach" title="Dara — Strength & Balance Coaching" />
+      {/* Coaches who offer small group — goal: go to their Instagram or WhatsApp */}
+      <Section id="coaches">
+        <SectionHeader
+          overline="The coaches"
+          title="Coaches who offer small group"
+          description="Pick the coach that fits you. Follow them on Instagram or send a direct WhatsApp — they'll set up the small group with you."
+        />
         <FadeIn>
-          <div className="mx-auto max-w-4xl grid gap-8 md:grid-cols-[280px_1fr] items-start">
-            <div className="relative aspect-[4/5] w-full max-w-[280px] mx-auto overflow-hidden rounded-2xl bg-muted">
-              <Image
-                src={daraImg}
-                alt="Dara — Strength & Balance Coaching, small group coach at SculptClub in the Jordaan"
-                fill
-                sizes="(max-width: 768px) 280px, 280px"
-                className="object-cover [object-position:center_20%]"
-              />
-            </div>
-            <div>
-              <p className="text-lg text-muted-foreground leading-relaxed">{daraBio}</p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                In a small group, Dara coaches you in strength and balance with personal attention for
-                everyone — beginners are just as welcome as seasoned lifters. NL / EN.
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {daraSpec.map((s) => (
-                  <span
-                    key={s}
-                    className="inline-flex items-center rounded-full border border-border bg-secondary px-3 py-1 text-sm text-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-
-              {/* Instagram promotion — the account we're promoting */}
-              <a
-                href={daraIg}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="plausible-event-name=smallgroup_instagram mt-6 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 hover:border-brand hover:bg-brand/5 transition-colors group"
+          <div className="mx-auto max-w-5xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {coaches.map((c) => (
+              <div
+                key={c.name}
+                className="flex flex-col rounded-2xl border border-border bg-card overflow-hidden"
               >
-                <span className="w-11 h-11 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
-                  <InstagramIcon className="w-5 h-5" />
-                </span>
-                <span className="flex-1 min-w-0">
-                  <span className="block text-sm text-muted-foreground">Follow on Instagram</span>
-                  <span className="block font-semibold">{daraIgHandle}</span>
-                </span>
-                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 transition-all shrink-0" aria-hidden="true" />
-              </a>
-
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <ButtonLink
-                  href={daraIntake}
-                  size="lg"
-                  className="plausible-event-name=smallgroup_coach_intake rounded-xl px-6"
-                >
-                  Free intro with Dara
-                  <ArrowRight className="w-4 h-4" />
-                </ButtonLink>
-                <ButtonLink
-                  href={daraWa}
-                  size="lg"
-                  variant="outline"
-                  className="plausible-event-name=smallgroup_coach_whatsapp rounded-xl px-6"
-                >
-                  WhatsApp Dara
-                </ButtonLink>
+                <div className="relative aspect-[4/5] w-full bg-muted">
+                  <Image
+                    src={c.image}
+                    alt={`${c.name} — small group coach at SculptClub in the Jordaan`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 320px"
+                    className="object-cover [object-position:center_20%]"
+                  />
+                </div>
+                <div className="flex flex-col flex-1 p-4">
+                  <h3 className="text-lg font-bold">{c.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {c.specialization.en.join(" · ")}
+                  </p>
+                  <div className="mt-4 flex flex-col gap-2">
+                    {c.instagram && (
+                      <a
+                        href={c.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`plausible-event-name=smallgroup_ig_${c.name.toLowerCase()} inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-4 h-11 text-sm font-semibold hover:border-brand hover:bg-brand/5 transition-colors`}
+                      >
+                        <InstagramIcon className="w-4 h-4" />
+                        {c.instagramHandle ?? "Instagram"}
+                      </a>
+                    )}
+                    {c.whatsapp && (
+                      <a
+                        href={c.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`plausible-event-name=smallgroup_wa_${c.name.toLowerCase()} inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-brand-foreground px-4 h-11 text-sm font-semibold hover:bg-brand-dark transition-colors`}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp {c.name}
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </FadeIn>
       </Section>
