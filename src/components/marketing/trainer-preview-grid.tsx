@@ -32,7 +32,7 @@ const COPY = {
     overline: "Onze trainers",
     title: "Maak kennis met je trainer",
     subtitle: `${trainers.length} personal trainers, eigen specialisatie, gratis intake. Geen abonnement, geen tussenpersoon.`,
-    ctaCard: "Plan gratis intake",
+    ctaCard: "Boek intake",
     ctaAll: `Bekijk alle ${trainers.length} trainers`,
     ctaSeeStudio: "Bekijk de studio",
     seeStudioHref: "/nl/studio",
@@ -52,7 +52,7 @@ const COPY = {
     // so "all English-speaking" is accurate. No-Dutch-required removes the
     // single biggest hesitation for Amsterdam expats researching in English.
     subtitle: `${trainers.length} personal trainers — all English-speaking, no Dutch required. Distinct specialties, free intro. No membership, no middleman.`,
-    ctaCard: "Book free intro",
+    ctaCard: "Book intake",
     ctaAll: `View all ${trainers.length} trainers`,
     ctaSeeStudio: "See the studio",
     seeStudioHref: "/en/studio",
@@ -168,7 +168,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                       2026-05-16 fix (operator audit: cards rendered but lacked
                       obvious "tap to book" affordance on mobile). */}
                   <span
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
+                    className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
                     aria-hidden
                   >
                     {c.ctaCard}

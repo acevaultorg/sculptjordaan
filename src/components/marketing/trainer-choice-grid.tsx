@@ -60,14 +60,14 @@ type Locale = "nl" | "en";
 
 const COPY = {
   nl: {
-    ctaCard: "Plan gratis intake",
+    ctaCard: "Boek intake",
     intakeFree: "Intake gratis",
     rateOnRequest: "Prijs op aanvraag",
     languageLabel: "Spreekt",
     photoAlt: (name: string) => `${name}, personal trainer bij SculptClub Amsterdam Jordaan`,
   },
   en: {
-    ctaCard: "Book free intro",
+    ctaCard: "Book intake",
     intakeFree: "Free intro",
     rateOnRequest: "Rate on request",
     languageLabel: "Speaks",
@@ -166,7 +166,7 @@ export function TrainerChoiceGrid({ locale }: { locale: Locale }) {
                     Arrow nudges right on hover (mouse) + stays visible at rest
                     on touch devices (no hover state). */}
                 <span
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
+                  className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
                   aria-hidden
                 >
                   {c.ctaCard}

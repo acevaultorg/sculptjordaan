@@ -66,7 +66,7 @@ const copy: Record<
         title: "Personal Training",
         description: "1-op-1 met je eigen trainer. Eerste intake gratis.",
         href: "/nl/vind-jouw-personal-trainer",
-        badge: "Gratis intake",
+        badge: "Boek intake",
         event: "first_time_personal_training",
       },
       {
@@ -105,7 +105,7 @@ const copy: Record<
         title: "Personal Training",
         description: "1-on-1 with your own trainer. First intro free.",
         href: "/en/find-personal-trainer",
-        badge: "Free intro",
+        badge: "Book intake",
         event: "first_time_personal_training",
       },
       {

@@ -388,9 +388,9 @@ const trainersRaw: Trainer[] = [
       nl: ["Kracht & Conditie", "Duurzame Training", "Brazilian Jiu-Jitsu"],
       en: ["Strength & Conditioning", "Sustainable Training", "Brazilian Jiu-Jitsu"],
     },
-    // Languages inferred (Amsterdam-based, Dutch mobile, common Dutch name);
-    // operator to confirm whether Tom also coaches in Dutch. Added 2026-07-01.
-    languages: ["NL", "EN"],
+    // English only — operator confirmed 2026-07-04 Tom does NOT coach in Dutch
+    // (the earlier NL inference from his Amsterdam mobile/name was wrong).
+    languages: ["EN"],
     rate: "€100 / 60 min",
     // Block of ten (€900 = €90/session) + monthly PAYG billing also offered, but
     // the Trainer schema has a single `rate` field (no trainer shows block
