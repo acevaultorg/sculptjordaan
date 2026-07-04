@@ -122,9 +122,13 @@ export function Header() {
         className={cn(
           "fixed top-0 inset-x-0 z-50",
           "transition-[background-color,backdrop-filter,border-color] duration-300",
+          // Always a bottom line under the header (operator 2026-07-04). Over the
+          // dark homepage hero a subtle white hairline; a theme line elsewhere.
           scrolled
             ? "bg-background/90 backdrop-blur-xl border-b border-border/50"
-            : "bg-transparent border-b border-transparent"
+            : overDarkHero
+              ? "bg-transparent border-b border-white/25"
+              : "bg-transparent border-b border-border/50"
         )}
       >
         {/* ── Row 1: logo + utility icons ── */}

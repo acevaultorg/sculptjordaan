@@ -467,16 +467,15 @@ export function Hero({ locale }: { locale: Locale }) {
                 </ButtonLink>
               ))}
 
-              {/* Direct-book path — clients prefer booking directly over the quiz
-                  (Plausible 30d: Acuity Click 159 ≫ Quiz-start 36). Kept as a quiet
-                  text link, NOT another button / primary-colour, per the operator's
-                  "too many buttons" hero directive (2026-05-27). */}
+              {/* Secondary link — "see all trainers" (operator 2026-07-04; was
+                  "book direct" before). Quiet text link, not another button /
+                  primary colour, per the "too many buttons" hero directive. */}
               <Link
-                href={locale === "nl" ? "/nl/boek-trainer" : "/en/book-trainer"}
-                className="plausible-event-name=hero_direct_book self-center text-sm font-medium text-white/90 underline underline-offset-4 hover:text-white transition-colors"
-                onClick={() => trackHeroClick("hero direct book", 0, locale)}
+                href={locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer"}
+                className="plausible-event-name=hero_see_all_trainers self-center text-sm font-medium text-white/90 underline underline-offset-4 hover:text-white transition-colors"
+                onClick={() => trackHeroClick("hero see all trainers", 0, locale)}
               >
-                {locale === "nl" ? "Of boek direct je gratis intake →" : "Or book your free intro directly →"}
+                {locale === "nl" ? "Of zie alle trainers →" : "Or see all trainers →"}
               </Link>
 
               {/* ZZP-trainer acquisition CTA — outline variant for hierarchy
@@ -516,33 +515,8 @@ export function Hero({ locale }: { locale: Locale }) {
                   bottom-of-viewport, always within thumb reach. */}
             </div>
 
-            {/* Trust line — mixed clickable + static bullets.
-                Clickable segments get subtle underline-on-hover + same color
-                register as static (no visual jump that would distract from the
-                primary action). Visitors who tap "Eerste intake gratis" hit the
-                same destination as the primary CTA — same goal, different
-                surface — so a tap from the trust line is a real conversion not
-                a leak. */}
-            <p className="mt-4 text-center text-xs text-white/70">
-              {t.trustParts.map((part, i) => (
-                <span key={part.text}>
-                  {i > 0 && <span aria-hidden> · </span>}
-                  {part.href ? (
-                    <Link
-                      href={part.href}
-                      target={part.external ? "_blank" : undefined}
-                      rel={part.external ? "noopener noreferrer" : undefined}
-                      onClick={() => trackHeroClick(part.text, i + 100, locale)}
-                      className={`plausible-event-name=${part.event} underline-offset-4 decoration-white/30 hover:text-white hover:underline hover:decoration-white/70 transition-colors`}
-                    >
-                      {part.text}
-                    </Link>
-                  ) : (
-                    <span>{part.text}</span>
-                  )}
-                </span>
-              ))}
-            </p>
+            {/* Trust line ("Eerste intake gratis · Altijd opzegbaar · 5.0 ★
+                Google") removed 2026-07-04 per operator. */}
           </div>
         </div>
       </div>
