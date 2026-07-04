@@ -57,16 +57,6 @@ const plans = [
     link: acuityLinks.openGymPlans.instapplan,
   },
   {
-    name: "Popular",
-    sessions: "8 sessions",
-    tagline: "Train 2x / week",
-    price: "€49",
-    period: "/ 4 weeks",
-    perSession: "€6.13 / session",
-    badge: "Most popular",
-    link: acuityLinks.openGymPlans.populair,
-  },
-  {
     name: "Unlimited",
     sessions: "Unlimited",
     tagline: "Maximum freedom",
@@ -86,7 +76,7 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "How much does an Open Gym session cost?", a: "Single session €10. Or get a membership from €29/4 weeks (€7.25/session). Most popular: 2x/week for €49. You can always upgrade or downgrade." },
+  { q: "How much does an Open Gym session cost?", a: "Single session €10. Or get a membership: Starter Plan €29/4 weeks (€7.25/session) or Unlimited €59/4 weeks. You can always upgrade or downgrade." },
   { q: "Do I need a membership?", a: "No, you can book a single session for €10. Or get a 4-week membership for better value. Cancel anytime." },
   { q: "Is it really just for me?", a: "Yes. The entire studio to yourself during your booked 60-minute slot. No other gym-goers." },
   { q: "Can I bring a friend?", a: "Up to 4 people can train together. Want to train together? Check our studio rental options." },
@@ -182,7 +172,7 @@ export default function BookGymPageEN() {
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
-              {["Free trial session — try it with no obligation", "Single session €10 — no membership needed", "Private studio all to yourself — no waiting, no crowds", "Membership from €29/4 weeks (€7.25/session)", "Most popular: 2x/week for €49/4 weeks", "Door code via WhatsApp, start right away"].map((b, i) => (
+              {["Free trial session — try it with no obligation", "Single session €10 — no membership needed", "Private studio all to yourself — no waiting, no crowds", "Membership from €29/4 weeks (€7.25/session)", "Unlimited training for €59/4 weeks", "Door code via WhatsApp, start right away"].map((b, i) => (
                 <li key={i} className="flex items-start gap-3"><CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span className="text-sm">{b}</span></li>
               ))}
             </ul>

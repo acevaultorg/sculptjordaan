@@ -104,7 +104,7 @@ const FACTS = {
   hours: "Daily 06:30 – 22:00",
   pt: "from €45/session · free intake",
   studio: "from €12 per 60 min",
-  openGym: "from €6.13 per session",
+  openGym: "from €7.25 per session",
   rating: "5.0 ⭐ on Google",
   website: "sculptclub.nl",
   ptLanding: "sculptclub.nl/vind-jouw-personal-trainer",
@@ -128,25 +128,24 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     platform: "tiktok",
     pillar: "studio-tour",
     format: "TikTok Video",
-    title: "Price-tag · Open Gym from €6.13/session",
+    title: "Price-tag · Open Gym from €7.25/session",
     script: `[0-3s] Static shot of studio floor (numbered rubber flooring visible)
 [3-10s] Slow pan or zoom toward equipment
 [10-15s] BOLD OVERLAY appears: "OPEN GYM" line 1
-[15-20s] BOLD OVERLAY: "FROM €6.13 / SESSION"
+[15-20s] BOLD OVERLAY: "FROM €7.25 / SESSION"
 [20-25s] BOLD OVERLAY: "TRY FIRST SESSION FREE"
 [25-30s] Small text: "Jordaan · No membership · Cancel anytime"`,
     brief: {
-      message: "Replicate the 10.5K-view winning format. Static studio shot + bold price overlay + free-trial CTA. Open Gym tier: €6.13/session is the lowest price-point on the entire roster — make the headline punch.",
+      message: "Replicate the 10.5K-view winning format. Static studio shot + bold price overlay + free-trial CTA. Open Gym tier: €7.25/session is the lowest price-point on the entire roster — make the headline punch.",
       facts: [
         "Open Gym Instapplan: €29 / 4 weeks (4 sessions = €7.25/session)",
-        "Open Gym Populair: €49 / 4 weeks (8 sessions = €6.13/session)",
         "Open Gym Onbeperkt: €59 / 4 weeks unlimited",
         "Max 4 people per slot",
         "Door code via WhatsApp the night before",
         "First session free",
         "No contract · cancel anytime",
       ],
-      hookConcept: "€6.13/session for a private gym in the Jordaan — read that again",
+      hookConcept: "€7.25/session for a private gym in the Jordaan — read that again",
       cta: `Book first free session · ${FACTS.website}/nl/open-gym`,
       targetLength: "short",
     },
@@ -238,14 +237,14 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     title: "Carousel — Price-tag trio (Open Gym · PT · Studio Rental)",
     script: `Carousel (4 slides — IG variant of the 10.5K-view TikTok winning formula):
 1. Cover: dark studio shot + BOLD OVERLAY "YOUR PRIVATE GYM" + sublime "3 ways in · 1 first session free"
-2. Slide: "OPEN GYM · from €6.13/session · Try free · No contract"
+2. Slide: "OPEN GYM · from €7.25/session · Try free · No contract"
 3. Slide: "PERSONAL TRAINING · from €45/session · 8 independent trainers · First intake free"
 4. Slide: "STUDIO RENTAL · from €12/hour · For freelance trainers · First session free"
 5. CTA: "Pick your option · sculptclub.nl · Jordaan, Amsterdam"`,
     brief: {
       message: "Instagram variant of the TikTok winning pattern. Same overlay-on-studio-floor visual style. Carousel lets viewer swipe through ALL THREE tiers — they self-select which one fits their budget/need.",
       facts: [
-        "Open Gym from €6.13/session",
+        "Open Gym from €7.25/session",
         "Personal Training from €45/session",
         "Studio Rental from €12/hour",
         "All three: first session free",

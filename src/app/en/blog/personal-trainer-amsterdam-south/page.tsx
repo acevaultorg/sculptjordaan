@@ -113,7 +113,7 @@ export default function PTAmsterdamSouthEN() {
               <p>
                 Prefer to train on your own? With <a href="/en/open-gym" className="text-brand hover:underline">Open
                 Gym</a> you get access to the same private studio, without a trainer. From
-                €6.13 per session, in 4-week cycles. Maximum 4 people at a time, so there’s
+                €7.25 per session, in 4-week cycles. Maximum 4 people at a time, so there’s
                 always space.
               </p>
 

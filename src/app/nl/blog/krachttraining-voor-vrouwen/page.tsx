@@ -127,7 +127,7 @@ export default function KrachttrainingVoorVrouwenNL() {
               </p>
               <p>
                 Liever zelfstandig trainen? Met <a href="/nl/open-gym" className="text-brand hover:underline">Open
-                Gym</a> kun je zelfstandig trainen in onze privé studio, vanaf €6,13 per sessie.
+                Gym</a> kun je zelfstandig trainen in onze privé studio, vanaf €7,25 per sessie.
               </p>
             </div>
 

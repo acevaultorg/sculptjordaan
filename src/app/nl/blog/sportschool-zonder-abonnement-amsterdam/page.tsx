@@ -140,7 +140,7 @@ export default function SportschoolZonderAbonnementNL() {
                 Een relatief nieuw concept in Amsterdam is Open Gym: je huurt een privé sportruimte voor een vaste
                 tijd en traint zelfstandig met professionele apparatuur. Geen drukte, geen wachten, geen afleiding.
                 Bij SculptClub werkt <Link href="/nl/open-gym" className="text-brand underline-offset-2 hover:underline">Open Gym</Link> met een 4-weken cyclus zonder contract. Je kunt elk moment opzeggen
-                en betaalt vanaf 6,13 euro per sessie.
+                en betaalt vanaf 7,25 euro per sessie.
               </p>
               <p>
                 Wat Open Gym uniek maakt ten opzichte van reguliere sportscholen:
@@ -161,7 +161,7 @@ export default function SportschoolZonderAbonnementNL() {
                 <li><strong>Groot sportschoolabonnement</strong> — 30 tot 50 euro per maand (beperkte flexibiliteit)</li>
                 <li><strong>Dagpassen</strong> — 96 tot 240 euro per maand (12 x 8 tot 20 euro)</li>
                 <li><strong>Pay-per-session app</strong> — 60 tot 120 euro per maand (afhankelijk van credits)</li>
-                <li><strong>Open Gym bij SculptClub</strong> — 69 euro per maand voor 3x per week (populair plan)</li>
+                <li><strong>Open Gym bij SculptClub</strong> — vanaf 29 euro per 4 weken (Instapplan), of 59 euro onbeperkt</li>
               </ul>
               <p>
                 Open Gym biedt dus een privé ervaring voor een vergelijkbare prijs als een groot sportschoolabonnement,

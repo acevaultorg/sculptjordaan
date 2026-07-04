@@ -101,7 +101,7 @@ export default function PersonalTrainerDePijpEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Open Gym for independent training</h2>
               <p>
-                Prefer to train on your own? Open Gym offers 60-minute sessions from €6.13 per visit.
+                Prefer to train on your own? Open Gym offers 60-minute sessions from €7.25 per visit.
                 Book a slot, receive your door code via WhatsApp and train in peace. No contract, stop
                 whenever you want.
               </p>

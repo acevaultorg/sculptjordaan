@@ -80,14 +80,6 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Description:**
   > 4 trainingen in 4 weken. €7,25 per sessie. Train zelfstandig in een privé gym met max 4 mensen. Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken. Dagelijks open 06:30-22:00. Eerste keer? Boek je gratis try-out.
 
-### 3. Open Gym — Populair (8 sessions)
-- **Category:** Open Gym
-- **Price:** €49 / 4 weeks
-- **Photo:** `training-dumbbells-joy.jpg`
-- **Link:** `https://sculptclub.nl/nl/open-gym`
-- **Description:**
-  > 8 trainingen in 4 weken. €6,13 per sessie. Het populairste plan: ongeveer 2× per week trainen. Train zelfstandig in een privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract.
-
 ### 4. Open Gym — Losse sessie
 - **Category:** Open Gym
 - **Price:** €10 / session
@@ -196,7 +188,6 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 >
 > Geen contract:
 > · Instapplan — 4 sessies — €29/4w
-> · Populair — 8 sessies — €49/4w
 > · Onbeperkt — onbeperkt — €59/4w
 > · Losse sessie — €10
 >

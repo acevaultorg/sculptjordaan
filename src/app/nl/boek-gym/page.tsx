@@ -73,16 +73,6 @@ const plans = [
     link: acuityLinks.openGymPlans.instapplan,
   },
   {
-    name: "Populair",
-    sessions: "8 sessies",
-    tagline: "2x / week trainen",
-    price: "€49",
-    period: "/ 4 weken",
-    perSession: "€6,13 / sessie",
-    badge: "Meest gekozen",
-    link: acuityLinks.openGymPlans.populair,
-  },
-  {
     name: "Onbeperkt",
     sessions: "Onbeperkt",
     tagline: "Maximale vrijheid",
@@ -102,7 +92,7 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap vanaf €29/4 weken (€7,25/sessie). Populairste: 2x/week voor €49. Je kunt altijd upgraden of downgraden." },
+  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap: Instapplan €29/4 weken (€7,25/sessie) of Onbeperkt €59/4 weken. Je kunt altijd upgraden of downgraden." },
   { q: "Heb ik een abonnement nodig?", a: "Nee, je kunt ook een losse sessie boeken voor €10. Of neem een lidmaatschap per 4 weken voor meer voordeel. Altijd opzegbaar." },
   { q: "Is het echt alleen voor mij?", a: "Ja. De hele studio voor jezelf tijdens je geboekte slot van 60 minuten. Geen andere sporters." },
   { q: "Kan ik een vriend meenemen?", a: "Er mogen max 4 personen tegelijk in de studio. Samen trainen? Bekijk onze studio verhuur opties." },
@@ -217,7 +207,7 @@ export default function BoekGymPageNL() {
                 "Losse sessie €10 — geen lidmaatschap nodig",
                 "Privé studio helemaal voor jezelf — geen wachten, geen drukte",
                 "Lidmaatschap vanaf €29/4 weken (€7,25/sessie)",
-                "Populairste plan: 2x per week voor €49/4 weken",
+                "Onbeperkt trainen voor €59/4 weken",
                 "Deurcode via WhatsApp, direct starten",
               ].map((b, i) => (
                 <li key={i} className="flex items-start gap-3">

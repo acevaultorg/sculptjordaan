@@ -15,7 +15,6 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 ## Pricing (ALWAYS use these exact numbers)
 - **Personal Training:** from €45/session (trainers set own rates, 0% commission, first intake free)
 - **Open Gym Instapplan:** 4 sessions, €29/4 weeks (€7.25/session)
-- **Open Gym Populair:** 8 sessions, €49/4 weeks (€6.13/session)
 - **Open Gym Onbeperkt:** unlimited, €59/4 weeks
 - **Studio Rental Half:** €12/60min, €17/90min
 - **Studio Rental Full:** €17/60min, €24/90min

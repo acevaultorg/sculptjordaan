@@ -80,7 +80,6 @@ export const acuityPaidSessions = {
   /** Open Gym multi-session plan add-to-cart links (paid) */
   openGymPlans: {
     instapplan: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155887`,
-    populair: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155888`,
     intensief: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155889`,
     onbeperkt: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2155890`,
   },

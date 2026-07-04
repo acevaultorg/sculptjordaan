@@ -14,7 +14,7 @@ A small, independent private training studio on the Egelantiersgracht in the Jor
 
 No reception. No front desk. No membership cards. Door codes by WhatsApp the night before. Cancellation is always free. Max 4 people in the space at once.
 
-This is a **boutique private gym**, not a premium lifestyle brand. Prices are honest: PT from €45, Open Gym from €6.13/session, studio rental from €12/hour. The room is beautiful but the economics are accessible.
+This is a **boutique private gym**, not a premium lifestyle brand. Prices are honest: PT from €45, Open Gym from €7.25/session, studio rental from €12/hour. The room is beautiful but the economics are accessible.
 
 ## Positioning (one sentence)
 

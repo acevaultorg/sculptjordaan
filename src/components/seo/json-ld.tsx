@@ -176,7 +176,6 @@ export function LocalBusinessJsonLd() {
               name: "Open Gym",
               itemListElement: [
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Instapplan — 4 sessions/4 weeks" }, price: 29, priceCurrency: "EUR" },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Populair — 8 sessions/4 weeks" }, price: 49, priceCurrency: "EUR" },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Onbeperkt — unlimited/4 weeks" }, price: 59, priceCurrency: "EUR" },
               ],
             },

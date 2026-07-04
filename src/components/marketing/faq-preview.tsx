@@ -20,7 +20,7 @@ const faqs = {
     },
     {
       q: "Hoe werkt Open Gym?",
-      a: "Je traint zelfstandig in onze privé studio met professionele apparatuur. Plan je sessies via ons boekingssysteem, ontvang een deurcode en train op jouw tijd. Vanaf €6,13 per sessie.",
+      a: "Je traint zelfstandig in onze privé studio met professionele apparatuur. Plan je sessies via ons boekingssysteem, ontvang een deurcode en train op jouw tijd. Vanaf €7,25 per sessie.",
     },
     {
       q: "Moet ik een abonnement afsluiten?",
@@ -42,7 +42,7 @@ const faqs = {
     },
     {
       q: "How does Open Gym work?",
-      a: "You train independently in our private studio with professional equipment. Schedule your sessions via our booking system, receive a door code and train on your time. From €6.13 per session.",
+      a: "You train independently in our private studio with professional equipment. Schedule your sessions via our booking system, receive a door code and train on your time. From €7.25 per session.",
     },
     {
       q: "Do I need a subscription?",

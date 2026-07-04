@@ -77,17 +77,6 @@ const plans = [
     link: acuityLinks.openGymPlans.instapplan,
   },
   {
-    name: "Populair",
-    sessions: "8 sessies",
-    frequency: "2x / week",
-    tagline: "Regelmatig trainen zonder te veel druk",
-    price: "\u20ac49",
-    period: "/ 4 weken",
-    perSession: "\u20ac6,13 / sessie",
-    badge: "Meest gekozen",
-    link: acuityLinks.openGymPlans.populair,
-  },
-  {
     name: "Onbeperkt",
     sessions: "Onbeperkt",
     frequency: "Onbeperkt",
@@ -197,7 +186,6 @@ export default function OpenGymPageNL() {
         recurring
         offers={[
           { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
-          { name: "Populair — 8 sessies", description: "8 sessies per 4 weken, €6,13 per sessie", price: 49 },
           { name: "Onbeperkt", description: "Onbeperkt trainen per 4 weken", price: 59 },
         ]}
       />
@@ -484,7 +472,7 @@ export default function OpenGymPageNL() {
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <ButtonLink
-            href={acuityLinks.openGymPlans.populair}
+            href={acuityLinks.openGymPlans.instapplan}
             size="lg"
             className="text-white"
           >

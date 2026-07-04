@@ -202,8 +202,13 @@ export function Hero({ locale }: { locale: Locale }) {
       // Subtitle field kept in shape with null so the destructuring/render
       // sites stay stable (the JSX guards on `t.subtitle` to skip rendering).
       subtitle: null,
-      taglineSub: "Vind je trainer. Word sterker.",
-      priceAnchor: "Gratis intake · 1-op-1",
+      // taglineSub + priceAnchor removed 2026-07-04 (operator: "remove this
+      // text" — the cropped hero screenshot showed exactly these two lines).
+      // Hero now leads with the PRIVATE GYM / JORDAAN H1 + CTAs, no tagline/
+      // price line. Fields kept as null so the render guards + data shape stay
+      // stable (same pattern as `subtitle: null`).
+      taglineSub: null,
+      priceAnchor: null,
       // 2026-05-27 Clarity audit lesson — heatmap shows "Voor trainers"
       // (4 clicks) beats "Probeer Personal training" (2 clicks) on the same
       // hero. Hypothesis: "Probeer" is a vague verb that signals commit-
@@ -253,8 +258,9 @@ export function Hero({ locale }: { locale: Locale }) {
       // structure exactly: overline dropped, JORDAAN moves into H1 stack,
       // taglineSub becomes emotional anchor, priceAnchor condensed.
       subtitle: null,
-      taglineSub: "Find your trainer. Get stronger.",
-      priceAnchor: "Free intro · 1-on-1",
+      // See NL parallel — removed 2026-07-04 per operator "remove this text".
+      taglineSub: null,
+      priceAnchor: null,
       // See NL parallel comment (2026-05-27 Clarity audit + 2026-06-20 copy
       // fix: "Match your trainer" had the same awkwardness as the Dutch).
       ctas: [
@@ -415,15 +421,21 @@ export function Hero({ locale }: { locale: Locale }) {
               <span className="block mt-1 sm:mt-2 font-bold tracking-[0.22em] leading-[1] text-[clamp(1rem,4vw,1.875rem)] text-white/85">
                 JORDAAN
               </span>
-              <span className="block mt-4 sm:mt-5 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
-                {t.taglineSub}
-              </span>
+              {t.taglineSub && (
+                <span className="block mt-4 sm:mt-5 text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight text-white/85">
+                  {t.taglineSub}
+                </span>
+              )}
               {/* Price anchor — added 2026-05-26 lead-cap (task A). Catches
                   the price-curious visitor before bounce. Subtle white/70
-                  weight so it reads as informational, not a sales-shout. */}
-              <span className="block mt-2 sm:mt-3 text-sm sm:text-base text-white/70 font-medium">
-                {t.priceAnchor}
-              </span>
+                  weight so it reads as informational, not a sales-shout.
+                  Removed 2026-07-04 per operator (see nl strings) — guarded
+                  so it only renders when priceAnchor is non-null. */}
+              {t.priceAnchor && (
+                <span className="block mt-2 sm:mt-3 text-sm sm:text-base text-white/70 font-medium">
+                  {t.priceAnchor}
+                </span>
+              )}
             </h1>
           </div>
 
