@@ -2,18 +2,22 @@ import Script from "next/script";
 import { siteConfig } from "@/config/site";
 
 const { ga4, gtm, googleAds, googleAdsConversion, googleAdsConversionPurchase, fbPixel, clarity, tiktokPixel } = siteConfig.analytics;
-const PLAUSIBLE_DOMAIN = "sculptclub.nl";
 
 export function Analytics() {
   return (
     <>
-      {/* Plausible — privacy-first analytics, no cookies, no consent needed */}
-      <Script
-        defer
-        data-domain={PLAUSIBLE_DOMAIN}
-        src="https://plausible.io/js/script.outbound-links.tagged-events.js"
-        strategy="afterInteractive"
-      />
+      {/* Plausible — STOPPED (operator 2026-07-04: "we stop with plausible ...
+          we use clarity and analytics the upcoming months"). The plausible.io
+          script LOADER is removed so nothing is fetched from plausible.io and
+          no events are sent to the (now inactive) account. The init stub below
+          is KEPT on purpose: dozens of components across the app call
+          window.plausible(...) (operator: "you dont have to remove the tracks")
+          — the stub keeps window.plausible a safe queue function so every one
+          of those calls stays a harmless no-op (queues in memory, never
+          flushed, never throws) instead of a ReferenceError. Conversion +
+          engagement tracking continues via GA4 + Google Ads + Microsoft
+          Clarity below. To re-enable Plausible later, restore the
+          <Script defer data-domain src="https://plausible.io/js/script.outbound-links.tagged-events.js"> loader. */}
       <Script id="plausible-init" strategy="afterInteractive">
         {`window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`}
       </Script>

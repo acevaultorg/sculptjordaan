@@ -229,12 +229,12 @@ export function Header() {
                   {/* Caption (e.g. "for trainers" on Rent Studio) — the mobile
                       tile uses the shorter captionShort so the row still fits. */}
                   {item.captionShort && (
-                    <span className="sm:hidden truncate max-w-full tracking-tight text-[9px] font-normal opacity-70 leading-tight">
+                    <span className="sm:hidden truncate max-w-full tracking-tight text-[9px] font-normal opacity-70 leading-none -mt-0.5">
                       {item.captionShort}
                     </span>
                   )}
                   {item.caption && (
-                    <span className="hidden sm:block text-[11px] font-normal opacity-70 leading-tight">
+                    <span className="hidden sm:block text-[11px] font-normal opacity-70 leading-none -mt-0.5">
                       {item.caption}
                     </span>
                   )}
