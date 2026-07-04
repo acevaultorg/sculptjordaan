@@ -6,18 +6,23 @@ export interface NavItem {
   children?: NavItem[];
 }
 
+// Primary categories — aligned to the operator's new header concept
+// (2026-07-04): Small Group · Open Gym · Personal Training · Rent Studio.
+// Small Group links the new /small-group page (was orphaned). "Voor Trainers"
+// (the trainer hub) stays reachable via footer + hamburger; the trainer
+// conversion page (Studio Huren) keeps its top-nav slot as "Rent studio".
 export const mainNav: Record<Locale, NavItem[]> = {
   nl: [
-    { label: "Studio Huren", href: "/nl/studio-huren" },
-    { label: "Voor Trainers", href: "/nl/voor-trainers" },
-    { label: "Trainer Vinden", href: "/nl/vind-jouw-personal-trainer" },
+    { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
+    { label: "Trainer Vinden", href: "/nl/vind-jouw-personal-trainer" },
+    { label: "Studio Huren", href: "/nl/studio-huren" },
   ],
   en: [
-    { label: "Studio Rental", href: "/en/studio-rental" },
-    { label: "For Trainers", href: "/en/for-trainers" },
-    { label: "Find a Trainer", href: "/en/find-personal-trainer" },
+    { label: "Small Group", href: "/en/small-group" },
     { label: "Open Gym", href: "/en/open-gym" },
+    { label: "Find a Trainer", href: "/en/find-personal-trainer" },
+    { label: "Studio Rental", href: "/en/studio-rental" },
   ],
 };
 
