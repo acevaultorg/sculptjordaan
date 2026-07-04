@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Sparkles, X, ArrowRight, Users, UsersRound, Dumbbell, Building2 } from "lucide-react";
+import { X, ArrowRight, Users, UsersRound, Dumbbell, Building2 } from "lucide-react";
 import { trackHeroClick } from "@/lib/tracking";
 import type { Locale } from "@/config/site";
 
@@ -198,18 +198,24 @@ export function FirstTimeMenu({ locale }: { locale: Locale }) {
 
   return (
     <>
-      {/* The single hero action — orange primary, since it's now THE hero CTA.
-          Styling mirrors the prior primary CTA (rounded-xl, min-h-[52px],
-          shadow-brand-lg) so the hero footprint is unchanged. */}
+      {/* The single hero action — orange primary, THE hero CTA. No icon
+          (operator 2026-07-04: a decorative sparkle didn't reinforce "first
+          time?" and added noise — a clean text button reads as the clearest,
+          highest-CTR call to action). Bumped a step for prominence: text-base
+          + font-bold + 56px min-height (was 14px/semibold/52px). Full-width,
+          anchored at the bottom of the hero = the mobile thumb zone.
+          Click tracking: the `plausible-event-name=hero_first_time` class fires
+          a Plausible CUSTOM EVENT on every click (the site loads the
+          tagged-events script) — make it a Goal in Plausible to read CTR. A
+          GA4 `hero_cta_click` event also fires via handleOpen(). */}
       <div className="flex flex-col items-stretch max-w-md mx-auto">
         <button
           type="button"
           onClick={handleOpen}
           aria-haspopup="dialog"
           aria-expanded={open}
-          className="plausible-event-name=hero_first_time inline-flex items-center justify-center gap-2 rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg cursor-pointer active:scale-95 [text-shadow:none]"
+          className="plausible-event-name=hero_first_time inline-flex items-center justify-center rounded-xl px-6 py-5 min-h-[56px] text-base font-bold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg cursor-pointer active:scale-95 [text-shadow:none]"
         >
-          <Sparkles className="w-4 h-4" aria-hidden="true" />
           {t.button}
         </button>
       </div>
