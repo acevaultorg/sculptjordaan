@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Users, Building2 } from "lucide-react";
-import { ButtonLink } from "@/components/ui/button-link";
-import { trackHeroClick } from "@/lib/tracking";
+import { Users } from "lucide-react";
+import { FirstTimeMenu } from "@/components/marketing/first-time-menu";
 import { getColor } from "@/lib/image-color-manifest";
 import type { Locale } from "@/config/site";
 
@@ -392,7 +390,7 @@ export function Hero({ locale }: { locale: Locale }) {
               up there. Doesn't touch the CTA-near-thumb bottom anchoring:
               the flex-1 spacer between headline and CTAs (below) just
               absorbs less space, so CTAs stay exactly where they were. */}
-          <div className="h-[13vh] sm:h-[15vh] lg:h-0" aria-hidden="true" />
+          <div className="h-[17vh] sm:h-[19vh] lg:h-0" aria-hidden="true" />
 
           {/* TOP CLUSTER — h1 (with JORDAAN sub-line) + taglineSub.
               2026-06-02: overline removed; JORDAAN moved INTO the H1 stack
@@ -457,80 +455,19 @@ export function Hero({ locale }: { locale: Locale }) {
               instead of the spacer eating all the vertical space. */}
           <div className="flex-1 min-h-[2rem] lg:flex-none lg:h-16" aria-hidden="true" />
 
-          {/* BOTTOM CLUSTER — primary (fill) + secondary (outline) + trust.
-              Two equal-height buttons stacked, distinguished by fill vs
-              outline. Primary still wins the eye (orange fill on warm gradient
-              = high color anchor); secondary clearly tappable (full button
-              footprint, 44×44 WCAG, white border at 50% opacity = visible but
-              subordinate). The audience-distinct value-props remove choice
-              paralysis: visitor decides "am I here to train, or here to rent
-              the studio?" in one read — no internal ranking of two equivalent
-              consumer offers needed. */}
+          {/* BOTTOM CLUSTER — single "First time?" wayfinder (operator
+              2026-07-04: "change this buttons in First time?, when users clicks,
+              first time menu should appear"). Replaces the prior primary +
+              "zie alle trainers" link + trainer-rental outline button. One
+              inviting opener routes every audience (consumer PT / Open Gym /
+              Small Group AND ZZP-trainer rental) from a single tap; the four
+              paths live one tap deeper inside the sheet, first-timer-framed.
+              See first-time-menu.tsx for the full rationale + the paths.
+              (Prior 2-CTA audience-split rationale intentionally superseded by
+              this directive — the split is now expressed inside the menu, not
+              on the hero surface.) */}
           <div>
-            <div className="flex flex-col items-stretch gap-3 max-w-md mx-auto">
-              {t.ctas.map((cta, i) => (
-                <ButtonLink
-                  key={cta.href}
-                  href={cta.href}
-                  size="lg"
-                  className={`plausible-event-name=hero_cta_${i + 1}_primary rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg [text-shadow:none]`}
-                  onClick={() => trackHeroClick(cta.label, i + 1, locale)}
-                >
-                  <cta.icon className="w-4 h-4" />
-                  {cta.label}
-                </ButtonLink>
-              ))}
-
-              {/* Secondary link — "see all trainers" (operator 2026-07-04; was
-                  "book direct" before). Quiet text link, not another button /
-                  primary colour, per the "too many buttons" hero directive. */}
-              <Link
-                href={locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer"}
-                className="plausible-event-name=hero_see_all_trainers self-center text-sm font-medium text-white/90 underline underline-offset-4 hover:text-white transition-colors"
-                onClick={() => trackHeroClick("hero see all trainers", 0, locale)}
-              >
-                {locale === "nl" ? "Of zie alle trainers →" : "Or see all trainers →"}
-              </Link>
-
-              {/* ZZP-trainer acquisition CTA — outline variant for hierarchy
-                  via fill-vs-outline (not size). Same min-height + padding +
-                  font as primary so both feel like first-class actions.
-                  2026-06-02 legibility fix: pure transparent bg failed against
-                  bright photos in the hero rotation (canal-view-doors.jpg has
-                  sky + light-tree areas; white-on-beige washes out, operator
-                  screenshot caught it). Switched to glass-blur over a black
-                  veil — same pattern the proven Try-Out header button uses
-                  — guaranteed readable against ANY rotation slide while
-                  staying visually subordinate to the orange primary CTA.
-                  Border bumped to white/60 for slightly stronger definition
-                  and `[text-shadow:none]` REMOVED so the button text inherits
-                  the hero parent's text-shadow (double insurance against
-                  bright-background contrast failure). */}
-              <ButtonLink
-                href={t.trainerLink.href}
-                size="lg"
-                className="plausible-event-name=hero_trainer_cta rounded-xl px-6 py-5 min-h-[52px] text-sm font-semibold bg-black/35 backdrop-blur-md hover:bg-black/45 text-white border border-white/60 hover:border-white active:scale-95 transition-all"
-                onClick={() => trackHeroClick(t.trainerLink.label, 2, locale)}
-              >
-                <Building2 className="w-4 h-4" />
-                {t.trainerLink.label}
-              </ButtonLink>
-
-              {/* WhatsApp CTA REMOVED from hero 2026-05-27 — UX audit per
-                  operator directive "too many buttons, too many primary
-                  CTA colors". WhatsApp is already always-available via the
-                  fixed MobileLeadBar (bottom sticky on every demand page,
-                  including this one) + the CtaBand below fold. Stacking
-                  3 hero CTAs (orange + outline + emerald) on mobile was
-                  decision-paralysis + color-competition. Two-CTA hero
-                  reads cleaner: ONE primary (PT intake = largest audience)
-                  + ONE secondary (trainer rental = highest LTV audience).
-                  Visitors who want chat first see it in the sticky bar
-                  bottom-of-viewport, always within thumb reach. */}
-            </div>
-
-            {/* Trust line ("Eerste intake gratis · Altijd opzegbaar · 5.0 ★
-                Google") removed 2026-07-04 per operator. */}
+            <FirstTimeMenu locale={locale} />
           </div>
         </div>
       </div>
