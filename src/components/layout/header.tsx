@@ -159,7 +159,7 @@ export function Header() {
           {/* Category tiles */}
           <nav
             aria-label={locale === "nl" ? "Categorieën" : "Categories"}
-            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1.5 sm:gap-2 min-w-0"
+            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1 sm:gap-2 min-w-0"
           >
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -169,11 +169,13 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    // Mobile: equal-width flex-1 tiles so the 4 categories ALWAYS
-                    // fit the row (structurally can't overflow — no scroll, no
-                    // hidden tile), paired with the short mobile labels below.
-                    // sm+: back to natural shrink-0-equivalent content width.
-                    "flex-1 sm:flex-none min-w-0 flex items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap overflow-hidden transition-all",
+                    // Mobile: each tile keeps its own natural content width (no
+                    // word is ever abbreviated/hidden) — padding/gap/tracking are
+                    // tuned tight so the 4 always fit the row without scrolling.
+                    // min-w-0 + overflow-hidden + truncate on the span below is a
+                    // last-resort safety net only (extreme zoom/viewport), not
+                    // the normal behavior.
+                    "min-w-0 overflow-hidden flex items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap transition-all",
                     "h-9 sm:h-10 px-2 sm:px-5 text-xs sm:text-sm",
                     isActive
                       // Active = brand fill (clickable, so orange is allowed per
@@ -186,9 +188,7 @@ export function Header() {
                         : "text-foreground bg-muted border border-border/60 hover:border-brand hover:bg-brand/5"
                   )}
                 >
-                  {/* short label on phones (truncates as a last resort — the
-                      flex-1 row can't overflow, so worst case is an ellipsis,
-                      never a hidden 4th tile), full label at sm+ */}
+                  {/* short label on phones, full label at sm+ */}
                   <span className="sm:hidden truncate max-w-full tracking-tight">{item.shortLabel ?? item.label}</span>
                   <span className="hidden sm:inline">{item.label}</span>
                 </Link>

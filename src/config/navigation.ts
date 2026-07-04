@@ -16,16 +16,16 @@ export interface NavItem {
 // conversion page (Studio Huren) keeps its top-nav slot as "Rent studio".
 export const mainNav: Record<Locale, NavItem[]> = {
   nl: [
-    { label: "Small Group", href: "/nl/small-group", shortLabel: "Groep" },
+    { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
-    { label: "Trainer Vinden", href: "/nl/vind-jouw-personal-trainer", shortLabel: "Trainer" },
-    { label: "Studio Huren", href: "/nl/studio-huren", shortLabel: "Studio" },
+    { label: "Personal Training", href: "/nl/vind-jouw-personal-trainer", shortLabel: "Trainer" },
+    { label: "Rent Studio", href: "/nl/studio-huren", shortLabel: "Studio" },
   ],
   en: [
-    { label: "Small Group", href: "/en/small-group", shortLabel: "Group" },
+    { label: "Small Group", href: "/en/small-group" },
     { label: "Open Gym", href: "/en/open-gym" },
-    { label: "Find a Trainer", href: "/en/find-personal-trainer", shortLabel: "Trainer" },
-    { label: "Studio Rental", href: "/en/studio-rental", shortLabel: "Studio" },
+    { label: "Personal Training", href: "/en/find-personal-trainer", shortLabel: "Trainer" },
+    { label: "Rent Studio", href: "/en/studio-rental", shortLabel: "Studio" },
   ],
 };
 
