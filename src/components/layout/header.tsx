@@ -105,22 +105,14 @@ export function Header() {
     setMenuOpen(false);
   }
 
-  // Shared utility-icon chip style — globe only (2026-07-04: login + hamburger
-  // dropped the permanent chip look, see iconButtonClass below). NOTE: no
-  // `display` here on purpose — the globe sets its own (`hidden sm:flex`), so
-  // the chip's style can't override its mobile-hide.
-  const iconChip = cn(
-    "items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
-    "w-11 h-11 sm:w-9 sm:h-9",
-    "text-foreground/75 hover:text-foreground bg-muted hover:bg-accent border-foreground/15 active:scale-95"
-  );
-
-  // Bare icon-button style for login + hamburger (operator 2026-07-04: no
-  // permanent circle/background). Text color has to adapt to overDarkHero for
-  // itself now — previously the chip's own bg-muted provided contrast against
-  // the dark hero regardless of icon color. Hover shows a soft circle purely
-  // as interaction feedback; `open` (menu/login panel open) keeps a
-  // self-contrasting highlight so the toggled state is still visible.
+  // Bare icon-button style for ALL utility icons — globe + login + hamburger
+  // (operator 2026-07-04: none of them keep a permanent circle/background; the
+  // globe dropped its chip last). Text color adapts to overDarkHero itself
+  // since there's no chip bg to provide contrast against the dark hero. Hover
+  // shows a soft circle purely as interaction feedback; `open` (menu/login
+  // panel open) keeps a self-contrasting highlight so the toggled state stays
+  // visible. NOTE: returns no `display` on purpose — callers set their own
+  // (`flex` for login/hamburger, `hidden sm:flex` for the globe).
   function iconButtonClass(open: boolean) {
     return cn(
       "items-center justify-center rounded-full transition-all cursor-pointer touch-manipulation active:scale-95",
@@ -251,7 +243,7 @@ export function Header() {
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className={cn("hidden sm:flex", iconChip)}
+              className={cn("hidden sm:flex", iconButtonClass(false))}
             >
               <Globe className="w-4 h-4" aria-hidden="true" />
               <span className="sr-only">{locale === "nl" ? "English" : "Nederlands"}</span>
