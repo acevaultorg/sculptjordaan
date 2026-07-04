@@ -469,6 +469,15 @@ export function Hero({ locale }: { locale: Locale }) {
           <div>
             <FirstTimeMenu locale={locale} />
           </div>
+
+          {/* Bottom spacer — operator 2026-07-04 "make the button smaller and
+              the position higher" (Saints & Stars example). Mobile/tablet only:
+              mirrors the flex-1 spacer ABOVE the button so the wayfinder now
+              CENTERS in the lower area of the hero instead of hugging the very
+              bottom — lands it higher (lower-third, like the example) while the
+              headline stays mid-hero. lg:hidden so desktop's justify-center
+              centering of the headline+CTA group is untouched. */}
+          <div className="flex-1 lg:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>

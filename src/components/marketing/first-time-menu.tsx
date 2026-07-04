@@ -208,13 +208,13 @@ export function FirstTimeMenu({ locale }: { locale: Locale }) {
           a Plausible CUSTOM EVENT on every click (the site loads the
           tagged-events script) — make it a Goal in Plausible to read CTR. A
           GA4 `hero_cta_click` event also fires via handleOpen(). */}
-      <div className="flex flex-col items-stretch max-w-md mx-auto">
+      <div className="flex justify-center">
         <button
           type="button"
           onClick={handleOpen}
           aria-haspopup="dialog"
           aria-expanded={open}
-          className="plausible-event-name=hero_first_time inline-flex items-center justify-center rounded-xl px-6 py-5 min-h-[56px] text-base font-bold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg cursor-pointer active:scale-95 [text-shadow:none]"
+          className="plausible-event-name=hero_first_time inline-flex items-center justify-center rounded-full px-8 py-3 min-h-[48px] text-base font-bold bg-brand hover:bg-brand-dark text-brand-foreground border border-brand transition-all shadow-brand-lg cursor-pointer active:scale-95 [text-shadow:none]"
         >
           {t.button}
         </button>
