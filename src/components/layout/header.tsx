@@ -105,15 +105,33 @@ export function Header() {
     setMenuOpen(false);
   }
 
-  // Shared utility-icon chip style (globe · login · hamburger). NOTE: no
-  // `display` here on purpose — each element sets its own (`flex`, or the
-  // globe's `hidden sm:flex`), so the chip's style can't override the globe's
-  // mobile-hide.
+  // Shared utility-icon chip style — globe only (2026-07-04: login + hamburger
+  // dropped the permanent chip look, see iconButtonClass below). NOTE: no
+  // `display` here on purpose — the globe sets its own (`hidden sm:flex`), so
+  // the chip's style can't override its mobile-hide.
   const iconChip = cn(
     "items-center justify-center rounded-xl border transition-all cursor-pointer touch-manipulation",
     "w-11 h-11 sm:w-9 sm:h-9",
     "text-foreground/75 hover:text-foreground bg-muted hover:bg-accent border-foreground/15 active:scale-95"
   );
+
+  // Bare icon-button style for login + hamburger (operator 2026-07-04: no
+  // permanent circle/background). Text color has to adapt to overDarkHero for
+  // itself now — previously the chip's own bg-muted provided contrast against
+  // the dark hero regardless of icon color. Hover shows a soft circle purely
+  // as interaction feedback; `open` (menu/login panel open) keeps a
+  // self-contrasting highlight so the toggled state is still visible.
+  function iconButtonClass(open: boolean) {
+    return cn(
+      "items-center justify-center rounded-full transition-all cursor-pointer touch-manipulation active:scale-95",
+      "w-11 h-11 sm:w-9 sm:h-9",
+      open
+        ? "text-foreground bg-accent"
+        : overDarkHero
+          ? "text-white/90 hover:text-white hover:bg-white/10"
+          : "text-foreground/75 hover:text-foreground hover:bg-accent/60"
+    );
+  }
 
   return (
     <>
@@ -169,19 +187,20 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    // Mobile: each tile keeps its own natural content width (no
-                    // word is ever abbreviated/hidden) — padding/gap/tracking are
-                    // tuned tight so the 4 always fit the row without scrolling.
-                    // min-w-0 + overflow-hidden + truncate on the span below is a
-                    // last-resort safety net only (extreme zoom/viewport), not
-                    // the normal behavior.
-                    // sm+: flex-col so a tile with a caption (below) stacks label
+                    // Each tile keeps its own natural content width (no word is
+                    // ever abbreviated/hidden) — padding/gap/tracking are tuned
+                    // tight so the 4 always fit the row without scrolling.
+                    // min-w-0 + overflow-hidden + truncate on the spans below is
+                    // a last-resort safety net only (extreme zoom/viewport),
+                    // not the normal behavior.
+                    // flex-col so a tile with a caption (below) stacks label
                     // over caption; tiles without one just center their single
-                    // line same as before. Height goes auto+py-2 so items-stretch
+                    // line same as before. Height is auto+py so items-stretch
                     // on the <nav> grows every tile to match the tallest (the
-                    // captioned one), keeping the row visually uniform.
-                    "min-w-0 overflow-hidden flex sm:flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
-                    "h-9 sm:h-auto px-2 sm:px-5 sm:py-2 text-xs sm:text-sm",
+                    // captioned one), keeping the row visually uniform — at
+                    // both mobile and desktop.
+                    "min-w-0 overflow-hidden flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
+                    "h-auto py-1.5 sm:py-2 px-2 sm:px-5 text-xs sm:text-sm",
                     isActive
                       // Active = brand fill (clickable, so orange is allowed per
                       // the color-clickability contract).
@@ -196,8 +215,13 @@ export function Header() {
                   {/* short label on phones, full label at sm+ */}
                   <span className="sm:hidden truncate max-w-full tracking-tight">{item.shortLabel ?? item.label}</span>
                   <span className="hidden sm:block">{item.label}</span>
-                  {/* Caption (e.g. "for trainers" on Rent Studio) — sm+ only,
-                      never shown on the mobile tile. */}
+                  {/* Caption (e.g. "for trainers" on Rent Studio) — the mobile
+                      tile uses the shorter captionShort so the row still fits. */}
+                  {item.captionShort && (
+                    <span className="sm:hidden truncate max-w-full tracking-tight text-[9px] font-normal opacity-70 leading-tight">
+                      {item.captionShort}
+                    </span>
+                  )}
                   {item.caption && (
                     <span className="hidden sm:block text-[11px] font-normal opacity-70 leading-tight">
                       {item.caption}
@@ -225,7 +249,7 @@ export function Header() {
             {/* Client login / My bookings — also a booking entry point */}
             <button
               onClick={handleLoginClick}
-              className={cn("flex", iconChip, loginOpen && "text-foreground bg-accent border-border")}
+              className={cn("flex", iconButtonClass(loginOpen))}
               aria-label={locale === "nl" ? "Mijn boekingen" : "My bookings"}
               title={locale === "nl" ? "Mijn boekingen" : "My bookings"}
             >
@@ -235,7 +259,7 @@ export function Header() {
             {/* Hamburger */}
             <button
               onClick={handleMenuClick}
-              className={cn("flex", iconChip, menuOpen && "text-foreground bg-accent border-border")}
+              className={cn("flex", iconButtonClass(menuOpen))}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

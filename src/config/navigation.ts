@@ -7,9 +7,11 @@ export interface NavItem {
   // Shorter label used only where space is tight (the header category tiles on
   // narrow phones), so all 4 categories fit at 375px without a scrollbar.
   shortLabel?: string;
-  // Tiny qualifier line under the label — desktop-only (sm+). The mobile tile
-  // stays single-line so the "always fits 4, never scrolls" guarantee holds.
+  // Tiny qualifier line under the label — desktop (sm+) version, full text.
   caption?: string;
+  // Same qualifier, shorter — used on the mobile tile instead of `caption` so
+  // the "always fits 4, never scrolls" row guarantee still holds.
+  captionShort?: string;
 }
 
 // Primary categories — aligned to the operator's new header concept
@@ -22,13 +24,13 @@ export const mainNav: Record<Locale, NavItem[]> = {
     { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Personal Training", href: "/nl/vind-jouw-personal-trainer", shortLabel: "Trainer" },
-    { label: "Rent Studio", href: "/nl/studio-huren", shortLabel: "Studio", caption: "(voor trainers)" },
+    { label: "Rent Studio", href: "/nl/studio-huren", shortLabel: "Studio", caption: "(voor trainers)", captionShort: "(trainers)" },
   ],
   en: [
     { label: "Small Group", href: "/en/small-group" },
     { label: "Open Gym", href: "/en/open-gym" },
     { label: "Personal Training", href: "/en/find-personal-trainer", shortLabel: "Trainer" },
-    { label: "Rent Studio", href: "/en/studio-rental", shortLabel: "Studio", caption: "(For trainers)" },
+    { label: "Rent Studio", href: "/en/studio-rental", shortLabel: "Studio", caption: "(For trainers)", captionShort: "(trainers)" },
   ],
 };
 
