@@ -203,7 +203,7 @@ export function Header() {
                     // wraps to 2 lines if needed (no abbreviation, no truncation)
                     // — operator wants the real words, e.g. "Personal Training".
                     // Desktop (sm+): natural content width, single line.
-                    "flex-1 sm:flex-none flex flex-col items-center justify-center text-center rounded-xl font-semibold leading-tight transition-all",
+                    "flex-1 sm:flex-none flex flex-col items-center justify-center text-center rounded-xl font-semibold leading-none transition-all",
                     "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-[13px] sm:text-sm sm:whitespace-nowrap",
                     isActive || item.highlight
                       // Active OR a persistently-highlighted tile (Rent Studio)
