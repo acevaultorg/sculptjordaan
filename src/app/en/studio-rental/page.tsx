@@ -306,7 +306,7 @@ export default function StudioRentalPageEN() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessions of 60 min — half studio (max 2) €12 · full studio (max 6) €17. 90 min or a mix is fine; your credit sets the count.
+                Sessions of 60 min — half studio (2 people) €12 · full studio (6 people) €17. 90 min or a mix is fine; your credit sets the count.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Lowest rate: <span className="text-discount font-medium">€9.24/session</span> · Prefer bank transfer?{" "}
@@ -335,7 +335,7 @@ export default function StudioRentalPageEN() {
                   </thead>
                   <tbody>
                     <tr className="border-b">
-                      <td className="px-4 py-3 font-medium">Half studio (max 2)</td>
+                      <td className="px-4 py-3 font-medium">Half studio (for 2 people)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€12</span>
@@ -350,7 +350,7 @@ export default function StudioRentalPageEN() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
+                      <td className="px-4 py-3 font-medium">Full studio (for 6 people)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>

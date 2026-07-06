@@ -278,7 +278,7 @@ export default function StudioRentalPageNL() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessies van 60 min — halve studio (max 2) €12 · hele studio (max 6) €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal.
+                Sessies van 60 min — halve studio (2 pers.) €12 · hele studio (6 pers.) €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
@@ -307,7 +307,7 @@ export default function StudioRentalPageNL() {
                   </thead>
                   <tbody>
                     <tr className="border-b">
-                      <td className="px-4 py-3 font-medium">Halve studio (max 2)</td>
+                      <td className="px-4 py-3 font-medium">Halve studio (voor 2 personen)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€12</span>
@@ -322,7 +322,7 @@ export default function StudioRentalPageNL() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
+                      <td className="px-4 py-3 font-medium">Hele studio (voor 6 personen)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>
