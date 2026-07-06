@@ -72,7 +72,7 @@ const copy: Record<
       {
         icon: Dumbbell,
         title: "Open Gym",
-        description: "Zelf trainen in de studio, max 4 personen. Onbeperkt voor €59 per 4 weken.",
+        description: "Zelf trainen, max 4 personen. Vanaf €29/4 wkn.",
         href: "/nl/open-gym",
         badge: "Gratis proefles",
         event: "first_time_open_gym",
@@ -111,7 +111,7 @@ const copy: Record<
       {
         icon: Dumbbell,
         title: "Open Gym",
-        description: "Train on your own in the studio, max 4 people. Unlimited for €59 per 4 weeks.",
+        description: "Train on your own, max 4 people. From €29/4 wks.",
         href: "/en/open-gym",
         badge: "Free trial",
         event: "first_time_open_gym",
@@ -178,9 +178,9 @@ export function FirstTimeMenu({
           setOpen(false);
           trackHeroClick(opt.title, 1, locale);
         }}
-        className={`plausible-event-name=hero_${opt.event} flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:border-brand hover:bg-brand/5 transition-colors group`}
+        className={`plausible-event-name=hero_${opt.event} flex items-center gap-3 p-3 rounded-2xl border border-border/60 hover:border-brand hover:bg-brand/5 transition-colors group`}
       >
-        <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
           <Icon className="w-5 h-5 text-brand" aria-hidden="true" />
         </div>
         <div className="flex-1 min-w-0">
@@ -197,7 +197,7 @@ export function FirstTimeMenu({
               </span>
             )}
           </div>
-          <div className="text-sm text-muted-foreground">{opt.description}</div>
+          <div className="text-[13px] leading-snug text-muted-foreground">{opt.description}</div>
         </div>
         <ArrowRight
           className="w-4 h-4 text-muted-foreground group-hover:text-brand group-hover:translate-x-0.5 transition-all shrink-0"
@@ -257,8 +257,8 @@ export function FirstTimeMenu({
               <div className="flex justify-center pt-3 pb-1">
                 <div className="w-10 h-1 rounded-full bg-border" />
               </div>
-              <div className="flex items-center justify-between px-6 py-4">
-                <h2 id="first-time-title" className="text-xl sm:text-2xl font-bold tracking-tight">
+              <div className="flex items-center justify-between px-6 py-3">
+                <h2 id="first-time-title" className="text-lg sm:text-xl font-bold tracking-tight">
                   {t.title}
                 </h2>
                 <button
@@ -269,17 +269,17 @@ export function FirstTimeMenu({
                   <X className="w-5 h-5" />
                 </button>
               </div>
-              <div className="flex-1 overflow-y-auto px-6 pb-8">
-                <p className="text-sm text-muted-foreground mb-5">{t.subtitle}</p>
+              <div className="flex-1 overflow-y-auto px-6 pb-5">
+                <p className="text-[13px] text-muted-foreground mb-3">{t.subtitle}</p>
 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {t.consumer.map((opt) => (
                     <OptionCard key={opt.href} opt={opt} />
                   ))}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-border/50">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+                <div className="mt-4 pt-4 border-t border-border/50">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">
                     {t.trainerHeading}
                   </p>
                   <OptionCard opt={t.trainer} />
