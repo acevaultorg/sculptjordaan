@@ -27,7 +27,8 @@ export function LocalBusinessJsonLd() {
         url: siteConfig.url,
         logo: {
           "@type": "ImageObject",
-          url: `${siteConfig.url}/images/logo.png`,
+          "@id": `${siteConfig.url}#logo`,
+          url: `${siteConfig.url}/images/icon-512.png`,
           width: 512,
           height: 512,
         },
@@ -398,7 +399,9 @@ export function BlogPostingJsonLd({
       url: siteConfig.url,
       logo: {
         "@type": "ImageObject",
-        url: `${siteConfig.url}/images/logo.png`,
+        url: `${siteConfig.url}/images/icon-512.png`,
+        width: 512,
+        height: 512,
       },
     },
     mainEntityOfPage: {
