@@ -169,7 +169,7 @@ export function Header() {
           {/* Category tiles */}
           <nav
             aria-label={locale === "nl" ? "Categorieën" : "Categories"}
-            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-0.5 sm:gap-2 min-w-0"
+            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1.5 sm:gap-2 min-w-0 overflow-x-auto no-scrollbar"
           >
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -199,8 +199,8 @@ export function Header() {
                     // 4 tiles look balanced + fill the space. sm:flex-none →
                     // natural content width at sm+ where the centered layout
                     // (justify-center) reads better on the wider row.
-                    "flex-auto sm:flex-none min-w-0 overflow-hidden flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
-                    "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-xs sm:text-sm",
+                    "flex-none flex flex-col items-center justify-center text-center rounded-xl font-semibold whitespace-nowrap leading-tight transition-all",
+                    "h-auto py-1.5 sm:py-2 px-2.5 sm:px-5 text-[13px] sm:text-sm",
                     isActive || item.highlight
                       // Active OR a persistently-highlighted tile (Rent Studio)
                       // = brand fill. Orange is allowed because the tile is
@@ -216,7 +216,7 @@ export function Header() {
                   )}
                 >
                   {/* short label on phones, full label at sm+ */}
-                  <span className="sm:hidden truncate max-w-full tracking-tighter">{item.shortLabel ?? item.label}</span>
+                  <span className="sm:hidden">{item.shortLabel ?? item.label}</span>
                   <span className="hidden sm:block">{item.label}</span>
                   {/* Caption (e.g. "for trainers" on Rent Studio) — the mobile
                       tile uses the shorter captionShort so the row still fits. */}
@@ -237,13 +237,14 @@ export function Header() {
 
           {/* Utility icons */}
           <div className="order-2 ml-auto lg:order-3 lg:ml-0 flex items-center gap-1 sm:gap-2 shrink-0">
-            {/* Language toggle — desktop only (sm+). Mobile: globe lives inside
-                the hamburger dropdown (frees horizontal room on phones). */}
+            {/* Language toggle — now visible on ALL breakpoints incl. mobile
+                (operator 2026-07-04: "add globe to change language"). The
+                hamburger dropdown still carries the labelled Switch-to-… row. */}
             <a
               href={altPath}
               aria-label={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
               title={locale === "nl" ? "Schakel naar Engels" : "Switch to Dutch"}
-              className={cn("hidden sm:flex", iconButtonClass(false))}
+              className={cn("flex", iconButtonClass(false))}
             >
               <Globe className="w-4 h-4" aria-hidden="true" />
               <span className="sr-only">{locale === "nl" ? "English" : "Nederlands"}</span>
