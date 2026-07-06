@@ -6,7 +6,11 @@ import { Globe, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getLocaleFromPath, getAlternatePath } from "@/lib/locale";
 
-const SEEN_KEY = "sc_lang_hint_seen";
+// v2 (2026-07-04): the offer used to sit behind the taller 2-row header on
+// mobile (top-[58px]) so it was invisible — and it marked "seen" on detection,
+// so returning visitors never got it. Bumping the key re-arms it once for
+// everyone now that it renders below the header.
+const SEEN_KEY = "sc_lang_hint_seen_v2";
 
 /**
  * Device-language hint — a polite, one-time offer (never a forced redirect).
@@ -97,7 +101,9 @@ export function LanguageHint() {
     <div
       aria-hidden={!visible}
       className={cn(
-        "fixed top-[58px] left-1/2 z-40 w-[calc(100%-1rem)] max-w-md -translate-x-1/2 px-2 sm:top-[72px] sm:w-auto",
+        // Sit just BELOW the header: ~103px 2-row header on mobile/tablet,
+        // ~61px 1-row header at lg+.
+        "fixed top-[112px] left-1/2 z-40 w-[calc(100%-1rem)] max-w-md -translate-x-1/2 px-2 lg:top-[72px] lg:w-auto",
         "transition-all duration-300 ease-out motion-reduce:transition-none",
         visible
           ? "translate-y-0 opacity-100"
