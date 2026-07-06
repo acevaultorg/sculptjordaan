@@ -173,6 +173,17 @@ export function LocalBusinessJsonLd() {
             },
             {
               "@type": "OfferCatalog",
+              name: "Small Group Training",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: { "@type": "Service", name: "Small Group Training Session" },
+                  description: "Train together in a small group of 2–4 people with a coach — strength & balance. First session free.",
+                },
+              ],
+            },
+            {
+              "@type": "OfferCatalog",
               name: "Open Gym",
               itemListElement: [
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Instapplan — 4 sessions/4 weeks" }, price: 29, priceCurrency: "EUR" },
