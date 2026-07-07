@@ -1,8 +1,10 @@
+// Static export (CF Pages 2026-07-07): prerender OG to a static PNG at build.
+export const dynamic = "force-static";
+
 import OgImage from "./opengraph-image";
 
 // Re-uses opengraph-image; runtime must match (edge — Satori can't load
 // WOFF2 fonts so we fall back to system sans-serif at edge).
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt =

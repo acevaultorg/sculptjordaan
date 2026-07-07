@@ -1,3 +1,7 @@
+// Static export (CF Pages migration 2026-07-07): metadata/route handlers
+// must be static under output:export.
+export const dynamic = "force-static";
+
 import type { MetadataRoute } from "next";
 
 // AI / LLM crawlers — explicit allowlist (bot-harvest, 2026).

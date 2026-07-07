@@ -1,3 +1,7 @@
+// Static export (CF Pages migration 2026-07-07): metadata/route handlers
+// must be static under output:export.
+export const dynamic = "force-static";
+
 import type { MetadataRoute } from "next";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";

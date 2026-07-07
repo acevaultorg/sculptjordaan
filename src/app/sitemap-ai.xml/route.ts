@@ -1,3 +1,7 @@
+// Static export (CF Pages migration 2026-07-07): metadata/route handlers
+// must be static under output:export.
+export const dynamic = "force-static";
+
 // AI-focused sitemap — surfaces highest-value pages for LLM crawlers
 // (GPTBot / ClaudeBot / PerplexityBot / Googlebot-Extended / Applebot / etc.)
 // Money pages + comparison guides + freshest blog posts. Pruned vs sitemap.xml.

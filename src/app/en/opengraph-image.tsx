@@ -1,3 +1,6 @@
+// Static export (CF Pages 2026-07-07): prerender OG to a static PNG at build.
+export const dynamic = "force-static";
+
 import { ImageResponse } from "next/og";
 
 // English OG image — applies to every /en/* route via Next.js opengraph-image
@@ -13,7 +16,6 @@ import { ImageResponse } from "next/og";
 // - With /en/opengraph-image.tsx, every /en/* route now serves an English OG.
 //   NL routes (/) still inherit the parent Dutch OG. Operator's trainer-
 //   recruitment shares on LinkedIn now land in the recipient's language.
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt =

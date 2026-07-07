@@ -10,8 +10,8 @@
 // Why not blur placeholder: see docs/PERF-EXPERIMENTS-2026-05-07.md.
 // (TL;DR: SVG feGaussianBlur regressed Lighthouse mobile LCP by 6-9s.)
 //
-// Generated: 2026-07-01T13:52:03.916Z
-// Total entries: 94
+// Generated: 2026-07-07T09:40:07.231Z
+// Total entries: 97
 // Skipped (unsupported format): 2
 
 export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
@@ -90,6 +90,7 @@ export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
   "/images/studio/training-squat-cinematic.jpg": "#2a1c10",
   "/images/studio/turf-lane-canal.jpg": "#5b5141",
   "/images/tiktok-avatar.png": "#db530c",
+  "/images/trainers/887e948c-8ccd-4785-b61e-7ae619d58ffa.JPG": "#4a5153",
   "/images/trainers/alex-wp.jpg": "#a69d98",
   "/images/trainers/alex.jpg": "#6e6e5f",
   "/images/trainers/andrea-wp.jpg": "#8b8075",
@@ -97,6 +98,8 @@ export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
   "/images/trainers/bryan.jpg": "#2f3a30",
   "/images/trainers/dara-wp.jpg": "#868279",
   "/images/trainers/dara.jpg": "#868279",
+  "/images/trainers/dddf025e-31e0-4e80-99f1-3025a0107ec9.JPG": "#646768",
+  "/images/trainers/e5c748f3-05ee-4133-b84a-1b54a497c304.JPG": "#3b3a36",
   "/images/trainers/eva-wp.jpg": "#c9bfbb",
   "/images/trainers/eva.jpg": "#c9bfbb",
   "/images/trainers/gezina.jpg": "#1f1810",

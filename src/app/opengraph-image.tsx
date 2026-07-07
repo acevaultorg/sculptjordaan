@@ -1,3 +1,6 @@
+// Static export (CF Pages 2026-07-07): prerender OG to a static PNG at build.
+export const dynamic = "force-static";
+
 import { ImageResponse } from "next/og";
 
 // Satori (next/og's underlying renderer) only supports TTF/OTF, not WOFF2.
@@ -9,7 +12,6 @@ import { ImageResponse } from "next/og";
 // is the right trade — getting brand fonts into OG images would require
 // converting woff2→ttf + checking-in a duplicate font asset, which doubles
 // the font cost for a small social-share polish gain.
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt =
