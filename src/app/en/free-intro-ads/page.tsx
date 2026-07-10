@@ -111,7 +111,7 @@ export default function FreeIntroAdsPage() {
             <p className="text-[10px] text-muted-foreground mt-0.5">no obligation</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-secondary border border-border/30">
-            <p className="text-xs font-semibold text-foreground">11 trainers</p>
+            <p className="text-xs font-semibold text-foreground">12 trainers</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">your match</p>
           </div>
         </div>

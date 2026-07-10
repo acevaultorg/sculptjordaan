@@ -144,7 +144,7 @@ export default function GratisIntakeAdsPage() {
             <p className="text-[10px] text-muted-foreground mt-0.5">vrijblijvend</p>
           </div>
           <div className="text-center p-3 rounded-xl bg-secondary border border-border/30">
-            <p className="text-xs font-semibold text-foreground">11 trainers</p>
+            <p className="text-xs font-semibold text-foreground">12 trainers</p>
             <p className="text-[10px] text-muted-foreground mt-0.5">jouw match</p>
           </div>
         </div>

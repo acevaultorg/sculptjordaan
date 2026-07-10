@@ -169,7 +169,7 @@ export default function EersteBezoekPage() {
         steps={[
           {
             name: "Kies je trainer",
-            text: "Bekijk alle 8 personal trainers op /nl/vind-jouw-personal-trainer. Filter op specialiteit (kracht, calisthenics, herstel, voeding) en taal (NL/EN/PT). Lees korte profielen, bekijk tarieven (vanaf €45/sessie) en kies de trainer die bij jouw doel past.",
+            text: "Bekijk alle 12 personal trainers op /nl/vind-jouw-personal-trainer. Filter op specialiteit (kracht, calisthenics, herstel, voeding) en taal (NL/EN/PT). Lees korte profielen, bekijk tarieven (vanaf €45/sessie) en kies de trainer die bij jouw doel past.",
             url: "/nl/vind-jouw-personal-trainer",
           },
           {
@@ -298,7 +298,7 @@ export default function EersteBezoekPage() {
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Vind jouw trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
-                <p className="text-center text-[11px] text-muted-foreground">8 trainers · filter op specialiteit + taal</p>
+                <p className="text-center text-[11px] text-muted-foreground">12 trainers · filter op specialiteit + taal</p>
               </CardFooter>
             </Card>
           </FadeIn>

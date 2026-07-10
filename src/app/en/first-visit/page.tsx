@@ -166,7 +166,7 @@ export default function FirstVisitPage() {
         steps={[
           {
             name: "Pick your trainer",
-            text: "Browse all 8 personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €45/session), and pick the trainer who fits your goal.",
+            text: "Browse all 12 personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €45/session), and pick the trainer who fits your goal.",
             url: "/en/find-personal-trainer",
           },
           {
@@ -283,7 +283,7 @@ export default function FirstVisitPage() {
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
-                <p className="text-center text-[11px] text-muted-foreground">8 trainers · filter by specialty + language</p>
+                <p className="text-center text-[11px] text-muted-foreground">12 trainers · filter by specialty + language</p>
               </CardFooter>
             </Card>
           </FadeIn>

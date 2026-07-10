@@ -150,7 +150,7 @@ const COPY_NL: QuizCopy = {
     // Direct active form fits Dutch operator-action register.
     whatsappLabel: "Of WhatsApp ons",
     reset: "↺ Doe de match opnieuw",
-    findOther: "Bekijk alle 11 trainers",
+    findOther: "Bekijk alle 12 trainers",
     specialty: "Specialisatie",
     languages: "Talen",
     rate: "Tarief",
@@ -202,7 +202,7 @@ const COPY_EN: QuizCopy = {
     waDirectLabel: (name) => `WhatsApp ${name} directly`,
     whatsappLabel: "Or WhatsApp us?",
     reset: "↺ Run the match again",
-    findOther: "See all 11 trainers",
+    findOther: "See all 12 trainers",
     specialty: "Specialty",
     languages: "Languages",
     rate: "Rate",
@@ -539,7 +539,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
         })}
       </div>
 
-      {/* 2026-05-27: "Bekijk alle 11 trainers" promoted from a tiny
+      {/* 2026-05-27: "Bekijk alle 12 trainers" promoted from a tiny
           text-xs muted link to a full outlined button next to WhatsApp.
           Operator: "maak die knop meer prominent." Reasoning: the match
           quiz surfaces 2 trainers, but the operator has 10 — a visitor

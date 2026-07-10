@@ -14,7 +14,7 @@ import { Star } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Match yourself with a personal trainer — SculptClub" },
   description:
-    "3 questions, 30 seconds. We show your top-2 trainer match from 11 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
+    "3 questions, 30 seconds. We show your top-2 trainer match from 12 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
   robots: { index: false, follow: true },
   alternates: {
     canonical: "/en/match-trainer",
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     url: "/en/match-trainer",
     title: "Match yourself with a personal trainer — SculptClub",
     description:
-      "3 questions, 30 seconds. We show your top-2 trainer match from 11 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
+      "3 questions, 30 seconds. We show your top-2 trainer match from 12 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Match yourself with a personal trainer — SculptClub",
     description:
-      "3 questions, 30 seconds. We show your top-2 trainer match from 11 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
+      "3 questions, 30 seconds. We show your top-2 trainer match from 12 trainers in Jordaan, Amsterdam. First intro free · no obligation.",
   },
 };
 
@@ -70,7 +70,7 @@ export default function MatchTrainerPage() {
               Match yourself with the right trainer
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground">
-              3 questions · 30 seconds · we show your top-2 match from 11 trainers.
+              3 questions · 30 seconds · we show your top-2 match from 12 trainers.
             </p>
           </div>
 
