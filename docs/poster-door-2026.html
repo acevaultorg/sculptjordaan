@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>SculptClub — Deur/etalage poster (A4)</title>
+<style>
+  /* ── Print-ready A4 "what we are" door poster. Chrome → Cmd/Ctrl+P → A4, margins None, Background graphics ON. ── */
+  :root{
+    --ink:#1c1a17; --paper:#faf7f2; --muted:#6b6459; --line:#e4ddd1;
+    --accent:#b8842b; --accent-soft:#f3ead9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#555}
+  @page{ size:A4 portrait; margin:0; }
+  .sheet{
+    width:210mm; height:297mm; margin:12px auto; background:var(--paper); color:var(--ink);
+    font-family:"Helvetica Neue",Arial,system-ui,sans-serif;
+    display:flex; flex-direction:column; padding:18mm 16mm 14mm; position:relative; overflow:hidden;
+    box-shadow:0 6px 30px rgba(0,0,0,.35);
+  }
+  .sheet::before{ content:""; position:absolute; inset:7mm; border:1.5px solid var(--line); pointer-events:none; }
+  .top{ display:flex; justify-content:space-between; align-items:baseline; letter-spacing:.26em;
+        font-size:10.5pt; text-transform:uppercase; color:var(--muted); z-index:1; }
+  .brand{ font-weight:700; color:var(--ink); }
+  .stars{ color:var(--accent); letter-spacing:.04em; }
+
+  .hero{ margin-top:15mm; text-align:center; z-index:1; }
+  .hero h1{ font-size:30pt; font-weight:300; line-height:1.08; }
+  .hero h1 b{ font-weight:700; }
+  .hero .loc{ margin-top:3mm; font-size:13pt; color:var(--muted); letter-spacing:.02em; }
+  .hero .rule{ width:26mm; height:2px; background:var(--accent); margin:6mm auto 0; }
+
+  .offers{ margin-top:9mm; z-index:1; display:flex; flex-direction:column; gap:4.5mm; }
+  .offer{ display:flex; align-items:baseline; gap:5mm; }
+  .offer .k{ flex:0 0 46mm; font-size:14pt; font-weight:700; }
+  .offer .v{ font-size:11.5pt; color:var(--muted); line-height:1.35; }
+  .offer .v b{ color:var(--ink); font-weight:600; }
+  .offer + .offer{ border-top:1px solid var(--line); padding-top:4.5mm; }
+
+  .cta{ margin-top:auto; z-index:1; background:var(--accent-soft); border:1.5px solid var(--accent);
+        border-radius:2.5mm; padding:6mm 7mm; display:flex; justify-content:space-between; align-items:center; gap:6mm; }
+  .cta-text .kicker{ text-transform:uppercase; letter-spacing:.18em; font-size:10pt; color:var(--accent); font-weight:700; }
+  .cta-text .big{ font-size:20pt; font-weight:800; margin-top:1mm; }
+  .cta-text .url{ font-size:12pt; color:var(--muted); margin-top:1mm; }
+  .qr{ text-align:center; }
+  .qr img{ width:30mm; height:30mm; display:block; background:#fff; border:1px solid var(--line); padding:1.5mm; }
+  .qr span{ display:block; font-size:9pt; color:var(--muted); margin-top:1.2mm; letter-spacing:.03em; }
+
+  .foot{ text-align:center; font-size:9.5pt; color:var(--muted); letter-spacing:.04em; margin-top:6mm; z-index:1; }
+
+  @media print{ html,body{background:#fff} .sheet{margin:0;box-shadow:none} .no-print{display:none!important} }
+  .no-print{ max-width:210mm; margin:14px auto; font:13px/1.5 system-ui,sans-serif; color:#eee; text-align:center; }
+  .no-print b{color:#fff}
+</style>
+</head>
+<body>
+<p class="no-print">📄 <b>Print:</b> Cmd/Ctrl+P → <b>A4</b>, marges <b>Geen/None</b>, "Achtergrondafbeeldingen/Background graphics" AAN → op de deur/etalage. QR linkt naar WhatsApp (verschijnt online).</p>
+
+<div class="sheet">
+  <div class="top">
+    <span class="brand">SculptClub · Egelantiersgracht</span>
+    <span class="stars">★★★★★ 5.0 op Google</span>
+  </div>
+
+  <div class="hero">
+    <h1>Personal training &amp; <b>open gym</b><br>in de Jordaan</h1>
+    <div class="loc">Rustige privé studio · dagelijks 06:30 – 22:00</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="offers">
+    <div class="offer">
+      <div class="k">Personal training</div>
+      <div class="v">1-op-1 met je eigen coach. <b>Vanaf €45</b> · start met een <b>gratis kennismaking</b>.</div>
+    </div>
+    <div class="offer">
+      <div class="k">Open gym</div>
+      <div class="v">Zelfstandig trainen, wanneer jij wilt. <b>Vanaf €29 / 4 weken</b> · geen contract.</div>
+    </div>
+    <div class="offer">
+      <div class="k">Small group</div>
+      <div class="v">Samen in een kleine groep van <b>2–4</b>, met persoonlijke begeleiding.</div>
+    </div>
+    <div class="offer">
+      <div class="k">Studio huren</div>
+      <div class="v">Voor zelfstandige trainers: huur de privé studio per uur. <b>€12/uur</b> · eigen klanten &amp; tarief.</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-text">
+      <div class="kicker">Gratis kennismaking</div>
+      <div class="big">App ons · 06 15 14 79 52</div>
+      <div class="url">sculptclub.nl</div>
+    </div>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https://wa.me/31615147952?text=Hoi!%20Ik%20liep%20langs%20de%20studio%20-%20ik%20wil%20graag%20meer%20weten"
+           alt="Scan voor WhatsApp" onerror="this.parentNode.style.display='none'">
+      <span>Scan → WhatsApp</span>
+    </div>
+  </div>
+
+  <div class="foot">SculptClub · Egelantiersgracht 424, 1015 RR Amsterdam · gratis annuleren, geen contract</div>
+</div>
+</body>
+</html>
