@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>SculptClub — Open Gym Zomeraanbieding (A4 poster)</title>
+<style>
+  /* ── Print-ready A4 poster. Open in Chrome → Cmd/Ctrl+P → Save as PDF or print A4 (no margins). ── */
+  :root{
+    --ink:#1c1a17;        /* near-black warm */
+    --paper:#faf7f2;      /* warm off-white */
+    --muted:#6b6459;
+    --line:#e4ddd1;
+    --accent:#b8842b;     /* muted brass — quiet/premium, not loud */
+    --accent-soft:#f3ead9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#555}
+  @page{ size:A4 portrait; margin:0; }
+  .sheet{
+    width:210mm; height:297mm; margin:12px auto; background:var(--paper); color:var(--ink);
+    font-family:"Helvetica Neue",Arial,system-ui,sans-serif;
+    display:flex; flex-direction:column; padding:20mm 18mm 16mm; position:relative; overflow:hidden;
+    box-shadow:0 6px 30px rgba(0,0,0,.35);
+  }
+  .sheet::before{ /* thin frame */
+    content:""; position:absolute; inset:8mm; border:1.5px solid var(--line); pointer-events:none;
+  }
+  .top{ display:flex; justify-content:space-between; align-items:baseline; letter-spacing:.28em;
+        font-size:11pt; text-transform:uppercase; color:var(--muted); z-index:1; }
+  .brand{ font-weight:700; color:var(--ink); }
+  .stars{ color:var(--accent); letter-spacing:.05em; }
+
+  .eyebrow{ margin-top:26mm; text-align:center; letter-spacing:.34em; text-transform:uppercase;
+            font-size:13pt; color:var(--accent); font-weight:700; z-index:1; }
+  .headline{ text-align:center; margin-top:6mm; font-size:34pt; line-height:1.05; font-weight:300; z-index:1; }
+  .price{ text-align:center; margin-top:2mm; z-index:1; }
+  .price .amt{ font-size:96pt; font-weight:800; letter-spacing:-.02em; line-height:1; }
+  .price .per{ font-size:20pt; color:var(--muted); font-weight:400; }
+  .sub{ text-align:center; font-size:15pt; color:var(--muted); margin-top:1mm; z-index:1; }
+
+  .deadline{ margin:9mm auto 0; z-index:1; background:var(--accent); color:#fff; font-weight:700;
+             letter-spacing:.06em; text-transform:uppercase; font-size:14pt; padding:4.5mm 10mm;
+             border-radius:2mm; }
+
+  .details{ margin:9mm auto 0; z-index:1; width:100%; max-width:150mm;
+            display:grid; grid-template-columns:1fr 1fr; gap:3mm 10mm; font-size:12.5pt; }
+  .details div{ display:flex; align-items:center; gap:3mm; color:var(--ink); }
+  .details .dot{ width:6px;height:6px;border-radius:50%;background:var(--accent);flex:0 0 auto; }
+  .details .full{ grid-column:1 / -1; }
+
+  .cta{ margin-top:auto; z-index:1; display:flex; justify-content:space-between; align-items:center;
+        gap:8mm; border-top:1.5px solid var(--line); padding-top:7mm; }
+  .cta-text{ }
+  .cta-text .kicker{ text-transform:uppercase; letter-spacing:.2em; font-size:10.5pt; color:var(--muted); }
+  .cta-text .phone{ font-size:24pt; font-weight:800; margin-top:1mm; }
+  .cta-text .url{ font-size:13pt; color:var(--accent); font-weight:600; margin-top:1mm; }
+  .qr{ text-align:center; }
+  .qr img{ width:34mm; height:34mm; display:block; border:1px solid var(--line); background:#fff; padding:2mm; }
+  .qr span{ display:block; font-size:9.5pt; color:var(--muted); margin-top:1.5mm; letter-spacing:.04em; }
+
+  .foot{ text-align:center; font-size:10pt; color:var(--muted); letter-spacing:.05em; margin-top:6mm; z-index:1; }
+
+  @media print{
+    html,body{background:#fff}
+    .sheet{ margin:0; box-shadow:none; width:210mm; height:297mm; }
+    .no-print{ display:none !important; }
+  }
+  .no-print{ max-width:210mm; margin:14px auto; font:13px/1.5 system-ui,sans-serif; color:#eee; text-align:center; }
+  .no-print b{color:#fff}
+</style>
+</head>
+<body>
+<p class="no-print">📄 <b>Print:</b> Cmd/Ctrl+P → bestemming <b>A4</b>, marges <b>Geen/None</b>, "Achtergrondafbeeldingen" AAN → Opslaan als PDF of printen &amp; ophangen. De QR verschijnt online (linkt naar WhatsApp).</p>
+
+<div class="sheet">
+  <div class="top">
+    <span class="brand">SculptClub · Jordaan</span>
+    <span class="stars">★★★★★ 5.0 op Google</span>
+  </div>
+
+  <div class="eyebrow">Open Gym · Zomeraanbieding</div>
+  <div class="headline">Onbeperkt trainen</div>
+  <div class="price"><span class="amt">€49</span><span class="per"> / maand</span></div>
+  <div class="sub">Rustige privé studio in de Jordaan — train wanneer jij wilt.</div>
+
+  <div class="deadline">Word lid vóór 1 augustus</div>
+
+  <div class="details">
+    <div><span class="dot"></span> Onbeperkt open gym, hele maand</div>
+    <div><span class="dot"></span> Dagelijks 06:30 – 22:00</div>
+    <div><span class="dot"></span> Privé studio, max 4 per slot</div>
+    <div><span class="dot"></span> Egelantiersgracht, Jordaan</div>
+    <div class="full"><span class="dot"></span> Geen contract · altijd gratis opzegbaar · toegangscode per WhatsApp</div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-text">
+      <div class="kicker">Word vandaag lid</div>
+      <div class="phone">App ons · 06 15 14 79 52</div>
+      <div class="url">sculptclub.nl/open-gym</div>
+    </div>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https://wa.me/31615147952?text=Ik%20wil%20lid%20worden%20van%20Open%20Gym%20(zomeraanbieding)"
+           alt="Scan voor WhatsApp" onerror="this.parentNode.style.display='none'">
+      <span>Scan → WhatsApp</span>
+    </div>
+  </div>
+
+  <div class="foot">SculptClub · Egelantiersgracht 424, 1015 RR Amsterdam · Boutique personal training &amp; open gym</div>
+</div>
+</body>
+</html>
