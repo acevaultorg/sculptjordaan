@@ -122,7 +122,7 @@ export default function BlogPostGymHurenPerUur() {
                       ["Ruimte bij sportschool incl. commissie", "€0 + 20–30% commissie"],
                       ["Huurstudio generiek Amsterdam centrum", "€25 – €60/uur"],
                       ["SculptClub — halve studio (1:1)", "vanaf €12/60 min"],
-                      ["SculptClub — hele studio (max 6 pers)", "vanaf €17/60 min"],
+                      ["SculptClub — hele studio (kleine groep)", "vanaf €17/60 min"],
                     ].map(([type, price]) => (
                       <tr key={type} className="border-b last:border-0">
                         <td className="px-4 py-3">{type}</td>

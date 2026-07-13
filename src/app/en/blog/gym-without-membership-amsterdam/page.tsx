@@ -126,7 +126,7 @@ export default function GymWithoutMembershipEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Option 3: Pay-per-session apps</h2>
               <p>
-                Apps like OneFit and ClassPass offer access to multiple gyms and studios in Amsterdam through a
+                Apps like OneFit offer access to multiple gyms and studios in Amsterdam through a
                 flexible credits system. You pay per session or class and get access to a wide variety. This is
                 great if you enjoy variety. But keep in mind: popular classes fill up quickly and costs can add
                 up if you train frequently.

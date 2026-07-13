@@ -117,7 +117,7 @@ const galleryImages = [
 const faqs = [
   {
     q: "Wat kost het om de studio te huren?",
-    a: "Halve studio (1:1) vanaf \u20ac12 per 60 minuten. Hele studio (max 6 personen) vanaf \u20ac17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
+    a: "Halve studio (1:1) vanaf \u20ac12 per 60 minuten. Hele studio (kleine groep) vanaf \u20ac17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
   },
   {
     q: "Welke kortingspakketten zijn er?",
@@ -278,7 +278,7 @@ export default function StudioRentalPageNL() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessies van 60 min — halve studio (2 pers.) €12 · hele studio (6 pers.) €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal.
+                Sessies van 60 min — halve studio (2 pers.) €12 · hele studio €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
@@ -293,8 +293,8 @@ export default function StudioRentalPageNL() {
               <p className="mb-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
                 <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
-                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé (max 6 personen).
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
+                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
               </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">
@@ -322,7 +322,7 @@ export default function StudioRentalPageNL() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Hele studio (voor 6 personen)</td>
+                      <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>

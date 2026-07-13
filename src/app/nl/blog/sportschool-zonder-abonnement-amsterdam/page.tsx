@@ -129,7 +129,7 @@ export default function SportschoolZonderAbonnementNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Optie 3: Pay-per-session apps</h2>
               <p>
-                Apps zoals OneFit en ClassPass bieden toegang tot meerdere sportscholen en studio’s in Amsterdam
+                Apps zoals OneFit bieden toegang tot meerdere sportscholen en studio’s in Amsterdam
                 via een flexibel credits-systeem. Je betaalt per sessie of les en hebt toegang tot een breed aanbod.
                 Dit is ideaal als je van afwisseling houdt. Maar let op: populaire lessen zijn snel vol en de kosten
                 kunnen oplopen als je vaak traint.

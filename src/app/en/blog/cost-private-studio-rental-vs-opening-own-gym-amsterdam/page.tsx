@@ -119,7 +119,7 @@ export default function BlogPostCostStudioVsOwnGym() {
                   <tbody>
                     {[
                       ["Half studio (1-on-1)", "€12", "€17"],
-                      ["Full studio (max 6 people)", "€17", "€24"],
+                      ["Full studio (small group)", "€17", "€24"],
                     ].map(([type, p60, p90]) => (
                       <tr key={type} className="border-b last:border-0">
                         <td className="px-4 py-3">{type}</td>

@@ -116,7 +116,7 @@ const pillars = [
 const trainerFaqs = [
   {
     q: "Wat kost het écht om de studio te huren?",
-    a: "Halve studio (1:1 sessies) vanaf €12 per 60 min, €17 per 90 min. Hele studio (max 6 personen) €17/60 min, €24/90 min. Kortingspakketten besparen 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. Alle apparatuur, wifi, muziek en schoonmaak zijn inbegrepen. Geen verplicht abonnement of bemiddelingskosten.",
+    a: "Halve studio (1:1 sessies) vanaf €12 per 60 min, €17 per 90 min. Hele studio (kleine groep) €17/60 min, €24/90 min. Kortingspakketten besparen 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. Alle apparatuur, wifi, muziek en schoonmaak zijn inbegrepen. Geen verplicht abonnement of bemiddelingskosten.",
   },
   {
     q: "Is er ook een vast membership?",

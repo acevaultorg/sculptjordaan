@@ -103,7 +103,7 @@ const uniqueFeatures = [
     icon: UserCheck,
     title: "Tailored capacity",
     description:
-      "During Open Gym we limit the space to four people. With a full studio rental the space fits up to six people plus your trainer.",
+      "During Open Gym we limit the space to four people. With a full studio rental you have the whole space privately — no fixed maximum, you train with your own small group.",
   },
   // M (2026-06-02) — EN parallel: the 2 positioning principles (Transparent +
   // Trainer-first) the facility grid lacked.

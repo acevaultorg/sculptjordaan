@@ -23,7 +23,7 @@ growth unless it goes out.
   no contract, you keep 100% of your revenue.
 - **Facts to reuse** (verified): Egelantiersgracht, Jordaan Amsterdam · private studio · daily 06:30–22:00
   · 5.0 on Google · Open Gym from ~€7/session (4-week plan) · Personal Training from €45/session ·
-  Studio rental €12/uur (half studio, 1-on-1) or €17/uur (full studio, up to 6) · free intro · cancel
+  Studio rental €12/uur (half studio, 1-on-1) or €17/uur (full studio, small group) · free intro · cancel
   always free, no time limit · WhatsApp +31 6 15 14 79 52 (wa.me/31615147952) · door code by WhatsApp
   the night before. 89% of traffic is mobile → shoot vertical 9:16.
 - **Publishing is yours** (posting under your identity = operator-only). I prep to the last inch; you post.
@@ -72,7 +72,7 @@ if a week is busy, post those first.
 
 ### 4 · trainer-spotlight · Carousel — "Renting here: 6 honest questions answered"
 - **Hook:** "Everything a trainer asks before renting — answered straight."
-- **Message:** FAQ carousel: How much? €12/uur half studio, €17/uur full (up to 6). Contract? No. Minimum hours? No. My own clients + rate? Yes, you keep 100%. Access? Door code by WhatsApp, daily 06:30–22:00. Equipment? Full private studio. Try first? Free 60-min trial, no credit card.
+- **Message:** FAQ carousel: How much? €12/uur half studio, €17/uur full (small group). Contract? No. Minimum hours? No. My own clients + rate? Yes, you keep 100%. Access? Door code by WhatsApp, daily 06:30–22:00. Equipment? Full private studio. Try first? Free 60-min trial, no credit card.
 - **Visual:** 7-slide Q→A carousel, clean type on studio photos.
 - **CTA:** /nl/studio-huren · WhatsApp. **Hashtags:** #studiohuren #zzppersonaltrainer #amsterdam #jordaan
 

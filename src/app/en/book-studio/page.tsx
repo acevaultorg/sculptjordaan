@@ -265,8 +265,8 @@ export default function BookStudioPageEN() {
               <p className="mb-4 text-center text-sm text-muted-foreground">
                 Book per session. No subscription, no contract,{" "}
                 <strong className="text-foreground">free cancellation anytime</strong>.{" "}
-                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private (max 6 people).
+                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
+                <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
               </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">
@@ -294,7 +294,7 @@ export default function BookStudioPageEN() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
+                      <td className="px-4 py-3 font-medium">Full studio (small group)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>

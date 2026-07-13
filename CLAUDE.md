@@ -11,6 +11,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Founded:** 2025
 - **Rating:** 5.0 stars on Google
 - **Open Gym capacity:** max **4 people** in the studio at a time (operator 2026-06-23, raised from 3). Use "max 4 personen / max 4 people" everywhere — never "3".
+- **Studio rental capacity (operator 2026-07-13):** Half studio = **max 2** (1:1 / a duo); the *other* half can be used at the same time by another trainer OR by Open Gym — so up to 4 people share the room (two couples of 2, or one couple + 2 Open Gym, or 4 Open Gym). Full studio = **fully private, NO fixed maximum** (your own small group). **NEVER say the full studio holds "6"** — that figure was wrong and was corrected fleet-wide on 2026-07-13. Full-studio labels use "kleine groep / small group", never a hard number.
 
 ## Pricing (ALWAYS use these exact numbers)
 - **Personal Training:** from €45/session (trainers set own rates, 0% commission, first intake free)

@@ -122,7 +122,7 @@ export default function BlogPostGymRentalPerHour() {
                       ["Gym space with revenue share", "€0 + 20–30% commission"],
                       ["Generic rental studio Amsterdam centre", "€25 – €60/hour"],
                       ["SculptClub — half studio (1:1)", "from €12/60 min"],
-                      ["SculptClub — full studio (max 6 people)", "from €17/60 min"],
+                      ["SculptClub — full studio (small group)", "from €17/60 min"],
                     ].map(([type, price]) => (
                       <tr key={type} className="border-b last:border-0">
                         <td className="px-4 py-3">{type}</td>

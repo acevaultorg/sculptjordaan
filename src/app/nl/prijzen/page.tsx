@@ -342,7 +342,7 @@ export default function PricingPageNL() {
                     <td className="px-4 py-3 text-center font-semibold">€17</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
+                    <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
                     <td className="px-4 py-3 text-center font-semibold">€17</td>
                     <td className="px-4 py-3 text-center font-semibold">€24</td>
                   </tr>
@@ -453,7 +453,7 @@ export default function PricingPageNL() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-            Een strippenkaart is studiotegoed — de doorgestreepte prijs is je tegoed. Sessies van 60 min: halve studio (max 2) €12 · hele studio (max 6) €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal. 1 jaar geldig.
+            Een strippenkaart is studiotegoed — de doorgestreepte prijs is je tegoed. Sessies van 60 min: halve studio (max 2) €12 · hele studio €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal. 1 jaar geldig.
           </p>
         </FadeIn>
 

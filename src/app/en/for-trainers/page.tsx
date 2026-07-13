@@ -117,7 +117,7 @@ const pillars = [
 const trainerFaqs = [
   {
     q: "What does it actually cost to rent the studio?",
-    a: "Half studio (1:1 sessions) from €12 per 60 min, €17 per 90 min. Full studio (max 6 people) €17/60 min, €24/90 min. Discount packages save 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. All equipment, wifi, music and cleaning included. No mandatory subscription or brokerage fees.",
+    a: "Half studio (1:1 sessions) from €12 per 60 min, €17 per 90 min. Full studio (small group) €17/60 min, €24/90 min. Discount packages save 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. All equipment, wifi, music and cleaning included. No mandatory subscription or brokerage fees.",
   },
   {
     q: "Is there a fixed membership too?",

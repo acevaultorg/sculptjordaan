@@ -265,8 +265,8 @@ export default function BoekStudioPageNL() {
               <p className="mb-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
                 <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
-                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé (max 6 personen).
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
+                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
               </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">
@@ -294,7 +294,7 @@ export default function BoekStudioPageNL() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Hele studio (max 6)</td>
+                      <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>

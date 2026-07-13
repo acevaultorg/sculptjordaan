@@ -115,7 +115,7 @@ const HERO_IMAGES = [
 const faqs = [
   {
     q: "How much does it cost to rent the studio?",
-    a: "Half studio (1:1) from \u20ac12 per 60 minutes. Full studio (max 6 people) from \u20ac17 per 60 minutes. Save 10-23% with a discount package.",
+    a: "Half studio (1:1) from \u20ac12 per 60 minutes. Full studio (small group) from \u20ac17 per 60 minutes. Save 10-23% with a discount package.",
   },
   {
     q: "What discount packages are available?",
@@ -306,7 +306,7 @@ export default function StudioRentalPageEN() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessions of 60 min — half studio (2 people) €12 · full studio (6 people) €17. 90 min or a mix is fine; your credit sets the count.
+                Sessions of 60 min — half studio (2 people) €12 · full studio €17. 90 min or a mix is fine; your credit sets the count.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Lowest rate: <span className="text-discount font-medium">€9.24/session</span> · Prefer bank transfer?{" "}
@@ -321,8 +321,8 @@ export default function StudioRentalPageEN() {
               <p className="mb-4 text-center text-sm text-muted-foreground">
                 Book per session. No subscription, no contract,{" "}
                 <strong className="text-foreground">free cancellation anytime</strong>.{" "}
-                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private (max 6 people).
+                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
+                <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
               </p>
               <div className="overflow-hidden rounded-xl border bg-card">
                 <table className="w-full text-sm">
@@ -350,7 +350,7 @@ export default function StudioRentalPageEN() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Full studio (for 6 people)</td>
+                      <td className="px-4 py-3 font-medium">Full studio (small group)</td>
                       <td className="px-4 py-3 text-center">
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>

@@ -342,7 +342,7 @@ export default function PricingPageEN() {
                     <td className="px-4 py-3 text-center font-semibold">€17</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium">Full studio (max 6)</td>
+                    <td className="px-4 py-3 font-medium">Full studio (small group)</td>
                     <td className="px-4 py-3 text-center font-semibold">€17</td>
                     <td className="px-4 py-3 text-center font-semibold">€24</td>
                   </tr>
@@ -453,7 +453,7 @@ export default function PricingPageEN() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-            A credit package is studio credit — the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio (max 6) €17. 90 min or a mix is fine; your credit sets the count. Valid 1 year.
+            A credit package is studio credit — the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio €17. 90 min or a mix is fine; your credit sets the count. Valid 1 year.
           </p>
         </FadeIn>
 
