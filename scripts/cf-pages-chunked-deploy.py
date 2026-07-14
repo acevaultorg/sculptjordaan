@@ -26,7 +26,7 @@ import base64, hashlib, json, mimetypes, os, pathlib, sys, time, uuid, urllib.re
 
 ACCOUNT = "72bfd26c5f3c935393a25e5c0dea6039"
 PROJECT = "sculptclub"
-BRANCH = "main"
+BRANCH = os.environ.get("CF_BRANCH", "main")
 OUT_DIR = pathlib.Path(os.environ.get("OUT_DIR",
     str(pathlib.Path(__file__).resolve().parent.parent / "out"))).resolve()
 
@@ -140,11 +140,23 @@ def upload(jwt, batch, attempts=40):
             time.sleep(s)
     raise RuntimeError(f"batch failed after {attempts}: {last}")
 
-def create_deployment(manifest):
+def create_deployment(manifest, worker_js=None, routes_json=None):
+    # worker_js / routes_json (bytes): Advanced-Mode Pages Functions. CF's deployment-
+    # creation API expects `_worker.js` (+ optional `_routes.json`) as dedicated multipart
+    # FILE fields — this is how wrangler ships Functions on direct upload. Placing
+    # _worker.js in the static-asset manifest does NOTHING (verified 2026-07-14 on
+    # sculptclub: worker-as-asset → /api/* returned 404/405; worker-as-form-field → live).
     b = f"----cf{uuid.uuid4().hex}"; parts = []
     def fld(n, v):
         parts.append(f"--{b}\r\nContent-Disposition: form-data; name=\"{n}\"\r\n\r\n{v}\r\n".encode())
+    def file_fld(n, fn, ctype, content):
+        parts.append((f"--{b}\r\nContent-Disposition: form-data; name=\"{n}\"; filename=\"{fn}\"\r\n"
+                      f"Content-Type: {ctype}\r\n\r\n").encode() + content + b"\r\n")
     fld("manifest", json.dumps(manifest)); fld("branch", BRANCH)
+    if worker_js is not None:
+        file_fld("_worker.js", "_worker.js", "application/javascript+module", worker_js)
+    if routes_json is not None:
+        file_fld("_routes.json", "_routes.json", "application/json", routes_json)
     parts.append(f"--{b}--\r\n".encode())
     return http(f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/pages/projects/{PROJECT}/deployments",
                 method="POST", data=b"".join(parts),
@@ -157,7 +169,17 @@ def mime(p):
 def main():
     t0 = time.time()
     print(f"[+] chunked deploy · project={PROJECT} · out={OUT_DIR}")
-    entries = walk(OUT_DIR); print(f"[+] {len(entries)} files")
+    entries = walk(OUT_DIR)
+    # Advanced-Mode Functions: _worker.js/_routes.json ship as deployment form fields,
+    # NEVER as static assets (CF ignores them there). Pop them out of the entry list.
+    worker_js = routes_json = None
+    kept = []
+    for rel, c, sha in entries:
+        if rel == "/_worker.js": worker_js = c
+        elif rel == "/_routes.json": routes_json = c
+        else: kept.append((rel, c, sha))
+    entries = kept
+    print(f"[+] {len(entries)} files" + (" · +_worker.js" if worker_js else "") + (" · +_routes.json" if routes_json else ""))
     # Fail-fast BEFORE the (expensive, ~14min) upload: create_deployment rejects a
     # manifest >20,000 files (HTTP 400), so uploading first just wastes the upload.
     # The RSC soft-nav .txt prune (scripts/deploy-cf-chunked.sh) gets us under the cap.
@@ -172,8 +194,15 @@ def main():
     for rel, c, sha in entries: idx.setdefault(sha, (c, rel))
     uniq = list(idx.keys())
     jwt = get_jwt(); jwt_at = time.time()
-    miss = check_missing(jwt, uniq)
-    print(f"[+] {len(miss)} need upload ({len(uniq)-len(miss)} cached)")
+    # CF_SKIP_UPLOAD=1: jump straight to create_deployment. Use ONLY right after a
+    # completed upload run (assets still in the upload bucket) — e.g. to re-create the
+    # deployment with _worker.js attached without re-uploading ~150MB for 66 min.
+    if os.environ.get("CF_SKIP_UPLOAD") == "1":
+        print("[+] CF_SKIP_UPLOAD=1 — skipping upload, creating deployment from existing assets")
+        miss = []
+    else:
+        miss = check_missing(jwt, uniq)
+        print(f"[+] {len(miss)} need upload ({len(uniq)-len(miss)} cached)")
     if miss:
         miss.sort(key=lambda h: len(idx[h][0]))
         batch, nb, up, by = [], 0, 0, 0
@@ -190,7 +219,7 @@ def main():
             upload(jwt, batch); nb += 1; up += len(batch)
         print(f"[+] uploaded {up} files in {nb} batches · {int(time.time()-t0)}s")
     print("[+] creating deployment…")
-    r = create_deployment(manifest)
+    r = create_deployment(manifest, worker_js=worker_js, routes_json=routes_json)
     if not r.get("success"):
         print(f"ERROR: create-deployment failed: {r}", file=sys.stderr); sys.exit(1)
     res = r["result"]
