@@ -283,21 +283,6 @@ export default function OpenGymPageEN() {
         />
       </Section>
 
-      {/* Social proof */}
-      <Section bg="muted">
-        <FadeIn>
-          <div className="flex flex-col items-center gap-2 text-center">
-            <p className="text-lg font-semibold text-primary">
-              Most members start with 2x per week
-            </p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Info className="h-4 w-4" />
-              <span>60-minute sessions. For 1 person.</span>
-            </div>
-          </div>
-        </FadeIn>
-      </Section>
-
       {/* Pricing */}
       <Section>
         <SectionHeader
@@ -305,6 +290,16 @@ export default function OpenGymPageEN() {
           title="Choose Your Plan"
           description="All plans run per 4 weeks. No long-term contract."
         />
+
+        <div className="-mt-4 mb-10 flex flex-col items-center gap-1.5 text-center sm:-mt-6">
+          <p className="text-base font-semibold text-primary">
+            Most members start with 2x per week
+          </p>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Info className="h-4 w-4" />
+            <span>60-minute sessions. For 1 person.</span>
+          </div>
+        </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan, i) => (

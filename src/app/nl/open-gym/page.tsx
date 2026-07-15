@@ -286,21 +286,6 @@ export default function OpenGymPageNL() {
         />
       </Section>
 
-      {/* Social proof */}
-      <Section bg="muted">
-        <FadeIn>
-          <div className="flex flex-col items-center gap-2 text-center">
-            <p className="text-lg font-semibold text-primary">
-              De meeste leden starten met 2x per week
-            </p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Info className="h-4 w-4" />
-              <span>Sessies van 60 minuten. Voor 1 persoon.</span>
-            </div>
-          </div>
-        </FadeIn>
-      </Section>
-
       {/* Pricing */}
       <Section>
         <SectionHeader
@@ -308,6 +293,16 @@ export default function OpenGymPageNL() {
           title="Kies jouw plan"
           description="Losse sessie of lidmaatschap per 4 weken. Altijd opzegbaar."
         />
+
+        <div className="-mt-4 mb-10 flex flex-col items-center gap-1.5 text-center sm:-mt-6">
+          <p className="text-base font-semibold text-primary">
+            De meeste leden starten met 2x per week
+          </p>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Info className="h-4 w-4" />
+            <span>Sessies van 60 minuten. Voor 1 persoon.</span>
+          </div>
+        </div>
 
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {plans.map((plan, i) => (
