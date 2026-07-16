@@ -93,17 +93,17 @@ export const acuityPaidSessions = {
 //   endDate       → a REAL operator-set date for the honest urgency line
 //                   (null → no date shown, never faked).
 //   dealUrl       → the €49 Zomerdeal product's add-to-cart link.
-// OPERATOR ACUITY SETUP: (1) set the regular Onbeperkt product (id 2155890)
-// to €69; (2) create a new €49 "Zomerdeal Onbeperkt" product + paste its
-// add-to-cart link into dealUrl below. Until then dealUrl falls back to the
-// regular product so nothing 404s.
+// ACUITY SETUP DONE 2026-07-16 (brain-driven via Chrome MCP, operator-authorized):
+// regular "Open gym - Onbeperkt" (id 2155890) set to €69 (it had ZERO subscribers,
+// so nobody's price changed); new private product "Open gym - Onbeperkt Zomerdeal"
+// (id 2247082) created at €49 every 4 weeks, forever-until-canceled, unlimited
+// Open Gym Sessie redemption — Acuity bills €49 forever = the price-lock promise.
 export const openGymSummerDeal = {
   active: true,
   priceRegular: 69,
   priceDeal: 49,
   endDate: null as string | null,
-  // TODO(operator): replace with the €49 Zomerdeal product add-to-cart link.
-  dealUrl: acuityPaidSessions.openGymPlans.onbeperkt,
+  dealUrl: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2247082`,
 } as const;
 
 // ─── PAID packages (catalog.php) ────────────────────────────────────
