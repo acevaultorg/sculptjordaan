@@ -169,7 +169,7 @@ export function Header() {
           {/* Category tiles */}
           <nav
             aria-label={locale === "nl" ? "Categorieën" : "Categories"}
-            className="order-3 w-full lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1.5 sm:gap-2 min-w-0 overflow-x-auto no-scrollbar"
+            className="order-3 w-[calc(100%+0.5rem)] -mx-1 lg:mx-0 lg:order-2 lg:w-auto lg:flex-1 flex items-stretch justify-center gap-1.5 sm:gap-2 min-w-0 overflow-x-auto no-scrollbar"
           >
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -203,8 +203,15 @@ export function Header() {
                     // down on phones (text-[11px]) so all 4 fit at 375px without
                     // wrapping or abbreviating (operator 2026-07-04). Tiles are
                     // content-width + centered.
-                    "flex-none flex flex-col items-center justify-center text-center rounded-xl font-semibold leading-none transition-all",
-                    "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-[10px] sm:text-sm whitespace-nowrap",
+                    // flex-auto on mobile: tiles GROW to fill the row width,
+                    // proportional to their content, so the long label
+                    // ("Personal Training") still never truncates. NOT flex-1 —
+                    // equal widths would starve the long label. lg:flex-none
+                    // restores natural-width centered tiles on the desktop row.
+                    // (operator 2026-07-15: bigger pills, 12px side gutters —
+                    // supersedes the 2026-07-04 content-width+centered pass.)
+                    "flex-auto lg:flex-none flex flex-col items-center justify-center text-center rounded-xl font-semibold leading-none transition-all",
+                    "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-[11px] sm:text-sm whitespace-nowrap",
                     isActive || item.highlight
                       // Active OR a persistently-highlighted tile (Rent Studio)
                       // = brand fill. Orange is allowed because the tile is

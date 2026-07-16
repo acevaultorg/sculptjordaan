@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Wat kost de sportschool in de Jordaan zonder abonnement?",
-    a: "Open Gym Instapplan is €29 per 4 weken (4 sessies, €7,25 per keer). Onbeperkt €59 per 4 weken (onbeperkt trainen). Geen lange contracten, geen opzegtermijn.",
+    a: "Open Gym Instapplan is €29 per 4 weken (4 sessies, €7,25 per keer). Onbeperkt €69 per 4 weken (onbeperkt trainen). Geen lange contracten, geen opzegtermijn.",
   },
   {
     q: "Kan ik eerst een keer proberen?",

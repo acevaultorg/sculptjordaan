@@ -155,6 +155,7 @@ const nlPages = [
   "/nl/boek-trainer",
   "/nl/boek-studio",
   "/nl/boek-gym",
+  "/nl/gratis-proefles",
   "/nl/gratis-intake",
 ];
 
@@ -258,6 +259,7 @@ const enPages = [
   "/en/book-trainer",
   "/en/book-studio",
   "/en/book-gym",
+  "/en/free-trial",
   "/en/free-intro",
 ];
 
@@ -270,7 +272,7 @@ const enPages = [
 // intent pages on the site (a visitor on a specific trainer's page is closer
 // to booking than one on the general listing), so they should get the same
 // money-page tier as /nl/gratis-intake itself.
-const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym|studio-huren|studio-rental|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake(-met-.+)?|plan-free-intro(-with-.+)?|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
+const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|gratis-proefles|free-trial|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym|studio-huren|studio-rental|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake(-met-.+)?|plan-free-intro(-with-.+)?|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
 const LEGAL_RE = /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/;
 
 // Newest blog posts get a priority boost — signals freshness to Google.

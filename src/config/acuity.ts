@@ -85,6 +85,27 @@ export const acuityPaidSessions = {
   },
 } as const;
 
+// ─── Open Gym summer deal (Zomeraanbieding) ─────────────────────────
+// Base Onbeperkt list price = €69 / 4 weken. Acuity holds ONE price per
+// subscription product, so the deal is a SEPARATE €49 / 4-weken product
+// (which is also why existing members keep their own price). Toggle:
+//   active:false  → every deal element disappears; base €69 shows plain.
+//   endDate       → a REAL operator-set date for the honest urgency line
+//                   (null → no date shown, never faked).
+//   dealUrl       → the €49 Zomerdeal product's add-to-cart link.
+// OPERATOR ACUITY SETUP: (1) set the regular Onbeperkt product (id 2155890)
+// to €69; (2) create a new €49 "Zomerdeal Onbeperkt" product + paste its
+// add-to-cart link into dealUrl below. Until then dealUrl falls back to the
+// regular product so nothing 404s.
+export const openGymSummerDeal = {
+  active: true,
+  priceRegular: 69,
+  priceDeal: 49,
+  endDate: null as string | null,
+  // TODO(operator): replace with the €49 Zomerdeal product add-to-cart link.
+  dealUrl: acuityPaidSessions.openGymPlans.onbeperkt,
+} as const;
+
 // ─── PAID packages (catalog.php) ────────────────────────────────────
 // MUST be opened via target="_blank" — Apple Pay restriction.
 export const acuityPackages = {

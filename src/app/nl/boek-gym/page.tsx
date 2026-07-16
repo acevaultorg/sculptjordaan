@@ -76,7 +76,7 @@ const plans = [
     name: "Onbeperkt",
     sessions: "Onbeperkt",
     tagline: "Maximale vrijheid",
-    price: "€59",
+    price: "€69",
     period: "/ 4 weken",
     perSession: null,
     badge: null,
@@ -92,7 +92,7 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap: Instapplan €29/4 weken (€7,25/sessie) of Onbeperkt €59/4 weken. Je kunt altijd upgraden of downgraden." },
+  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap: Instapplan €29/4 weken (€7,25/sessie) of Onbeperkt €69/4 weken. Je kunt altijd upgraden of downgraden." },
   { q: "Heb ik een abonnement nodig?", a: "Nee, je kunt ook een losse sessie boeken voor €10. Of neem een lidmaatschap per 4 weken voor meer voordeel. Altijd opzegbaar." },
   { q: "Is het echt alleen voor mij?", a: "Ja. De hele studio voor jezelf tijdens je geboekte slot van 60 minuten. Geen andere sporters." },
   { q: "Kan ik een vriend meenemen?", a: "Er mogen max 4 personen tegelijk in de studio. Samen trainen? Bekijk onze studio verhuur opties." },
@@ -106,7 +106,7 @@ export default function BoekGymPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Boek Open Gym", url: "/nl/boek-gym" }]} />
-      <ServiceJsonLd name="Open Gym" description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam." url="/nl/boek-gym" priceRange="€29 - €59 per 4 weken" />
+      <ServiceJsonLd name="Open Gym" description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam." url="/nl/boek-gym" priceRange="€29 - €69 per 4 weken" />
       <FaqJsonLd faqs={faqJsonLdData} />
 
       {/* ═══ ABOVE THE FOLD: Title + CTA + trust — convert without scrolling ═══ */}
@@ -207,7 +207,7 @@ export default function BoekGymPageNL() {
                 "Losse sessie €10 — geen lidmaatschap nodig",
                 "Privé studio helemaal voor jezelf — geen wachten, geen drukte",
                 "Lidmaatschap vanaf €29/4 weken (€7,25/sessie)",
-                "Onbeperkt trainen voor €59/4 weken",
+                "Onbeperkt trainen voor €69/4 weken",
                 "Deurcode via WhatsApp, direct starten",
               ].map((b, i) => (
                 <li key={i} className="flex items-start gap-3">

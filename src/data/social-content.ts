@@ -139,7 +139,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       message: "Replicate the 10.5K-view winning format. Static studio shot + bold price overlay + free-trial CTA. Open Gym tier: €7.25/session is the lowest price-point on the entire roster — make the headline punch.",
       facts: [
         "Open Gym Instapplan: €29 / 4 weeks (4 sessions = €7.25/session)",
-        "Open Gym Onbeperkt: €59 / 4 weeks unlimited",
+        "Open Gym Onbeperkt: €69 / 4 weeks unlimited (summer deal: €49)",
         "Max 4 people per slot",
         "Door code via WhatsApp the night before",
         "First session free",

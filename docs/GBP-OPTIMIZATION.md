@@ -90,11 +90,11 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 
 ### 5. Open Gym — Onbeperkt
 - **Category:** Open Gym
-- **Price:** €59 / 4 weeks
+- **Price:** €69 / 4 weeks (zomeraanbieding: €49, prijs blijft zolang je lid blijft)
 - **Photo:** `training-dumbbells-smile.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > Onbeperkt trainen, 7 dagen per week, 06:30-22:00. €59 per 4 weken. Voor wie er bijna elke dag is. Privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
+  > Onbeperkt trainen, 7 dagen per week, 06:30-22:00. €69 per 4 weken — zomeraanbieding: nu €49 en je houdt die prijs zolang je lid blijft. Voor wie er bijna elke dag is. Privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
 
 ### 6. Studio Rental — Half (per uur)
 - **Category:** Studio Rental
@@ -188,7 +188,7 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 >
 > Geen contract:
 > · Instapplan — 4 sessies — €29/4w
-> · Onbeperkt — onbeperkt — €59/4w
+> · Onbeperkt — onbeperkt — €69/4w (zomeraanbieding €49)
 > · Losse sessie — €10
 >
 > Dagelijks 06:30-22:00. Eerste keer gratis proberen.
