@@ -121,7 +121,7 @@ const faqs = [
   },
   {
     q: "Welke kortingspakketten zijn er?",
-    a: "Starter \u20ac89 (10% korting), Routine \u20ac199 (15% korting) en Volume \u20ac549 (23% korting). Pakketten zijn 1 jaar geldig.",
+    a: "Starter \u20ac89 (10% korting), Routine \u20ac179 (15% korting), Pro \u20ac299 (20% korting) en Volume \u20ac499 (23% korting). Pakketten zijn 1 jaar geldig.",
   },
   {
     q: "Wat is inbegrepen bij studio huur?",
