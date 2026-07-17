@@ -14,7 +14,7 @@ import { acuityFreeTrials } from "@/config/acuity";
 // anchor; change this one line to adjust the public price. Billing is set up
 // manually via WhatsApp for now (no self-serve checkout yet). NL parity:
 // src/app/nl/voor-trainers/page.tsx.
-const MEMBERSHIP_FROM = "€199";
+const MEMBERSHIP_FROM = "€179";
 const membershipPerks = [
   "One fixed monthly rate — no surprises",
   "Your regular training slots reserved",
@@ -117,7 +117,7 @@ const pillars = [
 const trainerFaqs = [
   {
     q: "What does it actually cost to rent the studio?",
-    a: "Half studio (1:1 sessions) from €12 per 60 min, €17 per 90 min. Full studio (small group) €17/60 min, €24/90 min. Discount packages save 10-23%: Starter €89, Routine €199, Pro €349, Volume €549. All equipment, wifi, music and cleaning included. No mandatory subscription or brokerage fees.",
+    a: "Half studio (1:1 sessions) from €12 per 60 min, €17 per 90 min. Full studio (small group) €17/60 min, €24/90 min. Discount packages save 10-23%: Starter €89, Routine €179, Pro €299, Volume €499. All equipment, wifi, music and cleaning included. No mandatory subscription or brokerage fees.",
   },
   {
     q: "Is there a fixed membership too?",

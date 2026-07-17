@@ -217,8 +217,8 @@ export const whatsappLinks = {
   /** Generic (no pre-filled text) */
   generic: "https://wa.me/31615147952",
   /** Bank transfer for Volume pack */
-  bankTransferNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! Ik wil graag het Volume pakket (€549) kopen en betalen via bankoverschrijving. Mijn naam:")}`,
-  bankTransferEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€549) and pay via bank transfer. My name:")}`,
+  bankTransferNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! Ik wil graag het Volume pakket (€499) kopen en betalen via bankoverschrijving. Mijn naam:")}`,
+  bankTransferEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to order the Volume pack (€499) and pay via bank transfer. My name:")}`,
   /** Studio pack — per-pack "Betaal per factuur" (pay by invoice) WhatsApp, the
       secondary action beside the Koop/Acuity button on each /boek-studio package
       card (Q 2026-06-08). Shows the strikethrough regular price via WhatsApp's

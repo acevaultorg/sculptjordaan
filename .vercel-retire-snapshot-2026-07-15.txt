@@ -1,0 +1,14 @@
+# Vercel sculctclub project retire snapshot 2026-07-15
+# project id: prj_2CkPYkUuRzMwN9484yN57Yt9pNia (name: sculptclub)
+## domains:
+www.jordaangym.nl
+jordaangym.nl
+www.krachtzaal.nl
+krachtzaal.nl
+www.gymjordaan.nl
+gymjordaan.nl
+www.sculpt45.com
+sculpt45.com
+www.pt45.nl
+pt45.nl
+## env var names (values NOT stored; live copies are in CF Pages):

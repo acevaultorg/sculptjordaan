@@ -155,7 +155,7 @@ const faqs = [
   },
   {
     q: "Which payment methods are accepted?",
-    a: "CreditCard, Apple Pay, Google Pay, or invoice (on request). iDEAL via Apple Pay. Volume package (€549) can be paid by bank transfer on request — WhatsApp us.",
+    a: "CreditCard, Apple Pay, Google Pay, or invoice (on request). iDEAL via Apple Pay. Volume package (€499) can be paid by bank transfer on request — WhatsApp us.",
   },
 ];
 
@@ -262,10 +262,10 @@ export default function StudioRentalPageEN() {
                     <CardTitle className="text-xl">Routine</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">€234</p>
-                    <p className="text-3xl font-bold">€199</p>
+                    <p className="text-sm text-muted-foreground line-through">€210</p>
+                    <p className="text-3xl font-bold">€179</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 19 half / 14 full studio sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 17 half / 12 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Buy Routine
                     </ButtonLink>
@@ -278,10 +278,10 @@ export default function StudioRentalPageEN() {
                     <CardTitle className="text-xl">Pro</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">€436</p>
-                    <p className="text-3xl font-bold">€349</p>
+                    <p className="text-sm text-muted-foreground line-through">€375</p>
+                    <p className="text-3xl font-bold">€299</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 20%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 36 half / 26 full studio sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 31 half / 22 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Buy Pro
                     </ButtonLink>
@@ -294,10 +294,10 @@ export default function StudioRentalPageEN() {
                     <CardTitle className="text-xl">Volume</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">€713</p>
-                    <p className="text-3xl font-bold">€549</p>
+                    <p className="text-sm text-muted-foreground line-through">€650</p>
+                    <p className="text-3xl font-bold">€499</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">≈ 59 half / 42 full studio sessions</p>
+                    <p className="mt-1 text-xs text-muted-foreground">≈ 54 half / 38 full studio sessions</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Buy Volume
                     </ButtonLink>

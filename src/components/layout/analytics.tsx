@@ -132,8 +132,8 @@ export function Analytics() {
             function detectBookingType(href) {
               if (href.includes('id=2155887') || href.includes('id=2155888') || href.includes('id=2155889') || href.includes('id=2155890')) return { type: 'open_gym', value: 49 };
               if (href.includes('id=2149357')) return { type: 'studio_pack_starter', value: 89 };
-              if (href.includes('id=2149358')) return { type: 'studio_pack_routine', value: 199 };
-              if (href.includes('id=2149360')) return { type: 'studio_pack_volume', value: 549 };
+              if (href.includes('id=2149358')) return { type: 'studio_pack_routine', value: 179 };
+              if (href.includes('id=2149360')) return { type: 'studio_pack_volume', value: 499 };
               if (href.includes('appointmentType=84032351') || href.includes('appointmentType=86677323') || href.includes('appointmentType=82553655') || href.includes('appointmentType=85410115')) return { type: 'studio_rental', value: 12 };
               if (href.includes('appointmentType=83513953')) return { type: 'open_gym_session', value: 7 };
               if (href.includes('appointmentType=87017445') || href.includes('appointmentType=86758291')) return { type: 'trial', value: 0 };
@@ -185,7 +185,7 @@ export function Analytics() {
               if (text.indexOf('studio huren') !== -1 || text.indexOf('renting the studio') !== -1 || text.indexOf('huren van de studio') !== -1 || text.indexOf('trainingsruimte') !== -1 || text.indexOf('fysiotherapeut') !== -1) {
                 return { intent: 'studio_rental', pricing: 'paid', trainer_name: '' };
               }
-              // Volume pack purchase = trainer paid (€549 PT package)
+              // Volume pack purchase = trainer paid (€499 PT package)
               if (text.indexOf('volume pakket') !== -1 || text.indexOf('volume pack') !== -1) {
                 return { intent: 'trainer', pricing: 'paid', trainer_name: '' };
               }

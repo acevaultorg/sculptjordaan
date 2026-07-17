@@ -158,9 +158,9 @@ export default function PricingPageEN() {
           { name: "Full studio — 60 min", description: "Full studio rental, 60 minutes", price: 17 },
           { name: "Full studio — 90 min", description: "Full studio rental, 90 minutes", price: 24 },
           { name: "Starter discount pack", description: "Studio rental discount pack, 10% off", price: 89 },
-          { name: "Routine discount pack", description: "Studio rental discount pack, 15% off", price: 199 },
-          { name: "Pro discount pack", description: "Studio rental discount pack, 20% off", price: 349 },
-          { name: "Volume discount pack", description: "Studio rental discount pack, 23% off", price: 549 },
+          { name: "Routine discount pack", description: "Studio rental discount pack, 15% off", price: 179 },
+          { name: "Pro discount pack", description: "Studio rental discount pack, 20% off", price: 299 },
+          { name: "Volume discount pack", description: "Studio rental discount pack, 23% off", price: 499 },
         ]}
       />
 
@@ -386,13 +386,13 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">€234</span>
+                  <span className="sc-price-old">€210</span>
                 </p>
-                <p className="text-3xl font-bold">€199</p>
+                <p className="text-3xl font-bold">€179</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 15%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 19 half / 14 full studio sessions</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 17 half / 12 full studio sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.routine} size="lg" className="w-full">
@@ -410,13 +410,13 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">€436</span>
+                  <span className="sc-price-old">€375</span>
                 </p>
-                <p className="text-3xl font-bold">€349</p>
+                <p className="text-3xl font-bold">€299</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 20%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 36 half / 26 full studio sessions</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 31 half / 22 full studio sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.pro} size="lg" className="w-full">
@@ -434,13 +434,13 @@ export default function PricingPageEN() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">€713</span>
+                  <span className="sc-price-old">€650</span>
                 </p>
-                <p className="text-3xl font-bold">€549</p>
+                <p className="text-3xl font-bold">€499</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Save 23%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 59 half / 42 full studio sessions</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 54 half / 38 full studio sessions</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.volume} size="lg" className="w-full">

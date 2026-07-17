@@ -136,9 +136,9 @@ export default function BlogPostCostStudioVsOwnGym() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Starter — €89", "10 sessions, ~10% off"],
-                  ["Routine — €199", "~15% off, most popular pack"],
-                  ["Pro — €349", "~20% off"],
-                  ["Volume — €549", "~23% off for trainers running 3+ sessions/week"],
+                  ["Routine — €179", "~15% off, most popular pack"],
+                  ["Pro — €299", "~20% off"],
+                  ["Volume — €499", "~23% off for trainers running 3+ sessions/week"],
                 ].map(([pkg, desc]) => (
                   <li key={pkg} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />

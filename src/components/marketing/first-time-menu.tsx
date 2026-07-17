@@ -55,7 +55,7 @@ const copy: Record<
   }
 > = {
   nl: {
-    button: "Eerste keer?",
+    button: "Boek gratis proefles",
     title: "Waar wil je beginnen?",
     subtitle: "Nieuw bij SculptClub? Kies wat bij je past — we helpen je op weg.",
     trainerHeading: "Ben je zelf trainer?",
@@ -94,7 +94,7 @@ const copy: Record<
     },
   },
   en: {
-    button: "First time?",
+    button: "Book free trial",
     title: "Where do you want to start?",
     subtitle: "New to SculptClub? Pick what fits you — we'll guide you.",
     trainerHeading: "Are you a trainer yourself?",

@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
 import { FirstTimeMenu } from "@/components/marketing/first-time-menu";
+import { WhatsAppIcon } from "@/components/layout/whatsapp-button";
+import { whatsappLinks } from "@/config/acuity";
+import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
 import type { Locale } from "@/config/site";
 
@@ -466,8 +469,25 @@ export function Hero({ locale }: { locale: Locale }) {
               (Prior 2-CTA audience-split rationale intentionally superseded by
               this directive — the split is now expressed inside the menu, not
               on the hero surface.) */}
-          <div>
+          {/* Operator 2026-07-16: two CTAs — the free-trial wayfinder (same
+              sheet as before, relabeled "Boek gratis proefles"/"Book free
+              trial" in first-time-menu.tsx) + a low-threshold WhatsApp chat
+              for everyone not ready to book. White-glass secondary is allowed
+              here (over photo). */}
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <FirstTimeMenu locale={locale} />
+            <a
+              href={whatsappLinks[locale]}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-intent="generic"
+              data-pricing="unknown"
+              onClick={() => trackHeroClick("whatsapp_chat", 1, locale)}
+              className="plausible-event-name=hero_whatsapp_chat inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 min-h-[48px]"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+              {locale === "nl" ? "Even appen" : "Have a chat"}
+            </a>
           </div>
 
           {/* Bottom spacer — operator 2026-07-04 "make the button smaller and

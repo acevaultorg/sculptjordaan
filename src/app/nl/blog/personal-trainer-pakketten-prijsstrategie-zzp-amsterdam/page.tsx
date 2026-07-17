@@ -238,9 +238,9 @@ export default function BlogPostPakkettenPrijsstrategie() {
                   <tbody>
                     {[
                       ["Starter", "€89", "~10%", "€10,80"],
-                      ["Routine (populair)", "€199", "~15%", "€10,18"],
-                      ["Pro", "€349", "~20%", "€9,60"],
-                      ["Volume", "€549", "~23%", "€9,24"],
+                      ["Routine (populair)", "€179", "~15%", "€10,20"],
+                      ["Pro", "€299", "~20%", "€9,60"],
+                      ["Volume", "€499", "~23%", "€9,24"],
                     ].map(([pkg, price, disc, perhour]) => (
                       <tr key={pkg} className="border-b last:border-0">
                         <td className="px-4 py-3 font-medium">{pkg}</td>
@@ -253,7 +253,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
                 </table>
               </div>
               <p>
-                Je ziet dat de Per-uur kolom gestaffeld afdaalt: €12 losse uur → €10,80 (Starter) → €10,18 (Routine) → €9,60 (Pro) → €9,24 (Volume). Elke stap voelt als een betere deal. De Routine zit visueel net iets prominenter dan de rest — dat is geen toeval.
+                Je ziet dat de Per-uur kolom gestaffeld afdaalt: €12 losse uur → €10,80 (Starter) → €10,20 (Routine) → €9,60 (Pro) → €9,24 (Volume). Elke stap voelt als een betere deal. De Routine zit visueel net iets prominenter dan de rest — dat is geen toeval.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Hoe communiceer je een prijsverhoging?</h2>

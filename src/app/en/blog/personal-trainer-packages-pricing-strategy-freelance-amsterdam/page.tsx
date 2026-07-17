@@ -133,7 +133,7 @@ export default function BlogPostPackagesPricing() {
               <div className="overflow-hidden rounded-xl border border-border bg-card my-6">
                 <table className="w-full text-sm">
                   <thead><tr className="border-b bg-muted/50"><th className="px-4 py-3 text-left font-semibold text-foreground">Pack</th><th className="px-4 py-3 text-center font-semibold text-foreground">Price</th><th className="px-4 py-3 text-center font-semibold text-foreground">Discount</th><th className="px-4 py-3 text-center font-semibold text-foreground">Per hour</th></tr></thead>
-                  <tbody>{[["Starter", "€89", "~10%", "€10.80"], ["Routine (popular)", "€199", "~15%", "€10.18"], ["Pro", "€349", "~20%", "€9.60"], ["Volume", "€549", "~23%", "€9.24"]].map(([p, pr, d, h]) => (<tr key={p} className="border-b last:border-0"><td className="px-4 py-3 font-medium">{p}</td><td className="px-4 py-3 text-center">{pr}</td><td className="px-4 py-3 text-center">{d}</td><td className="px-4 py-3 text-center">{h}</td></tr>))}</tbody>
+                  <tbody>{[["Starter", "€89", "~10%", "€10.80"], ["Routine (popular)", "€179", "~15%", "€10.20"], ["Pro", "€299", "~20%", "€9.60"], ["Volume", "€499", "~23%", "€9.24"]].map(([p, pr, d, h]) => (<tr key={p} className="border-b last:border-0"><td className="px-4 py-3 font-medium">{p}</td><td className="px-4 py-3 text-center">{pr}</td><td className="px-4 py-3 text-center">{d}</td><td className="px-4 py-3 text-center">{h}</td></tr>))}</tbody>
                 </table>
               </div>
               <p>The Per-hour column steps down deliberately: €12 single → €10.80 → €10.18 → €9.60 → €9.24. Each step feels like a better deal. The Routine sits visually slightly more prominent — not accidental.</p>

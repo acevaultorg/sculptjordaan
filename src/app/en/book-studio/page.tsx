@@ -173,8 +173,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Routine</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">€234</p>
-                    <p className="text-3xl font-bold">€199</p>
+                    <p className="text-sm text-muted-foreground line-through">€210</p>
+                    <p className="text-3xl font-bold">€179</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 15%</p>
                     <ButtonLink href={acuityPackages.studio.routine} size="lg" className="mt-4 w-full">
                       Buy Routine
@@ -198,8 +198,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Pro</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">€436</p>
-                    <p className="text-3xl font-bold">€349</p>
+                    <p className="text-sm text-muted-foreground line-through">€375</p>
+                    <p className="text-3xl font-bold">€299</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 20%</p>
                     <ButtonLink href={acuityPackages.studio.pro} size="lg" className="mt-4 w-full">
                       Buy Pro
@@ -223,8 +223,8 @@ export default function BookStudioPageEN() {
                     <CardTitle className="text-xl">Volume</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground line-through">€713</p>
-                    <p className="text-3xl font-bold">€549</p>
+                    <p className="text-sm text-muted-foreground line-through">€650</p>
+                    <p className="text-3xl font-bold">€499</p>
                     <p className="mt-2 text-sm text-discount font-medium">Save 23%</p>
                     <ButtonLink href={acuityPackages.studio.volume} size="lg" className="mt-4 w-full">
                       Buy Volume

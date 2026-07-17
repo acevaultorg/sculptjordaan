@@ -50,7 +50,7 @@
 
 ### Facts to weave in
 - SculptClub per uur: €12 halve studio · €17 hele studio (60 min)
-- SculptClub pakketten: Starter €89 (10×) / Routine €199 / Pro €349 / Volume €549
+- SculptClub pakketten: Starter €89 (10×) / Routine €179 / Pro €299 / Volume €499
 - Amsterdam Jordaan vierkante meter huur 2026: ~€500-700/m²/jaar voor commerciële plint
 - Een gym van ~80m² kost minimum ~€40k-60k/jaar aan vaste lasten (huur + utilities + insurance)
 - Equipment investering: €15k-40k voor een goed-uitgeruste private gym

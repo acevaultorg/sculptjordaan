@@ -158,9 +158,9 @@ export default function PricingPageNL() {
           { name: "Volledige studio — 60 min", description: "Volledige studio huur, 60 minuten", price: 17 },
           { name: "Volledige studio — 90 min", description: "Volledige studio huur, 90 minuten", price: 24 },
           { name: "Starter strippenkaart", description: "Strippenkaart studio huur, 10% korting", price: 89 },
-          { name: "Routine strippenkaart", description: "Strippenkaart studio huur, 15% korting", price: 199 },
-          { name: "Pro strippenkaart", description: "Strippenkaart studio huur, 20% korting", price: 349 },
-          { name: "Volume strippenkaart", description: "Strippenkaart studio huur, 23% korting", price: 549 },
+          { name: "Routine strippenkaart", description: "Strippenkaart studio huur, 15% korting", price: 179 },
+          { name: "Pro strippenkaart", description: "Strippenkaart studio huur, 20% korting", price: 299 },
+          { name: "Volume strippenkaart", description: "Strippenkaart studio huur, 23% korting", price: 499 },
         ]}
       />
 
@@ -386,13 +386,13 @@ export default function PricingPageNL() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">€234</span>
+                  <span className="sc-price-old">€210</span>
                 </p>
-                <p className="text-3xl font-bold">€199</p>
+                <p className="text-3xl font-bold">€179</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 15%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 19 halve / 14 hele studio sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 17 halve / 12 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.routine} size="lg" className="w-full">
@@ -410,13 +410,13 @@ export default function PricingPageNL() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">€436</span>
+                  <span className="sc-price-old">€375</span>
                 </p>
-                <p className="text-3xl font-bold">€349</p>
+                <p className="text-3xl font-bold">€299</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 20%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 36 halve / 26 hele studio sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 31 halve / 22 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.pro} size="lg" className="w-full">
@@ -434,13 +434,13 @@ export default function PricingPageNL() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground line-through">
-                  <span className="sc-price-old">€713</span>
+                  <span className="sc-price-old">€650</span>
                 </p>
-                <p className="text-3xl font-bold">€549</p>
+                <p className="text-3xl font-bold">€499</p>
                 <p className="mt-2 text-sm">
                   <span className="sc-discount">Bespaar 23%</span>
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">≈ 59 halve / 42 hele studio sessies</p>
+                <p className="mt-1 text-xs text-muted-foreground">≈ 54 halve / 38 hele studio sessies</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink href={acuityPackages.studio.volume} size="lg" className="w-full">

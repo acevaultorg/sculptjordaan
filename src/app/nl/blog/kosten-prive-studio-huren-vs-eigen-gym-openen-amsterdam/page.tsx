@@ -136,9 +136,9 @@ export default function BlogPostKostenStudioVsEigenGym() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Starter — €89", "10× sessie, ~10% korting"],
-                  ["Routine — €199", "~15% korting, populairste pakket"],
-                  ["Pro — €349", "~20% korting"],
-                  ["Volume — €549", "~23% korting voor wie wekelijks 3+ sessies geeft"],
+                  ["Routine — €179", "~15% korting, populairste pakket"],
+                  ["Pro — €299", "~20% korting"],
+                  ["Volume — €499", "~23% korting voor wie wekelijks 3+ sessies geeft"],
                 ].map(([pkg, desc]) => (
                   <li key={pkg} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />

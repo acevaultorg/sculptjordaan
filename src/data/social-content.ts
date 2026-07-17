@@ -210,7 +210,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       facts: [
         "Full studio: €17/60min, €24/90min",
         "Half studio (1 trainer + 1 client): €12/60min",
-        "Packages: Starter €89 (10% off), Routine €199 (15% off), Pro €349 (20% off), Volume €549 (23% off)",
+        "Packages: Starter €89 (10% off), Routine €179 (15% off), Pro €299 (20% off), Volume €499 (23% off)",
         "First session free for new trainers",
         "Includes all equipment + wifi + music + cleaning",
         "Free cancellation",

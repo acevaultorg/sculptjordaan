@@ -201,16 +201,16 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
              style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Routine</strong>
             <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
-            &nbsp;·&nbsp; <span style="color:#544A40;">€199</span>
-            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€234</span>
+            &nbsp;·&nbsp; <span style="color:#544A40;">€179</span>
+            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€210</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Bespaar 15%</span>
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149359"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
-            <strong>Pro</strong> &nbsp;·&nbsp; <span style="color:#544A40;">€349</span>
-            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€436</span>
+            <strong>Pro</strong> &nbsp;·&nbsp; <span style="color:#544A40;">€299</span>
+            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€375</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Bespaar 19%</span>
           </a>
         </td></tr>
@@ -219,8 +219,8 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Volume</strong>
             <span style="display:inline-block;background:#16a34a;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Beste deal</span>
-            &nbsp;·&nbsp; <span style="color:#544A40;">€549</span>
-            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€713</span>
+            &nbsp;·&nbsp; <span style="color:#544A40;">€499</span>
+            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€650</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Bespaar 23%</span>
           </a>
         </td></tr>
@@ -286,16 +286,16 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
              style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Routine</strong>
             <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
-            &nbsp;·&nbsp; <span style="color:#544A40;">€199</span>
-            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€234</span>
+            &nbsp;·&nbsp; <span style="color:#544A40;">€179</span>
+            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€210</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Save 15%</span>
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149359"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
-            <strong>Pro</strong> &nbsp;·&nbsp; <span style="color:#544A40;">€349</span>
-            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€436</span>
+            <strong>Pro</strong> &nbsp;·&nbsp; <span style="color:#544A40;">€299</span>
+            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€375</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Save 19%</span>
           </a>
         </td></tr>
@@ -304,8 +304,8 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Volume</strong>
             <span style="display:inline-block;background:#16a34a;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Best deal</span>
-            &nbsp;·&nbsp; <span style="color:#544A40;">€549</span>
-            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€713</span>
+            &nbsp;·&nbsp; <span style="color:#544A40;">€499</span>
+            <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€650</span>
             <span style="display:block;color:#16a34a;font-size:12px;margin-top:2px;">Save 23%</span>
           </a>
         </td></tr>
