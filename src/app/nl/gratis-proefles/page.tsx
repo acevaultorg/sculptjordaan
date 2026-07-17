@@ -10,10 +10,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Gratis Open Gym proefles boeken — Privé Studio Jordaan | SculptClub Amsterdam",
+      "Gratis Open Gym probeersessie boeken — Privé Studio Jordaan | SculptClub Amsterdam",
   },
   description:
-    "Boek je gratis Open Gym proefles bij SculptClub in de Jordaan. Kom vrijblijvend langs en train één sessie gratis — geen abonnement, geen verplichting.",
+    "Boek je gratis Open Gym probeersessie bij SculptClub in de Jordaan. Kom vrijblijvend langs en train één sessie gratis — geen abonnement, geen verplichting.",
   alternates: {
     canonical: "/nl/gratis-proefles",
     languages: { nl: "/nl/gratis-proefles", en: "/en/free-trial" },
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "/nl/gratis-proefles",
     title:
-      "Gratis Open Gym proefles boeken — Privé Studio Jordaan | SculptClub Amsterdam",
+      "Gratis Open Gym probeersessie boeken — Privé Studio Jordaan | SculptClub Amsterdam",
     description:
-      "Boek je gratis Open Gym proefles bij SculptClub in de Jordaan. Kom vrijblijvend langs en train één sessie gratis — geen abonnement, geen verplichting.",
+      "Boek je gratis Open Gym probeersessie bij SculptClub in de Jordaan. Kom vrijblijvend langs en train één sessie gratis — geen abonnement, geen verplichting.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Gratis Open Gym proefles boeken | SculptClub Amsterdam",
     description:
-      "Boek je gratis Open Gym proefles bij SculptClub in de Jordaan. Vrijblijvend, geen abonnement.",
+      "Boek je gratis Open Gym probeersessie bij SculptClub in de Jordaan. Vrijblijvend, geen abonnement.",
   },
 };
 
@@ -46,13 +46,13 @@ export default function GratisProeflesPage() {
       />
       <Section>
         <SectionHeader
-          overline="Gratis proefles"
-          title="Plan je gratis proefles"
+          overline="gratis probeersessie"
+          title="Plan je gratis probeersessie"
           description="Kies een tijd en kom langs. Geen verplichting, geen abonnement — ervaar eerst zelf hoe rustig en compleet onze privé studio in de Jordaan is."
         />
         <AcuityEmbed
           url={acuityFreeTrials.openGymTryout}
-          title="Boek je gratis Open Gym proefles bij SculptClub"
+          title="Boek je gratis Open Gym probeersessie bij SculptClub"
           intent="open_gym"
           pricing="free"
           height={900}

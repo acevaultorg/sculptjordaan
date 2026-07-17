@@ -98,12 +98,22 @@ def http(url, method="GET", headers=None, data=None, timeout=120):
         raise RuntimeError(f"HTTP {code} on {url}: {body.decode('utf-8','replace')[:300]}")
     return json.loads(body) if body else {"success": True}
 
-def get_jwt():
+_JWT = {"v": None, "t": 0.0}
+
+def get_jwt(force=False):
+    # The asset-upload JWT lives 30 min (exp-iat = 1800s). A big export (181MB /
+    # 2175 files) uploads for longer than that, and an EXPIRED upload JWT makes CF
+    # HANG rather than return 401 — so a fixed token turned the retry loop into a
+    # ~70-min burn against a dead credential and the deploy always failed
+    # (observed 2026-07-17). Cache and re-mint at 20 min, well inside the window.
+    if not force and _JWT["v"] and (time.time() - _JWT["t"]) < 1200:
+        return _JWT["v"]
     r = http(f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/pages/projects/{PROJECT}/upload-token",
              headers={"Authorization": f"Bearer {API_TOKEN}"})
     if not r.get("success"):
         raise RuntimeError(f"upload-token fetch failed (is the token Pages:Edit scoped?): {r}")
-    return r["result"]["jwt"]
+    _JWT["v"] = r["result"]["jwt"]; _JWT["t"] = time.time()
+    return _JWT["v"]
 
 def walk(root):
     out = []
@@ -125,18 +135,22 @@ def check_missing(jwt, hashes):
         miss.extend(r.get("result", []))
     return miss
 
-def upload(jwt, batch, attempts=40):
+def upload(jwt, batch, attempts=12):
+    # NOTE: the `jwt` arg is kept for call-site compatibility but deliberately
+    # ignored — get_jwt() owns freshness (see its comment). Re-minting per attempt
+    # is what makes a >30-min upload survivable.
     body = json.dumps(batch).encode(); last = None
     for a in range(1, attempts+1):
         try:
             r = http("https://api.cloudflare.com/client/v4/pages/assets/upload", method="POST",
-                     headers={"Authorization": f"Bearer {jwt}", "Content-Type": "application/json", "Connection": "close"},
+                     headers={"Authorization": f"Bearer {get_jwt()}", "Content-Type": "application/json", "Connection": "close"},
                      data=body, timeout=UPLOAD_TIMEOUT)
             if not r.get("success"): raise RuntimeError(f"upload failed: {r}")
             return
         except Exception as e:
             last = e; s = min(30, 2**(a-1))
-            sys.stderr.write(f"  ⚠ batch {a}/{attempts}: {str(e)[:110]} — retry {s}s\n"); sys.stderr.flush()
+            sys.stderr.write(f"  ⚠ batch {a}/{attempts}: {str(e)[:110]} — retry {s}s (fresh JWT)\n"); sys.stderr.flush()
+            get_jwt(force=True)   # an expired upload JWT surfaces as a TIMEOUT, not a 401
             time.sleep(s)
     raise RuntimeError(f"batch failed after {attempts}: {last}")
 

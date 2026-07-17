@@ -486,7 +486,7 @@ export function Hero({ locale }: { locale: Locale }) {
               className="plausible-event-name=hero_whatsapp_chat inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 min-h-[48px]"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              {locale === "nl" ? "Even appen" : "Have a chat"}
+              {locale === "nl" ? "Stel je vraag" : "Ask a question"}
             </a>
           </div>
 

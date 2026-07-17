@@ -558,11 +558,11 @@ export default function PricingPageNL() {
               Klaar om te beginnen?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Start met een gratis proefles of neem contact met ons op via WhatsApp.
+              Start met een gratis probeersessie of neem contact met ons op via WhatsApp.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink href={"/nl/vind-jouw-personal-trainer"} size="lg">
-                Boek Gratis Proefles
+                Boek Gratis Probeersessie
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
               <ButtonLink

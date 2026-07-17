@@ -169,7 +169,7 @@ export default function StudioPageNL() {
       {/* Dual-audience CTA section — /nl/studio is reached by BOTH consumer
           visitors (via hero secondary CTA "Bekijk de studio" from 2026-05-16)
           AND ZZP trainers (via "Studio Huren" nav). Before 2026-05-16 the
-          bottom CTA only served the ZZP audience ("Boek gratis proefles"
+          bottom CTA only served the ZZP audience ("Boek gratis probeersessie"
           → /studio-huren). Now consumer visitors get a primary path to
           trainer-intake AND ZZP trainers retain the rental-trial path. */}
       <Section bg="muted">

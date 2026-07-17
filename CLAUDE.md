@@ -21,6 +21,11 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Studio Rental Full:** €17/60min, €24/90min
 - **Packages:** Starter €89 (10% off, credit €99), Routine €179 (15% off, credit €210), Pro €299 (20% off, credit €375), Volume €499 (23% off, credit €650) — repriced 2026-07-16 (operator); Acuity products duplicated to new IDs, old ones set Unavailable (existing codes stay valid)
 
+## Copy vocabulary (operator 2026-07-17)
+- **"probeersessie", NEVER "proefles"** in visible copy (buttons, badges, FAQ, body). Open Gym = training solo and studio huren = renting a room — neither is a *les*, so "proefles" is factually wrong. PT/Small Group keep "intake"/"kennismaking".
+- **EXCEPTION — SEO surfaces keep "proefles":** page `title`/`description`/`keywords` and the `/nl/gratis-proefles` URL. "Proefles" is the term Dutch people actually search; "probeersessie" has ~no search volume. Both words mean the same thing, so this is honest — accurate copy, searchable metadata. Don't "fix" the metadata to probeersessie: it silently costs organic clicks.
+- Hero secondary CTA is **"Stel je vraag" / "Ask a question"** (not "Even appen"/"Have a chat") — it names the visitor's actual need; the WhatsApp icon already signals the channel.
+
 ## Policies (ALWAYS use these)
 - **Cancellation:** Always free. No time restriction. Never say "24 hours" or "12 hours".
 - **Door code:** Sent via WhatsApp the night before. Never say "per e-mail" or "by email".

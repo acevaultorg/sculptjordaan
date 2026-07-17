@@ -55,7 +55,10 @@ const copy: Record<
   }
 > = {
   nl: {
-    button: "Boek gratis proefles",
+    // "probeersessie", never "proefles" (operator 2026-07-17): this button is an
+    // UMBRELLA over Open Gym (train solo) + Studio huren (rental) — neither is a
+    // "les". The studio-rental path already said "sessie"; this aligns the rest.
+    button: "Boek gratis probeersessie",
     title: "Waar wil je beginnen?",
     subtitle: "Nieuw bij SculptClub? Kies wat bij je past — we helpen je op weg.",
     trainerHeading: "Ben je zelf trainer?",
@@ -74,7 +77,7 @@ const copy: Record<
         title: "Open Gym",
         description: "Zelf trainen, max 4 personen. Vanaf €29/4 wkn.",
         href: "/nl/open-gym",
-        badge: "Gratis proefles",
+        badge: "Gratis probeersessie",
         event: "first_time_open_gym",
       },
       {

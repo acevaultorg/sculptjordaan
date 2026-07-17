@@ -57,7 +57,7 @@ const paths = [
     cta: "Probeer Open Gym gratis",
     href: withUtm(acuityLinks.openGymTrial, "open_gym"),
     external: true,
-    highlight: "Gratis proefles",
+    highlight: "gratis probeersessie",
   },
   {
     icon: "Building2" as const,

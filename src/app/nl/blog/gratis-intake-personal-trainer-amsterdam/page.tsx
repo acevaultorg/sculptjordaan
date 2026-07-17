@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   keywords: [
     "gratis intake personal trainer amsterdam",
     "gratis kennismaking personal trainer",
-    "gratis proefles personal training amsterdam",
+    "gratis probeersessie personal training amsterdam",
     "gratis intake personal training",
     "personal trainer kennismaking amsterdam",
-    "proefles personal trainer",
+    "probeersessie personal trainer",
   ],
   alternates: {
     canonical: "/nl/blog/gratis-intake-personal-trainer-amsterdam",

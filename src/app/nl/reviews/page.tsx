@@ -230,7 +230,7 @@ export default function ReviewsPageNL() {
               Ervaar het zelf
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Boek een gratis proefles en ontdek waarom onze klanten ons 5
+              Boek een gratis probeersessie en ontdek waarom onze klanten ons 5
               sterren geven.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -239,7 +239,7 @@ export default function ReviewsPageNL() {
                 size="lg"
                 className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                Boek Gratis Proefles
+                Boek Gratis Probeersessie
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink

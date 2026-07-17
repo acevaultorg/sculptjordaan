@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: "Resultaten — SculptClub Amsterdam Jordaan" },
   description:
-    "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis proefles bij SculptClub.",
+    "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis probeersessie bij SculptClub.",
   alternates: {
     canonical: "/nl/resultaten",
     languages: {
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     url: "/nl/resultaten",
     title: "Resultaten — SculptClub Amsterdam Jordaan",
     description:
-      "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis proefles bij SculptClub.",
+      "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis probeersessie bij SculptClub.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Resultaten — SculptClub Amsterdam Jordaan",
     description:
-      "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis proefles bij SculptClub.",
+      "Bekijk de transformaties en resultaten van onze klanten. Personal training die werkt. Boek je gratis probeersessie bij SculptClub.",
   },
 };
 
@@ -136,7 +136,7 @@ export default function ResultsPageNL() {
               Jouw transformatie begint hier
             </h2>
             <p className="text-muted-foreground mb-8">
-              Boek een gratis proefles en ontdek wat personal training bij
+              Boek een gratis probeersessie en ontdek wat personal training bij
               SculptClub voor jou kan betekenen. Onze trainers helpen je om
               jouw doelen te bereiken.
             </p>
@@ -146,7 +146,7 @@ export default function ResultsPageNL() {
                 size="lg"
                 className="bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold transition-all hover:scale-[1.015] active:scale-[0.97]"
               >
-                Boek gratis proefles
+                Boek gratis probeersessie
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink

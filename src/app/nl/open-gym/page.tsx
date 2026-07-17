@@ -100,8 +100,8 @@ const studioImages = [
 // so the JSON-LD stays perfectly in sync.
 const faqs = [
   {
-    q: "Wat is het verschil tussen een gratis proefles en een sessie reserveren?",
-    a: "De gratis proefles is je eerste keer — vrijblijvend en zonder abonnement. Daarna reserveer je losse sessies (€10) of word je lid. Nieuw hier? Begin met de gratis proefles.",
+    q: "Wat is het verschil tussen een gratis probeersessie en een sessie reserveren?",
+    a: "De gratis probeersessie is je eerste keer — vrijblijvend en zonder abonnement. Daarna reserveer je losse sessies (€10) of word je lid. Nieuw hier? Begin met de gratis probeersessie.",
   },
   ...(deal.active
     ? [
@@ -137,7 +137,7 @@ const faqs = [
   },
   {
     q: "Is de eerste les echt gratis?",
-    a: "Ja. Je boekt een gratis proefles van 60 minuten via het boekingssysteem. Geen creditcard nodig, geen verplichting, geen automatische verlenging.",
+    a: "Ja. Je boekt een gratis probeersessie van 60 minuten via het boekingssysteem. Geen creditcard nodig, geen verplichting, geen automatische verlenging.",
   },
   {
     q: "Hoe laat kan ik trainen?",
@@ -202,7 +202,7 @@ export default function OpenGymPageNL() {
                 data-intent="open_gym"
                 data-pricing="free"
               >
-                Boek je gratis proefles
+                Boek je gratis probeersessie
               </ButtonLink>
               {/* G2 — reserve a paid session; target=_blank for Apple Pay support. */}
               <ButtonLink
@@ -292,7 +292,7 @@ export default function OpenGymPageNL() {
             <Card className="h-full flex flex-col text-center">
               <CardHeader>
                 <Badge variant="secondary" className="mx-auto mb-2">Nieuw hier</Badge>
-                <CardTitle className="text-lg">1. Boek je gratis proefles</CardTitle>
+                <CardTitle className="text-lg">1. Boek je gratis probeersessie</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
@@ -307,7 +307,7 @@ export default function OpenGymPageNL() {
                   data-intent="open_gym"
                   data-pricing="free"
                 >
-                  Plan je gratis proefles
+                  Plan je gratis probeersessie
                 </ButtonLink>
               </CardFooter>
             </Card>
@@ -316,7 +316,7 @@ export default function OpenGymPageNL() {
           <FadeIn delay={0.1}>
             <Card className="h-full flex flex-col text-center">
               <CardHeader>
-                <Badge variant="outline" className="mx-auto mb-2">Na je proefles</Badge>
+                <Badge variant="outline" className="mx-auto mb-2">Na je probeersessie</Badge>
                 <CardTitle className="text-lg">2. Reserveer je uur</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
@@ -606,8 +606,8 @@ export default function OpenGymPageNL() {
           title="Kies jouw volgende stap"
           description={
             deal.active
-              ? "Nieuw hier? Boek een gratis proefles. Klaar om lid te worden? Pak de zomeraanbieding."
-              : "Nieuw hier? Boek een gratis proefles. Klaar om lid te worden? Word onbeperkt lid."
+              ? "Nieuw hier? Boek een gratis probeersessie. Klaar om lid te worden? Pak de zomeraanbieding."
+              : "Nieuw hier? Boek een gratis probeersessie. Klaar om lid te worden? Word onbeperkt lid."
           }
         />
         <FadeIn className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -627,7 +627,7 @@ export default function OpenGymPageNL() {
             data-intent="open_gym"
             data-pricing="free"
           >
-            Of boek eerst een gratis proefles
+            Of boek eerst een gratis probeersessie
           </ButtonLink>
         </FadeIn>
       </Section>

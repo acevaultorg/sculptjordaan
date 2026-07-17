@@ -131,7 +131,7 @@ export default function BoekGymPageNL() {
           </p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymTrial} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Nieuw? Probeer eerst een gratis proefles →
+              Nieuw? Probeer eerst een gratis probeersessie →
             </ButtonLink>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function BoekGymPageNL() {
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
               {[
-                "Gratis proefles — probeer het zonder verplichtingen",
+                "gratis probeersessie — probeer het zonder verplichtingen",
                 "Losse sessie €10 — geen lidmaatschap nodig",
                 "Privé studio helemaal voor jezelf — geen wachten, geen drukte",
                 "Lidmaatschap vanaf €29/4 weken (€7,25/sessie)",

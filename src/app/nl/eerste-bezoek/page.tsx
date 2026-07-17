@@ -102,7 +102,7 @@ const bringItems = [
 const faqs = [
   {
     q: "Wat kost het de eerste keer?",
-    a: "Bij Personal Training is je eerste intake altijd gratis — je maakt kennis met je trainer, bespreekt je doelen en doet (als je wilt) direct een kennismakingstraining. Geen verplichting daarna. Voor Open Gym kun je een gratis proefles van 60 minuten boeken. Studio huren start vanaf €12 per uur voor de halve studio.",
+    a: "Bij Personal Training is je eerste intake altijd gratis — je maakt kennis met je trainer, bespreekt je doelen en doet (als je wilt) direct een kennismakingstraining. Geen verplichting daarna. Voor Open Gym kun je een gratis probeersessie van 60 minuten boeken. Studio huren start vanaf €12 per uur voor de halve studio.",
   },
   {
     q: "Moet ik al fit zijn om te beginnen?",
@@ -306,17 +306,17 @@ export default function EersteBezoekPage() {
           <FadeIn delay={0.1}>
             <Card className="relative h-full flex flex-col">
               <span className="absolute top-3 right-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-md">
-                Gratis proefles
+                gratis probeersessie
               </span>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-950/30">
                   <Dumbbell className="h-5 w-5 text-emerald-600" />
                 </div>
                 <CardTitle>Open Gym</CardTitle>
-                <CardDescription>Train zelfstandig in een privé studio. 60 min proefles. Max 4 personen. Daarna vanaf €29 per 4 weken.</CardDescription>
+                <CardDescription>Train zelfstandig in een privé studio. 60 min probeersessie. Max 4 personen. Daarna vanaf €29 per 4 weken.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
-                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Boek gratis proefles<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
+                <ButtonLink href={acuityLinks.openGymTrial} size="lg" className="w-full">Boek gratis probeersessie<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
                 <ButtonLink href="/nl/open-gym" variant="outline" size="lg" className="w-full">Plannen bekijken</ButtonLink>
               </CardFooter>
             </Card>

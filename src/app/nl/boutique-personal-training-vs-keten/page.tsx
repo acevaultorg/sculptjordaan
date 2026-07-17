@@ -64,7 +64,7 @@ const faqs = [
   {
     question: "Kan ik eerst gratis komen kijken?",
     answer:
-      "Ja. De eerste intake met een trainer is altijd gratis en vrijblijvend. Je kunt ook een gratis Open Gym proefles boeken om de studio te ervaren voordat je iets afneemt.",
+      "Ja. De eerste intake met een trainer is altijd gratis en vrijblijvend. Je kunt ook een gratis Open Gym probeersessie boeken om de studio te ervaren voordat je iets afneemt.",
   },
   {
     question: "Wanneer is een grote sportschool eigenlijk de betere keuze?",

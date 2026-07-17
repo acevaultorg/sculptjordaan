@@ -163,7 +163,7 @@ export default function SportschoolJordaanNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Probeer het zelf</h2>
               <p>
-                Benieuwd of een privé studio bij je past? Boek een gratis proefles bij Open Gym of plan
+                Benieuwd of een privé studio bij je past? Boek een gratis probeersessie bij Open Gym of plan
                 een gratis intake met een personal trainer. Geen verplichtingen, geen abonnement — gewoon
                 komen kijken of het iets voor je is.
               </p>
@@ -182,7 +182,7 @@ export default function SportschoolJordaanNL() {
             <div className="mt-12 rounded-2xl bg-muted p-8 text-center">
               <h3 className="text-xl font-bold mb-2">Gratis proberen?</h3>
               <p className="text-muted-foreground mb-6">
-                Boek een gratis proefles of plan een intake met een trainer.
+                Boek een gratis probeersessie of plan een intake met een trainer.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg">

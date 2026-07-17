@@ -118,7 +118,7 @@ export default function BoutiqueGymVsKetenNL() {
               <p>
                 SculptClub is een privé studio aan de Egelantiersgracht in Amsterdam. Open Gym vanaf
                 €7,25 per sessie. Personal training vanaf €45. Geen contract, gratis annuleren. Je kunt
-                gratis komen proberen — boek een proefles of plan een intake.
+                gratis komen proberen — boek een probeersessie of plan een intake.
               </p>
             </div>
 

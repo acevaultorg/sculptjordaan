@@ -113,7 +113,7 @@ var onRequest = /* @__PURE__ */ __name(async (context) => {
   return context.next();
 }, "onRequest");
 
-// ../.wrangler/tmp/pages-M3ZBUI/functionsRoutes-0.13826458409797882.mjs
+// ../.wrangler/tmp/pages-HYwM5O/functionsRoutes-0.6491587950087793.mjs
 var routes = [
   {
     routePath: "/api/whatsapp/webhook",
