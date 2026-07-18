@@ -49,3 +49,7 @@ next-env.d.ts
 playwright-screenshots/
 playwright-report/
 test-results/
+
+# Raw photo dumps — never deploy (moved to ../sculptclub-source-photos)
+public/images/TransferNow-*
+public/images/wetransfer_*

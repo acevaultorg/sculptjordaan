@@ -109,12 +109,16 @@ export const openGymSummerDeal = {
 // ─── PAID packages (catalog.php) ────────────────────────────────────
 // MUST be opened via target="_blank" — Apple Pay restriction.
 export const acuityPackages = {
-  /** Studio rental discount packs */
+  /** Studio rental discount packs — repriced 2026-07-18 (89/179/299/499).
+   *  New Acuity products created for the new prices: Routine 2247124 ·
+   *  Pro 2248025 · Volume 2248026 (old 2149358/59/60 were ALSO price-corrected
+   *  so any cached/old page charges the right price; retire them to
+   *  Unavailable only after this relink is verified live). */
   studio: {
     starter: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149357`,
-    routine: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149358`,
-    pro: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149359`,
-    volume: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2149360`,
+    routine: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2247124`,
+    pro: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2248025`,
+    volume: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2248026`,
   },
   /** Open Gym membership plans */
   openGym: {
