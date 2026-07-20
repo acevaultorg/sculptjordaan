@@ -47,6 +47,17 @@ function updateConsent(granted: boolean) {
       ad_personalization: granted ? "granted" : "denied",
     });
   }
+  // Meta Pixel. It is consent-gated in analytics.tsx: connect.facebook.net is
+  // never even requested until `sc_consent=all` exists, so on grant there is
+  // usually nothing loaded here yet — the `sc:consent-updated` event below is
+  // what starts it. This call only matters on the way back down: if the pixel
+  // IS already running (returning visitor who previously accepted) and consent
+  // is withdrawn, revoke stops it sending further events and setting cookies.
+  const wf = window as Window & { fbq?: (...args: unknown[]) => void };
+  if (!granted && typeof wf.fbq === "function" && (wf.fbq as { loaded?: boolean }).loaded) {
+    wf.fbq("consent", "revoke");
+  }
+
   // Signal to other scripts
   (window as Window & { sc_consent?: string }).sc_consent = granted ? "all" : "essential";
 }

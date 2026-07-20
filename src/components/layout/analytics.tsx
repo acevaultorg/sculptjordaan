@@ -85,19 +85,73 @@ export function Analytics() {
         `}
       </Script>
 
-      {/* Facebook Pixel */}
-      <Script id="fb-pixel" strategy="lazyOnload">
+      {/* Meta (Facebook) Pixel — CONSENT-GATED.
+
+          Audited live 2026-07-20 (Playwright, real Chrome, no consent clicked):
+          the old version fired PageView and set the `_fbp` cookie on every
+          visit regardless of the cookie banner, while GA4/Ads correctly
+          honoured Consent Mode v2. That directly contradicted our own
+          published cookie policy — /nl/cookiebeleid states verbatim
+          "Facebook Pixel en Google Ads ... Deze cookies worden alleen
+          geplaatst met je toestemming." Behaviour now matches the promise.
+
+          Two deliberate choices:
+
+          1. We do NOT load connect.facebook.net at all until consent.
+             Meta's documented alternative — fbq('consent','revoke') before
+             init — still downloads fbevents.js, which hands the visitor's IP
+             and referrer to Meta before they've agreed to anything. Not
+             requesting the script is both stricter and ~80KB cheaper for
+             everyone who declines.
+
+          2. Strategy moved lazyOnload -> afterInteractive. The old lazyOnload
+             put PageView at +1.8-3.9s on mobile and +11.6s on one desktop
+             run, so early bouncers were invisible to Meta and ad optimisation
+             was learning from partial data. Gating on consent means the
+             script now loads only for visitors who opted in, so loading it
+             promptly costs the declining majority nothing while giving Meta
+             complete data for the ones who did consent.
+
+          The stub is installed unconditionally so the ~8 `fbq(...)` calls in
+          the handlers below stay safe no-ops pre-consent (they queue in
+          memory and flush on init if consent is later granted — Meta's own
+          revoke/grant semantics). No <noscript> fallback img on purpose: it
+          would fire unconditionally and cannot be consent-gated. */}
+      <Script id="fb-pixel" strategy="afterInteractive">
         {`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${fbPixel}');
-          fbq('track', 'PageView');
+          (function(){
+            !function(f,b,e,v,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[]}(window,document);
+
+            var started = false;
+            function startPixel(){
+              if (started) return;
+              started = true;
+              var t = document.createElement('script'); t.async = !0;
+              t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(t, s);
+              fbq('init', '${fbPixel}');
+              fbq('track', 'PageView');
+            }
+            function hasConsent(){
+              return document.cookie.indexOf('sc_consent=all') > -1;
+            }
+
+            if (hasConsent()) {
+              // Returning visitor who already accepted — no waiting.
+              startPixel();
+            } else {
+              // CookieConsent sets the cookie BEFORE dispatching this event,
+              // so reading the cookie here is safe. 'essential' choosers never
+              // reach startPixel(), so Meta is never contacted for them.
+              window.addEventListener('sc:consent-updated', function(){
+                if (hasConsent()) startPixel();
+              });
+            }
+          })();
         `}
       </Script>
 

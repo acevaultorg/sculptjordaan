@@ -144,7 +144,15 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://plausible.io" />
+        {/* plausible.io preconnect REMOVED 2026-07-20 — Plausible was retired
+            2026-07-04 and its script loader is gone from analytics.tsx, but this
+            preconnect survived and was still opening a full TCP+TLS handshake to
+            plausible.io on every single page load, for a service that never
+            loads. Pure waste on every visit. (Verified: no plausible.io/js in
+            the built output.) */}
+        {/* dns-prefetch (DNS only — no connection, no request, no data to Meta)
+            is kept: the pixel is consent-gated in analytics.tsx, so this just
+            shaves the lookup for visitors who DO accept. */}
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.google.com" />
