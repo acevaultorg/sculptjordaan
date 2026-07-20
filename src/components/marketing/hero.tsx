@@ -51,22 +51,58 @@ import type { Locale } from "@/config/site";
 // branded SCULPT wall + numbered turf sprint-lane + exposed brick + canal
 // light — so the first thing every visitor (consumer AND trainer) sees is the
 // actual studio, not a person. The action shot follows in rotation.
+// FOCAL POINTS (`position`) — 2026-07-20. Every hero photo is PORTRAIT
+// (1440x1920). The desktop hero is a wide band, so object-cover scales each
+// photo to the full width and only ~33% of its HEIGHT is ever on screen. Which
+// third you see is decided entirely by the Y value here.
+//
+// All four previously shared one hardcoded `center 25%`, which put the visible
+// window at roughly 17%-50% of the photo — i.e. ceiling, pipes and track
+// lighting — and cropped off the sprint-lane numbers, dumbbell rack and mats
+// that live at 55%-100%. The hero of a private gym was showing everything
+// except the gym. Each photo now gets the anchor its own composition needs.
+//
+// Mobile is unaffected: there the portrait image is cropped horizontally, not
+// vertically, so the full height shows and this Y value is inert.
 const HERO_IMAGES = [
   {
     src: "/images/studio/studio-overview.jpeg",
     alt: "Full overview of the SculptClub private studio in Amsterdam Jordaan — branded sprint lane, dumbbell rack, power rack and canal light",
+    // Signature shot. 40% is the one value that fits BOTH halves of it in the
+    // ~33% window: the whole SCULPT wall AND the numbered sprint lane, dumbbell
+    // rack and power rack down the back. Tested against 25/50/58/64/70:
+    // 25% = ceiling + pipes (the old bug); 50% clips the letters against the
+    // header and collides with the nav logo; 58%+ drops the branding entirely
+    // and leaves a half-cut "SCU" ghost behind the header.
+    position: "center 40%",
   },
   {
     src: "/images/studio/entrance-smile.jpg",
     alt: "A smiling SculptClub member in the warm-lit private studio in Amsterdam Jordaan",
+    // Tight portrait — the hardest of the four, because her face sits at ~31%
+    // of the photo and the desktop band is only ~33% tall, so there is barely
+    // room to place it. 32% lifts her whole face into the clear strip between
+    // the header and the headline. Tested against 8/24/36/42: the old 24% ran
+    // the headline straight across her eyes and the CTA over her mouth; 42%
+    // decapitated her and centred the frame on her chest.
+    position: "center 32%",
   },
   {
     src: "/images/studio/canal-view-doors.jpg",
     alt: "View from inside SculptClub onto the Egelantiersgracht canal in Amsterdam Jordaan",
+    // The canal view IS this photo's subject, so don't drop so low that the
+    // doors leave frame. 58% keeps the full doorway + canal and picks up the
+    // medicine balls, bench and plant at the edges. Tested 68/75 to try to
+    // reach the floor mats: both cut the canal houses off and left a dead
+    // expanse of pavement, so 58% stands.
+    position: "center 58%",
   },
   {
     src: "/images/studio/boutique-corner.jpg",
     alt: "Cosy corner of the SculptClub private studio — dumbbells, kettlebells and plants in warm Jordaan light",
+    // 55% centres the dumbbell rack + kettlebells; 25% showed the vinyl shelf
+    // and bare wall above them.
+    position: "center 55%",
   },
 ];
 
@@ -341,9 +377,13 @@ export function Hero({ locale }: { locale: Locale }) {
               src={img.src}
               alt={img.alt}
               fill
-              className={`object-cover [object-position:center_25%] [transform:translateZ(0)] transition-opacity duration-1000 ease-in-out ${
+              className={`object-cover [transform:translateZ(0)] transition-opacity duration-1000 ease-in-out ${
                 i === active ? "opacity-100" : "opacity-0"
               }`}
+              // Per-image focal point — see HERO_IMAGES. Was a single hardcoded
+              // [object-position:center_25%] for all four, which framed the
+              // ceiling and cropped the gym away on desktop (2026-07-20 fix).
+              style={{ objectPosition: img.position }}
               sizes="100vw"
               loading={i === 0 ? "eager" : "lazy"}
               priority={i === 0}
