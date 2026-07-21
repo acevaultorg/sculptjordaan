@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 
 // Summer deal — honest, price-locked (member keeps €49 as long as they stay).
 // Every deal surface below gates on `deal.active`; when false the page shows the
-// plain regular €69 with no strikethrough/ring/badge/savings/urgency (nothing lies).
+// plain regular €79 with no strikethrough/ring/badge/savings/urgency (nothing lies).
 const deal = openGymSummerDeal;
 const savings = deal.priceRegular - deal.priceDeal;
 // When the deal is live all "become an unlimited member" CTAs route to the €49
@@ -166,7 +166,7 @@ export default function OpenGymPageEN() {
         name="Open Gym"
         description="Train independently in a private studio in the Jordaan, Amsterdam. Book 60-minute sessions, max 4 people at a time."
         url="/en/open-gym"
-        priceRange="€29 - €69 per 4 weeks"
+        priceRange="€29 - €79 per 4 weeks"
       />
       <OfferCatalogJsonLd
         catalogName="Open Gym Memberships"

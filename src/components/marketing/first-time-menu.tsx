@@ -75,12 +75,16 @@ const copy: Record<
       {
         icon: Dumbbell,
         title: "Open Gym",
-        description: "Zelf trainen, max 4 personen. Vanaf €29/4 wkn.",
-        // Points at the DEDICATED trial page, not /nl/open-gym (operator
-        // 2026-07-17): the badge promises a free trial, and /nl/open-gym is the
-        // same page the header menu already links to — clicking "gratis
-        // probeersessie" must land somewhere that actually books one.
-        href: "/nl/gratis-proefles",
+        description: "Zelf trainen, max 4 personen. Nu €49/4 wkn.",
+        // Points at the ZOMERDEAL landing page (operator 2026-07-21) — the same
+        // offer the live summer ad sells (~~€79~~ → €49). Two reasons this
+        // beats the previous /nl/gratis-proefles target: (1) a first-timer
+        // tapping Open Gym sees the actual current offer instead of having to
+        // find it, and (2) the deal page's PRIMARY CTA is still the free
+        // tryout, so the "Gratis probeersessie" badge below stays a true
+        // promise — the 2026-07-17 reason for not sending them to /nl/open-gym
+        // (which buries the booking step) is respected.
+        href: "/nl/open-gym/onbeperkt-zomerdeal",
         badge: "Gratis probeersessie",
         event: "first_time_open_gym",
       },
@@ -118,9 +122,10 @@ const copy: Record<
       {
         icon: Dumbbell,
         title: "Open Gym",
-        description: "Train on your own, max 4 people. From €29/4 wks.",
-        // See NL comment — dedicated trial page, not the header's /en/open-gym.
-        href: "/en/free-trial",
+        description: "Train on your own, max 4 people. Now €49/4 wks.",
+        // See NL comment — the summer-deal landing page, whose primary CTA is
+        // still the free tryout, so the "Free trial" badge stays truthful.
+        href: "/en/open-gym/unlimited-summer-deal",
         badge: "Free trial",
         event: "first_time_open_gym",
       },

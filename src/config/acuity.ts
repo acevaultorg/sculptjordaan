@@ -86,21 +86,21 @@ export const acuityPaidSessions = {
 } as const;
 
 // ─── Open Gym summer deal (Zomeraanbieding) ─────────────────────────
-// Base Onbeperkt list price = €69 / 4 weken. Acuity holds ONE price per
+// Base Onbeperkt list price = €79 / 4 weken. Acuity holds ONE price per
 // subscription product, so the deal is a SEPARATE €49 / 4-weken product
 // (which is also why existing members keep their own price). Toggle:
-//   active:false  → every deal element disappears; base €69 shows plain.
+//   active:false  → every deal element disappears; base €79 shows plain.
 //   endDate       → a REAL operator-set date for the honest urgency line
 //                   (null → no date shown, never faked).
 //   dealUrl       → the €49 Zomerdeal product's add-to-cart link.
 // ACUITY SETUP DONE 2026-07-16 (brain-driven via Chrome MCP, operator-authorized):
-// regular "Open gym - Onbeperkt" (id 2155890) set to €69 (it had ZERO subscribers,
+// regular "Open gym - Onbeperkt" (id 2155890) set to €79 (it had ZERO subscribers,
 // so nobody's price changed); new private product "Open gym - Onbeperkt Zomerdeal"
 // (id 2247082) created at €49 every 4 weeks, forever-until-canceled, unlimited
 // Open Gym Sessie redemption — Acuity bills €49 forever = the price-lock promise.
 export const openGymSummerDeal = {
   active: true,
-  priceRegular: 69,
+  priceRegular: 79,
   priceDeal: 49,
   endDate: null as string | null,
   dealUrl: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2247082`,

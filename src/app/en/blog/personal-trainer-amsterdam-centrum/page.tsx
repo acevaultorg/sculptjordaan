@@ -115,7 +115,7 @@ export default function PersonalTrainerCentrumEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Train independently too</h2>
               <p>
                 Prefer to train on your own? Open Gym offers 60-minute sessions in the same private
-                studio. From €7.25 per session with the Starter plan, or unlimited for €69 per 4 weeks. No contract, stop whenever
+                studio. From €7.25 per session with the Starter plan, or unlimited for €79 per 4 weeks. No contract, stop whenever
                 you want.
               </p>
             </div>

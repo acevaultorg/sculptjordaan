@@ -140,7 +140,7 @@ export default function SportschoolJordaanNL() {
                 Een abonnement bij een grote keten kost tussen de €20 en €40 per maand. Een
                 boutique studio zoals SculptClub werkt anders: je betaalt per sessie of via een
                 flexibel lidmaatschap. Open Gym sessies beginnen bij €7,25 per bezoek met het
-                Instapplan (4 sessies per 4 weken voor €29), of onbeperkt voor €69 per 4 weken.
+                Instapplan (4 sessies per 4 weken voor €29), of onbeperkt voor €79 per 4 weken.
                 Geen contract, geen jaarlijks abonnement — stop wanneer je wilt.
               </p>
 

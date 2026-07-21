@@ -129,7 +129,7 @@ export default function PricingPageEN() {
         name="Open Gym"
         description="Independent training in a private studio in Amsterdam Jordaan. 60-minute sessions, max 4 people. From €29/4 weeks."
         url="/en/pricing"
-        priceRange="€29–€69/4 weeks"
+        priceRange="€29–€79/4 weeks"
       />
       <ServiceJsonLd
         name="Studio Rental"

@@ -115,7 +115,7 @@ export default function PersonalTrainerCentrumNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Ook zelfstandig trainen</h2>
               <p>
                 Liever zelf trainen? Open Gym biedt sessies van 60 minuten in dezelfde privé studio.
-                Vanaf €7,25 per sessie met het Instapplan, of onbeperkt voor €69 per 4 weken. Geen contract, stop wanneer je wilt.
+                Vanaf €7,25 per sessie met het Instapplan, of onbeperkt voor €79 per 4 weken. Geen contract, stop wanneer je wilt.
               </p>
             </div>
 
