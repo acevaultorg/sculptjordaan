@@ -193,11 +193,19 @@ export default function RootLayout({
         <MobileBottomCTABar />
         <UtmCapture />
         <Analytics />
+        {/* FunnelPilot — DISABLED 2026-07-20. funnelpilot.app has our Cloudflare
+            nameservers but no A record, so this script failed with
+            ERR_NAME_NOT_RESOLVED on every page load and tracked nothing. The
+            FunnelPilot product (VAULT-Fleet/cro/funnelpilot) is archived +
+            undeployed. Kept (not deleted) as a placeholder — re-enable the day
+            FunnelPilot ships by uncommenting + confirming funnelpilot.app
+            resolves.
         <Script
           src="https://funnelpilot.app/fp.js"
           data-site="sculptclub"
           strategy="lazyOnload"
         />
+        */}
         {/* Cloudflare Web Analytics — cookieless, privacy-first */}
         <Script
           defer
