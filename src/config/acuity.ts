@@ -93,8 +93,15 @@ export const acuityPaidSessions = {
 //   endDate       → a REAL operator-set date for the honest urgency line
 //                   (null → no date shown, never faked).
 //   dealUrl       → the €49 Zomerdeal product's add-to-cart link.
+// ⚠️ ACUITY OUT OF SYNC (2026-07-21): priceRegular is €79 here, but the Acuity
+// product "Open gym - Onbeperkt" (id 2155890) is still €69. Operator confirmed
+// 2026-07-21 that €79 IS the new standard price, so Acuity must be updated to
+// match — until then the site correctly advertises €79 while checkout of the
+// REGULAR product would charge €69. (No customer is mis-charged and no member is
+// affected — that product has zero subscribers, and every current signup goes to
+// the €49 Zomerdeal product — but the "daarna €79" promise isn't backed yet.)
 // ACUITY SETUP DONE 2026-07-16 (brain-driven via Chrome MCP, operator-authorized):
-// regular "Open gym - Onbeperkt" (id 2155890) set to €79 (it had ZERO subscribers,
+// regular "Open gym - Onbeperkt" (id 2155890) set to €69 (it had ZERO subscribers,
 // so nobody's price changed); new private product "Open gym - Onbeperkt Zomerdeal"
 // (id 2247082) created at €49 every 4 weeks, forever-until-canceled, unlimited
 // Open Gym Sessie redemption — Acuity bills €49 forever = the price-lock promise.
