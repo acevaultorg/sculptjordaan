@@ -82,7 +82,7 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 
 ### 4. Open Gym — Losse sessie
 - **Category:** Open Gym
-- **Price:** €10 / session
+- **Price:** €9 / session (1 uur)
 - **Photo:** `pt-session-barbell.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
@@ -189,7 +189,7 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 > Geen contract:
 > · Instapplan — 4 sessies — €29/4w
 > · Onbeperkt — onbeperkt — €79/4w (zomeraanbieding €49)
-> · Losse sessie — €10
+> · Losse sessie (1 uur) — €9
 >
 > Dagelijks 06:30-22:00. Eerste keer gratis proberen.
 

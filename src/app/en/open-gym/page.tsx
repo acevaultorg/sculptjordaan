@@ -100,7 +100,7 @@ const studioImages = [
 const faqs = [
   {
     q: "What's the difference between a free trial and reserving a session?",
-    a: "The free trial is your first time — no obligation, no membership. After that you reserve single sessions (€10) or become a member. New here? Start with the free trial.",
+    a: "The free trial is your first time — no obligation, no membership. After that you reserve single sessions (€9, 1 hour) or become a member. New here? Start with the free trial.",
   },
   ...(deal.active
     ? [
@@ -320,7 +320,7 @@ export default function OpenGymPageEN() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Liked it? Reserve a session whenever it suits you — €10 single, or cheaper with a plan.
+                  Liked it? Reserve a session whenever it suits you — €9 per hour single, or cheaper with a plan.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -395,7 +395,7 @@ export default function OpenGymPageEN() {
                 <CardDescription>1 session</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
-                <p className="text-3xl font-bold">€10</p>
+                <p className="text-3xl font-bold">€9</p>
                 <p className="mt-3 text-sm text-muted-foreground">No membership needed</p>
               </CardContent>
               <CardFooter className="justify-center">

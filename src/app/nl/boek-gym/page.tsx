@@ -25,7 +25,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam" },
   description:
-    "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie €10 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+    "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
   alternates: {
     canonical: "/nl/boek-gym",
     languages: { nl: "/nl/boek-gym", en: "/en/book-gym" },
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     url: "/nl/boek-gym",
     title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
     description:
-      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie €10 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
     description:
-      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie €10 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
   },
 };
 
@@ -54,9 +54,9 @@ const steps = [
 const plans = [
   {
     name: "Losse sessie",
-    sessions: "1 sessie",
+    sessions: "1 sessie (1 uur)",
     tagline: "Geen lidmaatschap nodig",
-    price: "€10",
+    price: "€9",
     period: "",
     perSession: null,
     badge: null,
@@ -92,8 +92,8 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie €10. Of neem een lidmaatschap: Instapplan €29/4 weken (€7,25/sessie) of Onbeperkt €79/4 weken. Je kunt altijd upgraden of downgraden." },
-  { q: "Heb ik een abonnement nodig?", a: "Nee, je kunt ook een losse sessie boeken voor €10. Of neem een lidmaatschap per 4 weken voor meer voordeel. Altijd opzegbaar." },
+  { q: "Wat kost een Open Gym sessie?", a: "Losse sessie van 1 uur €9. Of neem een lidmaatschap: Instapplan €29/4 weken (€7,25/sessie) of Onbeperkt €79/4 weken. Je kunt altijd upgraden of downgraden." },
+  { q: "Heb ik een abonnement nodig?", a: "Nee, je kunt ook een losse sessie van 1 uur boeken voor €9. Of neem een lidmaatschap per 4 weken voor meer voordeel. Altijd opzegbaar." },
   { q: "Is het echt alleen voor mij?", a: "Ja. De hele studio voor jezelf tijdens je geboekte slot van 60 minuten. Geen andere sporters." },
   { q: "Kan ik een vriend meenemen?", a: "Er mogen max 4 personen tegelijk in de studio. Samen trainen? Bekijk onze studio verhuur opties." },
   { q: "Wat als ik moet annuleren?", a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem." },
@@ -127,7 +127,7 @@ export default function BoekGymPageNL() {
             </ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Losse sessie €10 · Lidmaatschap vanaf €7,25/sessie · Dagelijks 06:30–22:00
+            Losse sessie (1 uur) €9 · Lidmaatschap vanaf €7,25/sessie · Dagelijks 06:30–22:00
           </p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymTrial} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
@@ -204,7 +204,7 @@ export default function BoekGymPageNL() {
             <ul className="space-y-3">
               {[
                 "gratis probeersessie — probeer het zonder verplichtingen",
-                "Losse sessie €10 — geen lidmaatschap nodig",
+                "Losse sessie (1 uur) €9 — geen lidmaatschap nodig",
                 "Privé studio helemaal voor jezelf — geen wachten, geen drukte",
                 "Lidmaatschap vanaf €29/4 weken (€7,25/sessie)",
                 "Onbeperkt trainen voor €79/4 weken",

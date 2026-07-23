@@ -12,20 +12,20 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: { absolute: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam" },
-  description: "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+  description: "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
   alternates: { canonical: "/en/book-gym", languages: { nl: "/nl/boek-gym", en: "/en/book-gym" } },
   openGraph: {
     type: "website",
     url: "/en/book-gym",
     title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
     description:
-      "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+      "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
     description:
-      "Book an Open Gym session at SculptClub in the Jordaan. Single session €10 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+      "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
   },
 };
 
@@ -38,9 +38,9 @@ const steps = [
 const plans = [
   {
     name: "Single Session",
-    sessions: "1 session",
+    sessions: "1 session (1 hour)",
     tagline: "No membership needed",
-    price: "€10",
+    price: "€9",
     period: "",
     perSession: null,
     badge: null,
@@ -76,8 +76,8 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "How much does an Open Gym session cost?", a: "Single session €10. Or get a membership: Starter Plan €29/4 weeks (€7.25/session) or Unlimited €79/4 weeks. You can always upgrade or downgrade." },
-  { q: "Do I need a membership?", a: "No, you can book a single session for €10. Or get a 4-week membership for better value. Cancel anytime." },
+  { q: "How much does an Open Gym session cost?", a: "A 1-hour single session is €9. Or get a membership: Starter Plan €29/4 weeks (€7.25/session) or Unlimited €79/4 weeks. You can always upgrade or downgrade." },
+  { q: "Do I need a membership?", a: "No, you can book a 1-hour single session for €9. Or get a 4-week membership for better value. Cancel anytime." },
   { q: "Is it really just for me?", a: "Yes. The entire studio to yourself during your booked 60-minute slot. No other gym-goers." },
   { q: "Can I bring a friend?", a: "Up to 4 people can train together. Want to train together? Check our studio rental options." },
   { q: "What if I need to cancel?", a: "Cancelling or rescheduling is always free through the booking system." },
@@ -102,7 +102,7 @@ export default function BookGymPageEN() {
             <ButtonLink href={acuityLinks.openGymBook} size="xl" className="w-full sm:w-auto">Book a session<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
             <ButtonLink href="#plans" size="lg" variant="outline" className="w-full sm:w-auto">Choose a plan</ButtonLink>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Single session €10 · Membership from €7.25/session · Daily 06:30–22:00</p>
+          <p className="mt-4 text-xs text-muted-foreground">Single session (1 hour) €9 · Membership from €7.25/session · Daily 06:30–22:00</p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymTrial} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
               New here? Try a free trial first →
@@ -172,7 +172,7 @@ export default function BookGymPageEN() {
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
-              {["Free trial session — try it with no obligation", "Single session €10 — no membership needed", "Private studio all to yourself — no waiting, no crowds", "Membership from €29/4 weeks (€7.25/session)", "Unlimited training for €79/4 weeks", "Door code via WhatsApp, start right away"].map((b, i) => (
+              {["Free trial session — try it with no obligation", "Single session (1 hour) €9 — no membership needed", "Private studio all to yourself — no waiting, no crowds", "Membership from €29/4 weeks (€7.25/session)", "Unlimited training for €79/4 weeks", "Door code via WhatsApp, start right away"].map((b, i) => (
                 <li key={i} className="flex items-start gap-3"><CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span className="text-sm">{b}</span></li>
               ))}
             </ul>

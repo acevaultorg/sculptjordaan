@@ -101,7 +101,7 @@ const studioImages = [
 const faqs = [
   {
     q: "Wat is het verschil tussen een gratis probeersessie en een sessie reserveren?",
-    a: "De gratis probeersessie is je eerste keer — vrijblijvend en zonder abonnement. Daarna reserveer je losse sessies (€10) of word je lid. Nieuw hier? Begin met de gratis probeersessie.",
+    a: "De gratis probeersessie is je eerste keer — vrijblijvend en zonder abonnement. Daarna reserveer je losse sessies van 1 uur (€9) of word je lid. Nieuw hier? Begin met de gratis probeersessie.",
   },
   ...(deal.active
     ? [
@@ -321,7 +321,7 @@ export default function OpenGymPageNL() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Beviel het? Reserveer een sessie wanneer het jou uitkomt — €10 los, of voordeliger met een plan.
+                  Beviel het? Reserveer een sessie wanneer het jou uitkomt — €9 per uur los, of voordeliger met een plan.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -396,7 +396,7 @@ export default function OpenGymPageNL() {
                 <CardDescription>1 sessie</CardDescription>
               </CardHeader>
               <CardContent className="flex-1">
-                <p className="text-3xl font-bold">€10</p>
+                <p className="text-3xl font-bold">€9</p>
                 <p className="mt-3 text-sm text-muted-foreground">Geen lidmaatschap nodig</p>
               </CardContent>
               <CardFooter className="justify-center">
