@@ -69,6 +69,16 @@ export function CookieConsent() {
 
   const [visible, setVisible] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
+  // Minimized = banner collapsed to a small cookie chip (bottom-left). Visitors
+  // who ignore the banner and just start scrolling were stuck with a z-50
+  // full-width bar covering the bottom of the screen forever — which also hid
+  // the sticky mobile CTA bar (z-40) on every funnel page, killing its
+  // conversion job (operator screenshot 2026-07-23). After ~1.2 viewports of
+  // scroll without a choice we collapse to the chip: the page's own CTAs get
+  // the bottom edge back, the choice stays one tap away, and consent remains
+  // default-DENIED until an explicit Accept (GDPR-safe — ignoring is treated
+  // as "not yet", never as consent).
+  const [minimized, setMinimized] = useState(false);
 
   useEffect(() => {
     const existing = getCookie("sc_consent");
@@ -87,6 +97,25 @@ export function CookieConsent() {
     }, 700);
     return () => window.clearTimeout(showTimer);
   }, []);
+
+  // Auto-minimize on scroll. Re-arms every time the banner is (re)opened:
+  // baseline = scroll position when the banner appeared; once the visitor
+  // scrolls meaningfully past it (or past ~1.2 viewports on first load) the
+  // banner collapses to the chip. So a chip-reopened banner that gets ignored
+  // again also re-minimizes after ~300px of further scrolling instead of
+  // permanently covering the page's own bottom CTAs again.
+  useEffect(() => {
+    if (!visible || minimized) return;
+    const baseline = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > window.innerHeight * 1.2 && Math.abs(y - baseline) > 300) {
+        setMinimized(true);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [visible, minimized]);
 
   function handleAccept() {
     setCookie("sc_consent", "all", 365);
@@ -127,6 +156,23 @@ export function CookieConsent() {
   }
 
   if (!visible) return null;
+
+  // Minimized chip — small, bottom-left, sits ABOVE the mobile sticky CTA bar
+  // (bottom-24 clears the 64px bar + safe-area; md has no bar → bottom-4).
+  // Muted styling on purpose: it must not compete with page CTAs.
+  if (minimized) {
+    return (
+      <button
+        onClick={() => setMinimized(false)}
+        aria-label={`${t.title} — ${t.policyLabel}`}
+        className="fixed left-3 bottom-24 md:bottom-4 z-40 flex h-11 w-11 items-center justify-center
+                   rounded-full border border-border bg-card shadow-lg text-muted-foreground
+                   hover:text-foreground transition-colors cursor-pointer"
+      >
+        <Cookie className="h-5 w-5" aria-hidden="true" />
+      </button>
+    );
+  }
 
   return (
     <div

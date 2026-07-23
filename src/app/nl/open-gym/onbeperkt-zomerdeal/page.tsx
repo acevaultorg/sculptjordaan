@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
+import { LandingVideo } from "@/components/marketing/landing-video";
+import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
+import { GoogleMap } from "@/components/marketing/google-map";
+import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, openGymSummerDeal, whatsappLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
@@ -61,6 +65,16 @@ import {
 
 const deal = openGymSummerDeal;
 const savings = deal.priceRegular - deal.priceDeal;
+
+// Real training photos — shared with the Open Gym hub page. Instagram
+// visitors decide on vibe: show the actual room + actual people training.
+const galleryImages = [
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de privé gym in de Jordaan — SCULPT-muur en apparatuur" },
+  { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press op de bank bij SculptClub" },
+  { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang aan de pull-up bar bij SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Open deuren met uitzicht op de Egelantiersgracht" },
+];
+
 
 export const metadata: Metadata = {
   title: { absolute: `Zomeractie — Onbeperkt Open Gym €${deal.priceDeal}/4 weken | SculptClub Jordaan` },
@@ -265,6 +279,34 @@ export default function OnbeperktZomerdealPage() {
         </FadeIn>
       </Section>
 
+      {/* ── Kijk zelf — Instagram-bezoekers leven in verticale video; geef ze
+          de vibe waarvoor ze kwamen: het grachtfilmpje + echte trainingsfoto's.
+          Eerst gevoel (zomer aan de Egelantiersgracht), dan bewijs (de ruimte). */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <p className="overline">Zomer in de Jordaan</p>
+              <h2 className="mt-2 text-2xl font-bold text-foreground">Train waar Amsterdam op z&apos;n mooist is</h2>
+              <p className="mt-2 text-muted-foreground">
+                Jouw gym aan de Egelantiersgracht — bootjes voorbij, deuren open, nooit druk.
+              </p>
+            </div>
+            <div className="mx-auto max-w-xs">
+              <LandingVideo
+                src="/videos/opengym-canal.mp4"
+                poster="/videos/opengym-canal-poster.jpg"
+                label="Zomer aan de Egelantiersgracht, recht voor de deur van SculptClub"
+                aspectClassName="aspect-[9/16]"
+              />
+            </div>
+            <div className="mt-8">
+              <PhotoGalleryLightbox images={galleryImages} locale="nl" />
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
       <Section bg="muted">
         <FadeIn>
@@ -286,6 +328,11 @@ export default function OnbeperktZomerdealPage() {
           </div>
         </FadeIn>
       </Section>
+
+      {/* ── Social proof + location — real Google reviews (5.0), then the
+          practical answer to "where is this?": address, map, route, hours. */}
+      <ReviewsPreview locale="nl" />
+      <GoogleMap locale="nl" />
 
       {/* ── Close ─────────────────────────────────────────────────────── */}
       <Section>

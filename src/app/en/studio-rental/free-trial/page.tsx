@@ -4,6 +4,8 @@ import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
+import { GoogleMap } from "@/components/marketing/google-map";
+import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
@@ -166,6 +168,36 @@ export default function FreeTrialStudioRentalEN() {
         </FadeIn>
       </Section>
 
+      {/* How-it-works — 3 concrete steps. Clarity showed visitors scroll this
+          page without booking; the biggest silent objection on a "free trial"
+          is uncertainty about what booking actually commits you to. Spell it
+          out: 30-second booking, door code via WhatsApp, walk away freely. */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-8 text-center">
+              <p className="overline">How it works</p>
+              <h2 className="mt-2 text-xl font-semibold">Your free trial, step by step</h2>
+            </div>
+            <ol className="grid gap-6 sm:grid-cols-3">
+              {[
+                { n: "1", title: "Book a time", text: "Pick any slot that suits you — takes 30 seconds. No credit card, nothing to fill in." },
+                { n: "2", title: "Walk in & train", text: "You get the door code via WhatsApp. 60 minutes in the studio — alone or with a client." },
+                { n: "3", title: "Decide freely", text: "Like it? Rent from €12/hr, pay per booking. Not for you? Just walk away — there's nothing to cancel." },
+              ].map((s) => (
+                <li key={s.n} className="text-center sm:text-left">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
+                    {s.n}
+                  </span>
+                  <p className="mt-3 text-base font-semibold">{s.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Booking surface — the canonical conversion. NO iframe (operator
           2026-06-21): the embedded Acuity calendar is replaced by a button that
           opens our calendar in a NEW TAB. Acuity's own page is mobile-native +
@@ -217,6 +249,14 @@ export default function FreeTrialStudioRentalEN() {
           </div>
         </FadeIn>
       </Section>
+
+      {/* Social proof — real Google reviews (5.0). A trainer deciding whether
+          this studio is credible wants other people's words, not ours. */}
+      <ReviewsPreview locale="en" />
+
+      {/* Location — where IS this? Practical objection killer: address, map,
+          route planner, hours. Canal-side Jordaan is also a selling point. */}
+      <GoogleMap locale="en" />
 
       {/* Chat-first block — two low-commitment paths for trainers who aren't
           ready to book: ask a question, or come see the room first. */}

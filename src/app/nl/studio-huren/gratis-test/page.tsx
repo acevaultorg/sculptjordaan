@@ -4,6 +4,8 @@ import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
+import { GoogleMap } from "@/components/marketing/google-map";
+import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
@@ -188,6 +190,36 @@ export default function GratisTestStudioHurenNL() {
         </FadeIn>
       </Section>
 
+      {/* Zo-werkt-het — 3 concrete stappen. Clarity: bezoekers scrollen zonder
+          te boeken; het grootste stille bezwaar bij "gratis proberen" is
+          onzekerheid over wat boeken betekent. Dus: 30 seconden boeken,
+          deurcode via WhatsApp, vrijblijvend weglopen. */}
+      <Section>
+        <FadeIn>
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-8 text-center">
+              <p className="overline">Zo werkt het</p>
+              <h2 className="mt-2 text-xl font-semibold">Jouw gratis probeersessie, stap voor stap</h2>
+            </div>
+            <ol className="grid gap-6 sm:grid-cols-3">
+              {[
+                { n: "1", title: "Kies een moment", text: "Boek een tijd die jou uitkomt — duurt 30 seconden. Geen creditcard, niks invullen." },
+                { n: "2", title: "Loop binnen & train", text: "Je krijgt de deurcode via WhatsApp. 60 minuten in de studio — alleen of met je klant." },
+                { n: "3", title: "Beslis vrijblijvend", text: "Bevalt het? Huur vanaf €12/uur, betaal per boeking. Niks voor jou? Gewoon weglopen — er valt niks op te zeggen." },
+              ].map((s) => (
+                <li key={s.n} className="text-center sm:text-left">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
+                    {s.n}
+                  </span>
+                  <p className="mt-3 text-base font-semibold">{s.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Booking surface — the canonical conversion. NO iframe (operator
           2026-06-21): the embedded Acuity calendar is replaced by a button that
           opens our agenda in a NEW TAB. Acuity's own page is mobile-native +
@@ -240,6 +272,14 @@ export default function GratisTestStudioHurenNL() {
           </div>
         </FadeIn>
       </Section>
+
+      {/* Social proof — echte Google-reviews (5.0). Een trainer die twijfelt of
+          deze studio serieus is, wil andermans woorden, niet de onze. */}
+      <ReviewsPreview locale="nl" />
+
+      {/* Locatie — waar IS het? Praktische drempel weg: adres, kaart, route,
+          openingstijden. De gracht in de Jordaan is ook een verkoopargument. */}
+      <GoogleMap locale="nl" />
 
       {/* Chat-first block — TWO low-commitment paths for trainers who aren't
           ready to book: ask a question, or come see the room first. */}

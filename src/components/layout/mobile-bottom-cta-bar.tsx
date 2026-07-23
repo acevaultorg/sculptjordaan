@@ -47,6 +47,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { getLocaleFromPath } from "@/lib/locale";
+import { acuityFreeTrials } from "@/config/acuity";
 import { WhatsAppIcon, pickMessage } from "./whatsapp-button";
 
 // Operator's WhatsApp number. Kept inline to avoid restructuring whatsapp-button.tsx
@@ -94,7 +95,6 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // BACK to the widget instead of duplicating it.
   if (
     /\/(boeking-bevestigd|booking-confirmed)(\/|$)/.test(pathname) || // post-booking — already converted
-    /\/(studio-huren|studio-rental)\/(gratis-test|free-trial)(\/|$)/.test(pathname) || // free-trial step (the screenshot)
     /\/plan-(gratis-intake-met|free-intro-with)-/.test(pathname) || // per-trainer intake step (×22)
     /\/(boek-trainer|boek-gym|boek-studio|book-trainer|book-gym|book-studio)(\/|$)/.test(pathname) || // dedicated book pages
     /\/(boek|book|start)(\/|$)/.test(pathname) // book/start booking endpoints
@@ -106,6 +106,33 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // for both internal AND external CTAs. 2026-05-16: operator phone-shot
   // showed "Boek gratis try-out → →" — duplicate-arrow bug from labels
   // containing trailing → plus JSX-rendered icon. Stripped from all labels.
+
+  // Studio-rental FREE-TRIAL step — re-enabled 2026-07-23. This page was in the
+  // hide-guard since 2026-06-03, when it had an inline AcuityEmbed whose own
+  // button the bar duplicated. That embed was REMOVED 2026-06-21 (no-iframe
+  // directive) — leaving mobile visitors with NO persistent CTA after they
+  // scroll past the hero (Clarity: people scroll, don't book). The bar now
+  // scrolls them to the on-page #book card, and the anchor-aware hide (below)
+  // solves the very redundancy that caused the 2026-06-03 removal.
+  if (/\/(studio-huren\/gratis-test|studio-rental\/free-trial)(\/|$)/.test(pathname)) {
+    return {
+      label: locale === "nl" ? "Boek gratis probeersessie" : "Book free trial",
+      href: "#book",
+      ctaId: "mobile-cta-freetrial-book",
+    };
+  }
+
+  // Open Gym summer-deal landing (nested under /open-gym/ — must match BEFORE
+  // the generic open-gym branch, whose #schedule anchor doesn't exist here).
+  // Primary = the free tryout, same as the page's own hero CTA.
+  if (/\/(onbeperkt-zomerdeal|unlimited-summer-deal)(\/|$)/.test(pathname)) {
+    return {
+      label: locale === "nl" ? "Probeer eerste sessie gratis" : "Try first session free",
+      href: acuityFreeTrials.openGymTryout,
+      external: true,
+      ctaId: "mobile-cta-summerdeal-tryout",
+    };
+  }
 
   // Studio-rental — visitors are PT-trainers shopping rental space.
   // 2026-05-27: route changed from #schedule (deleted free-trial

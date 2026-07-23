@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
+import { LandingVideo } from "@/components/marketing/landing-video";
+import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
+import { GoogleMap } from "@/components/marketing/google-map";
+import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { acuityFreeTrials, openGymSummerDeal, whatsappLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
@@ -28,6 +32,16 @@ import {
 
 const deal = openGymSummerDeal;
 const savings = deal.priceRegular - deal.priceDeal;
+
+// Real training photos — shared with the Open Gym hub page. Instagram
+// visitors decide on vibe: show the actual room + actual people training.
+const galleryImages = [
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overview of the private gym in the Jordaan — SCULPT wall and equipment" },
+  { src: "/images/studio/training-chest-press.jpg", alt: "Dumbbell chest press on the bench at SculptClub" },
+  { src: "/images/studio/training-dead-hang.jpg", alt: "Dead hang on the pull-up bar at SculptClub" },
+  { src: "/images/studio/canal-view-doors.jpg", alt: "Open doors overlooking the Egelantiersgracht canal" },
+];
+
 
 export const metadata: Metadata = {
   title: { absolute: `Summer Deal — Unlimited Open Gym €${deal.priceDeal}/4 weeks | SculptClub Jordaan` },
@@ -229,6 +243,34 @@ export default function UnlimitedSummerDealPage() {
         </FadeIn>
       </Section>
 
+      {/* ── See it — Instagram visitors live in vertical video; give them the
+          vibe they came for: the canal clip + real training photos. Emotion
+          first (summer on the Egelantiersgracht), proof second (the room). */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <p className="overline">Summer in the Jordaan</p>
+              <h2 className="mt-2 text-2xl font-bold text-foreground">Train where Amsterdam is at its best</h2>
+              <p className="mt-2 text-muted-foreground">
+                Your gym on the Egelantiersgracht — boats going by, doors open, never crowded.
+              </p>
+            </div>
+            <div className="mx-auto max-w-xs">
+              <LandingVideo
+                src="/videos/opengym-canal.mp4"
+                poster="/videos/opengym-canal-poster.jpg"
+                label="Summer on the Egelantiersgracht, right outside SculptClub"
+                aspectClassName="aspect-[9/16]"
+              />
+            </div>
+            <div className="mt-8">
+              <PhotoGalleryLightbox images={galleryImages} locale="en" />
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* ── FAQ ───────────────────────────────────────────────────────── */}
       <Section bg="muted">
         <FadeIn>
@@ -250,6 +292,11 @@ export default function UnlimitedSummerDealPage() {
           </div>
         </FadeIn>
       </Section>
+
+      {/* ── Social proof + location — real Google reviews (5.0), then the
+          practical answer to "where is this?": address, map, route, hours. */}
+      <ReviewsPreview locale="en" />
+      <GoogleMap locale="en" />
 
       {/* ── Close ─────────────────────────────────────────────────────── */}
       <Section>
