@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Mail, Send, ArrowLeft, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, Send, ArrowLeft, ArrowRight, CalendarCheck } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +19,13 @@ interface TrainerIntakeProps {
 
 export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   const trainer = trainers.find((t) => t.id === trainerId)!;
+
+  // Some trainers book via their own scheduling link instead of WhatsApp
+  // (Roberta, 2026-07-25 — asked not to publish a private number). When
+  // `bookingUrl` is set we render THAT as the primary CTA and never fall back
+  // to the studio WhatsApp, which would wrongly imply it reaches the trainer.
+  const bookingUrl = trainer.bookingUrl;
+  const bookingLabel = trainer.bookingLabel?.[locale];
 
   // WhatsApp base URL — trainer's own number if configured, else studio
   const waBase = trainer.whatsapp ?? siteConfig.whatsapp;
@@ -310,16 +317,29 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
               <div className="space-y-6 order-1 md:order-2">
                 <h3 className="text-lg font-bold">{t.contactTitle}</h3>
 
-                {/* WhatsApp CTA — goes to trainer directly */}
-                <ButtonLink
-                  href={trainerWhatsapp}
-                  external
-                  size="lg"
-                  className="w-full bg-[#25D366] hover:bg-[#1da851] text-white rounded-xl px-6 py-5 text-base font-semibold transition-all"
-                >
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  {t.whatsappLabel}
-                </ButtonLink>
+                {/* Primary CTA — the trainer's own booking link when they have
+                    one (brand-orange, calendar icon), otherwise WhatsApp. */}
+                {bookingUrl ? (
+                  <ButtonLink
+                    href={bookingUrl}
+                    external
+                    size="lg"
+                    className="w-full rounded-xl px-6 py-5 text-base font-semibold transition-all"
+                  >
+                    <CalendarCheck className="mr-2 w-5 h-5" />
+                    {bookingLabel ?? t.title}
+                  </ButtonLink>
+                ) : (
+                  <ButtonLink
+                    href={trainerWhatsapp}
+                    external
+                    size="lg"
+                    className="w-full bg-[#25D366] hover:bg-[#1da851] text-white rounded-xl px-6 py-5 text-base font-semibold transition-all"
+                  >
+                    <MessageCircle className="mr-2 w-5 h-5" />
+                    {t.whatsappLabel}
+                  </ButtonLink>
+                )}
 
                 {/* Contact form */}
                 {submitted ? (

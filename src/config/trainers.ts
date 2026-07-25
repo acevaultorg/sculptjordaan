@@ -47,6 +47,21 @@ export interface Trainer {
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
   whatsapp?: string;
   /**
+   * External booking URL (Calendly etc.) used INSTEAD of the WhatsApp CTA on
+   * the trainer's card + intake page. For trainers who prefer not to publish a
+   * private mobile number (Roberta, 2026-07-25 — her own request by email).
+   * When set, `whatsapp` is ignored for this trainer's CTAs so we never fall
+   * back to the studio number and mislabel it as reaching the trainer.
+   */
+  bookingUrl?: string;
+  /**
+   * Localized label for the `bookingUrl` button. Lets a trainer name what the
+   * call actually is — Roberta offers a short free DISCOVERY CALL, not a full
+   * intake, so labelling it "Boek intake" would be inaccurate. Falls back to
+   * the generic intake wording if omitted.
+   */
+  bookingLabel?: Record<Locale, string>;
+  /**
    * Trainer's typical availability, short free-text per locale
    * (e.g. nl: "Ma–vr ochtend + avond", en: "Mon–Fri mornings + evenings").
    * 🚨 OPERATOR-SUPPLIED REAL DATA ONLY — ask the trainer; never guess or
@@ -90,7 +105,10 @@ export interface Trainer {
 // military/rowing/BJJ). Operator can reorder freely. Added 2026-07-01.
 // Gezina moved up to #2 (operator 2026-07-04 "plaats gezina hoger op de pagina")
 // — women's-training specialist, given more prominence.
-const DISPLAY_ORDER = ["eva", "gezina", "bryan", "tom", "joey", "ibrahim", "alex", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
+// Roberta added 2026-07-25 (her own email request). Placed at #6 — her
+// ACE®-certified strength / posture-&-mobility / weight-loss profile sits
+// naturally among the general-strength coaches. Operator can reorder freely.
+const DISPLAY_ORDER = ["eva", "gezina", "bryan", "tom", "joey", "roberta", "ibrahim", "alex", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
 
 const trainersRaw: Trainer[] = [
   {
@@ -430,6 +448,44 @@ const trainersRaw: Trainer[] = [
     ],
     // Tom — operator-provided direct contact 2026-07-01: +31 6 15294322.
     whatsapp: "https://wa.me/31615294322",
+  },
+  {
+    id: "roberta",
+    name: "Roberta",
+    slug: {
+      nl: "plan-gratis-intake-met-roberta",
+      en: "plan-free-intro-with-roberta",
+    },
+    specialization: {
+      nl: ["Kracht", "Houding & Mobiliteit", "Afvallen"],
+      en: ["Strength", "Posture & Mobility", "Weight Loss"],
+    },
+    languages: ["EN", "IT"],
+    rate: null,
+    instagram: "https://instagram.com/fitmillennial.pt",
+    instagramHandle: "@fitmillennial.pt",
+    credentials: {
+      nl: "ACE® gecertificeerd personal trainer",
+      en: "ACE® Certified Personal Trainer",
+    },
+    // Bio supplied by Roberta herself (email 2026-07-25), condensed to the
+    // house length + voice. Claims kept exactly as she wrote them — ACE®
+    // certification, Italian, Amsterdam-based, 1-to-1 + small group +
+    // one-off consultations. Nothing added or inferred.
+    bio: {
+      nl: "Italiaanse ACE®-gecertificeerde personal trainer in Amsterdam. Roberta helpt drukke volwassenen sterker te worden, beter te bewegen en een realistische routine op te bouwen die bij hun leven past. Ze geeft 1-op-1 en kleine groepen, en losse consulten voor beginners én gevorderden die professionele begeleiding willen zonder wekelijkse afspraken. De nadruk ligt op techniek, houding en mobiliteit, en vooruitgang die je op eigen kracht volhoudt.",
+      en: "Italian ACE® Certified Personal Trainer based in Amsterdam. Roberta helps busy adults get stronger, move better and build a realistic routine that fits their lifestyle. She offers one-to-one and small-group coaching, plus focused consultations for beginners and experienced exercisers who want professional guidance without committing to weekly appointments. The emphasis is on proper technique, posture and mobility, and sustainable progress you can carry on your own.",
+    },
+    image: "/images/trainers/roberta-main.jpg",
+    // Roberta asked (email 2026-07-25) NOT to publish a private mobile —
+    // her CTA goes to her own Calendly instead of WhatsApp, and she offers a
+    // short free DISCOVERY CALL rather than a full intake, so the button is
+    // relabelled to match what she actually delivers.
+    bookingUrl: "https://calendly.com/robertavirzipt/30min",
+    bookingLabel: {
+      nl: "Boek een gratis kennismakingsgesprek",
+      en: "Book a free discovery call",
+    },
   },
 ];
 

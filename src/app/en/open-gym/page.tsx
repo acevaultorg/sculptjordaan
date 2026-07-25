@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
+import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
@@ -241,6 +242,11 @@ export default function OpenGymPageEN() {
                   Free cancellation
                 </span>
               </div>
+              {/* Single-session ⟷ Membership toggle — see the NL twin for the
+                  full rationale (operator 2026-07-25: make memberships
+                  discoverable in the hero). Defaults to the membership tab. */}
+              <OpenGymPlanTabs locale="en" />
+
               {/* Deal teaser — plain foreground text (never orange, never a button), gated */}
               {deal.active && (
                 <p className="mt-4 text-sm font-medium text-foreground">

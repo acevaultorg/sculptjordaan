@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
+import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
@@ -242,6 +243,16 @@ export default function OpenGymPageNL() {
                   Gratis annuleren
                 </span>
               </div>
+              {/* Losse sessie ⟷ Abonnement toggle. Operator 2026-07-25: visitors
+                  were not learning that Open Gym HAS memberships — all three
+                  prices lived far below the fold, so the hero only ever showed
+                  the €9 hourly path. Defaults to the membership tab on purpose:
+                  that is the option we want people to discover here. (The
+                  free-tryout CTA above is untouched — it stays the entry point
+                  for first-timers, and remains the single goal of the separate
+                  /nl/open-gym/onbeperkt-zomerdeal landing page.) */}
+              <OpenGymPlanTabs locale="nl" />
+
               {/* Deal teaser — plain foreground text (never orange, never a button), gated */}
               {deal.active && (
                 <p className="mt-4 text-sm font-medium text-foreground">

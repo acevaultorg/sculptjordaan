@@ -88,6 +88,8 @@ const aiPriorityPages = [
   { path: "/en/plan-free-intro-with-hamish", priority: 0.75 },
   { path: "/nl/plan-gratis-intake-met-tom", priority: 0.75 },
   { path: "/en/plan-free-intro-with-tom", priority: 0.75 },
+  { path: "/nl/plan-gratis-intake-met-roberta", priority: 0.75 },
+  { path: "/en/plan-free-intro-with-roberta", priority: 0.75 },
 ];
 
 export function GET() {

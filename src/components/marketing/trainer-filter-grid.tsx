@@ -355,14 +355,28 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                 </CardContent>
 
                 <CardFooter className="flex-col gap-2 border-t-0 bg-transparent pt-2 pb-4">
+                  {/* Trainers with their own booking link (Calendly) get that
+                      as the card CTA, with their own wording — Roberta offers a
+                      free discovery call, not an intake, and asked us not to
+                      publish a private number (2026-07-25). Everyone else keeps
+                      the WhatsApp intake link. */}
                   <Link
-                    href={whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)}
+                    href={
+                      trainer.bookingUrl ??
+                      whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)
+                    }
                     target="_blank"
                     rel="noopener"
-                    aria-label={t.ariaIntro(trainer.name)}
+                    aria-label={
+                      trainer.bookingUrl
+                        ? `${trainer.bookingLabel?.[locale] ?? t.bookIntro} — ${trainer.name}`
+                        : t.ariaIntro(trainer.name)
+                    }
                     className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
-                    {t.bookIntro}
+                    {trainer.bookingUrl
+                      ? trainer.bookingLabel?.[locale] ?? t.bookIntro
+                      : t.bookIntro}
                   </Link>
                   {/* Secondary, low-weight path to the trainer's intake page —
                       where bio detail, the structured intake form, and (when
