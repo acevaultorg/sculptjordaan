@@ -90,9 +90,20 @@ const features = [
     description: "Geen pottenkijkers. Alleen jij en je klant(en).",
   },
   {
+    // Availability is a top-3 objection for a trainer choosing a studio
+    // ("kan ik de tijden krijgen die mijn klanten willen?") and it was
+    // nowhere on this page — the old copy ("Boek wanneer het jou uitkomt")
+    // is the generic line every studio runs. Replaced with the specific,
+    // verifiable version: a 13-week Acuity booking analysis (2026-07-27)
+    // shows the studio at ~47% utilisation, with weekday evenings, Monday
+    // and especially the weekend still wide open. Deliberately phrased as
+    // "nog volop uren vrij" (there IS space) and NOT as a promise of any
+    // specific slot — Open Gym / ClassPass share the room on some weekend
+    // hours, so never promise exclusivity here.
     icon: Clock,
-    title: "Flexibel per uur",
-    description: "Boek wanneer het jou uitkomt. Geen vaste tijden.",
+    title: "Ruime beschikbaarheid",
+    description:
+      "Boek per uur, wanneer het jou uitkomt — ook 's avonds en in het weekend zijn er nog volop uren vrij.",
   },
   {
     icon: Percent,

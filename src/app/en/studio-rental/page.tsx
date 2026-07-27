@@ -75,8 +75,18 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Flexible by the hour",
-    description: "Book when it suits you. No fixed schedules.",
+    // NL parity: src/app/nl/studio-huren/page.tsx. Availability is a top-3
+    // objection for a trainer choosing a studio and was absent from this
+    // page; the old line ("Book when it suits you") is the generic claim
+    // every studio makes. Replaced with the specific, verifiable version —
+    // a 13-week Acuity booking analysis (2026-07-27) puts the studio at
+    // ~47% utilisation with weekday evenings, Monday and especially the
+    // weekend wide open. Phrased as "plenty of hours still free" (there IS
+    // space), never as a promise of a specific slot — Open Gym / ClassPass
+    // share the room on some weekend hours, so no exclusivity claim here.
+    title: "Real availability",
+    description:
+      "Book by the hour, whenever suits you — plenty of hours still free on weekday evenings and at weekends.",
   },
   {
     icon: Percent,
