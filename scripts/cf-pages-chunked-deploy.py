@@ -197,6 +197,15 @@ def main():
     # Fail-fast BEFORE the (expensive, ~14min) upload: create_deployment rejects a
     # manifest >20,000 files (HTTP 400), so uploading first just wastes the upload.
     # The RSC soft-nav .txt prune (scripts/deploy-cf-chunked.sh) gets us under the cap.
+    # Fail-fast #2 (2026-07-28): CF Pages hard-rejects any single file >25MiB — the
+    # upload API returns an opaque HTML 500 for the whole BATCH, which retries 12x and
+    # kills the deploy ~45min in. Cheaper to catch here. (Hit live: a 27.8MB photo.)
+    oversized = [(rel, len(c)) for rel, c, sha in entries if len(c) > 25 * 1024 * 1024]
+    if oversized:
+        for rel, n in oversized:
+            print(f"ERROR: {rel} is {n/1048576:.1f}MiB — exceeds CF Pages' 25MiB/file limit.", file=sys.stderr)
+        print("  Recompress/resize these files, then re-run (uploaded batches are cached).", file=sys.stderr)
+        sys.exit(1)
     if len(entries) > 20000:
         print(f"ERROR: {len(entries)} files exceeds CF Pages' 20,000/deployment cap.\n"
               f"  Prune first — deploy via `bash scripts/deploy-cf-chunked.sh` (it strips\n"
