@@ -8,7 +8,7 @@ import { WhatsAppIcon } from "@/components/layout/whatsapp-button";
 import { whatsappLinks } from "@/config/acuity";
 import { trackHeroClick } from "@/lib/tracking";
 import { getColor } from "@/lib/image-color-manifest";
-import type { Locale } from "@/config/site";
+import { siteConfig, type Locale } from "@/config/site";
 
 /**
  * Hero background slideshow — operator directive 2026-05-20: "make this
@@ -541,6 +541,44 @@ export function Hero({ locale }: { locale: Locale }) {
               {locale === "nl" ? "Stel je vraag" : "Ask a question"}
             </a>
           </div>
+
+          {/* SOCIAL PROOF — rating only, deliberately NOT the old 3-part trust
+              bar (operator removed that on 2026-07-04, c09cb52; the minimalist
+              hero direction stands). Re-added 2026-07-27 on the operator's
+              explicit "you decide all, do what's best for revenue".
+
+              Why the rating specifically: a mobile-375 audit that day found the
+              hero carried NO social proof above the fold — the first "5.0 op
+              Google" sat at y≈919 on an 812px viewport, i.e. unseen — while
+              ~20% of sessions arrive COLD from Instagram (in-app browser) with
+              zero prior context, 69% of all sessions are mobile, and 17% quick-
+              back. The 5.0/21-review rating is the single strongest owned trust
+              asset and it was invisible to exactly the visitors who need it.
+              The site's own best-converting page (/en/studio-rental/free-trial)
+              already shows the rating directly under its CTA — this mirrors
+              that proven pattern rather than inventing one.
+
+              Placement: directly under the CTAs so it lands ~y=530 on a 375px
+              screen — inside the fold AND clear of the cookie banner, which
+              occupies 669-812px on first paint.
+
+              Values come from siteConfig.rating so they can never drift from
+              the JSON-LD / reviews section. White text is allowed here because
+              it sits over the hero photo (per CLAUDE.md). */}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=SculptClub+Egelantiersgracht+424+Amsterdam"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackHeroClick("google_rating", 2, locale)}
+            className="plausible-event-name=hero_trust_reviews mt-4 inline-flex items-center justify-center gap-1.5 self-center text-sm font-medium text-white/90 transition-colors hover:text-white"
+          >
+            <span aria-hidden="true" className="text-base leading-none text-[#FFC107]">★★★★★</span>
+            <span>
+              {locale === "nl"
+                ? `${siteConfig.rating.value.toFixed(1).replace(".", ",")} op Google · ${siteConfig.rating.count} reviews`
+                : `${siteConfig.rating.value.toFixed(1)} on Google · ${siteConfig.rating.count} reviews`}
+            </span>
+          </a>
 
           {/* Bottom spacer — operator 2026-07-04 "make the button smaller and
               the position higher" (Saints & Stars example). Mobile/tablet only:
