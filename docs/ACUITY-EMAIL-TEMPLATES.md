@@ -1,5 +1,12 @@
 # Acuity Confirmation Email — Custom Blocks
 
+> ✅ **EXECUTED IN ACUITY 2026-07-27 (all three live):**
+> 1. **Open Gym confirmation** → template "Booking Confirmation 2" (`templateId=3325119`), status **On**, scoped to *Open Gym Sessie / Open Gym Session* + *Book spot / Open gym - Try first time for free* + *Open Gym ClassPass* (class). Section 1 NL block appended.
+> 2. **Studio Rental confirmation** → template "Booking Confirmation 3" (`templateId=3325132`), status **On**, scoped to the 5 rental types + 2 rental trials (*Hele Studio 60 / Halve Studio 60 / Halve Studio 90 / Rent Full Studio 90 / Rent Full Studio (try for free) / Free try out: Full Studio 60 / 2 people (try for free)* — "Hele Studio 60 min +6 others"). Section 2 NL block appended.
+> 3. **Review-request follow-up** → Client Emails → Follow-ups, **1 day after, after each appointment**, subject "Hoe was je sessie, %first%?". ⚠️ Acuity's follow-up editor has TWO templates: **1A (default)** and **1B (has ALL appointment types dragged in)**. The review block lives in **BOTH** — an empty template silently sends nothing for its types, and 1B can't be deleted via automation. **Future edits must be made in 1A AND 1B.**
+>
+> Template NAMES ("Booking Confirmation 2/3") are not renameable via automation — admin-internal only, clients never see them.
+
 Paste these HTML blocks at the bottom of the relevant confirmation emails in Acuity.
 
 ## Where to paste
