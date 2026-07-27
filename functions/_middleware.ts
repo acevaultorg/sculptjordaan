@@ -74,5 +74,34 @@ export const onRequest: PagesFunction = async (context) => {
     }
   }
 
+  // ── Trailing-slash retry for the EXACT map ───────────────────────────────
+  // EXACT is keyed by literal pathname, so "/plan-gratis-intake-met-alex"
+  // matched but "/plan-gratis-intake-met-alex/" fell straight through to a
+  // 404. That mattered a lot: the legacy URLs are WordPress-era, and
+  // WordPress always emitted a trailing slash — so the slashed form is
+  // exactly what Google, old Instagram-bio links and printed material still
+  // point at. Measured 2026-07-27: 350 of 351 non-wildcard rules had no
+  // trailing-slash twin, and GSC listed 29 "Not found (404)" URLs including
+  // /plan-gratis-intake-met-{alex,dara,eva}/ — free-intake booking pages,
+  // i.e. top-of-funnel conversion URLs answering 404 to real visitors.
+  //
+  // Scope is deliberately narrow: only retry when the de-slashed path is a
+  // KNOWN EXACT key. Verified safe against the two things that could break:
+  //   • real pages ("/nl/open-gym/") aren't EXACT keys, so they still fall
+  //     through to context.next() and CF serves them 200 as before;
+  //   • SPLAT prefixes ("/category/") are matched ABOVE this block, so
+  //     de-slashing can never steal them.
+  // A blanket "strip every trailing slash" redirect was rejected for that
+  // reason — it would have rewritten live URLs that already work.
+  if (path.length > 1 && path.endsWith("/")) {
+    const deslashed = path.slice(0, -1);
+    const exSlash = EXACT[deslashed];
+    if (exSlash) {
+      const dest = exSlash[0];
+      if (/^https?:\/\//.test(dest)) return Response.redirect(dest, exSlash[1]);
+      url.pathname = dest; return Response.redirect(url.toString(), exSlash[1]);
+    }
+  }
+
   return context.next();
 };
