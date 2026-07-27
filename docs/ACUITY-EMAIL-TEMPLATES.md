@@ -16,7 +16,12 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
 
 ## 1. Open Gym confirmation (appointmentType 83513953 + trial 87017445)
 
-**What it adds:** one primary "Book next session" button + the 4 membership upgrade options.
+**What it adds:** one primary "Book next session" button + the Open Gym membership upgrade options (per operator directive 2026-07-27: Open Gym emails promote Open Gym subscriptions; Studio Rental emails promote the studio packages — see Section 2).
+
+> **Synced 2026-07-27 against `src/config/acuity.ts` + CLAUDE.md:**
+> - Removed the "Populair — 8 sessies €49" row (product 2155888): it is no longer in the config, and its €49 price collides with the Zomerdeal price — two different "€49" products in one email is a support headache.
+> - Onbeperkt was listed at €89 — wrong twice over. List price is **€79**, and while `openGymSummerDeal.active` is true the row promotes the **Zomerdeal product 2247082** at ~~€79~~ €49, price-locked ("deze prijs blijft zolang je lid blijft" — the honest framing per CLAUDE.md; never "daarna €69/€79" for the deal member).
+> - ⚠️ **If the Zomerdeal is switched off** (`openGymSummerDeal.active: false` in `src/config/acuity.ts`), edit the pasted email in Acuity too: swap the Onbeperkt row's link to product **2155890** and the price to plain **€79 / 4 weken**, no badge, no strikethrough. The email is a pasted copy — it does NOT update itself when the config changes.
 
 ### NL (for `/nl/boek-gym` customers)
 
@@ -54,14 +59,6 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155888"
-             style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
-            <strong>Populair</strong> — 8 sessies
-            <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
-            <span style="display:block;color:#544A40;font-size:13px;margin-top:2px;">€49 / 4 weken — €6,13 per sessie</span>
-          </a>
-        </td></tr>
-        <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155889"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Intensief</strong> — 12 sessies &nbsp;·&nbsp; <span style="color:#544A40;">€69 / 4 weken</span>
@@ -69,9 +66,11 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155890"
-             style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
-            <strong>Onbeperkt</strong> — Zoveel als je wilt &nbsp;·&nbsp; <span style="color:#544A40;">€89 / 4 weken</span>
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2247082"
+             style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
+            <strong>Onbeperkt</strong> — Zoveel als je wilt
+            <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Zomerdeal</span>
+            <span style="display:block;color:#544A40;font-size:13px;margin-top:2px;"><span style="text-decoration:line-through;color:#8A8073;">€79</span> €49 / 4 weken — deze prijs blijft zolang je lid blijft</span>
           </a>
         </td></tr>
       </table>
@@ -116,14 +115,6 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155888"
-             style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
-            <strong>Popular</strong> — 8 sessions
-            <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
-            <span style="display:block;color:#544A40;font-size:13px;margin-top:2px;">€49 / 4 weeks — €6.13 per session</span>
-          </a>
-        </td></tr>
-        <tr><td style="padding:4px 0;">
           <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155889"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Intensive</strong> — 12 sessions &nbsp;·&nbsp; <span style="color:#544A40;">€69 / 4 weeks</span>
@@ -131,9 +122,11 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2155890"
-             style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
-            <strong>Unlimited</strong> — As much as you want &nbsp;·&nbsp; <span style="color:#544A40;">€89 / 4 weeks</span>
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2247082"
+             style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
+            <strong>Unlimited</strong> — As much as you want
+            <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Summer deal</span>
+            <span style="display:block;color:#544A40;font-size:13px;margin-top:2px;"><span style="text-decoration:line-through;color:#8A8073;">€79</span> €49 / 4 weeks — you keep this price for as long as you stay a member</span>
           </a>
         </td></tr>
       </table>
@@ -148,7 +141,9 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
 
 ## 2. Studio Rental confirmation (appointmentTypes 84032351, 86677323, 82553655, 85410115)
 
-**What it adds:** two "book next session" buttons (Half 60 + Full 60), 4 discount pack options, and a WhatsApp-invoice fallback.
+**What it adds:** two "book next session" buttons (Half 60 + Full 60), the 4 studio discount packages (per operator directive 2026-07-27: Studio Rental emails promote the studio packages, not Open Gym), and a WhatsApp-invoice fallback.
+
+> **Synced 2026-07-27 against `src/config/acuity.ts`:** product links updated to the CURRENT package products created at the 2026-07-18 repricing — Routine **2247124** · Pro **2248025** · Volume **2248026** (Starter stays 2149357). The old ids 2149358/59/60 this doc used were the pre-reprice products; they were price-corrected too, but the new ids are canonical and the old ones are due to be retired to Unavailable. Prices unchanged: Starter €89 (credit €99) · Routine €179 (€210) · Pro €299 (€375) · Volume €499 (€650).
 
 ### NL
 
@@ -197,7 +192,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149358"
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2247124"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Routine</strong>
             <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Meest gekozen</span>
@@ -207,7 +202,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149359"
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2248025"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Pro</strong> &nbsp;·&nbsp; <span style="color:#544A40;">€299</span>
             <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€375</span>
@@ -215,7 +210,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149360"
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2248026"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Volume</strong>
             <span style="display:inline-block;background:#16a34a;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Beste deal</span>
@@ -282,7 +277,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149358"
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2247124"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:2px solid #EA580C;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Routine</strong>
             <span style="display:inline-block;background:#EA580C;color:#0E0C0A;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Most popular</span>
@@ -292,7 +287,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149359"
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2248025"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Pro</strong> &nbsp;·&nbsp; <span style="color:#544A40;">€299</span>
             <span style="color:#8A8073;text-decoration:line-through;font-size:12px;">&nbsp;€375</span>
@@ -300,7 +295,7 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
           </a>
         </td></tr>
         <tr><td style="padding:4px 0;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2149360"
+          <a href="https://app.acuityscheduling.com/catalog.php?owner=36720238&action=addCart&clear=1&id=2248026"
              style="display:block;padding:14px 16px;background:#F3F0EC;border:1px solid #D3CCC4;border-radius:10px;color:#0E0C0A;text-decoration:none;font-size:14px;text-align:left;">
             <strong>Volume</strong>
             <span style="display:inline-block;background:#16a34a;color:#ffffff;padding:2px 10px;border-radius:999px;font-size:11px;margin-left:6px;font-weight:600;">Best deal</span>
@@ -320,6 +315,116 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
   </tr>
 </table>
 ```
+
+---
+
+## 3. Review request — FOLLOW-UP email (all appointment types)
+
+> ⚠️ **This is a FOLLOW-UP email, not a confirmation email.** It must arrive *after* the session, never at booking time — asking for a review before someone has trained makes no sense and reads as spam.
+>
+> **Why this exists (added 2026-07-27):** SculptClub has **21 Google reviews**; local rivals have **126–719**. Review count is the single biggest driver of local-SERP visibility, and the site currently averages position ~48 on non-branded local queries. A `/review` link and a printable QR already exist — but nothing ever *asks*. This closes that gap: an automatic, honest ask after every completed session.
+>
+> This is the highest-ROI item in the Marketing project's own notes, and it compounds — every session becomes a chance at a review, forever, with no ongoing operator effort.
+
+### ⚖️ Compliance — read before editing the copy
+
+Google's review policies are strict and the penalties (review removal, profile action) land on **your** listing:
+
+- **Never incentivise.** No discount, free session, or entry-to-win in exchange for a review. Not even a small one.
+- **Never gate.** Don't ask only the happy customers, and don't pre-screen ("did you enjoy it? → if yes, review us"). Ask *everyone* the same way.
+- **Never script the rating.** Don't write "leave us 5 stars". Ask for an honest review; the 5.0 takes care of itself.
+
+The copy below is deliberately written to satisfy all three. If you rewrite it, keep those constraints.
+
+### Where to set it up in Acuity (~3 min, one-time)
+
+1. Log in to https://secure.acuityscheduling.com/
+2. **Business Settings → Customize Appearance → Emails**
+3. Find **"Follow-up email"** (Acuity may label it *Follow-Up* or *Post-appointment*). Enable it.
+4. Timing: **1 day after** the appointment. Rationale: same-day is too soon (they may still be travelling home), and after ~3 days the session stops feeling fresh and reply rates fall off.
+5. Switch the editor to **HTML / Source mode** and paste the block below.
+6. Apply to **all appointment types** — Open Gym, Studio Rental, PT, trials. Everyone gets asked, which is also what keeps it compliant (no gating).
+
+**VERIFY:** book a test appointment on a past date (or use Acuity's email preview), confirm the mail arrives and the button lands on the Google star form. `https://sculptclub.nl/review` is a stable redirect → verified live 2026-07-27 → resolves to `search.google.com/local/writereview?placeid=ChIJCXG6-WAJxkcRO-dqhcrQSgU`. Using the `/review` indirection (not the raw Google URL) means the destination can be changed in one place later.
+
+### NL
+
+```html
+<!-- ═══ SculptClub — review request, follow-up (NL) ═══ -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:32px;border-top:1px solid #2A2620;padding-top:28px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;">
+  <tr>
+    <td align="center" style="padding:0 16px;">
+      <p style="margin:0 0 8px 0;font-size:12px;color:#8A8073;letter-spacing:0.1em;text-transform:uppercase;">Hoe was het?</p>
+      <h3 style="margin:0 0 8px 0;font-size:22px;font-weight:700;color:#0E0C0A;">Laat je het ons weten?</h3>
+      <p style="margin:0 0 20px 0;font-size:14px;line-height:1.6;color:#544A40;">
+        We zijn een kleine studio aan de Egelantiersgracht — geen keten, geen marketingbudget.
+        Mensen vinden ons vooral via Google. Een eerlijke review, goed of kritisch, helpt de
+        volgende persoon beslissen of dit bij ze past. Kost je een minuut.
+      </p>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+        <tr>
+          <td style="border-radius:12px;background:#EA580C;">
+            <a href="https://sculptclub.nl/review"
+               style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:600;color:#0E0C0A;text-decoration:none;border-radius:12px;">
+              Schrijf een review →
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <p style="margin:20px 0 0 0;font-size:13px;line-height:1.6;color:#8A8073;">
+        Liever iets rechtstreeks kwijt? App ons op
+        <a href="https://wa.me/31615147952" style="color:#EA580C;text-decoration:none;">06 15 14 79 52</a>
+        — we lezen alles en passen dingen echt aan.
+      </p>
+    </td>
+  </tr>
+</table>
+```
+
+### EN
+
+```html
+<!-- ═══ SculptClub — review request, follow-up (EN) ═══ -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:32px;border-top:1px solid #2A2620;padding-top:28px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;">
+  <tr>
+    <td align="center" style="padding:0 16px;">
+      <p style="margin:0 0 8px 0;font-size:12px;color:#8A8073;letter-spacing:0.1em;text-transform:uppercase;">How was it?</p>
+      <h3 style="margin:0 0 8px 0;font-size:22px;font-weight:700;color:#0E0C0A;">Would you tell us?</h3>
+      <p style="margin:0 0 20px 0;font-size:14px;line-height:1.6;color:#544A40;">
+        We're a small studio on the Egelantiersgracht — no chain, no marketing budget.
+        People mostly find us through Google. An honest review, glowing or critical, helps
+        the next person work out whether this is right for them. Takes a minute.
+      </p>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+        <tr>
+          <td style="border-radius:12px;background:#EA580C;">
+            <a href="https://sculptclub.nl/review"
+               style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:600;color:#0E0C0A;text-decoration:none;border-radius:12px;">
+              Write a review →
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <p style="margin:20px 0 0 0;font-size:13px;line-height:1.6;color:#8A8073;">
+        Rather tell us directly? WhatsApp us on
+        <a href="https://wa.me/31615147952" style="color:#EA580C;text-decoration:none;">+31 6 15 14 79 52</a>
+        — we read everything and we do act on it.
+      </p>
+    </td>
+  </tr>
+</table>
+```
+
+### Why the copy is written this way
+
+- **Gives a reason.** "Small studio, no marketing budget, people find us through Google" — a concrete, true reason to bother. Reciprocity beats a bare "please review us".
+- **"Goed of kritisch" / "glowing or critical"** is doing real work: it's the honest ask that keeps this compliant, *and* it raises response rates because it doesn't feel like a performance request.
+- **WhatsApp escape hatch** at the bottom, deliberately placed *after* the review button and not as an alternative to it. This is NOT gating — everyone still gets the review link first. It just gives someone with a real complaint a private route, which protects the rating honestly rather than by filtering.
+- Dutch is `je/jouw` throughout, no `u`-vorm, no superlatives — per the SculptClub voice.
 
 ---
 
