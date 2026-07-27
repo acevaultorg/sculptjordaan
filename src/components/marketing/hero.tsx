@@ -271,6 +271,18 @@ export function Hero({ locale }: { locale: Locale }) {
       // not a personal-workout rental).
       trainerLink: { label: "Studio huren voor trainers", href: "/nl/studio-huren" },
       // whatsappLink removed 2026-05-27 — see comment in BOTTOM CLUSTER.
+      // ⚠️ trustParts (NL here + EN below) is DEAD CONFIG — it is NOT rendered
+      // anywhere. The hero trust line was removed on purpose in c09cb52
+      // (operator 2026-07-04, image annotation: "Hero: remove the trust line
+      // 'Eerste intake gratis · Altijd opzegbaar · 5.0 ★ Google'"). Kept only
+      // as a record of the wording + the tracking events, so the copy isn't
+      // lost if it's ever reinstated.
+      // DO NOT "fix" this by re-rendering it — that reverses an explicit
+      // operator decision. Verified 2026-07-27: a mobile-375 audit found the
+      // hero shows no social proof above the fold (first "5.0 op Google" sits
+      // at y≈919 on an 812px viewport, i.e. below the fold) while ~20% of
+      // sessions arrive cold from Instagram. That is a real trade-off, but it
+      // is the operator's call to reopen — surface it, don't silently undo it.
       trustParts: [
         { text: "Eerste intake gratis", href: "/nl/gratis-intake", event: "hero_trust_intake" },
         // 2026-06-02: was static text. Clarity 2026-05-19 audit showed 5.45% of
