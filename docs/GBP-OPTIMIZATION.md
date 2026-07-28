@@ -45,7 +45,7 @@ Add via **Services → Add more services**. Click "Add custom service" if not in
 
 | # | Service name | Category | Description (optional, ≤1000 chars) |
 |---|---|---|---|
-| 1 | **Open Gym** | Gym | Solo training in a private studio. Door code via WhatsApp. Max 4 people at a time. €29-59/4 weeks, no contract. |
+| 1 | **Open Gym** | Gym | Solo training in a private studio. Door code via WhatsApp. Max 4 people at a time. €29-79/4 weeks (summer deal: unlimited €49, price-locked), no contract. |
 | 2 | **Studio rental** | Gym | Rent the full studio per session for your own clients. €12-24/hour. For trainers and physiotherapists. |
 | 3 | **Strength training** | Gym | Trainers specialized in compound lifts, progressive overload, technique. Free first intake. |
 | 4 | **Calisthenics coaching** | Gym | Bodyweight skill work, mobility, strength progressions. With trainer Alex. |
