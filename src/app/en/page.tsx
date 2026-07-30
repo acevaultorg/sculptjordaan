@@ -3,6 +3,7 @@ import { Hero } from "@/components/marketing/hero";
 import { TrainerPreviewGrid } from "@/components/marketing/trainer-preview-grid";
 import { TrainerSignalBand } from "@/components/marketing/trainer-signal-band";
 import { ServicesOverview } from "@/components/marketing/services-overview";
+import { HomePricingExplorer } from "@/components/marketing/home-pricing-explorer";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { InstagramFeed } from "@/components/marketing/instagram-feed";
@@ -104,6 +105,7 @@ export default function HomePageEN() {
       <TrainerPreviewGrid locale="en" />
       <TrainerSignalBand locale="en" />
       <ServicesOverview locale="en" />
+      <HomePricingExplorer locale="en" />
       <HowItWorks locale="en" />
       <WhyWeExist locale="en" />
       <StudioVideoBand locale="en" />

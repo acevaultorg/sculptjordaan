@@ -180,7 +180,7 @@ export default function BookStudioPageEN() {
                       Buy Routine
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Routine", 234, 199, "en")}
+                      href={whatsappLinks.studioPackInvoice("Routine", 210, 179, "en")}
                       external
                       variant="outline"
                       size="lg"
@@ -205,7 +205,7 @@ export default function BookStudioPageEN() {
                       Buy Pro
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Pro", 436, 349, "en")}
+                      href={whatsappLinks.studioPackInvoice("Pro", 375, 299, "en")}
                       external
                       variant="outline"
                       size="lg"
@@ -230,7 +230,7 @@ export default function BookStudioPageEN() {
                       Buy Volume
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Volume", 713, 549, "en")}
+                      href={whatsappLinks.studioPackInvoice("Volume", 650, 499, "en")}
                       external
                       variant="outline"
                       size="lg"

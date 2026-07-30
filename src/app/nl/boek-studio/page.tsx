@@ -180,7 +180,7 @@ export default function BoekStudioPageNL() {
                       Koop Routine
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Routine", 234, 199, "nl")}
+                      href={whatsappLinks.studioPackInvoice("Routine", 210, 179, "nl")}
                       external
                       variant="outline"
                       size="lg"
@@ -205,7 +205,7 @@ export default function BoekStudioPageNL() {
                       Koop Pro
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Pro", 436, 349, "nl")}
+                      href={whatsappLinks.studioPackInvoice("Pro", 375, 299, "nl")}
                       external
                       variant="outline"
                       size="lg"
@@ -230,7 +230,7 @@ export default function BoekStudioPageNL() {
                       Koop Volume
                     </ButtonLink>
                     <ButtonLink
-                      href={whatsappLinks.studioPackInvoice("Volume", 713, 549, "nl")}
+                      href={whatsappLinks.studioPackInvoice("Volume", 650, 499, "nl")}
                       external
                       variant="outline"
                       size="lg"
