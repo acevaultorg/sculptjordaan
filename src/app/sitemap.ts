@@ -63,6 +63,11 @@ const nlPages = [
   "/nl/small-group",
   "/nl/studio-huren",
   "/nl/studio-huren/rekentool",
+  // Added 2026-07-30 — was `index, follow` + self-canonical but absent from this
+  // hand-maintained array, so it was never submitted for indexing. This is the
+  // conversion page of the studio-rental funnel (93% of revenue), i.e. the single
+  // page a searching trainer is most likely to convert on.
+  "/nl/studio-huren/gratis-test",
   "/nl/boek",
   "/nl/over-ons",
   "/nl/reviews",
@@ -131,6 +136,13 @@ const nlPages = [
   "/nl/voor-trainers/personal-trainer-locatie-amsterdam-jordaan",
   "/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten",
   "/nl/prijzen",
+  // Added 2026-07-30 — both are `index, follow` + self-canonical (i.e. the page
+  // author intended them indexed) but had drifted out of this hand-maintained
+  // array, so neither was ever submitted. High local intent — these target the
+  // "Jordaan" queries the studio actually competes for. NOT to be confused with
+  // the deliberately noindex'd thin location pages listed further up.
+  "/nl/personal-trainer-jordaan",
+  "/nl/sportschool-jordaan",
   "/nl/boutique-personal-training-vs-keten",
   "/nl/algemene-voorwaarden",
   "/nl/privacybeleid",
@@ -169,6 +181,9 @@ const enPages = [
   "/en/small-group",
   "/en/studio-rental",
   "/en/studio-rental/calculator",
+  // Added 2026-07-30 — EN twin of /nl/studio-huren/gratis-test. Same story:
+  // `index, follow` + self-canonical, but never in this array so never submitted.
+  "/en/studio-rental/free-trial",
   "/en/book",
   "/en/about",
   "/en/reviews",
@@ -237,6 +252,10 @@ const enPages = [
   "/en/for-trainers/personal-trainer-location-amsterdam-jordaan",
   "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
   "/en/pricing",
+  // Added 2026-07-30 — EN twins of the two NL local pages above. Both
+  // `index, follow` + self-canonical, both previously unsubmitted.
+  "/en/personal-trainer-amsterdam-jordaan",
+  "/en/boutique-gym-amsterdam",
   "/en/boutique-personal-training-vs-chain-gyms",
   "/en/terms-conditions",
   "/en/privacy-policy",
@@ -276,7 +295,15 @@ const enPages = [
 // intent pages on the site (a visitor on a specific trainer's page is closer
 // to booking than one on the general listing), so they should get the same
 // money-page tier as /nl/gratis-intake itself.
-const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|gratis-proefles|free-trial|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym|studio-huren|studio-rental|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake(-met-.+)?|plan-free-intro(-with-.+)?|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
+// 2026-07-30 — `open-gym`, `studio-huren` and `studio-rental` now also match
+// their SUBpaths (`(\/.+)?`). Same bug the plan-gratis-intake note above
+// describes: the `$` anchor meant only the bare slug counted as a money page, so
+// every conversion sub-page silently fell through to the 0.8 default —
+// /nl/studio-huren/rekentool + /gratis-test, /en/studio-rental/calculator +
+// /free-trial, and both live summer-deal pages (/nl/open-gym/onbeperkt-zomerdeal,
+// /en/open-gym/unlimited-summer-deal) were all sitting at 0.8 under a 0.9 parent.
+// These are the pages a visitor converts ON, so they earn the money-page tier.
+const MONEY_PAGE_RE = /^\/(nl|en)\/(gratis-intake|free-intro|gratis-proefles|free-trial|vind-jouw-personal-trainer|find-personal-trainer|prijzen|pricing|open-gym(\/.+)?|studio-huren(\/.+)?|studio-rental(\/.+)?|boek|book|boek-trainer|book-trainer|boek-studio|book-studio|boek-gym|book-gym|plan-gratis-intake(-met-.+)?|plan-free-intro(-with-.+)?|boutique-personal-training-vs-keten|boutique-personal-training-vs-chain-gyms)$/;
 const LEGAL_RE = /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelijkheid|privacy-policy|cookie-policy|terms-conditions|accessibility-statement)/;
 
 // Newest blog posts get a priority boost — signals freshness to Google.
