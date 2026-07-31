@@ -94,7 +94,9 @@ export default function EersteKeerSportschoolTips() {
                 Je eerste keer naar de sportschool kan spannend zijn. Misschien weet je niet wat je kunt verwachten,
                 voel je je onzeker over de apparaten of vraag je je af of iedereen naar je kijkt. Laat we je
                 geruststellen: iedereen is ooit voor het eerst geweest. Met deze 7 praktische tips bereid je je
-                goed voor en stap je vol vertrouwen die sportschool binnen.
+                goed voor en stap je vol vertrouwen die sportschool binnen. Kom je bij ons langs? Dan lees je op{" "}
+                <a href="/nl/eerste-bezoek">wat je bij je eerste bezoek kunt verwachten</a> precies hoe dat
+                eerste uur eruitziet — van deurcode tot warming-up.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">1. Kies de juiste sportschool voor jou</h2>

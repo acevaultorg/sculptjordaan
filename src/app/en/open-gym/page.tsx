@@ -602,6 +602,11 @@ export default function OpenGymPageEN() {
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">First time at the gym: tips</p>
               </a>
+              {/* EN twin of the /nl/eerste-bezoek contextual-link push (see NL page). */}
+              <a href="/en/first-visit" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Practical</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Your first visit — what to expect</p>
+              </a>
             </div>
           </div>
         </FadeIn>

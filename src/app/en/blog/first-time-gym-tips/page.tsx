@@ -94,7 +94,9 @@ export default function FirstTimeGymTips() {
                 Walking into a gym for the first time can feel intimidating. You might not know what to expect, feel
                 unsure about the equipment, or worry that everyone is watching you. Let us put your mind at ease:
                 everyone was a beginner once. With these 7 practical tips, you will be well prepared and walk through
-                those doors with confidence.
+                those doors with confidence. Visiting us? See{" "}
+                <a href="/en/first-visit">what to expect on your first visit</a> for exactly how that first
+                hour goes — from door code to warm-up.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">1. Choose the Right Gym for You</h2>

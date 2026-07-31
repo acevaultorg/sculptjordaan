@@ -601,6 +601,13 @@ export default function OpenGymPageNL() {
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Voor het eerst naar de sportschool: tips</p>
               </a>
+              {/* Contextual link added 2026-07-30 — /nl/eerste-bezoek ranked pos ~14
+                  (72 imp/30d, 0 clicks) with ONLY nav/footer links; this is its first
+                  in-body link from a topically-related page (GSC striking-distance push). */}
+              <a href="/nl/eerste-bezoek" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Praktisch</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Je eerste bezoek — wat je kunt verwachten</p>
+              </a>
               <a href="/nl/blog/consistent-blijven-met-sporten" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Consistent blijven met sporten</p>
