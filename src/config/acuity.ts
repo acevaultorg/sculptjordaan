@@ -69,17 +69,20 @@ export const acuityPaidSessions = {
   studioRentalHalf60: `${SCHEDULE}?owner=${OWNER}&appointmentType=84032351`,
 
   /** Studio Rental Half 90min — €17 (appointmentType=86677323).
-   * NOT OFFERED on the site since 2026-07-30 (operator: 0×
-   * booked in ~3 months per Acuity Reports — June MTD listed only 60-min
-   * types). Link kept so cached pages keep working; Acuity product
-   * untouched (operator-side). */
+   * NOT ADVERTISED on the site since 2026-07-30 (0× booked in ~3 months per
+   * Acuity Reports), but DO NOT DELETE this entry or the Acuity product:
+   * operator 2026-07-30 — "de 90 min niet uit acuity verwijderen … mogelijk
+   * komt het later nog terug." The product stays bookable via direct link,
+   * cached pages keep working, and re-offering it on the site is a matter of
+   * re-adding UI that points at this link. */
   studioRentalHalf90: `${SCHEDULE}?owner=${OWNER}&appointmentType=86677323`,
 
   /** Studio Rental Full 60min — €17 (appointmentType=82553655) */
   studioRentalFull60: `${SCHEDULE}?owner=${OWNER}&appointmentType=82553655`,
 
   /** Studio Rental Full 90min — €24 (appointmentType=85410115).
-   * NOT OFFERED on the site since 2026-07-30 — see note above. */
+   * NOT ADVERTISED on the site since 2026-07-30 — same rule as Half 90min
+   * above: KEEP this entry and the Acuity product (operator: may return). */
   studioRentalFull90: `${SCHEDULE}?owner=${OWNER}&appointmentType=85410115`,
 
   /** Open Gym multi-session plan add-to-cart links (paid) */
