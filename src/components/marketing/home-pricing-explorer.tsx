@@ -54,7 +54,11 @@ const COPY = {
         gym: {
           title: "Open Gym",
           who: "1 persoon",
-          sub: "Train zelf · max 4 personen in de studio",
+          // Operator 2026-07-30: "max 4 personen in de studio" was confusing
+          // right after "1 persoon" (you book for 1, the ROOM holds max 4).
+          // Reframed as the benefit — quiet, never crowded — with "tegelijk"
+          // making it unambiguously about the room, not your booking.
+          sub: "Train zelf in alle rust — nooit meer dan 4 tegelijk",
         },
         half: {
           title: "Halve studio",
@@ -69,15 +73,23 @@ const COPY = {
       },
     },
     packages: {
-      forWho: "Tegoed voor studio huren (halve of hele studio) — voor trainers.",
-      valueLabel: "t.w.v.",
+      // Operator 2026-07-30: "dit heeft meer uitleg nodig" — the panel showed
+      // pack names + a struck-through "t.w.v." with zero explanation of what
+      // tegoed IS or what it buys. Now: one how-it-works line + per pack the
+      // discount and what the credit is worth in half-studio hours (derived
+      // from the €12/uur rate — honest math, recomputes if rates change).
+      forWho:
+        "Voor trainers die vaker huren: koop tegoed met korting en boek er losse uren mee — halve of hele studio.",
+      hoursBasis: "Uurindicatie op basis van halve studio (€12/uur).",
+      creditWord: "tegoed",
+      hoursLine: (h: number) => `ruim ${h} uur halve studio`,
       buy: "Koop",
       all: "Alle pakketdetails",
       rows: [
-        { name: "Starter", price: 89, credit: 99 },
-        { name: "Routine", price: 179, credit: 210 },
-        { name: "Pro", price: 299, credit: 375 },
-        { name: "Volume", price: 499, credit: 650 },
+        { name: "Starter", price: 89, credit: 99, pct: 10 },
+        { name: "Routine", price: 179, credit: 210, pct: 15 },
+        { name: "Pro", price: 299, credit: 375, pct: 20 },
+        { name: "Volume", price: 499, credit: 650, pct: 23 },
       ],
     },
     membership: {
@@ -112,7 +124,8 @@ const COPY = {
         gym: {
           title: "Open Gym",
           who: "1 person",
-          sub: "Train on your own · max 4 people in the studio",
+          // EN twin of the NL disambiguation (see nl copy note above).
+          sub: "Train on your own in peace — never more than 4 at a time",
         },
         half: {
           title: "Half studio",
@@ -127,15 +140,18 @@ const COPY = {
       },
     },
     packages: {
-      forWho: "Credit for studio rental (half or full studio) — for trainers.",
-      valueLabel: "worth",
+      forWho:
+        "For trainers who rent regularly: buy credit at a discount and book hourly sessions with it — half or full studio.",
+      hoursBasis: "Hour estimates based on the half studio (€12/hr).",
+      creditWord: "credit",
+      hoursLine: (h: number) => `over ${h} hours of half studio`,
       buy: "Buy",
       all: "All package details",
       rows: [
-        { name: "Starter", price: 89, credit: 99 },
-        { name: "Routine", price: 179, credit: 210 },
-        { name: "Pro", price: 299, credit: 375 },
-        { name: "Volume", price: 499, credit: 650 },
+        { name: "Starter", price: 89, credit: 99, pct: 10 },
+        { name: "Routine", price: 179, credit: 210, pct: 15 },
+        { name: "Pro", price: 299, credit: 375, pct: 20 },
+        { name: "Volume", price: 499, credit: 650, pct: 23 },
       ],
     },
     membership: {
@@ -159,7 +175,10 @@ const COPY = {
   },
 } as const;
 
-/** One bookable price chip — the price IS the button (orange = clickable). */
+/** One bookable price chip — the price IS the button (orange = clickable).
+ * Homepage shows ONLY the 60-min rates (operator 2026-07-30: "bied geen 90
+ * min aan") — one button per row keeps the entry decision simple; 90-min
+ * options still exist on /nl/studio-huren for trainers who want them. */
 function PriceButton({
   href,
   price,
@@ -284,13 +303,6 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                         intent="studio_rental"
                         eventClass="plausible-event-name=home_pricing_book_half"
                       />
-                      <PriceButton
-                        href={acuityPaidSessions.studioRentalHalf90}
-                        price={17}
-                        minutes={90}
-                        intent="studio_rental"
-                        eventClass="plausible-event-name=home_pricing_book_half"
-                      />
                     </div>
                   </div>
                   <div className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
@@ -313,13 +325,6 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                         intent="studio_rental"
                         eventClass="plausible-event-name=home_pricing_book_full"
                       />
-                      <PriceButton
-                        href={acuityPaidSessions.studioRentalFull90}
-                        price={24}
-                        minutes={90}
-                        intent="studio_rental"
-                        eventClass="plausible-event-name=home_pricing_book_full"
-                      />
                     </div>
                   </div>
                 </div>
@@ -336,12 +341,18 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       className="flex items-center justify-between gap-3 p-5"
                     >
                       <div>
-                        <p className="font-semibold">{p.name}</p>
-                        <p className="mt-0.5 text-sm text-muted-foreground">
-                          <span className="font-semibold text-foreground">€{p.price}</span>{" "}
-                          <span className="line-through">
-                            {c.packages.valueLabel} €{p.credit}
+                        <p className="flex items-center gap-2 font-semibold">
+                          {p.name}
+                          <span className="rounded-full bg-discount px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">
+                            −{p.pct}%
                           </span>
+                        </p>
+                        <p className="mt-0.5 text-sm text-muted-foreground">
+                          <span className="font-semibold text-foreground">€{p.price}</span>
+                          {" → "}€{p.credit} {c.packages.creditWord}
+                        </p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">
+                          {c.packages.hoursLine(Math.floor(p.credit / 12))}
                         </p>
                       </div>
                       <ButtonLink
@@ -361,14 +372,17 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                     </div>
                   ))}
                 </div>
-                <p className="px-5 pb-4">
-                  <Link
-                    href={packagesHref}
-                    className="text-sm font-medium text-primary hover:underline"
-                  >
-                    {c.packages.all} →
-                  </Link>
-                </p>
+                <div className="px-5 pb-4">
+                  <p className="text-xs text-muted-foreground">{c.packages.hoursBasis}</p>
+                  <p className="mt-1">
+                    <Link
+                      href={packagesHref}
+                      className="text-sm font-medium text-primary hover:underline"
+                    >
+                      {c.packages.all} →
+                    </Link>
+                  </p>
+                </div>
               </div>
             )}
 
