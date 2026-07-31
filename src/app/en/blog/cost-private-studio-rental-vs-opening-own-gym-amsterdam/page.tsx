@@ -113,18 +113,16 @@ export default function BlogPostCostStudioVsOwnGym() {
                     <tr className="border-b bg-muted/50">
                       <th className="px-4 py-3 text-left font-semibold text-foreground">What you rent</th>
                       <th className="px-4 py-3 text-center font-semibold text-foreground">Price (60 min)</th>
-                      <th className="px-4 py-3 text-center font-semibold text-foreground">Price (90 min)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      ["Half studio (1-on-1)", "€12", "€17"],
-                      ["Full studio (small group)", "€17", "€24"],
-                    ].map(([type, p60, p90]) => (
+                      ["Half studio (1-on-1)", "€12"],
+                      ["Full studio (small group)", "€17"],
+                    ].map(([type, p60]) => (
                       <tr key={type} className="border-b last:border-0">
                         <td className="px-4 py-3">{type}</td>
                         <td className="px-4 py-3 text-center font-medium">{p60}</td>
-                        <td className="px-4 py-3 text-center font-medium">{p90}</td>
                       </tr>
                     ))}
                   </tbody>

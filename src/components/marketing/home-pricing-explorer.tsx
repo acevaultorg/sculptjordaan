@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button-link";
+import { trackTabSwitch } from "@/lib/tracking";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import {
   acuityPaidSessions,
@@ -184,13 +185,11 @@ function PriceButton({
   price,
   minutes,
   intent,
-  eventClass,
 }: {
   href: string;
   price: number;
   minutes: 60 | 90;
   intent: "open_gym" | "studio_rental";
-  eventClass: string;
 }) {
   return (
     <ButtonLink
@@ -198,7 +197,7 @@ function PriceButton({
       size="sm"
       // min-h-11 = 44px tap target on mobile (WCAG 2.5.5 / mobile-perfection);
       // relaxes to the compact sm height on ≥sm where a pointer is precise.
-      className={`${eventClass} min-h-11 shrink-0 sm:min-h-0`}
+      className="min-h-11 shrink-0 sm:min-h-0"
       data-intent={intent}
       data-pricing="paid"
     >
@@ -226,8 +225,13 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
   const tabButton = (key: Tab, label: string, badge?: string) => (
     <button
       type="button"
-      onClick={() => setTab(key)}
-      className={`plausible-event-name=home_pricing_tab_${key} flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition ${
+      // GA4 tab_switch (surface=home_pricing). Plausible classes removed —
+      // Plausible was retired on this site 2026-07-20, they tracked nothing.
+      onClick={() => {
+        setTab(key);
+        trackTabSwitch("home_pricing", key);
+      }}
+      className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition ${
         tab === key
           ? "bg-primary text-primary-foreground shadow-sm"
           : "text-muted-foreground hover:text-foreground"
@@ -279,7 +283,6 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                         price={9}
                         minutes={60}
                         intent="open_gym"
-                        eventClass="plausible-event-name=home_pricing_book_gym"
                       />
                     </div>
                   </div>
@@ -301,7 +304,6 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                         price={12}
                         minutes={60}
                         intent="studio_rental"
-                        eventClass="plausible-event-name=home_pricing_book_half"
                       />
                     </div>
                   </div>
@@ -323,7 +325,6 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                         price={17}
                         minutes={60}
                         intent="studio_rental"
-                        eventClass="plausible-event-name=home_pricing_book_full"
                       />
                     </div>
                   </div>
@@ -363,7 +364,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                         }
                         size="sm"
                         variant="outline"
-                        className="plausible-event-name=home_pricing_buy_pack min-h-11 shrink-0 sm:min-h-0"
+                        className="min-h-11 shrink-0 sm:min-h-0"
                         data-intent="studio_rental"
                         data-pricing="paid"
                       >
@@ -412,7 +413,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       deal.active ? deal.dealUrl : acuityPaidSessions.openGymPlans.onbeperkt
                     }
                     size="lg"
-                    className="plausible-event-name=home_pricing_join mt-3 w-full sm:w-auto"
+                    className="mt-3 w-full sm:w-auto"
                     data-intent="open_gym"
                     data-pricing="paid"
                   >
@@ -431,7 +432,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                     href={acuityPaidSessions.openGymPlans.instapplan}
                     size="sm"
                     variant="outline"
-                    className="plausible-event-name=home_pricing_instap mt-3 min-h-11 sm:min-h-0"
+                    className="mt-3 min-h-11 sm:min-h-0"
                     data-intent="open_gym"
                     data-pricing="paid"
                   >

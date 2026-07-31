@@ -68,13 +68,18 @@ export const acuityPaidSessions = {
   /** Studio Rental Half 60min — €12 (appointmentType=84032351) */
   studioRentalHalf60: `${SCHEDULE}?owner=${OWNER}&appointmentType=84032351`,
 
-  /** Studio Rental Half 90min — €17 (appointmentType=86677323) */
+  /** Studio Rental Half 90min — €17 (appointmentType=86677323).
+   * NOT OFFERED on the site since 2026-07-30 (operator: 0×
+   * booked in ~3 months per Acuity Reports — June MTD listed only 60-min
+   * types). Link kept so cached pages keep working; Acuity product
+   * untouched (operator-side). */
   studioRentalHalf90: `${SCHEDULE}?owner=${OWNER}&appointmentType=86677323`,
 
   /** Studio Rental Full 60min — €17 (appointmentType=82553655) */
   studioRentalFull60: `${SCHEDULE}?owner=${OWNER}&appointmentType=82553655`,
 
-  /** Studio Rental Full 90min — €24 (appointmentType=85410115) */
+  /** Studio Rental Full 90min — €24 (appointmentType=85410115).
+   * NOT OFFERED on the site since 2026-07-30 — see note above. */
   studioRentalFull90: `${SCHEDULE}?owner=${OWNER}&appointmentType=85410115`,
 
   /** Open Gym multi-session plan add-to-cart links (paid) */

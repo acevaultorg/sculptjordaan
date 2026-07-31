@@ -274,7 +274,6 @@ export default function BoekStudioPageNL() {
                     <tr className="border-b bg-muted/50">
                       <th className="px-4 py-3 text-left font-medium">Ruimte</th>
                       <th className="px-4 py-3 text-center font-medium">60 min</th>
-                      <th className="px-4 py-3 text-center font-medium">90 min</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -286,12 +285,6 @@ export default function BoekStudioPageNL() {
                           <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€17</span>
-                          <ButtonLink href={acuityLinks.halfStudio90} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
@@ -299,12 +292,6 @@ export default function BoekStudioPageNL() {
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>
                           <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€24</span>
-                          <ButtonLink href={acuityLinks.fullStudio90} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
                     </tr>

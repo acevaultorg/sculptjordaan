@@ -98,19 +98,19 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 
 ### 6. Studio Rental — Half (per uur)
 - **Category:** Studio Rental
-- **Price:** €12 / 60 min · €17 / 90 min
+- **Price:** €12 / 60 min
 - **Photo:** `boutique-corner.jpg`
 - **Link:** `https://sculptclub.nl/nl/studio-huren`
 - **Description:**
-  > Half van de studio huren voor je eigen client. €12 per uur, €17 voor 90 minuten. Volledig uitgerust met halters, kabels, racks. Voor trainers en fysiotherapeuten. Per sessie of via pakket — geen abonnement.
+  > Half van de studio huren voor je eigen client. €12 per uur. Volledig uitgerust met halters, kabels, racks. Voor trainers en fysiotherapeuten. Per sessie of via pakket — geen abonnement.
 
 ### 7. Studio Rental — Full (per uur)
 - **Category:** Studio Rental
-- **Price:** €17 / 60 min · €24 / 90 min
+- **Price:** €17 / 60 min
 - **Photo:** `pt-session-barbell.jpg`
 - **Link:** `https://sculptclub.nl/nl/studio-huren`
 - **Description:**
-  > De hele studio voor jezelf en je client(s). €17 per uur, €24 voor 90 minuten. Tot 6 mensen plus trainer. Volledig uitgerust voor kracht, conditie, mobility. Voor freelance trainers en fysiotherapeuten.
+  > De hele studio voor jezelf en je client(s). €17 per uur. Volledig privé voor jouw eigen kleine groep. Volledig uitgerust voor kracht, conditie, mobility. Voor freelance trainers en fysiotherapeuten.
 
 ### 8. Free first intro — Personal Training
 - **Category:** Personal Training
@@ -204,8 +204,8 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 
 > Freelance trainer of fysiotherapeut? Huur onze studio voor je eigen clients.
 >
-> Half studio: €12/uur · €17/90 min.
-> Hele studio: €17/uur · €24/90 min — tot 6 mensen plus trainer.
+> Half studio: €12/uur.
+> Hele studio: €17/uur — volledig privé, jouw eigen kleine groep.
 >
 > Volledig uitgerust voor kracht, conditie en mobility. Per sessie of via pakket — geen abonnement, geen contract.
 >

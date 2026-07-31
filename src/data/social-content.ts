@@ -208,7 +208,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     brief: {
       message: "Variant of the €12 winning post — same exact format but full-studio tier for trainers running small-group sessions. Different audience (trainers running 2-5 person classes), same exact visual playbook.",
       facts: [
-        "Full studio: €17/60min, €24/90min",
+        "Full studio: €17/60min",
         "Half studio (1 trainer + 1 client): €12/60min",
         "Packages: Starter €89 (10% off), Routine €179 (15% off), Pro €299 (20% off), Volume €499 (23% off)",
         "First session free for new trainers",
@@ -282,8 +282,8 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       message: "Show that our studio is a real private gym in the Jordaan, not a chain. Lead with the per-hour price for two people (trainer + client = €12/hr half-studio).",
       facts: [
         `Location: ${FACTS.address}`,
-        "Half-studio: €12/60min, €17/90min (perfect for trainer + 1 client)",
-        "Full studio: €17/60min, €24/90min (for groups/duos training together)",
+        "Half-studio: €12/60min (perfect for trainer + 1 client)",
+        "Full studio: €17/60min (for groups/duos training together)",
         "No membership required",
         "Real Rogue equipment",
         FACTS.hours,

@@ -35,6 +35,16 @@ export function trackBeginBooking(
   });
 }
 
+/**
+ * Track a pricing/plan tab switch (GA4). Added 2026-07-30: the tab toggles
+ * (HomePricingExplorer, RentalTabs, OpenGymPlanTabs) carried only
+ * `plausible-event-name=` classes — but Plausible was retired on this site
+ * 2026-07-20, so tab clicks were tracked by NOTHING. GA4 is the live channel.
+ */
+export function trackTabSwitch(surface: string, tab: string) {
+  sendEvent("tab_switch", { surface, tab });
+}
+
 /** Track hero CTA clicks to measure conversion by position */
 export function trackHeroClick(label: string, position: number, locale: string) {
   sendEvent("hero_cta_click", {
@@ -93,9 +103,19 @@ export function detectBookingType(url: string): { bookingType: string; planName?
   if (url.includes("id=2160074")) return { bookingType: "open_gym_duo", planName: "once" };
   if (url.includes("id=2160077")) return { bookingType: "open_gym_duo", planName: "twice" };
 
-  // Studio rental packages
+  // Open Gym Onbeperkt Zomerdeal (€49, product created 2026-07-16). Without
+  // this mapping every "Word lid" click on the PRIMARY Open Gym conversion
+  // button logged as bookingType "generic" — found 2026-07-30.
+  if (url.includes("id=2247082")) return { bookingType: "open_gym", planName: "onbeperkt_zomerdeal" };
+
+  // Studio rental packages — new ids from the 2026-07-18 repricing FIRST,
+  // old ids kept below for cached pages that still link them.
+  if (url.includes("id=2247124")) return { bookingType: "studio_pack", planName: "routine" };
+  if (url.includes("id=2248025")) return { bookingType: "studio_pack", planName: "pro" };
+  if (url.includes("id=2248026")) return { bookingType: "studio_pack", planName: "volume" };
   if (url.includes("id=2149357")) return { bookingType: "studio_pack", planName: "starter" };
   if (url.includes("id=2149358")) return { bookingType: "studio_pack", planName: "routine" };
+  if (url.includes("id=2149359")) return { bookingType: "studio_pack", planName: "pro" };
   if (url.includes("id=2149360")) return { bookingType: "studio_pack", planName: "volume" };
 
   // Studio rental single sessions

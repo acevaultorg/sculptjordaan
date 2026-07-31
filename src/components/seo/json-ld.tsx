@@ -196,9 +196,7 @@ export function LocalBusinessJsonLd() {
               name: "Studio Rental",
               itemListElement: [
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Half Studio — 60 min" }, price: 12, priceCurrency: "EUR" },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Half Studio — 90 min" }, price: 17, priceCurrency: "EUR" },
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Studio — 60 min" }, price: 17, priceCurrency: "EUR" },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Studio — 90 min" }, price: 24, priceCurrency: "EUR" },
               ],
             },
           ],

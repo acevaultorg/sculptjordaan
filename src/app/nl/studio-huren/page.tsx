@@ -289,7 +289,7 @@ export default function StudioRentalPageNL() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessies van 60 min — halve studio (2 pers.) €12 · hele studio €17. 90 min of een mix kan ook; je tegoed bepaalt het aantal.
+                Sessies van 60 min — halve studio (2 pers.) €12 · hele studio €17. Je tegoed bepaalt het aantal sessies.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
@@ -313,7 +313,6 @@ export default function StudioRentalPageNL() {
                     <tr className="border-b bg-muted/50">
                       <th className="px-4 py-3 text-left font-medium">Ruimte</th>
                       <th className="px-4 py-3 text-center font-medium">60 min</th>
-                      <th className="px-4 py-3 text-center font-medium">90 min</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -325,12 +324,6 @@ export default function StudioRentalPageNL() {
                           <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€17</span>
-                          <ButtonLink href={acuityLinks.halfStudio90} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
@@ -338,12 +331,6 @@ export default function StudioRentalPageNL() {
                         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
                           <span className="font-semibold">€17</span>
                           <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€24</span>
-                          <ButtonLink href={acuityLinks.fullStudio90} size="sm">Boek</ButtonLink>
                         </div>
                       </td>
                     </tr>

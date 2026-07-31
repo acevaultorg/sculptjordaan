@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackTabSwitch } from "@/lib/tracking";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
 
@@ -88,8 +89,11 @@ export function OpenGymPlanTabs({ locale }: { locale: Locale }) {
       <div className="flex max-w-md gap-2 rounded-full border border-border bg-card p-1">
         <button
           type="button"
-          onClick={() => setTab("single")}
-          className={`plausible-event-name=opengym_tab_single flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          onClick={() => {
+            setTab("single");
+            trackTabSwitch("open_gym", "single");
+          }}
+          className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "single"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
@@ -100,8 +104,11 @@ export function OpenGymPlanTabs({ locale }: { locale: Locale }) {
         </button>
         <button
           type="button"
-          onClick={() => setTab("membership")}
-          className={`plausible-event-name=opengym_tab_membership flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          onClick={() => {
+            setTab("membership");
+            trackTabSwitch("open_gym", "membership");
+          }}
+          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "membership"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"

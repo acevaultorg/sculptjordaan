@@ -122,7 +122,7 @@ const faqs = [
   },
   {
     q: "Hoe lang duurt een sessie?",
-    a: "Personal Training duurt 45 tot 60 minuten, afhankelijk van je trainer. Open Gym en studio-sessies zijn standaard 60 of 90 minuten. Kom 5 minuten eerder zodat je rustig kunt beginnen.",
+    a: "Personal Training duurt 45 tot 60 minuten, afhankelijk van je trainer. Open Gym en studio-sessies zijn standaard 60 minuten. Kom 5 minuten eerder zodat je rustig kunt beginnen.",
   },
   {
     q: "Wat als ik een blessure heb of beperking?",

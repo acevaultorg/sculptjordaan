@@ -332,20 +332,17 @@ export default function BecomeTrainerEN() {
               locale="en"
               hourly={
                 <div className="rounded-2xl border border-border bg-card/30 overflow-hidden">
-                  <div className="grid grid-cols-3 text-sm font-medium text-muted-foreground border-b border-border px-5 py-3">
+                  <div className="grid grid-cols-2 text-sm font-medium text-muted-foreground border-b border-border px-5 py-3">
                     <div>Space</div>
                     <div className="text-right">60 min</div>
-                    <div className="text-right">90 min</div>
                   </div>
-                  <div className="grid grid-cols-3 items-center px-5 py-4 border-b border-border/50">
+                  <div className="grid grid-cols-2 items-center px-5 py-4 border-b border-border/50">
                     <div className="font-semibold">Half studio</div>
                     <div className="text-right text-lg font-bold">€12</div>
-                    <div className="text-right text-lg font-bold">€17</div>
                   </div>
-                  <div className="grid grid-cols-3 items-center px-5 py-4">
+                  <div className="grid grid-cols-2 items-center px-5 py-4">
                     <div className="font-semibold">Full studio</div>
                     <div className="text-right text-lg font-bold">€17</div>
-                    <div className="text-right text-lg font-bold">€24</div>
                   </div>
                 </div>
               }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackTabSwitch } from "@/lib/tracking";
 
 type Locale = "nl" | "en";
 
@@ -34,8 +35,11 @@ export function RentalTabs({
       <div className="mx-auto mb-6 flex max-w-md gap-2 rounded-full border border-border bg-card p-1">
         <button
           type="button"
-          onClick={() => setTab("hourly")}
-          className={`plausible-event-name=rental_tab_hourly flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          onClick={() => {
+            setTab("hourly");
+            trackTabSwitch("rental", "hourly");
+          }}
+          className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "hourly"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
@@ -46,8 +50,11 @@ export function RentalTabs({
         </button>
         <button
           type="button"
-          onClick={() => setTab("packages")}
-          className={`plausible-event-name=rental_tab_packages flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          onClick={() => {
+            setTab("packages");
+            trackTabSwitch("rental", "packages");
+          }}
+          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "packages"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"

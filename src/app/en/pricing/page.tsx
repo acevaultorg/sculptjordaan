@@ -154,9 +154,7 @@ export default function PricingPageEN() {
         url="/en/pricing"
         offers={[
           { name: "Half studio — 60 min", description: "Half studio rental, 60 minutes", price: 12 },
-          { name: "Half studio — 90 min", description: "Half studio rental, 90 minutes", price: 17 },
           { name: "Full studio — 60 min", description: "Full studio rental, 60 minutes", price: 17 },
-          { name: "Full studio — 90 min", description: "Full studio rental, 90 minutes", price: 24 },
           { name: "Starter discount pack", description: "Studio rental discount pack, 10% off", price: 89 },
           { name: "Routine discount pack", description: "Studio rental discount pack, 15% off", price: 179 },
           { name: "Pro discount pack", description: "Studio rental discount pack, 20% off", price: 299 },
@@ -332,19 +330,16 @@ export default function PricingPageEN() {
                   <tr className="border-b bg-muted/50">
                     <th className="px-4 py-3 text-left font-medium">Space</th>
                     <th className="px-4 py-3 text-center font-medium">60 min</th>
-                    <th className="px-4 py-3 text-center font-medium">90 min</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 font-medium">Half studio (1:1)</td>
                     <td className="px-4 py-3 text-center font-semibold">€12</td>
-                    <td className="px-4 py-3 text-center font-semibold">€17</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 font-medium">Full studio (small group)</td>
                     <td className="px-4 py-3 text-center font-semibold">€17</td>
-                    <td className="px-4 py-3 text-center font-semibold">€24</td>
                   </tr>
                 </tbody>
               </table>
@@ -453,7 +448,7 @@ export default function PricingPageEN() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-            A credit package is studio credit — the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio €17. 90 min or a mix is fine; your credit sets the count. Valid 1 year.
+            A credit package is studio credit — the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio €17. Your credit sets the number of sessions. Valid 1 year.
           </p>
         </FadeIn>
 

@@ -122,7 +122,7 @@ const faqs = [
   },
   {
     q: "How long is a session?",
-    a: "Personal Training is 45 to 60 minutes, depending on your trainer. Open Gym and studio sessions are 60 or 90 minutes. Arrive 5 minutes early so you can start at a relaxed pace.",
+    a: "Personal Training is 45 to 60 minutes, depending on your trainer. Open Gym and studio sessions are 60 minutes. Arrive 5 minutes early so you can start at a relaxed pace.",
   },
   {
     q: "What if I have an injury or limitation?",
