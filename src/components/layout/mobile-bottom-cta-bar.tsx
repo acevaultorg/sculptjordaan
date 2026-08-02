@@ -80,6 +80,25 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // routes to a real booking widget. Reversible: delete this guard to restore.
   if (/^\/(nl|en)?\/?$/.test(pathname)) return null;
 
+  // Blog / long-form content — DE-AGGRESSION PHASE 2 (GA4 read 2026-08-02).
+  // The homepage guard above shipped 2026-06-22. The before/after is now
+  // measured in GA4 (property G-QYW5H4XTXW — Plausible was cancelled, so the
+  // original Plausible-goal method died; these are its GA4 equivalents):
+  //   window A 23 May–22 Jun (pre, 710 users) → B 23 Jun–19 Jul (post, 479)
+  //   Book_appointment_1 ("Acuity Click")  5.63% → 5.43% per user  (z=0.15)
+  //   generate_lead      ("Lead Generated") 2.39% → 2.30% per user
+  //   hero_cta_click −28% · cta_click −41% · whatsapp_click −16%
+  // Booking conversion HELD well inside the noise band; what fell was CTA
+  // *clicking*. The bar manufactured clicks, not bookings — operator's
+  // "aggression may counter-act conversion" hypothesis holds.
+  // Blog is the lowest-intent surface and keeps a booking path without the
+  // bar: in-content ButtonLink CTAs (/nl/studio-huren, /nl/word-trainer) plus
+  // the always-visible header CTAs. The default-branch bar these pages fell to
+  // earned just 8 clicks across ALL content pages.
+  // KEPT on funnel pages (studio-huren / open-gym / trainer-hub).
+  // Reversible: delete this one guard to restore.
+  if (/^\/(nl|en)\/blog(\/|$)/.test(pathname)) return null;
+
   // Hide on dedicated booking-STEP pages — the page IS the booking action, so a
   // floating "go to booking" CTA is redundant and competes with the on-page
   // widget's own button. Operator UX screenshot 2026-06-03 on
