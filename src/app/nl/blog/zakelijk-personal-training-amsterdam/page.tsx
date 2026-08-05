@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Zakelijk Personal Training Amsterdam — SculptClub" },
   description:
-    "Personal training voor drukke professionals en teams in Amsterdam. Privé studio in de Jordaan, dagelijks 06:30–22:00, factuur op bedrijfsnaam mogelijk.",
+    "Personal training voor drukke professionals en teams in Amsterdam. Privé studio in de Jordaan, dagelijks 06:00–22:00, factuur op bedrijfsnaam mogelijk.",
   keywords: [
     "zakelijk personal trainer amsterdam",
     "personal training zakelijk amsterdam",
@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Hebben jullie tijden voor mensen met een drukke agenda?",
     answer:
-      "Ja. De studio is dagelijks geopend van 06:30 tot 22:00, ook in het weekend. Vroege ochtendsessies vóór een dag in Zuidas of late avondsessies na werk in Centrum zijn beide mogelijk.",
+      "Ja. De studio is dagelijks geopend van 06:00 tot 22:00, ook in het weekend. Vroege ochtendsessies vóór een dag in Zuidas of late avondsessies na werk in Centrum zijn beide mogelijk.",
   },
   {
     question: "Kan ik met collega's of een klein team trainen?",
@@ -127,7 +127,7 @@ export default function ZakelijkPersonalTrainingAmsterdamNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Flexibele tijden voor drukke agenda’s</h2>
               <p>
-                De studio is dagelijks geopend van 06:30 tot 22:00. Dat klinkt logisch, maar in de
+                De studio is dagelijks geopend van 06:00 tot 22:00. Dat klinkt logisch, maar in de
                 praktijk maakt het uit. Voor executives in{" "}
                 <a href="/nl/blog/personal-trainer-amsterdam-zuid" className="text-brand hover:underline">Zuidas</a> die
                 om 08:00 hun eerste call hebben, betekent het dat een sessie om 06:45 reëel is —

@@ -104,7 +104,7 @@ export const metadata: Metadata = {
 
 const included = [
   { icon: Users, text: "Max 4 personen in de studio — nooit wachten op een toestel" },
-  { icon: Clock, text: "Elke dag open van 06:30 tot 22:00" },
+  { icon: Clock, text: "Elke dag open van 06:00 tot 22:00" },
   { icon: KeyRound, text: "Deurcode via WhatsApp — je kunt meteen beginnen" },
   { icon: Ban, text: "Geen contract, geen opzegtermijn — stoppen is altijd gratis" },
 ];

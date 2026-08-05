@@ -278,7 +278,7 @@ export default function BecomeTrainerEN() {
         <SectionHeader
           overline="The studio"
           title="Egelantiersgracht 424, Amsterdam Jordaan"
-          description="Centrally located private studio with professional equipment. Open daily from 06:30 to 22:00."
+          description="Centrally located private studio with professional equipment. Open daily from 06:00 to 22:00."
         />
         <FadeIn>
           {/* Studio gallery — 3 visually distinct shots covering people +

@@ -145,7 +145,7 @@ export default function GymWithoutMembershipEN() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Complete privacy</strong> — you train alone or with your training partner in a private studio.</li>
                 <li><strong>Professional equipment</strong> — power rack, cable machine, dumbbells, assault bike and more.</li>
-                <li><strong>Flexible hours</strong> — book sessions from 06:30 to 22:00, 7 days a week.</li>
+                <li><strong>Flexible hours</strong> — book sessions from 06:00 to 22:00, 7 days a week.</li>
                 <li><strong>No contract</strong> — 4-week cycle, cancel whenever you want.</li>
                 <li><strong>Door code access</strong> — book, receive your code, and train on your schedule.</li>
               </ul>

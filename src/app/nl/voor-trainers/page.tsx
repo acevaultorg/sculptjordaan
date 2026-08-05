@@ -152,7 +152,7 @@ const trainerFaqs = [
   },
   {
     q: "Tot welke tijden is de studio open?",
-    a: "Dagelijks 06:30-22:00. Je boekt je eigen tijdvak in Acuity; binnen jouw uur ben jij + je klant alleen in de studio (privé).",
+    a: "Dagelijks 06:00-22:00. Je boekt je eigen tijdvak in Acuity; binnen jouw uur ben jij + je klant alleen in de studio (privé).",
   },
   {
     q: "Hoe zit het met annuleren?",

@@ -216,7 +216,7 @@ export default function FreeIntroBlogEN() {
                     "No contract, no membership, no obligation",
                     "Private studio — no crowds, no waiting",
                     "Trainers from €45/session, 0% commission",
-                    "Open daily from 06:30 to 22:00",
+                    "Open daily from 06:00 to 22:00",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm">
                       <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

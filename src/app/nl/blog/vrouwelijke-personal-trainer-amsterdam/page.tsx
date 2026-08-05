@@ -139,7 +139,7 @@ export default function VrouwelijkePTAmsterdamNL() {
                 en niemand bekijkt jou of je techniek.
               </p>
               <p>
-                De studio is dagelijks open van 06:30 tot 22:00. Vroege ochtend, lunchpauze,
+                De studio is dagelijks open van 06:00 tot 22:00. Vroege ochtend, lunchpauze,
                 na het werk — je plant op het moment dat jou past, niet op wanneer de
                 sportschool het minst druk is.
               </p>

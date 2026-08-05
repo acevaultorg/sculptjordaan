@@ -17,7 +17,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: { absolute: "Location & Hours — SculptClub Amsterdam Jordaan" },
   description:
-    "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:30 to 22:00. Easy to reach by tram, metro, bike or on foot.",
+    "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:00 to 22:00. Easy to reach by tram, metro, bike or on foot.",
   alternates: {
     canonical: "/en/location-hours",
     languages: {
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     url: "/en/location-hours",
     title: "Location & Hours — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:30 to 22:00. Easy to reach by tram, metro, bike or on foot.",
+      "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:00 to 22:00. Easy to reach by tram, metro, bike or on foot.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Location & Hours — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:30 to 22:00. Easy to reach by tram, metro, bike or on foot.",
+      "SculptClub is located on the Egelantiersgracht in the Jordaan, Amsterdam. Open daily 06:00 to 22:00. Easy to reach by tram, metro, bike or on foot.",
   },
 };
 
@@ -106,7 +106,7 @@ export default function LocationPageEN() {
                 <div>
                   <p className="font-semibold">Opening Hours</p>
                   <p className="text-muted-foreground">
-                    Daily: 06:30 - 22:00
+                    Daily: 06:00 - 22:00
                   </p>
                   <p className="text-xs text-muted-foreground/70 mt-1">
                     By appointment. Book your session online or via WhatsApp.

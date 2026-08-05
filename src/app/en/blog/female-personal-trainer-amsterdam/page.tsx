@@ -135,7 +135,7 @@ export default function FemalePTAmsterdamEN() {
                 and nobody is watching your form.
               </p>
               <p>
-                The studio is open daily from 06:30 to 22:00. Early morning, lunch break, after
+                The studio is open daily from 06:00 to 22:00. Early morning, lunch break, after
                 work — book at a time that suits your day, not when the gym is least busy.
               </p>
 

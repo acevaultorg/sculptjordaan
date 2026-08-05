@@ -78,7 +78,7 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Photo:** `boutique-corner.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > 4 trainingen in 4 weken. €7,25 per sessie. Train zelfstandig in een privé gym met max 4 mensen. Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken. Dagelijks open 06:30-22:00. Eerste keer? Boek je gratis try-out.
+  > 4 trainingen in 4 weken. €7,25 per sessie. Train zelfstandig in een privé gym met max 4 mensen. Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken. Dagelijks open 06:00-22:00. Eerste keer? Boek je gratis try-out.
 
 ### 4. Open Gym — Losse sessie
 - **Category:** Open Gym
@@ -94,7 +94,7 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Photo:** `training-dumbbells-smile.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > Onbeperkt trainen, 7 dagen per week, 06:30-22:00. €79 per 4 weken — zomeraanbieding: nu €49 en je houdt die prijs zolang je lid blijft. Voor wie er bijna elke dag is. Privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
+  > Onbeperkt trainen, 7 dagen per week, 06:00-22:00. €79 per 4 weken — zomeraanbieding: nu €49 en je houdt die prijs zolang je lid blijft. Voor wie er bijna elke dag is. Privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
 
 ### 6. Studio Rental — Half (per uur)
 - **Category:** Studio Rental
@@ -191,7 +191,7 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 > · Onbeperkt — onbeperkt — €79/4w (zomeraanbieding €49)
 > · Losse sessie (1 uur) — €9
 >
-> Dagelijks 06:30-22:00. Eerste keer gratis proberen.
+> Dagelijks 06:00-22:00. Eerste keer gratis proberen.
 
 ---
 
@@ -251,7 +251,7 @@ Each post live for ~7 days, then archived but searchable. Schedule one per week.
 
 ### From the business (paste in textarea)
 
-> SculptClub is a small private gym on the Egelantiersgracht in Amsterdam Jordaan. Open daily 06:30–22:00. No membership required.
+> SculptClub is a small private gym on the Egelantiersgracht in Amsterdam Jordaan. Open daily 06:00–22:00. No membership required.
 >
 > Three ways to train: **Open Gym** (you train alone with a door code, max 4 people at once), **Personal Training** (book your own trainer — first 45-min intake free), or **Studio Rental** (full studio for trainers and physiotherapists).
 >

@@ -21,7 +21,7 @@ growth unless it goes out.
 - **NEVER** frame the trainer model as "0% commissie / 0% commission" (operator killed this — it implies
   a commission that never existed). Frame it as **rent + freedom**: €12/uur, your clients, your rate,
   no contract, you keep 100% of your revenue.
-- **Facts to reuse** (verified): Egelantiersgracht, Jordaan Amsterdam · private studio · daily 06:30–22:00
+- **Facts to reuse** (verified): Egelantiersgracht, Jordaan Amsterdam · private studio · daily 06:00–22:00
   · 5.0 on Google · Open Gym from ~€7/session (4-week plan) · Personal Training from €45/session ·
   Studio rental €12/uur (half studio, 1-on-1) or €17/uur (full studio, small group) · free intro · cancel
   always free, no time limit · WhatsApp +31 6 15 14 79 52 (wa.me/31615147952) · door code by WhatsApp
@@ -67,12 +67,12 @@ if a week is busy, post those first.
 ### 3 · behind-scenes · Reel — "A trainer's day at SculptClub (POV)"
 - **Hook:** "One day renting the studio, from door code to done."
 - **Message:** Show the reality: WhatsApp door code the night before, quiet early-morning studio, a 1-on-1 session, lock up, next trainer comes in. No front desk, no contract, no commission on your work.
-- **Visual (9:16):** timestamped POV clips 06:30 → session → 08:00.
+- **Visual (9:16):** timestamped POV clips 06:00 → session → 08:00.
 - **CTA:** "Want a key? Free trial." **Hashtags:** #personaltrainer #amsterdam #dayinthelife #studiohuren #jordaan
 
 ### 4 · trainer-spotlight · Carousel — "Renting here: 6 honest questions answered"
 - **Hook:** "Everything a trainer asks before renting — answered straight."
-- **Message:** FAQ carousel: How much? €12/uur half studio, €17/uur full (small group). Contract? No. Minimum hours? No. My own clients + rate? Yes, you keep 100%. Access? Door code by WhatsApp, daily 06:30–22:00. Equipment? Full private studio. Try first? Free 60-min trial, no credit card.
+- **Message:** FAQ carousel: How much? €12/uur half studio, €17/uur full (small group). Contract? No. Minimum hours? No. My own clients + rate? Yes, you keep 100%. Access? Door code by WhatsApp, daily 06:00–22:00. Equipment? Full private studio. Try first? Free 60-min trial, no credit card.
 - **Visual:** 7-slide Q→A carousel, clean type on studio photos.
 - **CTA:** /nl/studio-huren · WhatsApp. **Hashtags:** #studiohuren #zzppersonaltrainer #amsterdam #jordaan
 
@@ -116,13 +116,13 @@ if a week is busy, post those first.
 
 ### 11 · fitness-tip · Reel — "Train in a heatwave without dying (3 rules)"
 - **Hook:** "It's 30°C — here's how to still get a good session in."
-- **Message:** 3 practical hot-weather training rules (hydrate before not during, train early or evening, drop volume keep intensity). Tie: the studio is quiet + early hours 06:30 beat the heat.
+- **Message:** 3 practical hot-weather training rules (hydrate before not during, train early or evening, drop volume keep intensity). Tie: the studio is quiet + early hours 06:00 beat the heat.
 - **Visual (9:16):** quick 3-tip reel, early-morning studio light.
 - **CTA:** "Early slots open — book an intro." **Hashtags:** #summer #trainingtips #amsterdam #personaltrainer
 
 ### 12 · pt-showcase · Photo — "Open Gym: self-guided, from ~€7/session"
 - **Hook:** "Train on your own terms — Open Gym from ~€7 a session."
-- **Message:** For members who train solo: 4-week Open Gym plan, private studio, daily 06:30–22:00, door code by WhatsApp, no lock-in. From ~€7/session.
+- **Message:** For members who train solo: 4-week Open Gym plan, private studio, daily 06:00–22:00, door code by WhatsApp, no lock-in. From ~€7/session.
 - **Visual:** clean shot of the open studio + kit.
 - **CTA:** /nl/open-gym. **Hashtags:** #opengym #amsterdam #jordaan #gym #fitnessamsterdam
 
@@ -170,7 +170,7 @@ if a week is busy, post those first.
 - **Visual (9:16):** side-by-side wrong/right.
 - **CTA:** "Free intro = a form check." **Hashtags:** #squat #form #amsterdam #personaltrainer #strength
 
-### 20 · jordaan-local · Reel — "06:30 in the Jordaan studio (POV)"
+### 20 · jordaan-local · Reel — "06:00 in the Jordaan studio (POV)"
 - **Hook:** "The quietest, best hour to train."
 - **Message:** Ambient early-morning POV — canal light, empty private studio, first session. Sells the calm private-studio feeling.
 - **Visual (9:16):** slow ambient POV.
@@ -196,7 +196,7 @@ if a week is busy, post those first.
 
 ### 24 · behind-scenes · Reel — "How the door code actually works"
 - **Hook:** "No front desk. So how do you get in? WhatsApp."
-- **Message:** Demystify the keyless model: door code by WhatsApp the night before, daily 06:30–22:00. Removes a real hesitation for first-timers + renters.
+- **Message:** Demystify the keyless model: door code by WhatsApp the night before, daily 06:00–22:00. Removes a real hesitation for first-timers + renters.
 - **Visual (9:16):** phone → code → door opens.
 - **CTA:** "Questions? WhatsApp us." **Hashtags:** #howitworks #amsterdam #jordaan #privatestudio
 

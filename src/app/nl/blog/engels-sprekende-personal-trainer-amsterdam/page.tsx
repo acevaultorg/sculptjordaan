@@ -135,7 +135,7 @@ export default function EngelsSprekendePTAmsterdamNL() {
               <p>
                 De Jordaan ligt centraal: lopend vanuit Centrum, 10 minuten fietsen vanuit
                 Zuidas en bereikbaar vanaf Noord met de gratis IJ-pont. Dagelijks geopend van
-                06:30 tot 22:00. Zie de wijkspecifieke gidsen:{" "}
+                06:00 tot 22:00. Zie de wijkspecifieke gidsen:{" "}
                 <a href="/nl/blog/personal-trainer-amsterdam-centrum" className="text-brand hover:underline">Centrum</a>,{" "}
                 <a href="/nl/blog/personal-trainer-amsterdam-zuid" className="text-brand hover:underline">Zuid</a>,{" "}
                 <a href="/nl/blog/personal-trainer-amsterdam-noord" className="text-brand hover:underline">Noord</a>,{" "}

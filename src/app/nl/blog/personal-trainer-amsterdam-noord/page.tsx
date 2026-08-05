@@ -159,7 +159,7 @@ export default function PersonalTrainerAmsterdamNoordNL() {
                 bij jouw doel past — niet andersom. Tarieven beginnen bij €45 per sessie en we houden
                 een <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="text-brand hover:underline">eerlijk overzicht van wat personal training kost in Amsterdam</a>.
                 De eerste kennismaking is altijd gratis. Geen abonnement, geen lange contracten, geen
-                verborgen kosten. Annuleren is altijd gratis. De studio is dagelijks open van 06:30 tot
+                verborgen kosten. Annuleren is altijd gratis. De studio is dagelijks open van 06:00 tot
                 22:00, dus voor of na je werk in{" "}
                 <a href="/nl/blog/personal-trainer-amsterdam-centrum" className="text-brand hover:underline">Centrum</a> of{" "}
                 <a href="/nl/blog/personal-trainer-amsterdam-zuid" className="text-brand hover:underline">Zuidas</a> past het

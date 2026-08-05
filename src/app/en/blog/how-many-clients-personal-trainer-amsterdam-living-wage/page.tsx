@@ -82,7 +82,7 @@ export default function BlogPostHowManyClients() {
               <ul className="space-y-2 list-none pl-0">
                 {[["€60/session", "~108 sessions/month = 27 sessions/week"], ["€75/session", "~87 sessions/month = 22 sessions/week"], ["€90/session", "~72 sessions/month = 18 sessions/week"]].map(([r, n]) => (<li key={r} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{r}:</strong> {n}</span></li>))}
               </ul>
-              <p>27 sessions/week is hard work. 5 workdays × 5-6 sessions/day means early morning (06:30) until late evening (21:00). Not impossible but intense — and eats 3-5 sessions/week for yourself and your family.</p>
+              <p>27 sessions/week is hard work. 5 workdays × 5-6 sessions/day means early morning (06:00) until late evening (21:00). Not impossible but intense — and eats 3-5 sessions/week for yourself and your family.</p>
               <p>Smarter route: grow your rate instead of your hours. €60 → €75 in year 2 → €90 in year 4. Then a family can run on 18-22 sessions/week.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Scenario C — deliberately choosing part-time</h2>

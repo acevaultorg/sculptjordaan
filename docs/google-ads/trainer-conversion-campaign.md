@@ -146,7 +146,7 @@ ervaringen
 11. Egelantiersgracht 424
 12. 5,0★ op Google
 13. Rogue Rack · Kabelmachine
-14. Daily 06:30 – 22:00
+14. Daily 06:00 – 22:00
 15. Train Eigen Klanten
 ```
 
@@ -186,7 +186,7 @@ Vanaf €12/uur
 0% commissie
 Geen contract
 Gratis annuleren
-Daily 06:30–22:00
+Daily 06:00–22:00
 5,0★ Google
 Amsterdam Jordaan
 ```

@@ -194,7 +194,7 @@ export default function StudioRentalPageEN() {
             Studio rental for personal trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hr · Full freedom · Free cancellation · Daily 06:30–22:00
+            From €12/hr · Full freedom · Free cancellation · Daily 06:00–22:00
           </p>
         </div>
 

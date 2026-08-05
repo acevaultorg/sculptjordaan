@@ -25,7 +25,7 @@ export const siteConfig = {
   phoneDisplay: "+31 6 15 14 79 52",
   email: "contact@sculptclub.nl",
   whatsapp: "https://wa.me/31615147952",
-  hours: "Daily 06:30–22:00",
+  hours: "Daily 06:00–22:00",
   instagram: "https://instagram.com/sculptclubjordaan",
   instagramHandle: "@sculptclubjordaan",
   tiktok: "https://www.tiktok.com/@sculptclub.jordaan",

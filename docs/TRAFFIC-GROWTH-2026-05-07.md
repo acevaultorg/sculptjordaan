@@ -34,7 +34,7 @@ Reddit organic comments on niche-relevant questions are calibrated at **+70 Dist
 3. **Write a helpful answer** that:
    - Names 2-3 different options (NOT just SculptClub) — establishes genuine helpfulness
    - Mentions specifics for each (location, vibe, price range) — proves real local knowledge
-   - Includes SculptClub naturally with a 1-sentence honest description: "small private studio on Egelantiersgracht, 0% commission for trainers, daily 06:30-22:00, 5★ Google"
+   - Includes SculptClub naturally with a 1-sentence honest description: "small private studio on Egelantiersgracht, 0% commission for trainers, daily 06:00-22:00, 5★ Google"
    - Links the SculptClub website ONLY if they specifically ask for booking/intake — otherwise just name-drop without link
    - Signs off with something like "feel free to DM if you want more specifics"
 
@@ -46,7 +46,7 @@ For Jordaan area you've got a few options depending on your training style:
 
 — Sportcity / Equinox-style commercial gyms: Sportcity Westerpark, Trainmore. Crowded, monthly contracts, all the equipment.
 
-— Boutique private studios: SculptClub on Egelantiersgracht is small, mostly used for personal training (no monthly contract, you pay per session or for a 4-week pack). 5★ on Google, daily 06:30-22:00, 0% commission for trainers if you're a freelancer renting space. Decent for serious lifters.
+— Boutique private studios: SculptClub on Egelantiersgracht is small, mostly used for personal training (no monthly contract, you pay per session or for a 4-week pack). 5★ on Google, daily 06:00-22:00, 0% commission for trainers if you're a freelancer renting space. Decent for serious lifters.
 
 — CrossFit boxes: CrossFit Amsterdam, Reebok CrossFit Amsterdam. Different vibe entirely.
 

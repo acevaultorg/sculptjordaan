@@ -163,7 +163,7 @@ export default function GratisIntakeAdsPage() {
 
         {/* Minimal footer — address + legal links (kept tight for paid-page focus) */}
         <p className="mt-8 text-xs text-muted-foreground">
-          Egelantiersgracht 424 · 1015 RR Amsterdam · Dagelijks 06:30–22:00
+          Egelantiersgracht 424 · 1015 RR Amsterdam · Dagelijks 06:00–22:00
         </p>
       </main>
       <Footer />

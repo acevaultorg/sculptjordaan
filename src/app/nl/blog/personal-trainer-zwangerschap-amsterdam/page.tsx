@@ -152,7 +152,7 @@ export default function PTZwangerschapAmsterdamNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Praktisch — zwanger in de studio</h2>
               <ul>
-                <li><strong>Geopend 06:30-22:00 dagelijks:</strong> Plan rond je energie, niet rond openingstijden.</li>
+                <li><strong>Geopend 06:00-22:00 dagelijks:</strong> Plan rond je energie, niet rond openingstijden.</li>
                 <li><strong>Privé studio:</strong> Geen grote spiegel-wand, geen bench-press publiek. Jouw tempo, jouw ruimte.</li>
                 <li><strong>Altijd gratis annuleren:</strong> Een mindere dag? Je belt af en plant opnieuw.</li>
                 <li><strong>Geen contract:</strong> Kies een bundel van 4 of 8 sessies. Pauzeer rondom de bevalling zonder opzegtermijn.</li>

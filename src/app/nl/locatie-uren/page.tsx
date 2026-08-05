@@ -17,7 +17,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: { absolute: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan" },
   description:
-    "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:30 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+    "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
   alternates: {
     canonical: "/nl/locatie-uren",
     languages: {
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     url: "/nl/locatie-uren",
     title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:30 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:30 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
   },
 };
 
@@ -106,7 +106,7 @@ export default function LocationPageNL() {
                 <div>
                   <p className="font-semibold">Openingstijden</p>
                   <p className="text-muted-foreground">
-                    Dagelijks: 06:30 - 22:00
+                    Dagelijks: 06:00 - 22:00
                   </p>
                   <p className="text-xs text-muted-foreground/70 mt-1">
                     Op afspraak. Boek je sessie online of via WhatsApp.

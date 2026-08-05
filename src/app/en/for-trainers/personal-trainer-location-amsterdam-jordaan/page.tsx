@@ -138,7 +138,7 @@ export default function LocationJordaanEN() {
             <li><strong>Low-price PT</strong> — if your rate is under €55, you're asking clients to pay more than they want for the access</li>
             <li><strong>Bodybuilding specialist</strong> — Jordaan clients rarely seek heavy mass-training; that audience is more in Oost and Noord</li>
             <li><strong>Group classes or bootcamp</strong> — works better in parks and larger studios; boutique 1:1 is the norm in Jordaan</li>
-            <li><strong>Trainers who can't work early or late</strong> — Jordaan clients book mostly 06:30-08:30 (pre-work) or 17:00-21:00 (post-work). Midday is dead.</li>
+            <li><strong>Trainers who can't work early or late</strong> — Jordaan clients book mostly 06:00-08:30 (pre-work) or 17:00-21:00 (post-work). Midday is dead.</li>
           </ul>
 
           <h2>Bottom line</h2>

@@ -194,12 +194,12 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "🧡 Huur jouw eigen PT-studio in de Jordaan — €12/uur",
       description:
-        "Trainers — eigen sleutel, eigen tarief, eigen klanten.\n\n0% commissie · geen contract · dagelijks geopend 06:30 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
+        "Trainers — eigen sleutel, eigen tarief, eigen klanten.\n\n0% commissie · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
     instagram: {
       caption:
-        "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · dagelijks geopend 06:30 – 22:00.\n\nProbeer gratis · link in bio 👆",
+        "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis · link in bio 👆",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
   },

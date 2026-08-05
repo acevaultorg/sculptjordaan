@@ -205,7 +205,7 @@ export default function OgImage() {
                 fontWeight: 500,
               }}
             >
-              Dagelijks 06:30–22:00
+              Dagelijks 06:00–22:00
             </div>
           </div>
           <div

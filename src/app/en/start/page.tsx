@@ -72,7 +72,7 @@ const paths = [
 
 const trustItems = [
   { icon: Shield, text: "No contract, no membership" },
-  { icon: Clock, text: "Open daily 06:30\u201322:00" },
+  { icon: Clock, text: "Open daily 06:00\u201322:00" },
   { icon: MapPin, text: "Jordaan, Amsterdam" },
 ];
 

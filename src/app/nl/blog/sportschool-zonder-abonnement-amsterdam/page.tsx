@@ -148,7 +148,7 @@ export default function SportschoolZonderAbonnementNL() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Volledige privacy</strong> — je traint alleen of met je trainingspartner in een afgesloten studio.</li>
                 <li><strong>Professionele apparatuur</strong> — power rack, kabelmachine, dumbbells, assault bike en meer.</li>
-                <li><strong>Flexibele tijden</strong> — boek sessies van 06:30 tot 22:00, 7 dagen per week.</li>
+                <li><strong>Flexibele tijden</strong> — boek sessies van 06:00 tot 22:00, 7 dagen per week.</li>
                 <li><strong>Geen contract</strong> — 4-weken cyclus, opzeggen wanneer je wilt.</li>
                 <li><strong>Deurcode toegang</strong> — boek, ontvang je code en train op jouw tijd.</li>
               </ul>

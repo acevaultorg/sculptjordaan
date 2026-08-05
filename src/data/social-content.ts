@@ -101,7 +101,7 @@ export interface SocialIdea {
 
 const FACTS = {
   address: "Egelantiersgracht 424, Jordaan, Amsterdam",
-  hours: "Daily 06:30 – 22:00",
+  hours: "Daily 06:00 – 22:00",
   pt: "from €45/session · free intake",
   studio: "from €12 per 60 min",
   openGym: "from €7.25 per session",
@@ -249,7 +249,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Studio Rental from €12/hour",
         "All three: first session free",
         "Jordaan, Egelantiersgracht 424",
-        "Daily 06:30-22:00",
+        "Daily 06:00-22:00",
       ],
       hookConcept: "3 ways to use SculptClub — all under €50, all first-free",
       cta: FACTS.website,
@@ -892,7 +892,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
     pillar: "behind-scenes",
     format: "TikTok Video",
     title: "An early morning in the Jordaan studio",
-    script: `[0-3s] Hook on-screen: "06:30 AM in the Jordaan"
+    script: `[0-3s] Hook on-screen: "06:00 AM in the Jordaan"
 [3-12s] Trainer opens garage door, sun on canal
 [12-22s] First client in, coffee being made
 [22-32s] Warming-up, music on
@@ -906,7 +906,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "Early morning = quietest time, gym to yourself",
         FACTS.address,
       ],
-      hookConcept: "06:30 in the Jordaan",
+      hookConcept: "06:00 in the Jordaan",
       cta: FACTS.website,
       targetLength: "short",
     },
@@ -1569,7 +1569,7 @@ Reel: 30s — intro + coaching demo`,
     title: "Reel — A day in the life of a PT",
     script: `Reel (60s):
 [0-5s] 06:00 — Trainer arrives, doors open
-[5-15s] 06:30-12:00 — Morning clients
+[5-15s] 06:00-12:00 — Morning clients
 [15-25s] 12:00 — Lunch + afternoon planning
 [25-40s] 14:00-18:00 — Afternoon/evening clients
 [40-50s] 19:00 — Last session of the day
@@ -1739,7 +1739,7 @@ Operator face/avatar bottom-left + small "❤️" emoji (replicates the engageme
       facts: [
         `Studio: ${FACTS.studio}`,
         "Rent-only model — trainer keeps 100% of PT income",
-        "Available daily 06:30-22:00, hourly bookings, no contract",
+        "Available daily 06:00-22:00, hourly bookings, no contract",
         "Egelantiersgracht 424 — central Jordaan",
         "Free first test session for new trainers",
       ],
@@ -1968,7 +1968,7 @@ Slide 6 (CTA): Studio interior + bold "PLAN JE GRATIS INTAKE"
         "Open Gym: €29/4-weken Instapplan (€7.25/sessie)",
         "Always free first test session",
         "Max 4 people at a time in studio — never overcrowded",
-        "No contract · cancel anytime · daily 06:30-22:00",
+        "No contract · cancel anytime · daily 06:00-22:00",
       ],
       hookConcept: "Numbers-only opener (€7.25). Beats Saints-&-Stars even at their 50%-off price. Emphasize boutique scarcity (max 4).",
       cta: `Boek je gratis testsessie: sculptclub.nl/open-gym`,
@@ -2135,7 +2135,7 @@ Center-screen: large yellow circle with "+ EERSTE TEST GRATIS" inside
         "Rent-only — trainer keeps 100% of PT income",
         "First test session free",
         FACTS.address,
-        "Daily 06:30-22:00 availability",
+        "Daily 06:00-22:00 availability",
       ],
       hookConcept: "Aggressive price-anchor. €12 looks too good — viewer hits the link to verify. Conversion happens on landing page.",
       cta: `Bekijk studio: ${FACTS.studioLanding}`,

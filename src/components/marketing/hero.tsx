@@ -183,7 +183,7 @@ export function Hero({ locale }: { locale: Locale }) {
     // element accumulated 3 clicks / 5.45 % of all taps as DEAD CLICKS — visitors
     // were tapping the trust bullets expecting an action. The two segments that
     // promise the action ("Eerste intake gratis" + "5.0 ★ Google") get hrefs;
-    // the static factual segments ("Geen contracten" / "Dagelijks 06:30–22:00")
+    // the static factual segments ("Geen contracten" / "Dagelijks 06:00–22:00")
     // stay as spans. Each clickable bullet ships a distinct Plausible event
     // (hero_trust_intake / hero_trust_reviews) so we can measure if the
     // dead-click signal converts into a real conversion path.

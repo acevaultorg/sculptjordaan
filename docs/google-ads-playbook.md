@@ -123,7 +123,7 @@ Pasted into the campaign during build. Shown here for reference and easy re-past
 
 ```
 1. Privé studio in Jordaan. 5 trainers, geen abonnement. Vanaf €45 per sessie.
-2. Egelantiersgracht 424. Open 06:30–22:00. Boek je gratis intake. 5.0★ Google.
+2. Egelantiersgracht 424. Open 06:00–22:00. Boek je gratis intake. 5.0★ Google.
 3. Boek online in 2 min. Geen abonnement. Cancel altijd gratis. Tot 22:00 open.
 4. 5.0★ op Google. Verkoopabonnement loos — privé club, je betaalt per sessie.
 ```
@@ -134,7 +134,7 @@ Pasted into the campaign during build. Shown here for reference and easy re-past
 9.  Eerste Intake 100% Gratis
 10. Egelantiersgracht 424
 11. Boek Online — 2 Minuten
-12. Open 06:30–22:00 Daags
+12. Open 06:00–22:00 Daags
 13. Direct Beschikbaar
 14. Privé. Persoonlijk. Echt.
 15. Boutique Personal Training
@@ -153,11 +153,11 @@ HEADLINES:
 - 5 Coaches in Jordaan
 - Egelantiersgracht 424
 - Book Online — 2 Minutes
-- Open Daily 06:30–22:00
+- Open Daily 06:00–22:00
 
 DESCRIPTIONS:
 - Private boutique gym in Jordaan. 5 trainers. No contract. From €45.
-- Egelantiersgracht 424. Open 06:30–22:00. Free intro online in 2 min.
+- Egelantiersgracht 424. Open 06:00–22:00. Free intro online in 2 min.
 - 5.0★ on Google. No-membership boutique club — pay per session.
 - Book free intro online. Cancel anytime free. 5 trainers, one studio.
 ```
@@ -187,7 +187,7 @@ Recommended 4–6 sitelinks for the campaign assets:
 - Privé Studio
 - 5 Trainers
 - Eerste Intake Gratis
-- Open 06:30–22:00
+- Open 06:00–22:00
 - Egelantiersgracht 424
 - Direct Boeken
 ```

@@ -140,7 +140,7 @@ export default function PTNaBevallingAmsterdamNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Praktisch — tijd met een baby</h2>
               <ul>
-                <li><strong>Open 06:30-22:00 dagelijks:</strong> Een sessie plannen voor de partner naar werk gaat, tijdens de middagdut, of in de avond als iemand thuis is.</li>
+                <li><strong>Open 06:00-22:00 dagelijks:</strong> Een sessie plannen voor de partner naar werk gaat, tijdens de middagdut, of in de avond als iemand thuis is.</li>
                 <li><strong>Gratis annuleren:</strong> Altijd. Geen 24-uursregel. Een slechte nacht? Je belt af en we plannen opnieuw. Geen gedoe.</li>
                 <li><strong>Privé studio:</strong> Geen kleedkamer-gedoe. Deurcode via WhatsApp, je trainer wacht al op je.</li>
                 <li><strong>Geen contract:</strong> Koop een bundel wanneer je er klaar voor bent. Pauzeer maanden als dat nodig is.</li>

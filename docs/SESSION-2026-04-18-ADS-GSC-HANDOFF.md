@@ -102,7 +102,7 @@ These are drafts you can paste directly into the Google Ads Apply flow. The Dutc
 4. Vanaf €45 per PT-sessie
 5. Geen vaste contracten
 6. Altijd gratis opzegbaar
-7. Dagelijks 06:30–22:00
+7. Dagelijks 06:00–22:00
 8. 8 ervaren trainers
 
 #### #6 — Structured snippets (NL)
@@ -139,14 +139,14 @@ Add these headlines (up to 15, 30 chars each) — Google will mix-and-match:
 11. Krachttraining op Maat
 12. Amsterdam Jordaan
 13. SculptClub Egelantiersgracht
-14. Dagelijks 06:30–22:00
+14. Dagelijks 06:00–22:00
 15. Revalidatie én Sport
 
 Add these descriptions (up to 4, 90 chars each):
 1. Privé personal training studio aan de Egelantiersgracht. Gratis intake, 8 trainers, vanaf €45.
 2. Geen vaste contracten, altijd gratis opzegbaar. Open Gym vanaf €29 per 4 weken. Boek nu.
 3. Fysiotherapeut Hamish BSc combineert revalidatie met krachttraining. Veilig terug naar sport.
-4. 5 sterren op Google. Kleine boutique studio in de Jordaan. Dagelijks open 06:30–22:00.
+4. 5 sterren op Google. Kleine boutique studio in de Jordaan. Dagelijks open 06:00–22:00.
 
 **Copy-quality note:** these draft lines respect all rules in `USER-KNOWLEDGE.md` — no "geen abonnement" as a blanket statement, WhatsApp/email numbers match `src/config/site.ts`, BTW 9% (sport rate) acknowledged in price descriptions, pricing exactly matches `CLAUDE.md`. Review before applying.
 

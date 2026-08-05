@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Corporate Personal Training Amsterdam — SculptClub" },
   description:
-    "Personal training for busy professionals and small teams in Amsterdam. Private studio in the Jordaan, daily 06:30–22:00, invoice on company name possible.",
+    "Personal training for busy professionals and small teams in Amsterdam. Private studio in the Jordaan, daily 06:00–22:00, invoice on company name possible.",
   keywords: [
     "corporate personal training amsterdam",
     "executive personal trainer amsterdam",
@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Do you offer hours that suit a busy schedule?",
     answer:
-      "Yes. The studio is open daily from 06:30 to 22:00, weekends included. Early-morning sessions before a Zuidas workday or late-evening sessions after a city-centre meeting are both standard.",
+      "Yes. The studio is open daily from 06:00 to 22:00, weekends included. Early-morning sessions before a Zuidas workday or late-evening sessions after a city-centre meeting are both standard.",
   },
   {
     question: "Can I train with colleagues or a small team?",
@@ -127,7 +127,7 @@ export default function CorporatePersonalTrainingAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Flexible hours for full calendars</h2>
               <p>
-                The studio is open daily from 06:30 to 22:00. That sounds obvious, but it matters in
+                The studio is open daily from 06:00 to 22:00. That sounds obvious, but it matters in
                 practice. For <a href="/en/blog/personal-trainer-amsterdam-south" className="text-brand hover:underline">Zuidas</a> executives
                 with an 08:00 first call, a 06:45 session is realistic — train, shower, coffee, on time
                 at the office. For consultants leaving the office at 19:00, a 19:30 or 20:00 session

@@ -71,7 +71,7 @@ const steps = [
 
 const trustItems = [
   { icon: Shield, text: "Altijd opzegbaar" },
-  { icon: Clock, text: "Dagelijks 06:30–22:00" },
+  { icon: Clock, text: "Dagelijks 06:00–22:00" },
   { icon: MessageCircle, text: "Snel antwoord via WhatsApp" },
 ];
 

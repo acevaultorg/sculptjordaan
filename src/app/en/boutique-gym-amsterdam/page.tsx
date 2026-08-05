@@ -46,13 +46,13 @@ const steps = [
   {
     step: "3",
     title: "Train on your schedule",
-    desc: "Open daily 06:30–22:00. Door code via WhatsApp the night before. No reception, no queues, no small talk.",
+    desc: "Open daily 06:00–22:00. Door code via WhatsApp the night before. No reception, no queues, no small talk.",
   },
 ];
 
 const trustItems = [
   { icon: Shield, text: "Cancel anytime" },
-  { icon: Clock, text: "Daily 06:30–22:00" },
+  { icon: Clock, text: "Daily 06:00–22:00" },
   { icon: MessageCircle, text: "Quick reply on WhatsApp" },
 ];
 
@@ -195,7 +195,7 @@ export default function BoutiqueGymAmsterdamPage() {
               "7 trainers, all English-speaking",
               "Personal training from €45 per session, you pay your trainer directly",
               "Open Gym from €29 for 4 sessions — no membership lock-in",
-              "Open daily 06:30–22:00, door code via WhatsApp",
+              "Open daily 06:00–22:00, door code via WhatsApp",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

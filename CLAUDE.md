@@ -7,7 +7,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Address:** Egelantiersgracht 424, 1015 RR Amsterdam
 - **Phone / WhatsApp:** +31 6 15 14 79 52 (`wa.me/31615147952`) — single public number for calls AND WhatsApp Business (auto-replies live on this line). Replaced old `0683178934` fleet-wide on 2026-06-01 per operator. NEVER revert to 0683178934 even if older context/memory references it.
 - **Email:** contact@sculptclub.nl
-- **Hours:** Daily 06:30–22:00
+- **Hours:** Daily 06:00–22:00
 - **Founded:** 2025
 - **Rating:** 5.0 stars on Google
 - **Open Gym capacity:** max **4 people** in the studio at a time (operator 2026-06-23, raised from 3). Use "max 4 personen / max 4 people" everywhere — never "3".

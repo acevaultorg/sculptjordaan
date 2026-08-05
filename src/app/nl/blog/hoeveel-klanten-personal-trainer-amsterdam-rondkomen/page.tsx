@@ -88,7 +88,7 @@ export default function BlogPostHoeveelKlanten() {
                   ["€90/sessie", "~72 sessies/maand = 18 sessies/week"],
                 ].map(([rate, n]) => (<li key={rate} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{rate}:</strong> {n}</span></li>))}
               </ul>
-              <p>27 sessies/week is hard werken. 5 werkdagen × 5-6 sessies/dag betekent vroege ochtend (06:30) tot late avond (21:00). Niet onmogelijk maar wel intensief — en eet 3-5 sessies/week voor jezelf en je gezin op.</p>
+              <p>27 sessies/week is hard werken. 5 werkdagen × 5-6 sessies/dag betekent vroege ochtend (06:00) tot late avond (21:00). Niet onmogelijk maar wel intensief — en eet 3-5 sessies/week voor jezelf en je gezin op.</p>
               <p>Verstandige route: groei je tarief in plaats van je uur-aantal. €60 → €75 in jaar 2 → €90 in jaar 4. Dan kan je gezin draaien op 18-22 sessies/week.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Scenario C — bewust voor part-time kiezen</h2>

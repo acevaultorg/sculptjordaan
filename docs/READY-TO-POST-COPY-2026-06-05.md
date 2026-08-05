@@ -18,7 +18,7 @@ Depends what you're after:
 
 — Big commercial gyms: Sportcity (Westerpark), TrainMore. Lots of kit, monthly contract, can get busy.
 
-— Small private studios: SculptClub on Egelantiersgracht is tiny and private, mostly used for personal training. No monthly contract — you pay per session or a 4-week Open Gym plan (from ~€6/session). Daily 06:30–22:00, 5★ on Google. If you're a trainer yourself you can rent the room by the hour (no commission).
+— Small private studios: SculptClub on Egelantiersgracht is tiny and private, mostly used for personal training. No monthly contract — you pay per session or a 4-week Open Gym plan (from ~€6/session). Daily 06:00–22:00, 5★ on Google. If you're a trainer yourself you can rent the room by the hour (no commission).
 
 — CrossFit: CrossFit Amsterdam / Reebok CrossFit. Whole different vibe.
 
@@ -31,7 +31,7 @@ Hangt af van wat je zoekt:
 
 — Grote commerciële gyms: Sportcity (Westerpark), TrainMore. Veel apparatuur, maandcontract, vaak druk.
 
-— Kleine privé studio's: SculptClub op de Egelantiersgracht is klein en privé, vooral voor personal training. Geen maandcontract — je betaalt per sessie of een 4-weken Open Gym plan (vanaf ~€6/sessie). Dagelijks 06:30–22:00, 5★ op Google. Ben je zelf trainer, dan huur je er per uur de ruimte (geen commissie).
+— Kleine privé studio's: SculptClub op de Egelantiersgracht is klein en privé, vooral voor personal training. Geen maandcontract — je betaalt per sessie of een 4-weken Open Gym plan (vanaf ~€6/sessie). Dagelijks 06:00–22:00, 5★ op Google. Ben je zelf trainer, dan huur je er per uur de ruimte (geen commissie).
 
 — CrossFit: CrossFit Amsterdam / Reebok CrossFit. Hele andere sfeer.
 
@@ -53,7 +53,7 @@ De meeste gyms pakken 30-50% van wat een zelfstandige trainer per sessie vraagt.
 Hoe het werkt:
 • Huur per uur — geen contract, geen minimum
 • Trainer bepaalt z'n eigen tarief, klant betaalt direct
-• Privé studio, dagelijks 06:30–22:00, sleutelcode per WhatsApp
+• Privé studio, dagelijks 06:00–22:00, sleutelcode per WhatsApp
 
 Waarom: een ervaren trainer is geen werknemer. Z'n uur is niet "de helft" waard — het is waard wat de klant eruit haalt. Vaste, voorspelbare huur werkt voor ons beter dan wisselende commissie, en is voor de trainer een stuk eerlijker.
 
@@ -72,7 +72,7 @@ Most gyms take 30-50% of what an independent trainer charges per session. Here t
 How it works:
 • Rent by the hour — no contract, no minimum
 • Trainer sets their own rate, client pays them directly
-• Private studio, daily 06:30–22:00, door code by WhatsApp
+• Private studio, daily 06:00–22:00, door code by WhatsApp
 
 Why: an experienced trainer isn't an employee. Their hour isn't worth "half" — it's worth what the client gets out of it. Fixed, predictable rent works better for us than variable commission, and it's a lot fairer to the trainer.
 

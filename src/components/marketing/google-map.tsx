@@ -11,13 +11,13 @@ export function GoogleMap({ locale }: { locale: Locale }) {
       ? {
           overline: "Locatie",
           title: "Vind ons in de Jordaan",
-          hours: "Dagelijks 06:30–22:00",
+          hours: "Dagelijks 06:00–22:00",
           directions: "Route plannen",
         }
       : {
           overline: "Location",
           title: "Find us in the Jordaan",
-          hours: "Daily 06:30–22:00",
+          hours: "Daily 06:00–22:00",
           directions: "Get directions",
         };
 

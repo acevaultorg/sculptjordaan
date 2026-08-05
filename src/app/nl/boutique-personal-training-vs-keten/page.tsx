@@ -279,7 +279,7 @@ export default function BoutiquePTvsKetenNL() {
               techniek of programmering, of als je terugkomt na een blessure.
               Ook als je niet vastzit aan een lang contract of inschrijfgeld,
               en je gewoon wilt kunnen stoppen wanneer het je uitkomt. SculptClub
-              is open van 06:30 tot 22:00, dagelijks, op de Egelantiersgracht
+              is open van 06:00 tot 22:00, dagelijks, op de Egelantiersgracht
               424 in de Jordaan.
             </p>
           </FadeIn>

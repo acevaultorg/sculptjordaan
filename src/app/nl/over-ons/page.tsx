@@ -89,7 +89,7 @@ const uniqueFeatures = [
   },
   {
     icon: Clock,
-    title: "06:30 \u2013 22:00 dagelijks",
+    title: "06:00 \u2013 22:00 dagelijks",
     description:
       "Open 7 dagen per week. Vroege vogels en avondmensen, iedereen is welkom.",
   },

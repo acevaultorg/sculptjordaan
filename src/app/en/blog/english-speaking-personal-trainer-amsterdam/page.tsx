@@ -146,7 +146,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
               <p>
                 The Jordaan is central Amsterdam — walkable from Centrum, a 10-minute cycle from
                 Zuidas, and reachable from Noord via the free IJ ferry. The studio is open
-                06:30–22:00 daily, which makes squeezing a session around work calls workable.
+                06:00–22:00 daily, which makes squeezing a session around work calls workable.
                 Read the neighbourhood-specific guides:{" "}
                 <a href="/en/blog/personal-trainer-amsterdam-centrum" className="text-brand hover:underline">Centrum</a>,{" "}
                 <a href="/en/blog/personal-trainer-amsterdam-south" className="text-brand hover:underline">Zuidas/South</a>,{" "}

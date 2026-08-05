@@ -276,7 +276,7 @@ export default function BoutiquePTvsChainEN() {
               technique or programming, or you’re returning after an
               injury. Also if you don’t want to be locked into a long
               contract or sign-up fees, and you just want to be able to stop
-              whenever it suits you. SculptClub is open daily 06:30 to 22:00
+              whenever it suits you. SculptClub is open daily 06:00 to 22:00
               at Egelantiersgracht 424 in the Jordaan.
             </p>
           </FadeIn>

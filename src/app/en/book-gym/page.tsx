@@ -12,20 +12,20 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: { absolute: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam" },
-  description: "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+  description: "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:00–22:00.",
   alternates: { canonical: "/en/book-gym", languages: { nl: "/nl/boek-gym", en: "/en/book-gym" } },
   openGraph: {
     type: "website",
     url: "/en/book-gym",
     title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
     description:
-      "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+      "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:00–22:00.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
     description:
-      "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:30–22:00.",
+      "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:00–22:00.",
   },
 };
 
@@ -102,7 +102,7 @@ export default function BookGymPageEN() {
             <ButtonLink href={acuityLinks.openGymBook} size="xl" className="w-full sm:w-auto">Book a session<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
             <ButtonLink href="#plans" size="lg" variant="outline" className="w-full sm:w-auto">Choose a plan</ButtonLink>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Single session (1 hour) €9 · Membership from €7.25/session · Daily 06:30–22:00</p>
+          <p className="mt-4 text-xs text-muted-foreground">Single session (1 hour) €9 · Membership from €7.25/session · Daily 06:00–22:00</p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymTrial} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
               New here? Try a free trial first →

@@ -42,19 +42,20 @@ Sun  8(4) 9(2) 10(5) 11(11) 12(3) 13(3) 14(3) 15(2)
 
 ## ✅ The ONLY hours ClassPass may be offered
 
-(07:00–21:00 window; a 21:00 class ends at 22:00 close)
+Opening hours are **06:00–22:00 every day** (corrected 2026-08-05 — the old "06:30" in code+docs was wrong), so start times run 06:00 → 21:00 (a 21:00 class ends at close).
 
 | Day | ClassPass-safe hours |
 |---|---|
 | **Mon** | 21:00 |
-| **Tue** | 09:00 · 21:00 |
-| **Wed** | — none — |
-| **Thu** | 21:00 |
+| **Tue** | 06:00 · 09:00 · 21:00 |
+| **Wed** | 06:00 |
+| **Thu** | 06:00 · 21:00 |
 | **Fri** | 21:00 |
-| **Sat** | 07:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
-| **Sun** | 07:00 · 16:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
+| **Sat** | 06:00 · 07:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
+| **Sun** | 06:00 · 07:00 · 16:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
 
-**19 safe slots/week.** This is a *cap*, not a target — offering fewer is always safe.
+**23 safe slots/week.** This is a *cap*, not a target — offering fewer is always safe.
+(Mon 06:00 and Fri 06:00 are NOT safe — 3 and 20 Full Studio bookings respectively. Early Friday is a real rental hour.)
 
 Note how cleanly this matches the utilisation data: weekend afternoons/evenings were the dead zone (Sat 26% / Sun 13% utilisation, Sat+Sun 16–22h had **zero** bookings in 13 weeks). ClassPass fills exactly the hours the rental business never wanted — which is the whole point.
 
@@ -98,3 +99,37 @@ Re-run whenever rental patterns shift (quarterly is enough):
 4. Diff against the live ClassPass schedule; remove conflicts.
 
 ⚠️ Never widen ClassPass into a "quiet" hour just because it looks empty this month — the rule is *ever booked*, across the whole history.
+
+---
+
+## 🔒 Why a one-time cleanup is NOT enough (and what guards it)
+
+The set of "hours Full Studio has ever been booked" **grows**. A slot that is safe today becomes a
+conflict the first time someone rents that hour — silently, with nothing to detect it.
+
+**Guard:** scheduled task `classpass-fullstudio-conflict-guard`, **Mondays 07:02**. It re-exports
+Acuity, recomputes the grid, diffs it against the live ClassPass schedule, removes any new conflict,
+and reports. Definition + prompt: `~/.claude/scheduled-tasks/classpass-fullstudio-conflict-guard/SKILL.md`.
+
+**Data + script live in** `../acuity-exports/` (CSV + `analyze-classpass-safety.py` + README).
+
+### ⚠️ Export trap (cost me a wrong dataset once)
+Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1,642). The real form
+download with *"Include canceled appointments"* ticked returns **1,951** — and 5 appointment types
+appear only in the fuller set. Always use the form download.
+
+### Verified against the complete history (2026-08-05)
+1,951 rows · 30 appointment types · 822 whole-room bookings (incl. cancellations) · 93 distinct slots.
+
+| Live slot | Whole-room bookings in that hour, ever |
+|---|---|
+| Mon 21:00 | 0 ✅ |
+| Tue 21:00 | 0 ✅ |
+| Thu 21:00 | 0 ✅ |
+| Fri 21:00 | 0 ✅ |
+
+### Residual risk (accepted, worth knowing)
+"Never booked before" ≠ "will never be booked". A ClassPass booking on a safe hour still blocks a
+rental *if one is wanted for the first time*. With 21:00 that risk is minimal (zero demand in 15
+months). The structural cure would be releasing ClassPass slots only ~24h ahead so any advance
+rental wins — worth exploring if ClassPass exposes a booking-window setting.

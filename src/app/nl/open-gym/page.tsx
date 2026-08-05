@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     q: "Hoe laat kan ik trainen?",
-    a: "Dagelijks van 06:30 tot 22:00. Vroege ochtend, lunchtijd, na het werk of laat in de avond — je kiest. De studio is altijd privé tijdens jouw geboekte tijdslot.",
+    a: "Dagelijks van 06:00 tot 22:00. Vroege ochtend, lunchtijd, na het werk of laat in de avond — je kiest. De studio is altijd privé tijdens jouw geboekte tijdslot.",
   },
   {
     q: "Waar is de studio en hoe kom ik er?",

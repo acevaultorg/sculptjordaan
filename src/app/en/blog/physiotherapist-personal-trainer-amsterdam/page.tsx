@@ -59,7 +59,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
         { question: "Does SculptClub have a physiotherapist on staff?", answer: "Not currently. For diagnosis, treatment and rehabilitation we refer you to a licensed physiotherapist. Our personal trainers take over once your physio gives the green light — strength, technique, progressive loading." },
         { question: "Can I train with a herniated disc?", answer: "Your physiotherapist or doctor decides that, not your personal trainer. With clearance from your treating clinician, our trainers can build you up safely — under the load tolerance they set." },
         { question: "Does my insurance cover the sessions?", answer: "Personal training is not covered by basic health insurance. Some supplementary plans partially cover (para)medical fitness — check your policy." },
-        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily 06:30–22:00. For PT sessions your trainer arranges access; for Open Gym you receive a door code via WhatsApp. No buzzer, no reception desk." },
+        { question: "Where is SculptClub located?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Open daily 06:00–22:00. For PT sessions your trainer arranges access; for Open Gym you receive a door code via WhatsApp. No buzzer, no reception desk." },
       ]} />
 
       <Section>

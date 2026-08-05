@@ -207,7 +207,7 @@ export default function OgImage() {
                 fontWeight: 500,
               }}
             >
-              Daily 06:30–22:00
+              Daily 06:00–22:00
             </div>
           </div>
           <div

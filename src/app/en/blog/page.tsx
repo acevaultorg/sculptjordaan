@@ -293,7 +293,7 @@ const posts = [
   {
     title: "Corporate Personal Training Amsterdam",
     excerpt:
-      "Personal training for busy professionals and small teams in Amsterdam. Private studio in the Jordaan, open daily 06:30–22:00, invoice on company name available.",
+      "Personal training for busy professionals and small teams in Amsterdam. Private studio in the Jordaan, open daily 06:00–22:00, invoice on company name available.",
     category: "Corporate",
     href: "/en/blog/corporate-personal-training-amsterdam",
     date: "April 5, 2026",

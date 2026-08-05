@@ -151,7 +151,7 @@ export default function PrenatalPTAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Practical — training while pregnant</h2>
               <ul>
-                <li><strong>Open 06:30-22:00 daily:</strong> Schedule around your energy, not around opening hours.</li>
+                <li><strong>Open 06:00-22:00 daily:</strong> Schedule around your energy, not around opening hours.</li>
                 <li><strong>Private studio:</strong> No mirror wall, no bench-press audience. Your pace, your space.</li>
                 <li><strong>Cancellation always free:</strong> Off day? You cancel and we rebook. No hassle.</li>
                 <li><strong>No contract:</strong> Buy a 4- or 8-session package. Pause around the birth with no notice period.</li>

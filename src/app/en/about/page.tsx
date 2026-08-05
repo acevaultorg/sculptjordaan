@@ -89,7 +89,7 @@ const uniqueFeatures = [
   },
   {
     icon: Clock,
-    title: "06:30 \u2013 22:00 daily",
+    title: "06:00 \u2013 22:00 daily",
     description:
       "Open 7 days a week. Early birds and night owls, everyone is welcome.",
   },

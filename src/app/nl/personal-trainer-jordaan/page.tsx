@@ -51,13 +51,13 @@ const steps = [
   {
     step: "3",
     title: "Train op jouw moment",
-    desc: "Dagelijks open van 06:30 tot 22:00. Boek per sessie, vanaf €45. Geen verplichting achteraf.",
+    desc: "Dagelijks open van 06:00 tot 22:00. Boek per sessie, vanaf €45. Geen verplichting achteraf.",
   },
 ];
 
 const trustItems = [
   { icon: Shield, text: "Altijd opzegbaar" },
-  { icon: Clock, text: "Dagelijks 06:30–22:00" },
+  { icon: Clock, text: "Dagelijks 06:00–22:00" },
   { icon: MessageCircle, text: "Direct contact via WhatsApp" },
 ];
 
@@ -210,7 +210,7 @@ export default function PersonalTrainerJordaanPage() {
               "5 personal trainers, jouw match qua doel en stijl",
               "Eerste intake 100% gratis, geen creditcard nodig",
               "Geen abonnement — boek per sessie, vanaf €45",
-              "Dagelijks open van 06:30 tot 22:00",
+              "Dagelijks open van 06:00 tot 22:00",
               "Deurcode via WhatsApp — geen receptie, geen wachten",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
@@ -258,7 +258,7 @@ export default function PersonalTrainerJordaanPage() {
               Onze privé studio ligt aan de <strong className="text-foreground">Egelantiersgracht 424</strong>, midden in de Jordaan — op loopafstand van het Centrum, het Westerpark en de Westelijke Eilanden. Of je nu in de Jordaan woont, in de grachtengordel werkt of vanuit het Centrum komt: je traint binnen een paar minuten, zonder gedoe.
             </p>
             <p>
-              <strong className="text-foreground">Makkelijk bereikbaar.</strong> Met tram 13 of 17 sta je zo bij de Marnixstraat; bus 18 en 21 stoppen om de hoek. De meeste klanten komen lopend of op de fiets — geen zoektocht naar een parkeerplek, geen file. Train vóór je werk, in je lunchpauze of 's avonds: we zijn dagelijks open van 06:30 tot 22:00.
+              <strong className="text-foreground">Makkelijk bereikbaar.</strong> Met tram 13 of 17 sta je zo bij de Marnixstraat; bus 18 en 21 stoppen om de hoek. De meeste klanten komen lopend of op de fiets — geen zoektocht naar een parkeerplek, geen file. Train vóór je werk, in je lunchpauze of 's avonds: we zijn dagelijks open van 06:00 tot 22:00.
             </p>
             <p>
               <strong className="text-foreground">Rustig, niet druk.</strong> Anders dan een grote sportschool in het Centrum train je hier in een rustige, volledig uitgeruste privé studio aan de gracht — met Rogue, Eleiko en Concept2. Geen wachtrij, volledige focus. Alleen jij en je trainer, of een kleine groep.

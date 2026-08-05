@@ -157,7 +157,7 @@ export default function PersonalTrainerAmsterdamNorthEN() {
                 other way round. Rates start at €45 per session and we keep an{" "}
                 <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of what personal training costs in Amsterdam</a>.
                 The first intro is always free. No membership, no long contracts, no hidden fees.
-                Cancellation is always free. The studio is open daily 06:30 to 22:00, so squeezing a
+                Cancellation is always free. The studio is open daily 06:00 to 22:00, so squeezing a
                 session in before or after work in <a href="/en/blog/personal-trainer-amsterdam-centrum" className="text-brand hover:underline">Centrum</a>{" "}
                 or <a href="/en/blog/personal-trainer-amsterdam-south" className="text-brand hover:underline">Zuidas</a> is usually
                 straightforward.

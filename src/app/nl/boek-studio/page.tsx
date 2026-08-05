@@ -130,7 +130,7 @@ export default function BoekStudioPageNL() {
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek de Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:30–22:00
+            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
           </p>
         </div>
 

@@ -205,7 +205,7 @@ export default function StudioRentalPageNL() {
             Studio huren voor personal trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:30–22:00
+            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
           </p>
         </div>
 

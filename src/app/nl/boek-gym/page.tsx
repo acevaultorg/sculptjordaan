@@ -25,7 +25,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam" },
   description:
-    "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+    "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:00–22:00.",
   alternates: {
     canonical: "/nl/boek-gym",
     languages: { nl: "/nl/boek-gym", en: "/en/book-gym" },
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     url: "/nl/boek-gym",
     title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
     description:
-      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:00–22:00.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
     description:
-      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:30–22:00.",
+      "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:00–22:00.",
   },
 };
 
@@ -127,7 +127,7 @@ export default function BoekGymPageNL() {
             </ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Losse sessie (1 uur) €9 · Lidmaatschap vanaf €7,25/sessie · Dagelijks 06:30–22:00
+            Losse sessie (1 uur) €9 · Lidmaatschap vanaf €7,25/sessie · Dagelijks 06:00–22:00
           </p>
           <div className="mt-6 pt-4 border-t border-border/50">
             <ButtonLink href={acuityLinks.openGymTrial} size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">

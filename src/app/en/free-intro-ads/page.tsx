@@ -128,7 +128,7 @@ export default function FreeIntroAdsPage() {
         </div>
 
         <p className="mt-8 text-xs text-muted-foreground">
-          Egelantiersgracht 424 · 1015 RR Amsterdam · Daily 06:30–22:00
+          Egelantiersgracht 424 · 1015 RR Amsterdam · Daily 06:00–22:00
         </p>
       </main>
       <Footer />

@@ -153,7 +153,7 @@ const trainerFaqs = [
   },
   {
     q: "What are the operating hours?",
-    a: "Daily 06:30-22:00. You book your own time slot in Acuity; during your hour you and your client have the studio entirely to yourselves (private).",
+    a: "Daily 06:00-22:00. You book your own time slot in Acuity; during your hour you and your client have the studio entirely to yourselves (private).",
   },
   {
     q: "What's the cancellation policy?",

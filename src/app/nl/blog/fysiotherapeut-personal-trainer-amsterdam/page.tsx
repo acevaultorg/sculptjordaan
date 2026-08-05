@@ -59,7 +59,7 @@ export default function FysiotherapeutPersonalTrainerNL() {
         { question: "Heeft SculptClub een fysiotherapeut in dienst?", answer: "Op dit moment niet. Voor diagnose, behandeling en revalidatie verwijzen we je naar een gediplomeerd fysiotherapeut. Onze personal trainers nemen het over zodra je weer mag bewegen — opbouw, kracht en techniek." },
         { question: "Mag ik trainen met een hernia?", answer: "Dat bepaalt je fysiotherapeut of arts, niet je personal trainer. Met groen licht van je behandelaar kunnen onze trainers je veilig opbouwen — onder de belastbaarheid die zij hebben aangegeven." },
         { question: "Vergoedt mijn zorgverzekeraar de sessies?", answer: "Personal training valt niet onder de zorgverzekering. Sommige aanvullende verzekeringen vergoeden (para)medische fitness deels — check je polis." },
-        { question: "Waar is SculptClub gevestigd?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:30 tot 22:00. Voor PT-sessies regelt je trainer de toegang; voor Open Gym ontvang je zelf een deurcode via WhatsApp. Geen bel, geen receptie." },
+        { question: "Waar is SculptClub gevestigd?", answer: "Egelantiersgracht 424, Amsterdam Jordaan. Dagelijks open van 06:00 tot 22:00. Voor PT-sessies regelt je trainer de toegang; voor Open Gym ontvang je zelf een deurcode via WhatsApp. Geen bel, geen receptie." },
       ]} />
 
       <Section>

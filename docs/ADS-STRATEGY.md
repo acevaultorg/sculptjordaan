@@ -102,7 +102,7 @@ Headlines (max 30 chars each):
 7. Eerste Sessie Gratis
 8. SculptClub Jordaan
 9. Persoonlijke Begeleiding
-10. Dagelijks Open 06:30–22:00
+10. Dagelijks Open 06:00–22:00
 
 Descriptions (max 90 chars each):
 1. Privé personal training studio in de Jordaan. Gratis intake, geen abonnement. Boek nu.
@@ -138,7 +138,7 @@ Headlines:
 5. Klein & Persoonlijk
 6. SculptClub Open Gym
 7. Privé Sfeer, Lage Prijs
-8. Dagelijks 06:30–22:00
+8. Dagelijks 06:00–22:00
 
 Descriptions:
 1. Open Gym vanaf €29/4 weken. Geen contract, altijd gratis annuleren. Probeer het nu.

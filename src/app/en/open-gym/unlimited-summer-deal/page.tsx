@@ -71,7 +71,7 @@ export const metadata: Metadata = {
 
 const included = [
   { icon: Users, text: "Max 4 people in the studio — never wait for equipment" },
-  { icon: Clock, text: "Open every day from 06:30 to 22:00" },
+  { icon: Clock, text: "Open every day from 06:00 to 22:00" },
   { icon: KeyRound, text: "Door code via WhatsApp — you can start right away" },
   { icon: Ban, text: "No contract, no notice period — cancelling is always free" },
 ];

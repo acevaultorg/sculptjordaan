@@ -139,7 +139,7 @@ export default function PostpartumPTAmsterdamEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Practical — training with a baby</h2>
               <ul>
-                <li><strong>Open 06:30-22:00 daily:</strong> Fit a session before partner leaves for work, during afternoon nap, or evening when someone’s home.</li>
+                <li><strong>Open 06:00-22:00 daily:</strong> Fit a session before partner leaves for work, during afternoon nap, or evening when someone’s home.</li>
                 <li><strong>Cancellation is always free:</strong> No 24-hour rule. Rough night? You cancel and we rebook. No hassle.</li>
                 <li><strong>Private studio:</strong> No changing-room logistics. WhatsApp door code, trainer waiting.</li>
                 <li><strong>No contract:</strong> Buy a package when you’re ready. Pause for months if you need to.</li>

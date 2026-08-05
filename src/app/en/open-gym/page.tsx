@@ -141,7 +141,7 @@ const faqs = [
   },
   {
     q: "What hours can I train?",
-    a: "Daily 06:30 to 22:00. Early morning, lunch, after work or late evening — you choose. The studio is always private during your booked slot.",
+    a: "Daily 06:00 to 22:00. Early morning, lunch, after work or late evening — you choose. The studio is always private during your booked slot.",
   },
   {
     q: "Where is the studio and how do I get there?",

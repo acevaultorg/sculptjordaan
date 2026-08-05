@@ -246,7 +246,7 @@ export default function EersteBezoekPage() {
               <span aria-hidden className="h-4 w-px bg-border" />
               <div className="flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-brand" />
-                <span className="text-sm font-medium">Dagelijks 06:30–22:00</span>
+                <span className="text-sm font-medium">Dagelijks 06:00–22:00</span>
               </div>
               <span aria-hidden className="h-4 w-px bg-border" />
               <div className="flex items-center gap-1.5">

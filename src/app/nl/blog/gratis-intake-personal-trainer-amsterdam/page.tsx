@@ -220,7 +220,7 @@ export default function GratisIntakeBlogNL() {
                     "Geen contract, geen abonnement, geen verplichting",
                     "Privé studio — geen drukte, geen wachtrijen",
                     "Trainers vanaf €45/sessie, 0% commissie",
-                    "Dagelijks open van 06:30 tot 22:00",
+                    "Dagelijks open van 06:00 tot 22:00",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm">
                       <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

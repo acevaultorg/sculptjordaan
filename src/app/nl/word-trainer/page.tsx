@@ -269,7 +269,7 @@ export default function WordTrainerNL() {
         <SectionHeader
           overline="De studio"
           title="Egelantiersgracht 424, Amsterdam Jordaan"
-          description="Centraal gelegen privé studio met professionele apparatuur. Dagelijks open van 06:30 tot 22:00."
+          description="Centraal gelegen privé studio met professionele apparatuur. Dagelijks open van 06:00 tot 22:00."
         />
         <FadeIn>
           {/* Studio gallery — 3 visually distinct shots covering people +

@@ -138,7 +138,7 @@ export default function LocatieJordaanNL() {
             <li><strong>Lage-prijs PT</strong> — als je tarief onder €55 ligt, vraag je klanten meer dan ze willen betalen voor de aanrijtijd</li>
             <li><strong>Bodybuilding-specialist</strong> — Jordaan-klanten zoeken zelden zware spiermassa-training; dat publiek zit meer in Oost en Noord</li>
             <li><strong>Groepslessen of bootcamp</strong> — werkt beter in parken en grotere studio's; boutique 1:1 is de norm in Jordaan</li>
-            <li><strong>Trainers die niet vroeg of laat kunnen werken</strong> — Jordaan-klanten boeken vooral 06:30-08:30 (voor werk) of 17:00-21:00 (na werk). De middag is dood.</li>
+            <li><strong>Trainers die niet vroeg of laat kunnen werken</strong> — Jordaan-klanten boeken vooral 06:00-08:30 (voor werk) of 17:00-21:00 (na werk). De middag is dood.</li>
           </ul>
 
           <h2>Conclusie</h2>

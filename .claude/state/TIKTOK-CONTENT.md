@@ -82,7 +82,7 @@ Geen gat meer tussen fysio en sport. Gratis intake — link in bio.
 **Caption:**
 Egelantiersgracht 424, Amsterdam Jordaan.
 
-Een privé gym aan de gracht. Dagelijks open 06:30-22:00.
+Een privé gym aan de gracht. Dagelijks open 06:00-22:00.
 
 De deurcode krijg je via WhatsApp. Geen receptie, geen wachttijden.
 

@@ -49,13 +49,13 @@ const steps = [
   {
     step: "3",
     title: "Train on your terms",
-    desc: "Open daily 06:30–22:00. Pay per session, from €45. No contract, no membership, free cancellation.",
+    desc: "Open daily 06:00–22:00. Pay per session, from €45. No contract, no membership, free cancellation.",
   },
 ];
 
 const trustItems = [
   { icon: Shield, text: "No contract" },
-  { icon: Clock, text: "Daily 06:30–22:00" },
+  { icon: Clock, text: "Daily 06:00–22:00" },
   { icon: MessageCircle, text: "Direct line on WhatsApp" },
 ];
 
@@ -207,7 +207,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               `${trainers.length} personal trainers — your match for goal and style`,
               "First intro free, no credit card needed",
               "From €45 per session — you pay your trainer directly",
-              "Open daily 06:30–22:00 — train when it suits you",
+              "Open daily 06:00–22:00 — train when it suits you",
               "Door code via WhatsApp the night before — no reception",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
@@ -252,7 +252,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               Our private studio sits at <strong className="text-foreground">Egelantiersgracht 424</strong>, in the heart of the Jordaan — walking distance from the Centrum, Westerpark and the Western Islands. Whether you live in the Jordaan, work along the canals, or come in from the Centrum, you train within a few minutes, no hassle.
             </p>
             <p>
-              <strong className="text-foreground">Easy to reach.</strong> Tram 13 or 17 drops you at the Marnixstraat; bus 18 and 21 stop around the corner. Most clients walk or cycle — no hunt for a parking spot, no traffic. Train before work, on your lunch break, or in the evening: we're open daily 06:30–22:00.
+              <strong className="text-foreground">Easy to reach.</strong> Tram 13 or 17 drops you at the Marnixstraat; bus 18 and 21 stop around the corner. Most clients walk or cycle — no hunt for a parking spot, no traffic. Train before work, on your lunch break, or in the evening: we're open daily 06:00–22:00.
             </p>
             <p>
               <strong className="text-foreground">Quiet, not crowded.</strong> Unlike a big gym in the Centrum, you train here in a calm, fully-equipped private studio on the canal — with Rogue, Eleiko and Concept2. No queue, full focus. Just you and your trainer, or a small group.

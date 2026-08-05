@@ -63,7 +63,7 @@ export function Footer() {
       company: "Bedrijf",
       location: "Locatie",
       legal: "Juridisch",
-      hours: "Dagelijks 06:30–22:00",
+      hours: "Dagelijks 06:00–22:00",
       rights: "Alle rechten voorbehouden.",
     },
     en: {
@@ -71,7 +71,7 @@ export function Footer() {
       company: "Company",
       location: "Location",
       legal: "Legal",
-      hours: "Daily 06:30–22:00",
+      hours: "Daily 06:00–22:00",
       rights: "All rights reserved.",
     },
   }[locale];

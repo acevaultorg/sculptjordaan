@@ -156,7 +156,7 @@ export default function SportschoolJordaanNL() {
               <p>
                 SculptClub zit aan de Egelantiersgracht 424, in het hart van de Jordaan. Een volledig
                 uitgeruste privé studio op de begane grond, direct vanaf de straat. Professionele
-                apparatuur van Rogue en Concept2, dagelijks open van 06:30 tot 22:00. Je kunt er
+                apparatuur van Rogue en Concept2, dagelijks open van 06:00 tot 22:00. Je kunt er
                 zelfstandig trainen via Open Gym, een personal trainer kiezen of de <Link href="/nl/studio-huren" className="text-brand underline-offset-2 hover:underline">studio huren</Link> als
                 ZZP-trainer.
               </p>

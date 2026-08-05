@@ -70,7 +70,7 @@ const steps = [
 
 const trustItems = [
   { icon: Shield, text: "No contract" },
-  { icon: Clock, text: "Daily 06:30–22:00" },
+  { icon: Clock, text: "Daily 06:00–22:00" },
   { icon: MessageCircle, text: "Fast replies via WhatsApp" },
 ];
 

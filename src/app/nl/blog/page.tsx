@@ -293,7 +293,7 @@ const posts = [
   {
     title: "Zakelijk Personal Training Amsterdam",
     excerpt:
-      "Personal training voor drukke professionals en teams in Amsterdam. Privé studio in de Jordaan, dagelijks 06:30–22:00, factuur op bedrijfsnaam mogelijk.",
+      "Personal training voor drukke professionals en teams in Amsterdam. Privé studio in de Jordaan, dagelijks 06:00–22:00, factuur op bedrijfsnaam mogelijk.",
     category: "Zakelijk",
     href: "/nl/blog/zakelijk-personal-training-amsterdam",
     date: "5 april 2026",
