@@ -8,6 +8,12 @@
 
 ---
 
+## 👨🏻‍🔧 🔴🔴 0 — EERST: Vercel-account geschorst (2 min)
+
+Ontdekt 14 aug bij het deployen: **"Your account has been suspended. To reactivate, add a valid payment method."** De site draait nog (Cloudflare + bestaande deployment), maar geen enkele nieuwe deploy kan live — en bij intrekking van de bestaande deployment gaat sculptclub.nl offline. Fix: [Vercel billing](https://vercel.com/teams/paulomdevries-6397s-projects/settings/billing) → betaalmethode → Reactivate. De SEO-ship van vandaag (commit `ab3c793`) staat klaar en gaat daarna direct live.
+
+---
+
 ## 👨🏻‍🔧 🔴 1 — Win-back: 5 gestopte huurders (WhatsApp, ~45 min, est. +€400–650/mnd)
 
 **WHAT:** Persoonlijk appje naar de 5 huurders die dit voorjaar regelmatig huurden en sinds mei/juni niets meer boekten. Geen korting in het eerste bericht — gewoon persoonlijk contact.

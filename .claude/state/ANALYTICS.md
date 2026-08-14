@@ -6,3 +6,4 @@
 - Fix: swapped gallery entries to visually-distinct, non-hero images on all 3 page-pairs
 - Verify: fleet grep audit 0 dups · Chrome MCP live verify 0 dups on all 3 page-pairs
 - PromptPrio: task mpo4k7cnt8r1ph (archive tier candidate)
+2026-08-14 20:xx | revenue-sprint-autopilot | rental-recovery | recon-wf(5 agents)+build-wf(3 agents)+inline | fleet | standard | @strategist+@distributor-in-wf | auto | ~7200 | success — 40 files shipped (commits 8f73c19/ab3c793), 7 operator cards, deploy blocked on Vercel suspension (operator card filed)
