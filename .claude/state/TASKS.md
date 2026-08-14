@@ -91,8 +91,8 @@
 
 ## Revenue-sprint 2026-08-14 (autopilot session — trainer-rental recovery)
 - [x] `P0` DATA Acuity full-export analysis: rental −40% since May peak (€2,428→€1,468), true utilization ~18% of 112h/wk, 13 churned renters, 15 unconverted trial leads, top-3 = ~80% concentration [id:acuity-analysis-aug]
-- [x] `P0` SEO Rental-cluster ship: 39 internal links (hub consolidation NL+EN, de-orphaning), de-cannibalization (kosten-retitle, URL unchanged), market-contrast tables on both money pages (live-verified facts, peildatum aug 2026) — commits 8f73c19 + ab3c793, pushed to GitLab ⚠️ NOT YET DEPLOYED (Vercel suspended) [id:rental-seo-ship]
+- [x] `P0` SEO Rental-cluster ship: 39 internal links (hub consolidation NL+EN, de-orphaning), de-cannibalization (kosten-retitle, URL unchanged), market-contrast tables on both money pages (live-verified facts, peildatum aug 2026) — commits 8f73c19 + ab3c793, pushed to GitLab — deployed via CF Pages chunked deployer 2026-08-14 evening (Vercel is RETIRED for this repo since 2026-07-14; earlier 'Vercel suspended' blocker note was a mis-orientation) [id:rental-seo-ship]
 - [x] `P0` COPY Retired '0% commissie / 0% commission' self-framing in 20 files → rent+freedom voice (operator directive per feedback_model_is_rental_not_commission); gym-commission comparisons kept [id:commissie-retire]
 - [x] `P0` DIAG Google Ads zero-serving root-caused: budget-starvation (€1.99/day vs €2.70 CPC), NOT billing/disapproval/URL; May window served 2,643 impr/102 clicks; Jul 15–Aug 13 = 0/0/€0.00 [id:gads-zero-diag]
-- [👤] `P0` 🔴🔴 Vercel account SUSPENDED (payment) — deploys blocked, site-at-risk; TaskPrio card mstdozr3ruglam (Website board) [id:vercel-suspended]
+- [👤] `P1` 🟡 Vercel TEAM suspended (payment) — does NOT affect sculptclub (CF Pages since 2026-07-14); only a fleet-check for other sites on that team; card mstdozr3ruglam updated [id:vercel-suspended]
 - [👤] `P0` Win-back 5 churned renters + follow-up 15 trial leads + Ads budget-fix + Sept block-offer + referral + GBP + daluren decision — 7 cards on SculptClub Sales/Marketing/Website boards, full playbook: docs/REVENUE-SPRINT-2026-08-14.md [id:revenue-sprint-cards]

@@ -8,9 +8,9 @@
 
 ---
 
-## 👨🏻‍🔧 🔴🔴 0 — EERST: Vercel-account geschorst (2 min)
+## ✅ 0 — Deploy-status + één fleet-check (gecorrigeerd 14 aug, later op de avond)
 
-Ontdekt 14 aug bij het deployen: **"Your account has been suspended. To reactivate, add a valid payment method."** De site draait nog (Cloudflare + bestaande deployment), maar geen enkele nieuwe deploy kan live — en bij intrekking van de bestaande deployment gaat sculptclub.nl offline. Fix: [Vercel billing](https://vercel.com/teams/paulomdevries-6397s-projects/settings/billing) → betaalmethode → Reactivate. De SEO-ship van vandaag (commit `ab3c793`) staat klaar en gaat daarna direct live.
+De SEO-ship van vandaag wordt **autonoom gedeployed via Cloudflare Pages** (sculptclub draait daar sinds 14 jul — geen actie nodig). De eerdere Vercel-paniek in dit doc was onterecht: die schorsing raakt sculptclub niet. **Wél even checken (1 min):** draaien er nog andere fleet-sites op het geschorste Vercel-team? Zie de 🟡 kaart op het Website-bord.
 
 ---
 
@@ -89,12 +89,12 @@ T3 (+14d): September is een goed startmoment (iedereen pakt de draad
 
 ## 👨🏻‍🔧 🔴 3 — Google Ads repareren: de betaalde verhuur-pijplijn staat op NUL (~30 min, est. netto +€100–400/mnd)
 
-**WHAT:** Je Ads-account (SculptClub 511-161-9582) heeft **0 vertoningen, 0 clicks, €0,00 besteed in de laatste 30 dagen** — terwijl er in mei nog 2.643 vertoningen en 102 clicks liepen. Beide campagnes staan "Eligible", facturering is in orde; het probleem is **budget-verhongering**: de Trainers-campagne heeft €1,99/dag budget terwijl de gemiddelde CPC €2,70 is — Google doet dan simpelweg niet meer mee aan veilingen. De brand-campagne staat op €0,01/dag (decoratief).
+**WHAT:** Je Ads-account (SculptClub 511-161-9582) heeft **0 vertoningen, 0 clicks, €0,00 besteed in de laatste 30 dagen** — terwijl er in mei nog 2.643 vertoningen en 102 clicks liepen. Beide campagnes staan "Eligible", facturering is in orde; het probleem is **jouw eigen budget-cap van max €2/dag (17 jun)**: die ligt onder de gemiddelde CPC van €2,70, dus Google doet simpelweg niet meer mee aan veilingen. Binnen de cap is dit niet te fixen — het is een cap-beslissing (verhogen naar €5/dag, of accepteren dat search-ads uit staan).
 **WHY:** Dit was je enige altijd-aan kanaal voor verhuur-vraag — het product dat 93% van je omzet is. De stop viel samen met de juli-daling.
 **TIME:** ~30 min in ads.google.com.
 
 **HOW:**
-1. Open de campagne **SculptClub-Search-Trainers-Jordaan-2026** → Budget: **€1,99 → €5,00/dag** (≈€150/mnd max).
+1. BESLIS eerst: cap loslaten? Zo ja: campagne **SculptClub-Search-Trainers-Jordaan-2026** → Budget: **€1,99 → €5,00/dag** (≈€150/mnd max). Zo nee: stop hier — de rest heeft geen zin onder de cap.
 2. Zoekwoorden: de meeste lange NL-termen staan op "Low search volume". Voeg deze **phrase-match** varianten toe (bewezen zoekvolume): `"studio huren personal trainer amsterdam"` · `"pt studio huren"` · `"gym huren per uur"` · `"trainingsruimte huren amsterdam"` · `"personal training ruimte amsterdam"` en **exact**: `[gym huren amsterdam]` · `[sportschool ruimte huren amsterdam]`.
 3. Advertentie: final URL naar **https://sculptclub.nl/nl/studio-huren** (nu /nl/voor-trainers — de geldpagina converteert directer). Display-path mag `voor-trainers/studio-huren` blijven.
 4. ⚠️ Fix ook de **brand-advertentie**: die zegt nog "Open 06:30–22:00" → **06:00**.
