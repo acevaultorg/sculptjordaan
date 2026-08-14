@@ -75,7 +75,7 @@ export default function BlogPostStudioVsCommercialGym() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Rent per hour from €12", "No membership. No contract. Fixed costs = zero."],
-                  ["0% commission", "What you charge, you keep. No cut, no percentage."],
+                  ["Rent only", "What you charge, you keep. No cut, no percentage."],
                   ["Own profile on the website", "Since 2026: trainers get a profile page on sculptclub.nl with photo, bio, specializations + WhatsApp CTA. We're your distribution partner."],
                   ["Own client contact", "DMs, planning, WhatsApp — all via you. The client is yours."],
                   ["Own branding", "No mandatory uniform. You present yourself under your own name + brand."],
@@ -152,7 +152,7 @@ export default function BlogPostStudioVsCommercialGym() {
               </div>
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">Want 100% of your rate?</h3>
-                <p className="mb-4">At SculptClub no commission, no membership, no shared client ownership. From €12/hour. Schedule a free tour.</p>
+                <p className="mb-4">At SculptClub rent only — no membership, no shared client ownership. From €12/hour. Schedule a free tour.</p>
                 <ButtonLink href="/en/studio-rental" size="lg">See Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
               </div>
             </div>

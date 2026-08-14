@@ -82,6 +82,10 @@ export default function BecomePTAmsterdamEN() {
                 <li><strong>Training location:</strong> This is the biggest hurdle. Renting your own studio costs €1,500-3,000/month in Amsterdam. Or you rent by the hour.</li>
                 <li><strong>Clients:</strong> Instagram, word-of-mouth, Google and platforms are the main channels.</li>
               </ul>
+              <p>
+                Step-by-step details on KvK, VAT, insurance and pension are in our{" "}
+                <a href="/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension" className="text-brand hover:underline">freelance PT registration and tax guide</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">The problem: finding a studio</h2>
               <p>
@@ -90,8 +94,9 @@ export default function BecomePTAmsterdamEN() {
                 demand exclusivity or high commissions (30-50% of your revenue).
               </p>
               <p>
-                The solution: rent a studio by the hour. No fixed costs, no commission,
-                maximum flexibility. You only pay for the hours you use.
+                The solution: rent a studio by the hour. No fixed costs, no contract,
+                maximum flexibility. You only pay for the hours you use. See current rates
+                and availability on our <a href="/en/studio-rental" className="text-brand hover:underline">studio rental page</a>.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">SculptClub: rent a studio without hassle</h2>
@@ -104,7 +109,7 @@ export default function BecomePTAmsterdamEN() {
                 <li><strong>Professional equipment:</strong> Power rack, cable machine, dumbbells, cardio</li>
                 <li><strong>Your own profile on the website:</strong> With photo, bio and direct booking link</li>
                 <li><strong>Clients via the website:</strong> Hundreds of visitors monthly searching for a trainer</li>
-                <li><strong>0% commission:</strong> You keep 100% of your income</li>
+                <li><strong>Your rate, your income:</strong> you keep 100% of what you earn — we only charge the hourly rent</li>
                 <li><strong>Flexible:</strong> Book per hour, no contract, stop whenever you want</li>
               </ul>
 
@@ -136,6 +141,10 @@ export default function BecomePTAmsterdamEN() {
                 Curious? <a href="/en/become-trainer" className="text-brand hover:underline">See the
                 full information</a> or send a WhatsApp directly. We’ll schedule a free
                 tour — see if the studio is right for you. No obligations.
+              </p>
+              <p>
+                Prefer to read first? Everything for trainers — rates, equipment, how
+                per-hour renting works — is on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
               </p>
             </div>
 

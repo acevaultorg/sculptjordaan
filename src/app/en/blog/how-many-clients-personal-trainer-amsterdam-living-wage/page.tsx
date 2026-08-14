@@ -111,13 +111,14 @@ export default function BlogPostHowManyClients() {
                   ["Phone + website + marketing", "€50-100"],
                 ].map(([k, v]) => (<li key={k} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{k}:</strong> {v}</span></li>))}
               </ul>
-              <p>With SculptClub as your studio: ~€350-500/month total fixed costs. With own space: €4,200-5,500. That difference is why 95% of Amsterdam freelance trainers rent per-hour until they have 25+ stable sessions/week.</p>
+              <p>With SculptClub as your studio: ~€350-500/month total fixed costs. With own space: €4,200-5,500. That difference is why 95% of Amsterdam freelance trainers rent per-hour until they have 25+ stable sessions/week. Rates, packs and how per-hour rental works are on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What if you can’t hit your session target?</h2>
               <p>Reality: not every PT hits 18-22 sessions/week. Average Amsterdam freelance PT sits at 10-15/week. Four solutions:</p>
               <ol className="space-y-2 list-decimal pl-6">
                 {["Raise your rate — €60 → €75 = 25% more income at same session count", "Add online coaching — nutrition plans or video feedback for €49-99/month", "Specialize — niche expertise (back pain, prenatal, calisthenics) attracts paying premium clients", "Group classes — 4-6 people at €15-20 each = €60-120/hour, same margin as a premium 1-on-1"].map((line) => (<li key={line} className="leading-relaxed">{line}</li>))}
               </ol>
+              <p>And for the acquisition side, read our <a href="/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" className="text-brand hover:underline">Instagram marketing guide for Amsterdam PTs</a> — it covers the channel most Amsterdam trainers actually get clients from.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">The honest timeline to stability</h2>
               <p>Nobody hits 20 sessions/week in month 3. Honest expectations:</p>
@@ -143,7 +144,7 @@ export default function BlogPostHowManyClients() {
               </div>
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">Lower fixed costs = lower break-even</h3>
-                <p className="mb-4">At SculptClub you only pay for hours you use — no membership, no commission. From €12/hour. See rates and schedule a free tour.</p>
+                <p className="mb-4">At SculptClub you only pay for hours you use — no membership, no contract. From €12/hour. See rates and schedule a free tour.</p>
                 <ButtonLink href="/en/studio-rental" size="lg">See Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
               </div>
             </div>

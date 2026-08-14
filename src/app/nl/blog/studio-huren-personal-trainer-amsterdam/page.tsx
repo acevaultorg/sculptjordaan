@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Studio huren als personal trainer in Amsterdam — SculptClub" },
+  title: { absolute: "Wat kost studio huren als personal trainer in Amsterdam?" },
   description:
-    "Op zoek naar een trainingsruimte om te huren als personal trainer in Amsterdam? Vergelijk kosten, flexibiliteit en voordelen van een eigen studio.",
+    "Wat kost een trainingsruimte huren als personal trainer in Amsterdam? Vergelijk vaste maandhuur, huren per uur en pakketten met korting.",
   keywords: [
     "studio huren personal trainer",
     "trainingsruimte huren amsterdam",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/studio-huren-personal-trainer-amsterdam",
-    title: "Studio huren als personal trainer in Amsterdam — SculptClub",
+    title: "Wat kost studio huren als personal trainer in Amsterdam?",
     description:
-      "Op zoek naar een trainingsruimte om te huren als personal trainer in Amsterdam? Vergelijk kosten, flexibiliteit en voordelen van een eigen studio.",
+      "Wat kost een trainingsruimte huren als personal trainer in Amsterdam? Vergelijk vaste maandhuur, huren per uur en pakketten met korting.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio huren als personal trainer in Amsterdam — SculptClub",
+    title: "Wat kost studio huren als personal trainer in Amsterdam?",
     description:
-      "Op zoek naar een trainingsruimte om te huren als personal trainer in Amsterdam? Vergelijk kosten, flexibiliteit en voordelen van een eigen studio.",
+      "Wat kost een trainingsruimte huren als personal trainer in Amsterdam? Vergelijk vaste maandhuur, huren per uur en pakketten met korting.",
   },
 };
 
@@ -46,12 +46,12 @@ export default function BlogPostStudioHurenNL() {
         items={[
           { name: "Home", url: "/" },
           { name: "Blog", url: "/nl/blog" },
-          { name: "Studio huren als personal trainer", url: "/nl/blog/studio-huren-personal-trainer-amsterdam" },
+          { name: "Wat kost een studio huren als personal trainer", url: "/nl/blog/studio-huren-personal-trainer-amsterdam" },
         ]}
       />
       <BlogPostingJsonLd
-        title="Studio huren als personal trainer in Amsterdam"
-        description="Vergelijk de opties voor het huren van een trainingsruimte als personal trainer in Amsterdam."
+        title="Wat kost een studio huren als personal trainer in Amsterdam?"
+        description="Wat een trainingsruimte huren kost als personal trainer in Amsterdam: vaste maandhuur vergeleken met huren per uur."
         url="/nl/blog/studio-huren-personal-trainer-amsterdam"
         datePublished="2026-03-26"
       />
@@ -66,7 +66,7 @@ export default function BlogPostStudioHurenNL() {
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Studio huren als personal trainer in Amsterdam
+                Wat kost een studio huren als personal trainer in Amsterdam?
               </h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
@@ -100,6 +100,14 @@ export default function BlogPostStudioHurenNL() {
                 kiezen voor die laatste optie. Een eigen ruimte geeft je controle over de ervaring die je je
                 klanten biedt, zonder de kosten en risico’s van een volledig eigen pand. In dit artikel leggen
                 we uit waarom het huren van een studio vaak de slimste zet is.
+              </p>
+
+              <p>
+                Wil je direct het tarief per uur zien en boeken? Ga dan naar{" "}
+                <a href="/nl/studio-huren" className="font-medium text-brand underline underline-offset-4 hover:text-brand/80">
+                  studio huren in Amsterdam
+                </a>{" "}
+                — vanaf €12 per uur, zonder contract.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Waarom niet bij een grote sportschool werken?</h2>

@@ -519,6 +519,50 @@ export default function StudioRentalPageNL() {
         </div>
       </Section>
 
+      {/* Vergelijk zelf — competitor-contrast, UNNAMED market facts only.
+          Live-verified 2026-08-14: vaste maandhuur elders v.a. €600/mnd ·
+          minimum-afname elders v.a. 5 uur/week · premium alternatief
+          €22,50/uur. Peildatum on-page; geen namen. Frame = flexibel +
+          per uur, nooit "goedkoopste". EN parity: /en/studio-rental. */}
+      <Section>
+        <SectionHeader
+          overline="Vergelijk zelf"
+          title="Per uur, zonder minimum"
+          description="Zo verhoudt huren per uur bij ons zich tot wat elders in Amsterdam gebruikelijk is."
+        />
+        <FadeIn>
+          <div className="mx-auto max-w-2xl">
+            <div className="overflow-hidden rounded-xl border bg-card">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/50">
+                    <th className="px-4 py-3 text-left font-medium">Elders in Amsterdam</th>
+                    <th className="px-4 py-3 text-left font-medium">Bij SculptClub</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="px-4 py-3 text-muted-foreground">Vaste maandhuur v.a. €600 per maand</td>
+                    <td className="px-4 py-3 font-medium">€12 per uur — alleen als je een sessie hebt</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-4 py-3 text-muted-foreground">Minimum-afname v.a. 5 uur per week</td>
+                    <td className="px-4 py-3 font-medium">Geen minimum, geen contract</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 text-muted-foreground">Premium alternatief: €22,50 per uur</td>
+                    <td className="px-4 py-3 font-medium">Jouw klanten, jouw tarief</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              Marktcijfers Amsterdam, peildatum aug 2026.
+            </p>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Gallery — clickable thumbs, opens fullscreen lightbox slider on tap.
           Operator directive 2026-05-20: "if people click this photos they
           should get enlarged slider". See PhotoGalleryLightbox for the

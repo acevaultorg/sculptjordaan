@@ -78,7 +78,7 @@ export default function BlogPostStudioVsCommercieleGym() {
               <ul className="space-y-2 list-none pl-0">
                 {[
                   ["Per uur huren vanaf €12", "Geen lidmaatschap. Geen contract. Vaste lasten = nul."],
-                  ["0% commissie", "Wat jij rekent, hou je. Geen aftrek, geen percentage."],
+                  ["Alleen uurhuur", "Wat jij rekent, hou je. Geen aftrek, geen percentage."],
                   ["Eigen profiel op de website", "Sinds 2026: trainers krijgen een profielpagina op sculptclub.nl met foto, bio, specialisaties + WhatsApp-CTA. We zijn jouw distribution-partner."],
                   ["Eigen klantcontact", "DMs, planning, WhatsApp — alles loopt via jou. Klant is van jou."],
                   ["Eigen branding", "Geen verplicht uniform. Je presenteert jezelf onder eigen naam + brand."],
@@ -145,6 +145,7 @@ export default function BlogPostStudioVsCommercieleGym() {
                 ].map(([t, d]) => (<li key={t} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{t}:</strong> {d}</span></li>))}
               </ul>
               <p>Het hybride model werkt — let alleen op contractuele non-compete clausules en consistente klant-relatie. Vermeng niet je SculptClub-klanten met je gym-klanten.</p>
+              <p>Meer gidsen over werken als zelfstandige trainer — van eerste klanten tot pakketten — vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.</p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
@@ -157,7 +158,7 @@ export default function BlogPostStudioVsCommercieleGym() {
               </div>
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">Wil je 100% van je tarief?</h3>
-                <p className="mb-4">Bij SculptClub geen commissie, geen lidmaatschap, geen gedeelde klantenbinding. Vanaf €12/uur. Plan een gratis rondleiding.</p>
+                <p className="mb-4">Bij SculptClub alleen uurhuur — geen lidmaatschap, geen gedeelde klantenbinding. Vanaf €12/uur. Plan een gratis rondleiding.</p>
                 <ButtonLink href="/nl/studio-huren" size="lg">Bekijk Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
               </div>
             </div>

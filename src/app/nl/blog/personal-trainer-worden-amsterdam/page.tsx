@@ -82,6 +82,9 @@ export default function PTWordenAmsterdamNL() {
                 <li><strong>Trainingslocatie:</strong> Dit is het grootste obstakel. Een eigen studio huren kost €1.500-3.000/maand in Amsterdam. Of je huurt per uur.</li>
                 <li><strong>Klanten:</strong> Instagram, mond-tot-mond, Google en platforms zijn de belangrijkste kanalen.</li>
               </ul>
+              <p>
+                Een uitgebreidere versie van deze stappen vind je in de gids <a href="/nl/voor-trainers/freelance-personal-trainer-worden" className="text-brand hover:underline">freelance personal trainer worden</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Het probleem: een studio vinden</h2>
               <p>
@@ -90,7 +93,7 @@ export default function PTWordenAmsterdamNL() {
                 vaak exclusiviteit of hoge commissies (30-50% van je omzet).
               </p>
               <p>
-                De oplossing: huur een studio per uur. Geen vaste lasten, geen commissie,
+                De oplossing: <a href="/nl/studio-huren" className="text-brand hover:underline">huur een studio per uur</a>. Geen vaste lasten, geen contract,
                 maximale flexibiliteit. Je betaalt alleen voor de uren die je gebruikt.
               </p>
 
@@ -104,7 +107,7 @@ export default function PTWordenAmsterdamNL() {
                 <li><strong>Professionele apparatuur:</strong> Powerrack, kabelmachine, dumbbells, cardio</li>
                 <li><strong>Eigen profiel op de website:</strong> Met foto, bio en directe boekingslink</li>
                 <li><strong>Klanten via de website:</strong> Honderden bezoekers per maand zoeken een trainer</li>
-                <li><strong>0% commissie:</strong> Je houdt 100% van je inkomsten</li>
+                <li><strong>Jouw tarief, jouw inkomsten:</strong> je houdt 100% van wat je verdient — wij rekenen alleen de uurhuur</li>
                 <li><strong>Flexibel:</strong> Boek per uur, geen contract, stop wanneer je wilt</li>
               </ul>
 
@@ -131,6 +134,9 @@ export default function PTWordenAmsterdamNL() {
                 <li><strong>Mond-tot-mond:</strong> Tevreden klanten zijn je beste marketing</li>
                 <li><strong>Gratis intake:</strong> Bied een gratis kennismaking aan. De drempel verlagen is de beste conversietactiek</li>
               </ul>
+              <p>
+                Meer gidsen over starten en groeien als zelfstandige trainer vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Gratis kennismaking bij SculptClub</h2>
               <p>

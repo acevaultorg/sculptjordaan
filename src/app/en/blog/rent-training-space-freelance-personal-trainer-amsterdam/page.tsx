@@ -125,6 +125,10 @@ export default function BlogPostFreelanceTrainerEN() {
                 each, your studio space at SculptClub costs roughly 15 to 20 percent of revenue —
                 compare that to the 40 to 60 percent you’d give up at a big gym chain.
               </p>
+              <p>
+                For a deeper look at both models, read{" "}
+                <a href="/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam" className="text-brand hover:underline">studio rental vs a commercial gym for personal trainers</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Tax benefits for freelance trainers in the Netherlands</h2>
               <p>
@@ -193,7 +197,8 @@ export default function BlogPostFreelanceTrainerEN() {
                 SculptClub in Amsterdam’s Jordaan neighbourhood is built for independent trainers.
                 A fully equipped private studio, bookable by the hour, no long-term contract and always
                 free cancellation. Studio rental from €12 per hour, with discount packages up to 23% off.
-                0% commission — what you earn, you keep.
+                What you earn, you keep — we only charge the hourly rent. Full details — equipment, rates and how
+                booking works — are on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
               </p>
             </div>
 

@@ -110,6 +110,7 @@ export default function BlogPostInstagramMarketingEN() {
               <p>Short version: <strong className="text-foreground">yes, do it</strong>. Long version:</p>
               <p>TikTok pushes new creators faster than Instagram in 2026. Same 7-15s Reel cross-posts to TikTok without rework. Lunch (12:30) and evening (19:00) are TikTok sweet spots.</p>
               <p>Caveat: TikTok audience is younger on average. Amsterdam PT clients willing to pay €60-90/session sit more on Instagram. TikTok is good for brand awareness + new reach, Instagram is good for conversion.</p>
+              <p>Where you film matters too: a private studio reads more professional on camera than a busy gym floor. At SculptClub you can <a href="/en/studio-rental" className="text-brand hover:underline">rent the studio per hour</a> — from €12, no contract.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">SculptClub social tool — ready-made 4-week calendar</h2>
               <p>At SculptClub we have a tool at <a href="/nl/social" className="text-brand hover:underline">sculptclub.nl/nl/social</a> with 4 posts ready every week: hook, script, hashtags, visuals. 16 posts/month, all schedulable. Brain provides the brief in English — you write the Dutch caption in your own voice.</p>

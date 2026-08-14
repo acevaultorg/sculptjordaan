@@ -160,6 +160,9 @@ export default function ZZPChecklistNL() {
           <p>
             Vergelijk dit met loondienst bij een ketensportschool (~€2.500-€3.500 bruto/mnd): als ZZP'er heb je 8-12 betaalde sessies/week nodig om hetzelfde netto-inkomen te halen. Boven dat punt verdien je significant meer.
           </p>
+          <p>
+            Wil je meer verdieping per stap — btw, AOV en pensioenopbouw? Lees de uitgebreide gids <a href="/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen">ZZP personal trainer in Nederland: KvK, btw, verzekering en pensioen</a>.
+          </p>
         </article>
       </Section>
 

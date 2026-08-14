@@ -186,6 +186,9 @@ export default function BlogPostGymHurenPerUur() {
               <p>
                 Voor trainers die met regelmatige klanten werken, zijn er ook voordeelpakketten beschikbaar: bespaar tot 23% op je uurtarief met een strippenkaart die een jaar geldig is.
               </p>
+              <p>
+                Benieuwd hoeveel sessies per week je nodig hebt om van dit model rond te komen? Reken het na in <a href="/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen" className="text-brand hover:underline">hoeveel klanten heb je nodig als personal trainer in Amsterdam</a>. Meer gidsen voor zelfstandige trainers vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Locatie: privé studio in Amsterdam Jordaan</h2>
               <p>

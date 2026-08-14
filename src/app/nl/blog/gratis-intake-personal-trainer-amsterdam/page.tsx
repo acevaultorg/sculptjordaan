@@ -219,7 +219,7 @@ export default function GratisIntakeBlogNL() {
                     "Gratis kennismaking — geen tijdsdruk",
                     "Geen contract, geen abonnement, geen verplichting",
                     "Privé studio — geen drukte, geen wachtrijen",
-                    "Trainers vanaf €45/sessie, 0% commissie",
+                    "Trainers vanaf €45/sessie, je betaalt je trainer direct",
                     "Dagelijks open van 06:00 tot 22:00",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm">

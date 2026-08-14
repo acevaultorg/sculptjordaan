@@ -272,6 +272,9 @@ export default function BlogPostPakkettenPrijsstrategie() {
                   <li key={line} className="leading-relaxed">{line}</li>
                 ))}
               </ol>
+              <p>
+                Meer gidsen over tarieven, klanten en administratie als zelfstandige trainer vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
+              </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
@@ -286,7 +289,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">100% van jouw tarief</h3>
                 <p className="mb-4">
-                  Bij SculptClub rekenen wij 0% commissie. Welke pakketten + prijzen je ook samenstelt — alles wat je rekent, hou je. Plan een gratis rondleiding in onze studio.
+                  Bij SculptClub rekenen wij alleen de uurhuur. Welke pakketten + prijzen je ook samenstelt — alles wat je rekent, hou je. Plan een gratis rondleiding in onze studio.
                 </p>
                 <ButtonLink href="/nl/studio-huren" size="lg">
                   Bekijk Studio Rental

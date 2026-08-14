@@ -108,7 +108,7 @@ export default function PersonalTrainerCentrumEN() {
                 SculptClub has seven independent trainers specialising in strength training, nutrition,
                 women’s training and posture. The first introduction is always free. Rates from
                 €45 per session. No membership, no contract — book per session and always cancel for
-                free. We charge 0% commission. For physiotherapy we’ll refer you out — we
+                free. You pay your trainer directly. For physiotherapy we’ll refer you out — we
                 don’t have a physiotherapist on staff.
               </p>
 

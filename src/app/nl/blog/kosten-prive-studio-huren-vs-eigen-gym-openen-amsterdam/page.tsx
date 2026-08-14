@@ -259,6 +259,9 @@ export default function BlogPostKostenStudioVsEigenGym() {
                   </li>
                 ))}
               </ul>
+              <p>
+                Hoe je btw, verzekering en pensioen als ZZP-trainer regelt, staat stap voor stap in de gids <a href="/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen" className="text-brand hover:underline">ZZP personal trainer — KvK, btw, verzekering en pensioen</a>.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Wat trainers in de Jordaan in 2026 daadwerkelijk doen</h2>
               <p>
@@ -277,7 +280,7 @@ export default function BlogPostKostenStudioVsEigenGym() {
                 ))}
               </ul>
               <p>
-                De rode draad: een eigen gym is geen status-symbool maar een operationele beslissing met directe cashflow-gevolgen. Wie het kan dragen, doet het. Wie twijfelt, huurt per uur en bouwt eerst zijn klantenbestand op.
+                De rode draad: een eigen gym is geen status-symbool maar een operationele beslissing met directe cashflow-gevolgen. Wie het kan dragen, doet het. Wie twijfelt, huurt per uur en bouwt eerst zijn klantenbestand op. Meer gidsen over werken als zelfstandige trainer vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Drie scenario’s — wat zou jij doen?</h2>

@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Studio Rental for Personal Trainers in Amsterdam — SculptClub" },
+  title: { absolute: "Studio Rental Costs for Personal Trainers in Amsterdam" },
   description:
-    "Looking for a training space to rent as a personal trainer in Amsterdam? Compare costs, flexibility and benefits of renting your own studio.",
+    "What does renting a training space cost as a personal trainer in Amsterdam? Compare fixed monthly rent, hourly rental and discount packages.",
   keywords: [
     "studio rental personal trainer",
     "training space rental amsterdam",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/studio-rental-personal-trainers-amsterdam",
-    title: "Studio Rental for Personal Trainers in Amsterdam — SculptClub",
+    title: "Studio Rental Costs for Personal Trainers in Amsterdam",
     description:
-      "Looking for a training space to rent as a personal trainer in Amsterdam? Compare costs, flexibility and benefits of renting your own studio.",
+      "What does renting a training space cost as a personal trainer in Amsterdam? Compare fixed monthly rent, hourly rental and discount packages.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Rental for Personal Trainers in Amsterdam — SculptClub",
+    title: "Studio Rental Costs for Personal Trainers in Amsterdam",
     description:
-      "Looking for a training space to rent as a personal trainer in Amsterdam? Compare costs, flexibility and benefits of renting your own studio.",
+      "What does renting a training space cost as a personal trainer in Amsterdam? Compare fixed monthly rent, hourly rental and discount packages.",
   },
 };
 
@@ -46,12 +46,12 @@ export default function BlogPostStudioRentalEN() {
         items={[
           { name: "Home", url: "/en" },
           { name: "Blog", url: "/en/blog" },
-          { name: "Studio Rental for Personal Trainers", url: "/en/blog/studio-rental-personal-trainers-amsterdam" },
+          { name: "Studio Rental Costs for Personal Trainers", url: "/en/blog/studio-rental-personal-trainers-amsterdam" },
         ]}
       />
       <BlogPostingJsonLd
-        title="Studio Rental for Personal Trainers in Amsterdam"
-        description="Compare options for renting a training space as a personal trainer in Amsterdam."
+        title="What does renting a studio cost as a personal trainer in Amsterdam?"
+        description="What renting a training space costs as a personal trainer in Amsterdam: fixed monthly rent compared with hourly rental."
         url="/en/blog/studio-rental-personal-trainers-amsterdam"
         datePublished="2026-03-26"
       />
@@ -66,7 +66,7 @@ export default function BlogPostStudioRentalEN() {
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Studio Rental for Personal Trainers in Amsterdam
+                What does renting a studio cost as a personal trainer in Amsterdam?
               </h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
@@ -100,6 +100,14 @@ export default function BlogPostStudioRentalEN() {
                 the latter. Having your own space gives you control over the experience you offer your clients,
                 without the costs and risks of owning a full property. In this article, we explain why renting a
                 studio is often the smartest move.
+              </p>
+
+              <p>
+                Just want the hourly rate and the booking link? Head straight to{" "}
+                <a href="/en/studio-rental" className="font-medium text-brand underline underline-offset-4 hover:text-brand/80">
+                  studio rental in Amsterdam
+                </a>{" "}
+                — from €12 per hour, no contract.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Why not work at a big gym?</h2>

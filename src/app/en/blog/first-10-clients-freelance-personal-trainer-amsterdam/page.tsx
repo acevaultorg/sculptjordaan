@@ -158,6 +158,9 @@ export default function BlogPostFirst10Clients() {
               <p>
                 What does NOT work: cold LinkedIn DMs to “sporty professionals”, Groupon deals, or paid flyers in local sport shops.
               </p>
+              <p>
+                Want the full Instagram playbook — Reel formats, hashtags, DM strategy? Read our <a href="/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" className="text-brand hover:underline">Instagram marketing guide for Amsterdam personal trainers</a>.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Clients 7-10 — referrals + partnerships</h2>
               <p>
@@ -206,7 +209,7 @@ export default function BlogPostFirst10Clients() {
                 {[
                   ["Start at market rate, not below", "Amsterdam PT starting rate 2026 is €45-55/session. Not lower."],
                   ["Free intro is your acquisition asset", "Not a discount offer. One free intro per new client — then full price."],
-                  ["Communicate quarterly price reviews", "A trainer who never changes prices in 3 years is a trainer afraid. At SculptClub trainers adjust their rates freely — we charge 0% commission, so your price is always 100% of your income."],
+                  ["Communicate quarterly price reviews", "A trainer who never changes prices in 3 years is a trainer afraid. At SculptClub trainers adjust their rates freely — we only charge the hourly rent, so your price is always 100% of your income."],
                 ].map(([type, desc]) => (
                   <li key={type} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
@@ -233,6 +236,9 @@ export default function BlogPostFirst10Clients() {
               </ol>
               <p>
                 The choice depends on what you want. Not everyone wants to open a gym or manage a team. Some trainers are happier at 15 regular clients in a clean flow than at 35 sessions/week of stress.
+              </p>
+              <p>
+                Whichever path you pick: rates, equipment and how per-hour rental at SculptClub works are all on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
               </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">

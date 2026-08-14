@@ -94,7 +94,7 @@ export default function PersonalTrainerDePijpEN() {
               <p>
                 Seven independent trainers. Specialisations: strength, nutrition, women’s training,
                 posture, technique and small group. Rates from €45 per session. First intro always free.
-                0% commission — you pay your trainer directly. No membership, no contract. For
+                You pay your trainer directly. No membership, no contract. For
                 rehabilitation or physiotherapy we’ll refer you out — we don’t have a
                 physiotherapist on staff.
               </p>

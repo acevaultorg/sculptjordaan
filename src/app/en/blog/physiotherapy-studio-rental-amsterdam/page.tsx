@@ -157,6 +157,10 @@ export default function BlogPostPhysioStudioEN() {
                 can refer them to one of the resident trainers. Your patient gets continuity in the same
                 trusted environment. And you build a professional network.
               </p>
+              <p>
+                More on how SculptClub works for professionals — rates, equipment and per-hour
+                booking — is on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Get started</h2>
               <p>

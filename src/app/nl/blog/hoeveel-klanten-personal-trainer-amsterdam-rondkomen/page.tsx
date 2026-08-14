@@ -136,7 +136,7 @@ export default function BlogPostHoeveelKlanten() {
                   ["Jaar 3+", "Stabiele 20-30 sessies/week + scale-paden actief."],
                 ].map(([phase, d]) => (<li key={phase} className="flex items-start gap-2"><span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" /><span><strong className="text-foreground">{phase}:</strong> {d}</span></li>))}
               </ul>
-              <p>Sommige PT’s halen dit sneller (sterk bestaand netwerk, sport-celebrity). Sommige langzamer (oververzadigde wijk, geen onderscheid). 12-24 maanden tot stabiliteit is de mediaan.</p>
+              <p>Sommige PT’s halen dit sneller (sterk bestaand netwerk, sport-celebrity). Sommige langzamer (oververzadigde wijk, geen onderscheid). 12-24 maanden tot stabiliteit is de mediaan. Meer gidsen over rondkomen, tarieven en administratie als zelfstandige trainer vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.</p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Meer lezen</h3>
@@ -149,7 +149,7 @@ export default function BlogPostHoeveelKlanten() {
               </div>
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">Lage vaste lasten = lager break-even punt</h3>
-                <p className="mb-4">Bij SculptClub betaal je alleen voor de uren die je gebruikt — geen abonnement, geen commissie. Vanaf €12/uur. Bekijk de tarieven en plan een gratis rondleiding.</p>
+                <p className="mb-4">Bij SculptClub betaal je alleen voor de uren die je gebruikt — geen abonnement, geen contract. Vanaf €12/uur. Bekijk de tarieven en plan een gratis rondleiding.</p>
                 <ButtonLink href="/nl/studio-huren" size="lg">Bekijk Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
               </div>
             </div>

@@ -259,7 +259,7 @@ export default function BlogPostZzpKvkBtw() {
                 ))}
               </ol>
               <p>
-                Pensioen en AOV zijn geen blokkers voor klant 1, maar wel voor klant 50 — los het op binnen je eerste jaar.
+                Pensioen en AOV zijn geen blokkers voor klant 1, maar wel voor klant 50 — los het op binnen je eerste jaar. Meer gidsen over starten als zelfstandige trainer — van eerste klanten tot tarieven — vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
               </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
@@ -275,7 +275,7 @@ export default function BlogPostZzpKvkBtw() {
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">Geregeld? Tijd voor een werkruimte</h3>
                 <p className="mb-4">
-                  KvK ingeschreven, BA geregeld, klaar om te starten. Bekijk SculptClub Studio Rental — geen vaste lasten, geen commissie, vanaf €12/uur.
+                  KvK ingeschreven, BA geregeld, klaar om te starten. Bekijk SculptClub Studio Rental — geen vaste lasten, geen contract, vanaf €12/uur.
                 </p>
                 <ButtonLink href="/nl/studio-huren" size="lg">
                   Bekijk Studio Rental

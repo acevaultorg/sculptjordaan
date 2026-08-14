@@ -261,6 +261,9 @@ export default function BlogPostFreelanceTrainerTax() {
               <p>
                 Pension and AOV are not blockers for client 1, but they are for client 50 — sort them within your first year.
               </p>
+              <p>
+                Looking for a place to train clients once the paperwork is done? Rates, equipment and how per-hour rental works are on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
+              </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Further reading</h3>

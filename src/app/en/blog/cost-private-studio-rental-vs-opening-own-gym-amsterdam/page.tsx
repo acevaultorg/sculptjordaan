@@ -259,6 +259,9 @@ export default function BlogPostCostStudioVsOwnGym() {
                   </li>
                 ))}
               </ul>
+              <p>
+                The full breakdown of KvK, VAT, insurance and pension is in our <a href="/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension" className="text-brand hover:underline">freelance PT registration and tax guide</a>.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What Jordaan trainers actually do in 2026</h2>
               <p>
@@ -278,6 +281,9 @@ export default function BlogPostCostStudioVsOwnGym() {
               </ul>
               <p>
                 The thread: an own gym is not a status symbol — it’s an operational decision with immediate cashflow consequences. Those who can carry it, do. Those who hesitate rent per hour and build their book first.
+              </p>
+              <p>
+                Curious what renting at SculptClub looks like in practice? Rates, equipment and how per-hour booking works are on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Three concrete scenarios</h2>

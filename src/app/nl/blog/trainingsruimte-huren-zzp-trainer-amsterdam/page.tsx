@@ -191,13 +191,16 @@ export default function BlogPostZZPTrainerNL() {
                 <li>Start met een paar uur per week en schaal op naarmate je klantenbestand groeit</li>
                 <li>Gebruik de locatie in je marketing — foto’s, Google profiel, social media</li>
               </ol>
+              <p>
+                Meer gidsen over starten en groeien als zelfstandige trainer vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Aan de slag bij SculptClub</h2>
               <p>
                 SculptClub in de Amsterdamse Jordaan is gebouwd voor zelfstandige trainers. Een volledig
                 uitgeruste privé studio, flexibel te boeken per uur, geen langlopend contract en altijd
                 gratis annuleren. Studio huren vanaf €12 per uur, met kortingspakketten tot 23% korting.
-                0% commissie — wat je verdient, houd je.
+                Wat je verdient, houd je — wij rekenen alleen de uurhuur.
               </p>
             </div>
 

@@ -129,7 +129,7 @@ export default function PersonalTrainerAmsterdamWestNL() {
               <p>
                 Personal training bij SculptClub begint vanaf €45 per sessie. De eerste kennismaking
                 is altijd gratis. Geen abonnement, geen contract — je boekt per sessie en annuleert
-                altijd gratis. Wij rekenen 0% commissie aan onze trainers, dus wat je betaalt gaat
+                altijd gratis. Je betaalt je trainer direct, dus wat je betaalt gaat
                 volledig naar jouw trainer.
               </p>
 

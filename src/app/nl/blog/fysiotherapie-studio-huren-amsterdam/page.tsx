@@ -134,6 +134,10 @@ export default function BlogPostFysioStudioNL() {
                 en boek de studio voor de actieve revalidatiesessies. Zo hoef je niet de hele dag een
                 ruimte te huren, maar alleen voor de uren dat je trainingsbegeleiding geeft.
               </p>
+              <p>
+                Twijfel je tussen een privé studio en werken vanuit een commerciële gym? De afweging
+                staat uitgewerkt in <a href="/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam" className="text-brand hover:underline">studio huren vs werken bij een commerciële gym</a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Vergoeding en declaratie</h2>
               <p>
@@ -165,7 +169,8 @@ export default function BlogPostFysioStudioNL() {
                 SculptClub is niet alleen een studio — het is een plek waar fysiotherapeuten en personal
                 trainers samenwerken. Als je patiënt klaar is met het revalidatietraject, kun je
                 doorverwijzen naar een van de vaste trainers. Zo krijgt je patiënt continuïteit in
-                dezelfde vertrouwde omgeving. En jij bouwt een professioneel netwerk op.
+                dezelfde vertrouwde omgeving. En jij bouwt een professioneel netwerk op. Meer praktische
+                gidsen over zelfstandig werken vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Aan de slag</h2>

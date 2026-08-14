@@ -143,6 +143,7 @@ export default function BlogPostPackagesPricing() {
               <ol className="space-y-2 list-decimal pl-6">
                 {["Give existing clients minimum 30 days notice. Personal, not bulk-mail.", "Offer existing clients a chance to buy one more pack at the old rate before the increase. “If you book a Pro before June 1, old rate applies.”", "New clients pay the new rate immediately. No exceptions — otherwise your new price devalues from day 1."].map((line) => (<li key={line} className="leading-relaxed">{line}</li>))}
               </ol>
+              <p>Pricing is one half of your margin — tax is the other. Our <a href="/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension" className="text-brand hover:underline">freelance PT tax and registration guide</a> covers what you actually keep after VAT and deductions.</p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Further reading</h3>
@@ -155,7 +156,7 @@ export default function BlogPostPackagesPricing() {
               </div>
               <div className="mt-10 p-6 rounded-2xl bg-brand/5 border border-brand/20">
                 <h3 className="text-xl font-bold text-foreground mb-2">100% of your rate</h3>
-                <p className="mb-4">At SculptClub we charge 0% commission. Whatever packs and prices you build — everything you charge, you keep. Schedule a free tour at our studio.</p>
+                <p className="mb-4">At SculptClub we only charge the hourly rent. Whatever packs and prices you build — everything you charge, you keep. Schedule a free tour at our studio.</p>
                 <ButtonLink href="/en/studio-rental" size="lg">See Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
               </div>
             </div>

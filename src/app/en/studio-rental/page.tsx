@@ -505,6 +505,51 @@ export default function StudioRentalPageEN() {
         </div>
       </Section>
 
+      {/* Compare for yourself — competitor-contrast, UNNAMED market facts
+          only. Live-verified 2026-08-14: fixed monthly rent elsewhere from
+          €600/month · minimum commitment elsewhere from 5 hrs/week ·
+          premium alternative €22.50/hour. Date stamp on-page; no names.
+          Frame = flexible + per hour, never "cheapest". NL parity:
+          /nl/studio-huren. */}
+      <Section>
+        <SectionHeader
+          overline="Compare for yourself"
+          title="By the hour, no minimum"
+          description="How renting by the hour with us compares to what's common elsewhere in Amsterdam."
+        />
+        <FadeIn>
+          <div className="mx-auto max-w-2xl">
+            <div className="overflow-hidden rounded-xl border bg-card">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b bg-muted/50">
+                    <th className="px-4 py-3 text-left font-medium">Elsewhere in Amsterdam</th>
+                    <th className="px-4 py-3 text-left font-medium">At SculptClub</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="px-4 py-3 text-muted-foreground">Fixed monthly rent from €600 per month</td>
+                    <td className="px-4 py-3 font-medium">€12 per hour — only when you have a session</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="px-4 py-3 text-muted-foreground">Minimum commitment from 5 hours per week</td>
+                    <td className="px-4 py-3 font-medium">No minimum, no contract</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 text-muted-foreground">Premium alternative: €22.50 per hour</td>
+                    <td className="px-4 py-3 font-medium">Your clients, your rate</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              Amsterdam market rates, as of Aug 2026.
+            </p>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Gallery — clickable thumbs open fullscreen lightbox slider on tap.
           Operator directive 2026-05-20: "if people click this photos they
           should get enlarged slider". See PhotoGalleryLightbox for the

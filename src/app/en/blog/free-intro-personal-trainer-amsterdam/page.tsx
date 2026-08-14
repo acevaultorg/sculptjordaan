@@ -215,7 +215,7 @@ export default function FreeIntroBlogEN() {
                     "Free intro — no time pressure",
                     "No contract, no membership, no obligation",
                     "Private studio — no crowds, no waiting",
-                    "Trainers from €45/session, 0% commission",
+                    "Trainers from €45/session, you pay your trainer directly",
                     "Open daily from 06:00 to 22:00",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm">

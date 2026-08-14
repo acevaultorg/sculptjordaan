@@ -103,6 +103,9 @@ export default function BlogPostGymRentalPerHour() {
               <p>
                 Renting a private studio by the hour solves all of this. You only pay for time you actually use. At SculptClub, that starts at <strong className="text-foreground">€12 for a 60-minute session</strong> — a fraction of what a monthly gym membership costs.
               </p>
+              <p>
+                Want the full side-by-side? Read <a href="/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam" className="text-brand hover:underline">studio rental vs a commercial gym for personal trainers</a>.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What does gym rental per hour cost in Amsterdam?</h2>
               <p>
@@ -153,7 +156,7 @@ export default function BlogPostGymRentalPerHour() {
                 ))}
               </ul>
               <p>
-                There’s no lengthy selection process or waiting list. Book a trial session, see the space, and start reserving slots from there.
+                There’s no lengthy selection process or waiting list. Book a trial session, see the space, and start reserving slots from there. Everything else — equipment, house rules, how the trainer community works — is on our <a href="/en/for-trainers" className="text-brand hover:underline">for-trainers page</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What equipment is in the studio?</h2>
@@ -185,6 +188,9 @@ export default function BlogPostGymRentalPerHour() {
               </p>
               <p>
                 For trainers working with regular clients, discount packages are also available: save up to 23% on your hourly rate with a credit package valid for one year.
+              </p>
+              <p>
+                Wondering how many sessions per week you need for a full income? See <a href="/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage" className="text-brand hover:underline">how many clients a personal trainer needs in Amsterdam</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Location: private studio in Amsterdam Jordaan</h2>

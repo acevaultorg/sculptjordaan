@@ -116,6 +116,7 @@ export default function BlogPostInstagramMarketing() {
               <h2 className="text-2xl font-bold text-foreground mt-8">SculptClub social-tool — kant-en-klare 4-weken kalender</h2>
               <p>Bij SculptClub hebben we een tool op <a href="/nl/social" className="text-brand hover:underline">sculptclub.nl/nl/social</a> die elke week 4 posts klaar heeft: hook, script, hashtags, visuals. 16 posts per maand, alles in te plannen. Brain geeft de brief in het Engels — jij schrijft de Dutch caption in je eigen stem.</p>
               <p>Werkt voor alle SculptClub-trainers, ook als je niet bij ons in de studio huurt. Gratis te gebruiken zonder lidmaatschap. Bedoeling: je bespaart 3-5 uur per week aan content-planning.</p>
+              <p>Zoek je naast content ook een vaste plek om je klanten te trainen? Bekijk de tarieven voor <a href="/nl/studio-huren" className="text-brand hover:underline">studio huren per uur</a>, of blader door alle gidsen op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Wat absoluut NIET werkt</h2>
               <p>Lijst van content-vormen die je tijd verspillen:</p>

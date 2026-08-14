@@ -149,7 +149,7 @@ export default function SportschoolJordaanNL() {
                 Als je begeleiding zoekt, bieden meerdere trainers in de Jordaan personal training aan.
                 Bij SculptClub werken <Link href="/nl/vind-jouw-personal-trainer" className="text-brand underline-offset-2 hover:underline">zeven onafhankelijke trainers</Link> met tarieven vanaf €45 per sessie.
                 De eerste intake is altijd gratis en vrijblijvend. Elke trainer bepaalt zelf zijn tarief —
-                wij rekenen 0% commissie, dus wat je betaalt gaat volledig naar je trainer.
+                wij zitten er niet tussen: wat je betaalt gaat volledig naar je trainer.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">SculptClub: privé studio aan de gracht</h2>

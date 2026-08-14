@@ -129,7 +129,7 @@ export default function PersonalTrainerAmsterdamWestEN() {
               <p>
                 Personal training at SculptClub starts from €45 per session. The first introduction
                 is always free. No membership, no contract — you book per session and always cancel
-                for free. We charge 0% commission to our trainers, so what you pay goes entirely to
+                for free. You pay your trainer directly, so what you pay goes entirely to
                 your trainer.
               </p>
 

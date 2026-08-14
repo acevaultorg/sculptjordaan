@@ -158,6 +158,9 @@ export default function BlogPostEerste10Klanten() {
               <p>
                 Wat NIET werkt: cold DMs op LinkedIn naar “sportieve professionals”, Groupon-aanbiedingen, of betaalde flyers in lokale sportwinkels.
               </p>
+              <p>
+                Meer over hooks, hashtags en DM-strategie lees je in de gids <a href="/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" className="text-brand hover:underline">Instagram-marketing voor personal trainers in de Jordaan</a>.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Klant 7-10 — doorverwijzingen + samenwerkingen</h2>
               <p>
@@ -206,7 +209,7 @@ export default function BlogPostEerste10Klanten() {
                 {[
                   ["Start op je marktwaarde, niet eronder", "Amsterdam PT-startprijs 2026 is €45-55/sessie. Niet lager."],
                   ["Gratis intake is je acquisitie-asset", "Niet een korting-aanbod. Eén gratis intake per nieuwe klant — daarna full price."],
-                  ["Communiceer per kwartaal een prijsaanpassing", "Trainer die niets verandert in 3 jaar is een trainer die te bang is. Bij SculptClub passen trainers hun tarief vrijelijk aan — wij rekenen 0% commissie, dus jouw prijs is altijd 100% van jouw inkomsten."],
+                  ["Communiceer per kwartaal een prijsaanpassing", "Trainer die niets verandert in 3 jaar is een trainer die te bang is. Bij SculptClub passen trainers hun tarief vrijelijk aan — wij rekenen alleen de uurhuur, dus jouw prijs is altijd 100% van jouw inkomsten."],
                 ].map(([type, desc]) => (
                   <li key={type} className="flex items-start gap-2">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand flex-shrink-0" />
@@ -233,6 +236,9 @@ export default function BlogPostEerste10Klanten() {
               </ol>
               <p>
                 De keuze hangt af van wat je wil. Niet iedereen wil een gym openen of een team aansturen. Sommige trainers zijn gelukkiger op 15 vaste klanten met een lekkere flow dan op 35 sessies/week met stress.
+              </p>
+              <p>
+                Alle gidsen voor zelfstandige trainers — van KvK tot tarieven — vind je op de pagina <a href="/nl/voor-trainers" className="text-brand hover:underline">voor trainers</a>.
               </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
