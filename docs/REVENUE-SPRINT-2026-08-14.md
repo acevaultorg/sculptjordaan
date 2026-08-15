@@ -145,7 +145,7 @@ nieuwsgierigheid: waar zocht jij destijds toen je ruimte nodig had?
 
 ## 🟢 7 — Beslissing (geen haast): daluren-tarief €10/uur
 
-64 van de 112 weekuren zijn vrijwel altijd leeg (vroege ochtend, late avond, weekendmiddag). Een **daluren-tarief van €10/uur** (niet €9 — we gaan niet onder de goedkoopste concurrent zitten; het frame blijft flexibiliteit + Jordaan, niet "goedkoopst") alleen voor die blokken, gericht op startende trainers. Zeg ja/nee — bij ja wire ik Acuity + de pagina-sectie.
+64 van de 112 weekuren zijn vrijwel altijd leeg (vroege ochtend, late avond, weekendmiddag). ⚠️ Nuance (kaart `ms8tqmxsscdq9k` op het Marketing-bord): het weekend sluit in Acuity om **15:00** — de lege za/zo-middagen zijn een dichte agenda, geen vraaguitval. Wil je daluren in het weekend aanbieden, dan moet eerst de Acuity-beschikbaarheid open (die kaart), anders is een weekend-daltarief onboekbaar. Een **daluren-tarief van €10/uur** (niet €9 — we gaan niet onder de goedkoopste concurrent zitten; het frame blijft flexibiliteit + Jordaan, niet "goedkoopst") alleen voor die blokken, gericht op startende trainers. Zeg ja/nee — bij ja wire ik Acuity + de pagina-sectie.
 
 ---
 
