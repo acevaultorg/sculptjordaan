@@ -133,7 +133,7 @@ def f4_cta(src, out):
     y = block(d, M, y, 'Kom eerst gratis proberen.', f_h, BONE, W - M * 2 - 60, lead=1.04); y += 34
     y = block(d, M, y, 'Egelantiersgracht 424 · dagelijks 06:00–22:00', f_sub, MUTED, W - M * 2 - 120, lead=1.28)
     y += 44
-    txt = 'sculptclub.nl/studio-huren'
+    txt = 'sculptclub.nl'
     tw = d.textlength(txt, font=f_b); asc, desc = f_b.getmetrics()
     d.rounded_rectangle([M, y, M + tw + 56, y + asc + desc + 30], radius=16, fill=ORANGE)
     d.text((M + 28, y + 15), txt, font=f_b, fill=(14, 12, 10))
