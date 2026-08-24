@@ -63,52 +63,65 @@
 - **Hand-off pattern that works:** the site already serves an operator-only Posting Studio at `public/social/<post-id>/index.html` (noindex, phone-first: long-press-save images + 1-tap caption copy). New posts go there; the operator opens it on their phone and posts from the app in ~2 min. NOTE `/social` and `/social/` **302 → /nl/social** via `functions/_middleware.ts` EXACT map (deliberate — the planner is the hub entry), so always hand out the DEEP link `/social/<post-id>/`, never `/social/`.
 - Studio-page assets live in `public/` and ARE publicly served (noindex only) — keep internal strategy notes out of them; the per-post `POST.md` lives in `docs/social/<post>/`.
 
-## TikTok web upload — exact root cause found (2026-08-24)
+## TikTok web upload — SOLVED (2026-08-24)
 
-Traced end-to-end with the extension's own tooling. TikTok Studio's uploader is
-**not** blocked by anti-bot on the file hand-off; it stalls on media decoding.
+TikTok Studio uploads **do** work from a session. Earlier sessions concluded
+"not possible"; that was wrong — it was one missing step.
 
-**The trace** (hooked `performance.mark` in-page):
-`USER_SELECT_FILE → uploadVideoFiles:addFile-start → addFile-end →
-updateFileMeta-start → FILE_PARSE_START → ✋ nothing`
+**Root cause of the old failure.** Their uploader probes the file with an
+**off-DOM `<video>`** on a `blob:` src and awaits `loadedmetadata`. Every
+Chrome-MCP tab is `document.visibilityState === "hidden"` (the extension creates
+tabs non-active by design), and **Chrome will not decode media in a hidden
+document** — so that element sat at `readyState:0 / networkState:2` forever.
+Their mp4 atom parsing (FileReader reads of 4100/128/32/24/32/2039 B) finished
+fine; only decode hung, so no upload request was ever made. Trace via hooked
+`performance.mark`: `USER_SELECT_FILE → addFile-start/end → updateFileMeta-start
+→ FILE_PARSE_START → ✋`.
 
-At FILE_PARSE they create an **off-DOM `<video>`** with a `blob:` src and await
-`loadedmetadata`. In the Chrome-MCP tab that element sits at
-`readyState: 0 (HAVE_NOTHING)` / `networkState: 2 (LOADING)` forever — their mp4
-atom parsing (FileReader reads of 4100/128/32/24/32/2039 bytes) completes fine,
-only the media pipeline hangs. So no upload request is ever made.
+**The fix — two steps, both needed:**
 
-**Why:** every Chrome-MCP tab reports `document.visibilityState === "hidden"`
-(the extension creates tabs non-active by design; `tabs_create_mcp`,
-`open_application`, and screenshots all leave it hidden — screenshots go via CDP
-without activating). Chrome will not load media metadata for a hidden document.
-Attaching the element to the DOM + `preload="metadata"` + `load()` does not help.
-Long JS waits in that state can also hit `Runtime.evaluate` timeouts
-("renderer may be frozen").
+1. **Make the tab genuinely visible.** `tabs_create_mcp`, `open_application`,
+   and CDP screenshots all leave it hidden. What works is
+   `mcp__Control_Chrome__switch_to_tab({tab_id})` (ids from
+   `mcp__Control_Chrome__list_tabs`; the Chrome-MCP `tabId` is the same number).
+   Verify with `document.visibilityState === "visible"` before proceeding.
+   This is tab *activation*, not input injection — page interaction still goes
+   through Chrome MCP. Do **not** fake the visibility API instead; that is
+   anti-detection and is correctly refused.
 
-**Consequence:** TikTok web upload cannot be completed from a background tab.
-The one thing that unblocks it is the tab being genuinely foreground — an
-operator action (click the tab), after which the normal flow should proceed.
-Faking the metadata is off-limits (correctly refused by the safety classifier).
-
-### Reusable win — the shim-input technique
-`file_upload` **silently no-ops on TikTok's own file input** (reports success,
-`input.files.length` stays 0 — their React-managed input can't be targeted).
-Workaround that works and is worth reusing on any stubborn uploader:
+2. **Use a shim input.** `file_upload` silently no-ops on TikTok's own
+   React-managed input (reports success, `files.length` stays 0). Create your
+   own plain input, upload into that, then hand the File across:
 
 ```js
-// 1. create your own plain input, find it, file_upload into THAT
 const shim = document.createElement('input');
 shim.type = 'file'; shim.id = 'sc-shim';
-shim.setAttribute('aria-label','shim upload');   // makes it findable
+shim.setAttribute('aria-label', 'sculptclub shim upload');  // makes it findable
 document.body.appendChild(shim);
-// 2. hand the File across to the real input
-const dt = new DataTransfer(); dt.items.add(shim.files[0]);
-realInput.files = dt.files;
-realInput.dispatchEvent(new Event('change', { bubbles: true }));
+// → find "sculptclub shim upload" → file_upload into it → then:
+const file = new File([shim.files[0]], 'name.mp4', { type: 'video/mp4' });
+const real = [...document.querySelectorAll('input[type=file]')].find(i => i.id !== 'sc-shim');
+const dt = new DataTransfer(); dt.items.add(file);
+real.files = dt.files;
+real.dispatchEvent(new Event('change', { bubbles: true }));
 ```
-Verified: the shim received the real 311,964-byte mp4, and TikTok's handler
-consumed it (`files` went 1 → 0) and ran `selectVideoFiles` to completion.
 
-Instagram remains fully autonomous (see the 2026-08-16 entry) — it does not
-gate on media decode, which is why carousels post fine from a hidden tab.
+**Then the normal flow works:** editor opens → triple-click + `cmd+a` the
+Beschrijving (it auto-fills with the filename) → type caption + hashtags →
+scroll down → **Plaatsen**. Settings default correctly (Nu · Iedereen · HD on).
+
+**Two gotchas:**
+- A modal offers "Automatische contentcontroles inschakelen" — that's an
+  **account setting**; click **Annuleren**, not Inschakelen.
+- After posting, the row shows privacy **"Alleen ik" + "Content wordt
+  beoordeeld"**. That is a temporary moderation hold, not a failure — it flipped
+  to **Iedereen** on its own within ~90s. Reload
+  `tiktokstudio/content` and re-check before reporting anything as private.
+
+First post shipped this way:
+https://www.tiktok.com/@sculptclub.jordaan/video/7677670221590629654
+
+**Web is video-only** — photo-carousel mode is still app-only, so a 4-slide
+carousel ships to TikTok as the generated `reel.mp4`, and to Instagram as a real
+carousel. Instagram remains fully autonomous either way (it never gated on media
+decode, which is why IG worked from hidden tabs all along).
