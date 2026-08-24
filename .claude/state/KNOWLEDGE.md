@@ -62,3 +62,53 @@
 - **TikTok web (tiktokstudio/upload) CANNOT be completed from a session.** It is video-only (no photo mode on desktop), and a programmatic `file_upload` transfers the bytes fine (4× POST → 200 on tos-*.tiktokcdn-eu.com) but the finalize/commit step never fires — no console error, no draft created (Concepten 0), spinner forever. Tested 3× incl. a variant WITH a silent AAC track, so it is not the file. Their `mssdk/webmssdk` anti-bot SDK is active on the page. Conclusion: TikTok = operator-action; don't burn session time retrying.
 - **Hand-off pattern that works:** the site already serves an operator-only Posting Studio at `public/social/<post-id>/index.html` (noindex, phone-first: long-press-save images + 1-tap caption copy). New posts go there; the operator opens it on their phone and posts from the app in ~2 min. NOTE `/social` and `/social/` **302 → /nl/social** via `functions/_middleware.ts` EXACT map (deliberate — the planner is the hub entry), so always hand out the DEEP link `/social/<post-id>/`, never `/social/`.
 - Studio-page assets live in `public/` and ARE publicly served (noindex only) — keep internal strategy notes out of them; the per-post `POST.md` lives in `docs/social/<post>/`.
+
+## TikTok web upload — exact root cause found (2026-08-24)
+
+Traced end-to-end with the extension's own tooling. TikTok Studio's uploader is
+**not** blocked by anti-bot on the file hand-off; it stalls on media decoding.
+
+**The trace** (hooked `performance.mark` in-page):
+`USER_SELECT_FILE → uploadVideoFiles:addFile-start → addFile-end →
+updateFileMeta-start → FILE_PARSE_START → ✋ nothing`
+
+At FILE_PARSE they create an **off-DOM `<video>`** with a `blob:` src and await
+`loadedmetadata`. In the Chrome-MCP tab that element sits at
+`readyState: 0 (HAVE_NOTHING)` / `networkState: 2 (LOADING)` forever — their mp4
+atom parsing (FileReader reads of 4100/128/32/24/32/2039 bytes) completes fine,
+only the media pipeline hangs. So no upload request is ever made.
+
+**Why:** every Chrome-MCP tab reports `document.visibilityState === "hidden"`
+(the extension creates tabs non-active by design; `tabs_create_mcp`,
+`open_application`, and screenshots all leave it hidden — screenshots go via CDP
+without activating). Chrome will not load media metadata for a hidden document.
+Attaching the element to the DOM + `preload="metadata"` + `load()` does not help.
+Long JS waits in that state can also hit `Runtime.evaluate` timeouts
+("renderer may be frozen").
+
+**Consequence:** TikTok web upload cannot be completed from a background tab.
+The one thing that unblocks it is the tab being genuinely foreground — an
+operator action (click the tab), after which the normal flow should proceed.
+Faking the metadata is off-limits (correctly refused by the safety classifier).
+
+### Reusable win — the shim-input technique
+`file_upload` **silently no-ops on TikTok's own file input** (reports success,
+`input.files.length` stays 0 — their React-managed input can't be targeted).
+Workaround that works and is worth reusing on any stubborn uploader:
+
+```js
+// 1. create your own plain input, find it, file_upload into THAT
+const shim = document.createElement('input');
+shim.type = 'file'; shim.id = 'sc-shim';
+shim.setAttribute('aria-label','shim upload');   // makes it findable
+document.body.appendChild(shim);
+// 2. hand the File across to the real input
+const dt = new DataTransfer(); dt.items.add(shim.files[0]);
+realInput.files = dt.files;
+realInput.dispatchEvent(new Event('change', { bubbles: true }));
+```
+Verified: the shim received the real 311,964-byte mp4, and TikTok's handler
+consumed it (`files` went 1 → 0) and ran `selectVideoFiles` to completion.
+
+Instagram remains fully autonomous (see the 2026-08-16 entry) — it does not
+gate on media decode, which is why carousels post fine from a hidden tab.
