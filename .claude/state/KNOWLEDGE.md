@@ -212,3 +212,41 @@ so adding a trainer without their aliases fails the build with the exact line to
 "crawled – currently not indexed" is the real signal: Google fetched those pages and declined
 them, which is a quality/duplication judgement, and it is the same size as the entire indexed set.
 That is the next thing to diagnose — not the 404s, which were mostly already fixed.
+
+## Ranking diagnosis — /nl/studio-huren (2026-08-26, GSC 90d, operator session)
+
+**The "average position 52" number is meaningless — the distribution is bimodal.**
+`/nl/studio-huren`: 80 impressions at position **1.71** (brand: "sculptclub", "sculpt
+club") and 320 at position **81.7** (commercial: "personal trainingsruimte huren" 84
+@79.1 · "pt ruimte huren" 84 @81.6 · "fitness ruimte huren" 62 @85.1). Exactly **3 of
+400 impressions (0.75%) fall between position 3 and 65.** The site ranks #1 on its own
+name and nowhere on the terms that bring renting trainers. Never quote the average
+again — always split brand vs non-brand before drawing a conclusion.
+
+Site-wide 90d for context: 191 clicks · 7.47K impressions · 93% Netherlands (178/191).
+Page split: `/` 141 clicks @28.2 · `/en` 26 @**20.0** · `/nl/studio-huren` 2 @55.9 ·
+`/nl/open-gym` 2 @56.8. English pages are ~18% of clicks and rank BETTER than Dutch.
+
+### CLOSED — do not re-propose these (adversarially verified, 18 refuters)
+- ❌ **"The money page is thin."** FALSE. `/nl/studio-huren` is richer than `/nl/over-ons`
+  on every measurable axis. Do not add word count, FAQs-for-volume, or filler to it.
+- ❌ **"Internal linking is the problem."** FALSE. The money pages are the best-linked
+  content pages on the site; `/nl/over-ons` (which ranks 5.4) is linked *less*.
+- ❌ **"Something is technically suppressing it."** FALSE. Every crawl/index signal on
+  `/nl/studio-huren` is correct.
+- ❌ **"A national chain owns the SERP."** FALSE. That SERP is contested only by small
+  local operators — no dominant market leader. Which makes position 81 diagnosable,
+  not inevitable.
+
+### OPEN — the live hypothesis (shipped 2026-08-26, measure ~6 weeks)
+**Term mismatch.** 230 impressions of demand use the word **"ruimte"**; the page was
+built entirely around **"studio"** — "personal trainingsruimte huren" 0 occurrences,
+"pt ruimte" 0, "fitness ruimte" 0, while "studio huren" appeared 4×. Google surfaces
+the page as topically related but ranks it below everything that uses the searcher's
+own words. Fix shipped: title → "Trainingsruimte huren Amsterdam — PT-studio vanaf
+€12/uur", h1 → "Trainingsruimte huren voor personal trainers in Amsterdam", plus one
+FAQ answering the literal question ("Ik zoek een PT-ruimte of fitnessruimte om te
+huren — is dit dat?"). Honest expectation: this is a targeting fix, not an authority
+fix — it can plausibly move ~81 toward the 20s, it cannot manufacture page 1 on its
+own. **Verify by re-pulling non-brand position for this page in ~6 weeks; if it has
+not moved, term mismatch is refuted and authority is the remaining explanation.**

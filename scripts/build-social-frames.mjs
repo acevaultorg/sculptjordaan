@@ -73,6 +73,45 @@ FRAME_SETS["trainer-gezina-001"] = [
   },
 ];
 
+// English variant of the Gezina spotlight. Client-facing posts skew English:
+// the IG bio is English, Gezina's own profile is English, and in Amsterdam
+// English excludes nobody while Dutch excludes the international residents who
+// buy premium PT. Trainer-facing (rental) posts stay Dutch — the GSC money
+// queries there are Dutch ("pt ruimte huren"). One language per post, never both.
+FRAME_SETS["trainer-gezina-001-en"] = [
+  {
+    id: "01-hook",
+    photo: "shoot-11.jpg",
+    focus: "50% 45%",
+    kicker: "Personal trainer \u00b7 Jordaan",
+    head: "Gezina trains women strong.",
+  },
+  {
+    id: "02-cyclus",
+    photo: "shoot-10.jpg",
+    focus: "55% 50%",
+    kicker: "Her specialism",
+    head: "Strength, built around your cycle.",
+    body: "Not \u2018toned\u2019. Actually stronger \u2014 with a build-up that moves with your body.",
+  },
+  {
+    id: "03-hoe",
+    photoAbs: "public/images/trainers/gezina.jpg",
+    focus: "50% 30%",
+    kicker: "1-on-1 or small group",
+    head: "In English or Dutch.",
+    body: "Certified personal trainer. Rate on request.",
+  },
+  {
+    id: "04-cta",
+    photoAbs: "public/images/studio/canal-view-doors.jpg",
+    focus: "50% 42%",
+    kicker: "Egelantiersgracht 424",
+    head: "First intake is free.",
+    body: "Book via sculptclub.nl \u2014 open daily 06:00\u201322:00.",
+  },
+];
+
 FRAME_SETS["trainer-arithmetic-001"] = [
   {
     id: "01-hook",
