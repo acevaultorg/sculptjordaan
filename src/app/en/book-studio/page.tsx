@@ -18,6 +18,7 @@ import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
+import { StudioRateTable } from "@/components/marketing/studio-rate-table";
 import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt, Check } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -268,36 +269,15 @@ export default function BookStudioPageEN() {
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
                 <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
               </p>
-              <div className="overflow-hidden rounded-xl border bg-card">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b bg-muted/50">
-                      <th className="px-4 py-3 text-left font-medium">Space</th>
-                      <th className="px-4 py-3 text-center font-medium">60 min</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <td className="px-4 py-3 font-medium">Half studio (max 2)</td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€12</span>
-                          <ButtonLink href={acuityLinks.halfStudio60} size="sm">Book</ButtonLink>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium">Full studio (small group)</td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€17</span>
-                          <ButtonLink href={acuityLinks.fullStudio60} size="sm">Book</ButtonLink>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <StudioRateTable
+                headSpace="Space"
+                headDuration="60 min"
+                cta="Book"
+                rows={[
+                  { label: "Half studio (max 2)", price: "€12", href: acuityLinks.halfStudio60 },
+                  { label: "Full studio (small group)", price: "€17", href: acuityLinks.fullStudio60 },
+                ]}
+              />
               <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
                 <CreditCard className="h-3.5 w-3.5" />
                 <span>Pick your time and pay securely with CreditCard, Apple Pay, Google Pay or invoice</span>

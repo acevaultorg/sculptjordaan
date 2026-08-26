@@ -48,6 +48,7 @@ import {
 } from "@/components/ui/accordion";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
+import { StudioRateTable } from "@/components/marketing/studio-rate-table";
 
 export const metadata: Metadata = {
   title: { absolute: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan" },
@@ -307,36 +308,15 @@ export default function StudioRentalPageNL() {
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
                 <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
               </p>
-              <div className="overflow-hidden rounded-xl border bg-card">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b bg-muted/50">
-                      <th className="px-4 py-3 text-left font-medium">Ruimte</th>
-                      <th className="px-4 py-3 text-center font-medium">60 min</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <td className="px-4 py-3 font-medium">Halve studio (voor 2 personen)</td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€12</span>
-                          <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€17</span>
-                          <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <StudioRateTable
+                headSpace="Ruimte"
+                headDuration="60 min"
+                cta="Boek"
+                rows={[
+                  { label: "Halve studio (voor 2 personen)", price: "€12", href: acuityLinks.halfStudio60 },
+                  { label: "Hele studio (kleine groep)", price: "€17", href: acuityLinks.fullStudio60 },
+                ]}
+              />
               <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
                 <CreditCard className="h-3.5 w-3.5" />
                 <span>CreditCard, Apple Pay, Google Pay of factuur</span>
