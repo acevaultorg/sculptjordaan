@@ -57,13 +57,19 @@ FRAME_SETS["trainer-gezina-001"] = [
   },
   {
     id: "04-cta",
-    // Gezina is on the LEFT of shoot-10 — crop to her. Never end a post about one
-    // trainer on a frame showing two different people (caught in review 2026-08-26).
-    photo: "shoot-10.jpg",
-    focus: "28% 40%",
+    // The shoot contains only TWO photos of Gezina (shoot-10, shoot-11), so a
+    // 4-slide set about her cannot be four different pictures of her. This slide
+    // was a third crop of shoot-10 and read as repetition (operator, 2026-08-26).
+    // Ending on the PLACE is better anyway: the slide names the address, so show
+    // the door onto the canal. Rhythm: person -> person -> portrait -> place.
+    photoAbs: "public/images/studio/canal-view-doors.jpg",
+    focus: "50% 42%",
     kicker: "Egelantiersgracht 424",
     head: "Eerste intake gratis.",
-    body: "DM @gezfitness of plan via sculptclub.nl \u2014 dagelijks 06:00\u201322:00.",
+    // No @handle in the ARTWORK: @gezfitness is hers on Instagram but belongs to
+    // someone else on TikTok, and these frames ship to both. The caption carries
+    // the mention, where it is platform-correct.
+    body: "Plan via sculptclub.nl \u2014 dagelijks 06:00\u201322:00.",
   },
 ];
 
