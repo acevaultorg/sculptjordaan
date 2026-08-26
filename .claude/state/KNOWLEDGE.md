@@ -158,3 +158,27 @@ Searched TikTok for `studio huren personal trainer` + `personal trainer amsterda
 - **Benchmark, not model:** Saints & Stars = **7,040** TikTok followers after years + budget + multiple locations. Gym TikTok is a grind for everyone → goal is findability by a few hundred local deciders, not follower count. Take consistency/real-faces/vertical-native; refuse the luxury-English positioning.
 - **Six-slot rotation, 3/wk, 2-of-3 trainer-facing while utilisation is low:** the arithmetic · Meet [name] · the empty room ("A rare sight — an empty studio!" did **94** for LAPT Studios) · privacy-not-fitness · the collab · one useful thing.
 - **Caveat:** search-page like counts, one day, not view counts, and competitor numbers are boost-confounded. The bar the arithmetic frame must beat is **our own 1–7**, not the boosted 220–3,111. Let the first month of real posting overrule all of it.
+
+## Brand mark on generated assets — use the file, never set it as type (2026-08-26)
+
+The SculptClub wordmark is **`public/images/logo-sculptclub.svg`** — two words, "SCULPT CLUB",
+a heavy custom grotesque with tight spacing and flat-cut terminals. It is NOT Syne, and it is
+NOT one word. Social frames were shipping `<div class="mark">SCULPTCLUB</div>` in Syne 800 with
+`letter-spacing:.24em`, which is visibly wrong to anyone who knows the brand. Operator caught it.
+
+**Rule: any generated asset that carries the logo embeds the real file.** Source art is near-black,
+so `filter:invert(1)` puts it white on a dark photo (same trick as the site header's `dark:invert`).
+
+Two traps, both hit on the way to fixing it — worth knowing before writing any frame generator:
+
+1. **Selector specificity.** The frame CSS has `.f img{position:absolute;inset:0;width:100%;
+   height:100%;object-fit:cover}` — that is (0,1,1). A logo styled with `.mark` is (0,1,0) and
+   **loses**, so the logo inherits `width:100%/object-fit:cover` and full-bleeds the frame cropped
+   to its middle. The first regeneration shipped a giant "PT" (the centre of "SCULPT") across every
+   frame. Use `.f img.mark` and reset `inset` + `object-fit` explicitly.
+2. **The render gate must wait for EVERY image.** `document.querySelector("img")` returns the photo,
+   so the gate passed while the logo was still loading — that ships a frame with no wordmark. Wait
+   for `[...document.querySelectorAll("img")].every(i => i.complete && i.naturalWidth > 0)`.
+
+Related: frames are rendered from a real `file://` document, never `page.setContent` (about:blank
+blocks `file://` subresources → black frames). See `scripts/build-social-frames.mjs`.
