@@ -1,4 +1,10 @@
 # Auto-generated from next.config.ts redirects() — Vercel->CF Pages migration 2026-07-07
+# ⚠️  NOT THE SOURCE OF TRUTH. CF Pages honours only ~the first 100 rules here,
+#     and this file has 380+. functions/_middleware.ts owns ALL path redirects
+#     (EXACT + SPLAT maps) and has no count limit. A rule added ONLY here, past
+#     the first ~100, is silently INERT — verified the hard way on 2026-08-26:
+#     26 trainer aliases were added here, deployed, and still 404'd live.
+#     ADD REDIRECTS TO functions/_middleware.ts.
 # Host-based (vanity domains, www->apex), /review, /start (lang-detect), wrong-locale slugs => functions/_middleware.ts
 /nl / 301
 /nl/ / 301
@@ -191,17 +197,41 @@
 /author/* / 301
 /amp / 301
 /nl/amp /nl/blog 301
+# Prefix-less trainer booking aliases — one per trainer, BOTH locales.
+# These are the highest-intent URLs on the site; without the locale prefix
+# they 404'd. GSC found /plan-free-intro-with-andrea/ on 2026-08-26; a live
+# sweep showed 18 of 26 dead (5 NL missing + all 13 EN). Generated from
+# src/config/trainers.ts and enforced by scripts/check-trainer-consistency.mjs.
 /plan-gratis-intake-met-alex /nl/plan-gratis-intake-met-alex 301
-/plan-gratis-intake-met-dara /nl/plan-gratis-intake-met-dara 301
+/plan-free-intro-with-alex /en/plan-free-intro-with-alex 301
 /plan-gratis-intake-met-eva /nl/plan-gratis-intake-met-eva 301
-/plan-gratis-intake-met-hamish /nl/plan-gratis-intake-met-hamish 301
-/plan-gratis-intake-met-andrea /nl/plan-gratis-intake-met-andrea 301
+/plan-free-intro-with-eva /en/plan-free-intro-with-eva 301
+/plan-gratis-intake-met-bryan /nl/plan-gratis-intake-met-bryan 301
+/plan-free-intro-with-bryan /en/plan-free-intro-with-bryan 301
+/plan-gratis-intake-met-ibrahim /nl/plan-gratis-intake-met-ibrahim 301
+/plan-free-intro-with-ibrahim /en/plan-free-intro-with-ibrahim 301
 /plan-gratis-intake-met-gezina /nl/plan-gratis-intake-met-gezina 301
+/plan-free-intro-with-gezina /en/plan-free-intro-with-gezina 301
+/plan-gratis-intake-met-andrea /nl/plan-gratis-intake-met-andrea 301
+/plan-free-intro-with-andrea /en/plan-free-intro-with-andrea 301
+/plan-gratis-intake-met-dara /nl/plan-gratis-intake-met-dara 301
+/plan-free-intro-with-dara /en/plan-free-intro-with-dara 301
 /plan-gratis-intake-met-jearmey /nl/plan-gratis-intake-met-jearmey 301
+/plan-free-intro-with-jearmey /en/plan-free-intro-with-jearmey 301
+/plan-gratis-intake-met-sergei /nl/plan-gratis-intake-met-sergei 301
+/plan-free-intro-with-sergei /en/plan-free-intro-with-sergei 301
 /plan-gratis-intake-met-joey /nl/plan-gratis-intake-met-joey 301
+/plan-free-intro-with-joey /en/plan-free-intro-with-joey 301
+/plan-gratis-intake-met-hamish /nl/plan-gratis-intake-met-hamish 301
+/plan-free-intro-with-hamish /en/plan-free-intro-with-hamish 301
+/plan-gratis-intake-met-tom /nl/plan-gratis-intake-met-tom 301
+/plan-free-intro-with-tom /en/plan-free-intro-with-tom 301
+/plan-gratis-intake-met-roberta /nl/plan-gratis-intake-met-roberta 301
+/plan-free-intro-with-roberta /en/plan-free-intro-with-roberta 301
 /sculpt45class /nl/open-gym 301
 /help /nl/contact 301
 /nl/members /nl/prijzen 301
+/nl/eerste-sessie-sculptclub /nl/gratis-intake 301
 /nl/contact-2 /nl/contact 301
 /home-nl/faqs /nl/faqs 301
 /sculptclub-partner / 301
