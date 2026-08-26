@@ -27,8 +27,46 @@ const PHOTOS = "/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub-source-p
 const OUT = path.resolve(`public/social/${POST}`);
 fs.mkdirSync(OUT, { recursive: true });
 
-/** Every price/fact here is verified against CLAUDE.md — do not invent. */
-const FRAMES = [
+/** Every price/fact here is verified against CLAUDE.md + src/config/trainers.ts — do not invent. */
+const FRAME_SETS = {};
+
+FRAME_SETS["trainer-gezina-001"] = [
+  {
+    id: "01-hook",
+    photo: "shoot-11.jpg",
+    focus: "50% 45%",
+    kicker: "Personal trainer · Jordaan",
+    head: "Gezina traint vrouwen sterk.",
+  },
+  {
+    id: "02-cyclus",
+    photo: "shoot-10.jpg",
+    focus: "55% 50%",
+    kicker: "Haar specialisme",
+    head: "Kracht, afgestemd op je cyclus.",
+    body: "Geen \u2018toned\u2019. Sterker worden, met een opbouw die meebeweegt met je lichaam.",
+  },
+  {
+    id: "03-hoe",
+    photoAbs: "public/images/trainers/gezina.jpg",
+    focus: "50% 30%",
+    kicker: "1-op-1 of small group",
+    head: "Nederlands en Engels.",
+    body: "Gecertificeerd personal trainer. Tarief op aanvraag.",
+  },
+  {
+    id: "04-cta",
+    // Gezina is on the LEFT of shoot-10 — crop to her. Never end a post about one
+    // trainer on a frame showing two different people (caught in review 2026-08-26).
+    photo: "shoot-10.jpg",
+    focus: "28% 40%",
+    kicker: "Egelantiersgracht 424",
+    head: "Eerste intake gratis.",
+    body: "DM @gezfitness of plan via sculptclub.nl \u2014 dagelijks 06:00\u201322:00.",
+  },
+];
+
+FRAME_SETS["trainer-arithmetic-001"] = [
   {
     id: "01-hook",
     photo: "shoot-18.jpg",
@@ -72,6 +110,8 @@ const FRAMES = [
   },
 ];
 
+const FRAMES = FRAME_SETS[POST] || FRAME_SETS["trainer-arithmetic-001"];
+
 const css = (w, h, textTop, textBottom) => `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
@@ -108,7 +148,7 @@ const css = (w, h, textTop, textBottom) => `
 const html = (f, w, h, textTop, textBottom) => `<!doctype html><meta charset="utf-8">
 <style>${css(w, h, textTop, textBottom)}</style>
 <div class="f">
-  <img src="file://${path.join(PHOTOS, f.photo)}" style="object-position:${f.focus}">
+  <img src="file://${f.photoAbs ? path.resolve(f.photoAbs) : path.join(PHOTOS, f.photo)}" style="object-position:${f.focus}">
   <div class="scrim"></div>
   <div class="mark">SCULPTCLUB</div>
   <div class="box">
