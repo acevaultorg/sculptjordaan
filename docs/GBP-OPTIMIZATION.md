@@ -1,6 +1,16 @@
 # Google Business Profile — Optimization Pack
 
-**Status:** ~71% profile strength · 768 customer interactions · last photo upload 120 days ago.
+**Status (VERIFIED LIVE 2026-08-26, not from this doc's own memory):** 812 customer
+interactions · **703 views/month** · 19 reviews at 5.0 · profile strength still short of complete.
+
+⚠️ **This checklist is partly STALE — verify each item live before doing it.** Confirmed already
+done on 2026-08-26: the second business category **"Personal trainer" is present** (Gym is
+PRIMARY), the address postcode already reads `1015 RR`, and the NL description is in place. Do
+not redo those. The remaining items were not re-verified one by one.
+
+📊 **Why this file outranks almost everything else on the board:** GBP delivers ~703 views/month.
+Organic search delivers 191 clicks per *90 days* — about 64/month. **The Business Profile is
+roughly 11× the reach of all SEO combined**, and it is the channel nobody has been working.
 **Goal of this doc:** ship paste-ready content so you can do the full GBP optimization in one ~60-min sitting.
 
 **Where to do the work:** [Manage your business on Google](https://business.google.com/) → SculptClub.
