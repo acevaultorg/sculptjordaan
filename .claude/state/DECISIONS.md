@@ -53,3 +53,17 @@ CHOSE: restructure `src/config/acuity.ts` from single ambiguous `acuityLinks` ob
 - COPY: '0% commissie' self-framing retired site-wide per operator rule (rent+freedom: "je betaalt je trainer direct" / "wij rekenen alleen de uurhuur"). Kept legitimate gym-commission comparisons + rekentool's operator-validated formulation.
 - PRICING RECS (operator decides): 10+1 block bundle for shrinking renters; daluren tier at €10 NOT €9 (never undercut ptstudiorent's €10 floor; frame = flexibiliteit + Jordaan, never cheapest).
 - CORRECTION over workflow data: Alexandre/Alex de Almeida NOT churned (active via 2nd email); Joey van Veen is top renter (~87h/8wk via 2 emails). Cross-reference emails before outreach lists.
+
+## 2026-08-26 — Money pages rank position ~56 while About page ranks ~5: diagnosed + partial structural fix shipped
+
+**Decision:** GSC showed `/nl/studio-huren` + `/nl/open-gym` (money pages, 495-496 impressions/mo each) ranking position 55.9/56.8 while `/nl/over-ons` + `/en/about` (About pages) rank position 5.4/6.6 for overlapping "studio huren"/"trainingsruimte" queries. A live SERP check confirmed Google currently returns the About page, not the dedicated page, for "trainingsruimte huren amsterdam jordaan".
+
+**Ruled out with evidence** (not the cause): indexing (both pages live, indexed, correctly canonical'd), homepage under-linking (money pages get MORE homepage links than About), technical/schema deficiency (studio-huren has strictly more schema — FAQPage, LocalBusiness — than over-ons has).
+
+**Found + fixed:** the About page's "Three Pillars" section had zero outbound links from its Studio Huren / Open Gym cards. Added keyword-rich links from each pillar to its specialist page, NL+EN. This is a real, verified, safe structural fix — but not a complete resolution. Position 55-56 with otherwise-healthy fundamentals most likely reflects an authority-signal gap that resolves over weeks, not a single edit.
+
+**Deferred to a session with GSC/Chrome MCP access:** the task's own prescribed method (URL Inspection "Test live URL" on a sample, hreflang reciprocity check) — genuinely couldn't run this session (no Chrome MCP, no GSC API key). Re-measure position on `/nl/studio-huren` + `/nl/open-gym` in 2-4 weeks to see if the link-equity fix moved anything.
+
+**Verify:** build clean, deployed (`e46e5dd8`), webhook-403 sanity check passed, all 3 links live on both language versions.
+
+**Reversibility:** fully reversible, `git revert` commit `86df21a`.
