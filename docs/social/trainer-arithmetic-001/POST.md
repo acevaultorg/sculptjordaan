@@ -25,9 +25,11 @@ TikTok search, 26 Aug 2026, queries `studio huren personal trainer` + `personal 
 | **1** | **"Private gym in de Jordaan."** | **SculptClub** |
 | 2 | "Ben jij personal trainer op zoek naar een werkplek?" | fitbyroxpt (competitor) |
 
+⚠️ **Boost confound (operator, same day):** competitor engagement may be paid, and it is invisible from outside. `Fitness Aannemer` holds three of the four top rows — one commercial account sweeping a niche reads as ad spend, not frame superiority. Treat the top of this table as **hypothesis**. The clean, unconfounded evidence is the bottom: our own three organic posts, plus a solo peer's.
+
 **Reading:** every post that *advertises available space to trainers* — ours three times, a competitor's once — lands at 1–7. What wins is the **arithmetic of owning a room**. Our €240 (20 uur × €12) is a better number than the €750 that earned 220, and we had never told it.
 
-Caveat: search-page like counts, one day, not view counts. Directionally strong; let the first month of posting overrule it.
+Caveat: search-page like counts, one day, not view counts, competitor rows boost-confounded. **The bar this post must beat is our own 1–7 likes**, not the 220–3,111. That is the actual experiment.
 
 ## Frames
 
