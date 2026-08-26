@@ -127,7 +127,7 @@ export default function BoekStudioPageNL() {
 
       {/* ═══ ABOVE THE FOLD: Hero + Tabs (Packages default · Hourly secondary) ═══ */}
       <Section>
-        <div className="mb-6 text-center">
+        <div className="mb-4 text-center sm:mb-6">
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek de Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -263,12 +263,6 @@ export default function BoekStudioPageNL() {
           }
           hourly={
             <div className="mx-auto max-w-3xl">
-              <p className="mb-4 text-center text-sm text-muted-foreground">
-                Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
-                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
-              </p>
               <StudioRateTable
                 headSpace="Ruimte"
                 headDuration="60 min"
@@ -282,6 +276,12 @@ export default function BoekStudioPageNL() {
                 <CreditCard className="h-3.5 w-3.5" />
                 <span>Kies je tijd en betaal veilig met CreditCard, Apple Pay, Google Pay of factuur</span>
               </div>
+              <p className="mt-4 text-center text-sm text-muted-foreground">
+                Reserveer per sessie. Geen abonnement, geen contract,{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
+                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
+              </p>
             </div>
           }
         />

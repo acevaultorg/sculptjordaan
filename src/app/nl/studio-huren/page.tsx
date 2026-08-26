@@ -200,7 +200,7 @@ export default function StudioRentalPageNL() {
           existing TrainerValueProp + Bekijk de Ruimte sections.
           ═══ */}
       <Section id="book">
-        <div className="mb-6 text-center">
+        <div className="mb-4 text-center sm:mb-6">
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Studio huren voor personal trainers in Amsterdam
@@ -302,12 +302,6 @@ export default function StudioRentalPageNL() {
           }
           hourly={
             <div className="mx-auto max-w-3xl">
-              <p className="mb-4 text-center text-sm text-muted-foreground">
-                Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
-                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
-              </p>
               <StudioRateTable
                 headSpace="Ruimte"
                 headDuration="60 min"
@@ -321,6 +315,12 @@ export default function StudioRentalPageNL() {
                 <CreditCard className="h-3.5 w-3.5" />
                 <span>CreditCard, Apple Pay, Google Pay of factuur</span>
               </div>
+              <p className="mt-4 text-center text-sm text-muted-foreground">
+                Reserveer per sessie. Geen abonnement, geen contract,{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
+                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
+              </p>
             </div>
           }
         />

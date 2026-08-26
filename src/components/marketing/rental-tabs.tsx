@@ -32,7 +32,7 @@ export function RentalTabs({
 
   return (
     <div>
-      <div className="mx-auto mb-6 flex max-w-md gap-2 rounded-full border border-border bg-card p-1">
+      <div className="mx-auto mb-4 flex max-w-md gap-2 rounded-full border border-border bg-card p-1 sm:mb-6">
         <button
           type="button"
           onClick={() => {

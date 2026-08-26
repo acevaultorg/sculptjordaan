@@ -127,7 +127,7 @@ export default function BookStudioPageEN() {
 
       {/* ═══ ABOVE THE FOLD: Hero + Tabs (Packages default · Hourly secondary) ═══ */}
       <Section>
-        <div className="mb-6 text-center">
+        <div className="mb-4 text-center sm:mb-6">
           <p className="overline text-primary">For Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book the Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -263,12 +263,6 @@ export default function BookStudioPageEN() {
           }
           hourly={
             <div className="mx-auto max-w-3xl">
-              <p className="mb-4 text-center text-sm text-muted-foreground">
-                Book per session. No subscription, no contract,{" "}
-                <strong className="text-foreground">free cancellation anytime</strong>.{" "}
-                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
-              </p>
               <StudioRateTable
                 headSpace="Space"
                 headDuration="60 min"
@@ -282,6 +276,12 @@ export default function BookStudioPageEN() {
                 <CreditCard className="h-3.5 w-3.5" />
                 <span>Pick your time and pay securely with CreditCard, Apple Pay, Google Pay or invoice</span>
               </div>
+              <p className="mt-4 text-center text-sm text-muted-foreground">
+                Book per session. No subscription, no contract,{" "}
+                <strong className="text-foreground">free cancellation anytime</strong>.{" "}
+                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
+                <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
+              </p>
             </div>
           }
         />
