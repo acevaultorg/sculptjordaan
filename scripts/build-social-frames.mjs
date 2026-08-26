@@ -24,6 +24,7 @@ import fs from "node:fs";
 
 const POST = process.argv[2] || "trainer-arithmetic-001";
 const PHOTOS = "/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub-source-photos/gezina-sam-shoot-2026-08-17";
+const LOGO = path.resolve("public/images/logo-sculptclub.svg");
 const OUT = path.resolve(`public/social/${POST}`);
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -140,9 +141,17 @@ const css = (w, h, textTop, textBottom) => `
   p{font-family:'Instrument Sans',sans-serif;font-weight:400;color:#F3EBE2;opacity:.94;
     font-size:${Math.round(w*0.042)}px;line-height:1.42;max-width:${Math.round(w*0.82)}px;
     text-shadow:0 1px 16px rgba(0,0,0,.45)}
-  .mark{position:absolute;left:${Math.round(w*0.075)}px;top:${Math.round(h*0.055)}px;
-        font-family:Syne,sans-serif;font-weight:800;color:#FDFAF6;opacity:.92;
-        font-size:${Math.round(w*0.036)}px;letter-spacing:.24em}
+  /* The wordmark is the REAL asset (public/images/logo-sculptclub.svg), never
+     text set in Syne. The logo is a two-word custom grotesque — "SCULPT CLUB",
+     tight spacing — and faking it as letter-spaced type gets it visibly wrong
+     (caught by the operator 2026-08-26). Source art is near-black, so invert
+     it to sit white on the photo. */
+  /* MUST be '.f img.mark', not '.mark' — '.f img' above is (0,1,1) and would
+     otherwise win, handing the logo width:100%/height:100%/object-fit:cover and
+     full-bleeding it across the frame cropped to its middle. Reset inset and
+     object-fit explicitly for the same reason. */
+  .f img.mark{position:absolute;inset:auto;left:${Math.round(w*0.075)}px;top:${Math.round(h*0.055)}px;
+        width:${Math.round(w*0.24)}px;height:auto;object-fit:contain;opacity:.94;filter:invert(1)}
 `;
 
 const html = (f, w, h, textTop, textBottom) => `<!doctype html><meta charset="utf-8">
@@ -150,7 +159,7 @@ const html = (f, w, h, textTop, textBottom) => `<!doctype html><meta charset="ut
 <div class="f">
   <img src="file://${f.photoAbs ? path.resolve(f.photoAbs) : path.join(PHOTOS, f.photo)}" style="object-position:${f.focus}">
   <div class="scrim"></div>
-  <div class="mark">SCULPTCLUB</div>
+  <img class="mark" src="file://${LOGO}" alt="">
   <div class="box">
     ${f.kicker ? `<div class="kick">${f.kicker}</div>` : ""}
     ${f.big ? `<div class="big">${f.big}</div><div class="bigsub">${f.sub}</div>` : ""}
@@ -173,9 +182,11 @@ async function render(f, w, h, top, bottom, suffix) {
   fs.writeFileSync(tmpFile, html(f, w, h, top, bottom));
   const page = await browser.newPage({ viewport: { width: w, height: h } });
   await page.goto(`file://${tmpFile}`, { waitUntil: "load" });
+  // Wait for EVERY image — the photo AND the logo. Checking only the first
+  // <img> would happily ship a frame with a missing wordmark.
   await page.waitForFunction(() => {
-    const img = document.querySelector("img");
-    return img && img.complete && img.naturalWidth > 0;
+    const imgs = [...document.querySelectorAll("img")];
+    return imgs.length >= 2 && imgs.every((i) => i.complete && i.naturalWidth > 0);
   }, { timeout: 15000 });
   await page.waitForTimeout(700);
   await page.screenshot({ path: path.join(OUT, `${f.id}${suffix}.jpg`), quality: 92, type: "jpeg" });
