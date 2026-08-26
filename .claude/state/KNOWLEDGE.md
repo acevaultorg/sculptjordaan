@@ -63,7 +63,43 @@
 - **Hand-off pattern that works:** the site already serves an operator-only Posting Studio at `public/social/<post-id>/index.html` (noindex, phone-first: long-press-save images + 1-tap caption copy). New posts go there; the operator opens it on their phone and posts from the app in ~2 min. NOTE `/social` and `/social/` **302 → /nl/social** via `functions/_middleware.ts` EXACT map (deliberate — the planner is the hub entry), so always hand out the DEEP link `/social/<post-id>/`, never `/social/`.
 - Studio-page assets live in `public/` and ARE publicly served (noindex only) — keep internal strategy notes out of them; the per-post `POST.md` lives in `docs/social/<post>/`.
 
-## Social frame — post the arithmetic, never the offer (verified 2026-08-26)
+## Social frame — ⚠️ SUPERSEDED SAME DAY, read the correction below first (2026-08-26)
+
+### ❌ THE CORRECTION — I measured LIKES; the right metric is VIEWS, and it inverts the finding
+Pulled from TikTok Studio → Berichten (first-party account analytics, 22 posts). **The rental/offer
+frame is this account's BEST performer by views:**
+
+| views | post | date |
+|---:|---|---|
+| **11,000** | "Private gym in de Jordaan. Huur vanaf €12/uur. Probeer eerste sessie gratis." | 1 jan |
+| **3,262** | "Freelance Personal Trainer? Train your clients in a private studio… DM to see the space" | 2 nov 2025 |
+| **1,553** | "Private gym in de Jordaan. Huur volledige studio €17/uur." | 2 jan |
+| 902 | Garagedeur die direct aan de gracht opengaat | 23 mei |
+| 836 | "Trainers — eigen sleutel, eigen tarief, eigen klanten. 0% commissie…" | 17 mei |
+| 776 | "Een eerste sessie met je personal trainer in onze privé studio" | 18 mei |
+| 773 | "#jordaan #amsterdamgym #privategym…" | 2 jan |
+| 334 | "Michiel @ SculptClub Jordaan" | 11 nov 2025 |
+| 312 | "Freelance trainer in Amsterdam? Try SculptClub Jordaan for free" (EN) | 15 feb |
+| 249 | "Dit huur je voor €12 per uur." | 24 aug |
+| 242 | "Mensen stoppen zelden met trainen omdat de training te zwaar is" | 25 aug |
+| 45 | "Personal training Jordaan Amsterdam" | 5 nov 2025 |
+
+**Lessons, in order of importance:**
+1. **Likes are the WRONG metric for a local B2B offer.** Offer posts get viewed and acted on (DM),
+   not liked. Reading 1–7 likes as "the frame is dead" was a measurement error — those same posts
+   pulled 836–11,000 views.
+2. **Use first-party analytics (TikTok Studio → Berichten), never search-page like counts.** The
+   search page also failed to surface the 24/25-aug posts at all, which made the account look
+   dormant since May. It was not.
+3. **The real problem is a REACH DECLINE, not a frame problem:** 11K (1 jan) → 1.5K (2 jan) →
+   ~800 (mei) → ~245 (aug). Same account, same kind of content, 45× less reach. THAT is the
+   question worth answering.
+4. Dutch beats English on this account (the one EN post: 312 views, below the Dutch equivalents).
+5. The arithmetic framing is still a reasonable variant to test — but as a variant of a frame that
+   ALREADY WORKS, not as a replacement for one that failed.
+
+### The original (WRONG) reading, kept for the record
+
 Searched TikTok for `studio huren personal trainer` + `personal trainer amsterdam`; **our own posts came back in the results**, so this is a same-query/same-week control group, not a hunch.
 - **Every post that advertises available space to trainers dies:** ours "Private gym in de Jordaan." **7** and **1**, "Trainers — eigen sleutel, eigen tarief, eigen klanten." **2**; competitor fitbyroxpt "Ben jij personal trainer op zoek naar een werkplek?" **2**. Three of our own = not bad luck.
 - ⚠️ **BOOST CONFOUND (operator, same day):** competitor engagement may be PAID and you cannot see it from outside. `Fitness Aannemer` held THREE of the four "winners" below — one commercial account sweeping a niche is the signature of ad spend, not a better frame. So the winners list is **hypothesis, not proof**. What survives cleanly is the negative half: OUR OWN organic posts at 1/2/7, plus a solo peer at 2. Only our own posts are a clean control.
