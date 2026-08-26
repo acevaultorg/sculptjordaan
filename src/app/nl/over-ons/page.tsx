@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -48,24 +49,39 @@ export const metadata: Metadata = {
   },
 };
 
+// href + linkLabel added (task mta5j62vzskwd7, 2026-08-26) \u2014 /nl/studio-huren
+// and /nl/open-gym rank position ~56 despite 495-496 impressions/mo while
+// this page (which briefly covers all three pillars) ranks position 5.4 for
+// overlapping queries. The pillar cards previously had no outbound link at
+// all, so this page absorbed relevance for "studio huren"/"open gym" intent
+// with nowhere to hand it off to the dedicated, more substantive pages.
+// Keyword-rich anchor text (not generic "Meer info") on the two specialist
+// pages, per standard cannibalisation-resolution practice: point Google at
+// which page is the specialist for each intent.
 const pillars = [
   {
     icon: Users,
     title: "Personal Training",
     description:
       "Onafhankelijke trainers met hun eigen specialisatie en tarieven. De intake is altijd gratis en je betaalt je trainer direct.",
+    href: "/nl/vind-jouw-personal-trainer",
+    linkLabel: "Vind een personal trainer",
   },
   {
     icon: Dumbbell,
     title: "Open Gym",
     description:
       "Train zelfstandig in een priv\u00e9 studio met professionele apparatuur. Boek je sessie, ontvang een deurcode en train op jouw tijd.",
+    href: "/nl/open-gym",
+    linkLabel: "Open Gym Amsterdam Jordaan",
   },
   {
     icon: Building2,
     title: "Studio Huren",
     description:
       "Voor ZZP-trainers en fysiotherapeuten: huur onze volledig uitgeruste studio voor je eigen klanten. Flexibel per uur of via pakketten.",
+    href: "/nl/studio-huren",
+    linkLabel: "Trainingsruimte huren Amsterdam",
   },
 ];
 
@@ -197,6 +213,12 @@ export default function OverOnsPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {pillar.description}
                 </p>
+                <Link
+                  href={pillar.href}
+                  className="mt-3 inline-block text-sm font-medium text-brand hover:underline"
+                >
+                  {pillar.linkLabel} &rarr;
+                </Link>
               </div>
             </FadeIn>
           ))}

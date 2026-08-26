@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -48,24 +49,32 @@ export const metadata: Metadata = {
   },
 };
 
+// href + linkLabel added (task mta5j62vzskwd7, 2026-08-26) — EN mirror of
+// the same fix on /nl/over-ons. See that file for the full rationale.
 const pillars = [
   {
     icon: Users,
     title: "Personal Training",
     description:
       "Independent trainers with their own specialisations and rates. The intro is always free and you pay your trainer directly.",
+    href: "/en/find-personal-trainer",
+    linkLabel: "Find a personal trainer",
   },
   {
     icon: Dumbbell,
     title: "Open Gym",
     description:
       "Train independently in a private studio with professional equipment. Book your session, receive a door code and train on your time.",
+    href: "/en/open-gym",
+    linkLabel: "Open Gym Amsterdam Jordaan",
   },
   {
     icon: Building2,
     title: "Studio Rental",
     description:
       "For freelance trainers and physiotherapists: rent our fully equipped studio for your own clients. Flexible per hour or via packages.",
+    href: "/en/studio-rental",
+    linkLabel: "Studio rental Amsterdam",
   },
 ];
 
@@ -192,6 +201,12 @@ export default function AboutPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {pillar.description}
                 </p>
+                <Link
+                  href={pillar.href}
+                  className="mt-3 inline-block text-sm font-medium text-brand hover:underline"
+                >
+                  {pillar.linkLabel} &rarr;
+                </Link>
               </div>
             </FadeIn>
           ))}
