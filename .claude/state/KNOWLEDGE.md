@@ -182,3 +182,33 @@ Two traps, both hit on the way to fixing it — worth knowing before writing any
 
 Related: frames are rendered from a real `file://` document, never `page.setContent` (about:blank
 blocks `file://` subresources → black frames). See `scripts/build-social-frames.mjs`.
+
+## Redirects live in functions/_middleware.ts — NOT public/_redirects (2026-08-26)
+
+`public/_redirects` has 380+ rules but **Cloudflare Pages honours only ~the first 100**. Everything
+past that is silently inert: no error, no warning, the build is green and the URL still 404s.
+`functions/_middleware.ts` owns all path redirects via its `EXACT` (exact match) and `SPLAT`
+(prefix) maps, compiled into `_worker.js`. No count limit there.
+
+**Cost the hard way:** 26 trainer aliases were added to `_redirects`, built, deployed — and every
+new one still 404'd live. Only the post-deploy re-test caught it. `_redirects` now carries a
+warning header.
+
+**To add a redirect:** edit the `EXACT` map in `functions/_middleware.ts`, then
+`npx wrangler pages functions build --outdir=DIR` → copy `DIR/index.js` to `out/_worker.js` →
+deploy. Assets unchanged means `CF_SKIP_UPLOAD=1` makes it a ~4s deploy.
+
+**Always re-test the actual URL after deploying a redirect.** A green build proves nothing here.
+
+### The 404s that were live until 2026-08-26
+18 of 26 prefix-less trainer booking aliases — the highest-intent URLs on the site. 5 NL had never
+been added (bryan, ibrahim, sergei, tom, roberta) and all 13 EN were missing. Now generated from
+`src/config/trainers.ts` and enforced by `scripts/check-trainer-consistency.mjs` (in `prebuild`),
+so adding a trainer without their aliases fails the build with the exact line to paste.
+
+### Still open on indexing (GSC, 2026-08-26)
+109 indexed vs **300 not indexed**. Breakdown: 109 crawled-not-indexed · 90 page-with-redirect ·
+47 discovered-not-indexed · 25 noindex · 23 404 (now fixed) · 6 alternate-canonical. The 109
+"crawled – currently not indexed" is the real signal: Google fetched those pages and declined
+them, which is a quality/duplication judgement, and it is the same size as the entire indexed set.
+That is the next thing to diagnose — not the 404s, which were mostly already fixed.
