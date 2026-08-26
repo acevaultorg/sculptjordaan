@@ -59,7 +59,7 @@ export default function StrengthTrainingForWomenEN() {
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-              <Image src="/images/studio/dumbbell-rack.jpeg" alt="Dumbbell rack at SculptClub Amsterdam" fill className="object-cover" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" />
+              <Image src="/images/studio/training-woman-pullup.jpg" alt="Woman doing a pull-up on the Rogue rack in SculptClub’s private studio in the Jordaan, Amsterdam" fill className="object-cover object-[center_25%]" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" />
             </div>
 
             <div className="prose prose-lg max-w-none">

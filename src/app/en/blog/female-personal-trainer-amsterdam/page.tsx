@@ -59,7 +59,7 @@ export default function FemalePTAmsterdamEN() {
             </div>
 
             <div className="relative w-full aspect-[2/1] rounded-2xl overflow-hidden mb-10">
-              <Image src="/images/studio/dumbbell-rack.jpeg" alt="Dumbbell rack in the SculptClub private studio, Amsterdam" fill className="object-cover" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" />
+              <Image src="/images/studio/training-women-coaching.jpg" alt="Female personal trainer coaching a client through a shoulder press in SculptClub’s private studio in the Jordaan, Amsterdam" fill className="object-cover" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" />
             </div>
 
             <div className="prose prose-lg max-w-none">

@@ -91,12 +91,57 @@ frame is this account's BEST performer by views:**
 2. **Use first-party analytics (TikTok Studio → Berichten), never search-page like counts.** The
    search page also failed to surface the 24/25-aug posts at all, which made the account look
    dormant since May. It was not.
-3. **The real problem is a REACH DECLINE, not a frame problem:** 11K (1 jan) → 1.5K (2 jan) →
-   ~800 (mei) → ~245 (aug). Same account, same kind of content, 45× less reach. THAT is the
-   question worth answering.
+3. ~~**The real problem is a REACH DECLINE:** 11K → ~245, 45× less reach.~~ **REFUTED
+   2026-08-26 — the "decline" is inside the noise.** Five posts published in the SAME MINUTE
+   (2 jan) range from 20 to 3,129 views — a 156× spread — while month-to-month variance is only
+   4.7×. Per-post variance is ~33× larger than the trend I read into it. With 22 posts in 12
+   months there is no series to draw a trend through. Do not open "why did reach fall" as a
+   question; it is an artefact of n=1-per-month. **Second, independent confound** (found by the
+   iMac session on the same card): the 11K post is dated **1 January** — New Year is the largest
+   seasonal demand spike in fitness and late August is near its trough, so the headline comparison
+   is peak-vs-trough on a "try it free" offer whose appeal is itself seasonal. Any future
+   comparison must be like-for-like month (Aug'26 vs Aug'25), never across seasons.
 4. Dutch beats English on this account (the one EN post: 312 views, below the Dutch equivalents).
 5. The arithmetic framing is still a reasonable variant to test — but as a variant of a frame that
    ALREADY WORKS, not as a replacement for one that failed.
+
+### ✅ WHO ACTUALLY WATCHES — per-post viewer data, pulled 2026-08-26
+
+TikTok Studio → Analyses → Content → *Gegevens weergeven* → **Kijkers** exposes per-post viewer
+geography, age and gender once a post clears ~100 viewers. Never looked before today. Three posts
+pulled, chosen to separate LANGUAGE from FRAME:
+
+| # | post | format | lang | frame | views | **NL** | male | 18–34 | avg watch | watched full |
+|---|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| A | "Private gym in de Jordaan. Huur vanaf €12/uur" | photo | NL | rental/consumer | 11,000 | **96.1%** | 52% | 79% | 2.69s | 7.5% |
+| B | "Trainers — want your own spot in Jordaan?" | video 0:14 | **EN** | trainer | 3,100 | **87.9%** | 67% | 44% | — | — |
+| C | "Trainers — eigen sleutel, eigen tarief, eigen klanten" | photo | NL | trainer | 836 | **89.3%** | 74% | 86% | 6.3s | 18.4% |
+
+**1. The audience is local. 88–96% Netherlands on every post.** Non-NL is a rounding error
+(België 2–4%, UK/US/DE each ≤2%). The channel reaches people who can physically get to
+Egelantiersgracht. This is the number that decides whether TikTok is worth running at all, and
+the answer is yes. Post A's search traffic (7.0% of its views) came from `personal trainer
+amsterdam` 13.3% · `personal training amsterdam` 5.3% · `private gym nederland` 4.2% · `prive gym
+amsterdam` 3.8% — literal local commercial intent.
+
+**2. Frame drives the audience, language does not.** B vs C is the clean test: same trainer frame,
+different language, 87.9% vs 89.3% NL — indistinguishable. A vs C is same language, different
+frame: 96.1% vs 89.3%. Gender tracks the frame even harder — consumer 52% male → trainer-EN 67%
+→ trainer-NL 74%. **Write for the audience you want; TikTok resolves the rest.**
+
+**3. Views and attention rank in OPPOSITE order.** Post C got 13× fewer views than A but held
+2.3× the watch time (6.3s vs 2.69s) and 2.5× the completion (18.4% vs 7.5%). A is scale; C is
+attention. Judging trainer-facing posts on view count alone would kill the format that actually
+gets read. **Track completion + avg watch, not just views.**
+
+**4. Baseline for the women's-training work.** Post A's 52/47 male/female split is the *best*
+female reach this account has ever had, and it came from consumer framing. Gezina's spotlight
+(2026-08-26) is the first post aimed explicitly at women — measure it against 47%, and against
+C's 25%, not against raw views.
+
+**5. Nobody is following.** 97–100% of viewers are non-followers, 93–99% first-time. Follower
+count is not the funnel here; reach is bought fresh every post. Consistent with the 20-follower
+account pulling 11K views on one post.
 
 ### The original (WRONG) reading, kept for the record
 
@@ -108,7 +153,7 @@ Searched TikTok for `studio huren personal trainer` + `personal trainer amsterda
 - ⇒ **A whole audience is unserved:** the person who wants to train ALONE in a private room. That is Open Gym / hele studio, and we have never marketed it that way.
 - **Client-side winner is a NAMED human with a specialty** — "Meet Oumaima! Onze kickboks trainster…" **1,714** (Fit n' Fab Amsterdam). Doubles as recruitment: trainers see a studio that makes its people look good.
 - **Text-card carousels (our current grids) are the weakest format on both platforms** — every winner had humans in it. Sam's 13-photo shoot (`sculptclub-source-photos/gezina-sam-shoot-2026-08-17/`) is the fix.
-- **Language IS the targeting.** TikTok/IG cluster by language; Dutch serves it to people who can reach Egelantiersgracht, English leaks reach to people who never will. TikTok: Dutch always. IG: Dutch caption + one short "EN:" line. **Both bios must be Dutch-first — IG's bio is currently English while TikTok's is Dutch.**
+- ~~**Language IS the targeting.**~~ **REFUTED 2026-08-26 by per-post geography (see "Who actually watches" below).** The Dutch trainer post is 89.3% NL and the ENGLISH trainer post is 87.9% NL — 1.4 points apart. What moves the NL share is the FRAME (consumer 96.1% vs trainer ~88-89%), not the caption language. Keep writing Dutch — it is the right register for a Jordaan studio and it costs nothing — but do not claim it buys geographic targeting. TikTok already targets this account locally. **IG bio should still be Dutch-first for voice consistency (it is currently English while TikTok's is Dutch).**
 - **Collabs ≫ own posts at our size.** IG 232 / TikTok 20 followers → an own-post reaches ~30 people; a renting trainer with 2k followers reaches exactly the right 2k. IG "Invite collaborator" puts one post on both grids. Make it a standing part of renting. (Gezina launched a 2nd account "Marseille Movement" 2026-08-26 → first partner.)
 - **Benchmark, not model:** Saints & Stars = **7,040** TikTok followers after years + budget + multiple locations. Gym TikTok is a grind for everyone → goal is findability by a few hundred local deciders, not follower count. Take consistency/real-faces/vertical-native; refuse the luxury-English positioning.
 - **Six-slot rotation, 3/wk, 2-of-3 trainer-facing while utilisation is low:** the arithmetic · Meet [name] · the empty room ("A rare sight — an empty studio!" did **94** for LAPT Studios) · privacy-not-fitness · the collab · one useful thing.
