@@ -116,6 +116,21 @@ export default function KrachttrainingVoorVrouwenNL() {
                 je vindt de expertise die bij je past.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Wie traint hier vrouwen in kracht?</h2>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Gezina — training voor vrouwen, kracht, prestatie</h3>
+              <p>
+                Gezina is in de studio de trainer die zich specifiek op training voor vrouwen
+                richt. Ze werkt met vrouwen die serieus willen worden in krachttraining:
+                technisch, gestructureerd, opbouwend naar echt zwaarder tillen. Ze coacht in
+                het Nederlands en Engels. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">gratis intake met Gezina</a>.
+              </p>
+              <p>
+                Liever eerst rondkijken wie er nog meer traint? Bekijk de{" "}
+                <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">trainerspagina</a>.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">Hoe begin je?</h2>
               <p>
                 Stap 1: Kies een trainer op onze{" "}

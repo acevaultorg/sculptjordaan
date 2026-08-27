@@ -103,6 +103,22 @@ export default function PTVoorBeginnersNL() {
                 Je trainer regelt de studio en zorgt dat je binnen kunt.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Welke trainer past bij een beginner?</h2>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Dara — kracht &amp; balans, beginners welkom</h3>
+              <p>
+                Dara zet "beginners welkom" letterlijk in haar profiel, en dat is precies het
+                punt: geen aanname dat je al weet wat een deadlift is. De nadruk ligt op kracht
+                en balans, rustig opbouwen, en techniek voordat er gewicht bij komt. Ze coacht
+                in het Nederlands en Engels, 1-op-1 en in kleine groepen. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-dara" className="text-brand hover:underline">gratis intake met Dara</a>.
+              </p>
+              <p>
+                Andere trainers werken ook met beginners — bekijk de{" "}
+                <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">trainerspagina</a>{" "}
+                als je liever zelf vergelijkt.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en hoe je begint</h2>
               <p>
                 Personal training bij SculptClub <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">begint vanaf €45 per sessie</Link>. De <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">eerste kennismaking

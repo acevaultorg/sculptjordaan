@@ -128,6 +128,30 @@ export default function PTNaBlessureNL() {
                 sportspecifieke bewegingen hervatten.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Welke trainer past hierbij?</h2>
+              <p>
+                Twee trainers in de studio werken specifiek met opbouw na een periode van
+                klachten. Beiden trainen náást je fysiotherapeut, niet in plaats daarvan —
+                die volgorde blijft staan.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Ibrahim — revalidatie, voeding, afvallen</h3>
+              <p>
+                Ibrahim heeft revalidatie als specialisatie: weer belastbaar worden na een
+                blessure, in een tempo dat je aankunt. Hij kijkt daarnaast naar voeding, wat
+                meestal meespeelt zodra je een tijd stil hebt gestaan. Hij coacht in het
+                Nederlands en Engels. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-ibrahim" className="text-brand hover:underline">gratis intake met Ibrahim</a>.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Sergei — herstel en houdingscorrectie</h3>
+              <p>
+                Sergei werkt met herstel en houdingscorrectie en heeft ruim tien jaar ervaring
+                met mensen die na klachten weer willen opbouwen. Hij coacht in het Engels en
+                Russisch, niet in het Nederlands. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-sergei" className="text-brand hover:underline">gratis intake met Sergei</a>.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en hoe je begint</h2>
               <p>
                 Personal training bij SculptClub begint vanaf €45 per sessie. De eerste
