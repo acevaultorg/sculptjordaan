@@ -18,6 +18,34 @@ Or: search "SculptClub" while logged in as manager → click the management stri
 
 ---
 
+## ⚠️ LIVE AUDIT 2026-08-27 — most of this checklist is ALREADY DONE
+
+Verified by reading the live profile through Chrome MCP. **Do not work this list top-to-bottom;
+it overstates the remaining work badly.** Confirmed present already:
+
+| doc item | live state |
+|---|---|
+| Add category "Personal trainer" | ✅ present — Gym is PRIMARY, Personal trainer secondary |
+| Fix postcode `1015 RR` | ✅ already correct |
+| NL description | ✅ present |
+| Services | ✅ **largely populated in Dutch, with descriptions** — Nutrition consulting · Personal training · Private lessons · Small group training · **Open Gym** ("Train solo of met max 4 mensen in de studio. Deurcode via WhatsApp. Vanaf 29 euro per 4 we…") · **Studio huren voor trainers** ("Huur de studio per uur voor je eigen klanten, vanaf 12 euro per uur…") |
+| Photos | some exist; Google still prompts specifically for an **exterior photo** |
+| Reviews | 19 at 5.0 |
+
+**What Google itself still asks for (its own prompts, which beat this doc):** add an exterior
+photo · add an update/post · get more reviews · add directions to the website.
+
+### 🔴 Chrome MCP CANNOT edit this profile — verified, do not retry
+The GBP editing surface is not automatable from here:
+- The **photo uploader never renders** — `input[type=file]` count stays 0 after clicking
+  "Add photos", twice, including after a full reload. The modal paints blank.
+- Modal contents live outside the reachable DOM (shadow DOM / cross-origin): a JS query for
+  the literal string "Primary category" returns not-found while that text is visibly on screen.
+  So forms can be *read from screenshots* but not filled programmatically.
+
+Same failure class as the Cloudflare dashboard SPA under automation. **This is genuinely
+operator-only work** — an agent can audit it, not do it. Budget ~15 min, not 60.
+
 ## Operator checklist (15 items, ~60-75 min total)
 
 ### Profile basics (~5 min)
