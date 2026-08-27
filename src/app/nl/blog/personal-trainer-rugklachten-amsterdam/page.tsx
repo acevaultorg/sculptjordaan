@@ -179,6 +179,44 @@ export default function PersonalTrainerRugklachtenAmsterdam() {
                 geen vervanging.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Welke trainer past hierbij?</h2>
+              <p>
+                Rugklachten vragen om iemand die op houding en techniek let, niet om iemand
+                die je zo snel mogelijk zwaarder laat tillen. Drie trainers in de studio
+                werken daar specifiek mee. Ze behandelen niet — dat blijft het werk van je
+                fysiotherapeut — maar ze bouwen de training eromheen op.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Andrea — kracht, houding, techniek</h3>
+              <p>
+                Andrea traint op techniek en houding: hoe je staat, hoe je tilt, en waar het
+                misgaat zodra je moe wordt. Handig als je klachten vooral opspelen bij gewone
+                dagelijkse bewegingen. Ze coacht in het Nederlands en Engels. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-andrea" className="text-brand hover:underline">
+                  gratis intake met Andrea
+                </a>.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Sergei — houdingscorrectie en herstel</h3>
+              <p>
+                Sergei werkt met houdingscorrectie en herstel en heeft ruim tien jaar ervaring
+                met mensen die na een periode van klachten weer rustig willen opbouwen. Hij
+                coacht in het Engels en Russisch, niet in het Nederlands. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-sergei" className="text-brand hover:underline">
+                  gratis intake met Sergei
+                </a>.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Roberta — houding &amp; mobiliteit</h3>
+              <p>
+                Roberta is ACE®-gecertificeerd en richt zich op houding en mobiliteit: weer
+                soepel bewegen voordat je zwaarder gaat belasten. Ze coacht in het Engels en
+                Italiaans. Plan een{" "}
+                <a href="/nl/plan-gratis-intake-met-roberta" className="text-brand hover:underline">
+                  gratis kennismaking met Roberta
+                </a>.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">Hoe begin je?</h2>
               <p>
                 De eerste stap is een gratis intake. Geen verplichtingen, geen kosten.
