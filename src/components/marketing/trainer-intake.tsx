@@ -8,7 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button-link";
 import { PersonJsonLd } from "@/components/seo/json-ld";
 import { TrainerPhotoGallery } from "@/components/marketing/trainer-photo-gallery";
+import Image from "next/image";
+import Link from "next/link";
 import { trainers } from "@/config/trainers";
+import { trackNavClick } from "@/lib/tracking";
 import { siteConfig } from "@/config/site";
 import type { Locale } from "@/config/site";
 
@@ -31,6 +34,39 @@ function listEn(xs: readonly string[]): string {
   if (v.length === 0) return "Personal training";
   if (v.length === 1) return v[0];
   return `${v.slice(0, -1).join(", ")} and ${v[v.length - 1]}`;
+}
+
+/**
+ * Pick 3 sibling trainers for the "other trainers" cards, preferring shared
+ * specialisation terms so the suggestion is a real alternative (someone on
+ * Gezina's page sees strength/women's-training peers, not a random trio).
+ * Deterministic — token overlap, tie-broken by roster order — because this
+ * renders at build time on a static export; no randomness allowed.
+ *
+ * Why this exists (2026-08-28): the 13 profile pages each had 4 inbound
+ * internal links against 106 for /nl/studio-huren, and linked to ZERO other
+ * trainers — a disconnected leaf layer. A cold visitor landing on the wrong
+ * trainer had no lateral move except back to the hub. Sibling links fix both
+ * the link-graph gap and the marketplace UX in one section.
+ */
+function relatedTrainers(selfId: string, locale: Locale) {
+  const self = trainers.find((t) => t.id === selfId);
+  if (!self) return trainers.filter((t) => t.id !== selfId).slice(0, 3);
+  const tokens = new Set(
+    self.specialization[locale].flatMap((x) => x.toLowerCase().split(/[^a-zà-ü]+/)).filter((w) => w.length > 3)
+  );
+  return trainers
+    .filter((t) => t.id !== selfId)
+    .map((t, i) => ({
+      t,
+      score: t.specialization[locale]
+        .flatMap((x) => x.toLowerCase().split(/[^a-zà-ü]+/))
+        .filter((w) => tokens.has(w)).length,
+      i,
+    }))
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .slice(0, 3)
+    .map((x) => x.t);
 }
 
 export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
@@ -533,15 +569,48 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
         </div>
       </Section>
 
-      {/* Browse other trainers CTA */}
+      {/* Other trainers — 3 concrete sibling cards + the browse-all button.
+          Upgraded 2026-08-28 from a lone "browse all" button: see the
+          relatedTrainers() note for the measured link-graph gap this closes. */}
       <Section bg="muted">
         <FadeIn>
-          <div className="text-center max-w-lg mx-auto">
-            <p className="text-muted-foreground mb-4">{t.otherTrainerCta}</p>
-            <ButtonLink href={trainersUrl} size="lg" variant="outline">
-              {t.browseAll}
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </ButtonLink>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-8">
+              {locale === "nl" ? "Andere trainers bij SculptClub" : "More trainers at SculptClub"}
+            </h2>
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-8">
+              {relatedTrainers(trainer.id, locale).map((rt) => (
+                <Link
+                  key={rt.id}
+                  href={`/${locale}/${rt.slug[locale]}`}
+                  onClick={() => trackNavClick("related_trainers", rt.slug[locale], locale)}
+                  className="group rounded-2xl border border-border/60 bg-card overflow-hidden hover:border-brand transition-colors"
+                >
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <Image
+                      src={rt.image}
+                      alt={rt.name}
+                      fill
+                      sizes="(max-width: 640px) 30vw, 220px"
+                      className="object-cover object-top transition-transform group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="p-3 sm:p-4">
+                    <div className="font-semibold text-sm sm:text-base">{rt.name}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
+                      {rt.specialization[locale].join(" · ")}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center max-w-lg mx-auto">
+              <p className="text-muted-foreground mb-4">{t.otherTrainerCta}</p>
+              <ButtonLink href={trainersUrl} size="lg" variant="outline">
+                {t.browseAll}
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </ButtonLink>
+            </div>
           </div>
         </FadeIn>
       </Section>
