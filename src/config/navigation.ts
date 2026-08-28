@@ -79,6 +79,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Small Group", href: "/nl/small-group" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
+    { label: "Cadeaukaarten", href: "/nl/cadeaukaarten" },
     { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
   en: [
@@ -89,6 +90,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Open Gym", href: "/en/open-gym" },
     { label: "Small Group", href: "/en/small-group" },
     { label: "First Visit", href: "/en/first-visit" },
+    { label: "Gift cards", href: "/en/gift-cards" },
     { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
 };
@@ -97,12 +99,20 @@ export const footerCompany: Record<Locale, NavItem[]> = {
   nl: [
     { label: "Over ons", href: "/nl/over-ons" },
     { label: "Reviews", href: "/nl/reviews" },
+    // Added 2026-08-28: /nl/contact and /nl/resultaten were UNREACHABLE from the
+    // homepage by following links — each one's only inbound link was its own
+    // translation (a closed nl<->en loop), so neither was in any crawl path.
+    { label: "Resultaten", href: "/nl/resultaten" },
+    { label: "Contact", href: "/nl/contact" },
     { label: "FAQ", href: "/nl/faqs" },
     { label: "Blog", href: "/nl/blog" },
   ],
   en: [
     { label: "About", href: "/en/about" },
     { label: "Reviews", href: "/en/reviews" },
+    // Added 2026-08-28 — see the NL note above (same closed-loop problem).
+    { label: "Results", href: "/en/results" },
+    { label: "Contact", href: "/en/contact" },
     { label: "FAQs", href: "/en/faqs" },
     { label: "Blog", href: "/en/blog" },
   ],
