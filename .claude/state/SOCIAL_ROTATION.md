@@ -35,13 +35,62 @@ constraint that motivated 3×/week is gone.)
 
 | date | slot | post-id | studio link | posted? | result |
 |---|---|---|---|---|---|
-| 2026-08-26 | arithmetic | trainer-arithmetic-001 | /social/trainer-arithmetic-001/ | ✅ 26 aug 11:45 | 265 views · 1 like @ 28 aug |
-| 2026-08-26 | meet-name | trainer-gezina-001 | /social/trainer-gezina-001/ | ✅ 26 aug 12:23 | 251 views · 2 likes @ 28 aug |
-| 2026-08-27 | (outside rotation) | trainer-hamish-2026-08 | /social/trainer-hamish-2026-08/ | ✅ 27 aug 18:32 | 242 views · 1 reactie @ 28 aug |
+| 2026-08-26 | arithmetic | trainer-arithmetic-001 | /social/trainer-arithmetic-001/ | ✅ 26 aug 11:45 | 265 views · 1 like · 0 reacties @ 28 aug 21:35 (plateaued) |
+| 2026-08-26 | meet-name | trainer-gezina-001 | /social/trainer-gezina-001/ | ✅ 26 aug 12:23 | 251 views · 2 likes · 0 reacties @ 28 aug 21:35 (plateaued) |
+| 2026-08-27 | (outside rotation) | trainer-hamish-2026-08 | /social/trainer-hamish-2026-08/ | ✅ 27 aug 18:32 | 242 views · 0 likes · 1 reactie @ 28 aug 21:35 (plateaued) |
 | 2026-08-28 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | NOT posted — next in daily queue | — |
-| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | ✅ 28 aug ~16:45 AUTO-POSTED (Chrome MCP → TikTok Studio) | in review ("Content wordt beoordeeld") |
+| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | ✅ 28 aug **15:06** AUTO-POSTED (Chrome MCP → TikTok Studio) | LIVE (Iedereen, out of review) · 240 views · 0 likes @ 28 aug 21:35 |
+
+| 2026-08-28 | (19:00 run) | — | — | **NOT posted — deliberate** | quota already met at 15:06; 21:32 is 2.5h past best-time. See finding below. |
 
 ### Skips + notes
+
+- **2026-08-28 (19:00 scheduled run, fired 21:32) — NO POST, on purpose. Two reasons, then
+  the finding that matters.** (a) The daily quota was already met: `geen-wachtrij-001` went
+  out at **15:06** (the log said ~16:45 — corrected above) and is **live, Iedereen, out of
+  review, 240 views**. (b) The run fired ~2h50m late, so the 19:00 best-time window was gone;
+  an 8th post at 21:30 would have been a second post in one day at a bad hour.
+
+- **🔴 THE FINDING — the current editorial rotation is beaten ~12–45× by the account's own
+  proven offer-led format.** Sorted the whole account by Weergaven (first time this has been
+  done). The ranking:
+
+  | # | post | date | type | views | likes |
+  |---|---|---|---|---:|---:|
+  | 1 | "Private gym in de Jordaan. **Huur vanaf €12/uur**. Probeer eerste…" | 1 jan | photo | **11.0K** | 7 |
+  | 2 | "**Freelance Personal Trainer?** Train your clients in a private studio…" | 2 nov 2025 | video 0:24 | **3,262** | 4 |
+  | 3 | "**Trainers — want your own spot in Jordaan?** 🏋️ Come give your own…" | 29 aug 2025 | video 0:14 | **3,129** | 24 |
+  | 4 | "Private gym in de Jordaan. **Huur volledige studio €17/uur**…" | 2 jan | photo | 1,559 | 1 |
+  | 5 | "🚪 Garagedeur die direct aan de gracht opengaat" | 23 mei | photo | 902 | 13 |
+  | — | **the seven Aug 24–28 posts (this rotation)** | 24–28 aug | photo carousels | **240–265** | 0–2 |
+
+  All four top posts **lead line 1 with the offer and a price, addressed to trainers**. Every
+  post this rotation has produced instead leads with an atmospheric/editorial hook
+  (arithmetic, meet-name, empty-room, privacy, spotlight) and buries the offer — and every
+  single one lands in a 240–265 band.
+
+  **Why this is not just the age confound.** Older posts have had longer to accumulate, which
+  is real. But the seven August posts are 1–4 days apart and sit at 249 (24 aug), 243, 265,
+  251, 242, 240 (28 aug) — essentially FLAT with age. TikTok front-loads distribution; a post
+  headed for 3,000 does most of it inside 48h. These plateaued at ~245 within a day and
+  stopped. The band is too tight across six different creative frames to be content variation
+  — it reads as the initial test-audience ceiling, never graduated past.
+
+  **Consequence for the queue:** tomorrow's post switches from `studio-leeg-001` (empty-room,
+  atmospheric hook "Achter deze deur is niemand") to **`trainer-rental-2026-08`**, whose
+  caption opens *"Trainer in Amsterdam en je zoekt een eigen plek?"* — the same
+  direct-question-to-trainers shape as #2 and #3 above. `studio-leeg-001` stays built and
+  queued behind it; it is not discarded.
+
+  **Open question for the operator (do not let the autopilot decide this alone):** the two
+  posts at 3.1–3.3K are *videos*, and the account has shipped only photo carousels since. A
+  fair test of "offer-led" vs "video" needs one of each. Recommend the rotation doc's six
+  editorial slots be re-cut around offer-led framing before more carousels are spent.
+
+- **Also reconciled: the log did not know about 3 more live posts.** "Mensen stoppen zelden met
+  trainen…" (25 aug, 243), "Dit huur je voor €12 per uur" (24 aug, video 0:12, 249), and the
+  23 mei garagedeur post (902). Account total is **25 Berichten**; this log tracks 8. The
+  Studio list remains the truth — reconcile every run.
 
 - **2026-08-28 RECONCILIATION — the log was stale, TikTok was ahead.** The Studio
   Berichten list showed 3 posts live that this log had as "operator —": arithmetic
