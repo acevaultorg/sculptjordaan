@@ -128,6 +128,29 @@ export default function PTAfterInjuryEN() {
                 resume sport-specific movements.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Which trainer fits this?</h2>
+              <p>
+                Two trainers in the studio work specifically on rebuilding after a spell of
+                trouble. Both train alongside your physiotherapist, not instead of one — that
+                order stays.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Ibrahim — rehabilitation, nutrition, weight loss</h3>
+              <p>
+                Ibrahim lists rehabilitation as a specialism: getting you loadable again after
+                an injury, at a pace you can actually handle. He also looks at nutrition, which
+                usually matters once you have been still for a while. He coaches in Dutch and
+                English. Book a{" "}
+                <a href="/en/plan-free-intro-with-ibrahim" className="text-brand hover:underline">free intro with Ibrahim</a>.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Sergei — recovery and posture correction</h3>
+              <p>
+                Sergei works on recovery and posture correction, with more than ten years of
+                experience helping people rebuild. He coaches in English and Russian. Book a{" "}
+                <a href="/en/plan-free-intro-with-sergei" className="text-brand hover:underline">free intro with Sergei</a>.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">Pricing and how to start</h2>
               <p>
                 Personal training at SculptClub starts from €45 per session. The first intro

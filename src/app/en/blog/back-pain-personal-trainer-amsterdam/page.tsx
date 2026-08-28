@@ -172,6 +172,38 @@ export default function BackPainPersonalTrainerAmsterdam() {
                 first. Our trainers are a complement to that treatment, not a replacement.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Which trainer fits this?</h2>
+              <p>
+                Back trouble calls for someone who watches posture and technique, not someone
+                who loads the bar faster. Three trainers in the studio work specifically on
+                that. They do not treat — that stays your physiotherapist&rsquo;s job — but they
+                build the training around it.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Andrea — strength, posture, technique</h3>
+              <p>
+                Andrea trains technique and posture: how you stand, how you lift, and where it
+                slips once you get tired. Useful if your symptoms mostly show up in ordinary
+                daily movement. She coaches in Dutch and English. Book a{" "}
+                <a href="/en/plan-free-intro-with-andrea" className="text-brand hover:underline">free intro with Andrea</a>.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Sergei — posture correction and recovery</h3>
+              <p>
+                Sergei works on posture correction and recovery, with more than ten years of
+                experience helping people rebuild after a spell of trouble. He coaches in
+                English and Russian. Book a{" "}
+                <a href="/en/plan-free-intro-with-sergei" className="text-brand hover:underline">free intro with Sergei</a>.
+              </p>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Roberta — posture &amp; mobility</h3>
+              <p>
+                Roberta is ACE®-certified and focuses on posture and mobility: moving well
+                again before you start loading heavier. She coaches in English and Italian.
+                Book a{" "}
+                <a href="/en/plan-free-intro-with-roberta" className="text-brand hover:underline">free intro with Roberta</a>.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">How to start</h2>
               <p>
                 The first step is a free intro. No obligations, no cost. You discuss

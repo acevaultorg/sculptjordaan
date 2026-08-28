@@ -102,6 +102,22 @@ export default function PTForBeginnersEN() {
                 Your trainer arranges the studio and gets you in.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Which trainer suits a beginner?</h2>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Dara — strength &amp; balance, beginner-friendly</h3>
+              <p>
+                Dara puts &ldquo;beginner-friendly&rdquo; in her profile, and that is exactly the point:
+                no assumption that you already know what a deadlift is. The focus is strength
+                and balance, building slowly, and technique before weight. She coaches in Dutch
+                and English, one-to-one and in small groups. Book a{" "}
+                <a href="/en/plan-free-intro-with-dara" className="text-brand hover:underline">free intro with Dara</a>.
+              </p>
+              <p>
+                Other trainers work with beginners too — browse the{" "}
+                <a href="/en/find-personal-trainer" className="text-brand hover:underline">trainer page</a>{" "}
+                if you would rather compare yourself.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">Cost and how to start</h2>
               <p>
                 Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €45 per session</Link>. The <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first introduction

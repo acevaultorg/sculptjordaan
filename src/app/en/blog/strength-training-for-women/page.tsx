@@ -116,6 +116,21 @@ export default function StrengthTrainingForWomenEN() {
                 you’ll find the expertise that suits you.
               </p>
 
+              <h2 className="text-2xl font-bold mt-10 mb-4">Who trains women in strength here?</h2>
+
+              <h3 className="text-xl font-bold mt-8 mb-3">Gezina — women&rsquo;s training, strength, performance</h3>
+              <p>
+                Gezina is the trainer in the studio who focuses specifically on training for
+                women. She works with women who want to get serious about strength: technical,
+                structured, building towards genuinely heavier lifting. She coaches in Dutch
+                and English. Book a{" "}
+                <a href="/en/plan-free-intro-with-gezina" className="text-brand hover:underline">free intro with Gezina</a>.
+              </p>
+              <p>
+                Want to see who else trains here first? Browse the{" "}
+                <a href="/en/find-personal-trainer" className="text-brand hover:underline">trainer page</a>.
+              </p>
+
               <h2 className="text-2xl font-bold mt-10 mb-4">How to start</h2>
               <p>
                 Step 1: Choose a trainer on our{" "}
