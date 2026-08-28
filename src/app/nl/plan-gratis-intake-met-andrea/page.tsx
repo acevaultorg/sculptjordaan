@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Andrea";
+const title = "Andrea — personal trainer houding & techniek";
 const description = "Gratis intake met Andrea — specialist in houding, techniek en kracht bij SculptClub Amsterdam Jordaan. Vanaf €45/sessie.";
 const canonical = "/nl/plan-gratis-intake-met-andrea";
 

@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Gezina";
+const title = "Gezina — personal trainer voor vrouwen, Amsterdam";
 const description = "Gratis intake met Gezina — gecertificeerde personal trainer gespecialiseerd in training voor vrouwen, kracht en prestatie bij SculptClub Amsterdam Jordaan. Geen verplichtingen.";
 const canonical = "/nl/plan-gratis-intake-met-gezina";
 

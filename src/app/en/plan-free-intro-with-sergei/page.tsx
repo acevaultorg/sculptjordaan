@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Book a free intro with Sergei";
+const title = "Sergei — Russian-speaking personal trainer Amsterdam";
 const description = "Free intro with Sergei — certified personal trainer with 10+ years of experience. Body recomposition, posture correction, strength & recovery at SculptClub Amsterdam Jordaan.";
 const canonical = "/en/plan-free-intro-with-sergei";
 

@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Hamish";
+const title = "Hamish — personal trainer afvallen Amsterdam";
 const description = "Gratis intake met Hamish — personal trainer gespecialiseerd in kracht, high performance en afvallen bij SculptClub Amsterdam Jordaan. Geen verplichtingen.";
 const canonical = "/nl/plan-gratis-intake-met-hamish";
 

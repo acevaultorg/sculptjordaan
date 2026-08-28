@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Bryan";
+const title = "Bryan — calisthenics trainer Amsterdam";
 const description = "Gratis intake met Bryan — calisthenics-specialist bij SculptClub Amsterdam Jordaan. Van push-ups tot muscle-up en handstand. Geen verplichtingen.";
 const canonical = "/nl/plan-gratis-intake-met-bryan";
 

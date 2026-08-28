@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Joey";
+const title = "Joey — kracht & ademwerk, The Ascend Method";
 const description = "Gratis intake met Joey — The Ascend Method: kracht, ademwerk en zelfonderzoek bij SculptClub Amsterdam Jordaan. Voor high-performers die vastzitten of burn-out ervaren.";
 const canonical = "/nl/plan-gratis-intake-met-joey";
 

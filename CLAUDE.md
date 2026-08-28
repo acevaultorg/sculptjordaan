@@ -88,6 +88,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Automatic light/dark mode via system preference (added 2026-05-29, operator directive). Both palettes live in `src/app/globals.css` (`:root` = light warm-bone, `.dark` = dark near-black), switched by a flash-free `prefers-color-scheme` script in `layout.tsx`. Build for BOTH modes — use theme tokens (`bg-card`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-brand`), never hardcoded `text-white`/`bg-black` on token surfaces (white text is only OK over photos or on the orange brand button). (Supersedes the prior "dark only — never add light mode" rule.)
 - Color-clickability contract: if it's orange, it MUST be clickable (and if it's not clickable, it MUST NOT be orange)
 - Fonts: Syne (headings) + Instrument Sans (body)
+- **THE LOGO IS A FILE, NEVER TYPE. Non-negotiable.** The wordmark is `public/images/logo-sculptclub.svg` (or `.png`) — **"SCULPT CLUB", TWO words**, a heavy custom grotesque with tight spacing. It is **not Syne**, it is **not one word**, and it is **never** letter-spaced. NEVER draw it as text in any generator, canvas, SVG, PIL script, OG image, social frame, email, PDF or slide — always embed the real asset. Source art is near-black → `filter:invert(1)` (or the `.png` on light) to place it white on a dark photo, same as the header's `dark:invert`. Run `npm run check:logo` before shipping anything that renders the mark.
 - Primary brand color: #EF5012 (vibrant orange — changed from #134DE1 blue on 2026-05-17; source of truth: `--brand`/`--primary` in `src/app/globals.css`)
 
 ## Legacy WordPress Repo
@@ -101,6 +102,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Never mention cancellation time limits — cancellation is **always free**
 - Never say door code comes by email — it comes **via WhatsApp the night before**
 - Never list iDEAL as a standalone payment method
+- **Never render the logo as text** (`SCULPTCLUB` in Syne/letter-spaced/one word). Embed `public/images/logo-sculptclub.svg`. Two traps that hide the failure: (a) a `.mark` class loses to `.f img` on specificity and the logo silently full-bleeds cropped to its middle — scope it `.f img.mark` and reset `inset`/`object-fit`; (b) a render gate on `querySelector("img")` waits on the *photo*, so the frame ships with no logo — wait for **every** image. Shipped wrong on live social 2026-08-26; operator: "dont make the logo mistake in the future! very important".
 - Never use "sculptjordaan" or "Sculpt Jordaan" as the business name — it's **SculptClub**
 - Never use **0683178934** — the public number is now **+31 6 15 14 79 52** / `wa.me/31615147952` (the WhatsApp Business line with auto-replies). 0683178934 was retired 2026-06-01.
 - Build for BOTH light + dark mode via theme tokens — auto light/dark shipped 2026-05-29 (see "Brand & Design" above). The old "dark only — never add light mode" rule is RETIRED.

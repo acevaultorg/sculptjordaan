@@ -48,9 +48,10 @@ import {
 } from "@/components/ui/accordion";
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
+import { StudioRateTable } from "@/components/marketing/studio-rate-table";
 
 export const metadata: Metadata = {
-  title: { absolute: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan" },
+  title: { absolute: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur" },
   description:
     "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   alternates: {
@@ -65,13 +66,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/studio-huren",
-    title: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan",
+    title: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur",
     description:
       "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Huren Personal Trainer Amsterdam | SculptClub Jordaan",
+    title: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur",
     description:
       "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   },
@@ -126,6 +127,15 @@ const galleryImages = [
 ];
 
 const faqs = [
+  {
+    // GSC 90d: "personal trainingsruimte huren" 84 impr @ pos 79, "pt ruimte
+    // huren" 84 @ 81.6, "fitness ruimte huren" 62 @ 85.1 — 230 impressions of
+    // demand using the word "ruimte", on a page that only ever said "studio".
+    // This answers the literal question those searchers have. Not stuffing:
+    // every synonym here is a name trainers genuinely use for the same room.
+    q: "Ik zoek een PT-ruimte of fitnessruimte om te huren — is dit dat?",
+    a: "Ja. Dit is een priv\u00e9 trainingsruimte in de Jordaan die je per uur huurt \u2014 of je het nu een PT-ruimte, fitnessruimte, trainingsruimte of studio noemt. Halve studio voor 1-op-1, hele studio voor een kleine groep. Geen contract en geen minimum aantal uren.",
+  },
   {
     q: "Wat kost het om de studio te huren?",
     a: "Halve studio (1:1) vanaf \u20ac12 per 60 minuten. Hele studio (kleine groep) vanaf \u20ac17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
@@ -194,15 +204,16 @@ export default function StudioRentalPageNL() {
           previous hero (slideshow + dual CTAs) + standalone Tarieven
           section + standalone Pakketten section + #schedule embed
           have all been consolidated into ONE widget. SEO-strong h1
-          retained ("Studio huren voor personal trainers in Amsterdam"
-          — head query winner). Slideshow imagery moves below in the
-          existing TrainerValueProp + Bekijk de Ruimte sections.
+          retained. 2026-08-26: h1 reworded studio->trainingsruimte after GSC
+          showed 230 non-brand impressions using "ruimte", 0 using it here.
+          Slideshow imagery moves below in the existing TrainerValueProp
+          + Bekijk de Ruimte sections.
           ═══ */}
       <Section id="book">
-        <div className="mb-6 text-center">
+        <div className="mb-4 text-center sm:mb-6">
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Studio huren voor personal trainers in Amsterdam
+            Trainingsruimte huren voor personal trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
@@ -301,46 +312,25 @@ export default function StudioRentalPageNL() {
           }
           hourly={
             <div className="mx-auto max-w-3xl">
-              <p className="mb-4 text-center text-sm text-muted-foreground">
+              <StudioRateTable
+                headSpace="Ruimte"
+                headDuration="60 min"
+                cta="Boek"
+                rows={[
+                  { label: "Halve studio (voor 2 personen)", price: "€12", href: acuityLinks.halfStudio60 },
+                  { label: "Hele studio (kleine groep)", price: "€17", href: acuityLinks.fullStudio60 },
+                ]}
+              />
+              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <CreditCard className="h-3.5 w-3.5" />
+                <span>CreditCard, Apple Pay, Google Pay of factuur</span>
+              </div>
+              <p className="mt-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
                 <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
                 <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
               </p>
-              <div className="overflow-hidden rounded-xl border bg-card">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b bg-muted/50">
-                      <th className="px-4 py-3 text-left font-medium">Ruimte</th>
-                      <th className="px-4 py-3 text-center font-medium">60 min</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <td className="px-4 py-3 font-medium">Halve studio (voor 2 personen)</td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€12</span>
-                          <ButtonLink href={acuityLinks.halfStudio60} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-medium">Hele studio (kleine groep)</td>
-                      <td className="px-4 py-3 text-center">
-                        <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-center sm:gap-2">
-                          <span className="font-semibold">€17</span>
-                          <ButtonLink href={acuityLinks.fullStudio60} size="sm">Boek</ButtonLink>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                <CreditCard className="h-3.5 w-3.5" />
-                <span>CreditCard, Apple Pay, Google Pay of factuur</span>
-              </div>
             </div>
           }
         />

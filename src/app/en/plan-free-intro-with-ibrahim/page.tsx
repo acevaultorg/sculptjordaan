@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Book free intro with Ibrahim";
+const title = "Ibrahim — nutrition & rehab trainer Amsterdam";
 const description = "Free intro with Ibrahim — nutrition, weight loss and rehabilitation at SculptClub Amsterdam Jordaan. Practical plans that fit your lifestyle. No obligation.";
 const canonical = "/en/plan-free-intro-with-ibrahim";
 

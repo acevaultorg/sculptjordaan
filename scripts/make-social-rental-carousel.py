@@ -64,8 +64,21 @@ def block(d, x, y, text, f, fill, mw, lead=1.1):
         d.text((x, y + i * lh), ln, font=f, fill=fill)
     return y + len(wrap(d, text, f, mw)) * lh
 
-def logo(d, y=120):
-    d.text((M, y), 'SCULPTCLUB', font=font('Syne-800.ttf', 36), fill=BONE)
+LOGO_PNG = REPO + 'sculptclub/public/images/logo-sculptclub.png'
+
+def logo(im, y=120, w=300):
+    """Paste the REAL wordmark — never draw it as type.
+
+    The mark is a two-word custom grotesque ("SCULPT CLUB"); setting it in Syne
+    gets it visibly wrong and shipped to a live post once (2026-08-26). The source
+    art is near-black with an alpha channel, so use that alpha as a MASK and paste
+    solid BONE through it — that recolours the mark to bone without touching its
+    shapes. See CLAUDE.md > Brand & Design.
+    """
+    lg = Image.open(LOGO_PNG).convert('RGBA')
+    h = max(1, round(lg.height * (w / lg.width)))
+    lg = lg.resize((w, h), Image.LANCZOS)
+    im.paste(Image.new('RGBA', lg.size, BONE + (255,)), (M, y), lg)
 
 def dot(d, x, y, r=9, c=ORANGE):
     d.ellipse([x, y, x + r * 2, y + r * 2], fill=c)
@@ -80,7 +93,7 @@ def dash(d, x, y, w=30, c=DIM, t=5):
 # ── frames ──────────────────────────────────────────────────────────────────
 def f1_hook(src, out):
     im = scrim(cover(Image.open(src).convert('RGB'), W, H, bias=0.42), start=0.02, strength=238, flat=52)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_over, f_big, f_sub = font('IS-600.ttf', 38), font('Syne-800.ttf', 122), font('IS-500.ttf', 42)
     y = 660
     lab = 'VOOR TRAINERS · JORDAAN'
@@ -96,7 +109,7 @@ def f1_hook(src, out):
 def f2_price(src, out):
     im = cover(Image.open(src).convert('RGB'), W, H, bias=0.5).filter(ImageFilter.GaussianBlur(3))
     im = scrim(im, start=0.0, strength=150, flat=95)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_lab, f_num, f_unit, f_row = font('IS-600.ttf', 38), font('Syne-800.ttf', 200), font('Syne-700.ttf', 60), font('IS-500.ttf', 44)
     y = 700
     d.text((M, y), 'HUUR DE STUDIO', font=f_lab, fill=ORANGE); y += 84
@@ -110,7 +123,7 @@ def f2_price(src, out):
 def f3_compare(src, out):
     im = cover(Image.open(src).convert('RGB'), W, H, bias=0.5).filter(ImageFilter.GaussianBlur(9))
     im = scrim(im, start=0.0, strength=180, flat=140)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_h, f_lab, f_it, f_fine = font('Syne-800.ttf', 84), font('IS-600.ttf', 34), font('IS-500.ttf', 41), font('IS-500.ttf', 28)
     y = 430
     y = block(d, M, y, 'Reken het na.', f_h, BONE, W - M * 2, lead=1.05); y += 44
@@ -118,6 +131,7 @@ def f3_compare(src, out):
     for row in ['Vaste maandhuur v.a. €600 p/m', 'Minimum 5 uur per week', 'Premium: €22,50 per uur']:
         dash(d, M + 2, y + 26); d.text((M + 52, y), row, font=f_it, fill=MUTED); y += 74
     y += 44
+    # logo-check:allow — column label paired with 'ELDERS IN AMSTERDAM', the brand NAME as type, not the wordmark
     d.text((M, y), 'BIJ SCULPTCLUB', font=f_lab, fill=ORANGE); y += 64
     for row in ['€12 per uur', 'Geen minimum, geen contract', 'Jouw klanten, jouw tarief']:
         check(d, M, y + 4); d.text((M + 56, y), row, font=f_it, fill=BONE); y += 74
@@ -127,7 +141,7 @@ def f3_compare(src, out):
 
 def f4_cta(src, out):
     im = scrim(cover(Image.open(src).convert('RGB'), W, H, bias=0.36), start=0.02, strength=240, flat=58)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_h, f_sub, f_b = font('Syne-800.ttf', 96), font('IS-500.ttf', 42), font('IS-600.ttf', 42)
     y = 800
     y = block(d, M, y, 'Kom eerst gratis proberen.', f_h, BONE, W - M * 2 - 60, lead=1.04); y += 34

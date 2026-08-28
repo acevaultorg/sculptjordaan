@@ -53,3 +53,82 @@ CHOSE: restructure `src/config/acuity.ts` from single ambiguous `acuityLinks` ob
 - COPY: '0% commissie' self-framing retired site-wide per operator rule (rent+freedom: "je betaalt je trainer direct" / "wij rekenen alleen de uurhuur"). Kept legitimate gym-commission comparisons + rekentool's operator-validated formulation.
 - PRICING RECS (operator decides): 10+1 block bundle for shrinking renters; daluren tier at €10 NOT €9 (never undercut ptstudiorent's €10 floor; frame = flexibiliteit + Jordaan, never cheapest).
 - CORRECTION over workflow data: Alexandre/Alex de Almeida NOT churned (active via 2nd email); Joey van Veen is top renter (~87h/8wk via 2 emails). Cross-reference emails before outreach lists.
+
+## 2026-08-26 — Money pages rank position ~56 while About page ranks ~5: diagnosed + partial structural fix shipped
+
+**Decision:** GSC showed `/nl/studio-huren` + `/nl/open-gym` (money pages, 495-496 impressions/mo each) ranking position 55.9/56.8 while `/nl/over-ons` + `/en/about` (About pages) rank position 5.4/6.6 for overlapping "studio huren"/"trainingsruimte" queries. A live SERP check confirmed Google currently returns the About page, not the dedicated page, for "trainingsruimte huren amsterdam jordaan".
+
+**Ruled out with evidence** (not the cause): indexing (both pages live, indexed, correctly canonical'd), homepage under-linking (money pages get MORE homepage links than About), technical/schema deficiency (studio-huren has strictly more schema — FAQPage, LocalBusiness — than over-ons has).
+
+**Found + fixed:** the About page's "Three Pillars" section had zero outbound links from its Studio Huren / Open Gym cards. Added keyword-rich links from each pillar to its specialist page, NL+EN. This is a real, verified, safe structural fix — but not a complete resolution. Position 55-56 with otherwise-healthy fundamentals most likely reflects an authority-signal gap that resolves over weeks, not a single edit.
+
+**Deferred to a session with GSC/Chrome MCP access:** the task's own prescribed method (URL Inspection "Test live URL" on a sample, hreflang reciprocity check) — genuinely couldn't run this session (no Chrome MCP, no GSC API key). Re-measure position on `/nl/studio-huren` + `/nl/open-gym` in 2-4 weeks to see if the link-equity fix moved anything.
+
+**Verify:** build clean, deployed (`e46e5dd8`), webhook-403 sanity check passed, all 3 links live on both language versions.
+
+**Reversibility:** fully reversible, `git revert` commit `86df21a`.
+
+## 2026-08-28 — Positioning: SculptClub is a two-sided matching platform, not only a rental
+
+**Operator, verbatim:** *"sculptclub moet naast ruimte verhuur hét matching platform voor
+freelance personal trainers en klanten zijn"* — and, earlier the same day, *"het vinden van
+klanten voor de trainers is net zo belangrijk als het vinden van nieuwe trainers"*.
+
+This is a positioning decision, not a feature request. Space rental is one half; matching
+freelance PTs to clients is the other, and the two sides rank equally.
+
+### The traffic already has that shape
+
+| side | sessions/30d |
+|---|--:|
+| trainer (`studio-huren` NL+EN + `gratis-test`) | 95 |
+| client (`vind-jouw-personal-trainer` NL+EN) | 77 |
+
+Same order of magnitude. Treating client acquisition as subordinate was never supported by
+the data — only by habit.
+
+### What is already built (verified, not assumed — do NOT rebuild these)
+
+- **13 trainer profiles** with `bio · credentials · rate · languages · specialization ·
+  availability · testimonials · gallery · instagram · whatsapp · bookingUrl · slug`
+- **26 live profile pages** (13 NL `/nl/plan-gratis-intake-met-*`, 13 EN
+  `/en/plan-free-intro-with-*`) — all HTTP 200, `index, follow`, canonical, Person schema,
+  ~3,300 words each, all 13 in the sitemap
+- **Direct client→trainer contact works**: 12 of 13 trainers have their own WhatsApp number,
+  used by `trainer-filter-grid` and `trainer-intake` (falls back to the studio for the 13th)
+- Match quiz, filter grid, trainer application form (`/nl/word-trainer`), both languages
+
+The marketplace is not missing. It is **invisible**.
+
+### The gap: the supply side has no distribution
+
+- **1 session** across all 13 profile pages in a 3-day window
+- **0 AI citations** across all 13 (blog posts and `/voor-trainers` get cited; profiles never)
+
+Cause, now fixed: every profile page was titled `Plan gratis intake met [Naam]` /
+`Book a free intro with [Name]` — a **booking frame on a discovery page**. Nobody searches
+that phrase unless they already know the trainer, so the 13 richest pages on the site
+targeted a query with ~zero volume. The meta descriptions already carried the real substance
+(specialisation, years, languages); only the titles wasted it.
+
+Fixed 2026-08-28: all 26 titles rewritten to distinct long-tails derived from each trainer's
+own copy — deliberately NOT all "personal trainer Amsterdam", to avoid the 13 profiles
+cannibalising each other and the `/vind-jouw-personal-trainer` hub.
+
+**Zero downside by construction:** these pages had ~0 impressions, so there was no ranking
+to lose.
+
+### The unexploited differentiator
+
+The roster speaks **Portuguese (Alex), Russian (Sergei), Italian (Roberta)** alongside NL/EN.
+"Russischtalige personal trainer Amsterdam" is a real expat query with almost no competition,
+and the old titles discarded it entirely. Now in the titles.
+
+### Still open
+
+- The H1 and page body still read as a booking form (`Plan je gratis intake met X`). Changing
+  those is user-visible and a brand-voice call — propose to the operator, do not ship
+  unilaterally.
+- Client-side conversion is unattributed: 77 sessions/month look for a trainer, "contact met
+  ons opnemen" fires 6×/month, and the dashboard cannot map the 20 monthly "Boeken" events
+  to a page.

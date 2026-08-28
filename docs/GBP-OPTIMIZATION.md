@@ -1,12 +1,50 @@
 # Google Business Profile — Optimization Pack
 
-**Status:** ~71% profile strength · 768 customer interactions · last photo upload 120 days ago.
+**Status (VERIFIED LIVE 2026-08-26, not from this doc's own memory):** 812 customer
+interactions · **703 views/month** · 19 reviews at 5.0 · profile strength still short of complete.
+
+⚠️ **This checklist is partly STALE — verify each item live before doing it.** Confirmed already
+done on 2026-08-26: the second business category **"Personal trainer" is present** (Gym is
+PRIMARY), the address postcode already reads `1015 RR`, and the NL description is in place. Do
+not redo those. The remaining items were not re-verified one by one.
+
+📊 **Why this file outranks almost everything else on the board:** GBP delivers ~703 views/month.
+Organic search delivers 191 clicks per *90 days* — about 64/month. **The Business Profile is
+roughly 11× the reach of all SEO combined**, and it is the channel nobody has been working.
 **Goal of this doc:** ship paste-ready content so you can do the full GBP optimization in one ~60-min sitting.
 
 **Where to do the work:** [Manage your business on Google](https://business.google.com/) → SculptClub.
 Or: search "SculptClub" while logged in as manager → click the management strip on top.
 
 ---
+
+## ⚠️ LIVE AUDIT 2026-08-27 — most of this checklist is ALREADY DONE
+
+Verified by reading the live profile through Chrome MCP. **Do not work this list top-to-bottom;
+it overstates the remaining work badly.** Confirmed present already:
+
+| doc item | live state |
+|---|---|
+| Add category "Personal trainer" | ✅ present — Gym is PRIMARY, Personal trainer secondary |
+| Fix postcode `1015 RR` | ✅ already correct |
+| NL description | ✅ present |
+| Services | ✅ **largely populated in Dutch, with descriptions** — Nutrition consulting · Personal training · Private lessons · Small group training · **Open Gym** ("Train solo of met max 4 mensen in de studio. Deurcode via WhatsApp. Vanaf 29 euro per 4 we…") · **Studio huren voor trainers** ("Huur de studio per uur voor je eigen klanten, vanaf 12 euro per uur…") |
+| Photos | some exist; Google still prompts specifically for an **exterior photo** |
+| Reviews | 19 at 5.0 |
+
+**What Google itself still asks for (its own prompts, which beat this doc):** add an exterior
+photo · add an update/post · get more reviews · add directions to the website.
+
+### 🔴 Chrome MCP CANNOT edit this profile — verified, do not retry
+The GBP editing surface is not automatable from here:
+- The **photo uploader never renders** — `input[type=file]` count stays 0 after clicking
+  "Add photos", twice, including after a full reload. The modal paints blank.
+- Modal contents live outside the reachable DOM (shadow DOM / cross-origin): a JS query for
+  the literal string "Primary category" returns not-found while that text is visibly on screen.
+  So forms can be *read from screenshots* but not filled programmatically.
+
+Same failure class as the Cloudflare dashboard SPA under automation. **This is genuinely
+operator-only work** — an agent can audit it, not do it. Budget ~15 min, not 60.
 
 ## Operator checklist (15 items, ~60-75 min total)
 

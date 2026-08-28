@@ -5,6 +5,7 @@
  * Verifies that every trainer in src/config/trainers.ts is also present in:
  *   - public/llms.txt § Trainers section
  *   - src/app/sitemap-ai.xml/route.ts (both NL + EN slug variants)
+ *   - functions/_middleware.ts    (prefix-less alias, both locales)
  *
  * Why: rounds 14 + 15 of the 2026-05-07 audit found that Gezina + Joey were
  * missing from llms.txt + sitemap-ai.xml even though they had pages and were
@@ -25,6 +26,7 @@ const REPO = join(dirname(fileURLToPath(import.meta.url)), "..");
 const TRAINERS_TS = join(REPO, "src", "config", "trainers.ts");
 const LLMS_TXT = join(REPO, "public", "llms.txt");
 const SITEMAP_AI = join(REPO, "src", "app", "sitemap-ai.xml", "route.ts");
+const MIDDLEWARE = join(REPO, "functions", "_middleware.ts");
 
 // Extract the canonical roster from trainers.ts via regex on the slug fields.
 // Pattern: `slug: {\n      nl: "plan-gratis-intake-met-X",\n      en: "plan-free-intro-with-X",`
@@ -49,6 +51,7 @@ function main() {
 
   const llms = readFileSync(LLMS_TXT, "utf8");
   const sitemapAi = readFileSync(SITEMAP_AI, "utf8");
+  const middleware = readFileSync(MIDDLEWARE, "utf8");
 
   const errors = [];
 
@@ -71,6 +74,26 @@ function main() {
       errors.push(
         `  • /en/${t.enSlug} missing from src/app/sitemap-ai.xml/route.ts`,
       );
+    }
+
+    // functions/_middleware.ts — the PREFIX-LESS alias must exist for both locales.
+    // Trainer booking pages are the highest-intent URLs on the site, and without
+    // the locale prefix they 404. On 2026-08-26 GSC surfaced
+    // /plan-free-intro-with-andrea/ as a 404; a live sweep found 18 of 26 dead
+    // (5 NL never added, all 13 EN never added).
+    //
+    // Check the MIDDLEWARE, not public/_redirects: CF Pages only honours roughly
+    // the first 100 rules of _redirects, so with 375 rules that file is a partial
+    // fast path and a rule added there alone is silently inert. Adding these to
+    // _redirects and deploying was exactly the mistake made while fixing this —
+    // the live re-test caught it. The middleware EXACT map is the source of truth.
+    for (const [locale, slug] of [["nl", t.nlSlug], ["en", t.enSlug]]) {
+      const rule = `"/${slug}":["/${locale}/${slug}",301]`;
+      if (!middleware.includes(rule)) {
+        errors.push(
+          `  • prefix-less alias missing from functions/_middleware.ts EXACT — add: ${rule}`,
+        );
+      }
     }
   }
 

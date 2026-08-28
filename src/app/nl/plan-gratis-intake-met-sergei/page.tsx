@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Sergei";
+const title = "Sergei — Russischtalige personal trainer Amsterdam";
 const description = "Gratis intake met Sergei — gecertificeerd personal trainer met 10+ jaar ervaring. Lichaamsrecompositie, houdingscorrectie, kracht & herstel bij SculptClub Amsterdam Jordaan.";
 const canonical = "/nl/plan-gratis-intake-met-sergei";
 

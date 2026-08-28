@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Ibrahim";
+const title = "Ibrahim — voeding & revalidatie trainer Amsterdam";
 const description = "Gratis intake met Ibrahim — voeding, afvallen en revalidatie bij SculptClub Amsterdam Jordaan. Praktische plannen die passen bij jouw levensstijl. Geen verplichtingen.";
 const canonical = "/nl/plan-gratis-intake-met-ibrahim";
 

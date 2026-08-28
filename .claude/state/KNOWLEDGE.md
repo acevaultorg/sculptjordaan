@@ -63,6 +63,409 @@
 - **Hand-off pattern that works:** the site already serves an operator-only Posting Studio at `public/social/<post-id>/index.html` (noindex, phone-first: long-press-save images + 1-tap caption copy). New posts go there; the operator opens it on their phone and posts from the app in ~2 min. NOTE `/social` and `/social/` **302 → /nl/social** via `functions/_middleware.ts` EXACT map (deliberate — the planner is the hub entry), so always hand out the DEEP link `/social/<post-id>/`, never `/social/`.
 - Studio-page assets live in `public/` and ARE publicly served (noindex only) — keep internal strategy notes out of them; the per-post `POST.md` lives in `docs/social/<post>/`.
 
+## Social frame — ⚠️ SUPERSEDED SAME DAY, read the correction below first (2026-08-26)
+
+### ❌ THE CORRECTION — I measured LIKES; the right metric is VIEWS, and it inverts the finding
+Pulled from TikTok Studio → Berichten (first-party account analytics, 22 posts). **The rental/offer
+frame is this account's BEST performer by views:**
+
+| views | post | date |
+|---:|---|---|
+| **11,000** | "Private gym in de Jordaan. Huur vanaf €12/uur. Probeer eerste sessie gratis." | 1 jan |
+| **3,262** | "Freelance Personal Trainer? Train your clients in a private studio… DM to see the space" | 2 nov 2025 |
+| **1,553** | "Private gym in de Jordaan. Huur volledige studio €17/uur." | 2 jan |
+| 902 | Garagedeur die direct aan de gracht opengaat | 23 mei |
+| 836 | "Trainers — eigen sleutel, eigen tarief, eigen klanten. 0% commissie…" | 17 mei |
+| 776 | "Een eerste sessie met je personal trainer in onze privé studio" | 18 mei |
+| 773 | "#jordaan #amsterdamgym #privategym…" | 2 jan |
+| 334 | "Michiel @ SculptClub Jordaan" | 11 nov 2025 |
+| 312 | "Freelance trainer in Amsterdam? Try SculptClub Jordaan for free" (EN) | 15 feb |
+| 249 | "Dit huur je voor €12 per uur." | 24 aug |
+| 242 | "Mensen stoppen zelden met trainen omdat de training te zwaar is" | 25 aug |
+| 45 | "Personal training Jordaan Amsterdam" | 5 nov 2025 |
+
+**Lessons, in order of importance:**
+1. **Likes are the WRONG metric for a local B2B offer.** Offer posts get viewed and acted on (DM),
+   not liked. Reading 1–7 likes as "the frame is dead" was a measurement error — those same posts
+   pulled 836–11,000 views.
+2. **Use first-party analytics (TikTok Studio → Berichten), never search-page like counts.** The
+   search page also failed to surface the 24/25-aug posts at all, which made the account look
+   dormant since May. It was not.
+3. ~~**The real problem is a REACH DECLINE:** 11K → ~245, 45× less reach.~~ **REFUTED
+   2026-08-26 — the "decline" is inside the noise.** Five posts published in the SAME MINUTE
+   (2 jan) range from 20 to 3,129 views — a 156× spread — while month-to-month variance is only
+   4.7×. Per-post variance is ~33× larger than the trend I read into it. With 22 posts in 12
+   months there is no series to draw a trend through. Do not open "why did reach fall" as a
+   question; it is an artefact of n=1-per-month. **Second, independent confound** (found by the
+   iMac session on the same card): the 11K post is dated **1 January** — New Year is the largest
+   seasonal demand spike in fitness and late August is near its trough, so the headline comparison
+   is peak-vs-trough on a "try it free" offer whose appeal is itself seasonal. Any future
+   comparison must be like-for-like month (Aug'26 vs Aug'25), never across seasons.
+4. Dutch beats English on this account (the one EN post: 312 views, below the Dutch equivalents).
+5. The arithmetic framing is still a reasonable variant to test — but as a variant of a frame that
+   ALREADY WORKS, not as a replacement for one that failed.
+
+### ✅ WHO ACTUALLY WATCHES — per-post viewer data, pulled 2026-08-26
+
+TikTok Studio → Analyses → Content → *Gegevens weergeven* → **Kijkers** exposes per-post viewer
+geography, age and gender once a post clears ~100 viewers. Never looked before today. Three posts
+pulled, chosen to separate LANGUAGE from FRAME:
+
+| # | post | format | lang | frame | views | **NL** | male | 18–34 | avg watch | watched full |
+|---|---|---|---|---|---:|---:|---:|---:|---:|---:|
+| A | "Private gym in de Jordaan. Huur vanaf €12/uur" | photo | NL | rental/consumer | 11,000 | **96.1%** | 52% | 79% | 2.69s | 7.5% |
+| B | "Trainers — want your own spot in Jordaan?" | video 0:14 | **EN** | trainer | 3,100 | **87.9%** | 67% | 44% | — | — |
+| C | "Trainers — eigen sleutel, eigen tarief, eigen klanten" | photo | NL | trainer | 836 | **89.3%** | 74% | 86% | 6.3s | 18.4% |
+
+**1. The audience is local. 88–96% Netherlands on every post.** Non-NL is a rounding error
+(België 2–4%, UK/US/DE each ≤2%). The channel reaches people who can physically get to
+Egelantiersgracht. This is the number that decides whether TikTok is worth running at all, and
+the answer is yes. Post A's search traffic (7.0% of its views) came from `personal trainer
+amsterdam` 13.3% · `personal training amsterdam` 5.3% · `private gym nederland` 4.2% · `prive gym
+amsterdam` 3.8% — literal local commercial intent.
+
+**2. Frame drives the audience, language does not.** B vs C is the clean test: same trainer frame,
+different language, 87.9% vs 89.3% NL — indistinguishable. A vs C is same language, different
+frame: 96.1% vs 89.3%. Gender tracks the frame even harder — consumer 52% male → trainer-EN 67%
+→ trainer-NL 74%. **Write for the audience you want; TikTok resolves the rest.**
+
+**3. Views and attention rank in OPPOSITE order.** Post C got 13× fewer views than A but held
+2.3× the watch time (6.3s vs 2.69s) and 2.5× the completion (18.4% vs 7.5%). A is scale; C is
+attention. Judging trainer-facing posts on view count alone would kill the format that actually
+gets read. **Track completion + avg watch, not just views.**
+
+**4. Baseline for the women's-training work.** Post A's 52/47 male/female split is the *best*
+female reach this account has ever had, and it came from consumer framing. Gezina's spotlight
+(2026-08-26) is the first post aimed explicitly at women — measure it against 47%, and against
+C's 25%, not against raw views.
+
+**5. Nobody is following.** 97–100% of viewers are non-followers, 93–99% first-time. Follower
+count is not the funnel here; reach is bought fresh every post. Consistent with the 20-follower
+account pulling 11K views on one post.
+
+### The original (WRONG) reading, kept for the record
+
+Searched TikTok for `studio huren personal trainer` + `personal trainer amsterdam`; **our own posts came back in the results**, so this is a same-query/same-week control group, not a hunch.
+- **Every post that advertises available space to trainers dies:** ours "Private gym in de Jordaan." **7** and **1**, "Trainers — eigen sleutel, eigen tarief, eigen klanten." **2**; competitor fitbyroxpt "Ben jij personal trainer op zoek naar een werkplek?" **2**. Three of our own = not bad luck.
+- ⚠️ **BOOST CONFOUND (operator, same day):** competitor engagement may be PAID and you cannot see it from outside. `Fitness Aannemer` held THREE of the four "winners" below — one commercial account sweeping a niche is the signature of ad spend, not a better frame. So the winners list is **hypothesis, not proof**. What survives cleanly is the negative half: OUR OWN organic posts at 1/2/7, plus a solo peer at 2. Only our own posts are a clean control.
+- **What appears to win in the same niche is the ARITHMETIC of owning a room (treat as hypothesis):** "Zo heb jij jouw eigen gym voor 750 euro per maand" **220** · "Zoveel geld kan je verdienen met een eigen PT studio" **317** · "Dit kost het om een Pilates Studio te openen" **3,111** · and the biggest, **13,000**, reframed it for a consumer: "You can rent your own personal gym — perfect for privacy".
+- ⇒ **Our number is €240/maand (20 uur × €12, halve studio)** — better than the €750 in the post that worked, and never told. Always phrase as "20 uur × €12"; NEVER imply a monthly plan exists (halve €12/uur, hele €17/uur).
+- ⇒ **A whole audience is unserved:** the person who wants to train ALONE in a private room. That is Open Gym / hele studio, and we have never marketed it that way.
+- **Client-side winner is a NAMED human with a specialty** — "Meet Oumaima! Onze kickboks trainster…" **1,714** (Fit n' Fab Amsterdam). Doubles as recruitment: trainers see a studio that makes its people look good.
+- **Text-card carousels (our current grids) are the weakest format on both platforms** — every winner had humans in it. Sam's 13-photo shoot (`sculptclub-source-photos/gezina-sam-shoot-2026-08-17/`) is the fix.
+- ~~**Language IS the targeting.**~~ **REFUTED 2026-08-26 by per-post geography (see "Who actually watches" below).** The Dutch trainer post is 89.3% NL and the ENGLISH trainer post is 87.9% NL — 1.4 points apart. What moves the NL share is the FRAME (consumer 96.1% vs trainer ~88-89%), not the caption language. Keep writing Dutch — it is the right register for a Jordaan studio and it costs nothing — but do not claim it buys geographic targeting. TikTok already targets this account locally. **IG bio should still be Dutch-first for voice consistency (it is currently English while TikTok's is Dutch).**
+- **Collabs ≫ own posts at our size.** IG 232 / TikTok 20 followers → an own-post reaches ~30 people; a renting trainer with 2k followers reaches exactly the right 2k. IG "Invite collaborator" puts one post on both grids. Make it a standing part of renting. (Gezina launched a 2nd account "Marseille Movement" 2026-08-26 → first partner.)
+- **Benchmark, not model:** Saints & Stars = **7,040** TikTok followers after years + budget + multiple locations. Gym TikTok is a grind for everyone → goal is findability by a few hundred local deciders, not follower count. Take consistency/real-faces/vertical-native; refuse the luxury-English positioning.
+- **Six-slot rotation, 3/wk, 2-of-3 trainer-facing while utilisation is low:** the arithmetic · Meet [name] · the empty room ("A rare sight — an empty studio!" did **94** for LAPT Studios) · privacy-not-fitness · the collab · one useful thing.
+- **Caveat:** search-page like counts, one day, not view counts, and competitor numbers are boost-confounded. The bar the arithmetic frame must beat is **our own 1–7**, not the boosted 220–3,111. Let the first month of real posting overrule all of it.
+
+## Brand mark on generated assets — use the file, never set it as type (2026-08-26)
+
+The SculptClub wordmark is **`public/images/logo-sculptclub.svg`** — two words, "SCULPT CLUB",
+a heavy custom grotesque with tight spacing and flat-cut terminals. It is NOT Syne, and it is
+NOT one word. Social frames were shipping `<div class="mark">SCULPTCLUB</div>` in Syne 800 with
+`letter-spacing:.24em`, which is visibly wrong to anyone who knows the brand. Operator caught it.
+
+**Rule: any generated asset that carries the logo embeds the real file.** Source art is near-black,
+so `filter:invert(1)` puts it white on a dark photo (same trick as the site header's `dark:invert`).
+
+Two traps, both hit on the way to fixing it — worth knowing before writing any frame generator:
+
+1. **Selector specificity.** The frame CSS has `.f img{position:absolute;inset:0;width:100%;
+   height:100%;object-fit:cover}` — that is (0,1,1). A logo styled with `.mark` is (0,1,0) and
+   **loses**, so the logo inherits `width:100%/object-fit:cover` and full-bleeds the frame cropped
+   to its middle. The first regeneration shipped a giant "PT" (the centre of "SCULPT") across every
+   frame. Use `.f img.mark` and reset `inset` + `object-fit` explicitly.
+2. **The render gate must wait for EVERY image.** `document.querySelector("img")` returns the photo,
+   so the gate passed while the logo was still loading — that ships a frame with no wordmark. Wait
+   for `[...document.querySelectorAll("img")].every(i => i.complete && i.naturalWidth > 0)`.
+
+Related: frames are rendered from a real `file://` document, never `page.setContent` (about:blank
+blocks `file://` subresources → black frames). See `scripts/build-social-frames.mjs`.
+
+## Redirects live in functions/_middleware.ts — NOT public/_redirects (2026-08-26)
+
+`public/_redirects` has 380+ rules but **Cloudflare Pages honours only ~the first 100**. Everything
+past that is silently inert: no error, no warning, the build is green and the URL still 404s.
+`functions/_middleware.ts` owns all path redirects via its `EXACT` (exact match) and `SPLAT`
+(prefix) maps, compiled into `_worker.js`. No count limit there.
+
+**Cost the hard way:** 26 trainer aliases were added to `_redirects`, built, deployed — and every
+new one still 404'd live. Only the post-deploy re-test caught it. `_redirects` now carries a
+warning header.
+
+**To add a redirect:** edit the `EXACT` map in `functions/_middleware.ts`, then
+`npx wrangler pages functions build --outdir=DIR` → copy `DIR/index.js` to `out/_worker.js` →
+deploy. Assets unchanged means `CF_SKIP_UPLOAD=1` makes it a ~4s deploy.
+
+**Always re-test the actual URL after deploying a redirect.** A green build proves nothing here.
+
+### The 404s that were live until 2026-08-26
+18 of 26 prefix-less trainer booking aliases — the highest-intent URLs on the site. 5 NL had never
+been added (bryan, ibrahim, sergei, tom, roberta) and all 13 EN were missing. Now generated from
+`src/config/trainers.ts` and enforced by `scripts/check-trainer-consistency.mjs` (in `prebuild`),
+so adding a trainer without their aliases fails the build with the exact line to paste.
+
+### Still open on indexing (GSC, 2026-08-26)
+109 indexed vs **300 not indexed**. Breakdown: 109 crawled-not-indexed · 90 page-with-redirect ·
+47 discovered-not-indexed · 25 noindex · 23 404 (now fixed) · 6 alternate-canonical. The 109
+"crawled – currently not indexed" is the real signal: Google fetched those pages and declined
+them, which is a quality/duplication judgement, and it is the same size as the entire indexed set.
+That is the next thing to diagnose — not the 404s, which were mostly already fixed.
+
+## Ranking diagnosis — /nl/studio-huren (2026-08-26, GSC 90d, operator session)
+
+**The "average position 52" number is meaningless — the distribution is bimodal.**
+`/nl/studio-huren`: 80 impressions at position **1.71** (brand: "sculptclub", "sculpt
+club") and 320 at position **81.7** (commercial: "personal trainingsruimte huren" 84
+@79.1 · "pt ruimte huren" 84 @81.6 · "fitness ruimte huren" 62 @85.1). Exactly **3 of
+400 impressions (0.75%) fall between position 3 and 65.** The site ranks #1 on its own
+name and nowhere on the terms that bring renting trainers. Never quote the average
+again — always split brand vs non-brand before drawing a conclusion.
+
+Site-wide 90d for context: 191 clicks · 7.47K impressions · 93% Netherlands (178/191).
+Page split: `/` 141 clicks @28.2 · `/en` 26 @**20.0** · `/nl/studio-huren` 2 @55.9 ·
+`/nl/open-gym` 2 @56.8. English pages are ~18% of clicks and rank BETTER than Dutch.
+
+### CLOSED — do not re-propose these (adversarially verified, 18 refuters)
+- ❌ **"The money page is thin."** FALSE. `/nl/studio-huren` is richer than `/nl/over-ons`
+  on every measurable axis. Do not add word count, FAQs-for-volume, or filler to it.
+- ❌ **"Internal linking is the problem."** FALSE. The money pages are the best-linked
+  content pages on the site; `/nl/over-ons` (which ranks 5.4) is linked *less*.
+- ❌ **"Something is technically suppressing it."** FALSE. Every crawl/index signal on
+  `/nl/studio-huren` is correct.
+- ❌ **"A national chain owns the SERP."** FALSE. That SERP is contested only by small
+  local operators — no dominant market leader. Which makes position 81 diagnosable,
+  not inevitable.
+
+### OPEN — the live hypothesis (shipped 2026-08-26, measure ~6 weeks)
+**Term mismatch.** 230 impressions of demand use the word **"ruimte"**; the page was
+built entirely around **"studio"** — "personal trainingsruimte huren" 0 occurrences,
+"pt ruimte" 0, "fitness ruimte" 0, while "studio huren" appeared 4×. Google surfaces
+the page as topically related but ranks it below everything that uses the searcher's
+own words. Fix shipped: title → "Trainingsruimte huren Amsterdam — PT-studio vanaf
+€12/uur", h1 → "Trainingsruimte huren voor personal trainers in Amsterdam", plus one
+FAQ answering the literal question ("Ik zoek een PT-ruimte of fitnessruimte om te
+huren — is dit dat?"). Honest expectation: this is a targeting fix, not an authority
+fix — it can plausibly move ~81 toward the 20s, it cannot manufacture page 1 on its
+own. **Verify by re-pulling non-brand position for this page in ~6 weeks; if it has
+not moved, term mismatch is refuted and authority is the remaining explanation.**
+
+## Photo library — full catalogue (2026-08-28)
+
+**All 139 source photos read**, not sampled. 4.9 GB across 7 folders, found by counting
+images per directory (a filename search for "sculptclub" missed 133 of them — the shoots
+are named `Martin hiperflow website-081.jpg` and `IMG_0857.jpeg`).
+
+Method: `sips` 520px thumbnails → 11 HTML contact sheets rendered in Chrome → read directly.
+A first attempt pointed 8 subagents at the 4000×6000 originals; all 8 stalled and burned
+24.9M tokens for zero output. The instrument was wrong, not the design.
+
+### The finding: ZERO coaching-interaction shots. 0 of 139.
+
+There is not a single two-person frame in the entire library. Every photo is one of:
+
+| Category | ~count | What it is |
+|---|---:|---|
+| Empty studio / equipment | ~55 | Rack, platform, dumbbell wall, SCULPT hallway, air bike, sled |
+| Solo male model | ~30 | July shoot, shirtless, dramatic warm key light |
+| Solo female model | ~40 | April "Martin hiperflow" shoot, dumbbells + barbell + squat rack |
+| Exterior / entrance | ~8 | Door 424, canal facade, hallway-to-canal |
+| Gezina (trainer-supplied) | 13 | Also solo |
+
+**Nobody is instructing, spotting, or correcting anybody.** Nobody is over ~35. Nobody
+reads as a client rather than a model. Open Gym is never shown in use.
+
+### Consequences
+
+- The Sam-shoot premise is CONFIRMED, not refuted — but a paid shoot is the second-cheapest
+  fix. The cheapest is asking renting trainers for session photos (with client consent),
+  which is exactly how the Gezina post got made, at EUR 0.
+- **`FEB/IMG_0866` is the best GBP exterior** — street-level, whole facade, house number
+  visible. `gbp-uploads/02-entrance-424` is the doorway close-up, which is not the same thing.
+- ~25 files are duplicates: `exports-web-2026-07` is a web-res copy of `exports-fullres-2026-07`,
+  and `gbp-uploads` / `classpass-uploads` re-crop the February studio set.
+
+Contact sheet (thumbnails, noindex): https://sculptclub.nl/social/photo-library/
+
+## Conversion mix is measurable WITHOUT GA4 (2026-08-28)
+
+`intent` (trainer / studio_rental / open_gym / generic) is sent to GA4 only — never to
+Clarity — and the autopilot has no GA4 credentials. So the most important business
+question, *is the site converting the 93% revenue line or only Open Gym?*, looked
+unmeasurable.
+
+It isn't. **The booking-confirmation page carries the product in its URL:**
+
+```
+/nl/boeking-bevestigd?type=Hele%20Studio%2060%20min%20%2F%20Full%20Studio%2060%20min&value=0&id=…
+```
+
+Clarity's Data Export API (`project-live-insights`, `dimension1=URL`, `CLARITY_API_TOKEN`
+in `~/.zshenv`) returns those URLs with session counts. Parse the `type` param and the
+mix falls out — no GA4, no operator, one API call. Rate limit ~10/day, so make it count.
+
+### Measured 3-day window (2026-08-28)
+
+| type | n |
+|---|--:|
+| Hele Studio 60 min | 31 |
+| Halve Studio 60 min | 24 |
+| Studio help 90 min | 1 |
+| **studio rental** | **56 (92%)** |
+| Open Gym session + free trial | 4 (7%) |
+
+**The RATIO is the finding and it is robust** — 92/7 rental-vs-Open-Gym matches the known
+93/5 revenue split, so the funnel is delivering the line that pays. No on-site conversion
+fix is warranted; the constraint is upstream (503 visitors/30d against a 3000 target).
+
+**The ABSOLUTE VOLUME is NOT reliable and must not be quoted.** Two unresolved problems:
+1. The API returns a top-N URL list, not every URL — 60 is a floor, not a total.
+2. It contradicts the fleet metric `conversions_30d: 24`. 60 confirmations in 3 days
+   annualises to ~600/month, 25× that figure. Most of the gap is almost certainly
+   existing trainers rebooking (a trainer renting 3×/week hits this page ~12×/month),
+   plus GA4 "conversions" counting a narrower configured event. Do not compute revenue
+   from these counts — 31×EUR17 + 24×EUR12 would imply ~EUR 8k/month against a known
+   ~EUR 2.5k. The arithmetic is wrong somewhere; treat the mix as signal and the
+   magnitude as unknown until GA4 or Acuity settles it.
+
+### Traffic shape, same window
+
+`/` 21 · `/nl/boek-studio` 10 · `/nl/studio-huren` 7 · `/nl/vind-jouw-personal-trainer` 6.
+The booking page is the second-busiest page on the site — existing trainers go straight
+there. `/nl/studio-huren` (~70 sessions/month) is the *acquisition* page for new trainers,
+and `/nl/studio-huren/gratis-test` sees ~2/3d, so roughly a third of that page's visitors
+reach the free-trial step.
+
+One referral arrived as `/nl/studio-huren?utm_source=chatgpt.com` — AI citation is already
+sending traffic to the trainer-acquisition page.
+
+## AI-citation channel — first ever measurement (2026-08-28)
+
+Never checked before. Read via Bing Webmaster Tools → AI Performance, one API call from
+an authenticated `bing.com/webmasters` tab (method in `rules/ai-citation-channel.md`).
+
+**Positive control run in the same pass:** readinglist.school returned 33,093 citations
+over 128 days. So the API path is healthy and a low SculptClub number is a real finding,
+not a broken instrument.
+
+### SculptClub: 64 citations in 278 days (last7 9 · prev7 7)
+
+Genuinely small. This is the one fleet site where the "web metrics understate AI by
+9-105×" pattern does NOT rescue the number — the site really is barely cited.
+
+**But 61% of it lands on four pages, and they are all the same audience:**
+
+| page | citations |
+|---|--:|
+| `/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen` | 16 |
+| `/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension` | 14 |
+| `/en/for-trainers/zzp-personal-trainer-checklist` | 5 |
+| `/nl/voor-trainers/freelance-personal-trainer-worden` | 4 |
+| **freelance/ZZP-trainer cluster** | **39 of 64 (61%)** |
+| rest (afvallen · sportschool-zonder-abonnement · jordaan · PT-kosten · boutique-vs-keten) | 25 |
+
+AI engines cite this site almost exclusively for *"how do I become an independent personal
+trainer in the Netherlands"* — KvK registration, BTW, insurance, pension. **That is exactly
+the person who then needs a studio to rent**, i.e. the 93%-of-revenue customer. It matches
+the `?utm_source=chatgpt.com` referral observed landing on `/nl/studio-huren`.
+
+EN (14) performs nearly as well as NL (16) — not a Dutch-only play.
+
+Bing returns `NoDataFound` for query-level data at this volume, so the exact prompts are
+unknown; the page list is the evidence.
+
+### Scale check, second domain, and two instrument traps (independent re-run, same day)
+
+A parallel session pulled this independently and reached the SAME numbers (64 / 39-of-64 / same
+control values) — so the finding is replicated, not single-sourced. Four things that run added:
+
+- **Size it against Google, not against the fleet.** 35 citations in the last 30d against 81 GSC
+  clicks in the same window — the AI channel here is ~43% of Google organic, i.e. the same order
+  of magnitude. Useful as a sanity bound: nobody should go looking for a hidden 10x here.
+- **`sculptjordaan.nl` has 0 citations, ever** (131 days of data). The second domain is dark to
+  this channel.
+- **The CTA bridge is NOT missing** — verified in source: all four cited cluster pages already
+  link to `/nl/studio-huren` / `/en/studio-rental`. (A first pass "found" the EN pages had no link;
+  that was a bad grep pattern — it searched `studio-huren|/en/rent` and missed `/en/studio-rental`.
+  Positive-control your pattern before believing an absence.)
+- **`globalinfo` returns the site list under `UserSites`, not `Sites`.** Parsing `Sites` yields an
+  empty array that reads exactly like "no sites enrolled" — on an account with 79 of them.
+
+### Why this is worth pursuing despite tiny absolute numbers
+
+readinglist's citations are worth ~EUR 0.069/click. A trainer who starts renting is
+recurring revenue for months against a studio at ~50% utilisation, i.e. near-zero marginal
+cost. **Low volume, extremely high value per visitor** — the opposite trade to the affiliate
+fleet, and the reason a 64-citation footprint is still worth compounding.
+
+Per `ai-citation-channel` LAW 3 the winning shape is a deterministic factual lookup over a
+finite verified dataset. Dutch ZZP admin is precisely that: KvK inschrijfkosten, BTW +
+KOR-drempel, AOV/verzekeringsvormen, lijfrente/pensioen, urencriterium, zelfstandigenaftrek,
+starterskorting — finite, factual, checkable against Belastingdienst/KvK, one right answer.
+
+## 30-day Clarity baseline (2026-08-28) — read from the dashboard, not the API
+
+The export API caps at `numOfDays=3` (7 and 30 both return HTTP 400). A 30-day read needs
+the Clarity dashboard: `clarity.microsoft.com/projects/view/vx7zcg6zys/dashboard?date=Last%2030%20days`
+via Chrome MCP + `get_page_text`. JS with `credentials:'include'` is BLOCKED there by the
+browser guard, so read the rendered text — do not try the internal-API trick that works on
+Bing WMT.
+
+**761 sessions · 218 bot sessions excluded · 576 unique users · 74.6% new / 25.4% returning**
+
+| | |
+|---|---|
+| Pages/session | 1.56 |
+| Scroll depth | 43.7% |
+| Active time | 34s (of 2.4 min total) |
+| Rage clicks | 0% |
+| Excessive scroll | 0% |
+| Dead clicks | 2.89% (22 sessions) |
+| **Quickbacks** | **15.24% (116 sessions)** ← the only real friction signal |
+| Performance | **91/100 · LCP 1.5s · INP 150ms · CLS 0** — all green, no perf work needed |
+| Mobile | ~64% (ChromeMobile 35% + MobileSafari 28.5%) |
+
+### The two sides are comparable in traffic — the operator was right
+
+| side | sessions/30d |
+|---|--:|
+| trainer: `/nl/studio-huren` 60 + `/en/studio-rental` 25 + `gratis-test` 10 | **95** |
+| client: `/nl/vind-jouw-personal-trainer` 54 + `/en/find-personal-trainer` 23 | **77** |
+
+Client-side is ~10% of all sessions. Treating trainer acquisition as "the" constraint and
+client acquisition as secondary was not supported by the traffic — they are the same order
+of magnitude.
+
+### Smart events, 30d — the conversion leak is real but unattributed
+
+Outbound click 146 · **Boeken 20** · Contact 6 · Registreren 1 · Formulier 1 · Reviews 1.
+
+77 people/month look for a trainer and 6 use "contact met ons opnemen". The dashboard view
+does not attribute the 20 bookings to a page, so the client-side conversion rate is still
+unmeasured — that is the next thing worth pulling, not another redesign.
+
+`/nl/boeking-bevestigd` got 246 views against only 20 "Boeken" events, and 116 sessions are
+referred from `conversion-tracking-sandbox.acuityinnovation.com`. That is existing customers
+rebooking straight in Acuity — it confirms the earlier read that confirmation-page volume is
+repeat business, not new conversion.
+
+### chatgpt.com is a live referrer, ahead of Bing and Instagram-referral
+
+Referrers 30d: Acuity 116 · google.com 93 · sculptclub.nl 30 · **chatgpt.com 9** ·
+bing.com 6 · l.instagram.com 6 · view.page 6.
+
+9 AI referrals/month off only 64 lifetime citations is punching well above weight, and they
+land on money pages (`/nl/studio-huren?utm_source=chatgpt.com`), not the blog. Note Instagram
+is understated here — in-app browser traffic lands in Direct, so `l.instagram.com` 6 is a
+floor, not the channel's true size.
+
+### What this closes
+
+- **Performance is not a lever** (91/100, everything green). Stop considering it.
+- **The blog is not a lever** — 0 sessions on the cited client-side posts.
+- **Quickbacks (15%) are the one friction signal worth chasing** — not rage clicks, not
+  dead clicks, not scroll.
 ## TikTok web upload — SOLVED (2026-08-24)
 
 TikTok Studio uploads **do** work from a session. Earlier sessions concluded
