@@ -678,3 +678,35 @@ credentials is a hard never. GA4 property currency is USD.
 The hero decision (same day): second CTA became "Huur de studio" (the most-clicked,
 all-of-revenue side had no hero door); WhatsApp shrank to an icon-only circle (3 clicks/30d,
 but it is mobile's only above-fold WhatsApp entry — the floating button is `hidden md:flex`).
+
+## The homepage quickback "problem" was hub-ness, not friction — investigated and CLOSED (2026-08-28)
+
+Per-URL Clarity put 47.8% quickback on the homepage (11 of ~13 quickback sessions in the 3-day
+window) and the cause was flagged open. Watched the actual recordings via the Clarity UI
+(recordings list filtered `QuickbackClickPresent=1` + `PageURL=is;https://sculptclub.nl/` — the
+filter state IS URL-addressable once you copy Clarity's own param format from an applied-filter
+URL; the naive guessed params silently don't apply). Three distinct users, three mechanisms:
+
+1. **Member rebooking speed-run** (2 of the 11 sessions are the same user): home → "Mijn
+   boekingen" modal → "Studio Huren · per uur boeken" → `/nl/boek-studio` → outbound "€12 Boek"
+   (Acuity) → gone. 3–13 seconds, done twice in a day. The quickback is a hop in a SUCCESSFUL
+   flow — consistent with the 30-day baseline's finding that confirmation-page volume is repeat
+   business.
+2. **Instagram in-app first-click bounce**: `/start/?utm_source=ig` arrival, cookie-accept, one
+   early click, quickback at 00:09, then immediately "Personal Training" and a purposeful
+   7-page / 7:19 journey ending on `/nl/studio-huren`. App-switch/back-bounce, then engagement.
+3. **NL→EN language find**: US MobileSafari visitor, quickback at 00:05 on the Dutch homepage,
+   on `/en` by 00:07. Bounced off Dutch once, found "English" fast. The dismissible
+   `<LanguageHint/>` offer stands; no auto-redirect (standing rule).
+
+**The structural point: Clarity credits a quickback to the page you come BACK to, and the
+homepage is the hub people return to mid-journey.** A hub page's quickback rate is inflated by
+definition. None of the three mechanisms is a defect; two are the funnel working.
+
+**Closed as no-fix.** Do not re-open "homepage 47.8% quickback" as a friction hunt unless the
+rate rises on a bigger window AND the recordings show a new mechanism. The one soft watch-item:
+`/start/` first-click behaviour in Instagram's in-app browser (n=1 here — not evidence yet).
+
+Replay caveat, again: the Clarity player renders some pages as unstyled HTML with giant SVG
+icons. That is a replay CSS-reconstruction artifact, NOT what the visitor saw — do not diagnose
+layout from the replay (same class of instrument-lie as `feedback_chrome_mcp_breaks_hydration`).
