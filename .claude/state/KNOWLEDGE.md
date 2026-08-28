@@ -564,3 +564,72 @@ including the control (blocked User-Agent); BSD `sed` silently not matching `</\
 (GNU extension); and `${var:+-H "Accept-Language: x"}` word-splitting in bash so the header
 was never sent — which made a *working* language redirect look unconditionally broken.
 Each looked like a site failure. See `feedback_publishing_a_file_is_not_serving_it`.
+
+## Per-URL Clarity friction: the API DOES do it, and the field you want is not the obvious one (2026-08-28)
+
+The 30-day baseline said quickbacks (15.24%) are the one real friction signal but could not say
+*where*. It can: `project-live-insights?numOfDays=3&dimension1=URL` returns all 9 metrics broken
+down per URL in a single call. The 3-day cap still applies (7 and 30 return HTTP 400), so this is
+a small window — but per-URL beats site-wide for localising a problem.
+
+**Read `sessionsWithMetricPercentage`, not `sessionsCount`.** `sessionsCount` is the URL's total
+session count and is IDENTICAL in every metric block. Summing it per metric produces a table where
+every page has "100% quickback" and quickback-sessions exactly equals traffic-sessions — which is
+what a wrong-field read looks like, not a finding. A result that is suspiciously perfect is an
+instrument failure the same way a zero is.
+
+### Where the friction actually is
+
+| page | sessions | quickback |
+|---|--:|--:|
+| **`/` (homepage)** | 23 | **47.8%** |
+| `/nl/open-gym` | 3 | 33.3% |
+| `/en` | 3 | 33.3% |
+| `/nl/vind-jouw-personal-trainer` | 6 | 16.7% |
+| `/nl/boek-studio` · `/nl/studio-huren` · `/en/studio-rental/free-trial` | 12 · 6 · 3 | **0%** |
+
+The homepage carries ~11 of the ~13 quickback sessions in the window. Everything else is ≤1.
+Note Clarity counts a quickback **on the page you return TO** — so this is "people leave the
+homepage, reject what they find, come straight back", i.e. the *destinations* are the suspect,
+not the homepage itself.
+
+## The homepage was the only trainer surface with no route to a profile (2026-08-28)
+
+Chasing that led somewhere real, though **not provably to the quickbacks** — see the caveat below.
+
+`TrainerPreviewGrid` (homepage, 4 cards) wrapped the ENTIRE card in one `target="_blank"` link to
+WhatsApp. Photo, name, specialty, languages, rate — all of it opened a chat. There was no way to
+reach a trainer's page from the busiest page on the site, while `TrainerFilterGrid`
+(`/vind-jouw-personal-trainer`) has linked to both since 2026-06-11, its own comment reading *"the
+grid previously bypassed intake pages"*. The same fix was made there and the preview grid was
+missed — so this is finishing a started job, not a redesign.
+
+It matters more now than it did in June: the operator's 2026-08-28 directive is that SculptClub
+should be *hét matching platform* for freelance trainers and clients, and a sibling session spent
+that morning making 26 profile pages discoverable. The homepage linked past all of them.
+
+**It also closed a live consent trap.** The grid always called
+`whatsappLinks.trainerIntake(name, locale, trainer.whatsapp)` and ignored `trainer.bookingUrl`.
+Roberta asked by email (2026-07-25) not to publish a private mobile and uses Calendly instead; she
+has no `whatsapp` field, and `trainerIntake()` **falls back to the studio's own number** when that
+argument is undefined. She sits outside the top-4 preview today so nothing was exposed — but a
+one-line `DISPLAY_ORDER` edit would have silently routed her leads to the studio under a "book
+intake with Roberta" label. The card now honours `bookingUrl` + `bookingLabel` like the filter grid.
+
+### The caveat, stated plainly
+
+**Do not record this as "the quickback fix."** A `target="_blank"` link does not navigate the
+original tab, so it may not generate a Clarity quickback at all — the mechanism is unproven and
+the 3-day window is 23 sessions. The change is justified on its own merits (matching-platform
+directive · internal linking to 26 orphaned pages · consistency with the sibling grid · the
+`bookingUrl` trap). **The homepage quickback cause remains OPEN.** Next step is a Clarity
+recording/heatmap on `/` via Chrome MCP — the API gives counts, never which element.
+
+### Method note — greps lie about absence, three times in one session
+
+`grep 'plan-gratis-intake-met'` on `/nl/vind-jouw-personal-trainer` returned 0 and I briefly
+concluded it linked to no profiles. It links to all of them — via
+``href={`/${locale}/${trainer.slug[locale]}`}``, a template literal no literal-string grep can see.
+Same class of error as the `studio-huren|/en/rent` pattern that missed `/en/studio-rental`, and the
+zsh glob that returned "0" from a shell error. **Treat every grep-based absence as a claim about
+the pattern until a positive control says otherwise.**

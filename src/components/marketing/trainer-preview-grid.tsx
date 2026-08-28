@@ -33,6 +33,8 @@ const COPY = {
     title: "Maak kennis met je trainer",
     subtitle: `${trainers.length} personal trainers, eigen specialisatie, gratis intake. Geen abonnement, geen tussenpersoon.`,
     ctaCard: "Boek intake",
+    ctaProfile: "Bekijk profiel",
+    ariaProfile: (name: string) => `Bekijk het profiel van ${name}`,
     ctaAll: `Bekijk alle ${trainers.length} trainers`,
     ctaSeeStudio: "Bekijk de studio",
     seeStudioHref: "/nl/studio",
@@ -53,6 +55,8 @@ const COPY = {
     // single biggest hesitation for Amsterdam expats researching in English.
     subtitle: `${trainers.length} personal trainers — all English-speaking, no Dutch required. Distinct specialties, free intro. No membership, no middleman.`,
     ctaCard: "Book intake",
+    ctaProfile: "View profile",
+    ariaProfile: (name: string) => `View ${name}'s profile`,
     ctaAll: `View all ${trainers.length} trainers`,
     ctaSeeStudio: "See the studio",
     seeStudioHref: "/en/studio",
@@ -101,19 +105,22 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
       <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
         {previewTrainers.map((trainer, i) => (
           <FadeIn key={trainer.id} delay={i * 0.08}>
+            <div
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-primary/60 hover:shadow-brand-lg"
+            >
+            {/* Card BODY -> the trainer's own page, not WhatsApp. Until
+                2026-08-28 the whole card was a single target="_blank" link to
+                WhatsApp, so the homepage — the site's busiest page — was the
+                only trainer surface with no route to the 26 profile pages.
+                TrainerFilterGrid already made exactly this change on
+                2026-06-11 ("the grid previously bypassed intake pages"); the
+                preview grid was missed. Information should lead to
+                information; the booking CTA below stays one tap away. */}
             <Link
-              href={whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)}
-              target="_blank"
-              rel="noopener"
-              // WCAG 2.5.3 (Label in Name) — aria-label removed 2026-05-17 after
-              // Lighthouse mobile audit flagged label-content-name-mismatch. The
-              // computed accessible name now comes from visible text content
-              // (trainer name + specialty + rate + CTA chip), which is RICHER
-              // than the prior "Plan gratis intake met X via WhatsApp" string
-              // AND matches what speech-input users (Dragon, Voice Control) say
-              // to invoke the control.
-              data-cta={`home-trainer-${trainer.id}`}
-              className={`plausible-event-name=home_trainer_${trainer.id} group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card transition-all hover:border-primary/60 hover:shadow-brand-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
+              href={`/${locale}/${trainer.slug[locale]}`}
+              aria-label={c.ariaProfile(trainer.name)}
+              data-cta={`home-trainer-profile-${trainer.id}`}
+              className="flex flex-1 flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               {/* Square photo on mobile, 4:3 on larger screens — denser visual
                   per card on small screens where every pixel counts. */}
@@ -158,7 +165,10 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                   </p>
                 </div>
 
-                <div className="mt-auto flex items-center justify-between gap-2 pt-2">
+              </div>
+            </Link>
+
+              <div className="mt-auto flex items-center justify-between gap-2 p-3 pt-0 sm:p-4 sm:pt-0">
                   <span className="text-xs font-medium text-muted-foreground sm:text-sm">
                     {trainer.rate ?? c.onRequest}
                   </span>
@@ -167,16 +177,36 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                       tappable. Was opacity-0+group-hover:opacity-100 before
                       2026-05-16 fix (operator audit: cards rendered but lacked
                       obvious "tap to book" affordance on mobile). */}
-                  <span
-                    className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-semibold text-primary transition-transform sm:text-sm group-hover:translate-x-0.5"
-                    aria-hidden
+                  {/* Booking CTA — its own link, so the card body can reach
+                      the profile. Honours trainer.bookingUrl: Roberta asked
+                      (email 2026-07-25) not to publish a private mobile and
+                      uses Calendly instead. The old code always called
+                      trainerIntake(), which silently falls back to the STUDIO
+                      number when a trainer has no whatsapp — she is outside
+                      the top-4 preview today, so nothing was exposed, but a
+                      DISPLAY_ORDER change would have routed her leads wrong. */}
+                  <Link
+                    href={
+                      trainer.bookingUrl ??
+                      whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)
+                    }
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={
+                      trainer.bookingUrl
+                        ? `${trainer.bookingLabel?.[locale] ?? c.ctaCard} — ${trainer.name}`
+                        : c.ariaIntake(trainer.name)
+                    }
+                    data-cta={`home-trainer-${trainer.id}`}
+                    className={`plausible-event-name=home_trainer_${trainer.id} inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2 py-1 text-xs font-semibold text-primary transition-transform hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm group-hover:translate-x-0.5`}
                   >
-                    {c.ctaCard}
+                    {trainer.bookingUrl
+                      ? trainer.bookingLabel?.[locale] ?? c.ctaCard
+                      : c.ctaCard}
                     <ArrowRight className="h-3 w-3" />
-                  </span>
+                  </Link>
                 </div>
-              </div>
-            </Link>
+            </div>
           </FadeIn>
         ))}
       </div>
