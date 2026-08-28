@@ -449,3 +449,62 @@ floor, not the channel's true size.
 - **The blog is not a lever** — 0 sessions on the cited client-side posts.
 - **Quickbacks (15%) are the one friction signal worth chasing** — not rage clicks, not
   dead clicks, not scroll.
+
+## The AI-citation channel, measured for the first time (2026-08-28)
+
+The metrics layer lists "GEO: LLM citations" as **not yet wired**, and sculptclub.nl was absent
+from the 45-site fleet AI audit. So this channel had never been looked at once. Pulled from
+**Bing Webmaster Tools → AI Performance** via the documented same-origin API (see
+`rules/ai-citation-channel.md`), with readinglist.school + colorcombinations.org as controls —
+both returned their known values (33,093 / 25,747), so the instrument is verified.
+
+**sculptclub.nl: 64 citations lifetime · 17 cited pages · 35 in the last 30 days.**
+
+The headline is a *negative* result worth having: **on this site the AI channel is NOT the hidden
+9–105× multiplier it is on the programmatic fleet sites.** 35 citations/30d against 81 GSC clicks
+/30d — same order of magnitude, roughly 43%. A local 200-page site does not have the finite-corpus
+shape that earns tens of thousands of groundings. Do not go hunting for a big hidden number here;
+it isn't there. What follows is more useful than the total.
+
+### 61% of all citations sit on ONE topic — and it is the revenue lever
+
+| citations | page |
+|---:|---|
+| 16 | `/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen` |
+| 14 | `/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension` |
+| 5 | `/en/for-trainers/zzp-personal-trainer-checklist` |
+| 4 | `/nl/voor-trainers/freelance-personal-trainer-worden` |
+| **39** | **= the ZZP / freelance-PT admin cluster (61% of 64)** |
+
+The rest is a long tail of 1–4 (weight loss, gym-without-membership, Jordaan gym, pregnancy PT).
+
+**Copilot has decided what this site is an authority on, and it is "how to set yourself up as a
+freelance personal trainer in the Netherlands" — KvK, BTW, insurance, pension.** That is not the
+thing we sell. It *is* precisely the person who is about to need a room: rental is ~93% of revenue
+at ~50% utilisation, so the top of the trainer funnel is the €-lever. The channel is already
+delivering the right audience, on 4 pages, unaided.
+
+It also fits the winning shape from `ai-citation-channel.md` LAW 3 exactly: a deterministic factual
+lookup over a finite verified dataset (Dutch ZZP admin rules), one right answer, no opinion.
+
+### Three things that follow
+
+1. **The compounding move is more of that cluster, not more of the site.** Four pages earn 61%.
+   Adjacent unanswered questions in the same shape (AOV/arbeidsongeschiktheid, VAR/modelovereenkomst,
+   BTW on PT services, first-year tax reality) are the highest-EV content on this domain.
+2. **English is not a handicap on this topic — it is half of it.** 19 of the 39 cluster citations
+   are on EN pages, and the EN page (14) nearly matches its NL twin (16). This is the one topic
+   where the site's Dutch-first default should not apply; the audience is international freelancers
+   in Amsterdam. Note this does not contradict the TikTok finding (frame drives audience, not
+   language) — different channel, and here the measured split is near 50/50.
+3. **`sculptjordaan.nl` has 0 citations, ever.** The second domain is dark to the AI channel.
+
+### Method notes (both instruments lied once, both caught by control)
+
+- `globalinfo` returns the site list under **`UserSites`**, not `Sites` — parsing `Sites` returns
+  an empty array and reads exactly like "the account has no sites enrolled". It has 79.
+- The AI-Performance **queries** endpoint (`/searchqueries/stats`) returns `{code,message}` for
+  this site with the same body that works for `/pages/stats` — so per-query data is unavailable
+  here for now. The pages endpoint carries the finding regardless.
+- Re-verify quarterly. Never report a zero from this API without running a known-value site in the
+  same call (`positive-control-before-absence`).

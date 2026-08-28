@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Book a free intro with Tom";
+const title = "Tom — strength coach Amsterdam, 12 years";
 const description = "Free intro with Tom — personal trainer with 12 years' experience (Mayfair & Soho, London). Strength & conditioning, sustainable training and Brazilian Jiu-Jitsu at SculptClub Amsterdam Jordaan.";
 const canonical = "/en/plan-free-intro-with-tom";
 

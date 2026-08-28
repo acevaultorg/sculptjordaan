@@ -67,3 +67,68 @@ CHOSE: restructure `src/config/acuity.ts` from single ambiguous `acuityLinks` ob
 **Verify:** build clean, deployed (`e46e5dd8`), webhook-403 sanity check passed, all 3 links live on both language versions.
 
 **Reversibility:** fully reversible, `git revert` commit `86df21a`.
+
+## 2026-08-28 — Positioning: SculptClub is a two-sided matching platform, not only a rental
+
+**Operator, verbatim:** *"sculptclub moet naast ruimte verhuur hét matching platform voor
+freelance personal trainers en klanten zijn"* — and, earlier the same day, *"het vinden van
+klanten voor de trainers is net zo belangrijk als het vinden van nieuwe trainers"*.
+
+This is a positioning decision, not a feature request. Space rental is one half; matching
+freelance PTs to clients is the other, and the two sides rank equally.
+
+### The traffic already has that shape
+
+| side | sessions/30d |
+|---|--:|
+| trainer (`studio-huren` NL+EN + `gratis-test`) | 95 |
+| client (`vind-jouw-personal-trainer` NL+EN) | 77 |
+
+Same order of magnitude. Treating client acquisition as subordinate was never supported by
+the data — only by habit.
+
+### What is already built (verified, not assumed — do NOT rebuild these)
+
+- **13 trainer profiles** with `bio · credentials · rate · languages · specialization ·
+  availability · testimonials · gallery · instagram · whatsapp · bookingUrl · slug`
+- **26 live profile pages** (13 NL `/nl/plan-gratis-intake-met-*`, 13 EN
+  `/en/plan-free-intro-with-*`) — all HTTP 200, `index, follow`, canonical, Person schema,
+  ~3,300 words each, all 13 in the sitemap
+- **Direct client→trainer contact works**: 12 of 13 trainers have their own WhatsApp number,
+  used by `trainer-filter-grid` and `trainer-intake` (falls back to the studio for the 13th)
+- Match quiz, filter grid, trainer application form (`/nl/word-trainer`), both languages
+
+The marketplace is not missing. It is **invisible**.
+
+### The gap: the supply side has no distribution
+
+- **1 session** across all 13 profile pages in a 3-day window
+- **0 AI citations** across all 13 (blog posts and `/voor-trainers` get cited; profiles never)
+
+Cause, now fixed: every profile page was titled `Plan gratis intake met [Naam]` /
+`Book a free intro with [Name]` — a **booking frame on a discovery page**. Nobody searches
+that phrase unless they already know the trainer, so the 13 richest pages on the site
+targeted a query with ~zero volume. The meta descriptions already carried the real substance
+(specialisation, years, languages); only the titles wasted it.
+
+Fixed 2026-08-28: all 26 titles rewritten to distinct long-tails derived from each trainer's
+own copy — deliberately NOT all "personal trainer Amsterdam", to avoid the 13 profiles
+cannibalising each other and the `/vind-jouw-personal-trainer` hub.
+
+**Zero downside by construction:** these pages had ~0 impressions, so there was no ranking
+to lose.
+
+### The unexploited differentiator
+
+The roster speaks **Portuguese (Alex), Russian (Sergei), Italian (Roberta)** alongside NL/EN.
+"Russischtalige personal trainer Amsterdam" is a real expat query with almost no competition,
+and the old titles discarded it entirely. Now in the titles.
+
+### Still open
+
+- The H1 and page body still read as a booking form (`Plan je gratis intake met X`). Changing
+  those is user-visible and a brand-voice call — propose to the operator, do not ship
+  unilaterally.
+- Client-side conversion is unattributed: 77 sessions/month look for a trainer, "contact met
+  ons opnemen" fires 6×/month, and the dashboard cannot map the 20 monthly "Boeken" events
+  to a page.

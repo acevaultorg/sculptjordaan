@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Book free intro with Dara";
+const title = "Dara — small group & personal training Amsterdam";
 const description = "Book a free intro with Dara — personal training and small group specialist at SculptClub Amsterdam Jordaan. No commitment.";
 const canonical = "/en/plan-free-intro-with-dara";
 

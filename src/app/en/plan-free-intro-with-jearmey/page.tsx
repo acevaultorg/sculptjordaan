@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Book free intro with Jearmey";
+const title = "Jearmey — strength & athletic trainer Amsterdam";
 const description = "Free intro with Jearmey — strength, fat loss and athletic performance specialist at SculptClub Amsterdam Jordaan. No commitment.";
 const canonical = "/en/plan-free-intro-with-jearmey";
 

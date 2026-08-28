@@ -2,7 +2,7 @@ import { TrainerIntakePage } from "@/components/marketing/trainer-intake";
 import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
-const title = "Plan gratis intake met Tom";
+const title = "Tom — krachttrainer Amsterdam, 12 jaar ervaring";
 const description = "Gratis intake met Tom — personal trainer met 12 jaar ervaring (Mayfair & Soho, Londen). Kracht & conditie, duurzame training en Brazilian Jiu-Jitsu bij SculptClub Amsterdam Jordaan.";
 const canonical = "/nl/plan-gratis-intake-met-tom";
 
