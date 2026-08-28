@@ -17,6 +17,22 @@ interface TrainerIntakeProps {
   locale: Locale;
 }
 
+// Join a trainer's specialisation list the way each language actually reads it:
+// "Kracht, mobiliteit en techniek" / "Strength, mobility and technique". Guards
+// on 0/1/2 items because the roster is hand-maintained and lengths vary.
+function listNl(xs: readonly string[]): string {
+  const v = xs.filter(Boolean);
+  if (v.length === 0) return "Personal training";
+  if (v.length === 1) return v[0];
+  return `${v.slice(0, -1).join(", ")} en ${v[v.length - 1]}`;
+}
+function listEn(xs: readonly string[]): string {
+  const v = xs.filter(Boolean);
+  if (v.length === 0) return "Personal training";
+  if (v.length === 1) return v[0];
+  return `${v.slice(0, -1).join(", ")} and ${v[v.length - 1]}`;
+}
+
 export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   const trainer = trainers.find((t) => t.id === trainerId)!;
 
@@ -39,9 +55,28 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   const trainersUrl = locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer";
 
   const t = locale === "nl" ? {
+  // 2026-08-28 — this page now has TWO audiences, and the H1 has to serve both.
+  //
+  // The original H1 "Plan je gratis intake met <naam>" was written (see the
+  // mobile-fold note further down) for visitors who ALREADY chose this trainer
+  // via the quiz or the grid — warm, high intent, name-recognition is the job.
+  //
+  // That assumption changed the same day: the 26 profile TITLES were rewritten
+  // from "Plan gratis intake met <naam>" to discoverable long-tails
+  // ("Gezina — personal trainer voor vrouwen, Amsterdam"), because the profiles
+  // were drawing 1 session per 3 days and 0 AI citations while the studio-rental
+  // page drew 60. Those titles are meant to bring COLD traffic from search and
+  // AI — people who have never heard of this trainer. For them, an H1 that opens
+  // with a commitment ("plan je intake") asks before it introduces.
+  //
+  // So: the overline still carries the promise ("Gratis intake") and stays the
+  // first line read, the H1 now says WHO this is, and the description says WHAT
+  // they do — pulled from trainer.specialization, so it is their own copy and
+  // nothing is invented. The WhatsApp button and form below are untouched, so
+  // the warm path from quiz/grid is unchanged.
     overline: "Gratis intake",
-    title: `Plan je gratis intake met ${trainer.name}`,
-    description: "Vertel ons over je doelen en we plannen een gratis kennismaking.",
+    title: `${trainer.name} — personal trainer in de Jordaan`,
+    description: `${listNl(trainer.specialization.nl)}. Vertel wat je wilt bereiken, dan plannen we een gratis kennismaking.`,
     specializations: "Specialisaties",
     languages: "Talen",
     rate: "Tarief",
@@ -70,8 +105,8 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     otherTrainerCta: "Niet zeker? Bekijk alle trainers en vind je match.",
   } : {
     overline: "Free intro",
-    title: `Book your free intro with ${trainer.name}`,
-    description: "Tell us about your goals and we'll set up a free intro session.",
+    title: `${trainer.name} — personal trainer in Amsterdam Jordaan`,
+    description: `${listEn(trainer.specialization.en)}. Tell us what you want to achieve and we'll set up a free intro.`,
     specializations: "Specializations",
     languages: "Languages",
     rate: "Rate",
