@@ -243,6 +243,11 @@ export default function TrainersPageNL() {
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Vrouwelijke personal trainer</p>
               <p className="text-sm text-muted-foreground">Gezina, Eva of Andrea — drie vrouwelijke trainers, privé studio, comfortabel leren krachttrainen.</p>
             </a>
+            {/* De-orphaned 2026-08-28 — zero inbound internal links before this. */}
+            <a href="/nl/personal-trainer-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Personal trainer in de Jordaan</p>
+              <p className="text-sm text-muted-foreground">Egelantiersgracht 424 — privé studio in de Jordaan en het Centrum, geen keten, geen wachtrij.</p>
+            </a>
             <a href="/nl/blog/engels-sprekende-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Engels-sprekende trainer</p>
               <p className="text-sm text-muted-foreground">Alle trainers coachen vloeiend in het Engels. Geschikt voor expats en internationale teams.</p>

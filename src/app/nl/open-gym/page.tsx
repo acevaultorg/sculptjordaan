@@ -597,6 +597,20 @@ export default function OpenGymPageNL() {
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym vs. ketensportschool</p>
               </a>
+              {/* De-orphaned 2026-08-28: this page had ZERO inbound internal links from any
+                  indexable page (measured across all 194 sitemap pages), so it was submitted
+                  to Google but starved of link equity — a prime cause of "crawled/discovered –
+                  currently not indexed". It targets a real local head query. */}
+              <a href="/nl/sportschool-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Locatie</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Sportschool in de Jordaan zonder abonnement</p>
+              </a>
+              {deal.active && (
+                <a href="/nl/open-gym/onbeperkt-zomerdeal" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                  <p className="text-sm text-muted-foreground mb-1">Zomeractie</p>
+                  <p className="font-semibold group-hover:text-brand transition-colors">Onbeperkt Open Gym voor €{deal.priceDeal} per 4 weken</p>
+                </a>
+              )}
               <a href="/nl/blog/eerste-keer-sportschool-tips" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Voor het eerst naar de sportschool: tips</p>
