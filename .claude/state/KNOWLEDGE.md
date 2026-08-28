@@ -673,6 +673,24 @@ open-gym type. PT exists on this site as LEADS only: `Trainer_Intake_Lead_1` 18 
 Acuity itself (the booking truth) was NOT readable — operator logged out, and typing
 credentials is a hard never. GA4 property currency is USD.
 
+### Verification pass (same evening, operator: "be very sure")
+
+- **Pill clicks confirmed as header elements**: Clarity's element-highlight places
+  "Huur Studio" (20), "Open Gym" (7) and "Personal Training" (5) all in the header band —
+  none map to the services section, footer or FirstTimeMenu sheet. Ranks 21-37 (≤2 clicks
+  each) may hide small pill variants → published counts are FLOORS; ordering is robust.
+  (Horizontal positions in the highlight view don't match today's pill order — Clarity's
+  background capture predates a layout change; the band, not the x-position, is the signal.)
+- **Bookings cross-checked**: GA4 21 purchases vs Clarity smart event "Boeken" 20 — two
+  independent instruments within 5%. **The earlier "GA4 undercounts ~5-10×" caveat was WRONG
+  for purchases** (it came from a June note about different events); unique Acuity ids in
+  Clarity's confirmation URLs put the true undercount at ~20-30% (real total ≈ 25-30).
+  The 248 boeking-bevestigd SESSIONS are revisits (door-code checks), not bookings.
+- **Known blind spots**: "Free try out: Full Studio" (2 ids) + "Studio help 90 min" (1 id)
+  appear in Clarity confirmations but missed GA4's consent sample; Open Gym SUBSCRIPTIONS
+  (the €49 deal) may bypass the confirmation page entirely — Acuity-only truth, unreadable
+  while the operator is logged out.
+
 ### What this changed
 
 The hero decision (same day): second CTA became "Huur de studio" (the most-clicked,
