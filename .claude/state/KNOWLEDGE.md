@@ -386,3 +386,66 @@ Per `ai-citation-channel` LAW 3 the winning shape is a deterministic factual loo
 finite verified dataset. Dutch ZZP admin is precisely that: KvK inschrijfkosten, BTW +
 KOR-drempel, AOV/verzekeringsvormen, lijfrente/pensioen, urencriterium, zelfstandigenaftrek,
 starterskorting — finite, factual, checkable against Belastingdienst/KvK, one right answer.
+
+## 30-day Clarity baseline (2026-08-28) — read from the dashboard, not the API
+
+The export API caps at `numOfDays=3` (7 and 30 both return HTTP 400). A 30-day read needs
+the Clarity dashboard: `clarity.microsoft.com/projects/view/vx7zcg6zys/dashboard?date=Last%2030%20days`
+via Chrome MCP + `get_page_text`. JS with `credentials:'include'` is BLOCKED there by the
+browser guard, so read the rendered text — do not try the internal-API trick that works on
+Bing WMT.
+
+**761 sessions · 218 bot sessions excluded · 576 unique users · 74.6% new / 25.4% returning**
+
+| | |
+|---|---|
+| Pages/session | 1.56 |
+| Scroll depth | 43.7% |
+| Active time | 34s (of 2.4 min total) |
+| Rage clicks | 0% |
+| Excessive scroll | 0% |
+| Dead clicks | 2.89% (22 sessions) |
+| **Quickbacks** | **15.24% (116 sessions)** ← the only real friction signal |
+| Performance | **91/100 · LCP 1.5s · INP 150ms · CLS 0** — all green, no perf work needed |
+| Mobile | ~64% (ChromeMobile 35% + MobileSafari 28.5%) |
+
+### The two sides are comparable in traffic — the operator was right
+
+| side | sessions/30d |
+|---|--:|
+| trainer: `/nl/studio-huren` 60 + `/en/studio-rental` 25 + `gratis-test` 10 | **95** |
+| client: `/nl/vind-jouw-personal-trainer` 54 + `/en/find-personal-trainer` 23 | **77** |
+
+Client-side is ~10% of all sessions. Treating trainer acquisition as "the" constraint and
+client acquisition as secondary was not supported by the traffic — they are the same order
+of magnitude.
+
+### Smart events, 30d — the conversion leak is real but unattributed
+
+Outbound click 146 · **Boeken 20** · Contact 6 · Registreren 1 · Formulier 1 · Reviews 1.
+
+77 people/month look for a trainer and 6 use "contact met ons opnemen". The dashboard view
+does not attribute the 20 bookings to a page, so the client-side conversion rate is still
+unmeasured — that is the next thing worth pulling, not another redesign.
+
+`/nl/boeking-bevestigd` got 246 views against only 20 "Boeken" events, and 116 sessions are
+referred from `conversion-tracking-sandbox.acuityinnovation.com`. That is existing customers
+rebooking straight in Acuity — it confirms the earlier read that confirmation-page volume is
+repeat business, not new conversion.
+
+### chatgpt.com is a live referrer, ahead of Bing and Instagram-referral
+
+Referrers 30d: Acuity 116 · google.com 93 · sculptclub.nl 30 · **chatgpt.com 9** ·
+bing.com 6 · l.instagram.com 6 · view.page 6.
+
+9 AI referrals/month off only 64 lifetime citations is punching well above weight, and they
+land on money pages (`/nl/studio-huren?utm_source=chatgpt.com`), not the blog. Note Instagram
+is understated here — in-app browser traffic lands in Direct, so `l.instagram.com` 6 is a
+floor, not the channel's true size.
+
+### What this closes
+
+- **Performance is not a lever** (91/100, everything green). Stop considering it.
+- **The blog is not a lever** — 0 sessions on the cited client-side posts.
+- **Quickbacks (15%) are the one friction signal worth chasing** — not rage clicks, not
+  dead clicks, not scroll.
