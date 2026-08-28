@@ -1,11 +1,22 @@
 ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website + trainer acquisition platform for Amsterdam Jordaan. State: main branch on GitLab (gitlab.com/acevault-lab/sculptjordaan, canonical 2026-05-06+) + GitHub archive (acevaultorg/sculptjordaan), Vercel auto-deploy via Layer 7 API confirmed working (gitSource type=gitlab, projectId=81955354). Goal: maximize bookings + trainer acquisition.
 
 ## Session Handoff
-Mode: sovereign auto — SculptClub revenue autopilot (operator: "become the ultimate sculptclub autopilot for fastest revenue increase", 2026-08-14)
-Objective: fastest revenue increase. Constraint identified + attacked: trainer studio-rental (93% of revenue) sliding −40% since May at ~18% true utilization.
-SHIPPED + LIVE (CF Pages deployment 31b03315, verified): 39-link internal consolidation NL+EN · head-query de-cannibalization (kosten-retitle, URL unchanged) · "Vergelijk zelf" market-contrast on both money pages (live-verified unnamed facts, peildatum aug 2026) · '0% commissie' self-framing retired in 20 files. IndexNow 191 URLs pinged. Commits 8f73c19→f2e582e on GitLab main.
-OPERATOR QUEUE (8 cards on SculptClub Sales/Marketing/Website boards + docs/REVENUE-SPRINT-2026-08-14.md): win-back 5 churned renters · follow-up 15 trial leads · Ads €2/day-cap decision (cap < €2.70 CPC = zero serving since Jul) · Sept 10+1 block offer · referral+channel ask · GBP rental post+reviews · daluren €10 decision · Vercel-team fleet-check (sculptclub NOT affected — CF Pages).
-NEXT SESSION: (1) check operator card progress → wire Acuity packages if 10+1/daluren approved; (2) measure: GSC position for studio-huren cluster (baseline avg 52.4, /gratis-intake pos 13), rental bookings WoW from next Acuity export; (3) if operator raised Ads cap → verify serving within 48h; (4) deploy = CF Pages chunked deployer per CLAUDE.md (Vercel RETIRED — read repo CLAUDE.md FIRST, see feedback_read_repo_claude_md_first).
+Mode: sovereign auto — SculptClub autopilot (q loop, 2026-08-28)
+Objective: fastest revenue growth. This session's leg = fact integrity on a rental-demand page + repairing a build chain that had been silently dead for a month.
+
+SHIPPED + LIVE-VERIFIED (CF Pages deploy 2916b3c9-1e03-40da-a994-bea0ae13df1f, 1565 files/16 batches/139s):
+- FACT FIX: /en/blog/physiotherapy-studio-rental-amsterdam served "up to 50 kg" / "From 2 kg" / "40+ kg" against photo-verified 4-40 kg. It was the SOLE survivor of the same-day fleet-wide equipment fix — the NL sibling had been corrected, EN never touched (bilingual half-fix), and the board task (TaskPrio mtcmka67djcml3) was closed on an unverified "FIXED autonomously" claim. Live proof: production now returns "up to 40 kg" x4 + "From 4 kg" x2, "50 kg" count = 0. Commits a2c56dc + 2b9f3be on GitLab main.
+- BUILD-CHAIN REPAIR: out/ was frozen at 2026-07-31 (a MONTH stale) while live kept advancing — a blind deploy would have reverted production by a month. Three pre-existing node_modules breakages: semver missing (broke sharp->prebuild), next/dist/bin/next absent (no CLI), playwright-core/types/ absent (broke the `devices` export -> typecheck abort). THE TRAP: `next build` prints "Compiled successfully" then "Failed to type check" and npm STILL EXITS 0. Repaired at env level only; no shipped config touched. Typecheck exit 0/zero errors; build emits 229 pages (stale was 217).
+- POST-DEPLOY VERIFY: Pages Functions alive (whatsapp webhook 403, not 404/405) · 9 routes 200 · no-revert proof (EUR49 x16 live, stale EUR69 = 0, EUR79 list x4, "Naar boeken" CTA present).
+
+NEXT SESSION:
+1. READ .claude/state/KNOWLEDGE.md "Build/deploy trap" section BEFORE any deploy — exit 0 does NOT mean the build produced output. Check `grep -E "Failed to type check|build worker exited"` in the build log AND that out/index.html has today's mtime AND that built html count >= live sitemap count.
+2. Growth constraint is unchanged and is ACQUISITION, not conversion: 472 human visitors/30d vs 2000 goal, 23 conversions (4.9% — healthy). GSC 81 clicks / 2667 impressions / avg position 52.
+3. Money pages are a POSITION problem, not a title problem: /nl/studio-huren (496 impr, 0.4% CTR, pos 55.9) and /nl/open-gym (495 impr, 0.4% CTR, pos 56.8). Per feedback_user_growth_drivers that means authority + internal linking, NOT title rewrites. The ONLY page-1-top low-CTR pages that qualify for a title lever are /nl/over-ons (pos 5.4, 1.3% CTR) and /en/about (pos 6.6, 1.4%) — small volume (~292 impr/90d combined), so modest EV.
+4. Indexation is a real gate: ~207-229 built routes vs 109 GSC-indexed.
+5. OPERATOR-SIDE, unchanged from 2026-08-14 sprint: win-back 5 churned renters · follow-up 15 trial leads · Ads budget cap (EUR1.99/day < EUR2.70 CPC = zero serving) · Sept block offer · GBP. See docs/REVENUE-SPRINT-2026-08-14.md.
+6. Two operator-side tooling notes: TaskPeace MCP server is a STALE BUILD (it self-reports silently dropping newer params like kind/appendBody); and get_next_task scoped to this cwd returned a Mediahuis ADP/Jira task (mplj0qoenwjm1w) — HARD-EXCLUDED, left untouched, but cwd auto-scoping is not reliably keeping employer work out.
+
 
 ## Tracking Calibration
 

@@ -775,3 +775,56 @@ in `trainer-intake.tsx`.
 Commit 9f7e8ab. Follows the fleet doctrine: internal linking is the #1 measured ranking
 lever; these pages just got discoverable titles the same day, so link equity now has
 somewhere to flow.
+
+## Build/deploy trap: `npm run build` can exit 0 while producing NOTHING (2026-08-28)
+
+**Symptom found live:** `out/` was frozen at **2026-07-31** — a month stale — while the live site
+kept receiving deploys. Deploying that `out/` would have reverted production by a month.
+
+**Why it went unnoticed:** `next build` prints `✓ Compiled successfully in 4.8min`, THEN fails at
+the type-check stage, and **`npm` still exits 0** (the failure surfaces only as a
+`Next.js build worker exited with code: 1` line mid-log). A pipeline that checks `$?` — or that
+pipes to `tail` — sees success and a silently-unchanged `out/`.
+
+**ALWAYS, before any CF Pages deploy:**
+```bash
+npm run build > /tmp/build.log 2>&1; echo "EXIT=$?"      # exit 0 is NOT sufficient
+grep -E "Failed to type check|Type error|build worker exited" /tmp/build.log   # must be empty
+find out -name '*.html' | wc -l                          # must be ~229+, and
+stat -f "%Sm" out/index.html                             # must be TODAY, not last month
+```
+If `out/` is older than your last commit, the build did not run — do NOT deploy.
+Cross-check `find out -name '*.html' | wc -l` against the LIVE sitemap
+(`curl -s https://sculptclub.nl/sitemap.xml | grep -c '<loc>'`, 194 on this date);
+built must be >= live or you are shipping a regression.
+
+**Root cause here — three independent `node_modules` breakages on this machine, all pre-existing:**
+| missing | breaks |
+|---|---|
+| `semver` | `sharp` → prebuild `generate-image-color-manifest.mjs` |
+| `next/dist/bin/next` | the `next` CLI (`sh: next: command not found`) |
+| `playwright-core/types/` | the `devices` export → `playwright.config.ts` typecheck → **build abort** |
+
+Repair is targeted, not a full reinstall (slow on the external drive):
+`npm install <pkg>@<exact-version> --no-audit --no-fund --no-save`, and for a package that npm
+thinks is already correct, `rm -rf node_modules/<pkg>` FIRST or npm no-ops.
+Note this npm blocks install scripts by default (`npm warn allow-scripts`), which is why partially
+-installed native packages appear "installed" but are missing generated/downloaded files.
+Fix the ENVIRONMENT — never edit `playwright.config.ts` or `tsconfig` to dodge the typecheck, since
+that config is correct for every other machine.
+<!-- added 2026-08-28, source: task (physio dumbbell fix deploy) -->
+
+## Bilingual half-fix pattern (2026-08-28)
+
+A site-wide fact correction was applied to the NL page and **not** its EN sibling, then marked
+"FIXED autonomously" on the board (TaskPrio mtcmka67djcml3). The EN physiotherapy rental page
+served `up to 50 kg` against a photo-verified `4–40 kg` for hours afterwards.
+
+**Rule:** every fact fix must be greped across BOTH locales and closed with a LIVE curl, not a
+local edit. Cheap check that would have caught it:
+```bash
+grep -rniE "(50|32) ?kg|40\+ ?kg" src --include="*.tsx" | grep -viE "per kg"
+# plus a positive control so an empty result means "clean", not "broken pattern":
+grep -rcE "40 ?kg" src --include="*.tsx" | grep -v ":0" | wc -l   # expect ~20
+```
+<!-- added 2026-08-28, source: task -->
