@@ -528,3 +528,39 @@ https://www.tiktok.com/@sculptclub.jordaan/video/7677670221590629654
 carousel ships to TikTok as the generated `reel.mp4`, and to Instagram as a real
 carousel. Instagram remains fully autonomous either way (it never gated on media
 decode, which is why IG worked from hidden tabs all along).
+
+## /start/ was 404ing — the Instagram link-in-bio landing page (fixed 2026-08-28)
+
+Found while attributing the site's only real friction signal (quickbacks) to pages.
+
+`functions/_middleware.ts` handled `/start` in its own branch with an exact string
+comparison, and that branch runs BEFORE the trailing-slash retry — which only rescues keys
+in the EXACT map. So the slashed form fell through to a 404:
+
+```
+/start                          → 302 /nl/start   (Accept-Language aware, correct)
+/start/                         → 404             ← the live Instagram bio link
+/start/?utm_source=ig&...       → 404
+control /review/                → 302             (retry works for EXACT-map keys)
+control /plan-gratis-intake-met-alex/ → 301
+```
+
+Clarity showed the live traffic arriving as `/start/?utm_source=ig&utm_medium=social` — with
+the slash — at a **100% quickback rate** for that URL. Instagram is the #1 identifiable
+channel at ~20% of sessions, so its landing page was answering 404 to real visitors.
+
+Ironic detail: the trailing-slash retry immediately below carries a comment naming
+"old Instagram-bio links" as exactly the case it was written for. `/start` sat above it and
+was missed.
+
+Fixed by accepting both forms. Verified live: both slashed and unslashed now 302 correctly
+per Accept-Language, **and UTM parameters survive the redirect** (without that, the
+attribution would still be lost even with the 404 gone).
+
+### Method note — three prober bugs in one session, all caught by controls
+
+Getting here required correcting my own instrument three times: `urllib` 403s on every URL
+including the control (blocked User-Agent); BSD `sed` silently not matching `</\?title>`
+(GNU extension); and `${var:+-H "Accept-Language: x"}` word-splitting in bash so the header
+was never sent — which made a *working* language redirect look unconditionally broken.
+Each looked like a site failure. See `feedback_publishing_a_file_is_not_serving_it`.

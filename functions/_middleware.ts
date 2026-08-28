@@ -51,7 +51,19 @@ export const onRequest: PagesFunction = async (context) => {
   }
 
   // ── /start → Accept-Language locale (root '/' ALWAYS Dutch; never auto-flip) ─
-  if (path === "/start") {
+  //
+  // Accept BOTH "/start" and "/start/". This branch runs BEFORE the
+  // trailing-slash retry below, and that retry only rescues keys in the EXACT
+  // map — so the slashed form fell straight through to a 404. Measured
+  // 2026-08-28: /start -> 302, /start/ -> 404, while /review/ and
+  // /plan-gratis-intake-met-alex/ both redirect fine.
+  //
+  // That was not theoretical. Clarity shows the live Instagram link-in-bio
+  // arriving as "/start/?utm_source=ig&utm_medium=social" — WITH the slash —
+  // and 100% of those sessions ended in a quickback. Instagram is the #1
+  // identifiable channel at ~20% of traffic, so its landing page was 404ing.
+  // Same WordPress-era slash habit the retry below was written for.
+  if (path === "/start" || path === "/start/") {
     const al = (context.request.headers.get("accept-language") || "").toLowerCase();
     url.pathname = al.startsWith("nl") ? "/nl/start" : "/en/start";
     return Response.redirect(url.toString(), 302);
