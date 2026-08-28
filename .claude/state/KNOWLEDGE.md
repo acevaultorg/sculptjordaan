@@ -710,3 +710,22 @@ rate rises on a bigger window AND the recordings show a new mechanism. The one s
 Replay caveat, again: the Clarity player renders some pages as unstyled HTML with giant SVG
 icons. That is a replay CSS-reconstruction artifact, NOT what the visitor saw — do not diagnose
 layout from the replay (same class of instrument-lie as `feedback_chrome_mcp_breaks_hydration`).
+
+## Trainer link-graph fix — sibling cards on every profile (2026-08-28, avond)
+
+Measured gap from this morning's marketplace audit: 13 profile pages × 4 inbound internal
+links each (vs 106 for /nl/studio-huren), zero profile→profile edges. Fixed with a
+"Andere trainers bij SculptClub" section (3 cards) above the existing browse-all button
+in `trainer-intake.tsx`.
+
+- Selection: deterministic specialisation-token overlap, roster-order tie-break
+  (static export → no randomness). Simulated for all 13 before building: Gezina→
+  Tom/Dara/Jearmey, Roberta→Andrea/Jearmey/Hamish, Bryan→Roberta/Alex. No page gets a
+  zero-relevance trio.
+- Result in build: inbound links per profile 4 → 7-19 (gezina 19 · roberta 11 · sergei 7),
+  39 new profile→profile edges, NL + EN.
+- Cards fire `nav_click(surface=related_trainers)` → lateral movement is measurable in GA4.
+
+Commit 9f7e8ab. Follows the fleet doctrine: internal linking is the #1 measured ranking
+lever; these pages just got discoverable titles the same day, so link equity now has
+somewhere to flow.
