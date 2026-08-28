@@ -372,6 +372,14 @@ const posts = [
     date: "May 20, 2026",
   },
   {
+    title: "VAT for Personal Trainers in the Netherlands — 21% or 9%?",
+    excerpt:
+      "Standalone PT sessions are 21%. The reduced 9% rate only applies with a sports facility included — the Belastingdienst criteria, plus the KOR exemption under €20,000.",
+    category: "For Trainers",
+    href: "/en/blog/vat-personal-trainer-netherlands",
+    date: "Aug 28, 2026",
+  },
+  {
     title: "Disability Insurance (AOV) for Personal Trainers — mandatory from ~2030",
     excerpt:
       "The BAZ act makes disability insurance mandatory for Dutch freelancers around 2030. What the public scheme covers, what private cover costs for a physical profession, and when a broodfonds is enough.",

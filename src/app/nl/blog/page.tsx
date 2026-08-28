@@ -372,6 +372,14 @@ const posts = [
     date: "20 mei 2026",
   },
   {
+    title: "Btw voor Personal Trainers — 21% of 9%? Zo zit het",
+    excerpt:
+      "Losse PT-sessies vallen onder 21%. Het 9%-tarief geldt alleen mét sportaccommodatie — de criteria van de Belastingdienst, plus de KOR onder €20.000 omzet.",
+    category: "Voor Trainers",
+    href: "/nl/blog/btw-personal-trainer",
+    date: "28 aug 2026",
+  },
+  {
     title: "AOV voor Personal Trainers — verplicht vanaf ±2030, dit kost het nu",
     excerpt:
       "Wet BAZ maakt een AOV rond 2030 verplicht voor ZZP'ers. Wat de publieke verzekering inhoudt, wat een private AOV nu kost voor een fysiek beroep, en wanneer een broodfonds genoeg is.",
