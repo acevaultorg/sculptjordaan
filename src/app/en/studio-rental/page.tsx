@@ -199,6 +199,25 @@ export default function StudioRentalPageEN() {
           </p>
         </div>
 
+        {/* Weekend-availability hook — NL parity src/app/nl/studio-huren.
+            Task mtdbcq8ie715lw (2026-08-28). Deliberately durable copy, not a
+            hardcoded "13-week" / literal hour-range claim — exact hours shift
+            as ClassPass classes occupy specific weekend slots (see
+            docs/CLASSPASS-FULLSTUDIO-PRIORITY.md: Sat 17-21h + Sun 16-21h run
+            recurring ClassPass), so a static "16:00-22:00 guaranteed free"
+            promise would go stale/wrong for those exact hours. Points to the
+            live Acuity calendar via the Book button below. */}
+        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
+          <p className="text-sm font-semibold text-primary">
+            🎯 Most room available: weekend afternoons &amp; evenings
+          </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Saturday and Sunday afternoon/evening is typically the quietest time in the studio —
+            a great fit for a regular weekend slot with your clients. Click Book below to see
+            live availability.
+          </p>
+        </div>
+
         {/* Booking table is now the FIRST thing after the header — NL parity
             (operator 2026-07-17: "order of /nl/studio-huren is correct, this
             page is not"). Mirrors the NL 2026-07-04 redesign this page never

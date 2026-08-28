@@ -220,6 +220,31 @@ export default function StudioRentalPageNL() {
           </p>
         </div>
 
+        {/* Weekend-availability hook — task mtdbcq8ie715lw (2026-08-28): the
+            13-week Acuity analysis shows the studio at ~47% utilisation,
+            with the weekend afternoon/evening block especially quiet — a
+            gap that was previously buried in bullet #3 of the features grid
+            far below the fold. Placed right above the booking widget so it
+            leads without displacing the proven "booking-first" layout
+            (operator 2026-05-27 directive). Deliberately durable copy, not
+            a hardcoded "13 weken" / literal hour-range claim: exact hours
+            shift as ClassPass classes occupy specific weekend slots (see
+            docs/CLASSPASS-FULLSTUDIO-PRIORITY.md — Sat 17-21h + Sun 16-21h
+            currently run recurring ClassPass, so a static "16:00-22:00
+            gegarandeerd vrij" promise would go stale/wrong for those exact
+            hours). Points to the live Acuity calendar via the Boek button
+            below rather than claiming this page shows real-time hours. */}
+        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
+          <p className="text-sm font-semibold text-primary">
+            🎯 Extra veel ruimte: weekendmiddag &amp; -avond
+          </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Zaterdag- en zondagmiddag/avond is doorgaans de rustigste tijd in de studio —
+            ideaal om hier een vaste weekendplek voor je klanten vast te leggen. Klik hieronder
+            op Boek voor de actuele beschikbaarheid.
+          </p>
+        </div>
+
         {/* Booking table is now the FIRST thing after the header — operator
             2026-07-04: /nl/studio-huren is PRIMARY for trainers who ALREADY rent
             here, so they can book immediately (no scrolling past a tour CTA).
