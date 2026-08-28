@@ -82,10 +82,17 @@ constraint that motivated 3×/week is gone.)
   direct-question-to-trainers shape as #2 and #3 above. `studio-leeg-001` stays built and
   queued behind it; it is not discarded.
 
-  **Open question for the operator (do not let the autopilot decide this alone):** the two
-  posts at 3.1–3.3K are *videos*, and the account has shipped only photo carousels since. A
-  fair test of "offer-led" vs "video" needs one of each. Recommend the rotation doc's six
-  editorial slots be re-cut around offer-led framing before more carousels are spent.
+  **NOT a video-vs-slides question — that one is settled, leave it settled.** Two of the top
+  four are videos, but they are from Aug/Nov **2025**, a different account era; and the
+  outright #1 (11.0K) is a **photo carousel**, which is consistent with the operator's
+  2026-06-04 decision *"video is the problem, slides perform better"* (TaskPrio
+  `mpzexr1zrdijtd`). Do not reopen it on the strength of 2025-era posts. The variable that
+  actually separates the winners from the 240–265 band is the **offer-led first line**, not
+  the medium — #1 is a photo and leads with "Huur vanaf €12/uur".
+
+  **What to change instead:** re-cut the six editorial slots around offer-led framing (price
+  + trainer address in line 1) before more carousels are spent on atmospheric hooks. That is
+  an operator call on the rotation doc, not an autopilot one.
 
 - **Also reconciled: the log did not know about 3 more live posts.** "Mensen stoppen zelden met
   trainen…" (25 aug, 243), "Dit huur je voor €12 per uur" (24 aug, video 0:12, 249), and the
