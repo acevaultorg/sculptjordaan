@@ -652,8 +652,10 @@ zero tracking events. Measured via Clarity heatmap (30d, homepage) + GA4 (Jul 31
 Hero WhatsApp button ("Stel je vraag"): **3 clicks/30d.** The account icon (top right):
 31 clicks — people looking for a login that doesn't exist (likely renting trainers).
 
-### Purchases by item (GA4 e-commerce, Jul 31–Aug 27; consent-gated SAMPLE — undercounts
-absolute volume ~5-10×, the SPLIT is the signal)
+### Purchases by item (GA4 e-commerce, Jul 31–Aug 27; SITE-initiated bookings only —
+~11% of the Acuity total, because regular renters book directly in Acuity, not via the
+site (superseded 2026-08-28: this is a CHANNEL split, not a consent undercount). The
+SPLIT is the signal)
 
 | item | purchases | tracked revenue |
 |---|--:|--:|
@@ -670,8 +672,8 @@ open-gym type. PT exists on this site as LEADS only: `Trainer_Intake_Lead_1` 18 
 12 users + `whatsapp_click` 18/12 in the same window. Funnel events: `Book_appointment_1`
 178 · `begin_checkout` 156 · `begin_booking` 152 → 21 tracked purchases.
 
-Acuity itself (the booking truth) was NOT readable — operator logged out, and typing
-credentials is a hard never. GA4 property currency is USD.
+~~Acuity itself (the booking truth) was NOT readable~~ (superseded same evening —
+operator logged in; see "Acuity ground truth" below). GA4 property currency is USD.
 
 ### Verification pass (same evening, operator: "be very sure")
 
@@ -682,9 +684,12 @@ credentials is a hard never. GA4 property currency is USD.
   (Horizontal positions in the highlight view don't match today's pill order — Clarity's
   background capture predates a layout change; the band, not the x-position, is the signal.)
 - **Bookings cross-checked**: GA4 21 purchases vs Clarity smart event "Boeken" 20 — two
-  independent instruments within 5%. **The earlier "GA4 undercounts ~5-10×" caveat was WRONG
-  for purchases** (it came from a June note about different events); unique Acuity ids in
-  Clarity's confirmation URLs put the true undercount at ~20-30% (real total ≈ 25-30).
+  independent instruments within 5%, and both are CORRECT for what they measure:
+  **site-initiated bookings**. (Superseded 2026-08-28, twice-corrected: my "undercount is
+  really ~20-30%" correction was itself wrong. Acuity ground truth = 191 August
+  appointments, ~9× GA4's 21 — but that gap is not a consent artifact of one population;
+  it is a DIFFERENT CHANNEL: regular renters book directly in Acuity. The site is the
+  acquisition channel; Acuity is the booking channel.)
   The 248 boeking-bevestigd SESSIONS are revisits (door-code checks), not bookings.
 - **Known blind spots**: "Free try out: Full Studio" (2 ids) + "Studio help 90 min" (1 id)
   appear in Clarity confirmations but missed GA4's consent sample; Open Gym SUBSCRIPTIONS
@@ -696,6 +701,29 @@ credentials is a hard never. GA4 property currency is USD.
 The hero decision (same day): second CTA became "Huur de studio" (the most-clicked,
 all-of-revenue side had no hero door); WhatsApp shrank to an icon-only circle (3 clicks/30d,
 but it is mobile's only above-fold WhatsApp entry — the floating button is `hidden md:flex`).
+
+## Acuity ground truth — July + August 2026 (read with operator logged in, 2026-08-28)
+
+The booking truth the site instruments can't see. Source: Acuity reports.php, per type.
+
+| type | Jul afspraken | Jul € | Aug afspraken | Aug € |
+|---|--:|--:|--:|--:|
+| Halve Studio 60 min | 72 | — | 84 | €848,02 |
+| Halve Studio 90 min | 1 | — | — | — |
+| Hele Studio 60 min | 43 | — | 68 | €944,28 |
+| Open Gym Sessie | 33 | €125,44 | 28 | €41,37 |
+| Free try-out: Full Studio | 6 | 0 | 5 | 0 |
+| Free try-out: Open Gym | 4 | 0 | 2 | 0 |
+| Studio help 90 min | 5 | 0 | 4 | 0 |
+| **Totaal** | **164** | **€1.548** | **191** | **€1.833,70** |
+
+- August +16% vs July (appointments), revenue +18%. Trainer studio rental = ~93% of revenue.
+- GA4/Clarity see ~21/20 of these 191 (~11%): only bookings STARTED on the site. The other
+  ~89% are regulars booking straight into Acuity (app / direct scheduling link). So:
+  **site CRO moves new-customer acquisition, not the 191** — the 191 grow via trainer
+  acquisition + utilization (the €-lever per `feedback_sculptclub_revenue_mix_and_lever`).
+- Zero Small Group and zero PT purchases hold in Acuity too (no SG/PT appointment types
+  booked) — the header-tile removal decision stands on all four instruments.
 
 ## The homepage quickback "problem" was hub-ness, not friction — investigated and CLOSED (2026-08-28)
 
