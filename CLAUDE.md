@@ -14,7 +14,11 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Studio rental capacity (operator 2026-07-13):** Half studio = **max 2** (1:1 / a duo); the *other* half can be used at the same time by another trainer OR by Open Gym — so up to 4 people share the room (two couples of 2, or one couple + 2 Open Gym, or 4 Open Gym). Full studio = **fully private, NO fixed maximum** (your own small group). **NEVER say the full studio holds "6"** — that figure was wrong and was corrected fleet-wide on 2026-07-13. Full-studio labels use "kleine groep / small group", never a hard number.
 
 ## Pricing (ALWAYS use these exact numbers)
-- **Personal Training:** from €45/session (trainers set own rates, 0% commission, first intake free)
+- **Personal Training:** from €45/session (trainers are self-employed — they set their own rates and
+  the client pays them directly; first intake free). ⚠️ Do NOT write "0% commissie"/"0% commission":
+  trainers rent the room and bring their own clients, so there was never a commission to waive.
+  Operator's words: "weird bull shit". Safe published phrasing: "je houdt 100% van je tarief".
+  Naming what OTHER gyms charge (30–50%) is fine and stays.
 - **Open Gym Instapplan:** 4 sessions, €29/4 weeks (€7.25/session)
 - **Open Gym Onbeperkt:** unlimited, **€79/4 weeks** (list price raised 2026-07-21 to match the live summer-deal ad creative, which anchors ~~€79~~ → €49; was €69 from 2026-07-15, €59 before that. NEVER quote €59 or €69 as the current list price). ⚠️ For this to be TRUE the Acuity regular "Open gym - Onbeperkt" product (id 2155890) must also be €79 — the site now tells new members they pay €79 after the deal window. **Zomeraanbieding:** new members join at **€49/4 weeks and keep that price for as long as they stay a member** (price-locked, honest urgency = the €49 window closes for new joiners, NOT "daarna €69" for the deal member). Config + gate: `openGymSummerDeal` in `src/config/acuity.ts` (`active:false` → every deal surface disappears, plain €69 shows). Existing pre-2026-07-15 members are grandfathered at their old €59 Acuity product — never touch it. Acuity holds ONE price per subscription product → the deal is a SEPARATE €49 product (operator creates it; `dealUrl` in config).
 - **Studio Rental Half:** €12/60min, €17/90min
@@ -32,11 +36,26 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Payment:** CreditCard, Apple Pay, Google Pay. Studio rental also accepts invoice. iDEAL only via Apple Pay (don't list separately).
 - **Contracts:** None. No membership required. Open Gym = 4-week cycles, cancel anytime.
 
-## Trainers
-- **Alex:** €69/60min, Strength/Calisthenics/Recovery, NL/EN/PT
-- **Eva:** Rate on request, Dietitian, Strength/Nutrition, NL/EN
-- **Andrea:** €45/45min, Strength/Posture/Technique, NL/EN
-- **Dara:** Rate on request, Strength & Balance/Personal Training, NL/EN
+## Trainers (13 — source of truth: `src/config/trainers.ts`)
+- **Alex:** €69 / 60 min, Static Calisthenics, Gymnastiek, Prestatie, NL,EN,PT
+- **Eva:** op aanvraag, Kracht, Voeding, NL,EN
+- **Bryan:** vanaf €55 / 60 min, Calisthenics, Skills, Mobiliteit, NL,EN
+- **Ibrahim:** op aanvraag, Voeding, Afvallen, Revalidatie, NL,EN
+- **Gezina:** op aanvraag, Training voor vrouwen, Kracht, Prestatie, NL,EN
+- **Andrea:** €45 / 45 min, Kracht, Houding, Techniek, NL,EN
+- **Dara:** op aanvraag, Kracht & Balans, Personal Training, Beginners welkom, NL,EN
+- **Jearmey:** op aanvraag, Kracht, Afvallen, Atletische Prestatie, NL,EN
+- **Sergei:** €80 / 60 min, Lichaamsrecompositie, Houdingscorrectie, Kracht & Beweging, Herstel, EN,RU
+- **Joey:** op aanvraag, Kracht, Ademwerk, Zenuwstelsel, Zelfonderzoek, NL,EN
+- **Hamish:** €72 / 60 min, Kracht, High Performance, Afvallen, NL,EN
+- **Tom:** €100 / 60 min, Kracht & Conditie, Duurzame Training, Brazilian Jiu-Jitsu, EN
+- **Roberta:** op aanvraag, Kracht, Houding & Mobiliteit, Afvallen, EN,IT
+- Short link per trainer: `sculptclub.nl/<naam>` → their own intake page (all 13 pages live at
+  `/nl/plan-gratis-intake-met-<naam>`). Trainers are SELF-EMPLOYED: own rates, own clients, client
+  pays them directly. NEVER "0% commissie" — the frame is rent + freedom.
+- ⚠️ Bryan (last rental Mar 2026) and Tom (never appears in the rental export) are listed but not
+  currently renting. Five renters who DO pay weekly have no profile at all — see
+  `docs/TRAINER-ROSTER-RECONCILIATION-2026-08-25.md`.
 
 ## Tech Stack
 - Next.js 16, React 19, TypeScript

@@ -95,16 +95,19 @@ export default function EngelsSprekendePTAmsterdamNL() {
                 het volledige beeld.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">Elke trainer, tweetalig</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Trainers die in het Engels coachen</h2>
               <ul>
-                <li><strong>Alex</strong> — Kracht, calisthenics, herstel. NL/EN/PT. €69/60 min.</li>
-                <li><strong>Eva</strong> — Diëtist én personal trainer. Kracht en voeding. NL/EN.</li>
-                <li><strong>Joey</strong> — Kracht, ademwerk, zenuwstelsel, zelfonderzoek. NL/EN.</li>
-                <li><strong>Gezina</strong> — Training voor vrouwen, kracht, prestatie. NL/EN. Zie ook de{" "}
+                <li><strong>Alex</strong> — Kracht, calisthenics, herstel. NL/EN/PT. €69/60 min. <a href="/nl/plan-gratis-intake-met-alex" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Eva</strong> — Diëtist én personal trainer. Kracht en voeding. NL/EN. <a href="/nl/plan-gratis-intake-met-eva" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Joey</strong> — Kracht, ademwerk, zenuwstelsel, zelfonderzoek. NL/EN. <a href="/nl/plan-gratis-intake-met-joey" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Gezina</strong> — Training voor vrouwen, kracht, prestatie. NL/EN. <a href="/nl/plan-gratis-intake-met-gezina" className="text-brand hover:underline">Plan een intake</a>. Zie ook de{" "}
                   <a href="/nl/blog/vrouwelijke-personal-trainer-amsterdam" className="text-brand hover:underline">gids voor een vrouwelijke trainer</a>.</li>
-                <li><strong>Andrea</strong> — Kracht, houding, techniek. NL/EN. €45/45 min.</li>
-                <li><strong>Dara</strong> — Personal training + small group. NL/EN.</li>
-                <li><strong>Jearmey</strong> — Kracht, vetverlies, atletische prestatie. NL/EN.</li>
+                <li><strong>Andrea</strong> — Kracht, houding, techniek. NL/EN. €45/45 min. <a href="/nl/plan-gratis-intake-met-andrea" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Dara</strong> — Personal training + small group. NL/EN. <a href="/nl/plan-gratis-intake-met-dara" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Jearmey</strong> — Kracht, vetverlies, atletische prestatie. NL/EN. <a href="/nl/plan-gratis-intake-met-jearmey" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Sergei</strong> — Lichaamsrecompositie, houdingscorrectie, herstel. EN/RU, geen Nederlands. €80/60 min. <a href="/nl/plan-gratis-intake-met-sergei" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Tom</strong> — Kracht &amp; conditie, duurzame training, Brazilian Jiu-Jitsu. Alleen Engels. €100/60 min. <a href="/nl/plan-gratis-intake-met-tom" className="text-brand hover:underline">Plan een intake</a>.</li>
+                <li><strong>Roberta</strong> — Kracht, houding &amp; mobiliteit, afvallen. EN/IT, ACE®-gecertificeerd. <a href="/nl/plan-gratis-intake-met-roberta" className="text-brand hover:underline">Plan een kennismaking</a>.</li>
               </ul>
               <p>
                 Bekijk de volledige <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">trainerpagina</a> voor
