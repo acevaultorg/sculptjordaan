@@ -53,7 +53,26 @@ def block(d, x, y, t, f, fill, mw, lead=1.1):
     for i, ln in enumerate(ls): d.text((x, y + i * lh), ln, font=f, fill=fill)
     return y + len(ls) * lh
 
-def logo(d, y=120): d.text((M, y), 'SCULPTCLUB', font=font('Syne-800.ttf', 36), fill=BONE)
+def top_scrim(img, depth=0.22, strength=120):
+    """darken the top band only — the wordmark sits there and slide 1 opens on sky"""
+    w, h = img.size
+    g = Image.new('L', (1, h))
+    for y in range(h):
+        t = y / h
+        g.putpixel((0, y), int(strength * (1 - (t / depth) ** 0.9)) if t < depth else 0)
+    return Image.composite(Image.new('RGB', (w, h), (0, 0, 0)), img, g.resize((w, h)))
+
+def logo(im, y=120, w=286):
+    """Paste the REAL wordmark. The logo is a FILE, never type — the mark is two
+    words in a custom grotesque that Syne does not reproduce. Guarded by
+    scripts/check-logo.mjs after a typed wordmark shipped live on 2026-08-26."""
+    mark = Image.open(REPO + 'public/images/logo-sculptclub.png').convert('RGBA')
+    h = max(1, round(mark.height * (w / mark.width)))
+    mark = mark.resize((w, h), Image.LANCZOS)
+    # source art is near-black; recolour to bone, keep the alpha channel
+    tint = Image.new('RGBA', mark.size, BONE + (255,))
+    tint.putalpha(mark.getchannel('A'))
+    im.paste(tint, (M, y), tint)
 
 def pill(d, x, y, txt, f, bg=ORANGE, fg=(14, 12, 10), padx=22, pady=10, r=10):
     tw = d.textlength(txt, font=f); a, dd = f.getmetrics()
@@ -75,7 +94,8 @@ def fit(d, lines, name, start, mw, floor=58, step=4):
 def f1(out):
     im = scrim(lift(cover(Image.open(T + 'hamish.jpg').convert('RGB'), W, H, bias=.14), 1.06),
                start=.30, strength=244, flat=16)
-    d = ImageDraw.Draw(im); logo(d)
+    im = top_scrim(im, depth=0.26, strength=205)
+    d = ImageDraw.Draw(im); logo(im)
     y = 1080
     y = pill(d, M, y, 'PERSONAL TRAINER · JORDAAN', font('IS-600.ttf', 36)) + 32
     y = block(d, M, y, 'Hamish.', font('Syne-800.ttf', 132), BONE, W - M * 2, lead=1.0) + 26
@@ -88,7 +108,7 @@ def f1(out):
 def f2(out):
     im = cover(Image.open(P + 'rogue-sled.jpg').convert('RGB'), W, H, bias=.42)
     im = scrim(lift(im, 0.94).filter(ImageFilter.GaussianBlur(4)), start=0, strength=192, flat=136)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     y = 620
     f_h = fit(d, ['Geen shortcuts.'], 'Syne-800.ttf', 96, W - M * 2)
     y = block(d, M, y, 'Geen shortcuts.', f_h, BONE, W - M * 2, lead=1.04)
@@ -102,7 +122,7 @@ def f2(out):
 def f3(out):
     im = cover(Image.open(P + 'sculpt-wall-logo.jpeg').convert('RGB'), W, H, bias=.5)
     im = scrim(lift(im, 1.06).filter(ImageFilter.GaussianBlur(7)), start=0, strength=184, flat=140)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     y = 470
     y = block(d, M, y, 'Hoe het hier werkt.', font('Syne-800.ttf', 84), BONE, W - M * 2, lead=1.06) + 52
     for r in ['Hamish is zelfstandig — geen personeel',
@@ -120,7 +140,7 @@ def f3(out):
 def f4(out):
     im = scrim(lift(cover(Image.open(P + 'studio-interior-1.jpeg').convert('RGB'), W, H, bias=.42), 1.14),
                start=.02, strength=246, flat=76)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     y = 900
     y = block(d, M, y, 'Train met', font('Syne-800.ttf', 100), BONE, W - M * 2, lead=1.03)
     y = block(d, M, y, 'Hamish.', font('Syne-800.ttf', 100), ORANGE, W - M * 2, lead=1.03) + 34

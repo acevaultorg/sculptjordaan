@@ -83,8 +83,17 @@ def block(d, x, y, text, f, fill, mw, lead=1.1):
     for i, ln in enumerate(lines): d.text((x, y + i * lh), ln, font=f, fill=fill)
     return y + len(lines) * lh
 
-def logo(d, y=120):
-    d.text((M, y), 'SCULPTCLUB', font=font('Syne-800.ttf', 36), fill=BONE)
+def logo(im, y=120, w=286):
+    """Paste the REAL wordmark. The logo is a FILE, never type — the mark is two
+    words in a custom grotesque that Syne does not reproduce. Guarded by
+    scripts/check-logo.mjs after a typed wordmark shipped live on 2026-08-26."""
+    mark = Image.open(REPO + 'public/images/logo-sculptclub.png').convert('RGBA')
+    h = max(1, round(mark.height * (w / mark.width)))
+    mark = mark.resize((w, h), Image.LANCZOS)
+    # source art is near-black; recolour to bone, keep the alpha channel
+    tint = Image.new('RGBA', mark.size, BONE + (255,))
+    tint.putalpha(mark.getchannel('A'))
+    im.paste(tint, (M, y), tint)
 
 def pill(d, x, y, txt, f, bg=ORANGE, fg=(14, 12, 10), padx=22, pady=10, r=10):
     tw = d.textlength(txt, font=f); asc, desc = f.getmetrics()
@@ -107,7 +116,7 @@ def fit(d, lines, name, start, mw, floor=60, step=4):
 def f1(out):
     im = scrim(lift(cover(Image.open(P + 'studio-overview.jpeg').convert('RGB'), W, H, bias=0.46), 1.20),
                start=0.04, strength=234, flat=34)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_lab, f_sub = font('IS-600.ttf', 38), font('IS-500.ttf', 42)
     y = 640
     y = pill(d, M, y, 'OPEN GYM · JORDAAN', f_lab) + 36
@@ -126,7 +135,7 @@ def f2(out):
     im = cover(Image.open(P + 'facade-sculptclub.jpg').convert('RGB'), W, H, bias=0.5)
     im = scrim(lift(im, 1.10).filter(ImageFilter.GaussianBlur(3)), start=0.0, strength=150, flat=64)
     im = side_scrim(im, upto=0.78, strength=165)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_h = fit(d, ['Waarom mensen', 'stoppen.'], 'Syne-800.ttf', 92, W - M * 2)
     f_b = font('IS-500.ttf', 46)
     y = 700
@@ -142,7 +151,7 @@ def f2(out):
 def f3(out):
     im = cover(Image.open(P + 'turf-lane-canal.jpg').convert('RGB'), W, H, bias=0.5)
     im = scrim(lift(im, 1.14).filter(ImageFilter.GaussianBlur(5)), start=0.0, strength=168, flat=108)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_h, f_r = font('Syne-800.ttf', 84), font('IS-500.ttf', 42)
     y = 470
     y = block(d, M, y, 'Hoe het hier werkt.', f_h, BONE, W - M * 2, lead=1.06) + 56
@@ -164,7 +173,7 @@ def f3(out):
 def f4(out):
     im = scrim(lift(cover(Image.open(P + 'entrance-smile.jpg').convert('RGB'), W, H, bias=0.30), 1.06),
                start=0.05, strength=238, flat=38)
-    d = ImageDraw.Draw(im); logo(d)
+    d = ImageDraw.Draw(im); logo(im)
     f_h, f_s, f_m, f_b = (font('Syne-800.ttf', 96), font('IS-500.ttf', 42),
                           font('IS-500.ttf', 34), font('IS-600.ttf', 40))
     y = 940

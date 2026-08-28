@@ -56,7 +56,17 @@ def block(d, x, y, text, f, fill, mw, lead=1.1):
     for i, ln in enumerate(lines): d.text((x, y + i * lh), ln, font=f, fill=fill)
     return y + len(lines) * lh
 
-def logo(d, y=120): d.text((M, y), 'SCULPTCLUB', font=font('Syne-800.ttf', 36), fill=BONE)
+def logo(im, y=120, w=286):
+    """Paste the REAL wordmark. The logo is a FILE, never type — the mark is two
+    words in a custom grotesque that Syne does not reproduce. Guarded by
+    scripts/check-logo.mjs after a typed wordmark shipped live on 2026-08-26."""
+    mark = Image.open(REPO + 'sculptclub/public/images/logo-sculptclub.png').convert('RGBA')
+    h = max(1, round(mark.height * (w / mark.width)))
+    mark = mark.resize((w, h), Image.LANCZOS)
+    # source art is near-black; recolour to bone, keep the alpha channel
+    tint = Image.new('RGBA', mark.size, BONE + (255,))
+    tint.putalpha(mark.getchannel('A'))
+    im.paste(tint, (M, y), tint)
 def dot(d, x, y, r=9, c=ORANGE): d.ellipse([x, y, x + r * 2, y + r * 2], fill=c)
 
 def num_badge(d, x, y, n, f):
@@ -69,7 +79,7 @@ P = REPO + 'sculptclub/public/images/studio/'
 
 # 1 — HOOK: the room itself
 im = scrim(cover(Image.open(P + 'gym-latest.jpg').convert('RGB'), W, H, bias=.45), start=.02, strength=238, flat=48)
-d = ImageDraw.Draw(im); logo(d)
+d = ImageDraw.Draw(im); logo(im)
 f_over, f_big, f_sub = font('IS-600.ttf', 38), font('Syne-800.ttf', 118), font('IS-500.ttf', 42)
 y = 640
 lab = 'VOOR TRAINERS · JORDAAN'
@@ -92,7 +102,7 @@ im.save(OUT + '01-hook.jpg', quality=93)
 
 # 2 — WAT ER STAAT
 im = scrim(cover(Image.open(P + 'power-rack.jpeg').convert('RGB'), W, H, bias=.5).filter(ImageFilter.GaussianBlur(4)), start=0, strength=170, flat=120)
-d = ImageDraw.Draw(im); logo(d)
+d = ImageDraw.Draw(im); logo(im)
 f_h, f_row = font('Syne-800.ttf', 84), font('IS-500.ttf', 44)
 y = 520
 y = block(d, M, y, 'Wat er staat.', f_h, BONE, W - M * 2, lead=1.05); y += 56
@@ -102,7 +112,7 @@ im.save(OUT + '02-wat.jpg', quality=93)
 
 # 3 — ZO WERKT HET
 im = scrim(cover(Image.open(P + 'canal-view-doors.jpg').convert('RGB'), W, H, bias=.5).filter(ImageFilter.GaussianBlur(7)), start=0, strength=186, flat=142)
-d = ImageDraw.Draw(im); logo(d)
+d = ImageDraw.Draw(im); logo(im)
 f_h, f_step, f_n = font('Syne-800.ttf', 84), font('IS-500.ttf', 42), font('Syne-700.ttf', 32)
 y = 470
 y = block(d, M, y, 'Zo werkt het.', f_h, BONE, W - M * 2, lead=1.05); y += 56
@@ -114,7 +124,7 @@ im.save(OUT + '03-hoe.jpg', quality=93)
 
 # 4 — CTA
 im = scrim(cover(Image.open(P + 'back-room-full.jpg').convert('RGB'), W, H, bias=.4), start=.02, strength=240, flat=56)
-d = ImageDraw.Draw(im); logo(d)
+d = ImageDraw.Draw(im); logo(im)
 f_h, f_sub, f_b = font('Syne-800.ttf', 96), font('IS-500.ttf', 42), font('IS-600.ttf', 42)
 y = 780
 y = block(d, M, y, 'Eerste sessie gratis.', f_h, BONE, W - M * 2 - 60, lead=1.04); y += 30
