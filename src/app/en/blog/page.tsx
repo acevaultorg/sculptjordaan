@@ -372,6 +372,14 @@ const posts = [
     date: "May 20, 2026",
   },
   {
+    title: "Disability Insurance (AOV) for Personal Trainers — mandatory from ~2030",
+    excerpt:
+      "The BAZ act makes disability insurance mandatory for Dutch freelancers around 2030. What the public scheme covers, what private cover costs for a physical profession, and when a broodfonds is enough.",
+    category: "For Trainers",
+    href: "/en/blog/disability-insurance-freelance-personal-trainer-netherlands",
+    date: "Aug 28, 2026",
+  },
+  {
     title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026)",
     excerpt:
       "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, liability, AOV, pension and bookkeeping.",

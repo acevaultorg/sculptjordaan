@@ -372,6 +372,14 @@ const posts = [
     date: "20 mei 2026",
   },
   {
+    title: "AOV voor Personal Trainers — verplicht vanaf ±2030, dit kost het nu",
+    excerpt:
+      "Wet BAZ maakt een AOV rond 2030 verplicht voor ZZP'ers. Wat de publieke verzekering inhoudt, wat een private AOV nu kost voor een fysiek beroep, en wanneer een broodfonds genoeg is.",
+    category: "Voor Trainers",
+    href: "/nl/blog/aov-personal-trainer-zzp",
+    date: "28 aug 2026",
+  },
+  {
     title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026)",
     excerpt:
       "Complete gids voor wie ZZP personal trainer wordt: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding — met de actuele cijfers.",
