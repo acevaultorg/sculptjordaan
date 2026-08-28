@@ -633,3 +633,48 @@ concluded it linked to no profiles. It links to all of them — via
 Same class of error as the `studio-huren|/en/rent` pattern that missed `/en/studio-rental`, and the
 zsh glob that returned "0" from a shell error. **Treat every grep-based absence as a claim about
 the pattern until a positive control says otherwise.**
+
+## Element clicks + conversions by type — first real measurement (2026-08-28)
+
+Operator asked two questions nobody could answer before, because the header pills carry
+zero tracking events. Measured via Clarity heatmap (30d, homepage) + GA4 (Jul 31–Aug 27).
+
+### Header pills, homepage, 30d (Clarity click map, desktop 268 + mobile 56 taps)
+
+| pill | desktop | mobile | total |
+|---|--:|--:|--:|
+| Huur Studio | 22 | 8 | **30** |
+| Open Gym | 7 | 4 | 11 |
+| Personal Training | 8 | 3 | 11 |
+| Small Group | 3 | 3 | 6 |
+
+**Huur Studio out-clicks the other three pills combined.** Primary CTA area ≈ 44 clicks.
+Hero WhatsApp button ("Stel je vraag"): **3 clicks/30d.** The account icon (top right):
+31 clicks — people looking for a login that doesn't exist (likely renting trainers).
+
+### Purchases by item (GA4 e-commerce, Jul 31–Aug 27; consent-gated SAMPLE — undercounts
+absolute volume ~5-10×, the SPLIT is the signal)
+
+| item | purchases | tracked revenue |
+|---|--:|--:|
+| Hele Studio 60 min | 14 | $184.06 |
+| Halve Studio 60 min | 3 | $41.57 |
+| Open Gym Sessie | 3 | $41.55 |
+| Open Gym try-free | 1 | $14.00 |
+| **Small Group** | **0** | — |
+| **Personal Training** | **0** | — |
+
+Zero SG and zero PT purchases — corroborated by Clarity: every booking-confirmation URL
+read (`/nl/boeking-bevestigd?type=…`, unique Acuity id per row) was a studio-rental or
+open-gym type. PT exists on this site as LEADS only: `Trainer_Intake_Lead_1` 18 events /
+12 users + `whatsapp_click` 18/12 in the same window. Funnel events: `Book_appointment_1`
+178 · `begin_checkout` 156 · `begin_booking` 152 → 21 tracked purchases.
+
+Acuity itself (the booking truth) was NOT readable — operator logged out, and typing
+credentials is a hard never. GA4 property currency is USD.
+
+### What this changed
+
+The hero decision (same day): second CTA became "Huur de studio" (the most-clicked,
+all-of-revenue side had no hero door); WhatsApp shrank to an icon-only circle (3 clicks/30d,
+but it is mobile's only above-fold WhatsApp entry — the floating button is `hidden md:flex`).
