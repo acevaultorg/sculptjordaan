@@ -11,6 +11,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Founded:** 2025
 - **Rating:** 5.0 stars on Google
 - **Open Gym capacity:** max **4 people** in the studio at a time (operator 2026-06-23, raised from 3). Use "max 4 personen / max 4 people" everywhere — never "3".
+- **Dumbbells: 4–40 kg** (photo-verified 2026-08-28 from the rack close-up IMG_0878 — engraved 10/12.5/15/20/22.5/25 + two 40s on the floor row; site previously carried FOUR contradictory claims incl. "tot 50 kg" and "tot 32 kg", all fixed to 40). NEVER write "tot 50 kg" or "tot 32 kg". Lower bound 4-vs-2 kg is operator-confirmable; top is 40.
 - **Studio rental capacity (operator 2026-07-13):** Half studio = **max 2** (1:1 / a duo); the *other* half can be used at the same time by another trainer OR by Open Gym — so up to 4 people share the room (two couples of 2, or one couple + 2 Open Gym, or 4 Open Gym). Full studio = **fully private, NO fixed maximum** (your own small group). **NEVER say the full studio holds "6"** — that figure was wrong and was corrected fleet-wide on 2026-07-13. Full-studio labels use "kleine groep / small group", never a hard number.
 
 ## Pricing (ALWAYS use these exact numbers)
