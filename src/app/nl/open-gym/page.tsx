@@ -622,6 +622,14 @@ export default function OpenGymPageNL() {
                 <p className="text-sm text-muted-foreground mb-1">Praktisch</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Je eerste bezoek — wat je kunt verwachten</p>
               </a>
+              {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
+                  translation (nl<->en language switch) — a closed loop, zero links from any
+                  content page, despite being indexable + in the sitemap. Booking pages on the
+                  studio-rental path (=93% of revenue) must be reachable from the money page. */}
+              <a href="/nl/boek-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Boeken</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boek Open Gym — losse sessie of abonnement</p>
+              </a>
               <a href="/nl/blog/consistent-blijven-met-sporten" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Consistent blijven met sporten</p>

@@ -615,6 +615,14 @@ export default function StudioRentalPageNL() {
                 <p className="text-sm text-brand mb-1">Rekentool</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Bereken wat je overhoudt vs een commissie-gym →</p>
               </a>
+              {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
+                  translation (nl<->en language switch) — a closed loop, zero links from any
+                  content page, despite being indexable + in the sitemap. Booking pages on the
+                  studio-rental path (=93% of revenue) must be reachable from the money page. */}
+              <a href="/nl/boek-studio" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
+                <p className="text-sm text-brand mb-1">Boeken</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boek de studio — beschikbaarheid en tarieven per uur →</p>
+              </a>
               <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Studio huren als personal trainer in Amsterdam</p>
