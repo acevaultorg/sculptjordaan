@@ -149,7 +149,7 @@ const trainerFaqs = [
   },
   {
     q: "What equipment is available?",
-    a: "Rogue power rack, Olympic barbells + bumpers, dumbbells up to 32 kg, cable machine, sleds, kettlebells, plyo box, benches, bands, and cardio. Sufficient for 95% of standard PT sessions. Full list on /en/studio-rental.",
+    a: "Rogue power rack, Olympic barbells + bumpers, dumbbells up to 40 kg, cable machine, sleds, kettlebells, plyo box, benches, bands, and cardio. Sufficient for 95% of standard PT sessions. Full list on /en/studio-rental.",
   },
   {
     q: "What are the operating hours?",

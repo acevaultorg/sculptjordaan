@@ -105,7 +105,7 @@ const features = [
 // src/app/nl/studio-huren/page.tsx.
 const galleryImages = [
   { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack with Olympic barbell at SculptClub" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Full dumbbell set up to 32 kg at SculptClub" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Full dumbbell set up to 40 kg at SculptClub" },
   { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack with plants and vinyl player at SculptClub" },
   { src: "/images/studio/studio-overview.jpeg", alt: "Overview of the SculptClub private studio in the Jordaan" },
 ];

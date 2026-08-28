@@ -148,7 +148,7 @@ export default function BlogPostStudioRentalEN() {
               <p>
                 Your clients expect a professional environment. With a rented studio, you get access to equipment
                 that would be difficult to purchase as an individual trainer: power racks, cable machines,
-                dumbbells up to 50 kg, assault bikes and more. The studio is clean, well-maintained and has the
+                dumbbells up to 40 kg, assault bikes and more. The studio is clean, well-maintained and has the
                 right look to give your clients a premium experience.
               </p>
 

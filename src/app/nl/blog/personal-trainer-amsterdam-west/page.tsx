@@ -108,7 +108,7 @@ export default function PersonalTrainerAmsterdamWestNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat is anders aan een privé studio?</h2>
               <p>
                 Bij SculptClub train je niet in een volle sportschool. Je krijgt een volledige privé
-                studio met professionele apparatuur — power rack, kabelmachine, dumbbells tot 50 kg,
+                studio met professionele apparatuur — power rack, kabelmachine, dumbbells tot 40 kg,
                 assault bike. Maximaal 4 personen tegelijk, maar bij personal training ben je alleen
                 met je trainer. Geen wachten op apparaten, geen afleiding, geen ongemakkelijke
                 situaties. De deurcode ontvang je via WhatsApp de avond tevoren.

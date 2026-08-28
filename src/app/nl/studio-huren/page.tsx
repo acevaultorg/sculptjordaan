@@ -121,7 +121,7 @@ const features = [
 // complement the hero's spatial overviews.
 const galleryImages = [
   { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack met Olympic barbell bij SculptClub" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Volledige dumbbell-set tot 32 kg bij SculptClub" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Volledige dumbbell-set tot 40 kg bij SculptClub" },
   { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack met planten en vinyl speler bij SculptClub" },
   { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio in de Jordaan" },
 ];

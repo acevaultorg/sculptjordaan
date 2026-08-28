@@ -108,7 +108,7 @@ export default function BlogPostFysioStudioNL() {
               </p>
               <p>
                 Door een trainingsruimte te huren heb je toegang tot een power rack, kabelmachine,
-                dumbbells tot 50 kg en meer. Dat opent de deur naar effectievere behandelingen en
+                dumbbells tot 40 kg en meer. Dat opent de deur naar effectievere behandelingen en
                 sneller herstel voor je patiënten.
               </p>
 

@@ -148,7 +148,7 @@ const trainerFaqs = [
   },
   {
     q: "Welke apparatuur is aanwezig?",
-    a: "Rogue power rack, Olympic barbells + bumpers, dumbbells tot 32 kg, kabelmachine, sleds, kettlebells, plyo box, fitnessbanken, bands en cardio. Voldoende voor 95% van standaard-PT-sessies. Lijst op /nl/studio-huren.",
+    a: "Rogue power rack, Olympic barbells + bumpers, dumbbells tot 40 kg, kabelmachine, sleds, kettlebells, plyo box, fitnessbanken, bands en cardio. Voldoende voor 95% van standaard-PT-sessies. Lijst op /nl/studio-huren.",
   },
   {
     q: "Tot welke tijden is de studio open?",

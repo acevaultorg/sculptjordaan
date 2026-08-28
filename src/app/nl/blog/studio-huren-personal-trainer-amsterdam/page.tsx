@@ -148,7 +148,7 @@ export default function BlogPostStudioHurenNL() {
               <p>
                 Je klanten verwachten een professionele omgeving. Bij een gehuurde studio heb je toegang tot
                 apparatuur die je als individuele trainer moeilijk zelf kunt aanschaffen: power racks, kabelmachines,
-                dumbbells tot 50 kg, assault bikes en meer. De studio is schoon, goed onderhouden en heeft de
+                dumbbells tot 40 kg, assault bikes en meer. De studio is schoon, goed onderhouden en heeft de
                 juiste uitstraling om je klanten een premium ervaring te bieden.
               </p>
 
