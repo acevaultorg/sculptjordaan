@@ -20,20 +20,37 @@ While studio utilisation is low, **2 of every 3 posts must be trainer-facing**
 
 ## Cadence
 
-**3×/week — Mon / Wed / Fri.** Not daily, deliberately: the constraint here has
-never been ideas (50+ posts sit written and unposted) — it is throughput. A
-cadence that gets kept beats a better one that doesn't. Ramp to 5×/week only
-after four consecutive weeks land 3/3.
+**DAILY, auto-posted to TikTok at ~19:00** (operator directive 2026-08-28: "post the
+tiktok post, every day must be posted on the best time"). The scheduled task fires
+18:40 and POSTS via TikTok Studio in the operator's Chrome — the operator authorized
+TikTok auto-posting under the account identity; Instagram stays a manual 2-minute
+hand-off. The unposted backlog is the daily queue; new posts are built only when it
+runs dry. 19:00 is the default best-time — every 4th run must check the account's own
+activity data and move the cron if the data disagrees.
+(Superseded: the 2026-08-26 "3×/week, deliberately not daily" cadence — kept for the
+record; daily became viable because posting is now automated, so the throughput
+constraint that motivated 3×/week is gone.)
 
 ## Log
 
 | date | slot | post-id | studio link | posted? | result |
 |---|---|---|---|---|---|
-| 2026-08-26 | arithmetic | trainer-arithmetic-001 | /social/trainer-arithmetic-001/ | operator | — |
-| 2026-08-28 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | operator | — |
-| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | operator | — |
+| 2026-08-26 | arithmetic | trainer-arithmetic-001 | /social/trainer-arithmetic-001/ | ✅ 26 aug 11:45 | 265 views · 1 like @ 28 aug |
+| 2026-08-26 | meet-name | trainer-gezina-001 | /social/trainer-gezina-001/ | ✅ 26 aug 12:23 | 251 views · 2 likes @ 28 aug |
+| 2026-08-27 | (outside rotation) | trainer-hamish-2026-08 | /social/trainer-hamish-2026-08/ | ✅ 27 aug 18:32 | 242 views · 1 reactie @ 28 aug |
+| 2026-08-28 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | NOT posted — next in daily queue | — |
+| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | ✅ 28 aug ~16:45 AUTO-POSTED (Chrome MCP → TikTok Studio) | in review ("Content wordt beoordeeld") |
 
 ### Skips + notes
+
+- **2026-08-28 RECONCILIATION — the log was stale, TikTok was ahead.** The Studio
+  Berichten list showed 3 posts live that this log had as "operator —": arithmetic
+  (26 aug, 265 views), gezina (26 aug, 251), hamish (27 aug, 242, never logged here
+  at all). All three sit in the 242–265 view band — a consistent organic baseline,
+  well below the 836–1,553 target band. THE LIST IS TRUTH; reconcile against it at
+  the START of every run (now step 2 of the scheduled task). First auto-posted post:
+  geen-wachtrij-001, via file_upload into TikTok Studio's Foto's tab — the mssdk
+  block only kills the programmatic API, not the UI path.
 
 - **2026-08-28 (2nd run, operator-triggered) — slot 4 `privacy` taken in order.** Not a
   skip: privacy after empty-room does not make three client posts in a row (empty-room
