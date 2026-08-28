@@ -287,3 +287,102 @@ reads as a client rather than a model. Open Gym is never shown in use.
   and `gbp-uploads` / `classpass-uploads` re-crop the February studio set.
 
 Contact sheet (thumbnails, noindex): https://sculptclub.nl/social/photo-library/
+
+## Conversion mix is measurable WITHOUT GA4 (2026-08-28)
+
+`intent` (trainer / studio_rental / open_gym / generic) is sent to GA4 only — never to
+Clarity — and the autopilot has no GA4 credentials. So the most important business
+question, *is the site converting the 93% revenue line or only Open Gym?*, looked
+unmeasurable.
+
+It isn't. **The booking-confirmation page carries the product in its URL:**
+
+```
+/nl/boeking-bevestigd?type=Hele%20Studio%2060%20min%20%2F%20Full%20Studio%2060%20min&value=0&id=…
+```
+
+Clarity's Data Export API (`project-live-insights`, `dimension1=URL`, `CLARITY_API_TOKEN`
+in `~/.zshenv`) returns those URLs with session counts. Parse the `type` param and the
+mix falls out — no GA4, no operator, one API call. Rate limit ~10/day, so make it count.
+
+### Measured 3-day window (2026-08-28)
+
+| type | n |
+|---|--:|
+| Hele Studio 60 min | 31 |
+| Halve Studio 60 min | 24 |
+| Studio help 90 min | 1 |
+| **studio rental** | **56 (92%)** |
+| Open Gym session + free trial | 4 (7%) |
+
+**The RATIO is the finding and it is robust** — 92/7 rental-vs-Open-Gym matches the known
+93/5 revenue split, so the funnel is delivering the line that pays. No on-site conversion
+fix is warranted; the constraint is upstream (503 visitors/30d against a 3000 target).
+
+**The ABSOLUTE VOLUME is NOT reliable and must not be quoted.** Two unresolved problems:
+1. The API returns a top-N URL list, not every URL — 60 is a floor, not a total.
+2. It contradicts the fleet metric `conversions_30d: 24`. 60 confirmations in 3 days
+   annualises to ~600/month, 25× that figure. Most of the gap is almost certainly
+   existing trainers rebooking (a trainer renting 3×/week hits this page ~12×/month),
+   plus GA4 "conversions" counting a narrower configured event. Do not compute revenue
+   from these counts — 31×EUR17 + 24×EUR12 would imply ~EUR 8k/month against a known
+   ~EUR 2.5k. The arithmetic is wrong somewhere; treat the mix as signal and the
+   magnitude as unknown until GA4 or Acuity settles it.
+
+### Traffic shape, same window
+
+`/` 21 · `/nl/boek-studio` 10 · `/nl/studio-huren` 7 · `/nl/vind-jouw-personal-trainer` 6.
+The booking page is the second-busiest page on the site — existing trainers go straight
+there. `/nl/studio-huren` (~70 sessions/month) is the *acquisition* page for new trainers,
+and `/nl/studio-huren/gratis-test` sees ~2/3d, so roughly a third of that page's visitors
+reach the free-trial step.
+
+One referral arrived as `/nl/studio-huren?utm_source=chatgpt.com` — AI citation is already
+sending traffic to the trainer-acquisition page.
+
+## AI-citation channel — first ever measurement (2026-08-28)
+
+Never checked before. Read via Bing Webmaster Tools → AI Performance, one API call from
+an authenticated `bing.com/webmasters` tab (method in `rules/ai-citation-channel.md`).
+
+**Positive control run in the same pass:** readinglist.school returned 33,093 citations
+over 128 days. So the API path is healthy and a low SculptClub number is a real finding,
+not a broken instrument.
+
+### SculptClub: 64 citations in 278 days (last7 9 · prev7 7)
+
+Genuinely small. This is the one fleet site where the "web metrics understate AI by
+9-105×" pattern does NOT rescue the number — the site really is barely cited.
+
+**But 61% of it lands on four pages, and they are all the same audience:**
+
+| page | citations |
+|---|--:|
+| `/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen` | 16 |
+| `/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension` | 14 |
+| `/en/for-trainers/zzp-personal-trainer-checklist` | 5 |
+| `/nl/voor-trainers/freelance-personal-trainer-worden` | 4 |
+| **freelance/ZZP-trainer cluster** | **39 of 64 (61%)** |
+| rest (afvallen · sportschool-zonder-abonnement · jordaan · PT-kosten · boutique-vs-keten) | 25 |
+
+AI engines cite this site almost exclusively for *"how do I become an independent personal
+trainer in the Netherlands"* — KvK registration, BTW, insurance, pension. **That is exactly
+the person who then needs a studio to rent**, i.e. the 93%-of-revenue customer. It matches
+the `?utm_source=chatgpt.com` referral observed landing on `/nl/studio-huren`.
+
+EN (14) performs nearly as well as NL (16) — not a Dutch-only play.
+
+Bing returns `NoDataFound` for query-level data at this volume, so the exact prompts are
+unknown; the page list is the evidence.
+
+### Why this is worth pursuing despite tiny absolute numbers
+
+readinglist's citations are worth ~EUR 0.069/click. A trainer who starts renting is
+recurring revenue for months against a studio at ~50% utilisation, i.e. near-zero marginal
+cost. **Low volume, extremely high value per visitor** — the opposite trade to the affiliate
+fleet, and the reason a 64-citation footprint is still worth compounding.
+
+Per `ai-citation-channel` LAW 3 the winning shape is a deterministic factual lookup over a
+finite verified dataset. Dutch ZZP admin is precisely that: KvK inschrijfkosten, BTW +
+KOR-drempel, AOV/verzekeringsvormen, lijfrente/pensioen, urencriterium, zelfstandigenaftrek,
+starterskorting — finite, factual, checkable against Belastingdienst/KvK, one right answer.
