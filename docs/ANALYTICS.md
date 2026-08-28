@@ -164,3 +164,26 @@ them into GTM tags would risk **double-firing conversions** (every event counted
 twice) unless the hardcoded snippet is removed in the exact same change. Only add
 *new* tags to GTM (e.g. a future tag an agency needs without a code deploy). If you
 ever do migrate a pixel into GTM, remove its hardcoded snippet here in the same PR.
+
+## GA4 `nav_click` — header-navigatie (toegevoegd 2026-08-28)
+
+De vier categorie-tegels (Small Group · Open Gym · Personal Training · Huur Studio) en het
+"Mijn boekingen"-icoon/paneel droegen **geen enkel event**. De vraag "hoe vaak wordt elke
+knop geklikt?" kon alleen beantwoord worden door Clarity-heatmaps met de hand te lezen
+(meting 2026-08-28, homepage, 30d: Huur Studio 30 · Open Gym 11 · PT 11 · Small Group 6 —
+en het boekingen-icoon 31).
+
+Nu: GA4-event **`nav_click`** met params:
+
+| param | waarden |
+|---|---|
+| `surface` | `header_tiles` · `bookings_icon` · `bookings_panel` |
+| `label` | de href van de tegel/categorie · `open` (icoon) · `acuity_manage` |
+| `locale` | `nl` · `en` |
+
+Aflezen: GA4 → Reports → Engagement → Events → `nav_click` → parameter `label`
+(of Explore met dimensie `label`, gesplitst op `surface`). Dit telt sitewide, niet alleen
+de homepage zoals de heatmap-meting.
+
+NB: dit document beschrijft verder de Plausible-taxonomie; Plausible is 2026-07-20
+uitgezet. GA4 (via `src/lib/tracking.ts` → `sendEvent`) is het levende kanaal.

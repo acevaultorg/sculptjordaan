@@ -8,6 +8,7 @@ import { Menu, X, Globe, User, ArrowRight, ExternalLink, MessageCircle, Building
 import { mainNav, secondaryNav } from "@/config/navigation";
 import { getLocaleFromPath, getAlternatePath, getAlternateLocale } from "@/lib/locale";
 import { cn } from "@/lib/utils";
+import { trackNavClick } from "@/lib/tracking";
 
 // 2026-07-04 header redesign (operator concept): a clean two-row header — a
 // utility row (logo · language · login · menu) above a PERSISTENT category
@@ -101,6 +102,7 @@ export function Header() {
   }
 
   function handleLoginClick() {
+    if (!loginOpen) trackNavClick("bookings_icon", "open", locale);
     setLoginOpen(!loginOpen);
     setMenuOpen(false);
   }
@@ -178,6 +180,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
+                  onClick={() => trackNavClick("header_tiles", item.href, locale)}
                   className={cn(
                     // Each tile keeps its own natural content width (no word is
                     // ever abbreviated/hidden) — padding/gap/tracking are tuned
@@ -359,7 +362,7 @@ export function Header() {
                     <Link
                       key={cat.href}
                       href={cat.href}
-                      onClick={() => setLoginOpen(false)}
+                      onClick={() => { trackNavClick("bookings_panel", cat.href, locale); setLoginOpen(false); }}
                       className="flex items-center gap-4 p-4 rounded-2xl border border-border/60 hover:border-brand hover:bg-brand/5 transition-colors group"
                     >
                       <div className="w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
@@ -379,7 +382,7 @@ export function Header() {
                     href="https://app.acuityscheduling.com/schedule/fba376d5"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => setLoginOpen(false)}
+                    onClick={() => { trackNavClick("bookings_panel", "acuity_manage", locale); setLoginOpen(false); }}
                     className="flex items-center gap-3 p-3 rounded-xl text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                   >
                     <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />

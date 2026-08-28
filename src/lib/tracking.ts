@@ -45,6 +45,19 @@ export function trackTabSwitch(surface: string, tab: string) {
   sendEvent("tab_switch", { surface, tab });
 }
 
+/**
+ * Track header-navigation clicks (GA4). Added 2026-08-28: the four category
+ * tiles (Small Group · Open Gym · Personal Training · Huur Studio) and the
+ * "Mijn boekingen" icon/panel carried NO events at all — the operator's
+ * "how often is each tile clicked?" question could only be answered by
+ * hand-reading Clarity heatmaps (measured that day: 30/11/11/6 clicks per
+ * tile per 30d, homepage only). This makes the answer a GA4 report instead.
+ * surface: "header_tiles" | "bookings_icon" | "bookings_panel"
+ */
+export function trackNavClick(surface: string, label: string, locale: string) {
+  sendEvent("nav_click", { surface, label, locale });
+}
+
 /** Track hero CTA clicks to measure conversion by position */
 export function trackHeroClick(label: string, position: number, locale: string) {
   sendEvent("hero_cta_click", {
