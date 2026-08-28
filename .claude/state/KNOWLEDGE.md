@@ -250,3 +250,40 @@ huren — is dit dat?"). Honest expectation: this is a targeting fix, not an aut
 fix — it can plausibly move ~81 toward the 20s, it cannot manufacture page 1 on its
 own. **Verify by re-pulling non-brand position for this page in ~6 weeks; if it has
 not moved, term mismatch is refuted and authority is the remaining explanation.**
+
+## Photo library — full catalogue (2026-08-28)
+
+**All 139 source photos read**, not sampled. 4.9 GB across 7 folders, found by counting
+images per directory (a filename search for "sculptclub" missed 133 of them — the shoots
+are named `Martin hiperflow website-081.jpg` and `IMG_0857.jpeg`).
+
+Method: `sips` 520px thumbnails → 11 HTML contact sheets rendered in Chrome → read directly.
+A first attempt pointed 8 subagents at the 4000×6000 originals; all 8 stalled and burned
+24.9M tokens for zero output. The instrument was wrong, not the design.
+
+### The finding: ZERO coaching-interaction shots. 0 of 139.
+
+There is not a single two-person frame in the entire library. Every photo is one of:
+
+| Category | ~count | What it is |
+|---|---:|---|
+| Empty studio / equipment | ~55 | Rack, platform, dumbbell wall, SCULPT hallway, air bike, sled |
+| Solo male model | ~30 | July shoot, shirtless, dramatic warm key light |
+| Solo female model | ~40 | April "Martin hiperflow" shoot, dumbbells + barbell + squat rack |
+| Exterior / entrance | ~8 | Door 424, canal facade, hallway-to-canal |
+| Gezina (trainer-supplied) | 13 | Also solo |
+
+**Nobody is instructing, spotting, or correcting anybody.** Nobody is over ~35. Nobody
+reads as a client rather than a model. Open Gym is never shown in use.
+
+### Consequences
+
+- The Sam-shoot premise is CONFIRMED, not refuted — but a paid shoot is the second-cheapest
+  fix. The cheapest is asking renting trainers for session photos (with client consent),
+  which is exactly how the Gezina post got made, at EUR 0.
+- **`FEB/IMG_0866` is the best GBP exterior** — street-level, whole facade, house number
+  visible. `gbp-uploads/02-entrance-424` is the doorway close-up, which is not the same thing.
+- ~25 files are duplicates: `exports-web-2026-07` is a web-res copy of `exports-fullres-2026-07`,
+  and `gbp-uploads` / `classpass-uploads` re-crop the February studio set.
+
+Contact sheet (thumbnails, noindex): https://sculptclub.nl/social/photo-library/

@@ -15,7 +15,9 @@
     "mobile": "playwright test",
     "mobile:local": "PW_BASE_URL=http://localhost:3000 playwright test",
     "mobile:headed": "playwright test --headed",
-    "check:logo": "node scripts/check-logo.mjs"
+    "check:logo": "node scripts/check-logo.mjs",
+    "photo-library": "node scripts/build-photo-library.mjs",
+    "verify:photo-library": "node scripts/verify-photo-library.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
