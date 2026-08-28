@@ -19,20 +19,26 @@ export interface NavItem {
   highlight?: boolean;
 }
 
-// Primary categories — aligned to the operator's new header concept
-// (2026-07-04): Small Group · Open Gym · Personal Training · Rent Studio.
-// Small Group links the new /small-group page (was orphaned). "Voor Trainers"
-// (the trainer hub) stays reachable via footer + hamburger; the trainer
-// conversion page (Studio Huren) keeps its top-nav slot as "Rent studio".
+// Primary categories. Was the operator's 2026-07-04 four-tile concept
+// (Small Group · Open Gym · Personal Training · Rent Studio); Small Group was
+// REMOVED 2026-08-28 on measured grounds, operator-delegated ("jij maakt de
+// beste beslissing en voert uit"):
+//   · 0 Small Group bookings in THREE independent instruments — GA4 purchases
+//     (Jul 31-Aug 27), Clarity booking confirmations, and the Acuity
+//     appointments report itself (Jul: 164 appointments, Aug: 191 — not one
+//     Small Group row; the type doesn't even appear).
+//   · Fewest pill clicks of the four (6/30d vs Huur Studio's 30, Clarity
+//     heatmap, element-position verified in the header band).
+// The /small-group page still exists and stays reachable via the FirstTimeMenu
+// sheet + footer; only the tile is gone. Three tiles = more room per tile on
+// mobile. "Voor Trainers" hub stays in footer + hamburger as before.
 export const mainNav: Record<Locale, NavItem[]> = {
   nl: [
-    { label: "Small Group", href: "/nl/small-group" },
     { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Personal Training", href: "/nl/vind-jouw-personal-trainer" },
     { label: "Huur Studio", href: "/nl/studio-huren", caption: "(voor trainers)" },
   ],
   en: [
-    { label: "Small Group", href: "/en/small-group" },
     { label: "Open Gym", href: "/en/open-gym" },
     { label: "Personal Training", href: "/en/find-personal-trainer" },
     { label: "Rent Studio", href: "/en/studio-rental", caption: "(For trainers)" },
@@ -71,6 +77,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Voor Trainers (hub)", href: "/nl/voor-trainers" },
     { label: "Vind een personal trainer", href: "/nl/vind-jouw-personal-trainer" },
     { label: "Open Gym", href: "/nl/open-gym" },
+    { label: "Small Group", href: "/nl/small-group" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
     { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
@@ -80,6 +87,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "For Trainers (hub)", href: "/en/for-trainers" },
     { label: "Find your Trainer", href: "/en/find-personal-trainer" },
     { label: "Open Gym", href: "/en/open-gym" },
+    { label: "Small Group", href: "/en/small-group" },
     { label: "First Visit", href: "/en/first-visit" },
     { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],

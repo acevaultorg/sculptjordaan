@@ -29,6 +29,13 @@ const SHOOTS = {
   "gezina-sam-shoot-2026-08-17":     ["Gezina / Sam — 17 aug 2026",   "gezina-sam-shoot-2026-08-17/",                          "1066×1600 (WhatsApp)"],
   "wetransfer_foto-s-fe-x-sculpt":   ["FE x Sculpt — april 2026",     "wetransfer_foto-s-fe-x-sculpt_2026-04-12_1727 (1)/",    "3388×4517"],
   "wetransfer_foto-s-sculpt":        ["Sculpt — februari 2026",       "wetransfer_foto-s-sculpt_2026-02-12_2328 (1)/",         "4284×5712"],
+  // 67 RAW frames from the July shoot that were never exported as JPEG —
+  // found 2026-08-28 when the operator said "there must be more photos": the
+  // TransferNow delivery holds 83 .ARW files, exports-fullres only 16 JPEGs.
+  // Earlier photo counts missed them because the find filtered on jpg/png.
+  // Thumbs are sips-converted from RAW; full-res originals live in
+  // sculptclub-source-photos/TransferNow-20260715u0SY8XU0/ (RAW, 6000×4000).
+  "jul-raw-unexported":              ["Juli-shoot — 67 ongebruikte RAW-frames", "TransferNow-20260715u0SY8XU0/ (.ARW)",        "6000×4000 RAW"],
 };
 
 // 1 — normalise filenames. Spaces and parens in a URL are a needless 404 risk.

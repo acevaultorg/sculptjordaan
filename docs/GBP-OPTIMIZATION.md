@@ -381,3 +381,12 @@ After this optimization: target 95%+ strength, 1500+ interactions/window within 
 ---
 
 *Last updated: 2026-05-06 · Linked from CLAUDE.md as the canonical GBP optimization spec.*
+
+---
+
+## ✅ Uitgevoerd 2026-08-28 (via Search NMX-panel — business.google.com editor blijft kapot)
+
+- **Gevelfoto geüpload**: IMG_0866 (4284×5712, gevel Egelantiersgracht met SCULPT-muurlogo) — status "In behandeling" → wordt na Google-review publiek.
+- **POST 1 gepubliceerd** (gratis-intake update): tekst + `entrance-smile.jpg` + Boeken-knop → https://sculptclub.nl/nl/gratis-intake. Live geverifieerd ("Gepubliceerd op 23 seconden geleden").
+- **Review-share-link opgehaald**: `https://g.page/r/CTvnaoXK0EoFEBM/review` (302 → Google review-flow). Gebruik in WhatsApp naar tevreden klanten; trainers kunnen hem doorsturen naar hun eigen clients.
+- Techniek-notitie: post-editor + foto-upload leven in een same-origin iframe; file-uploads via een top-frame brug-input + `file_upload` → DataTransfer-overdracht. Het "Link voor je knop"-veld accepteert GEEN programmatic value-set (Wiz-model raakt corrupt → "link vereist"-fout blijft); reset de Knop-sectie en typ met echte toetsen.
