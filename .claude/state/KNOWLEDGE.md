@@ -828,3 +828,60 @@ grep -rniE "(50|32) ?kg|40\+ ?kg" src --include="*.tsx" | grep -viE "per kg"
 grep -rcE "40 ?kg" src --include="*.tsx" | grep -v ":0" | wc -l   # expect ~20
 ```
 <!-- added 2026-08-28, source: task -->
+
+## Rebasing makes SOURCE current; it does NOT make out/ current (2026-08-29)
+
+**Near-miss, caught one step before it shipped.** Mid-session another agent pushed
+`80b8041` (de-cannibalization) touching 2 blog pages. My `out/` had been built BEFORE I
+rebased onto that commit. The deploy was already launched. `wrangler`/the chunked deployer
+replaces the whole directory, so it would have served my stale build and **silently reverted
+their work on 2 live pages**. Stopped it in time — the log had written only its header line,
+no upload, no deployment created, production untouched.
+
+The trap is subtle because the git hygiene was *correct*: I pulled before pushing. But I had
+**built before pulling**, so the artifact was already stale at the moment of deploy. Git being
+clean says nothing about whether `out/` matches it.
+
+**Binding order on this repo (another agent works the same board):**
+```
+git fetch && git pull --rebase        # 1. reconcile FIRST
+npm run build                          # 2. build AFTER reconcile, never before
+git rev-list --count HEAD..origin/main # 3. MUST print 0 immediately before deploying
+<deploy>
+```
+If step 3 is non-zero, someone landed work after your build: rebase and REBUILD. Do not
+deploy. Re-run step 3 right before the deploy call, not once at the top of the leg — the
+window between build and deploy is exactly where the other agent lands.
+
+Cheap positive check that the reconcile actually took: grep the built HTML for a marker from
+their commit (here `grep -c boutique-personal-training-vs-keten out/nl/blog/...html` → 2).
+Source-level `git log` is not proof the artifact contains it.
+
+Related: `fleet-mobile-standard` § RECONCILE FIRST states the general rule; this is the
+build-artifact instance of it, and the one that is invisible to `git status`.
+<!-- added 2026-08-29, source: task (near-miss during internal-link reachability work) -->
+
+## Reachability from / beats inbound-link counting (2026-08-29)
+
+Counting inbound internal links scores a **closed loop as healthy**. Four booking pages
+(`/nl/boek-studio` ↔ `/en/book-studio`, `/nl/boek-gym` ↔ `/en/book-gym`) each had exactly 1
+inbound link — their own translation via the language switch — so an `inbound >= 1` check
+passed them while they were unreachable from anywhere on the site. They survived a full
+orphan sweep because of it.
+
+**Use BFS reachability from `/` instead.** It catches orphans AND islands in one measure:
+```python
+# build out[page] = set(internal hrefs) from BUILT html, sitemap pages only,
+# with <script> stripped; then BFS from "/" and diff against the sitemap set.
+```
+Positive control: homepage inbound should be ~127 and reachable-count should be near the
+sitemap total; if reachable is tiny, the extractor is broken, not the site.
+
+Measured 2026-08-29: 186/194 → **194/194** after de-orphaning + footer routing.
+
+**Second trap found the same way:** `secondaryNav` in `src/config/navigation.ts` (10 items
+per locale) is consumed ONLY by `header.tsx`, a **client component**. Those links never
+render into static HTML, so crawlers never see them. `/nl/contact` was listed there and was
+still unreachable. A config grep will tell you a page is linked when it is not — verify in
+`out/*.html`, not in the nav config.
+<!-- added 2026-08-29, source: task -->
