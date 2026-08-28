@@ -31,8 +31,16 @@ after four consecutive weeks land 3/3.
 |---|---|---|---|---|---|
 | 2026-08-26 | arithmetic | trainer-arithmetic-001 | /social/trainer-arithmetic-001/ | operator | — |
 | 2026-08-28 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | operator | — |
+| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | operator | — |
 
 ### Skips + notes
+
+- **2026-08-28 (2nd run, operator-triggered) — slot 4 `privacy` taken in order.** Not a
+  skip: privacy after empty-room does not make three client posts in a row (empty-room
+  is trainer-eligible). Sibling sessions also built `open-gym-september-2026`,
+  `studio-tour-2026-08` and `trainer-hamish-2026-08` OUTSIDE this rotation — none is a
+  privacy post, so no duplication; they are their own queue. The unposted backlog is
+  now 7 hand-off pages; the constraint is posting throughput, not supply.
 
 - **2026-08-28 — skipped slot 2 `meet-name`.** It had already been built two days
   earlier (`trainer-gezina-001` + an English variant) but was never logged here, so
