@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { openGymSummerDeal } from "@/config/acuity";
 import lastmodRaw from "@/sitemap-lastmod.json";
 
 // Per-route last-modified map. Keys are URL paths (e.g. "/en/blog/foo");
@@ -188,7 +189,16 @@ export function LocalBusinessJsonLd() {
               name: "Open Gym",
               itemListElement: [
                 { "@type": "Offer", itemOffered: { "@type": "Service", name: "Instapplan — 4 sessions/4 weeks" }, price: 29, priceCurrency: "EUR" },
-                { "@type": "Offer", itemOffered: { "@type": "Service", name: "Onbeperkt — unlimited/4 weeks" }, price: 69, priceCurrency: "EUR" },
+                {
+                  "@type": "Offer",
+                  itemOffered: { "@type": "Service", name: "Onbeperkt — unlimited/4 weeks" },
+                  // Sourced from the single deal config (src/config/acuity.ts), same
+                  // as /nl/prijzen and /nl/open-gym — never re-hardcode this price.
+                  price: openGymSummerDeal.active
+                    ? openGymSummerDeal.priceDeal
+                    : openGymSummerDeal.priceRegular,
+                  priceCurrency: "EUR",
+                },
               ],
             },
             {
