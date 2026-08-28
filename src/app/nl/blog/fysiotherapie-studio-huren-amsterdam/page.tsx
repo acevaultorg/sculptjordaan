@@ -155,7 +155,7 @@ export default function BlogPostFysioStudioNL() {
               <ul>
                 <li><strong>Power rack met safety pins:</strong> Voor squats, deadlifts en presses met begeleiding</li>
                 <li><strong>Kabelmachine:</strong> Onmisbaar voor schouder-revalidatie en gecontroleerde bewegingen</li>
-                <li><strong>Dumbbells (licht tot zwaar):</strong> Van 2 kg revalidatie-oefeningen tot 40+ kg kracht</li>
+                <li><strong>Dumbbells (licht tot zwaar):</strong> Van 4 kg revalidatie-oefeningen tot 40 kg kracht</li>
                 <li><strong>Verstelbare bank:</strong> Voor variatie in hoeken bij borst-, schouder- en rugoefeningen</li>
                 <li><strong>Resistance bands:</strong> Complementair aan de vrije gewichten</li>
               </ul>
