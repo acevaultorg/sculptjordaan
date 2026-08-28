@@ -156,6 +156,70 @@ FRAME_SETS["trainer-arithmetic-001"] = [
   },
 ];
 
+// ── studio-leeg-001 — slot 3 "empty-room" (2026-08-28) ────────────────────────
+// Serves BOTH audiences by design: an empty room reads as PRIVACY to a client
+// and as AVAILABILITY to a trainer. It is also a variant of this account's
+// single best-performing post ever ("Private gym in de Jordaan. Huur vanaf
+// €12/uur" — 11,000 views, 96.1% NL), which KNOWLEDGE.md says to iterate on
+// rather than replace.
+//
+// The honest hook nobody publishes: privacy has a PRICE, and it is not €12.
+// Per CLAUDE.md, the HALF studio (€12/uur) shares the room — the other half can
+// be another trainer or Open Gym. Only the FULL studio (€17/uur) is genuinely
+// "nobody else". Frame 3 attaches the privacy claim to €17 and says so plainly.
+//
+// Photos: public/images/studio (all 1440×1920). No people in any frame — the
+// subject IS the empty room. Rhythm: outside door → the room → the number →
+// the canal door → warm corner.
+//
+// Equipment names use ONLY the site's own vocabulary (rack, kabelmachine,
+// dumbbells, kettlebells, sled, Echo Bike). NO dumbbell weight is quoted:
+// src/ currently carries four contradictory claims (50 kg / 32 kg / 2-40 kg /
+// 4-40 kg), so any number would be a coin flip. Flagged for the operator.
+FRAME_SETS["studio-leeg-001"] = [
+  {
+    id: "01-deur",
+    photoAbs: "public/images/studio/facade-sculptclub.jpg",
+    focus: "58% 50%",
+    kicker: "Egelantiersgracht 424",
+    head: "Achter deze deur is niemand.",
+  },
+  {
+    id: "02-leeg",
+    photoAbs: "public/images/studio/studio-overview.jpeg",
+    focus: "45% 50%",
+    kicker: "Zo ziet leeg eruit",
+    head: "Leeg is precies het punt.",
+    body: "Rack, kabelmachine, dumbbells, kettlebells, sled en een Echo Bike. En verder niemand.",
+  },
+  {
+    id: "03-som",
+    photoAbs: "public/images/studio/back-room-full.jpg",
+    focus: "50% 50%",
+    kicker: "De hele zaal",
+    head: "Zo veel kost een lege zaal.",
+    big: "€17",
+    sub: "per uur",
+    body: "Halve studio is €12 per uur, maar dan kan de andere helft bezet zijn. Hele studio is de hele ruimte.",
+  },
+  {
+    id: "04-gracht",
+    photoAbs: "public/images/studio/canal-view-doors.jpg",
+    focus: "55% 45%",
+    kicker: "Bij mooi weer",
+    head: "De garagedeur gaat open.",
+    body: "Uitzicht op de gracht, daglicht en buitenlucht \u2014 en nog steeds je eigen ruimte.",
+  },
+  {
+    id: "05-cta",
+    photoAbs: "public/images/studio/entrance.jpeg",
+    focus: "50% 55%",
+    kicker: "Dagelijks 06:00–22:00",
+    head: "Eerste sessie gratis.",
+    body: "Zestig minuten, zelf uitproberen. Boeken kan via sculptclub.nl.",
+  },
+];
+
 const FRAMES = FRAME_SETS[POST] || FRAME_SETS["trainer-arithmetic-001"];
 
 const css = (w, h, textTop, textBottom) => `
@@ -168,13 +232,15 @@ const css = (w, h, textTop, textBottom) => `
      THERE regardless of what the photo does — a light wall behind an orange
      kicker is unreadable otherwise (caught on frames 1/2/4, 2026-08-26). */
   .scrim{position:absolute;inset:0;background:
-    linear-gradient(180deg,rgba(18,14,11,.62) 0%,rgba(18,14,11,.16) 22%,rgba(18,14,11,.14) 40%,
-                    rgba(18,14,11,.55) 58%,rgba(18,14,11,.86) 76%,rgba(18,14,11,.95) 100%)}
+    linear-gradient(180deg,rgba(18,14,11,.60) 0%,rgba(18,14,11,.18) 20%,rgba(18,14,11,.18) 34%,
+                    rgba(18,14,11,.48) 50%,rgba(18,14,11,.80) 66%,rgba(18,14,11,.92) 80%,
+                    rgba(18,14,11,.96) 100%)}
   .box{position:absolute;left:${Math.round(w*0.075)}px;right:${Math.round(w*0.075)}px;
        top:${textTop}px;bottom:${textBottom}px;
        display:flex;flex-direction:column;justify-content:flex-end;gap:${Math.round(w*0.026)}px}
   .kick{font-family:'Instrument Sans',sans-serif;font-weight:600;color:#FF8A57;
-        font-size:${Math.round(w*0.033)}px;letter-spacing:.17em;text-transform:uppercase}
+        font-size:${Math.round(w*0.033)}px;letter-spacing:.17em;text-transform:uppercase;
+        text-shadow:0 1px 14px rgba(0,0,0,.6),0 0 3px rgba(0,0,0,.35)}
   h1{font-family:Syne,sans-serif;font-weight:800;color:#FDFAF6;line-height:1.02;
      letter-spacing:-.022em;font-size:${Math.round(w*0.088)}px;text-wrap:balance;
      text-shadow:0 2px 28px rgba(0,0,0,.45)}

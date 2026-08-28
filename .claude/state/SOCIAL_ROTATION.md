@@ -30,3 +30,17 @@ after four consecutive weeks land 3/3.
 | date | slot | post-id | studio link | posted? | result |
 |---|---|---|---|---|---|
 | 2026-08-26 | arithmetic | trainer-arithmetic-001 | /social/trainer-arithmetic-001/ | operator | — |
+| 2026-08-28 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | operator | — |
+
+### Skips + notes
+
+- **2026-08-28 — skipped slot 2 `meet-name`.** It had already been built two days
+  earlier (`trainer-gezina-001` + an English variant) but was never logged here, so
+  the pointer was stale rather than the slot being due. Building a second one would
+  have duplicated it. Went to slot 3 `empty-room`, which also keeps the
+  2-of-3-trainer-facing rule intact (arithmetic → empty-room = 2/2 trainer-eligible)
+  and matches the money lever: rental is ~93% of revenue at ~50% utilisation.
+  **Lesson for the log: post first, then log — an unlogged post makes the next run
+  repeat it.** `trainer-gezina-001` is backfilled below for that reason.
+- **Backfill, 2026-08-26 — slot 2 `meet-name`, `trainer-gezina-001`** (+ `-en`
+  variant). Built but not logged at the time. Status: operator to post.
