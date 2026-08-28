@@ -102,7 +102,7 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // Hide on dedicated booking-STEP pages — the page IS the booking action, so a
   // floating "go to booking" CTA is redundant and competes with the on-page
   // widget's own button. Operator UX screenshot 2026-06-03 on
-  // /studio-huren/gratis-test showed TWO "Naar boeking" CTAs on one screen
+  // /studio-huren/gratis-test showed TWO "Naar boeken" CTAs on one screen
   // (the sticky bar + the inline AcuityEmbed's own button) = confusion. On the
   // 22 per-trainer plan-* pages the bar was even worse: it fell to the default
   // branch and MISDIRECTED the visitor away to the generic /gratis-intake — a
@@ -160,7 +160,7 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   // returns visitor there after deep-scroll.
   if (/\/(studio-huren|studio-rental)(\/|$)/.test(pathname)) {
     return {
-      label: locale === "nl" ? "Naar boeking" : "Go to booking",
+      label: locale === "nl" ? "Naar boeken" : "Go to booking",
       href: "#book",
       ctaId: "mobile-cta-studio-book",
     };
