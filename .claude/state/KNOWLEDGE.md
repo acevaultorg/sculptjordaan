@@ -5,12 +5,12 @@
 - Geo-redirect: Middleware redirects non-Dutch accept-language on root (/) to /en. www and sculptjordaan.nl subdomains 301 to sculptclub.nl. <!-- added 2026-03-30, source: scan -->
 - Pricing values in code MUST match CLAUDE.md: PT €45/session (not €49), Open Gym starts at €29/4wk (Instapplan). The €49 figure is the "Populair" plan (8 sessions/4wk) — valid when referencing that plan specifically, wrong when used as "starting from" price. <!-- added 2026-03-30, source: scan -->
 - Lint noise: .vercel/ build artifacts generate ~20 lint errors (require imports, this-alias). These are not source issues — eslint runs on generated code. <!-- added 2026-03-30, source: scan -->
-- Blog posts use hardcoded WhatsApp links (wa.me URLs) rather than importing from config. Always grep for placeholder numbers (31612345678) when new blog posts are added. Real number: 31683178934. <!-- added 2026-03-30, source: task -->
+- Blog posts use hardcoded WhatsApp links (wa.me URLs) rather than importing from config. Always grep for placeholder numbers (31612345678) when new blog posts are added. Real number: **31615147952** (`wa.me/31615147952`). <!-- added 2026-03-30, source: task; number CORRECTED 2026-08-29: this line said 31683178934, which was retired fleet-wide 2026-06-01 — CLAUDE.md says NEVER revert to it. A stale 'real number' here is high-risk precisely because blog posts hardcode wa.me links, so a session trusting this line would paste the dead number into new customer-facing CTAs. -->
 
 - Revenue priority: Studio rental is the #1 revenue driver. Should be prominent in hero CTAs and conversion paths. <!-- added 2026-03-30, source: user -->
 
 ## Error patterns
-- config: Placeholder WhatsApp number in blog CTA → replace with real number from CLAUDE.md (+31 6 83 17 89 34 = 31683178934). Blog posts don't use acuity.ts config — they hardcode wa.me links. <!-- added 2026-03-30, source: task -->
+- config: Placeholder WhatsApp number in blog CTA → replace with real number from CLAUDE.md (**+31 6 15 14 79 52 = 31615147952**). Blog posts don't use acuity.ts config — they hardcode wa.me links. <!-- added 2026-03-30, source: task; number CORRECTED 2026-08-29 — previously read +31 6 83 17 89 34 / 31683178934, retired 2026-06-01. Always take the number from CLAUDE.md itself, never from this cached copy. -->
 
 - Google Ads tracking: Single conversion action fires on ALL Acuity link clicks (AW-17749877333/QW0mCPOF_YocENXE5o9C). Added secondary GA4 event `free_intake_click` that fires specifically from gratis-intake/free-intro/plan-gratis-intake-met-* pages. Import this event in Google Ads as a secondary conversion to optimize for free intro bookings. <!-- added 2026-04-01, source: task -->
 - Email: Canonical contact email is contact@sculptclub.nl (from site config). All legal/policy pages now use this. Never use info@sculptclub.nl. <!-- added 2026-04-01, source: task -->
