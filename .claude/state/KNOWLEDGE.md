@@ -885,3 +885,30 @@ render into static HTML, so crawlers never see them. `/nl/contact` was listed th
 still unreachable. A config grep will tell you a page is linked when it is not — verify in
 `out/*.html`, not in the nav config.
 <!-- added 2026-08-29, source: task -->
+
+## Optional chaining defeats a naive call-site grep (2026-08-29)
+
+Sweeping for orphaned analytics calls with `grep -rl "window\.plausible("` reported ONE
+remaining file — apparently a closed class. It was wrong. Call sites written as
+`window.plausible?.("Event", …)` do not contain the literal `plausible(`, so the pattern
+skipped them, and **two files were hiding behind exactly that**, one of which
+(`trainer-filter-grid.tsx`) had zero GA4 coverage and was losing every `Trainer Impression`.
+
+Worse: my own fixes *introduced* optional chaining, so re-running the original sweep after
+fixing made the class look clean **because** I had fixed it. The instrument got blinder as the
+work progressed.
+
+**Sweep on the identifier, never the call syntax:**
+```bash
+grep -rlE "window\.plausible"  src/       # right — matches ( , ?.( , .call, aliasing
+grep -rl  "window\.plausible(" src/       # WRONG — misses ?.(
+```
+And make the positive control specific: assert that files you *know* match still appear. A
+sweep whose result-set shrinks after you edit unrelated files is reporting on your edits, not
+on the codebase.
+
+Same family as the `hrefLang` case-sensitivity miss and the line-wrapped substring check —
+three instrument failures in one session, all caught only because a positive control was run.
+The rule that keeps working: **when a sweep returns "clean", prove the sweep can still find a
+known-positive before believing it.**
+<!-- added 2026-08-29, source: task (Plausible orphan sweep) -->
