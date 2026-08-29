@@ -1355,11 +1355,12 @@ and assert non-empty.
     curl -s "$W/bing-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
     # needs `source ~/.zshenv` — the token is not in the default shell env
 
-## `/Users/paulodevries/Local/...` is a SYMLINK to the failing WD drive — not an escape hatch (2026-08-29)
+## `/Users/paulodevries/Local/...` is a symlink to the failing WD drive ON THE iMac ONLY (2026-08-29)
 
-The session environment lists `/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub` as an
-additional working directory. It reads like a fast local checkout — it is on `main`, clean, and
-has `node_modules`. It is not local:
+**Machine-specific — check before you rely on either fact.** On **iMac van Gebruiker** the
+session environment lists `/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub` as an
+additional working directory. It reads like a fast local checkout — on `main`, clean,
+`node_modules` present. On this machine it is not local (`ls -ld` shows `lrwxr-xr-x`):
 
     realpath(Local) == realpath(WD) == /Volumes/WD ULTRA HD 1tb/.../sculptclub
     df Local -> /dev/disk4s2      df WD -> /dev/disk4s2      # same device
@@ -1372,6 +1373,22 @@ Measured the same 100 .tsx reads through both paths:
 Both are the failing drive. This independently confirms Fleet Dashboard card
 `mt9pxpc0y5w1pk` ("96ms per file read, ~1000× slow", measured 2026-08-26) is **still true
 three days later**. A healthy SSD reads these in ~0.05 ms/file.
+
+**On the air (MacBook) the same path IS real internal storage** — ChiefPilot measured
+`/Users/paulodevries/Local/VAULT04-SculptClub` as a 10G directory on `/dev/disk3s1`,
+**0.082 ms/file** stat-only over 300 files (~900× faster, corroborating the ~1000× gap from
+the other side). So the correct conclusion is not "that path is a lie" but **"resolve the path
+on the machine you are actually on"**:
+
+    ls -ld /Users/paulodevries/Local/VAULT04-SculptClub   # lrwxr-xr-x => symlink, you are on the iMac
+    python3 -c "import os;print(os.path.realpath('/Users/paulodevries/Local/VAULT04-SculptClub'))"
+
+⇒ **Build and deploy legs belong on the air, not the iMac.** That is the fix for 45-65 min
+deploys — not a code change. Caveats from Chief's measurement, unresolved: the air's Data
+volume was 92% full (17Gi free), and the two copies were only confirmed in sync at one HEAD.
+Chief also notes its FIRST timing said 48.8 ms/file and was contaminated by `find` traversal +
+python startup inside the timing loop; the clean number pre-collects the file list and times
+only `os.stat`. Same trap applies to any re-measurement here.
 
 **Why it matters for builds:** `next build` compiles fine (5.4 min) and generates all 221
 static pages (97 s), then sits in "Finalizing page optimization" for 20+ minutes at **0.0% CPU**
