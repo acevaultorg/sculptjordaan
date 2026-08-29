@@ -946,3 +946,33 @@ Two transferable points:
   the worker owns every request and the chunked deployer ships only
   `_worker.js`/`_routes.json` as form fields. Response headers belong in
   `functions/_middleware.ts` on the `context.next()` path.
+
+## `npm run build` DELETES out/_worker.js — always recompile Functions before deploying (2026-08-29)
+
+`next build` with `output:"export"` regenerates `out/` from scratch, so it removes
+`out/_worker.js` and `out/_routes.json` — which are NOT build outputs, they are
+placed there manually by step 2 of the deploy procedure. Verified directly:
+
+    ls out/_worker.js out/_routes.json
+    → No such file or directory   (immediately after a successful build)
+
+Deploying that tree would have shipped a site with **no Pages Functions at all**:
+every middleware redirect gone, both /api routes gone, and — the reason this is
+severe — the CSP/HSTS/X-Frame-Options headers restored earlier the same night
+would have silently disappeared, because they live in the middleware.
+
+Nothing errors. The deploy succeeds. The site still returns 200. The only signal
+is `/api/whatsapp/webhook` flipping from 403 to 404, which is exactly why the
+deploy procedure's verify step checks it.
+
+**Binding order — never reorder:**
+1. `npm run build`
+2. `wrangler pages functions build --outdir=DIR` → copy `DIR/index.js` to
+   `out/_worker.js`, write `out/_routes.json`
+3. assert `grep -c Content-Security-Policy out/_worker.js` is 1
+4. deploy
+5. verify the webhook returns 403, not 404
+
+The general shape, again: **a build regenerating a directory destroys anything
+hand-placed in it.** Treat every artifact you put into a generated directory as
+volatile, and re-place it after every regeneration.

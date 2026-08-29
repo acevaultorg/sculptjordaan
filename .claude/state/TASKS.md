@@ -122,3 +122,13 @@
   - VERIFIED LIVE: all 6 headers served · 6/6 routes 200 · Functions 403 · /studio-huren 301 · '50 kg' 0 · clarity upgrade 4 · trainer_name present.
   - **Residual risk stated honestly:** no browser this session, so runtime CSP violations can't be observed directly. Mitigated by restoring a value proven in production Apr→Jul against a third-party set that has only shrunk since.
   - Closed the wider question too: `headers()` was the migration's ONLY silent drop — redirects/env/images survived, and the middleware's vanity-domain UTM injection migrated intact.
+
+- [x] **LEADS Blog lead-magnet promised an email that was never sent — deliver the asset in-page instead** (2026-08-29, deploy `65c689c6`)
+  - The capture form renders on EVERY blog post (`BlogEmailCaptureSlot` → `page-layout.tsx`). On submit it said *"Verstuurd — check je inbox binnen 1 minuut. Niets ontvangen? Kijk in spam."* / *"check your inbox in 1 minute"*.
+  - No email was ever sent. `functions/api/lead-magnet.ts` validates the address then does exactly one thing: `console.log("LEAD_MAGNET", …)`. Its own comment says "TODO: ConvertKit / Resend / Buttondown".
+  - The comment also claims "Captures are logged so nothing is lost" — but CF Pages Functions logs are a LIVE TAIL (`wrangler pages deployment tail`), not a queryable store. Label disagreeing with the artifact, same class as the IndexNow + security-header findings.
+  - Meanwhile the asset existed all along: `/pt-cheat-sheet` serves 200 with real content (72KB, 27 structured items, scoring rubric), and the API had ALWAYS returned `cheat_sheet_url` — the UI simply never read it.
+  - FIX: read `cheat_sheet_url` from the response and render a 44px brand CTA in both terminal states (success + alreadyDone). Honest copy replaces the inbox promise in NL and EN. Default is locale-aware so an EN repeat visitor isn't sent to the Dutch page (the alreadyDone path never calls the API).
+  - VERIFIED LIVE: false-promise copy 0 on the served blog page · `openCta` in served JS · lead-magnet POST 400 (alive) · webhook 403 · security headers 4/4 · 6/6 routes 200 · /studio-huren 301 · '50 kg' 0 · clarity upgrade 4 · trainer_name present.
+  - NOT fixed (operator-gated, filed as TaskPeace `mtdsxgfb0zz8ng`): captured addresses still have no durable destination — every option needs an API key or a dashboard binding. Consent wording left alone deliberately; GDPR text is the operator's call.
+  - TRAP CAUGHT: `npm run build` deletes `out/_worker.js` + `out/_routes.json`. Deploying straight after a build would have removed ALL Pages Functions and silently reverted the same night's CSP/HSTS restoration. Recompiled before deploy; webhook 403 confirms.
