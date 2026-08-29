@@ -25,13 +25,13 @@
 - Sitemap-ai.xml at `src/app/sitemap-ai.xml/route.ts` returns ~50 highest-citation-value URLs for AI crawlers (money pages + comparison guides + fresh blog + trainer profiles). Cached `public, max-age=3600, s-maxage=86400`. Per Lever 5. <!-- added 2026-04-27 -->
 - llms.txt at `public/llms.txt` includes Identity (KvK 64708101 / VAT NL002250100B57) + Differentiators + Pricing + Trainers + Core pages + Comparison guides + Citation-preferred sections + License + Last-updated. Reviewed 2026-04-27. Edit when pricing/trainers/core URLs change. Per Lever 2. <!-- added 2026-04-27 -->
 - IndexNow integration: key `ae1c16d6e9e1321057ea5294a59c66e4` lives at `public/<key>.txt`. `bin/indexnow.mjs` POSTs sitemap URLs to https://api.indexnow.org/indexnow. `bin/ship.sh` calls it after Vercel deploy (non-blocking). `npm run indexnow` for manual ping. Bing/Yandex/Naver/Seznam → indexed within hours. Google honors via Bing data sharing. NEVER rotate the key file — search engines re-verify on it. <!-- added 2026-04-27, source: PR #45 -->
-- CSP (`next.config.ts` headers) includes `static.cloudflareinsights.com` in script-src and `*.cloudflareinsights.com` in connect-src. Without these, the Cloudflare Web Analytics beacon was silently CSP-blocked from v18 ship until 2026-04-27. Hardening: base-uri 'self', form-action 'self' wa.me, object-src 'none', frame-ancestors 'none', upgrade-insecure-requests. Headers: Permissions-Policy (geo/mic/camera/payment(self)/interest-cohort=()) + Strict-Transport-Security (max-age 63072000 + includeSubDomains + preload — eligible for hstspreload.org submission). <!-- added 2026-04-27, source: PR #42 -->
+- CSP (`functions/_middleware.ts`) includes `static.cloudflareinsights.com` in script-src and `*.cloudflareinsights.com` in connect-src. Without these, the Cloudflare Web Analytics beacon was silently CSP-blocked from v18 ship until 2026-04-27. Hardening: base-uri 'self', form-action 'self' wa.me, object-src 'none', frame-ancestors 'none', upgrade-insecure-requests. Headers: Permissions-Policy (geo/mic/camera/payment(self)/interest-cohort=()) + Strict-Transport-Security (max-age 63072000 + includeSubDomains + preload — eligible for hstspreload.org submission). <!-- added 2026-04-27, source: PR #42 -->  **(location corrected 2026-08-29:** this moved out of `next.config.ts` when the CF-Pages migration deleted `headers()` — it was absent entirely from 2026-07-14 to 2026-08-29, then restored in the middleware, which is the only reliable place under Advanced-Mode `_worker.js`.)
 - Schema.org graph (`src/components/seo/json-ld.tsx#LocalBusinessJsonLd`): single `@graph` containing Organization (`#organization`), WebSite (`#website` with publisher → org + SearchAction + speakable), and LocalBusiness/HealthClub/SportsActivityLocation (`#localbusiness` with parentOrganization → org). All linked via `@id`. Loaded on every page via root layout. Per page schema (BlogPosting, FAQPage, ServiceJsonLd, ReviewsJsonLd, BreadcrumbJsonLd, PersonJsonLd, OfferCatalogJsonLd) imported as needed. OrganizationJsonLd is now a no-op stub (export kept for backwards compat — content folded into the @graph). <!-- added 2026-04-27, source: PR #44 -->
 - Speakable schema (cssSelector: h1, h2, main p:first-of-type) is on the WebSite entity in @graph. Voice assistants + AI Overview spoken-answer extraction prefer pages with this hint. <!-- added 2026-04-27, source: PR #46 -->
 - Plausible custom events fire alongside gtag/fbq/ttq in `src/components/layout/analytics.tsx`: `Free Intake Click`, `Acuity Click`, `WhatsApp Click`, `Phone Click`, `Email Click`, `Lead Generated` (umbrella with method=free_intake/whatsapp/phone/email). Each event includes props: { method, value, source_page }. Plausible Goals can be configured in dashboard to use these — no code change needed for new Goals. Closes the Plausible-bounce false-positive (e.g. /en/find-personal-trainer was 100% bounce because outbound clicks counted as zero-pageview sessions). <!-- added 2026-04-27, source: PR #43 -->
 - Layout metadata (`src/app/layout.tsx`): metadata.alternates.languages declares `nl-NL` / `en` / `x-default` at root. metadata.robots.googleBot has `max-snippet:-1, max-image-preview:large, max-video-preview:-1` for richer SERP. metadata.formatDetection: false (no iOS auto-linking of phone/email/address). Per-page metadata.alternates can override but is not required (layout default works). <!-- added 2026-04-27 -->
 - Hreflang renders as Next.js `hrefLang` (camelCase JSX → HTML attribute lowercased on parse — case-insensitive per HTML spec). Don't mistake the camelCase output for a bug. Pages may have BOTH layout-level hreflang (nl-NL/en/x-default) AND page-level hreflang (nl/en) — duplication is harmless. <!-- added 2026-04-27 -->
-- HTTP `permissions-policy` + `strict-transport-security` are set in `next.config.ts` headers (alongside CSP). HSTS preload was submitted by operator 2026-04-27 (pending inclusion in browser lists). The HSTS header `max-age=63072000; includeSubDomains; preload` MUST stay live + must NEVER drop max-age below 31536000 (1y) until/unless operator initiates official de-preload via hstspreload.org/removal — otherwise browsers cache the old policy until refresh. Treat HSTS-preloaded as permanent commitment to HTTPS-only on sculptclub.nl + all subdomains. <!-- added 2026-04-27, source: operator submission verified screenshot -->
+- HTTP `permissions-policy` + `strict-transport-security` are set in `functions/_middleware.ts` (alongside CSP). HSTS preload was submitted by operator 2026-04-27 (pending inclusion in browser lists). The HSTS header `max-age=63072000; includeSubDomains; preload` MUST stay live + must NEVER drop max-age below 31536000 (1y) until/unless operator initiates official de-preload via hstspreload.org/removal — otherwise browsers cache the old policy until refresh. Treat HSTS-preloaded as permanent commitment to HTTPS-only on sculptclub.nl + all subdomains. <!-- added 2026-04-27, source: operator submission verified screenshot -->  **(location corrected 2026-08-29:** this moved out of `next.config.ts` when the CF-Pages migration deleted `headers()` — it was absent entirely from 2026-07-14 to 2026-08-29, then restored in the middleware, which is the only reliable place under Advanced-Mode `_worker.js`.)
 - Money pages (/nl/studio-huren, /en/studio-rental, /nl/open-gym, /en/open-gym, /nl/prijzen, /en/pricing, /en/find-personal-trainer, /nl/vind-jouw-personal-trainer) all have ServiceJsonLd + OfferCatalogJsonLd + FAQPage + BreadcrumbList + speakable on top of the @graph. <!-- added 2026-04-27 -->
 - npm scripts (`package.json`): `npm run ship` → `bin/ship.sh` (full deploy with IndexNow ping). `npm run indexnow` → `node bin/indexnow.mjs` (manual ping). `npm run prebuild` → `node scripts/sitemap-lastmod.mjs` (regenerates per-route git-mtime map; runs automatically before `next build` via npm lifecycle hook). <!-- added 2026-04-27, prebuild added 2026-05-06 -->
 - Sitemap real per-route lastmod (`src/app/sitemap.ts` + `src/sitemap-lastmod.json` + `scripts/sitemap-lastmod.mjs`): generator walks `src/app/**/page.{tsx,ts,mdx}` and runs `git log -1 --format=%cI -- <file>` per file. Map COMMITTED to repo (not gitignored) because Vercel's shallow git clone resists `--deepen` extension. Generator skips regeneration in CI (`process.env.VERCEL === "1"`) and uses the committed map. Live verification: `curl -sL https://sculptclub.nl/sitemap.xml | grep -oE '<lastmod>[^<]+</lastmod>' | sort -u | wc -l` returns 9 distinct dates spanning real per-file edit history (was 4-in-12ms uniform-now anti-pattern before fix). Fall-through: map → fs.statSync → build-time `now`. <!-- added 2026-05-06, source: 4f9231e/58ce360/37b66f5 -->
@@ -912,3 +912,37 @@ three instrument failures in one session, all caught only because a positive con
 The rule that keeps working: **when a sweep returns "clean", prove the sweep can still find a
 known-positive before believing it.**
 <!-- added 2026-08-29, source: task (Plausible orphan sweep) -->
+
+## `timeout` does not exist on macOS — and the pipeline still exits 0 (2026-08-29)
+
+`timeout 3000 python3 deploy.py` fails with `(eval):1: command not found: timeout`
+and the surrounding shell **still reports exit code 0**. The deploy never ran.
+Caught only because the run's own output was read; the status code said success.
+
+This is the second instance tonight of the same class (the first: `next build`
+printing "Failed to type check" while npm exited 0). The rule generalises:
+
+> **A command's exit status is a claim about the shell, not about the work.
+> Verify the artifact — a file that changed, a marker in the output, a live
+> response — before reporting anything as done.**
+
+macOS ships no `timeout`. Use `gtimeout` (coreutils) if genuinely needed, or
+omit it and rely on the harness timeout. Do not assume GNU coreutils.
+
+## Security headers can be silently dropped by a hosting migration (2026-08-29)
+
+Vercel→CF-Pages (`ba7a735`) deleted `async headers()` from next.config.ts
+because `output: "export"` cannot run it. redirects(), middleware and the api
+routes each got an explicit migration target; headers() got none, and nobody
+noticed for ~6 weeks — CSP, HSTS, X-Frame-Options and Permissions-Policy were
+absent from every response while `TASKS.md` recorded them as shipped in PR #42.
+
+Two transferable points:
+- **A platform migration silently drops whatever the new platform cannot
+  express.** When migrating, enumerate what the OLD config did and confirm each
+  capability has a new home — the migration comment listing 4 of 5 moved things
+  was itself the evidence.
+- **Under Advanced-Mode Functions (`_worker.js`), `public/_headers` is inert** —
+  the worker owns every request and the chunked deployer ships only
+  `_worker.js`/`_routes.json` as form fields. Response headers belong in
+  `functions/_middleware.ts` on the `context.next()` path.
