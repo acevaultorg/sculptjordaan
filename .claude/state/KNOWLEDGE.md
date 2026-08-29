@@ -1279,3 +1279,30 @@ is added, its wrong-locale twins belong in EXACT too. The Open Gym deal pages ha
 been missed, which is why `/nl/open-gym/unlimited-summer-deal` and
 `/nl/open-gym/summer-deal` were live 404s — both had real (if tiny) GA4 traffic,
 so someone was hand-editing `/en/`→`/nl/` and hitting a dead end on a money page.
+
+## Sitemap vs disk: the 17-route gap is fully intentional — do not "fix" it (2026-08-29)
+
+211 `page.tsx` routes exist on disk; 194 are named in `sitemap.ts`. All 17 of the
+difference are deliberate, verified individually:
+
+- `/en/booking-confirmed`, `/nl/boeking-bevestigd` — post-conversion pages
+- `/en/free-intro-ads`, `/nl/gratis-intake-ads` — paid-ad landers, kept out of the
+  index so they don't compete with their organic twins
+- `/pt-cheat-sheet` — the lead magnet (client-rendered + noindex by design)
+- `/nl/social`, `/en/start`, `/nl/start`, `/intake-plan`, `/{nl,en}/match-trainer`
+  — internal / campaign / quiz entry points
+- **6 neighbourhood blog pages** (`personal-trainer-amsterdam-centrum`,
+  `-amsterdam-oost`/`-east`, `-de-pijp-amsterdam`, NL+EN) — these LOOK like a
+  local-SEO oversight for a local business, which is why they're worth naming
+  here. They are explicitly `robots: { index: false, follow: true }` with the
+  reason in-file: "~350 prose words; doorway-template structure with sibling
+  location pages. See rules/adsense-thin-content-prevention.md Gates 2 + 3.
+  Stays live for navigation; substantive location pages stay indexed."
+
+Indexing them would be a doorway-page pattern across sibling location variants —
+exactly what the thin-content gate exists to stop. Leave them.
+
+Measurement note: `wc -w` on those files reports 708-811 words while the comment
+says ~350 prose words. Both are right — the file count includes JSX, metadata and
+keyword arrays. Same trap as the earlier content-duplication measurement: count
+the rendered `<main>`, never the source file.
