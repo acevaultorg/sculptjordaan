@@ -10,7 +10,7 @@
 // Why not blur placeholder: see docs/PERF-EXPERIMENTS-2026-05-07.md.
 // (TL;DR: SVG feGaussianBlur regressed Lighthouse mobile LCP by 6-9s.)
 //
-// Generated: 2026-08-29T02:01:55.602Z
+// Generated: 2026-08-29T02:40:46.264Z
 // Total entries: 101
 // Skipped (unsupported format): 2
 
