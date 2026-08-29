@@ -1011,3 +1011,44 @@ measurement is worse than no number, because it gets acted on.
 
 Generalises to any "are these pages duplicative?" question: strip the furniture
 before you compare, and widen the sample before you conclude.
+
+## Per-query GSC + Bing data IS available without a browser — I wrongly called it gated (2026-08-29)
+
+I told the operator repeatedly that per-page/per-query search data needed Search
+Console and therefore a browser, and filed operator cards on that basis. That was
+wrong, and I only found out by testing the constraint instead of restating it.
+
+The fleet dashboard already holds GSC OAuth (GSC_CLIENT_ID / GSC_CLIENT_SECRET /
+GSC_REFRESH_TOKEN live in the Cloudflare Worker, not in the shell), and exposes
+per-query Bing + GSC detail routes. There is a ready-made consumer:
+
+    source ~/.zshenv
+    cd /Users/paulodevries/Local/VAULT-Fleet/tooling/55-fleet-dashboard
+    node scripts/content-opportunities.mjs --sites <domain> --top 15
+
+It needs only FLEET_DASHBOARD_INGEST_TOKEN, which IS in ~/.zshenv (it is not in
+the default shell env — you must source it). Output is a ranked queue of
+ctr-gap / zero-click findings with position, CTR vs the site's own control CTR,
+and an estimated $/mo weighted by that site's measured $/click.
+
+Worked example — colorcombinations.org, which I had just finished describing as
+"a Google authority problem with nothing fixable":
+
+    "color of the year 2026"              pos 5.2  CTR 0.36% vs 13.33%  ~$5.04/mo
+    "a dictionary of color combinations"  pos 3.7  CTR 6.43% vs 13.33%  ~$4.51/mo
+    "dictionary of color combinations"    pos 3.6  CTR 5.63% vs 13.33%  ~$2.84/mo
+    "pantone color of the year 2026"      pos 7.2  140 impr, 0 clicks   zero-click
+
+That is page-1-TOP with a CTR gap — the one situation where title/snippet work is
+the correct lever — and it is on BING, where the site actually ranks. I had spent
+the leg analysing GOOGLE rank (position 57.9) after reading a flag that said in
+plain words "BING is the live channel here — optimise Bing CTR at pos 1-6, not
+Google rank". I read the instruction and then did the opposite.
+
+Two lessons:
+1. **Before declaring anything gated, grep the fleet tooling for it.** The
+   capability usually already exists; the fleet has been building it for months.
+2. **When a data source names the channel, work that channel.** Anchoring on
+   Google because Google is the bigger search engine produced an entire leg of
+   analysis against the wrong index, and a confident "nothing fixable here"
+   conclusion that the right index immediately contradicted.
