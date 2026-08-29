@@ -214,15 +214,22 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
         value: 45,
         currency: "EUR",
       });
+        // Emit BOTH trainer + trainer_name (2026-08-29). The codebase had drifted into two
+        // param names for one concept, fragmenting per-trainer GA4 reporting. Rather than
+        // rename — which would silently break whichever is already registered as a custom
+        // dimension — both are emitted with the same value. Strictly additive: whichever the
+        // operator registers works, and the loser can be dropped later with no data gap.
       w.gtag("event", "generate_lead", {
         method: "trainer_intake_form",
         value: 45,
         currency: "EUR",
         booking_source: path,
         trainer: trainer.id,
+        trainer_name: trainer.id,
       });
       w.gtag("event", "trainer_intake_submit", {
         trainer: trainer.id,
+        trainer_name: trainer.id,
         locale,
         booking_source: path,
         intake_goal: formState.goal || "(unset)",
