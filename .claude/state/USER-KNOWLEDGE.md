@@ -30,7 +30,7 @@
 - Open Gym cancel mid-cycle: client keeps remaining sessions until cycle ends.
 - Open Gym single session: same 59-minute slot as subscription sessions, €10.
 - Studio rental discount packs expire after 12 months. Valid for both half and full studio. Strictly per person (no sharing between trainers).
-- Trainers with packs: the pack value is deducted per booking. Trainers buy a pack (e.g. Routine €199) and get €234 worth of sessions — the pack credit is used to "pay" each booking.
+- Trainers with packs: the pack value is deducted per booking. Trainers buy a pack (e.g. Routine €179) and get €210 worth of sessions — the pack credit is used to "pay" each booking.
 - PT minimum €45 is NOT enforced — trainers set their own rates, can go lower if they choose.
 - Trainers collect payment directly from clients. SculptClub takes 0% commission.
 - Studio rental free trial: yes, one free tryout available (same as Open Gym trial).
@@ -41,8 +41,8 @@
 - Door code: unique per day (not per session). Everyone who books that day gets the same code. Don't over-explain anti-misuse details on the website.
 - Overlap/conflict: if a client arrives and someone is still in the studio, they should contact SculptClub (call/WhatsApp).
 - No gap between Open Gym slots — sessions are back-to-back.
-- "Max 3 personen" Open Gym: goal is best experience per member. Enforced through booking system.
-- "Max 6" studio rental: soft guideline, not enforced. Trainers can bring more for group classes.
+- "Max 4 personen" Open Gym: goal is best experience per member. Enforced through booking system. <!-- CORRECTED 2026-08-29: said "Max 3"; capacity was raised to 4 on 2026-06-23 per CLAUDE.md. -->
+- Full studio rental: fully private, NO fixed maximum — your own small group. <!-- CORRECTED 2026-08-29: said '"Max 6" studio rental'; CLAUDE.md (operator 2026-07-13) says NEVER state 6 — that figure was wrong and was corrected fleet-wide. Half studio = max 2. -->
 - Changing facilities: limited (no full showers). Don't promise showers on the website.
 - All equipment included: resistance bands, yoga mats, foam rollers, kettlebells — everything is there.
 - Access: parking at the canals (grachten), bike is the best option. Don't promise parking.

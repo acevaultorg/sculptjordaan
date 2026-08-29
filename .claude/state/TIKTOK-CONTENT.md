@@ -112,7 +112,8 @@ sculptclub.nl/word-trainer
 **Caption:**
 Open Gym = zelfstandig trainen in een privé studio.
 
-Vanaf €5,75/sessie. Max 3 personen. Boek een tijdslot, krijg je deurcode, train.
+Vanaf €5,75/sessie. Max 4 personen. Boek een tijdslot, krijg je deurcode, train.
+<!-- CORRECTED 2026-08-29: said "Max 3 personen" — capacity was raised to 4 on 2026-06-23 (CLAUDE.md). NOT changed: "vanaf €5,75/sessie" — I could not verify it. CLAUDE.md's cheapest per-session figure is €7.25 (Instapplan €29/4). €5,75 only holds if it is derived from the €49 unlimited deal at ~8.5 sessions/4wk; confirm before posting, since it is a "vanaf" price claim. -->
 
 Geen abonnement. Opzeggen wanneer je wilt.
 
