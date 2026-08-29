@@ -39,11 +39,73 @@ constraint that motivated 3×/week is gone.)
 | 2026-08-26 | meet-name | trainer-gezina-001 | /social/trainer-gezina-001/ | ✅ 26 aug 12:23 | 251 views · 2 likes · 0 reacties @ 28 aug 21:35 (plateaued) |
 | 2026-08-27 | (outside rotation) | trainer-hamish-2026-08 | /social/trainer-hamish-2026-08/ | ✅ 27 aug 18:32 | 242 views · 0 likes · 1 reactie @ 28 aug 21:35 (plateaued) |
 | 2026-08-28 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | NOT posted — next in daily queue | — |
-| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | ✅ 28 aug **15:06** AUTO-POSTED (Chrome MCP → TikTok Studio) | LIVE (Iedereen, out of review) · 240 views · 0 likes @ 28 aug 21:35 |
+| 2026-08-28 | privacy | geen-wachtrij-001 | /social/geen-wachtrij-001/ | ✅ 28 aug **15:06** AUTO-POSTED (Chrome MCP → TikTok Studio) | LIVE · 244 views · 0 likes · 0 reacties @ 29 aug 13:30 (plateaued) |
 
 | 2026-08-28 | (19:00 run) | — | — | **NOT posted — deliberate** | quota already met at 15:06; 21:32 is 2.5h past best-time. See finding below. |
 
+| 2026-08-29 | offer/rental (re-cut) | trainer-rental-2026-08 | /social/trainer-rental-2026-08/ | ✅ 29 aug ~13:25 AUTO-POSTED, caption REWRITTEN | in review · **18:40 run must NOT double-post today** |
+
 ### Skips + notes
+
+- **2026-08-29 — posted `trainer-rental-2026-08` with a REWRITTEN caption, and the strategy
+  behind it changed. Two operator messages drove this: "im wondering how you can improve your
+  strategy" + "likes and followers increase are important too."**
+
+  **The 2026-08-28 finding was single-metric and inverts on engagement.** Ranked by
+  likes-per-1k-views instead of raw views:
+
+  | post | views | likes | likes/1k |
+  |---|---:|---:|---:|
+  | Garagedeur / gracht (the space) | 902 | 13 | **14.4** |
+  | Gezina (named trainer) | 251 | 2 | 8.0 |
+  | "Trainers - own spot in Jordaan?" | 3,129 | 24 | 7.7 |
+  | **"Huur vanaf €12/uur" (the 11K)** | 11,000 | 7 | **0.64** |
+
+  The 11K post I made the north star yesterday has the account's WORST like rate — reach
+  without resonance. So "re-cut all six slots to offer-led" (yesterday's recommendation)
+  would have raised views and crushed likes/follows. **Withdrawn.** Offer-led and
+  audience-building are two different jobs needing two different post types (~1 offer : 2
+  audience).
+
+- **🔴 ROOT CAUSE FOUND — the account is misclassified, and that beats any framing debate.**
+  First-ever look at Analyses → Kijkers/Volgers:
+  - **20 followers, all time** (net +2/7d) after 25 posts and ~22K cumulative views.
+  - **940 viewers/7d, 894 (95%) NEW** — almost nobody returns.
+  - **7 profile views on 1.4K video views (0.5%).**
+  - Traffic: Voor jou 92.3% · **Zoeken 3.9%**.
+  - "Makers die je kijkers ook bekeken": ESPN · Ziggo Sport · FIFA World Cup · NOS Sport ·
+    ESPN MMA · FC Bayern · Red Bull. Co-viewed posts: Islam Makhachev UFC (12M), Verstappen
+    vs 100 amateurs (4.5M).
+  - Audience **83% Nederland**, 25-34 top age, 55% man.
+
+  So NOT a wrong-country problem — right country, plausible gym demographic. The mismatch is
+  **INTENT**: the algorithm files this as *sports entertainment*. People watching MMA
+  highlights scroll past a Jordaan studio-rental ad. That is the 240-265 band with ~0 likes.
+  The 3.9% from Zoeken is the only correctly-targeted traffic, and its queries are literally
+  "personal trainer nederlands" / "Personal training amsterdam".
+
+  **Two traps in this data:**
+  1. "Actiefste tijden = 1am-2am" — one date, ~60 viewers, on an 83%-NL audience. Do NOT move
+     the cron there; it optimises for the misclassified crowd.
+  2. **Under 100 followers TikTok LOCKS the analytics** ("Krijg meer inzichten wanneer je 100
+     volgers hebt"). The scheduled task's every-4th-run best-time check is therefore
+     *impossible*, not merely skipped. Don't fake it — fix the task text instead.
+
+- **What changed in today's caption** (facts all re-verified this run: €12 half / €17 full per
+  CLAUDE.md L25-26; Egelantiersgracht 424 + 06:00-22:00 per L7/L10; the €600/mnd + min-5-uur
+  competitor facts are live-verified 2026-08-14, unnamed, peildatum on-page; "gratis
+  proefsessie" is live on /nl/studio-huren; no "proefles", no "0% commissie", no dumbbell
+  weights):
+  1. **Search-intent lead.** Line 1 + title now open "Personal trainer in Amsterdam en je
+     zoekt een eigen studio?" — matching the queries that already convert in Zoeken.
+  2. **A follow-reason, which the account has never had.** "Volg voor vrije uren in de studio
+     en de trainers die er werken." 25 posts with no reason to follow is why 22K views made
+     20 followers.
+  3. **Niche hashtags to fight the misclassification** — #personaltraineramsterdam
+     #personaltrainer #personaltraining #krachttraining lead; generic #amsterdam demoted.
+
+  ⚠️ The hand-off page `public/social/trainer-rental-2026-08/index.html` still carries the OLD
+  caption — the IG version will differ from what went out on TikTok until it is updated.
 
 - **2026-08-28 (19:00 scheduled run, fired 21:32) — NO POST, on purpose. Two reasons, then
   the finding that matters.** (a) The daily quota was already met: `geen-wachtrij-001` went
