@@ -1575,3 +1575,43 @@ leads with. Stripping it would have removed the top of the funnel from a print a
 future agent reading CLAUDE.md would have made the same call. Fixed in CLAUDE.md (0508b3a) with
 an explicit DO-NOT-CORRECT warning rather than a bare price line, because the bare line is what
 was missing and a bare line would not have stopped the next session.
+
+## Outbound-link audit — the method, and why the naive version is 75% wrong (2026-08-29)
+
+**Why run one at all:** sculptcoach.app sat in the sitewide footer returning HTTP 402
+(DEPLOYMENT_DISABLED — Vercel unpaid) for months. Nothing surfaced it: the SculptCoach board was
+empty, the link rendered fine, and every internal check was green. An external dependency dying is
+invisible to internal QA by construction. Audit outbound links periodically or you find out from a
+customer.
+
+**The naive method and its measured error rate.** Extract external hosts, probe `https://{host}/`.
+On sculptclub.nl that flagged 4 of 12 hosts broken. **3 were false positives — 75%:**
+
+| host | bare root | the REAL href | verdict |
+|---|---|---|---|
+| app.acuityscheduling.com | 404 | `/catalog.php?owner=36720238&id=2149357` → **200** | fine — this is the PAYMENT path |
+| www.googletagmanager.com | 404 | `/gtag/js?id=G-QYW5H4XTXW` → **200** | fine |
+| static.cloudflareinsights.com | 522 | `/beacon.min.js` → **200** | fine |
+| sculptcoach.app | 402 | `https://sculptcoach.app` → **402** (HEAD and GET) | GENUINELY DEAD |
+
+Roots 404/522 **by design** on API, tag and beacon hosts — nobody is meant to fetch them. Reporting
+those as broken would have sent the operator chasing three healthy systems, including the booking
+path that takes the money.
+
+**The method that works:**
+1. Extract full URLs from BOTH `href=` and `src=` — analytics/beacons are script `src`, a different
+   mechanism, and an href-only regex misses them entirely (mechanism-matched control, per
+   `positive-control-before-absence`).
+2. Probe the **captured URL verbatim**. Never reconstruct, never truncate to the host.
+3. On a 4xx/5xx from HEAD, **retry with GET** before believing it — some hosts reject HEAD only.
+   sculptcoach.app failed both, which is what made it credible.
+4. Only then report. A host is dead when its real URL fails both verbs.
+
+**Same failure class as `repo-name-is-not-the-domain` and CLAUDE.md-vs-€9:** I substituted a
+convenient stand-in (the host root) for the actual artifact (the href on the page) and the stand-in
+lied. The fix is always identical — go read the artifact.
+
+**Bonus signal:** the Acuity catalog probes returning 200 for ids 2149357 / 2155887 / 2247082
+independently confirm those package products are live and reachable, which is a cheap way to
+re-verify the price list without opening Acuity (which needs Chrome MCP and is otherwise unreadable
+from here).
