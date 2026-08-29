@@ -333,7 +333,7 @@ const POSTS = {
       hero: "Solo trainen. Privé.",
       heroScale: 0.75,
       price: "",  // premium register
-      usp: "60 min · max 3 personen · in de Jordaan",
+      usp: "60 min · max 4 personen · in de Jordaan",
       cta: "Eerste les vrijblijvend · sculptclub.nl/open-gym",
     },
     {
@@ -346,7 +346,7 @@ const POSTS = {
       heroScale: 0.6,  // 22 chars including punctuation
       price: "",
       usp: "4 sessies · €29 / 4 weken · geen contract",
-      cta: "Boek je proefles · sculptclub.nl",
+      cta: "Boek je probeersessie · sculptclub.nl",
     },
     {
       name: "location",
@@ -358,7 +358,7 @@ const POSTS = {
       heroScale: 0.7,
       price: "",
       usp: "Dagelijks 06:30 – 22:00 · privé studio",
-      cta: "Boek je proefles · sculptclub.nl",
+      cta: "Boek je probeersessie · sculptclub.nl",
     },
   ],
 
