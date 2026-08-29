@@ -1306,3 +1306,51 @@ Measurement note: `wc -w` on those files reports 708-811 words while the comment
 says ~350 prose words. Both are right — the file count includes JSX, metadata and
 keyword arrays. Same trap as the earlier content-duplication measurement: count
 the rendered `<main>`, never the source file.
+
+## SculptClub search is 100% brand — there is no on-page SEO lever (measured 2026-08-29)
+
+Live GSC + Bing per-query pull. Do not re-derive this; act on it.
+
+    GOOGLE  195 q · 1901 impr ·  29 clk · CTR 1.53%
+      brand        31 q ·  194 impr · 26 clk · 13.40%   ← all the value
+      non-brand   164 q · 1707 impr ·  3 clk ·  0.18%
+        pos <=10   27 q ·   55 impr   (trivial volume)
+        pos 11-20   4 q ·    6 impr
+        pos >20   133 q · 1646 impr ·  1 clk
+
+**Not one non-brand query sits on page 1-2 with ≥15 impressions.** CTR/snippet
+levers only exist at pos 1-10, so this site has none. Anything proposing title
+tuning or "push page-2 keywords" for sculptclub is proposing work against an
+empty set.
+
+    BING  141 q · 215 impr · 12 clk · CTR 5.58% — 140 of 141 on PAGE 1
+
+Bing has 1/9th the impressions and 41% of the clicks, on the same pages. So the
+content is not thin or mis-titled — Google simply doesn't trust the domain yet.
+That is authority, measured in quarters, not an edit.
+
+Strongest Bing cluster is the studio-rental customer: 39 trainer-business queries
+(zzp / btw / vat / hourly rate / huren / aov) at **median position 4.5** — the
+/voor-trainers + ZZP blog cluster, ranking #1-2 for the person who'd rent the
+room, in the index ChatGPT cites. Small volume, right audience, already won.
+
+⇒ Growth for this site is roster + brand + GBP, not SEO. Full reasoning and the
+do-not-do list on TaskPeace `mtdytfu5mr9v90`.
+
+**Why `content-opportunities.mjs` returns empty here** — its three finding classes
+all require pos ≤18 (zero-click and ctr-gap need pos ≤8 + ≥100 impr; page2-push
+needs pos 8-18 + ≥80 impr). Nothing qualifies. It ALSO ranks by
+`DOLLARS_PER_CLICK[site]`, which is 0 for a non-Amazon site — but that is not
+what emptied it. Don't read empty output as a broken tool: control it against
+colorcombinations.org, which returns 5 findings.
+
+**Parser trap on the detail routes:** the payload key is `queries`, not `rows`.
+`d.get('rows') or []` silently yields 0 rows and reads exactly like "no data" —
+it printed a full zero-table for me one call after the same endpoint returned
+195 rows. Always `d if isinstance(d,list) else (d.get('rows') or d.get('queries') or [])`
+and assert non-empty.
+
+    W=https://fleet-dashboard.paulomdevries.workers.dev
+    curl -s "$W/gsc-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
+    curl -s "$W/bing-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
+    # needs `source ~/.zshenv` — the token is not in the default shell env
