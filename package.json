@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sitemap-lastmod.mjs && node scripts/check-trainer-consistency.mjs && node scripts/generate-image-color-manifest.mjs && node scripts/check-logo.mjs",
+    "prebuild": "node scripts/sitemap-lastmod.mjs && node scripts/check-trainer-consistency.mjs && node scripts/generate-image-color-manifest.mjs && node scripts/check-logo.mjs && node scripts/check-deal-honesty.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -15,6 +15,7 @@
     "mobile": "playwright test",
     "mobile:local": "PW_BASE_URL=http://localhost:3000 playwright test",
     "mobile:headed": "playwright test --headed",
+    "check:deal": "node scripts/check-deal-honesty.mjs",
     "check:logo": "node scripts/check-logo.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
     "verify:photo-library": "node scripts/verify-photo-library.mjs"

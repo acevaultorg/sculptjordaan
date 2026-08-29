@@ -1194,3 +1194,88 @@ auditing — and it fails by returning 0, which reads exactly like "clean".
 4. This is the highest-severity instrument trap found this session, because
    unlike ugrep's complexity error (which fails loudly) it fails SILENTLY and
    in the direction that ends an investigation.
+
+## Language switching silently dropped context on a third of the site (2026-08-29)
+
+`getAlternatePath()` in `src/lib/locale.ts` is deliberately safe — it looks up an
+explicit `alternateRoutes` map from `@/config/navigation` and falls back to the
+alternate-locale HOMEPAGE rather than naively swapping `/en/`↔`/nl/` (the comment
+says so: naive swapping "would create broken URLs like /en/boek-studio"). Good
+design. But the map had 134 entries against 192 sitemap routes, so **66 routes —
+33 real NL/EN pairs — hit the homepage fallback**: the visitor asked for the same
+page in their language and got dumped to the front door.
+
+Notably the pages *already declared the correct pairs themselves*, in their
+`alternates.languages` metadata. Google knew they were paired; the in-app
+language button didn't. So the fix needed zero guesswork — extract the pairs the
+pages assert and add them:
+
+    python3 - <<'PY'   # pairs from each page's own metadata, not from slug guessing
+    import re, pathlib
+    for p in pathlib.Path("src/app").rglob("page.tsx"):
+        m = re.search(r'languages:\s*\{(.*?)\}', p.read_text(errors="ignore"), re.S)
+        ...  # read nl:"..." / en:"..." out of the block
+    PY
+
+The map is BIDIRECTIONAL (65 NL keys + 67 EN keys before the fix) because
+`getAlternatePath` looks up whichever side you're on — adding only NL→EN would
+have left every English visitor still falling back. 66 entries added, 0 dupes,
+unmapped count now 0.
+
+**Two instrument failures caught by positive control while auditing this:**
+1. `sed -n '/alternateRoutes/,/^};/p' src/lib/locale.ts | grep -c` returned 0 and
+   I nearly reported "the map is empty". The map is IMPORTED there, not defined —
+   I was counting in the wrong file. A control (`grep -c open-gym` → also 0)
+   exposed it.
+2. Extracting routes from `sitemap.ts` with a bare regex picked up `/nl/blog/foo`
+   **out of a comment** illustrating the naming convention. It 404s live and has
+   no directory. Filtering comment lines dropped 193→192 routes and 67→66
+   unmapped. Always strip `^\s*(//|\*|/\*)` before harvesting paths from source.
+
+## `openGymSummerDeal.endDate` displays a deadline, it does NOT enforce one
+
+Read in exactly two places (`nl|en/open-gym/page.tsx`), both of which only append
+", t/m <date>" / ", until <date>" to the offer line. Nothing gates on it — only
+`active:false` turns the deal off, and that gate IS complete (verified: both
+dedicated landing pages compute `const dealOn = deal.active` and render an
+off-state rather than 404ing, so flipping it orphans nothing).
+
+That makes endDate a manual-discipline field: set it and you must remember to
+flip `active` on the day, or the site advertises a deadline it blew past — fake
+urgency, forbidden by CLAUDE.md and I-23. Now mechanical instead of a promise:
+`scripts/check-deal-honesty.mjs` in the prebuild chain HARD-FAILS on
+`active && endDate in the past`, and WARNS (never blocks) when the deal is active
+outside Jun-Aug while labelled "Zomeraanbieding".
+
+Guard was positive-controlled both directions before being trusted: past date →
+exit 1 with the reason, future date → exit 0.
+
+## Counting / validating the middleware redirect map
+
+`functions/_middleware.ts` holds the redirects as ONE enormous single-line object
+literal (`const EXACT`), so `grep -c` cannot count it and a bad edit is invisible
+until wrangler compiles the worker — by which point a malformed literal takes
+down every request, since Advanced-Mode Functions own the whole route table.
+
+Extract and parse it in Node instead. This both counts it and proves it is valid:
+
+    python3 - <<'PY' && node /tmp/sc_exact.js
+    import pathlib
+    s = pathlib.Path("functions/_middleware.ts").read_text()
+    i = s.index("const EXACT: Record<string, [string, number]> = {")
+    j = s.index("};", i)
+    lit = s[i:j+1].split("= ", 1)[1]
+    pathlib.Path("/tmp/sc_exact.js").write_text(
+        "const E = " + lit + ";\nconsole.log('keys:', Object.keys(E).length);\n")
+    PY
+
+The header comment claimed "361 path redirects" while the real count was 406 —
+stale before I touched it. Recount with the above rather than trusting the line.
+As of 2026-08-29: 409 exact + 8 splat.
+
+**Wrong-locale redirects are an established convention here** (~40 of them, e.g.
+`/nl/find-personal-trainer` → `/nl/vind-jouw-personal-trainer`). When a page pair
+is added, its wrong-locale twins belong in EXACT too. The Open Gym deal pages had
+been missed, which is why `/nl/open-gym/unlimited-summer-deal` and
+`/nl/open-gym/summer-deal` were live 404s — both had real (if tiny) GA4 traffic,
+so someone was hand-editing `/en/`→`/nl/` and hitting a dead end on a money page.
