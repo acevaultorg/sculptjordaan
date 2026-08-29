@@ -128,10 +128,17 @@ export function BlogEmailCapture() {
 
       setState("success");
       try { localStorage.setItem(LS_KEY, Date.now().toString()); } catch {}
-      if (typeof window !== "undefined" && window.plausible) {
-        window.plausible("Blog Email Capture", {
+      if (typeof window !== "undefined") {
+        // Dual-fire — GA4 is the live destination; window.plausible is a
+        // deliberate no-op stub since Plausible was retired 2026-07-04, so
+        // before 2026-08-29 this capture was recorded nowhere.
+        window.plausible?.("Blog Email Capture", {
           props: { source_page: pathname, locale: isEn ? "en" : "nl" },
         });
+        const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+        if (typeof g === "function") {
+          g("event", "blog_email_capture", { source_page: pathname, locale: isEn ? "en" : "nl" });
+        }
       }
     } catch {
       setState("error");
