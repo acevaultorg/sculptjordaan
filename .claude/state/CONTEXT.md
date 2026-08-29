@@ -201,3 +201,57 @@ Free Intake: Click still 0. Loop continues.
 UV 15 / goals identical / CRs identical (vs iter 4). Late-evening idle window.
 Loop continues. Going forward: skipping CONTEXT.md write on no-op iterations
 (only logs on Δ > 0) to reduce noise. Iter-5 entry kept for cadence reference.
+
+## Session Handoff — 2026-08-29 (overnight god --loop, later legs)
+
+Mode: `god --loop`. Repo CLEAN, pushed, `behind=0`. Live = deploy `65c689c6`.
+
+### Shipped this stretch (all live-verified)
+1. **Security headers restored** (`c46faef`, deploy `721d3b2b`). CSP / HSTS-with-preload /
+   `X-Frame-Options: DENY` / Permissions-Policy had been absent from EVERY response since
+   2026-07-14. The Vercel→CF-Pages migration (`ba7a735`) deleted `next.config.ts async headers()`
+   because `output:"export"` can't run it, and — unlike redirects/middleware/api-routes — it was
+   never given a migration target. Now set in `functions/_middleware.ts` on the `context.next()`
+   path (public/_headers is INERT under Advanced-Mode `_worker.js`).
+2. **Blog lead-magnet leak fixed** (`f063aa7`, deploy `65c689c6`). The form on every blog post
+   promised "check je inbox binnen 1 minuut"; no mail service exists — `/api/lead-magnet` only
+   `console.log`s. Now delivers the cheat sheet in-page via the `cheat_sheet_url` the API always
+   returned but the UI never read. Locale-aware (verified: the page really does read `?locale=en`).
+
+### Verified clean — no defect, do NOT re-audit without new evidence
+- CF migration dropped ONLY `headers()`. `redirects`/`env`/`images` survived; the middleware's
+  vanity-domain UTM injection migrated intact.
+- CF AI-crawler policy: no managed-robots injection, GPTBot/ClaudeBot/PerplexityBot/Googlebot all 200.
+- LocalBusiness JSON-LD complete (all required + recommended fields, full PostalAddress).
+- Schema `telephone` is the correct +31615147952 everywhere; ZERO occurrences of the retired
+  0683178934 in live HTML — so that risk is confined to Acuity (see the open flag).
+- Both `/api/*` functions alive (webhook 403, lead-magnet POST 400).
+- `/pt-cheat-sheet` is client-rendered BY DESIGN — noindex + absent from sitemap, same as
+  `/intake-plan`. Its content being invisible to crawlers is correct, not a bug.
+
+### Operator-gated (nothing else blocks these)
+- `mtdsxgfb0zz8ng` — where lead-magnet emails should land. Currently `console.log` only, and CF
+  Functions logs are a LIVE TAIL, so captured addresses are unrecoverable. Needs an API key,
+  a KV binding, or a decision to drop the field.
+- Plus the three still open from earlier: trainer consent (`mtdndkjduuu5sh`), GA4 custom
+  dimensions (`mtdrgdg5os7vbw`, forward-only clock running), Acuity retired-phone check
+  (`mtdrr3qwq1uw7a`), and the 9%-vs-21% BTW line in `mrokfzvp6hxt8j`.
+
+### Traps that bit this session — read before deploying
+- **`npm run build` DELETES `out/_worker.js` + `out/_routes.json`.** Deploying straight after a
+  build strips every Pages Function and would have silently reverted the CSP/HSTS work. Always
+  recompile the worker, assert `grep -c Content-Security-Policy out/_worker.js` is 1, then deploy,
+  then confirm the webhook returns 403 (not 404).
+- **Exit code 0 is not success — three times tonight.** `timeout` doesn't exist on macOS (deploy
+  never ran, shell said 0); a `pkill`-ed build reported 0; `next build` printed "Failed to type
+  check" and npm still exited 0. Verify the ARTIFACT, never the status code.
+- **Grep the right surface.** A client component's strings live in `out/_next/static/*.js`, not the
+  page HTML. Searching HTML for them returns a confident, wrong zero.
+
+### Honest state
+The SculptClub boards are empty apart from operator-gated cards. The technical surface has been
+systematically verified (sitemap, reachability, click-depth, hreflang, JSON-LD validity AND
+completeness, trainer coverage, funnel dead-ends, performance, CF bot policy, migration drops,
+API routes, security headers). Remaining levers are authority-gated (indexing takes weeks),
+tool-gated (no Chrome MCP this session — no browser, so runtime CSP violations and visual QA
+cannot be observed), or waiting on the operator cards above.
