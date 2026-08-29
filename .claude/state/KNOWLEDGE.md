@@ -976,3 +976,38 @@ deploy procedure's verify step checks it.
 The general shape, again: **a build regenerating a directory destroys anything
 hand-placed in it.** Treat every artifact you put into a generated directory as
 volatile, and re-place it after every regeneration.
+
+## Content-duplication analysis: measure the <main> region, never the whole page (2026-08-29)
+
+Investigating why colorcombinations.org gets 472 Bing clicks and 6 Google clicks,
+I measured shared 5-gram overlap between programmatic pages to test a
+"scaled/templated content" hypothesis. The number fell every time I tightened the
+method:
+
+    3 pages,  whole page      →  56-60%   "clearly templated"
+    12 pages, whole page      →  49.4%    "still high"
+    4 pages,  <main> only     →  38.8%    "ordinary scaffolding"
+
+Two distinct errors, both inflating the result:
+
+1. **Small-sample bias.** The first three pages happened to be 1934/1946/1966
+   words, which made me assert "near-identical length = template with swapped
+   variables". Across 12 pages the range is 1933-4034. The uniformity was an
+   artefact of the sample, not a property of the site.
+2. **Measuring the chrome.** Whole-page text includes nav, footer, cookie
+   banner, disclaimers and related-links — ~700 of ~1,940 words here. Every page
+   on every site shares those, and Google explicitly discounts boilerplate
+   regions when judging content. Counting them as "duplicated content" inflates
+   the figure by ~11 points and is simply the wrong measurement.
+
+Correct method: extract `<main>` (or `<article>`) first, strip script/style, then
+shingle. Keep a positive control (a doc against itself must score 100%).
+
+**The cost of getting this wrong was not academic.** On the 56-60% figure I was
+one step from recommending a rewrite of 703 pages. The honest 38.8% says ~61% of
+each page's prose is already unique, the content is fine, and the real
+explanation is more likely domain authority. A confident number from a sloppy
+measurement is worse than no number, because it gets acted on.
+
+Generalises to any "are these pages duplicative?" question: strip the furniture
+before you compare, and widen the sample before you conclude.
