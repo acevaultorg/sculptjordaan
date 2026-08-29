@@ -339,6 +339,15 @@ export function Analytics() {
                   });
                   if (isIntake) {
                     window.plausible('Lead Generated', { props: { method: 'free_intake', intent: acuityIntent, pricing: acuityPricing, value: 45, source_page: window.location.pathname } });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'free_intake');
+                    window.clarity('upgrade', 'lead');
+                  }
                   }
                 }
                 return;
@@ -408,6 +417,15 @@ export function Analytics() {
                   window.plausible('Lead Generated', {
                     props: { method: 'whatsapp', value: 45, source_page: window.location.pathname, intent: waSig.intent, pricing: waSig.pricing, trainer_name: waSig.trainer_name }
                   });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'whatsapp');
+                    window.clarity('upgrade', 'lead');
+                  }
                 }
                 return;
               }
@@ -441,6 +459,15 @@ export function Analytics() {
                   window.plausible('Lead Generated', {
                     props: { method: 'phone', value: 45, source_page: window.location.pathname }
                   });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'phone');
+                    window.clarity('upgrade', 'lead');
+                  }
                 }
                 return;
               }
@@ -472,6 +499,15 @@ export function Analytics() {
                   window.plausible('Lead Generated', {
                     props: { method: 'email', value: 30, source_page: window.location.pathname }
                   });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'email');
+                    window.clarity('upgrade', 'lead');
+                  }
                 }
                 return;
               }
