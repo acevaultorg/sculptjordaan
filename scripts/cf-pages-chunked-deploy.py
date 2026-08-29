@@ -225,9 +225,12 @@ def main():
                   f"    npx wrangler pages functions build --outdir=/tmp/fnbuild\n"
                   f"    cp /tmp/fnbuild/index.js out/_worker.js\n"
                   f"    echo '{{\"version\":1,\"include\":[\"/*\"],\"exclude\":[]}}' > out/_routes.json\n"
-                  f"  Then re-run this script. (Set ALLOW_NO_FUNCTIONS=1 to override — only if\n"
+                  f"  Then re-run this script. (Set SKIP_FUNCTIONS_CHECK=1 or\n"
+                  f"  ALLOW_NO_FUNCTIONS=1 to override — only if\n"
                   f"  you genuinely intend a Functions-less deploy.)", file=sys.stderr)
-            if os.environ.get("ALLOW_NO_FUNCTIONS") != "1":
+            # Accept both names: SKIP_FUNCTIONS_CHECK is the fleet-wide spelling
+            # (ChiefPilot is porting this guard to the other 7 deployers).
+            if os.environ.get("ALLOW_NO_FUNCTIONS") != "1" and os.environ.get("SKIP_FUNCTIONS_CHECK") != "1":
                 sys.exit(3)
             print("  ALLOW_NO_FUNCTIONS=1 set — proceeding WITHOUT Functions.", file=sys.stderr)
 
