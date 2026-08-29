@@ -283,6 +283,11 @@ def main():
     print(f"[✓] DEPLOYED · id={res.get('id')} · {res.get('url')} · {int(time.time()-t0)}s")
     verify_functions_live(worker_js)
 
+def _looks_html(body: bytes, ctype: str) -> bool:
+    if "html" in (ctype or "").lower(): return True
+    head = (body or b"")[:512].lstrip().lower()
+    return head.startswith(b"<!doctype") or head.startswith(b"<html")
+
 # ---------------------------------------------------------------------------
 # Post-deploy verification (2026-08-29).
 #
@@ -306,25 +311,45 @@ def verify_functions_live(worker_js):
     path   = os.environ.get("FUNCTIONS_PROBE_PATH",
              "/api/whatsapp/webhook?hub.mode=subscribe&hub.verify_token=probe&hub.challenge=1")
     expect = os.environ.get("FUNCTIONS_PROBE_EXPECT", "403")
-    def code(u):
+    def probe(u):
+        """-> (status, is_html_body). Status alone cannot discriminate: a LIVE Function
+        rejecting a method returns 405 with a non-HTML body, while an ABSENT route falls
+        through to the framework's HTML 404 page. Measured by ChiefPilot on readstacks —
+        /api/subscribe 405 non-HTML (alive) vs /api/checkout 404 <!DOCTYPE (absent), same
+        deployment, opposite verdicts. Failing on status alone would flag the healthy one."""
         try:
             req = urllib.request.Request(u, method="GET", headers={"User-Agent": "cf-deploy-verify"})
-            with urllib.request.urlopen(req, timeout=30) as resp: return resp.status
-        except urllib.error.HTTPError as e: return e.code
-        except Exception as e: return f"ERR:{type(e).__name__}"
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                body = resp.read(2048)
+                return resp.status, _looks_html(body, resp.headers.get("Content-Type", ""))
+        except urllib.error.HTTPError as e:
+            try: body = e.read(2048)
+            except Exception: body = b""
+            return e.code, _looks_html(body, e.headers.get("Content-Type", "") if e.headers else "")
+        except Exception as e:
+            return f"ERR:{type(e).__name__}", False
+    def code(u):
+        return probe(u)[0]
     print(f"[+] verifying Functions in production (propagation pause 20s)…")
     time.sleep(20)
     ctrl = code(f"{base}/__deploy_probe_should_404__{uuid.uuid4().hex[:8]}")
-    got  = code(f"{base}{path}")
-    print(f"    control(bogus path)={ctrl}  probe({path.split('?')[0]})={got}  expect={expect}")
+    got, got_html = probe(f"{base}{path}")
+    print(f"    control(bogus path)={ctrl}  probe({path.split('?')[0]})={got} "
+          f"body={'HTML' if got_html else 'non-HTML'}  expect={expect}")
     if ctrl != 404:
         print(f"[!] INCONCLUSIVE: control returned {ctrl}, not 404 — the probe is not measuring\n"
               f"    what it thinks it is. Verify by hand before trusting this deploy.", file=sys.stderr)
         return
     if str(got) in (str(expect),):
         print("[✓] Functions LIVE in production."); return
-    if got in (404, 405):
-        print(f"[X] FUNCTIONS ARE DEAD: {base}{path} returned {got} (expected {expect}).\n"
+    if got in (404, 405) and not got_html:
+        print(f"[!] {got} with a NON-HTML body — that is a live Function rejecting the request,\n"
+              f"    not a missing route. Treating as ALIVE. (Set FUNCTIONS_PROBE_EXPECT={got}\n"
+              f"    to make this a clean pass.)", file=sys.stderr)
+        return
+    if got in (404, 405) and got_html:
+        print(f"[X] FUNCTIONS ARE DEAD: {base}{path} returned {got} with an HTML body\n"
+              f"    (the framework's 404 page = the route does not exist). Expected {expect}.\n"
               f"    404/405 with a healthy 404-control is the signature of a deployment whose\n"
               f"    _worker.js did not take effect. The site will still serve HTML 200, so this\n"
               f"    will NOT look broken from a browser. Re-run the functions build and redeploy:\n"
