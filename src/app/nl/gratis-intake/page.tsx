@@ -99,7 +99,7 @@ export default function GratisIntakePage() {
     <div className="min-h-screen bg-background">
       {/* Minimal header */}
       <header className="flex items-center justify-center py-6 px-4 border-b border-border/30">
-        <Link href="/nl" aria-label="Terug naar homepage">
+        <Link href="/" aria-label="Terug naar homepage">
           <Image
             src="/images/logo-sculptclub.png"
             alt="SculptClub"

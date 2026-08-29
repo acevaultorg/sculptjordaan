@@ -53,7 +53,7 @@ export default function MatchTrainerPage() {
           {/* Compact header — visitor came here to take action, not read marketing */}
           <div className="text-center max-w-2xl mx-auto mb-8">
             <Link
-              href="/nl"
+              href="/"
               className="inline-block mb-6"
               aria-label="Terug naar homepage"
             >
