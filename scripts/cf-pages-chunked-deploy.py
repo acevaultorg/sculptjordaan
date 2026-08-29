@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-"""CF Pages chunked-upload deployer for readinglist.school.
+"""CF Pages chunked-upload deployer — THIS COPY DEPLOYS PROJECT "sculptclub" (see PROJECT below).
+
+Copy-forked from the readinglist.school deployer; the WHY paragraph below still
+describes that site's numbers. If you fork this again, change PROJECT first — a
+hardcoded project name has previously published one site into another site's
+Pages project.
 
 WHY: readinglist out/ is ~962MB / 11,981 files. `wrangler pages deploy` closes
 the upload socket at a hard ~56MB PER CONNECTION (log-verified EPIPE), and Next's
@@ -200,6 +205,32 @@ def main():
     # Fail-fast #2 (2026-07-28): CF Pages hard-rejects any single file >25MiB — the
     # upload API returns an opaque HTML 500 for the whole BATCH, which retries 12x and
     # kills the deploy ~45min in. Cheaper to catch here. (Hit live: a 27.8MB photo.)
+    # Fail-fast #3 (2026-08-29): repo HAS Pages Functions but out/_worker.js is missing.
+    # `npm run build` does NOT emit _worker.js — it is a separate step
+    # (`npx wrangler pages functions build --outdir=DIR` → copy DIR/index.js). Deploying
+    # without it ships the site with NO Functions: every redirect in functions/_middleware.ts
+    # (409 of them here), www→apex, the locale middleware and functions/api/* all go dead,
+    # while the site still returns 200 so nothing looks broken. That exact failure is live on
+    # another fleet site right now (its /api/* 404s in production). Silent + severe + easy to
+    # repeat = worth blocking at ship time rather than finding in an audit weeks later.
+    fdir = OUT_DIR.parent / "functions"
+    if worker_js is None and fdir.is_dir():
+        fn_files = [f for f in fdir.rglob("*")
+                    if f.is_file() and f.suffix in (".ts", ".js", ".tsx", ".mjs")]
+        if fn_files:
+            print(f"ERROR: {len(fn_files)} file(s) in {fdir}/ but out/_worker.js is MISSING.\n"
+                  f"  Deploying now would ship the site with NO Pages Functions — redirects,\n"
+                  f"  www→apex, locale middleware and /api/* would all silently stop working.\n"
+                  f"  Run the functions build first:\n"
+                  f"    npx wrangler pages functions build --outdir=/tmp/fnbuild\n"
+                  f"    cp /tmp/fnbuild/index.js out/_worker.js\n"
+                  f"    echo '{{\"version\":1,\"include\":[\"/*\"],\"exclude\":[]}}' > out/_routes.json\n"
+                  f"  Then re-run this script. (Set ALLOW_NO_FUNCTIONS=1 to override — only if\n"
+                  f"  you genuinely intend a Functions-less deploy.)", file=sys.stderr)
+            if os.environ.get("ALLOW_NO_FUNCTIONS") != "1":
+                sys.exit(3)
+            print("  ALLOW_NO_FUNCTIONS=1 set — proceeding WITHOUT Functions.", file=sys.stderr)
+
     oversized = [(rel, len(c)) for rel, c, sha in entries if len(c) > 25 * 1024 * 1024]
     if oversized:
         for rel, n in oversized:
