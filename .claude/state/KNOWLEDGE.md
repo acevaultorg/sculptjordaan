@@ -1148,6 +1148,26 @@ Measured on this repo, same pattern, same `--include`:
 Zero versus six hundred and twenty-seven. `out/` and `.next/` are both
 gitignored, so a search rooted at `.` silently skips every build artefact.
 
+**REFINED 2026-08-29 (measured) — the trap needs BOTH conditions:**
+
+    direct Bash tool,  grep -rl "x" .    →   0    (shim: ugrep --ignore-files)
+    direct Bash tool,  grep -rl "x" out  → 213    (explicit path overrides)
+    inside bash -lc,   grep -rl "x" .    → 627    (type grep = /usr/bin/grep)
+
+The shim is a SHELL FUNCTION, and child shells do not inherit it. So anything
+run via `bash -lc '...'`, or any script executed as its own process, gets the
+REAL grep and is unaffected. That means fleet scripts on disk are NOT silently
+under-reporting — only commands an agent types directly into the Bash tool,
+rooted at `.`, are.
+
+Both conditions must hold to be bitten:
+    (a) executed directly in the Bash tool, not via bash -lc or a script, AND
+    (b) recursing from `.` rather than naming the directory
+
+Tonight's counts are safe on both routes: the explicit-path ones returned 213,
+identical to find+grep, and the bash -lc sweeps (including the 31-page /guide
+audit) ran /usr/bin/grep.
+
 **THE BOUNDARY — this is the actionable part:**
 
     grep -rl "x" out          → SEARCHES IT (explicit path overrides the filter)
