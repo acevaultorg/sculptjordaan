@@ -281,6 +281,60 @@ def main():
         print(f"ERROR: create-deployment failed: {r}", file=sys.stderr); sys.exit(1)
     res = r["result"]
     print(f"[✓] DEPLOYED · id={res.get('id')} · {res.get('url')} · {int(time.time()-t0)}s")
+    verify_functions_live(worker_js)
+
+# ---------------------------------------------------------------------------
+# Post-deploy verification (2026-08-29).
+#
+# WHY: a successful create_deployment proves NOTHING about whether Functions
+# actually run. Two fleet sites (conversionbench.com, sourdoughhydration.com)
+# have shipped "successfully" and serve 404/405 on every /api/* route in
+# production — undetected, because the HTML still 200s so the site looks fine.
+# ChiefPilot established the general form: static analysis of a deployer is a
+# property of a SCRIPT; only a live probe is a property of PRODUCTION. So the
+# deployer now checks its own work instead of printing a checkmark and exiting.
+#
+# The probe carries its own CONTROL: a bogus path must 404. If the control does
+# not 404, the probe is not measuring what it thinks (origin down, WAF, captive
+# portal) and we report INCONCLUSIVE rather than a false pass or false alarm.
+def verify_functions_live(worker_js):
+    if worker_js is None:
+        return  # nothing to verify; the pre-upload guard already ruled on this
+    if os.environ.get("SKIP_FUNCTIONS_PROBE") == "1":
+        print("[i] SKIP_FUNCTIONS_PROBE=1 — not verifying Functions in production."); return
+    base   = os.environ.get("PROD_URL", "https://sculptclub.nl").rstrip("/")
+    path   = os.environ.get("FUNCTIONS_PROBE_PATH",
+             "/api/whatsapp/webhook?hub.mode=subscribe&hub.verify_token=probe&hub.challenge=1")
+    expect = os.environ.get("FUNCTIONS_PROBE_EXPECT", "403")
+    def code(u):
+        try:
+            req = urllib.request.Request(u, method="GET", headers={"User-Agent": "cf-deploy-verify"})
+            with urllib.request.urlopen(req, timeout=30) as resp: return resp.status
+        except urllib.error.HTTPError as e: return e.code
+        except Exception as e: return f"ERR:{type(e).__name__}"
+    print(f"[+] verifying Functions in production (propagation pause 20s)…")
+    time.sleep(20)
+    ctrl = code(f"{base}/__deploy_probe_should_404__{uuid.uuid4().hex[:8]}")
+    got  = code(f"{base}{path}")
+    print(f"    control(bogus path)={ctrl}  probe({path.split('?')[0]})={got}  expect={expect}")
+    if ctrl != 404:
+        print(f"[!] INCONCLUSIVE: control returned {ctrl}, not 404 — the probe is not measuring\n"
+              f"    what it thinks it is. Verify by hand before trusting this deploy.", file=sys.stderr)
+        return
+    if str(got) in (str(expect),):
+        print("[✓] Functions LIVE in production."); return
+    if got in (404, 405):
+        print(f"[X] FUNCTIONS ARE DEAD: {base}{path} returned {got} (expected {expect}).\n"
+              f"    404/405 with a healthy 404-control is the signature of a deployment whose\n"
+              f"    _worker.js did not take effect. The site will still serve HTML 200, so this\n"
+              f"    will NOT look broken from a browser. Re-run the functions build and redeploy:\n"
+              f"      npx wrangler pages functions build --outdir=/tmp/fnbuild\n"
+              f"      cp /tmp/fnbuild/index.js out/_worker.js && CF_SKIP_UPLOAD=1 python3 {sys.argv[0]}",
+              file=sys.stderr)
+        sys.exit(4)
+    print(f"[!] Functions probe returned {got}, expected {expect} — not the dead-worker signature\n"
+          f"    (404/405), so treating as a probe/config mismatch rather than a failed deploy.\n"
+          f"    Check FUNCTIONS_PROBE_PATH / FUNCTIONS_PROBE_EXPECT.", file=sys.stderr)
 
 if __name__ == "__main__":
     main()
