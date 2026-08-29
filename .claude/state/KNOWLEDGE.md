@@ -1504,3 +1504,32 @@ in shipped copy: 0. `€59` as a live price: 0. `06:30`: 0 outside historical no
 Google Ads account (brand ad still shows "Open 06:30-22:00", per
 docs/REVENUE-SPRINT-2026-08-14.md:100) · Acuity receipt templates · GBP service text ·
 "vanaf €5,75/sessie" in TIKTOK-CONTENT.md (unverifiable against CLAUDE.md's €7.25 floor).
+
+## The "45-65 min upload" figure is ~40x stale — it is ~77 seconds (measured 2026-08-29)
+
+CLAUDE.md's deploy procedure said "full upload ≈ 45-65 min". Measured on a real deploy today:
+
+    [+] 2548 files · +_worker.js · +_routes.json
+    [+] uploaded 1565 files in 9 batches · 77s
+    [✓] DEPLOYED · id=37840d54-… · 80s end-to-end
+
+**Why the old number was right once and is not now:** the deployer originally used 1MB/8-file
+batches (~1600 batches ≈ 23 min just in per-batch SSL handshakes, per its own header comment).
+`CF_BATCH_MB` now defaults to 20, which collapses the batch count ~25x and makes handshake
+overhead irrelevant. The 45-65 min figure survived the change that invalidated it.
+
+**Why this matters more than a wrong number usually would:** it changes a DECISION. I spent this
+session deferring live-affecting commits to "batch them", reasoning that ~90 min per deploy was
+disproportionate for small fixes. That trade does not exist. On this repo:
+
+    build  ~25 min   (I/O-bound on the WD drive — the expensive half)
+    upload ~1-2 min  (only changed files; CF caches the rest — "0 cached" here only
+                      because the Next build-ID churn re-hashes nearly everything)
+
+⇒ **Deploy when something is ready.** The cost of shipping is a build you often need anyway, not
+an hour of transfer. Batching still makes sense to avoid redundant BUILDS, never to avoid uploads.
+
+Caveat: 1565 files / ~190MB out/. A much larger changed payload (readinglist's ~962MB / 11,981
+files) will take proportionally longer — this is a sculptclub-scale measurement, not a universal
+constant. Re-measure rather than inheriting THIS number as gospel; that is exactly how the old
+one persisted.
