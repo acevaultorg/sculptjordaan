@@ -1132,3 +1132,45 @@ deploying (logged above).
    6 got a block. A recommendation surface with mismatched items is worse than
    no surface, and "the data exists on the site" is a claim to verify, not
    assume — I asserted it without checking.
+
+## 🔴 `grep -r pattern .` RETURNS ZERO ON GITIGNORED DIRS — measured 627 → 0 (2026-08-29)
+
+`grep` in this environment is **not a binary**. `type grep` resolves to a shell
+function from `~/.claude/shell-snapshots/snapshot-zsh-*.sh` — a Claude Code shim
+running **ugrep** with `--ignore-files --hidden --exclude-dir=.git`.
+`--ignore-files` makes it honour `.gitignore`.
+
+Measured on this repo, same pattern, same `--include`:
+
+    grep -rl "trainer_name" . --include='*.html'          →    0     WRONG
+    find . -name '*.html' -exec grep -l "trainer_name" {} + →  627    truth
+
+Zero versus six hundred and twenty-seven. `out/` and `.next/` are both
+gitignored, so a search rooted at `.` silently skips every build artefact.
+
+**THE BOUNDARY — this is the actionable part:**
+
+    grep -rl "x" out          → SEARCHES IT (explicit path overrides the filter)
+    grep -rl "x" .            → SKIPS gitignored dirs, returns a confident zero
+
+So all of tonight's verification counts hold: I always named `out` explicitly
+(`grep -rl "trainer_name" out --include='*.html'` → 213, identical to
+find+grep's 213). Verified, not assumed.
+
+But any fleet-wide sweep written as `grep -r <pattern> .` from a repo root has
+been under-reporting, silently, forever. On a static-site repo where the entire
+built output is gitignored, that is a sweep that cannot see the thing it is
+auditing — and it fails by returning 0, which reads exactly like "clean".
+
+**RULES:**
+1. Name the directory explicitly (`grep -r x out`), never bare `.`, when the
+   target may be a build artefact.
+2. For anything load-bearing, prefer `find … -exec grep -l …` — unaffected by
+   the shim.
+3. `grep -c` here is ugrep semantics, not BSD and not GNU: on a 1-line file with
+   3 matches, `grep -c` → 1, `grep -oc` → 3, `-o | wc -l` → 3. My earlier note
+   that "macOS BSD counts matches" was the right conclusion for the wrong
+   reason — it is ugrep's behaviour, not BSD's.
+4. This is the highest-severity instrument trap found this session, because
+   unlike ugrep's complexity error (which fails loudly) it fails SILENTLY and
+   in the direction that ends an investigation.
