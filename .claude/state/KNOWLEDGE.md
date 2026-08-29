@@ -1052,3 +1052,44 @@ Two lessons:
    Google because Google is the bigger search engine produced an entire leg of
    analysis against the wrong index, and a confident "nothing fixable here"
    conclusion that the right index immediately contradicted.
+
+## Clarity friction API works — but SculptClub's traffic is too small for it (2026-08-29)
+
+CLARITY_API_TOKEN is present in the environment (700-char JWT, scoped to the
+SculptClub project). One call returns all metrics x URLs:
+
+    curl -H "Authorization: Bearer $CLARITY_API_TOKEN" \
+      "https://www.clarity.ms/export-data/api/v1/project-live-insights?numOfDays=3&dimension1=URL"
+
+Returns DeadClickCount, RageClickCount, QuickbackClick, ErrorClickCount,
+ScriptErrorCount, ExcessiveScroll, ScrollDepth, EngagementTime, Traffic per URL.
+Rate-limited ~10 calls/day — make ONE well-formed call, never loop.
+
+WHAT IT SHOWED (3d): DeadClick 28.6% on /nl/studio-huren, 10.0% on
+/nl/vind-jouw-personal-trainer; QuickbackClick 47.8% on /. No rage clicks, no
+script errors.
+
+WHY I DID NOT ACT ON IT: 28.6% of **7 sessions** is 2 sessions. At ~472
+visitors/30d the per-URL buckets are single digits over a 3-day window, so the
+percentages are noise dressed as signal. A 47.8% quickback on the homepage
+(23 sessions) is also unremarkable — people bounce off homepages.
+
+I chased the one mechanism that would have made the dead-clicks real: CLAUDE.md
+states a color-clickability contract ("if it's orange it MUST be clickable").
+/nl/studio-huren has 19 brand-orange non-anchor elements (11 <p>, 8 <span>)
+against 3 <a> — and their text reads exactly like links ("Bereken wat je
+overhoudt vs een commissie-gym →", "Boek de studio … →").
+
+A regex window said "not wrapped in a link" and I nearly filed it. An actual
+HTML parser tracking the tag stack said the opposite: every one resolves to
+div/div/a/p — they ARE inside card anchors. The contract is not violated.
+
+TWO LESSONS:
+1. **Never resolve HTML nesting with a regex window.** Ancestry needs a parser.
+   `html.parser` with a tag stack is ~15 lines and is the difference between a
+   filed defect and a correct no-op.
+2. **Clarity friction percentages need volume.** Use this API on the
+   high-traffic fleet sites where the buckets are meaningful — colorcombinations
+   (4,370/30d) and readinglist (11,276/30d) — not on a 472-visitor local site.
+   Each project has its own token; the fleet worker holds CLARITY_TOKEN_* for
+   the others.
