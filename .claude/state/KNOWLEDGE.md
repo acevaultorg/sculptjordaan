@@ -1403,3 +1403,27 @@ because `sitemap.ts` does `join(process.cwd(), ...)` + `readFileSync`/`existsSyn
 on dynamically-built paths. That warning is real and worth fixing one day — but it is a
 symptom-level optimisation on top of failing hardware, and `sitemap.ts` is SEO-critical.
 Fixing it here buys little and risks the sitemap. The drive is the problem.
+
+## Acuity state is UNREADABLE without Chrome MCP or API creds — both surfaces are JS-rendered (2026-08-29)
+
+Several open cards depend on Acuity state (weekend availability `ms8tqmxsscdq9k`, 3→4 spots
+`mr6o0itg1l430l`, ClassPass, product prices). None of it can be read with curl/WebFetch. Measured,
+so nobody repeats the probes:
+
+| probe | result |
+|---|---|
+| `schedule.php?owner=36720238&appointmentType=83513953` | 200, but **302s** to `/schedule/fba376d5/?appointmentTypeIds[]=...` — needs `-L` or you get **0 bytes**, which reads like "no availability" and is really a failed fetch |
+| that scheduler URL | 6099 bytes, **54 chars of body text** ("Schedule Appointment"), zero `HH:MM` strings |
+| same URL via WebFetch (independent renderer) | "no appointment time slots visible… page likely requires JavaScript" |
+| `catalog.php?owner=36720238` | 5223 bytes, **no prices, no product names** in HTML |
+
+Env has no `ACUITY_API_KEY` / `ACUITY_USER_ID` / `ACUITY_TOKEN`.
+
+⇒ To verify anything in Acuity you need **Chrome MCP** (render the SPA) or **API credentials**.
+CLAUDE.md's "✅ VERIFIED IN ACUITY 2026-08-28: all 7 products re-read live" was necessarily done
+from a Chrome-MCP session — do not read that line as evidence that curl can do it.
+
+**The trap worth remembering:** the first probe returned **0 bytes with exit 0**. Without `-L` that
+looks exactly like an empty calendar, i.e. "weekends are closed" — the very claim under test. An
+absence produced by a redirect you didn't follow will confirm whatever you already believed. Always
+check `%{http_code}` + `%{url_effective}` before reading meaning into an empty Acuity response.
