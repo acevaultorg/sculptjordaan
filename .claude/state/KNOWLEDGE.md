@@ -1615,3 +1615,42 @@ lied. The fix is always identical — go read the artifact.
 independently confirm those package products are live and reachable, which is a cheap way to
 re-verify the price list without opening Acuity (which needs Chrome MCP and is otherwise unreadable
 from here).
+
+## Operator cards can outlive the platform they describe — check the card's date against the migration (2026-08-29)
+
+**Found:** card `mqox979w7fehvw` ("Activate WhatsApp Cloud API webhook") is 🔴-adjacent, active, and
+**unfollowable**. It instructs:
+
+  "In Vercel (sculptclub project → Settings → Environment Variables, Production), set
+   WHATSAPP_VERIFY_TOKEN / WHATSAPP_TOKEN / WHATSAPP_PHONE_NUMBER_ID … then redeploy:
+   vercel build --prod && vercel deploy --prebuilt --prod"
+
+Card created **2026-06-22**. SculptClub migrated to **Cloudflare Pages on 2026-07-14** — three weeks
+later. So every platform instruction in it is now wrong:
+
+- The webhook runs as a **CF Pages Function** (`functions/api/whatsapp/webhook.ts`, reads
+  `context.env.WHATSAPP_VERIFY_TOKEN`). Env vars set in Vercel reach nothing.
+- `vercel deploy` would not touch sculptclub.nl, and it targets team_RnTaiEeYwOq3wPb2CioNcBwe —
+  the same lapsed Vercel team whose sculptcoach project is 402'd for non-payment.
+- Verified the endpoint IS live on CF: `/api/whatsapp/webhook?hub.mode=subscribe` → 403 with a
+  control bogus path → 404, so the check discriminates.
+
+Following it would burn ~45 min of operator time, set secrets on the wrong platform, run a deploy
+that changes nothing, and end with "the feature is broken."
+
+**The trap, generalised:** a task card is a **snapshot of the world when it was written**. Long-lived
+cards silently rot when infrastructure moves under them, and nothing in the card announces this —
+it still reads confident and specific. The older + more specific a card's platform instructions, the
+more suspect they are.
+
+**The check — cheap, do it before acting on any card older than the last migration:**
+1. `createdAt` vs the migration dates in CLAUDE.md (here: CF Pages 2026-07-14, GitLab 2026-05-06).
+2. Does the card name a platform/CLI the project no longer uses? (`vercel`, `github`, an old host)
+3. Probe the thing live before following the steps — the endpoint was already deployed and working,
+   which the card could not know.
+
+**Also live in the repo:** `vercel.json` and `.vercel/project.json` (→ prj_2CkPYkUuRzMwN9484yN57Yt9pNia
+on the lapsed team) survive the migration. CLAUDE.md says "Vercel is RETIRED for this project —
+never deploy there", but the config that makes `vercel deploy` *work* is still sitting there for an
+agent or a tired operator to trip over. Same shape as the dead footer link: the artifact outlived
+the decision.
