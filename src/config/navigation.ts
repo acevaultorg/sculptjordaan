@@ -81,7 +81,12 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Small Group", href: "/nl/small-group" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
     { label: "Cadeaukaarten", href: "/nl/cadeaukaarten" },
-    { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
+    // SculptCoach link REMOVED 2026-08-29: sculptcoach.app returns HTTP 402
+    // (x-vercel-error: DEPLOYMENT_DISABLED) — the Vercel deployment is disabled for
+    // non-payment, so this footer link sent every visitor on every page to an error
+    // page. Repo ../sculptcoach last shipped 2026-05-05. RESTORE this line verbatim
+    // once sculptcoach.app returns 200:
+    // { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
   en: [
     { label: "Rent the Studio", href: "/en/studio-rental" },
@@ -93,7 +98,12 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Small Group", href: "/en/small-group" },
     { label: "First Visit", href: "/en/first-visit" },
     { label: "Gift cards", href: "/en/gift-cards" },
-    { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
+    // SculptCoach link REMOVED 2026-08-29: sculptcoach.app returns HTTP 402
+    // (x-vercel-error: DEPLOYMENT_DISABLED) — the Vercel deployment is disabled for
+    // non-payment, so this footer link sent every visitor on every page to an error
+    // page. Repo ../sculptcoach last shipped 2026-05-05. RESTORE this line verbatim
+    // once sculptcoach.app returns 200:
+    // { label: "SculptCoach App ↗", href: "https://sculptcoach.app" },
   ],
 };
 
