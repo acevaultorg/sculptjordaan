@@ -21,6 +21,66 @@ Acuity emails render in Gmail/Outlook/Apple Mail. The markup below is table-base
 
 ---
 
+## 0. Legal invoice footer (NL Belastingdienst) — ⚠️ NOT YET IN ACUITY
+
+**Status 2026-08-29: absent from every template.** Verified — the only `btw|vat|kvk` match in
+this whole file was a false positive on the word "pri**vat**e". So none of the legally required
+seller identifiers currently reach a customer.
+
+**Why it matters more for rental than for Open Gym:** studio-rental customers are self-employed
+trainers who need a proper *factuur* to reclaim BTW. If the order email is not a valid invoice,
+they cannot deduct — and they will ask for one. Open Gym consumers rarely need it; renters
+always do.
+
+**Target template:** Acuity's **order / receipt** email (paid items), NOT the appointment
+confirmation. The task on the Sales board (`mrokfzvp6hxt8j`) names order emails specifically.
+
+### Block A — static seller identity (READY TO PASTE, all values verified in-repo)
+
+Sources: `src/components/seo/json-ld.tsx` + `public/llms.txt` (KvK + BTW-id), CLAUDE.md (address).
+
+```html
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px;border-top:1px solid #e5e5e5;padding-top:16px">
+  <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#666">
+    <strong style="color:#333">SculptClub</strong><br>
+    Egelantiersgracht 424, 1015 RR Amsterdam, Nederland<br>
+    KvK 64708101 &nbsp;·&nbsp; BTW-id NL002250100B57<br>
+    contact@sculptclub.nl &nbsp;·&nbsp; +31 6 15 14 79 52
+  </td></tr>
+</table>
+```
+
+EN version: identical — a Dutch KvK/BTW footer is not translated; the identifiers are legal
+values, and "BTW-id" is the correct term on an invoice issued from NL.
+
+### Block B — dynamic invoice fields (OPERATOR maps these to Acuity's order variables)
+
+Dutch law requires a full factuur to carry the items below. Acuity exposes order data through
+`%merge%` variables (the confirmation templates already use `%appointmentType%`, `%time%`,
+`%first%`), but **the exact variable names for order/receipt fields are not documented in this
+repo and are NOT guessed here** — pick them from Acuity's own variable list in the template
+editor, which shows what that template actually exposes.
+
+Required: sequential invoice number · invoice date · buyer name (and address, for B2B) ·
+description of the service · quantity · date of supply · net amount per VAT rate · the VAT rate
+applied · the VAT amount · the total.
+
+### ⚠️ Block C — the VAT rate is NOT specified here, on purpose
+
+This repo contains both 21% and 9% — but only as **editorial content** in the BTW blog article
+written for freelance trainers, never as a statement of SculptClub's own applied rate.
+
+The rate genuinely depends on how each product is classified: studio rental to a trainer (room
+hire, B2B) and "gelegenheid geven tot sportbeoefening" (Open Gym) do not automatically attract
+the same rate. That is an accountant's determination about this business, not something an agent
+should infer from a blog post — and a wrong rate on a real invoice is a real problem for the
+operator and for every trainer who reclaims against it.
+
+**So: Blocks A and B ship as soon as you paste them. Block C needs one line from you or your
+accountant — the rate per product — and then the breakdown can be written in one pass.**
+
+---
+
 ## 1. Open Gym confirmation (appointmentType 83513953 + trial 87017445)
 
 **What it adds:** one primary "Book next session" button + the Open Gym membership upgrade options (per operator directive 2026-07-27: Open Gym emails promote Open Gym subscriptions; Studio Rental emails promote the studio packages — see Section 2).
