@@ -114,5 +114,50 @@ export const onRequest: PagesFunction = async (context) => {
     }
   }
 
-  return context.next();
+  // ───────────────────────────────────────────────────────────────────────────
+  // SECURITY HEADERS — restored 2026-08-29.
+  //
+  // These shipped in PR #42 as next.config.ts `async headers()`. The
+  // Vercel→CF-Pages migration (ba7a735) deleted that block because
+  // `output: "export"` cannot run headers() — and unlike redirects(),
+  // middleware and the api routes, it was never given a migration target.
+  // Net effect: CSP, HSTS, X-Frame-Options and Permissions-Policy were
+  // absent from EVERY response for ~6 weeks (2026-07-14 → 2026-08-29),
+  // while HSTS preload had already been submitted to hstspreload.org.
+  //
+  // Set HERE, not in public/_headers, because this project runs Advanced-Mode
+  // Functions (_worker.js): the worker owns every request, and the chunked
+  // deployer ships only _worker.js/_routes.json as form fields — a _headers
+  // file would upload as an inert static asset.
+  //
+  // CSP is the PR #42 value verbatim (months of incident-driven fixes: the
+  // *.clarity.ms wildcard, Meta's managed CAPI forwarders on *.a.run.app /
+  // *.ecs.us-east-1.on.aws, TikTok web-events, Google Ads pixels) MINUS two
+  // provably-dead entries: plausible.io (retired 2026-07-04) and
+  // funnelpilot.app (disabled 2026-07-20). Verified against the built output —
+  // 0 references to either, and every host the site loads is allowlisted.
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com googleads.g.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com analytics.tiktok.com static.cloudflareinsights.com www.instagram.com",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob: *.google-analytics.com *.googletagmanager.com *.clarity.ms www.facebook.com www.google.com pagead2.googlesyndication.com googleads.g.doubleclick.net wa.me *.cdninstagram.com *.fbcdn.net www.instagram.com scontent.cdninstagram.com",
+    "font-src 'self'",
+    "connect-src 'self' www.googletagmanager.com www.google-analytics.com analytics.google.com region1.google-analytics.com googleads.g.doubleclick.net ad.doubleclick.net pagead2.googlesyndication.com connect.facebook.net *.conversionsapigateway.com https://*.a.run.app https://*.ecs.us-east-1.on.aws *.clarity.ms app.acuityscheduling.com embed.acuityscheduling.com analytics.tiktok.com *.tiktokw.us cloudflareinsights.com *.cloudflareinsights.com www.instagram.com",
+    "frame-src app.acuityscheduling.com embed.acuityscheduling.com www.google.com maps.google.com www.instagram.com instagram.com staticxx.facebook.com",
+    "base-uri 'self'",
+    "form-action 'self' https://wa.me *.cdninstagram.com *.fbcdn.net www.instagram.com scontent.cdninstagram.com",
+    "object-src 'none'",
+    "frame-ancestors 'none'",
+    "upgrade-insecure-requests",
+  ].join("; ");
+
+  const res = await context.next();
+  const h = new Headers(res.headers);
+  h.set("Content-Security-Policy", csp);
+  h.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
+  h.set("X-Frame-Options", "DENY");
+  h.set("X-Content-Type-Options", "nosniff");
+  h.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  h.set("Permissions-Policy", "geolocation=(), microphone=(), camera=(), payment=(self), interest-cohort=()");
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers: h });
 };
