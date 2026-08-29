@@ -1427,3 +1427,35 @@ from a Chrome-MCP session — do not read that line as evidence that curl can do
 looks exactly like an empty calendar, i.e. "weekends are closed" — the very claim under test. An
 absence produced by a redirect you didn't follow will confirm whatever you already believed. Always
 check `%{http_code}` + `%{url_effective}` before reading meaning into an empty Acuity response.
+
+## I escaped MCP's truncation with REST, then truncated it myself (2026-08-29)
+
+Recording because the irony is the lesson. Earlier in the same session I proved the TaskPeace MCP
+build truncates bodies to ~200 chars and established REST as the way to read a full task:
+
+    curl -H "Authorization: Bearer $PROMPTPRIO_API_TOKEN" https://taskprio.com/api/tasks/<id>
+
+Then, reading task `mqgqo5oacvgu2w`, I did exactly that — and printed `b[:2600]` of a **4,496-char**
+body. The card's `## Revision 2026-08-26` sat past my cutoff. It said the calibration was already
+UNBLOCKED (the tracked events never stopped; they fire to gtag under renamed GA4 events —
+`Acuity Click → Book_appointment_1 / begin_checkout / begin_booking`, `Lead Generated →
+generate_lead`, etc.). I appended a confident "asks #2-4 are permanently unanswerable", which was
+flatly wrong, and had to retract it in place.
+
+**The rule:** when you fetch a full document specifically to escape someone else's truncation, do
+not re-impose your own. Either print the whole thing, or — better for long bodies — print
+`len(b)` first and then SEARCH it for the structures that matter rather than slicing a prefix:
+
+    print(len(b))
+    for h in re.findall(r'^#+ .*$', b, re.M): print(h)      # all section headers
+    for m in re.finditer(r'Revision|BLOCKED|UNBLOCK|CORRECT', b): ...  # decision markers
+
+A task body is append-only by convention here, so **the most recent and most authoritative content
+is at the END** — precisely the part a prefix slice discards. Slicing a prefix on an append-only
+document is close to guaranteed to read stale state as current.
+
+Same failure class as the other three logged today (MCP search indexing only a body prefix; an
+impression-weighted mean reading as depth-conversion; a step-change flag saying "stayed down" on
+`after_days: 1`). In every case a confident output rested on less data than the phrasing implied.
+The distinguishing feature here is that the truncation was **mine**, imposed after I had already
+solved it.
