@@ -1354,3 +1354,35 @@ and assert non-empty.
     curl -s "$W/gsc-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
     curl -s "$W/bing-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
     # needs `source ~/.zshenv` — the token is not in the default shell env
+
+## `/Users/paulodevries/Local/...` is a SYMLINK to the failing WD drive — not an escape hatch (2026-08-29)
+
+The session environment lists `/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub` as an
+additional working directory. It reads like a fast local checkout — it is on `main`, clean, and
+has `node_modules`. It is not local:
+
+    realpath(Local) == realpath(WD) == /Volumes/WD ULTRA HD 1tb/.../sculptclub
+    df Local -> /dev/disk4s2      df WD -> /dev/disk4s2      # same device
+
+Measured the same 100 .tsx reads through both paths:
+
+    Local:  7108 ms / 100 files  (71.1 ms/file)
+    WD   :  7725 ms / 100 files  (77.3 ms/file)
+
+Both are the failing drive. This independently confirms Fleet Dashboard card
+`mt9pxpc0y5w1pk` ("96ms per file read, ~1000× slow", measured 2026-08-26) is **still true
+three days later**. A healthy SSD reads these in ~0.05 ms/file.
+
+**Why it matters for builds:** `next build` compiles fine (5.4 min) and generates all 221
+static pages (97 s), then sits in "Finalizing page optimization" for 20+ minutes at **0.0% CPU**
+on every process — parent and both workers. That reads exactly like a hang. It is not: `lsof`
+shows live handles on `out/nl/cadeaukaarten/...`, so it is writing export output, I/O-bound on
+a disk doing ~13 reads/second. Do not kill the build and do not go looking for a code-level
+hang; check `lsof` before concluding anything about a stalled build here.
+
+**Do not "fix" this in code.** Turbopack also warns during the same build that the whole
+project is being traced into the NFT list (import trace `next.config.ts -> src/app/sitemap.ts`),
+because `sitemap.ts` does `join(process.cwd(), ...)` + `readFileSync`/`existsSync`/`statSync`
+on dynamically-built paths. That warning is real and worth fixing one day — but it is a
+symptom-level optimisation on top of failing hardware, and `sitemap.ts` is SEO-critical.
+Fixing it here buys little and risks the sitemap. The drive is the problem.
