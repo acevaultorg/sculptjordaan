@@ -1093,3 +1093,42 @@ TWO LESSONS:
    (4,370/30d) and readinglist (11,276/30d) — not on a 472-visitor local site.
    Each project has its own token; the fleet worker holds CLARITY_TOKEN_* for
    the others.
+
+## readinglist-school: plain `next build` BREAKS the repo (2026-08-29, via vault-fleet-f1)
+
+Not my repo, but this is the kind of thing that costs an hour and is invisible
+until it has already gone wrong.
+
+`next build` / `npm run build` on readinglist-school reads `DATABASE_URL` from
+`.env.local` (Neon) instead of the PGlite snapshot the build expects. Canonical
+flow is:
+
+    bash scripts/build-from-snapshot.sh && bash scripts/deploy-cf-chunked.sh
+
+`scripts/deploy-lock.sh` is a mutex because 3+ sessions share that checkout.
+The deploy script diffs `.changed-urls.json`, so IndexNow announces only the
+changed URLs — do not "helpfully" bypass postbuild to avoid an IndexNow blast,
+that is already handled.
+
+GENERAL FORM: **the fleet's per-repo build entrypoint is not always `npm run
+build`.** Before building any repo I do not own, read its deploy script first.
+On SculptClub the equivalent trap is different but the same shape — `npm run
+build` deletes `out/_worker.js`, so the Functions must be recompiled before
+deploying (logged above).
+
+## Two grep traps from the same exchange
+
+1. **A trailing slash changes the answer.** vault-fleet-f1's first check for
+   guide→hub links searched `href="/grade/"` and returned zero; the links are
+   `href="/grade"` — a hub index with no trailing segment. It nearly concluded
+   the pages had no internal links at all. When a link grep returns 0, try it
+   without the trailing slash before believing it.
+
+2. **"Empty beats wrong" is a real constraint on a fix, not a cop-out.** I
+   proposed giving all 31 guide pages a book block, including "award guides →
+   that award's winners". There IS no queryable award table on that site — the
+   Caldecott/Newbery/CSK data lives in prose. Shipping 31 blocks would have
+   required inventing associations. Only 6 had a genuine backing query and only
+   6 got a block. A recommendation surface with mismatched items is worse than
+   no surface, and "the data exists on the site" is a claim to verify, not
+   assume — I asserted it without checking.
