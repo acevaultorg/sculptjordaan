@@ -23,7 +23,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
             },
             {
               icon: Dumbbell,
-              label: "Proefles Open Gym",
+              label: "Probeersessie Open Gym",
               description: "60 min · gratis · zelf trainen",
               href: acuityLinks.openGymTrial,
               external: true,

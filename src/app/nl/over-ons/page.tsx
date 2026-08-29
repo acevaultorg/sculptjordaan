@@ -283,7 +283,7 @@ export default function OverOnsPage() {
                 href={"/nl/vind-jouw-personal-trainer"}
                 size="lg"
               >
-                Boek Gratis Proefles
+                Boek Gratis Intake
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
               <ButtonLink

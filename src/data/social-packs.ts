@@ -61,7 +61,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     },
     instagram: {
       caption:
-        "Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 4 personen per slot · eerste les vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nBoek je proefles · link in bio 👆",
+        "Open Gym in onze privé studio aan de Egelantiersgracht.\n\n60 minuten solo trainen · max 4 personen per slot · eerste les vrijblijvend · vanaf €7,25 per sessie · geen contract.\n\nBoek je probeersessie · link in bio 👆",
       hashtags: "#opengym #amsterdamgym #privegym #jordaan #fitamsterdam",
     },
   },

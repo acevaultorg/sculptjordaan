@@ -480,7 +480,7 @@ export default function BlogPageNL() {
       <Section bg="dark">
         <SectionHeader
           overline="Klaar om te beginnen?"
-          title="Boek een Gratis Proefles"
+          title="Boek een Gratis Intake"
           description="Ervaar zelf hoe het is om te trainen in onze privé studio in de Jordaan."
         />
         <FadeIn className="flex justify-center">
@@ -489,7 +489,7 @@ export default function BlogPageNL() {
             size="lg"
             className="text-white"
           >
-            Boek Gratis Proefles
+            Boek Gratis Intake
           </ButtonLink>
         </FadeIn>
       </Section>
