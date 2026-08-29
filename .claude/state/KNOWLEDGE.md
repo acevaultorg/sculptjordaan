@@ -1533,3 +1533,45 @@ Caveat: 1565 files / ~190MB out/. A much larger changed payload (readinglist's ~
 files) will take proportionally longer — this is a sculptclub-scale measurement, not a universal
 constant. Re-measure rather than inheriting THIS number as gospel; that is exactly how the old
 one persisted.
+
+## Fact-audit false-positive class #6 — the REFERENCE-DATA GAP (2026-08-29)
+
+Traps 1-5 in the playbook above are all *instrument* faults (regex, tool, truncation). This one
+is a **corpus** fault, and it points the opposite way, so the existing controls do not catch it.
+
+**What happened.** Auditing `docs/poster-open-gym-deur-2026.html` I found `€9 / uur`, a price
+absent from CLAUDE.md's Open Gym list (which had only Instapplan €29 and Onbeperkt €79) and
+absent from the llms.txt I had just deployed. It read as an invented price on a print asset, and
+I was one step from "fixing" it.
+
+It is real: live `/nl/open-gym` sells "Losse sessie · 1 sessie €9 · Geen lidmaatschap nodig" in
+body copy AND JSON-LD, `src/config/acuity.ts` defines it as `appointmentType=83513953`, and it
+appears in 17 files. **CLAUDE.md was the thing that was wrong.**
+
+**Why the standard control misses it.** A positive control proves the *instrument* works — mine
+did (`€49` → 35 repo hits, 9 live hits). But the instrument was never in doubt. The failure was
+that I compared the artifact against a reference list that was **silently incomplete**, and an
+incomplete reference makes a true fact look false with full confidence.
+
+**The check that catches it — before calling any fact wrong, resolve it from the ARTIFACT, not
+the reference:**
+
+| about to report | resolve against |
+|---|---|
+| "this price isn't in our price list" | the live page + the payment/product config (Acuity, Stripe) |
+| "this claim isn't documented" | grep the whole repo — count files, not just the doc |
+| "this figure looks invented" | git log the file: did the OPERATOR author it? |
+
+All three fired here: 17 repo files, a live JSON-LD offer, and `git log` showing the operator
+committed the poster (7b897e7, "€9/hr + first-free hook").
+
+**Generalisation — this is `repo-name-is-not-the-domain` in a new costume.** That rule says a
+*label* (directory name, tracking tag) is not the artifact. This says a *reference doc* is not
+the artifact either. When doc and artifact disagree, the artifact wins and **the doc is the bug**
+— so the fix is to update the reference, never to "correct" the artifact into agreement.
+
+**Cost if unfixed:** the €9 is the cheapest paid product and the entry point the door poster
+leads with. Stripping it would have removed the top of the funnel from a print asset, and any
+future agent reading CLAUDE.md would have made the same call. Fixed in CLAUDE.md (0508b3a) with
+an explicit DO-NOT-CORRECT warning rather than a bare price line, because the bare line is what
+was missing and a bare line would not have stopped the next session.
