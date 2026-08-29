@@ -1459,3 +1459,48 @@ impression-weighted mean reading as depth-conversion; a step-change flag saying 
 `after_days: 1`). In every case a confident output rested on less data than the phrasing implied.
 The distinguishing feature here is that the truncation was **mine**, imposed after I had already
 solved it.
+
+## Fact-audit playbook + verified-clean list (2026-08-29) — read before re-auditing facts
+
+A full factual sweep ran on 2026-08-29 (229 built pages + 429 source/doc files). What it found,
+what it did NOT find, and the two traps that make this audit expensive to repeat badly.
+
+### TRAP 1 — scan `*.html` only and you WILL miss the worst offender
+The first pass covered `out/**/*.html` and came back nearly clean. `public/llms.txt` is `.txt`,
+and it carried four wrong facts at once (forbidden "0% commission" ×2, "max 3 people / max 6
+studio rental", Onbeperkt at the two-generations-old €59, and packages at pre-repricing
+€199/€349/€549). **Always include `.txt .xml .json .md .mjs .py` and `public/`, `docs/`,
+`scripts/`, `.claude/state/`.**
+
+### TRAP 2 — a big sweep tends to miss the files humans actually hand out
+`docs/CLASSPASS-FULLSTUDIO-PRIORITY.md` records "06:30 was wrong in 78 files", corrected
+2026-08-05. Four survived it, and they were the print/publish assets:
+`docs/poster-door-2026.html`, `docs/poster-open-gym-deur-2026.html`,
+`docs/poster-open-gym-zomer-2026.html`, and `scripts/build-tiktok-post.mjs` (which regenerated
+it). After any mass fact-fix, **re-grep `docs/*.html`, `public/social/`, and `scripts/` by hand.**
+
+### FALSE POSITIVES — do not re-raise these
+- **`0% commissie` matched 14 files; only 1 was real.** 7 were the tail of "20-30% commissie" /
+  "30-50% commission" (needs a `(?<![\d\-–])` guard); 6 were `public/social/*` pages *stating the
+  prohibition* ("Nooit '0% commissie' gebruiken"). Naming what OTHER gyms charge is explicitly
+  allowed by CLAUDE.md and must stay.
+- **`tot 50 kg` / `tot 32 kg` in `public/social/`** is meta-commentary about the old
+  inconsistency ("De site noemt vier verschillende dumbbell-gewichten…"), not a live claim.
+  a2c56dc fixed the real ones.
+- **`€199` / `€349` in the two pricing-strategy blog posts** (`personal-trainer-pakketten-
+  prijsstrategie-zzp-amsterdam` + EN twin) are generic anchor-pricing EXAMPLES for a trainer's own
+  client packs ("€199 / 10 sessies = €19,90 per sessie"). Not SculptClub package prices.
+- **`24 uur` on word-trainer / become-trainer** is "we bellen je binnen 24 uur" — a response-time
+  promise, not a cancellation window.
+- **`€69`** is Alex's real PT rate. **`90-minuten`** are real products (€17/€24). **`06:00`**
+  everywhere is correct.
+
+### VERIFIED CLEAN 2026-08-29 (site-wide, control-backed)
+Retired phone `0683178934`: 0 in `src/` and 0 in live HTML. Wrong brand name: 0. `max 3` / `max 6`
+in shipped copy: 0. `€59` as a live price: 0. `06:30`: 0 outside historical notes. Placeholder
+`wa.me/31612345678`: 0. `proefles` in visible copy: 0 (URL + metadata retained deliberately).
+
+### STILL OPEN — operator-only, cannot be reached from a normal session
+Google Ads account (brand ad still shows "Open 06:30-22:00", per
+docs/REVENUE-SPRINT-2026-08-14.md:100) · Acuity receipt templates · GBP service text ·
+"vanaf €5,75/sessie" in TIKTOK-CONTENT.md (unverifiable against CLAUDE.md's €7.25 floor).
