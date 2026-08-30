@@ -138,3 +138,87 @@ becomes a live page with no design effort.
 
 **Also worth fixing:** `CLAUDE.md` lists four trainers (Alex, Eva, Andrea, Dara). The config
 has thirteen. Anything working from CLAUDE.md under-counts the roster by nine people.
+
+---
+
+# Revision 2026-08-30 — refreshed against a newer export
+
+Recomputed from `acuity-exports/acuity-full-export-2026-08-30.csv` (2,186 rows, pulled 30 Aug),
+five days after the original. Two findings the 25-Aug pass could not see.
+
+## 1. The rental slide bottomed out in July and is recovering
+
+Paid rentals per month (cancellations and future bookings excluded):
+
+| Month | Bookings | Δ | Room-utilisation* |
+|---|---:|---:|---:|
+| Mar 2026 | 164 | +9% | 25.9% |
+| Apr 2026 | 168 | +2% | 26.3% |
+| May 2026 | **183** ← peak | +9% | 27.2% |
+| Jun 2026 | 151 | −17% | 23.2% |
+| Jul 2026 | **116** ← trough | −23% | **17.8%** |
+| Aug 2026 | **140** | **+21%** | 22.2% |
+
+\* room-hours booked ÷ 112 open hours/week; a half-studio booking counts as half a room.
+
+Peak-to-trough was **−37%** (183 → 116) — that is the "−40% slide" in the record. **August reversed
+it: +21% off the bottom**, and that is with 30 Aug still running. Still 24% below the May peak.
+
+⚠️ **Do not read the dip as decay, and do not read the recovery as a fix.** July–August is Amsterdam
+holiday season and the obvious hypothesis is seasonality — but **it cannot be tested**: the studio's
+own August 2025 was 5 bookings (the business was starting), so there is no clean year-over-year
+comparison. Treat both the fall and the rebound as unexplained until September lands.
+
+## 2. Six of the thirteen listed trainers no longer rent — not two
+
+The table above lists Bryan and Tom. Against the fresh export, **four more have gone quiet**, and one
+of them is a high-volume renter that the 25-Aug pass should have caught (Alex was already 95 days
+silent when that document was written; he appears in it only as a passing volume figure).
+
+Every trainer in `src/config/trainers.ts`, by last paid rental as of 30 Aug 2026:
+
+| Trainer | All-time rentals | Last rental | Days | Status |
+|---|---:|---|---:|---|
+| Joey | 279 | 2026-08-29 | 0 | 🟢 active |
+| Dara | 200 | 2026-08-28 | 1 | 🟢 active |
+| Jearmey | 164 | 2026-08-26 | 3 | 🟢 active |
+| Eva | 71 | 2026-08-28 | 1 | 🟢 active |
+| Andrea | 61 | 2026-08-19 | 10 | 🟢 active |
+| Hamish | 22 | 2026-08-27 | 2 | 🟢 active |
+| Roberta | 2 | 2026-08-22 | 7 | 🟢 active |
+| **Sergei** | 21 | 2026-07-11 | 49 | 🔴 **newly flagged** |
+| **Ibrahim** | 16 | 2026-06-30 | 60 | 🔴 **newly flagged** |
+| **Gezina** | 2 | 2026-06-27 | 63 | 🔴 **newly flagged** |
+| **Alex** | **74** | 2026-05-22 | **99** | 🔴 **newly flagged — missed on 25 Aug** |
+| Bryan | 23 | 2026-03-25 | 157 | 🔴 already flagged |
+| Tom | 0 | never | — | 🔴 already flagged |
+
+**The leak:** each of these six has a live `/nl/plan-gratis-intake-met-<naam>` page in the sitemap. A
+client who picks one books a free intake with someone who no longer rents the room — so the booking
+produces no rental hour, and the client meets a trainer who may no longer be available. Alex is the
+expensive one: 74 lifetime rentals, the largest book among the lapsed.
+
+## 3. What to do — and why I did not do it
+
+**This is a judgement call, not a config change, so it is left to the operator.** Delisting a trainer
+touches a real working relationship, and the timing is the worst possible moment to automate it: four
+of the six went quiet in exactly the weeks the whole studio dipped. Sergei at 49 days may simply be on
+holiday. Removing him in the last week of August would be a self-inflicted wound if he returns in
+September.
+
+Suggested, in order:
+
+1. **Message the four newly-flagged (Alex, Sergei, Ibrahim, Gezina) before touching the site.** One
+   question — "still planning to rent in September?" Alex first; his book is the biggest.
+2. **Bryan and Tom are not ambiguous** — 157 days and never, respectively. Their intake pages can come
+   down or be de-indexed now.
+3. **Re-run this table in late September.** If a trainer is still silent after the holiday window
+   closes, the seasonality defence is gone and delisting is clean.
+4. The five renters with no profile (Mees, Nahuel, Jimmi, Aldo, Nadine — original table above) are
+   still the mirror-image opportunity: they pay rent and get no client flow.
+
+**Reproduce:** the per-trainer figures come from matching `First Name`+`Last Name` against the paid
+rental types. Watch for duplicate spellings in the raw data — `Joey Van Veen`/`Joey van Veen`,
+`Mees Loman`/`mees loman`, `H.M. Leijer`/`Hamish Leijer` and four spellings of Alex are all the same
+people, so a naive per-name count understates the top renters and inflates the renter total (76 raw
+names ≫ real tenants).
