@@ -191,7 +191,7 @@ Every trainer in `src/config/trainers.ts`, by last paid rental as of 30 Aug 2026
 | **Gezina** | 2 | 2026-06-27 | 63 | 🔴 **newly flagged** |
 | **Alex** | **74** | 2026-05-22 | **99** | 🔴 **newly flagged — missed on 25 Aug** |
 | Bryan | 23 | 2026-03-25 | 157 | 🔴 already flagged |
-| Tom | 0 | never | — | 🔴 already flagged |
+| **Tom** | **0** | **never** | — | ⚠️ **not lapsed — never ramped. See below.** |
 
 **The leak:** each of these six has a live `/nl/plan-gratis-intake-met-<naam>` page in the sitemap. A
 client who picks one books a free intake with someone who no longer rents the room — so the booking
@@ -222,3 +222,41 @@ rental types. Watch for duplicate spellings in the raw data — `Joey Van Veen`/
 `Mees Loman`/`mees loman`, `H.M. Leijer`/`Hamish Leijer` and four spellings of Alex are all the same
 people, so a naive per-name count understates the top renters and inflates the renter total (76 raw
 names ≫ real tenants).
+
+
+---
+
+## Correction 2026-08-30 (same day) — "lapsed" and "never ramped" are not the same thing
+
+The table above, and the first version of this revision, treated *last rental date* as the only
+signal. That is wrong for two names, and it produced one actively bad recommendation — the earlier
+advice that **Bryan and Tom "can come down now"**. Checking `git log` on `src/config/trainers.ts`
+changes the picture:
+
+| | Added to the site | Lifetime rentals | Reading |
+|---|---|---:|---|
+| **Tom** | **2026-07-01** (60 days ago), deliberate commit, €100/60min, operator-supplied gallery photos | 0 | **Not a lapsed tenant — a listing that has never landed its first client.** |
+| **Roberta** | 2026-07-25 (36 days ago), at her own request | 2, last 2026-08-22 | Added *later* than Tom and already converted — she ramped. |
+| **Gezina** | promoted to #2 by operator directive 2026-07-04 ("plaats gezina hoger op de pagina") | 2 | Never a high-volume renter; 63 days quiet is not a fall from anything. |
+
+**Delisting Tom would be exactly backwards.** He is the highest-priced trainer on the roster, added
+on purpose two months ago; zero rentals is a *demand* signal, not a dead tenant. Removing his page
+would destroy the only asset that could produce his first client. Same logic protects Gezina, whom
+the operator explicitly asked to give *more* prominence eight weeks ago.
+
+### The roster is three groups, not two
+
+1. **Genuinely lapsed** — had a real book and stopped. Alex (74 lifetime, 99d) · Bryan (23, 157d) ·
+   Sergei (21, 49d) · Ibrahim (16, 60d). Ask if they're returning in September.
+2. **Never ramped** — listed recently, little or no history. **Tom (0, listed 60d)** · Gezina (2).
+   The question here is the opposite one: *why does nobody pick them?* Roberta is the control that
+   proves it is answerable — she was listed later and converted.
+3. **Active** — Joey · Dara · Jearmey · Eva · Andrea · Hamish · Roberta.
+
+**Only Bryan is unambiguous** (157 days, a real book that stopped, already recorded in `CLAUDE.md`
+as not currently renting). Everyone else needs a question asked, not a page removed.
+
+**Lesson for the next pass:** rental recency alone cannot tell "lapsed" from "new and waiting". Read
+`git log -S'"<name>"' -- src/config/trainers.ts` for when a trainer was listed before calling them
+lapsed — the config comments and commit history carry deliberate operator intent that the Acuity
+export cannot see.
