@@ -99,3 +99,51 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 
 ### Residual risk (accepted)
 "Never booked before" ≠ "will never be booked". A ClassPass booking on a safe hour still blocks a rental *if one is wanted there for the first time*. At 21:00 that risk is minimal (zero demand in 15 months). The structural cure would be releasing ClassPass slots only ~24h ahead so any advance rental always wins — worth exploring if ClassPass exposes a booking-window setting.
+
+---
+
+## Guard run log
+
+| Date | Result | Notes |
+|---|---|---|
+| 2026-08-05 | ✅ Executed | 11 conflicts removed, 4 safe slots kept (initial cleanup) |
+| 2026-08-30 | ⚠️ **BLOCKED — could not verify** | Both dashboard sessions logged out. No fresh export, no live-schedule read. See below. |
+
+### 2026-08-30 — blocked run (honest record)
+
+The guard **did not perform its core function**. It could not re-export Acuity and could not read the
+live ClassPass schedule, because **both browser sessions have expired**:
+
+- `secure.acuityscheduling.com` → login page; `GET /api/v1/me` returns **401** (instrument verified
+  working — real status codes came back, so this is a genuine logout, not a tool failure).
+- `studios.classpass.com/schedule-settings` → *"Mogelijk moet je inloggen om deze pagina te bekijken."*
+
+Logging in is operator-only (never type credentials). Chrome MCP was also down; the AppleScript
+Chrome fallback worked and is what produced the two reads above.
+
+**What WAS verified**, re-running `analyze-classpass-safety.py` against the 2026-08-05 export:
+
+- Grid reproduces exactly — 822 whole-room bookings · 93 distinct slots · 0 unclassified types ·
+  20 safe slots/week. The documented table above is intact.
+- All 4 live slots (Mon/Tue/Thu/Fri 21:00) = **0 whole-room bookings ever**, cancellations included.
+- **0** forward-booked whole-room appointments land on any live slot — the export ran to 2027-12-31
+  and held 43 whole-room bookings dated on/after 2026-08-05 (latest 2026-10-05). None at 21:00.
+- Only **3** whole-room bookings in all history start at 21:00 or later: Wed 21:00 ×2 (Mar 2026 —
+  precisely why Wed 21:00 was deleted) and Thu 22:00 ×1 (outside opening hours). **Mon/Tue/Thu/Fri
+  21:00 has never had a whole-room booking at any point.**
+
+**Residual exposure:** bookings *made* in the 25 days since the export (~58 whole-room bookings per
+25-day window at recent velocity). All observed 21:00 demand has ever been Wednesday, so the odds a
+live slot became a conflict are low — but this is **unverified, not confirmed safe**. Do not read
+this run as a green light.
+
+### 🔧 Structural fix — make half this guard session-proof
+
+The export half of the guard does not need a browser at all. Acuity exposes **API credentials**
+(Settings → Integrations → API) — a user ID + API key that never expire on their own. With them in
+`~/.zshenv`, the Acuity pull becomes a `curl` and the guard stops depending on a session that
+silently lapses. Only the ClassPass read would still need a login.
+
+Endpoint: `GET https://acuityscheduling.com/api/v1/appointments?minDate=…&maxDate=…&canceled=true`
+(basic auth, paginate with `max`/`page`). ⚠️ Verify the API returns cancelled rows before trusting
+it — the in-page `fetch()` trap that silently drops 309 cancelled rows is exactly this failure mode.
