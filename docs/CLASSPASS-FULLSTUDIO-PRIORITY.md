@@ -63,8 +63,17 @@ Weekdays are almost fully rented 06:00–20:00; only 21:00 survives (plus Wed 06
 
 ## Where the schedule actually lives
 
-The Acuity class **"Open Gym ClassPass" (id 89359957) is dormant** — no offered times. ClassPass runs its **own manual schedule** (AutoSync Off, no Acuity integration), so nothing structurally prevented conflicts.
-→ Fix location: studios.classpass.com → **Manage → Schedule settings**.
+The Acuity class **"Open Gym ClassPass" (id 89359957) is dormant** — no offered times. ClassPass runs its **own manual schedule** (AutoSync Off, re-confirmed 2026-08-30), so nothing structurally prevents conflicts.
+
+→ Fix location: studios.classpass.com → sidebar **Manage → Schedule settings**.
+⚠️ `studios.classpass.com/schedule-settings` **404s** — that path is wrong. The real page is
+`studios.classpass.com/manage/schedule/generate/260955/<YYYY-MM-DD>?focus=list` (260955 = the studio id).
+Navigate via the sidebar; don't deep-link the old path.
+
+**Reading it correctly:** the list is filtered. Open both filter dropdowns and confirm
+**3 statuses** = Published + Drafts + Disabled and **2 types** = Recurring + One-time are all ticked,
+or the view silently hides slots. The `Repeat on` column is what matters — one row reading
+"Mon, Fri" is a single series covering *two* weekday-hours.
 
 ## ✅ Executed 2026-08-05 — the conflict is gone
 
@@ -112,9 +121,9 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 | Date | Result | Notes |
 |---|---|---|
 | 2026-08-05 | ✅ Executed | 11 conflicts removed, 4 safe slots kept (initial cleanup) |
-| 2026-08-30 | 🟡 **Acuity half DONE · ClassPass half BLOCKED** | Fresh export pulled + grid rebuilt. No conflict on any known live slot. Live ClassPass schedule unread (logged out). |
+| 2026-08-30 | ✅ **Clean — zero conflicts** | Both halves verified. 4 live slots, all on never-booked hours. Nothing deleted. Safe-hours cap fell 20→17. |
 
-### 2026-08-30 — what ran, what didn't
+### 2026-08-30 — full run, zero conflicts
 
 **✅ Acuity half — complete.** Fresh export pulled through the real form (`2020-01-01 → 2027-12-31`,
 *Include canceled* ticked): **2,186 rows · 331 cancelled · 30 types · 0 unclassified · 944 whole-room
@@ -128,11 +137,19 @@ silently failed. Saved as `../acuity-exports/acuity-full-export-2026-08-30.csv`.
   slot, so no action was needed — but the safe-hours cap fell **20 → 17** and the table above was
   corrected. This is precisely the drift the guard exists to catch.
 
-**🟡 ClassPass half — not verified.** `studios.classpass.com/schedule-settings` is logged out
-(*"Mogelijk moet je inloggen om deze pagina te bekijken"*), so the live recurring schedule was never
-read. The clean verdict above is against the **4 slots this document records as live**. If a slot was
-added since 2026-08-05 — on a daytime hour — it would be a conflict and this run would not have seen
-it. Treat the all-clear as covering known slots only.
+**✅ ClassPass half — complete.** Live schedule read directly (studio 260955), filters confirmed
+unfiltered (all 3 statuses + both types ticked), 8.5 weeks forward through 2026-10-27:
+
+| Live series | Repeat on | Whole-room bookings in that hour |
+|---|---|---|
+| 21:00 Open gym (max 4), 60m — staff Sam | Mon, Fri | 0 ✅ |
+| 21:00 Open gym (max 4), 60m | Tue | 0 ✅ |
+| 21:00 Open gym (max 4), 60m | Thu | 0 ✅ |
+
+**Every single instance is 21:00. No Wednesday, no daytime, no weekend.** That is exactly the 4
+weekday-hours this document records — no slot was added since the 2026-08-05 cleanup.
+
+**Verdict: ZERO CONFLICTS. Nothing changed.**
 
 ### ❌ The Acuity API route does NOT work — don't retry it
 
