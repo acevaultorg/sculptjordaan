@@ -209,7 +209,7 @@ export default function PersonalTrainerRugklachtenAmsterdam() {
 
               <h3 className="text-xl font-bold mt-8 mb-3">Roberta — houding &amp; mobiliteit</h3>
               <p>
-                Roberta is ACE®-gecertificeerd en richt zich op houding en mobiliteit: weer
+                Roberta richt zich op houding en mobiliteit: weer
                 soepel bewegen voordat je zwaarder gaat belasten. Ze coacht in het Engels en
                 Italiaans. Plan een{" "}
                 <a href="/nl/plan-gratis-intake-met-roberta" className="text-brand hover:underline">

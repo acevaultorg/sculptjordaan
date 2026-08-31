@@ -107,7 +107,7 @@ export default function EngelsSprekendePTAmsterdamNL() {
                 <li><strong>Jearmey</strong> — Kracht, vetverlies, atletische prestatie. NL/EN. <a href="/nl/plan-gratis-intake-met-jearmey" className="text-brand hover:underline">Plan een intake</a>.</li>
                 <li><strong>Sergei</strong> — Lichaamsrecompositie, houdingscorrectie, herstel. EN/RU, geen Nederlands. €80/60 min. <a href="/nl/plan-gratis-intake-met-sergei" className="text-brand hover:underline">Plan een intake</a>.</li>
                 <li><strong>Tom</strong> — Kracht &amp; conditie, duurzame training, Brazilian Jiu-Jitsu. Alleen Engels. €100/60 min. <a href="/nl/plan-gratis-intake-met-tom" className="text-brand hover:underline">Plan een intake</a>.</li>
-                <li><strong>Roberta</strong> — Kracht, houding &amp; mobiliteit, afvallen. EN/IT, ACE®-gecertificeerd. <a href="/nl/plan-gratis-intake-met-roberta" className="text-brand hover:underline">Plan een kennismaking</a>.</li>
+                <li><strong>Roberta</strong> — Kracht, houding &amp; mobiliteit, afvallen. EN/IT. <a href="/nl/plan-gratis-intake-met-roberta" className="text-brand hover:underline">Plan een kennismaking</a>.</li>
               </ul>
               <p>
                 Bekijk de volledige <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">trainerpagina</a> voor

@@ -198,7 +198,7 @@ export default function BackPainPersonalTrainerAmsterdam() {
 
               <h3 className="text-xl font-bold mt-8 mb-3">Roberta — posture &amp; mobility</h3>
               <p>
-                Roberta is ACE®-certified and focuses on posture and mobility: moving well
+                Roberta focuses on posture and mobility: moving well
                 again before you start loading heavier. She coaches in English and Italian.
                 Book a{" "}
                 <a href="/en/plan-free-intro-with-roberta" className="text-brand hover:underline">free intro with Roberta</a>.
