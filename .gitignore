@@ -53,3 +53,10 @@ test-results/
 # Raw photo dumps — never deploy (moved to ../sculptclub-source-photos)
 public/images/TransferNow-*
 public/images/wetransfer_*
+
+# Vercel — RETIRED for this project 2026-07-14 (moved to Cloudflare Pages).
+# Config removed 2026-08-29: .vercel/project.json pointed at the lapsed team
+# team_RnTaiEeYwOq3wPb2CioNcBwe, so `vercel deploy` would SUCCEED against a stale
+# project and publish a duplicate of the site. Without it the command fails fast.
+.vercel/
+vercel.json
