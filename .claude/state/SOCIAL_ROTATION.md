@@ -187,3 +187,38 @@ constraint that motivated 3×/week is gone.)
   repeat it.** `trainer-gezina-001` is backfilled below for that reason.
 - **Backfill, 2026-08-26 — slot 2 `meet-name`, `trainer-gezina-001`** (+ `-en`
   variant). Built but not logged at the time. Status: operator to post.
+
+| 2026-09-01 | empty-room | studio-leeg-001 | /social/studio-leeg-001/ | ⏰ **SCHEDULED** 31 aug 21:10 → posts **1 sep 19:00** (TikTok native) | verified in Studio: "🕐 1 sep, 19:00" badge, 0 views |
+
+### 2026-08-31 — posting model changed: buffer, not daily-post
+
+**2 days were missed (30 + 31 aug). Measured on-platform, not inferred:** TikTok
+Studio shows the previous post at **29 aug 14:55** and **Concepten 0**. Two causes,
+both silent:
+
+1. The `social-autopilot` scheduled task described at the top of this file **did not
+   exist** — verified in both the tasks directory (55 tasks, zero matching "social")
+   and the scheduler registry. The 26–29 aug posts were a *running interactive
+   session* driving Chrome MCP by hand. When that lane hit its weekly usage cap on
+   29 aug 16:13, posting stopped and nothing reported it.
+2. TikTok's session had **expired** in the operator's Chrome, so even a working task
+   could not have posted.
+
+**The fix inverts the model.** The task no longer posts one item per run — it keeps
+**TikTok's OWN native schedule ≥5 days deep**. Six things can each kill a run (usage
+cap, app closed, drive unmounted, Chrome logged out, backlog dry, TikTok UI change);
+with a buffer, all six become survivable because the posts already live inside
+TikTok. Any single successful run refills it. Only 5+ consecutive failed days break
+the chain, versus one before.
+
+**Scheduling capability — MEASURED 2026-08-31, do not re-guess it:** TikTok Studio
+does support native scheduling ("Tijdstip van plaatsing" → *Plannen*). The date
+picker offered **1–5 sep** from 31 aug, i.e. a **~5-day forward window**, NOT the
+~10 days assumed when the task was written. Minutes snap to 5-minute steps. A
+one-time consent ("Mag je video worden opgeslagen voor geplande plaatsing?") must be
+accepted before the first scheduled post. **So the ≥5-day buffer target is at the
+very edge of what TikTok allows — treat 4 days as the practical ceiling.**
+
+Backlog on disk at this point: `studio-leeg-001` (now scheduled), plus
+`open-gym-september-2026` and `studio-tour-2026-08` (both have reel.mp4) = 2 more
+days available without building anything new.
