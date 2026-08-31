@@ -28,8 +28,9 @@ Opening hours are **06:00–22:00, every day** (corrected 2026-08-05 — "06:30"
 
 ## Ground truth — complete Acuity export
 
-`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-08-30**: **2,186 rows · 30 appointment types · 944 whole-room bookings · 96 distinct weekday-hour slots.**
-(Prior 2026-08-05 export: 1,951 rows · 822 whole-room · 93 slots. File: `acuity-full-export-2026-08-30.csv`.)
+`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-08-31**: **2,188 rows · 30 appointment types · 944 whole-room bookings · 96 distinct weekday-hour slots.**
+(Prior 2026-08-30 export: 2,186 rows · 944 whole-room · 96 slots — the grid below is byte-identical between the two.
+Prior 2026-08-05: 1,951 rows · 822 whole-room · 93 slots. File: `acuity-full-export-2026-08-31.csv`.)
 
 Whole-room bookings per weekday-hour (count in brackets):
 
@@ -55,7 +56,7 @@ Sun        7(1)  8(5)  9(4)  10(8) 11(12) 12(4) 13(4)  14(4)  15(3)
 | **Sat** | 06:00 · 18:00 · 19:00 · 20:00 · 21:00 |
 | **Sun** | 06:00 · 16:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
 
-**17 safe slots/week** (2026-08-30; was 20 on 2026-08-05) — a *cap*, not a target. Offering fewer is always safe.
+**17 safe slots/week** (unchanged 2026-08-31; was 20 on 2026-08-05) — a *cap*, not a target. Offering fewer is always safe.
 
 ⚠️ **The cap shrinks over time.** Three weekend hours were lost in 25 days — Sat 07:00, Sat 17:00, Sun 07:00 each took their first-ever Full Studio booking. The weekend dead zone that makes ClassPass viable is being eaten by real rentals, which is exactly the outcome the priority rule wants. Re-check this table before adding any slot; never add from memory.
 
@@ -106,10 +107,27 @@ The set of "hours Full Studio has ever been booked" **grows**. A slot that is sa
 Definition: `~/.claude/scheduled-tasks/classpass-fullstudio-conflict-guard/SKILL.md`
 Data + script: `../acuity-exports/` (CSV · `analyze-classpass-safety.py` · README).
 
+### The two URLs (don't guess — these are verified)
+
+| What | URL |
+|---|---|
+| Acuity export form | `https://secure.acuityscheduling.com/reports.php?action=importexport` |
+| ClassPass schedule | `https://studios.classpass.com/manage/schedule/generate/260955/<YYYY-MM-DD>?focus=list` |
+
+Reached in the UI via **Reports → Import/Export** (the left-nav "Reports" link is behind the
+`acuity:scheduling ⌄` dropdown at top-left). `admin.php`, `export.php` and `importexport.php` all
+**404 to the marketing site** — and that 404 renders a "Log in" link, which looks exactly like a
+logged-out session but is not. **Positive control before concluding logged-out:**
+`secure.acuityscheduling.com/appointments.php` — it returns the calendar when the session is live.
+
+Form fields are `minDay` / `maxDay` (hidden, `YYYY-MM-DD`) mirrored by `minDay-input` / `maxDay-input`
+(visible). Setting only the visible pair leaves the hidden pair empty and the range is ignored — set
+both, then verify all three (`minDay`, `maxDay`, `includeCanceled`) before submitting.
+
 ### ⚠️ Export trap
 Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1,642). The real form download with *"Include canceled appointments"* ticked returns **1,951** — and 5 appointment types appear only in the fuller set. Two safe-looking hours (Tue 09:00, Thu 06:00) turned out to have cancelled Full-Studio bookings. **Always use the form download.**
 
-**Control to run every time:** count cancelled rows in the result. The 2026-08-05 export has **309**, the 2026-08-30 export has **331**. If you ever see **0**, the checkbox didn't take and the data is wrong — re-export before trusting anything.
+**Control to run every time:** count cancelled rows in the result. The 2026-08-05 export has **309**, 2026-08-30 has **331**, 2026-08-31 has **332**. If you ever see **0**, the checkbox didn't take and the data is wrong — re-export before trusting anything.
 
 ### Residual risk (accepted)
 "Never booked before" ≠ "will never be booked". A ClassPass booking on a safe hour still blocks a rental *if one is wanted there for the first time*. At 21:00 that risk is minimal (zero demand in 15 months). The structural cure would be releasing ClassPass slots only ~24h ahead so any advance rental always wins — worth exploring if ClassPass exposes a booking-window setting.
@@ -122,6 +140,7 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 |---|---|---|
 | 2026-08-05 | ✅ Executed | 11 conflicts removed, 4 safe slots kept (initial cleanup) |
 | 2026-08-30 | ✅ **Clean — zero conflicts** | Both halves verified. 4 live slots, all on never-booked hours. Nothing deleted. Safe-hours cap fell 20→17. |
+| 2026-08-31 | ✅ **Clean — zero conflicts** | Both halves verified. Fresh export (2,188 rows, 332 cancelled) → grid identical to 08-30. Live ClassPass: **35** forward instances enumerated, all 21:00 Mon/Tue/Thu/Fri. Nothing deleted. |
 
 ### 2026-08-30 — full run, zero conflicts
 
