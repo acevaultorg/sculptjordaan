@@ -1654,3 +1654,60 @@ on the lapsed team) survive the migration. CLAUDE.md says "Vercel is RETIRED for
 never deploy there", but the config that makes `vercel deploy` *work* is still sitting there for an
 agent or a tired operator to trip over. Same shape as the dead footer link: the artifact outlived
 the decision.
+
+## A deploy path can pass its own verification while deploying nothing (2026-08-31)
+
+`bin/ship.sh` ran `vercel --prod --yes` and ended with:
+
+    echo "✓ Shipped. Verify: curl -sI https://sculptclub.nl/ | head -1"
+
+After the CF Pages migration that curl returns **HTTP 200 from Cloudflare whether
+or not anything deployed**, because CF now serves the site. So the script's own
+verification step passed exactly when it was blind. `npm run ship` still pointed
+at it, and CLAUDE.md already said it was the old Vercel path — documentation
+saying "don't use this" does not remove the command that offers it.
+
+Decommissioned to a signpost (exits 1, prints the canonical CF procedure) rather
+than deleted, so a future session gets the right steps instead of "command not
+found". `.github/workflows/deploy.yml` (fired a `VERCEL_DEPLOY_HOOK_URL` on every
+push to main) removed — repo is on GitLab, Vercel retired.
+
+**The discriminating check is the Functions probe, not the homepage:**
+
+    curl -s -o /dev/null -w '%{http_code}\n' \
+      "https://sculptclub.nl/api/whatsapp/webhook?hub.mode=subscribe"   # must be 403
+
+GET → 403 and POST → 200 are BOTH correct here (see functions/api/whatsapp/webhook.ts
+— unprovisioned, POST is a deliberate inert no-op because Meta requires a 200).
+Probing with the wrong method reads like a security hole and is not one.
+
+Generalises: **any check that returns the reassuring answer when it cannot see is
+worse than no check.** Sibling instances found the same week — a git guard installed
+in `scripts/` but never invoked because npm's `predeploy` hook doesn't fire for a
+direct `bash scripts/deploy-cf.sh` (3 of 4 fleet Pages sites; caught one repo 9
+commits behind). Before trusting a green check, ask what would make it say "fine"
+while blind.
+
+## Vanity redirect domains rot silently — 5 of 10 were down and nothing noticed (2026-08-31)
+
+DECISIONS.md registered 10 vanity domains as a "revenue leak fix". Measured today:
+
+| working | broken |
+|---|---|
+| jordaanpt.nl · pt45.nl · gymjordaan.nl · jordaangym.nl · sculptjordaan.nl | krachtzaal.nl · vindpt.nl · sculptspace.nl · ptjordaan.nl · sculpt45.com |
+
+- **krachtzaal.nl** — `dig` NXDOMAIN **and** SIDN whois "is free". Two independent
+  instruments. Dropped; operator decision was to let it go. Its stale
+  `krachtzaal.nl` / `www.krachtzaal.nl` CF Pages custom domains were removed.
+- **sculpt45.com** — NOT expired (registry expiry 2027-07-31, status ACTIVE at
+  Hostinger) but delegated to `ns1/ns2.dns-expired.com`, serving a `Server: hcdn`
+  parking lander under the brand. CF zone created (`57e77802…`), apex + www CNAME →
+  `sculptclub.pages.dev` proxied; it was **already** an active Pages custom domain,
+  so DNS was the only gap. Needs the NS change at Hostinger →
+  `amanda.ns.cloudflare.com` + `lochlan.ns.cloudflare.com` (same pair as sculptclub.nl).
+
+A prior session reported "all 5 vanity domains still 301-ing with correct UTMs".
+That was false when measured. **Nothing monitors redirect domains** — they fail
+without touching the main site, so no alert fires. Whois via the wrong server also
+lies: `whois krachtzaal.nl` hit IANA and returned facts about the .nl TLD, not the
+domain; only `whois -h whois.domain-registry.nl` answered.
