@@ -10,7 +10,8 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages, openGymSummerDeal } from "@/config/acuity";
+import { acuityLinks, acuityPackages, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
@@ -302,6 +303,20 @@ export default function PricingPageNL() {
             </FadeIn>
           ))}
         </div>
+
+        {openGymStudentDeal.active && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Student? Onbeperkt voor €{openGymStudentDeal.priceStudent} per 4 weken op vertoon van je studentenpas.{" "}
+            <Link
+              href="/nl/open-gym/studentenkorting"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+              data-intent="open_gym"
+              data-pricing="paid"
+            >
+              Bekijk de studentenkorting
+            </Link>
+          </p>
+        )}
 
         <FadeIn delay={0.4} className="mt-6 flex justify-center">
           <ButtonLink href="/nl/open-gym" variant="outline" size="lg">
