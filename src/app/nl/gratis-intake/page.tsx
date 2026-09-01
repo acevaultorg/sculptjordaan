@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: "Gratis Intake Personal Training — SculptClub Jordaan" },
   description:
     "Plan je gratis intake bij SculptClub. Privé personal training studio in de Jordaan. Geen contract, geen abonnement. Eerste kennismaking 100% gratis.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   alternates: {
     canonical: "/nl/gratis-intake",
     languages: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   // Per-page OG/Twitter so direct + ad + Instagram-bio shares of THIS page
   // preview the free-intake pitch + correct URL (not the homepage studio-rental
-  // default). noindex above only affects search crawling, not social previews.
+  // default).
   openGraph: {
     type: "website",
     url: "/nl/gratis-intake",
