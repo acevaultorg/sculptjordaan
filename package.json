@@ -17,6 +17,7 @@
     "mobile:headed": "playwright test --headed",
     "check:deal": "node scripts/check-deal-honesty.mjs",
     "check:logo": "node scripts/check-logo.mjs",
+    "check:orphans": "node scripts/check-orphan-routes.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
     "verify:photo-library": "node scripts/verify-photo-library.mjs"
   },
