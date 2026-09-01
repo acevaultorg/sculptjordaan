@@ -684,15 +684,45 @@ export function Analytics() {
         `}
       </Script>
 
-      {/* TikTok Pixel — only loads when pixel ID is configured */}
+      {/* TikTok Pixel — CONSENT-GATED (fixed 2026-09-02; was firing for every
+          visitor unconditionally regardless of the cookie banner — verified
+          live via Playwright, real Chrome, no consent clicked: analytics.tiktok.com
+          was requested and TikTok's cross-site ad-attribution cookies were set
+          on first paint for 100% of traffic. /nl/cookiebeleid's Marketing-cookies
+          section names only "Facebook Pixel en Google Ads" as consent-gated;
+          TikTok wasn't even disclosed there, let alone gated — the exact same
+          violation class the Meta Pixel fix above addressed on 2026-07-20, just
+          undiscovered until now. Same pattern as Meta Pixel: ttq.load()/ttq.page()
+          only run after sc_consent=all exists (immediately for a returning
+          consented visitor, or on the sc:consent-updated event after Accept).
+          Declining costs nothing extra — the pixel loader script (the SDK
+          bootstrap) still has to be present as a stub so ttq.page()/track()
+          calls elsewhere don't throw, matching the fbq() stub pattern above. */}
       {tiktokPixel && (
-        <Script id="tiktok-pixel" strategy="lazyOnload">
+        <Script id="tiktok-pixel" strategy="afterInteractive">
           {`
             !function (w, d, t) {
               w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-              ttq.load('${tiktokPixel}');
-              ttq.page();
             }(window, document, 'ttq');
+
+            var ttqStarted = false;
+            function startTikTokPixel() {
+              if (ttqStarted) return;
+              ttqStarted = true;
+              window.ttq.load('${tiktokPixel}');
+              window.ttq.page();
+            }
+            function ttqHasConsent() {
+              return document.cookie.indexOf('sc_consent=all') > -1;
+            }
+
+            if (ttqHasConsent()) {
+              startTikTokPixel();
+            } else {
+              window.addEventListener('sc:consent-updated', function () {
+                if (ttqHasConsent()) startTikTokPixel();
+              });
+            }
           `}
         </Script>
       )}

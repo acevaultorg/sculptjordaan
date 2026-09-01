@@ -44,7 +44,7 @@ export default function CookiePolicyNL() {
           <p>Google Analytics 4 (GA4) helpt ons begrijpen hoe bezoekers de website gebruiken. Deze data is geanonimiseerd.</p>
 
           <h3>Marketing cookies</h3>
-          <p>Facebook Pixel en Google Ads helpen ons relevante advertenties te tonen. Deze cookies worden alleen geplaatst met je toestemming.</p>
+          <p>Facebook Pixel, TikTok Pixel en Google Ads helpen ons relevante advertenties te tonen. Deze cookies worden alleen geplaatst met je toestemming.</p>
 
           <h2>Je cookies beheren</h2>
           <p>Je kunt je cookievoorkeuren wijzigen via de cookiebanner onderaan de pagina, of via je browserinstellingen.</p>
