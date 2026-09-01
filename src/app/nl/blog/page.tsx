@@ -354,6 +354,14 @@ const posts = [
     href: "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
     date: "16 april 2026",
   },
+  {
+    title: "Personal Trainer Stress & Burn-out in Amsterdam",
+    excerpt:
+      "High-end personal training voor ondernemers en high performers met stress en burn-out klachten. The Ascend Method van Joey: kracht, ademwerk en zenuwstelselregulatie.",
+    category: "Herstel",
+    href: "/nl/blog/personal-trainer-stress-burnout-amsterdam",
+    date: "12 mei 2026",
+  },
   // Supply-side ship 2026-05-20 — 7 nieuwe long-form posts voor ZZP trainers
   {
     title: "Kosten Privé Studio Huren vs Eigen Gym Openen in Amsterdam",

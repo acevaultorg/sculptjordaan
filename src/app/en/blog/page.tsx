@@ -354,6 +354,14 @@ const posts = [
     href: "/en/blog/improve-body-composition-amsterdam",
     date: "April 16, 2026",
   },
+  {
+    title: "Burnout & Stress Personal Trainer in Amsterdam",
+    excerpt:
+      "High-end personal training for entrepreneurs and high performers experiencing stress and burnout. Joey's Ascend Method — strength, breathwork and nervous system regulation.",
+    category: "Recovery",
+    href: "/en/blog/burnout-personal-trainer-amsterdam",
+    date: "May 12, 2026",
+  },
   // Supply-side ship 2026-05-20 — 7 new long-form posts for freelance trainers
   {
     title: "Cost of Private Studio Rental vs Opening Your Own Gym in Amsterdam",
