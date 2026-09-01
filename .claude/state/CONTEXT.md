@@ -1,7 +1,7 @@
 ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website + trainer acquisition platform for Amsterdam Jordaan. State: main branch on GitLab (gitlab.com/acevault-lab/sculptjordaan, canonical 2026-05-06+) + GitHub archive (acevaultorg/sculptjordaan), Vercel auto-deploy via Layer 7 API confirmed working (gitSource type=gitlab, projectId=81955354). Goal: maximize bookings + trainer acquisition.
 
 ## Session Handoff
-Mode: god --loop (IMMORTAL) — SculptClub autopilot, 2026-09-01
+Mode: god --loop (IMMORTAL) — SculptClub autopilot, 2026-09-01 · STOPPED by operator, wound down cleanly (tree clean, in sync with origin, nothing half-applied)
 Objective: fastest revenue growth. Binding constraint is ACQUISITION (437 human visitors/30d vs 3000 goal; conversion is healthy at ~4.8%).
 
 SHIPPED + LIVE-VERIFIED (commit 11b757b · CF Pages deploy cf10d531-8570-45f1-bbc6-314b97c0fbb4 · pushed):
@@ -10,6 +10,7 @@ SHIPPED + LIVE-VERIFIED (commit 11b757b · CF Pages deploy cf10d531-8570-45f1-bb
 - Verified: tsc 0 · 0 build-trap lines · 231 html (UP from 229) · 8/8 routes 200 · 4/4 security headers intact · Functions LIVE · IndexNow 200 (2 targeted URLs).
 
 NEXT SESSION:
+0. **🔴 HIGHEST-VALUE OPEN ITEM — diagnosed, verified, NOT shipped.** Every `<AccordionContent>` renders its questions but NOT its answers: Base UI's `Accordion.Panel` defaults `keepMounted: false` (AccordionRoot.js:103) and returns `null` when closed (AccordionPanel.js:137), so answer text never reaches the DOM. Measured: **0 of 20 answers visible on /nl/faqs, 0/12 on /nl/studio-huren, 3,149 answer-words invisible across 8 pages**, 17 files affected incl. BOTH money pages. Also makes the FAQPage JSON-LD claim content the page doesn't show. Fix is ONE prop (`keepMounted` on the Panel in src/components/ui/accordion.tsx); closed panels still get `hidden` (useCollapsiblePanel.js:46) so users see no change. I reverted my edit rather than ship it unverified — session was stopped before the build. Full evidence + exact fix + 6-step verification: TaskPrio **mtj9ehdy0wk6ca**.
 1. **The board is project `mqmijq6eya7fv7`, NOT `mpkuzegvsxdaut`** (the id listed in ~/.claude/rules/promptprio-sync-discipline.md is wrong for this project). Querying the wrong id returns an empty board and looks like "no work". Confirm with search_tasks before concluding the queue is empty.
 2. OPEN + brain-doable: remove the 2 `noindex` pages (/nl/gratis-intake, /en/free-intro) from sitemap.xml. Own commit; pages stay live + noindex.
 3. **Do NOT chase `/gratis-intake` as striking-distance** — it is deliberately `noindex, nofollow`. Both `get_project_data.gsc_strike` and GSC_SNAPSHOT flag it anyway; neither checks indexability. Card mtj85olyfvixps. The real striking-distance page is /nl/eerste-bezoek (indexable, 203 impr, pos 11.0, already 678w → its lever is authority, not content).
