@@ -123,6 +123,38 @@ export const openGymSummerDeal = {
   dealUrl: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2247082`,
 } as const;
 
+/**
+ * STUDENT RATE — Open Gym Onbeperkt at €39/4 weeks on proof of student ID.
+ *
+ * Created in Acuity 2026-09-01 as product 2272560 by DUPLICATING the €49
+ * Zomerdeal (2247082), so every setting except title and price is identical:
+ * billing every 4 weeks, forever-until-cancelled, €0 setup fee, access
+ * Private (deep-link only, like all 8 products), and redemption = unlimited
+ * "Open Gym Sessie / Open Gym Session".
+ *
+ * Verified live 2026-09-01: the catalog URL returns 200 and renders
+ * "Onbeperkt Studenten" at 39.00 (control: 2247082 still renders 49.00).
+ *
+ * WHY €39 and not lower: it sits between the €29 Instapplan (4 sessions) and
+ * the €49 price-locked deal, so it undercuts neither. Rationale is the ~18%
+ * true utilisation of 112 opening h/wk measured in the Acuity full export —
+ * a student training off-peak is near-zero marginal cost and fills dead hours.
+ *
+ * ⚠️ NOT time-restricted. Acuity applies availability to APPOINTMENT TYPES,
+ * not to subscription products, so an off-peak-only student tier would need a
+ * separate restricted appointment type. At 18% utilisation that isn't worth
+ * the complexity yet — revisit if peak hours start filling.
+ *
+ * Verification is a human step: student card shown at the first visit.
+ */
+export const openGymStudentDeal = {
+  active: true,
+  priceRegular: 79,
+  priceStudent: 39,
+  requiresStudentId: true,
+  url: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2272560`,
+} as const;
+
 // ─── PAID packages (catalog.php) ────────────────────────────────────
 // MUST be opened via target="_blank" — Apple Pay restriction.
 export const acuityPackages = {
