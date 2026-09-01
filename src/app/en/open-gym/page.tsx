@@ -16,12 +16,13 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
+import { acuityPaidSessions, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -499,6 +500,19 @@ export default function OpenGymPageEN() {
             </span>
           ))}
         </div>
+        {openGymStudentDeal.active && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Student? Unlimited for €{openGymStudentDeal.priceStudent} per 4 weeks with a valid student ID.{" "}
+            <Link
+              href="/en/open-gym/student-discount"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+              data-intent="open_gym"
+              data-pricing="paid"
+            >
+              See the student discount
+            </Link>
+          </p>
+        )}
       </Section>
 
       {/* S5 — HOW YOU GET IN (operational, friction-kill) */}

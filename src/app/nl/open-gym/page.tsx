@@ -16,12 +16,13 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
+import { acuityPaidSessions, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -505,6 +506,19 @@ export default function OpenGymPageNL() {
             </span>
           ))}
         </div>
+        {openGymStudentDeal.active && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Student? Onbeperkt voor €{openGymStudentDeal.priceStudent} per 4 weken op vertoon van je studentenpas.{" "}
+            <Link
+              href="/nl/open-gym/studentenkorting"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+              data-intent="open_gym"
+              data-pricing="paid"
+            >
+              Bekijk de studentenkorting
+            </Link>
+          </p>
+        )}
       </Section>
 
       {/* S5 — ZO KOM JE BINNEN (operational, friction-kill) */}
