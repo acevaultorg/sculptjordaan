@@ -1,21 +1,22 @@
 ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website + trainer acquisition platform for Amsterdam Jordaan. State: main branch on GitLab (gitlab.com/acevault-lab/sculptjordaan, canonical 2026-05-06+) + GitHub archive (acevaultorg/sculptjordaan), Vercel auto-deploy via Layer 7 API confirmed working (gitSource type=gitlab, projectId=81955354). Goal: maximize bookings + trainer acquisition.
 
 ## Session Handoff
-Mode: sovereign auto — SculptClub autopilot (q loop, 2026-08-28)
-Objective: fastest revenue growth. This session's leg = fact integrity on a rental-demand page + repairing a build chain that had been silently dead for a month.
+Mode: god --loop (IMMORTAL) — SculptClub autopilot, 2026-09-01
+Objective: fastest revenue growth. Binding constraint is ACQUISITION (437 human visitors/30d vs 3000 goal; conversion is healthy at ~4.8%).
 
-SHIPPED + LIVE-VERIFIED (CF Pages deploy 2916b3c9-1e03-40da-a994-bea0ae13df1f, 1565 files/16 batches/139s):
-- FACT FIX: /en/blog/physiotherapy-studio-rental-amsterdam served "up to 50 kg" / "From 2 kg" / "40+ kg" against photo-verified 4-40 kg. It was the SOLE survivor of the same-day fleet-wide equipment fix — the NL sibling had been corrected, EN never touched (bilingual half-fix), and the board task (TaskPrio mtcmka67djcml3) was closed on an unverified "FIXED autonomously" claim. Live proof: production now returns "up to 40 kg" x4 + "From 4 kg" x2, "50 kg" count = 0. Commits a2c56dc + 2b9f3be on GitLab main.
-- BUILD-CHAIN REPAIR: out/ was frozen at 2026-07-31 (a MONTH stale) while live kept advancing — a blind deploy would have reverted production by a month. Three pre-existing node_modules breakages: semver missing (broke sharp->prebuild), next/dist/bin/next absent (no CLI), playwright-core/types/ absent (broke the `devices` export -> typecheck abort). THE TRAP: `next build` prints "Compiled successfully" then "Failed to type check" and npm STILL EXITS 0. Repaired at env level only; no shipped config touched. Typecheck exit 0/zero errors; build emits 229 pages (stale was 217).
-- POST-DEPLOY VERIFY: Pages Functions alive (whatsapp webhook 403, not 404/405) · 9 routes 200 · no-revert proof (EUR49 x16 live, stale EUR69 = 0, EUR79 list x4, "Naar boeken" CTA present).
+SHIPPED + LIVE-VERIFIED (commit 11b757b · CF Pages deploy cf10d531-8570-45f1-bbc6-314b97c0fbb4 · pushed):
+- Measured prose depth across ALL 196 sitemap URLs live: median 633w, 42 pages under 200w. The two thinnest were not boilerplate — /nl/gratis-proefles 57w and /en/free-trial 55w, both indexable + in sitemap. Cause: the Acuity booking widget is an IFRAME, so crawlers saw ~57 words.
+- Enriched both to 571w / 590w from CLAUDE.md-verified facts only. FAQ + FAQPage JSON-LD render from ONE array (schema cannot drift; all 6 Q + 6 A verified visible live). Pricing LINKED not restated. Vocabulary rule honored.
+- Verified: tsc 0 · 0 build-trap lines · 231 html (UP from 229) · 8/8 routes 200 · 4/4 security headers intact · Functions LIVE · IndexNow 200 (2 targeted URLs).
 
 NEXT SESSION:
-1. READ .claude/state/KNOWLEDGE.md "Build/deploy trap" section BEFORE any deploy — exit 0 does NOT mean the build produced output. Check `grep -E "Failed to type check|build worker exited"` in the build log AND that out/index.html has today's mtime AND that built html count >= live sitemap count.
-2. Growth constraint is unchanged and is ACQUISITION, not conversion: 472 human visitors/30d vs 2000 goal, 23 conversions (4.9% — healthy). GSC 81 clicks / 2667 impressions / avg position 52.
-3. Money pages are a POSITION problem, not a title problem: /nl/studio-huren (496 impr, 0.4% CTR, pos 55.9) and /nl/open-gym (495 impr, 0.4% CTR, pos 56.8). Per feedback_user_growth_drivers that means authority + internal linking, NOT title rewrites. The ONLY page-1-top low-CTR pages that qualify for a title lever are /nl/over-ons (pos 5.4, 1.3% CTR) and /en/about (pos 6.6, 1.4%) — small volume (~292 impr/90d combined), so modest EV.
-4. Indexation is a real gate: ~207-229 built routes vs 109 GSC-indexed.
-5. OPERATOR-SIDE, unchanged from 2026-08-14 sprint: win-back 5 churned renters · follow-up 15 trial leads · Ads budget cap (EUR1.99/day < EUR2.70 CPC = zero serving) · Sept block offer · GBP. See docs/REVENUE-SPRINT-2026-08-14.md.
-6. Two operator-side tooling notes: TaskPeace MCP server is a STALE BUILD (it self-reports silently dropping newer params like kind/appendBody); and get_next_task scoped to this cwd returned a Mediahuis ADP/Jira task (mplj0qoenwjm1w) — HARD-EXCLUDED, left untouched, but cwd auto-scoping is not reliably keeping employer work out.
+1. **The board is project `mqmijq6eya7fv7`, NOT `mpkuzegvsxdaut`** (the id listed in ~/.claude/rules/promptprio-sync-discipline.md is wrong for this project). Querying the wrong id returns an empty board and looks like "no work". Confirm with search_tasks before concluding the queue is empty.
+2. OPEN + brain-doable: remove the 2 `noindex` pages (/nl/gratis-intake, /en/free-intro) from sitemap.xml. Own commit; pages stay live + noindex.
+3. **Do NOT chase `/gratis-intake` as striking-distance** — it is deliberately `noindex, nofollow`. Both `get_project_data.gsc_strike` and GSC_SNAPSHOT flag it anyway; neither checks indexability. Card mtj85olyfvixps. The real striking-distance page is /nl/eerste-bezoek (indexable, 203 impr, pos 11.0, already 678w → its lever is authority, not content).
+4. The AI-citation channel has NEVER been measured for this site (metrics layer says "GEO: LLM citations — not yet wired"). Plumbing is verified HEALTHY (no CF Managed robots.txt injection, no Disallow:/, all 6 bot UAs get 200 with byte-identical responses = no cloaking). The measurement itself needs Bing WMT via Chrome MCP — **the Chrome extension was NOT connected this session**, so it stays operator-gated.
+5. Indexation defect-side remains EXHAUSTED (prior session). Money pages /nl/studio-huren + /nl/open-gym sit at position ~56 on ~496 impressions each — authority-gated, not defect-gated.
+6. USE THE SESSION SCRATCHPAD, NOT /tmp. A parallel session overwrote /tmp/sm.xml mid-audit and my SculptClub scan silently ran against readinglist.school. Assert the expected host inside any audit script.
+7. Operator-gated queue is unchanged and is where the revenue actually is: win-back 5 churned renters · follow up 15 trial leads · Ads budget €1.99/day < €2.70 CPC = zero serving · Sept block offer · GBP. See docs/REVENUE-SPRINT-2026-08-14.md.
 
 
 ## Tracking Calibration
