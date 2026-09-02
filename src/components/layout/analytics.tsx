@@ -525,6 +525,22 @@ export function Analytics() {
                   else if (el.closest('footer')) navSection = 'footer';
                   else if (el.closest('nav')) navSection = 'nav';
                   var navLabel = (el.textContent || '').trim().slice(0, 40);
+                  // GA4 (added 2026-09-02). This branch was Plausible-ONLY, and Plausible was
+                  // retired 2026-07-04 — so from that date the internal-link blind spot this
+                  // branch was written to close (2026-06-18, "every clickable now tracked")
+                  // silently reopened. Measured before the fix: GA4 'click' totalled 18
+                  // site-wide and 0 on /nl/gratis-intake, a page with a 13-card trainer grid,
+                  // a match-quiz CTA and a WhatsApp link. The other four branches (Acuity,
+                  // WhatsApp, tel:, mailto:) already fire gtag AND plausible; only this one
+                  // did not. Keep the plausible call below: harmless, and self-restoring.
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'nav_click', {
+                      dest: el.pathname || navRaw,
+                      section: navSection,
+                      label: navLabel,
+                      booking_source: window.location.pathname
+                    });
+                  }
                   if (typeof window.plausible === 'function') {
                     window.plausible('Nav Click', {
                       props: { dest: el.pathname || navRaw, section: navSection, label: navLabel, source_page: window.location.pathname }
