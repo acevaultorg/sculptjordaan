@@ -65,7 +65,7 @@ Tags: `#PersonalTraining #Amsterdam #Jordaan #Zelfstandig #Fitness`
 
 ### EN
 ```
-We run SculptClub on the Egelantiersgracht with 0% commission on trainers.
+We run SculptClub on the Egelantiersgracht where trainers rent the room instead of paying commission.
 
 Most gyms take 30-50% of what an independent trainer charges per session. Here the trainer rents the room by the hour (€12-17) and keeps the rest.
 

@@ -32,7 +32,7 @@
 - Studio rental discount packs expire after 12 months. Valid for both half and full studio. Strictly per person (no sharing between trainers).
 - Trainers with packs: the pack value is deducted per booking. Trainers buy a pack (e.g. Routine €179) and get €210 worth of sessions — the pack credit is used to "pay" each booking.
 - PT minimum €45 is NOT enforced — trainers set their own rates, can go lower if they choose.
-- Trainers collect payment directly from clients. SculptClub takes 0% commission.
+- Trainers collect payment directly from clients and keep 100% of their rate. SculptClub's revenue comes from studio rental (from €12/hour), not from trainer sessions — never phrase this as "0% commission" (operator: rent-not-commission is the correct model; there was never a commission to waive).
 - Studio rental free trial: yes, one free tryout available (same as Open Gym trial).
 - Invoicing: only available for package purchases (not single hours). No minimum amount.
 - All prices include VAT at 9% (sport rate).

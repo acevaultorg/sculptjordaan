@@ -171,12 +171,12 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "30% commissie. Elke sessie. Elke maand. ↓",
       description:
-        "Trainers betalen tot 30% commissie per sessie aan de meeste gyms.\n\nSculptClub: €12 huur per uur · 0% commissie · eigen klanten · eigen profiel.\n\nDe math is simpel.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
+        "Trainers betalen tot 30% commissie per sessie aan de meeste gyms.\n\nSculptClub: €12 huur per uur · je houdt 100% van je tarief · eigen klanten · eigen profiel.\n\nDe math is simpel.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
     instagram: {
       caption:
-        "30% commissie. Elke sessie. Elke maand. 🧡\n\nTrainers betalen tot 30% commissie per sessie aan de meeste gyms. SculptClub: €12 huur per uur · 0% commissie · eigen klanten · eigen profiel.\n\nDe math is simpel.\n\nProbeer gratis · link in bio 👆",
+        "30% commissie. Elke sessie. Elke maand. 🧡\n\nTrainers betalen tot 30% commissie per sessie aan de meeste gyms. SculptClub: €12 huur per uur · je houdt 100% van je tarief · eigen klanten · eigen profiel.\n\nDe math is simpel.\n\nProbeer gratis · link in bio 👆",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
   },
@@ -184,22 +184,22 @@ export const SOCIAL_PACKS: SocialPack[] = [
     id: "trainer-pitch-001",
     title: "Huur je eigen PT-studio · €12/uur",
     audience: "trainer",
-    blurb: "Trainer-werving: huur je eigen studio, 0% commissie, eigen klanten, geen contract.",
+    blurb: "Trainer-werving: huur je eigen studio, je houdt 100% van je tarief, eigen klanten, geen contract.",
     ctaUrl: "sculptclub.nl/voor-trainers",
     slides: [
       { name: "main-offer", label: "1", title: "Main offer · €12/uur" },
-      { name: "usp-focus", label: "2", title: "USP · 0% commissie" },
+      { name: "usp-focus", label: "2", title: "USP · 100% van je tarief" },
       { name: "location", label: "3", title: "Locatie · Jordaan" },
     ],
     tiktok: {
       title: "🧡 Huur jouw eigen PT-studio in de Jordaan — €12/uur",
       description:
-        "Trainers — eigen sleutel, eigen tarief, eigen klanten.\n\n0% commissie · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
+        "Trainers — eigen sleutel, eigen tarief, eigen klanten.\n\nJe houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
     instagram: {
       caption:
-        "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · 0% commissie · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis · link in bio 👆",
+        "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · je houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis · link in bio 👆",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
   },

@@ -7,7 +7,7 @@ import type { Locale } from "@/config/site";
 // "Get started in 3 steps" section directly above on the same page —
 // two consecutive 01/02/03 stacks read as a confusing visual sequence).
 // Replaced with semantic icons matching the studio-huren features pattern:
-//   Percent  → "0% commission"     (matches the "we take 0%" claim)
+//   Percent  → "trainers keep 100% of their rate" (matches the rent-not-commission model)
 //   Lock     → "Private + quiet"   (matches the "private studio" pillar)
 //   Calendar → "Flexible / no lock-in" (matches "per session, no contract")
 export function WhyWeExist({ locale }: { locale: Locale }) {

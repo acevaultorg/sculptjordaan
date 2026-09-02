@@ -45,7 +45,7 @@ Meet Alex. Kracht, calisthenics en hersteltraining.
 
 Spreekt NL, EN en PT. Eerste intake is gratis.
 
-€69/60 min. 0% commissie — alles gaat naar je trainer.
+€69/60 min. Alex houdt zelf 100% van dat tarief.
 
 **Hashtags:** #personaltrainer #calisthenics #krachttraining #sculptclub #amsterdamtrainer #fitcoach #strengthtraining #recoverytraining #personaltrainingamsterdam
 
@@ -97,7 +97,7 @@ sculptclub.nl
 **Caption:**
 Ben je personal trainer in Amsterdam?
 
-Huur onze studio. Vanaf €12/uur. 0% commissie. Eigen profiel op onze website.
+Huur onze studio. Vanaf €12/uur. Je houdt 100% van je tarief. Eigen profiel op onze website.
 
 Geen eigen studio nodig. Geen vaste lasten.
 

@@ -54,7 +54,7 @@
 - Amsterdam Jordaan vierkante meter huur 2026: ~€500-700/m²/jaar voor commerciële plint
 - Een gym van ~80m² kost minimum ~€40k-60k/jaar aan vaste lasten (huur + utilities + insurance)
 - Equipment investering: €15k-40k voor een goed-uitgeruste private gym
-- 0% commissie bij SculptClub vs typische gym-commissie 30-50%
+- Bij SculptClub houd je 100% van je tarief (huur, geen commissie) vs typische gym-commissie 30-50%
 - Geen contract, altijd gratis annuleren
 - Realistische break-even: ~25-35 PT-sessies/week voor een eigen gym, vs ~3-5 voor SculptClub-huur
 
@@ -92,7 +92,7 @@
 - SculptClub trainers krijgen een gratis profielpagina + eigen WhatsApp-CTA (free distribution)
 - Operator profiles per trainer: photo + bio + specialisaties + boekingslink
 - Vanaf €45/sessie is de marktstandaard in Amsterdam voor beginners
-- 0% commissie betekent: één klant = ~€2000-3500/jaar als ze 2× per maand komen
+- Je houdt 100% van je tarief: één klant = ~€2000-3500/jaar als ze 2× per maand komen
 - ZZP startersaftrek + zelfstandigenaftrek (~€7280 + €2123 in 2026) = belastingkorting voor eerste 5 jaar
 - Geen contract = klanten voelen geen druk = hogere conversie van intake → tweede sessie
 
@@ -167,7 +167,7 @@
 ### Facts to weave in
 - Amsterdam PT-markt 2026: €45-90/sessie voor 1-op-1
 - SculptClub trainers: Alex €69/60min, Andrea €45/45min, Eva op aanvraag, Dara op aanvraag, Alex tot Bryan €55-66/uur
-- 0% commissie bij SculptClub = trainer houdt 100% van haar prijsstrategie
+- Bij SculptClub huurt de trainer de ruimte en houdt 100% van haar prijsstrategie
 - Standaard pakket-kortingen NL: 4-pak 5%, 10-pak 10-15%, 20-pak 20-25%
 - 3-maanden geldigheidsduur is de sweet spot (langer = scope creep, korter = trainer push)
 
@@ -239,7 +239,7 @@
 
 ### Facts to weave in
 - Commerciële gym typical: 30-50% commissie + verplichte uren + gym-branded uniform + geen klantcontact buiten de sessie
-- SculptClub: 0% commissie + eigen agenda + eigen klantcontact + eigen profiel op website + eigen brand
+- SculptClub: je houdt 100% van je tarief + eigen agenda + eigen klantcontact + eigen profiel op website + eigen brand
 - Bij een commerciële gym is de KLANT van de GYM, niet van jou — als je weggaat, blijven ze
 - Bij privé studio rental: jouw klant blijft jouw klant — als je SculptClub verlaat, ga je samen met je klanten
 - SculptClub: vanaf €12/uur · pakketten tot 23% korting
