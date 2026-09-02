@@ -468,3 +468,50 @@ caption into that post's `index.html` `<pre>` block.
 1. 👨🏻‍🔧 **TikTok session logged out** — operator sign-in. Blocks every TikTok action.
    ~30 seconds. Nothing else in this pipeline works until then.
 2. **7 packs need captions** — brain-doable, ~1 run, unlocks a 7-day buffer.
+
+## 2026-09-02 02:05 — Content diagnosis: the sameness is measured, and it explains the flat ~250 views
+
+Operator: *"the content you make can be way better"* / *"maybe learn from competition?"* /
+*"it now feels too much the same."* Correct on all three. Measured it rather than agreeing:
+
+**7/7 captions contain ALL of** "eerste sessie gratis" + "Egelantiersgracht 424" +
+"06:00–22:00". 5/7 recite €12/€17. 5/7 use the literal phrase "even voelen of het klopt".
+Only the opening line varies.
+
+Paired with performance — 265 · 251 · 242 · 244 · 248 · 239 views, 0–2 likes — this is not
+weak reach. **It is TikTok testing each post on one batch and declining to expand it, six
+times running,** because engagement is ~zero. A content problem, not a posting-frequency
+problem.
+
+**Both captions written earlier tonight reproduce the template exactly.** The autopilot was
+manufacturing the sameness, not just inheriting it.
+
+### 🔴 Biggest finding: we ship the wrong half of our own library
+
+Published = 100% offer-recital. Unpublished-for-weeks = `education-squat-mistakes-001`
+(correction hook — the #2 performing family in fitness), `pt-how-to-choose-001`
+(knowledge-gap), `trainer-spotlight-alex-001` (person-led — the format local studios
+actually convert on). The content that travels has been blocked behind a missing caption
+while the offer-cards ship on schedule. **Ship order is now: education + spotlight FIRST.**
+
+### Shipped
+
+- `.claude/state/CONTENT_STRATEGY.md` — full diagnosis, 2026 field research w/ sources,
+  7 binding caption rules, and the ship-order correction.
+- `social-autopilot/SKILL.md` caption section rewritten to enforce them (kill the footer,
+  one idea per post, no phrase reuse, rotate hook family, WhatsApp CTA over URLs).
+
+### Biggest untapped lever (needs operator)
+
+Every asset today is a **rendered card**. The research is unambiguous that real footage —
+transformation, member stories, behind-the-scenes — beats designed cards in this niche.
+Operator says there is a **large SculptClub image library on the MacBook Pro**. That
+machine is NOT co-located with this shell (verified: different host, same network), so it
+needs the operator to move it or a session running there. That library is probably worth
+more than any caption rewrite.
+
+### Honest caveat on the numbers
+
+Six posts of ONE format is one experiment, not six. The correct read is "this format
+failed", not "TikTok doesn't work for SculptClub". Education and person-led have never
+been tested here.
