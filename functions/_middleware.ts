@@ -17,8 +17,8 @@ const vanityDomains: Record<string, VanityRoute> = {
   "sculpt45.com": { destPath: "/nl/prijzen", utmSource: "sculpt45", utmCampaign: "pricing" },
   "gymjordaan.nl": { destPath: "/nl/open-gym", utmSource: "gymjordaan", utmCampaign: "opengym" },
   "krachtzaal.nl": { destPath: "/nl/open-gym", utmSource: "krachtzaal", utmCampaign: "opengym" },
-  "jordaangym.nl": { destPath: "/nl", utmSource: "jordaangym", utmCampaign: "homepage" },
-  "sculptjordaan.nl": { destPath: "/nl", utmSource: "sculptjordaan", utmCampaign: "brand_variant" },
+  "jordaangym.nl": { destPath: "/", utmSource: "jordaangym", utmCampaign: "homepage" },
+  "sculptjordaan.nl": { destPath: "/", utmSource: "sculptjordaan", utmCampaign: "brand_variant" },
 };
 
 // path -> [destination, statusCode]
