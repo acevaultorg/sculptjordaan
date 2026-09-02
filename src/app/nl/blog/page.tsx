@@ -396,6 +396,14 @@ const posts = [
     date: "28 aug 2026",
   },
   {
+    title: "Belasting Eerste Jaar ZZP Personal Trainer — wat houd je over? (2026)",
+    excerpt:
+      "Zelfstandigenaftrek €1.200, startersaftrek €2.123, urencriterium 1.225 uur, mkb-winstvrijstelling 12,7% — wat elke aftrekpost oplevert, met een rekenvoorbeeld.",
+    category: "Voor Trainers",
+    href: "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
+    date: "2 sep 2026",
+  },
+  {
     title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026)",
     excerpt:
       "Complete gids voor wie ZZP personal trainer wordt: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding — met de actuele cijfers.",

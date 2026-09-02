@@ -396,6 +396,14 @@ const posts = [
     date: "Aug 28, 2026",
   },
   {
+    title: "First-Year Tax as a Freelance Personal Trainer in the Netherlands (2026)",
+    excerpt:
+      "Self-employed deduction €1,200, starter's deduction €2,123, the 1,225-hour criterion, 12.7% SME profit exemption — what each deduction saves, with a worked example.",
+    category: "For Trainers",
+    href: "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
+    date: "Sep 2, 2026",
+  },
+  {
     title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026)",
     excerpt:
       "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, liability, AOV, pension and bookkeeping.",
