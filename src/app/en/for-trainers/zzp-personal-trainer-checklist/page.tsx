@@ -87,6 +87,7 @@ export default function ZZPChecklistEN() {
             <li><strong>Time:</strong> automatic with KvK registration (within 5 working days)</li>
             <li><strong>KOR (Small Business Scheme):</strong> if you expect to stay under €20,000 annual turnover, register for KOR. This means: no VAT on invoices, no VAT filings. Apply via <a href="https://www.belastingdienst.nl" rel="external">Mijn Belastingdienst Zakelijk</a>.</li>
             <li><strong>Above €20,000?</strong> Charge 21% VAT on invoices, file quarterly. Bookkeeping software handles this automatically.</li>
+            <li><strong>Deeper dive:</strong> exactly which rate (21% or 9%) applies to personal training, and when, is worked out in <a href="/en/blog/vat-personal-trainer-netherlands">VAT for personal trainers</a>.</li>
           </ul>
 
           <h2>Step 3 — Professional liability insurance</h2>
@@ -96,6 +97,7 @@ export default function ZZPChecklistEN() {
             <li><strong>Required?</strong> Not legally, but most studio landlords (including SculptClub) and clients' own insurers require it. Without insurance you're personally liable for injuries.</li>
             <li><strong>Providers:</strong> ZZP-pensioen.nl, Centraal Beheer Achmea, Hiscox, Schouten ZZP. Minimum coverage €1 million per event.</li>
             <li><strong>Tip:</strong> choose a policy that also covers "damage to rented premises" — relevant if you rent studio space.</li>
+            <li><strong>Separately:</strong> disability insurance (what if you yourself get injured and can't train) is a different policy — see <a href="/en/blog/disability-insurance-freelance-personal-trainer-netherlands">disability insurance for personal trainers</a>.</li>
           </ul>
 
           <h2>Step 4 — Business bank account</h2>
@@ -160,6 +162,9 @@ export default function ZZPChecklistEN() {
           </ul>
           <p>
             Compare with chain-gym employment (~€2,500-€3,500 gross/month): as a ZZP'er you need 8-12 paid sessions/week to match the same net income. Above that point you earn significantly more.
+          </p>
+          <p>
+            Want more depth per step — VAT, disability insurance, pension? Read the complete guide <a href="/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension">freelance personal trainer in the Netherlands: KvK, VAT, insurance, pension</a>. And for what you actually keep after deductions in your first year: <a href="/en/blog/first-year-tax-freelance-personal-trainer-netherlands">first-year tax as a freelance personal trainer</a>.
           </p>
         </article>
       </Section>
