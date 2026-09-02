@@ -1,5 +1,17 @@
 # Google Ads — Advertiser Identity Verification
 
+## ⚠️ MOOT 2026-09-02 — both conditions below have changed since this was written (2026-04-18)
+
+Two things have made the "🔴 REQUIRED" framing below stale: (1) per `.claude/state/TASKS.md`
+`[id:gads-identity-verify]`, this verification was completed the same day it was generated
+(2026-04-18, confirmed via Chrome MCP — "Individual path... all 4 tasks green"); (2) the operator
+has since made an explicit, unconditional decision (CLAUDE.md, 2026-08-28): **"no google ads
+budget."** — no campaign should be running or resumed at all. Kept intact below as historical
+record. **Do not act on the "After you submit" step at the bottom** — do not run any command to
+"unpause" ads work.
+
+---
+
 **Link:** https://ads.google.com/aw/identity/verification?ocid=7814821197&authuser=1
 **Account:** paulomdevries@gmail.com (authuser=1)
 **Why Google asks:** EU law + Google's own Advertiser Transparency policy. Every advertiser must verify identity once. If you skip it, your campaign pauses within ~30 days and your ads stop serving.

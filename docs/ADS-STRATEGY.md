@@ -1,6 +1,27 @@
 # SculptClub Paid Ads Strategy
 
-**Total budget:** €5/day | **Platforms:** Google Ads, Meta/Instagram, TikTok (organic)
+## ⚠️ SUPERSEDED 2026-09-02 — do NOT act on the budget/spend recommendations below
+
+This entire doc plans and recommends paid-ad spend (currently framed around €5/day, escalating to
+€6.70/day for a promo credit). The operator has since made an explicit, unconditional decision
+(CLAUDE.md, 2026-08-28, verbatim): **"no google ads budget."** — with an instruction that this
+applies to ALL paid channels, that a €0/0-impression Ads account is the *intended* state, and that
+no session should propose, plan, or cost a campaign at any budget, "not even a discovery test."
+Three TaskPeace cards were already closed under that decision, and a near-identical stale
+recommendation was found and struck the same session in `docs/REVENUE-SPRINT-2026-08-14.md` §3
+(commit `421d945`).
+
+This file is orphaned (not linked from any active TASKS.md item or TaskPeace card — confirmed
+2026-09-02), so nobody is currently being pointed at it, but it sits in `docs/` where a future
+session or the operator could open it and act on a plan that is no longer wanted. Leaving the full
+content below intact for the historical record (it documents the original Google-Ads setup and
+account history, which is real) — but every €/day budget figure, campaign-launch step, and "next
+phase" recommendation in this file is void. **SculptClub acquisition is UNPAID ONLY going forward:
+organic/local SEO, Google Business Profile, warm-lead follow-up, referral/retention.**
+
+---
+
+**Total budget:** ~~€5/day~~ **€0 — see superseded banner above** | **Platforms:** ~~Google Ads, Meta/Instagram, TikTok (organic)~~ organic only (TikTok/Instagram)
 **Account:** paulomdevries@gmail.com (Google Ads)
 
 ---

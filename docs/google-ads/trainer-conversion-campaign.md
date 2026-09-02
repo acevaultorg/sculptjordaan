@@ -1,5 +1,17 @@
 # Google Ads — Trainer Conversion Campaign Spec
 
+## ⚠️ SUPERSEDED 2026-09-02 — do NOT act on the campaign/budget content below
+
+Written 2026-06-02, before the operator's later, explicit, unconditional decision (CLAUDE.md,
+2026-08-28, verbatim): **"no google ads budget."** — a €0/0-impression Ads account is the *intended*
+state and no session should propose, plan, or cost a campaign at any budget. Orphaned (not linked
+from any active TASKS.md item or TaskPeace card as of 2026-09-02), so nobody is currently pointed
+here, but the content stays live in `docs/` and could mislead a future reader. Kept intact below as
+historical record of the original campaign spec. **Do not resume, edit, or re-launch anything
+described here without a fresh, explicit operator go-ahead that reverses the 2026-08-28 decision.**
+
+---
+
 **Goal:** Personal-trainer leads at lowest CPL → book free proefsessie OR send WhatsApp.
 
 **Account:** SculptClub · Customer ID **511-161-9582** · paulomdevries@gmail.com
