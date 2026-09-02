@@ -1694,7 +1694,32 @@ DECISIONS.md registered 10 vanity domains as a "revenue leak fix". Measured toda
 
 | working | broken |
 |---|---|
-| jordaanpt.nl · pt45.nl · gymjordaan.nl · jordaangym.nl · sculptjordaan.nl | krachtzaal.nl · vindpt.nl · sculptspace.nl · ptjordaan.nl · sculpt45.com |
+| jordaanpt.nl · pt45.nl · gymjordaan.nl · jordaangym.nl · sculptjordaan.nl · **ptjordaan.nl** | krachtzaal.nl · vindpt.nl · sculptspace.nl · ~~ptjordaan.nl~~ · sculpt45.com |
+
+**RE-MEASURED 2026-09-02 — 6 of 9 now healthy, and one row above is stale.**
+`ptjordaan.nl` was broken on 08-31 and **works now** (301 → `/nl/vind-jouw-personal-trainer` with correct UTMs). Struck through above rather than
+deleted so the recovery is visible. `sculptspace.nl` is no longer in the middleware map
+at all — it was removed, so it is not one of the 9 currently configured hosts.
+
+- **vindpt.nl** — detail this entry previously lacked. SIDN (`whois -h
+  whois.domain-registry.nl`) reports **`Status: in quarantine`** — expired, inside the
+  post-expiry reclaim window, then released. Operator decision queued as TaskPeace
+  `mtjmrudix7hau2`; recommendation is to let it go, since ptjordaan/jordaanpt/pt45 all
+  serve the same destination and all three are verified working.
+
+⚠️ **The whois trap below bit again on 2026-09-02.** A bare `whois vindpt.nl` /
+`whois krachtzaal.nl` answered from IANA with **.nl TLD** facts — including nameserver
+lines — which reads exactly like a registered domain with delegation. It produced a
+confident, wrong "all three are registered and paying" claim that only died when the
+correct server was queried. **Always `whois -h whois.domain-registry.nl` for .nl.**
+
+✅ **This is now mechanical: `npm run check:vanity`** (`scripts/check-vanity-domains.mjs`,
+commit `319f8de`). It parses the host map straight out of `functions/_middleware.ts` so it
+cannot drift, compares each live `Location` against the exact expected UTM string, and
+carries a KNOWN_DOWN allowlist so expected-down domains do not cry wolf. Verified in both
+directions — exit 0 on the real state, exit 1 naming the domain against an injected
+wrong-destPath regression. The "nothing monitors redirect domains" line below is the
+reason it exists; it is no longer true.
 
 - **krachtzaal.nl** — `dig` NXDOMAIN **and** SIDN whois "is free". Two independent
   instruments. Dropped; operator decision was to let it go. Its stale
