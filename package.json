@@ -19,6 +19,7 @@
     "check:logo": "node scripts/check-logo.mjs",
     "check:orphans": "node scripts/check-orphan-routes.mjs",
     "check:vanity": "node scripts/check-vanity-domains.mjs",
+    "check:sitemap": "node scripts/check-sitemap.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
     "verify:photo-library": "node scripts/verify-photo-library.mjs"
   },
