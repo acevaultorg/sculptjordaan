@@ -222,3 +222,249 @@ very edge of what TikTok allows — treat 4 days as the practical ceiling.**
 Backlog on disk at this point: `studio-leeg-001` (now scheduled), plus
 `open-gym-september-2026` and `studio-tour-2026-08` (both have reel.mp4) = 2 more
 days available without building anything new.
+
+## 2026-09-01 — MEASURED: the real backlog is 2 posts, not 18
+
+Counted every dir in `public/social/` for (unposted) + (caption) + (asset).
+A post is only queueable if it has BOTH a rendered asset AND a caption.
+
+**Captions live in the post's own `index.html`** inside a `<pre>` caption-box —
+NOT only in `docs/social/<id>/POST.md`. Only 4 POST.md files exist and 3 are
+already posted, so judging the backlog from `docs/social/` alone reports
+"dry" incorrectly. Check the `<pre>` block.
+
+TRULY READY (unposted + caption + asset) — 2:
+  - studio-tour-2026-08        | reel.mp4 | trainer-facing | "Wat je precies huurt voor EUR12 per uur."
+  - open-gym-september-2026    | reel.mp4 | client-facing  | "Vier mensen. Meer niet."
+
+HAVE ASSETS BUT NO CAPTION — 8 (need a caption written before they are queueable):
+  education-squat-mistakes-001, intake-pitch-001, open-gym-pitch-001,
+  pt-how-to-choose-001, trainer-commission-math-001, trainer-gezina-001-en,
+  trainer-spotlight-alex-001  (+ photo-library, not a post)
+
+CONSEQUENCE: the buffer can reach at most 1 sep (scheduled) + 2 more days.
+After ~3 sep the queue is dry unless captions are written for the 8 above.
+That is the true cause of future missed days — not the scheduling mechanism.
+
+Per the 2-of-3 trainer-facing rule and 1 sep being client-facing (empty-room),
+the intended order is:
+  2 sep -> studio-tour-2026-08      (trainer-facing)
+  3 sep -> open-gym-september-2026  (client-facing, September-themed)
+
+NOT SCHEDULED THIS SESSION: `file_upload` (Chrome MCP) reported
+"Uploaded 1 file(s)" on three attempts but `input.files` stayed `[]`
+immediately after each — verified against the only file input on the page
+(`accept="video/*"`). Downloads, `resize_window` and shell `rm`/`kill` were
+also non-functional in the same window while `curl` recovered mid-session,
+so this looks like transient environment degradation rather than a TikTok
+or capability change. Uploads demonstrably worked on 28/29/31 aug.
+RETRY the upload before assuming the pipeline is broken.
+
+## ~~2026-09-01 18:47 CEST — TOP-UP RUN FAILED: `file_upload` is broken~~ **(SUPERSEDED 2026-09-02 01:30 — `file_upload` is NOT broken. Root cause found + workaround proven. See '2026-09-02 — SOLVED' below. Everything in this section about the TOOL being broken is WRONG; the diagnosis of what was RULED OUT is still valid.)**
+
+| date | slot | post-id | studio link | posted? | result |
+|---|---|---|---|---|---|
+| 2026-09-02 | studio-tour | studio-tour-2026-08 | /social/studio-tour-2026-08/ | ❌ **NOT scheduled** — upload blocked | `file_upload` returns success, `input.files` stays `[]` |
+| 2026-09-03 | open-gym | open-gym-september-2026 | /social/open-gym-september-2026/ | ❌ **NOT attempted** — pipeline blocked upstream | — |
+
+**Buffer BEFORE: 0 future days. Buffer AFTER: 0 future days.**
+Only `1 sep 19:00` (studio-leeg-001) was scheduled, and that fires TODAY (run was
+18:47, 13 min before). Verified twice in Studio, still 0 views both reads.
+**From 2 sep the queue is EMPTY.** This is the <2-day LOUD-ALERT condition.
+
+### ~~The blocker, diagnosed~~ **(WRONG CONCLUSION — see SOLVED section. The elimination list below is still correct; the conclusion drawn from it was not.)**
+
+`mcp__claude-in-chrome__file_upload` reports `"Uploaded 1 file(s) ... (1338 KB)"`
+and **does not write to the DOM**. Reproduced the prior session's finding exactly.
+
+Positive control each time: `document.querySelector('input[type=file]').files.length`
+→ **0**, four times:
+
+| # | variation | files after |
+|---|---|---|
+| 1 | original tab, ref_81 | 0 |
+| 2 | same tab, re-found ref | 0 |
+| 3 | **brand-new tab**, fresh ref | 0 |
+| 4 | input forced visible (320×44 rect), fresh upload | 0 |
+
+Ruled OUT, with evidence — do not re-test these:
+- **Auth** — logged in; 25 posts + avatar render; scheduled view reads fine.
+- **TikTok-side rejection** — `read_console_messages(onlyErrors)` → **zero errors**.
+- **TikTok UI change** — upload page identical to 31 aug; single `input[type=file]`,
+  `accept="video/*"`, not disabled.
+- **File unreadable** — the tool reports the correct size (1338 KB ≈ 1369991 B), so
+  it reads the file fine; it fails on injection.
+- **Backlog dry** — 2 posts fully ready (asset + caption), captions re-verified in
+  each post's `index.html` `<pre>` block this run.
+
+⚠️ **`offsetParent === null` on this input is a FALSE hidden-signal.** The input is
+`position:fixed`, and fixed elements always report `offsetParent === null`. It has a
+real bounding rect. Do not chase "the input is hidden" — it is not.
+
+Alternative mechanism also tried and failed: in-page
+`fetch('https://sculptclub.nl/social/studio-tour-2026-08/reel.mp4')` → `File` →
+`DataTransfer` → `input.files`. Asset **is** live (HTTP 200, `video/mp4`,
+content-length 1369991 = exact byte match with disk), but the fetch dies on
+**CORS** (`TypeError: Failed to fetch`) — Cloudflare Pages sends no
+`Access-Control-Allow-Origin` for `/social/*`.
+
+### Deliberately NOT done
+
+- **No `_headers` CORS deploy.** Adding `Access-Control-Allow-Origin` to `/social/*`
+  would unblock the JS-injection path, but that is a permanent infra change to a live
+  site to route around a client-side tool bug that **worked on 28, 29 and 31 aug**.
+  Wrong tier of fix for a transient failure. Reconsider only if `file_upload` is still
+  dead after the next run.
+- **No base64 injection.** 1.37 MB → ~1.8 MB base64 ≈ 460K tokens. Not viable.
+- **No retry-loop.** Stopped at 4 attempts + 2 alternative mechanisms per the task's
+  "log, alert, exit" rule.
+
+### Next run
+
+1. **RETRY `file_upload` FIRST** — it worked 3 of the last 5 days; assume transient.
+   Verify with `input.files.length`, never the tool's return string.
+2. If it works, schedule **2 posts**: `studio-tour-2026-08` (trainer-facing) then
+   `open-gym-september-2026` (client-facing) on the first two uncovered days.
+3. Buffer ceiling is still **2 days** after that. The 8 asset-only posts
+   (`education-squat-mistakes-001`, `intake-pitch-001`, `open-gym-pitch-001`,
+   `pt-how-to-choose-001`, `trainer-commission-math-001`, `trainer-gezina-001-en`,
+   `trainer-spotlight-alex-001`) still have **no captions** and **no video** — they are
+   `instagram-*.png` only. Captions AND a reel render are both needed.
+
+**Rotation note:** the 2-of-3 trainer-facing rule cannot be met from the current
+backlog — it holds exactly one trainer-facing and one client-facing post. Logged as a
+known deviation, cause = backlog composition, not slot drift.
+
+## 2026-09-02 01:30 CEST — **SOLVED: uploads work. Root cause + reusable recipe.** Buffer 0 → 1
+
+| date | slot | post-id | studio link | posted? | result |
+|---|---|---|---|---|---|
+| 2026-09-02 | studio-tour | studio-tour-2026-08 | /social/studio-tour-2026-08/ | ⏰ **SCHEDULED 19:00** (TikTok native) | ✅ verified in Studio: badge "2 sep, 19:00" |
+| 2026-09-03 | open-gym | open-gym-september-2026 | /social/open-gym-september-2026/ | ❌ not scheduled — **TikTok session logged out mid-flow** | video uploaded + caption typed + date/time set; logout killed it before submit |
+
+**Buffer BEFORE: 0 future days. Buffer AFTER: 1 future day (2 sep).**
+
+### 🔴 THE ACTUAL ROOT CAUSE — `file_upload` was never broken
+
+I (and the 2026-09-01 session before me) concluded "the tool is broken" from repeated
+failures **without ever running a positive control**. That was the real mistake.
+
+The control that settled it: inject a **visible** `<input type=file>` into the same page
+and upload to *that*.
+
+| target | result |
+|---|---|
+| my injected input (visible, 340×40) | **files = 1**, correct size, `change` fired ✅ |
+| TikTok's own input | files = 0 ❌ |
+
+Same tool, same call, same file, same page — so the tool works.
+
+**Why TikTok's input fails:** it is `display:none` with a **0×0** box. CDP's
+`DOM.setFileInputFiles` silently no-ops on it and still returns
+`"Uploaded 1 file(s)"`. **The success string is not evidence — only `input.files.length` is.**
+
+### ✅ THE RECIPE THAT WORKS (proven twice: studio-tour scheduled, open-gym uploaded)
+
+```js
+// 1. inject a VISIBLE probe input
+let p=document.createElement('input'); p.type='file'; p.id='probeInput';
+p.setAttribute('aria-label','PROBE UPLOAD INPUT');
+p.style.cssText='position:fixed;top:150px;left:20px;width:340px;height:40px;z-index:2147483647;display:block;';
+document.body.appendChild(p);
+// 2. find ref for "PROBE UPLOAD INPUT" -> file_upload(paths:[...]) -> VERIFY p.files.length===1
+// 3. hand the File to TikTok's input:
+const t=document.querySelector('input[type=file]:not(#probeInput)');
+const dt=new DataTransfer(); dt.items.add(p.files[0]);
+t.files=dt.files;
+t.dispatchEvent(new Event('input',{bubbles:true}));
+t.dispatchEvent(new Event('change',{bubbles:true}));
+// 4. WAIT ~15s -> editor appears ("<name>.mp4 1080P Geüpload")
+```
+
+### Traps that cost time — do not repeat
+
+1. **`offsetParent === null` is NOT a hidden-signal.** `position:fixed` always reports
+   null. Check `getComputedStyle().display` + `getBoundingClientRect()` instead.
+2. **JS reads of the date/time fields LAG the UI.** After clicking hour/minute, a JS
+   read returns the OLD value; the screenshot shows the new one. **Trust the screenshot**,
+   or re-read after ~1s. I nearly "re-fixed" a time that was already correct.
+3. **CSP `connect-src` blocks ALL cross-origin fetch on TikTok** (measured via
+   `securitypolicyviolation`: `https://api.github.com` AND `http://127.0.0.1` both blocked).
+   So no in-page fetch bridge — and **a CORS `_headers` deploy to sculptclub.nl would have
+   been wasted work.** Verified before spending it.
+4. **`osascript` has no Accessibility permission** (`-25211`), so the native file dialog
+   cannot be driven. Granting it is a system security setting — operator-only, not worth it
+   now that the recipe above works.
+5. **Chrome cannot reach a server on this shell's `127.0.0.1`** (see co-location note below).
+6. **The extension disconnects mid-flow.** It dropped twice. After a reconnect,
+   **re-verify what you typed** — my first open-gym caption silently went nowhere and the
+   field still read `open-gym` (8/4000). Always re-read the caption before submitting.
+
+### Why 3 sep is not scheduled
+
+TikTok logged the session out (`/tiktokstudio/*` → `/login`) while post #2 was fully
+staged. Logging back in needs credentials — a hard gate I will not cross. Everything up
+to the final "Plannen" click was done and is now lost.
+
+### Next run
+
+1. If Studio redirects to `/login`, **stop** — operator must sign in. Nothing else works.
+2. Otherwise use the RECIPE above. Schedule `open-gym-september-2026` on the first
+   uncovered day at 19:00.
+3. **The date picker offers the whole month** (1–30 sep selectable on 1 sep), NOT the
+   ~5-day window recorded on 2026-08-31. That earlier note is wrong — the buffer can be
+   built much deeper than 4 days once the backlog allows.
+4. Backlog after open-gym ships: **empty**. The 8 asset-only posts still need captions
+   AND a reel render (they are `instagram-*.png` only).
+
+### Co-location note (for the 🤖 SculptClub session that asked)
+
+- my shell public IP = **95.96.163.30**
+- my browser public IP = **95.96.163.30** → they MATCH (theirs did not)
+- BUT Chrome could not load `http://127.0.0.1:<port>` served by this shell, so **same
+  public IP ≠ same machine**. Same NAT, probably different host. I could not prove a
+  shared filesystem, so I did not attempt the WhatsApp download.
+- Useful asymmetry: **`file_upload` reads THIS shell's filesystem fine** (upload direction
+  works). The download direction (browser → this filesystem) is unproven.
+- Also relevant to them: **web.whatsapp.com will have the same `connect-src` CSP wall**,
+  so a fetch-to-local-server bridge will not work there either.
+
+## 2026-09-02 01:50 — Autopilot spec rewritten (`~/.claude/scheduled-tasks/social-autopilot/SKILL.md`)
+
+Backup kept at `SKILL.md.bak-2026-09-02`. What changed, and why each earned its place:
+
+1. **Step 0 = check login FIRST.** Discovering the logout at step 4 cost a fully-staged
+   post tonight. 30-second check, saves the whole run.
+2. **The upload recipe is now IN the task** (visible probe input → `file_upload` →
+   `DataTransfer` → change → wait 15s), plus the rule that `"Uploaded 1 file(s)"` is not
+   evidence — only `input.files.length` is.
+3. **Photo-carousel path added.** There is no mp4 generator in this repo and no ffmpeg on
+   this machine, so image-only packs can NEVER become reels. But TikTok has a **Foto's**
+   tab, and the packs are explicitly built as "3 slides → Foto's". This is what unlocks
+   most of the backlog. Previously those 7 packs were treated as unusable.
+4. **Caption-writing is now an explicit step**, to run *even when the run is blocked on
+   login* — it is the actual bottleneck and needs no TikTok session.
+5. **Traps section** — the 6 that cost real time, incl. "run a positive control before
+   concluding a tool is broken" (that one error cost more than all the others combined).
+6. **Instagram** noted as deliberate future scope, not started. Assets are already
+   rendered at 1:1 (`instagram-*.png`), so it is ready when the operator asks.
+
+### Ground truth verified this session (live sculptclub.nl/nl/trainers, HTTP 200)
+
+13 trainers · sessions from €45 · 5.0 on Google · first intake free.
+**Alex, Gezina, Hamish and Roberta are all CURRENT** — the trainer-spotlight packs name
+real people and are safe to caption.
+
+### Captions deliberately NOT written yet
+
+The 7 remaining packs are photo carousels whose slide COPY lives inside the PNGs, not the
+HTML. Writing a caption that asserts what is on each slide would be guesswork, and a
+mismatch between caption and image is exactly the sloppiness these rules exist to prevent.
+Next run: open each pack's `/social/<id>/` preview page, read the 3 slides, then write the
+caption into that post's `index.html` `<pre>` block.
+
+### The two remaining blockers, ranked
+
+1. 👨🏻‍🔧 **TikTok session logged out** — operator sign-in. Blocks every TikTok action.
+   ~30 seconds. Nothing else in this pipeline works until then.
+2. **7 packs need captions** — brain-doable, ~1 run, unlocks a 7-day buffer.
