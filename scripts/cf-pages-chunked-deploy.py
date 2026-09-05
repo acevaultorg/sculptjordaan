@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-"""CF Pages chunked-upload deployer for readinglist.school.
+"""CF Pages chunked-upload deployer — THIS COPY DEPLOYS PROJECT "sculptclub" (see PROJECT below).
+
+Copy-forked from the readinglist.school deployer; the WHY paragraph below still
+describes that site's numbers. If you fork this again, change PROJECT first — a
+hardcoded project name has previously published one site into another site's
+Pages project.
 
 WHY: readinglist out/ is ~962MB / 11,981 files. `wrangler pages deploy` closes
 the upload socket at a hard ~56MB PER CONNECTION (log-verified EPIPE), and Next's
@@ -200,6 +205,35 @@ def main():
     # Fail-fast #2 (2026-07-28): CF Pages hard-rejects any single file >25MiB — the
     # upload API returns an opaque HTML 500 for the whole BATCH, which retries 12x and
     # kills the deploy ~45min in. Cheaper to catch here. (Hit live: a 27.8MB photo.)
+    # Fail-fast #3 (2026-08-29): repo HAS Pages Functions but out/_worker.js is missing.
+    # `npm run build` does NOT emit _worker.js — it is a separate step
+    # (`npx wrangler pages functions build --outdir=DIR` → copy DIR/index.js). Deploying
+    # without it ships the site with NO Functions: every redirect in functions/_middleware.ts
+    # (409 of them here), www→apex, the locale middleware and functions/api/* all go dead,
+    # while the site still returns 200 so nothing looks broken. That exact failure is live on
+    # another fleet site right now (its /api/* 404s in production). Silent + severe + easy to
+    # repeat = worth blocking at ship time rather than finding in an audit weeks later.
+    fdir = OUT_DIR.parent / "functions"
+    if worker_js is None and fdir.is_dir():
+        fn_files = [f for f in fdir.rglob("*")
+                    if f.is_file() and f.suffix in (".ts", ".js", ".tsx", ".mjs")]
+        if fn_files:
+            print(f"ERROR: {len(fn_files)} file(s) in {fdir}/ but out/_worker.js is MISSING.\n"
+                  f"  Deploying now would ship the site with NO Pages Functions — redirects,\n"
+                  f"  www→apex, locale middleware and /api/* would all silently stop working.\n"
+                  f"  Run the functions build first:\n"
+                  f"    npx wrangler pages functions build --outdir=/tmp/fnbuild\n"
+                  f"    cp /tmp/fnbuild/index.js out/_worker.js\n"
+                  f"    echo '{{\"version\":1,\"include\":[\"/*\"],\"exclude\":[]}}' > out/_routes.json\n"
+                  f"  Then re-run this script. (Set SKIP_FUNCTIONS_CHECK=1 or\n"
+                  f"  ALLOW_NO_FUNCTIONS=1 to override — only if\n"
+                  f"  you genuinely intend a Functions-less deploy.)", file=sys.stderr)
+            # Accept both names: SKIP_FUNCTIONS_CHECK is the fleet-wide spelling
+            # (ChiefPilot is porting this guard to the other 7 deployers).
+            if os.environ.get("ALLOW_NO_FUNCTIONS") != "1" and os.environ.get("SKIP_FUNCTIONS_CHECK") != "1":
+                sys.exit(3)
+            print("  ALLOW_NO_FUNCTIONS=1 set — proceeding WITHOUT Functions.", file=sys.stderr)
+
     oversized = [(rel, len(c)) for rel, c, sha in entries if len(c) > 25 * 1024 * 1024]
     if oversized:
         for rel, n in oversized:
@@ -247,6 +281,85 @@ def main():
         print(f"ERROR: create-deployment failed: {r}", file=sys.stderr); sys.exit(1)
     res = r["result"]
     print(f"[✓] DEPLOYED · id={res.get('id')} · {res.get('url')} · {int(time.time()-t0)}s")
+    verify_functions_live(worker_js)
+
+def _looks_html(body: bytes, ctype: str) -> bool:
+    if "html" in (ctype or "").lower(): return True
+    head = (body or b"")[:512].lstrip().lower()
+    return head.startswith(b"<!doctype") or head.startswith(b"<html")
+
+# ---------------------------------------------------------------------------
+# Post-deploy verification (2026-08-29).
+#
+# WHY: a successful create_deployment proves NOTHING about whether Functions
+# actually run. Two fleet sites (conversionbench.com, sourdoughhydration.com)
+# have shipped "successfully" and serve 404/405 on every /api/* route in
+# production — undetected, because the HTML still 200s so the site looks fine.
+# ChiefPilot established the general form: static analysis of a deployer is a
+# property of a SCRIPT; only a live probe is a property of PRODUCTION. So the
+# deployer now checks its own work instead of printing a checkmark and exiting.
+#
+# The probe carries its own CONTROL: a bogus path must 404. If the control does
+# not 404, the probe is not measuring what it thinks (origin down, WAF, captive
+# portal) and we report INCONCLUSIVE rather than a false pass or false alarm.
+def verify_functions_live(worker_js):
+    if worker_js is None:
+        return  # nothing to verify; the pre-upload guard already ruled on this
+    if os.environ.get("SKIP_FUNCTIONS_PROBE") == "1":
+        print("[i] SKIP_FUNCTIONS_PROBE=1 — not verifying Functions in production."); return
+    base   = os.environ.get("PROD_URL", "https://sculptclub.nl").rstrip("/")
+    path   = os.environ.get("FUNCTIONS_PROBE_PATH",
+             "/api/whatsapp/webhook?hub.mode=subscribe&hub.verify_token=probe&hub.challenge=1")
+    expect = os.environ.get("FUNCTIONS_PROBE_EXPECT", "403")
+    def probe(u):
+        """-> (status, is_html_body). Status alone cannot discriminate: a LIVE Function
+        rejecting a method returns 405 with a non-HTML body, while an ABSENT route falls
+        through to the framework's HTML 404 page. Measured by ChiefPilot on readstacks —
+        /api/subscribe 405 non-HTML (alive) vs /api/checkout 404 <!DOCTYPE (absent), same
+        deployment, opposite verdicts. Failing on status alone would flag the healthy one."""
+        try:
+            req = urllib.request.Request(u, method="GET", headers={"User-Agent": "cf-deploy-verify"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                body = resp.read(2048)
+                return resp.status, _looks_html(body, resp.headers.get("Content-Type", ""))
+        except urllib.error.HTTPError as e:
+            try: body = e.read(2048)
+            except Exception: body = b""
+            return e.code, _looks_html(body, e.headers.get("Content-Type", "") if e.headers else "")
+        except Exception as e:
+            return f"ERR:{type(e).__name__}", False
+    def code(u):
+        return probe(u)[0]
+    print(f"[+] verifying Functions in production (propagation pause 20s)…")
+    time.sleep(20)
+    ctrl = code(f"{base}/__deploy_probe_should_404__{uuid.uuid4().hex[:8]}")
+    got, got_html = probe(f"{base}{path}")
+    print(f"    control(bogus path)={ctrl}  probe({path.split('?')[0]})={got} "
+          f"body={'HTML' if got_html else 'non-HTML'}  expect={expect}")
+    if ctrl != 404:
+        print(f"[!] INCONCLUSIVE: control returned {ctrl}, not 404 — the probe is not measuring\n"
+              f"    what it thinks it is. Verify by hand before trusting this deploy.", file=sys.stderr)
+        return
+    if str(got) in (str(expect),):
+        print("[✓] Functions LIVE in production."); return
+    if got in (404, 405) and not got_html:
+        print(f"[!] {got} with a NON-HTML body — that is a live Function rejecting the request,\n"
+              f"    not a missing route. Treating as ALIVE. (Set FUNCTIONS_PROBE_EXPECT={got}\n"
+              f"    to make this a clean pass.)", file=sys.stderr)
+        return
+    if got in (404, 405) and got_html:
+        print(f"[X] FUNCTIONS ARE DEAD: {base}{path} returned {got} with an HTML body\n"
+              f"    (the framework's 404 page = the route does not exist). Expected {expect}.\n"
+              f"    404/405 with a healthy 404-control is the signature of a deployment whose\n"
+              f"    _worker.js did not take effect. The site will still serve HTML 200, so this\n"
+              f"    will NOT look broken from a browser. Re-run the functions build and redeploy:\n"
+              f"      npx wrangler pages functions build --outdir=/tmp/fnbuild\n"
+              f"      cp /tmp/fnbuild/index.js out/_worker.js && CF_SKIP_UPLOAD=1 python3 {sys.argv[0]}",
+              file=sys.stderr)
+        sys.exit(4)
+    print(f"[!] Functions probe returned {got}, expected {expect} — not the dead-worker signature\n"
+          f"    (404/405), so treating as a probe/config mismatch rather than a failed deploy.\n"
+          f"    Check FUNCTIONS_PROBE_PATH / FUNCTIONS_PROBE_EXPECT.", file=sys.stderr)
 
 if __name__ == "__main__":
     main()

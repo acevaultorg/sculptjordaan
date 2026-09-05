@@ -44,7 +44,7 @@ export default function CookiePolicyEN() {
           <p>Google Analytics 4 (GA4) helps us understand how visitors use the website. This data is anonymized.</p>
 
           <h3>Marketing cookies</h3>
-          <p>Facebook Pixel and Google Ads help us show relevant advertisements. These cookies are only placed with your consent.</p>
+          <p>Facebook Pixel, TikTok Pixel and Google Ads help us show relevant advertisements. These cookies are only placed with your consent.</p>
 
           <h2>Managing your cookies</h2>
           <p>You can change your cookie preferences via the cookie banner at the bottom of the page, or through your browser settings.</p>

@@ -1,5 +1,17 @@
 # Google Ads — Trainer Conversion Campaign Spec
 
+## ⚠️ SUPERSEDED 2026-09-02 — do NOT act on the campaign/budget content below
+
+Written 2026-06-02, before the operator's later, explicit, unconditional decision (CLAUDE.md,
+2026-08-28, verbatim): **"no google ads budget."** — a €0/0-impression Ads account is the *intended*
+state and no session should propose, plan, or cost a campaign at any budget. Orphaned (not linked
+from any active TASKS.md item or TaskPeace card as of 2026-09-02), so nobody is currently pointed
+here, but the content stays live in `docs/` and could mislead a future reader. Kept intact below as
+historical record of the original campaign spec. **Do not resume, edit, or re-launch anything
+described here without a fresh, explicit operator go-ahead that reverses the 2026-08-28 decision.**
+
+---
+
 **Goal:** Personal-trainer leads at lowest CPL → book free proefsessie OR send WhatsApp.
 
 **Account:** SculptClub · Customer ID **511-161-9582** · paulomdevries@gmail.com
@@ -159,7 +171,7 @@ ervaringen
 ### Descriptions (4)
 
 ```
-01. Privé studio in Jordaan vanaf €12/uur. 0% commissie · jouw klanten · jouw tarieven. Boek gratis proefsessie.
+01. Privé studio Jordaan vanaf €12/uur. Je houdt 100% van je tarief. Boek je gratis test.
 02. Voor freelance personal trainers. Per uur, per dag, of pakket met 23% korting. Geen contract.
 03. 60 minuten gratis kennismaken met de studio. Geen creditcard. Geen verplichting. Plan online.
 04. Volledig uitgeruste privé studio aan de gracht. Rogue rack, dumbbells 4-40 kg, kabelmachine, sleds.
@@ -175,7 +187,7 @@ ervaringen
 |---|---|---|---|
 | Tarieven & Pakketten | https://sculptclub.nl/nl/studio-huren#book | Per uur of pakket — bespaar tot 23% | Geen contract · gratis annuleren |
 | Bekijk de Studio | https://sculptclub.nl/nl/studio-huren | Egelantiersgracht 424 · Jordaan | Rogue rack · kabelmachine · cardio |
-| Word SculptClub-Trainer | https://sculptclub.nl/nl/word-trainer#aanmelden | Eigen profiel + klanten via SCNL | 0% commissie · jouw tarieven |
+| Word SculptClub-Trainer | https://sculptclub.nl/nl/word-trainer#aanmelden | Eigen profiel + klanten via SCNL | 100% van je tarief |
 | WhatsApp Direct | https://wa.me/31615147952?text=Hoi%21%20Ik%20wil%20graag%20de%20studio%20huren%20als%20trainer | Reactie meestal binnen 1 uur | Vragen? App ons |
 
 ### Callouts (8)
@@ -183,7 +195,7 @@ ervaringen
 ```
 Privé studio
 Vanaf €12/uur
-0% commissie
+Je houdt 100%
 Geen contract
 Gratis annuleren
 Daily 06:00–22:00
@@ -352,3 +364,17 @@ The dedicated landing has ONE conversion (Acuity embed) + no paid-pricing compet
 - Add ad group D: `English-speaking PT in Amsterdam` (route to `/en/studio-rental/free-trial`)
 - Add Performance Max campaign once conversion volume ≥ 30/month
 - Layer Meta Ads (Instagram is where IG-trainer audience already lives — separate campaign)
+
+> **Copy note (2026-08-29):** "0% commissie" was removed from all three places it appeared here
+> (description 01, the Word-SculptClub-Trainer sitelink, and the callout list). CLAUDE.md forbids
+> the phrase outright — trainers rent the room and bring their own clients, so there was never a
+> commission to waive; the operator's reaction to it is on record. The sanctioned framing is
+> "je houdt 100% van je tarief". Naming what OTHER gyms charge (30–50%) is explicitly fine and is
+> unchanged elsewhere in this doc.
+>
+> Length check while here: the ORIGINAL description 01 was 108 characters, over Google's 90-char
+> description limit, so it would have been rejected or truncated regardless. The replacement is 85 and fits. Callouts (25) and sitelink descriptions (35) are within
+> limits after the change.
+>
+> ⚠️ This file is the campaign SPEC. If these ads are already live, editing here changes nothing —
+> the copy must be updated in the Google Ads account, which is operator-only.

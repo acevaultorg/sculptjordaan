@@ -10,7 +10,8 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages } from "@/config/acuity";
+import { acuityLinks, acuityPackages, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import {
@@ -76,12 +77,19 @@ const openGymPlans = [
   {
     name: "Unlimited",
     sessions: "Unlimited",
-    price: "\u20ac69",
+    // Sourced from the single deal config (src/config/acuity.ts) \u2014 never
+    // re-hardcode this price. A second hardcode here (previously "\u20ac69", the
+    // pre-2026-07-21 price) is exactly how the /en/pricing \u2194 /en/open-gym
+    // contradiction happened.
+    price: `\u20ac${openGymSummerDeal.active ? openGymSummerDeal.priceDeal : openGymSummerDeal.priceRegular}`,
+    priceOld: openGymSummerDeal.active ? `\u20ac${openGymSummerDeal.priceRegular}` : null,
     period: "/ 4 weeks",
     perSession: null,
-    blurb: "No limits, no planning",
-    badge: null,
-    link: acuityLinks.openGymPlans.onbeperkt,
+    blurb: openGymSummerDeal.active
+      ? `Save \u20ac${openGymSummerDeal.priceRegular - openGymSummerDeal.priceDeal} per 4 weeks \u2014 this price stays as long as you're a member`
+      : "No limits, no planning",
+    badge: openGymSummerDeal.active ? "Summer" : null,
+    link: openGymSummerDeal.active ? openGymSummerDeal.dealUrl : acuityLinks.openGymPlans.onbeperkt,
   },
 ];
 
@@ -145,7 +153,13 @@ export default function PricingPageEN() {
         offers={[
           { name: "Single Session", description: "1 session, no membership needed", price: 10 },
           { name: "Starter Plan — 4 sessions", description: "4 sessions per 4 weeks, €7.25 per session", price: 29 },
-          { name: "Unlimited", description: "Unlimited training per 4 weeks", price: 69 },
+          {
+            name: "Unlimited",
+            description: "Unlimited training per 4 weeks",
+            price: openGymSummerDeal.active
+              ? openGymSummerDeal.priceDeal
+              : openGymSummerDeal.priceRegular,
+          },
         ]}
       />
       <OfferCatalogJsonLd
@@ -260,6 +274,11 @@ export default function PricingPageEN() {
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-3xl font-bold">
+                    {plan.priceOld && (
+                      <span className="sc-price-old text-lg">
+                        {plan.priceOld}
+                      </span>
+                    )}{" "}
                     {plan.price}
                     <span className="text-base font-normal text-muted-foreground">
                       {" "}
@@ -284,6 +303,20 @@ export default function PricingPageEN() {
             </FadeIn>
           ))}
         </div>
+
+        {openGymStudentDeal.active && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Student? Unlimited for €{openGymStudentDeal.priceStudent} per 4 weeks with a valid student ID.{" "}
+            <Link
+              href="/en/open-gym/student-discount"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+              data-intent="open_gym"
+              data-pricing="paid"
+            >
+              See the student discount
+            </Link>
+          </p>
+        )}
 
         <FadeIn delay={0.4} className="mt-6 flex justify-center">
           <ButtonLink href="/en/open-gym" variant="outline" size="lg">

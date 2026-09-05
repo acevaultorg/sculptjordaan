@@ -101,24 +101,58 @@ export const acuityPaidSessions = {
 //   endDate       → a REAL operator-set date for the honest urgency line
 //                   (null → no date shown, never faked).
 //   dealUrl       → the €49 Zomerdeal product's add-to-cart link.
-// ⚠️ ACUITY OUT OF SYNC (2026-07-21): priceRegular is €79 here, but the Acuity
-// product "Open gym - Onbeperkt" (id 2155890) is still €69. Operator confirmed
-// 2026-07-21 that €79 IS the new standard price, so Acuity must be updated to
-// match — until then the site correctly advertises €79 while checkout of the
-// REGULAR product would charge €69. (No customer is mis-charged and no member is
-// affected — that product has zero subscribers, and every current signup goes to
-// the €49 Zomerdeal product — but the "daarna €79" promise isn't backed yet.)
-// ACUITY SETUP DONE 2026-07-16 (brain-driven via Chrome MCP, operator-authorized):
-// regular "Open gym - Onbeperkt" (id 2155890) set to €69 (it had ZERO subscribers,
-// so nobody's price changed); new private product "Open gym - Onbeperkt Zomerdeal"
-// (id 2247082) created at €49 every 4 weeks, forever-until-canceled, unlimited
-// Open Gym Sessie redemption — Acuity bills €49 forever = the price-lock promise.
+// ✅ ACUITY IN SYNC — VERIFIED LIVE 2026-08-28. Every product was read straight
+// from its own Acuity cart and matches the prices published on the site:
+//   2155887 Instapplan €29 · 2155890 Onbeperkt €79 · 2247082 Zomerdeal €49
+//   2149357 Starter €89 · 2247124 Routine €179 · 2248025 Pro €299 · 2248026 Volume €499
+// This CLOSES the 2026-07-21 "ACUITY OUT OF SYNC" warning that used to stand here,
+// which said id 2155890 was "still €69" and that the "daarna €79" promise was not
+// backed yet. It IS backed: 2155890 reads €79. (The 2026-07-16 note that set it to
+// €69 is superseded — the 2026-07-21 raise to €79 did land in Acuity.)
+// ACUITY SETUP (2026-07-16, brain-driven via Chrome MCP, operator-authorized):
+// new private product "Open gym - Onbeperkt Zomerdeal" (id 2247082) created at €49
+// every 4 weeks, forever-until-canceled, unlimited Open Gym Sessie redemption —
+// Acuity bills €49 forever = the price-lock promise.
+// Re-verify after any Acuity price edit: follow each catalog.php add-to-cart link
+// with -L and read the "price" field in the returned JSON.
 export const openGymSummerDeal = {
   active: true,
   priceRegular: 79,
   priceDeal: 49,
   endDate: null as string | null,
   dealUrl: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2247082`,
+} as const;
+
+/**
+ * STUDENT RATE — Open Gym Onbeperkt at €39/4 weeks on proof of student ID.
+ *
+ * Created in Acuity 2026-09-01 as product 2272560 by DUPLICATING the €49
+ * Zomerdeal (2247082), so every setting except title and price is identical:
+ * billing every 4 weeks, forever-until-cancelled, €0 setup fee, access
+ * Private (deep-link only, like all 8 products), and redemption = unlimited
+ * "Open Gym Sessie / Open Gym Session".
+ *
+ * Verified live 2026-09-01: the catalog URL returns 200 and renders
+ * "Onbeperkt Studenten" at 39.00 (control: 2247082 still renders 49.00).
+ *
+ * WHY €39 and not lower: it sits between the €29 Instapplan (4 sessions) and
+ * the €49 price-locked deal, so it undercuts neither. Rationale is the ~18%
+ * true utilisation of 112 opening h/wk measured in the Acuity full export —
+ * a student training off-peak is near-zero marginal cost and fills dead hours.
+ *
+ * ⚠️ NOT time-restricted. Acuity applies availability to APPOINTMENT TYPES,
+ * not to subscription products, so an off-peak-only student tier would need a
+ * separate restricted appointment type. At 18% utilisation that isn't worth
+ * the complexity yet — revisit if peak hours start filling.
+ *
+ * Verification is a human step: student card shown at the first visit.
+ */
+export const openGymStudentDeal = {
+  active: true,
+  priceRegular: 79,
+  priceStudent: 39,
+  requiresStudentId: true,
+  url: `${CATALOG}?owner=${OWNER}&action=addCart&clear=1&id=2272560`,
 } as const;
 
 // ─── PAID packages (catalog.php) ────────────────────────────────────

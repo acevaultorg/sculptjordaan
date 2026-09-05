@@ -264,15 +264,27 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
   const [freq, setFreq] = useState<FreqKey | null>(null);
   const [lang, setLang] = useState<LangKey | null>(null);
 
-  // Fire Quiz Start on mount
+  // Fire Quiz Start on mount.
+  // Dual-fire: GA4 is the LIVE destination (Plausible was retired 2026-07-04 and
+  // window.plausible is now a no-op stub kept on purpose per operator "you dont
+  // have to remove the tracks"). Before 2026-08-29 this quiz sent its events ONLY
+  // to that stub, so every Quiz Start / Quiz Step / Quiz Lead was silently
+  // unmeasured — which also made the 2026-06-11 match-trainer CRO work
+  // impossible to evaluate. GA4 names are snake_case to match the existing
+  // gtag events (generate_lead, contact_form_submit, trainer_intake_submit).
   useEffect(() => {
-    if (typeof window === "undefined" || !window.plausible) return;
-    window.plausible("Quiz Start", { props: { locale } });
+    if (typeof window === "undefined") return;
+    window.plausible?.("Quiz Start", { props: { locale } });
+    const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+    if (typeof g === "function") g("event", "quiz_start", { locale });
   }, [locale]);
 
   function track(event: string, props: Record<string, unknown>) {
-    if (typeof window !== "undefined" && window.plausible) {
-      window.plausible(event, { props: { locale, ...props } });
+    if (typeof window === "undefined") return;
+    window.plausible?.(event, { props: { locale, ...props } });
+    const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+    if (typeof g === "function") {
+      g("event", event.toLowerCase().replace(/[^a-z0-9]+/g, "_"), { locale, ...props });
     }
   }
 
@@ -506,7 +518,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 <Link
                   href={intakeHref}
                   onClick={() =>
-                    track("Quiz Lead", { trainer: trainer.id, position: i + 1, method: "intake_page" })
+                    track("Quiz Lead", { trainer: trainer.id, trainer_name: trainer.id, position: i + 1, method: "intake_page" })
                   }
                   className={`mt-4 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-bold text-sm transition-colors min-h-[48px] ${
                     isPrimary
@@ -526,7 +538,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() =>
-                    track("Quiz Lead", { trainer: trainer.id, position: i + 1, method: "whatsapp_direct" })
+                    track("Quiz Lead", { trainer: trainer.id, trainer_name: trainer.id, position: i + 1, method: "whatsapp_direct" })
                   }
                   className="mt-2 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm transition-colors min-h-[48px]"
                 >

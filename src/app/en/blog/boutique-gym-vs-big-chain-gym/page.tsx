@@ -7,15 +7,15 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub" },
+  title: { absolute: "What Does a Boutique Gym Cost vs a Big Chain? — SculptClub" },
   description:
-    "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results. Find what works best for your goals.",
+    "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   keywords: [
     "boutique gym amsterdam",
-    "boutique gym vs big gym",
-    "small gym amsterdam",
+    "boutique gym price vs gym",
+    "gym cost vs boutique gym",
     "basic-fit alternative amsterdam",
-    "personal training studio vs gym",
+    "gym without contract amsterdam",
   ],
   alternates: {
     canonical: "/en/blog/boutique-gym-vs-big-chain-gym",
@@ -27,30 +27,30 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/boutique-gym-vs-big-chain-gym",
-    title: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub",
+    title: "What Does a Boutique Gym Cost vs a Big Chain? — SculptClub",
     description:
-      "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results. Find what works best for your goals.",
+      "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boutique Gym vs Big Chain Gym: What's Right for You? — SculptClub",
+    title: "What Does a Boutique Gym Cost vs a Big Chain? — SculptClub",
     description:
-      "Deciding between a boutique gym and a big chain? Compare price, atmosphere, equipment and results. Find what works best for your goals.",
+      "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   },
 };
 
 export default function BoutiqueGymVsChainEN() {
   return (
     <PageLayout>
-      <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "Boutique gym vs big chain", url: "/en/blog/boutique-gym-vs-big-chain-gym" }]} />
-      <BlogPostingJsonLd title="Boutique Gym vs Big Chain Gym" description="Compare boutique gyms and big chain gyms on price, atmosphere and results." url="/en/blog/boutique-gym-vs-big-chain-gym" datePublished="2026-04-02" />
+      <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "What does a boutique gym cost vs a big chain", url: "/en/blog/boutique-gym-vs-big-chain-gym" }]} />
+      <BlogPostingJsonLd title="What Does a Boutique Gym Cost vs a Big Chain?" description="What does it cost to train at a boutique gym vs a big chain gym? Price and contract terms compared." url="/en/blog/boutique-gym-vs-big-chain-gym" datePublished="2026-04-02" />
 
       <Section>
         <FadeIn>
           <article className="mx-auto max-w-3xl">
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Boutique Gym vs Big Chain Gym: What’s Right for You?</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">What Does a Boutique Gym Cost vs a Big Chain?</h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><User className="w-4 h-4" />SculptClub</span>
                 <span className="flex items-center gap-1"><CalendarDays className="w-4 h-4" />April 2, 2026</span>
@@ -64,8 +64,16 @@ export default function BoutiqueGymVsChainEN() {
             <div className="prose prose-lg max-w-none">
               <p>
                 You want to start working out. Or you already train at a big chain and are considering
-                something different. The choice between a boutique gym and a big chain isn’t just
-                about price — it’s about what you need to actually get results.
+                something different. The first question is almost always: what does it cost? Here's the
+                price, contract terms and what you actually get for your money at both.
+              </p>
+              <p>
+                Want a fuller comparison of guidance, equipment and atmosphere — including personal
+                training? Read the full{" "}
+                <a href="/en/boutique-personal-training-vs-chain-gyms" className="text-brand underline underline-offset-2 hover:no-underline">
+                  boutique personal training vs chain gyms comparison →
+                </a>
+                .
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Big chain: the familiar model</h2>
@@ -84,7 +92,7 @@ export default function BoutiqueGymVsChainEN() {
                 training instead of background music.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">The honest comparison</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Cost comparison at a glance</h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -96,14 +104,17 @@ export default function BoutiqueGymVsChainEN() {
                   </thead>
                   <tbody>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Price</td><td className="py-2 pr-4">€20-€40/month</td><td className="py-2">€29-€79/4 weeks</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Crowding</td><td className="py-2 pr-4">High (peak hours)</td><td className="py-2">Max 4 people</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Guidance</td><td className="py-2 pr-4">Not included</td><td className="py-2">Optional (PT from €45)</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Equipment</td><td className="py-2 pr-4">Many, often occupied</td><td className="py-2">Fewer, always available</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Contract</td><td className="py-2 pr-4">Often 12 months</td><td className="py-2">None — stop whenever</td></tr>
-                    <tr><td className="py-2 pr-4 font-medium">Atmosphere</td><td className="py-2 pr-4">Busy, loud, anonymous</td><td className="py-2">Quiet, private, personal</td></tr>
+                    <tr><td className="py-2 pr-4 font-medium">Crowding</td><td className="py-2 pr-4">High (peak hours)</td><td className="py-2">Max 4 people</td></tr>
                   </tbody>
                 </table>
               </div>
+              <p className="text-sm text-muted-foreground mt-3">
+                For a fuller comparison of guidance, equipment and atmosphere, see the{" "}
+                <a href="/en/boutique-personal-training-vs-chain-gyms" className="text-brand underline underline-offset-2 hover:no-underline">
+                  full personal training comparison
+                </a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Who is a boutique gym for?</h2>
               <p>

@@ -1,49 +1,45 @@
 #!/usr/bin/env bash
-# ship.sh — one-command deploy for sculptclub.nl
-# ─────────────────────────────────────────────────────────────
-# Temporary workaround while GitHub Actions are disabled on the
-# owner's account. Run this from anywhere inside the repo after
-# a PR is merged on GitHub — pulls main + deploys to Vercel prod.
+# ship.sh — DECOMMISSIONED 2026-08-31. Do not resurrect as a one-command deploy.
+# ─────────────────────────────────────────────────────────────────────────────
+# This script used to run `vercel --prod --yes`. Vercel is RETIRED for this
+# project (CF Pages migration, nameservers moved 2026-08-29).
 #
-# Usage: ./bin/ship.sh
-# ─────────────────────────────────────────────────────────────
+# It is kept as a SIGNPOST, not deleted, because its final line was actively
+# dangerous:
+#
+#     echo "✓ Shipped. Verify: curl -sI https://sculptclub.nl/ | head -1"
+#
+# That curl returns HTTP 200 from Cloudflare whether or not anything deployed,
+# so the "verification" passed while the deploy went nowhere. Same blind-
+# instrument class as a git guard that is installed but never invoked: the
+# check returns the reassuring answer precisely when it cannot see.
+#
+# It also called `node bin/indexnow.mjs` bare — which submits EVERY sitemap URL.
+# Since a CSS change touches every page, that is the batch-abuse pattern.
+# ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 
-# Find repo root (works from any subdir)
-REPO_ROOT="$(git rev-parse --show-toplevel)"
-cd "$REPO_ROOT"
+cat >&2 <<'MSG'
+✗ bin/ship.sh is decommissioned — it deployed to Vercel, which is retired.
 
-echo "→ Switching to main + pulling latest..."
-# Detect if we're in a worktree; jump to main worktree if so
-if git worktree list | grep -q " [worktree/]"; then
-  MAIN_WT="$(git worktree list --porcelain | awk '/^worktree/ {wt=$2} /^branch refs\/heads\/main$/ {print wt; exit}')"
-  if [[ -n "$MAIN_WT" && "$MAIN_WT" != "$REPO_ROOT" ]]; then
-    echo "  (detected worktree; switching to main at $MAIN_WT)"
-    cd "$MAIN_WT"
-  fi
-fi
+  Use the canonical CF Pages procedure (CLAUDE.md "Deploy procedure"):
 
-git fetch origin main --quiet
-git checkout main --quiet 2>/dev/null || true
-git pull --ff-only origin main
-
-echo "→ Deploying to Vercel production..."
-vercel --prod --yes
-
-# IndexNow ping — Bing / Yandex / Naver / Seznam see new content within minutes
-# instead of waiting for natural crawl. Google honors via Bing data sharing.
-# Non-blocking: failure here doesn't fail the deploy.
-echo "→ IndexNow ping..."
-node bin/indexnow.mjs || echo "  (IndexNow ping failed — non-blocking, deploy is still live)"
-
-# Warm Vercel _next/image transform cache for top-entry-page heroes.
-# First request per (url, w, format) triggers a cold transform (~3-10s
-# server-side processing). Pre-warming means the FIRST real user lands on
-# a warm-cache POP instead of triggering the cold transform themselves.
-# Sub-5s runtime in the normal case. Covers ~4 of top 7 entry pages
-# (other 3 are text-LCP, no warming needed). Non-blocking.
-# Context: docs/PERF-EXPERIMENTS-2026-05-07.md
-echo "→ Warming _next/image cache..."
-node scripts/warm-image-cache.mjs || echo "  (image warm failed — non-blocking)"
-
-echo "✓ Shipped. Verify: curl -sI https://sculptclub.nl/ | head -1"
+    1. npm run build
+       ⚠ Build success is NOT $? — `next build` can print "Compiled
+         successfully", fail type-check, and still exit 0 with a STALE out/.
+    2. npx wrangler pages functions build --outdir=DIR
+       cp DIR/index.js out/_worker.js
+       echo '{"version":1,"include":["/*"],"exclude":[]}' > out/_routes.json
+    3. CF_BRANCH=main python3 -u scripts/cf-pages-chunked-deploy.py
+       (wrangler EPIPEs on the ~154MB export; the chunked deployer also
+        carries the functions guard — do not bypass it)
+    4. VERIFY FUNCTIONS — this is the only check that discriminates:
+         curl -s -o /dev/null -w '%{http_code}\n' \
+           "https://sculptclub.nl/api/whatsapp/webhook?hub.mode=subscribe"
+       Must be 403. A 404/405 means the worker is missing → REDEPLOY.
+       A plain `curl -sI https://sculptclub.nl/` proves NOTHING: it returns
+       200 from Cloudflare regardless of whether your deploy landed.
+    5. node bin/indexnow.mjs <url> <url> …   ← ONLY the URLs you changed.
+       Never bare: with no args it submits the entire sitemap.
+MSG
+exit 1

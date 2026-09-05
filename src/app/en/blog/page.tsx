@@ -354,6 +354,14 @@ const posts = [
     href: "/en/blog/improve-body-composition-amsterdam",
     date: "April 16, 2026",
   },
+  {
+    title: "Burnout & Stress Personal Trainer in Amsterdam",
+    excerpt:
+      "High-end personal training for entrepreneurs and high performers experiencing stress and burnout. Joey's Ascend Method — strength, breathwork and nervous system regulation.",
+    category: "Recovery",
+    href: "/en/blog/burnout-personal-trainer-amsterdam",
+    date: "May 12, 2026",
+  },
   // Supply-side ship 2026-05-20 — 7 new long-form posts for freelance trainers
   {
     title: "Cost of Private Studio Rental vs Opening Your Own Gym in Amsterdam",
@@ -370,6 +378,30 @@ const posts = [
     category: "For Trainers",
     href: "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
     date: "May 20, 2026",
+  },
+  {
+    title: "VAT for Personal Trainers in the Netherlands — 21% or 9%?",
+    excerpt:
+      "Standalone PT sessions are 21%. The reduced 9% rate only applies with a sports facility included — the Belastingdienst criteria, plus the KOR exemption under €20,000.",
+    category: "For Trainers",
+    href: "/en/blog/vat-personal-trainer-netherlands",
+    date: "Aug 28, 2026",
+  },
+  {
+    title: "Disability Insurance (AOV) for Personal Trainers — mandatory from ~2030",
+    excerpt:
+      "The BAZ act makes disability insurance mandatory for Dutch freelancers around 2030. What the public scheme covers, what private cover costs for a physical profession, and when a broodfonds is enough.",
+    category: "For Trainers",
+    href: "/en/blog/disability-insurance-freelance-personal-trainer-netherlands",
+    date: "Aug 28, 2026",
+  },
+  {
+    title: "First-Year Tax as a Freelance Personal Trainer in the Netherlands (2026)",
+    excerpt:
+      "Self-employed deduction €1,200, starter's deduction €2,123, the 1,225-hour criterion, 12.7% SME profit exemption — what each deduction saves, with a worked example.",
+    category: "For Trainers",
+    href: "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
+    date: "Sep 2, 2026",
   },
   {
     title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026)",

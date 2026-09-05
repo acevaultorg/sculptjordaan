@@ -7,15 +7,15 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub" },
+  title: { absolute: "Wat Kost een Boutique Gym vs een Ketensportschool? — SculptClub" },
   description:
-    "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding. Ontdek wat het beste werkt voor jouw doelen.",
+    "Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld — op een rij.",
   keywords: [
     "boutique gym amsterdam",
-    "boutique gym vs sportschool",
-    "kleine sportschool amsterdam",
+    "boutique gym prijs vs sportschool",
+    "kosten sportschool vs boutique gym",
     "basic-fit alternatief amsterdam",
-    "personal training studio vs sportschool",
+    "sportschool zonder contract amsterdam",
   ],
   alternates: {
     canonical: "/nl/blog/boutique-gym-vs-sportschool-keten",
@@ -27,30 +27,30 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/boutique-gym-vs-sportschool-keten",
-    title: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub",
+    title: "Wat Kost een Boutique Gym vs een Ketensportschool? — SculptClub",
     description:
-      "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding. Ontdek wat het beste werkt voor jouw doelen.",
+      "Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld — op een rij.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boutique Gym vs Sportschool Keten: Wat Past bij Jou? — SculptClub",
+    title: "Wat Kost een Boutique Gym vs een Ketensportschool? — SculptClub",
     description:
-      "Twijfel je tussen een boutique gym en een grote sportschool? Vergelijk prijs, sfeer, apparatuur en begeleiding. Ontdek wat het beste werkt voor jouw doelen.",
+      "Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld — op een rij.",
   },
 };
 
 export default function BoutiqueGymVsKetenNL() {
   return (
     <PageLayout>
-      <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Boutique gym vs sportschool keten", url: "/nl/blog/boutique-gym-vs-sportschool-keten" }]} />
-      <BlogPostingJsonLd title="Boutique Gym vs Sportschool Keten" description="Vergelijk boutique gyms en grote sportschoolketens op prijs, sfeer en resultaat." url="/nl/blog/boutique-gym-vs-sportschool-keten" datePublished="2026-04-02" />
+      <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Wat kost een boutique gym vs een ketensportschool", url: "/nl/blog/boutique-gym-vs-sportschool-keten" }]} />
+      <BlogPostingJsonLd title="Wat Kost een Boutique Gym vs een Ketensportschool?" description="Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs en contractvoorwaarden op een rij." url="/nl/blog/boutique-gym-vs-sportschool-keten" datePublished="2026-04-02" />
 
       <Section>
         <FadeIn>
           <article className="mx-auto max-w-3xl">
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Boutique Gym vs Sportschool Keten: Wat Past bij Jou?</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Wat Kost een Boutique Gym vs een Ketensportschool?</h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><User className="w-4 h-4" />SculptClub</span>
                 <span className="flex items-center gap-1"><CalendarDays className="w-4 h-4" />2 april 2026</span>
@@ -64,8 +64,16 @@ export default function BoutiqueGymVsKetenNL() {
             <div className="prose prose-lg max-w-none">
               <p>
                 Je wilt gaan sporten. Of je sport al bij een grote keten en overweegt iets anders. De
-                keuze tussen een boutique gym en een grote sportschoolketen is niet alleen een kwestie
-                van prijs — het gaat om wat je nodig hebt om daadwerkelijk resultaat te boeken.
+                eerste vraag is bijna altijd: wat kost het? Hieronder de prijzen, contractvoorwaarden en
+                wat je écht krijgt voor je geld bij beide opties.
+              </p>
+              <p>
+                Wil je liever een uitgebreide vergelijking van begeleiding, apparatuur en sfeer — inclusief
+                personal training? Lees de volledige{" "}
+                <a href="/nl/boutique-personal-training-vs-keten" className="text-brand underline underline-offset-2 hover:no-underline">
+                  boutique personal training vs ketensportschool vergelijking →
+                </a>
+                .
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Grote keten: het bekende model</h2>
@@ -84,7 +92,7 @@ export default function BoutiqueGymVsKetenNL() {
                 training in plaats van op achtergrondmuziek.
               </p>
 
-              <h2 className="text-2xl font-bold mt-10 mb-4">De eerlijke vergelijking</h2>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Kostenvergelijking op een rij</h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -96,14 +104,17 @@ export default function BoutiqueGymVsKetenNL() {
                   </thead>
                   <tbody>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Prijs</td><td className="py-2 pr-4">€20-€40/maand</td><td className="py-2">€29-€89/4 weken</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Drukte</td><td className="py-2 pr-4">Hoog (spitsuren)</td><td className="py-2">Max 4 personen</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Begeleiding</td><td className="py-2 pr-4">Niet inbegrepen</td><td className="py-2">Optioneel (PT vanaf €45)</td></tr>
-                    <tr className="border-b"><td className="py-2 pr-4 font-medium">Apparatuur</td><td className="py-2 pr-4">Veel, vaak bezet</td><td className="py-2">Minder, altijd beschikbaar</td></tr>
                     <tr className="border-b"><td className="py-2 pr-4 font-medium">Contract</td><td className="py-2 pr-4">Vaak 12 maanden</td><td className="py-2">Geen — stop wanneer je wilt</td></tr>
-                    <tr><td className="py-2 pr-4 font-medium">Sfeer</td><td className="py-2 pr-4">Druk, muziek, anoniem</td><td className="py-2">Rustig, privé, persoonlijk</td></tr>
+                    <tr><td className="py-2 pr-4 font-medium">Drukte</td><td className="py-2 pr-4">Hoog (spitsuren)</td><td className="py-2">Max 4 personen</td></tr>
                   </tbody>
                 </table>
               </div>
+              <p className="text-sm text-muted-foreground mt-3">
+                Voor een diepere vergelijking van begeleiding, apparatuur en sfeer, zie de{" "}
+                <a href="/nl/boutique-personal-training-vs-keten" className="text-brand underline underline-offset-2 hover:no-underline">
+                  uitgebreide personal training vergelijking
+                </a>.
+              </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Voor wie is een boutique gym?</h2>
               <p>

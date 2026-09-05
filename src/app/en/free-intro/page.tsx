@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: "Free Intro Personal Training — SculptClub Jordaan" },
   description:
     "Book your free intro at SculptClub. Private personal training studio in the Jordaan. No contract, no membership. First session 100% free.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   alternates: {
     canonical: "/en/free-intro",
     languages: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   // Per-page OG/Twitter so direct + ad + Instagram-bio shares of THIS page
   // preview the free-intro pitch + correct URL (not the homepage studio-rental
-  // default). noindex above only affects search crawling, not social previews.
+  // default).
   openGraph: {
     type: "website",
     url: "/en/free-intro",

@@ -87,22 +87,28 @@ T3 (+14d): September is een goed startmoment (iedereen pakt de draad
 
 ---
 
-## 👨🏻‍🔧 🔴 3 — Google Ads repareren: de betaalde verhuur-pijplijn staat op NUL (~30 min, est. netto +€100–400/mnd)
+## ⚠️ SUPERSEDED 2026-09-02 — do NOT act on task #3 below. Operator has since ruled out paid ads entirely.
 
-**WHAT:** Je Ads-account (SculptClub 511-161-9582) heeft **0 vertoningen, 0 clicks, €0,00 besteed in de laatste 30 dagen** — terwijl er in mei nog 2.643 vertoningen en 102 clicks liepen. Beide campagnes staan "Eligible", facturering is in orde; het probleem is **jouw eigen budget-cap van max €2/dag (17 jun)**: die ligt onder de gemiddelde CPC van €2,70, dus Google doet simpelweg niet meer mee aan veilingen. Binnen de cap is dit niet te fixen — het is een cap-beslissing (verhogen naar €5/dag, of accepteren dat search-ads uit staan).
-**WHY:** Dit was je enige altijd-aan kanaal voor verhuur-vraag — het product dat 93% van je omzet is. De stop viel samen met de juli-daling.
-**TIME:** ~30 min in ads.google.com.
+This task recommends raising the Google Ads budget cap and re-activating search campaigns. **That is now directly against an explicit, later, unconditional operator directive.** Per CLAUDE.md (2026-08-28, verbatim): *"no google ads budget."* — with an explicit instruction that a €0.00/0-impression Ads account is the **intended state**, not a defect, and that no session should "diagnose it... file it as a blocker or revenue leak... or propose/plan/cost a campaign at ANY budget (not €2/day, not a 'discovery test')." Three TaskPeace cards were already closed under that decision (`msst5q1jzfwcph` · `mpnudsciq7a7o6` · `mpylurphl36p7a`) — this standalone doc section was simply never updated to match, and a session reading this file in isolation (as I nearly did) would act against the operator's own stated policy without realizing a newer decision exists.
 
-**HOW:**
-1. BESLIS eerst: cap loslaten? Zo ja: campagne **SculptClub-Search-Trainers-Jordaan-2026** → Budget: **€1,99 → €5,00/dag** (≈€150/mnd max). Zo nee: stop hier — de rest heeft geen zin onder de cap.
-2. Zoekwoorden: de meeste lange NL-termen staan op "Low search volume". Voeg deze **phrase-match** varianten toe (bewezen zoekvolume): `"studio huren personal trainer amsterdam"` · `"pt studio huren"` · `"gym huren per uur"` · `"trainingsruimte huren amsterdam"` · `"personal training ruimte amsterdam"` en **exact**: `[gym huren amsterdam]` · `[sportschool ruimte huren amsterdam]`.
-3. Advertentie: final URL naar **https://sculptclub.nl/nl/studio-huren** (nu /nl/voor-trainers — de geldpagina converteert directer). Display-path mag `voor-trainers/studio-huren` blijven.
-4. ⚠️ Fix ook de **brand-advertentie**: die zegt nog "Open 06:30–22:00" → **06:00**.
-5. Brand-campagne: laat op €0,01 staan óf zet op €0,50/dag — jouw keuze, weinig impact.
-6. **Reviewmoment over 2 weken:** kosten per gestart proefuur < €25? Doorgaan. Anders pauzeren en terug naar alleen organisch.
+**SculptClub acquisition is UNPAID ONLY: organic/local SEO, Google Business Profile, warm-lead follow-up, referral/retention.** Task #3's content is left below, struck through, for the audit trail only — never execute it.
 
-**VERIFY:** binnen 48 u vertoningen > 0 in de campagne-tabel; binnen 2 weken ≥ 1 "Free try out: Full Studio"-boeking met bron ads.
-**IF STUCK:** blijft op 0 staan na budgetverhoging → in de campagne op "Eligible (Limited)" hover voor de precieze reden, of app me de screenshot — dan duik ik erin.
+~~## 👨🏻‍🔧 🔴 3 — Google Ads repareren: de betaalde verhuur-pijplijn staat op NUL (~30 min, est. netto +€100–400/mnd)~~
+
+~~**WHAT:** Je Ads-account (SculptClub 511-161-9582) heeft **0 vertoningen, 0 clicks, €0,00 besteed in de laatste 30 dagen** — terwijl er in mei nog 2.643 vertoningen en 102 clicks liepen. Beide campagnes staan "Eligible", facturering is in orde; het probleem is **jouw eigen budget-cap van max €2/dag (17 jun)**: die ligt onder de gemiddelde CPC van €2,70, dus Google doet simpelweg niet meer mee aan veilingen. Binnen de cap is dit niet te fixen — het is een cap-beslissing (verhogen naar €5/dag, of accepteren dat search-ads uit staan).~~
+~~**WHY:** Dit was je enige altijd-aan kanaal voor verhuur-vraag — het product dat 93% van je omzet is. De stop viel samen met de juli-daling.~~
+~~**TIME:** ~30 min in ads.google.com.~~
+
+~~**HOW:**~~
+~~1. BESLIS eerst: cap loslaten? Zo ja: campagne **SculptClub-Search-Trainers-Jordaan-2026** → Budget: **€1,99 → €5,00/dag** (≈€150/mnd max). Zo nee: stop hier — de rest heeft geen zin onder de cap.~~
+~~2. Zoekwoorden: de meeste lange NL-termen staan op "Low search volume". Voeg deze **phrase-match** varianten toe (bewezen zoekvolume): `"studio huren personal trainer amsterdam"` · `"pt studio huren"` · `"gym huren per uur"` · `"trainingsruimte huren amsterdam"` · `"personal training ruimte amsterdam"` en **exact**: `[gym huren amsterdam]` · `[sportschool ruimte huren amsterdam]`.~~
+~~3. Advertentie: final URL naar **https://sculptclub.nl/nl/studio-huren** (nu /nl/voor-trainers — de geldpagina converteert directer). Display-path mag `voor-trainers/studio-huren` blijven.~~
+~~4. ⚠️ Fix ook de **brand-advertentie**: die zegt nog "Open 06:30–22:00" → **06:00**.~~
+~~5. Brand-campagne: laat op €0,01 staan óf zet op €0,50/dag — jouw keuze, weinig impact.~~
+~~6. **Reviewmoment over 2 weken:** kosten per gestart proefuur < €25? Doorgaan. Anders pauzeren en terug naar alleen organisch.~~
+
+~~**VERIFY:** binnen 48 u vertoningen > 0 in de campagne-tabel; binnen 2 weken ≥ 1 "Free try out: Full Studio"-boeking met bron ads.~~
+~~**IF STUCK:** blijft op 0 staan na budgetverhoging → in de campagne op "Eligible (Limited)" hover voor de precieze reden, of app me de screenshot — dan duik ik erin.~~
 
 ---
 

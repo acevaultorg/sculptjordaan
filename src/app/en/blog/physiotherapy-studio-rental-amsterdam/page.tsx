@@ -108,7 +108,7 @@ export default function BlogPostPhysioStudioEN() {
               </p>
               <p>
                 By renting a training space you get access to a power rack, cable machine, dumbbells
-                up to 50 kg and more. That opens the door to more effective treatments and faster
+                up to 40 kg and more. That opens the door to more effective treatments and faster
                 recovery for your patients.
               </p>
 
@@ -141,7 +141,7 @@ export default function BlogPostPhysioStudioEN() {
               <ul>
                 <li><strong>Power rack with safety pins:</strong> For guided squats, deadlifts and presses</li>
                 <li><strong>Cable machine:</strong> Essential for shoulder rehabilitation and controlled movements</li>
-                <li><strong>Dumbbells (light to heavy):</strong> From 2 kg rehab exercises to 40+ kg strength work</li>
+                <li><strong>Dumbbells (light to heavy):</strong> From 4 kg rehab exercises up to 40 kg strength work</li>
                 <li><strong>Adjustable bench:</strong> For varied angles on chest, shoulder and back exercises</li>
                 <li><strong>Resistance bands:</strong> Complementary to free weights</li>
               </ul>

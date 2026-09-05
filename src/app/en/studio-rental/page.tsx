@@ -105,7 +105,7 @@ const features = [
 // src/app/nl/studio-huren/page.tsx.
 const galleryImages = [
   { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack with Olympic barbell at SculptClub" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Full dumbbell set up to 32 kg at SculptClub" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Full dumbbell set up to 40 kg at SculptClub" },
   { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack with plants and vinyl player at SculptClub" },
   { src: "/images/studio/studio-overview.jpeg", alt: "Overview of the SculptClub private studio in the Jordaan" },
 ];
@@ -196,6 +196,25 @@ export default function StudioRentalPageEN() {
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
             From €12/hr · Full freedom · Free cancellation · Daily 06:00–22:00
+          </p>
+        </div>
+
+        {/* Weekend-availability hook — NL parity src/app/nl/studio-huren.
+            Task mtdbcq8ie715lw (2026-08-28). Deliberately durable copy, not a
+            hardcoded "13-week" / literal hour-range claim — exact hours shift
+            as ClassPass classes occupy specific weekend slots (see
+            docs/CLASSPASS-FULLSTUDIO-PRIORITY.md: Sat 17-21h + Sun 16-21h run
+            recurring ClassPass), so a static "16:00-22:00 guaranteed free"
+            promise would go stale/wrong for those exact hours. Points to the
+            live Acuity calendar via the Book button below. */}
+        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
+          <p className="text-sm font-semibold text-primary">
+            🎯 Most room available: weekend afternoons &amp; evenings
+          </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Saturday and Sunday afternoon/evening is typically the quietest time in the studio —
+            a great fit for a regular weekend slot with your clients. Click Book below to see
+            live availability.
           </p>
         </div>
 
@@ -566,6 +585,14 @@ export default function StudioRentalPageEN() {
               <a href="/en/studio-rental/calculator" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">Calculator</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">See what you keep vs a commission gym →</p>
+              </a>
+              {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
+                  translation (nl<->en language switch) — a closed loop, zero links from any
+                  content page, despite being indexable + in the sitemap. Booking pages on the
+                  studio-rental path (=93% of revenue) must be reachable from the money page. */}
+              <a href="/en/book-studio" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
+                <p className="text-sm text-brand mb-1">Booking</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Book the studio — hourly availability and rates →</p>
               </a>
               <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

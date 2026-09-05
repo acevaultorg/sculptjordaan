@@ -16,12 +16,13 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
+import { acuityPaidSessions, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -499,6 +500,19 @@ export default function OpenGymPageEN() {
             </span>
           ))}
         </div>
+        {openGymStudentDeal.active && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Student? Unlimited for €{openGymStudentDeal.priceStudent} per 4 weeks with a valid student ID.{" "}
+            <Link
+              href="/en/open-gym/student-discount"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+              data-intent="open_gym"
+              data-pricing="paid"
+            >
+              See the student discount
+            </Link>
+          </p>
+        )}
       </Section>
 
       {/* S5 — HOW YOU GET IN (operational, friction-kill) */}
@@ -590,6 +604,20 @@ export default function OpenGymPageEN() {
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Private gym vs. a big-box chain</p>
               </a>
+              {/* De-orphaned 2026-08-28: this page had ZERO inbound internal links from any
+                  indexable page (measured across all 194 sitemap pages), so it was submitted
+                  to Google but starved of link equity — a prime cause of "crawled/discovered –
+                  currently not indexed". It targets a real local head query. */}
+              <a href="/en/boutique-gym-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Location</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym in Amsterdam — the private-studio alternative</p>
+              </a>
+              {deal.active && (
+                <a href="/en/open-gym/unlimited-summer-deal" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                  <p className="text-sm text-muted-foreground mb-1">Summer deal</p>
+                  <p className="font-semibold group-hover:text-brand transition-colors">Unlimited Open Gym for €{deal.priceDeal} per 4 weeks</p>
+                </a>
+              )}
               <a href="/en/blog/boutique-gym-vs-big-chain-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym vs. big chain gym</p>
@@ -597,6 +625,13 @@ export default function OpenGymPageEN() {
               <a href="/en/blog/gym-jordaan-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Gym in the Jordaan, Amsterdam</p>
+              </a>
+              {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
+                  translation (nl<->en language switch) — a closed loop, zero links from any
+                  content page, despite being indexable + in the sitemap. */}
+              <a href="/en/book-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Booking</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Book Open Gym — single session or membership</p>
               </a>
               <a href="/en/blog/first-time-gym-tips" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

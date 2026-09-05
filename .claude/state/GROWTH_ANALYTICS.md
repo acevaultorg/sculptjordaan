@@ -120,6 +120,8 @@ Until these are set up, calibration runs on GSC impressions + the /free_intake_c
 
 ## Corrections
 
+- 2026-08-29 — `package_purchase` event definition (line ~25) lists **Starter €89 / Routine €199 / Volume €549**. Routine and Volume are the PRE-repricing values; per CLAUDE.md the live Acuity products are Starter €89 (2149357) · Routine **€179** (2247124) · Pro **€299** (2248025) · Volume **€499** (2248026), executed 2026-07-18. The original line is left intact per this file's append-only rule — anyone reading historical `package_purchase` rows should note that rows before 2026-07-18 used the old prices and rows after use the new ones, so a naive sum across the boundary mixes two price regimes. corrects: the `## Attribution sources` package_purchase definition.
+
 <!-- Append here if any row needs correction. Never edit existing rows. -->
 <!-- Format: corrects: <original_timestamp> | <corrected_row> | reason: <one line> -->
 

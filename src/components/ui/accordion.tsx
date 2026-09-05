@@ -48,6 +48,15 @@ function AccordionTrigger({
   )
 }
 
+// keepMounted: base-ui's AccordionPanel defaults keepMounted to false, which
+// makes a closed panel return null — the answer text never reaches the DOM,
+// only the question (in AccordionTrigger) does. That left every FAQ answer
+// on the site (3,149+ words across 17 files) invisible to crawlers that
+// don't execute JS (GPTBot, PerplexityBot) and to Google's text extraction,
+// even though FAQPage JSON-LD asserts the answers exist. keepMounted forces
+// the content into the HTML; useCollapsiblePanel still applies the `hidden`
+// attribute while closed (per @base-ui/react's useCollapsiblePanel.js), so
+// visually nothing changes — it stays collapsed, just crawlable.
 function AccordionContent({
   className,
   children,
@@ -56,6 +65,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Panel
       data-slot="accordion-content"
+      keepMounted
       className="overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up"
       {...props}
     >

@@ -9,6 +9,7 @@ import {
   acuityPaidSessions,
   acuityPackages,
   openGymSummerDeal,
+  openGymStudentDeal,
 } from "@/config/acuity";
 import type { Locale } from "@/config/site";
 
@@ -419,6 +420,21 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                   >
                     {c.membership.unlimitedCta}
                   </ButtonLink>
+                  {openGymStudentDeal.active && (
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {locale === "nl"
+                        ? `Student? Onbeperkt voor €${openGymStudentDeal.priceStudent} per 4 weken op vertoon van je studentenpas. `
+                        : `Student? Unlimited for €${openGymStudentDeal.priceStudent} per 4 weeks with a valid student ID. `}
+                      <Link
+                        href={locale === "nl" ? "/nl/open-gym/studentenkorting" : "/en/open-gym/student-discount"}
+                        className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+                        data-intent="open_gym"
+                        data-pricing="paid"
+                      >
+                        {locale === "nl" ? "Bekijk de studentenkorting" : "See the student discount"}
+                      </Link>
+                    </p>
+                  )}
                 </div>
                 <div className="border-t border-border pt-4">
                   <div className="flex flex-wrap items-baseline gap-x-2">

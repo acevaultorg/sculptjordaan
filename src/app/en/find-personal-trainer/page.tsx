@@ -220,6 +220,11 @@ export default function TrainersPageEN() {
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Female personal trainer</p>
               <p className="text-sm text-muted-foreground">Gezina, Eva or Andrea — three female trainers, private studio, comfortable learning environment.</p>
             </a>
+            {/* De-orphaned 2026-08-28 — zero inbound internal links before this. */}
+            <a href="/en/personal-trainer-amsterdam-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Personal trainer in Jordaan</p>
+              <p className="text-sm text-muted-foreground">Egelantiersgracht 424 — private studio in the Jordaan and Centrum, no chain, no queue.</p>
+            </a>
             <a href="/en/blog/english-speaking-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">English-speaking trainer</p>
               <p className="text-sm text-muted-foreground">Every trainer coaches fluently in English. Built for expats and international teams.</p>

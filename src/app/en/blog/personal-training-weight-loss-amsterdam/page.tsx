@@ -58,7 +58,7 @@ export default function PersonalTrainingWeightLossEN() {
       />
       <FaqJsonLd faqs={[
         { question: "What does a personal trainer do for you?", answer: "A personal trainer makes the difference in three areas:" },
-        { question: "What does personal training for weight loss cost?", answer: "Personal training at SculptClub starts from €45 per session. Each trainer sets their own rate — we charge 0% commission. The first introduction is always free. During that intro you discuss your goals, your trainer assesses your current level and together you decide on a plan. No obligations upfront." },
+        { question: "What does personal training for weight loss cost?", answer: "Personal training at SculptClub starts from €45 per session. Trainers rent the studio and bring their own clients, so you pay them directly and they keep 100% of their rate. The first introduction is always free. During that intro you discuss your goals, your trainer assesses your current level and together you decide on a plan. No obligations upfront." },
       ]} />
 
       <Section>
@@ -135,8 +135,8 @@ export default function PersonalTrainingWeightLossEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">What does personal training for weight loss cost?</h2>
               <p>
-                Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €45 per session</Link>. Each trainer sets their own
-                rate — we charge 0% commission. The first introduction is always free. During that intro
+                Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €45 per session</Link>. Trainers rent the studio and bring
+                their own clients, so you pay them directly and they keep 100% of their rate. The first introduction is always free. During that intro
                 you discuss your goals, your trainer assesses your current level and together you decide
                 on a plan. No obligations upfront.
               </p>

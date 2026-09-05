@@ -339,6 +339,15 @@ export function Analytics() {
                   });
                   if (isIntake) {
                     window.plausible('Lead Generated', { props: { method: 'free_intake', intent: acuityIntent, pricing: acuityPricing, value: 45, source_page: window.location.pathname } });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'free_intake');
+                    window.clarity('upgrade', 'lead');
+                  }
                   }
                 }
                 return;
@@ -408,6 +417,15 @@ export function Analytics() {
                   window.plausible('Lead Generated', {
                     props: { method: 'whatsapp', value: 45, source_page: window.location.pathname, intent: waSig.intent, pricing: waSig.pricing, trainer_name: waSig.trainer_name }
                   });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'whatsapp');
+                    window.clarity('upgrade', 'lead');
+                  }
                 }
                 return;
               }
@@ -441,6 +459,15 @@ export function Analytics() {
                   window.plausible('Lead Generated', {
                     props: { method: 'phone', value: 45, source_page: window.location.pathname }
                   });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'phone');
+                    window.clarity('upgrade', 'lead');
+                  }
                 }
                 return;
               }
@@ -472,6 +499,15 @@ export function Analytics() {
                   window.plausible('Lead Generated', {
                     props: { method: 'email', value: 30, source_page: window.location.pathname }
                   });
+                  // Clarity (added 2026-08-29). Clarity had ZERO custom tags — only clarity('consent') —
+                  // so session recordings could not be filtered to converters, which is the whole
+                  // point of having replay on a trafficked site. 'set' makes the session filterable;
+                  // 'upgrade' forces Clarity to RETAIN it (Clarity samples, so converting sessions
+                  // were the ones most likely to be discarded).
+                  if (typeof window.clarity === 'function') {
+                    window.clarity('set', 'conversion', 'email');
+                    window.clarity('upgrade', 'lead');
+                  }
                 }
                 return;
               }
@@ -489,6 +525,22 @@ export function Analytics() {
                   else if (el.closest('footer')) navSection = 'footer';
                   else if (el.closest('nav')) navSection = 'nav';
                   var navLabel = (el.textContent || '').trim().slice(0, 40);
+                  // GA4 (added 2026-09-02). This branch was Plausible-ONLY, and Plausible was
+                  // retired 2026-07-04 — so from that date the internal-link blind spot this
+                  // branch was written to close (2026-06-18, "every clickable now tracked")
+                  // silently reopened. Measured before the fix: GA4 'click' totalled 18
+                  // site-wide and 0 on /nl/gratis-intake, a page with a 13-card trainer grid,
+                  // a match-quiz CTA and a WhatsApp link. The other four branches (Acuity,
+                  // WhatsApp, tel:, mailto:) already fire gtag AND plausible; only this one
+                  // did not. Keep the plausible call below: harmless, and self-restoring.
+                  if (typeof gtag === 'function') {
+                    gtag('event', 'nav_click', {
+                      dest: el.pathname || navRaw,
+                      section: navSection,
+                      label: navLabel,
+                      booking_source: window.location.pathname
+                    });
+                  }
                   if (typeof window.plausible === 'function') {
                     window.plausible('Nav Click', {
                       props: { dest: el.pathname || navRaw, section: navSection, label: navLabel, source_page: window.location.pathname }
@@ -648,15 +700,45 @@ export function Analytics() {
         `}
       </Script>
 
-      {/* TikTok Pixel — only loads when pixel ID is configured */}
+      {/* TikTok Pixel — CONSENT-GATED (fixed 2026-09-02; was firing for every
+          visitor unconditionally regardless of the cookie banner — verified
+          live via Playwright, real Chrome, no consent clicked: analytics.tiktok.com
+          was requested and TikTok's cross-site ad-attribution cookies were set
+          on first paint for 100% of traffic. /nl/cookiebeleid's Marketing-cookies
+          section names only "Facebook Pixel en Google Ads" as consent-gated;
+          TikTok wasn't even disclosed there, let alone gated — the exact same
+          violation class the Meta Pixel fix above addressed on 2026-07-20, just
+          undiscovered until now. Same pattern as Meta Pixel: ttq.load()/ttq.page()
+          only run after sc_consent=all exists (immediately for a returning
+          consented visitor, or on the sc:consent-updated event after Accept).
+          Declining costs nothing extra — the pixel loader script (the SDK
+          bootstrap) still has to be present as a stub so ttq.page()/track()
+          calls elsewhere don't throw, matching the fbq() stub pattern above. */}
       {tiktokPixel && (
-        <Script id="tiktok-pixel" strategy="lazyOnload">
+        <Script id="tiktok-pixel" strategy="afterInteractive">
           {`
             !function (w, d, t) {
               w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-              ttq.load('${tiktokPixel}');
-              ttq.page();
             }(window, document, 'ttq');
+
+            var ttqStarted = false;
+            function startTikTokPixel() {
+              if (ttqStarted) return;
+              ttqStarted = true;
+              window.ttq.load('${tiktokPixel}');
+              window.ttq.page();
+            }
+            function ttqHasConsent() {
+              return document.cookie.indexOf('sc_consent=all') > -1;
+            }
+
+            if (ttqHasConsent()) {
+              startTikTokPixel();
+            } else {
+              window.addEventListener('sc:consent-updated', function () {
+                if (ttqHasConsent()) startTikTokPixel();
+              });
+            }
           `}
         </Script>
       )}

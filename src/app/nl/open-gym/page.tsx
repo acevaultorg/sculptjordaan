@@ -16,12 +16,13 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { acuityPaidSessions, openGymSummerDeal } from "@/config/acuity";
+import { acuityPaidSessions, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -505,6 +506,19 @@ export default function OpenGymPageNL() {
             </span>
           ))}
         </div>
+        {openGymStudentDeal.active && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Student? Onbeperkt voor €{openGymStudentDeal.priceStudent} per 4 weken op vertoon van je studentenpas.{" "}
+            <Link
+              href="/nl/open-gym/studentenkorting"
+              className="font-medium text-primary underline underline-offset-4 hover:no-underline"
+              data-intent="open_gym"
+              data-pricing="paid"
+            >
+              Bekijk de studentenkorting
+            </Link>
+          </p>
+        )}
       </Section>
 
       {/* S5 — ZO KOM JE BINNEN (operational, friction-kill) */}
@@ -597,6 +611,20 @@ export default function OpenGymPageNL() {
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym vs. ketensportschool</p>
               </a>
+              {/* De-orphaned 2026-08-28: this page had ZERO inbound internal links from any
+                  indexable page (measured across all 194 sitemap pages), so it was submitted
+                  to Google but starved of link equity — a prime cause of "crawled/discovered –
+                  currently not indexed". It targets a real local head query. */}
+              <a href="/nl/sportschool-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Locatie</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Sportschool in de Jordaan zonder abonnement</p>
+              </a>
+              {deal.active && (
+                <a href="/nl/open-gym/onbeperkt-zomerdeal" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                  <p className="text-sm text-muted-foreground mb-1">Zomeractie</p>
+                  <p className="font-semibold group-hover:text-brand transition-colors">Onbeperkt Open Gym voor €{deal.priceDeal} per 4 weken</p>
+                </a>
+              )}
               <a href="/nl/blog/eerste-keer-sportschool-tips" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Voor het eerst naar de sportschool: tips</p>
@@ -607,6 +635,14 @@ export default function OpenGymPageNL() {
               <a href="/nl/eerste-bezoek" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Praktisch</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Je eerste bezoek — wat je kunt verwachten</p>
+              </a>
+              {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
+                  translation (nl<->en language switch) — a closed loop, zero links from any
+                  content page, despite being indexable + in the sitemap. Booking pages on the
+                  studio-rental path (=93% of revenue) must be reachable from the money page. */}
+              <a href="/nl/boek-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
+                <p className="text-sm text-muted-foreground mb-1">Boeken</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boek Open Gym — losse sessie of abonnement</p>
               </a>
               <a href="/nl/blog/consistent-blijven-met-sporten" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

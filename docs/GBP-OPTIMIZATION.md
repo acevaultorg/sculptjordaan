@@ -58,7 +58,7 @@ operator-only work** — an agent can audit it, not do it. Budget ~15 min, not 6
 - [ ] **Services → Add more services** — paste 8 from § Services below
 
 ### Products (~25 min)
-- [ ] **Edit products → Get started** — add 8 priced products from § Products below
+- [ ] **Edit products → Get started** — add 9 priced products from § Products below (#9 is the new student-rate tier, added 2026-09-02)
 
 ### Photos (~5 min — bulk drag-drop)
 - [ ] **Photos → Add photos** — upload 8 from `/public/images/studio/` folder + 5 trainer headshots (see § Photos below)
@@ -124,7 +124,7 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Photo:** `pt-session-barbell.jpg`
 - **Link:** `https://sculptclub.nl/nl/open-gym`
 - **Description:**
-  > Eén losse Open Gym sessie van 60 minuten. €10, geen lidmaatschap nodig. Train zelfstandig in een privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract.
+  > Eén losse Open Gym sessie van 60 minuten. €9, geen lidmaatschap nodig. Train zelfstandig in een privé gym (max 4 mensen). Deurcode via WhatsApp. Geen contract.
 
 ### 5. Open Gym — Onbeperkt
 - **Category:** Open Gym
@@ -157,6 +157,14 @@ Add via **Edit products → Get started → Add product**. For each: enter name,
 - **Link:** `https://sculptclub.nl/nl/gratis-intake`
 - **Description:**
   > Maak gratis kennis met een personal trainer in onze privé studio aan de gracht. 45 minuten, geen verplichting. Bespreek je doelen, ontmoet de trainer, voel of het klikt. Trainers vanaf €45/sessie daarna — direct met je trainer, geen tussenpersoon.
+
+### 9. Open Gym — Studentenkorting (NEW 2026-09-01, added by this session — not in the original 8)
+- **Category:** Open Gym
+- **Price:** €39 / 4 weeks (op vertoon van studentenpas)
+- **Photo:** `training-dumbbells-joy.jpg`
+- **Link:** `https://sculptclub.nl/nl/open-gym/studentenkorting`
+- **Description:**
+  > Onbeperkt trainen als student — €39 per 4 weken op vertoon van je studentenpas bij je eerste bezoek. Privé gym (max 4 mensen), 06:00-22:00 dagelijks. Deurcode via WhatsApp. Geen contract — opzegbaar elke 4 weken.
 
 ---
 
@@ -381,3 +389,12 @@ After this optimization: target 95%+ strength, 1500+ interactions/window within 
 ---
 
 *Last updated: 2026-05-06 · Linked from CLAUDE.md as the canonical GBP optimization spec.*
+
+---
+
+## ✅ Uitgevoerd 2026-08-28 (via Search NMX-panel — business.google.com editor blijft kapot)
+
+- **Gevelfoto geüpload**: IMG_0866 (4284×5712, gevel Egelantiersgracht met SCULPT-muurlogo) — status "In behandeling" → wordt na Google-review publiek.
+- **POST 1 gepubliceerd** (gratis-intake update): tekst + `entrance-smile.jpg` + Boeken-knop → https://sculptclub.nl/nl/gratis-intake. Live geverifieerd ("Gepubliceerd op 23 seconden geleden").
+- **Review-share-link opgehaald**: `https://g.page/r/CTvnaoXK0EoFEBM/review` (302 → Google review-flow). Gebruik in WhatsApp naar tevreden klanten; trainers kunnen hem doorsturen naar hun eigen clients.
+- Techniek-notitie: post-editor + foto-upload leven in een same-origin iframe; file-uploads via een top-frame brug-input + `file_upload` → DataTransfer-overdracht. Het "Link voor je knop"-veld accepteert GEEN programmatic value-set (Wiz-model raakt corrupt → "link vereist"-fout blijft); reset de Knop-sectie en typ met echte toetsen.

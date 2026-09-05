@@ -1,11 +1,24 @@
 ORIENT: SculptClub is a bilingual (NL/EN) personal training studio website + trainer acquisition platform for Amsterdam Jordaan. State: main branch on GitLab (gitlab.com/acevault-lab/sculptjordaan, canonical 2026-05-06+) + GitHub archive (acevaultorg/sculptjordaan), Vercel auto-deploy via Layer 7 API confirmed working (gitSource type=gitlab, projectId=81955354). Goal: maximize bookings + trainer acquisition.
 
 ## Session Handoff
-Mode: sovereign auto — SculptClub revenue autopilot (operator: "become the ultimate sculptclub autopilot for fastest revenue increase", 2026-08-14)
-Objective: fastest revenue increase. Constraint identified + attacked: trainer studio-rental (93% of revenue) sliding −40% since May at ~18% true utilization.
-SHIPPED + LIVE (CF Pages deployment 31b03315, verified): 39-link internal consolidation NL+EN · head-query de-cannibalization (kosten-retitle, URL unchanged) · "Vergelijk zelf" market-contrast on both money pages (live-verified unnamed facts, peildatum aug 2026) · '0% commissie' self-framing retired in 20 files. IndexNow 191 URLs pinged. Commits 8f73c19→f2e582e on GitLab main.
-OPERATOR QUEUE (8 cards on SculptClub Sales/Marketing/Website boards + docs/REVENUE-SPRINT-2026-08-14.md): win-back 5 churned renters · follow-up 15 trial leads · Ads €2/day-cap decision (cap < €2.70 CPC = zero serving since Jul) · Sept 10+1 block offer · referral+channel ask · GBP rental post+reviews · daluren €10 decision · Vercel-team fleet-check (sculptclub NOT affected — CF Pages).
-NEXT SESSION: (1) check operator card progress → wire Acuity packages if 10+1/daluren approved; (2) measure: GSC position for studio-huren cluster (baseline avg 52.4, /gratis-intake pos 13), rental bookings WoW from next Acuity export; (3) if operator raised Ads cap → verify serving within 48h; (4) deploy = CF Pages chunked deployer per CLAUDE.md (Vercel RETIRED — read repo CLAUDE.md FIRST, see feedback_read_repo_claude_md_first).
+Mode: god --loop (IMMORTAL) — SculptClub autopilot, 2026-09-01 · STOPPED by operator, wound down cleanly (tree clean, in sync with origin, nothing half-applied)
+Objective: fastest revenue growth. Binding constraint is ACQUISITION (437 human visitors/30d vs 3000 goal; conversion is healthy at ~4.8%).
+
+SHIPPED + LIVE-VERIFIED (commit 11b757b · CF Pages deploy cf10d531-8570-45f1-bbc6-314b97c0fbb4 · pushed):
+- Measured prose depth across ALL 196 sitemap URLs live: median 633w, 42 pages under 200w. The two thinnest were not boilerplate — /nl/gratis-proefles 57w and /en/free-trial 55w, both indexable + in sitemap. Cause: the Acuity booking widget is an IFRAME, so crawlers saw ~57 words.
+- Enriched both to 571w / 590w from CLAUDE.md-verified facts only. FAQ + FAQPage JSON-LD render from ONE array (schema cannot drift; all 6 Q + 6 A verified visible live). Pricing LINKED not restated. Vocabulary rule honored.
+- Verified: tsc 0 · 0 build-trap lines · 231 html (UP from 229) · 8/8 routes 200 · 4/4 security headers intact · Functions LIVE · IndexNow 200 (2 targeted URLs).
+
+NEXT SESSION:
+0. **🔴 HIGHEST-VALUE OPEN ITEM — diagnosed, verified, NOT shipped.** Every `<AccordionContent>` renders its questions but NOT its answers: Base UI's `Accordion.Panel` defaults `keepMounted: false` (AccordionRoot.js:103) and returns `null` when closed (AccordionPanel.js:137), so answer text never reaches the DOM. Measured: **0 of 20 answers visible on /nl/faqs, 0/12 on /nl/studio-huren, 3,149 answer-words invisible across 8 pages**, 17 files affected incl. BOTH money pages. Also makes the FAQPage JSON-LD claim content the page doesn't show. Fix is ONE prop (`keepMounted` on the Panel in src/components/ui/accordion.tsx); closed panels still get `hidden` (useCollapsiblePanel.js:46) so users see no change. I reverted my edit rather than ship it unverified — session was stopped before the build. Full evidence + exact fix + 6-step verification: TaskPrio **mtj9ehdy0wk6ca**.
+1. **The board is project `mqmijq6eya7fv7`, NOT `mpkuzegvsxdaut`** (the id listed in ~/.claude/rules/promptprio-sync-discipline.md is wrong for this project). Querying the wrong id returns an empty board and looks like "no work". Confirm with search_tasks before concluding the queue is empty.
+2. OPEN + brain-doable: remove the 2 `noindex` pages (/nl/gratis-intake, /en/free-intro) from sitemap.xml. Own commit; pages stay live + noindex.
+3. **Do NOT chase `/gratis-intake` as striking-distance** — it is deliberately `noindex, nofollow`. Both `get_project_data.gsc_strike` and GSC_SNAPSHOT flag it anyway; neither checks indexability. Card mtj85olyfvixps. The real striking-distance page is /nl/eerste-bezoek (indexable, 203 impr, pos 11.0, already 678w → its lever is authority, not content).
+4. The AI-citation channel has NEVER been measured for this site (metrics layer says "GEO: LLM citations — not yet wired"). Plumbing is verified HEALTHY (no CF Managed robots.txt injection, no Disallow:/, all 6 bot UAs get 200 with byte-identical responses = no cloaking). The measurement itself needs Bing WMT via Chrome MCP — **the Chrome extension was NOT connected this session**, so it stays operator-gated.
+5. Indexation defect-side remains EXHAUSTED (prior session). Money pages /nl/studio-huren + /nl/open-gym sit at position ~56 on ~496 impressions each — authority-gated, not defect-gated.
+6. USE THE SESSION SCRATCHPAD, NOT /tmp. A parallel session overwrote /tmp/sm.xml mid-audit and my SculptClub scan silently ran against readinglist.school. Assert the expected host inside any audit script.
+7. Operator-gated queue is unchanged and is where the revenue actually is: win-back 5 churned renters · follow up 15 trial leads · Ads budget €1.99/day < €2.70 CPC = zero serving · Sept block offer · GBP. See docs/REVENUE-SPRINT-2026-08-14.md.
+
 
 ## Tracking Calibration
 
@@ -190,3 +203,57 @@ Free Intake: Click still 0. Loop continues.
 UV 15 / goals identical / CRs identical (vs iter 4). Late-evening idle window.
 Loop continues. Going forward: skipping CONTEXT.md write on no-op iterations
 (only logs on Δ > 0) to reduce noise. Iter-5 entry kept for cadence reference.
+
+## Session Handoff — 2026-08-29 (overnight god --loop, later legs)
+
+Mode: `god --loop`. Repo CLEAN, pushed, `behind=0`. Live = deploy `65c689c6`.
+
+### Shipped this stretch (all live-verified)
+1. **Security headers restored** (`c46faef`, deploy `721d3b2b`). CSP / HSTS-with-preload /
+   `X-Frame-Options: DENY` / Permissions-Policy had been absent from EVERY response since
+   2026-07-14. The Vercel→CF-Pages migration (`ba7a735`) deleted `next.config.ts async headers()`
+   because `output:"export"` can't run it, and — unlike redirects/middleware/api-routes — it was
+   never given a migration target. Now set in `functions/_middleware.ts` on the `context.next()`
+   path (public/_headers is INERT under Advanced-Mode `_worker.js`).
+2. **Blog lead-magnet leak fixed** (`f063aa7`, deploy `65c689c6`). The form on every blog post
+   promised "check je inbox binnen 1 minuut"; no mail service exists — `/api/lead-magnet` only
+   `console.log`s. Now delivers the cheat sheet in-page via the `cheat_sheet_url` the API always
+   returned but the UI never read. Locale-aware (verified: the page really does read `?locale=en`).
+
+### Verified clean — no defect, do NOT re-audit without new evidence
+- CF migration dropped ONLY `headers()`. `redirects`/`env`/`images` survived; the middleware's
+  vanity-domain UTM injection migrated intact.
+- CF AI-crawler policy: no managed-robots injection, GPTBot/ClaudeBot/PerplexityBot/Googlebot all 200.
+- LocalBusiness JSON-LD complete (all required + recommended fields, full PostalAddress).
+- Schema `telephone` is the correct +31615147952 everywhere; ZERO occurrences of the retired
+  0683178934 in live HTML — so that risk is confined to Acuity (see the open flag).
+- Both `/api/*` functions alive (webhook 403, lead-magnet POST 400).
+- `/pt-cheat-sheet` is client-rendered BY DESIGN — noindex + absent from sitemap, same as
+  `/intake-plan`. Its content being invisible to crawlers is correct, not a bug.
+
+### Operator-gated (nothing else blocks these)
+- `mtdsxgfb0zz8ng` — where lead-magnet emails should land. Currently `console.log` only, and CF
+  Functions logs are a LIVE TAIL, so captured addresses are unrecoverable. Needs an API key,
+  a KV binding, or a decision to drop the field.
+- Plus the three still open from earlier: trainer consent (`mtdndkjduuu5sh`), GA4 custom
+  dimensions (`mtdrgdg5os7vbw`, forward-only clock running), Acuity retired-phone check
+  (`mtdrr3qwq1uw7a`), and the 9%-vs-21% BTW line in `mrokfzvp6hxt8j`.
+
+### Traps that bit this session — read before deploying
+- **`npm run build` DELETES `out/_worker.js` + `out/_routes.json`.** Deploying straight after a
+  build strips every Pages Function and would have silently reverted the CSP/HSTS work. Always
+  recompile the worker, assert `grep -c Content-Security-Policy out/_worker.js` is 1, then deploy,
+  then confirm the webhook returns 403 (not 404).
+- **Exit code 0 is not success — three times tonight.** `timeout` doesn't exist on macOS (deploy
+  never ran, shell said 0); a `pkill`-ed build reported 0; `next build` printed "Failed to type
+  check" and npm still exited 0. Verify the ARTIFACT, never the status code.
+- **Grep the right surface.** A client component's strings live in `out/_next/static/*.js`, not the
+  page HTML. Searching HTML for them returns a confident, wrong zero.
+
+### Honest state
+The SculptClub boards are empty apart from operator-gated cards. The technical surface has been
+systematically verified (sitemap, reachability, click-depth, hreflang, JSON-LD validity AND
+completeness, trainer coverage, funnel dead-ends, performance, CF bot policy, migration drops,
+API routes, security headers). Remaining levers are authority-gated (indexing takes weeks),
+tool-gated (no Chrome MCP this session — no browser, so runtime CSP violations and visual QA
+cannot be observed), or waiting on the operator cards above.

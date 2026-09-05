@@ -70,7 +70,7 @@ export const COMPOSER_PILLARS: ComposerPillar[] = [
       "dagelijks open van 06:00 tot 22:00",
       "deurcode via WhatsApp de avond ervoor",
     ],
-    ctas: ["Boek je proefles", "Plan je eerste les", "Kom langs voor een vrijblijvende les"],
+    ctas: ["Boek je probeersessie", "Plan je eerste les", "Kom langs voor een vrijblijvende les"],
     hooks: [
       "Vanaf €7,25 per sessie — privé trainen in de Jordaan.",
       "Geen sportschool. Geen publiek. Wel een privé studio aan de gracht.",

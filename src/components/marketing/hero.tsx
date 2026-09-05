@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
 import { FirstTimeMenu } from "@/components/marketing/first-time-menu";
+import Link from "next/link";
 import { WhatsAppIcon } from "@/components/layout/whatsapp-button";
 import { whatsappLinks } from "@/config/acuity";
 import { trackHeroClick } from "@/lib/tracking";
@@ -526,20 +527,56 @@ export function Hero({ locale }: { locale: Locale }) {
               trial" in first-time-menu.tsx) + a low-threshold WhatsApp chat
               for everyone not ready to book. White-glass secondary is allowed
               here (over photo). */}
+          {/* 2026-08-28 — operator repositioned SculptClub as a two-sided
+              matching platform ("naast ruimte verhuur hét matching platform
+              voor freelance personal trainers en klanten") and delegated the
+              call ("jij beslist alles"). Decision: the hero gets one door per
+              side, measured before designed:
+
+              · Huur Studio is the MOST-clicked header pill — 30 clicks/30d on
+                the homepage alone, more than the other three pills combined
+                (Clarity heatmap, desktop 22 + mobile 8). And GA4 Jul 31–Aug 27:
+                ALL 21 tracked purchases were studio rental + open gym; Small
+                Group and PT both 0. The revenue side had no hero door.
+              · The full-label WhatsApp button earned 3 clicks/30d in the same
+                heatmap. It stays — it is the ONLY above-fold WhatsApp entry on
+                mobile (the global floating button is hidden md:flex) — but as
+                an icon-only circle. The operator's own 2026-07-17 note applies:
+                "de WhatsApp-icon signaleert het kanaal al"; the visitor-need
+                label ("Stel je vraag") lives on in the aria-label + title.
+              · Destination is the free-trial page (the FirstTimeMenu's own
+                rental path, and per the 2026-07-27 note the site's best-
+                converting page family), not the hub.
+              This restores the 2026-05-19 dual-funnel logic ("TWO equal-
+              importance funnels… demoting ZZP trainer undersells the funnel
+              that actually compounds") that 2026-07-04's single-wayfinder
+              refactor moved behind a client-labelled button. */}
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <FirstTimeMenu locale={locale} />
-            <a
-              href={whatsappLinks[locale]}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-intent="generic"
-              data-pricing="unknown"
-              onClick={() => trackHeroClick("whatsapp_chat", 1, locale)}
-              className="plausible-event-name=hero_whatsapp_chat inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 min-h-[48px]"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              {locale === "nl" ? "Stel je vraag" : "Ask a question"}
-            </a>
+            <div className="flex items-center gap-3">
+              <Link
+                href={locale === "nl" ? "/nl/studio-huren/gratis-test" : "/en/studio-rental/free-trial"}
+                data-intent="studio_rental"
+                data-pricing="free"
+                onClick={() => trackHeroClick("studio_rental", 2, locale)}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 min-h-[48px]"
+              >
+                {locale === "nl" ? "Huur de studio" : "Rent the studio"}
+              </Link>
+              <a
+                href={whatsappLinks[locale]}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-intent="generic"
+                data-pricing="unknown"
+                aria-label={locale === "nl" ? "Stel je vraag via WhatsApp" : "Ask a question on WhatsApp"}
+                title={locale === "nl" ? "Stel je vraag" : "Ask a question"}
+                onClick={() => trackHeroClick("whatsapp_chat", 3, locale)}
+                className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* SOCIAL PROOF — rating only, deliberately NOT the old 3-part trust

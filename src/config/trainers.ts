@@ -106,7 +106,7 @@ export interface Trainer {
 // Gezina moved up to #2 (operator 2026-07-04 "plaats gezina hoger op de pagina")
 // — women's-training specialist, given more prominence.
 // Roberta added 2026-07-25 (her own email request). Placed at #6 — her
-// ACE®-certified strength / posture-&-mobility / weight-loss profile sits
+// Strength / posture-&-mobility / weight-loss profile sits
 // naturally among the general-strength coaches. Operator can reorder freely.
 const DISPLAY_ORDER = ["eva", "gezina", "bryan", "tom", "joey", "roberta", "ibrahim", "alex", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
 
@@ -464,17 +464,16 @@ const trainersRaw: Trainer[] = [
     rate: null,
     instagram: "https://instagram.com/fitmillennial.pt",
     instagramHandle: "@fitmillennial.pt",
-    credentials: {
-      nl: "ACE® gecertificeerd personal trainer",
-      en: "ACE® Certified Personal Trainer",
-    },
     // Bio supplied by Roberta herself (email 2026-07-25), condensed to the
-    // house length + voice. Claims kept exactly as she wrote them — ACE®
-    // certification, Italian, Amsterdam-based, 1-to-1 + small group +
-    // one-off consultations. Nothing added or inferred.
+    // house length + voice. Claims kept exactly as she wrote them — Italian,
+    // Amsterdam-based, 1-to-1 + small group + one-off consultations. Nothing
+    // added or inferred.
+    // 2026-08-31: ACE® removed from credentials + bio + all page copy at
+    // Roberta's own request (WhatsApp 17:46) — "if you can remove ACE from my
+    // description". Do NOT reinstate it without her asking.
     bio: {
-      nl: "Italiaanse ACE®-gecertificeerde personal trainer in Amsterdam. Roberta helpt drukke volwassenen sterker te worden, beter te bewegen en een realistische routine op te bouwen die bij hun leven past. Ze geeft 1-op-1 en kleine groepen, en losse consulten voor beginners én gevorderden die professionele begeleiding willen zonder wekelijkse afspraken. De nadruk ligt op techniek, houding en mobiliteit, en vooruitgang die je op eigen kracht volhoudt.",
-      en: "Italian ACE® Certified Personal Trainer based in Amsterdam. Roberta helps busy adults get stronger, move better and build a realistic routine that fits their lifestyle. She offers one-to-one and small-group coaching, plus focused consultations for beginners and experienced exercisers who want professional guidance without committing to weekly appointments. The emphasis is on proper technique, posture and mobility, and sustainable progress you can carry on your own.",
+      nl: "Italiaanse personal trainer in Amsterdam. Roberta helpt drukke volwassenen sterker te worden, beter te bewegen en een realistische routine op te bouwen die bij hun leven past. Ze geeft 1-op-1 en kleine groepen, en losse consulten voor beginners én gevorderden die professionele begeleiding willen zonder wekelijkse afspraken. De nadruk ligt op techniek, houding en mobiliteit, en vooruitgang die je op eigen kracht volhoudt.",
+      en: "Italian personal trainer based in Amsterdam. Roberta helps busy adults get stronger, move better and build a realistic routine that fits their lifestyle. She offers one-to-one and small-group coaching, plus focused consultations for beginners and experienced exercisers who want professional guidance without committing to weekly appointments. The emphasis is on proper technique, posture and mobility, and sustainable progress you can carry on your own.",
     },
     image: "/images/trainers/roberta-main.jpg",
     // Roberta asked (email 2026-07-25) NOT to publish a private mobile —

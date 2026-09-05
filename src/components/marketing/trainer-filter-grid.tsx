@@ -96,9 +96,21 @@ function ImpressionCard({ name, children }: { name: string; children: React.Reac
       (entries) => {
         if (entries[0]?.isIntersecting && !fired.current) {
           fired.current = true;
+          // Dual-fire — GA4 is the live destination. window.plausible is a
+          // deliberate no-op stub since Plausible was retired 2026-07-04, so
+          // before 2026-08-29 this impression was recorded nowhere: the TOP of
+          // the trainer-discovery funnel (which trainers actually get seen) was
+          // invisible, making impression -> click -> intake unanswerable.
           window.plausible?.("Trainer Impression", {
             props: { trainer_name: name, source_page: window.location.pathname },
           });
+          const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+          if (typeof g === "function") {
+            g("event", "trainer_impression", {
+              trainer_name: name,
+              source_page: window.location.pathname,
+            });
+          }
           obs.disconnect();
         }
       },

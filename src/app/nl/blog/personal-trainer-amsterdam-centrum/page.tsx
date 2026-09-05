@@ -100,7 +100,7 @@ export default function PersonalTrainerCentrumNL() {
                 SculptClub zit aan de Egelantiersgracht in de Jordaan. Vanaf het Centraal Station fiets
                 je in 10 minuten. Vanaf de Dam in 5 minuten. Tram 13 en 17 stoppen op de Westermarkt,
                 2 minuten lopen. Je traint in een volledig uitgeruste privé studio — power rack,
-                kabelmachine, dumbbells tot 50 kg — alleen jij en je trainer.
+                kabelmachine, dumbbells tot 40 kg — alleen jij en je trainer.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Zeven trainers, gratis intake</h2>

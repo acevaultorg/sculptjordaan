@@ -110,7 +110,7 @@ const faqs = [
   { q: "How many clients can I train at once?", a: "The studio is suitable for 1-on-1 sessions and small groups of up to 4 people." },
   { q: "Do I really get a profile on the website?", a: "Yes. You get a personal profile page with photo, bio, specialisations, rates and a direct booking link. This is included with every rental package." },
   { q: "Do I need to sign a contract?", a: "No. You book per hour or buy a package. No long-term contract, no obligations. Stop whenever you want." },
-  { q: "What equipment is available?", a: "Power rack, adjustable bench, dumbbells (2-40 kg), cable machine, assault bike, rower and accessories. Everything you need for professional sessions." },
+  { q: "What equipment is available?", a: "Power rack, adjustable bench, dumbbells (4-40 kg), cable machine, assault bike, rower and accessories. Everything you need for professional sessions." },
   { q: "Can I see the studio first?", a: "Of course. Send a WhatsApp and we'll schedule a free tour. No obligations." },
   { q: "Where is SculptClub located?", a: "Egelantiersgracht 424, Amsterdam Jordaan. Centrally located, easily accessible by bike and public transport from all over Amsterdam." },
 ];

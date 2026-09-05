@@ -44,6 +44,14 @@ export function BlogEmailCapture() {
   const [consent, setConsent] = useState(false);
   const [state, setState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  // The API has always returned cheat_sheet_url; the UI never read it, so the
+  // asset was never delivered.
+  // Locale-aware default: the success path overwrites this with the URL the
+  // API returns, but the alreadyDone path never calls the API — without this
+  // an English repeat visitor would be sent to the Dutch cheat sheet.
+  const [cheatSheetUrl, setCheatSheetUrl] = useState(
+    isEn ? "/pt-cheat-sheet?locale=en" : "/pt-cheat-sheet",
+  );
   const [alreadyDone, setAlreadyDone] = useState(false);
 
   useEffect(() => {
@@ -62,11 +70,12 @@ export function BlogEmailCapture() {
         consent: "OK to send me the PDF + occasional SculptClub updates (unsubscribe anytime)",
         submit: "Send me the cheat sheet",
         submitting: "Sending…",
-        success: "Sent — check your inbox in 1 minute. If nothing arrives, peek in spam.",
+        success: "Done — your cheat sheet is ready. Open it below.",
+        openCta: "Open the cheat sheet →",
         errorGeneric: "Something went wrong. Try again, or WhatsApp us at +31 6 15 14 79 52.",
         errorInvalid: "That doesn't look like a valid email — try again?",
         errorConsent: "Please tick the consent box first.",
-        alreadyDone: "✓ You already got the cheat sheet — thanks!",
+        alreadyDone: "✓ You already requested the cheat sheet — open it any time.",
       }
     : {
         eyebrow: "Gratis download",
@@ -77,17 +86,24 @@ export function BlogEmailCapture() {
         consent: "OK om me de PDF te sturen + af en toe een SculptClub update (uitschrijven kan altijd)",
         submit: "Stuur me de cheat sheet",
         submitting: "Versturen…",
-        success: "Verstuurd — check je inbox binnen 1 minuut. Niets ontvangen? Kijk in spam.",
+        success: "Klaar — je cheat sheet staat voor je klaar. Open 'm hieronder.",
+        openCta: "Open de cheat sheet →",
         errorGeneric: "Er ging iets mis. Probeer opnieuw, of WhatsApp ons op +31 6 15 14 79 52.",
         errorInvalid: "Dat lijkt geen geldig e-mailadres — probeer opnieuw?",
         errorConsent: "Vink eerst de consent-checkbox aan.",
-        alreadyDone: "✓ Je hebt de cheat sheet al ontvangen — dankjewel!",
+        alreadyDone: "✓ Je hebt de cheat sheet al aangevraagd — open 'm wanneer je wilt.",
       };
 
   if (alreadyDone) {
     return (
       <aside className="my-10 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-5 sm:p-6 text-center">
         <p className="text-sm font-semibold text-emerald-500">{t.alreadyDone}</p>
+        <a
+          href={cheatSheetUrl}
+          className="mt-3 inline-flex items-center justify-center min-h-[44px] px-5 rounded-xl bg-brand text-white font-bold"
+        >
+          {t.openCta}
+        </a>
       </aside>
     );
   }
@@ -126,12 +142,27 @@ export function BlogEmailCapture() {
 
       if (!r.ok) throw new Error("submit failed");
 
+      // Deliver the asset in-page. No mail service is wired (see
+      // functions/api/lead-magnet.ts), so promising an inbox delivery was a
+      // promise nothing could keep.
+      try {
+        const data = (await r.json()) as { cheat_sheet_url?: string };
+        if (data?.cheat_sheet_url) setCheatSheetUrl(data.cheat_sheet_url);
+      } catch {}
+
       setState("success");
       try { localStorage.setItem(LS_KEY, Date.now().toString()); } catch {}
-      if (typeof window !== "undefined" && window.plausible) {
-        window.plausible("Blog Email Capture", {
+      if (typeof window !== "undefined") {
+        // Dual-fire — GA4 is the live destination; window.plausible is a
+        // deliberate no-op stub since Plausible was retired 2026-07-04, so
+        // before 2026-08-29 this capture was recorded nowhere.
+        window.plausible?.("Blog Email Capture", {
           props: { source_page: pathname, locale: isEn ? "en" : "nl" },
         });
+        const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+        if (typeof g === "function") {
+          g("event", "blog_email_capture", { source_page: pathname, locale: isEn ? "en" : "nl" });
+        }
       }
     } catch {
       setState("error");
@@ -144,6 +175,12 @@ export function BlogEmailCapture() {
       <aside className="my-10 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-5 sm:p-6 text-center">
         <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto mb-3" />
         <p className="text-base font-bold text-foreground">{t.success}</p>
+        <a
+          href={cheatSheetUrl}
+          className="mt-3 inline-flex items-center justify-center min-h-[44px] px-5 rounded-xl bg-brand text-white font-bold"
+        >
+          {t.openCta}
+        </a>
         <p className="mt-2 text-xs text-muted-foreground">
           {isEn ? "Want to skip ahead and book a free intro?" : "Direct een gratis intake plannen?"}{" "}
           <a

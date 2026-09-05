@@ -121,7 +121,7 @@ const features = [
 // complement the hero's spatial overviews.
 const galleryImages = [
   { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack met Olympic barbell bij SculptClub" },
-  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Volledige dumbbell-set tot 32 kg bij SculptClub" },
+  { src: "/images/studio/dumbbell-rack.jpeg", alt: "Volledige dumbbell-set tot 40 kg bij SculptClub" },
   { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack met planten en vinyl speler bij SculptClub" },
   { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de SculptClub privé studio in de Jordaan" },
 ];
@@ -217,6 +217,31 @@ export default function StudioRentalPageNL() {
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
+          </p>
+        </div>
+
+        {/* Weekend-availability hook — task mtdbcq8ie715lw (2026-08-28): the
+            13-week Acuity analysis shows the studio at ~47% utilisation,
+            with the weekend afternoon/evening block especially quiet — a
+            gap that was previously buried in bullet #3 of the features grid
+            far below the fold. Placed right above the booking widget so it
+            leads without displacing the proven "booking-first" layout
+            (operator 2026-05-27 directive). Deliberately durable copy, not
+            a hardcoded "13 weken" / literal hour-range claim: exact hours
+            shift as ClassPass classes occupy specific weekend slots (see
+            docs/CLASSPASS-FULLSTUDIO-PRIORITY.md — Sat 17-21h + Sun 16-21h
+            currently run recurring ClassPass, so a static "16:00-22:00
+            gegarandeerd vrij" promise would go stale/wrong for those exact
+            hours). Points to the live Acuity calendar via the Boek button
+            below rather than claiming this page shows real-time hours. */}
+        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
+          <p className="text-sm font-semibold text-primary">
+            🎯 Extra veel ruimte: weekendmiddag &amp; -avond
+          </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Zaterdag- en zondagmiddag/avond is doorgaans de rustigste tijd in de studio —
+            ideaal om hier een vaste weekendplek voor je klanten vast te leggen. Klik hieronder
+            op Boek voor de actuele beschikbaarheid.
           </p>
         </div>
 
@@ -589,6 +614,14 @@ export default function StudioRentalPageNL() {
               <a href="/nl/studio-huren/rekentool" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">Rekentool</p>
                 <p className="font-semibold group-hover:text-brand transition-colors">Bereken wat je overhoudt vs een commissie-gym →</p>
+              </a>
+              {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
+                  translation (nl<->en language switch) — a closed loop, zero links from any
+                  content page, despite being indexable + in the sitemap. Booking pages on the
+                  studio-rental path (=93% of revenue) must be reachable from the money page. */}
+              <a href="/nl/boek-studio" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
+                <p className="text-sm text-brand mb-1">Boeken</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boek de studio — beschikbaarheid en tarieven per uur →</p>
               </a>
               <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

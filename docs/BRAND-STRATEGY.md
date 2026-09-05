@@ -8,7 +8,7 @@ This doc is the source of truth for voice, positioning, and design decisions. Ev
 
 A small, independent private training studio on the Egelantiersgracht in the Jordaan. Three things happen in the same room:
 
-1. **Independent personal trainers** bring their own clients and set their own prices. SculptClub takes **0% commission**.
+1. **Independent personal trainers** bring their own clients and set their own prices. They rent the studio and keep 100% of their rate — SculptClub's revenue comes from the room rental, not from their sessions.
 2. **Open Gym members** train on their own in 4-week cycles with no membership lock-in.
 3. **Freelance trainers, physios and coaches** rent the studio by the hour or by the pack.
 
@@ -24,7 +24,7 @@ This is a **boutique private gym**, not a premium lifestyle brand. Prices are ho
 
 These are the four things the business actually believes, written the way a human would say them. They are the "why" behind every operational choice.
 
-1. **Trainers do their best work when they own their prices and their clients.** That's why we take 0% commission. The rate you see is the rate they charge — we don't mark it up.
+1. **Trainers do their best work when they own their prices and their clients.** That's why they rent the room and keep 100% of their rate. The rate you see is the rate they charge — we don't mark it up.
 2. **People train harder in privacy.** That's why we cap at 4 people simultaneously and send door codes instead of having a reception desk.
 3. **Commitment doesn't equal results.** That's why Open Gym runs in 4-week cycles you can cancel anytime, and why the first intake is free with no pressure to book again.
 4. **Neighbourhood matters.** That's why we're on the canal in the Jordaan and not in a strip-mall fitness park.
@@ -47,7 +47,7 @@ Two very different audiences use the site, and the copy needs to speak to each w
 - Freelance professionals in Amsterdam who already have clients
 - Currently either (a) renting studio time at marked-up hourly rates, (b) paying commission to a gym, or (c) training clients in overcrowded chain gyms
 - Want a clean, equipped room they can call their own without fixed overhead
-- **They care about:** cost per session, scheduling freedom, 0% commission, free marketing support, clean equipment
+- **They care about:** cost per session, scheduling freedom, keeping 100% of their rate, free marketing support, clean equipment
 - **They don't care about:** branded merchandise, management meetings, team-building nonsense
 
 ## Voice

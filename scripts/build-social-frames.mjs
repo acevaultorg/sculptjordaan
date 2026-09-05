@@ -112,6 +112,58 @@ FRAME_SETS["trainer-gezina-001-en"] = [
   },
 ];
 
+// Slot 4 "privacy" — client-facing. The 11K-view winner on this account was the
+// consumer rental frame, and the biggest competitor winner (13K) reframed it as
+// privacy: "rent your own personal gym — perfect for privacy". This is that post,
+// honest: privacy = HELE studio (€17/uur, deur dicht); the €12 halve studio can
+// be shared, so the €12 price NEVER carries the alone-claim (studio-leeg lesson).
+// Photos chosen by eye 2026-08-28: 14 = woman alone AT THE RACK (matches the hook
+// literally), 04 = man alone with sled, 06 = proven price-frame bg (arithmetic
+// post), 18 = solo portrait, canal doors = house closer. 01 is a phone screenshot;
+// 08/09/12/13 all show two people — wrong photo for an alone-claim.
+FRAME_SETS["geen-wachtrij-001"] = [
+  {
+    id: "01-hook",
+    photo: "shoot-14.jpg",
+    focus: "45% 40%",
+    kicker: "Priv\u00e9 studio \u00b7 Jordaan",
+    head: "Geen wachtrij bij de&nbsp;rack.",
+  },
+  {
+    id: "02-alleen",
+    photo: "shoot-04.jpg",
+    focus: "40% 45%",
+    kicker: "De hele zaal, alleen jij",
+    head: "Deur dicht. Jouw muziek. Jouw&nbsp;tempo.",
+    body: "Huur de hele studio en de zaal is gegarandeerd van jou \u2014 niemand die meekijkt, niemand die wacht.",
+  },
+  {
+    id: "03-som",
+    photo: "shoot-06.jpg",
+    focus: "50% 60%",
+    kicker: "Wat kost dat",
+    big: "\u20ac17",
+    sub: "per uur \u00b7 hele studio",
+    body: "Halve studio \u20ac12 per uur \u2014 dan kan de andere helft bezet zijn. Helemaal voor jezelf? Dat is de hele studio.",
+  },
+  {
+    id: "04-voor-wie",
+    photo: "shoot-18.jpg",
+    focus: "30% 45%",
+    kicker: "Liever alleen trainen",
+    head: "N\u00e9t iets te veel sportschool, die sportschool.",
+    body: "Eerste keer, terug na een blessure, of gewoon liever alleen \u2014 hier bepaal jij wie erbij is.",
+  },
+  {
+    id: "05-cta",
+    photoAbs: "public/images/studio/canal-view-doors.jpg",
+    focus: "50% 42%",
+    kicker: "Egelantiersgracht 424",
+    head: "Eerste sessie gratis.",
+    body: "Boek via sculptclub.nl \u2014 dagelijks 06:00\u201322:00. Annuleren is altijd gratis.",
+  },
+];
+
 FRAME_SETS["trainer-arithmetic-001"] = [
   {
     id: "01-hook",
@@ -274,7 +326,7 @@ const html = (f, w, h, textTop, textBottom) => `<!doctype html><meta charset="ut
   <div class="box">
     ${f.kicker ? `<div class="kick">${f.kicker}</div>` : ""}
     ${f.big ? `<div class="big">${f.big}</div><div class="bigsub">${f.sub}</div>` : ""}
-    <h1>${f.head}</h1>
+    ${f.head ? `<h1>${f.head}</h1>` : ""}
     ${f.body ? `<p>${f.body}</p>` : ""}
   </div>
 </div>`;

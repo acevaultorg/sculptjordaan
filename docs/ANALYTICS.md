@@ -1,11 +1,34 @@
-# Analytics — event taxonomy + Plausible setup
+# Analytics — event taxonomy (GA4 · GTM · Clarity)
 
-Last verified end-to-end via real click testing 2026-05-08.
+> ## ⚠️ PLAUSIBLE IS RETIRED (4 July 2026). Read this before acting on anything below.
+>
+> This file was written when Plausible was the destination. **It no longer is.** The script
+> loader is gone, the account is inactive, and `window.plausible` is now a deliberate no-op
+> stub — kept on purpose (operator: *"you dont have to remove the tracks"*) so the dozens of
+> existing calls stay harmless rather than throwing.
+>
+> **Every `https://plausible.io/sculptclub.nl…` link below is dead.** The live destinations are
+> **GA4 `G-QYW5H4XTXW`**, **GTM `GTM-PG592B5Q`** and **Clarity `vx7zcg6zys`**
+> (source of truth: `analytics` in `src/config/site.ts`).
+>
+> **What is still TRUE and worth reading:** the event taxonomy, the `intent` / `pricing`
+> custom properties, the classification rules, and the naming-mismatch trap. Those describe
+> what the code fires and are unchanged — only where it lands changed. Read "goal" as
+> "GA4 event" throughout.
+>
+> **Fixed 2026-08-29:** `trainer-match-quiz.tsx` and `blog-email-capture.tsx` were still firing
+> ONLY into the dead stub, so every Quiz Start / Quiz Step / Quiz Lead and every blog email
+> capture had been recorded nowhere since 4 July. Both now dual-fire to GA4 as
+> `quiz_start` / `quiz_step` / `quiz_lead` / `blog_email_capture`. `analytics.tsx` was always
+> fine — it fires 27 gtag calls alongside its 11 plausible no-ops.
+
+Last verified end-to-end via real click testing 2026-05-08 (Plausible era).
 Dashboard-hygiene section + business-outcomes mapping added 2026-06-02.
+Plausible-retirement supersession + quiz/email-capture GA4 fix: 2026-08-29.
 
 ## TL;DR — what each goal MEANS in plain language
 
-When you open https://plausible.io/sculptclub.nl, the Goals tab should show the **7 canonical goals below**. Each maps to a clear business outcome — read this table left-to-right to know what a goal-count is telling you:
+~~When you open https://plausible.io/sculptclub.nl, the Goals tab should show the **7 canonical goals below**.~~ **(SUPERSEDED 2026-08-29 — that dashboard is dead.)** These 7 are still the canonical conversion set; read them in **GA4 → Reports → Engagement → Events**. Each maps to a clear business outcome — read this table left-to-right to know what a goal-count is telling you:
 
 | Goal name (Plausible) | Plain-language meaning | Funnel stage | Revenue tied to |
 |---|---|---|---|
@@ -29,7 +52,7 @@ When you open https://plausible.io/sculptclub.nl, the Goals tab should show the 
 The Goals tab currently shows some legacy ad-hoc goals (`mobile_cta_default_intake`, `hero_cta_1_primary`) that were added during early CTA wiring. **These are technical event names, not business outcomes.** The events still fire and accumulate (Plausible records ALL custom events whether or not they're configured as goals — they appear under Properties tab once fired enough times). Archiving them as goals doesn't lose data; it just stops them cluttering the primary dashboard view.
 
 **Operator action:**
-1. Open https://plausible.io/sculptclub.nl/settings#goals
+1. ~~Open https://plausible.io/sculptclub.nl/settings#goals~~ **(dead — GA4 has no goal-promotion step; mark conversions in GA4 → Admin → Events)**
 2. Confirm the 7 canonical goals in the table above all exist (they do per 2026-05-08 verification — confirm they haven't been deleted)
 3. **Archive these legacy ad-hoc goals** so the Goals tab only shows the 7 canonical:
    - `mobile_cta_default_intake` — was a one-off; its data is now captured by `Lead Generated` via the global click handler
@@ -94,7 +117,7 @@ Decided in `classifyAcuityIntent` + `classifyAcuityPricing` from the `booking_ty
 
 ## Plausible — how to read the data
 
-Open https://plausible.io/sculptclub.nl?period=day → scroll to **Goals** widget.
+~~Open https://plausible.io/sculptclub.nl?period=day → scroll to **Goals** widget.~~ **(dead)** Use **GA4 → Reports → Realtime** for same-day checks, or Clarity for session replay.
 
 To split a goal by intent or pricing:
 
@@ -119,6 +142,46 @@ The auto-detected list includes some props older legacy code (FunnelPilot fp.js,
 
 **Goals registered** (Settings → Goals): all 7 code-fired goals above + several auto-detected by Plausible from historical traffic. Two duplicates from a 2026-05-08 bulk-add (`WhatsApp: Click` with colon, `Free Intake Click` without colon) were removed since they would never aggregate any future events from current code.
 
+## GA4 custom dimensions — REGISTER THESE OR THE PARAMS ARE UNREADABLE (2026-08-29)
+
+GA4 only *reports* an event parameter if it is registered as a custom dimension
+(Admin → Custom definitions → Create custom dimension · Scope = **Event**). Unregistered,
+the param still arrives and is silently dropped from every report — and **registration is
+FORWARD-ONLY**: it never backfills the window in which it was missing. The fleet audit
+(`~/.claude/fleet/GA4_CUSTOM_DIMENSION_AUDIT.md`, 26 Aug 2026) proved this on the affiliate
+sites. SculptClub had never been audited.
+
+**Emitted by this codebase and needing registration (15):**
+`booking_source` · `booking_type` · `cta_id` · `intake_experience` · `intake_frequency` ·
+`intake_goal` · `intent` · `locale` · `method` · `page_category` · `percent` · `pricing` ·
+`source_page` · `trainer` · `trainer_name`
+
+**Do NOT register** — GA4 handles these natively as standard/ecommerce params:
+`value` · `currency` · `transaction_id` · `item_name` · `price` · `quantity` · `page_path`.
+
+Free tier allows 50 event-scoped custom dimensions, so 15 is comfortable.
+
+Highest-value first: `intent` + `pricing` carry the whole revenue taxonomy (they split every
+WhatsApp/Acuity click into trainer-free-tryout · trainer-paid-pack · studio-rental · gym-sub),
+then `trainer_name` and `booking_source`.
+
+**✅ RESOLVED 2026-08-29 — both params now emitted, so this no longer blocks anything.**
+`trainer` and `trainer_name` had drifted into two names for one concept, fragmenting per-trainer
+reporting. Renaming was the obvious fix and the wrong one: if either is already registered as a
+custom dimension, a rename silently breaks it, and GA4 config is not visible from this repo.
+
+So **both are now emitted with the same value** on `generate_lead`, `trainer_intake_submit` and
+`Quiz Lead` (commit follows this doc). Strictly additive — nothing can break, whichever name you
+register works immediately, and the loser can be dropped later with **no gap in the series**.
+
+Practical effect: register **either** one (`trainer_name` is the better long-term pick — more
+events use it, including `trainer_impression`). Registering both is also fine and costs 2 of the
+50 slots. Not added to the plausible block in `trainer-intake.tsx` — that is the retired no-op
+stub, so a param there would be decoration.
+
+Full event → param inventory can be regenerated by grepping `gtag("event", …)` /
+`g("event", …)` call sites across `src/`.
+
 ## Naming-mismatch trap
 
 Plausible matches goal names **exactly, case-sensitive**. If code fires `Free Intake Click` and the configured goal is `Free Intake: Click` (with colon), events land but don't aggregate into the goal. Fix: match the configured-goal name in code. We hit this once on 2026-05-08 (commit 63e6ad3 renamed `Free Intake Click` → `Free Intake: Click` in code to match the existing Plausible goal).
@@ -132,7 +195,7 @@ JS-spy on `window.plausible` validates classifier logic only. Real verification 
 
 1. Open Plausible dashboard in one tab (period=day, NOT realtime — Realtime doesn't show goal counts).
 2. Drive a real click via Chrome MCP `left_click` on the actual element (event.isTrusted=true).
-3. Wait 4-5 seconds for the page's plausible.io API call to complete.
+3. Wait 4-5 seconds for the page's analytics call to complete (GA4 `collect`, not plausible.io — that request no longer happens).
 4. Refresh the dashboard. Verify the goal counter incremented + Properties tab dropdown lists your custom properties + splitting by them shows expected values.
 
 If counter doesn't increment within 60s, debug — don't assume "ingestion delay."
@@ -164,3 +227,26 @@ them into GTM tags would risk **double-firing conversions** (every event counted
 twice) unless the hardcoded snippet is removed in the exact same change. Only add
 *new* tags to GTM (e.g. a future tag an agency needs without a code deploy). If you
 ever do migrate a pixel into GTM, remove its hardcoded snippet here in the same PR.
+
+## GA4 `nav_click` — header-navigatie (toegevoegd 2026-08-28)
+
+De vier categorie-tegels (Small Group · Open Gym · Personal Training · Huur Studio) en het
+"Mijn boekingen"-icoon/paneel droegen **geen enkel event**. De vraag "hoe vaak wordt elke
+knop geklikt?" kon alleen beantwoord worden door Clarity-heatmaps met de hand te lezen
+(meting 2026-08-28, homepage, 30d: Huur Studio 30 · Open Gym 11 · PT 11 · Small Group 6 —
+en het boekingen-icoon 31).
+
+Nu: GA4-event **`nav_click`** met params:
+
+| param | waarden |
+|---|---|
+| `surface` | `header_tiles` · `bookings_icon` · `bookings_panel` |
+| `label` | de href van de tegel/categorie · `open` (icoon) · `acuity_manage` |
+| `locale` | `nl` · `en` |
+
+Aflezen: GA4 → Reports → Engagement → Events → `nav_click` → parameter `label`
+(of Explore met dimensie `label`, gesplitst op `surface`). Dit telt sitewide, niet alleen
+de homepage zoals de heatmap-meting.
+
+NB: dit document beschrijft verder de Plausible-taxonomie; Plausible is 2026-07-20
+uitgezet. GA4 (via `src/lib/tracking.ts` → `sendEvent`) is het levende kanaal.

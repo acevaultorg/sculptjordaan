@@ -354,6 +354,14 @@ const posts = [
     href: "/nl/blog/lichaamssamenstelling-verbeteren-amsterdam",
     date: "16 april 2026",
   },
+  {
+    title: "Personal Trainer Stress & Burn-out in Amsterdam",
+    excerpt:
+      "High-end personal training voor ondernemers en high performers met stress en burn-out klachten. The Ascend Method van Joey: kracht, ademwerk en zenuwstelselregulatie.",
+    category: "Herstel",
+    href: "/nl/blog/personal-trainer-stress-burnout-amsterdam",
+    date: "12 mei 2026",
+  },
   // Supply-side ship 2026-05-20 — 7 nieuwe long-form posts voor ZZP trainers
   {
     title: "Kosten Privé Studio Huren vs Eigen Gym Openen in Amsterdam",
@@ -370,6 +378,30 @@ const posts = [
     category: "Voor Trainers",
     href: "/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam",
     date: "20 mei 2026",
+  },
+  {
+    title: "Btw voor Personal Trainers — 21% of 9%? Zo zit het",
+    excerpt:
+      "Losse PT-sessies vallen onder 21%. Het 9%-tarief geldt alleen mét sportaccommodatie — de criteria van de Belastingdienst, plus de KOR onder €20.000 omzet.",
+    category: "Voor Trainers",
+    href: "/nl/blog/btw-personal-trainer",
+    date: "28 aug 2026",
+  },
+  {
+    title: "AOV voor Personal Trainers — verplicht vanaf ±2030, dit kost het nu",
+    excerpt:
+      "Wet BAZ maakt een AOV rond 2030 verplicht voor ZZP'ers. Wat de publieke verzekering inhoudt, wat een private AOV nu kost voor een fysiek beroep, en wanneer een broodfonds genoeg is.",
+    category: "Voor Trainers",
+    href: "/nl/blog/aov-personal-trainer-zzp",
+    date: "28 aug 2026",
+  },
+  {
+    title: "Belasting Eerste Jaar ZZP Personal Trainer — wat houd je over? (2026)",
+    excerpt:
+      "Zelfstandigenaftrek €1.200, startersaftrek €2.123, urencriterium 1.225 uur, mkb-winstvrijstelling 12,7% — wat elke aftrekpost oplevert, met een rekenvoorbeeld.",
+    category: "Voor Trainers",
+    href: "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
+    date: "2 sep 2026",
   },
   {
     title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026)",
@@ -464,7 +496,7 @@ export default function BlogPageNL() {
       <Section bg="dark">
         <SectionHeader
           overline="Klaar om te beginnen?"
-          title="Boek een Gratis Proefles"
+          title="Boek een Gratis Intake"
           description="Ervaar zelf hoe het is om te trainen in onze privé studio in de Jordaan."
         />
         <FadeIn className="flex justify-center">
@@ -473,7 +505,7 @@ export default function BlogPageNL() {
             size="lg"
             className="text-white"
           >
-            Boek Gratis Proefles
+            Boek Gratis Intake
           </ButtonLink>
         </FadeIn>
       </Section>

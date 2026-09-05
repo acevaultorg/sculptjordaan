@@ -5,12 +5,12 @@
 - Geo-redirect: Middleware redirects non-Dutch accept-language on root (/) to /en. www and sculptjordaan.nl subdomains 301 to sculptclub.nl. <!-- added 2026-03-30, source: scan -->
 - Pricing values in code MUST match CLAUDE.md: PT €45/session (not €49), Open Gym starts at €29/4wk (Instapplan). The €49 figure is the "Populair" plan (8 sessions/4wk) — valid when referencing that plan specifically, wrong when used as "starting from" price. <!-- added 2026-03-30, source: scan -->
 - Lint noise: .vercel/ build artifacts generate ~20 lint errors (require imports, this-alias). These are not source issues — eslint runs on generated code. <!-- added 2026-03-30, source: scan -->
-- Blog posts use hardcoded WhatsApp links (wa.me URLs) rather than importing from config. Always grep for placeholder numbers (31612345678) when new blog posts are added. Real number: 31683178934. <!-- added 2026-03-30, source: task -->
+- Blog posts use hardcoded WhatsApp links (wa.me URLs) rather than importing from config. Always grep for placeholder numbers (31612345678) when new blog posts are added. Real number: **31615147952** (`wa.me/31615147952`). <!-- added 2026-03-30, source: task; number CORRECTED 2026-08-29: this line said 31683178934, which was retired fleet-wide 2026-06-01 — CLAUDE.md says NEVER revert to it. A stale 'real number' here is high-risk precisely because blog posts hardcode wa.me links, so a session trusting this line would paste the dead number into new customer-facing CTAs. -->
 
 - Revenue priority: Studio rental is the #1 revenue driver. Should be prominent in hero CTAs and conversion paths. <!-- added 2026-03-30, source: user -->
 
 ## Error patterns
-- config: Placeholder WhatsApp number in blog CTA → replace with real number from CLAUDE.md (+31 6 83 17 89 34 = 31683178934). Blog posts don't use acuity.ts config — they hardcode wa.me links. <!-- added 2026-03-30, source: task -->
+- config: Placeholder WhatsApp number in blog CTA → replace with real number from CLAUDE.md (**+31 6 15 14 79 52 = 31615147952**). Blog posts don't use acuity.ts config — they hardcode wa.me links. <!-- added 2026-03-30, source: task; number CORRECTED 2026-08-29 — previously read +31 6 83 17 89 34 / 31683178934, retired 2026-06-01. Always take the number from CLAUDE.md itself, never from this cached copy. -->
 
 - Google Ads tracking: Single conversion action fires on ALL Acuity link clicks (AW-17749877333/QW0mCPOF_YocENXE5o9C). Added secondary GA4 event `free_intake_click` that fires specifically from gratis-intake/free-intro/plan-gratis-intake-met-* pages. Import this event in Google Ads as a secondary conversion to optimize for free intro bookings. <!-- added 2026-04-01, source: task -->
 - Email: Canonical contact email is contact@sculptclub.nl (from site config). All legal/policy pages now use this. Never use info@sculptclub.nl. <!-- added 2026-04-01, source: task -->
@@ -25,13 +25,13 @@
 - Sitemap-ai.xml at `src/app/sitemap-ai.xml/route.ts` returns ~50 highest-citation-value URLs for AI crawlers (money pages + comparison guides + fresh blog + trainer profiles). Cached `public, max-age=3600, s-maxage=86400`. Per Lever 5. <!-- added 2026-04-27 -->
 - llms.txt at `public/llms.txt` includes Identity (KvK 64708101 / VAT NL002250100B57) + Differentiators + Pricing + Trainers + Core pages + Comparison guides + Citation-preferred sections + License + Last-updated. Reviewed 2026-04-27. Edit when pricing/trainers/core URLs change. Per Lever 2. <!-- added 2026-04-27 -->
 - IndexNow integration: key `ae1c16d6e9e1321057ea5294a59c66e4` lives at `public/<key>.txt`. `bin/indexnow.mjs` POSTs sitemap URLs to https://api.indexnow.org/indexnow. `bin/ship.sh` calls it after Vercel deploy (non-blocking). `npm run indexnow` for manual ping. Bing/Yandex/Naver/Seznam → indexed within hours. Google honors via Bing data sharing. NEVER rotate the key file — search engines re-verify on it. <!-- added 2026-04-27, source: PR #45 -->
-- CSP (`next.config.ts` headers) includes `static.cloudflareinsights.com` in script-src and `*.cloudflareinsights.com` in connect-src. Without these, the Cloudflare Web Analytics beacon was silently CSP-blocked from v18 ship until 2026-04-27. Hardening: base-uri 'self', form-action 'self' wa.me, object-src 'none', frame-ancestors 'none', upgrade-insecure-requests. Headers: Permissions-Policy (geo/mic/camera/payment(self)/interest-cohort=()) + Strict-Transport-Security (max-age 63072000 + includeSubDomains + preload — eligible for hstspreload.org submission). <!-- added 2026-04-27, source: PR #42 -->
+- CSP (`functions/_middleware.ts`) includes `static.cloudflareinsights.com` in script-src and `*.cloudflareinsights.com` in connect-src. Without these, the Cloudflare Web Analytics beacon was silently CSP-blocked from v18 ship until 2026-04-27. Hardening: base-uri 'self', form-action 'self' wa.me, object-src 'none', frame-ancestors 'none', upgrade-insecure-requests. Headers: Permissions-Policy (geo/mic/camera/payment(self)/interest-cohort=()) + Strict-Transport-Security (max-age 63072000 + includeSubDomains + preload — eligible for hstspreload.org submission). <!-- added 2026-04-27, source: PR #42 -->  **(location corrected 2026-08-29:** this moved out of `next.config.ts` when the CF-Pages migration deleted `headers()` — it was absent entirely from 2026-07-14 to 2026-08-29, then restored in the middleware, which is the only reliable place under Advanced-Mode `_worker.js`.)
 - Schema.org graph (`src/components/seo/json-ld.tsx#LocalBusinessJsonLd`): single `@graph` containing Organization (`#organization`), WebSite (`#website` with publisher → org + SearchAction + speakable), and LocalBusiness/HealthClub/SportsActivityLocation (`#localbusiness` with parentOrganization → org). All linked via `@id`. Loaded on every page via root layout. Per page schema (BlogPosting, FAQPage, ServiceJsonLd, ReviewsJsonLd, BreadcrumbJsonLd, PersonJsonLd, OfferCatalogJsonLd) imported as needed. OrganizationJsonLd is now a no-op stub (export kept for backwards compat — content folded into the @graph). <!-- added 2026-04-27, source: PR #44 -->
 - Speakable schema (cssSelector: h1, h2, main p:first-of-type) is on the WebSite entity in @graph. Voice assistants + AI Overview spoken-answer extraction prefer pages with this hint. <!-- added 2026-04-27, source: PR #46 -->
 - Plausible custom events fire alongside gtag/fbq/ttq in `src/components/layout/analytics.tsx`: `Free Intake Click`, `Acuity Click`, `WhatsApp Click`, `Phone Click`, `Email Click`, `Lead Generated` (umbrella with method=free_intake/whatsapp/phone/email). Each event includes props: { method, value, source_page }. Plausible Goals can be configured in dashboard to use these — no code change needed for new Goals. Closes the Plausible-bounce false-positive (e.g. /en/find-personal-trainer was 100% bounce because outbound clicks counted as zero-pageview sessions). <!-- added 2026-04-27, source: PR #43 -->
 - Layout metadata (`src/app/layout.tsx`): metadata.alternates.languages declares `nl-NL` / `en` / `x-default` at root. metadata.robots.googleBot has `max-snippet:-1, max-image-preview:large, max-video-preview:-1` for richer SERP. metadata.formatDetection: false (no iOS auto-linking of phone/email/address). Per-page metadata.alternates can override but is not required (layout default works). <!-- added 2026-04-27 -->
 - Hreflang renders as Next.js `hrefLang` (camelCase JSX → HTML attribute lowercased on parse — case-insensitive per HTML spec). Don't mistake the camelCase output for a bug. Pages may have BOTH layout-level hreflang (nl-NL/en/x-default) AND page-level hreflang (nl/en) — duplication is harmless. <!-- added 2026-04-27 -->
-- HTTP `permissions-policy` + `strict-transport-security` are set in `next.config.ts` headers (alongside CSP). HSTS preload was submitted by operator 2026-04-27 (pending inclusion in browser lists). The HSTS header `max-age=63072000; includeSubDomains; preload` MUST stay live + must NEVER drop max-age below 31536000 (1y) until/unless operator initiates official de-preload via hstspreload.org/removal — otherwise browsers cache the old policy until refresh. Treat HSTS-preloaded as permanent commitment to HTTPS-only on sculptclub.nl + all subdomains. <!-- added 2026-04-27, source: operator submission verified screenshot -->
+- HTTP `permissions-policy` + `strict-transport-security` are set in `functions/_middleware.ts` (alongside CSP). HSTS preload was submitted by operator 2026-04-27 (pending inclusion in browser lists). The HSTS header `max-age=63072000; includeSubDomains; preload` MUST stay live + must NEVER drop max-age below 31536000 (1y) until/unless operator initiates official de-preload via hstspreload.org/removal — otherwise browsers cache the old policy until refresh. Treat HSTS-preloaded as permanent commitment to HTTPS-only on sculptclub.nl + all subdomains. <!-- added 2026-04-27, source: operator submission verified screenshot -->  **(location corrected 2026-08-29:** this moved out of `next.config.ts` when the CF-Pages migration deleted `headers()` — it was absent entirely from 2026-07-14 to 2026-08-29, then restored in the middleware, which is the only reliable place under Advanced-Mode `_worker.js`.)
 - Money pages (/nl/studio-huren, /en/studio-rental, /nl/open-gym, /en/open-gym, /nl/prijzen, /en/pricing, /en/find-personal-trainer, /nl/vind-jouw-personal-trainer) all have ServiceJsonLd + OfferCatalogJsonLd + FAQPage + BreadcrumbList + speakable on top of the @graph. <!-- added 2026-04-27 -->
 - npm scripts (`package.json`): `npm run ship` → `bin/ship.sh` (full deploy with IndexNow ping). `npm run indexnow` → `node bin/indexnow.mjs` (manual ping). `npm run prebuild` → `node scripts/sitemap-lastmod.mjs` (regenerates per-route git-mtime map; runs automatically before `next build` via npm lifecycle hook). <!-- added 2026-04-27, prebuild added 2026-05-06 -->
 - Sitemap real per-route lastmod (`src/app/sitemap.ts` + `src/sitemap-lastmod.json` + `scripts/sitemap-lastmod.mjs`): generator walks `src/app/**/page.{tsx,ts,mdx}` and runs `git log -1 --format=%cI -- <file>` per file. Map COMMITTED to repo (not gitignored) because Vercel's shallow git clone resists `--deepen` extension. Generator skips regeneration in CI (`process.env.VERCEL === "1"`) and uses the committed map. Live verification: `curl -sL https://sculptclub.nl/sitemap.xml | grep -oE '<lastmod>[^<]+</lastmod>' | sort -u | wc -l` returns 9 distinct dates spanning real per-file edit history (was 4-in-12ms uniform-now anti-pattern before fix). Fall-through: map → fs.statSync → build-time `now`. <!-- added 2026-05-06, source: 4f9231e/58ce360/37b66f5 -->
@@ -528,3 +528,1211 @@ https://www.tiktok.com/@sculptclub.jordaan/video/7677670221590629654
 carousel ships to TikTok as the generated `reel.mp4`, and to Instagram as a real
 carousel. Instagram remains fully autonomous either way (it never gated on media
 decode, which is why IG worked from hidden tabs all along).
+
+## /start/ was 404ing — the Instagram link-in-bio landing page (fixed 2026-08-28)
+
+Found while attributing the site's only real friction signal (quickbacks) to pages.
+
+`functions/_middleware.ts` handled `/start` in its own branch with an exact string
+comparison, and that branch runs BEFORE the trailing-slash retry — which only rescues keys
+in the EXACT map. So the slashed form fell through to a 404:
+
+```
+/start                          → 302 /nl/start   (Accept-Language aware, correct)
+/start/                         → 404             ← the live Instagram bio link
+/start/?utm_source=ig&...       → 404
+control /review/                → 302             (retry works for EXACT-map keys)
+control /plan-gratis-intake-met-alex/ → 301
+```
+
+Clarity showed the live traffic arriving as `/start/?utm_source=ig&utm_medium=social` — with
+the slash — at a **100% quickback rate** for that URL. Instagram is the #1 identifiable
+channel at ~20% of sessions, so its landing page was answering 404 to real visitors.
+
+Ironic detail: the trailing-slash retry immediately below carries a comment naming
+"old Instagram-bio links" as exactly the case it was written for. `/start` sat above it and
+was missed.
+
+Fixed by accepting both forms. Verified live: both slashed and unslashed now 302 correctly
+per Accept-Language, **and UTM parameters survive the redirect** (without that, the
+attribution would still be lost even with the 404 gone).
+
+### Method note — three prober bugs in one session, all caught by controls
+
+Getting here required correcting my own instrument three times: `urllib` 403s on every URL
+including the control (blocked User-Agent); BSD `sed` silently not matching `</\?title>`
+(GNU extension); and `${var:+-H "Accept-Language: x"}` word-splitting in bash so the header
+was never sent — which made a *working* language redirect look unconditionally broken.
+Each looked like a site failure. See `feedback_publishing_a_file_is_not_serving_it`.
+
+## Per-URL Clarity friction: the API DOES do it, and the field you want is not the obvious one (2026-08-28)
+
+The 30-day baseline said quickbacks (15.24%) are the one real friction signal but could not say
+*where*. It can: `project-live-insights?numOfDays=3&dimension1=URL` returns all 9 metrics broken
+down per URL in a single call. The 3-day cap still applies (7 and 30 return HTTP 400), so this is
+a small window — but per-URL beats site-wide for localising a problem.
+
+**Read `sessionsWithMetricPercentage`, not `sessionsCount`.** `sessionsCount` is the URL's total
+session count and is IDENTICAL in every metric block. Summing it per metric produces a table where
+every page has "100% quickback" and quickback-sessions exactly equals traffic-sessions — which is
+what a wrong-field read looks like, not a finding. A result that is suspiciously perfect is an
+instrument failure the same way a zero is.
+
+### Where the friction actually is
+
+| page | sessions | quickback |
+|---|--:|--:|
+| **`/` (homepage)** | 23 | **47.8%** |
+| `/nl/open-gym` | 3 | 33.3% |
+| `/en` | 3 | 33.3% |
+| `/nl/vind-jouw-personal-trainer` | 6 | 16.7% |
+| `/nl/boek-studio` · `/nl/studio-huren` · `/en/studio-rental/free-trial` | 12 · 6 · 3 | **0%** |
+
+The homepage carries ~11 of the ~13 quickback sessions in the window. Everything else is ≤1.
+Note Clarity counts a quickback **on the page you return TO** — so this is "people leave the
+homepage, reject what they find, come straight back", i.e. the *destinations* are the suspect,
+not the homepage itself.
+
+## The homepage was the only trainer surface with no route to a profile (2026-08-28)
+
+Chasing that led somewhere real, though **not provably to the quickbacks** — see the caveat below.
+
+`TrainerPreviewGrid` (homepage, 4 cards) wrapped the ENTIRE card in one `target="_blank"` link to
+WhatsApp. Photo, name, specialty, languages, rate — all of it opened a chat. There was no way to
+reach a trainer's page from the busiest page on the site, while `TrainerFilterGrid`
+(`/vind-jouw-personal-trainer`) has linked to both since 2026-06-11, its own comment reading *"the
+grid previously bypassed intake pages"*. The same fix was made there and the preview grid was
+missed — so this is finishing a started job, not a redesign.
+
+It matters more now than it did in June: the operator's 2026-08-28 directive is that SculptClub
+should be *hét matching platform* for freelance trainers and clients, and a sibling session spent
+that morning making 26 profile pages discoverable. The homepage linked past all of them.
+
+**It also closed a live consent trap.** The grid always called
+`whatsappLinks.trainerIntake(name, locale, trainer.whatsapp)` and ignored `trainer.bookingUrl`.
+Roberta asked by email (2026-07-25) not to publish a private mobile and uses Calendly instead; she
+has no `whatsapp` field, and `trainerIntake()` **falls back to the studio's own number** when that
+argument is undefined. She sits outside the top-4 preview today so nothing was exposed — but a
+one-line `DISPLAY_ORDER` edit would have silently routed her leads to the studio under a "book
+intake with Roberta" label. The card now honours `bookingUrl` + `bookingLabel` like the filter grid.
+
+### The caveat, stated plainly
+
+**Do not record this as "the quickback fix."** A `target="_blank"` link does not navigate the
+original tab, so it may not generate a Clarity quickback at all — the mechanism is unproven and
+the 3-day window is 23 sessions. The change is justified on its own merits (matching-platform
+directive · internal linking to 26 orphaned pages · consistency with the sibling grid · the
+`bookingUrl` trap). **The homepage quickback cause remains OPEN.** Next step is a Clarity
+recording/heatmap on `/` via Chrome MCP — the API gives counts, never which element.
+
+### Method note — greps lie about absence, three times in one session
+
+`grep 'plan-gratis-intake-met'` on `/nl/vind-jouw-personal-trainer` returned 0 and I briefly
+concluded it linked to no profiles. It links to all of them — via
+``href={`/${locale}/${trainer.slug[locale]}`}``, a template literal no literal-string grep can see.
+Same class of error as the `studio-huren|/en/rent` pattern that missed `/en/studio-rental`, and the
+zsh glob that returned "0" from a shell error. **Treat every grep-based absence as a claim about
+the pattern until a positive control says otherwise.**
+
+## Element clicks + conversions by type — first real measurement (2026-08-28)
+
+Operator asked two questions nobody could answer before, because the header pills carry
+zero tracking events. Measured via Clarity heatmap (30d, homepage) + GA4 (Jul 31–Aug 27).
+
+### Header pills, homepage, 30d (Clarity click map, desktop 268 + mobile 56 taps)
+
+| pill | desktop | mobile | total |
+|---|--:|--:|--:|
+| Huur Studio | 22 | 8 | **30** |
+| Open Gym | 7 | 4 | 11 |
+| Personal Training | 8 | 3 | 11 |
+| Small Group | 3 | 3 | 6 |
+
+**Huur Studio out-clicks the other three pills combined.** Primary CTA area ≈ 44 clicks.
+Hero WhatsApp button ("Stel je vraag"): **3 clicks/30d.** The account icon (top right):
+31 clicks — people looking for a login that doesn't exist (likely renting trainers).
+
+### Purchases by item (GA4 e-commerce, Jul 31–Aug 27; SITE-initiated bookings only —
+~11% of the Acuity total, because regular renters book directly in Acuity, not via the
+site (superseded 2026-08-28: this is a CHANNEL split, not a consent undercount). The
+SPLIT is the signal)
+
+| item | purchases | tracked revenue |
+|---|--:|--:|
+| Hele Studio 60 min | 14 | $184.06 |
+| Halve Studio 60 min | 3 | $41.57 |
+| Open Gym Sessie | 3 | $41.55 |
+| Open Gym try-free | 1 | $14.00 |
+| **Small Group** | **0** | — |
+| **Personal Training** | **0** | — |
+
+Zero SG and zero PT purchases — corroborated by Clarity: every booking-confirmation URL
+read (`/nl/boeking-bevestigd?type=…`, unique Acuity id per row) was a studio-rental or
+open-gym type. PT exists on this site as LEADS only: `Trainer_Intake_Lead_1` 18 events /
+12 users + `whatsapp_click` 18/12 in the same window. Funnel events: `Book_appointment_1`
+178 · `begin_checkout` 156 · `begin_booking` 152 → 21 tracked purchases.
+
+~~Acuity itself (the booking truth) was NOT readable~~ (superseded same evening —
+operator logged in; see "Acuity ground truth" below). GA4 property currency is USD.
+
+### Verification pass (same evening, operator: "be very sure")
+
+- **Pill clicks confirmed as header elements**: Clarity's element-highlight places
+  "Huur Studio" (20), "Open Gym" (7) and "Personal Training" (5) all in the header band —
+  none map to the services section, footer or FirstTimeMenu sheet. Ranks 21-37 (≤2 clicks
+  each) may hide small pill variants → published counts are FLOORS; ordering is robust.
+  (Horizontal positions in the highlight view don't match today's pill order — Clarity's
+  background capture predates a layout change; the band, not the x-position, is the signal.)
+- **Bookings cross-checked**: GA4 21 purchases vs Clarity smart event "Boeken" 20 — two
+  independent instruments within 5%, and both are CORRECT for what they measure:
+  **site-initiated bookings**. (Superseded 2026-08-28, twice-corrected: my "undercount is
+  really ~20-30%" correction was itself wrong. Acuity ground truth = 191 August
+  appointments, ~9× GA4's 21 — but that gap is not a consent artifact of one population;
+  it is a DIFFERENT CHANNEL: regular renters book directly in Acuity. The site is the
+  acquisition channel; Acuity is the booking channel.)
+  The 248 boeking-bevestigd SESSIONS are revisits (door-code checks), not bookings.
+- **Known blind spots**: "Free try out: Full Studio" (2 ids) + "Studio help 90 min" (1 id)
+  appear in Clarity confirmations but missed GA4's consent sample; Open Gym SUBSCRIPTIONS
+  (the €49 deal) may bypass the confirmation page entirely — Acuity-only truth, unreadable
+  while the operator is logged out.
+
+### What this changed
+
+The hero decision (same day): second CTA became "Huur de studio" (the most-clicked,
+all-of-revenue side had no hero door); WhatsApp shrank to an icon-only circle (3 clicks/30d,
+but it is mobile's only above-fold WhatsApp entry — the floating button is `hidden md:flex`).
+
+## Acuity ground truth — July + August 2026 (read with operator logged in, 2026-08-28)
+
+The booking truth the site instruments can't see. Source: Acuity reports.php, per type.
+
+| type | Jul afspraken | Jul € | Aug afspraken | Aug € |
+|---|--:|--:|--:|--:|
+| Halve Studio 60 min | 72 | — | 84 | €848,02 |
+| Halve Studio 90 min | 1 | — | — | — |
+| Hele Studio 60 min | 43 | — | 68 | €944,28 |
+| Open Gym Sessie | 33 | €125,44 | 28 | €41,37 |
+| Free try-out: Full Studio | 6 | 0 | 5 | 0 |
+| Free try-out: Open Gym | 4 | 0 | 2 | 0 |
+| Studio help 90 min | 5 | 0 | 4 | 0 |
+| **Totaal** | **164** | **€1.548** | **191** | **€1.833,70** |
+
+- August +16% vs July (appointments), revenue +18%. Trainer studio rental = ~93% of revenue.
+- GA4/Clarity see ~21/20 of these 191 (~11%): only bookings STARTED on the site. The other
+  ~89% are regulars booking straight into Acuity (app / direct scheduling link). So:
+  **site CRO moves new-customer acquisition, not the 191** — the 191 grow via trainer
+  acquisition + utilization (the €-lever per `feedback_sculptclub_revenue_mix_and_lever`).
+- Zero Small Group and zero PT purchases hold in Acuity too (no SG/PT appointment types
+  booked) — the header-tile removal decision stands on all four instruments.
+
+## The homepage quickback "problem" was hub-ness, not friction — investigated and CLOSED (2026-08-28)
+
+Per-URL Clarity put 47.8% quickback on the homepage (11 of ~13 quickback sessions in the 3-day
+window) and the cause was flagged open. Watched the actual recordings via the Clarity UI
+(recordings list filtered `QuickbackClickPresent=1` + `PageURL=is;https://sculptclub.nl/` — the
+filter state IS URL-addressable once you copy Clarity's own param format from an applied-filter
+URL; the naive guessed params silently don't apply). Three distinct users, three mechanisms:
+
+1. **Member rebooking speed-run** (2 of the 11 sessions are the same user): home → "Mijn
+   boekingen" modal → "Studio Huren · per uur boeken" → `/nl/boek-studio` → outbound "€12 Boek"
+   (Acuity) → gone. 3–13 seconds, done twice in a day. The quickback is a hop in a SUCCESSFUL
+   flow — consistent with the 30-day baseline's finding that confirmation-page volume is repeat
+   business.
+2. **Instagram in-app first-click bounce**: `/start/?utm_source=ig` arrival, cookie-accept, one
+   early click, quickback at 00:09, then immediately "Personal Training" and a purposeful
+   7-page / 7:19 journey ending on `/nl/studio-huren`. App-switch/back-bounce, then engagement.
+3. **NL→EN language find**: US MobileSafari visitor, quickback at 00:05 on the Dutch homepage,
+   on `/en` by 00:07. Bounced off Dutch once, found "English" fast. The dismissible
+   `<LanguageHint/>` offer stands; no auto-redirect (standing rule).
+
+**The structural point: Clarity credits a quickback to the page you come BACK to, and the
+homepage is the hub people return to mid-journey.** A hub page's quickback rate is inflated by
+definition. None of the three mechanisms is a defect; two are the funnel working.
+
+**Closed as no-fix.** Do not re-open "homepage 47.8% quickback" as a friction hunt unless the
+rate rises on a bigger window AND the recordings show a new mechanism. The one soft watch-item:
+`/start/` first-click behaviour in Instagram's in-app browser (n=1 here — not evidence yet).
+
+Replay caveat, again: the Clarity player renders some pages as unstyled HTML with giant SVG
+icons. That is a replay CSS-reconstruction artifact, NOT what the visitor saw — do not diagnose
+layout from the replay (same class of instrument-lie as `feedback_chrome_mcp_breaks_hydration`).
+
+## Trainer link-graph fix — sibling cards on every profile (2026-08-28, avond)
+
+Measured gap from this morning's marketplace audit: 13 profile pages × 4 inbound internal
+links each (vs 106 for /nl/studio-huren), zero profile→profile edges. Fixed with a
+"Andere trainers bij SculptClub" section (3 cards) above the existing browse-all button
+in `trainer-intake.tsx`.
+
+- Selection: deterministic specialisation-token overlap, roster-order tie-break
+  (static export → no randomness). Simulated for all 13 before building: Gezina→
+  Tom/Dara/Jearmey, Roberta→Andrea/Jearmey/Hamish, Bryan→Roberta/Alex. No page gets a
+  zero-relevance trio.
+- Result in build: inbound links per profile 4 → 7-19 (gezina 19 · roberta 11 · sergei 7),
+  39 new profile→profile edges, NL + EN.
+- Cards fire `nav_click(surface=related_trainers)` → lateral movement is measurable in GA4.
+
+Commit 9f7e8ab. Follows the fleet doctrine: internal linking is the #1 measured ranking
+lever; these pages just got discoverable titles the same day, so link equity now has
+somewhere to flow.
+
+## Build/deploy trap: `npm run build` can exit 0 while producing NOTHING (2026-08-28)
+
+**Symptom found live:** `out/` was frozen at **2026-07-31** — a month stale — while the live site
+kept receiving deploys. Deploying that `out/` would have reverted production by a month.
+
+**Why it went unnoticed:** `next build` prints `✓ Compiled successfully in 4.8min`, THEN fails at
+the type-check stage, and **`npm` still exits 0** (the failure surfaces only as a
+`Next.js build worker exited with code: 1` line mid-log). A pipeline that checks `$?` — or that
+pipes to `tail` — sees success and a silently-unchanged `out/`.
+
+**ALWAYS, before any CF Pages deploy:**
+```bash
+npm run build > /tmp/build.log 2>&1; echo "EXIT=$?"      # exit 0 is NOT sufficient
+grep -E "Failed to type check|Type error|build worker exited" /tmp/build.log   # must be empty
+find out -name '*.html' | wc -l                          # must be ~229+, and
+stat -f "%Sm" out/index.html                             # must be TODAY, not last month
+```
+If `out/` is older than your last commit, the build did not run — do NOT deploy.
+Cross-check `find out -name '*.html' | wc -l` against the LIVE sitemap
+(`curl -s https://sculptclub.nl/sitemap.xml | grep -c '<loc>'`, 194 on this date);
+built must be >= live or you are shipping a regression.
+
+**Root cause here — three independent `node_modules` breakages on this machine, all pre-existing:**
+| missing | breaks |
+|---|---|
+| `semver` | `sharp` → prebuild `generate-image-color-manifest.mjs` |
+| `next/dist/bin/next` | the `next` CLI (`sh: next: command not found`) |
+| `playwright-core/types/` | the `devices` export → `playwright.config.ts` typecheck → **build abort** |
+
+Repair is targeted, not a full reinstall (slow on the external drive):
+`npm install <pkg>@<exact-version> --no-audit --no-fund --no-save`, and for a package that npm
+thinks is already correct, `rm -rf node_modules/<pkg>` FIRST or npm no-ops.
+Note this npm blocks install scripts by default (`npm warn allow-scripts`), which is why partially
+-installed native packages appear "installed" but are missing generated/downloaded files.
+Fix the ENVIRONMENT — never edit `playwright.config.ts` or `tsconfig` to dodge the typecheck, since
+that config is correct for every other machine.
+<!-- added 2026-08-28, source: task (physio dumbbell fix deploy) -->
+
+## Bilingual half-fix pattern (2026-08-28)
+
+A site-wide fact correction was applied to the NL page and **not** its EN sibling, then marked
+"FIXED autonomously" on the board (TaskPrio mtcmka67djcml3). The EN physiotherapy rental page
+served `up to 50 kg` against a photo-verified `4–40 kg` for hours afterwards.
+
+**Rule:** every fact fix must be greped across BOTH locales and closed with a LIVE curl, not a
+local edit. Cheap check that would have caught it:
+```bash
+grep -rniE "(50|32) ?kg|40\+ ?kg" src --include="*.tsx" | grep -viE "per kg"
+# plus a positive control so an empty result means "clean", not "broken pattern":
+grep -rcE "40 ?kg" src --include="*.tsx" | grep -v ":0" | wc -l   # expect ~20
+```
+<!-- added 2026-08-28, source: task -->
+
+## Rebasing makes SOURCE current; it does NOT make out/ current (2026-08-29)
+
+**Near-miss, caught one step before it shipped.** Mid-session another agent pushed
+`80b8041` (de-cannibalization) touching 2 blog pages. My `out/` had been built BEFORE I
+rebased onto that commit. The deploy was already launched. `wrangler`/the chunked deployer
+replaces the whole directory, so it would have served my stale build and **silently reverted
+their work on 2 live pages**. Stopped it in time — the log had written only its header line,
+no upload, no deployment created, production untouched.
+
+The trap is subtle because the git hygiene was *correct*: I pulled before pushing. But I had
+**built before pulling**, so the artifact was already stale at the moment of deploy. Git being
+clean says nothing about whether `out/` matches it.
+
+**Binding order on this repo (another agent works the same board):**
+```
+git fetch && git pull --rebase        # 1. reconcile FIRST
+npm run build                          # 2. build AFTER reconcile, never before
+git rev-list --count HEAD..origin/main # 3. MUST print 0 immediately before deploying
+<deploy>
+```
+If step 3 is non-zero, someone landed work after your build: rebase and REBUILD. Do not
+deploy. Re-run step 3 right before the deploy call, not once at the top of the leg — the
+window between build and deploy is exactly where the other agent lands.
+
+Cheap positive check that the reconcile actually took: grep the built HTML for a marker from
+their commit (here `grep -c boutique-personal-training-vs-keten out/nl/blog/...html` → 2).
+Source-level `git log` is not proof the artifact contains it.
+
+Related: `fleet-mobile-standard` § RECONCILE FIRST states the general rule; this is the
+build-artifact instance of it, and the one that is invisible to `git status`.
+<!-- added 2026-08-29, source: task (near-miss during internal-link reachability work) -->
+
+## Reachability from / beats inbound-link counting (2026-08-29)
+
+Counting inbound internal links scores a **closed loop as healthy**. Four booking pages
+(`/nl/boek-studio` ↔ `/en/book-studio`, `/nl/boek-gym` ↔ `/en/book-gym`) each had exactly 1
+inbound link — their own translation via the language switch — so an `inbound >= 1` check
+passed them while they were unreachable from anywhere on the site. They survived a full
+orphan sweep because of it.
+
+**Use BFS reachability from `/` instead.** It catches orphans AND islands in one measure:
+```python
+# build out[page] = set(internal hrefs) from BUILT html, sitemap pages only,
+# with <script> stripped; then BFS from "/" and diff against the sitemap set.
+```
+Positive control: homepage inbound should be ~127 and reachable-count should be near the
+sitemap total; if reachable is tiny, the extractor is broken, not the site.
+
+Measured 2026-08-29: 186/194 → **194/194** after de-orphaning + footer routing.
+
+**Second trap found the same way:** `secondaryNav` in `src/config/navigation.ts` (10 items
+per locale) is consumed ONLY by `header.tsx`, a **client component**. Those links never
+render into static HTML, so crawlers never see them. `/nl/contact` was listed there and was
+still unreachable. A config grep will tell you a page is linked when it is not — verify in
+`out/*.html`, not in the nav config.
+<!-- added 2026-08-29, source: task -->
+
+## Optional chaining defeats a naive call-site grep (2026-08-29)
+
+Sweeping for orphaned analytics calls with `grep -rl "window\.plausible("` reported ONE
+remaining file — apparently a closed class. It was wrong. Call sites written as
+`window.plausible?.("Event", …)` do not contain the literal `plausible(`, so the pattern
+skipped them, and **two files were hiding behind exactly that**, one of which
+(`trainer-filter-grid.tsx`) had zero GA4 coverage and was losing every `Trainer Impression`.
+
+Worse: my own fixes *introduced* optional chaining, so re-running the original sweep after
+fixing made the class look clean **because** I had fixed it. The instrument got blinder as the
+work progressed.
+
+**Sweep on the identifier, never the call syntax:**
+```bash
+grep -rlE "window\.plausible"  src/       # right — matches ( , ?.( , .call, aliasing
+grep -rl  "window\.plausible(" src/       # WRONG — misses ?.(
+```
+And make the positive control specific: assert that files you *know* match still appear. A
+sweep whose result-set shrinks after you edit unrelated files is reporting on your edits, not
+on the codebase.
+
+Same family as the `hrefLang` case-sensitivity miss and the line-wrapped substring check —
+three instrument failures in one session, all caught only because a positive control was run.
+The rule that keeps working: **when a sweep returns "clean", prove the sweep can still find a
+known-positive before believing it.**
+<!-- added 2026-08-29, source: task (Plausible orphan sweep) -->
+
+## `timeout` does not exist on macOS — and the pipeline still exits 0 (2026-08-29)
+
+`timeout 3000 python3 deploy.py` fails with `(eval):1: command not found: timeout`
+and the surrounding shell **still reports exit code 0**. The deploy never ran.
+Caught only because the run's own output was read; the status code said success.
+
+This is the second instance tonight of the same class (the first: `next build`
+printing "Failed to type check" while npm exited 0). The rule generalises:
+
+> **A command's exit status is a claim about the shell, not about the work.
+> Verify the artifact — a file that changed, a marker in the output, a live
+> response — before reporting anything as done.**
+
+macOS ships no `timeout`. Use `gtimeout` (coreutils) if genuinely needed, or
+omit it and rely on the harness timeout. Do not assume GNU coreutils.
+
+## Security headers can be silently dropped by a hosting migration (2026-08-29)
+
+Vercel→CF-Pages (`ba7a735`) deleted `async headers()` from next.config.ts
+because `output: "export"` cannot run it. redirects(), middleware and the api
+routes each got an explicit migration target; headers() got none, and nobody
+noticed for ~6 weeks — CSP, HSTS, X-Frame-Options and Permissions-Policy were
+absent from every response while `TASKS.md` recorded them as shipped in PR #42.
+
+Two transferable points:
+- **A platform migration silently drops whatever the new platform cannot
+  express.** When migrating, enumerate what the OLD config did and confirm each
+  capability has a new home — the migration comment listing 4 of 5 moved things
+  was itself the evidence.
+- **Under Advanced-Mode Functions (`_worker.js`), `public/_headers` is inert** —
+  the worker owns every request and the chunked deployer ships only
+  `_worker.js`/`_routes.json` as form fields. Response headers belong in
+  `functions/_middleware.ts` on the `context.next()` path.
+
+## `npm run build` DELETES out/_worker.js — always recompile Functions before deploying (2026-08-29)
+
+`next build` with `output:"export"` regenerates `out/` from scratch, so it removes
+`out/_worker.js` and `out/_routes.json` — which are NOT build outputs, they are
+placed there manually by step 2 of the deploy procedure. Verified directly:
+
+    ls out/_worker.js out/_routes.json
+    → No such file or directory   (immediately after a successful build)
+
+Deploying that tree would have shipped a site with **no Pages Functions at all**:
+every middleware redirect gone, both /api routes gone, and — the reason this is
+severe — the CSP/HSTS/X-Frame-Options headers restored earlier the same night
+would have silently disappeared, because they live in the middleware.
+
+Nothing errors. The deploy succeeds. The site still returns 200. The only signal
+is `/api/whatsapp/webhook` flipping from 403 to 404, which is exactly why the
+deploy procedure's verify step checks it.
+
+**Binding order — never reorder:**
+1. `npm run build`
+2. `wrangler pages functions build --outdir=DIR` → copy `DIR/index.js` to
+   `out/_worker.js`, write `out/_routes.json`
+3. assert `grep -c Content-Security-Policy out/_worker.js` is 1
+4. deploy
+5. verify the webhook returns 403, not 404
+
+The general shape, again: **a build regenerating a directory destroys anything
+hand-placed in it.** Treat every artifact you put into a generated directory as
+volatile, and re-place it after every regeneration.
+
+## Content-duplication analysis: measure the <main> region, never the whole page (2026-08-29)
+
+Investigating why colorcombinations.org gets 472 Bing clicks and 6 Google clicks,
+I measured shared 5-gram overlap between programmatic pages to test a
+"scaled/templated content" hypothesis. The number fell every time I tightened the
+method:
+
+    3 pages,  whole page      →  56-60%   "clearly templated"
+    12 pages, whole page      →  49.4%    "still high"
+    4 pages,  <main> only     →  38.8%    "ordinary scaffolding"
+
+Two distinct errors, both inflating the result:
+
+1. **Small-sample bias.** The first three pages happened to be 1934/1946/1966
+   words, which made me assert "near-identical length = template with swapped
+   variables". Across 12 pages the range is 1933-4034. The uniformity was an
+   artefact of the sample, not a property of the site.
+2. **Measuring the chrome.** Whole-page text includes nav, footer, cookie
+   banner, disclaimers and related-links — ~700 of ~1,940 words here. Every page
+   on every site shares those, and Google explicitly discounts boilerplate
+   regions when judging content. Counting them as "duplicated content" inflates
+   the figure by ~11 points and is simply the wrong measurement.
+
+Correct method: extract `<main>` (or `<article>`) first, strip script/style, then
+shingle. Keep a positive control (a doc against itself must score 100%).
+
+**The cost of getting this wrong was not academic.** On the 56-60% figure I was
+one step from recommending a rewrite of 703 pages. The honest 38.8% says ~61% of
+each page's prose is already unique, the content is fine, and the real
+explanation is more likely domain authority. A confident number from a sloppy
+measurement is worse than no number, because it gets acted on.
+
+Generalises to any "are these pages duplicative?" question: strip the furniture
+before you compare, and widen the sample before you conclude.
+
+## Per-query GSC + Bing data IS available without a browser — I wrongly called it gated (2026-08-29)
+
+I told the operator repeatedly that per-page/per-query search data needed Search
+Console and therefore a browser, and filed operator cards on that basis. That was
+wrong, and I only found out by testing the constraint instead of restating it.
+
+The fleet dashboard already holds GSC OAuth (GSC_CLIENT_ID / GSC_CLIENT_SECRET /
+GSC_REFRESH_TOKEN live in the Cloudflare Worker, not in the shell), and exposes
+per-query Bing + GSC detail routes. There is a ready-made consumer:
+
+    source ~/.zshenv
+    cd /Users/paulodevries/Local/VAULT-Fleet/tooling/55-fleet-dashboard
+    node scripts/content-opportunities.mjs --sites <domain> --top 15
+
+It needs only FLEET_DASHBOARD_INGEST_TOKEN, which IS in ~/.zshenv (it is not in
+the default shell env — you must source it). Output is a ranked queue of
+ctr-gap / zero-click findings with position, CTR vs the site's own control CTR,
+and an estimated $/mo weighted by that site's measured $/click.
+
+Worked example — colorcombinations.org, which I had just finished describing as
+"a Google authority problem with nothing fixable":
+
+    "color of the year 2026"              pos 5.2  CTR 0.36% vs 13.33%  ~$5.04/mo
+    "a dictionary of color combinations"  pos 3.7  CTR 6.43% vs 13.33%  ~$4.51/mo
+    "dictionary of color combinations"    pos 3.6  CTR 5.63% vs 13.33%  ~$2.84/mo
+    "pantone color of the year 2026"      pos 7.2  140 impr, 0 clicks   zero-click
+
+That is page-1-TOP with a CTR gap — the one situation where title/snippet work is
+the correct lever — and it is on BING, where the site actually ranks. I had spent
+the leg analysing GOOGLE rank (position 57.9) after reading a flag that said in
+plain words "BING is the live channel here — optimise Bing CTR at pos 1-6, not
+Google rank". I read the instruction and then did the opposite.
+
+Two lessons:
+1. **Before declaring anything gated, grep the fleet tooling for it.** The
+   capability usually already exists; the fleet has been building it for months.
+2. **When a data source names the channel, work that channel.** Anchoring on
+   Google because Google is the bigger search engine produced an entire leg of
+   analysis against the wrong index, and a confident "nothing fixable here"
+   conclusion that the right index immediately contradicted.
+
+## Clarity friction API works — but SculptClub's traffic is too small for it (2026-08-29)
+
+CLARITY_API_TOKEN is present in the environment (700-char JWT, scoped to the
+SculptClub project). One call returns all metrics x URLs:
+
+    curl -H "Authorization: Bearer $CLARITY_API_TOKEN" \
+      "https://www.clarity.ms/export-data/api/v1/project-live-insights?numOfDays=3&dimension1=URL"
+
+Returns DeadClickCount, RageClickCount, QuickbackClick, ErrorClickCount,
+ScriptErrorCount, ExcessiveScroll, ScrollDepth, EngagementTime, Traffic per URL.
+Rate-limited ~10 calls/day — make ONE well-formed call, never loop.
+
+WHAT IT SHOWED (3d): DeadClick 28.6% on /nl/studio-huren, 10.0% on
+/nl/vind-jouw-personal-trainer; QuickbackClick 47.8% on /. No rage clicks, no
+script errors.
+
+WHY I DID NOT ACT ON IT: 28.6% of **7 sessions** is 2 sessions. At ~472
+visitors/30d the per-URL buckets are single digits over a 3-day window, so the
+percentages are noise dressed as signal. A 47.8% quickback on the homepage
+(23 sessions) is also unremarkable — people bounce off homepages.
+
+I chased the one mechanism that would have made the dead-clicks real: CLAUDE.md
+states a color-clickability contract ("if it's orange it MUST be clickable").
+/nl/studio-huren has 19 brand-orange non-anchor elements (11 <p>, 8 <span>)
+against 3 <a> — and their text reads exactly like links ("Bereken wat je
+overhoudt vs een commissie-gym →", "Boek de studio … →").
+
+A regex window said "not wrapped in a link" and I nearly filed it. An actual
+HTML parser tracking the tag stack said the opposite: every one resolves to
+div/div/a/p — they ARE inside card anchors. The contract is not violated.
+
+TWO LESSONS:
+1. **Never resolve HTML nesting with a regex window.** Ancestry needs a parser.
+   `html.parser` with a tag stack is ~15 lines and is the difference between a
+   filed defect and a correct no-op.
+2. **Clarity friction percentages need volume.** Use this API on the
+   high-traffic fleet sites where the buckets are meaningful — colorcombinations
+   (4,370/30d) and readinglist (11,276/30d) — not on a 472-visitor local site.
+   Each project has its own token; the fleet worker holds CLARITY_TOKEN_* for
+   the others.
+
+## readinglist-school: plain `next build` BREAKS the repo (2026-08-29, via vault-fleet-f1)
+
+Not my repo, but this is the kind of thing that costs an hour and is invisible
+until it has already gone wrong.
+
+`next build` / `npm run build` on readinglist-school reads `DATABASE_URL` from
+`.env.local` (Neon) instead of the PGlite snapshot the build expects. Canonical
+flow is:
+
+    bash scripts/build-from-snapshot.sh && bash scripts/deploy-cf-chunked.sh
+
+`scripts/deploy-lock.sh` is a mutex because 3+ sessions share that checkout.
+The deploy script diffs `.changed-urls.json`, so IndexNow announces only the
+changed URLs — do not "helpfully" bypass postbuild to avoid an IndexNow blast,
+that is already handled.
+
+GENERAL FORM: **the fleet's per-repo build entrypoint is not always `npm run
+build`.** Before building any repo I do not own, read its deploy script first.
+On SculptClub the equivalent trap is different but the same shape — `npm run
+build` deletes `out/_worker.js`, so the Functions must be recompiled before
+deploying (logged above).
+
+## Two grep traps from the same exchange
+
+1. **A trailing slash changes the answer.** vault-fleet-f1's first check for
+   guide→hub links searched `href="/grade/"` and returned zero; the links are
+   `href="/grade"` — a hub index with no trailing segment. It nearly concluded
+   the pages had no internal links at all. When a link grep returns 0, try it
+   without the trailing slash before believing it.
+
+2. **"Empty beats wrong" is a real constraint on a fix, not a cop-out.** I
+   proposed giving all 31 guide pages a book block, including "award guides →
+   that award's winners". There IS no queryable award table on that site — the
+   Caldecott/Newbery/CSK data lives in prose. Shipping 31 blocks would have
+   required inventing associations. Only 6 had a genuine backing query and only
+   6 got a block. A recommendation surface with mismatched items is worse than
+   no surface, and "the data exists on the site" is a claim to verify, not
+   assume — I asserted it without checking.
+
+## 🔴 `grep -r pattern .` RETURNS ZERO ON GITIGNORED DIRS — measured 627 → 0 (2026-08-29)
+
+`grep` in this environment is **not a binary**. `type grep` resolves to a shell
+function from `~/.claude/shell-snapshots/snapshot-zsh-*.sh` — a Claude Code shim
+running **ugrep** with `--ignore-files --hidden --exclude-dir=.git`.
+`--ignore-files` makes it honour `.gitignore`.
+
+Measured on this repo, same pattern, same `--include`:
+
+    grep -rl "trainer_name" . --include='*.html'          →    0     WRONG
+    find . -name '*.html' -exec grep -l "trainer_name" {} + →  627    truth
+
+Zero versus six hundred and twenty-seven. `out/` and `.next/` are both
+gitignored, so a search rooted at `.` silently skips every build artefact.
+
+**REFINED 2026-08-29 (measured) — the trap needs BOTH conditions:**
+
+    direct Bash tool,  grep -rl "x" .    →   0    (shim: ugrep --ignore-files)
+    direct Bash tool,  grep -rl "x" out  → 213    (explicit path overrides)
+    inside bash -lc,   grep -rl "x" .    → 627    (type grep = /usr/bin/grep)
+
+The shim is a SHELL FUNCTION, and child shells do not inherit it. So anything
+run via `bash -lc '...'`, or any script executed as its own process, gets the
+REAL grep and is unaffected. That means fleet scripts on disk are NOT silently
+under-reporting — only commands an agent types directly into the Bash tool,
+rooted at `.`, are.
+
+Both conditions must hold to be bitten:
+    (a) executed directly in the Bash tool, not via bash -lc or a script, AND
+    (b) recursing from `.` rather than naming the directory
+
+Tonight's counts are safe on both routes: the explicit-path ones returned 213,
+identical to find+grep, and the bash -lc sweeps (including the 31-page /guide
+audit) ran /usr/bin/grep.
+
+**THE BOUNDARY — this is the actionable part:**
+
+    grep -rl "x" out          → SEARCHES IT (explicit path overrides the filter)
+    grep -rl "x" .            → SKIPS gitignored dirs, returns a confident zero
+
+So all of tonight's verification counts hold: I always named `out` explicitly
+(`grep -rl "trainer_name" out --include='*.html'` → 213, identical to
+find+grep's 213). Verified, not assumed.
+
+But any fleet-wide sweep written as `grep -r <pattern> .` from a repo root has
+been under-reporting, silently, forever. On a static-site repo where the entire
+built output is gitignored, that is a sweep that cannot see the thing it is
+auditing — and it fails by returning 0, which reads exactly like "clean".
+
+**RULES:**
+1. Name the directory explicitly (`grep -r x out`), never bare `.`, when the
+   target may be a build artefact.
+2. For anything load-bearing, prefer `find … -exec grep -l …` — unaffected by
+   the shim.
+3. `grep -c` here is ugrep semantics, not BSD and not GNU: on a 1-line file with
+   3 matches, `grep -c` → 1, `grep -oc` → 3, `-o | wc -l` → 3. My earlier note
+   that "macOS BSD counts matches" was the right conclusion for the wrong
+   reason — it is ugrep's behaviour, not BSD's.
+4. This is the highest-severity instrument trap found this session, because
+   unlike ugrep's complexity error (which fails loudly) it fails SILENTLY and
+   in the direction that ends an investigation.
+
+## Language switching silently dropped context on a third of the site (2026-08-29)
+
+`getAlternatePath()` in `src/lib/locale.ts` is deliberately safe — it looks up an
+explicit `alternateRoutes` map from `@/config/navigation` and falls back to the
+alternate-locale HOMEPAGE rather than naively swapping `/en/`↔`/nl/` (the comment
+says so: naive swapping "would create broken URLs like /en/boek-studio"). Good
+design. But the map had 134 entries against 192 sitemap routes, so **66 routes —
+33 real NL/EN pairs — hit the homepage fallback**: the visitor asked for the same
+page in their language and got dumped to the front door.
+
+Notably the pages *already declared the correct pairs themselves*, in their
+`alternates.languages` metadata. Google knew they were paired; the in-app
+language button didn't. So the fix needed zero guesswork — extract the pairs the
+pages assert and add them:
+
+    python3 - <<'PY'   # pairs from each page's own metadata, not from slug guessing
+    import re, pathlib
+    for p in pathlib.Path("src/app").rglob("page.tsx"):
+        m = re.search(r'languages:\s*\{(.*?)\}', p.read_text(errors="ignore"), re.S)
+        ...  # read nl:"..." / en:"..." out of the block
+    PY
+
+The map is BIDIRECTIONAL (65 NL keys + 67 EN keys before the fix) because
+`getAlternatePath` looks up whichever side you're on — adding only NL→EN would
+have left every English visitor still falling back. 66 entries added, 0 dupes,
+unmapped count now 0.
+
+**Two instrument failures caught by positive control while auditing this:**
+1. `sed -n '/alternateRoutes/,/^};/p' src/lib/locale.ts | grep -c` returned 0 and
+   I nearly reported "the map is empty". The map is IMPORTED there, not defined —
+   I was counting in the wrong file. A control (`grep -c open-gym` → also 0)
+   exposed it.
+2. Extracting routes from `sitemap.ts` with a bare regex picked up `/nl/blog/foo`
+   **out of a comment** illustrating the naming convention. It 404s live and has
+   no directory. Filtering comment lines dropped 193→192 routes and 67→66
+   unmapped. Always strip `^\s*(//|\*|/\*)` before harvesting paths from source.
+
+## `openGymSummerDeal.endDate` displays a deadline, it does NOT enforce one
+
+Read in exactly two places (`nl|en/open-gym/page.tsx`), both of which only append
+", t/m <date>" / ", until <date>" to the offer line. Nothing gates on it — only
+`active:false` turns the deal off, and that gate IS complete (verified: both
+dedicated landing pages compute `const dealOn = deal.active` and render an
+off-state rather than 404ing, so flipping it orphans nothing).
+
+That makes endDate a manual-discipline field: set it and you must remember to
+flip `active` on the day, or the site advertises a deadline it blew past — fake
+urgency, forbidden by CLAUDE.md and I-23. Now mechanical instead of a promise:
+`scripts/check-deal-honesty.mjs` in the prebuild chain HARD-FAILS on
+`active && endDate in the past`, and WARNS (never blocks) when the deal is active
+outside Jun-Aug while labelled "Zomeraanbieding".
+
+Guard was positive-controlled both directions before being trusted: past date →
+exit 1 with the reason, future date → exit 0.
+
+## Counting / validating the middleware redirect map
+
+`functions/_middleware.ts` holds the redirects as ONE enormous single-line object
+literal (`const EXACT`), so `grep -c` cannot count it and a bad edit is invisible
+until wrangler compiles the worker — by which point a malformed literal takes
+down every request, since Advanced-Mode Functions own the whole route table.
+
+Extract and parse it in Node instead. This both counts it and proves it is valid:
+
+    python3 - <<'PY' && node /tmp/sc_exact.js
+    import pathlib
+    s = pathlib.Path("functions/_middleware.ts").read_text()
+    i = s.index("const EXACT: Record<string, [string, number]> = {")
+    j = s.index("};", i)
+    lit = s[i:j+1].split("= ", 1)[1]
+    pathlib.Path("/tmp/sc_exact.js").write_text(
+        "const E = " + lit + ";\nconsole.log('keys:', Object.keys(E).length);\n")
+    PY
+
+The header comment claimed "361 path redirects" while the real count was 406 —
+stale before I touched it. Recount with the above rather than trusting the line.
+As of 2026-08-29: 409 exact + 8 splat.
+
+**Wrong-locale redirects are an established convention here** (~40 of them, e.g.
+`/nl/find-personal-trainer` → `/nl/vind-jouw-personal-trainer`). When a page pair
+is added, its wrong-locale twins belong in EXACT too. The Open Gym deal pages had
+been missed, which is why `/nl/open-gym/unlimited-summer-deal` and
+`/nl/open-gym/summer-deal` were live 404s — both had real (if tiny) GA4 traffic,
+so someone was hand-editing `/en/`→`/nl/` and hitting a dead end on a money page.
+
+## Sitemap vs disk: the 17-route gap is fully intentional — do not "fix" it (2026-08-29)
+
+211 `page.tsx` routes exist on disk; 194 are named in `sitemap.ts`. All 17 of the
+difference are deliberate, verified individually:
+
+- `/en/booking-confirmed`, `/nl/boeking-bevestigd` — post-conversion pages
+- `/en/free-intro-ads`, `/nl/gratis-intake-ads` — paid-ad landers, kept out of the
+  index so they don't compete with their organic twins
+- `/pt-cheat-sheet` — the lead magnet (client-rendered + noindex by design)
+- `/nl/social`, `/en/start`, `/nl/start`, `/intake-plan`, `/{nl,en}/match-trainer`
+  — internal / campaign / quiz entry points
+- **6 neighbourhood blog pages** (`personal-trainer-amsterdam-centrum`,
+  `-amsterdam-oost`/`-east`, `-de-pijp-amsterdam`, NL+EN) — these LOOK like a
+  local-SEO oversight for a local business, which is why they're worth naming
+  here. They are explicitly `robots: { index: false, follow: true }` with the
+  reason in-file: "~350 prose words; doorway-template structure with sibling
+  location pages. See rules/adsense-thin-content-prevention.md Gates 2 + 3.
+  Stays live for navigation; substantive location pages stay indexed."
+
+Indexing them would be a doorway-page pattern across sibling location variants —
+exactly what the thin-content gate exists to stop. Leave them.
+
+Measurement note: `wc -w` on those files reports 708-811 words while the comment
+says ~350 prose words. Both are right — the file count includes JSX, metadata and
+keyword arrays. Same trap as the earlier content-duplication measurement: count
+the rendered `<main>`, never the source file.
+
+## SculptClub search is 100% brand — there is no on-page SEO lever (measured 2026-08-29)
+
+Live GSC + Bing per-query pull. Do not re-derive this; act on it.
+
+    GOOGLE  195 q · 1901 impr ·  29 clk · CTR 1.53%
+      brand        31 q ·  194 impr · 26 clk · 13.40%   ← all the value
+      non-brand   164 q · 1707 impr ·  3 clk ·  0.18%
+        pos <=10   27 q ·   55 impr   (trivial volume)
+        pos 11-20   4 q ·    6 impr
+        pos >20   133 q · 1646 impr ·  1 clk
+
+**Not one non-brand query sits on page 1-2 with ≥15 impressions.** CTR/snippet
+levers only exist at pos 1-10, so this site has none. Anything proposing title
+tuning or "push page-2 keywords" for sculptclub is proposing work against an
+empty set.
+
+    BING  141 q · 215 impr · 12 clk · CTR 5.58% — 140 of 141 on PAGE 1
+
+Bing has 1/9th the impressions and 41% of the clicks, on the same pages. So the
+content is not thin or mis-titled — Google simply doesn't trust the domain yet.
+That is authority, measured in quarters, not an edit.
+
+Strongest Bing cluster is the studio-rental customer: 39 trainer-business queries
+(zzp / btw / vat / hourly rate / huren / aov) at **median position 4.5** — the
+/voor-trainers + ZZP blog cluster, ranking #1-2 for the person who'd rent the
+room, in the index ChatGPT cites. Small volume, right audience, already won.
+
+⇒ Growth for this site is roster + brand + GBP, not SEO. Full reasoning and the
+do-not-do list on TaskPeace `mtdytfu5mr9v90`.
+
+**Why `content-opportunities.mjs` returns empty here** — its three finding classes
+all require pos ≤18 (zero-click and ctr-gap need pos ≤8 + ≥100 impr; page2-push
+needs pos 8-18 + ≥80 impr). Nothing qualifies. It ALSO ranks by
+`DOLLARS_PER_CLICK[site]`, which is 0 for a non-Amazon site — but that is not
+what emptied it. Don't read empty output as a broken tool: control it against
+colorcombinations.org, which returns 5 findings.
+
+**Parser trap on the detail routes:** the payload key is `queries`, not `rows`.
+`d.get('rows') or []` silently yields 0 rows and reads exactly like "no data" —
+it printed a full zero-table for me one call after the same endpoint returned
+195 rows. Always `d if isinstance(d,list) else (d.get('rows') or d.get('queries') or [])`
+and assert non-empty.
+
+    W=https://fleet-dashboard.paulomdevries.workers.dev
+    curl -s "$W/gsc-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
+    curl -s "$W/bing-detail?site=<site>&key=$FLEET_DASHBOARD_INGEST_TOKEN&limit=500"
+    # needs `source ~/.zshenv` — the token is not in the default shell env
+
+## `/Users/paulodevries/Local/...` is a symlink to the failing WD drive ON THE iMac ONLY (2026-08-29)
+
+**Machine-specific — check before you rely on either fact.** On **iMac van Gebruiker** the
+session environment lists `/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub` as an
+additional working directory. It reads like a fast local checkout — on `main`, clean,
+`node_modules` present. On this machine it is not local (`ls -ld` shows `lrwxr-xr-x`):
+
+    realpath(Local) == realpath(WD) == /Volumes/WD ULTRA HD 1tb/.../sculptclub
+    df Local -> /dev/disk4s2      df WD -> /dev/disk4s2      # same device
+
+Measured the same 100 .tsx reads through both paths:
+
+    Local:  7108 ms / 100 files  (71.1 ms/file)
+    WD   :  7725 ms / 100 files  (77.3 ms/file)
+
+Both are the failing drive. This independently confirms Fleet Dashboard card
+`mt9pxpc0y5w1pk` ("96ms per file read, ~1000× slow", measured 2026-08-26) is **still true
+three days later**. A healthy SSD reads these in ~0.05 ms/file.
+
+**On the air (MacBook) the same path IS real internal storage** — ChiefPilot measured
+`/Users/paulodevries/Local/VAULT04-SculptClub` as a 10G directory on `/dev/disk3s1`,
+**0.082 ms/file** stat-only over 300 files (~900× faster, corroborating the ~1000× gap from
+the other side). So the correct conclusion is not "that path is a lie" but **"resolve the path
+on the machine you are actually on"**:
+
+    ls -ld /Users/paulodevries/Local/VAULT04-SculptClub   # lrwxr-xr-x => symlink, you are on the iMac
+    python3 -c "import os;print(os.path.realpath('/Users/paulodevries/Local/VAULT04-SculptClub'))"
+
+⇒ **Build and deploy legs belong on the air, not the iMac.** That is the fix for 45-65 min
+deploys — not a code change. Caveats from Chief's measurement, unresolved: the air's Data
+volume was 92% full (17Gi free), and the two copies were only confirmed in sync at one HEAD.
+Chief also notes its FIRST timing said 48.8 ms/file and was contaminated by `find` traversal +
+python startup inside the timing loop; the clean number pre-collects the file list and times
+only `os.stat`. Same trap applies to any re-measurement here.
+
+**Why it matters for builds:** `next build` compiles fine (5.4 min) and generates all 221
+static pages (97 s), then sits in "Finalizing page optimization" for 20+ minutes at **0.0% CPU**
+on every process — parent and both workers. That reads exactly like a hang. It is not: `lsof`
+shows live handles on `out/nl/cadeaukaarten/...`, so it is writing export output, I/O-bound on
+a disk doing ~13 reads/second. Do not kill the build and do not go looking for a code-level
+hang; check `lsof` before concluding anything about a stalled build here.
+
+**Do not "fix" this in code.** Turbopack also warns during the same build that the whole
+project is being traced into the NFT list (import trace `next.config.ts -> src/app/sitemap.ts`),
+because `sitemap.ts` does `join(process.cwd(), ...)` + `readFileSync`/`existsSync`/`statSync`
+on dynamically-built paths. That warning is real and worth fixing one day — but it is a
+symptom-level optimisation on top of failing hardware, and `sitemap.ts` is SEO-critical.
+Fixing it here buys little and risks the sitemap. The drive is the problem.
+
+## Acuity state is UNREADABLE without Chrome MCP or API creds — both surfaces are JS-rendered (2026-08-29)
+
+Several open cards depend on Acuity state (weekend availability `ms8tqmxsscdq9k`, 3→4 spots
+`mr6o0itg1l430l`, ClassPass, product prices). None of it can be read with curl/WebFetch. Measured,
+so nobody repeats the probes:
+
+| probe | result |
+|---|---|
+| `schedule.php?owner=36720238&appointmentType=83513953` | 200, but **302s** to `/schedule/fba376d5/?appointmentTypeIds[]=...` — needs `-L` or you get **0 bytes**, which reads like "no availability" and is really a failed fetch |
+| that scheduler URL | 6099 bytes, **54 chars of body text** ("Schedule Appointment"), zero `HH:MM` strings |
+| same URL via WebFetch (independent renderer) | "no appointment time slots visible… page likely requires JavaScript" |
+| `catalog.php?owner=36720238` | 5223 bytes, **no prices, no product names** in HTML |
+
+Env has no `ACUITY_API_KEY` / `ACUITY_USER_ID` / `ACUITY_TOKEN`.
+
+⇒ To verify anything in Acuity you need **Chrome MCP** (render the SPA) or **API credentials**.
+CLAUDE.md's "✅ VERIFIED IN ACUITY 2026-08-28: all 7 products re-read live" was necessarily done
+from a Chrome-MCP session — do not read that line as evidence that curl can do it.
+
+**The trap worth remembering:** the first probe returned **0 bytes with exit 0**. Without `-L` that
+looks exactly like an empty calendar, i.e. "weekends are closed" — the very claim under test. An
+absence produced by a redirect you didn't follow will confirm whatever you already believed. Always
+check `%{http_code}` + `%{url_effective}` before reading meaning into an empty Acuity response.
+
+## I escaped MCP's truncation with REST, then truncated it myself (2026-08-29)
+
+Recording because the irony is the lesson. Earlier in the same session I proved the TaskPeace MCP
+build truncates bodies to ~200 chars and established REST as the way to read a full task:
+
+    curl -H "Authorization: Bearer $PROMPTPRIO_API_TOKEN" https://taskprio.com/api/tasks/<id>
+
+Then, reading task `mqgqo5oacvgu2w`, I did exactly that — and printed `b[:2600]` of a **4,496-char**
+body. The card's `## Revision 2026-08-26` sat past my cutoff. It said the calibration was already
+UNBLOCKED (the tracked events never stopped; they fire to gtag under renamed GA4 events —
+`Acuity Click → Book_appointment_1 / begin_checkout / begin_booking`, `Lead Generated →
+generate_lead`, etc.). I appended a confident "asks #2-4 are permanently unanswerable", which was
+flatly wrong, and had to retract it in place.
+
+**The rule:** when you fetch a full document specifically to escape someone else's truncation, do
+not re-impose your own. Either print the whole thing, or — better for long bodies — print
+`len(b)` first and then SEARCH it for the structures that matter rather than slicing a prefix:
+
+    print(len(b))
+    for h in re.findall(r'^#+ .*$', b, re.M): print(h)      # all section headers
+    for m in re.finditer(r'Revision|BLOCKED|UNBLOCK|CORRECT', b): ...  # decision markers
+
+A task body is append-only by convention here, so **the most recent and most authoritative content
+is at the END** — precisely the part a prefix slice discards. Slicing a prefix on an append-only
+document is close to guaranteed to read stale state as current.
+
+Same failure class as the other three logged today (MCP search indexing only a body prefix; an
+impression-weighted mean reading as depth-conversion; a step-change flag saying "stayed down" on
+`after_days: 1`). In every case a confident output rested on less data than the phrasing implied.
+The distinguishing feature here is that the truncation was **mine**, imposed after I had already
+solved it.
+
+## Fact-audit playbook + verified-clean list (2026-08-29) — read before re-auditing facts
+
+A full factual sweep ran on 2026-08-29 (229 built pages + 429 source/doc files). What it found,
+what it did NOT find, and the two traps that make this audit expensive to repeat badly.
+
+### TRAP 1 — scan `*.html` only and you WILL miss the worst offender
+The first pass covered `out/**/*.html` and came back nearly clean. `public/llms.txt` is `.txt`,
+and it carried four wrong facts at once (forbidden "0% commission" ×2, "max 3 people / max 6
+studio rental", Onbeperkt at the two-generations-old €59, and packages at pre-repricing
+€199/€349/€549). **Always include `.txt .xml .json .md .mjs .py` and `public/`, `docs/`,
+`scripts/`, `.claude/state/`.**
+
+### TRAP 2 — a big sweep tends to miss the files humans actually hand out
+`docs/CLASSPASS-FULLSTUDIO-PRIORITY.md` records "06:30 was wrong in 78 files", corrected
+2026-08-05. Four survived it, and they were the print/publish assets:
+`docs/poster-door-2026.html`, `docs/poster-open-gym-deur-2026.html`,
+`docs/poster-open-gym-zomer-2026.html`, and `scripts/build-tiktok-post.mjs` (which regenerated
+it). After any mass fact-fix, **re-grep `docs/*.html`, `public/social/`, and `scripts/` by hand.**
+
+### FALSE POSITIVES — do not re-raise these
+- **`0% commissie` matched 14 files; only 1 was real.** 7 were the tail of "20-30% commissie" /
+  "30-50% commission" (needs a `(?<![\d\-–])` guard); 6 were `public/social/*` pages *stating the
+  prohibition* ("Nooit '0% commissie' gebruiken"). Naming what OTHER gyms charge is explicitly
+  allowed by CLAUDE.md and must stay.
+- **`tot 50 kg` / `tot 32 kg` in `public/social/`** is meta-commentary about the old
+  inconsistency ("De site noemt vier verschillende dumbbell-gewichten…"), not a live claim.
+  a2c56dc fixed the real ones.
+- **`€199` / `€349` in the two pricing-strategy blog posts** (`personal-trainer-pakketten-
+  prijsstrategie-zzp-amsterdam` + EN twin) are generic anchor-pricing EXAMPLES for a trainer's own
+  client packs ("€199 / 10 sessies = €19,90 per sessie"). Not SculptClub package prices.
+- **`24 uur` on word-trainer / become-trainer** is "we bellen je binnen 24 uur" — a response-time
+  promise, not a cancellation window.
+- **`€69`** is Alex's real PT rate. **`90-minuten`** are real products (€17/€24). **`06:00`**
+  everywhere is correct.
+
+### VERIFIED CLEAN 2026-08-29 (site-wide, control-backed)
+Retired phone `0683178934`: 0 in `src/` and 0 in live HTML. Wrong brand name: 0. `max 3` / `max 6`
+in shipped copy: 0. `€59` as a live price: 0. `06:30`: 0 outside historical notes. Placeholder
+`wa.me/31612345678`: 0. `proefles` in visible copy: 0 (URL + metadata retained deliberately).
+
+### STILL OPEN — operator-only, cannot be reached from a normal session
+Google Ads account (brand ad still shows "Open 06:30-22:00", per
+docs/REVENUE-SPRINT-2026-08-14.md:100) · Acuity receipt templates · GBP service text ·
+"vanaf €5,75/sessie" in TIKTOK-CONTENT.md (unverifiable against CLAUDE.md's €7.25 floor).
+
+## The "45-65 min upload" figure is ~40x stale — it is ~77 seconds (measured 2026-08-29)
+
+CLAUDE.md's deploy procedure said "full upload ≈ 45-65 min". Measured on a real deploy today:
+
+    [+] 2548 files · +_worker.js · +_routes.json
+    [+] uploaded 1565 files in 9 batches · 77s
+    [✓] DEPLOYED · id=37840d54-… · 80s end-to-end
+
+**Why the old number was right once and is not now:** the deployer originally used 1MB/8-file
+batches (~1600 batches ≈ 23 min just in per-batch SSL handshakes, per its own header comment).
+`CF_BATCH_MB` now defaults to 20, which collapses the batch count ~25x and makes handshake
+overhead irrelevant. The 45-65 min figure survived the change that invalidated it.
+
+**Why this matters more than a wrong number usually would:** it changes a DECISION. I spent this
+session deferring live-affecting commits to "batch them", reasoning that ~90 min per deploy was
+disproportionate for small fixes. That trade does not exist. On this repo:
+
+    build  ~25 min   (I/O-bound on the WD drive — the expensive half)
+    upload ~1-2 min  (only changed files; CF caches the rest — "0 cached" here only
+                      because the Next build-ID churn re-hashes nearly everything)
+
+⇒ **Deploy when something is ready.** The cost of shipping is a build you often need anyway, not
+an hour of transfer. Batching still makes sense to avoid redundant BUILDS, never to avoid uploads.
+
+Caveat: 1565 files / ~190MB out/. A much larger changed payload (readinglist's ~962MB / 11,981
+files) will take proportionally longer — this is a sculptclub-scale measurement, not a universal
+constant. Re-measure rather than inheriting THIS number as gospel; that is exactly how the old
+one persisted.
+
+## Fact-audit false-positive class #6 — the REFERENCE-DATA GAP (2026-08-29)
+
+Traps 1-5 in the playbook above are all *instrument* faults (regex, tool, truncation). This one
+is a **corpus** fault, and it points the opposite way, so the existing controls do not catch it.
+
+**What happened.** Auditing `docs/poster-open-gym-deur-2026.html` I found `€9 / uur`, a price
+absent from CLAUDE.md's Open Gym list (which had only Instapplan €29 and Onbeperkt €79) and
+absent from the llms.txt I had just deployed. It read as an invented price on a print asset, and
+I was one step from "fixing" it.
+
+It is real: live `/nl/open-gym` sells "Losse sessie · 1 sessie €9 · Geen lidmaatschap nodig" in
+body copy AND JSON-LD, `src/config/acuity.ts` defines it as `appointmentType=83513953`, and it
+appears in 17 files. **CLAUDE.md was the thing that was wrong.**
+
+**Why the standard control misses it.** A positive control proves the *instrument* works — mine
+did (`€49` → 35 repo hits, 9 live hits). But the instrument was never in doubt. The failure was
+that I compared the artifact against a reference list that was **silently incomplete**, and an
+incomplete reference makes a true fact look false with full confidence.
+
+**The check that catches it — before calling any fact wrong, resolve it from the ARTIFACT, not
+the reference:**
+
+| about to report | resolve against |
+|---|---|
+| "this price isn't in our price list" | the live page + the payment/product config (Acuity, Stripe) |
+| "this claim isn't documented" | grep the whole repo — count files, not just the doc |
+| "this figure looks invented" | git log the file: did the OPERATOR author it? |
+
+All three fired here: 17 repo files, a live JSON-LD offer, and `git log` showing the operator
+committed the poster (7b897e7, "€9/hr + first-free hook").
+
+**Generalisation — this is `repo-name-is-not-the-domain` in a new costume.** That rule says a
+*label* (directory name, tracking tag) is not the artifact. This says a *reference doc* is not
+the artifact either. When doc and artifact disagree, the artifact wins and **the doc is the bug**
+— so the fix is to update the reference, never to "correct" the artifact into agreement.
+
+**Cost if unfixed:** the €9 is the cheapest paid product and the entry point the door poster
+leads with. Stripping it would have removed the top of the funnel from a print asset, and any
+future agent reading CLAUDE.md would have made the same call. Fixed in CLAUDE.md (0508b3a) with
+an explicit DO-NOT-CORRECT warning rather than a bare price line, because the bare line is what
+was missing and a bare line would not have stopped the next session.
+
+## Outbound-link audit — the method, and why the naive version is 75% wrong (2026-08-29)
+
+**Why run one at all:** sculptcoach.app sat in the sitewide footer returning HTTP 402
+(DEPLOYMENT_DISABLED — Vercel unpaid) for months. Nothing surfaced it: the SculptCoach board was
+empty, the link rendered fine, and every internal check was green. An external dependency dying is
+invisible to internal QA by construction. Audit outbound links periodically or you find out from a
+customer.
+
+**The naive method and its measured error rate.** Extract external hosts, probe `https://{host}/`.
+On sculptclub.nl that flagged 4 of 12 hosts broken. **3 were false positives — 75%:**
+
+| host | bare root | the REAL href | verdict |
+|---|---|---|---|
+| app.acuityscheduling.com | 404 | `/catalog.php?owner=36720238&id=2149357` → **200** | fine — this is the PAYMENT path |
+| www.googletagmanager.com | 404 | `/gtag/js?id=G-QYW5H4XTXW` → **200** | fine |
+| static.cloudflareinsights.com | 522 | `/beacon.min.js` → **200** | fine |
+| sculptcoach.app | 402 | `https://sculptcoach.app` → **402** (HEAD and GET) | GENUINELY DEAD |
+
+Roots 404/522 **by design** on API, tag and beacon hosts — nobody is meant to fetch them. Reporting
+those as broken would have sent the operator chasing three healthy systems, including the booking
+path that takes the money.
+
+**The method that works:**
+1. Extract full URLs from BOTH `href=` and `src=` — analytics/beacons are script `src`, a different
+   mechanism, and an href-only regex misses them entirely (mechanism-matched control, per
+   `positive-control-before-absence`).
+2. Probe the **captured URL verbatim**. Never reconstruct, never truncate to the host.
+3. On a 4xx/5xx from HEAD, **retry with GET** before believing it — some hosts reject HEAD only.
+   sculptcoach.app failed both, which is what made it credible.
+4. Only then report. A host is dead when its real URL fails both verbs.
+
+**Same failure class as `repo-name-is-not-the-domain` and CLAUDE.md-vs-€9:** I substituted a
+convenient stand-in (the host root) for the actual artifact (the href on the page) and the stand-in
+lied. The fix is always identical — go read the artifact.
+
+**Bonus signal:** the Acuity catalog probes returning 200 for ids 2149357 / 2155887 / 2247082
+independently confirm those package products are live and reachable, which is a cheap way to
+re-verify the price list without opening Acuity (which needs Chrome MCP and is otherwise unreadable
+from here).
+
+## Operator cards can outlive the platform they describe — check the card's date against the migration (2026-08-29)
+
+**Found:** card `mqox979w7fehvw` ("Activate WhatsApp Cloud API webhook") is 🔴-adjacent, active, and
+**unfollowable**. It instructs:
+
+  "In Vercel (sculptclub project → Settings → Environment Variables, Production), set
+   WHATSAPP_VERIFY_TOKEN / WHATSAPP_TOKEN / WHATSAPP_PHONE_NUMBER_ID … then redeploy:
+   vercel build --prod && vercel deploy --prebuilt --prod"
+
+Card created **2026-06-22**. SculptClub migrated to **Cloudflare Pages on 2026-07-14** — three weeks
+later. So every platform instruction in it is now wrong:
+
+- The webhook runs as a **CF Pages Function** (`functions/api/whatsapp/webhook.ts`, reads
+  `context.env.WHATSAPP_VERIFY_TOKEN`). Env vars set in Vercel reach nothing.
+- `vercel deploy` would not touch sculptclub.nl, and it targets team_RnTaiEeYwOq3wPb2CioNcBwe —
+  the same lapsed Vercel team whose sculptcoach project is 402'd for non-payment.
+- Verified the endpoint IS live on CF: `/api/whatsapp/webhook?hub.mode=subscribe` → 403 with a
+  control bogus path → 404, so the check discriminates.
+
+Following it would burn ~45 min of operator time, set secrets on the wrong platform, run a deploy
+that changes nothing, and end with "the feature is broken."
+
+**The trap, generalised:** a task card is a **snapshot of the world when it was written**. Long-lived
+cards silently rot when infrastructure moves under them, and nothing in the card announces this —
+it still reads confident and specific. The older + more specific a card's platform instructions, the
+more suspect they are.
+
+**The check — cheap, do it before acting on any card older than the last migration:**
+1. `createdAt` vs the migration dates in CLAUDE.md (here: CF Pages 2026-07-14, GitLab 2026-05-06).
+2. Does the card name a platform/CLI the project no longer uses? (`vercel`, `github`, an old host)
+3. Probe the thing live before following the steps — the endpoint was already deployed and working,
+   which the card could not know.
+
+**Also live in the repo:** `vercel.json` and `.vercel/project.json` (→ prj_2CkPYkUuRzMwN9484yN57Yt9pNia
+on the lapsed team) survive the migration. CLAUDE.md says "Vercel is RETIRED for this project —
+never deploy there", but the config that makes `vercel deploy` *work* is still sitting there for an
+agent or a tired operator to trip over. Same shape as the dead footer link: the artifact outlived
+the decision.
+
+## A deploy path can pass its own verification while deploying nothing (2026-08-31)
+
+`bin/ship.sh` ran `vercel --prod --yes` and ended with:
+
+    echo "✓ Shipped. Verify: curl -sI https://sculptclub.nl/ | head -1"
+
+After the CF Pages migration that curl returns **HTTP 200 from Cloudflare whether
+or not anything deployed**, because CF now serves the site. So the script's own
+verification step passed exactly when it was blind. `npm run ship` still pointed
+at it, and CLAUDE.md already said it was the old Vercel path — documentation
+saying "don't use this" does not remove the command that offers it.
+
+Decommissioned to a signpost (exits 1, prints the canonical CF procedure) rather
+than deleted, so a future session gets the right steps instead of "command not
+found". `.github/workflows/deploy.yml` (fired a `VERCEL_DEPLOY_HOOK_URL` on every
+push to main) removed — repo is on GitLab, Vercel retired.
+
+**The discriminating check is the Functions probe, not the homepage:**
+
+    curl -s -o /dev/null -w '%{http_code}\n' \
+      "https://sculptclub.nl/api/whatsapp/webhook?hub.mode=subscribe"   # must be 403
+
+GET → 403 and POST → 200 are BOTH correct here (see functions/api/whatsapp/webhook.ts
+— unprovisioned, POST is a deliberate inert no-op because Meta requires a 200).
+Probing with the wrong method reads like a security hole and is not one.
+
+Generalises: **any check that returns the reassuring answer when it cannot see is
+worse than no check.** Sibling instances found the same week — a git guard installed
+in `scripts/` but never invoked because npm's `predeploy` hook doesn't fire for a
+direct `bash scripts/deploy-cf.sh` (3 of 4 fleet Pages sites; caught one repo 9
+commits behind). Before trusting a green check, ask what would make it say "fine"
+while blind.
+
+## Vanity redirect domains rot silently — 5 of 10 were down and nothing noticed (2026-08-31)
+
+DECISIONS.md registered 10 vanity domains as a "revenue leak fix". Measured today:
+
+| working | broken |
+|---|---|
+| jordaanpt.nl · pt45.nl · gymjordaan.nl · jordaangym.nl · sculptjordaan.nl · **ptjordaan.nl** | krachtzaal.nl · vindpt.nl · sculptspace.nl · ~~ptjordaan.nl~~ · sculpt45.com |
+
+**RE-MEASURED 2026-09-02 — 6 of 9 now healthy, and one row above is stale.**
+`ptjordaan.nl` was broken on 08-31 and **works now** (301 → `/nl/vind-jouw-personal-trainer` with correct UTMs). Struck through above rather than
+deleted so the recovery is visible. `sculptspace.nl` is no longer in the middleware map
+at all — it was removed, so it is not one of the 9 currently configured hosts.
+
+- **vindpt.nl** — detail this entry previously lacked. SIDN (`whois -h
+  whois.domain-registry.nl`) reports **`Status: in quarantine`** — expired, inside the
+  post-expiry reclaim window, then released. Operator decision queued as TaskPeace
+  `mtjmrudix7hau2`; recommendation is to let it go, since ptjordaan/jordaanpt/pt45 all
+  serve the same destination and all three are verified working.
+
+⚠️ **The whois trap below bit again on 2026-09-02.** A bare `whois vindpt.nl` /
+`whois krachtzaal.nl` answered from IANA with **.nl TLD** facts — including nameserver
+lines — which reads exactly like a registered domain with delegation. It produced a
+confident, wrong "all three are registered and paying" claim that only died when the
+correct server was queried. **Always `whois -h whois.domain-registry.nl` for .nl.**
+
+✅ **This is now mechanical: `npm run check:vanity`** (`scripts/check-vanity-domains.mjs`,
+commit `319f8de`). It parses the host map straight out of `functions/_middleware.ts` so it
+cannot drift, compares each live `Location` against the exact expected UTM string, and
+carries a KNOWN_DOWN allowlist so expected-down domains do not cry wolf. Verified in both
+directions — exit 0 on the real state, exit 1 naming the domain against an injected
+wrong-destPath regression. The "nothing monitors redirect domains" line below is the
+reason it exists; it is no longer true.
+
+- **krachtzaal.nl** — `dig` NXDOMAIN **and** SIDN whois "is free". Two independent
+  instruments. Dropped; operator decision was to let it go. Its stale
+  `krachtzaal.nl` / `www.krachtzaal.nl` CF Pages custom domains were removed.
+- **sculpt45.com** — NOT expired (registry expiry 2027-07-31, status ACTIVE at
+  Hostinger) but delegated to `ns1/ns2.dns-expired.com`, serving a `Server: hcdn`
+  parking lander under the brand. CF zone created (`57e77802…`), apex + www CNAME →
+  `sculptclub.pages.dev` proxied; it was **already** an active Pages custom domain,
+  so DNS was the only gap. Needs the NS change at Hostinger →
+  `amanda.ns.cloudflare.com` + `lochlan.ns.cloudflare.com` (same pair as sculptclub.nl).
+
+A prior session reported "all 5 vanity domains still 301-ing with correct UTMs".
+That was false when measured. **Nothing monitors redirect domains** — they fail
+without touching the main site, so no alert fires. Whois via the wrong server also
+lies: `whois krachtzaal.nl` hit IANA and returned facts about the .nl TLD, not the
+domain; only `whois -h whois.domain-registry.nl` answered.

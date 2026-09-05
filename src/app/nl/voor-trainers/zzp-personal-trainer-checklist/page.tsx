@@ -86,6 +86,7 @@ export default function ZZPChecklistNL() {
             <li><strong>Tijd:</strong> automatisch bij KvK-inschrijving (binnen 5 werkdagen)</li>
             <li><strong>KOR (Kleineondernemersregeling):</strong> als je verwacht onder de €20.000 omzet/jaar te blijven, schrijf je in voor de KOR. Dit betekent: geen BTW factureren, geen BTW-aangifte indienen. Aanmelden via <a href="https://www.belastingdienst.nl" rel="external">Mijn Belastingdienst Zakelijk</a>.</li>
             <li><strong>Boven €20.000?</strong> Reken 21% BTW op je facturen, dien per kwartaal aangifte in. Boekhoudsoftware doet dit automatisch.</li>
+            <li><strong>Verdieping:</strong> welk tarief (21% of 9%) voor personal training precies geldt en wanneer, staat uitgewerkt in <a href="/nl/blog/btw-personal-trainer">btw voor personal trainers</a>.</li>
           </ul>
 
           <h2>Stap 3 — Beroepsaansprakelijkheidsverzekering</h2>
@@ -95,6 +96,7 @@ export default function ZZPChecklistNL() {
             <li><strong>Verplicht?</strong> Niet wettelijk, maar de meeste verhuurders (waaronder SculptClub) en verzekeraars van klanten eisen het. Zonder verzekering ben je persoonlijk aansprakelijk bij blessures.</li>
             <li><strong>Aanbieders:</strong> ZZP-pensioen.nl, Centraal Beheer Achmea, Hiscox, Schouten ZZP. Dekking minimaal €1 miljoen per gebeurtenis.</li>
             <li><strong>Tip:</strong> kies een polis die ook "schade aan gehuurde ruimte" dekt — relevant als je een studio huurt.</li>
+            <li><strong>Los hiervan:</strong> arbeidsongeschiktheid (wat als je zelf geblesseerd raakt en niet kunt trainen) is een aparte verzekering — zie <a href="/nl/blog/aov-personal-trainer-zzp">AOV voor personal trainers</a>.</li>
           </ul>
 
           <h2>Stap 4 — Zakelijke bankrekening</h2>
@@ -161,7 +163,7 @@ export default function ZZPChecklistNL() {
             Vergelijk dit met loondienst bij een ketensportschool (~€2.500-€3.500 bruto/mnd): als ZZP'er heb je 8-12 betaalde sessies/week nodig om hetzelfde netto-inkomen te halen. Boven dat punt verdien je significant meer.
           </p>
           <p>
-            Wil je meer verdieping per stap — btw, AOV en pensioenopbouw? Lees de uitgebreide gids <a href="/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen">ZZP personal trainer in Nederland: KvK, btw, verzekering en pensioen</a>.
+            Wil je meer verdieping per stap — btw, AOV en pensioenopbouw? Lees de uitgebreide gids <a href="/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen">ZZP personal trainer in Nederland: KvK, btw, verzekering en pensioen</a>. En voor wat je in je eerste jaar daadwerkelijk overhoudt na aftrek: <a href="/nl/blog/belasting-eerste-jaar-zzp-personal-trainer">belasting eerste jaar ZZP personal trainer</a>.
           </p>
         </article>
       </Section>
