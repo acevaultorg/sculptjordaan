@@ -297,8 +297,16 @@ export const alternateRoutes: Record<string, string> = {
   // context. Both directions, because getAlternatePath looks up either.
   // Source of truth stays the page's own metadata — re-run the extractor
   // if a slug changes.
+  // +2 pairs 2026-09-05 (35 total): /open-gym/studentenkorting (shipped 09-01) and
+  // the belasting/first-year-tax blog post (shipped 09-05) recurred the SAME gap —
+  // both declared alternates in their own metadata but were never added here, so
+  // HreflangLinks hit its `if (!nlPath || !enPath) return null` guard and they served
+  // 2 hreflang tags instead of 5 (no x-default, no nl-NL). Any page added after
+  // 2026-08-29 needs an entry here too — the extractor is not wired into the build.
   "/nl/blog/aov-personal-trainer-zzp": "/en/blog/disability-insurance-freelance-personal-trainer-netherlands",
   "/en/blog/disability-insurance-freelance-personal-trainer-netherlands": "/nl/blog/aov-personal-trainer-zzp",
+  "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer": "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
+  "/en/blog/first-year-tax-freelance-personal-trainer-netherlands": "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
   "/nl/blog/btw-personal-trainer": "/en/blog/vat-personal-trainer-netherlands",
   "/en/blog/vat-personal-trainer-netherlands": "/nl/blog/btw-personal-trainer",
   "/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam": "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
@@ -331,6 +339,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/boutique-personal-training-vs-chain-gyms": "/nl/boutique-personal-training-vs-keten",
   "/nl/open-gym/onbeperkt-zomerdeal": "/en/open-gym/unlimited-summer-deal",
   "/en/open-gym/unlimited-summer-deal": "/nl/open-gym/onbeperkt-zomerdeal",
+  "/nl/open-gym/studentenkorting": "/en/open-gym/student-discount",
+  "/en/open-gym/student-discount": "/nl/open-gym/studentenkorting",
   "/nl/personal-trainer-jordaan": "/en/personal-trainer-amsterdam-jordaan",
   "/en/personal-trainer-amsterdam-jordaan": "/nl/personal-trainer-jordaan",
   "/nl/plan-gratis-intake-met-bryan": "/en/plan-free-intro-with-bryan",
