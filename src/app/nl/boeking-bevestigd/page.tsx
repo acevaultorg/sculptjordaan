@@ -20,7 +20,7 @@ import { siteConfig } from "@/config/site";
  *
  * URL params (set by Acuity Custom URL redirect):
  *   ?type=studio_rental|open_gym|trainer|generic
- *   ?value=12  (EUR amount)
+ *   ?value=12  (EUR amount; 0 for free-trial types — passed through, not defaulted)
  *   ?id=84032351 (Acuity appointmentType — optional)
  *
  * See companion EN page at /en/booking-confirmed.
@@ -47,7 +47,13 @@ export default function BookingConfirmedNL() {
 
     const params = new URLSearchParams(window.location.search);
     const type = params.get("type") ?? "generic";
-    const value = Number(params.get("value") ?? "12") || 12;
+    // %price% arrives as a string ("0", "12", "17.00", possibly "12,00"). 0 is a REAL value
+    // (free-trial types) and must never fall back to the €12 default — `|| 12` did exactly
+    // that, reporting a phantom €12 on every free booking. Only absent/garbage → default.
+    const rawValue = params.get("value");
+    const parsedValue =
+      rawValue === null ? NaN : Number(rawValue.trim().replace(",", ".").replace(/[^0-9.-]/g, ""));
+    const value = Number.isFinite(parsedValue) ? parsedValue : 12;
 
     // Retry until tag libs are loaded (gtag.js loads afterInteractive — useEffect
     // can run before that completes, causing the original implementation to silently
