@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sitemap-lastmod.mjs && node scripts/check-trainer-consistency.mjs && node scripts/generate-image-color-manifest.mjs && node scripts/check-logo.mjs && node scripts/check-deal-honesty.mjs",
+    "prebuild": "node scripts/sitemap-lastmod.mjs && node scripts/check-trainer-consistency.mjs && node scripts/generate-image-color-manifest.mjs && node scripts/check-logo.mjs && node scripts/check-deal-honesty.mjs && node scripts/check-hreflang-pairs.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -20,6 +20,7 @@
     "check:orphans": "node scripts/check-orphan-routes.mjs",
     "check:vanity": "node scripts/check-vanity-domains.mjs",
     "check:sitemap": "node scripts/check-sitemap.mjs",
+    "check:hreflang": "node scripts/check-hreflang-pairs.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
     "verify:photo-library": "node scripts/verify-photo-library.mjs"
   },

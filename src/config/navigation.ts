@@ -206,6 +206,7 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/boutique-gym-vs-sportschool-keten": "/en/blog/boutique-gym-vs-big-chain-gym",
   "/nl/blog/personal-trainer-voor-beginners": "/en/blog/personal-trainer-for-beginners",
   "/nl/blog/personal-trainer-amsterdam-oost": "/en/blog/personal-trainer-amsterdam-east",
+  "/nl/blog/personal-trainer-amsterdam-noord": "/en/blog/personal-trainer-amsterdam-north",
   "/nl/blog/personal-trainer-na-blessure-amsterdam": "/en/blog/personal-trainer-after-injury-amsterdam",
   "/nl/blog/krachttraining-voor-vrouwen": "/en/blog/strength-training-for-women",
   "/nl/blog/personal-trainer-rugklachten-amsterdam": "/en/blog/back-pain-personal-trainer-amsterdam",
@@ -213,6 +214,7 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/personal-trainer-amsterdam-zuid": "/en/blog/personal-trainer-amsterdam-south",
   "/nl/blog/personal-trainer-voor-senioren-amsterdam": "/en/blog/personal-trainer-for-seniors-amsterdam",
   "/nl/blog/personal-trainer-worden-amsterdam": "/en/blog/become-personal-trainer-amsterdam",
+  "/nl/blog/zakelijk-personal-training-amsterdam": "/en/blog/corporate-personal-training-amsterdam",
   "/nl/word-trainer": "/en/become-trainer",
   // EN → NL: pages
   "/en": "/",
