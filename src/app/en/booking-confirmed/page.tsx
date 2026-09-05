@@ -17,7 +17,13 @@ export default function BookingConfirmedEN() {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const type = params.get("type") ?? "generic";
-    const value = Number(params.get("value") ?? "12") || 12;
+    // %price% arrives as a string ("0", "12", "17.00", possibly "12,00"). 0 is a REAL value
+    // (free-trial types) and must never fall back to the €12 default — `|| 12` did exactly
+    // that, reporting a phantom €12 on every free booking. Only absent/garbage → default.
+    const rawValue = params.get("value");
+    const parsedValue =
+      rawValue === null ? NaN : Number(rawValue.trim().replace(",", ".").replace(/[^0-9.-]/g, ""));
+    const value = Number.isFinite(parsedValue) ? parsedValue : 12;
 
     type GtagFn = (...args: unknown[]) => void;
     type FbqFn = (...args: unknown[]) => void;
