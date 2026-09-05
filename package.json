@@ -21,6 +21,7 @@
     "check:vanity": "node scripts/check-vanity-domains.mjs",
     "check:sitemap": "node scripts/check-sitemap.mjs",
     "check:hreflang": "node scripts/check-hreflang-pairs.mjs",
+    "check:acuity": "node scripts/check-acuity-prices.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
     "verify:photo-library": "node scripts/verify-photo-library.mjs"
   },
