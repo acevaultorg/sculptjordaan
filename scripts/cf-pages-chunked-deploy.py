@@ -327,7 +327,14 @@ def verify_functions_live(worker_js):
             except Exception: body = b""
             return e.code, _looks_html(body, e.headers.get("Content-Type", "") if e.headers else "")
         except Exception as e:
-            return f"ERR:{type(e).__name__}", False
+            # Report the REASON, not just the class. `ERR:URLError` on its own is a
+            # dead end — it hides the one cause that actually recurs on this fleet:
+            # a Homebrew python with no CA bundle, where every HTTPS call fails
+            # CERTIFICATE_VERIFY_FAILED while curl to the same URL works fine
+            # (measured on device 4, 2026-09-05; both control and probe returned
+            # ERR:URLError, so the deploy reported INCONCLUSIVE every single time).
+            detail = getattr(e, "reason", None) or e
+            return f"ERR:{type(e).__name__}({str(detail)[:90]})", False
     def code(u):
         return probe(u)[0]
     print(f"[+] verifying Functions in production (propagation pause 20s)…")
@@ -339,6 +346,13 @@ def verify_functions_live(worker_js):
     if ctrl != 404:
         print(f"[!] INCONCLUSIVE: control returned {ctrl}, not 404 — the probe is not measuring\n"
               f"    what it thinks it is. Verify by hand before trusting this deploy.", file=sys.stderr)
+        if "CERTIFICATE_VERIFY" in str(ctrl):
+            print("    ^ This is THIS MACHINE, not the deploy. python has no CA bundle, so every\n"
+                  "      urlopen fails while curl works. Fix (Homebrew python, no sudo):\n"
+                  "        ln -sfn \"$(brew --prefix)/opt/ca-certificates/share/ca-certificates/cacert.pem\" \\\n"
+                  "               \"$(brew --prefix)/etc/openssl@3/cert.pem\"\n"
+                  "      Then re-run: the probe is the only thing that was broken, not the deploy.",
+                  file=sys.stderr)
         return
     if str(got) in (str(expect),):
         print("[✓] Functions LIVE in production."); return
