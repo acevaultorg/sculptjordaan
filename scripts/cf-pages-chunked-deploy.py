@@ -27,7 +27,7 @@ Then: python3 scripts/cf-pages-chunked-deploy.py   (after `npm run build` + RSC 
 
 Run-from-clean wrapper: scripts/deploy-cf-chunked.sh (build + prune + this).
 """
-import base64, hashlib, json, mimetypes, os, pathlib, sys, time, uuid, urllib.request, urllib.error
+import base64, hashlib, json, mimetypes, os, pathlib, subprocess, sys, time, uuid, urllib.request, urllib.error
 
 ACCOUNT = "72bfd26c5f3c935393a25e5c0dea6039"
 PROJECT = "sculptclub"
@@ -246,6 +246,45 @@ def main():
               f"  the RSC soft-nav .txt payloads), or run that prune before this script.",
               file=sys.stderr)
         sys.exit(2)
+
+    # Fail-fast #4 (2026-09-05): the sitemap advertises URLs with no built page.
+    # `scripts/check-sitemap.mjs` already detects this exactly, but nothing invoked it —
+    # it was a `npm run check:sitemap` you had to REMEMBER, and it is not in prebuild by
+    # design (it reads out/, which does not exist yet at prebuild time). So the one guard
+    # written to stop this class only ran when someone thought to run it.
+    #
+    # Same reasoning as #3: silent, severe, easy to repeat. A sitemap full of 404s teaches
+    # crawlers to distrust the whole file, the site still 200s so nothing looks broken, and
+    # `src/app/sitemap.ts` is a hardcoded list that does not self-heal on a route rename.
+    # readinglist.school shipped 65 sitemap-indexed 404 URLs this way and it surfaced only
+    # in an AdSense audit weeks later.
+    #
+    # Checked HERE rather than in a postbuild hook because a postbuild only fires if you
+    # rebuild — this validates the out/ actually about to ship, which is the thing that
+    # reaches production. Reuses the existing script instead of reimplementing its
+    # URL→file mapping, so there is one source of truth for the rule.
+    sitemap_f = OUT_DIR / "sitemap.xml"
+    sitemap_guard = OUT_DIR.parent / "scripts" / "check-sitemap.mjs"
+    if (sitemap_f.is_file() and sitemap_guard.is_file()
+            and os.environ.get("SKIP_SITEMAP_CHECK") != "1"):
+        try:
+            r = subprocess.run(["node", str(sitemap_guard)], capture_output=True,
+                               text=True, timeout=120, cwd=str(OUT_DIR.parent))
+        except Exception as e:
+            # Never block a deploy because the CHECK itself could not run — say so loudly
+            # and continue, rather than turning a tooling problem into a shipping outage.
+            print(f"[!] sitemap check could not run ({type(e).__name__}: {e}) — NOT blocking.",
+                  file=sys.stderr)
+        else:
+            if r.returncode != 0:
+                print((r.stdout or "") + (r.stderr or ""), file=sys.stderr)
+                print("ERROR: out/sitemap.xml advertises URLs with no built page (above).\n"
+                      "  Deploying would publish a sitemap pointing at 404s.\n"
+                      "  Fix the route or remove it from src/app/sitemap.ts, rebuild, re-run.\n"
+                      "  (Set SKIP_SITEMAP_CHECK=1 to override — only if you genuinely intend it.)",
+                      file=sys.stderr)
+                sys.exit(5)
+            print("[+] sitemap check passed — every advertised URL has a built page.")
     manifest = {rel: sha for rel, _, sha in entries}
     idx = {}
     for rel, c, sha in entries: idx.setdefault(sha, (c, rel))
