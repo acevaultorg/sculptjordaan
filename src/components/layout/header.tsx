@@ -214,7 +214,7 @@ export function Header() {
                     // (operator 2026-07-15: bigger pills, 12px side gutters —
                     // supersedes the 2026-07-04 content-width+centered pass.)
                     "flex-auto lg:flex-none flex flex-col items-center justify-center text-center rounded-xl font-semibold leading-none transition-all",
-                    "h-auto py-1.5 sm:py-2 px-1.5 sm:px-5 text-[11px] sm:text-sm whitespace-nowrap",
+                    "h-auto min-h-[44px] py-1.5 sm:py-2 px-1.5 sm:px-5 text-[11px] sm:text-sm whitespace-nowrap",
                     isActive || item.highlight
                       // Active OR a persistently-highlighted tile (Rent Studio)
                       // = brand fill. Orange is allowed because the tile is
