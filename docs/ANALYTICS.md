@@ -25,6 +25,20 @@
 Last verified end-to-end via real click testing 2026-05-08 (Plausible era).
 Dashboard-hygiene section + business-outcomes mapping added 2026-06-02.
 Plausible-retirement supersession + quiz/email-capture GA4 fix: 2026-08-29.
+Dead-stub sweep RE-VERIFIED 2026-09-06 (device4): **0 stub-only call sites remain.**
+All 9 files calling `plausible()` also fire GA4/Meta/TikTok, and every one of the 23
+live `plausible()` call sites has a `gtag`/`dataLayer`/`fbq`/`ttq` sibling within 20
+lines. So the 2026-08-29 fix was complete — no events are landing nowhere, and the
+conversion count is not under-reported by dead instrumentation.
+
+Two detector traps worth knowing before re-running this audit, because both produced
+a FALSE alarm first time:
+  - grepping the literal `gtag(` misses aliased calls. `trainer-match-quiz.tsx` does
+    `const g = window.gtag; g("event","quiz_start",…)` and scored ZERO on that pattern,
+    reading as stub-only when it is correctly dual-firing. Match the substring `gtag`.
+  - a ±10-line proximity window is too narrow for `analytics.tsx`, whose handlers fire
+    GA4 → fbq → ttq → plausible → clarity in one block with long multi-line prop
+    objects. ±20 is the honest window; anything tighter manufactures unpaired hits.
 
 ## TL;DR — what each goal MEANS in plain language
 
