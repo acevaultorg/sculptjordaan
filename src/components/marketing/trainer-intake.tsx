@@ -214,21 +214,25 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
         value: 45,
         currency: "EUR",
       });
-        // Emit BOTH trainer + trainer_name (2026-08-29). The codebase had drifted into two
-        // param names for one concept, fragmenting per-trainer GA4 reporting. Rather than
-        // rename — which would silently break whichever is already registered as a custom
-        // dimension — both are emitted with the same value. Strictly additive: whichever the
-        // operator registers works, and the loser can be dropped later with no data gap.
+      // trainer_name is now the ONLY param for this concept (2026-09-06). The dual emit added
+      // 2026-08-29 was a deliberate bridge, and it named its own exit condition: "whichever the
+      // operator registers works, and the loser can be dropped later with no data gap." That
+      // condition is met — all 17 custom dimensions were registered on property 497501213 on
+      // 2026-09-06, and trainer_name is the keeper (whatsapp_click and trainer_impression
+      // already emit it, so it carries 3 events to `trainer`'s 2).
+      // Checked BEFORE dropping `trainer`, because doing it blind would silently end per-trainer
+      // reporting: a ga4-probe on customEvent:trainer_name returns a row rather than "not a
+      // valid dimension", so the dimension exists and keeps receiving. The `trainer` DIMENSION
+      // stays registered in GA4 until ≥2026-09-13 so its historical window still reports —
+      // stopping the WRITE and archiving the DIMENSION are separate steps.
       w.gtag("event", "generate_lead", {
         method: "trainer_intake_form",
         value: 45,
         currency: "EUR",
         booking_source: path,
-        trainer: trainer.id,
         trainer_name: trainer.id,
       });
       w.gtag("event", "trainer_intake_submit", {
-        trainer: trainer.id,
         trainer_name: trainer.id,
         locale,
         booking_source: path,

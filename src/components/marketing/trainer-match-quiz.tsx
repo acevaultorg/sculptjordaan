@@ -518,7 +518,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 <Link
                   href={intakeHref}
                   onClick={() =>
-                    track("Quiz Lead", { trainer: trainer.id, trainer_name: trainer.id, position: i + 1, method: "intake_page" })
+                    track("Quiz Lead", { trainer_name: trainer.id, position: i + 1, method: "intake_page" })
                   }
                   className={`mt-4 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl font-bold text-sm transition-colors min-h-[48px] ${
                     isPrimary
@@ -538,7 +538,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() =>
-                    track("Quiz Lead", { trainer: trainer.id, trainer_name: trainer.id, position: i + 1, method: "whatsapp_direct" })
+                    track("Quiz Lead", { trainer_name: trainer.id, position: i + 1, method: "whatsapp_direct" })
                   }
                   className="mt-2 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm transition-colors min-h-[48px]"
                 >
