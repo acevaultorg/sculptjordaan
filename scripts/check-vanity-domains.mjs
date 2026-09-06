@@ -27,6 +27,27 @@
  * and it cannot see a domain that is missing from the map entirely (if someone
  * registers a vanity domain and never adds it here, this is blind to it).
  *
+ * IT ALSO CANNOT SEE AN UPCOMING EXPIRY — and whois will NOT close that gap.
+ * This catches a domain AFTER it dies. The obvious extension is "also warn when
+ * one is about to expire". Measured 2026-09-06 (device4): that does not work.
+ *   - SIDN (.nl) does NOT publish an expiry date. `whois -h whois.domain-registry.nl`
+ *     returns Status / Creation Date / Updated Date and nothing else. Verified
+ *     against pt45.nl, whose real expiry (2026-10-03, read from hPanel) appears
+ *     nowhere in its whois record.
+ *   - Deriving expiry from Creation Date + 1yr is an INFERENCE, not a measurement:
+ *     it cannot see multi-year terms or past renewals. It happens to match pt45
+ *     (created 2025-10-03) and that coincidence should not be trusted.
+ *   - For .com, `Creation Date` came back as 1985-01-01 on sculpt45.com — the
+ *     VeriSign registry PLACEHOLDER, not data. A date identical across unrelated
+ *     domains is always a parse artifact.
+ *   - SIDN rate-limits: 9 rapid lookups returned empty for 8 of them; the same
+ *     query succeeded again after ~20s. An empty whois result here means
+ *     THROTTLED, never "no such domain" — do not read it as absence.
+ * The registrar panel (hPanel) is the only authority on expiry, and it is
+ * operator-credentialed. Route expiry questions there; do not rebuild this in whois.
+ * (Live example: pt45.nl expires 2026-10-03 with auto-renew OFF — TaskPeace
+ * mtosbnak8ah4fs, found by an operator reading hPanel, not by any probe.)
+ *
  * Usage:
  *   node scripts/check-vanity-domains.mjs            # warn-only
  *   node scripts/check-vanity-domains.mjs --strict   # non-zero on any failure
