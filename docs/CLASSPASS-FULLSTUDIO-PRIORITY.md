@@ -28,20 +28,21 @@ Opening hours are **06:00–22:00, every day** (corrected 2026-08-05 — "06:30"
 
 ## Ground truth — complete Acuity export
 
-`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-08-31**: **2,188 rows · 30 appointment types · 944 whole-room bookings · 96 distinct weekday-hour slots.**
-(Prior 2026-08-30 export: 2,186 rows · 944 whole-room · 96 slots — the grid below is byte-identical between the two.
-Prior 2026-08-05: 1,951 rows · 822 whole-room · 93 slots. File: `acuity-full-export-2026-08-31.csv`.)
+`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-09-07**: **2,231 rows · 336 cancelled · 30 appointment types · 0 unclassified · 958 whole-room bookings · 97 distinct weekday-hour slots.**
+(Prior 2026-08-31: 2,188 rows · 332 cancelled · 944 whole-room · 96 slots.
+Prior 2026-08-30: 2,186 rows · 331 cancelled · 944 whole-room · 96 slots.
+Prior 2026-08-05: 1,951 rows · 309 cancelled · 822 whole-room · 93 slots. File: `acuity-full-export-2026-09-07.csv`.)
 
 Whole-room bookings per weekday-hour (count in brackets):
 
 ```
-Mon  6(3)  7(9)  8(14) 9(9)  10(2) 11(4)  12(3) 13(5)  14(1)  15(7) 16(7)  17(18) 18(34) 19(36) 20(11)
-Tue  6(1)  7(27) 8(7)  9(2)  10(8) 11(8)  12(9) 13(7)  14(6)  15(5) 16(9)  17(24) 18(57) 19(22) 20(3)
-Wed        7(13) 8(14) 9(11) 10(7) 11(5)  12(2) 13(4)  14(5)  15(4) 16(9)  17(15) 18(24) 19(8)  20(20) 21(2)
-Thu  6(1)  7(9)  8(13) 9(15) 10(13) 11(4) 12(8) 13(7)  14(5)  15(9) 16(4)  17(5)  18(37) 19(21) 20(8)  22(1)
-Fri  6(26) 7(3)  8(16) 9(10) 10(7) 11(11) 12(6) 13(12) 14(14) 15(8) 16(9)  17(7)  18(24) 19(14) 20(1)
-Sat        7(1)  8(3)  9(10) 10(10) 11(12) 12(8) 13(10) 14(1) 15(3) 16(11) 17(1)
-Sun        7(1)  8(5)  9(4)  10(8) 11(12) 12(4) 13(4)  14(4)  15(3)
+Mon  6(3)  7(9)  8(14) 9(8)  10(2)  11(4)  12(3)  13(5)  14(1)  15(7) 16(7)  17(18) 18(34) 19(36) 20(11)
+Tue  6(1)  7(27) 8(7)  9(3)  10(8)  11(7)  12(10) 13(8)  14(7)  15(5) 16(9)  17(24) 18(58) 19(22) 20(3)
+Wed        7(13) 8(14) 9(11) 10(7)  11(5)  12(2)  13(4)  14(5)  15(5) 16(10) 17(15) 18(24) 19(8)  20(20) 21(2)
+Thu  6(1)  7(9)  8(13) 9(15) 10(13) 11(4)  12(9)  13(7)  14(5)  15(9) 16(4)  17(5)  18(37) 19(21) 20(8)  22(1)
+Fri  6(26) 7(3)  8(16) 9(10) 10(7)  11(11) 12(6)  13(13) 14(14) 15(8) 16(9)  17(7)  18(24) 19(14) 20(1)
+Sat        7(1)  8(4)  9(12) 10(12) 11(14) 12(8)  13(10) 14(1)  15(3) 16(11) 17(2)
+Sun        7(1)  8(5)  9(3)  10(7)  11(12) 12(4)  13(4)  14(4)  15(3) 16(1)
 ```
 
 ## ✅ The ONLY hours ClassPass may be offered
@@ -54,11 +55,11 @@ Sun        7(1)  8(5)  9(4)  10(8) 11(12) 12(4) 13(4)  14(4)  15(3)
 | **Thu** | 21:00 |
 | **Fri** | 21:00 |
 | **Sat** | 06:00 · 18:00 · 19:00 · 20:00 · 21:00 |
-| **Sun** | 06:00 · 16:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
+| **Sun** | 06:00 · 17:00 · 18:00 · 19:00 · 20:00 · 21:00 |
 
-**17 safe slots/week** (unchanged 2026-08-31; was 20 on 2026-08-05) — a *cap*, not a target. Offering fewer is always safe.
+**16 safe slots/week** (was 17 on 2026-08-31, 20 on 2026-08-05) — a *cap*, not a target. Offering fewer is always safe.
 
-⚠️ **The cap shrinks over time.** Three weekend hours were lost in 25 days — Sat 07:00, Sat 17:00, Sun 07:00 each took their first-ever Full Studio booking. The weekend dead zone that makes ClassPass viable is being eaten by real rentals, which is exactly the outcome the priority rule wants. Re-check this table before adding any slot; never add from memory.
+⚠️ **The cap shrinks over time, and it only ever shrinks.** Four weekend hours have now been lost — Sat 07:00, Sat 17:00, Sun 07:00 (all by 2026-08-30), and **Sun 16:00** (found 2026-09-07: a `Hele Studio 60 min / Full Studio 60 min` booked for Sep 13 2026 16:00). Each took its first-ever Full Studio booking. The weekend dead zone that makes ClassPass viable is being eaten by real rentals, which is exactly the outcome the priority rule wants. Re-check this table before adding any slot; never add from memory.
 
 Weekdays are almost fully rented 06:00–20:00; only 21:00 survives (plus Wed 06:00). The real headroom is the **weekend afternoon/evening dead zone** — which matches the utilisation data exactly (Sat 26% / Sun 13% utilisation; Sat+Sun 16:00–22:00 had zero bookings in 13 weeks). ClassPass fills precisely the hours the rental business never wanted. That's the whole point.
 
@@ -120,9 +121,18 @@ Reached in the UI via **Reports → Import/Export** (the left-nav "Reports" link
 logged-out session but is not. **Positive control before concluding logged-out:**
 `secure.acuityscheduling.com/appointments.php` — it returns the calendar when the session is live.
 
-Form fields are `minDay` / `maxDay` (hidden, `YYYY-MM-DD`) mirrored by `minDay-input` / `maxDay-input`
-(visible). Setting only the visible pair leaves the hidden pair empty and the range is ignored — set
-both, then verify all three (`minDay`, `maxDay`, `includeCanceled`) before submitting.
+Form fields are `minDay` / `maxDay` (**hidden**, `YYYY-MM-DD`) plus a visible date-picker pair and the
+`includeCanceled` checkbox. **Corrected 2026-09-07:** the visible pickers have **no `name` attribute** on
+the current render (they are not `minDay-input` / `maxDay-input`, as this file previously claimed) — so
+they submit *nothing* and only the hidden pair reaches the server. Enumerate the form before filling it
+(`[...form.elements].map(e=>({name:e.name,type:e.type,value:e.value}))` — it is 6 elements) and verify
+all three of `minDay`, `maxDay`, `includeCanceled` read back correctly before submitting.
+
+⚠️ **The download will not fire from a backgrounded tab.** On 2026-09-07 the submit click returned
+cleanly, the page stayed put, and **no file appeared** — `document.visibilityState` was `hidden`.
+Foreground the tab first (`osascript` → set `active tab index`, then `activate`), confirm
+`document.hidden === false`, re-verify the three fields survived, then submit. Second attempt
+downloaded in <5s.
 
 ### ⚠️ Export trap
 Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1,642). The real form download with *"Include canceled appointments"* ticked returns **1,951** — and 5 appointment types appear only in the fuller set. Two safe-looking hours (Tue 09:00, Thu 06:00) turned out to have cancelled Full-Studio bookings. **Always use the form download.**
@@ -141,6 +151,7 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 | 2026-08-05 | ✅ Executed | 11 conflicts removed, 4 safe slots kept (initial cleanup) |
 | 2026-08-30 | ✅ **Clean — zero conflicts** | Both halves verified. 4 live slots, all on never-booked hours. Nothing deleted. Safe-hours cap fell 20→17. |
 | 2026-08-31 | ✅ **Clean — zero conflicts** | Both halves verified. Fresh export (2,188 rows, 332 cancelled) → grid identical to 08-30. Live ClassPass: **35** forward instances enumerated, all 21:00 Mon/Tue/Thu/Fri. Nothing deleted. |
+| 2026-09-07 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED** | Fresh export (2,231 rows, 336 cancelled). **Sun 16:00 lost virgin status** → cap 17→16. All 4 known live slots still 0-conflict. **ClassPass session expired** — live schedule could not be read. Nothing deleted. 👤 needs operator sign-in. |
 
 ### 2026-08-30 — full run, zero conflicts
 
@@ -185,3 +196,34 @@ The 401-vs-403 control proves the key authenticates and the **plan** is the bloc
 Unlocking it costs money → operator decision, not a brain fix. Until then the export **must** come
 from the browser form, and the guard **depends on a live Acuity session**. Do not spend time
 re-testing the API.
+
+### 2026-09-07 — Acuity half clean, ClassPass half could not be read
+
+**✅ Acuity half — complete.** Export pulled through the real form (`2020-01-01 → 2027-12-31`,
+*Include canceled* ticked): **2,231 rows · 336 cancelled · 30 types · 0 unclassified · 958 whole-room
+bookings · 97 distinct slots**. Cancelled count is the control — 336, up from 332 on 08-31 (monotonic,
+so the checkbox took). Saved as `../acuity-exports/acuity-full-export-2026-09-07.csv`.
+
+- All 4 documented live slots (**Mon/Tue/Thu/Fri 21:00**) → still **0 whole-room bookings ever**,
+  cancellations included. **No conflict on any known slot.**
+- **1 hour lost its virgin status** in 7 days: **Sun 16:00**, from a single active
+  `Hele Studio 60 min / Full Studio 60 min` booked for **Sep 13 2026 16:00**. It is not a live
+  ClassPass slot, so no deletion was required — but the safe-hours table above is corrected and the
+  cap falls **17 → 16**. Diff computed against the 08-31 CSV directly, not against this document.
+
+**❌ ClassPass half — NOT verified. The session is expired.**
+`studios.classpass.com/manage/schedule/generate/260955/2026-09-07?focus=list` redirected to
+`/login` (a real Dutch sign-in form), and the root redirected to the `classpass.com/partners`
+marketing page. Control run: no other authenticated ClassPass tab exists in the browser (8 tabs
+scanned). Re-authenticating requires the operator's credentials — a hard gate a session must never
+type — so the live schedule was **not read this run**.
+
+**What that does and does not leave open:**
+- The 4 slots recorded here (Mon/Tue/Thu/Fri 21:00) are still safe on fresh Acuity data. ✅
+- Sunday has never carried a live ClassPass slot in this document's history, so the newly-booked
+  **Sun 16:00 does not collide with any recorded slot.** ✅
+- **The residual risk is a slot added to ClassPass in the last 7 days**, on an hour Full Studio
+  rents. That is invisible without the session. It is the one thing this run cannot rule out.
+
+⚠️ **Do not read "no conflicts found" as "no conflicts exist" for this run.** Half the comparison
+did not execute. The next run with a live session re-verifies both halves.
