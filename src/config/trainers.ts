@@ -44,6 +44,21 @@ export interface Trainer {
   credentials?: Record<Locale, string>;
   bio: Record<Locale, string>;
   image: string;
+  /**
+   * Optional `object-position` for the cropped grid thumbnails ONLY
+   * (trainer-filter-grid / choice-grid / preview-grid crop to 4:3 or 1:1 with
+   * `object-cover object-top`). Default `object-top` shows the TOP of the
+   * photo, which is right for a headshot and wrong for an action shot where
+   * the subject sits low in the frame — Alex's handstand put his head against
+   * the bottom edge of the card, under the name band (operator, 2026-09-07).
+   * Applied as an INLINE style so it overrides the `object-top` class; it is
+   * deliberately not a Tailwind class, because a class name built from config
+   * data is invisible to the JIT scanner and would be purged from the CSS.
+   * The 4:5 intake hero is unaffected — there height binds, so the full photo
+   * height already shows and there is nothing to anchor.
+   * Format: any CSS object-position value, e.g. "50% 43%".
+   */
+  imagePosition?: string;
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
   whatsapp?: string;
   /**
@@ -146,6 +161,7 @@ const trainersRaw: Trainer[] = [
     // face and the full pose in frame. The original headshot is not lost — it
     // moves to `gallery` below, so his intake page still shows it.
     image: "/images/trainers/alex-handstand.jpg",
+    imagePosition: "50% 43%",
     gallery: [
       {
         src: "/images/trainers/alex.jpg",

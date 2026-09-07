@@ -600,6 +600,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <Image
                       src={rt.image}
+                      style={rt.imagePosition ? { objectPosition: rt.imagePosition } : undefined}
                       alt={rt.name}
                       fill
                       sizes="(max-width: 640px) 30vw, 220px"

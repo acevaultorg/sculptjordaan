@@ -490,6 +490,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                     LCP impact. */}
                 <Image
                   src={trainer.image}
+                  style={trainer.imagePosition ? { objectPosition: trainer.imagePosition } : undefined}
                   alt={trainer.name}
                   fill
                   className="object-cover"

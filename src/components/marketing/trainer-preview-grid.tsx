@@ -127,6 +127,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
               <div className="relative aspect-square sm:aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={trainer.image}
+                  style={trainer.imagePosition ? { objectPosition: trainer.imagePosition } : undefined}
                   alt={c.photoAlt(trainer.name)}
                   fill
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-105"

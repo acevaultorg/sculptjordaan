@@ -312,6 +312,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                       LCP budget. Index from filteredTrainers map below. */}
                   <Image
                     src={trainer.image}
+                    style={trainer.imagePosition ? { objectPosition: trainer.imagePosition } : undefined}
                     alt={t.photoAlt(trainer.name)}
                     fill
                     className="object-cover object-top"
