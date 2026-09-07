@@ -10,8 +10,8 @@
 // Why not blur placeholder: see docs/PERF-EXPERIMENTS-2026-05-07.md.
 // (TL;DR: SVG feGaussianBlur regressed Lighthouse mobile LCP by 6-9s.)
 //
-// Generated: 2026-09-06T02:22:10.548Z
-// Total entries: 101
+// Generated: 2026-09-07T18:28:26.324Z
+// Total entries: 102
 // Skipped (unsupported format): 2
 
 export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
@@ -94,6 +94,7 @@ export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
   "/images/studio/turf-lane-canal.jpg": "#5b5141",
   "/images/tiktok-avatar.png": "#db530c",
   "/images/trainers/887e948c-8ccd-4785-b61e-7ae619d58ffa.JPG": "#4a5153",
+  "/images/trainers/alex-handstand.jpg": "#5b779e",
   "/images/trainers/alex-wp.jpg": "#a69d98",
   "/images/trainers/alex.jpg": "#6e6e5f",
   "/images/trainers/andrea-wp.jpg": "#8b8075",

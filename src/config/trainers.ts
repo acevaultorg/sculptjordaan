@@ -139,7 +139,22 @@ const trainersRaw: Trainer[] = [
       nl: "Static calisthenics-specialist met een achtergrond in gymnastiek. Als fitnessinstructeur richt Alex zich op prestatie, afvallen, spieropbouw en herstel met functionele, skill-gerichte bewegingen — van je eerste push-up tot een beheerste handstand, terwijl je je atletisch vermogen opbouwt met meetbare resultaten.",
       en: "Static calisthenics specialist with a background in gymnastics. As a fitness instructor, Alex coaches performance, weight loss, muscle gain and recovery through functional, skill-based movement — from your first push-up to a clean handstand, building real athletic ability and measurable results.",
     },
-    image: "/images/trainers/alex.jpg",
+    // Hero swapped 2026-09-07 (operator directive): the handstand shot is the
+    // main photo. It IS his specialisation — static calisthenics — where the
+    // headshot showed only a face. Every grid crops `object-cover object-top`
+    // at 4:3 / 1:1; both crops were rendered before the swap and keep the
+    // face and the full pose in frame. The original headshot is not lost — it
+    // moves to `gallery` below, so his intake page still shows it.
+    image: "/images/trainers/alex-handstand.jpg",
+    gallery: [
+      {
+        src: "/images/trainers/alex.jpg",
+        alt: {
+          nl: "Portret van Alex, personal trainer bij SculptClub Amsterdam",
+          en: "Portrait of Alex, personal trainer at SculptClub Amsterdam",
+        },
+      },
+    ],
     // Alex = Alexandre de Almeida. Portuguese mobile (+351 917 397 700) —
     // operator-confirmed 2026-05-31 via his WhatsApp contact card. Was MISSING,
     // so his intake WhatsApp button fell back to the SculptClub studio number
