@@ -2,11 +2,19 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 
 export type TrainerGalleryImage = {
+  /** image URL — or, when `video` is set, the poster frame for that video */
   src: string;
   alt: string;
+  /**
+   * Optional mp4. Makes this item a VIDEO: the strip shows `src` as a
+   * play-badged thumbnail, the lightbox plays the clip (muted, looping,
+   * inline). Nothing downloads until the item is opened. Added 2026-09-07 for
+   * Alex's handstand clip; the hero (`images[0]`) is always a still photo.
+   */
+  video?: string;
 };
 
 /**
@@ -40,8 +48,8 @@ export function TrainerPhotoGallery({
   const touchStartX = useRef<number | null>(null);
 
   const t = locale === "nl"
-    ? { close: "Sluiten", prev: "Vorige", next: "Volgende", openLabel: (i: number) => `Foto ${i + 1} vergroten`, morePhotos: "Meer foto's" }
-    : { close: "Close", prev: "Previous", next: "Next", openLabel: (i: number) => `Enlarge photo ${i + 1}`, morePhotos: "More photos" };
+    ? { close: "Sluiten", prev: "Vorige", next: "Volgende", openLabel: (i: number) => `Foto ${i + 1} vergroten`, openVideo: "Video afspelen", morePhotos: "Meer foto's" }
+    : { close: "Close", prev: "Previous", next: "Next", openLabel: (i: number) => `Enlarge photo ${i + 1}`, openVideo: "Play video", morePhotos: "More photos" };
 
   const hero = images[0];
   const extra = images.slice(1);
@@ -145,7 +153,7 @@ export function TrainerPhotoGallery({
               key={img.src}
               type="button"
               onClick={() => open(i + 1)}
-              aria-label={t.openLabel(i + 1)}
+              aria-label={img.video ? t.openVideo : t.openLabel(i + 1)}
               className="group relative h-16 w-16 shrink-0 overflow-hidden rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Image
@@ -155,6 +163,20 @@ export function TrainerPhotoGallery({
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="64px"
               />
+              {/* Play badge so a video chip is not mistaken for a photo.
+                  Pure overlay — the poster is still a plain lazy <Image>,
+                  so a video item costs the page exactly one 64px thumbnail
+                  until it is tapped. */}
+              {img.video && (
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/30"
+                >
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-black">
+                    <Play className="ml-0.5 h-3.5 w-3.5" fill="currentColor" />
+                  </span>
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -223,15 +245,36 @@ export function TrainerPhotoGallery({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative mx-auto aspect-[4/3] w-full sm:aspect-[16/10]">
-              <Image
-                key={current.src}
-                src={current.src}
-                alt={current.alt}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 80vw"
-                priority
-              />
+              {current.video ? (
+                /* muted + playsInline = allowed to autoplay on iOS/Android;
+                   loop because a 10 s skill clip reads better on repeat;
+                   controls so the visitor can pause/unmute if the clip has
+                   sound. `key` forces a fresh element when swiping between
+                   items so the previous clip never keeps playing. */
+                <video
+                  key={current.video}
+                  src={current.video}
+                  poster={current.src}
+                  className="absolute inset-0 h-full w-full object-contain"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  aria-label={current.alt}
+                />
+              ) : (
+                <Image
+                  key={current.src}
+                  src={current.src}
+                  alt={current.alt}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                  priority
+                />
+              )}
             </div>
 
             <div className="mt-3 flex flex-col items-center justify-center gap-1 px-2 text-center text-sm text-white/85">

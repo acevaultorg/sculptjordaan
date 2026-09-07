@@ -331,7 +331,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   locale={locale}
                   images={[
                     { src: trainer.image, alt: `${locale === "nl" ? "Foto van" : "Photo of"} ${trainer.name}, personal trainer bij/at SculptClub Amsterdam` },
-                    ...(trainer.gallery?.map((g) => ({ src: g.src, alt: g.alt[locale] })) ?? []),
+                    ...(trainer.gallery?.map((g) => ({ src: g.src, alt: g.alt[locale], video: g.video })) ?? []),
                   ]}
                 />
 

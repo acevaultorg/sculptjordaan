@@ -104,7 +104,15 @@ export interface Trainer {
    * before (10 of 12 trainers have no gallery). Added 2026-07-01 (Tom, 3
    * operator-provided photos).
    */
-  gallery?: { src: string; alt: Record<Locale, string> }[];
+  /**
+   * `video` (added 2026-09-07, Alex): an optional mp4 makes the gallery item a
+   * VIDEO — `src` is then its poster frame. Rendered as a play-badged thumbnail
+   * in the strip and as a native muted/looping <video> inside the lightbox;
+   * never autoplays on the page itself, so the profile's LCP (the hero photo)
+   * and bandwidth are untouched until someone taps it. Keep clips short
+   * (≤15 s), silent, ≤1 MB, H.264 + faststart — see public/videos/trainers/.
+   */
+  gallery?: { src: string; alt: Record<Locale, string>; video?: string }[];
 }
 
 // Display order — optimised for conversion by differentiation strength
@@ -163,6 +171,19 @@ const trainersRaw: Trainer[] = [
     image: "/images/trainers/alex-handstand.jpg",
     imagePosition: "50% 43%",
     gallery: [
+      {
+        // 10-second clip Alex sent 2026-09-07: a held handstand on dumbbells in
+        // the studio — the proof behind "van je eerste push-up tot een
+        // beheerste handstand" in his bio. Web copy is silent, 30 fps,
+        // 945 KB, faststart; the original with audio lives in
+        // public/social/alex-handstand-001/ for the TikTok/IG post.
+        src: "/images/trainers/alex-handstand-poster.jpg",
+        video: "/videos/trainers/alex-handstand.mp4",
+        alt: {
+          nl: "Alex houdt een handstand op dumbbells in de SculptClub studio (video)",
+          en: "Alex holding a handstand on dumbbells in the SculptClub studio (video)",
+        },
+      },
       {
         src: "/images/trainers/alex.jpg",
         alt: {
