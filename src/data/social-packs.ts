@@ -32,6 +32,12 @@ export interface SocialPack {
   blurb: string;
   /** landing page the post drives to (reference) */
   ctaUrl: string;
+  /**
+   * Set when the pack is a finished VIDEO post instead of a slide deck. The
+   * studio then offers "save the video" in place of "save all slides" and
+   * `slides` is empty. One 9:16 file serves both TikTok and an IG Reel.
+   */
+  video?: { src: string; poster: string; durationLabel: string };
   slides: PackSlide[];
   tiktok: { title: string; description: string; hashtags: string };
   instagram: { caption: string; hashtags: string };
@@ -42,6 +48,40 @@ export interface SocialPack {
 // (entry product, lowest price-point, broadest audience, the 10.5K-view
 // price-overlay winning format).
 export const SOCIAL_PACKS: SocialPack[] = [
+  {
+    // WATCH-CONTENT. Operator 2026-09-07: "our tiktok has a lot of ad content;
+    // post more content people love to see and like." No offer, no price, no
+    // text card — a real trainer doing the thing he coaches. Alex sent the clip
+    // himself. First measured test of the format: read views at 48h against the
+    // account's 240-265 carousel band and the 1.5K-11K offer-led winners, and
+    // record the number on Marketing card mtdculbxd2grn7 before re-cutting the
+    // rotation either way.
+    id: "alex-handstand-001",
+    title: "Alex \u00b7 10 seconden handstand (video)",
+    audience: "client",
+    blurb:
+      "Watch-content, geen aanbieding \u2014 echte skill van een echte trainer, in onze eigen zaal. Alex stuurde de clip zelf op 7 sep.",
+    ctaUrl: "sculptclub.nl/nl/plan-gratis-intake-met-alex",
+    video: {
+      src: "/social/alex-handstand-001/reel.mp4",
+      poster: "/social/alex-handstand-001/cover.jpg",
+      durationLabel: "10 s \u00b7 9:16",
+    },
+    slides: [],
+    tiktok: {
+      title: "Tien seconden stil op twee dumbbells \u2014 Alex, static calisthenics, Amsterdam",
+      description:
+        "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex \u2014 static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
+      hashtags:
+        "#handstand #calisthenics #amsterdam #jordaan #personaltrainer #gymnastics #handstandpractice #bodyweight #sculptclub",
+    },
+    instagram: {
+      caption:
+        "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex \u2014 static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
+      hashtags:
+        "#handstand #calisthenics #amsterdam #jordaan #personaltrainer #gymnastics #handstandpractice #bodyweight #sculptclub",
+    },
+  },
   {
     id: "open-gym-pitch-001",
     title: "Open Gym · solo trainen vanaf €7,25",

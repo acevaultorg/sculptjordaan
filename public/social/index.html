@@ -1,3 +1,11 @@
+<!--
+  ⚠ NOT REACHABLE IN PRODUCTION. functions/_middleware.ts has an EXACT redirect
+  "/social" -> "/nl/social" (302), and /social/ resolves through it too, so this
+  file is never served. The canonical Posting Studio is the Next route at
+  /nl/social (src/app/nl/social/page.tsx), driven by src/data/social-packs.ts.
+  Add a post THERE. Individual post pages (/social/<slug>/) are unaffected and
+  ARE reachable — only this index is shadowed. Verified 2026-09-07 by curl.
+-->
 <!DOCTYPE html>
 <html lang="nl">
 <head>

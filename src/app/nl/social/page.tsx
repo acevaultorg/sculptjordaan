@@ -137,6 +137,7 @@ function PackCard({
   onPosted: (v: boolean) => void;
 }) {
   const tt = platform === "tiktok";
+  const vid = pack.video;
   const slideFiles: SlideFile[] = pack.slides.map((s) => ({
     url: slideUrl(pack.id, platform, s.name),
     filename: slideFilename(pack.id, platform, s.label),
@@ -145,7 +146,25 @@ function PackCard({
     ? `${pack.tiktok.description}\n\n${pack.tiktok.hashtags}`
     : `${pack.instagram.caption}\n\n${pack.instagram.hashtags}`;
 
-  const steps = tt
+  const steps = vid
+    ? tt
+      ? [
+          "Bewaar de video in Foto's (knop hierboven).",
+          "Open TikTok \u2192 \uff0b \u2192 upload de video uit Foto's.",
+          "Voeg een trending sound toe \u2014 de clip zelf is stil (algoritme-signaal).",
+          "Tag @almeidalexjr als collab: het is Alex' eigen clip.",
+          "Kopieer titel + description en plak ze.",
+          "Post \u2192 plak + pin de eerste reactie met de link \u2192 vink af.",
+        ]
+      : [
+          "Bewaar de video in Foto's (knop hierboven).",
+          "Open Instagram \u2192 \uff0b \u2192 Reel \u2192 kies de video.",
+          "Voeg een sound toe \u2014 de clip zelf is stil.",
+          "Tag @almeidalexjr als collab: het is Alex' eigen clip.",
+          "Kopieer de caption + hashtags en plak.",
+          "Post \u2192 vink af.",
+        ]
+    : tt
     ? [
         "Bewaar alle slides in Foto's (knop hierboven).",
         "Open TikTok → ＋ → Foto → voeg de slides toe op volgorde.",
@@ -207,45 +226,80 @@ function PackCard({
             <PlatformToggle value={platform} onChange={onPlatform} />
           </div>
 
-          {/* slides */}
-          <h4 className="mt-5 text-[0.7rem] uppercase tracking-wider text-brand font-bold flex items-center gap-1.5">
-            <ImageIcon className="w-3.5 h-3.5" /> Slides ({pack.slides.length})
-          </h4>
-          <FlashBtn
-            run={async () => {
-              const r = await saveSlidesToPhotos(slideFiles);
-              return r === "aborted" ? "" : r === "manual" ? "Long-press de slides ↓" : "✓ Bewaard in Foto's";
-            }}
-            success="✓ Bewaard in Foto's"
-            className="mt-2.5 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-brand-foreground font-bold text-[0.95rem] py-3.5 active:scale-[0.99] transition-transform"
-          >
-            <Download className="w-4 h-4" /> Bewaar alle slides in Foto&apos;s
-          </FlashBtn>
-          <div className="mt-3 flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
-            {pack.slides.map((s, i) => (
-              <div key={s.name} className="shrink-0 w-[88px]">
-                <div className={`rounded-lg overflow-hidden border border-border bg-muted ${tt ? "aspect-[9/16]" : "aspect-square"}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={slideUrl(pack.id, platform, s.name)}
-                    alt={`Slide ${s.label} — ${s.title}`}
-                    loading="lazy"
+          {vid ? (
+            <>
+              {/* finished video post \u2014 one 9:16 file serves TikTok + IG Reel */}
+              <h4 className="mt-5 text-[0.7rem] uppercase tracking-wider text-brand font-bold flex items-center gap-1.5">
+                <Film className="w-3.5 h-3.5" /> Video ({vid.durationLabel})
+              </h4>
+              <FlashBtn
+                run={async () => {
+                  const r = await saveOneSlide({ url: vid.src, filename: `${pack.id}.mp4` });
+                  return r === "aborted" ? "" : r === "manual" ? "Long-press de video \u2193" : "\u2713 Bewaard in Foto's";
+                }}
+                success="\u2713 Bewaard in Foto's"
+                className="mt-2.5 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-brand-foreground font-bold text-[0.95rem] py-3.5 active:scale-[0.99] transition-transform"
+              >
+                <Download className="w-4 h-4" /> Bewaar video in Foto&apos;s
+              </FlashBtn>
+              <div className="mt-3 w-[132px]">
+                <div className="rounded-lg overflow-hidden border border-border bg-muted aspect-[9/16]">
+                  <video
+                    src={vid.src}
+                    poster={vid.poster}
+                    controls
+                    playsInline
+                    muted
+                    loop
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <FlashBtn
-                  run={async () => {
-                    const r = await saveOneSlide(slideFiles[i]);
-                    return r === "aborted" ? "" : "✓";
-                  }}
-                  success="✓"
-                  className="mt-1 w-full text-[0.7rem] font-semibold text-muted-foreground hover:text-foreground py-1 rounded-md"
-                >
-                  Slide {s.label}
-                </FlashBtn>
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            <>
+            {/* slides */}
+            <h4 className="mt-5 text-[0.7rem] uppercase tracking-wider text-brand font-bold flex items-center gap-1.5">
+              <ImageIcon className="w-3.5 h-3.5" /> Slides ({pack.slides.length})
+            </h4>
+            <FlashBtn
+              run={async () => {
+                const r = await saveSlidesToPhotos(slideFiles);
+                return r === "aborted" ? "" : r === "manual" ? "Long-press de slides ↓" : "✓ Bewaard in Foto's";
+              }}
+              success="✓ Bewaard in Foto's"
+              className="mt-2.5 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-brand-foreground font-bold text-[0.95rem] py-3.5 active:scale-[0.99] transition-transform"
+            >
+              <Download className="w-4 h-4" /> Bewaar alle slides in Foto&apos;s
+            </FlashBtn>
+            <div className="mt-3 flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
+              {pack.slides.map((s, i) => (
+                <div key={s.name} className="shrink-0 w-[88px]">
+                  <div className={`rounded-lg overflow-hidden border border-border bg-muted ${tt ? "aspect-[9/16]" : "aspect-square"}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={slideUrl(pack.id, platform, s.name)}
+                      alt={`Slide ${s.label} — ${s.title}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <FlashBtn
+                    run={async () => {
+                      const r = await saveOneSlide(slideFiles[i]);
+                      return r === "aborted" ? "" : "✓";
+                    }}
+                    success="✓"
+                    className="mt-1 w-full text-[0.7rem] font-semibold text-muted-foreground hover:text-foreground py-1 rounded-md"
+                  >
+                    Slide {s.label}
+                  </FlashBtn>
+                </div>
+              ))}
+            </div>
+            </>
+          )}
 
           {/* copy */}
           <h4 className="mt-6 text-[0.7rem] uppercase tracking-wider text-brand font-bold flex items-center gap-1.5">
@@ -405,7 +459,7 @@ export default function SocialPostingStudio() {
         {/* ── pack library ─────────────────────────────────────────────────── */}
         <h2 className="mt-9 text-xl font-bold tracking-tight">Kant-en-klare packs</h2>
         <p className="mt-1 text-[0.86rem] text-muted-foreground">
-          {total} uitgewerkte packs met kant-en-klare slides — open → bewaar → kopieer → post.
+          {total} uitgewerkte packs, slides of video — open → bewaar → kopieer → post.
         </p>
 
         {/* progress */}
