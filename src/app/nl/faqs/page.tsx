@@ -63,7 +63,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe annuleer ik een sessie?",
-        a: "Voor Open Gym en studio-sessies kun je altijd gratis annuleren of verzetten via ons boekingssysteem (Acuity). Voor Personal Training neem je direct contact op met je trainer — ook altijd gratis.",
+        a: "Voor Open Gym en studio-sessies kun je altijd gratis annuleren of verzetten via ons boekingssysteem (Acuity). Voor Personal Training neem je direct contact op met je trainer — ook altijd gratis. Annuleer je? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.",
       },
       {
         q: "Wat moet ik meenemen?",

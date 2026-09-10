@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
-    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem — geen kosten, geen uitzonderingen.",
+    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem — geen kosten, geen uitzonderingen. Annuleer je? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.",
   },
   {
     q: "Is het echt een lidmaatschap?",

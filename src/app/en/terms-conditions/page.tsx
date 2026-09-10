@@ -166,7 +166,9 @@ export default function TermsPageEN() {
             <h2 className="text-2xl font-bold mb-4">5. Cancellation</h2>
             <p className="text-muted-foreground">
               You may cancel or reschedule a booking free of charge at any time
-              through the booking system. Failure to appear (no-show) without
+              through the booking system. On cancellation your credits come back to
+              your account instantly; card payments for single sessions are
+              refunded automatically within a few days. Failure to appear (no-show) without
               prior cancellation may be charged. SculptClub reserves
               the right to cancel sessions in cases of force majeure (such as
               emergencies, equipment failure, or extreme weather conditions). In

@@ -352,7 +352,7 @@ export default function StudioRentalPageNL() {
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong>.{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong> — credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
                 <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
               </p>

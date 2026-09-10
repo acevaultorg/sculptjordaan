@@ -130,7 +130,7 @@ const faqs = [
   },
   {
     q: "What if I need to cancel?",
-    a: "Cancel or reschedule anytime via the booking system — always free, no exceptions.",
+    a: "Cancel or reschedule anytime via the booking system — always free, no exceptions. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
   },
   {
     q: "Is it really a membership?",

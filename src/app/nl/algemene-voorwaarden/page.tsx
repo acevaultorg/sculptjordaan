@@ -169,7 +169,9 @@ export default function TermsPageNL() {
             <h2 className="text-2xl font-bold mb-4">5. Annulering</h2>
             <p className="text-muted-foreground">
               Je kunt een boeking altijd kosteloos annuleren of verzetten via
-              het boekingssysteem. Niet-verschijnen (no-show) zonder
+              het boekingssysteem. Bij annulering komen je credits direct terug op je
+              account; kaartbetalingen voor losse sessies worden binnen enkele
+              dagen automatisch terugbetaald. Niet-verschijnen (no-show) zonder
               voorafgaande annulering kan wel in rekening worden gebracht.
               SculptClub behoudt zich het
               recht voor sessies te annuleren bij overmacht (zoals

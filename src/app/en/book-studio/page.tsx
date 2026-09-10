@@ -278,7 +278,7 @@ export default function BookStudioPageEN() {
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Book per session. No subscription, no contract,{" "}
-                <strong className="text-foreground">free cancellation anytime</strong>.{" "}
+                <strong className="text-foreground">free cancellation anytime</strong> — credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
                 <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
               </p>
