@@ -515,3 +515,5 @@ more than any caption rewrite.
 Six posts of ONE format is one experiment, not six. The correct read is "this format
 failed", not "TikTok doesn't work for SculptClub". Education and person-led have never
 been tested here.
+
+| 2026-09-10 | (outside rotation — watch-content, trainer-skill) | alex-handstand-001 | /social/alex-handstand-001/ | ✅ 10 sep **21:08** POSTED via TikTok Studio (Chrome MCP, device 1; operator directive in chat: "make a new tiktok post and put online") | https://www.tiktok.com/@sculptclub.jordaan/video/7683985521114107158 · Iedereen · caption + @almeidalexjr + 9 tags verbatim from the pack · first REAL-FOOTAGE post (10 s, original sound) — the format the 2026-09-02 diagnosis said had never been tested. Read views/likes at +24h and +72h and compare against the ~250-view card plateau. |
