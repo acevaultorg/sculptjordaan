@@ -275,3 +275,4 @@ UPDATE 2026-09-07 — Alex handstand clip (whatsapp) shipped to site + studio. P
 - Board hygiene: mtoshq47w96lqw closed as dup of mtj4bwea2p4j9t; mtbowchs1d5toz closed (leave the 15 posts indexed). All three SculptClub boards now hold operator-only work.
 - Checkout reconciled to origin/main (was 24 behind + stale generated dirt); the 09-07 handoff note below this one was restored from the uncommitted diff.
 - No IndexNow ping (JS-only change touches every page → batch pattern).
+- UPDATE 2026-09-10 21:00Z: cancel-and-refund policy published (532a241) — 10 surfaces NL+EN incl. Open Gym FAQPage JSON-LD; deployment 8572b2c7, Functions 403, every surface live-verified, IndexNow pinged for the 10 changed URLs only. Email half = Acuity template → 👤 card mtvvwg0ko24ftu.
