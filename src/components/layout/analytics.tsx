@@ -71,6 +71,92 @@ export function Analytics() {
         `}
       </Script>
 
+      {/* TikTok Pixel — CONSENT-GATED, and the gate is HARDENED against the GTM
+          container (2026-09-10). History: fixed 2026-09-02 by gating ttq.load()
+          behind sc_consent=all (same pattern as Meta above) — and a live re-check
+          the same day found analytics.tiktok.com STILL requested pre-consent on
+          every page while this script's own ttqStarted stayed false. Measured
+          2026-09-10 from the PUBLIC container JSON
+          (googletagmanager.com/gtm.js?id=GTM-PG592B5Q, container version 4):
+          a Custom HTML tag (tag_id 7) carries TikTok's stock loader for pixel
+          D75710BC77UDBCCMHF60 and fires on the "All Pages" (gtm.js) trigger with
+          NO consent setting — alongside a Meta Pixel tag (tag_id 6) and a Clarity
+          tag (tag_id 8) on the same trigger. Nothing in this repo can edit GTM,
+          so the gate is enforced ON THE OBJECT instead:
+
+          1. This script runs BEFORE gtm-init, so window.ttq exists before gtm.js
+             can fire its tag.
+          2. ttq.load is defined NON-WRITABLE + NON-CONFIGURABLE. TikTok's stock
+             loader (which GTM's tag is a copy of) does `a=d[e]=d[e]||[]` and
+             then `a.load=function(){...insert events.js...}` — that assignment
+             silently fails on a frozen property (GTM Custom HTML runs in sloppy
+             mode; in strict mode it would throw, which also fails CLOSED). Its
+             following `a.load(ID)` therefore calls OUR loader, which queues the
+             id and only inserts the SDK once sc_consent=all exists.
+          3. The real loader is once-per-pixel-id, so a consented visitor gets ONE
+             SDK load even though both this script and the GTM tag call load().
+             page() is likewise only queued once.
+
+          The Meta tag in GTM is already neutralised by the fbq stub above (Meta's
+          loader returns early when window.fbq exists, so GTM's fbq('init')/
+          ('track') calls just queue until consent). Clarity via GTM is a
+          duplicate of the direct loader below, cookieless by design.
+
+          The proper fix is still to delete tags 6/7/8 in the GTM dashboard
+          (board card mtjbid6ck48m9m) — this guard makes that a cleanup, not a
+          compliance emergency. Declining costs nothing extra: the stub keeps
+          ttq.page()/track() calls elsewhere safe no-ops. */}
+      {tiktokPixel && (
+        <Script id="tiktok-pixel" strategy="afterInteractive">
+          {`
+            !function (w, d, t) {
+              w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+              var pending = [];
+              function hasConsent() { return d.cookie.indexOf('sc_consent=all') > -1; }
+              function realLoad(e, n) {
+                ttq._i = ttq._i || {};
+                if (ttq._i[e]) return; // once per pixel id — GTM's tag and this script both call load()
+                var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                var o = d.createElement("script"); o.type = "text/javascript", o.async = !0, o.src = i + "?sdkid=" + e + "&lib=" + t;
+                var a = d.getElementsByTagName("script")[0]; a.parentNode.insertBefore(o, a);
+                w.__ttqSdkLoaded = true;
+              }
+              function flush() { var p = pending; pending = []; for (var k = 0; k < p.length; k++) realLoad(p[k][0], p[k][1]); }
+              function gatedLoad(e, n) { pending.push([e, n]); if (hasConsent()) flush(); }
+              try {
+                Object.defineProperty(ttq, 'load', { value: gatedLoad, writable: false, configurable: false, enumerable: true });
+              } catch (_) { ttq.load = gatedLoad; }
+              w.addEventListener('sc:consent-updated', function () { if (hasConsent()) flush(); });
+            }(window, document, 'ttq');
+
+            var ttqStarted = false;
+            function ttqPageQueued() {
+              var q = window.ttq;
+              for (var k = 0; k < q.length; k++) { if (q[k] && q[k][0] === 'page') return true; }
+              return false;
+            }
+            function startTikTokPixel() {
+              if (ttqStarted) return;
+              ttqStarted = true;
+              window.ttq.load('${tiktokPixel}');
+              if (!ttqPageQueued()) window.ttq.page();
+            }
+            function ttqHasConsent() {
+              return document.cookie.indexOf('sc_consent=all') > -1;
+            }
+
+            if (ttqHasConsent()) {
+              startTikTokPixel();
+            } else {
+              window.addEventListener('sc:consent-updated', function () {
+                if (ttqHasConsent()) startTikTokPixel();
+              });
+            }
+          `}
+        </Script>
+      )}
+
       {/* Google Tag Manager — loaded AFTER the gtag consent-default block above so
           GTM (container ${gtm}) reads the established Consent Mode v2 state from the
           shared window.dataLayer. Canonical GTM snippet; pairs with the <noscript>
@@ -700,48 +786,6 @@ export function Analytics() {
         `}
       </Script>
 
-      {/* TikTok Pixel — CONSENT-GATED (fixed 2026-09-02; was firing for every
-          visitor unconditionally regardless of the cookie banner — verified
-          live via Playwright, real Chrome, no consent clicked: analytics.tiktok.com
-          was requested and TikTok's cross-site ad-attribution cookies were set
-          on first paint for 100% of traffic. /nl/cookiebeleid's Marketing-cookies
-          section names only "Facebook Pixel en Google Ads" as consent-gated;
-          TikTok wasn't even disclosed there, let alone gated — the exact same
-          violation class the Meta Pixel fix above addressed on 2026-07-20, just
-          undiscovered until now. Same pattern as Meta Pixel: ttq.load()/ttq.page()
-          only run after sc_consent=all exists (immediately for a returning
-          consented visitor, or on the sc:consent-updated event after Accept).
-          Declining costs nothing extra — the pixel loader script (the SDK
-          bootstrap) still has to be present as a stub so ttq.page()/track()
-          calls elsewhere don't throw, matching the fbq() stub pattern above. */}
-      {tiktokPixel && (
-        <Script id="tiktok-pixel" strategy="afterInteractive">
-          {`
-            !function (w, d, t) {
-              w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
-            }(window, document, 'ttq');
-
-            var ttqStarted = false;
-            function startTikTokPixel() {
-              if (ttqStarted) return;
-              ttqStarted = true;
-              window.ttq.load('${tiktokPixel}');
-              window.ttq.page();
-            }
-            function ttqHasConsent() {
-              return document.cookie.indexOf('sc_consent=all') > -1;
-            }
-
-            if (ttqHasConsent()) {
-              startTikTokPixel();
-            } else {
-              window.addEventListener('sc:consent-updated', function () {
-                if (ttqHasConsent()) startTikTokPixel();
-              });
-            }
-          `}
-        </Script>
-      )}
     </>
   );
 }
