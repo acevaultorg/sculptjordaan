@@ -15,6 +15,8 @@
 > (commit 532a241, 10 surfaces).
 > - **Booking Confirmation 3** (`templateId=3325132`, studio rental) — saved ✓, re-read after a fresh
 >   reload: phrase present 1×.
+> - **Booking Confirmation 2** (`templateId=3325119`, Open Gym) — saved ✓ ("Booking Confirmation 2
+>   saved"), re-read after a fresh reload: phrase present 1×, placed before "Add to iCal".
 > - Admin moved: the old `preferences.php?action=emails*` URLs now render an empty shell. Current
 >   list is `/admin/client-emails`; a template editor is
 >   `/admin/client-emails-editor?emailType=1&templateId=<id>`. The `<>` toolbar button toggles a plain
