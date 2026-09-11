@@ -5,7 +5,10 @@ import { trainers } from "@/config/trainers";
 import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
-import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { GoalFunnel } from "@/components/marketing/goal-funnel";
+import { ptGoals } from "@/config/pt-goals";
+import Image from "next/image";
+import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles, Target, Check, X, Globe } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import {
@@ -18,8 +21,8 @@ import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Amsterdam — Find Your Match | SculptClub" },
-  description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, no middleman. Find your match at SculptClub.`,
+  title: { absolute: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub" },
+  description: `Looking for a personal trainer in Amsterdam? Pick your goal — lose fat, get stronger, move pain-free — and get a programme plan with a fixed price upfront at a free intro. ${trainers.length} trainers, private studio in the Jordaan.`,
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {
@@ -32,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/find-personal-trainer",
-    title: "Personal Trainer Amsterdam — Find Your Match | SculptClub",
-    description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, no middleman. Find your match at SculptClub.`,
+    title: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub",
+    description: `Looking for a personal trainer in Amsterdam? Pick your goal — lose fat, get stronger, move pain-free — and get a programme plan with a fixed price upfront at a free intro. ${trainers.length} trainers, private studio in the Jordaan.`,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Amsterdam — Find Your Match | SculptClub",
-    description: `Looking for a personal trainer in Amsterdam? ${trainers.length} specialists in the Jordaan — free intro, from €45/session, no middleman. Find your match at SculptClub.`,
+    title: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub",
+    description: `Looking for a personal trainer in Amsterdam? Pick your goal — lose fat, get stronger, move pain-free — and get a programme plan with a fixed price upfront at a free intro. ${trainers.length} trainers, private studio in the Jordaan.`,
   },
 };
 
@@ -58,8 +61,12 @@ const trainerBenefits = [
 
 const faqs = [
   {
+    q: "What is a programme?",
+    a: "Personal training with a goal and an end date, for example 8 or 12 weeks. At the free intro your trainer makes a plan: what you want to achieve, how often you train, what you track and what it costs in total. Prefer single sessions? That is always possible too.",
+  },
+  {
     q: "What does personal training cost at SculptClub?",
-    a: "Trainers set their own rates, from €45 per session. The first intro (including a kick-off training) is always free — no charge, no commitment after.",
+    a: "Trainers set their own rates, from \u20ac45 per session. For a programme you agree a fixed total price at the intro \u2014 ask your trainer about package prices. The first intro is always free \u2014 no charge, no commitment after.",
   },
   {
     q: "How does the free intro work?",
@@ -99,6 +106,21 @@ const faqs = [
   },
 ];
 
+
+// Goal-first PT hub (operator 2026-09-11: sell transformations, not hours).
+const trajectSteps = [
+  { title: "Free intro", desc: "By phone or in the studio. You share where you are and where you want to go; together you set your starting point." },
+  { title: "Your programme plan", desc: "Goal, duration, how often you train, what you track and the total price — agreed upfront. No surprises." },
+  { title: "Train in the private studio", desc: "Just you, your trainer and the whole studio. Your trainer adjusts based on how you progress." },
+  { title: "Check-in & next step", desc: "You see what has changed. Then you choose: a next programme, continue on your own with Open Gym, or stop." },
+];
+
+const methodCards = [
+  { id: "gezina", label: "Marseille Movement", text: "Personal coaching with attention to nutrition and hormonal health.", kind: "site" as const },
+  { id: "dara", label: "Strength & Balance", text: "Coaching for busy internationals living in Amsterdam.", kind: "site" as const },
+  { id: "joey", label: "The Ascend Method", text: "Strength, breathwork and self-inquiry for high performers.", kind: "profile" as const },
+];
+
 export default function TrainersPageEN() {
   return (
     <PageLayout>
@@ -107,7 +129,7 @@ export default function TrainersPageEN() {
       <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Private personal training in a boutique studio in the Jordaan, Amsterdam. Choose your own trainer, first intro always free."
+        description="Personal training as a programme toward a goal, in a private studio in the Jordaan, Amsterdam. Choose your goal and your trainer; the first intro is always free."
         url="/en/find-personal-trainer"
         priceRange="€45 - €120 per session"
       />
@@ -141,18 +163,19 @@ export default function TrainersPageEN() {
           }),
         }}
       />
-      {/* Hero */}
+      {/* Hero — goal-first (operator 2026-09-11: "sell transformations, not hours").
+          30d before: 93 views, ~10s engagement/view, 1 lead on the NL hub — a
+          directory of 13 bios priced per session. Now the page starts from the
+          visitor's goal and routes to the trainers who advertise that goal. */}
       <Section>
         <SectionHeader
           as="h1"
-          overline="Personal Trainers"
-          title="Find Your Personal Trainer"
-          description="Private studio · First intro free · Sessions from €45 · Pick your trainer, or let us match."
+          overline="Personal training · Jordaan"
+          title="Not hours. A programme toward your goal."
+          description="Pick what you want to achieve, meet the trainer who specialises in it, and get a concrete plan at a free intro: goal, duration, how often you train and a fixed price upfront."
         />
-
-        {/* Trust badges */}
         <FadeIn>
-          <div className="mb-6 flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex items-center gap-2 text-sm font-medium">
                 <badge.icon className="h-5 w-5 text-primary" />
@@ -161,50 +184,109 @@ export default function TrainersPageEN() {
             ))}
           </div>
         </FadeIn>
-
-        {/* Dual-primary CTA strip — see NL version comment. Paid-Google-Ads
-            landing conversion lever; emerald WhatsApp-direct gives instant-
-            match path, brand-blue anchor preserves "I'll choose" path. */}
         <FadeIn>
-          {/* 2-CTA strip — see /nl parallel comment (2026-05-27 UX audit). */}
-          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
-            <a
-              href="/en/match-trainer"
-              data-cta="trainerhub-quiz"
-              className="plausible-event-name=trainerhub_quiz inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]"
-            >
-              <Sparkles className="h-5 w-5" />
-              Find your trainer — 3 questions
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
+            <a href="#doelen" data-cta="trainerhub-goals" className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]">
+              <Target className="h-5 w-5" />
+              Choose your goal
             </a>
-            <a
-              href="#trainer-grid"
-              data-cta="trainerhub-scroll-grid"
-              className="plausible-event-name=trainerhub_scroll_grid inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
-            >
-              Or browse all {trainers.length} ↓
+            <a href="/en/match-trainer" data-cta="trainerhub-quiz" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]">
+              <Sparkles className="h-5 w-5" />
+              Not sure? 3 questions
             </a>
           </div>
         </FadeIn>
+      </Section>
 
-        {/* Trainer cards with filter */}
-        <div id="trainer-grid">
-          <TrainerFilterGrid trainers={trainers} locale="en" />
+      {/* Step 1 — goal picker → traject outline → matched trainers */}
+      <Section bg="muted" id="doelen" className="scroll-mt-20">
+        <SectionHeader overline="Step 1" title="What do you want to achieve?" description="Pick your goal. You will see what a programme works on and which trainers specialise in it." />
+        <GoalFunnel goals={ptGoals} trainers={trainers} locale="en" />
+      </Section>
+
+      {/* How a traject works — the SculptClub standard every trainer delivers */}
+      <Section>
+        <SectionHeader overline="How it works" title="From intro to result" description="Every trainer has their own style. This is what you can expect from every programme at SculptClub." />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {trajectSteps.map((step, i) => (
+            <FadeIn key={step.title} delay={i * 0.1}>
+              <div className="h-full rounded-2xl border border-border bg-card p-5">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">{i + 1}</div>
+                <p className="mb-1 font-semibold">{step.title}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Want to continue on your own after your programme? <a href="/en/open-gym" className="font-semibold text-brand hover:underline underline-offset-4">See Open Gym →</a>
+        </p>
+      </Section>
+
+      {/* Traject vs single session */}
+      <Section bg="muted">
+        <SectionHeader overline="Why a programme" title="Programme or single session?" description="Single sessions are always possible. But if you have a goal, a plan gets you further." />
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="mb-4 text-lg font-bold">Single session</p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Book one at a time</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />No fixed plan or end date</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />No set check-in moments</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />From €45 per session</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border-2 border-brand bg-card p-6 shadow-brand-lg">
+            <p className="mb-4 text-lg font-bold">Programme</p>
+            <ul className="space-y-2">
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />A concrete goal with an end date</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />A weekly plan that fits your calendar</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Check-ins, so you see what you achieve</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Fixed total price upfront — ask about packages</li>
+            </ul>
+          </div>
         </div>
       </Section>
 
-      {/* The Private Session — names the FORMAT (R, 2026-06-02). EN parallel of
-          "De Privé Sessie". See NL for positioning rationale. */}
+      {/* Trainers with their own coaching brand — link out to their sites */}
+      <Section>
+        <SectionHeader overline="Own method" title="Trainers with their own coaching method" description="Some trainers work with their own brand and approach. Read how they work and what their clients say on their site." />
+        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-3">
+          {methodCards.map((card) => {
+            const tr = trainers.find((x) => x.id === card.id);
+            if (!tr) return null;
+            const href = card.kind === "site" && tr.website ? tr.website.url : `/en/${tr.slug.en}`;
+            const external = card.kind === "site" && Boolean(tr.website);
+            return (
+              <a
+                key={card.id}
+                href={href}
+                {...(external ? { target: "_blank", rel: "noopener" } : {})}
+                data-trainer-website={external ? tr.name : undefined}
+                className="group flex gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-brand/60"
+              >
+                <Image src={tr.image} alt={tr.name} width={64} height={64} className="h-16 w-16 shrink-0 rounded-full object-cover object-top" />
+                <span className="min-w-0">
+                  <span className="block font-bold">{tr.name}</span>
+                  <span className="block text-sm font-medium text-brand">{card.label}</span>
+                  <span className="mt-1 block text-sm text-muted-foreground">{card.text}</span>
+                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-foreground group-hover:text-brand">
+                    {external ? <Globe className="h-3.5 w-3.5" aria-hidden="true" /> : null}
+                    {external ? "See method & client stories" : "View profile"} {external ? "↗" : "→"}
+                  </span>
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* All trainers — for visitors who prefer to browse */}
       <Section bg="muted">
-        <SectionHeader
-          overline="The format"
-          title="The Private Session"
-          description="Every session is private: you, your trainer and the whole studio. No other clients, no queue, full focus."
-        />
-        <FadeIn>
-          <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
-            The format is always the same — private, tailored, from €45, no contract. Your trainer picks the method: from strength and posture to nutrition, recovery or small group. Some trainers work with their own distinct approach — like Joey&apos;s <em>Ascend Method</em> (strength, breathwork, self-inquiry). You&apos;ll find each trainer&apos;s specialty on their profile.
-          </p>
-        </FadeIn>
+        <SectionHeader overline="All trainers" title={`Prefer to choose yourself? See all ${trainers.length}`} description="Filter by specialty or language. The first intro is always free." />
+        <div id="trainer-grid" className="scroll-mt-24">
+          <TrainerFilterGrid trainers={trainers} locale="en" />
+        </div>
       </Section>
 
       {/* Specific-need routing — self-segment for high-intent visitors */}
@@ -270,8 +352,8 @@ export default function TrainersPageEN() {
       <Section>
         <SectionHeader
           overline="For trainers"
-          title="Are you a personal trainer? Rent the studio."
-          description="Your own clients and rates, your own profile on this site, and matching with clients who find SculptClub directly. From €12/hour."
+          title="Personal trainer? Sell programmes, not hours."
+          description="Rent the studio from €12/hour, keep 100% of your rate, and get clients who arrive with a goal — this page sends them to you."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -302,6 +384,9 @@ export default function TrainersPageEN() {
             WhatsApp us
           </ButtonLink>
         </FadeIn>
+        <p className="mt-6 text-center text-sm">
+          <a href="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">How to price a programme or package →</a>
+        </p>
       </Section>
 
       {/* FAQ */}
@@ -331,16 +416,16 @@ export default function TrainersPageEN() {
       <Section bg="dark">
         <SectionHeader
           overline="Ready to start?"
-          title="Book Your Free Intro"
-          description="First intro free. No contract. No commitment. Pick your trainer or WhatsApp us."
+          title="Choose your goal, book your free intro"
+          description="No contract, no commitment. Your trainer makes a plan with a fixed price upfront — then you decide."
         />
         <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <ButtonLink
-            href="#trainer-grid"
+            href="#doelen"
             size="lg"
             className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
           >
-            See the trainers
+            Choose your goal
             <ArrowRight className="ml-2 w-4 h-4" />
           </ButtonLink>
           <ButtonLink

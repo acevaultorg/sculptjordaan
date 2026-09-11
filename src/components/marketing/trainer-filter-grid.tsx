@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, ArrowRight, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { X, ArrowRight, SlidersHorizontal, ChevronDown, Globe } from "lucide-react";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -35,6 +35,10 @@ type LocaleProp = "nl" | "en";
 interface TrainerFilterGridProps {
   trainers: Trainer[];
   locale: LocaleProp;
+  /** Hide the specialty/language filter (used when the list is already a goal match). */
+  hideFilters?: boolean;
+  /** Goal the visitor picked on the PT hub — prefilled into the WhatsApp intake message. */
+  goalLabel?: string;
 }
 
 const copy = {
@@ -57,6 +61,7 @@ const copy = {
     ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
     ariaProfile: (name: string) => `Bekijk het profiel van ${name}`,
     ariaInstagram: (handle: string) => `Bekijk ${handle} op Instagram`,
+    website: (label: string) => `Methode & ervaringen: ${label}`,
   },
   en: {
     filterHeading: "Filter by specialty or language",
@@ -77,6 +82,7 @@ const copy = {
     ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,
     ariaProfile: (name: string) => `View ${name}'s profile`,
     ariaInstagram: (handle: string) => `View ${handle} on Instagram`,
+    website: (label: string) => `Method & client stories: ${label}`,
   },
 } as const;
 
@@ -126,7 +132,7 @@ function ImpressionCard({ name, children }: { name: string; children: React.Reac
   );
 }
 
-export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) {
+export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalLabel }: TrainerFilterGridProps) {
   const t = copy[locale];
 
   const allSpecs = useMemo(() => {
@@ -188,6 +194,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
   return (
     <>
       {/* Filter controls */}
+      {!hideFilters && (
       <FadeIn>
         <div
           className="mb-8 rounded-2xl border border-border/60 bg-muted/40 p-5 sm:p-6"
@@ -280,6 +287,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
           )}
         </div>
       </FadeIn>
+      )}
 
       {/* Results */}
       {filteredTrainers.length === 0 ? (
@@ -365,6 +373,18 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                       {trainer.rate ?? t.onRequest}
                     </p>
                   </div>
+                  {trainer.website && (
+                    <a
+                      href={trainer.website.url}
+                      target="_blank"
+                      rel="noopener"
+                      data-trainer-website={trainer.name}
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline underline-offset-4"
+                    >
+                      <Globe className="h-4 w-4" aria-hidden="true" />
+                      {t.website(trainer.website.label)}
+                    </a>
+                  )}
                 </CardContent>
 
                 <CardFooter className="flex-col gap-2 border-t-0 bg-transparent pt-2 pb-4">
@@ -376,7 +396,7 @@ export function TrainerFilterGrid({ trainers, locale }: TrainerFilterGridProps) 
                   <Link
                     href={
                       trainer.bookingUrl ??
-                      whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp)
+                      whatsappLinks.trainerIntake(trainer.name, locale, trainer.whatsapp, goalLabel)
                     }
                     target="_blank"
                     rel="noopener"

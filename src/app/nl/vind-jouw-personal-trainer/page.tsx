@@ -5,7 +5,10 @@ import { trainers } from "@/config/trainers";
 import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
 import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
-import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { GoalFunnel } from "@/components/marketing/goal-funnel";
+import { ptGoals } from "@/config/pt-goals";
+import Image from "next/image";
+import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles, Target, Check, X, Globe } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import {
@@ -18,8 +21,8 @@ import { googleReviews } from "@/data/reviews";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub" },
-  description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, geen tussenpersoon. Vind jouw match bij SculptClub.`,
+  title: { absolute: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub" },
+  description: `Personal trainer in Amsterdam? Kies je doel — afvallen, sterker worden, pijnvrij bewegen — en krijg bij een gratis intake een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
   alternates: {
     canonical: "/nl/vind-jouw-personal-trainer",
     languages: {
@@ -32,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/vind-jouw-personal-trainer",
-    title: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub",
-    description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, geen tussenpersoon. Vind jouw match bij SculptClub.`,
+    title: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub",
+    description: `Personal trainer in Amsterdam? Kies je doel — afvallen, sterker worden, pijnvrij bewegen — en krijg bij een gratis intake een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Amsterdam — Vind Jouw Match | SculptClub",
-    description: `Personal trainer in Amsterdam nodig? ${trainers.length} specialisten in de Jordaan — gratis intake, tarieven vanaf €45/sessie, geen tussenpersoon. Vind jouw match bij SculptClub.`,
+    title: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub",
+    description: `Personal trainer in Amsterdam? Kies je doel — afvallen, sterker worden, pijnvrij bewegen — en krijg bij een gratis intake een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
   },
 };
 
@@ -58,8 +61,12 @@ const trainerBenefits = [
 
 const faqs = [
   {
+    q: "Wat is een traject?",
+    a: "Personal training met een doel en een einddatum, bijvoorbeeld 8 of 12 weken. Bij de gratis intake maakt je trainer een plan: wat je wilt bereiken, hoe vaak je traint, wat jullie meten en wat het in totaal kost. Liever losse sessies? Dat kan ook altijd.",
+  },
+  {
     q: "Wat kost personal training bij SculptClub?",
-    a: "Trainers bepalen hun eigen tarieven, vanaf \u20ac45 per sessie. De eerste intake (inclusief kennismakingstraining) is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
+    a: "Trainers bepalen hun eigen tarieven, vanaf \u20ac45 per sessie. Voor een traject spreek je bij de intake een vaste totaalprijs af \u2014 vraag je trainer naar pakketprijzen. De eerste intake is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
   },
   {
     q: "Hoe werkt de gratis intake?",
@@ -99,6 +106,21 @@ const faqs = [
   },
 ];
 
+
+// Goal-first PT hub (operator 2026-09-11: sell transformations, not hours).
+const trajectSteps = [
+  { title: "Gratis intake", desc: "Telefonisch of in de studio. Je vertelt waar je nu staat en waar je naartoe wilt; samen leggen jullie je startpunt vast." },
+  { title: "Jouw traject-plan", desc: "Doel, duur, hoe vaak je traint, wat je meet en de totaalprijs — vooraf afgesproken. Geen verrassingen." },
+  { title: "Trainen in de privé studio", desc: "Alleen jij, je trainer en de hele studio. Je trainer stuurt bij op basis van hoe je vooruitgaat." },
+  { title: "Meetmoment & volgende stap", desc: "Je ziet wat er veranderd is. Daarna kies je: een volgend traject, zelfstandig verder in Open Gym, of stoppen." },
+];
+
+const methodCards = [
+  { id: "gezina", label: "Marseille Movement", text: "Persoonlijke coaching met aandacht voor voeding en hormonale gezondheid.", kind: "site" as const },
+  { id: "dara", label: "Strength & Balance", text: "Coaching voor drukke internationals die in Amsterdam wonen.", kind: "site" as const },
+  { id: "joey", label: "The Ascend Method", text: "Kracht, ademwerk en zelfonderzoek voor high-performers.", kind: "profile" as const },
+];
+
 export default function TrainersPageNL() {
   return (
     <PageLayout>
@@ -107,7 +129,7 @@ export default function TrainersPageNL() {
       <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Privé personal training in een boutique studio in de Jordaan, Amsterdam. Kies je eigen trainer, eerste intake altijd gratis."
+        description="Personal training als traject naar een doel, in een privé studio in de Jordaan, Amsterdam. Kies je doel en je trainer; de eerste intake is altijd gratis."
         url="/nl/vind-jouw-personal-trainer"
         priceRange="€45 - €120 per sessie"
       />
@@ -141,18 +163,19 @@ export default function TrainersPageNL() {
           }),
         }}
       />
-      {/* Hero */}
+      {/* Hero — goal-first (operator 2026-09-11: "sell transformations, not hours").
+          30d before: 93 views, ~10s engagement/view, 1 lead on the NL hub — a
+          directory of 13 bios priced per session. Now the page starts from the
+          visitor's goal and routes to the trainers who advertise that goal. */}
       <Section>
         <SectionHeader
           as="h1"
-          overline="Personal trainers"
-          title="Vind jouw personal trainer"
-          description="Privé studio · Eerste intake gratis · Sessies vanaf €45 · Kies je trainer, of laat ons matchen."
+          overline="Personal training · Jordaan"
+          title="Geen losse uren. Een traject naar jouw doel."
+          description="Kies wat je wilt bereiken, ontmoet de trainer die daarin gespecialiseerd is, en krijg bij een gratis intake een concreet plan: doel, duur, hoe vaak je traint en een vaste prijs vooraf."
         />
-
-        {/* Trust badges */}
         <FadeIn>
-          <div className="mb-6 flex flex-wrap justify-center gap-6 sm:gap-10">
+          <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
             {trustBadges.map((badge) => (
               <div key={badge.label} className="flex items-center gap-2 text-sm font-medium">
                 <badge.icon className="h-5 w-5 text-primary" />
@@ -161,73 +184,109 @@ export default function TrainersPageNL() {
             ))}
           </div>
         </FadeIn>
-
-        {/*
-          Dual-primary CTA strip — paid-Google-Ads landing conversion lever
-          (operator directive 2026-05-16: PT-search ads now route here; goal
-          #3 in operator funnel = "click try-out with trainer"). Before this
-          strip shipped, paid mobile visitors had to scroll through 8 trainer
-          cards before reaching a decision moment — too many choices for
-          ad-clickers. The emerald WhatsApp-direct CTA gives instant-match
-          path (we match them to a trainer), while the brand-blue scroll-
-          anchor preserves the "I want to choose" path for visitors who
-          prefer evaluation.
-
-          Same dual-CTA pattern as /nl/gratis-intake (shipped earlier this
-          session). Funnel-coherent: both ad-landing pages now expose both
-          paths simultaneously.
-        */}
         <FadeIn>
-          {/* 2-CTA strip — UX audit 2026-05-27. Previously 3 CTAs (Match
-              quiz + WhatsApp + browse-all). WhatsApp removed: it's
-              always-available in the sticky lead bar at the bottom of
-              every viewport on mobile. Keeping it here was duplicate
-              + competed with the orange Match-quiz primary (both bright
-              fills next to each other). Match-quiz primary (orange) +
-              browse-all outline = clean choice for the undecided. */}
-          <div className="mb-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
-            <a
-              href="/nl/match-trainer"
-              data-cta="trainerhub-quiz"
-              className="plausible-event-name=trainerhub_quiz inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]"
-            >
-              <Sparkles className="h-5 w-5" />
-              Vind je trainer — 3 vragen
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
+            <a href="#doelen" data-cta="trainerhub-goals" className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]">
+              <Target className="h-5 w-5" />
+              Kies je doel
             </a>
-            <a
-              href="#trainer-grid"
-              data-cta="trainerhub-scroll-grid"
-              className="plausible-event-name=trainerhub_scroll_grid inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]"
-            >
-              Of bekijk alle {trainers.length} ↓
+            <a href="/nl/match-trainer" data-cta="trainerhub-quiz" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]">
+              <Sparkles className="h-5 w-5" />
+              Twijfel je? 3 vragen
             </a>
           </div>
         </FadeIn>
+      </Section>
 
-        {/* Trainer cards with filter */}
-        <div id="trainer-grid">
-          <TrainerFilterGrid trainers={trainers} locale="nl" />
+      {/* Step 1 — goal picker → traject outline → matched trainers */}
+      <Section bg="muted" id="doelen" className="scroll-mt-20">
+        <SectionHeader overline="Stap 1" title="Wat wil je bereiken?" description="Kies je doel. Je ziet direct waar een traject aan werkt en welke trainers hierin gespecialiseerd zijn." />
+        <GoalFunnel goals={ptGoals} trainers={trainers} locale="nl" />
+      </Section>
+
+      {/* How a traject works — the SculptClub standard every trainer delivers */}
+      <Section>
+        <SectionHeader overline="Zo werkt het" title="Van intake tot resultaat" description="Elke trainer werkt op zijn eigen manier. Dit mag je van elk traject bij SculptClub verwachten." />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {trajectSteps.map((step, i) => (
+            <FadeIn key={step.title} delay={i * 0.1}>
+              <div className="h-full rounded-2xl border border-border bg-card p-5">
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">{i + 1}</div>
+                <p className="mb-1 font-semibold">{step.title}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm text-muted-foreground">
+          Zelfstandig verder na je traject? <a href="/nl/open-gym" className="font-semibold text-brand hover:underline underline-offset-4">Bekijk Open Gym →</a>
+        </p>
+      </Section>
+
+      {/* Traject vs single session */}
+      <Section bg="muted">
+        <SectionHeader overline="Waarom een traject" title="Traject of losse sessie?" description="Losse sessies blijven altijd mogelijk. Maar wie een doel heeft, komt verder met een plan." />
+        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="mb-4 text-lg font-bold">Losse sessie</p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Per keer boeken</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Geen vast plan of einddatum</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Geen vaste meetmomenten</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Vanaf €45 per sessie</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border-2 border-brand bg-card p-6 shadow-brand-lg">
+            <p className="mb-4 text-lg font-bold">Traject</p>
+            <ul className="space-y-2">
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Een concreet doel met een einddatum</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Een plan per week dat past in je agenda</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Meetmomenten, zodat je ziet wat je bereikt</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Vaste totaalprijs vooraf — vraag naar pakketprijzen</li>
+            </ul>
+          </div>
         </div>
       </Section>
 
-      {/* De Privé Sessie — names the FORMAT (R, 2026-06-02), not a method.
-          Positioning-safe: names the experience constant across all independent
-          trainers (private, 1-on-1, full focus, no contract) AND amplifies that
-          each trainer brings their OWN method — celebrating roster diversity
-          rather than flattening it into one "SculptClub method" (which would
-          undermine the rent-only independent-trainer model). The per-trainer-
-          method framing is the net-new part vs the existing "privé studio" copy. */}
+      {/* Trainers with their own coaching brand — link out to their sites */}
+      <Section>
+        <SectionHeader overline="Eigen methode" title="Trainers met een eigen coaching-methode" description="Een aantal trainers werkt met een eigen merk en aanpak. Lees op hun site hoe ze werken en wat hun cliënten zeggen." />
+        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-3">
+          {methodCards.map((card) => {
+            const tr = trainers.find((x) => x.id === card.id);
+            if (!tr) return null;
+            const href = card.kind === "site" && tr.website ? tr.website.url : `/nl/${tr.slug.nl}`;
+            const external = card.kind === "site" && Boolean(tr.website);
+            return (
+              <a
+                key={card.id}
+                href={href}
+                {...(external ? { target: "_blank", rel: "noopener" } : {})}
+                data-trainer-website={external ? tr.name : undefined}
+                className="group flex gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-brand/60"
+              >
+                <Image src={tr.image} alt={tr.name} width={64} height={64} className="h-16 w-16 shrink-0 rounded-full object-cover object-top" />
+                <span className="min-w-0">
+                  <span className="block font-bold">{tr.name}</span>
+                  <span className="block text-sm font-medium text-brand">{card.label}</span>
+                  <span className="mt-1 block text-sm text-muted-foreground">{card.text}</span>
+                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-foreground group-hover:text-brand">
+                    {external ? <Globe className="h-3.5 w-3.5" aria-hidden="true" /> : null}
+                    {external ? "Bekijk methode & ervaringen" : "Bekijk profiel"} {external ? "↗" : "→"}
+                  </span>
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* All trainers — for visitors who prefer to browse */}
       <Section bg="muted">
-        <SectionHeader
-          overline="Het format"
-          title="De privé sessie"
-          description="Elke sessie is privé: jij, je trainer en de hele studio. Geen andere klanten, geen wachtrij, volledige focus."
-        />
-        <FadeIn>
-          <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Het format is altijd hetzelfde — privé, op maat, vanaf €45, geen contract. Je trainer kiest de méthode: van kracht en houding tot voeding, herstel of small group. Sommige trainers werken met een eigen, herkenbare aanpak — zoals Joey&apos;s <em>Ascend Method</em> (kracht, ademwerk, zelfonderzoek). Je vindt de specialisatie van elke trainer op hun profiel.
-          </p>
-        </FadeIn>
+        <SectionHeader overline="Alle trainers" title={`Liever zelf kiezen? Bekijk alle ${trainers.length}`} description="Filter op specialiteit of taal. De eerste intake is altijd gratis." />
+        <div id="trainer-grid" className="scroll-mt-24">
+          <TrainerFilterGrid trainers={trainers} locale="nl" />
+        </div>
       </Section>
 
       {/* Specific-need routing — self-segment for high-intent visitors */}
@@ -296,8 +355,8 @@ export default function TrainersPageNL() {
       <Section>
         <SectionHeader
           overline="Voor trainers"
-          title="Ben jij personal trainer? Huur de studio."
-          description="Eigen tarief en klanten, eigen profiel op deze site, en match met klanten die SculptClub zelf vinden. Vanaf €12/uur."
+          title="Personal trainer? Verkoop trajecten, geen uren."
+          description="Huur de studio vanaf €12/uur, houd 100% van je tarief en krijg klanten die met een doel binnenkomen — deze pagina stuurt ze naar jou."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -328,6 +387,9 @@ export default function TrainersPageNL() {
             WhatsApp ons
           </ButtonLink>
         </FadeIn>
+        <p className="mt-6 text-center text-sm">
+          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject of pakket →</a>
+        </p>
       </Section>
 
       {/* FAQ */}
@@ -357,16 +419,16 @@ export default function TrainersPageNL() {
       <Section bg="dark">
         <SectionHeader
           overline="Klaar om te beginnen?"
-          title="Plan je gratis intake"
-          description="Eerste intake gratis. Geen contract. Geen verplichting. Kies je trainer of stuur ons een WhatsApp."
+          title="Kies je doel, plan je gratis intake"
+          description="Geen contract, geen verplichting. Je trainer maakt een plan met een vaste prijs vooraf — jij beslist daarna."
         />
         <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <ButtonLink
-            href="#trainer-grid"
+            href="#doelen"
             size="lg"
             className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
           >
-            Bekijk de trainers
+            Kies je doel
             <ArrowRight className="ml-2 w-4 h-4" />
           </ButtonLink>
           <ButtonLink

@@ -283,7 +283,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
         url={`/${locale}/${trainer.slug[locale]}`}
         jobTitle={locale === "nl" ? "Personal Trainer" : "Personal Trainer"}
         languages={trainer.languages}
-        sameAs={trainer.instagram ? [trainer.instagram] : []}
+        sameAs={[trainer.instagram, trainer.website?.url].filter((u): u is string => Boolean(u))}
       />
       <Section>
         <div className="max-w-4xl mx-auto">
@@ -344,6 +344,17 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   )}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">{trainer.bio[locale]}</p>
+                {trainer.website && (
+                  <a
+                    href={trainer.website.url}
+                    target="_blank"
+                    rel="noopener"
+                    data-trainer-website={trainer.name}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline underline-offset-4"
+                  >
+                    {locale === "nl" ? `Methode & ervaringen van cliënten: ${trainer.website.label}` : `Method & client stories: ${trainer.website.label}`} ↗
+                  </a>
+                )}
 
                 <div>
                   <p className="text-sm font-semibold mb-1.5">{t.specializations}</p>

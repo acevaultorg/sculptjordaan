@@ -250,12 +250,18 @@ export const whatsappLinks = {
   intakeMatchNl: `https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?")}`,
   intakeMatchEn: `https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?")}`,
   /** Trainer intake — per trainer. Opens WhatsApp with pre-filled free-intro enquiry. */
-  trainerIntake: (name: string, locale: "nl" | "en", baseUrl?: string) => {
+  trainerIntake: (name: string, locale: "nl" | "en", baseUrl?: string, goal?: string) => {
     const base = baseUrl ?? "https://wa.me/31615147952";
+    // `goal` (2026-09-11, goal-first PT hub): tells the trainer WHY the lead is
+    // writing, so the intake starts from the client's goal instead of "hi".
     const text =
       locale === "nl"
-        ? `Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`
-        : `Hi! I'd like to book a free intro with ${name} at SculptClub`;
+        ? goal
+          ? `Hoi ${name}! Ik wil graag een gratis intake bij SculptClub voor een traject: ${goal}`
+          : `Hoi! Ik wil graag een gratis intake boeken bij ${name} van SculptClub`
+        : goal
+          ? `Hi ${name}! I'd like a free intro at SculptClub for a programme: ${goal}`
+          : `Hi! I'd like to book a free intro with ${name} at SculptClub`;
     return `${base}?text=${encodeURIComponent(text)}`;
   },
   /** Trainer price request — per trainer. Opens WhatsApp with pre-filled rate enquiry + free intro. */

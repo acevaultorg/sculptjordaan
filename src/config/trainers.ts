@@ -59,6 +59,13 @@ export interface Trainer {
    * Format: any CSS object-position value, e.g. "50% 43%".
    */
   imagePosition?: string;
+  /**
+   * Trainer's OWN coaching website (their brand, reviews, programmes). Rendered
+   * as a secondary link on the card + intake page so clients can read the
+   * trainer's client results before the intake. Operator-confirmed URLs only
+   * (2026-09-11: Gezina = Marseille Movement, Dara = Strength & Balance).
+   */
+  website?: { url: string; label: string };
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
   whatsapp?: string;
   /**
@@ -286,6 +293,7 @@ const trainersRaw: Trainer[] = [
     languages: ["NL", "EN"],
     rate: null,
     instagram: "https://www.instagram.com/gezfitness/",
+    website: { url: "https://www.marseillemovement.com/", label: "Marseille Movement" },
     instagramHandle: "@gezfitness",
     bio: {
       nl: "Gezina is een gecertificeerde personal trainer gespecialiseerd in training voor vrouwen. Ze helpt vrouwen sterker worden door personal training en small group sessies, afgestemd op het lichaam en de cyclus.",
@@ -336,6 +344,7 @@ const trainersRaw: Trainer[] = [
     languages: ["NL", "EN"],
     rate: null,
     instagram: "https://instagram.com/strengthandbalancecoaching",
+    website: { url: "https://strengthandbalancecoaching.com/", label: "Strength & Balance" },
     instagramHandle: "@strengthandbalancecoaching",
     bio: {
       nl: "Dara coacht je in kracht én balans, met persoonlijke aandacht en een aanpak die je stap voor stap zelfverzekerder maakt. Of je nu net begint of weer in beweging wilt komen: je traint op jouw tempo, in een rustige setting waar je je meteen op je gemak voelt.",
