@@ -7,6 +7,19 @@
 >
 > Template NAMES ("Booking Confirmation 2/3") are not renameable via automation — admin-internal only, clients never see them.
 
+> ✅ **2026-09-11 — refund line added under the Change/Cancel button** (operator: "you can do this").
+> Source view, inserted directly after the `</table>` that closes the Change/Cancel button, so it sits
+> between that button and "Add to iCal":
+> *"Annuleren? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden
+> binnen enkele dagen automatisch terugbetaald."* + EN line in lighter grey. Same wording as the site
+> (commit 532a241, 10 surfaces).
+> - **Booking Confirmation 3** (`templateId=3325132`, studio rental) — saved ✓, re-read after a fresh
+>   reload: phrase present 1×.
+> - Admin moved: the old `preferences.php?action=emails*` URLs now render an empty shell. Current
+>   list is `/admin/client-emails`; a template editor is
+>   `/admin/client-emails-editor?emailType=1&templateId=<id>`. The `<>` toolbar button toggles a plain
+>   textarea with the full template source, including Acuity's own top card.
+
 Paste these HTML blocks at the bottom of the relevant confirmation emails in Acuity.
 
 ## Where to paste
