@@ -115,11 +115,10 @@ const trajectSteps = [
   { title: "Check-in & next step", desc: "You see what has changed. Then you choose: a next programme, continue on your own with Open Gym, or stop." },
 ];
 
-const methodCards = [
-  { id: "gezina", label: "Marseille Movement", text: "Personal coaching with attention to nutrition and hormonal health.", kind: "site" as const },
-  { id: "dara", label: "Strength & Balance", text: "Coaching for busy internationals living in Amsterdam.", kind: "site" as const },
-  { id: "joey", label: "The Ascend Method", text: "Strength, breathwork and self-inquiry for high performers.", kind: "profile" as const },
-];
+// Every trainer with a VERIFIED own website (research 2026-09-11, docs/PT-TRANSFORMATION-STRATEGY.md).
+const methodCards = trainers
+  .filter((t) => t.website)
+  .map((t) => ({ id: t.id, label: t.website!.label, text: t.website!.tagline?.en ?? "", kind: "site" as const }));
 
 export default function TrainersPageEN() {
   return (
@@ -250,7 +249,7 @@ export default function TrainersPageEN() {
 
       {/* Trainers with their own coaching brand — link out to their sites */}
       <Section>
-        <SectionHeader overline="Own method" title="Trainers with their own coaching method" description="Some trainers work with their own brand and approach. Read how they work and what their clients say on their site." />
+        <SectionHeader overline="Own method" title="Trainers with their own brand and programmes" description="Many SculptClub trainers run their own coaching business, with programmes and packages. Read how they work and what their clients say on their site." />
         <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-3">
           {methodCards.map((card) => {
             const tr = trainers.find((x) => x.id === card.id);

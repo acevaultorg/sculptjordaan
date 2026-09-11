@@ -65,7 +65,12 @@ export interface Trainer {
    * trainer's client results before the intake. Operator-confirmed URLs only
    * (2026-09-11: Gezina = Marseille Movement, Dara = Strength & Balance).
    */
-  website?: { url: string; label: string };
+  website?: {
+    url: string;
+    label: string;
+    /** One line on what the trainer's own brand sells — taken from their own site. */
+    tagline?: Record<Locale, string>;
+  };
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
   whatsapp?: string;
   /**
@@ -221,6 +226,11 @@ const trainersRaw: Trainer[] = [
     rate: null,
     instagram: "https://instagram.com/sportieefnl",
     instagramHandle: "@sportieefnl",
+    website: {
+      url: "https://sportieef.com/",
+      label: "Sportieef",
+      tagline: { nl: "Coaching-trajecten van 12, 24 of 36 weken (True Balance) en voedingsbegeleiding.", en: "Coaching programmes of 12, 24 or 36 weeks (True Balance) and nutrition guidance." },
+    },
     credentials: {
       nl: "Diëtist",
       en: "Dietitian",
@@ -248,8 +258,17 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: "vanaf €55 / 60 min",
+    credentials: {
+      nl: "Calisthenics Coach (COI) · Calisthenics Skill Lab",
+      en: "Calisthenics Coach (COI) · Calisthenics Skill Lab",
+    },
     instagram: "https://instagram.com/calisthenics_skilllab",
     instagramHandle: "@calisthenics_skilllab",
+    website: {
+      url: "https://calisthenicsskilllab.nl/",
+      label: "Calisthenics Skill Lab",
+      tagline: { nl: "Calisthenics-groepslessen en personal training, van eerste pull-up tot muscle-up.", en: "Calisthenics group classes and personal training, from first pull-up to muscle-up." },
+    },
     bio: {
       nl: "Calisthenics-specialist. Van eerste push-up tot handstand, muscle-up en human flag — Bryan leert je je eigen lichaamsgewicht beheersen met heldere progressies, sterke fundamenten en gerichte mobiliteit.",
       en: "Calisthenics specialist. From your first push-up to handstand, muscle-up and human flag — Bryan teaches you to master your own bodyweight with clear progressions, strong foundations and targeted mobility.",
@@ -270,8 +289,17 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: null,
+    credentials: {
+      nl: "Gewichtsconsulent · gezondheidscoach",
+      en: "Weight consultant · health coach",
+    },
     instagram: "https://www.instagram.com/beter_dan_gister_/",
     instagramHandle: "@beter_dan_gister_",
+    website: {
+      url: "https://www.beterdangistercoaching.nl/",
+      label: "Beter Dan Gister",
+      tagline: { nl: "Personal training, voedingscoaching en privé voetbaltraining.", en: "Personal training, nutrition coaching and private football training." },
+    },
     bio: {
       nl: "Als personal trainer help ik mensen doelgericht werken aan een fitter en gezonder lichaam. Mijn specialisatie ligt in voeding en afvallen, waarbij ik praktische en haalbare plannen maak die passen bij jouw levensstijl. Daarnaast begeleid ik ook bij revalidatie, zodat je op een veilige en verantwoorde manier weer sterker en pijnvrij kunt bewegen.",
       en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss — I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
@@ -292,8 +320,16 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: null,
+    credentials: {
+      nl: "NL Actief Personal Training A & B · voedingsdeskundige",
+      en: "NL Actief Personal Training A & B · nutrition specialist",
+    },
     instagram: "https://www.instagram.com/gezfitness/",
-    website: { url: "https://www.marseillemovement.com/", label: "Marseille Movement" },
+    website: {
+      url: "https://www.marseillemovement.com/",
+      label: "Marseille Movement",
+      tagline: { nl: "Persoonlijke coaching met aandacht voor voeding en hormonale gezondheid.", en: "Personal coaching with attention to nutrition and hormonal health." },
+    },
     instagramHandle: "@gezfitness",
     bio: {
       nl: "Gezina is een gecertificeerde personal trainer gespecialiseerd in training voor vrouwen. Ze helpt vrouwen sterker worden door personal training en small group sessies, afgestemd op het lichaam en de cyclus.",
@@ -343,8 +379,16 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: null,
+    credentials: {
+      nl: "CIMSPA-gecertificeerd · MSc Performance Psychology",
+      en: "CIMSPA certified · MSc Performance Psychology",
+    },
     instagram: "https://instagram.com/strengthandbalancecoaching",
-    website: { url: "https://strengthandbalancecoaching.com/", label: "Strength & Balance" },
+    website: {
+      url: "https://strengthandbalancecoaching.com/",
+      label: "Strength & Balance",
+      tagline: { nl: "Personal training, small-group Strength Club en online coaching voor internationals.", en: "Personal training, small-group Strength Club and online coaching for internationals." },
+    },
     instagramHandle: "@strengthandbalancecoaching",
     bio: {
       nl: "Dara coacht je in kracht én balans, met persoonlijke aandacht en een aanpak die je stap voor stap zelfverzekerder maakt. Of je nu net begint of weer in beweging wilt komen: je traint op jouw tempo, in een rustige setting waar je je meteen op je gemak voelt.",
@@ -366,8 +410,17 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: null,
+    credentials: {
+      nl: "Triphasic Training-gecertificeerd (Overload Worldwide)",
+      en: "Triphasic Training certified (Overload Worldwide)",
+    },
     instagram: "https://instagram.com/jer.proformance",
     instagramHandle: "@jer.proformance",
+    website: {
+      url: "https://proformanceinstitute.nl/",
+      label: "Proformance Institute",
+      tagline: { nl: "Programma's zoals de 12-weekse Body Transformation en Pain Free Performance.", en: "Programmes such as the 12-week Body Transformation and Pain Free Performance." },
+    },
     bio: {
       nl: "Jearmey helpt je sterker worden, vet verliezen en pijnvrij bewegen. Met een focus op kracht en atletische prestaties bouwt hij programma's die resultaat leveren.",
       en: "Jearmey helps you build strength, lose fat and move pain-free. With a focus on strength and athletic performance, he builds programmes that deliver results.",
@@ -393,6 +446,11 @@ const trainersRaw: Trainer[] = [
     rate: "€80 / 60 min",
     instagram: "https://www.instagram.com/transformbst",
     instagramHandle: "@transformbst",
+    website: {
+      url: "https://transformbst.com/",
+      label: "TransformBST",
+      tagline: { nl: "De BST-methode: houdingscorrectie, kracht en lichaamsrecompositie.", en: "The BST method: posture correction, strength and body recomposition." },
+    },
     credentials: {
       nl: "Gecertificeerd personal trainer, 10+ jaar ervaring",
       en: "Certified Personal Trainer, 10+ years experience",
@@ -447,8 +505,17 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: "€72 / 60 min",
+    credentials: {
+      nl: "Henselmans Certified PT · achtergrond in sportwetenschap",
+      en: "Henselmans Certified PT · Sports Science background",
+    },
     instagram: "https://instagram.com/hamishleijer",
     instagramHandle: "@hamishleijer",
+    website: {
+      url: "https://leerkrachttraining.com/",
+      label: "Hamish Leijer PT",
+      tagline: { nl: "Personal training-pakketten van 10, 20 of 30 sessies, online coaching en kickboksen.", en: "Personal training packages of 10, 20 or 30 sessions, online coaching and kickboxing." },
+    },
     bio: {
       nl: "Als ervaren personal trainer helpt Hamish je om fysieke grenzen te doorbreken. Met een scherpe focus op functionele kracht, metabole optimalisatie en een resultaatgerichte aanpak zorgt hij dat je training naadloos aansluit op een high-performance levensstijl. Geen shortcuts, alleen structurele progressie.",
       en: "As an experienced personal trainer, Hamish helps you break through physical barriers. With a sharp focus on functional strength, metabolic optimization, and a results-driven approach, he ensures your training seamlessly aligns with a high-performance lifestyle. No shortcuts, just structural progress.",
@@ -523,8 +590,17 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["EN", "IT"],
     rate: null,
+    credentials: {
+      nl: "EREPS Level 4 personal trainer",
+      en: "EREPS Level 4 Personal Trainer",
+    },
     instagram: "https://instagram.com/fitmillennial.pt",
     instagramHandle: "@fitmillennial.pt",
+    website: {
+      url: "https://www.robertavirzipt.com/",
+      label: "Roberta Virzi PT",
+      tagline: { nl: "Personal training, duo-training en online coaching met een plan per 4 weken.", en: "Personal training, duo training and online coaching with a plan per 4 weeks." },
+    },
     // Bio supplied by Roberta herself (email 2026-07-25), condensed to the
     // house length + voice. Claims kept exactly as she wrote them — Italian,
     // Amsterdam-based, 1-to-1 + small group + one-off consultations. Nothing

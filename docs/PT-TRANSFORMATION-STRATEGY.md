@@ -84,3 +84,37 @@ Draft message to trainers (NL, for the operator to send):
 SculptClub does not sell programmes itself. Trainers sell trajecten; SculptClub matches, qualifies and routes the
 client, showcases the trainer's own brand, and earns on studio hours. The voor-trainers / for-trainers page now
 explains this platform value to renters.
+
+## Trainer research (2026-09-11, 13 trainers, identity-verified)
+
+Raw verdicts with source URLs: workflow wf_77a83936-e96 (session transcript dir). Each finding was re-fetched by
+an independent checker and only kept with concrete identity evidence (two-way handle link, KvK, studio address).
+
+**The trainers already sell transformations.** 10 of 13 run their own coaching business; several sell exactly the
+traject model this page now promotes:
+
+| trainer | own brand (verified) | what they sell |
+|---|---|---|
+| Eva | Sportieef | True Balance 1:1 coaching, 12/24/36 weeks (€297/€247/€227 per month, EN page) |
+| Jearmey | Proformance Institute | 12-week Body Transformation, Pain Free Performance and 4 more (from €300 per 4 weeks) |
+| Hamish | leerkrachttraining.com | PT packs of 10/20/30 sessions (€800/€1,560/€2,280), online coaching |
+| Sergei | TransformBST | BST method, posture correction (8–12 weeks), €90 first session |
+| Dara | Strength & Balance | 1:1 from €75, Strength Club from €19.90, online from €149 per 4 weeks |
+| Gezina | Marseille Movement | 1:1 €80 per hour, online coaching |
+| Bryan | Calisthenics Skill Lab | group classes (€63/month unlimited), PT on request |
+| Ibrahim | Beter Dan Gister | PT, nutrition/weight-loss traject, private football training |
+| Roberta | Roberta Virzi PT | PT, duo, online coaching; EREPS Level 4 (independent register #149967) |
+| Tom | probable: TomHammondPT (old London site) | not linked — identity only probable |
+| Alex, Andrea, Joey | nothing found outside SculptClub | — |
+
+Prices above are the trainers' own published prices, recorded here for strategy only. SculptClub does not show
+traject prices (pricing decision above); the website link lets clients read them on the trainer's own site.
+
+**Data to confirm with the trainers (operator):**
+- Rates differ from what SculptClub shows: Hamish €72 on SculptClub vs €76–80 per session on his site; Sergei €80 vs
+  €70/€65/€60 on a 2024 page of his site.
+- Location: Ibrahim's site names both Egelantiersgracht 424 and a gym at Reinaert de Vosstraat; Dara's site says
+  "private studio in Amsterdam-West".
+- Andrea's Instagram bio says "Master of Kinesiology · Yoga and Pilates instructor" (unverified; not shown).
+- Joey's Instagram @joaonomad137 appears to be gone; the card still links it.
+- Alex: a 2024 TrainMore profile of "Alexandre Almeida" (EREPS 4 claim) may be him — ask before showing.

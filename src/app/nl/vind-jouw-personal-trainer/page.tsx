@@ -115,11 +115,10 @@ const trajectSteps = [
   { title: "Meetmoment & volgende stap", desc: "Je ziet wat er veranderd is. Daarna kies je: een volgend traject, zelfstandig verder in Open Gym, of stoppen." },
 ];
 
-const methodCards = [
-  { id: "gezina", label: "Marseille Movement", text: "Persoonlijke coaching met aandacht voor voeding en hormonale gezondheid.", kind: "site" as const },
-  { id: "dara", label: "Strength & Balance", text: "Coaching voor drukke internationals die in Amsterdam wonen.", kind: "site" as const },
-  { id: "joey", label: "The Ascend Method", text: "Kracht, ademwerk en zelfonderzoek voor high-performers.", kind: "profile" as const },
-];
+// Every trainer with a VERIFIED own website (research 2026-09-11, docs/PT-TRANSFORMATION-STRATEGY.md).
+const methodCards = trainers
+  .filter((t) => t.website)
+  .map((t) => ({ id: t.id, label: t.website!.label, text: t.website!.tagline?.nl ?? "", kind: "site" as const }));
 
 export default function TrainersPageNL() {
   return (
@@ -250,7 +249,7 @@ export default function TrainersPageNL() {
 
       {/* Trainers with their own coaching brand — link out to their sites */}
       <Section>
-        <SectionHeader overline="Eigen methode" title="Trainers met een eigen coaching-methode" description="Een aantal trainers werkt met een eigen merk en aanpak. Lees op hun site hoe ze werken en wat hun cliënten zeggen." />
+        <SectionHeader overline="Eigen methode" title="Trainers met een eigen merk en programma's" description="Veel trainers bij SculptClub hebben een eigen coachingbedrijf, met programma's en pakketten. Lees op hun site hoe ze werken en wat hun cliënten zeggen." />
         <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-3">
           {methodCards.map((card) => {
             const tr = trainers.find((x) => x.id === card.id);
