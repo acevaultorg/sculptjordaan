@@ -34,6 +34,11 @@
 - [x] `P2` CONFIGURE Check Rich Results in Search Console — Breadcrumbs 13 valid / 0 invalid; Review snippets enhancement active [id:gsc-rich-results]
 - [x] `P0` FIX Vanity domain routing lost (UTM + deep-link gone) — codify in middleware `vanityDomains` map for 10 domains [id:vanity-map] [score:13.0]
 
+## Shipped 2026-09-11 — PT hub sells transformations, not hours
+- [x] Goal-first PT hub on /nl/vind-jouw-personal-trainer + /en/find-personal-trainer (commit 42acf62, CF deploy d5674371, live-verified). 6 goals → traject outline → only trainers whose own specialization names the goal; WhatsApp prefill carries the goal; GA4 `goal_select`; Gezina + Dara link to their own sites. Baseline + strategy: docs/PT-TRANSFORMATION-STRATEGY.md.
+- [ ] 2026-10-11 read vs baseline (board card on the Website board).
+- [ ] 👤 Trainer broadcast (card mpy22kmsv5acpq, parked with outreach-as-Paulo): ask each trainer for a traject/package price + own website; tell them the hub now promises a traject-plan with fixed price at every free intake.
+
 ## Queue (open)
 - [x] `P0` CRITICAL Vercel side of vanity routing DONE — detached 10 domains (ptjordaan, jordaanpt, pt45, vindpt, sculptspace, sculpt45, gymjordaan, krachtzaal, jordaangym, sculptjordaan) from domain-portfolio-router + attached as aliases to sculptclub project (apex + www 308 redirect). Via Vercel API. [id:vercel-vanity-alias]
 - [x] `P0` RESOLVED/STALE 2026-06-10 (verified live this audit) — Hostinger DNS for vanity domains is DONE: spot-check `ptjordaan.nl`, `vindpt.nl`, `jordaangym.nl`, `sculptjordaan.nl` all return 301 → sculptclub.nl with correct deep-link + utm_source/medium/campaign intact (e.g. ptjordaan.nl → /nl/vind-jouw-personal-trainer?utm_source=ptjordaan&utm_medium=vanity_domain&utm_campaign=local_pt). Middleware vanity routing fully working. (was: [👤] CRITICAL Update DNS at Hostinger — stale blocker claim) [id:hostinger-ns-switch]
