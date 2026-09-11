@@ -25,6 +25,13 @@
 >   ⚠️ **This template behaves differently:** a source-view (`<>`) edit is DISCARDED when you switch
 >   back — the textarea is re-serialised from the visual editor (2,711 → 2,665 chars, line gone).
 >   Type into the visual editor instead. Booking Confirmations 2/3 kept source edits fine.
+> - **Booking Confirmation (default, `emailType=1&templateId=0`)** — retired number `+31 6 83 17 89 34`
+>   replaced with `+31 6 15 14 79 52` in all 3 places (text + Call + WhatsApp links) and the refund line
+>   added under Change/Cancel. Saved ✓ ("Booking Confirmation saved"); fresh reload: old 0 · new 4 ·
+>   refund 1. **Saving WHILE STILL IN SOURCE VIEW persists on a default template** — it is only the
+>   switch back to visual that discards source edits.
+> - Receipt merge fields (Insert Field, package-order): first · last · phone · email · receipt summary ·
+>   product · total · notes · schedule link · certificate link. **No date, no order/invoice number.**
 > - Admin moved: the old `preferences.php?action=emails*` URLs now render an empty shell. Current
 >   list is `/admin/client-emails`; a template editor is
 >   `/admin/client-emails-editor?emailType=1&templateId=<id>`. The `<>` toolbar button toggles a plain
