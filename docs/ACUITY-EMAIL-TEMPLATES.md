@@ -131,6 +131,22 @@ gegevens aan de hand waarvan de btw kan worden berekend"*).
   **Invoice ID auto-starting at 1** (consecutive), due date, message, email send. That is the
   realistic route to a full factuur for the €179 / €299 / €499 packs without a new tool.
 
+### ✅ Receipt fix shipped 2026-09-11 (device 1) — verified after reload
+
+- **Package / Gift Certificate Order** and **Subscription Paid**: heading "Factuur / Invoice" →
+  **"Betalingsbewijs / Receipt"**; footer now reads *"Alle bedragen zijn inclusief 9% BTW. Dit bericht
+  is je betalingsbewijs. Ondernemer? Vraag een factuur met btw-specificatie aan via
+  contact@sculptclub.nl (vermeld je bedrijfsnaam en adres). / This email is your payment receipt;
+  businesses can request a VAT invoice at contact@sculptclub.nl · P.M. de Vries · KvK 64708101 ·
+  BTW-id NL002250100B57"*. Reload count on each page: new footer 2 · old footer 0 · new heading 2 ·
+  old heading 0.
+- **Appointment Receipts** (single €12/€17 sessions, ≤ €100): preview already renders issue date,
+  supplier name + address, KvK, BTW-id, the service line and "inclusief 9% BTW" → meets the
+  vereenvoudigde-factuur requirements. Left unchanged.
+- **Packs above €100** (€179/€299/€499): a full factuur must be issued on request via Acuity
+  Invoices (consecutive ID, tax line) — manual per order. A bookkeeping integration would automate
+  this but is a paid, operator-decided step.
+
 ### Residual limits (Acuity's design — recorded 2026-07-24, still true)
 
 Acuity receipt templates expose only `%first/last/phone/email/receipt/product/total/notes%`.
