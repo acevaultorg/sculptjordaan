@@ -45,6 +45,43 @@ contact number inside the legal supplier-identity line** — on the document a c
 to query a payment. Not verifiable from this repo (Acuity is credential-gated), so it needs an
 operator check: the correct number is **+31 6 15 14 79 52** / `wa.me/31615147952`.
 
+### ⚖️ Measured 2026-09-11 against belastingdienst.nl — what each trainer purchase legally needs
+
+Operator asked (2026-09-11): *"make sure all confirmation mails for trainers contain all the
+needed information for their financial administration, according to Dutch law."* Checked against
+the live Belastingdienst pages the same day (factuureisen + vereenvoudigde factuur), using the
+real receipt Joey van Veen received for the €499 Volume pack as the specimen.
+
+**Two regimes, split at €100 incl. btw:**
+
+| item | full factuur (> €100) | vereenvoudigde factuur (≤ €100) | Joey's €499 receipt |
+|---|---|---|---|
+| supplier name + address | required | required | ✅ |
+| btw-id | required | — | ✅ |
+| KvK-nummer | required (if registered) | — | ✅ |
+| issue date on the document | required | required | ❌ |
+| consecutive factuurnummer | required | not required | ❌ (certificate code ≠ invoice number) |
+| buyer name + address | required | not required | ❌ name only |
+| description + quantity | required | "welke diensten" | ✅ |
+| date of supply | required | — | ❌ |
+| amount excl. btw | required | — | ❌ |
+| btw-tarief | required | btw or data to calculate it | ✅ 9% |
+| btw-bedrag | required | btw or data to calculate it | ❌ (€41.20 not shown) |
+
+Sources: https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/administratie_bijhouden/facturen_maken/factuureisen/
+and …/factuureisen/aangepaste_regels_facturen/vereenvoudigde_factuur (verbatim: *"de btw of de
+gegevens aan de hand waarvan de btw kan worden berekend"*).
+
+**What that means per trainer product:**
+- **Single studio rentals (€12 / €17) and the Starter pack (€89)** — ≤ €100, so a simplified
+  invoice is enough. The Acuity email can satisfy it once it carries an **issue date**; "incl. 9%
+  btw" already counts as "data to calculate the btw".
+- **Routine €179 · Pro €299 · Volume €499** — above €100, a **full factuur is required**, and
+  these buyers are self-employed trainers who reclaim btw. Acuity has no merge field for a
+  consecutive invoice number or the buyer's address, so **no Acuity template can make these
+  compliant**. The footer line *"Dit bericht dient als betalingsbewijs / factuur"* over-claims for
+  them and should say *betalingsbewijs* only, with a route to request a full factuur.
+
 ### Residual limits (Acuity's design — recorded 2026-07-24, still true)
 
 Acuity receipt templates expose only `%first/last/phone/email/receipt/product/total/notes%`.
