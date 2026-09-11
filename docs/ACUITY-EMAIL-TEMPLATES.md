@@ -105,6 +105,25 @@ gegevens aan de hand waarvan de btw kan worden berekend"*).
   compliant**. The footer line *"Dit bericht dient als betalingsbewijs / factuur"* over-claims for
   them and should say *betalingsbewijs* only, with a route to request a full factuur.
 
+### 🔎 Live Acuity read 2026-09-11 (device 1, signed in) — what the templates actually say
+
+- **Package / Gift Certificate Order** (`/admin/email-settings/package-order`, 3,475-char source) and
+  **Subscription Paid** (`/admin/email-settings/subscription-paid`, 4,114 chars) both carry the
+  supplier block + heading "Factuur / Invoice" + footer *"Dit bericht dient als betalingsbewijs /
+  factuur bij je aankoop."* Merge fields in use: `%first% %last% %phone% %email% %receipt% %total%
+  %notes%` (package) and `%product% %price%` (subscription). **No date, no invoice number, no VAT
+  amount** — so the "factuur" claim over-reaches for anything above €100.
+- **Appointment Receipts** (`/admin/email-settings/appointment-receipts`) is a plain form: subject,
+  title, and a 218-char custom message.
+- **Booking Confirmation (default, `emailType=1&templateId=0`)** — sent for SCULPT45 class, Partner
+  Full Studio, Studio help 90/120/150, an Open Gym copy and a photoshoot type — **still shows the
+  RETIRED number `+31 6 83 17 89 34`: 3 occurrences in its source, 0 of the correct `+31 6 15 14 79 52`.**
+  Visible line: *"Need help? Call or WhatsApp us: +31 6 83 17 89 34."*
+- **Acuity has a built-in Invoices feature** (`/admin/invoices`, 0 invoices so far). "Create invoice"
+  offers: client picker, line items (qty · price), subtotal, **Add tax** (separate VAT line),
+  **Invoice ID auto-starting at 1** (consecutive), due date, message, email send. That is the
+  realistic route to a full factuur for the €179 / €299 / €499 packs without a new tool.
+
 ### Residual limits (Acuity's design — recorded 2026-07-24, still true)
 
 Acuity receipt templates expose only `%first/last/phone/email/receipt/product/total/notes%`.
