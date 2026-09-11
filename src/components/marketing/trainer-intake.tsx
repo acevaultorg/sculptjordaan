@@ -403,14 +403,15 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                           <li key={pname} className="rounded-xl border border-border bg-card p-4">
                             <p className="text-sm font-semibold">{pname}</p>
                             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.summary[locale]}</p>
-                            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                            {/* min-h-11 = 44px tap target (measured 20px at 375px before, 2026-09-11). */}
+                            <div className="mt-1 flex flex-wrap items-center gap-x-4 text-sm">
                               <a
                                 href={ask}
                                 target="_blank"
                                 rel="noopener"
                                 data-programme={pname}
                                 onClick={() => trackProgramme(pname, "ask")}
-                                className="font-semibold text-brand hover:underline underline-offset-4"
+                                className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4"
                               >
                                 {pt.ask} →
                               </a>
@@ -419,7 +420,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                                 target="_blank"
                                 rel="noopener"
                                 onClick={() => trackProgramme(pname, "details")}
-                                className="text-muted-foreground hover:underline underline-offset-4"
+                                className="inline-flex min-h-11 items-center text-muted-foreground hover:underline underline-offset-4"
                               >
                                 {pt.details(trainer.website?.label ?? trainer.name)} ↗
                               </a>
