@@ -95,6 +95,15 @@ function main() {
         );
       }
     }
+
+    // The short name link sculptclub.nl/<name> → the trainer's NL page. CLAUDE.md
+    // promises one per trainer and it is what trainers put in their bios and
+    // what the operator shares. 2026-09-11 live sweep: /bryan and /tom were 404
+    // while the other 11 worked — nothing checked it.
+    const short = `"/${t.name.toLowerCase()}":["/nl/${t.nlSlug}",301]`;
+    if (!middleware.includes(short)) {
+      errors.push(`  • short link missing from functions/_middleware.ts EXACT — add: ${short}`);
+    }
   }
 
   if (errors.length > 0) {
