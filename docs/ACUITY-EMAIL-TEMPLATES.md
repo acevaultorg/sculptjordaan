@@ -17,6 +17,14 @@
 >   reload: phrase present 1×.
 > - **Booking Confirmation 2** (`templateId=3325119`, Open Gym) — saved ✓ ("Booking Confirmation 2
 >   saved"), re-read after a fresh reload: phrase present 1×, placed before "Add to iCal".
+> - **Cancellation Confirmation** (`emailType=5&templateId=0`, Acuity's default, sent for ALL
+>   appointment types + classes) — conditional wording because it also goes to free trials/intakes:
+>   *"Betaald met credits? Die staan direct weer op je account. Losse sessie met je kaart betaald? Die
+>   wordt binnen enkele dagen automatisch terugbetaald."* + EN. Placed inside the "successfully
+>   cancelled" box. Saved ✓, fresh reload: NL 1× · EN 1×.
+>   ⚠️ **This template behaves differently:** a source-view (`<>`) edit is DISCARDED when you switch
+>   back — the textarea is re-serialised from the visual editor (2,711 → 2,665 chars, line gone).
+>   Type into the visual editor instead. Booking Confirmations 2/3 kept source edits fine.
 > - Admin moved: the old `preferences.php?action=emails*` URLs now render an empty shell. Current
 >   list is `/admin/client-emails`; a template editor is
 >   `/admin/client-emails-editor?emailType=1&templateId=<id>`. The `<>` toolbar button toggles a plain
