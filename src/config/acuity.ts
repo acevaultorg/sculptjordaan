@@ -265,12 +265,19 @@ export const whatsappLinks = {
     return `${base}?text=${encodeURIComponent(text)}`;
   },
   /** Trainer price request — per trainer. Opens WhatsApp with pre-filled rate enquiry + free intro. */
-  trainerPriceRequest: (name: string, locale: "nl" | "en", baseUrl?: string) => {
+  trainerPriceRequest: (name: string, locale: "nl" | "en", baseUrl?: string, goal?: string) => {
     const base = baseUrl ?? "https://wa.me/31615147952";
+    // Price REQUEST is the primary price action on the PT hub (2026-09-11): the
+    // trainer gets a high-intent lead with the goal in it, instead of the visitor
+    // reading "op aanvraag" and leaving.
     const text =
       locale === "nl"
-        ? `Hoi! Ik wil graag het tarief weten van ${name} en een gratis intake plannen.`
-        : `Hi! I'd like to know ${name}'s rate and book a free intro.`;
+        ? goal
+          ? `Hoi ${name}! Wat kost een traject bij jou voor: ${goal}? Ik wil ook graag een gratis intake plannen.`
+          : `Hoi! Ik wil graag het tarief weten van ${name} en een gratis intake plannen.`
+        : goal
+          ? `Hi ${name}! What does a programme with you cost for: ${goal}? I'd also like to book a free intro.`
+          : `Hi! I'd like to know ${name}'s rate and book a free intro.`;
     return `${base}?text=${encodeURIComponent(text)}`;
   },
   /** Generic (no pre-filled text) */

@@ -23,6 +23,8 @@ import type { Locale } from "./site";
 export interface PtGoal {
   id: string;
   icon: "flame" | "dumbbell" | "activity" | "heart" | "sparkles" | "battery";
+  /** Short label — intake-form goal option + WhatsApp context. */
+  short: Record<Locale, string>;
   title: Record<Locale, string>;
   /** One line: the change the client is after. */
   promise: Record<Locale, string>;
@@ -42,6 +44,7 @@ export const ptGoals: PtGoal[] = [
     // verliezen" · alex: "afvallen, spieropbouw" (all from trainers.ts)
     id: "afvallen",
     icon: "flame",
+    short: { nl: "Afvallen", en: "Lose fat" },
     title: { nl: "Afvallen & strakker worden", en: "Lose fat & get leaner" },
     promise: {
       nl: "Minder vet, meer spier — en gewoontes die je volhoudt.",
@@ -63,6 +66,7 @@ export const ptGoals: PtGoal[] = [
     // hamish: functionele kracht
     id: "sterker",
     icon: "dumbbell",
+    short: { nl: "Sterker worden", en: "Get stronger" },
     title: { nl: "Sterker worden — ook als beginner", en: "Get stronger — beginners welcome" },
     promise: {
       nl: "Van twijfelen bij de dumbbells naar zelfverzekerd zwaar tillen.",
@@ -84,6 +88,7 @@ export const ptGoals: PtGoal[] = [
     // "pijnvrij bewegen"
     id: "pijnvrij",
     icon: "activity",
+    short: { nl: "Pijnvrij bewegen", en: "Pain-free movement" },
     title: { nl: "Pijnvrij bewegen & herstel", en: "Move pain-free & recover" },
     promise: {
       nl: "Weer zonder zorgen bewegen — met een lichaam dat sterker is dan voorheen.",
@@ -109,6 +114,7 @@ export const ptGoals: PtGoal[] = [
     // (the old hub already routed "vrouwelijke personal trainer" to these 3)
     id: "vrouwen",
     icon: "heart",
+    short: { nl: "Sterk als vrouw", en: "Strong as a woman" },
     title: { nl: "Sterk als vrouw", en: "Strong as a woman" },
     promise: {
       nl: "Krachttraining afgestemd op jouw lichaam, cyclus en levensfase.",
@@ -128,6 +134,7 @@ export const ptGoals: PtGoal[] = [
     // bryan: Calisthenics, Skills · alex: Static Calisthenics, Gymnastiek
     id: "skills",
     icon: "sparkles",
+    short: { nl: "Calisthenics", en: "Calisthenics" },
     title: { nl: "Calisthenics skills", en: "Calisthenics skills" },
     promise: {
       nl: "Je eerste handstand, muscle-up of pull-up — met een helder stappenplan.",
@@ -149,6 +156,7 @@ export const ptGoals: PtGoal[] = [
     // trainen met een druk leven"
     id: "energie",
     icon: "battery",
+    short: { nl: "Energie & stress", en: "Energy & stress" },
     title: { nl: "Meer energie, minder stress", en: "More energy, less stress" },
     promise: {
       nl: "Voor drukke professionals: je energie en regie terug.",

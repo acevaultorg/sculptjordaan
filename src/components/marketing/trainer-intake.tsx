@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MessageCircle, Mail, Send, ArrowLeft, ArrowRight, CalendarCheck } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
@@ -11,6 +11,8 @@ import { TrainerPhotoGallery } from "@/components/marketing/trainer-photo-galler
 import Image from "next/image";
 import Link from "next/link";
 import { trainers } from "@/config/trainers";
+import { ptGoals } from "@/config/pt-goals";
+import { whatsappLinks } from "@/config/acuity";
 import { trackNavClick } from "@/lib/tracking";
 import { siteConfig } from "@/config/site";
 import type { Locale } from "@/config/site";
@@ -119,13 +121,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     availability: "Beschikbaarheid",
     testimonialsTitle: "Wat klanten zeggen",
     onRequest: "Op aanvraag",
+    requestPrice: "Vraag prijs aan →",
     contactTitle: "Neem contact op",
     nameLabel: "Naam",
     namePlaceholder: "Je volledige naam",
     phoneLabel: "Telefoon",
     phonePlaceholder: "+31 6 1234 5678",
     goalLabel: "Mijn doel",
-    goalOptions: ["Kracht", "Afvallen", "Mobiliteit", "Sport", "Algehele fitness", "Anders"] as const,
+    goalOptions: [...ptGoals.map((g) => g.short.nl), "Anders"],
     experienceLabel: "Ervaring",
     experienceOptions: ["Beginner", "Gemiddeld", "Gevorderd"] as const,
     frequencyLabel: "Hoe vaak per week?",
@@ -149,13 +152,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     availability: "Availability",
     testimonialsTitle: "What clients say",
     onRequest: "On request",
+    requestPrice: "Ask for price →",
     contactTitle: "Get in touch",
     nameLabel: "Name",
     namePlaceholder: "Your full name",
     phoneLabel: "Phone",
     phonePlaceholder: "+31 6 1234 5678",
     goalLabel: "My goal",
-    goalOptions: ["Strength", "Weight loss", "Mobility", "Sports", "General fitness", "Other"] as const,
+    goalOptions: [...ptGoals.map((g) => g.short.en), "Other"],
     experienceLabel: "Experience",
     experienceOptions: ["Beginner", "Intermediate", "Advanced"] as const,
     frequencyLabel: "How often per week?",
@@ -179,6 +183,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     experience: "" as string,
     frequency: "" as string,
   });
+
+  // Goal carried from the PT hub (?doel=<goal id>, 2026-09-11) preselects the
+  // form's goal, so the lead reaches the trainer with the goal already stated.
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("doel");
+    const g = id ? ptGoals.find((x) => x.id === id) : undefined;
+    if (g) setFormState((st) => ({ ...st, goal: g.short[locale] }));
+  }, [locale]);
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
@@ -372,7 +384,23 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   </div>
                   <div>
                     <p className="font-semibold">{t.rate}</p>
-                    <p className="text-muted-foreground">{trainer.rate || t.onRequest}</p>
+                    <p className="text-muted-foreground">
+                      {trainer.rate ? (
+                        trainer.rate
+                      ) : bookingUrl ? (
+                        t.onRequest
+                      ) : (
+                        <a
+                          href={whatsappLinks.trainerPriceRequest(trainer.name, locale, waBase, formState.goal || undefined)}
+                          target="_blank"
+                          rel="noopener"
+                          data-price-request={trainer.name}
+                          className="font-semibold text-brand hover:underline underline-offset-4"
+                        >
+                          {t.requestPrice}
+                        </a>
+                      )}
+                    </p>
                   </div>
                 </div>
 

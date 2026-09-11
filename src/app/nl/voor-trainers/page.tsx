@@ -283,6 +283,34 @@ export default function VoorTrainersHubNL() {
         </div>
       </Section>
 
+      {/* Platform value for renters (operator 2026-09-11: "sculptclub just sells hours, we will be the
+          ultimate platform for our renters to grow revenue"). Every claim here is live on the PT hub. */}
+      <Section bg="muted">
+        <SectionHeader overline="Het platform" title="Klanten die met een doel binnenkomen" description="Je huurt de studio per uur en houdt 100% van je tarief. Daarbovenop werkt sculptclub.nl als klantenplatform voor jou." />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <p className="mb-2 font-semibold">Gematcht op doel</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">Bezoekers kiezen eerst hun doel — afvallen, sterker worden, pijnvrij bewegen en meer — en zien alleen de trainers die daarin gespecialiseerd zijn.</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <p className="mb-2 font-semibold">Warme leads via WhatsApp</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">Hun bericht aan jou noemt hun doel of vraagt direct naar je traject-prijs. Jij begint het gesprek met context.</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <p className="mb-2 font-semibold">Verkoop trajecten, geen losse uren</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">Klanten verwachten na de gratis intake een traject-plan met duur en vaste prijs. Twaalf weken, twee keer per week, is 24 sessies in één gesprek verkocht.</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <p className="mb-2 font-semibold">Jouw merk, jouw site</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">Een eigen profiel met foto’s, specialisaties en tarief, plus een link naar je eigen website en de ervaringen van je klanten.</p>
+          </div>
+        </div>
+        <p className="mt-6 flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:gap-6">
+          <a href="/nl/vind-jouw-personal-trainer" className="font-semibold text-brand hover:underline underline-offset-4">Zo vinden klanten je →</a>
+          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject →</a>
+        </p>
+      </Section>
+
       {/* Studio Membership — optional recurring plan for regular trainers
           (operator 2026-06-21). Converts weekly per-hour renters into
           predictable monthly rent + fills quiet hours, WITHOUT breaking the

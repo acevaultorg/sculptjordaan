@@ -67,7 +67,7 @@ const copy: Record<
       {
         icon: Users,
         title: "Personal Training",
-        description: "1-op-1 met je eigen trainer. Eerste intake gratis.",
+        description: "Een traject naar jouw doel, met je eigen trainer. Eerste intake gratis.",
         href: "/nl/vind-jouw-personal-trainer",
         badge: "Boek intake",
         event: "first_time_personal_training",
@@ -114,7 +114,7 @@ const copy: Record<
       {
         icon: Users,
         title: "Personal Training",
-        description: "1-on-1 with your own trainer. First intro free.",
+        description: "A programme toward your goal, with your own trainer. First intro free.",
         href: "/en/find-personal-trainer",
         badge: "Book intake",
         event: "first_time_personal_training",

@@ -39,6 +39,8 @@ interface TrainerFilterGridProps {
   hideFilters?: boolean;
   /** Goal the visitor picked on the PT hub — prefilled into the WhatsApp intake message. */
   goalLabel?: string;
+  /** Goal id — carried to the trainer profile as ?doel= so the intake form is preselected. */
+  goalId?: string;
 }
 
 const copy = {
@@ -55,6 +57,7 @@ const copy = {
     languages: "Talen",
     rate: "Tarief",
     onRequest: "Op aanvraag",
+    requestPrice: "Vraag prijs aan →",
     bookIntro: "Boek intake",
     viewProfile: "Bekijk profiel & beschikbaarheid",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
@@ -76,6 +79,7 @@ const copy = {
     languages: "Languages",
     rate: "Rate",
     onRequest: "On request",
+    requestPrice: "Ask for price →",
     bookIntro: "Book intake",
     viewProfile: "View profile & availability",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
@@ -132,7 +136,7 @@ function ImpressionCard({ name, children }: { name: string; children: React.Reac
   );
 }
 
-export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalLabel }: TrainerFilterGridProps) {
+export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalLabel, goalId }: TrainerFilterGridProps) {
   const t = copy[locale];
 
   const allSpecs = useMemo(() => {
@@ -370,7 +374,21 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                     </p>
                     <p>
                       <span className="text-muted-foreground">{t.rate}:</span>{" "}
-                      {trainer.rate ?? t.onRequest}
+                      {trainer.rate ? (
+                        trainer.rate
+                      ) : trainer.bookingUrl ? (
+                        t.onRequest
+                      ) : (
+                        <a
+                          href={whatsappLinks.trainerPriceRequest(trainer.name, locale, trainer.whatsapp, goalLabel)}
+                          target="_blank"
+                          rel="noopener"
+                          data-price-request={trainer.name}
+                          className="font-semibold text-brand hover:underline underline-offset-4"
+                        >
+                          {t.requestPrice}
+                        </a>
+                      )}
                     </p>
                   </div>
                   {trainer.website && (
@@ -421,7 +439,7 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                       2026-06-11 to connect the richer-profiles work to the main
                       discovery path (the grid previously bypassed intake pages). */}
                   <Link
-                    href={`/${locale}/${trainer.slug[locale]}`}
+                    href={`/${locale}/${trainer.slug[locale]}${goalId ? `?doel=${goalId}` : ""}`}
                     aria-label={t.ariaProfile(trainer.name)}
                     className="inline-flex items-center justify-center gap-1 text-xs font-medium text-muted-foreground hover:text-brand transition-colors"
                   >

@@ -68,3 +68,19 @@ Draft message to trainers (NL, for the operator to send):
 - New GA4 event `goal_select {goal_id}` → trainer_impression → whatsapp_click / generate_lead.
 - Read at 2026-10-11 (30 days): leads per 100 hub views, NL and EN, against the baseline above
   (NL ~1 per 93 views). Small numbers: judge on counts, not percentages, until n > 30 leads.
+
+## Pricing decision (operator 2026-09-11: "you decide best strategy")
+
+- **Traject prices are never shown by SculptClub.** They vary per trainer and are the trainer's business.
+- **Asking for the price is the primary price action.** Every "rate on request" became a "Vraag prijs aan →"
+  WhatsApp button to that trainer, with the visitor's goal in the message. It fires the same lead events as the
+  intake button, so price requests count as leads.
+- **One site-level anchor stays: "sessies vanaf €45".** It qualifies visitors and prevents the "is this €150/hour?"
+  bounce. Trainers who publish their own session rate keep it; that is their choice.
+
+## Operator decision (2026-09-11)
+
+"sculptclub just sells hours, we will be the ultimate platform for our renters to grow revenue."
+SculptClub does not sell programmes itself. Trainers sell trajecten; SculptClub matches, qualifies and routes the
+client, showcases the trainer's own brand, and earns on studio hours. The voor-trainers / for-trainers page now
+explains this platform value to renters.

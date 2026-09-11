@@ -154,7 +154,7 @@ export function GoalFunnel({ goals, trainers, locale }: { goals: PtGoal[]; train
 
             <h4 className="mb-1 text-lg font-bold">{t.matchTitle(matched.length)}</h4>
             <p className="mb-6 text-sm text-muted-foreground">{t.matchHint}</p>
-            <TrainerFilterGrid trainers={matched} locale={locale} hideFilters goalLabel={goal.title[locale]} />
+            <TrainerFilterGrid trainers={matched} locale={locale} hideFilters goalLabel={goal.title[locale]} goalId={goal.id} />
           </div>
         )}
       </div>
