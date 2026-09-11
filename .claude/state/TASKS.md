@@ -37,7 +37,7 @@
 ## Shipped 2026-09-11 — PT hub sells transformations, not hours
 - [x] Goal-first PT hub on /nl/vind-jouw-personal-trainer + /en/find-personal-trainer (commit 42acf62, CF deploy d5674371, live-verified). 6 goals → traject outline → only trainers whose own specialization names the goal; WhatsApp prefill carries the goal; GA4 `goal_select`; Gezina + Dara link to their own sites. Baseline + strategy: docs/PT-TRANSFORMATION-STRATEGY.md.
 - [ ] 2026-10-11 read vs baseline (board card on the Website board).
-- [ ] 🔴 DEPLOY HELD (2026-09-11 16:37, device 1 host-safety pause from chief-pro-3: swap 15.0/15.4 GB, no builds/deploys). Commit 7a7fb60 on origin/main is NOT live yet: request-price CTA, ?doel= intake preselect, traject tile, voor-trainers platform section. Deploy per CLAUDE.md procedure (isolated build + chunked deployer) once device 1 is clear, or from another Mac after pulling origin/main. Verify with scratchpad-style checks: "Vraag prijs aan" on the NL hub, "Klanten die met een doel binnenkomen" on /nl/voor-trainers.
+- [x] Deploy done from device 2 / iMac (device 1 paused): 7a7fb60 as CF 782dbd8e, then f24a715 (9 verified trainer websites + credentials) as CF 6cb6cf48 — both live-verified, Functions 403. Method: git clone from GitLab into /tmp on the iMac internal disk + npm ci (the iMac fda tmux server lost WD access ~17:30).
 - [ ] 👤 Trainer broadcast (card mpy22kmsv5acpq, parked with outreach-as-Paulo): ask each trainer for a traject/package price + own website; tell them the hub now promises a traject-plan with fixed price at every free intake.
 
 ## Queue (open)
