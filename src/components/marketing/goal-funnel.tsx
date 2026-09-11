@@ -21,6 +21,9 @@ const copy = {
     matchTitle: (n: number) => `${n} trainers die hierin gespecialiseerd zijn`,
     matchHint: "Plan een gratis intake — je trainer stelt een traject-plan op met doel, duur en een vaste prijs vooraf.",
     otherGoal: "Ander doel kiezen",
+    progTitle: "Trajecten die onze trainers al aanbieden",
+    progHint: "Zo beschrijven de trainers ze zelf. Duur, inhoud en prijs spreek je af in de gratis intake.",
+    progBy: (name: string) => `met ${name}`,
   },
   en: {
     trainersCount: (n: number) => `${n} trainers`,
@@ -31,6 +34,9 @@ const copy = {
     matchTitle: (n: number) => `${n} trainers who specialise in this`,
     matchHint: "Book a free intro — your trainer puts together a programme with a goal, a duration and a fixed price upfront.",
     otherGoal: "Choose another goal",
+    progTitle: "Programmes our trainers already run",
+    progHint: "As the trainers describe them. Length, content and price are agreed at the free intro.",
+    progBy: (name: string) => `with ${name}`,
   },
 } as const;
 
@@ -51,6 +57,12 @@ export function GoalFunnel({ goals, trainers, locale }: { goals: PtGoal[]; train
   const byId = new Map(trainers.map((tr) => [tr.id, tr]));
   const goal = goals.find((g) => g.id === selected) ?? null;
   const matched = goal ? goal.trainerIds.map((id) => byId.get(id)).filter((x): x is Trainer => Boolean(x)) : [];
+  // The trainers' own named programmes for this goal (trainers.ts `programmes`).
+  // They link to the trainer's profile with the goal carried, so the visitor
+  // stays in the SculptClub intake path rather than leaving for another site.
+  const progs = goal
+    ? matched.flatMap((tr) => (tr.programmes ?? []).filter((p) => p.goals?.includes(goal.id)).map((p) => ({ tr, p })))
+    : [];
 
   const choose = (id: string) => {
     setSelected(id);
@@ -150,6 +162,43 @@ export function GoalFunnel({ goals, trainers, locale }: { goals: PtGoal[]; train
                 <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                 {goal.note[locale]}
               </p>
+            )}
+
+            {progs.length > 0 && (
+              <div className="mb-8">
+                <h4 className="mb-1 text-lg font-bold">{t.progTitle}</h4>
+                <p className="mb-4 text-sm text-muted-foreground">{t.progHint}</p>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {progs.map(({ tr, p }) => (
+                    <li key={`${tr.id}-${p.name[locale]}`}>
+                      <a
+                        href={`/${locale}/${tr.slug[locale]}?doel=${goal.id}`}
+                        data-programme={p.name[locale]}
+                        onClick={() => {
+                          const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+                          if (typeof g === "function")
+                            g("event", "programme_click", { trainer_name: tr.id, programme: p.name[locale], goal_id: goal.id, action: "profile", source_page: window.location.pathname });
+                        }}
+                        className="flex h-full gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:border-brand/60"
+                      >
+                        <Image
+                          src={tr.image}
+                          alt=""
+                          width={40}
+                          height={40}
+                          className="h-10 w-10 shrink-0 rounded-full object-cover object-top"
+                        />
+                        <span className="min-w-0">
+                          <span className="block text-sm font-semibold text-foreground">
+                            {p.name[locale]} <span className="font-normal text-muted-foreground">{t.progBy(tr.name)}</span>
+                          </span>
+                          <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">{p.summary[locale]}</span>
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
 
             <h4 className="mb-1 text-lg font-bold">{t.matchTitle(matched.length)}</h4>

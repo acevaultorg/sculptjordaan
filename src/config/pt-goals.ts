@@ -12,16 +12,21 @@ import type { Locale } from "./site";
  *
  * Rules for this file:
  *  - `trainerIds` must only list trainers whose OWN specialization/bio in
- *    trainers.ts names that goal. No trainer is claimed for an outcome they
- *    do not advertise themselves. The comment per goal cites the evidence.
+ *    trainers.ts, or their OWN published programme (their website, verified
+ *    live 2026-09-11), names that goal. No trainer is claimed for an outcome
+ *    they do not advertise themselves. The comment per goal cites the evidence.
+ *  - Order = strength of evidence (a named programme for the goal first), so
+ *    the goal card's avatar strip and the matched grid lead with the best fit.
  *  - Nothing here promises a result. Copy describes what a traject WORKS ON
  *    and what CAN be measured; the trainer sets the actual plan and price.
  *  - SculptClub does not set trainer prices (trainers are independent and
  *    keep 100%). A traject's price is agreed between client and trainer at
  *    the free intake — never render a price from this file.
  */
+export type PtGoalId = "afvallen" | "sterker" | "pijnvrij" | "vrouwen" | "skills" | "energie";
+
 export interface PtGoal {
-  id: string;
+  id: PtGoalId;
   icon: "flame" | "dumbbell" | "activity" | "heart" | "sparkles" | "battery";
   /** Short label — intake-form goal option + WhatsApp context. */
   short: Record<Locale, string>;
@@ -39,9 +44,10 @@ export interface PtGoal {
 
 export const ptGoals: PtGoal[] = [
   {
-    // eva: Diëtist + Voeding · ibrahim: "specialisatie voeding en afvallen" ·
-    // sergei: Lichaamsrecompositie · roberta: Afvallen · jearmey: "vet
-    // verliezen" · alex: "afvallen, spieropbouw" (all from trainers.ts)
+    // jearmey: 12-week Body Transformation (own site) · ibrahim: afvaltraject
+    // (own site) · sergei: "Fat Loss" (transformbst.com) · hamish: "fat loss"
+    // (leerkrachttraining.com) · roberta: "sustainable weight loss" (own site) ·
+    // eva: Diëtist + Voeding · alex: "afvallen, spieropbouw" (trainers.ts bio)
     id: "afvallen",
     icon: "flame",
     short: { nl: "Afvallen", en: "Lose fat" },
@@ -58,12 +64,15 @@ export const ptGoals: PtGoal[] = [
       nl: ["Omvang of lichaamssamenstelling", "Kracht in de basisoefeningen", "Energie en slaap"],
       en: ["Measurements or body composition", "Strength in the core lifts", "Energy and sleep"],
     },
-    trainerIds: ["eva", "ibrahim", "sergei", "roberta", "jearmey", "alex"],
+    trainerIds: ["jearmey", "ibrahim", "sergei", "hamish", "roberta", "eva", "alex"],
   },
   {
-    // dara: Kracht & Balans, Beginners welkom · andrea: kracht, techniek ·
-    // tom: Kracht & Conditie · gezina: Kracht · sergei: Kracht & Beweging ·
-    // hamish: functionele kracht
+    // dara: Strength Club, "complete beginners" (own site) · roberta: "beginners…
+    // intimidated by the gym" (own site) · hamish: "never been to a gym — where
+    // do I begin?" (own site) · jearmey: Hybrid Strength, beginners–advanced
+    // (own site) · sergei: Kracht & Beweging · gezina: Kracht · eva: "net begint
+    // met krachttraining" (sportieef.com) · andrea: kracht, techniek · tom:
+    // Kracht & Conditie
     id: "sterker",
     icon: "dumbbell",
     short: { nl: "Sterker worden", en: "Get stronger" },
@@ -80,12 +89,14 @@ export const ptGoals: PtGoal[] = [
       nl: ["Gewicht en herhalingen per oefening", "Techniek op video", "Hoe zeker je je voelt"],
       en: ["Load and reps per lift", "Technique on video", "How confident you feel"],
     },
-    trainerIds: ["dara", "andrea", "tom", "gezina", "sergei", "hamish"],
+    trainerIds: ["dara", "roberta", "hamish", "jearmey", "sergei", "gezina", "eva", "andrea", "tom"],
   },
   {
-    // ibrahim: Revalidatie · andrea: Houding, Techniek · sergei:
-    // Houdingscorrectie, Herstel · roberta: Houding & Mobiliteit · jearmey:
-    // "pijnvrij bewegen"
+    // jearmey: Pain Free Performance (own site) · sergei: Posture Correction
+    // (own site) · roberta: consult covers past injuries, posture, mobility (own
+    // site) · hamish: "during or after physiotherapy" (own site) · ibrahim:
+    // "trainen met lichamelijke klachten" (own site) · andrea: Houding, Techniek.
+    // None holds a physio/medical qualification — hence the note below.
     id: "pijnvrij",
     icon: "activity",
     short: { nl: "Pijnvrij bewegen", en: "Pain-free movement" },
@@ -106,12 +117,14 @@ export const ptGoals: PtGoal[] = [
       nl: "Geen vervanging van een fysiotherapeut. Bij acute of onverklaarde pijn: eerst naar je huisarts of fysio.",
       en: "Not a replacement for a physiotherapist. With acute or unexplained pain, see your GP or physio first.",
     },
-    trainerIds: ["ibrahim", "andrea", "sergei", "roberta", "jearmey"],
+    trainerIds: ["jearmey", "sergei", "roberta", "hamish", "ibrahim", "andrea"],
   },
   {
     // gezina: Training voor vrouwen, "afgestemd op het lichaam en de cyclus" ·
     // eva: Diëtist, Kracht, Voeding · andrea: Houding, Techniek, kracht
-    // (the old hub already routed "vrouwelijke personal trainer" to these 3)
+    // (the old hub already routed "vrouwelijke personal trainer" to these 3) ·
+    // eva: True Balance, "made for women" (own site) · roberta: "Women 35+
+    // navigating perimenopause, strength, and healthy aging" (own site)
     id: "vrouwen",
     icon: "heart",
     short: { nl: "Sterk als vrouw", en: "Strong as a woman" },
@@ -128,7 +141,7 @@ export const ptGoals: PtGoal[] = [
       nl: ["Kracht per oefening", "Energie door de maand heen", "Hoe je je voelt in je lichaam"],
       en: ["Strength per lift", "Energy through the month", "How you feel in your body"],
     },
-    trainerIds: ["gezina", "eva", "andrea"],
+    trainerIds: ["gezina", "eva", "roberta", "andrea"],
   },
   {
     // bryan: Calisthenics, Skills · alex: Static Calisthenics, Gymnastiek
@@ -151,9 +164,12 @@ export const ptGoals: PtGoal[] = [
     trainerIds: ["bryan", "alex"],
   },
   {
-    // joey: Ademwerk, Zenuwstelsel, "voor high-performers die vastzitten,
-    // stress ervaren" · hamish: High Performance · tom: "duurzaam blijven
-    // trainen met een druk leven"
+    // sergei: "busy professional with no time to waste" (own site) · dara:
+    // "coaching for busy internationals" (own site) · roberta: "busy
+    // professionals" (own site) · eva: "groeien in carrière én gezondheid"
+    // (own site) · joey: Ademwerk, Zenuwstelsel, "voor high-performers die
+    // vastzitten, stress ervaren" · tom: "duurzaam blijven trainen met een druk
+    // leven" · hamish: High Performance
     id: "energie",
     icon: "battery",
     short: { nl: "Energie & stress", en: "Energy & stress" },
@@ -170,6 +186,6 @@ export const ptGoals: PtGoal[] = [
       nl: ["Energie en slaap", "Hoe vaak je traint zonder te missen", "Conditie en kracht"],
       en: ["Energy and sleep", "How consistently you train", "Fitness and strength"],
     },
-    trainerIds: ["joey", "hamish", "tom"],
+    trainerIds: ["sergei", "dara", "roberta", "eva", "joey", "tom", "hamish"],
   },
 ];

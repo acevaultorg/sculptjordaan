@@ -1,4 +1,5 @@
 import type { Locale } from "./site";
+import type { PtGoalId } from "./pt-goals";
 
 /**
  * 🚨 CANONICAL TRAINER ROSTER — when adding/removing/renaming a trainer here,
@@ -71,6 +72,27 @@ export interface Trainer {
     /** One line on what the trainer's own brand sells — taken from their own site. */
     tagline?: Record<Locale, string>;
   };
+  /**
+   * The trainer's OWN named trajecten (programmes), taken from their own
+   * website and linked there — added 2026-09-11 for the "sell transformations,
+   * not hours" hub. Rules:
+   *  - Only programmes the trainer publishes themselves, page verified live
+   *    (HTTP 200) on the date added. Summaries paraphrase the trainer's page;
+   *    nothing is promised that their page does not say.
+   *  - In-person or hybrid formats only. Online-only coaching and group classes
+   *    at another venue are left out: they use no SculptClub studio hours.
+   *  - NEVER a price here — the traject price is agreed at the free intake.
+   *  - `goals` are pt-goals ids this programme serves, from the trainer's own
+   *    copy; they feed the goal panel on the PT hub.
+   */
+  programmes?: {
+    name: Record<Locale, string>;
+    url: string;
+    /** Locale-specific page when the trainer runs separate NL/EN pages. */
+    urlEn?: string;
+    summary: Record<Locale, string>;
+    goals?: PtGoalId[];
+  }[];
   /** Trainer's own WhatsApp number (wa.me link). Falls back to SculptClub main if not set. */
   whatsapp?: string;
   /**
@@ -231,6 +253,17 @@ const trainersRaw: Trainer[] = [
       label: "Sportieef",
       tagline: { nl: "Coaching-trajecten van 12, 24 of 36 weken (True Balance) en voedingsbegeleiding.", en: "Coaching programmes of 12, 24 or 36 weeks (True Balance) and nutrition guidance." },
     },
+    programmes: [
+      {
+        name: { nl: "True Balance", en: "True Balance" },
+        url: "https://sportieef.com/true-balance-eng",
+        summary: {
+          nl: "1-op-1 coachingtraject voor vrouwen van 12, 24 of 36 weken: wekelijkse coachcalls, voedingscoaching, een trainingsplan en mindsetopdrachten.",
+          en: "1:1 coaching programme for women over 12, 24 or 36 weeks: weekly coaching calls, nutrition coaching, a training plan and mindset assignments.",
+        },
+        goals: ["vrouwen", "energie"],
+      },
+    ],
     credentials: {
       nl: "Diëtist",
       en: "Dietitian",
@@ -269,6 +302,28 @@ const trainersRaw: Trainer[] = [
       label: "Calisthenics Skill Lab",
       tagline: { nl: "Calisthenics-groepslessen en personal training, van eerste pull-up tot muscle-up.", en: "Calisthenics group classes and personal training, from first pull-up to muscle-up." },
     },
+    // Outdoor group classes (Amsterdam West / Zaandam) deliberately not listed:
+    // another venue, no studio hours.
+    programmes: [
+      {
+        name: { nl: "Personal training 1-op-1", en: "1:1 personal training" },
+        url: "https://calisthenicsskilllab.nl/personal-training/",
+        summary: {
+          nl: "Eén-op-één calisthenics rond een concreet doel: je eerste pull-up, een muscle-up of een stabiele handstand.",
+          en: "One-to-one calisthenics toward a concrete goal: your first pull-up, a muscle-up or a stable handstand.",
+        },
+        goals: ["skills"],
+      },
+      {
+        name: { nl: "Duo-training", en: "Duo training" },
+        url: "https://calisthenicsskilllab.nl/personal-training/",
+        summary: {
+          nl: "Personal training voor twee — samen met een vriend, partner of collega.",
+          en: "Personal training for two — together with a friend, partner or colleague.",
+        },
+        goals: ["skills"],
+      },
+    ],
     bio: {
       nl: "Calisthenics-specialist. Van eerste push-up tot handstand, muscle-up en human flag — Bryan leert je je eigen lichaamsgewicht beheersen met heldere progressies, sterke fundamenten en gerichte mobiliteit.",
       en: "Calisthenics specialist. From your first push-up to handstand, muscle-up and human flag — Bryan teaches you to master your own bodyweight with clear progressions, strong foundations and targeted mobility.",
@@ -300,6 +355,26 @@ const trainersRaw: Trainer[] = [
       label: "Beter Dan Gister",
       tagline: { nl: "Personal training, voedingscoaching en privé voetbaltraining.", en: "Personal training, nutrition coaching and private football training." },
     },
+    programmes: [
+      {
+        name: { nl: "Afvaltraject met voedingscoaching", en: "Weight-loss programme with nutrition coaching" },
+        url: "https://www.beterdangistercoaching.nl/nl/voedingscoach",
+        summary: {
+          nl: "Voedingscoaching op maat, gecombineerd met training, gericht op gewichtsverlies of meer spierkracht.",
+          en: "Tailored nutrition coaching combined with training, aimed at weight loss or more muscle strength.",
+        },
+        goals: ["afvallen"],
+      },
+      {
+        name: { nl: "Personal training", en: "Personal training" },
+        url: "https://www.beterdangistercoaching.nl/nl/personal-trainer",
+        summary: {
+          nl: "Persoonlijk programma voor afvallen, kracht opbouwen of trainen met lichamelijke klachten, met een lichaamsanalyse vooraf.",
+          en: "A tailored programme for weight loss, building strength or training around physical complaints, starting with a body analysis.",
+        },
+        goals: ["afvallen", "pijnvrij"],
+      },
+    ],
     bio: {
       nl: "Als personal trainer help ik mensen doelgericht werken aan een fitter en gezonder lichaam. Mijn specialisatie ligt in voeding en afvallen, waarbij ik praktische en haalbare plannen maak die passen bij jouw levensstijl. Daarnaast begeleid ik ook bij revalidatie, zodat je op een veilige en verantwoorde manier weer sterker en pijnvrij kunt bewegen.",
       en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss — I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
@@ -330,6 +405,17 @@ const trainersRaw: Trainer[] = [
       label: "Marseille Movement",
       tagline: { nl: "Persoonlijke coaching met aandacht voor voeding en hormonale gezondheid.", en: "Personal coaching with attention to nutrition and hormonal health." },
     },
+    programmes: [
+      {
+        name: { nl: "Personal Training 1:1", en: "Personal Training 1:1" },
+        url: "https://www.marseillemovement.com/service-page/one-on-one-training",
+        summary: {
+          nl: "Eén-op-één training van 60 minuten, afgestemd op jouw doelen, in een privéstudio in de Jordaan.",
+          en: "60-minute one-to-one training tailored to your goals, in a private studio in the Jordaan.",
+        },
+        goals: ["vrouwen", "sterker"],
+      },
+    ],
     instagramHandle: "@gezfitness",
     bio: {
       nl: "Gezina is een gecertificeerde personal trainer gespecialiseerd in training voor vrouwen. Ze helpt vrouwen sterker worden door personal training en small group sessies, afgestemd op het lichaam en de cyclus.",
@@ -389,6 +475,28 @@ const trainersRaw: Trainer[] = [
       label: "Strength & Balance",
       tagline: { nl: "Personal training, small-group Strength Club en online coaching voor internationals.", en: "Personal training, small-group Strength Club and online coaching for internationals." },
     },
+    // Strength Club runs at SculptClub per Dara's own pinned Instagram post
+    // (names "Sculpt Club, Egelantiersgracht 424"), read 2026-09-11.
+    programmes: [
+      {
+        name: { nl: "Strength Club (kleine groep)", en: "Strength Club (small group)" },
+        url: "https://strengthandbalancecoaching.com/services",
+        summary: {
+          nl: "Kleine groep van maximaal 4 personen met een gedeeld, progressief programma en techniekcoaching op een vast weekrooster; alle niveaus welkom.",
+          en: "A small group of up to 4 on a shared, progressive programme with technique coaching on a fixed weekly schedule; all levels welcome.",
+        },
+        goals: ["sterker"],
+      },
+      {
+        name: { nl: "Personal training 1-op-1", en: "1:1 personal training" },
+        url: "https://strengthandbalancecoaching.com/services",
+        summary: {
+          nl: "Sessies van 60 minuten, 1–3x per week, met een startassessment, een persoonlijk programma en voedings- en leefstijlcoaching.",
+          en: "60-minute sessions, 1–3x a week, with a starting assessment, a personal programme and nutrition and lifestyle coaching.",
+        },
+        goals: ["sterker", "energie"],
+      },
+    ],
     instagramHandle: "@strengthandbalancecoaching",
     bio: {
       nl: "Dara coacht je in kracht én balans, met persoonlijke aandacht en een aanpak die je stap voor stap zelfverzekerder maakt. Of je nu net begint of weer in beweging wilt komen: je traint op jouw tempo, in een rustige setting waar je je meteen op je gemak voelt.",
@@ -421,6 +529,36 @@ const trainersRaw: Trainer[] = [
       label: "Proformance Institute",
       tagline: { nl: "Programma's zoals de 12-weekse Body Transformation en Pain Free Performance.", en: "Programmes such as the 12-week Body Transformation and Pain Free Performance." },
     },
+    programmes: [
+      {
+        name: { nl: "Body Transformation", en: "Body Transformation" },
+        url: "https://proformanceinstitute.nl/body-transformation/",
+        urlEn: "https://proformanceinstitute.nl/body-transformation-eng/",
+        summary: {
+          nl: "12-weeks kracht- en vetverliesprogramma, 1–3x per week, met voedingsbegeleiding, een wekelijkse check-in en metingen elke 4 weken.",
+          en: "12-week strength and fat-loss programme, 1–3x a week, with nutrition guidance, a weekly check-in and measurements every 4 weeks.",
+        },
+        goals: ["afvallen", "sterker"],
+      },
+      {
+        name: { nl: "Pain Free Performance", en: "Pain Free Performance" },
+        url: "https://proformanceinstitute.nl/pain-free-performance/",
+        urlEn: "https://proformanceinstitute.nl/pain-free-performance-eng/",
+        summary: {
+          nl: "Voor wie door pijn, blessures of beperkingen (rug, schouder, knie) wordt afgeremd: assessment, correctieve training en weer kracht opbouwen.",
+          en: "For people held back by pain, injuries or limitations (back, shoulder, knee): an assessment, corrective training and rebuilding strength.",
+        },
+        goals: ["pijnvrij"],
+      },
+      {
+        name: { nl: "Combat Athlete Performance", en: "Combat Athlete Performance" },
+        url: "https://proformanceinstitute.nl/combat-athlete-performance/",
+        summary: {
+          nl: "Kracht en conditie voor vechtsporters (MMA, boksen, BJJ, kickboksen, Muay Thai), inclusief voorbereiding op een fight camp.",
+          en: "Strength and conditioning for fighters (MMA, boxing, BJJ, kickboxing, Muay Thai), including fight-camp preparation.",
+        },
+      },
+    ],
     bio: {
       nl: "Jearmey helpt je sterker worden, vet verliezen en pijnvrij bewegen. Met een focus op kracht en atletische prestaties bouwt hij programma's die resultaat leveren.",
       en: "Jearmey helps you build strength, lose fat and move pain-free. With a focus on strength and athletic performance, he builds programmes that deliver results.",
@@ -451,6 +589,26 @@ const trainersRaw: Trainer[] = [
       label: "TransformBST",
       tagline: { nl: "De BST-methode: houdingscorrectie, kracht en lichaamsrecompositie.", en: "The BST method: posture correction, strength and body recomposition." },
     },
+    programmes: [
+      {
+        name: { nl: "Houdingscorrectie", en: "Posture Correction" },
+        url: "https://transformbst.com/posture-correction/",
+        summary: {
+          nl: "Start met een houdingsscreening en bewegingsanalyse, daarna correctieve training voor rug-, nek- en schouderklachten door veel zitten.",
+          en: "Starts with a posture screening and movement analysis, then corrective training for back, neck and shoulder issues from long hours at a desk.",
+        },
+        goals: ["pijnvrij"],
+      },
+      {
+        name: { nl: "De BST-methode", en: "The BST Method" },
+        url: "https://transformbst.com/bst-system/",
+        summary: {
+          nl: "Gestructureerde 1-op-1 coaching met vier pijlers: training, techniek, houding en voeding.",
+          en: "Structured 1:1 coaching built on four pillars: training, technique, posture and nutrition.",
+        },
+        goals: ["afvallen", "sterker", "energie"],
+      },
+    ],
     credentials: {
       nl: "Gecertificeerd personal trainer, 10+ jaar ervaring",
       en: "Certified Personal Trainer, 10+ years experience",
@@ -478,8 +636,11 @@ const trainersRaw: Trainer[] = [
     },
     languages: ["NL", "EN"],
     rate: null,
-    instagram: "https://www.instagram.com/joaonomad137",
-    instagramHandle: "@joaonomad137",
+    // instagram/instagramHandle removed 2026-09-11: @joaonomad137 returns
+    // "Deze pagina is niet beschikbaar" in a real browser and Instagram's own
+    // search finds nothing, while the other trainers' profiles loaded in the same
+    // session. The button on his card sent every visitor to an error page.
+    // Restore only with a handle Joey confirms.
     credentials: {
       // Joey's method name is a brand term — same in NL and EN, no translation.
       nl: "The Ascend Method — Inner Alignment System",
@@ -516,6 +677,25 @@ const trainersRaw: Trainer[] = [
       label: "Hamish Leijer PT",
       tagline: { nl: "Personal training-pakketten van 10, 20 of 30 sessies, online coaching en kickboksen.", en: "Personal training packages of 10, 20 or 30 sessions, online coaching and kickboxing." },
     },
+    programmes: [
+      {
+        name: { nl: "Personal training-traject (10, 20 of 30 sessies)", en: "Personal training programme (10, 20 or 30 sessions)" },
+        url: "https://leerkrachttraining.com/",
+        summary: {
+          nl: "1-op-1 training in pakketten van 10, 20 of 30 sessies van 60 minuten — wetenschappelijk onderbouwd, veiligheid eerst.",
+          en: "1:1 training in packs of 10, 20 or 30 sixty-minute sessions — science-based, safety first.",
+        },
+        goals: ["sterker", "afvallen"],
+      },
+      {
+        name: { nl: "Kickboksen & boksen (1-op-1)", en: "Kickboxing & boxing (1:1)" },
+        url: "https://leerkrachttraining.com/",
+        summary: {
+          nl: "Techniek, padwerk, combinaties, voetenwerk en conditie — van beginner tot ervaren, te combineren met krachttraining.",
+          en: "Technique, pad work, combinations, footwork and conditioning — beginner to experienced, can be combined with strength training.",
+        },
+      },
+    ],
     bio: {
       nl: "Als ervaren personal trainer helpt Hamish je om fysieke grenzen te doorbreken. Met een scherpe focus op functionele kracht, metabole optimalisatie en een resultaatgerichte aanpak zorgt hij dat je training naadloos aansluit op een high-performance levensstijl. Geen shortcuts, alleen structurele progressie.",
       en: "As an experienced personal trainer, Hamish helps you break through physical barriers. With a sharp focus on functional strength, metabolic optimization, and a results-driven approach, he ensures your training seamlessly aligns with a high-performance lifestyle. No shortcuts, just structural progress.",
@@ -601,6 +781,26 @@ const trainersRaw: Trainer[] = [
       label: "Roberta Virzi PT",
       tagline: { nl: "Personal training, duo-training en online coaching met een plan per 4 weken.", en: "Personal training, duo training and online coaching with a plan per 4 weeks." },
     },
+    programmes: [
+      {
+        name: { nl: "Startconsult", en: "Initial Training Consultation" },
+        url: "https://www.robertavirzipt.com/services",
+        summary: {
+          nl: "Doelen, trainingsgeschiedenis, eerdere blessures, houding, mobiliteit en vijf basisbewegingen in kaart — met een schriftelijk rapport en een plan voor vier weken.",
+          en: "Goals, training history, past injuries, posture, mobility and five fundamental movement patterns assessed — with a written report and a four-week plan.",
+        },
+        goals: ["sterker", "pijnvrij"],
+      },
+      {
+        name: { nl: "Personal training 1-op-1", en: "1-on-1 Personal Training" },
+        url: "https://www.robertavirzipt.com/services",
+        summary: {
+          nl: "Training op basis van het consult — wekelijks, tweewekelijks of maandelijks — met focus op techniek en zelfstandig leren trainen.",
+          en: "Training built on the consultation — weekly, fortnightly or monthly — focused on technique and learning to train independently.",
+        },
+        goals: ["sterker", "vrouwen", "afvallen", "energie"],
+      },
+    ],
     // Bio supplied by Roberta herself (email 2026-07-25), condensed to the
     // house length + voice. Claims kept exactly as she wrote them — Italian,
     // Amsterdam-based, 1-to-1 + small group + one-off consultations. Nothing

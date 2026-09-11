@@ -92,6 +92,26 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
 
   const trainersUrl = locale === "nl" ? "/nl/vind-jouw-personal-trainer" : "/en/find-personal-trainer";
 
+  // Copy for the trainer's own programmes block (trainers.ts `programmes`, 2026-09-11).
+  const pt = locale === "nl"
+    ? {
+        title: `Trajecten van ${trainer.name}`,
+        ask: "Vraag naar dit traject",
+        details: (label: string) => `Meer op ${label}`,
+        note: "Zo beschrijft de trainer het zelf. Duur, inhoud en prijs spreek je af in de gratis intake.",
+      }
+    : {
+        title: `${trainer.name}'s programmes`,
+        ask: "Ask about this programme",
+        details: (label: string) => `More on ${label}`,
+        note: "As the trainer describes it. Length, content and price are agreed at the free intro.",
+      };
+  const trackProgramme = (programme: string, action: "ask" | "details") => {
+    const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag;
+    if (typeof g === "function")
+      g("event", "programme_click", { trainer_name: trainer.id, programme, action, source_page: window.location.pathname });
+  };
+
   const t = locale === "nl" ? {
   // 2026-08-28 — this page now has TWO audiences, and the H1 has to serve both.
   //
@@ -366,6 +386,50 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   >
                     {locale === "nl" ? `Methode & ervaringen van cliënten: ${trainer.website.label}` : `Method & client stories: ${trainer.website.label}`} ↗
                   </a>
+                )}
+
+                {/* The trainer's OWN named trajecten. Primary action keeps the lead
+                    on the trainer's WhatsApp (or booking link) with the programme
+                    named in the message; the secondary link reads more on their site. */}
+                {trainer.programmes && trainer.programmes.length > 0 && (
+                  <div className="space-y-3">
+                    <p className="text-sm font-semibold">{pt.title}</p>
+                    <ul className="space-y-3">
+                      {trainer.programmes.map((p) => {
+                        const pname = p.name[locale];
+                        const ask = bookingUrl ?? whatsappLinks.trainerIntake(trainer.name, locale, waBase, pname);
+                        const more = locale === "en" && p.urlEn ? p.urlEn : p.url;
+                        return (
+                          <li key={pname} className="rounded-xl border border-border bg-card p-4">
+                            <p className="text-sm font-semibold">{pname}</p>
+                            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.summary[locale]}</p>
+                            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                              <a
+                                href={ask}
+                                target="_blank"
+                                rel="noopener"
+                                data-programme={pname}
+                                onClick={() => trackProgramme(pname, "ask")}
+                                className="font-semibold text-brand hover:underline underline-offset-4"
+                              >
+                                {pt.ask} →
+                              </a>
+                              <a
+                                href={more}
+                                target="_blank"
+                                rel="noopener"
+                                onClick={() => trackProgramme(pname, "details")}
+                                className="text-muted-foreground hover:underline underline-offset-4"
+                              >
+                                {pt.details(trainer.website?.label ?? trainer.name)} ↗
+                              </a>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    <p className="text-xs text-muted-foreground">{pt.note}</p>
+                  </div>
                 )}
 
                 <div>

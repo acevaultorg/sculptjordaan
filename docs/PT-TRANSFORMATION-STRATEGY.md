@@ -53,7 +53,8 @@ first. Result: ~10 seconds, ~1% of views to a lead.
   intake. Trainers need to know, and ideally agree a package price. Draft message below.
 - **Collect 3 real client stories per goal** (first name, consent). The page has no results section on
   purpose until real ones exist; fake or borrowed results are off the table.
-- **Confirm more trainer websites.** Only Gezina and Dara are linked because only those were confirmed.
+- ~~**Confirm more trainer websites.** Only Gezina and Dara are linked because only those were confirmed.~~
+  **(superseded 2026-09-11: 9 own websites are linked after identity verification — see Trainer research.)**
 
 Draft message to trainers (NL, for the operator to send):
 
@@ -114,7 +115,47 @@ traject prices (pricing decision above); the website link lets clients read them
 - Rates differ from what SculptClub shows: Hamish €72 on SculptClub vs €76–80 per session on his site; Sergei €80 vs
   €70/€65/€60 on a 2024 page of his site.
 - Location: Ibrahim's site names both Egelantiersgracht 424 and a gym at Reinaert de Vosstraat; Dara's site says
-  "private studio in Amsterdam-West".
+  "private studio in Amsterdam-West" (her pinned Instagram post names SculptClub).
 - Andrea's Instagram bio says "Master of Kinesiology · Yoga and Pilates instructor" (unverified; not shown).
-- Joey's Instagram @joaonomad137 appears to be gone; the card still links it.
+- ~~Joey's Instagram @joaonomad137 appears to be gone; the card still links it.~~ **(fixed 2026-09-11: confirmed
+  gone in a real browser — "Deze pagina is niet beschikbaar", no search result — and removed from his card, both
+  burnout blog posts' schema and the social drafts. Ask Joey for a current handle.)**
 - Alex: a 2024 TrainMore profile of "Alexandre Almeida" (EREPS 4 claim) may be him — ask before showing.
+- Tom: @tomhammondpt does not exist. The probable account is **@tomhammondfitness** (display name Tom Hammond,
+  "Amsterdam Based, British Personal Trainer", BJJ blue belt at Roger Gracie Amsterdam, a comment from
+  @sculptclubjordaan on a recent post). Not added until Tom confirms. Its link-in-bio tomhammondfitness.nl serves
+  "Page not found".
+
+## Deep pass: every trainer's Instagram + website (2026-09-11, workflow wf_1624b6e9-cf0)
+
+Browser read of all 13 Instagram profiles (bio, every link-in-bio, highlights, last 6 posts) and a full crawl of
+every own website. Full per-trainer plans: session scratchpad `deep.json`.
+
+**Shipped from it:**
+- Trainer profiles now list the trainer's OWN named trajecten (`programmes` in trainers.ts; 9 trainers, 17
+  programmes, every page HTTP 200 on 2026-09-11). Primary action "Vraag naar dit traject" opens the trainer's
+  WhatsApp with the programme named; the secondary link reads more on their site. Online-only coaching and
+  group classes at other venues are left out: they use no SculptClub hours. No prices.
+- The goal panel on the hub shows "Trajecten die onze trainers al aanbieden" for the chosen goal, linking to the
+  trainer's profile with the goal carried (`?doel=`), so the visitor stays in the SculptClub intake path.
+- Goal matching now uses the trainers' own published material, ordered by strength of evidence (pt-goals.ts):
+  Hamish added to afvallen + pijnvrij; Roberta to sterker, vrouwen, energie; Jearmey and Eva to sterker; Sergei,
+  Dara and Eva to energie.
+- New GA4 event `programme_click {trainer_name, programme, action: ask|details|profile}`.
+
+**What the trainers' own channels show (for the operator's trainer conversations):**
+- SculptClub is nearly invisible on trainers' own channels. Named on a website only by Hamish ("Sculptclub
+  Jordaan", and all his recent posts tag @sculptclubjordaan). On Instagram only: Dara (pinned post), Andrea
+  (reposted a SculptClub post), Ibrahim (address sticker in a video). Gezina and Jearmey write "private studio in
+  the Jordaan", Sergei "Private Studio — Egelantiersgracht 424", Dara's site "Amsterdam-West". A one-line ask to name
+  SculptClub Jordaan and link their SculptClub profile is the cheapest local-SEO and trust win.
+- Most trainers also sell hours elsewhere: Sergei (TrainMore Singel), Hamish (Sportcity Waterlooplein from 14 Sep),
+  Eva (Sportcity Willem de Zwijger), Roberta (a post tagged Train More), Gezina (I Am Woman, Reformher Studios),
+  Bryan (outdoor Amsterdam West / Zaandam), Alex (The Studio Oost). A profile that converts is the retention lever.
+- Group formats bring several clients into one hour: Dara's Strength Club (max 4, at SculptClub per her pinned
+  post) and Hamish's small-group trial. A class timetable surface would raise revenue per studio hour.
+- Broken links that cost trainers leads: Eva's Linktree "Kennismaking" booking widget returns 404; Gezina's site
+  promotes Duo and Online Coaching whose booking pages are unavailable; Tom's probable site is down.
+- Trainers with no booking path of their own: Alex (3.4K followers, empty bio, no link) and Andrea (1.1K, no link).
+  Their SculptClub profile link in their bio would be their only booking path.
+- Only independent credential register hit: Roberta, EREPS Personal Trainer #149967, valid to 2027-05-07.

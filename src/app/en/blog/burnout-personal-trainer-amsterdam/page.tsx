@@ -61,7 +61,6 @@ export default function BurnoutPersonalTrainerAmsterdam() {
         url="/en/plan-free-intro-with-joey"
         jobTitle="Personal Trainer · The Ascend Method"
         languages={["NL", "EN"]}
-        sameAs={["https://www.instagram.com/joaonomad137"]}
       />
 
       <Section>

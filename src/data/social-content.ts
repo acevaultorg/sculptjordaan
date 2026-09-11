@@ -624,7 +624,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
         "For high-performers who feel stuck, stressed, or disconnected",
       ],
       hookConcept: "Train your body AND your nervous system in one hour",
-      cta: `DM @joaonomad137 · book via ${FACTS.website}`,
+      cta: `WhatsApp Joey · book via ${FACTS.website}`,
       targetLength: "medium",
     },
     hashtags: `#personaltrainer #amsterdam #jordaan #breathwork #nervoussystem #mindbodyconnection #ascendmethod #strengthtraining #embodiment #ptamsterdam`,
@@ -1287,7 +1287,7 @@ Reel: 30s — intro + coaching demo`,
 [3-15s] Joey: "The Ascend Method — body, breath, awareness in one session"
 [15-27s] B-roll: slow squat with intentional breathing overlay
 [27-37s] Quote on screen: "Wisdom isn't studied, it's embodied."
-[37-45s] CTA: "DM @joaonomad137 — book via sculptclub.nl"`,
+[37-45s] CTA: "WhatsApp Joey — book via sculptclub.nl"`,
     brief: {
       message: "Joey is high-end positioned for high-performers who feel stuck. The Ascend Method = his unique brand. Pacing must feel different from other trainers.",
       facts: [
@@ -1299,7 +1299,7 @@ Reel: 30s — intro + coaching demo`,
         "For high-performers feeling stuck, stressed or disconnected",
       ],
       hookConcept: "Train your body AND your nervous system in one hour",
-      cta: `DM @joaonomad137 · book via ${FACTS.ptLanding}`,
+      cta: `WhatsApp Joey · book via ${FACTS.ptLanding}`,
       targetLength: "medium",
     },
     hashtags: `#personaltrainer #amsterdam #jordaan #breathwork #nervoussystem #mindbodyconnection #ascendmethod #strengthtraining #embodiment #amsterdamhealth`,
