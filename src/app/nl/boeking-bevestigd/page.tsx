@@ -25,6 +25,17 @@ import { siteConfig } from "@/config/site";
  *
  * See companion EN page at /en/booking-confirmed.
  */
+/**
+ * ⚠️ THIS useEffect IS NOT THE LIVE CONVERSION PATH.
+ * The conversion that actually fires is the server-rendered inline script
+ * `booking-confirmed-conversion` in src/components/layout/analytics.tsx — it runs
+ * during hydration, BEFORE this effect, and sets the shared window.__scBookingFired
+ * flag, so this block returns early on every real booking. A value/attribution fix
+ * applied here alone changes NOTHING in production: measured 2026-09-12, the 09-05
+ * `value=0` fix landed here and in the served chunk, yet GA4 kept reporting EUR 12
+ * for 59 value=0 bookings because analytics.tsx still had `|| 12`.
+ * Fix BOTH, and verify in GA4 (eventValue on `purchase` by URL), not in the bundle.
+ */
 export default function BookingConfirmedNL() {
   useEffect(() => {
     if (typeof window === "undefined") return;
