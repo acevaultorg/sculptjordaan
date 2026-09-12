@@ -732,7 +732,7 @@ export function Analytics() {
             // %price% arrives as a string: "0", "12", "17.00", possibly "12,00".
             // 0 is a REAL value (free try-outs, and paid types consumed from a prepaid
             // package/invoice where Acuity puts 0 on the appointment) and must NEVER fall
-            // back to the EUR 12 default. `|| 12` did exactly that: measured 2026-09-12 in
+            // back to the EUR 12 default. "|| 12" did exactly that: measured 2026-09-12 in
             // GA4, 59 of 66 purchases over 21d arrived with value=0 in the URL and were
             // reported at EUR 12.00 each — EUR 708 of phantom revenue, teaching Google Ads
             // to bid for free bookings. Only an absent/garbage param defaults to 12.
