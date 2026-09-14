@@ -116,7 +116,7 @@ export function LanguageHint() {
       <div className="flex items-center rounded-full border border-border bg-card/95 pr-1 shadow-brand-lg backdrop-blur-md">
         <a
           href={hint.href}
-          className="plausible-event-name=lang_hint_switch flex min-w-0 flex-1 items-center gap-2 rounded-full py-2 pl-3 pr-2 text-sm font-semibold text-foreground transition-colors hover:text-brand"
+          className="plausible-event-name=lang_hint_switch flex min-w-0 flex-1 items-center gap-2 self-stretch rounded-full py-2 pl-3 pr-2 text-sm font-semibold text-foreground transition-colors hover:text-brand"
         >
           <Globe className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
           <span className="min-w-0 flex-1 truncate">{hint.label} →</span>
