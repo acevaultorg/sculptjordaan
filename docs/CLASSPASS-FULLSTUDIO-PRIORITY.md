@@ -28,7 +28,8 @@ Opening hours are **06:00–22:00, every day** (corrected 2026-08-05 — "06:30"
 
 ## Ground truth — complete Acuity export
 
-`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-09-07**: **2,231 rows · 336 cancelled · 30 appointment types · 0 unclassified · 958 whole-room bookings · 97 distinct weekday-hour slots.**
+`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-09-14**: **2,319 rows · 342 cancelled · 0 unclassified · 980 whole-room bookings · 97 distinct weekday-hour slots.**
+(Prior 2026-09-07: 2,231 rows · 336 cancelled · 958 whole-room · 97 slots — safe-hours grid byte-identical.)
 (Prior 2026-08-31: 2,188 rows · 332 cancelled · 944 whole-room · 96 slots.
 Prior 2026-08-30: 2,186 rows · 331 cancelled · 944 whole-room · 96 slots.
 Prior 2026-08-05: 1,951 rows · 309 cancelled · 822 whole-room · 93 slots. File: `acuity-full-export-2026-09-07.csv`.)
@@ -152,6 +153,7 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 | 2026-08-30 | ✅ **Clean — zero conflicts** | Both halves verified. 4 live slots, all on never-booked hours. Nothing deleted. Safe-hours cap fell 20→17. |
 | 2026-08-31 | ✅ **Clean — zero conflicts** | Both halves verified. Fresh export (2,188 rows, 332 cancelled) → grid identical to 08-30. Live ClassPass: **35** forward instances enumerated, all 21:00 Mon/Tue/Thu/Fri. Nothing deleted. |
 | 2026-09-07 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED** | Fresh export (2,231 rows, 336 cancelled). **Sun 16:00 lost virgin status** → cap 17→16. All 4 known live slots still 0-conflict. **ClassPass session expired** — live schedule could not be read. Nothing deleted. 👤 needs operator sign-in. |
+| 2026-09-14 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED (2nd week)** | Fresh export (2,319 rows, 342 cancelled). Conservative grid identical to 09-07 → cap stays **16**. Mon/Tue/Thu/Fri 21:00 still 0 whole-room bookings ever. **ClassPass partner session still expired** (`/manage` → `/login`) — any slot added since 08-31 is unseen. Nothing deleted. 👤 needs operator sign-in. |
 
 ### 2026-08-30 — full run, zero conflicts
 
