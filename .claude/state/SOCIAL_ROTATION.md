@@ -518,3 +518,58 @@ been tested here.
 
 | 2026-09-10 | (outside rotation — watch-content, trainer-skill) | alex-handstand-001 | /social/alex-handstand-001/ | ✅ 10 sep **21:08** POSTED via TikTok Studio (Chrome MCP, device 1; operator directive in chat: "make a new tiktok post and put online") | https://www.tiktok.com/@sculptclub.jordaan/video/7683985521114107158 · Iedereen · caption + @almeidalexjr + 9 tags verbatim from the pack · first REAL-FOOTAGE post (10 s, original sound) — the format the 2026-09-02 diagnosis said had never been tested. Read views/likes at +24h and +72h and compare against the ~250-view card plateau. |
 | 2026-09-11 | (outside rotation — education, correction hook) | education-squat-mistakes-001 | /social/education-squat-mistakes-001/ | ✅ 11 sep **~11:10** POSTED via TikTok Studio (Chrome MCP, device 1; operator "try again" in chat after the upload stalled) | https://www.tiktok.com/@sculptclub.jordaan/video/7684202354991811862 · Iedereen · 3-slide photo post (hook → faults → CTA) · title + description + 5 tags from the pack, with the unclickable `sculptclub.nl/gratis-intake` line swapped for the pack's own "link in bio" line (caption rule 6). First CORRECTION-hook post — the #2 hook family the 09-02 diagnosis said was never tested. Measure alongside the Alex clip. |
+
+
+### 2026-09-12 00:30 CEST — checkpoint read #1 (Alex +27h · squat +13h interim)
+
+Measured from the public TikTok pages in real headless Chrome over CDP (on the Air). TikTok serves a
+JS shell to curl, so a fetch-based read returns nothing and would look like "0 views". Instrument
+controlled: both posts parsed from `__UNIVERSAL_DATA_FOR_REHYDRATION__`, and a fake video id returned
+NO STATS. Read at 2026-09-11T22:30:57Z. Reader: `node /tmp/tiktok-read.mjs sculptclub.jordaan <id>,<id>`.
+
+| post | format | elapsed | views | likes | comments | shares | saves | likes/1k |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| alex-handstand-001 (7683985521114107158) | person-led real footage | +27h22m | 231 | 0 | 0 | 0 | 0 | 0.0 |
+| education-squat-mistakes-001 (7684202354991811862) | correction-hook education | +13h21m (INTERIM) | 232 | 0 | 0 | 0 | 0 | 0.0 |
+
+**Alex verdict (near-final — posts here plateau within a day): FORMAT IS NOT THE VARIABLE.** The win
+rule was >500 views or >=28.8 likes/1k (2x Garagedeur's 14.4). It landed at 231 views / 0.0 likes per
+1k, i.e. at or just below the 240-265 rendered-card band. Real footage did not beat the cards, so this
+is the "log it honestly and revisit hook/timing" branch, NOT "make the next 3 posts real clips".
+
+**Squat post is not called yet** — 232 views at +13h is already in the band, but its +24h checkpoint is
+2026-09-12 ~11:00. Card mtvwknyvhdm42w is rescheduled to then; Alex +72h 09-13 ~21:00, squat +72h 09-14 ~11:00.
+
+Hint, not yet a finding: three formats (rendered cards, real footage, correction-hook education) now all
+land 231-265 views with ~0 likes/comments/shares/saves. That is the shape of a fixed cold-start test
+audience that never propagates - a distribution/audience problem, not a creative-format one. Still n=1 per
+format at different post times, so it needs the +72h rows before anyone spends work on it.
+
+### 2026-09-14 13:40Z — checkpoint read #2 (Alex +90h · squat +76h) — FINAL for both
+
+Measured from the public video pages in real Chrome (Chrome MCP, device 1), parsed from
+`__UNIVERSAL_DATA_FOR_REHYDRATION__` → `webapp.video-detail.itemInfo.itemStruct.stats`. Control in the
+same batch: a fake video id (…0001) returned NO stats. Profile grid did not render logged-out
+("Something went wrong"), so views come from the video pages, not the grid.
+
+| post | format | elapsed | views | likes | comments | shares | saves | likes/1k |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| alex-handstand-001 (7683985521114107158) | person-led real footage | +90h | 233 | 0 | 0 | 0 | 0 | 0.0 |
+| education-squat-mistakes-001 (7684202354991811862) | correction-hook education | +76h | 234 | 0 | 0 | 0 | 0 | 0.0 |
+
+Delta since checkpoint #1 (Sep 11 22:30Z): Alex +2 views, squat +2 views, zero engagement of any kind.
+
+**VERDICT (both, final): FORMAT IS NOT THE VARIABLE.** Win rule was >500 views or ≥28.8 likes/1k;
+both landed inside the 231–265 band with 0.0 likes/1k, identical to the six rendered-card posts.
+Three formats (rendered offer-cards ×6, real footage ×1, correction-hook education ×1) → the same
+~230–265 views and ~0 engagement, plateauing within ~24h and then flat. Caveat stands: the two new
+formats are n=1 at different post times — but a nine-post series that never leaves one band regardless
+of format is a distribution shape, not a creative one: a fixed cold-start test audience with zero
+propagation (no likes/shares/saves → no second wave). Per the card's own rule this is the
+"log it honestly and revisit hook/timing" branch. Do NOT spend more clips on format variation.
+
+What would actually move it (for the next social leg, not started here): hook + first-2-seconds and
+posting time are the only untested variables on the creative side; on the distribution side the lever
+is the 21-follower base itself — Instagram is the #1 identifiable channel (20% of sessions) while
+TikTok has never delivered a measurable session; consider whether TikTok is worth any further
+production until the account has an audience (cross-posting the same clips to IG Reels is free).
