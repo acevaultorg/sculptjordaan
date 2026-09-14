@@ -137,7 +137,7 @@ const trainerFaqs = [
   },
   {
     q: "What's the difference between hourly rental and being a regular trainer?",
-    a: "Hourly rental: pay per session, BYO clients, no site listing. Regular trainer: same studio + your own profile + match with inbound clients + featured on Instagram/TikTok. With both you just rent the space; you keep 100% of your rate.",
+    a: "Hourly rental: pay per session, BYO clients. Want inbound clients too? Ask for a profile page — you get one with any form of rental, hourly included: your own profile + match with inbound clients + featured on Instagram/TikTok. With both you just rent the space; you keep 100% of your rate.",
   },
   {
     q: "Do I keep 100% of my rate?",

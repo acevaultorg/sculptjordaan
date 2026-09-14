@@ -136,7 +136,7 @@ const trainerFaqs = [
   },
   {
     q: "Wat is het verschil tussen losse uur-huur en trainer bij SculptClub zijn?",
-    a: "Losse uur-huur: per sessie betalen, BYO klanten, geen vermelding op site. Met profiel: zelfde studio + eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Bij beide huur je alleen de ruimte; je houdt 100% van je tarief.",
+    a: "Losse uur-huur: per sessie betalen, BYO klanten. Wil je er ook inbound klanten bij? Vraag om een profielpagina — die krijg je bij elke vorm van huur, ook per uur: eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Bij beide huur je alleen de ruimte; je houdt 100% van je tarief.",
   },
   {
     q: "Houd ik 100% van mijn tarief?",

@@ -162,7 +162,7 @@ const faqs = [
   },
   {
     q: "Krijg ik klanten via SculptClub?",
-    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen tussenpersoon bij die boekingen — wij verbinden alleen.",
+    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen tussenpersoon bij die boekingen — wij verbinden alleen. Nog geen profiel? Vraag er via WhatsApp om en we zetten je erop.",
   },
   {
     q: "Kan ik vaste tijdslots reserveren?",

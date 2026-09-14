@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     q: "Will I get clients via SculptClub?",
-    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No middleman on those bookings — we just connect.",
+    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No middleman on those bookings — we just connect. No profile yet? Ask via WhatsApp and we'll add you.",
   },
   {
     q: "Can I reserve recurring time slots?",
