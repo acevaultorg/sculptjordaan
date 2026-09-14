@@ -108,7 +108,7 @@ const faqs = [
   ...(deal.active
     ? [
         {
-          q: "Wat houdt de zomeraanbieding in?",
+          q: "Wat houdt de introductieprijs in?",
           a: `Word je nu lid van Onbeperkt, dan train je onbeperkt voor €${deal.priceDeal} per 4 weken in plaats van €${deal.priceRegular} — en je houdt deze prijs zolang je lid blijft. Voor nieuwe leden geldt daarna weer het normale tarief van €${deal.priceRegular}. Je zegt altijd gratis op.`,
         },
       ]
@@ -257,7 +257,7 @@ export default function OpenGymPageNL() {
               {/* Deal teaser — plain foreground text (never orange, never a button), gated */}
               {deal.active && (
                 <p className="mt-4 text-sm font-medium text-foreground">
-                  Zomeraanbieding — Onbeperkt €{deal.priceDeal} per 4 weken (normaal €{deal.priceRegular})
+                  Introductieprijs — Onbeperkt €{deal.priceDeal} per 4 weken (normaal €{deal.priceRegular})
                   {deal.endDate ? `, t/m ${deal.endDate}` : ""}.
                 </p>
               )}
@@ -354,13 +354,13 @@ export default function OpenGymPageNL() {
           <FadeIn delay={0.2}>
             <Card className={`h-full flex flex-col text-center ${deal.active ? "ring-2 ring-primary" : ""}`}>
               <CardHeader>
-                {deal.active && <Badge className="mx-auto mb-2">Zomeractie</Badge>}
+                {deal.active && <Badge className="mx-auto mb-2">Introductieprijs</Badge>}
                 <CardTitle className="text-lg">3. Word vast lid</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
                   {deal.active
-                    ? `Elke week hier? Train onbeperkt voor €${deal.priceDeal} per 4 weken deze zomer (normaal €${deal.priceRegular}). Altijd gratis opzegbaar.`
+                    ? `Elke week hier? Train onbeperkt voor €${deal.priceDeal} per 4 weken (normaal €${deal.priceRegular}). Altijd gratis opzegbaar.`
                     : `Elke week hier? Train onbeperkt voor €${deal.priceRegular} per 4 weken. Altijd gratis opzegbaar.`}
                 </p>
               </CardContent>
@@ -384,7 +384,7 @@ export default function OpenGymPageNL() {
       {/* S4 — PRICING + ZOMERDEAL (the decision point) */}
       <Section bg="muted">
         <SectionHeader
-          overline={deal.active ? "Zomeraanbieding" : "Prijzen"}
+          overline={deal.active ? "Introductieprijs" : "Prijzen"}
           title="Kies wat bij je past"
           description="Losse sessie of onbeperkt, per 4 weken. Altijd opzegbaar."
         />
@@ -458,7 +458,7 @@ export default function OpenGymPageNL() {
           <FadeIn delay={0.2}>
             <Card className={`h-full text-center flex flex-col ${deal.active ? "ring-2 ring-primary" : ""}`}>
               <CardHeader>
-                {deal.active && <Badge className="mx-auto mb-2">Zomeractie</Badge>}
+                {deal.active && <Badge className="mx-auto mb-2">Introductieprijs</Badge>}
                 <CardTitle className="text-lg">Onbeperkt</CardTitle>
                 <CardDescription>Train zo vaak je wilt</CardDescription>
               </CardHeader>
@@ -621,7 +621,7 @@ export default function OpenGymPageNL() {
               </a>
               {deal.active && (
                 <a href="/nl/open-gym/onbeperkt-zomerdeal" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-                  <p className="text-sm text-muted-foreground mb-1">Zomeractie</p>
+                  <p className="text-sm text-muted-foreground mb-1">Introductieprijs</p>
                   <p className="font-semibold group-hover:text-brand transition-colors">Onbeperkt Open Gym voor €{deal.priceDeal} per 4 weken</p>
                 </a>
               )}
@@ -660,7 +660,7 @@ export default function OpenGymPageNL() {
           title="Kies jouw volgende stap"
           description={
             deal.active
-              ? "Nieuw hier? Boek een gratis probeersessie. Klaar om lid te worden? Pak de zomeraanbieding."
+              ? "Nieuw hier? Boek een gratis probeersessie. Klaar om lid te worden? Pak de introductieprijs."
               : "Nieuw hier? Boek een gratis probeersessie. Klaar om lid te worden? Word onbeperkt lid."
           }
         />

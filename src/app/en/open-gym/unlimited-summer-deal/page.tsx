@@ -44,7 +44,7 @@ const galleryImages = [
 
 
 export const metadata: Metadata = {
-  title: { absolute: `Summer Deal — Unlimited Open Gym €${deal.priceDeal}/4 weeks | SculptClub Jordaan` },
+  title: { absolute: `Intro Offer — Unlimited Open Gym €${deal.priceDeal}/4 weeks | SculptClub Jordaan` },
   description: `Train as often as you like in our private gym in Amsterdam Jordaan for €${deal.priceDeal} per 4 weeks (normally €${deal.priceRegular}). Join now and keep that price for as long as you stay a member. Max 4 people, no contract, first session free.`,
   keywords: [
     "gym deal amsterdam",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     "cheap gym jordaan",
     "open gym amsterdam",
     "gym without contract amsterdam",
-    "summer gym offer amsterdam",
+    "gym intro offer amsterdam",
   ],
   alternates: {
     canonical: "/en/open-gym/unlimited-summer-deal",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/open-gym/unlimited-summer-deal",
-    title: `Summer Deal — train unlimited for €${deal.priceDeal}/4 weeks`,
+    title: `Intro Offer — train unlimited for €${deal.priceDeal}/4 weeks`,
     description: `Normally €${deal.priceRegular}. Join now and keep €${deal.priceDeal} for as long as you stay a member. Private gym in the Jordaan, max 4 people.`,
   },
 };
@@ -82,7 +82,7 @@ const faqs = [
     answer: `For as long as you stay a member. Join Unlimited now and you pay €${deal.priceDeal} per 4 weeks, and that price stays while your membership runs. If you stop and come back later, you get whatever rate applies to new members at that time.`,
   },
   {
-    question: "What happens when the summer deal ends?",
+    question: "What happens when the intro offer ends?",
     answer: `Unlimited goes back to €${deal.priceRegular} per 4 weeks for new members. Nothing changes for you — you keep €${deal.priceDeal}.`,
   },
   {
@@ -108,7 +108,7 @@ export default function UnlimitedSummerDealPage() {
         items={[
           { name: "Home", url: "/en" },
           { name: "Open Gym", url: "/en/open-gym" },
-          { name: "Unlimited Summer Deal", url: "/en/open-gym/unlimited-summer-deal" },
+          { name: "Unlimited Intro Offer", url: "/en/open-gym/unlimited-summer-deal" },
         ]}
       />
       <FaqJsonLd faqs={faqs} />
@@ -119,7 +119,7 @@ export default function UnlimitedSummerDealPage() {
           <div className="mx-auto max-w-2xl text-center">
             {dealOn && (
               <span className="inline-block rounded-full bg-brand px-4 py-1.5 text-sm font-semibold text-brand-foreground">
-                Summer deal
+                Intro offer
               </span>
             )}
 
@@ -250,7 +250,7 @@ export default function UnlimitedSummerDealPage() {
         <FadeIn>
           <div className="mx-auto max-w-4xl">
             <div className="mb-6 text-center">
-              <p className="overline">Summer in the Jordaan</p>
+              <p className="overline">Right in the Jordaan</p>
               <h2 className="mt-2 text-2xl font-bold text-foreground">Train where Amsterdam is at its best</h2>
               <p className="mt-2 text-muted-foreground">
                 Your gym on the Egelantiersgracht — boats going by, doors open, never crowded.
@@ -260,7 +260,7 @@ export default function UnlimitedSummerDealPage() {
               <LandingVideo
                 src="/videos/opengym-canal.mp4"
                 poster="/videos/opengym-canal-poster.jpg"
-                label="Summer on the Egelantiersgracht, right outside SculptClub"
+                label="The Egelantiersgracht, right outside SculptClub"
                 aspectClassName="aspect-[9/16]"
               />
             </div>

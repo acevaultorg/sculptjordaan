@@ -88,7 +88,7 @@ const openGymPlans = [
     blurb: openGymSummerDeal.active
       ? `Save \u20ac${openGymSummerDeal.priceRegular - openGymSummerDeal.priceDeal} per 4 weeks \u2014 this price stays as long as you're a member`
       : "No limits, no planning",
-    badge: openGymSummerDeal.active ? "Summer" : null,
+    badge: openGymSummerDeal.active ? "Intro offer" : null,
     link: openGymSummerDeal.active ? openGymSummerDeal.dealUrl : acuityLinks.openGymPlans.onbeperkt,
   },
 ];

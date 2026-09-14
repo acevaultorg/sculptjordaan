@@ -107,7 +107,7 @@ const faqs = [
   ...(deal.active
     ? [
         {
-          q: "What is the summer offer?",
+          q: "What is the intro offer?",
           a: `Join Unlimited now and train unlimited for €${deal.priceDeal} per 4 weeks instead of €${deal.priceRegular} — and you keep this price as long as you stay a member. New members pay the regular €${deal.priceRegular} after that. Cancel anytime, free.`,
         },
       ]
@@ -251,7 +251,7 @@ export default function OpenGymPageEN() {
               {/* Deal teaser — plain foreground text (never orange, never a button), gated */}
               {deal.active && (
                 <p className="mt-4 text-sm font-medium text-foreground">
-                  Summer offer — Unlimited €{deal.priceDeal} per 4 weeks (normally €{deal.priceRegular})
+                  Intro offer — Unlimited €{deal.priceDeal} per 4 weeks (normally €{deal.priceRegular})
                   {deal.endDate ? `, until ${deal.endDate}` : ""}.
                 </p>
               )}
@@ -348,13 +348,13 @@ export default function OpenGymPageEN() {
           <FadeIn delay={0.2}>
             <Card className={`h-full flex flex-col text-center ${deal.active ? "ring-2 ring-primary" : ""}`}>
               <CardHeader>
-                {deal.active && <Badge className="mx-auto mb-2">Summer</Badge>}
+                {deal.active && <Badge className="mx-auto mb-2">Intro offer</Badge>}
                 <CardTitle className="text-lg">3. Become a regular</CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
                   {deal.active
-                    ? `Here every week? Train unlimited for €${deal.priceDeal} per 4 weeks this summer (normally €${deal.priceRegular}). Cancel anytime for free.`
+                    ? `Here every week? Train unlimited for €${deal.priceDeal} per 4 weeks (normally €${deal.priceRegular}). Cancel anytime for free.`
                     : `Here every week? Train unlimited for €${deal.priceRegular} per 4 weeks. Cancel anytime for free.`}
                 </p>
               </CardContent>
@@ -378,7 +378,7 @@ export default function OpenGymPageEN() {
       {/* S4 — PRICING + SUMMER DEAL (the decision point) */}
       <Section bg="muted">
         <SectionHeader
-          overline={deal.active ? "Summer offer" : "Pricing"}
+          overline={deal.active ? "Intro offer" : "Pricing"}
           title="Choose what fits you"
           description="Single session or unlimited, per 4 weeks. Cancel anytime."
         />
@@ -452,7 +452,7 @@ export default function OpenGymPageEN() {
           <FadeIn delay={0.2}>
             <Card className={`h-full text-center flex flex-col ${deal.active ? "ring-2 ring-primary" : ""}`}>
               <CardHeader>
-                {deal.active && <Badge className="mx-auto mb-2">Summer</Badge>}
+                {deal.active && <Badge className="mx-auto mb-2">Intro offer</Badge>}
                 <CardTitle className="text-lg">Unlimited</CardTitle>
                 <CardDescription>Train as often as you like</CardDescription>
               </CardHeader>
@@ -614,7 +614,7 @@ export default function OpenGymPageEN() {
               </a>
               {deal.active && (
                 <a href="/en/open-gym/unlimited-summer-deal" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-                  <p className="text-sm text-muted-foreground mb-1">Summer deal</p>
+                  <p className="text-sm text-muted-foreground mb-1">Intro offer</p>
                   <p className="font-semibold group-hover:text-brand transition-colors">Unlimited Open Gym for €{deal.priceDeal} per 4 weeks</p>
                 </a>
               )}
@@ -654,7 +654,7 @@ export default function OpenGymPageEN() {
           title="Choose your next step"
           description={
             deal.active
-              ? "New here? Book a free trial. Ready to join? Grab the summer offer."
+              ? "New here? Book a free trial. Ready to join? Grab the intro offer."
               : "New here? Book a free trial. Ready to join? Become an unlimited member."
           }
         />

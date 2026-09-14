@@ -43,13 +43,25 @@ if (active && endRaw) {
 }
 
 // Seasonal label sanity — warn only. NH summer ≈ Jun-Aug (months 6-8).
+// Scans the actual deal copy (2026-09-14: labels were relabelled to the
+// time-neutral "Introductieprijs" / "Intro offer"), so it only warns when a
+// season word is really on a deal surface out of season.
 const month = new Date().getMonth() + 1;
 if (active && (month < 6 || month > 8)) {
-  warnings.push(
-    `Deal is active in month ${month}, but it is labelled "Zomeraanbieding" /\n` +
-      `      "Summer" across ~127 strings. Outside Jun-Aug that reads as stale.\n` +
-      `      Not blocking — keeping vs ending it is a pricing decision.`,
-  );
+  const DEAL_FILES = [
+    "src/app/nl/open-gym/page.tsx", "src/app/en/open-gym/page.tsx",
+    "src/app/nl/open-gym/onbeperkt-zomerdeal/page.tsx", "src/app/en/open-gym/unlimited-summer-deal/page.tsx",
+    "src/app/nl/prijzen/page.tsx", "src/app/en/pricing/page.tsx",
+  ];
+  const SEASON = /["'`>]\s*(Zomeractie|Zomeraanbieding|Zomerdeal|Summer(?: deal| offer)?)\b|deze zomer|this summer/;
+  const hits = DEAL_FILES.filter((f) => fs.existsSync(f) && SEASON.test(fs.readFileSync(f, "utf8")));
+  if (hits.length) {
+    warnings.push(
+      `Deal is active in month ${month}, but a seasonal label is still on a deal surface:\n` +
+        hits.map((f) => `      - ${f}`).join("\n") +
+        `\n      Outside Jun-Aug that reads as stale. Not blocking.`,
+    );
+  }
 }
 
 for (const w of warnings) console.warn(`\n⚠️  check-deal-honesty: ${w}\n`);

@@ -77,7 +77,7 @@ const galleryImages = [
 
 
 export const metadata: Metadata = {
-  title: { absolute: `Zomeractie — Onbeperkt Open Gym €${deal.priceDeal}/4 weken | SculptClub Jordaan` },
+  title: { absolute: `Introductieprijs — Onbeperkt Open Gym €${deal.priceDeal}/4 weken | SculptClub Jordaan` },
   description: `Onbeperkt trainen in onze privé gym in de Jordaan voor €${deal.priceDeal} per 4 weken (normaal €${deal.priceRegular}). Word nu lid en hou die prijs zolang je lid blijft. Max 4 personen, geen contract, eerste sessie gratis.`,
   keywords: [
     "sportschool aanbieding amsterdam",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     "goedkope sportschool jordaan",
     "open gym amsterdam",
     "sportschool zonder contract amsterdam",
-    "zomeractie sportschool",
+    "introductieprijs sportschool",
   ],
   alternates: {
     canonical: "/nl/open-gym/onbeperkt-zomerdeal",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/open-gym/onbeperkt-zomerdeal",
-    title: `Zomeractie — Onbeperkt trainen voor €${deal.priceDeal}/4 weken`,
+    title: `Introductieprijs — Onbeperkt trainen voor €${deal.priceDeal}/4 weken`,
     description: `Normaal €${deal.priceRegular}. Word nu lid en hou €${deal.priceDeal} zolang je lid blijft. Privé gym in de Jordaan, max 4 personen.`,
   },
 };
@@ -115,7 +115,7 @@ const faqs = [
     answer: `Zolang je lid blijft. Word je nu lid van Onbeperkt, dan betaal je €${deal.priceDeal} per 4 weken en die prijs blijft staan zolang je lidmaatschap doorloopt. Stop je en kom je later terug, dan geldt het tarief dat op dat moment voor nieuwe leden geldt.`,
   },
   {
-    question: "Wat gebeurt er als de zomeractie afloopt?",
+    question: "Wat gebeurt er als de introductieprijs afloopt?",
     answer: `Dan gaat Onbeperkt voor nieuwe leden terug naar €${deal.priceRegular} per 4 weken. Voor jou verandert er niets — jij houdt €${deal.priceDeal}.`,
   },
   {
@@ -143,7 +143,7 @@ export default function OnbeperktZomerdealPage() {
         items={[
           { name: "Home", url: "/nl" },
           { name: "Open Gym", url: "/nl/open-gym" },
-          { name: "Onbeperkt Zomerdeal", url: "/nl/open-gym/onbeperkt-zomerdeal" },
+          { name: "Onbeperkt Introductieprijs", url: "/nl/open-gym/onbeperkt-zomerdeal" },
         ]}
       />
       <FaqJsonLd faqs={faqs} />
@@ -154,7 +154,7 @@ export default function OnbeperktZomerdealPage() {
           <div className="mx-auto max-w-2xl text-center">
             {dealOn && (
               <span className="inline-block rounded-full bg-brand px-4 py-1.5 text-sm font-semibold text-brand-foreground">
-                Zomeractie
+                Introductieprijs
               </span>
             )}
 
@@ -286,7 +286,7 @@ export default function OnbeperktZomerdealPage() {
         <FadeIn>
           <div className="mx-auto max-w-4xl">
             <div className="mb-6 text-center">
-              <p className="overline">Zomer in de Jordaan</p>
+              <p className="overline">Midden in de Jordaan</p>
               <h2 className="mt-2 text-2xl font-bold text-foreground">Train waar Amsterdam op z&apos;n mooist is</h2>
               <p className="mt-2 text-muted-foreground">
                 Jouw gym aan de Egelantiersgracht — bootjes voorbij, deuren open, nooit druk.
@@ -296,7 +296,7 @@ export default function OnbeperktZomerdealPage() {
               <LandingVideo
                 src="/videos/opengym-canal.mp4"
                 poster="/videos/opengym-canal-poster.jpg"
-                label="Zomer aan de Egelantiersgracht, recht voor de deur van SculptClub"
+                label="De Egelantiersgracht, recht voor de deur van SculptClub"
                 aspectClassName="aspect-[9/16]"
               />
             </div>
