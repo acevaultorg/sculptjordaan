@@ -110,19 +110,22 @@ export function LanguageHint() {
           : "pointer-events-none -translate-y-3 opacity-0"
       )}
     >
-      <div className="flex items-center gap-2 rounded-full border border-border bg-card/95 px-3 py-2 shadow-brand-lg backdrop-blur-md">
-        <Globe className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+      {/* v3 (2026-09-14, card mu19p0yxv3zseo): the ANCHOR is the whole pill (globe +
+          padding included) so no tap on it is inert, and the dismiss target is 44px
+          (fleet tap-target standard) instead of 28px. Copy and behaviour unchanged. */}
+      <div className="flex items-center rounded-full border border-border bg-card/95 pr-1 shadow-brand-lg backdrop-blur-md">
         <a
           href={hint.href}
-          className="plausible-event-name=lang_hint_switch min-w-0 flex-1 truncate text-sm font-semibold text-foreground transition-colors hover:text-brand"
+          className="plausible-event-name=lang_hint_switch flex min-w-0 flex-1 items-center gap-2 rounded-full py-2 pl-3 pr-2 text-sm font-semibold text-foreground transition-colors hover:text-brand"
         >
-          {hint.label} →
+          <Globe className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+          <span className="min-w-0 flex-1 truncate">{hint.label} →</span>
         </a>
         <button
           type="button"
           onClick={close}
           aria-label="Dismiss"
-          className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors touch-manipulation hover:bg-accent hover:text-foreground"
+          className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors touch-manipulation hover:bg-accent hover:text-foreground"
         >
           <X className="h-4 w-4" />
         </button>
