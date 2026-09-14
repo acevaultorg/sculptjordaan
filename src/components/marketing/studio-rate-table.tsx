@@ -35,6 +35,8 @@ export type StudioRate = {
   price: string;
   /** Acuity booking URL. */
   href: string;
+  /** Optional second line under the label, e.g. capacity "1 tot 8 personen" (operator 2026-09-14). */
+  note?: string;
 };
 
 export function StudioRateTable({
@@ -71,16 +73,19 @@ export function StudioRateTable({
             }
           }}
           className={cn(
-            "flex min-h-11 items-center justify-between gap-3 px-4 py-3 transition-colors",
+            "flex min-h-16 items-center justify-between gap-3 px-4 py-3.5 transition-colors",
             "hover:bg-muted/40 focus-visible:bg-muted/40 focus-visible:outline-none",
             "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
             i < rows.length - 1 && "border-b",
           )}
         >
-          <span className="font-medium">{row.label}</span>
+          <span className="flex min-w-0 flex-col">
+            <span className="font-medium">{row.label}</span>
+            {row.note ? <span className="text-xs text-muted-foreground">{row.note}</span> : null}
+          </span>
           <span className="flex shrink-0 items-center gap-2">
-            <span className="font-semibold">{row.price}</span>
-            <span aria-hidden className={cn(buttonVariants({ size: "sm" }), "pointer-events-none")}>
+            <span className="text-base font-semibold">{row.price}</span>
+            <span aria-hidden className={cn(buttonVariants({ size: "lg" }), "pointer-events-none min-w-20 text-base font-semibold")}>
               {cta}
             </span>
           </span>

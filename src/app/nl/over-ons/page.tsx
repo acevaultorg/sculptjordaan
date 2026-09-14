@@ -119,7 +119,7 @@ const uniqueFeatures = [
     icon: UserCheck,
     title: "Capaciteit op maat",
     description:
-      "Bij Open Gym beperken we de ruimte tot vier personen. Bij volledige studiohuur heb je de hele ruimte privé — geen vast maximum, je traint met je eigen kleine groep.",
+      "Bij Open Gym beperken we de ruimte tot vier personen. Bij volledige studiohuur heb je de hele ruimte privé — voor 1 tot 8 personen, je traint met je eigen groep.",
   },
   // M (2026-06-02) — the 2 positioning PRINCIPLES the facility-logistics grid
   // lacked: Transparant + Trainer-eerst (SculptClub's actual moats). Reuses

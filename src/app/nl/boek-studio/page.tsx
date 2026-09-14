@@ -269,7 +269,7 @@ export default function BoekStudioPageNL() {
                 cta="Boek"
                 rows={[
                   { label: "Halve studio (max 2)", price: "€12", href: acuityLinks.halfStudio60 },
-                  { label: "Hele studio (kleine groep)", price: "€17", href: acuityLinks.fullStudio60 },
+                  { label: "Hele studio (kleine groep)", note: "1 tot 8 personen", price: "€17", href: acuityLinks.fullStudio60 },
                 ]}
               />
               <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
@@ -280,7 +280,7 @@ export default function BoekStudioPageNL() {
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
                 <strong className="text-foreground">altijd gratis annuleren</strong> — credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé, geen vast maximum — jouw eigen kleine groep.
+                <strong className="text-foreground">Hele studio</strong> = volledig privé voor 1 tot 8 personen, jouw eigen groep.
               </p>
             </div>
           }

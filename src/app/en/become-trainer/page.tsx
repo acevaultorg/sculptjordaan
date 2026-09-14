@@ -107,7 +107,7 @@ const steps = [
 const faqs = [
   { q: "How much does it cost to rent the studio?", a: "From €12 per 60 minutes. With a 10-hour package you pay €10.20/hour (15% off). With a 20-hour package €9.24/hour (23% off). Packages are valid for 3 months." },
   { q: "Do I need my own insurance?", a: "Yes, you need a valid professional liability insurance. This is your own responsibility." },
-  { q: "How many clients can I train at once?", a: "The studio is suitable for 1-on-1 sessions and small groups of up to 4 people." },
+  { q: "How many clients can I train at once?", a: "The half studio is for 1-on-1 sessions (max 2 people). The full studio fits groups of 1 to 8 people." },
   { q: "Do I really get a profile on the website?", a: "Yes. You get a personal profile page with photo, bio, specialisations, rates and a direct booking link. This is included with every rental package — and with hourly rental too. Ask via WhatsApp and we'll add you." },
   { q: "Do I need to sign a contract?", a: "No. You book per hour or buy a package. No long-term contract, no obligations. Stop whenever you want." },
   { q: "What equipment is available?", a: "Power rack, adjustable bench, dumbbells (4-40 kg), cable machine, assault bike, rower and accessories. Everything you need for professional sessions." },

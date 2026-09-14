@@ -317,7 +317,7 @@ export default function StudioRentalPageEN() {
                 cta="Book"
                 rows={[
                   { label: "Half studio (for 2 people)", price: "€12", href: acuityLinks.halfStudio60 },
-                  { label: "Full studio (small group)", price: "€17", href: acuityLinks.fullStudio60 },
+                  { label: "Full studio (small group)", note: "1 to 8 people", price: "€17", href: acuityLinks.fullStudio60 },
                 ]}
               />
               <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
@@ -328,7 +328,7 @@ export default function StudioRentalPageEN() {
                 Book per session. No subscription, no contract,{" "}
                 <strong className="text-foreground">free cancellation anytime</strong> — credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private, no fixed maximum — your own small group.
+                <strong className="text-foreground">Full studio</strong> = fully private for 1 to 8 people, your own group.
               </p>
             </div>
           }

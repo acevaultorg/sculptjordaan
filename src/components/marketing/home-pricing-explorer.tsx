@@ -36,8 +36,9 @@ import type { Locale } from "@/config/site";
  *   pakketten badge  "bespaar tot 23%" → Volume €499 for €650 credit = 23.2%
  *   abonnement badge "bespaar 19%"     → Instapplan €7,25/sessie vs €9 los = 19.4%
  *   break-even line derived from the live deal price, never hardcoded.
- * Capacity copy: half = "max 2 personen"; full studio = "kleine groep",
- * NEVER a hard number (CLAUDE.md 2026-07-13).
+ * Capacity copy: half = "max 2 personen"; full studio = "1 tot 8 personen"
+ * (operator 2026-09-14 set the full-studio capacity, superseding the
+ * 2026-07-13 "never a hard number" note).
  */
 
 type Tab = "hourly" | "packages" | "membership";
@@ -69,8 +70,8 @@ const COPY = {
         },
         full: {
           title: "Hele studio",
-          who: "kleine groep",
-          sub: "Volledig privé — jouw eigen kleine groep",
+          who: "1 tot 8 personen",
+          sub: "Volledig privé, jouw eigen groep",
         },
       },
     },
@@ -136,8 +137,8 @@ const COPY = {
         },
         full: {
           title: "Full studio",
-          who: "small group",
-          sub: "Fully private — your own small group",
+          who: "1 to 8 people",
+          sub: "Fully private, your own group",
         },
       },
     },
