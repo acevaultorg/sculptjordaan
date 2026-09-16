@@ -6,7 +6,7 @@
 //   2. Generous whitespace between hierarchy levels
 //   3. 3-tier typography hierarchy max (HERO · PRICE · META)
 //   4. Brand wordmark as anchor (real PNG, not rendered text)
-//   5. Single focal message (Huur de Studio €12/uur · 0% commissie)
+//   5. Single focal message (Huur de Studio €12/uur · 100% van je tarief)
 //   6. High contrast (AA Large minimum on every text/bg pair)
 //   7. Photo + dark gradient stacked layer model
 //
@@ -215,16 +215,16 @@ const POSTS = {
       eyebrow: "VOOR TRAINERS",
       hero: "Huur de Studio",
       price: "€12 / uur",
-      usp: "0% commissie · geen contract",
+      usp: "100% van je tarief · geen contract",
       cta: "Probeer gratis · sculptclub.nl",
     },
     {
       name: "usp-focus",
       photoPath: STUDIO_INTERIOR,
-      // Was "ZERO COMMISSIE" — mixed English+Dutch and inconsistent with the caption
-      // (which uses "0% commissie") + slide 1 USP (also "0% commissie"). "0% COMMISSIE"
-      // matches both surfaces + reads pure Dutch.
-      eyebrow: "0% COMMISSIE",
+      // Was "0% COMMISSIE". Retired 2026-09-17: trainers rent the room and bring their own
+      // clients, so there was never a commission to waive (CLAUDE.md). "JOUW TARIEF" pairs
+      // with the "Houd 100% zelf" hero below.
+      eyebrow: "JOUW TARIEF",
       // "Houd 100%" alone reads as a fragment in Dutch — "Houd 100% zelf"
       // makes the trainer-keeps-everything meaning explicit + complete.
       hero: "Houd 100% zelf",
@@ -469,7 +469,7 @@ const POSTS = {
       hero: "Wat trainers houden.",
       heroScale: 0.7,  // 20 chars · 76 × 20 × 0.55 ≈ 836 in 888 — fits
       price: "100%",
-      usp: "0% commissie · €12 huur per uur",
+      usp: "100% van je tarief · €12 per uur",
       cta: "Eigen klanten. Eigen profiel.",
     },
     {
