@@ -138,7 +138,7 @@ const faqs = [
     a: "Ja, Open Gym werkt met een lidmaatschap per 4 weken. Je kiest een plan dat bij je past en kunt elk moment opzeggen. Geen langlopend contract.",
   },
   {
-    q: "Is de eerste les echt gratis?",
+    q: "Is de eerste probeersessie echt gratis?",
     a: "Ja. Je boekt een gratis probeersessie van 60 minuten via het boekingssysteem. Geen creditcard nodig, geen verplichting, geen automatische verlenging.",
   },
   {
@@ -191,7 +191,7 @@ export default function OpenGymPageNL() {
               as="h1"
               overline="Open Gym · Jordaan"
               title="Train wanneer jij wilt in een rustige privé studio"
-              description="Vrij trainen in een volledig uitgeruste studio aan de Egelantiersgracht, in hartje Jordaan. Sessies van 60 minuten, maximaal 4 mensen tegelijk. Geen contract, altijd gratis opzegbaar — en je eerste les is gratis."
+              description="Vrij trainen in een volledig uitgeruste studio aan de Egelantiersgracht, in hartje Jordaan. Sessies van 60 minuten, maximaal 4 mensen tegelijk. Geen contract, altijd gratis opzegbaar — en je eerste probeersessie is gratis."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -232,7 +232,7 @@ export default function OpenGymPageNL() {
               </div>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
-                  Eerste les gratis
+                  Eerste probeersessie gratis
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-purple-500/30 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-400">
                   Privé studio · max 4 personen
@@ -499,7 +499,7 @@ export default function OpenGymPageNL() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-          {["Altijd opzegbaar", "Geen contract", "Gratis annuleren", "Eerste les gratis"].map((t) => (
+          {["Altijd opzegbaar", "Geen contract", "Gratis annuleren", "Eerste probeersessie gratis"].map((t) => (
             <span key={t} className="inline-flex items-center gap-1.5">
               <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
               {t}
