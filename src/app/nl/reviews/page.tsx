@@ -199,6 +199,31 @@ export default function ReviewsPageNL() {
         </FadeIn>
       </Section>
 
+      {/* Laat een review achter — mirrors the EN page (2026-09-17). The profile sits at
+          19 reviews while local competitors carry 80-350, and review count is a map-pack
+          ranking input, so the ask belongs on the page existing clients already land on. */}
+      <Section bg="muted">
+        <FadeIn>
+          <div className="text-center max-w-lg mx-auto">
+            <h2 className="text-2xl font-bold mb-3">Al klant bij ons?</h2>
+            <p className="text-muted-foreground mb-6">
+              Deel je ervaring en help anderen de juiste keuze maken.
+            </p>
+            <ButtonLink
+              href={siteConfig.googleReview}
+              size="lg"
+              variant="outline"
+              external
+              className="plausible-event-name=leave_review_click"
+              data-cta="reviews-leave-review-google"
+            >
+              Laat een review achter op Google
+              <ExternalLink className="ml-2 w-4 h-4" />
+            </ButtonLink>
+          </div>
+        </FadeIn>
+      </Section>
+
       {/* Leave a review */}
       <Section bg="muted">
         <FadeIn>
