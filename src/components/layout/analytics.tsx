@@ -307,10 +307,15 @@ export function Analytics() {
                 '31645658213': 'Dara', '31621582581': 'Jearmey', '31639382800': 'Sergei',
                 '31639175337': 'Joey', '31613326221': 'Hamish', '31615294322': 'Tom'
               };
-              for (var waNum in TRAINER_WA) {
-                if (href.indexOf('wa.me/' + waNum) !== -1) return { intent: 'trainer', pricing: 'free', trainer_name: TRAINER_WA[waNum] };
-              }
-              // Decode text= param to classify by message content
+              // Decode text= param FIRST — the trainer-number branch below needs it.
+              // (Moved above the TRAINER_WA loop 2026-09-19. It used to sit after,
+              // which made the loop return a HARDCODED pricing:'free' for every
+              // click on a trainer's own number. That was fine while the only
+              // per-trainer CTA was the free intake, and it went wrong the moment
+              // the SCULPT TRANSFORMATION button shipped: both buttons on a trainer
+              // card open the same trainer number, so both logged trainer/free and
+              // the paid-vs-free split the hub exists to measure was structurally
+              // invisible — not noisy, blind.)
               var text = '';
               var qIdx = href.indexOf('text=');
               if (qIdx !== -1) {
@@ -318,6 +323,24 @@ export function Analytics() {
                 var ampIdx = raw.indexOf('&');
                 if (ampIdx !== -1) raw = raw.substring(0, ampIdx);
                 try { text = decodeURIComponent(raw).toLowerCase(); } catch (_) { text = raw.toLowerCase(); }
+              }
+              // A trainer's own number: paid ONLY when the prefilled message carries
+              // the transformation marker (whatsappLinks.trainerTransformation writes
+              // it in both locales). Everything else on a trainer number stays 'free',
+              // which is the pre-2026-09-19 behaviour for every existing CTA.
+              for (var waNum in TRAINER_WA) {
+                if (href.indexOf('wa.me/' + waNum) !== -1) {
+                  return {
+                    intent: 'trainer',
+                    pricing: text.indexOf('transformation') !== -1 || text.indexOf('transformatie') !== -1 ? 'paid' : 'free',
+                    trainer_name: TRAINER_WA[waNum]
+                  };
+                }
+              }
+              // Transformation on the CENTRAL number (trainers without a published
+              // number, e.g. Roberta) — same product, same paid intent.
+              if (text.indexOf('transformation') !== -1 || text.indexOf('transformatie') !== -1) {
+                return { intent: 'trainer', pricing: 'paid', trainer_name: '' };
               }
               // Open Gym = paid subscription
               if (text.indexOf('open gym') !== -1) return { intent: 'open_gym', pricing: 'paid', trainer_name: '' };

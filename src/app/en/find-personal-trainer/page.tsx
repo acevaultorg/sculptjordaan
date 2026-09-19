@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "What does personal training cost at SculptClub?",
-    a: "Trainers set their own rates, from \u20ac45 per session. For a programme you agree a fixed total price at the intro \u2014 ask your trainer about package prices. The first intro is always free \u2014 no charge, no commitment after.",
+    a: "A SCULPT TRANSFORMATION starts from \u20ac299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro \u2014 upfront, no surprises. The first intro is always free \u2014 no charge, no commitment after.",
   },
   {
     q: "How does the free intro work?",
@@ -169,9 +169,9 @@ export default function TrainersPageEN() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="Personal training · Jordaan"
-          title="Not hours. A programme toward your goal."
-          description="Pick what you want to achieve, meet the trainer who specialises in it, and get a concrete plan at a free intro: goal, duration, how often you train and a fixed price upfront."
+          overline="SCULPT TRANSFORMATION · Jordaan"
+          title="Not hours. A transformation in 4 weeks."
+          description="Body transformations from €299 per 4 weeks — unlimited Open Gym included. Pick what you want to achieve, meet the trainer who specialises in it, and agree your plan and your price at a free intro."
         />
         <FadeIn>
           <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
@@ -232,7 +232,7 @@ export default function TrainersPageEN() {
               <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Book one at a time</li>
               <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />No fixed plan or end date</li>
               <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />No set check-in moments</li>
-              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />From €45 per session</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Charged per session</li>
             </ul>
           </div>
           <div className="rounded-2xl border-2 border-brand bg-card p-6 shadow-brand-lg">
@@ -241,7 +241,8 @@ export default function TrainersPageEN() {
               <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />A concrete goal with an end date</li>
               <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />A weekly plan that fits your calendar</li>
               <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Check-ins, so you see what you achieve</li>
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Fixed total price upfront — ask about packages</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />From €299 per 4 weeks, unlimited Open Gym included</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Fixed total price agreed upfront with your trainer</li>
             </ul>
           </div>
         </div>

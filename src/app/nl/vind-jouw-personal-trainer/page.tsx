@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "Wat kost personal training bij SculptClub?",
-    a: "Trainers bepalen hun eigen tarieven, vanaf \u20ac45 per sessie. Voor een traject spreek je bij de intake een vaste totaalprijs af \u2014 vraag je trainer naar pakketprijzen. De eerste intake is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
+    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake \u2014 vooraf, zonder verrassingen. De eerste intake is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
   },
   {
     q: "Hoe werkt de gratis intake?",
@@ -169,9 +169,9 @@ export default function TrainersPageNL() {
       <Section>
         <SectionHeader
           as="h1"
-          overline="Personal training · Jordaan"
-          title="Geen losse uren. Een traject naar jouw doel."
-          description="Kies wat je wilt bereiken, ontmoet de trainer die daarin gespecialiseerd is, en krijg bij een gratis intake een concreet plan: doel, duur, hoe vaak je traint en een vaste prijs vooraf."
+          overline="SCULPT TRANSFORMATION · Jordaan"
+          title="Geen losse uren. Een transformatie in 4 weken."
+          description="Body transformaties vanaf €299 per 4 weken — inclusief onbeperkt Open Gym. Kies wat je wilt bereiken, ontmoet de trainer die daarin gespecialiseerd is, en spreek bij de gratis intake je plan en je prijs af."
         />
         <FadeIn>
           <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
@@ -232,7 +232,7 @@ export default function TrainersPageNL() {
               <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Per keer boeken</li>
               <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Geen vast plan of einddatum</li>
               <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Geen vaste meetmomenten</li>
-              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Vanaf €45 per sessie</li>
+              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Per sessie afgerekend</li>
             </ul>
           </div>
           <div className="rounded-2xl border-2 border-brand bg-card p-6 shadow-brand-lg">
@@ -241,7 +241,8 @@ export default function TrainersPageNL() {
               <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Een concreet doel met een einddatum</li>
               <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Een plan per week dat past in je agenda</li>
               <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Meetmomenten, zodat je ziet wat je bereikt</li>
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Vaste totaalprijs vooraf — vraag naar pakketprijzen</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Vanaf €299 per 4 weken, incl. onbeperkt Open Gym</li>
+              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Vaste totaalprijs vooraf afgesproken met je trainer</li>
             </ul>
           </div>
         </div>

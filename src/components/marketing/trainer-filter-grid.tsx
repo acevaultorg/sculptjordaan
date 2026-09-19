@@ -59,6 +59,15 @@ const copy = {
     onRequest: "Op aanvraag",
     requestPrice: "Vraag prijs aan →",
     bookIntro: "Boek intake",
+    /** SCULPT TRANSFORMATION — the shared FORMAT SculptClub markets; the trainer
+     *  sells it and sets the exact price at or above the €299 floor, which is why
+     *  every line here keeps "vanaf" and defers the exact price to the intake. */
+    transformationPrice: "vanaf €299 / 4 weken",
+    transformationIncl: "incl. onbeperkt Open Gym",
+    transformationCta: "Start transformatie · vanaf €299",
+    tryFree: "Probeer gratis",
+    ariaTransformation: (name: string) =>
+      `Start een SCULPT TRANSFORMATION van 4 weken met ${name} — vanaf €299, prijs afgesproken bij de gratis intake`,
     viewProfile: "Bekijk profiel & beschikbaarheid",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
@@ -81,6 +90,13 @@ const copy = {
     onRequest: "On request",
     requestPrice: "Ask for price →",
     bookIntro: "Book intake",
+    /** See the nl block — "from" is load-bearing, the trainer sets the price. */
+    transformationPrice: "from €299 / 4 weeks",
+    transformationIncl: "unlimited Open Gym included",
+    transformationCta: "Start your transformation · from €299",
+    tryFree: "Try for free",
+    ariaTransformation: (name: string) =>
+      `Start a 4-week SCULPT TRANSFORMATION with ${name} — from €299, price agreed at the free intro`,
     viewProfile: "View profile & availability",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,
@@ -372,23 +388,23 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                       <span className="text-muted-foreground">{t.languages}:</span>{" "}
                       {trainer.languages.join(", ")}
                     </p>
-                    <p>
-                      <span className="text-muted-foreground">{t.rate}:</span>{" "}
-                      {trainer.rate ? (
-                        trainer.rate
-                      ) : trainer.bookingUrl ? (
-                        t.onRequest
-                      ) : (
-                        <a
-                          href={whatsappLinks.trainerPriceRequest(trainer.name, locale, trainer.whatsapp, goalLabel)}
-                          target="_blank"
-                          rel="noopener"
-                          data-price-request={trainer.name}
-                          className="font-semibold text-brand hover:underline underline-offset-4"
-                        >
-                          {t.requestPrice}
-                        </a>
-                      )}
+                    {/* SCULPT TRANSFORMATION price line (operator 2026-09-19:
+                        "we dont name hourly rate, we say 'from 299/4 weeks'").
+                        The per-session rate is NOT shown on the hub any more —
+                        it still lives on the trainer's own intake page, which
+                        the "Bekijk profiel" link below reaches, so someone who
+                        wants an hour can still find the hourly price.
+
+                        Shown identically for every trainer ON PURPOSE: this is
+                        the shared format SculptClub markets, not a per-trainer
+                        quote. That also retires the old "Op aanvraag" /
+                        "Vraag prijs aan" split, which advertised the absence of
+                        a price on the 8 trainers whose rate is null. */}
+                    <p className="font-semibold">
+                      {t.transformationPrice}
+                      <span className="block text-xs font-normal text-muted-foreground">
+                        {t.transformationIncl}
+                      </span>
                     </p>
                   </div>
                   {trainer.website && (
@@ -411,6 +427,35 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                       free discovery call, not an intake, and asked us not to
                       publish a private number (2026-07-25). Everyone else keeps
                       the WhatsApp intake link. */}
+                  {/* PRIMARY — SCULPT TRANSFORMATION (paid intent).
+                      Goes to the TRAINER's WhatsApp, never to a SculptClub
+                      checkout: the trainer sells and collects the package and
+                      SculptClub earns the room rent, exactly as before. A
+                      SculptClub-collected €299 would be a different business
+                      (payment flow, VAT, liability, trainer agreements) and is
+                      explicitly NOT authorised — do not "upgrade" this to a
+                      purchase link without a written operator decision.
+                      Roberta has no published number (2026-07-25): trainerTransformation
+                      falls back to the central SculptClub line for her, which is
+                      correct here. Do NOT route her transformation to her
+                      bookingUrl — that Calendly is a FREE discovery call, so a
+                      "vanaf €299" button pointing at it would promise one thing
+                      and open another. Her free call stays the secondary CTA. */}
+                  <Link
+                    href={whatsappLinks.trainerTransformation(trainer.name, locale, trainer.whatsapp, goalLabel)}
+                    target="_blank"
+                    rel="noopener"
+                    data-intent="trainer"
+                    data-pricing="paid"
+                    aria-label={t.ariaTransformation(trainer.name)}
+                    className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-6 py-3 text-center text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    {t.transformationCta}
+                  </Link>
+                  {/* SECONDARY — the existing free intake, unchanged in
+                      destination and wording ("probeersessie" family, never
+                      "proefles"); only demoted from filled to outline so the
+                      paid action leads. */}
                   <Link
                     href={
                       trainer.bookingUrl ??
@@ -418,16 +463,18 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                     }
                     target="_blank"
                     rel="noopener"
+                    data-intent="trainer"
+                    data-pricing="free"
                     aria-label={
                       trainer.bookingUrl
                         ? `${trainer.bookingLabel?.[locale] ?? t.bookIntro} — ${trainer.name}`
                         : t.ariaIntro(trainer.name)
                     }
-                    className="inline-flex items-center justify-center w-full rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                    className="inline-flex items-center justify-center w-full rounded-xl border border-border bg-transparent px-6 py-3 text-center text-sm font-semibold text-foreground hover:border-brand hover:text-brand transition-colors"
                   >
                     {trainer.bookingUrl
-                      ? trainer.bookingLabel?.[locale] ?? t.bookIntro
-                      : t.bookIntro}
+                      ? trainer.bookingLabel?.[locale] ?? t.tryFree
+                      : t.tryFree}
                   </Link>
                   {/* Secondary, low-weight path to the trainer's intake page —
                       where bio detail, the structured intake form, and (when

@@ -280,6 +280,40 @@ export const whatsappLinks = {
           : `Hi! I'd like to know ${name}'s rate and book a free intro.`;
     return `${base}?text=${encodeURIComponent(text)}`;
   },
+  /** SCULPT TRANSFORMATION — per trainer. The paid-intent counterpart to
+   *  trainerIntake: the visitor is asking to START a 4-week transformation, not
+   *  to book a free intro.
+   *
+   *  BUSINESS MODEL (operator directive 2026-09-19, version (a) — do not change
+   *  without a written operator decision): the TRAINER sells and collects this.
+   *  SculptClub markets the shared FORMAT ("vanaf €299 / 4 weken, incl.
+   *  onbeperkt Open Gym") and earns the room rent, exactly as today. There is
+   *  deliberately NO SculptClub checkout for €299 — that would be a different
+   *  company (payment flow, VAT, liability, trainer agreements) and is NOT
+   *  authorised. So this is a WhatsApp link to the trainer, like every other
+   *  trainer CTA on the hub.
+   *
+   *  The message says "vanaf" and asks the trainer to confirm the price,
+   *  because trainer rates run €45-€100/60min and each sets their own package
+   *  price at or above the €299 floor. Never phrase it as an agreed price.
+   *
+   *  ⚠️ The word "transformatie"/"transformation" in this text is LOAD-BEARING
+   *  for analytics — src/components/layout/analytics.tsx classifies a click on a
+   *  trainer's own WhatsApp number as trainer/PAID only when it finds that
+   *  marker (every other trainer-number click is trainer/free). Change the
+   *  wording here and the paid-vs-free split on the hub goes blind. */
+  trainerTransformation: (name: string, locale: "nl" | "en", baseUrl?: string, goal?: string) => {
+    const base = baseUrl ?? "https://wa.me/31615147952";
+    const text =
+      locale === "nl"
+        ? goal
+          ? `Hoi ${name}! Ik wil graag starten met een SCULPT TRANSFORMATION van 4 weken (vanaf €299, incl. onbeperkt Open Gym). Mijn doel: ${goal}. Wat wordt de prijs bij jou?`
+          : `Hoi ${name}! Ik wil graag starten met een SCULPT TRANSFORMATION van 4 weken (vanaf €299, incl. onbeperkt Open Gym). Wat wordt de prijs bij jou?`
+        : goal
+          ? `Hi ${name}! I'd like to start a 4-week SCULPT TRANSFORMATION (from €299, unlimited Open Gym included). My goal: ${goal}. What would the price be with you?`
+          : `Hi ${name}! I'd like to start a 4-week SCULPT TRANSFORMATION (from €299, unlimited Open Gym included). What would the price be with you?`;
+    return `${base}?text=${encodeURIComponent(text)}`;
+  },
   /** Generic (no pre-filled text) */
   generic: "https://wa.me/31615147952",
   /** Bank transfer for Volume pack */
