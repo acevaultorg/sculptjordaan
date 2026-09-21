@@ -535,7 +535,10 @@ const POSTS = {
       hero: "Plan een sessie met Alex.",
       heroScale: 0.6,
       price: "",
-      usp: "45 minuten · 1-op-1 · privé studio aan de gracht",
+      // 2026-09-21: was "45 minuten · …". The site states no length for the free
+      // intake (Alex's intake page and /nl/gratis-intake checked live), so the slide
+      // does not claim one either. "Gratis intake" is a published fact.
+      usp: "Gratis intake · 1-op-1 · studio aan de gracht",
       cta: "sculptclub.nl/nl/plan-gratis-intake-met-alex",
     },
   ],
