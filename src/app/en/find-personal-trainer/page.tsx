@@ -18,6 +18,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { googleReviews } from "@/data/reviews";
+import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -393,6 +394,17 @@ export default function TrainersPageEN() {
           <a href="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">How to price a programme or package →</a>
         </p>
       </Section>
+
+      {/* Real Google reviews of the STUDIO (card mub833cd8fiu6l). See the nl page for the reasoning.
+          Reuses the shipped ReviewsPreview, already live on 6+ pages, rather
+          than building a second reviews surface: the quotes are real and
+          attributed (name + Google mark + Local Guide badge where true), and
+          the aggregate line reads siteConfig.rating, so the 5.0/19 stays in one
+          place — that single source is what stopped the 21-vs-19 overstatement
+          recurring. Studio reviews only; no per-trainer quotes here, because
+          trainers.ts testimonials render ONLY where a consented real quote
+          exists and none has been collected yet (blocked on mpy22kmsv5acpq). */}
+      <ReviewsPreview locale="en" />
 
       {/* FAQ */}
       <Section>
