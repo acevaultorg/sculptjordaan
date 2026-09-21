@@ -240,6 +240,12 @@ export default function PricingPageNL() {
               <p className="text-sm text-muted-foreground">
                 Eerste kennismaking altijd gratis. De prijs die je van je trainer hoort betaal je direct, zonder tussenpersoon.
               </p>
+              {/* 2026-09-22: the duo transformation was published on the finder page
+                  and nowhere else, not even here, on the page whose job is to say
+                  what things cost. Same offer, same wording, no new price. */}
+              <p className="text-sm text-muted-foreground">
+                Samen trainen? Duo-transformatie vanaf €199 p.p. per 4 weken (voor twee, €399 totaal).
+              </p>
             </CardContent>
             <CardFooter className="justify-center">
               <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg">

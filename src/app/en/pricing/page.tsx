@@ -240,6 +240,12 @@ export default function PricingPageEN() {
               <p className="text-sm text-muted-foreground">
                 First intro always free. The price your trainer quotes you pay directly, no middleman.
               </p>
+              {/* 2026-09-22: the duo transformation was published on the finder page
+                  and nowhere else, not even here, on the page whose job is to say
+                  what things cost. Same offer, same wording, no new price. */}
+              <p className="text-sm text-muted-foreground">
+                Training with a partner? Duo transformation from €199 p.p. per 4 weeks (for two, €399 total).
+              </p>
             </CardContent>
             <CardFooter className="justify-center">
               <ButtonLink href="/en/find-personal-trainer" size="lg">
