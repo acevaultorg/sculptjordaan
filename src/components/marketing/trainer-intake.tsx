@@ -138,6 +138,12 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     specializations: "Specialisaties",
     languages: "Talen",
     rate: "Tarief",
+    /* The hourly rate STAYS on this page on purpose (chief 2026-09-19 decision 2):
+       the finder hub sells the 4-week format, someone who wants a single hour can
+       still find the per-session price here. These two lines add the format next
+       to it so the page does not contradict the hub. */
+    transformation: "Of start een SCULPT TRANSFORMATION: vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Je trainer is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.",
+    transformationDuo: "Samen trainen? Duo-transformatie vanaf \u20ac399 / 4 weken voor twee.",
     availability: "Beschikbaarheid",
     testimonialsTitle: "Wat klanten zeggen",
     onRequest: "Op aanvraag",
@@ -169,6 +175,9 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     specializations: "Specializations",
     languages: "Languages",
     rate: "Rate",
+    /* See the nl block. */
+    transformation: "Or start a SCULPT TRANSFORMATION: from \u20ac299 per 4 weeks, unlimited Open Gym included. Your trainer is self-employed and agrees the exact price with you at the free intro.",
+    transformationDuo: "Training together? Duo transformation from \u20ac399 / 4 weeks for two.",
     availability: "Availability",
     testimonialsTitle: "What clients say",
     onRequest: "On request",
@@ -467,6 +476,11 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                       )}
                     </p>
                   </div>
+                </div>
+
+                <div className="rounded-xl border border-border bg-muted/40 p-4 text-sm">
+                  <p>{t.transformation}</p>
+                  <p className="mt-1 text-muted-foreground">{t.transformationDuo}</p>
                 </div>
 
                 {/* Availability — renders ONLY when operator supplied real data

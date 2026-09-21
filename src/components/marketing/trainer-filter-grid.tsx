@@ -67,7 +67,7 @@ const copy = {
     transformationCta: "Start transformatie · vanaf €299",
     tryFree: "Probeer gratis",
     ariaTransformation: (name: string) =>
-      `Start een SCULPT TRANSFORMATION van 4 weken met ${name} — vanaf €299, prijs afgesproken bij de gratis intake`,
+      `Start een SCULPT TRANSFORMATION van 4 weken met ${name}. Vanaf €299, prijs afgesproken bij de gratis intake`,
     viewProfile: "Bekijk profiel & beschikbaarheid",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
@@ -96,7 +96,7 @@ const copy = {
     transformationCta: "Start your transformation · from €299",
     tryFree: "Try for free",
     ariaTransformation: (name: string) =>
-      `Start a 4-week SCULPT TRANSFORMATION with ${name} — from €299, price agreed at the free intro`,
+      `Start a 4-week SCULPT TRANSFORMATION with ${name}. From €299, price agreed at the free intro`,
     viewProfile: "View profile & availability",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,

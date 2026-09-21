@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "Wat kost personal training bij SculptClub?",
-    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake \u2014 vooraf, zonder verrassingen. De eerste intake is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
+    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake, vooraf en zonder verrassingen. De eerste intake is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
   },
   {
     q: "Hoe werkt de gratis intake?",
@@ -171,7 +171,7 @@ export default function TrainersPageNL() {
           as="h1"
           overline="SCULPT TRANSFORMATION · Jordaan"
           title="Geen losse uren. Een transformatie in 4 weken."
-          description="Body transformaties vanaf €299 per 4 weken — inclusief onbeperkt Open Gym. Kies wat je wilt bereiken, ontmoet de trainer die daarin gespecialiseerd is, en spreek bij de gratis intake je plan en je prijs af."
+          description="Body transformaties vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Kies wat je wilt bereiken, ontmoet de trainer die daarin gespecialiseerd is, en spreek bij de gratis intake je plan en je prijs af."
         />
         <FadeIn>
           <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
@@ -246,6 +246,15 @@ export default function TrainersPageNL() {
             </ul>
           </div>
         </div>
+        {/* DUO (chief 2026-09-21, from the operator's question "299 for one
+            person 4 weeks, 399 for two persons?"). Deliberately ONE sentence
+            here and NOT a third button on the trainer cards: the studio holds
+            max 4, so a duo fits, but a third CTA on a mobile card costs more
+            conversion than the duo line wins. Price keeps "vanaf" for the same
+            reason as the solo line: each trainer sets their own. */}
+        <p className="mx-auto mt-4 max-w-4xl text-center text-sm text-muted-foreground">
+          Samen trainen? Duo-transformatie vanaf €399 / 4 weken voor twee.
+        </p>
       </Section>
 
       {/* Trainers with their own coaching brand — link out to their sites */}

@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "What does personal training cost at SculptClub?",
-    a: "A SCULPT TRANSFORMATION starts from \u20ac299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro \u2014 upfront, no surprises. The first intro is always free \u2014 no charge, no commitment after.",
+    a: "A SCULPT TRANSFORMATION starts from \u20ac299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro, upfront and with no surprises. The first intro is always free \u2014 no charge, no commitment after.",
   },
   {
     q: "How does the free intro work?",
@@ -171,7 +171,7 @@ export default function TrainersPageEN() {
           as="h1"
           overline="SCULPT TRANSFORMATION · Jordaan"
           title="Not hours. A transformation in 4 weeks."
-          description="Body transformations from €299 per 4 weeks — unlimited Open Gym included. Pick what you want to achieve, meet the trainer who specialises in it, and agree your plan and your price at a free intro."
+          description="Body transformations from €299 per 4 weeks, unlimited Open Gym included. Pick what you want to achieve, meet the trainer who specialises in it, and agree your plan and your price at a free intro."
         />
         <FadeIn>
           <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
@@ -246,6 +246,11 @@ export default function TrainersPageEN() {
             </ul>
           </div>
         </div>
+        {/* DUO — see the nl page for the reasoning. One sentence, never a third
+            button on the trainer cards. */}
+        <p className="mx-auto mt-4 max-w-4xl text-center text-sm text-muted-foreground">
+          Training together? Duo transformation from €399 / 4 weeks for two.
+        </p>
       </Section>
 
       {/* Trainers with their own coaching brand — link out to their sites */}
