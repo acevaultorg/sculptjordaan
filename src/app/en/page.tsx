@@ -68,7 +68,7 @@ export default function HomePageEN() {
           },
           {
             name: "Personal Training",
-            description: "1-on-1 training with a certified personal trainer who designs your session around your goals, level, and body. At SculptClub in the Jordaan from €45/session, first intro free, no contract, no membership. Trainers work as freelancers (ZZP): they rent the studio and keep 100% of their rate.",
+            description: "1-on-1 training with a certified personal trainer who designs your session around your goals, level, and body. At SculptClub in the Jordaan from €299 per 4 weeks with unlimited Open Gym included, first intro free, no contract, no membership. Trainers work as freelancers (ZZP): they rent the studio and keep 100% of their rate.",
             url: "/en/find-personal-trainer",
           },
           {

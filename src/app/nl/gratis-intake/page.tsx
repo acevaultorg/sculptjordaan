@@ -65,7 +65,7 @@ const steps = [
   {
     step: "5",
     title: "Train op jouw moment",
-    desc: "Klikt het? Dan plan je je eerste sessie. Per sessie, vanaf €45, geen contract. Stoppen kan altijd.",
+    desc: "Klikt het? Dan start je je traject. Vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Geen contract, stoppen kan altijd.",
   },
 ];
 
@@ -251,7 +251,7 @@ export default function GratisIntakePage() {
               "Privé studio: geen drukte, geen afleidingen",
               "Inzicht in jouw doelen en de beste aanpak",
               "Direct contact met je trainer, geen tussenpersoon",
-              "Trainers vanaf €45/sessie",
+              "Transformaties vanaf €299 per 4 weken",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

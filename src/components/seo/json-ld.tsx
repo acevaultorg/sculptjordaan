@@ -169,7 +169,7 @@ export function LocalBusinessJsonLd() {
                   itemOffered: { "@type": "Service", name: "Personal Training Session" },
                   price: 45,
                   priceCurrency: "EUR",
-                  description: "1-on-1 personal training, trainers set own rates from €45. Free intro session.",
+                  description: "1-on-1 personal training. Trainers set their own rates; transformations from €299 per 4 weeks, unlimited Open Gym included. Free intro session.",
                 },
               ],
             },

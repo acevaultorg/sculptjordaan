@@ -64,7 +64,7 @@ const steps = [
   {
     step: "5",
     title: "Train on your terms",
-    desc: "Clicks? Book your first session. Per session, from €45, no contract. Stop any time.",
+    desc: "Clicks? Then you start your programme. From €299 per 4 weeks, unlimited Open Gym included. No contract, stop any time.",
   },
 ];
 
@@ -232,7 +232,7 @@ export default function FreeIntroPage() {
               "Private studio: no crowds, no distractions",
               "Clarity on your goals and the best approach",
               "Direct contact with your trainer, no middleman",
-              "Trainers from €45/session",
+              "Transformations from €299 per 4 weeks",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />
