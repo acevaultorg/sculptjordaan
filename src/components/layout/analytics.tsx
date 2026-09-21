@@ -293,6 +293,31 @@ export function Analytics() {
               if (bookingType === 'generic') return 'unknown';
               return 'paid';
             }
+            // ── generate_lead: ONCE PER SESSION ────────────────────────────────
+            // 2026-09-22. Measured: the two "lead spikes" in GA4 were not leads.
+            // 2026-06-10 (68 events) was all desktop with 26 of them coming from
+            // tagassistant.google.com — someone debugging the tag. 2026-07-23 (36)
+            // had the same shape, two thirds of it on the trainer finder page,
+            // which carries a CTA per trainer card: one visitor clicking through
+            // the grid logged one lead per card. Those two days are 43% of the
+            // events of half a year, so any rate computed over a window holding
+            // them is wrong.
+            // A person who whatsapps three trainers is one lead, not three, so
+            // generate_lead now fires once per browser session.
+            // DELIBERATELY NOT de-duplicated: the Google Ads 'conversion' ping and
+            // Trainer_Intake_Lead_1. Those feed Ads bidding, and cutting the
+            // number they report would change what Smart Bidding pays per click —
+            // that is the operator's decision, not a measurement fix, and it is
+            // on a card for him.
+            function leadOnce() {
+              try {
+                if (window.sessionStorage.getItem('sc_lead_fired') === '1') return false;
+                window.sessionStorage.setItem('sc_lead_fired', '1');
+              } catch (e) {
+                // private mode or blocked storage: fire it rather than lose the lead
+              }
+              return true;
+            }
             function detectWaIntent(href) {
               // Direct trainer numbers → trainer intent, free intake assumed.
               // All 12 trainer WhatsApp numbers mapped (Tom 2026-07-01) so per-trainer
@@ -494,7 +519,7 @@ export function Analytics() {
                     value: 45,
                     currency: 'EUR'
                   });
-                  gtag('event', 'generate_lead', {
+                  if (leadOnce()) gtag('event', 'generate_lead', {
                     method: 'whatsapp',
                     intent: waSig.intent,
                     pricing: waSig.pricing,
@@ -553,7 +578,7 @@ export function Analytics() {
                     value: 45,
                     currency: 'EUR'
                   });
-                  gtag('event', 'generate_lead', {
+                  if (leadOnce()) gtag('event', 'generate_lead', {
                     method: 'phone',
                     value: 45,
                     currency: 'EUR',
@@ -593,7 +618,7 @@ export function Analytics() {
                     value: 30,
                     currency: 'EUR'
                   });
-                  gtag('event', 'generate_lead', {
+                  if (leadOnce()) gtag('event', 'generate_lead', {
                     method: 'email',
                     value: 30,
                     currency: 'EUR',
