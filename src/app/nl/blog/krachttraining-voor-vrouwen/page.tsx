@@ -136,7 +136,7 @@ export default function KrachttrainingVoorVrouwenNL() {
                 Stap 1: Kies een trainer op onze{" "}
                 <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">trainerspagina</a>.
                 Stap 2: Plan je gratis intake. Stap 3: Begin. De eerste kennismaking is
-                altijd gratis en vrijblijvend. Personal training begint vanaf €45 per sessie.
+                altijd gratis en vrijblijvend. Personal training begint vanaf €299 per 4 weken.
                 Geen abonnement, geen contract. Je <a href="/nl/faqs" className="text-brand hover:underline">annuleert
                 altijd gratis</a>.
               </p>

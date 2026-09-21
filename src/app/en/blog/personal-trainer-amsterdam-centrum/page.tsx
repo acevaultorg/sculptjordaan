@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam Centrum — SculptClub" },
   description:
-    "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, trainers from €45/session.",
+    "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, transformations from €299 per 4 weeks.",
   keywords: [
     "personal trainer amsterdam centrum",
     "personal training centrum amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-trainer-amsterdam-centrum",
     title: "Personal Trainer Amsterdam Centrum — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, trainers from €45/session.",
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, transformations from €299 per 4 weeks.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam Centrum — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, trainers from €45/session.",
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, transformations from €299 per 4 weeks.",
   },
 };
 
@@ -107,7 +107,7 @@ export default function PersonalTrainerCentrumEN() {
               <p>
                 SculptClub has seven independent trainers specialising in strength training, nutrition,
                 women’s training and posture. The first introduction is always free. Rates from
-                €45 per session. No membership, no contract — book per session and always cancel for
+                €299 per 4 weeks. No membership, no contract — book per session and always cancel for
                 free. You pay your trainer directly. For physiotherapy we’ll refer you out — we
                 don’t have a physiotherapist on staff.
               </p>

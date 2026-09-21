@@ -153,7 +153,7 @@ export default function PTAfterInjuryEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Pricing and how to start</h2>
               <p>
-                Personal training at SculptClub starts from €45 per session. The first intro
+                Personal training at SculptClub starts from €299 per 4 weeks. The first intro
                 session is always free. No membership, no contract. You book per session and
                 <a href="/en/faqs" className="text-brand hover:underline"> cancellation is always
                 free</a>.

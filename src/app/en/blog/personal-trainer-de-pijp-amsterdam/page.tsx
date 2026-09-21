@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer De Pijp Amsterdam — SculptClub" },
   description:
-    "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, trainers from €45.",
+    "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
   keywords: [
     "personal trainer de pijp",
     "personal trainer de pijp amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-trainer-de-pijp-amsterdam",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, trainers from €45.",
+      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, trainers from €45.",
+      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
   },
 };
 
@@ -93,7 +93,7 @@ export default function PersonalTrainerDePijpEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers and rates</h2>
               <p>
                 Seven independent trainers. Specialisations: strength, nutrition, women’s training,
-                posture, technique and small group. Rates from €45 per session. First intro always free.
+                posture, technique and small group. Rates from €299 per 4 weeks. First intro always free.
                 You pay your trainer directly. No membership, no contract. For
                 rehabilitation or physiotherapy we’ll refer you out — we don’t have a
                 physiotherapist on staff.

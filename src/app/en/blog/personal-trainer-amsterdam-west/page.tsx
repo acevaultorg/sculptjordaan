@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam West & Oud-West — SculptClub" },
   description:
-    "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €45/session.",
+    "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €299 per 4 weeks.",
   keywords: [
     "personal trainer amsterdam west",
     "personal trainer oud-west amsterdam",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-trainer-amsterdam-west",
     title: "Personal Trainer Amsterdam West & Oud-West — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €45/session.",
+      "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €299 per 4 weeks.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam West & Oud-West — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €45/session.",
+      "Looking for a personal trainer in Amsterdam West or Oud-West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €299 per 4 weeks.",
   },
 };
 
@@ -127,7 +127,7 @@ export default function PersonalTrainerAmsterdamWestEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Cost and flexibility</h2>
               <p>
-                Personal training at SculptClub starts from €45 per session. The first introduction
+                Personal training at SculptClub starts from €299 per 4 weeks. The first introduction
                 is always free. No membership, no contract — you book per session and always cancel
                 for free. You pay your trainer directly, so what you pay goes entirely to
                 your trainer.

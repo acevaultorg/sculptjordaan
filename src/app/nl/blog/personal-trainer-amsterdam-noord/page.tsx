@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "Wat kost personal training bij SculptClub?",
     answer:
-      "Trainers stellen hun eigen tarief in. Vanaf €45 per sessie. Er is geen abonnement, geen contract en de eerste intake is gratis. Je rekent direct met je trainer af.",
+      "Trainers stellen hun eigen tarief in. Een SCULPT TRANSFORMATION start vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Er is geen abonnement, geen contract en de eerste intake is gratis. Je rekent direct met je trainer af.",
   },
   {
     question: "En als ik liever zelf train zonder trainer?",
@@ -156,7 +156,7 @@ export default function PersonalTrainerAmsterdamNoordNL() {
                 Bij SculptClub werken zeven onafhankelijke trainers met verschillende specialisaties:
                 krachttraining, voeding, training voor vrouwen, houding en techniek. Voor fysiotherapie
                 verwijzen we je door — we hebben geen fysiotherapeut in dienst. Je kiest de trainer die
-                bij jouw doel past — niet andersom. Tarieven beginnen bij €45 per sessie en we houden
+                bij jouw doel past — niet andersom. Een SCULPT TRANSFORMATION start vanaf €299 per 4 weken en we houden
                 een <a href="/nl/blog/wat-kost-personal-training-amsterdam" className="text-brand hover:underline">eerlijk overzicht van wat personal training kost in Amsterdam</a>.
                 De eerste kennismaking is altijd gratis. Geen abonnement, geen lange contracten, geen
                 verborgen kosten. Annuleren is altijd gratis. De studio is dagelijks open van 06:00 tot

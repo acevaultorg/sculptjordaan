@@ -124,7 +124,7 @@ export default function PTForSeniorsEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Pricing and how to start</h2>
               <p>
-                Personal training at SculptClub starts from €45 per session. No membership,
+                Personal training at SculptClub starts from €299 per 4 weeks. No membership,
                 no contract. <a href="/en/faqs" className="text-brand hover:underline">Cancellation
                 is always free</a>. Most seniors train 1-2 times per week — enough for
                 noticeable results.

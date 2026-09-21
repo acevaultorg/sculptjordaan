@@ -126,8 +126,8 @@ export default function EnglishSpeakingPTAmsterdamEN() {
 
               <h3 className="text-xl font-bold mt-8 mb-3">"Is pricing in EUR, and does it include VAT?"</h3>
               <p>
-                Yes. Rates are in EUR, inclusive of VAT. Personal training starts from €45 per
-                session — trainers set their own rates. See our{" "}
+                Yes. Rates are in EUR, inclusive of VAT. Personal training starts from €299 per 4 weeks
+                — trainers set their own rates. See our{" "}
                 <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of personal training costs in Amsterdam</a>{" "}
                 for a full comparison with chain-gym and freelance-gym pricing.
               </p>

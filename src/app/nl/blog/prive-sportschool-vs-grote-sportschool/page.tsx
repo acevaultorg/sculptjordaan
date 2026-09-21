@@ -144,7 +144,7 @@ export default function BlogPostPriveVsGrNL() {
                 Hier zit het grootste verschil. Een grote sportschool is goedkoper, soms al vanaf €20 per maand. Een
                 privé studio kost meer, maar je krijgt er ook meer voor terug: exclusieve toegang, persoonlijke
                 aandacht, betere hygiëne en geen wachttijden. Bij SculptClub kun je Open Gym sessies boeken of
-                kiezen voor personal training vanaf €45 per sessie. Het is een investering in kwaliteit boven
+                kiezen voor personal training vanaf €299 per 4 weken. Het is een investering in kwaliteit boven
                 kwantiteit.
               </p>
 

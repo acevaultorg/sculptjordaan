@@ -263,7 +263,7 @@ export default function LichaamssamenstllingVerbeterenAmsterdam() {
                 .
               </p>
               <p>
-                Personal training begint vanaf €45 per sessie. Geen abonnement, geen contract.
+                Personal training begint vanaf €299 per 4 weken. Geen abonnement, geen contract.
                 Je eerste intake is gratis en vrijblijvend — dan bespreken we je doelen en maken
                 we een plan.
               </p>

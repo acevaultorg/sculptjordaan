@@ -221,7 +221,7 @@ export default function PersonalTrainerRugklachtenAmsterdam() {
               <p>
                 De eerste stap is een gratis intake. Geen verplichtingen, geen kosten.
                 Je bespreekt je klachten, je doelen en je verwachtingen. Daarna besluit
-                je of je wilt beginnen. Personal training begint vanaf €45 per sessie.
+                je of je wilt beginnen. Personal training begint vanaf €299 per 4 weken.
                 Annuleren is altijd gratis — geen restricties.
               </p>
               <p>

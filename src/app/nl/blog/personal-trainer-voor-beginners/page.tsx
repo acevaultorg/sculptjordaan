@@ -121,7 +121,7 @@ export default function PTVoorBeginnersNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en hoe je begint</h2>
               <p>
-                Personal training bij SculptClub <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">begint vanaf €45 per sessie</Link>. De <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">eerste kennismaking
+                Personal training bij SculptClub <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">begint vanaf €299 per 4 weken</Link>. De <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">eerste kennismaking
                 is altijd gratis</Link> — je bespreekt je doelen, je trainer bekijkt je niveau en je maakt
                 samen een plan. Geen abonnement, geen contract. Je boekt per sessie en annuleert
                 altijd gratis.

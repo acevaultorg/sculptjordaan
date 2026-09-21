@@ -136,7 +136,7 @@ export default function StrengthTrainingForWomenEN() {
                 Step 1: Choose a trainer on our{" "}
                 <a href="/en/find-personal-trainer" className="text-brand hover:underline">trainers page</a>.
                 Step 2: Book your free intro session. Step 3: Start. The first session is
-                always free and no-obligation. Personal training starts from €45 per session.
+                always free and no-obligation. Personal training starts from €299 per 4 weeks.
                 No membership, no contract. <a href="/en/faqs" className="text-brand hover:underline">Cancellation
                 is always free</a>.
               </p>

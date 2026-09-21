@@ -99,7 +99,7 @@ export default function PTAmsterdamSouthEN() {
                 At SculptClub, trainers set their own specialisation and rates. You’ll find
                 the full profile of each trainer on our{" "}
                 <a href="/en/find-personal-trainer" className="text-brand hover:underline">trainers page</a>.
-                Personal training starts from €45 per session.
+                Personal training starts from €299 per 4 weeks.
               </p>
               <p>
                 <a href="/en/blog/nutrition-coach-amsterdam" className="text-brand hover:underline">Eva</a> combines

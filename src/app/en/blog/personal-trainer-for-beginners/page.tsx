@@ -120,7 +120,7 @@ export default function PTForBeginnersEN() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Cost and how to start</h2>
               <p>
-                Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €45 per session</Link>. The <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first introduction
+                Personal training at SculptClub <Link href="/en/pricing" className="text-brand underline-offset-2 hover:underline">starts from €299 per 4 weeks</Link>. The <Link href="/en/free-intro" className="text-brand underline-offset-2 hover:underline">first introduction
                 is always free</Link> — discuss your goals, your trainer assesses your level and you make
                 a plan together. No membership, no contract. Book per session, always cancel for free.
               </p>

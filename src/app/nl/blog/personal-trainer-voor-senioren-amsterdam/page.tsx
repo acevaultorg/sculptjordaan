@@ -124,7 +124,7 @@ export default function PTVoorSeniorenNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en hoe je begint</h2>
               <p>
-                Personal training bij SculptClub begint vanaf €45 per sessie. Geen
+                Personal training bij SculptClub begint vanaf €299 per 4 weken. Geen
                 abonnement, geen contract. Je <a href="/nl/faqs" className="text-brand hover:underline">annuleert
                 altijd gratis</a>. De meeste senioren trainen 1-2 keer per week — genoeg
                 voor merkbaar resultaat.

@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer De Pijp Amsterdam — SculptClub" },
   description:
-    "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, trainers vanaf €45.",
+    "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
   keywords: [
     "personal trainer de pijp",
     "personal trainer de pijp amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/personal-trainer-de-pijp-amsterdam",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, trainers vanaf €45.",
+      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, trainers vanaf €45.",
+      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
   },
 };
 
@@ -93,7 +93,7 @@ export default function PersonalTrainerDePijpNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers en tarieven</h2>
               <p>
                 Zeven onafhankelijke trainers. Specialisaties: kracht, voeding, training voor vrouwen,
-                houding, techniek en small group. Tarieven vanaf €45 per sessie. Eerste intake altijd
+                houding, techniek en small group. Tarieven vanaf €299 per 4 weken. Eerste intake altijd
                 gratis. Je betaalt je trainer direct. Geen abonnement, geen contract.
                 Voor revalidatie of fysiotherapie verwijzen we je door — wij hebben geen fysiotherapeut
                 in dienst.
