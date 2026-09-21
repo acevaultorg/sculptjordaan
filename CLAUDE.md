@@ -15,7 +15,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - **Studio rental capacity (operator 2026-07-13):** Half studio = **max 2** (1:1 / a duo); the *other* half can be used at the same time by another trainer OR by Open Gym — so up to 4 people share the room (two couples of 2, or one couple + 2 Open Gym, or 4 Open Gym). Full studio = **fully private, NO fixed maximum** (your own small group). **NEVER say the full studio holds "6"** — that figure was wrong and was corrected fleet-wide on 2026-07-13. Full-studio labels use "kleine groep / small group", never a hard number.
 
 ## Pricing (ALWAYS use these exact numbers)
-- **Personal Training:** from €45/session (trainers are self-employed — they set their own rates and
+- **Personal Training:** SCULPT TRANSFORMATION from €299 per 4 weeks, unlimited Open Gym included (operator directive 2026-09-19: "we dont name hourly rate, we say from 299 / 4 weeks" — shipped site-wide 2026-09-21/22). Trainers are self-employed — they set their own rates and
   the client pays them directly; first intake free). ⚠️ Do NOT write "0% commissie"/"0% commission":
   trainers rent the room and bring their own clients, so there was never a commission to waive.
   Operator's words: "weird bull shit". Safe published phrasing: "je houdt 100% van je tarief".
@@ -101,7 +101,12 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 - Do NOT build new features there
 
 ## Common Mistakes to Avoid
-- Never use "€49" or "€60" for PT starting price — it's **€45**
+- Never quote an hourly PT rate on a page. The offer is **€299 per 4 weeks, incl. onbeperkt Open Gym**.
+  A per-session figure is allowed only as the derived explanation of that package (€299 / 4 is about €75 a
+  session at one session a week), never as a rate you can book. Two places keep €45 on purpose: the two Ads
+  landing pages until the live ad text is changed, and anything about a TRAINER's own economics (income
+  calculations, market bands, Andrea's own bio rate) plus the analytics comment about the €45 VALUE of an
+  Ads conversion, which is not a price.
 - Never mention cancellation time limits — cancellation is **always free**
 - Never say door code comes by email — it comes **via WhatsApp the night before**
 - Never list iDEAL as a standalone payment method

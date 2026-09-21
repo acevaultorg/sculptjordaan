@@ -166,8 +166,12 @@ export function LocalBusinessJsonLd() {
               itemListElement: [
                 {
                   "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Personal Training Session" },
-                  price: 45,
+                  // 2026-09-22: the Offer named a session at 45 while every page
+                  // now sells the 4-week transformation. A price in schema is
+                  // read by Google and by the AI answers even when no page shows
+                  // it, so it has to say the same thing the pages say.
+                  itemOffered: { "@type": "Service", name: "SCULPT TRANSFORMATION (4 weeks)" },
+                  price: 299,
                   priceCurrency: "EUR",
                   description: "1-on-1 personal training. Trainers set their own rates; transformations from €299 per 4 weeks, unlimited Open Gym included. Free intro session.",
                 },
