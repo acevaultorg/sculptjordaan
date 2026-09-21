@@ -18,7 +18,7 @@
  *    `generate_lead`: those feed Google Ads at EUR 45 per event.
  */
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, Loader2, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -154,6 +154,17 @@ export function FeedbackForm({
   const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState(""); // honeypot
 
+  // After sending, the long form collapses into a short card while the page is still
+  // scrolled to where the submit button was, so the visitor lands on the footer and
+  // never sees the thank-you or the review link (measured live 2026-09-21). Bring it
+  // into view and move focus to it for screen readers.
+  const thanksRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (state !== "success" || !thanksRef.current) return;
+    thanksRef.current.scrollIntoView({ block: "center" });
+    thanksRef.current.focus({ preventScroll: true });
+  }, [state]);
+
   const toggle = (arr: string[], set: (v: string[]) => void, id: string) =>
     set(arr.includes(id) ? arr.filter((x) => x !== id) : [...arr, id]);
 
@@ -203,7 +214,7 @@ export function FeedbackForm({
 
   if (state === "success") {
     return (
-      <div className="rounded-2xl border border-border bg-card p-6 text-center" role="status">
+      <div ref={thanksRef} tabIndex={-1} className="scroll-mt-40 rounded-2xl border border-border bg-card p-6 text-center outline-none" role="status">
         <CheckCircle2 className="mx-auto mb-3 h-10 w-10 text-brand" aria-hidden="true" />
         <h2 className="mb-2 text-xl font-bold">{t.thanksTitle}</h2>
         <p className="mb-5 text-muted-foreground">{t.thanksBody}</p>
