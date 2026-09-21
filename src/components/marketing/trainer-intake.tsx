@@ -143,7 +143,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
        still find the per-session price here. These two lines add the format next
        to it so the page does not contradict the hub. */
     transformation: "Of start een SCULPT TRANSFORMATION: vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Je trainer is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.",
-    transformationDuo: "Samen trainen? Duo-transformatie vanaf \u20ac399 / 4 weken voor twee.",
+    transformationDuo: "Samen trainen? Duo-transformatie vanaf \u20ac199 p.p. per 4 weken (voor twee, \u20ac399 totaal).",
     availability: "Beschikbaarheid",
     testimonialsTitle: "Wat klanten zeggen",
     onRequest: "Op aanvraag",
@@ -177,7 +177,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     rate: "Rate",
     /* See the nl block. */
     transformation: "Or start a SCULPT TRANSFORMATION: from \u20ac299 per 4 weeks, unlimited Open Gym included. Your trainer is self-employed and agrees the exact price with you at the free intro.",
-    transformationDuo: "Training together? Duo transformation from \u20ac399 / 4 weeks for two.",
+    transformationDuo: "Training with a partner? Duo transformation from \u20ac199 p.p. per 4 weeks (for two, \u20ac399 total).",
     availability: "Availability",
     testimonialsTitle: "What clients say",
     onRequest: "On request",

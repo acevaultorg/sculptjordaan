@@ -53,8 +53,8 @@ export const ptGoals: PtGoal[] = [
     short: { nl: "Afvallen", en: "Lose fat" },
     title: { nl: "Afvallen & strakker worden", en: "Lose fat & get leaner" },
     promise: {
-      nl: "Minder vet, meer spier — en gewoontes die je volhoudt.",
-      en: "Less fat, more muscle — and habits you can keep.",
+      nl: "Minder vet, meer spier en gewoontes die je volhoudt.",
+      en: "Less fat, more muscle and habits you can keep.",
     },
     focus: {
       nl: ["Krachttraining die je stofwisseling helpt", "Haalbare voeding die bij je week past", "Gewoontes buiten de studio"],
@@ -76,7 +76,7 @@ export const ptGoals: PtGoal[] = [
     id: "sterker",
     icon: "dumbbell",
     short: { nl: "Sterker worden", en: "Get stronger" },
-    title: { nl: "Sterker worden — ook als beginner", en: "Get stronger — beginners welcome" },
+    title: { nl: "Sterker worden, ook als beginner", en: "Get stronger, beginners welcome" },
     promise: {
       nl: "Van twijfelen bij de dumbbells naar zelfverzekerd zwaar tillen.",
       en: "From unsure at the rack to lifting heavy with confidence.",
@@ -102,8 +102,8 @@ export const ptGoals: PtGoal[] = [
     short: { nl: "Pijnvrij bewegen", en: "Pain-free movement" },
     title: { nl: "Pijnvrij bewegen & herstel", en: "Move pain-free & recover" },
     promise: {
-      nl: "Weer zonder zorgen bewegen — met een lichaam dat sterker is dan voorheen.",
-      en: "Move without worry again — in a body that is stronger than before.",
+      nl: "Weer zonder zorgen bewegen, met een lichaam dat sterker is dan voorheen.",
+      en: "Move without worry again, in a body that is stronger than before.",
     },
     focus: {
       nl: ["Houding en mobiliteit", "Rustig opbouwen na een blessure", "Kracht rond de zwakke plek"],
@@ -150,8 +150,8 @@ export const ptGoals: PtGoal[] = [
     short: { nl: "Calisthenics", en: "Calisthenics" },
     title: { nl: "Calisthenics skills", en: "Calisthenics skills" },
     promise: {
-      nl: "Je eerste handstand, muscle-up of pull-up — met een helder stappenplan.",
-      en: "Your first handstand, muscle-up or pull-up — with a clear step-by-step plan.",
+      nl: "Je eerste handstand, muscle-up of pull-up, met een helder stappenplan.",
+      en: "Your first handstand, muscle-up or pull-up, with a clear step-by-step plan.",
     },
     focus: {
       nl: ["Progressies per skill", "Sterke fundamenten: schouders, core, grip", "Mobiliteit voor de moeilijke posities"],

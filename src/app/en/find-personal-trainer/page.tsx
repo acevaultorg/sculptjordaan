@@ -22,7 +22,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub" },
-  description: `Looking for a personal trainer in Amsterdam? Pick your goal — lose fat, get stronger, move pain-free — and get a programme plan with a fixed price upfront at a free intro. ${trainers.length} trainers, private studio in the Jordaan.`,
+  description: `Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. At a free intro you get a programme plan with a fixed price upfront. ${trainers.length} trainers, private studio in the Jordaan.`,
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     type: "website",
     url: "/en/find-personal-trainer",
     title: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub",
-    description: `Looking for a personal trainer in Amsterdam? Pick your goal — lose fat, get stronger, move pain-free — and get a programme plan with a fixed price upfront at a free intro. ${trainers.length} trainers, private studio in the Jordaan.`,
+    description: `Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. At a free intro you get a programme plan with a fixed price upfront. ${trainers.length} trainers, private studio in the Jordaan.`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub",
-    description: `Looking for a personal trainer in Amsterdam? Pick your goal — lose fat, get stronger, move pain-free — and get a programme plan with a fixed price upfront at a free intro. ${trainers.length} trainers, private studio in the Jordaan.`,
+    description: `Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. At a free intro you get a programme plan with a fixed price upfront. ${trainers.length} trainers, private studio in the Jordaan.`,
   },
 };
 
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "What does personal training cost at SculptClub?",
-    a: "A SCULPT TRANSFORMATION starts from \u20ac299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro, upfront and with no surprises. The first intro is always free \u2014 no charge, no commitment after.",
+    a: "A SCULPT TRANSFORMATION starts from \u20ac299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro, upfront and with no surprises. The first intro is always free: no charge, no commitment after.",
   },
   {
     q: "How does the free intro work?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "What if I don't click with the trainer?",
-    a: "No problem. You can always switch — no contracts, no fees, no awkward conversations. Try another trainer or let us match you via the form below.",
+    a: "No problem. You can always switch: no contracts, no fees, no awkward conversations. Try another trainer or let us match you via the form below.",
   },
   {
     q: "How long is a session?",
@@ -85,16 +85,16 @@ const faqs = [
     a: "Yes. Many trainers offer duo sessions or small-group training (2–4 people) at adjusted per-person rates. Cheaper and more fun if you want to train together.",
   },
   {
-    q: "I don't speak Dutch — is that okay?",
+    q: "I don't speak Dutch, is that okay?",
     a: "All trainers coach fluently in English. Several also speak Portuguese or Russian. Use the language filter in the grid to see who speaks your language.",
   },
   {
     q: "What if I have an injury or limitation?",
-    a: "Mention it in your first message to the trainer. Some trainers (Andrea — posture & technique, Sergei — recovery & posture correction) are explicitly specialized here. Every trainer adapts the session to what is safe for you.",
+    a: "Mention it in your first message to the trainer. Some trainers (Andrea: posture & technique; Sergei: recovery & posture correction) are explicitly specialized here. Every trainer adapts the session to what is safe for you.",
   },
   {
     q: "How do I book my sessions?",
-    a: "After the free intro you arrange directly with your trainer — set times or one-off sessions. Payments go via your trainer (CreditCard, Apple Pay, or invoice). No membership, no long contracts.",
+    a: "After the free intro you arrange directly with your trainer: set times or one-off sessions. Payments go via your trainer (CreditCard, Apple Pay, or invoice). No membership, no long contracts.",
   },
   {
     q: "Can I cancel or reschedule?",
@@ -102,7 +102,7 @@ const faqs = [
   },
   {
     q: "Where is the studio?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area. The evening before your session you receive the exact address and directions via WhatsApp.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam, in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area. The evening before your session you receive the exact address and directions via WhatsApp.",
   },
 ];
 
@@ -110,7 +110,7 @@ const faqs = [
 // Goal-first PT hub (operator 2026-09-11: sell transformations, not hours).
 const trajectSteps = [
   { title: "Free intro", desc: "By phone or in the studio. You share where you are and where you want to go; together you set your starting point." },
-  { title: "Your programme plan", desc: "Goal, duration, how often you train, what you track and the total price — agreed upfront. No surprises." },
+  { title: "Your programme plan", desc: "Goal, duration, how often you train, what you track and the total price, agreed upfront. No surprises." },
   { title: "Train in the private studio", desc: "Just you, your trainer and the whole studio. Your trainer adjusts based on how you progress." },
   { title: "Check-in & next step", desc: "You see what has changed. Then you choose: a next programme, continue on your own with Open Gym, or stop." },
 ];
@@ -249,7 +249,7 @@ export default function TrainersPageEN() {
         {/* DUO — see the nl page for the reasoning. One sentence, never a third
             button on the trainer cards. */}
         <p className="mx-auto mt-4 max-w-4xl text-center text-sm text-muted-foreground">
-          Training together? Duo transformation from €399 / 4 weeks for two.
+          Training with a partner? Duo transformation from €199 p.p. per 4 weeks (for two, €399 total).
         </p>
       </Section>
 
@@ -305,12 +305,12 @@ export default function TrainersPageEN() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a href="/en/blog/female-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Female personal trainer</p>
-              <p className="text-sm text-muted-foreground">Gezina, Eva or Andrea — three female trainers, private studio, comfortable learning environment.</p>
+              <p className="text-sm text-muted-foreground">Gezina, Eva or Andrea: three female trainers, private studio, comfortable learning environment.</p>
             </a>
             {/* De-orphaned 2026-08-28 — zero inbound internal links before this. */}
             <a href="/en/personal-trainer-amsterdam-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Personal trainer in Jordaan</p>
-              <p className="text-sm text-muted-foreground">Egelantiersgracht 424 — private studio in the Jordaan and Centrum, no chain, no queue.</p>
+              <p className="text-sm text-muted-foreground">Egelantiersgracht 424: private studio in the Jordaan and Centrum, no chain, no queue.</p>
             </a>
             <a href="/en/blog/english-speaking-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">English-speaking trainer</p>
@@ -322,7 +322,7 @@ export default function TrainersPageEN() {
             </a>
             <a href="/en/blog/postpartum-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">After birth (postpartum)</p>
-              <p className="text-sm text-muted-foreground">Gradual return to strength. Diastasis, pelvic floor, relaxin — with experience.</p>
+              <p className="text-sm text-muted-foreground">Gradual return to strength. Diastasis, pelvic floor, relaxin, with experience.</p>
             </a>
             <a href="/en/blog/small-group-training-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Small group (2–4 people)</p>
@@ -358,7 +358,7 @@ export default function TrainersPageEN() {
         <SectionHeader
           overline="For trainers"
           title="Personal trainer? Sell programmes, not hours."
-          description="Rent the studio from €12/hour, keep 100% of your rate, and get clients who arrive with a goal — this page sends them to you."
+          description="Rent the studio from €12/hour, keep 100% of your rate, and get clients who arrive with a goal. This page sends them to you."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -422,7 +422,7 @@ export default function TrainersPageEN() {
         <SectionHeader
           overline="Ready to start?"
           title="Choose your goal, book your free intro"
-          description="No contract, no commitment. Your trainer makes a plan with a fixed price upfront — then you decide."
+          description="No contract, no commitment. Your trainer makes a plan with a fixed price upfront. Then you decide."
         />
         <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <ButtonLink

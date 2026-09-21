@@ -22,7 +22,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub" },
-  description: `Personal trainer in Amsterdam? Kies je doel — afvallen, sterker worden, pijnvrij bewegen — en krijg bij een gratis intake een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
+  description: `Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Bij een gratis intake krijg je een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
   alternates: {
     canonical: "/nl/vind-jouw-personal-trainer",
     languages: {
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     type: "website",
     url: "/nl/vind-jouw-personal-trainer",
     title: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub",
-    description: `Personal trainer in Amsterdam? Kies je doel — afvallen, sterker worden, pijnvrij bewegen — en krijg bij een gratis intake een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
+    description: `Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Bij een gratis intake krijg je een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub",
-    description: `Personal trainer in Amsterdam? Kies je doel — afvallen, sterker worden, pijnvrij bewegen — en krijg bij een gratis intake een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
+    description: `Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Bij een gratis intake krijg je een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
   },
 };
 
@@ -66,15 +66,15 @@ const faqs = [
   },
   {
     q: "Wat kost personal training bij SculptClub?",
-    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake, vooraf en zonder verrassingen. De eerste intake is altijd gratis \u2014 geen kosten, geen verplichting daarna.",
+    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake, vooraf en zonder verrassingen. De eerste intake is altijd gratis: geen kosten, geen verplichting daarna.",
   },
   {
     q: "Hoe werkt de gratis intake?",
-    a: "Je stuurt je gekozen trainer een WhatsApp via zijn/haar profielpagina. Jullie spreken af op een moment dat past, je komt naar de studio in de Jordaan, en je doet samen een vrijblijvende kennismakingstraining — de duur stem je samen af. Daarna beslis je zelf of je verder wilt.",
+    a: "Je stuurt je gekozen trainer een WhatsApp via zijn/haar profielpagina. Jullie spreken af op een moment dat past, je komt naar de studio in de Jordaan, en je doet samen een vrijblijvende kennismakingstraining, de duur stem je samen af. Daarna beslis je zelf of je verder wilt.",
   },
   {
     q: "Wat als het niet klikt met de trainer?",
-    a: "Geen probleem. Je kunt altijd switchen \u2014 geen contracten, geen kosten, geen ongemakkelijke gesprekken. Probeer een andere trainer of laat ons matchen via het formulier verderop.",
+    a: "Geen probleem. Je kunt altijd switchen: geen contracten, geen kosten, geen ongemakkelijke gesprekken. Probeer een andere trainer of laat ons matchen via het formulier verderop.",
   },
   {
     q: "Hoe lang duurt een sessie?",
@@ -85,12 +85,12 @@ const faqs = [
     a: "Ja. Veel trainers bieden duo-sessies of small-group training aan (2\u20134 personen) tegen een aangepast tarief per persoon. Goedkoper \u00e9n leuker als je samen wilt trainen.",
   },
   {
-    q: "Ik spreek geen Nederlands \u2014 kan dat?",
+    q: "Ik spreek geen Nederlands, kan dat?",
     a: "Alle trainers coachen vloeiend in het Engels. Een aantal trainers spreekt ook Portugees of Russisch. Gebruik het taalfilter in de grid om te zien wie jouw taal spreekt.",
   },
   {
     q: "Wat als ik een blessure of beperking heb?",
-    a: "Vermeld het in je eerste bericht aan de trainer. Sommige trainers (Andrea \u2014 houding & techniek, Sergei \u2014 herstel & houdingscorrectie) zijn hier expliciet in gespecialiseerd. Iedere trainer past de sessie aan op wat veilig is voor jou.",
+    a: "Vermeld het in je eerste bericht aan de trainer. Sommige trainers (Andrea: houding & techniek; Sergei: herstel & houdingscorrectie) zijn hier expliciet in gespecialiseerd. Iedere trainer past de sessie aan op wat veilig is voor jou.",
   },
   {
     q: "Hoe boek ik mijn sessies?",
@@ -102,7 +102,7 @@ const faqs = [
   },
   {
     q: "Waar is de studio?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam \u2014 middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk. De avond voor je sessie krijg je via WhatsApp het exacte adres en routebeschrijving.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam, middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk. De avond voor je sessie krijg je via WhatsApp het exacte adres en routebeschrijving.",
   },
 ];
 
@@ -110,7 +110,7 @@ const faqs = [
 // Goal-first PT hub (operator 2026-09-11: sell transformations, not hours).
 const trajectSteps = [
   { title: "Gratis intake", desc: "Telefonisch of in de studio. Je vertelt waar je nu staat en waar je naartoe wilt; samen leggen jullie je startpunt vast." },
-  { title: "Jouw traject-plan", desc: "Doel, duur, hoe vaak je traint, wat je meet en de totaalprijs — vooraf afgesproken. Geen verrassingen." },
+  { title: "Jouw traject-plan", desc: "Doel, duur, hoe vaak je traint, wat je meet en de totaalprijs, vooraf afgesproken. Geen verrassingen." },
   { title: "Trainen in de privé studio", desc: "Alleen jij, je trainer en de hele studio. Je trainer stuurt bij op basis van hoe je vooruitgaat." },
   { title: "Meetmoment & volgende stap", desc: "Je ziet wat er veranderd is. Daarna kies je: een volgend traject, zelfstandig verder in Open Gym, of stoppen." },
 ];
@@ -253,7 +253,7 @@ export default function TrainersPageNL() {
             conversion than the duo line wins. Price keeps "vanaf" for the same
             reason as the solo line: each trainer sets their own. */}
         <p className="mx-auto mt-4 max-w-4xl text-center text-sm text-muted-foreground">
-          Samen trainen? Duo-transformatie vanaf €399 / 4 weken voor twee.
+          Samen trainen? Duo-transformatie vanaf €199 p.p. per 4 weken (voor twee, €399 totaal).
         </p>
       </Section>
 
@@ -309,12 +309,12 @@ export default function TrainersPageNL() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a href="/nl/blog/vrouwelijke-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Vrouwelijke personal trainer</p>
-              <p className="text-sm text-muted-foreground">Gezina, Eva of Andrea — drie vrouwelijke trainers, privé studio, comfortabel leren krachttrainen.</p>
+              <p className="text-sm text-muted-foreground">Gezina, Eva of Andrea: drie vrouwelijke trainers, privé studio, comfortabel leren krachttrainen.</p>
             </a>
             {/* De-orphaned 2026-08-28 — zero inbound internal links before this. */}
             <a href="/nl/personal-trainer-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Personal trainer in de Jordaan</p>
-              <p className="text-sm text-muted-foreground">Egelantiersgracht 424 — privé studio in de Jordaan en het Centrum, geen keten, geen wachtrij.</p>
+              <p className="text-sm text-muted-foreground">Egelantiersgracht 424: privé studio in de Jordaan en het Centrum, geen keten, geen wachtrij.</p>
             </a>
             <a href="/nl/blog/engels-sprekende-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Engels-sprekende trainer</p>
@@ -326,7 +326,7 @@ export default function TrainersPageNL() {
             </a>
             <a href="/nl/blog/personal-trainer-na-bevalling-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Na de bevalling (postpartum)</p>
-              <p className="text-sm text-muted-foreground">Geleidelijk terug naar kracht. Diastase, bekkenbodem, relaxine — met ervaring.</p>
+              <p className="text-sm text-muted-foreground">Geleidelijk terug naar kracht. Diastase, bekkenbodem, relaxine, met ervaring.</p>
             </a>
             <a href="/nl/blog/small-group-training-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
               <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Samen trainen (2–4 personen)</p>
@@ -365,7 +365,7 @@ export default function TrainersPageNL() {
         <SectionHeader
           overline="Voor trainers"
           title="Personal trainer? Verkoop trajecten, geen uren."
-          description="Huur de studio vanaf €12/uur, houd 100% van je tarief en krijg klanten die met een doel binnenkomen — deze pagina stuurt ze naar jou."
+          description="Huur de studio vanaf €12/uur, houd 100% van je tarief en krijg klanten die met een doel binnenkomen. Deze pagina stuurt ze naar jou."
         />
 
         <div className="grid gap-8 sm:grid-cols-3">
@@ -429,7 +429,7 @@ export default function TrainersPageNL() {
         <SectionHeader
           overline="Klaar om te beginnen?"
           title="Kies je doel, plan je gratis intake"
-          description="Geen contract, geen verplichting. Je trainer maakt een plan met een vaste prijs vooraf — jij beslist daarna."
+          description="Geen contract, geen verplichting. Je trainer maakt een plan met een vaste prijs vooraf. Jij beslist daarna."
         />
         <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <ButtonLink
