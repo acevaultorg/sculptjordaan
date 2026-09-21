@@ -8,7 +8,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "Welcome to SculptClub — Private Studio Amsterdam Jordaan" },
   description:
-    "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
+    "Private personal training studio in the Jordaan. Personal training from \u20ac299 per 4 weeks, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/en/start",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/en/start",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
+      "Private personal training studio in the Jordaan. Personal training from \u20ac299 per 4 weeks, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private personal training studio in the Jordaan. Personal training from \u20ac45, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
+      "Private personal training studio in the Jordaan. Personal training from \u20ac299 per 4 weeks, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
   },
 };
 
@@ -44,7 +44,7 @@ const paths = [
   {
     icon: "Users" as const,
     title: "I want a personal trainer",
-    description: "Get matched with a trainer who fits your goals. First intro is 100% free. From \u20ac45/session after.",
+    description: "Get matched with a trainer who fits your goals. First intro is 100% free. After that a programme from \u20ac299 per 4 weeks.",
     cta: "Book free intro",
     href: withUtm("/en/free-intro", "pt"),
     external: false,
