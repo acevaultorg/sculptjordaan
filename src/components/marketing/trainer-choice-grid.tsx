@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { trainers } from "@/config/trainers";
+import { transformationFrom } from "@/config/transformation";
 
 /**
  * TrainerChoiceGrid — all-trainers grid for the conversion-landing pages
@@ -161,7 +162,14 @@ export function TrainerChoiceGrid({ locale }: { locale: Locale }) {
                   full-card-width row, so neither wraps. */}
               <div className="mt-auto flex flex-col gap-1.5 pt-2">
                 <span className="text-xs font-semibold text-foreground sm:text-sm">
-                  {trainer.rate ?? `${c.intakeFree} · ${c.rateOnRequest}`}
+                  {/* Transformation line, never the hourly rate (operator
+                      2026-09-19: "we dont name hourly rate, we say 'from 299/
+                      4 weeks'"). Measured 2026-09-21: /nl/gratis-intake still
+                      printed €45, €69, €72, €80 and €100 here while "€299"
+                      appeared zero times on the page. The SHORT variant only —
+                      these cards are ~175px wide at 375px. trainer.rate stays
+                      in trainers.ts; only the display changed. */}
+                  {transformationFrom[locale]}
                 </span>
                 {/* Full-width CTA chip — visual affordance that card is tappable.
                     Arrow nudges right on hover (mouse) + stays visible at rest

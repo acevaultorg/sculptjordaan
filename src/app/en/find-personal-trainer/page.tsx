@@ -157,7 +157,12 @@ export default function TrainersPageEN() {
                 knowsLanguage: trainer.languages.map((l) =>
                   l === "NL" ? "Dutch" : l === "EN" ? "English" : l === "PT" ? "Portuguese" : l
                 ),
-                ...(trainer.rate ? { makesOffer: { "@type": "Offer", price: trainer.rate } } : {}),
+                /* No makesOffer here (operator 2026-09-19 + measured 2026-09-21):
+                   the visible page stopped naming hourly rates on 2026-09-19, but
+                   this JSON-LD still told Google and the AI engines "€45 / 45 min".
+                   Structured data outlives the copy, so it is removed rather than
+                   replaced — SculptClub does not set trainer prices, and the
+                   4-week price is agreed at the free intake. */
               },
             })),
           }),

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { trainers } from "@/config/trainers";
+import { transformationFrom } from "@/config/transformation";
 import { whatsappLinks } from "@/config/acuity";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 
@@ -169,9 +170,22 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
               </div>
             </Link>
 
-              <div className="mt-auto flex items-center justify-between gap-2 p-3 pt-0 sm:p-4 sm:pt-0">
-                  <span className="text-xs font-medium text-muted-foreground sm:text-sm">
-                    {trainer.rate ?? c.onRequest}
+              {/* Stacked on mobile, side-by-side from sm (2026-09-21). The old
+                  row was `flex items-center justify-between`: with the short
+                  "Op aanvraag" that fitted, but the transformation line next to
+                  a whitespace-nowrap CTA chip got squeezed to 36px in a 175px
+                  2-col card and wrapped onto FOUR lines at 375px (measured on
+                  the built output before this line existed). trainer-choice-grid
+                  already solved the identical squeeze by stacking — same fix. */}
+              <div className="mt-auto flex flex-col items-start gap-1.5 p-3 pt-0 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:p-4 sm:pt-0">
+                  <span className="whitespace-nowrap text-xs font-medium text-muted-foreground sm:text-sm">
+                    {/* Transformation line, never the hourly rate (operator
+                        2026-09-19: "we dont name hourly rate, we say 'from
+                        299/ 4 weeks'"). Measured 2026-09-21: this grid was
+                        still printing €45 and €100 on the homepage while
+                        "€299" appeared zero times on it. trainer.rate stays
+                        in trainers.ts — only the display changed. */}
+                    {transformationFrom[locale]}
                   </span>
                   {/* Mobile users have no hover state — the CTA chip must be
                       visible-at-rest or visitors won't realize each card is

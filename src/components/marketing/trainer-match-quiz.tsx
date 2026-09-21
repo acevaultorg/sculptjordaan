@@ -49,6 +49,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import { trainers, type Trainer } from "@/config/trainers";
+import { transformationFrom } from "@/config/transformation";
 
 declare global {
   interface Window {
@@ -513,7 +514,13 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
                   <span>{trainer.languages.join(" · ")}</span>
                   <span>·</span>
-                  <span>{trainer.rate ?? t.result.rateUnknown}</span>
+                  {/* Transformation line, never the hourly rate (operator
+                      2026-09-19: "we dont name hourly rate, we say 'from 299/
+                      4 weeks'"). Measured 2026-09-21: the result card still
+                      printed per-hour rates while the finder hub sold the
+                      4-week format. trainer.rate stays in trainers.ts; only
+                      the display changed. */}
+                  <span>{transformationFrom[locale]}</span>
                 </div>
 
                 <Link

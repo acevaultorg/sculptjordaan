@@ -138,10 +138,13 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
     specializations: "Specialisaties",
     languages: "Talen",
     rate: "Tarief",
-    /* The hourly rate STAYS on this page on purpose (chief 2026-09-19 decision 2):
-       the finder hub sells the 4-week format, someone who wants a single hour can
-       still find the per-session price here. These two lines add the format next
-       to it so the page does not contradict the hub. */
+    /* ~~The hourly rate STAYS on this page on purpose (chief 2026-09-19
+       decision 2)~~ SUPERSEDED 2026-09-21: the operator measured this page live
+       ("€45 / 45 min" on /nl/plan-gratis-intake-met-andrea) and restated the
+       directive — "we dont name hourly rate, we say 'from 299/ 4 weeks'". The
+       Rate column now renders ONLY for trainers who publish no hourly rate (see
+       the render block below). These two lines stay: they ARE the price story
+       this page tells, and they are the only place €299 appears here. */
     transformation: "Of start een SCULPT TRANSFORMATION: vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Je trainer is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.",
     transformationDuo: "Samen trainen? Duo-transformatie vanaf \u20ac199 p.p. per 4 weken (voor twee, \u20ac399 totaal).",
     availability: "Beschikbaarheid",
@@ -456,12 +459,22 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                     <p className="font-semibold">{t.languages}</p>
                     <p className="text-muted-foreground">{trainer.languages.join(", ")}</p>
                   </div>
+                  {/* Rate column — shown ONLY when the trainer publishes no
+                      hourly rate. Supersedes chief 2026-09-19 decision 2 ("the
+                      hourly rate STAYS on this page"): the operator measured
+                      live 2026-09-21 that /nl/plan-gratis-intake-met-andrea
+                      still printed "€45 / 45 min" and restated the directive —
+                      "we dont name hourly rate, we say 'from 299/ 4 weeks'".
+                      Newer verbatim wins. No hourly number renders here now,
+                      and we do NOT reprint €299 either: the transformation box
+                      directly below already carries it, so repeating it would
+                      show the price twice. The on-request / "Vraag prijs aan →"
+                      WhatsApp path is untouched — it never named an hour. */}
+                  {trainer.rate ? null : (
                   <div>
                     <p className="font-semibold">{t.rate}</p>
                     <p className="text-muted-foreground">
-                      {trainer.rate ? (
-                        trainer.rate
-                      ) : bookingUrl ? (
+                      {bookingUrl ? (
                         t.onRequest
                       ) : (
                         <a
@@ -476,6 +489,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                       )}
                     </p>
                   </div>
+                  )}
                 </div>
 
                 <div className="rounded-xl border border-border bg-muted/40 p-4 text-sm">
