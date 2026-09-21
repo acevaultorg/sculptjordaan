@@ -131,7 +131,7 @@ export default function TrainersPageEN() {
         name="Personal Training"
         description="Personal training as a programme toward a goal, in a private studio in the Jordaan, Amsterdam. Choose your goal and your trainer; the first intro is always free."
         url="/en/find-personal-trainer"
-        priceRange="€45 - €120 per session"
+        priceRange="From €299 per 4 weeks"
       />
       <script
         type="application/ld+json"

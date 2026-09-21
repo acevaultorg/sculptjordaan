@@ -194,7 +194,7 @@ export default function SportschoolJordaanPage() {
               "Open Gym Instapplan: €29 voor 4 sessies (€7,25 p/s)",
               "Open Gym Onbeperkt: €89 per 4 weken",
               "Privé sfeer — geen drukte, nooit wachten op apparaten",
-              "Personal trainers beschikbaar (vanaf €45 per sessie)",
+              "Personal trainers beschikbaar (vanaf €299 per 4 weken)",
               "Ook studio te huren vanaf €12 voor een uur",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">

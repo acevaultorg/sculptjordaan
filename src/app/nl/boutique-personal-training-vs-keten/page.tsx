@@ -54,7 +54,7 @@ const faqs = [
   {
     question: "Is een boutique studio duurder dan een grote keten?",
     answer:
-      "Voor een kaal lidmaatschap: ja. Een keten zit op €20-€40 per maand. Voor wat je krijgt — privé ruimte, persoonlijke begeleiding optioneel, geen wachten — is een boutique studio juist goedkoper per resultaat. Bij SculptClub start Open Gym op €29/4 weken en personal training vanaf €45 per sessie.",
+      "Voor een kaal lidmaatschap: ja. Een keten zit op €20-€40 per maand. Voor wat je krijgt — privé ruimte, persoonlijke begeleiding optioneel, geen wachten — is een boutique studio juist goedkoper per resultaat. Bij SculptClub start Open Gym op €29/4 weken en personal training vanaf €299 per 4 weken.",
   },
   {
     question: "Moet ik een contract tekenen?",
@@ -87,9 +87,9 @@ export default function BoutiquePTvsKetenNL() {
       />
       <ServiceJsonLd
         name="Boutique Personal Training Amsterdam"
-        description="Privé personal training studio in Amsterdam Jordaan. Maximaal 4 personen, gratis intake, geen contract. Personal training vanaf €45/sessie."
+        description="Privé personal training studio in Amsterdam Jordaan. Maximaal 4 personen, gratis intake, geen contract. Personal training vanaf €299 per 4 weken."
         url="/nl/boutique-personal-training-vs-keten"
-        priceRange="Vanaf €45/sessie"
+        priceRange="Vanaf €299 per 4 weken"
       />
       <FaqJsonLd faqs={faqs} />
 

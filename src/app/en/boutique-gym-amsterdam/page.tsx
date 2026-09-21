@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/footer";
 export const metadata: Metadata = {
   title: { absolute: "Boutique Gym Amsterdam — SculptClub Private Studio Jordaan" },
   description:
-    "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €45 per session. First intro free.",
+    "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €299 per 4 weeks. First intro free.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/en/boutique-gym-amsterdam",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/en/boutique-gym-amsterdam",
     title: "Boutique Gym Amsterdam — SculptClub Private Studio Jordaan",
     description:
-      "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €45 per session. First intro free.",
+      "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €299 per 4 weeks. First intro free.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Boutique Gym Amsterdam — SculptClub Private Studio Jordaan",
     description:
-      "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €45 per session. First intro free.",
+      "A boutique gym in Amsterdam Jordaan. Private canal-side studio, no contract, no membership. Personal training from €299 per 4 weeks. First intro free.",
   },
 };
 
@@ -41,7 +41,7 @@ const steps = [
   {
     step: "2",
     title: "Pick your way to train",
-    desc: "Personal training from €45/session, Open Gym from €7.25/session, or rent the studio privately. No membership needed.",
+    desc: "Personal training from €299 per 4 weeks, Open Gym from €7.25/session, or rent the studio privately. No membership needed.",
   },
   {
     step: "3",
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "Do I need a membership?",
-    a: "No. No contract, no membership, no commitment. Pay per session for personal training (from €45) or pick a 4-week Open Gym plan with no auto-renewal lock-in.",
+    a: "No. No contract, no membership, no commitment. Start a personal training programme (from €299 per 4 weeks) or pick a 4-week Open Gym plan with no auto-renewal lock-in.",
   },
   {
     q: "Is English spoken at the gym?",
@@ -108,7 +108,7 @@ export default function BoutiqueGymAmsterdamPage() {
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
           A private canal-side studio. No chain-gym crowds, no contract, no
-          small talk. Personal training from €45. First intro free.
+          small talk. Personal training from €299 per 4 weeks. First intro free.
         </p>
 
         {/* Primary CTA */}
@@ -193,7 +193,7 @@ export default function BoutiqueGymAmsterdamPage() {
               "Private studio on the Egelantiersgracht in the Jordaan",
               "Small, calm space — never crowded, never queueing",
               "7 trainers, all English-speaking",
-              "Personal training from €45 per session, you pay your trainer directly",
+              "Personal training from €299 per 4 weeks, you pay your trainer directly",
               "Open Gym from €29 for 4 sessions — no membership lock-in",
               "Open daily 06:00–22:00, door code via WhatsApp",
             ].map((item) => (

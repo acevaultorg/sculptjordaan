@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "Is a boutique studio more expensive than a big chain?",
     answer:
-      "For a bare membership: yes. A chain runs €20-€40 per month. For what you actually get — a private space, optional one-on-one coaching, no waiting — a boutique studio is often cheaper per result. At SculptClub Open Gym starts at €29/4 weeks and personal training from €45 per session.",
+      "For a bare membership: yes. A chain runs €20-€40 per month. For what you actually get — a private space, optional one-on-one coaching, no waiting — a boutique studio is often cheaper per result. At SculptClub Open Gym starts at €29/4 weeks and personal training from €299 per 4 weeks.",
   },
   {
     question: "Do I have to sign a contract?",
@@ -86,9 +86,9 @@ export default function BoutiquePTvsChainEN() {
       />
       <ServiceJsonLd
         name="Boutique Personal Training Amsterdam"
-        description="Private personal training studio in Amsterdam Jordaan. Max 4 people, free intake, no contract. Personal training from €45/session."
+        description="Private personal training studio in Amsterdam Jordaan. Max 4 people, free intake, no contract. Personal training from €299 per 4 weeks."
         url="/en/boutique-personal-training-vs-chain-gyms"
-        priceRange="From €45/session"
+        priceRange="From €299 per 4 weeks"
       />
       <FaqJsonLd faqs={faqs} />
 

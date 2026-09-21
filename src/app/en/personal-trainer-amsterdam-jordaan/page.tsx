@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/footer";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio" },
   description:
-    "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €45 per session, no contract, first intro free.",
+    "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €299 per 4 weeks, no contract, first intro free.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/en/personal-trainer-amsterdam-jordaan",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     url: "/en/personal-trainer-amsterdam-jordaan",
     title: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio",
     description:
-      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €45 per session, no contract, first intro free.",
+      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €299 per 4 weeks, no contract, first intro free.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio",
     description:
-      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €45 per session, no contract, first intro free.",
+      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €299 per 4 weeks, no contract, first intro free.",
   },
 };
 
@@ -49,7 +49,7 @@ const steps = [
   {
     step: "3",
     title: "Train on your terms",
-    desc: "Open daily 06:00–22:00. Pay per session, from €45. No contract, no membership, free cancellation.",
+    desc: "Open daily 06:00–22:00. Your programme starts from €299 per 4 weeks. No contract, no membership, free cancellation.",
   },
 ];
 
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "How much does a personal trainer in Amsterdam Jordaan cost?",
-    a: "Sessions start from €45. Trainers set their own rates and there's no middleman, so what you pay goes straight to your trainer. The first intro is free.",
+    a: "A SCULPT TRANSFORMATION starts from €299 per 4 weeks, unlimited Open Gym included. Trainers set their own rates and there's no middleman, so what you pay goes straight to your trainer. The first intro is free.",
   },
   {
     q: "Can I choose my own personal trainer?",
@@ -121,7 +121,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
           {trainers.length} English-speaking trainers. One private studio on the
-          Egelantiersgracht. From €45 per session. First intro free.
+          Egelantiersgracht. From €299 per 4 weeks. First intro free.
         </p>
 
         {/* Primary CTA */}
@@ -206,7 +206,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               "Private canal-side studio on the Egelantiersgracht",
               `${trainers.length} personal trainers — your match for goal and style`,
               "First intro free, no credit card needed",
-              "From €45 per session — you pay your trainer directly",
+              "From €299 per 4 weeks — you pay your trainer directly",
               "Open daily 06:00–22:00 — train when it suits you",
               "Door code via WhatsApp the night before — no reception",
             ].map((item) => (

@@ -131,7 +131,7 @@ export default function TrainersPageNL() {
         name="Personal Training"
         description="Personal training als traject naar een doel, in een privé studio in de Jordaan, Amsterdam. Kies je doel en je trainer; de eerste intake is altijd gratis."
         url="/nl/vind-jouw-personal-trainer"
-        priceRange="€45 - €120 per sessie"
+        priceRange="Vanaf €299 per 4 weken"
       />
       <script
         type="application/ld+json"
