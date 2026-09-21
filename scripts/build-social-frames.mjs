@@ -135,7 +135,7 @@ FRAME_SETS["geen-wachtrij-001"] = [
     focus: "40% 45%",
     kicker: "De hele zaal, alleen jij",
     head: "Deur dicht. Jouw muziek. Jouw&nbsp;tempo.",
-    body: "Huur de hele studio en de zaal is gegarandeerd van jou \u2014 niemand die meekijkt, niemand die wacht.",
+    body: "Huur de hele studio en de zaal is gegarandeerd van jou. Niemand die meekijkt, niemand die wacht.",
   },
   {
     id: "03-som",
@@ -144,7 +144,7 @@ FRAME_SETS["geen-wachtrij-001"] = [
     kicker: "Wat kost dat",
     big: "\u20ac17",
     sub: "per uur \u00b7 hele studio",
-    body: "Halve studio \u20ac12 per uur \u2014 dan kan de andere helft bezet zijn. Helemaal voor jezelf? Dat is de hele studio.",
+    body: "Halve studio \u20ac12 per uur, dan kan de andere helft bezet zijn. Helemaal voor jezelf? Dat is de hele studio.",
   },
   {
     id: "04-voor-wie",
@@ -152,7 +152,7 @@ FRAME_SETS["geen-wachtrij-001"] = [
     focus: "30% 45%",
     kicker: "Liever alleen trainen",
     head: "N\u00e9t iets te veel sportschool, die sportschool.",
-    body: "Eerste keer, terug na een blessure, of gewoon liever alleen \u2014 hier bepaal jij wie erbij is.",
+    body: "Eerste keer, terug na een blessure, of gewoon liever alleen. Hier bepaal jij wie erbij is.",
   },
   {
     id: "05-cta",
@@ -160,7 +160,7 @@ FRAME_SETS["geen-wachtrij-001"] = [
     focus: "50% 42%",
     kicker: "Egelantiersgracht 424",
     head: "Eerste sessie gratis.",
-    body: "Boek via sculptclub.nl \u2014 dagelijks 06:00\u201322:00. Annuleren is altijd gratis.",
+    body: "Boek via sculptclub.nl. Dagelijks 06:00\u201322:00. Annuleren is altijd gratis.",
   },
 ];
 
@@ -260,7 +260,7 @@ FRAME_SETS["studio-leeg-001"] = [
     focus: "55% 45%",
     kicker: "Bij mooi weer",
     head: "De garagedeur gaat open.",
-    body: "Uitzicht op de gracht, daglicht en buitenlucht \u2014 en nog steeds je eigen ruimte.",
+    body: "Uitzicht op de gracht, daglicht en buitenlucht. En nog steeds je eigen ruimte.",
   },
   {
     id: "05-cta",

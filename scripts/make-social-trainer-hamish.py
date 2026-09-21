@@ -12,7 +12,10 @@ EUR72 per 60 min, bio, and his own intake page. NEVER "0% commissie" - rent + fr
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 import os
 
-S = '/private/tmp/claude-502/-Users-paulodevries-Local-VAULT04-SculptClub/6fcb818f-507a-4265-a0bf-0a79c8e2fe08/scratchpad/'
+import os as _os
+# Fonts live in the repo (scripts/fonts/, open licence). They used to sit in one session's
+# scratchpad, which vanished, and every generator here broke with 'cannot open resource'.
+S = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'fonts') + '/'
 REPO = '/Users/paulodevries/Local/VAULT04-SculptClub/sculptclub/'
 OUT = REPO + 'public/social/trainer-hamish-2026-08/'
 P, T = REPO + 'public/images/studio/', REPO + 'public/images/trainers/'
@@ -99,6 +102,13 @@ def f1(out):
     y = 1080
     y = pill(d, M, y, 'PERSONAL TRAINER · JORDAAN', font('IS-600.ttf', 36)) + 32
     y = block(d, M, y, 'Hamish.', font('Syne-800.ttf', 132), BONE, W - M * 2, lead=1.0) + 26
+    # 2026-09-21: the two small lines sat on the print of his own shirt ("Hamish Leijer")
+    # and the letters ran into each other. A soft dark backing behind just those lines.
+    from PIL import ImageFilter
+    ov = Image.new('L', im.size, 0)
+    ImageDraw.Draw(ov).rounded_rectangle((M - 40, y - 18, W - M + 10, y + 150), radius=40, fill=190)
+    im.paste(Image.new('RGB', im.size, (0, 0, 0)), (0, 0), ov.filter(ImageFilter.GaussianBlur(34)))
+    d = ImageDraw.Draw(im)
     y = block(d, M, y, 'Kracht · High Performance · Afvallen', font('IS-500.ttf', 42), BONE, W - M * 2 - 60, lead=1.28)
     y += 16
     block(d, M, y, 'Nederlands & Engels · Egelantiersgracht', font('IS-500.ttf', 34), DIM, W - M * 2 - 60, lead=1.3)
@@ -125,7 +135,7 @@ def f3(out):
     d = ImageDraw.Draw(im); logo(im)
     y = 470
     y = block(d, M, y, 'Hoe het hier werkt.', font('Syne-800.ttf', 84), BONE, W - M * 2, lead=1.06) + 52
-    for r in ['Hamish is zelfstandig — geen personeel',
+    for r in ['Hamish is zelfstandig, geen personeel',
               'Hij huurt de studio per uur, wanneer hij wil',
               'Eigen klanten, eigen tarief',
               'Je spreekt met hém af en betaalt hem direct']:
@@ -144,7 +154,7 @@ def f4(out):
     y = 900
     y = block(d, M, y, 'Train met', font('Syne-800.ttf', 100), BONE, W - M * 2, lead=1.03)
     y = block(d, M, y, 'Hamish.', font('Syne-800.ttf', 100), ORANGE, W - M * 2, lead=1.03) + 34
-    y = block(d, M, y, 'Eerste kennismaking gratis · €72 per 60 minuten',
+    y = block(d, M, y, 'Eerste kennismaking gratis · vanaf €299 per 4 weken',
               font('IS-500.ttf', 42), BONE, W - M * 2 - 70, lead=1.3) + 18
     y = block(d, M, y, 'Egelantiersgracht 424 · dagelijks 06:00–22:00',
               font('IS-500.ttf', 34), MUTED, W - M * 2 - 60, lead=1.3) + 34

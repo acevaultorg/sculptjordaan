@@ -15,7 +15,10 @@ the equipment instead of risking a false claim.
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import os
 
-S = '/private/tmp/claude-502/-Users-paulodevries-Local-VAULT04-SculptClub/6fcb818f-507a-4265-a0bf-0a79c8e2fe08/scratchpad/'
+import os as _os
+# Fonts live in the repo (scripts/fonts/, open licence). They used to sit in one session's
+# scratchpad, which vanished, and every generator here broke with 'cannot open resource'.
+S = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'fonts') + '/'
 REPO = '/Users/paulodevries/Local/VAULT04-SculptClub/'
 OUT = REPO + 'sculptclub/public/social/studio-tour-2026-08/'
 os.makedirs(OUT, exist_ok=True)
