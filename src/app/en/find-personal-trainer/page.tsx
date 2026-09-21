@@ -174,6 +174,19 @@ export default function TrainersPageEN() {
           title="Not hours. A transformation in 4 weeks."
           description="Body transformations from €299 per 4 weeks, unlimited Open Gym included. Pick what you want to achieve, meet the trainer who specialises in it, and agree your plan and your price at a free intro."
         />
+        {/* Brand line (operator 2026-09-20: slogan "MAKE IT WORK"; he also floated
+            "Let it work" and the chief picked this one). Deliberately BELOW the H1
+            and description: the card asked for it inside the first 375px screen
+            WITHOUT pushing the H1 down, and anything placed above the H1 moves it.
+            Measured at 375px before this change: overline top 192, H1 216-298,
+            description 314, first CTA 662 — so there is room here and the H1 stays
+            at 216. Same line on both locales; it is a brand line, not copy.
+            Written in literal capitals rather than CSS uppercase so a grep for
+            "MAKE IT WORK" in the served HTML finds it — an audit already reported it
+            missing once, and CSS-only capitals would have kept reporting that. */}
+        <p className="mt-5 text-center text-sm font-extrabold tracking-[0.18em] text-brand">
+          MAKE IT WORK
+        </p>
         <FadeIn>
           <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
             {trustBadges.map((badge) => (

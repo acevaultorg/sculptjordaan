@@ -53,8 +53,8 @@ export const ptGoals: PtGoal[] = [
     short: { nl: "Afvallen", en: "Lose fat" },
     title: { nl: "Afvallen & strakker worden", en: "Lose fat & get leaner" },
     promise: {
-      nl: "Minder vet, meer spier en gewoontes die je volhoudt.",
-      en: "Less fat, more muscle and habits you can keep.",
+      nl: "Afvallen en er goed uitzien, met gewoontes die je volhoudt.",
+      en: "Lose weight and look good, with habits you can keep.",
     },
     focus: {
       nl: ["Krachttraining die je stofwisseling helpt", "Haalbare voeding die bij je week past", "Gewoontes buiten de studio"],
