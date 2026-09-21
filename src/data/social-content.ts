@@ -441,7 +441,7 @@ export const SOCIAL_IDEAS: SocialIdea[] = [
       facts: [
         "Specialism: Strength · Calisthenics · Recovery",
         "Languages: NL · EN · PT",
-        "Rate: €69 per 60 min",
+        "Offer: SCULPT TRANSFORMATION from €299 / 4 weeks, unlimited Open Gym included",
         "First intake free",
       ],
       hookConcept: "Alex teaches the muscle-up — even if you can't do a pull-up yet",
@@ -1328,7 +1328,7 @@ Reel: 30s — intro + coaching demo`,
       facts: [
         "Specialism: Strength · Calisthenics · Recovery",
         "Languages: NL · EN · PT",
-        "Rate: €69 per 60 min",
+        "Offer: SCULPT TRANSFORMATION from €299 / 4 weeks, unlimited Open Gym included",
         "First intake free",
         "Calisthenics specialist — uncommon in Amsterdam PT scene",
       ],

@@ -526,7 +526,7 @@ const POSTS = {
       // USP shortened 2026-05-18 (first render clipped both edges — was 73
       // chars, which exceeds the ~38-char safe limit at this font/scale).
       usp: "Functioneel · meetbaar resultaat",
-      cta: "€69 / 60 min · vrijblijvende intake",
+      cta: "Vanaf €299 / 4 weken · gratis intake",
     },
     {
       name: "cta",

@@ -69,7 +69,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     },
     slides: [],
     tiktok: {
-      title: "Tien seconden stil op twee dumbbells \u2014 Alex, static calisthenics, Amsterdam",
+      title: "Tien seconden stil op twee dumbbells. Alex, static calisthenics, Amsterdam",
       description:
         "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex, static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
       hashtags:
@@ -163,7 +163,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
       { name: "cta", label: "3", title: "Laat je squat checken · /gratis-intake" },
     ],
     tiktok: {
-      title: "3 fouten in je squat — welke maak jij?",
+      title: "3 fouten in je squat: welke maak jij?",
       description:
         "Knieën die naar binnen vallen · romp die voorover valt · hielen die los komen. De drie meest gemaakte fouten, en de fix.\n\nEerste sessie 1-op-1 met je trainer in onze privé studio aan de Egelantiersgracht.\n\nPlan je gratis intake → sculptclub.nl/gratis-intake",
       hashtags: "#squat #squatform #personaltrainingamsterdam #amsterdamgym #jordaan",
@@ -182,18 +182,18 @@ export const SOCIAL_PACKS: SocialPack[] = [
     ctaUrl: "sculptclub.nl/nl/plan-gratis-intake-met-alex",
     slides: [
       { name: "intro", label: "1", title: "Intro · Alex · Kracht/Cali/Herstel" },
-      { name: "approach", label: "2", title: "Aanpak · Functioneel · €69/60min" },
+      { name: "approach", label: "2", title: "Aanpak · Functioneel · 4 weken" },
       { name: "cta", label: "3", title: "Plan een sessie · /plan-gratis-intake-met-alex" },
     ],
     tiktok: {
-      title: "Maak kennis met Alex — personal trainer in de Jordaan",
+      title: "SCULPT TRANSFORMATION met Alex in de Jordaan",
       description:
-        "Alex traint je 1-op-1 in onze privé studio aan de Egelantiersgracht.\n\nKracht · Calisthenics · Hersteltraining. NL · EN · PT.\n\n€69 per 60 min · vrijblijvende intake.\n\nPlan een sessie met Alex → sculptclub.nl/nl/plan-gratis-intake-met-alex",
+        "Vier weken gericht trainen met een eigen programma, en zien dat het werkt.\n\nSCULPT TRANSFORMATION vanaf €299 per 4 weken, inclusief onbeperkt Open Gym.\n\nMet Alex in onze privé studio aan de Egelantiersgracht. Kracht · Calisthenics · Hersteltraining. NL · EN · PT. Alex is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.\n\nProbeer eerst gratis → sculptclub.nl/nl/plan-gratis-intake-met-alex\n\nMAKE IT WORK.",
       hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #calisthenics #krachttraining",
     },
     instagram: {
       caption:
-        "Maak kennis met Alex, onze personal trainer voor kracht, calisthenics en hersteltraining.\n\nFunctionele bewegingen · doelgerichte programmering · meetbaar resultaat.\n\nNL · EN · PT · €69 per 60 min.\n\nPlan een sessie · link in bio 👆",
+        "Vier weken gericht trainen met een eigen programma, en zien dat het werkt.\n\nSCULPT TRANSFORMATION vanaf €299 per 4 weken, inclusief onbeperkt Open Gym.\n\nMet Alex, onze personal trainer voor kracht, calisthenics en hersteltraining. NL · EN · PT. Alex is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.\n\nProbeer eerst gratis. Link in bio 👆\n\nMAKE IT WORK.",
       hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #calisthenics #krachttraining",
     },
   },
@@ -232,7 +232,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
       { name: "location", label: "3", title: "Locatie · Jordaan" },
     ],
     tiktok: {
-      title: "🧡 Huur jouw eigen PT-studio in de Jordaan — €12/uur",
+      title: "🧡 Huur jouw eigen PT-studio in de Jordaan · €12/uur",
       description:
         "Trainers, eigen sleutel, eigen tarief, eigen klanten.\n\nJe houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
