@@ -114,6 +114,14 @@ export default function PrivacyPolicyEN() {
               Content of messages you send us via email, WhatsApp or contact
               forms.
             </p>
+            <p className="text-muted-foreground mt-3">
+              <strong>Feedback form:</strong> if you fill in our feedback form
+              we keep your answers and, only if you enter them yourself, your
+              first name and email address. We do not store an IP address with
+              it. We only show an answer on the site if you ticked the
+              separate box for that. You can withdraw that consent at any time
+              via contact@sculptclub.nl.
+            </p>
           </div>
         </FadeIn>
       </Section>
@@ -323,6 +331,10 @@ export default function PrivacyPolicyEN() {
               <li>
                 <strong>Website analytics data:</strong> 26 months (Google
                 Analytics default).
+              </li>
+              <li>
+                <strong>Feedback form:</strong> 2 years, then deleted
+                automatically. Sooner on request.
               </li>
               <li>
                 <strong>CCTV footage:</strong> maximum 4 weeks.

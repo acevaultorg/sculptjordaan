@@ -58,6 +58,16 @@ export function trackNavClick(surface: string, label: string, locale: string) {
   sendEvent("nav_click", { surface, label, locale });
 }
 
+/**
+ * Track a feedback form submission (GA4). Added 2026-09-21 with /feedback.
+ * Plain GA4 event on purpose: it is NOT a lead and must never be wired to the
+ * Google Ads "conversion" / generate_lead events (EUR 45 each).
+ * audience: "client" | "renter"
+ */
+export function trackFeedbackSubmit(audience: string, locale: string) {
+  sendEvent("feedback_submit", { audience, locale });
+}
+
 /** Track hero CTA clicks to measure conversion by position */
 export function trackHeroClick(label: string, position: number, locale: string) {
   sendEvent("hero_cta_click", {

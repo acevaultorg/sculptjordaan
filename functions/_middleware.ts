@@ -70,6 +70,18 @@ export const onRequest: PagesFunction = async (context) => {
     return Response.redirect(url.toString(), 302);
   }
 
+  // /feedback + /feedback/trainers: short links for the QR codes and for trainers
+  // to share (added 2026-09-21). Same Accept-Language rule as /start, because several
+  // renting trainers and their clients do not read Dutch. Query string (utm_source=qr)
+  // is preserved because only the pathname is rewritten.
+  const fbPath = path.replace(/\/$/, "");
+  if (fbPath === "/feedback" || fbPath === "/feedback/trainers") {
+    const al = (context.request.headers.get("accept-language") || "").toLowerCase();
+    const loc = al.startsWith("nl") ? "nl" : "en";
+    url.pathname = fbPath === "/feedback" ? `/${loc}/feedback` : `/${loc}/feedback/trainers`;
+    return Response.redirect(url.toString(), 302);
+  }
+
   // ── Path redirects (exact, then splat) ───────────────────────────────────
   const ex = EXACT[path];
   if (ex) {

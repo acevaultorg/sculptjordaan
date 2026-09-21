@@ -50,6 +50,7 @@ const ALLOW = [
   /-ads$/,                                           // paid-ad landers — entered from Google Ads only
   /^\/(en|nl)\/start$/,                              // vanity/campaign entry (see CLAUDE.md killed-investigations)
   /^\/intake-plan$/, /^\/pt-cheat-sheet$/,           // lead magnets, shared by direct link
+  /^\/(en|nl)\/feedback(\/trainers)?$/,               // feedback forms: reached by QR code + direct link only (noindex)
   // Trainer intake pages are linked DYNAMICALLY, not by literal href:
   //   src/components/marketing/trainer-match-quiz.tsx:452
   //   const intakeHref = `/${locale}/${trainer.slug[locale]}`

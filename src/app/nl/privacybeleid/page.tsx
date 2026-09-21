@@ -115,6 +115,14 @@ export default function PrivacyPageNL() {
               Inhoud van berichten die je ons stuurt via e-mail, WhatsApp of
               contactformulieren.
             </p>
+            <p className="text-muted-foreground mt-3">
+              <strong>Feedbackformulier:</strong> vul je ons feedbackformulier
+              in, dan bewaren we je antwoorden en, alleen als je ze zelf
+              invult, je voornaam en e-mailadres. We slaan daarbij geen
+              IP-adres op. We tonen een antwoord alleen op de site als je
+              daarvoor apart het vinkje hebt gezet. Die toestemming kun je
+              altijd intrekken via contact@sculptclub.nl.
+            </p>
           </div>
         </FadeIn>
       </Section>
@@ -331,6 +339,10 @@ export default function PrivacyPageNL() {
               <li>
                 <strong>Website-analysegegevens:</strong> 26 maanden (Google
                 Analytics standaard).
+              </li>
+              <li>
+                <strong>Feedbackformulier:</strong> 2 jaar, daarna automatisch
+                verwijderd. Eerder op verzoek.
               </li>
               <li>
                 <strong>Camerabeelden:</strong> maximaal 4 weken.
