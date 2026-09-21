@@ -60,6 +60,11 @@ const TRAINING_SQUAT_CINEMATIC = path.join(root, "public/images/studio/training-
 // One constant per trainer keeps the POSTS map declarative. Add new trainer
 // = add new path constant + new spotlight key.
 const ALEX_PORTRAIT = path.join(root, "public/images/trainers/alex.jpg");
+// 2026-09-21: Alex doing his own work — the only studio image of Alex that is
+// not a portrait. 1012×1107, so it is fine on the 1080² square (1.07× upscale)
+// and soft on the 1080×1920 vertical (1.5×). Used because a slide headed
+// "ALEX'S AANPAK" must show Alex; see the note on that slide.
+const ALEX_HANDSTAND = path.join(root, "public/images/trainers/alex-handstand.jpg");
 
 // Education photo set (pt-how-to-choose-001):
 //   TRAINING_BARBELL_SKYLIGHT → dramatic training shot (premium-aspirational hook)
@@ -511,13 +516,17 @@ const POSTS = {
     {
       name: "intro",
       photoPath: ALEX_PORTRAIT,
-      eyebrow: "PERSONAL TRAINER · KRACHT",
+      // 2026-09-21: eyebrow + usp were "KRACHT" and "Kracht · Calisthenics ·
+      // Herstel", which is not what the site says. trainers.ts has Alex as
+      // Static Calisthenics · Gymnastiek · Prestatie. A pack must say what the
+      // trainer's own card says.
+      eyebrow: "PERSONAL TRAINER · CALISTHENICS",
       hero: "Alex.",  // single-word hero — confident introduction
       heroScale: 1.5,  // upscale for solo-word impact (single short word
                        // needs extra weight to anchor the slide). 5 chars
                        // × 1.5 × 0.55 ≈ 70px wide — well within 888px content.
       price: "",
-      usp: "Kracht · Calisthenics · Herstel",
+      usp: "Calisthenics · Gymnastiek · Prestatie",
       cta: "NL · EN · PT · sculptclub.nl",
     },
     {
@@ -529,7 +538,16 @@ const POSTS = {
       // is the safe replacement: back-view client mid-rep, no trainer
       // visible, brand-recognizable studio environment (skylight + rack).
       // Frames the slide as "the work" rather than "the trainer's face".
-      photoPath: TRAINING_SQUAT_CINEMATIC,
+      // 2026-09-21 — SECOND false attribution on this same slide, caught by the
+      // operator at posting: "wtf is this not alex?". The 2026-05-26 swap below
+      // replaced Ibrahim's face with a client-only squat shot, which solved the
+      // "wrong trainer" reading and left a new one: a slide headed ALEX'S
+      // AANPAK showing a blonde woman. A frame that carries a trainer's name
+      // must show that trainer. This is now Alex's own handstand, shot in the
+      // studio, which also matches his bio ("van je eerste push-up tot een
+      // beheerste handstand"). Material limit, stated honestly: it is 1012px,
+      // so the vertical render upscales it 1.5×.
+      photoPath: ALEX_HANDSTAND,
       eyebrow: "ALEX'S AANPAK",
       // Two-stop hero in same register as intake-pitch slide 1 ("Privé. 1-op-1.")
       hero: "Functioneel. Doelgericht.",
@@ -537,7 +555,10 @@ const POSTS = {
       price: "",
       // USP shortened 2026-05-18 (first render clipped both edges — was 73
       // chars, which exceeds the ~38-char safe limit at this font/scale).
-      usp: "Functioneel · meetbaar resultaat",
+      // 2026-09-21: was "Functioneel · meetbaar resultaat", which repeated the
+      // hero's own first word. This line is Alex's own bio wording and it is
+      // what the photo shows.
+      usp: "Van push-up tot handstand",
       cta: "Vanaf €299 / 4 weken · gratis intake",
     },
     {
