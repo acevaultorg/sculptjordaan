@@ -16,7 +16,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam" },
   description:
-    "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €45/sessie, geen abonnement, altijd gratis annuleren.",
+    "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €299 per 4 weken, geen abonnement, altijd gratis annuleren.",
   alternates: {
     canonical: "/nl/boek-trainer",
     languages: { nl: "/nl/boek-trainer", en: "/en/book-trainer" },
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     url: "/nl/boek-trainer",
     title: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam",
     description:
-      "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €45/sessie, geen abonnement, altijd gratis annuleren.",
+      "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €299 per 4 weken, geen abonnement, altijd gratis annuleren.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam",
     description:
-      "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €45/sessie, geen abonnement, altijd gratis annuleren.",
+      "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €299 per 4 weken, geen abonnement, altijd gratis annuleren.",
   },
 };
 
@@ -50,7 +50,7 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "Wat kost een sessie?", a: "Vanaf €45 per sessie. Elke trainer bepaalt zijn eigen tarief. De eerste kennismaking is altijd gratis en vrijblijvend." },
+  { q: "Wat kost het?", a: "Een SCULPT TRANSFORMATION start vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Elke trainer bepaalt zijn eigen tarief. De eerste kennismaking is altijd gratis en vrijblijvend." },
   { q: "Zit ik ergens aan vast?", a: "Nee. Geen abonnement, geen contract. Je boekt per sessie en kunt altijd gratis annuleren." },
   { q: "Heb ik ervaring nodig?", a: "Nee. Alle trainers werken met beginners tot gevorderden. Tijdens je gratis intake bespreek je jouw niveau en doelen." },
   { q: "Hoe lang duurt een sessie?", a: "Afhankelijk van de trainer: 45 of 60 minuten. Tijdens je intake bepaal je samen welke sessieduur bij je past." },
@@ -64,7 +64,7 @@ export default function BoekTrainerPageNL() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Boek Trainer", url: "/nl/boek-trainer" }]} />
-      <ServiceJsonLd name="Personal Training" description="Boek een gratis kennismaking met een personal trainer bij SculptClub in de Jordaan, Amsterdam." url="/nl/boek-trainer" priceRange="Vanaf €45 per sessie" />
+      <ServiceJsonLd name="Personal Training" description="Boek een gratis kennismaking met een personal trainer bij SculptClub in de Jordaan, Amsterdam." url="/nl/boek-trainer" priceRange="Vanaf €299 per 4 weken" />
       <FaqJsonLd faqs={faqJsonLdData} />
 
       {/* ═══ ABOVE THE FOLD: Title + CTA + trust — convert without scrolling ═══ */}
@@ -86,7 +86,7 @@ export default function BoekTrainerPageNL() {
             </ButtonLink>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            ★ 5.0 op Google · Vanaf €45/sessie · Eerste intake gratis
+            ★ 5.0 op Google · Vanaf €299 per 4 weken · Eerste intake gratis
           </p>
         </div>
       </Section>
@@ -111,7 +111,7 @@ export default function BoekTrainerPageNL() {
 
       {/* What you get */}
       <Section>
-        <SectionHeader overline="Wat je krijgt" title="Personal training vanaf €45" />
+        <SectionHeader overline="Wat je krijgt" title="Personal training vanaf €299 per 4 weken" />
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">

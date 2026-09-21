@@ -30,7 +30,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym" },
   description:
-    "Alle prijzen SculptClub Amsterdam: personal training €45 (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
+    "Alle prijzen SculptClub Amsterdam: personal training vanaf €299 per 4 weken (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
   alternates: {
     canonical: "/nl/prijzen",
     languages: {
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: "/nl/prijzen",
     title: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym",
     description:
-      "Alle prijzen SculptClub Amsterdam: personal training €45 (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
+      "Alle prijzen SculptClub Amsterdam: personal training vanaf €299 per 4 weken (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym",
     description:
-      "Alle prijzen SculptClub Amsterdam: personal training €45 (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
+      "Alle prijzen SculptClub Amsterdam: personal training vanaf €299 per 4 weken (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
   },
 };
 
@@ -129,9 +129,9 @@ export default function PricingPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Prijzen","url":"/nl/prijzen"}]} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, trainers vanaf €45/sessie, je betaalt je trainer direct."
+        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, transformaties vanaf €299 per 4 weken inclusief onbeperkt Open Gym, je betaalt je trainer direct."
         url="/nl/prijzen"
-        priceRange="Vanaf €45/sessie"
+        priceRange="Vanaf €299 per 4 weken"
       />
       <ServiceJsonLd
         name="Open Gym"
@@ -182,7 +182,7 @@ export default function PricingPageNL() {
           as="h1"
           overline="Prijzen"
           title="Alle prijzen op een rij"
-          description="Geen verborgen kosten, geen langlopende contracten. Studio huur vanaf €12/uur (eigen tarief & klanten), personal training vanaf €45, Open Gym vanaf €29/4wk."
+          description="Geen verborgen kosten, geen langlopende contracten. Studio huur vanaf €12/uur (eigen tarief & klanten), personal training vanaf €299 per 4 weken, Open Gym vanaf €29/4wk."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -210,7 +210,7 @@ export default function PricingPageNL() {
               href="#personal-training"
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium transition hover:bg-muted"
             >
-              Personal Training (vanaf €45)
+              Personal Training (vanaf €299)
             </a>
             <a
               href="#open-gym"
@@ -233,8 +233,8 @@ export default function PricingPageNL() {
         <FadeIn>
           <Card className="mx-auto max-w-lg text-center">
             <CardHeader>
-              <CardTitle className="text-2xl">Vanaf €45 / sessie</CardTitle>
-              <CardDescription>Trainers bepalen hun eigen tarieven</CardDescription>
+              <CardTitle className="text-2xl">Vanaf €299 / 4 weken</CardTitle>
+              <CardDescription>Inclusief onbeperkt Open Gym. Trainers bepalen hun eigen tarief.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">

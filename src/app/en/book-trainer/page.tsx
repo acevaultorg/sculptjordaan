@@ -10,20 +10,20 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: { absolute: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam" },
-  description: "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €45/session, no membership, always free cancellation.",
+  description: "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €299 per 4 weeks, no membership, always free cancellation.",
   alternates: { canonical: "/en/book-trainer", languages: { nl: "/nl/boek-trainer", en: "/en/book-trainer" } },
   openGraph: {
     type: "website",
     url: "/en/book-trainer",
     title: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam",
     description:
-      "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €45/session, no membership, always free cancellation.",
+      "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €299 per 4 weeks, no membership, always free cancellation.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam",
     description:
-      "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €45/session, no membership, always free cancellation.",
+      "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €299 per 4 weeks, no membership, always free cancellation.",
   },
 };
 
@@ -41,7 +41,7 @@ const studioImages = [
 ];
 
 const faqs = [
-  { q: "How much does a session cost?", a: "From €45 per session. Each trainer sets their own rate. The first introduction is always free." },
+  { q: "How much does it cost?", a: "A SCULPT TRANSFORMATION starts from €299 per 4 weeks, unlimited Open Gym included. Each trainer sets their own rate. The first introduction is always free." },
   { q: "Am I locked into a contract?", a: "No. No membership, no contract. You book per session and can always cancel for free." },
   { q: "Do I need experience?", a: "No. All trainers work with beginners to advanced. During your free intro you'll discuss your level and goals." },
   { q: "How long is a session?", a: "Depending on the trainer: 45 or 60 minutes. During your intro you'll decide together." },
@@ -55,7 +55,7 @@ export default function BookTrainerPageEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Book Trainer", url: "/en/book-trainer" }]} />
-      <ServiceJsonLd name="Personal Training" description="Book a free introduction with a personal trainer at SculptClub in the Jordaan, Amsterdam." url="/en/book-trainer" priceRange="From €45 per session" />
+      <ServiceJsonLd name="Personal Training" description="Book a free introduction with a personal trainer at SculptClub in the Jordaan, Amsterdam." url="/en/book-trainer" priceRange="From €299 per 4 weeks" />
       <FaqJsonLd faqs={faqJsonLdData} />
 
       <Section>
@@ -67,7 +67,7 @@ export default function BookTrainerPageEN() {
             <ButtonLink href="/en/find-personal-trainer" size="xl" className="w-full sm:w-auto">Meet our trainers<ArrowRight className="ml-2 h-4 w-4" /></ButtonLink>
             <ButtonLink href={whatsappLinks.en} size="lg" variant="outline" className="w-full sm:w-auto" external><MessageCircle className="mr-2 h-4 w-4" />WhatsApp us</ButtonLink>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">★ 5.0 on Google · From €45/session · First intro free</p>
+          <p className="mt-4 text-xs text-muted-foreground">★ 5.0 on Google · From €299 per 4 weeks · First intro free</p>
         </div>
       </Section>
 
@@ -87,7 +87,7 @@ export default function BookTrainerPageEN() {
       </Section>
 
       <Section>
-        <SectionHeader overline="What you get" title="Personal Training from €45" />
+        <SectionHeader overline="What you get" title="Personal Training from €299 per 4 weeks" />
         <FadeIn>
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
