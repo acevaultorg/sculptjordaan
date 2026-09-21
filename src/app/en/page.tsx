@@ -16,18 +16,18 @@ import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
-  { question: "How does SculptClub work?", answer: "We match you with freelance personal trainers for private sessions or small group. Pick your own trainer, train 1-on-1 or in a small group in our private studio in the Jordaan, and pay your trainer directly — no membership, no middleman. Your first intro is always free." },
-  { question: "How much does personal training cost at SculptClub?", answer: "Each trainer sets their own rate, shown on the trainer's profile. The intro is always free. The price you see you pay directly to your trainer \u2014 no middleman." },
+  { question: "How does SculptClub work?", answer: "We match you with freelance personal trainers for private sessions or small group. Pick your own trainer, train 1-on-1 or in a small group in our private studio in the Jordaan, and pay your trainer directly, no membership, no middleman. Your first intro is always free." },
+  { question: "How much does personal training cost at SculptClub?", answer: "Each trainer sets their own rate, shown on the trainer's profile. The intro is always free. The price you see you pay directly to your trainer, no middleman." },
   { question: "How does Open Gym work?", answer: "You train independently in our private studio with professional equipment. Schedule your sessions via our booking system, receive a door code and train on your time. From \u20AC7.25 per session." },
-  { question: "Do I need a subscription?", answer: "No. Open Gym works on a 4-week cycle with no contract \u2014 cancel anytime. Personal training is booked per session. Studio rental is per hour or via discount packages." },
+  { question: "Do I need a subscription?", answer: "No. Open Gym works on a 4-week cycle with no contract, cancel anytime. Personal training is booked per session. Studio rental is per hour or via discount packages." },
   { question: "Can I rent the studio for my own clients?", answer: "Yes! As a freelance trainer or physiotherapist, you can rent our studio from \u20AC12 per 60 minutes. We also offer discount packages up to 23% off." },
-  { question: "How do I cancel a session?", answer: "For Open Gym and studio sessions, you can always cancel or reschedule for free via our booking system (Acuity). For Personal Training, contact your trainer directly — also always free." },
+  { question: "How do I cancel a session?", answer: "For Open Gym and studio sessions, you can always cancel or reschedule for free via our booking system (Acuity). For Personal Training, contact your trainer directly, also always free." },
 ];
 
 export const metadata: Metadata = {
   title: { absolute: "SculptClub — Personal Training Studio Amsterdam Jordaan" },
   description:
-    "Rent your own studio in the Jordaan from €12/hour — your clients, your rates, no contract. Also personal training with free intro session.",
+    "Rent your own studio in the Jordaan from €12/hour, your clients, your rates, no contract. Also personal training with free intro session.",
   alternates: {
     canonical: "/en",
     languages: {
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     url: "/en",
     title: "SculptClub — Personal Training Studio Amsterdam Jordaan",
     description:
-      "Rent your own studio in the Jordaan from €12/hour — your clients, your rates, no contract. Also personal training with free intro session.",
+      "Rent your own studio in the Jordaan from €12/hour, your clients, your rates, no contract. Also personal training with free intro session.",
   },
   twitter: {
     card: "summary_large_image",
     title: "SculptClub — Personal Training Studio Amsterdam Jordaan",
     description:
-      "Rent your own studio in the Jordaan from €12/hour — your clients, your rates, no contract. Also personal training with free intro session.",
+      "Rent your own studio in the Jordaan from €12/hour, your clients, your rates, no contract. Also personal training with free intro session.",
   },
 };
 

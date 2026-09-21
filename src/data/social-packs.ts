@@ -60,7 +60,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     title: "Alex \u00b7 10 seconden handstand (video)",
     audience: "client",
     blurb:
-      "Watch-content, geen aanbieding \u2014 echte skill van een echte trainer, in onze eigen zaal. Alex stuurde de clip zelf op 7 sep.",
+      "Watch-content, geen aanbieding, echte skill van een echte trainer, in onze eigen zaal. Alex stuurde de clip zelf op 7 sep.",
     ctaUrl: "sculptclub.nl/nl/plan-gratis-intake-met-alex",
     video: {
       src: "/social/alex-handstand-001/reel.mp4",
@@ -71,13 +71,13 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "Tien seconden stil op twee dumbbells \u2014 Alex, static calisthenics, Amsterdam",
       description:
-        "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex \u2014 static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
+        "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex, static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
       hashtags:
         "#handstand #calisthenics #amsterdam #jordaan #personaltrainer #gymnastics #handstandpractice #bodyweight #sculptclub",
     },
     instagram: {
       caption:
-        "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex \u2014 static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
+        "Tien seconden stil. Op twee dumbbells.\n\nDit is Alex, static calisthenics, achtergrond in gymnastiek. Geen trucje, geen montage: gewoon controle die je opbouwt, rep voor rep.\n\nVan je eerste push-up tot een strakke handstand. Zo coacht hij het, in onze priv\u00e9 studio in de Jordaan.\n\n@almeidalexjr",
       hashtags:
         "#handstand #calisthenics #amsterdam #jordaan #personaltrainer #gymnastics #handstandpractice #bodyweight #sculptclub",
     },
@@ -86,7 +86,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     id: "open-gym-pitch-001",
     title: "Open Gym · solo trainen vanaf €7,25",
     audience: "client",
-    blurb: "Entry-product. Solo trainen in de privé studio — laagste prijspunt, breedste publiek.",
+    blurb: "Entry-product. Solo trainen in de privé studio, laagste prijspunt, breedste publiek.",
     ctaUrl: "sculptclub.nl/open-gym",
     slides: [
       { name: "main-offer", label: "1", title: "Solo trainen · privé · 60 min" },
@@ -132,7 +132,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     id: "pt-how-to-choose-001",
     title: "Hoe kies je een personal trainer?",
     audience: "client",
-    blurb: "Educatief: Doel · Stijl · Tijd — bouwt vertrouwen, leidt naar de gratis intake.",
+    blurb: "Educatief: Doel · Stijl · Tijd, bouwt vertrouwen, leidt naar de gratis intake.",
     ctaUrl: "sculptclub.nl/gratis-intake",
     slides: [
       { name: "hook", label: "1", title: "Hook · Hoe kies je een PT?" },
@@ -147,7 +147,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     },
     instagram: {
       caption:
-        "Hoe kies je een personal trainer? Drie dingen die ertoe doen.\n\nDoel — wat wil je bereiken?\nStijl — past de aanpak bij hoe jij wilt trainen?\nTijd — past het in je week?\n\nAcht trainers in onze privé studio aan de Egelantiersgracht · vier specialisaties · 5.0 ★ Google.\n\nPlan je gratis intake · link in bio 👆",
+        "Hoe kies je een personal trainer? Drie dingen die ertoe doen.\n\nDoel: wat wil je bereiken?\nStijl: past de aanpak bij hoe jij wilt trainen?\nTijd: past het in je week?\n\nAcht trainers in onze privé studio aan de Egelantiersgracht · vier specialisaties · 5.0 ★ Google.\n\nPlan je gratis intake · link in bio 👆",
       hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #pt #fitamsterdam",
     },
   },
@@ -155,7 +155,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     id: "education-squat-mistakes-001",
     title: "3 fouten in je squat",
     audience: "client",
-    blurb: "Educatief: 3 squat-fouten + de fix — value-first hook richting de gratis intake.",
+    blurb: "Educatief: 3 squat-fouten + de fix, value-first hook richting de gratis intake.",
     ctaUrl: "sculptclub.nl/gratis-intake",
     slides: [
       { name: "hook", label: "1", title: "Hook · 3 fouten in je squat" },
@@ -165,12 +165,12 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "3 fouten in je squat — welke maak jij?",
       description:
-        "Knieën die naar binnen vallen · romp die voorover valt · hielen die los komen. De drie meest gemaakte fouten — en de fix.\n\nEerste sessie 1-op-1 met je trainer in onze privé studio aan de Egelantiersgracht.\n\nPlan je gratis intake → sculptclub.nl/gratis-intake",
+        "Knieën die naar binnen vallen · romp die voorover valt · hielen die los komen. De drie meest gemaakte fouten, en de fix.\n\nEerste sessie 1-op-1 met je trainer in onze privé studio aan de Egelantiersgracht.\n\nPlan je gratis intake → sculptclub.nl/gratis-intake",
       hashtags: "#squat #squatform #personaltrainingamsterdam #amsterdamgym #jordaan",
     },
     instagram: {
       caption:
-        "3 fouten in je squat — welke maak jij?\n\nKnieën die naar binnen vallen · romp die voorover valt · hielen die los komen. De drie meest gemaakte fouten — en de fix.\n\nEerste sessie 1-op-1 met je trainer in onze privé studio aan de Egelantiersgracht.\n\nPlan je gratis intake · link in bio 👆",
+        "3 fouten in je squat, welke maak jij?\n\nKnieën die naar binnen vallen · romp die voorover valt · hielen die los komen. De drie meest gemaakte fouten, en de fix.\n\nEerste sessie 1-op-1 met je trainer in onze privé studio aan de Egelantiersgracht.\n\nPlan je gratis intake · link in bio 👆",
       hashtags: "#squat #squatform #personaltrainingamsterdam #amsterdamgym #jordaan",
     },
   },
@@ -193,7 +193,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     },
     instagram: {
       caption:
-        "Maak kennis met Alex — onze personal trainer voor kracht, calisthenics en hersteltraining.\n\nFunctionele bewegingen · doelgerichte programmering · meetbaar resultaat.\n\nNL · EN · PT · €69 per 60 min.\n\nPlan een sessie · link in bio 👆",
+        "Maak kennis met Alex, onze personal trainer voor kracht, calisthenics en hersteltraining.\n\nFunctionele bewegingen · doelgerichte programmering · meetbaar resultaat.\n\nNL · EN · PT · €69 per 60 min.\n\nPlan een sessie · link in bio 👆",
       hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #calisthenics #krachttraining",
     },
   },
@@ -201,7 +201,7 @@ export const SOCIAL_PACKS: SocialPack[] = [
     id: "trainer-commission-math-001",
     title: "30% commissie vs €12 huur",
     audience: "trainer",
-    blurb: "Trainer-werving: 30% commissie elders vs €12 huur hier — de simpele math.",
+    blurb: "Trainer-werving: 30% commissie elders vs €12 huur hier, de simpele math.",
     ctaUrl: "sculptclub.nl/voor-trainers",
     slides: [
       { name: "loss", label: "1", title: "Loss · 30% commissie" },
@@ -234,12 +234,12 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "🧡 Huur jouw eigen PT-studio in de Jordaan — €12/uur",
       description:
-        "Trainers — eigen sleutel, eigen tarief, eigen klanten.\n\nJe houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
+        "Trainers, eigen sleutel, eigen tarief, eigen klanten.\n\nJe houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis → sculptclub.nl/voor-trainers",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
     instagram: {
       caption:
-        "Privé personal training studio in de Jordaan 🧡\n\nTrainers — huur jouw eigen studio vanaf €12/uur · je houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis · link in bio 👆",
+        "Privé personal training studio in de Jordaan 🧡\n\nTrainers, huur jouw eigen studio vanaf €12/uur · je houdt 100% van je tarief · geen contract · dagelijks geopend 06:00 – 22:00.\n\nProbeer gratis · link in bio 👆",
       hashtags: "#personaltraineramsterdam #studiohuren #zzpfitness #jordaan #ptamsterdam",
     },
   },

@@ -151,7 +151,7 @@ function PackCard({
       ? [
           "Bewaar de video in Foto's (knop hierboven).",
           "Open TikTok \u2192 \uff0b \u2192 upload de video uit Foto's.",
-          "Voeg een trending sound toe \u2014 de clip zelf is stil (algoritme-signaal).",
+          "Voeg een trending sound toe, de clip zelf is stil (algoritme-signaal).",
           "Tag @almeidalexjr als collab: het is Alex' eigen clip.",
           "Kopieer titel + description en plak ze.",
           "Post \u2192 plak + pin de eerste reactie met de link \u2192 vink af.",
@@ -159,7 +159,7 @@ function PackCard({
       : [
           "Bewaar de video in Foto's (knop hierboven).",
           "Open Instagram \u2192 \uff0b \u2192 Reel \u2192 kies de video.",
-          "Voeg een sound toe \u2014 de clip zelf is stil.",
+          "Voeg een sound toe, de clip zelf is stil.",
           "Tag @almeidalexjr als collab: het is Alex' eigen clip.",
           "Kopieer de caption + hashtags en plak.",
           "Post \u2192 vink af.",
@@ -280,7 +280,7 @@ function PackCard({
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={slideUrl(pack.id, platform, s.name)}
-                      alt={`Slide ${s.label} — ${s.title}`}
+                      alt={`Slide ${s.label}, ${s.title}`}
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -340,7 +340,7 @@ function PackCard({
 
           {/* steps */}
           <h4 className="mt-6 text-[0.7rem] uppercase tracking-wider text-brand font-bold flex items-center gap-1.5">
-            <ListChecks className="w-3.5 h-3.5" /> Stappen — {PLATFORM_LABEL[platform]}
+            <ListChecks className="w-3.5 h-3.5" /> Stappen, {PLATFORM_LABEL[platform]}
           </h4>
           <ol className="mt-2 space-y-2">
             {steps.map((st, i) => (
@@ -364,7 +364,7 @@ function PackCard({
               posted ? "bg-muted text-muted-foreground" : "bg-foreground text-brand-foreground active:opacity-85"
             }`}
           >
-            <Check className="w-4 h-4" /> {posted ? "Gepost — tik om terug te zetten" : "Markeer als gepost"}
+            <Check className="w-4 h-4" /> {posted ? "Gepost, tik om terug te zetten" : "Markeer als gepost"}
           </button>
         </div>
       )}
@@ -459,7 +459,7 @@ export default function SocialPostingStudio() {
         {/* ── pack library ─────────────────────────────────────────────────── */}
         <h2 className="mt-9 text-xl font-bold tracking-tight">Kant-en-klare packs</h2>
         <p className="mt-1 text-[0.86rem] text-muted-foreground">
-          {total} uitgewerkte packs, slides of video — open → bewaar → kopieer → post.
+          {total} uitgewerkte packs, slides of video, open → bewaar → kopieer → post.
         </p>
 
         {/* progress */}
@@ -485,7 +485,7 @@ export default function SocialPostingStudio() {
               </span>
             </button>
           ) : (
-            <p className="text-[0.92rem] font-semibold text-foreground">{mounted ? "Alles gepost 🎉 — mooi werk." : "Laden…"}</p>
+            <p className="text-[0.92rem] font-semibold text-foreground">{mounted ? "Alles gepost 🎉, mooi werk." : "Laden…"}</p>
           )}
         </div>
 
@@ -548,7 +548,7 @@ export default function SocialPostingStudio() {
             ))}
             <p className="pt-1">
               IG-bio-link heeft <b className="text-foreground">geen follower-grens</b> (werkt nu). TikTok ontgrendelt de
-              klikbare link bij 1.000 volgers — tot dan: pin de link in de <b className="text-foreground">eerste reactie</b>.
+              klikbare link bij 1.000 volgers, tot dan: pin de link in de <b className="text-foreground">eerste reactie</b>.
             </p>
           </div>
         </details>
@@ -557,7 +557,7 @@ export default function SocialPostingStudio() {
         <p className="mt-3 text-[0.8rem] text-muted-foreground leading-relaxed bg-muted/60 border border-border rounded-2xl p-3.5">
           📈 <b className="text-foreground">Voor bereik:</b> 1–2 posts/dag, 3–4 uur uit elkaar (nooit batchen) · altijd een
           trending sound op TikTok · open de hook met de winst + een getal · volg &amp; reageer dagelijks op een paar
-          accounts. Instagram is de #1 acquisitie-bron — geef klanten-posts voorrang.
+          accounts. Instagram is de #1 acquisitie-bron, geef klanten-posts voorrang.
         </p>
 
         {/* packs */}
@@ -592,7 +592,7 @@ export default function SocialPostingStudio() {
           </summary>
           <div className="px-4 pb-4 space-y-2">
             <p className="text-[0.82rem] text-muted-foreground leading-relaxed">
-              Geen kant-en-klare slides — dit zijn shotlists om zelf te filmen (de price-overlay studio-shots scoren het best).
+              Geen kant-en-klare slides, dit zijn shotlists om zelf te filmen (de price-overlay studio-shots scoren het best).
             </p>
             {ideas.map((idea) => {
               const a = audienceOf(PILLAR_TO_AUDIENCE[idea.pillar]);
@@ -632,8 +632,8 @@ export default function SocialPostingStudio() {
           </summary>
           <ul className="px-4 pb-4 space-y-2 text-[0.88rem] text-muted-foreground leading-relaxed list-disc pl-7">
             <li><b className="text-foreground">Cadans:</b> 1–2 posts per dag, 3–4 uur uit elkaar. Nooit batchen.</li>
-            <li><b className="text-foreground">Sound:</b> altijd een trending sound op TikTok (algoritme-signaal). IG-carrousels spelen muted — post de slides óók als Reel (9:16 + sound) voor bereik buiten je volgers.</li>
-            <li><b className="text-foreground">Hook:</b> open met de winst + een getal in de eerste 1–2 seconden (dat zet views om in likes — de 10,5K-views winnaar deed precies dat).</li>
+            <li><b className="text-foreground">Sound:</b> altijd een trending sound op TikTok (algoritme-signaal). IG-carrousels spelen muted, post de slides óók als Reel (9:16 + sound) voor bereik buiten je volgers.</li>
+            <li><b className="text-foreground">Hook:</b> open met de winst + een getal in de eerste 1–2 seconden (dat zet views om in likes, de 10,5K-views winnaar deed precies dat).</li>
             <li><b className="text-foreground">Voorrang:</b> Instagram is de #1 acquisitie-bron; klanten-posts (Open Gym / intake) eerst. Trainer-werving apart houden.</li>
             <li><b className="text-foreground">Account:</b> gebruik een Creator-account (gratis, houdt trending sounds). Schakel niet naar Business.</li>
           </ul>

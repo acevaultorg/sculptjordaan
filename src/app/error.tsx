@@ -10,7 +10,7 @@ const content = {
   nl: {
     title: "Er ging iets mis.",
     description:
-      "Vernieuw de pagina en probeer het opnieuw \u2014 of neem rechtstreeks contact met ons op.",
+      "Vernieuw de pagina en probeer het opnieuw, of neem rechtstreeks contact met ons op.",
     retry: "Opnieuw proberen",
     home: "Ga naar home",
     homeHref: "/",
@@ -18,7 +18,7 @@ const content = {
   en: {
     title: "Something went wrong.",
     description:
-      "Refresh the page and try again \u2014 or reach out to us directly.",
+      "Refresh the page and try again, or reach out to us directly.",
     retry: "Try again",
     home: "Go home",
     homeHref: "/en",

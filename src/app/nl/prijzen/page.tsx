@@ -86,7 +86,7 @@ const openGymPlans = [
     period: "/ 4 weken",
     perSession: null,
     blurb: openGymSummerDeal.active
-      ? `Bespaar \u20ac${openGymSummerDeal.priceRegular - openGymSummerDeal.priceDeal} per 4 weken \u2014 deze prijs blijft zolang je lid blijft`
+      ? `Bespaar \u20ac${openGymSummerDeal.priceRegular - openGymSummerDeal.priceDeal} per 4 weken, deze prijs blijft zolang je lid blijft`
       : "Geen limiet, geen geregel",
     badge: openGymSummerDeal.active ? "Introductieprijs" : null,
     link: openGymSummerDeal.active ? openGymSummerDeal.dealUrl : acuityLinks.openGymPlans.onbeperkt,
@@ -238,7 +238,7 @@ export default function PricingPageNL() {
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">
-                Eerste kennismaking altijd gratis. De prijs die je van je trainer hoort betaal je direct — zonder tussenpersoon.
+                Eerste kennismaking altijd gratis. De prijs die je van je trainer hoort betaal je direct, zonder tussenpersoon.
               </p>
             </CardContent>
             <CardFooter className="justify-center">
@@ -481,7 +481,7 @@ export default function PricingPageNL() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-            Een strippenkaart is studiotegoed — de doorgestreepte prijs is je tegoed. Sessies van 60 min: halve studio (max 2) €12 · hele studio €17. Je tegoed bepaalt het aantal sessies. 1 jaar geldig.
+            Een strippenkaart is studiotegoed, de doorgestreepte prijs is je tegoed. Sessies van 60 min: halve studio (max 2) €12 · hele studio €17. Je tegoed bepaalt het aantal sessies. 1 jaar geldig.
           </p>
         </FadeIn>
 
@@ -537,18 +537,18 @@ export default function PricingPageNL() {
               // V (2026-06-02) — pause/validity, model-correct (no membership to
               // pause; PT is trainer↔client direct; NO invented annual discount —
               // the studio packages already ARE the volume discount).
-              { q: "Kan ik pauzeren?", a: "Er is geen abonnement om te pauzeren. Open Gym stopt vanzelf na elke 4-weken cyclus — boek de volgende wanneer het jou uitkomt, zonder kosten. Personal training boek je per sessie, dus 'pauzeren' is simpelweg even niet boeken." },
-              { q: "Hoe lang is mijn strippenkaart geldig?", a: "Studio-strippenkaarten zijn 1 jaar geldig. Gebruik je tegoed wanneer het jou uitkomt — geen haast, geen verloop binnen het jaar." },
+              { q: "Kan ik pauzeren?", a: "Er is geen abonnement om te pauzeren. Open Gym stopt vanzelf na elke 4-weken cyclus, boek de volgende wanneer het jou uitkomt, zonder kosten. Personal training boek je per sessie, dus 'pauzeren' is simpelweg even niet boeken." },
+              { q: "Hoe lang is mijn strippenkaart geldig?", a: "Studio-strippenkaarten zijn 1 jaar geldig. Gebruik je tegoed wanneer het jou uitkomt, geen haast, geen verloop binnen het jaar." },
               { q: "Hoe betaal ik?", a: "CreditCard, Apple Pay en Google Pay. Studio huur ook per factuur. iDEAL via Apple Pay." },
               // U (2026-06-02) — zakelijk/vergoeding. Accurate + hedged: PT stays
               // trainer-arranged (only studio/packages "op factuur"); insurance
               // line directs to the insurer (NL basic insurance doesn't cover PT —
               // never promise coverage, YMYL-safe).
-              { q: "Kan ik zakelijk of op factuur betalen?", a: "Ja. Studiohuur en pakketten kunnen op factuur — handig voor ZZP-trainers en bedrijven. Via de werkkostenregeling of een bedrijfsfitnessregeling kan je werkgever soms (deels) bijdragen; vraag het na bij je werkgever." },
-              { q: "Vergoedt mijn zorgverzekering personal training?", a: "Soms gedeeltelijk: bepaalde aanvullende verzekeringen vergoeden leefstijl- of beweegcoaching. Of dit in jouw geval geldt, vraag je na bij je zorgverzekeraar — wij kunnen een factuur op naam leveren." },
+              { q: "Kan ik zakelijk of op factuur betalen?", a: "Ja. Studiohuur en pakketten kunnen op factuur, handig voor ZZP-trainers en bedrijven. Via de werkkostenregeling of een bedrijfsfitnessregeling kan je werkgever soms (deels) bijdragen; vraag het na bij je werkgever." },
+              { q: "Vergoedt mijn zorgverzekering personal training?", a: "Soms gedeeltelijk: bepaalde aanvullende verzekeringen vergoeden leefstijl- of beweegcoaching. Of dit in jouw geval geldt, vraag je na bij je zorgverzekeraar, wij kunnen een factuur op naam leveren." },
               { q: "Wat als de trainer niet bij me past?", a: "De eerste intake is gratis en vrijblijvend. Bevalt het niet? Geen verplichtingen. Je kunt altijd een andere trainer proberen." },
               { q: "Zijn er verborgen kosten?", a: "Nee. De prijzen op deze pagina zijn alles-inclusief. Geen inschrijfgeld, geen administratiekosten, geen verrassingen." },
-              { q: "Hoe werkt de deurcode?", a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode. Geen receptie, geen sleutels — je loopt direct naar binnen." },
+              { q: "Hoe werkt de deurcode?", a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode. Geen receptie, geen sleutels, je loopt direct naar binnen." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-border/50 py-6">
                 <h3 className="font-semibold mb-2">{faq.q}</h3>

@@ -35,7 +35,7 @@ const HERO_SRC = "/images/studio/gym-latest.jpg";
  * First image keeps LCP-priority; rest mount after 2s delay.
  */
 const HERO_IMAGES = [
-  { src: HERO_SRC, alt: "Privé studio interieur bij SculptClub Jordaan — apparatuur voor personal training, dumbbells, krachtstation en kabelmachine" },
+  { src: HERO_SRC, alt: "Privé studio interieur bij SculptClub Jordaan, apparatuur voor personal training, dumbbells, krachtstation en kabelmachine" },
   { src: "/images/studio/turf-lane-canal.jpg", alt: "Turf lane met SCULPT muur-logo en grachtenuitzicht bij SculptClub" },
   { src: "/images/studio/back-room-full.jpg", alt: "Achterruimte met sled, Rogue rack en bank onder lichtkoepel bij SculptClub" },
   { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht vanuit SculptClub op de Egelantiersgracht in Amsterdam" },
@@ -53,7 +53,7 @@ import { StudioRateTable } from "@/components/marketing/studio-rate-table";
 export const metadata: Metadata = {
   title: { absolute: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur" },
   description:
-    "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+    "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   alternates: {
     canonical: "/nl/studio-huren",
     languages: {
@@ -68,13 +68,13 @@ export const metadata: Metadata = {
     url: "/nl/studio-huren",
     title: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur",
     description:
-      "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+      "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur",
     description:
-      "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+      "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
   },
 };
 
@@ -104,7 +104,7 @@ const features = [
     icon: Clock,
     title: "Ruime beschikbaarheid",
     description:
-      "Boek per uur, wanneer het jou uitkomt — ook 's avonds en in het weekend zijn er nog volop uren vrij.",
+      "Boek per uur, wanneer het jou uitkomt, ook 's avonds en in het weekend zijn er nog volop uren vrij.",
   },
   {
     icon: Percent,
@@ -133,8 +133,8 @@ const faqs = [
     // demand using the word "ruimte", on a page that only ever said "studio".
     // This answers the literal question those searchers have. Not stuffing:
     // every synonym here is a name trainers genuinely use for the same room.
-    q: "Ik zoek een PT-ruimte of fitnessruimte om te huren — is dit dat?",
-    a: "Ja. Dit is een priv\u00e9 trainingsruimte in de Jordaan die je per uur huurt \u2014 of je het nu een PT-ruimte, fitnessruimte, trainingsruimte of studio noemt. Halve studio voor 1-op-1, hele studio voor een kleine groep. Geen contract en geen minimum aantal uren.",
+    q: "Ik zoek een PT-ruimte of fitnessruimte om te huren, is dit dat?",
+    a: "Ja. Dit is een priv\u00e9 trainingsruimte in de Jordaan die je per uur huurt, of je het nu een PT-ruimte, fitnessruimte, trainingsruimte of studio noemt. Halve studio voor 1-op-1, hele studio voor een kleine groep. Geen contract en geen minimum aantal uren.",
   },
   {
     q: "Wat kost het om de studio te huren?",
@@ -162,7 +162,7 @@ const faqs = [
   },
   {
     q: "Krijg ik klanten via SculptClub?",
-    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen tussenpersoon bij die boekingen — wij verbinden alleen. Nog geen profiel? Vraag er via WhatsApp om en we zetten je erop.",
+    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen tussenpersoon bij die boekingen, wij verbinden alleen. Nog geen profiel? Vraag er via WhatsApp om en we zetten je erop.",
   },
   {
     q: "Kan ik vaste tijdslots reserveren?",
@@ -174,11 +174,11 @@ const faqs = [
   },
   {
     q: "Wat als ik niet kom opdagen?",
-    a: "Annuleren of verplaatsen is altijd gratis — geen no-show fee. We rekenen op je professionaliteit. Bij regelmatig last-minute annuleren bespreken we het direct.",
+    a: "Annuleren of verplaatsen is altijd gratis, geen no-show fee. We rekenen op je professionaliteit. Bij regelmatig last-minute annuleren bespreken we het direct.",
   },
   {
     q: "Welke betaalmethodes worden geaccepteerd?",
-    a: "CreditCard, Apple Pay, Google Pay, of factuur (op verzoek). iDEAL via Apple Pay. Volume pakket (€499) kan op verzoek per bankoverschrijving — WhatsApp ons.",
+    a: "CreditCard, Apple Pay, Google Pay, of factuur (op verzoek). iDEAL via Apple Pay. Volume pakket (€499) kan op verzoek per bankoverschrijving. WhatsApp ons.",
   },
 ];
 
@@ -239,7 +239,7 @@ export default function StudioRentalPageNL() {
             🎯 Extra veel ruimte: weekendmiddag &amp; -avond
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
-            Zaterdag- en zondagmiddag/avond is doorgaans de rustigste tijd in de studio —
+            Zaterdag- en zondagmiddag/avond is doorgaans de rustigste tijd in de studio, 
             ideaal om hier een vaste weekendplek voor je klanten vast te leggen. Klik hieronder
             op Boek voor de actuele beschikbaarheid.
           </p>
@@ -256,7 +256,7 @@ export default function StudioRentalPageNL() {
           packages={
             <div className="mx-auto max-w-5xl">
               <p className="mb-4 text-center text-sm text-muted-foreground">
-                Een strippenkaart is boektegoed voor losse studiosessies — de doorgestreepte prijs is je tegoed. 1 jaar geldig.
+                Een strippenkaart is boektegoed voor losse studiosessies. De doorgestreepte prijs is je tegoed. 1 jaar geldig.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <Card className="h-full text-center">
@@ -325,7 +325,7 @@ export default function StudioRentalPageNL() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessies van 60 min — halve studio (2 pers.) €12 · hele studio €17. Je tegoed bepaalt het aantal sessies.
+                Sessies van 60 min: halve studio (2 pers.) €12 · hele studio €17. Je tegoed bepaalt het aantal sessies.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Laagste tarief: <span className="text-discount font-medium">€9,24/sessie</span> · Liever per bank?{" "}
@@ -352,7 +352,7 @@ export default function StudioRentalPageNL() {
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong> — credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong>, credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
                 <strong className="text-foreground">Hele studio</strong> = volledig privé voor 1 tot 8 personen, jouw eigen groep.
               </p>
@@ -370,7 +370,7 @@ export default function StudioRentalPageNL() {
           <p className="overline text-primary">Ben je hier voor het eerst?</p>
           <p className="mt-2 text-xl font-bold">Eerste keer? Kom de studio zien.</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            Bekijk de ruimte + apparatuur en doe een gratis proefsessie voordat je huurt — vrijblijvend, geen verplichting.
+            Bekijk de ruimte + apparatuur en doe een gratis proefsessie voordat je huurt, vrijblijvend, geen verplichting.
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink href="/nl/studio-huren/gratis-test" size="lg" className="w-full sm:w-auto">
@@ -389,7 +389,7 @@ export default function StudioRentalPageNL() {
             <LandingVideo
               src="/videos/studio-promo.mp4"
               poster="/videos/studio-promo-poster.jpg"
-              label="SculptClub — de studio in hartje Amsterdam Jordaan, in beeld"
+              label="SculptClub, de studio in hartje Amsterdam Jordaan, in beeld"
             />
           </div>
         </div>
@@ -402,7 +402,7 @@ export default function StudioRentalPageNL() {
             <div>
               <p className="text-base font-semibold">Niet zeker welke optie?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp ons je situatie — we reageren meestal binnen 1 uur.{" "}
+                WhatsApp ons je situatie, we reageren meestal binnen 1 uur.{" "}
                 {/* Q (2026-06-02) tour option — ZZP trainers want to see the
                     room + equipment before committing to hourly rental. */}
                 Liever eerst de ruimte zien?{" "}
@@ -518,7 +518,7 @@ export default function StudioRentalPageNL() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
                   "Volledig uitgeruste privé studio voor 1:1 en small group",
-                  "Jij houdt 100% van je sessietarief — wij rekenen alleen huur",
+                  "Jij houdt 100% van je sessietarief, wij rekenen alleen huur",
                   "Flexibel boeken: alleen wanneer jij een klant hebt",
                   "Deurcode per WhatsApp de avond van tevoren",
                   "Professionele apparatuur: squat rack, kabelmachine, dumbbells 4-40 kg, Echo Bike en meer",
@@ -558,7 +558,7 @@ export default function StudioRentalPageNL() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 text-muted-foreground">Vaste maandhuur v.a. €600 per maand</td>
-                    <td className="px-4 py-3 font-medium">€12 per uur — alleen als je een sessie hebt</td>
+                    <td className="px-4 py-3 font-medium">€12 per uur, alleen als je een sessie hebt</td>
                   </tr>
                   <tr className="border-b">
                     <td className="px-4 py-3 text-muted-foreground">Minimum-afname v.a. 5 uur per week</td>
@@ -621,7 +621,7 @@ export default function StudioRentalPageNL() {
                   studio-rental path (=93% of revenue) must be reachable from the money page. */}
               <a href="/nl/boek-studio" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">Boeken</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Boek de studio — beschikbaarheid en tarieven per uur →</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boek de studio: beschikbaarheid en tarieven per uur →</p>
               </a>
               <a href="/nl/blog/studio-huren-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
@@ -641,7 +641,7 @@ export default function StudioRentalPageNL() {
               </a>
               <a href="/nl/word-trainer" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">Voor trainers</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Word trainer bij SculptClub — eigen tarief & klanten</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Word trainer bij SculptClub, eigen tarief & klanten</p>
               </a>
               <a href="/nl/blog/personal-trainer-worden-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

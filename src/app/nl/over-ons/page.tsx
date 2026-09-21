@@ -119,7 +119,7 @@ const uniqueFeatures = [
     icon: UserCheck,
     title: "Capaciteit op maat",
     description:
-      "Bij Open Gym beperken we de ruimte tot vier personen. Bij volledige studiohuur heb je de hele ruimte privé — voor 1 tot 8 personen, je traint met je eigen groep.",
+      "Bij Open Gym beperken we de ruimte tot vier personen. Bij volledige studiohuur heb je de hele ruimte privé: voor 1 tot 8 personen, je traint met je eigen groep.",
   },
   // M (2026-06-02) — the 2 positioning PRINCIPLES the facility-logistics grid
   // lacked: Transparant + Trainer-eerst (SculptClub's actual moats). Reuses
@@ -160,7 +160,7 @@ export default function OverOnsPage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="/images/studio/entrance-smile.jpg"
-                alt="Warm welkom bij SculptClub Amsterdam Jordaan — onze studio aan de gracht in de Jordaan"
+                alt="Warm welkom bij SculptClub Amsterdam Jordaan, onze studio aan de gracht in de Jordaan"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -175,7 +175,7 @@ export default function OverOnsPage() {
               <p>
                 SculptClub is ontstaan uit frustratie met overvolle sportscholen
                 en lange contracten. Wij geloven dat trainen persoonlijk hoort
-                te zijn — zonder drukte, zonder verplichtingen, zonder
+                te zijn, zonder drukte, zonder verplichtingen, zonder
                 compromissen.
               </p>
               <p>
@@ -187,7 +187,7 @@ export default function OverOnsPage() {
               <p>
                 Of je nu traint met een personal trainer, zelfstandig komt
                 trainen via Open Gym, of als ZZP-trainer onze studio huurt voor
-                je eigen klanten — bij SculptClub draait alles om kwaliteit
+                je eigen klanten. Bij SculptClub draait alles om kwaliteit
                 boven kwantiteit.
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function OverOnsPage() {
         <SectionHeader
           overline="Wat wij bieden"
           title="Drie pijlers"
-          description="Personal Training, Open Gym en Studio Verhuur — alles onder één dak."
+          description="Personal Training, Open Gym en Studio Verhuur: alles onder één dak."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (

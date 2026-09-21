@@ -18,18 +18,18 @@ import { FaqJsonLd, DefinedTermJsonLd } from "@/components/seo/json-ld";
 import type { Metadata } from "next";
 
 const homeFaqs = [
-  { question: "Hoe werkt SculptClub?", answer: "Wij matchen je met freelance personal trainers voor privésessies of small group. Kies je eigen trainer, train 1-op-1 of in een kleine groep in onze privé studio in de Jordaan, en betaal direct aan je trainer — geen abonnement, geen tussenpersoon. De eerste intake is altijd gratis." },
-  { question: "Wat kost personal training bij SculptClub?", answer: "Elke trainer bepaalt zijn eigen tarief, te zien op het trainersprofiel. De intake is altijd gratis. De prijs die je ziet betaal je direct aan je trainer \u2014 geen tussenpersoon." },
+  { question: "Hoe werkt SculptClub?", answer: "Wij matchen je met freelance personal trainers voor privésessies of small group. Kies je eigen trainer, train 1-op-1 of in een kleine groep in onze privé studio in de Jordaan, en betaal direct aan je trainer, geen abonnement, geen tussenpersoon. De eerste intake is altijd gratis." },
+  { question: "Wat kost personal training bij SculptClub?", answer: "Elke trainer bepaalt zijn eigen tarief, te zien op het trainersprofiel. De intake is altijd gratis. De prijs die je ziet betaal je direct aan je trainer, geen tussenpersoon." },
   { question: "Hoe werkt Open Gym?", answer: "Je traint zelfstandig in onze priv\u00e9 studio met professionele apparatuur. Plan je sessies via ons boekingssysteem, ontvang een deurcode en train op jouw tijd. Vanaf \u20AC7,25 per sessie." },
-  { question: "Moet ik een abonnement afsluiten?", answer: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract \u2014 opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten." },
+  { question: "Moet ik een abonnement afsluiten?", answer: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract, opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten." },
   { question: "Kan ik de studio huren voor mijn eigen klanten?", answer: "Ja! Als ZZP-trainer of fysiotherapeut kun je onze studio huren vanaf \u20AC12 per 60 minuten. We bieden ook kortingspakketten tot 23% korting." },
-  { question: "Hoe annuleer ik een sessie?", answer: "Voor Open Gym en studio-sessies kun je altijd gratis annuleren of verzetten via ons boekingssysteem (Acuity). Voor Personal Training neem je direct contact op met je trainer — ook altijd gratis." },
+  { question: "Hoe annuleer ik een sessie?", answer: "Voor Open Gym en studio-sessies kun je altijd gratis annuleren of verzetten via ons boekingssysteem (Acuity). Voor Personal Training neem je direct contact op met je trainer, ook altijd gratis." },
 ];
 
 export const metadata: Metadata = {
   title: { absolute: "SculptClub — Personal Training Studio Amsterdam Jordaan" },
   description:
-    "Huur jouw eigen studio in de Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
+    "Huur jouw eigen studio in de Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
   alternates: {
     canonical: "/",
     languages: {
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     url: "/",
     title: "SculptClub — Personal Training Studio Amsterdam Jordaan",
     description:
-      "Huur jouw eigen studio in de Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
+      "Huur jouw eigen studio in de Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
   },
   twitter: {
     card: "summary_large_image",
     title: "SculptClub — Personal Training Studio Amsterdam Jordaan",
     description:
-      "Huur jouw eigen studio in de Jordaan vanaf €12/uur — eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
+      "Huur jouw eigen studio in de Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract. Ook personal training met gratis intake.",
   },
 };
 
@@ -139,7 +139,7 @@ export default function HomePage() {
               Eerste keer bij SculptClub?
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Kies je startpunt — we helpen je op weg.
+              Kies je startpunt. We helpen je op weg.
             </p>
             <div className="mt-7">
               <FirstTimeMenu locale="nl" placement="bottom" />

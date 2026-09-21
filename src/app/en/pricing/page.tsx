@@ -86,7 +86,7 @@ const openGymPlans = [
     period: "/ 4 weeks",
     perSession: null,
     blurb: openGymSummerDeal.active
-      ? `Save \u20ac${openGymSummerDeal.priceRegular - openGymSummerDeal.priceDeal} per 4 weeks \u2014 this price stays as long as you're a member`
+      ? `Save \u20ac${openGymSummerDeal.priceRegular - openGymSummerDeal.priceDeal} per 4 weeks, this price stays as long as you're a member`
       : "No limits, no planning",
     badge: openGymSummerDeal.active ? "Intro offer" : null,
     link: openGymSummerDeal.active ? openGymSummerDeal.dealUrl : acuityLinks.openGymPlans.onbeperkt,
@@ -238,7 +238,7 @@ export default function PricingPageEN() {
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-sm text-muted-foreground">
-                First intro always free. The price your trainer quotes you pay directly — no middleman.
+                First intro always free. The price your trainer quotes you pay directly, no middleman.
               </p>
             </CardContent>
             <CardFooter className="justify-center">
@@ -481,7 +481,7 @@ export default function PricingPageEN() {
 
         <FadeIn delay={0.28}>
           <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-            A credit package is studio credit — the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio €17. Your credit sets the number of sessions. Valid 1 year.
+            A credit package is studio credit, the struck-through price is your credit. Sessions of 60 min: half studio (max 2) €12 · full studio €17. Your credit sets the number of sessions. Valid 1 year.
           </p>
         </FadeIn>
 
@@ -535,15 +535,15 @@ export default function PricingPageEN() {
               { q: "Do I need a membership?", a: "No. Open Gym works in 4-week cycles you can cancel anytime. Personal training is booked per session. Studio rental per hour or via a package. No long-term contract." },
               { q: "Can I always cancel?", a: "Yes, cancellation is always free. No time limit, no fees." },
               // V (2026-06-02) — pause/validity, model-correct (see NL prijzen).
-              { q: "Can I pause?", a: "There's no membership to pause. Open Gym simply ends after each 4-week cycle — book the next one whenever suits you, at no cost. Personal training is booked per session, so 'pausing' just means not booking for a while." },
-              { q: "How long is my studio package valid?", a: "Studio packages are valid for 1 year. Use your credit whenever it suits you — no rush, no expiry within the year." },
+              { q: "Can I pause?", a: "There's no membership to pause. Open Gym simply ends after each 4-week cycle, book the next one whenever suits you, at no cost. Personal training is booked per session, so 'pausing' just means not booking for a while." },
+              { q: "How long is my studio package valid?", a: "Studio packages are valid for 1 year. Use your credit whenever it suits you, no rush, no expiry within the year." },
               { q: "How do I pay?", a: "Credit card, Apple Pay and Google Pay. Studio rental also accepts invoice. iDEAL via Apple Pay." },
               // U (2026-06-02) — business/reimbursement. See NL for accuracy notes.
-              { q: "Can I pay via invoice or for business?", a: "Yes. Studio rental and packages can be invoiced — handy for freelance trainers (ZZP) and companies. Via the werkkostenregeling or a corporate-fitness scheme your employer may (partly) contribute; ask your employer." },
-              { q: "Does my health insurance cover personal training?", a: "Sometimes partially: certain supplementary policies reimburse lifestyle or exercise coaching. Whether it applies in your case, check with your health insurer — we can provide an invoice in your name." },
+              { q: "Can I pay via invoice or for business?", a: "Yes. Studio rental and packages can be invoiced, handy for freelance trainers (ZZP) and companies. Via the werkkostenregeling or a corporate-fitness scheme your employer may (partly) contribute; ask your employer." },
+              { q: "Does my health insurance cover personal training?", a: "Sometimes partially: certain supplementary policies reimburse lifestyle or exercise coaching. Whether it applies in your case, check with your health insurer, we can provide an invoice in your name." },
               { q: "What if the trainer isn't right for me?", a: "The first intro is free and no-obligation. Not a match? No worries. You can always try a different trainer." },
               { q: "Are there hidden costs?", a: "No. The prices on this page are all-inclusive. No sign-up fee, no admin charges, no surprises." },
-              { q: "How does the door code work?", a: "The evening before your session you receive a unique door code via WhatsApp. No reception, no keys — walk straight in." },
+              { q: "How does the door code work?", a: "The evening before your session you receive a unique door code via WhatsApp. No reception, no keys, walk straight in." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-border/50 py-6">
                 <h3 className="font-semibold mb-2">{faq.q}</h3>
