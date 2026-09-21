@@ -137,17 +137,29 @@ async function buildSlide(opts) {
   const hasPrice = price != null && String(price).trim().length > 0;
 
   // Content zone vertical positions (relative to canvas height)
+  //
+  // 2026-09-21 — SQUARE TEXT BLOCK MOVED DOWN. It used to start at 0.45 and put
+  // the hero at 0.55, i.e. dead centre of the frame. On the 9:16 crop that is
+  // below the chin and reads fine, but a 1:1 centre-cover crop of a PORTRAIT
+  // puts the subject's face at roughly 0.20–0.65 — so the eyebrow landed across
+  // Alex's eyes and "Alex." across his mouth (trainer-spotlight-alex-001,
+  // rejected by the operator at posting: "wtf, over his face?"). The square
+  // slide now uses the same proportional composition as the vertical one,
+  // shifted clear of the face: eyebrow 0.70 → cta 0.945, all inside the bottom
+  // gradient (which starts at 0.4), so contrast is unchanged or better.
+  // Any future portrait slide inherits the fix; nothing already rendered moves
+  // until its own pack is rebuilt.
   const wordmarkTop = isSquare ? 75 : 140;
-  const eyebrowY = isSquare ? height * 0.45 : 1180;
-  const heroY = isSquare ? height * 0.55 : 1340;
-  const priceY = isSquare ? height * 0.72 : 1530;
+  const eyebrowY = isSquare ? height * 0.70 : 1180;
+  const heroY = isSquare ? height * 0.785 : 1340;
+  const priceY = isSquare ? height * 0.845 : 1530;
   // When no price slot, usp+cta move up into the void to fill the composition.
   const uspY = hasPrice
-    ? (isSquare ? height * 0.82 : 1660)
-    : (isSquare ? height * 0.72 : 1530);
+    ? (isSquare ? height * 0.90 : 1660)
+    : (isSquare ? height * 0.875 : 1530);
   const ctaY = hasPrice
-    ? (isSquare ? height * 0.92 : 1770)
-    : (isSquare ? height * 0.82 : 1640);
+    ? (isSquare ? height * 0.955 : 1770)
+    : (isSquare ? height * 0.945 : 1640);
 
   // Font scale: square slides have less vertical room, scale headlines smaller
   const scale = isSquare ? 0.65 : 1;
