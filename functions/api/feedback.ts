@@ -85,6 +85,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     slots: list(body.slots, 8, 40),
     group: GROUP.has(group) ? group : "",
     trainer: text(body.trainer, 40),
+    // 2026-09-22: how they found us, asked of renters only. Nothing in the
+    // fleet knew where our renters come from, and a renter is worth about
+    // twelve package clients (card mubk6kwqyry9z0), so this is the one answer
+    // that decides where the studio spends its effort. Free text on purpose:
+    // a dropdown would only return the options we already guessed.
+    found: text(body.found, 200),
     first_name: text(body.first_name, 60),
     email,
     // Strict: only the literal boolean true counts as consent.

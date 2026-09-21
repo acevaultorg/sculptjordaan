@@ -69,6 +69,8 @@ const COPY = {
     groupOptions: { yes: "Ja", maybe: "Misschien", no: "Nee" },
     aboutYou: "Over jou (mag je leeg laten)",
     trainer: "Bij welke trainer train je?",
+    found: "Hoe ben je bij SculptClub terechtgekomen?",
+    foundHint: "Via een trainer, Google, Instagram, langsgelopen, iemand die je kent?",
     trainerNone: "Geen of weet ik niet",
     firstName: "Voornaam",
     email: "E-mail, alleen als je een antwoord wilt",
@@ -103,6 +105,8 @@ const COPY = {
     groupOptions: { yes: "Yes", maybe: "Maybe", no: "No" },
     aboutYou: "About you (you can leave this empty)",
     trainer: "Which trainer do you train with?",
+    found: "How did you end up at SculptClub?",
+    foundHint: "Through a trainer, Google, Instagram, walked past, someone you know?",
     trainerNone: "None or not sure",
     firstName: "First name",
     email: "Email, only if you want a reply",
@@ -149,6 +153,8 @@ export function FeedbackForm({
   const [slots, setSlots] = useState<string[]>([]);
   const [group, setGroup] = useState("");
   const [trainer, setTrainer] = useState("");
+  // 2026-09-22: renters only — where they came from. See functions/api/feedback.ts.
+  const [found, setFound] = useState("");
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
@@ -195,6 +201,7 @@ export function FeedbackForm({
           slots,
           group,
           trainer,
+          found,
           first_name: firstName,
           email,
           consent_publish: consent === true,
@@ -352,6 +359,19 @@ export function FeedbackForm({
           <Label htmlFor="fb-name">{t.firstName}</Label>
           <Input id="fb-name" autoComplete="given-name" maxLength={60} value={firstName} onChange={(e) => setFirstName(e.target.value)} className="min-h-[44px]" />
         </div>
+        {audience === "renter" && (
+          <div className="space-y-2">
+            <Label htmlFor="fb-found">{t.found}</Label>
+            <Input
+              id="fb-found"
+              value={found}
+              onChange={(e) => setFound(e.target.value)}
+              maxLength={200}
+              placeholder={t.foundHint}
+              className="min-h-[44px]"
+            />
+          </div>
+        )}
         <div className="space-y-2">
           <Label htmlFor="fb-email">{t.email}</Label>
           <Input id="fb-email" type="email" autoComplete="email" maxLength={200} value={email} onChange={(e) => setEmail(e.target.value)} className="min-h-[44px]" />

@@ -45,6 +45,9 @@ if (asJson) {
   for (const r of shown) {
     console.log(`${r.ts}  ${r.audience}  ${r.locale}  rating ${r.rating}/5  PUBLISHABLE: ${r.consent_publish === true ? "yes" : "no"}`);
     if (r.first_name || r.trainer || r.email) console.log(`  who: ${r.first_name || "-"}${r.trainer ? `  trainer: ${r.trainer}` : ""}${r.email ? `  reply to: ${r.email}` : ""}`);
+    // 2026-09-22: renters are asked how they found us; without this line the
+    // answer would be stored and never read, which is the whole point of it.
+    if (r.found) console.log(`  found us via: ${r.found}`);
     if (r.feedback) console.log(`  feedback: ${r.feedback}`);
     if (r.ideas) console.log(`  ideas: ${r.ideas}`);
     if (r.equipment?.length || r.equipment_other) console.log(`  equipment: ${[...(r.equipment || []), r.equipment_other].filter(Boolean).join(", ")}`);
