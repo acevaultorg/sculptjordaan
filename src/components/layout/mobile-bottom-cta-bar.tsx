@@ -116,7 +116,11 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
     /\/(boeking-bevestigd|booking-confirmed)(\/|$)/.test(pathname) || // post-booking — already converted
     /\/plan-(gratis-intake-met|free-intro-with)-/.test(pathname) || // per-trainer intake step (×22)
     /\/(boek-trainer|boek-gym|boek-studio|book-trainer|book-gym|book-studio)(\/|$)/.test(pathname) || // dedicated book pages
-    /\/(boek|book|start)(\/|$)/.test(pathname) // book/start booking endpoints
+    /\/(boek|book|start)(\/|$)/.test(pathname) || // book/start booking endpoints
+    // Feedback forms (2026-09-21): the bar covered the form fields and the submit
+    // button at 375px, and a mis-tap on it is a trainer CTA = a fake EUR 45 Ads lead
+    // from someone who came to give feedback. Existing clients need no intake CTA.
+    /^\/(nl|en)\/feedback(\/|$)/.test(pathname)
   ) {
     return null;
   }

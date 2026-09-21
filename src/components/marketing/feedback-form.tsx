@@ -120,8 +120,8 @@ const COPY = {
   },
 } as const;
 
-const chip = (on: boolean) =>
-  `min-h-[44px] rounded-xl border px-3.5 py-2 text-left text-sm transition-colors ${
+const chip = (on: boolean, align: "left" | "center" = "left") =>
+  `min-h-[44px] rounded-xl border px-3.5 py-2 ${align === "center" ? "text-center" : "text-left"} text-sm leading-snug transition-colors ${
     on
       ? "border-brand bg-brand text-brand-foreground"
       : "border-border bg-background text-foreground hover:border-brand"
@@ -282,7 +282,7 @@ export function FeedbackForm({
       {/* 4. equipment */}
       <fieldset>
         <legend className="mb-3 text-base font-semibold leading-snug">4. {t.equipment}</legend>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
           {EQUIPMENT.map((it) => (
             <button key={it.id} type="button" aria-pressed={equipment.includes(it.id)} onClick={() => toggle(equipment, setEquipment, it.id)} className={chip(equipment.includes(it.id))}>
               {it[locale]}
@@ -308,7 +308,7 @@ export function FeedbackForm({
               role="radio"
               aria-checked={group === g}
               onClick={() => setGroup(group === g ? "" : g)}
-              className={`${chip(group === g)} flex-1 text-center`}
+              className={`${chip(group === g, "center")} flex-1`}
             >
               {t.groupOptions[g]}
             </button>
