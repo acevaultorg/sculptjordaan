@@ -53,7 +53,7 @@ const COPY = {
     // ALL trainers speak English (every roster entry has "EN" in languages),
     // so "all English-speaking" is accurate. No-Dutch-required removes the
     // single biggest hesitation for Amsterdam expats researching in English.
-    subtitle: `${trainers.length} personal trainers — all English-speaking, no Dutch required. Distinct specialties, free intro. No membership, no middleman.`,
+    subtitle: `${trainers.length} personal trainers, all English-speaking, no Dutch required. Distinct specialties, free intro. No membership, no middleman.`,
     ctaCard: "Book intake",
     ctaProfile: "View profile",
     ariaProfile: (name: string) => `View ${name}'s profile`,

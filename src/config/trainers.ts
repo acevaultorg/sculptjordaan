@@ -193,8 +193,8 @@ const trainersRaw: Trainer[] = [
       en: "Fitness Instructor",
     },
     bio: {
-      nl: "Static calisthenics-specialist met een achtergrond in gymnastiek. Als fitnessinstructeur richt Alex zich op prestatie, afvallen, spieropbouw en herstel met functionele, skill-gerichte bewegingen — van je eerste push-up tot een beheerste handstand, terwijl je je atletisch vermogen opbouwt met meetbare resultaten.",
-      en: "Static calisthenics specialist with a background in gymnastics. As a fitness instructor, Alex coaches performance, weight loss, muscle gain and recovery through functional, skill-based movement — from your first push-up to a clean handstand, building real athletic ability and measurable results.",
+      nl: "Static calisthenics-specialist met een achtergrond in gymnastiek. Als fitnessinstructeur richt Alex zich op prestatie, afvallen, spieropbouw en herstel met functionele, skill-gerichte bewegingen, van je eerste push-up tot een beheerste handstand, terwijl je je atletisch vermogen opbouwt met meetbare resultaten.",
+      en: "Static calisthenics specialist with a background in gymnastics. As a fitness instructor, Alex coaches performance, weight loss, muscle gain and recovery through functional, skill-based movement, from your first push-up to a clean handstand, building real athletic ability and measurable results.",
     },
     // Hero swapped 2026-09-07 (operator directive): the handstand shot is the
     // main photo. It IS his specialisation — static calisthenics — where the
@@ -325,8 +325,8 @@ const trainersRaw: Trainer[] = [
       },
     ],
     bio: {
-      nl: "Calisthenics-specialist. Van eerste push-up tot handstand, muscle-up en human flag — Bryan leert je je eigen lichaamsgewicht beheersen met heldere progressies, sterke fundamenten en gerichte mobiliteit.",
-      en: "Calisthenics specialist. From your first push-up to handstand, muscle-up and human flag — Bryan teaches you to master your own bodyweight with clear progressions, strong foundations and targeted mobility.",
+      nl: "Calisthenics-specialist. Van eerste push-up tot handstand, muscle-up en human flag: Bryan leert je je eigen lichaamsgewicht beheersen met heldere progressies, sterke fundamenten en gerichte mobiliteit.",
+      en: "Calisthenics specialist. From your first push-up to handstand, muscle-up and human flag: Bryan teaches you to master your own bodyweight with clear progressions, strong foundations and targeted mobility.",
     },
     image: "/images/trainers/bryan.jpg",
     whatsapp: "https://wa.me/31642267007",
@@ -377,7 +377,7 @@ const trainersRaw: Trainer[] = [
     ],
     bio: {
       nl: "Als personal trainer help ik mensen doelgericht werken aan een fitter en gezonder lichaam. Mijn specialisatie ligt in voeding en afvallen, waarbij ik praktische en haalbare plannen maak die passen bij jouw levensstijl. Daarnaast begeleid ik ook bij revalidatie, zodat je op een veilige en verantwoorde manier weer sterker en pijnvrij kunt bewegen.",
-      en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss — I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
+      en: "As a personal trainer I help people work purposefully toward a fitter and healthier body. My specialty is nutrition and weight loss. I build practical, achievable plans that fit your lifestyle. I also guide rehabilitation, so you can safely return to stronger and pain-free movement.",
     },
     image: "/images/trainers/ibrahim.jpg",
     whatsapp: "https://wa.me/31636091780",
@@ -647,8 +647,8 @@ const trainersRaw: Trainer[] = [
       en: "The Ascend Method — Inner Alignment System",
     },
     bio: {
-      nl: "Joey begeleidt je om lichaam, geest en bewustzijn op één lijn te brengen. Via functionele training, ademwerk en zelfonderzoek bouw je energie, helderheid en innerlijke kracht op. Voor high-performers die vastzitten, stress ervaren of zich afgesloten voelen — herwin je energie, neem de regie terug. \"Wisdom isn't studied, it's embodied.\"",
-      en: "Joey guides you to align body, mind and awareness. Through functional training, breathwork and self-inquiry you build energy, clarity and inner strength. For high-performers feeling stuck, stressed or disconnected — reclaim your energy, take back control. \"Wisdom isn't studied, it's embodied.\"",
+      nl: "Joey begeleidt je om lichaam, geest en bewustzijn op één lijn te brengen. Via functionele training, ademwerk en zelfonderzoek bouw je energie, helderheid en innerlijke kracht op. Voor high-performers die vastzitten, stress ervaren of zich afgesloten voelen: herwin je energie, neem de regie terug. \"Wisdom isn't studied, it's embodied.\"",
+      en: "Joey guides you to align body, mind and awareness. Through functional training, breathwork and self-inquiry you build energy, clarity and inner strength. For high-performers feeling stuck, stressed or disconnected: reclaim your energy, take back control. \"Wisdom isn't studied, it's embodied.\"",
     },
     image: "/images/trainers/joey.jpg",
     whatsapp: "https://wa.me/31639175337",
@@ -727,7 +727,7 @@ const trainersRaw: Trainer[] = [
     },
     bio: {
       nl: "Tom heeft 12 jaar ervaring, opgebouwd op de sportvloeren van Mayfair en Soho in Londen, waar hij veeleisende cliënten trainde. Met een achtergrond in het leger, roeien en Brazilian Jiu-Jitsu combineert hij die ervaring met een heldere aanpak: je gezonder maken en je de middelen geven om ook met een druk leven duurzaam te blijven trainen.",
-      en: "Tom brings 12 years of experience from the gym floors of Mayfair and Soho in London, where he trained demanding, high-end clients — alongside a background in the military, rowing and Brazilian Jiu-Jitsu. His approach is clear: get you healthier, and give you the tools to train sustainably through a busy life.",
+      en: "Tom brings 12 years of experience from the gym floors of Mayfair and Soho in London, where he trained demanding, high-end clients, alongside a background in the military, rowing and Brazilian Jiu-Jitsu. His approach is clear: get you healthier, and give you the tools to train sustainably through a busy life.",
     },
     // Real photo — front-facing street portrait, cropped 1122×1200 (best card
     // fit of the 3 operator-provided shots; see commit f602c7f).

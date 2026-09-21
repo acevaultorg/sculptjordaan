@@ -79,12 +79,12 @@ const benefits = [
   {
     icon: Users,
     title: "Kleine groep, echte aandacht",
-    body: "Maximaal 4 mensen tegelijk. Je coach ziet je techniek, corrigeert waar nodig en houdt het persoonlijk — het beste van samen trainen én 1-op-1.",
+    body: "Maximaal 4 mensen tegelijk. Je coach ziet je techniek, corrigeert waar nodig en houdt het persoonlijk: het beste van samen trainen én 1-op-1.",
   },
   {
     icon: Dumbbell,
     title: "Kracht & balans",
-    body: "Opgebouwd rond kracht, houding en stabiliteit. Sterker worden op een manier die je lichaam aankan — of je nu net begint of weer op gang komt.",
+    body: "Opgebouwd rond kracht, houding en stabiliteit. Sterker worden op een manier die je lichaam aankan, of je nu net begint of weer op gang komt.",
   },
   {
     icon: Sparkles,
@@ -94,7 +94,7 @@ const benefits = [
   {
     icon: Gift,
     title: "Eerste keer gratis",
-    body: "Kom vrijblijvend kennismaken. Geen contract, geen abonnement — na de eerste keer beslis je zelf of het bij je past.",
+    body: "Kom vrijblijvend kennismaken. Geen contract, geen abonnement. Na de eerste keer beslis je zelf of het bij je past.",
   },
 ];
 
@@ -177,7 +177,7 @@ export default function SmallGroupNL() {
         <SectionHeader
           overline="De coaches"
           title="Coaches die small group aanbieden"
-          description="Kies de coach die bij je past. Volg ze op Instagram of stuur direct een WhatsApp — zij plannen de small group samen met jou in."
+          description="Kies de coach die bij je past. Volg ze op Instagram of stuur direct een WhatsApp. Zij plannen de small group samen met jou in."
         />
         <FadeIn>
           <div className="mx-auto max-w-5xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -236,7 +236,7 @@ export default function SmallGroupNL() {
         <SectionHeader
           overline="Op Instagram"
           title="Bekijk Dara in actie"
-          description="Een indruk van hoe Dara traint — kracht, balans en techniek. Zin om mee te doen aan een small group? Volg haar of stuur direct een WhatsApp."
+          description="Een indruk van hoe Dara traint: kracht, balans en techniek. Zin om mee te doen aan een small group? Volg haar of stuur direct een WhatsApp."
         />
         <FadeIn>
           <InstagramEmbeds

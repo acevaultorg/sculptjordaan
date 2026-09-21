@@ -49,17 +49,17 @@ const steps = [
   {
     step: "2",
     title: "Send a message",
-    desc: "Via WhatsApp or the form. Your trainer usually replies within an hour — together you pick a time that works.",
+    desc: "Via WhatsApp or the form. Your trainer usually replies within an hour. Together you pick a time that works.",
   },
   {
     step: "3",
     title: "Free intro",
-    desc: "By phone or in our private studio in the Jordaan — your trainer decides what fits best. Discuss your goal, your experience and what you're after. No obligation.",
+    desc: "By phone or in our private studio in the Jordaan. Your trainer decides what fits best. Discuss your goal, your experience and what you're after. No obligation.",
   },
   {
     step: "4",
     title: "Your tailored approach",
-    desc: "Your trainer proposes a plan around your body, schedule and goal. You know exactly what to expect — and what it costs.",
+    desc: "Your trainer proposes a plan around your body, schedule and goal. You know exactly what to expect and what it costs.",
   },
   {
     step: "5",
@@ -77,7 +77,7 @@ const trustItems = [
 const faqs = [
   {
     q: "Is the intro really free?",
-    a: "Yes. Your first intro is always free — no credit card required. Duration is up to you and your trainer.",
+    a: "Yes. Your first intro is always free, no credit card required. Duration is up to you and your trainer.",
   },
   {
     q: "Am I committing to anything after the intro?",
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "How do I get in?",
-    a: "Your trainer arranges the studio and makes sure you can get in. At your intake the trainer either meets you at the door or sends instructions via WhatsApp beforehand — no buzzer, no reception, everything goes through your trainer.",
+    a: "Your trainer arranges the studio and makes sure you can get in. At your intake the trainer either meets you at the door or sends instructions via WhatsApp beforehand. No buzzer, no reception, everything goes through your trainer.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function FreeIntroPage() {
             Shipped 2026-05-26 lead-cap. */}
         <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
           <p className="text-sm text-foreground">
-            <strong className="font-semibold">12 trainers</strong> — not sure which fits?
+            <strong className="font-semibold">12 trainers</strong>. Not sure which fits?
           </p>
           <Link
             href="/en/match-trainer"
@@ -189,7 +189,7 @@ export default function FreeIntroPage() {
         {/* How it works */}
         <div className="mt-16 text-left">
           <h2 className="text-2xl font-bold text-center mb-2">The SculptClub Intake</h2>
-          <p className="text-center text-sm text-muted-foreground mb-8">In 5 steps — from intro to your first session.</p>
+          <p className="text-center text-sm text-muted-foreground mb-8">In 5 steps from intro to your first session.</p>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div
@@ -229,9 +229,9 @@ export default function FreeIntroPage() {
           <ul className="space-y-3">
             {[
               "Free personal intro",
-              "Private studio — no crowds, no distractions",
+              "Private studio: no crowds, no distractions",
               "Clarity on your goals and the best approach",
-              "Direct contact with your trainer — no middleman",
+              "Direct contact with your trainer, no middleman",
               "Trainers from €45/session",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
@@ -262,7 +262,7 @@ export default function FreeIntroPage() {
                 ))}
               </div>
               <p className="text-sm leading-relaxed">“{r.text}”</p>
-              <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
+              <p className="text-xs text-muted-foreground mt-2">{r.name} · Google</p>
             </div>
           ))}
         </div>

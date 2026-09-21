@@ -60,7 +60,7 @@ const copy: Record<
     // "les". The studio-rental path already said "sessie"; this aligns the rest.
     button: "Boek gratis probeersessie",
     title: "Waar wil je beginnen?",
-    subtitle: "Nieuw bij SculptClub? Kies wat bij je past — we helpen je op weg.",
+    subtitle: "Nieuw bij SculptClub? Kies wat bij je past en we helpen je op weg.",
     trainerHeading: "Ben je zelf trainer?",
     close: "Sluiten",
     consumer: [
@@ -107,7 +107,7 @@ const copy: Record<
   en: {
     button: "Book free trial",
     title: "Where do you want to start?",
-    subtitle: "New to SculptClub? Pick what fits you — we'll guide you.",
+    subtitle: "New to SculptClub? Pick what fits you and we'll guide you.",
     trainerHeading: "Are you a trainer yourself?",
     close: "Close",
     consumer: [

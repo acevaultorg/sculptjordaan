@@ -16,7 +16,7 @@ const faqs = {
   nl: [
     {
       q: "Wat kost personal training bij SculptClub?",
-      a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. De intake is altijd gratis. De prijs die je ziet betaal je direct aan je trainer — geen tussenpersoon.",
+      a: "Trainers bepalen hun eigen tarieven, vanaf €45 per sessie. De intake is altijd gratis. De prijs die je ziet betaal je direct aan je trainer, geen tussenpersoon.",
     },
     {
       q: "Hoe werkt Open Gym?",
@@ -24,7 +24,7 @@ const faqs = {
     },
     {
       q: "Moet ik een abonnement afsluiten?",
-      a: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract — opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten.",
+      a: "Nee. Open Gym werkt met een 4-weken cyclus zonder contract, opzeggen kan op elk moment. Personal training boek je per sessie. Studio huur betaal je per uur of via kortingspakketten.",
     },
     {
       q: "Kan ik de studio huren voor mijn eigen klanten?",
@@ -38,7 +38,7 @@ const faqs = {
   en: [
     {
       q: "How much does personal training cost at SculptClub?",
-      a: "Trainers set their own rates, starting from €45 per session. The intro is always free. The price you see you pay directly to your trainer — no middleman.",
+      a: "Trainers set their own rates, starting from €45 per session. The intro is always free. The price you see you pay directly to your trainer, no middleman.",
     },
     {
       q: "How does Open Gym work?",
@@ -46,7 +46,7 @@ const faqs = {
     },
     {
       q: "Do I need a subscription?",
-      a: "No. Open Gym works on a 4-week cycle with no contract — cancel anytime. Personal training is booked per session. Studio rental is per hour or via discount packages.",
+      a: "No. Open Gym works on a 4-week cycle with no contract, cancel anytime. Personal training is booked per session. Studio rental is per hour or via discount packages.",
     },
     {
       q: "Can I rent the studio for my own clients?",

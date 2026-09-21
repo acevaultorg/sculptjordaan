@@ -80,7 +80,7 @@ const steps = [
   },
   {
     icon: Dumbbell,
-    title: "Train — the studio is yours",
+    title: "Train: the studio is yours",
     description:
       "The full studio with professional equipment, all to yourself.",
   },
@@ -102,13 +102,13 @@ const studioImages = [
 const faqs = [
   {
     q: "What's the difference between a free trial and reserving a session?",
-    a: "The free trial is your first time — no obligation, no membership. After that you reserve single sessions (€9, 1 hour) or become a member. New here? Start with the free trial.",
+    a: "The free trial is your first time: no obligation, no membership. After that you reserve single sessions (€9, 1 hour) or become a member. New here? Start with the free trial.",
   },
   ...(deal.active
     ? [
         {
           q: "What is the intro offer?",
-          a: `Join Unlimited now and train unlimited for €${deal.priceDeal} per 4 weeks instead of €${deal.priceRegular} — and you keep this price as long as you stay a member. New members pay the regular €${deal.priceRegular} after that. Cancel anytime, free.`,
+          a: `Join Unlimited now and train unlimited for €${deal.priceDeal} per 4 weeks instead of €${deal.priceRegular}, and you keep this price as long as you stay a member. New members pay the regular €${deal.priceRegular} after that. Cancel anytime, free.`,
         },
       ]
     : []),
@@ -130,7 +130,7 @@ const faqs = [
   },
   {
     q: "What if I need to cancel?",
-    a: "Cancel or reschedule anytime via the booking system — always free, no exceptions. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
+    a: "Cancel or reschedule anytime via the booking system. Always free, no exceptions. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
   },
   {
     q: "Is it really a membership?",
@@ -142,11 +142,11 @@ const faqs = [
   },
   {
     q: "What hours can I train?",
-    a: "Daily 06:00 to 22:00. Early morning, lunch, after work or late evening — you choose. The studio is always private during your booked slot.",
+    a: "Daily 06:00 to 22:00. Early morning, lunch, after work or late evening: you choose. The studio is always private during your booked slot.",
   },
   {
     q: "Where is the studio and how do I get there?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam — in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area (Europarking 5 min walk). The evening before your session you receive the door code + directions via WhatsApp.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam, in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area (Europarking 5 min walk). The evening before your session you receive the door code + directions via WhatsApp.",
   },
   {
     q: "Are there changing rooms and showers?",
@@ -190,7 +190,7 @@ export default function OpenGymPageEN() {
               as="h1"
               overline="Open Gym · Jordaan"
               title="Train whenever you want in a quiet private studio"
-              description="Train freely in a fully equipped studio on the Egelantiersgracht, in the heart of the Jordaan. 60-minute sessions, max 4 people at a time. No contract, cancel anytime for free — and your first session is on us."
+              description="Train freely in a fully equipped studio on the Egelantiersgracht, in the heart of the Jordaan. 60-minute sessions, max 4 people at a time. No contract, cancel anytime for free, and your first session is on us."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -251,7 +251,7 @@ export default function OpenGymPageEN() {
               {/* Deal teaser — plain foreground text (never orange, never a button), gated */}
               {deal.active && (
                 <p className="mt-4 text-sm font-medium text-foreground">
-                  Intro offer — Unlimited €{deal.priceDeal} per 4 weeks (normally €{deal.priceRegular})
+                  Intro offer: Unlimited €{deal.priceDeal} per 4 weeks (normally €{deal.priceRegular})
                   {deal.endDate ? `, until ${deal.endDate}` : ""}.
                 </p>
               )}
@@ -290,7 +290,7 @@ export default function OpenGymPageEN() {
         <SectionHeader
           overline="How it works"
           title="Where are you now?"
-          description="New here or been before — you'll see your next step right away."
+          description="New here or been before, you'll see your next step right away."
         />
         <div className="grid gap-6 sm:grid-cols-3">
           {/* Rung 1 · G1 — the only filled button in this section */}
@@ -327,7 +327,7 @@ export default function OpenGymPageEN() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Liked it? Reserve a session whenever it suits you — €9 per hour single, or cheaper with a plan.
+                  Liked it? Reserve a session whenever it suits you: €9 per hour single, or cheaper with a plan.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -610,7 +610,7 @@ export default function OpenGymPageEN() {
                   currently not indexed". It targets a real local head query. */}
               <a href="/en/boutique-gym-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Location</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym in Amsterdam — the private-studio alternative</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boutique gym in Amsterdam: the private-studio alternative</p>
               </a>
               {deal.active && (
                 <a href="/en/open-gym/unlimited-summer-deal" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
@@ -631,7 +631,7 @@ export default function OpenGymPageEN() {
                   content page, despite being indexable + in the sitemap. */}
               <a href="/en/book-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Booking</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Book Open Gym — single session or membership</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Book Open Gym: single session or membership</p>
               </a>
               <a href="/en/blog/first-time-gym-tips" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
@@ -640,7 +640,7 @@ export default function OpenGymPageEN() {
               {/* EN twin of the /nl/eerste-bezoek contextual-link push (see NL page). */}
               <a href="/en/first-visit" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Practical</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Your first visit — what to expect</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Your first visit: what to expect</p>
               </a>
             </div>
           </div>
@@ -665,7 +665,7 @@ export default function OpenGymPageEN() {
             data-intent="open_gym"
             data-pricing="paid"
           >
-            {deal.active ? `Become an unlimited member — now €${deal.priceDeal}` : "Become an unlimited member"}
+            {deal.active ? `Become an unlimited member, now €${deal.priceDeal}` : "Become an unlimited member"}
           </ButtonLink>
           <ButtonLink
             href="/en/free-trial"

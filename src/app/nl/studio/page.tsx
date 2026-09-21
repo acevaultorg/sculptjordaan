@@ -87,7 +87,7 @@ const houseRules = [
   {
     title: "Respecteer de ruimte",
     description:
-      "Behandel de studio en apparatuur met respect. Dit is jouw gym — houd het netjes voor de volgende.",
+      "Behandel de studio en apparatuur met respect. Dit is jouw gym. Houd het netjes voor de volgende.",
   },
   {
     title: "Maak apparatuur schoon na gebruik",
@@ -110,7 +110,7 @@ export default function StudioPageNL() {
           as="h1"
           overline="De studio"
           title="Volledig uitgerust voor jouw training"
-          description="Alles wat je nodig hebt voor kracht, conditie en functionele training — in een privé setting aan de gracht."
+          description="Alles wat je nodig hebt voor kracht, conditie en functionele training, in een privé setting aan de gracht."
         />
       </Section>
 
@@ -179,8 +179,8 @@ export default function StudioPageNL() {
               Kom de studio bekijken
             </h2>
             <p className="text-muted-foreground mb-8">
-              Plan een gratis intake met een van onze trainers, of — als je
-              zelf personal trainer bent — boek een gratis testsessie van de
+              Plan een gratis intake met een van onze trainers of, als je
+              zelf personal trainer bent, boek een gratis testsessie van de
               studio. WhatsApp blijft altijd open voor vragen.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">

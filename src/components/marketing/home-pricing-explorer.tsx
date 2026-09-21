@@ -45,14 +45,14 @@ type Tab = "hourly" | "packages" | "membership";
 
 const COPY = {
   nl: {
-    title: "Open Gym & studio huren — alle tarieven",
+    title: "Open Gym & studio huren: alle tarieven",
     subtitle:
       "Train zelf of huur de ruimte als trainer. Geen abonnement verplicht, geen contract, altijd gratis annuleren.",
     tabs: { hourly: "Per uur", packages: "Pakketten", membership: "Abonnement" },
     savePackages: "bespaar tot 23%",
     saveMembership: "bespaar 19%",
     hourly: {
-      note: "Reserveer per sessie — betaal alleen wanneer je traint.",
+      note: "Reserveer per sessie en betaal alleen wanneer je traint.",
       rows: {
         gym: {
           title: "Open Gym",
@@ -61,7 +61,7 @@ const COPY = {
           // right after "1 persoon" (you book for 1, the ROOM holds max 4).
           // Reframed as the benefit — quiet, never crowded — with "tegelijk"
           // making it unambiguously about the room, not your booking.
-          sub: "Train zelf in alle rust — nooit meer dan 4 tegelijk",
+          sub: "Train zelf in alle rust, nooit meer dan 4 tegelijk",
         },
         half: {
           title: "Halve studio",
@@ -82,7 +82,7 @@ const COPY = {
       // discount and what the credit is worth in half-studio hours (derived
       // from the €12/uur rate — honest math, recomputes if rates change).
       forWho:
-        "Voor trainers die vaker huren: koop tegoed met korting en boek er losse uren mee — halve of hele studio.",
+        "Voor trainers die vaker huren: koop tegoed met korting en boek er losse uren mee (halve of hele studio).",
       hoursBasis: "Uurindicatie op basis van halve studio (€12/uur).",
       creditWord: "tegoed",
       hoursLine: (h: number) => `ruim ${h} uur halve studio`,
@@ -96,16 +96,16 @@ const COPY = {
       ],
     },
     membership: {
-      forWho: "Abonnementen zijn voor Open Gym — 1 persoon.",
+      forWho: "Abonnementen zijn voor Open Gym (1 persoon).",
       unlimitedTitle: "Onbeperkt",
       unlimitedBody: (breakEven: number) =>
         `Zo vaak trainen als je wilt. Vanaf ${breakEven} sessies per 4 weken ben je goedkoper uit dan los.`,
       dealNote: (deal: number, regular: number) =>
-        `Nu €${deal} per 4 weken — je houdt deze prijs zolang je lid blijft (normaal €${regular}).`,
+        `Nu €${deal} per 4 weken. Je houdt deze prijs zolang je lid blijft (normaal €${regular}).`,
       plainNote: (regular: number) => `€${regular} per 4 weken.`,
       unlimitedCta: "Word lid",
       instapTitle: "Instapplan",
-      instapBody: "4 sessies per 4 weken — €7,25 per sessie",
+      instapBody: "4 sessies per 4 weken · €7,25 per sessie",
       instapCta: "Kies Instapplan",
       cancel: "Altijd gratis opzegbaar · geen contract",
     },
@@ -115,20 +115,20 @@ const COPY = {
     book: "Boek",
   },
   en: {
-    title: "Open Gym & studio rental — all rates",
+    title: "Open Gym & studio rental: all rates",
     subtitle:
       "Train on your own or rent the space as a trainer. No membership required, no contract, always free cancellation.",
     tabs: { hourly: "Hourly", packages: "Packages", membership: "Membership" },
     savePackages: "save up to 23%",
     saveMembership: "save 19%",
     hourly: {
-      note: "Book per session — pay only when you train.",
+      note: "Book per session and pay only when you train.",
       rows: {
         gym: {
           title: "Open Gym",
           who: "1 person",
           // EN twin of the NL disambiguation (see nl copy note above).
-          sub: "Train on your own in peace — never more than 4 at a time",
+          sub: "Train on your own in peace, never more than 4 at a time",
         },
         half: {
           title: "Half studio",
@@ -144,7 +144,7 @@ const COPY = {
     },
     packages: {
       forWho:
-        "For trainers who rent regularly: buy credit at a discount and book hourly sessions with it — half or full studio.",
+        "For trainers who rent regularly: buy credit at a discount and book hourly sessions with it (half or full studio).",
       hoursBasis: "Hour estimates based on the half studio (€12/hr).",
       creditWord: "credit",
       hoursLine: (h: number) => `over ${h} hours of half studio`,
@@ -158,16 +158,16 @@ const COPY = {
       ],
     },
     membership: {
-      forWho: "Memberships are for Open Gym — 1 person.",
+      forWho: "Memberships are for Open Gym (1 person).",
       unlimitedTitle: "Unlimited",
       unlimitedBody: (breakEven: number) =>
         `Train as often as you like. From ${breakEven} sessions per 4 weeks you pay less than booking singles.`,
       dealNote: (deal: number, regular: number) =>
-        `Now €${deal} per 4 weeks — you keep this price for as long as you stay a member (normally €${regular}).`,
+        `Now €${deal} per 4 weeks. You keep this price for as long as you stay a member (normally €${regular}).`,
       plainNote: (regular: number) => `€${regular} per 4 weeks.`,
       unlimitedCta: "Become a member",
       instapTitle: "Starter plan",
-      instapBody: "4 sessions per 4 weeks — €7.25 per session",
+      instapBody: "4 sessions per 4 weeks · €7.25 per session",
       instapCta: "Choose starter plan",
       cancel: "Cancel anytime, free · no contract",
     },
@@ -272,7 +272,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       <p className="font-semibold">
                         {c.hourly.rows.gym.title}{" "}
                         <span className="font-normal text-muted-foreground">
-                          — {c.hourly.rows.gym.who}
+                          · {c.hourly.rows.gym.who}
                         </span>
                       </p>
                       <p className="mt-0.5 text-sm text-muted-foreground">
@@ -293,7 +293,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       <p className="font-semibold">
                         {c.hourly.rows.half.title}{" "}
                         <span className="font-normal text-muted-foreground">
-                          — {c.hourly.rows.half.who}
+                          · {c.hourly.rows.half.who}
                         </span>
                       </p>
                       <p className="mt-0.5 text-sm text-muted-foreground">
@@ -314,7 +314,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       <p className="font-semibold">
                         {c.hourly.rows.full.title}{" "}
                         <span className="font-normal text-muted-foreground">
-                          — {c.hourly.rows.full.who}
+                          · {c.hourly.rows.full.who}
                         </span>
                       </p>
                       <p className="mt-0.5 text-sm text-muted-foreground">

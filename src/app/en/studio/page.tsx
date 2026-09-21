@@ -81,7 +81,7 @@ const houseRules = [
   {
     title: "Respect the space",
     description:
-      "Treat the studio and equipment with care. This is your gym — keep it clean for the next person.",
+      "Treat the studio and equipment with care. This is your gym. Keep it clean for the next person.",
   },
   {
     title: "Clean equipment after use",
@@ -104,7 +104,7 @@ export default function StudioPageEN() {
           as="h1"
           overline="The Studio"
           title="Fully equipped for your training"
-          description="Everything you need for strength, conditioning and functional training — in a private setting on the canal."
+          description="Everything you need for strength, conditioning and functional training, in a private setting on the canal."
         />
       </Section>
 
@@ -169,7 +169,7 @@ export default function StudioPageEN() {
               Come see the studio
             </h2>
             <p className="text-muted-foreground mb-8">
-              Book a free intro with one of our trainers — or, if you’re a
+              Book a free intro with one of our trainers or, if you’re a
               personal trainer yourself, book a free studio test session.
               WhatsApp is always open for questions.
             </p>

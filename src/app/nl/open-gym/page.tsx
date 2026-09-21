@@ -80,7 +80,7 @@ const steps = [
   },
   {
     icon: Dumbbell,
-    title: "Train — de studio is van jou",
+    title: "Train: de studio is van jou",
     description:
       "De volledige studio met professionele apparatuur, helemaal voor jezelf.",
   },
@@ -103,13 +103,13 @@ const studioImages = [
 const faqs = [
   {
     q: "Wat is het verschil tussen een gratis probeersessie en een sessie reserveren?",
-    a: "De gratis probeersessie is je eerste keer — vrijblijvend en zonder abonnement. Daarna reserveer je losse sessies van 1 uur (€9) of word je lid. Nieuw hier? Begin met de gratis probeersessie.",
+    a: "De gratis probeersessie is je eerste keer, vrijblijvend en zonder abonnement. Daarna reserveer je losse sessies van 1 uur (€9) of word je lid. Nieuw hier? Begin met de gratis probeersessie.",
   },
   ...(deal.active
     ? [
         {
           q: "Wat houdt de introductieprijs in?",
-          a: `Word je nu lid van Onbeperkt, dan train je onbeperkt voor €${deal.priceDeal} per 4 weken in plaats van €${deal.priceRegular} — en je houdt deze prijs zolang je lid blijft. Voor nieuwe leden geldt daarna weer het normale tarief van €${deal.priceRegular}. Je zegt altijd gratis op.`,
+          a: `Word je nu lid van Onbeperkt, dan train je onbeperkt voor €${deal.priceDeal} per 4 weken in plaats van €${deal.priceRegular}, en je houdt deze prijs zolang je lid blijft. Voor nieuwe leden geldt daarna weer het normale tarief van €${deal.priceRegular}. Je zegt altijd gratis op.`,
         },
       ]
     : []),
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
-    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem — geen kosten, geen uitzonderingen. Annuleer je? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.",
+    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem. Geen kosten, geen uitzonderingen. Annuleer je? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.",
   },
   {
     q: "Is het echt een lidmaatschap?",
@@ -143,11 +143,11 @@ const faqs = [
   },
   {
     q: "Hoe laat kan ik trainen?",
-    a: "Dagelijks van 06:00 tot 22:00. Vroege ochtend, lunchtijd, na het werk of laat in de avond — je kiest. De studio is altijd privé tijdens jouw geboekte tijdslot.",
+    a: "Dagelijks van 06:00 tot 22:00. Vroege ochtend, lunchtijd, na het werk of laat in de avond: je kiest. De studio is altijd privé tijdens jouw geboekte tijdslot.",
   },
   {
     q: "Waar is de studio en hoe kom ik er?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam — middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk (Europarking 5 min lopen). De avond voor je sessie krijg je via WhatsApp de deurcode + routebeschrijving.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam, middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk (Europarking 5 min lopen). De avond voor je sessie krijg je via WhatsApp de deurcode + routebeschrijving.",
   },
   {
     q: "Zijn er kleedkamers en douches?",
@@ -191,7 +191,7 @@ export default function OpenGymPageNL() {
               as="h1"
               overline="Open Gym · Jordaan"
               title="Train wanneer jij wilt in een rustige privé studio"
-              description="Vrij trainen in een volledig uitgeruste studio aan de Egelantiersgracht, in hartje Jordaan. Sessies van 60 minuten, maximaal 4 mensen tegelijk. Geen contract, altijd gratis opzegbaar — en je eerste probeersessie is gratis."
+              description="Vrij trainen in een volledig uitgeruste studio aan de Egelantiersgracht, in hartje Jordaan. Sessies van 60 minuten, maximaal 4 mensen tegelijk. Geen contract, altijd gratis opzegbaar, en je eerste probeersessie is gratis."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">
@@ -257,7 +257,7 @@ export default function OpenGymPageNL() {
               {/* Deal teaser — plain foreground text (never orange, never a button), gated */}
               {deal.active && (
                 <p className="mt-4 text-sm font-medium text-foreground">
-                  Introductieprijs — Onbeperkt €{deal.priceDeal} per 4 weken (normaal €{deal.priceRegular})
+                  Introductieprijs: Onbeperkt €{deal.priceDeal} per 4 weken (normaal €{deal.priceRegular})
                   {deal.endDate ? `, t/m ${deal.endDate}` : ""}.
                 </p>
               )}
@@ -296,7 +296,7 @@ export default function OpenGymPageNL() {
         <SectionHeader
           overline="Zo werkt het"
           title="Waar sta jij nu?"
-          description="Nieuw hier of al eens geweest — je ziet meteen wat jouw volgende stap is."
+          description="Nieuw hier of al eens geweest, je ziet meteen wat jouw volgende stap is."
         />
         <div className="grid gap-6 sm:grid-cols-3">
           {/* Rung 1 · G1 — the only filled button in this section */}
@@ -333,7 +333,7 @@ export default function OpenGymPageNL() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Beviel het? Reserveer een sessie wanneer het jou uitkomt — €9 per uur los, of voordeliger met een plan.
+                  Beviel het? Reserveer een sessie wanneer het jou uitkomt: €9 per uur los, of voordeliger met een plan.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -634,7 +634,7 @@ export default function OpenGymPageNL() {
                   in-body link from a topically-related page (GSC striking-distance push). */}
               <a href="/nl/eerste-bezoek" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Praktisch</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Je eerste bezoek — wat je kunt verwachten</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Je eerste bezoek: wat je kunt verwachten</p>
               </a>
               {/* De-orphaned 2026-08-28: this booking page's ONLY inbound link was its own
                   translation (nl<->en language switch) — a closed loop, zero links from any
@@ -642,7 +642,7 @@ export default function OpenGymPageNL() {
                   studio-rental path (=93% of revenue) must be reachable from the money page. */}
               <a href="/nl/boek-gym" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Boeken</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Boek Open Gym — losse sessie of abonnement</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Boek Open Gym: losse sessie of abonnement</p>
               </a>
               <a href="/nl/blog/consistent-blijven-met-sporten" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
@@ -671,7 +671,7 @@ export default function OpenGymPageNL() {
             data-intent="open_gym"
             data-pricing="paid"
           >
-            {deal.active ? `Word onbeperkt lid — nu €${deal.priceDeal}` : "Word onbeperkt lid"}
+            {deal.active ? `Word onbeperkt lid, nu €${deal.priceDeal}` : "Word onbeperkt lid"}
           </ButtonLink>
           <ButtonLink
             href="/nl/gratis-proefles"

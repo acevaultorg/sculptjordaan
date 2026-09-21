@@ -70,7 +70,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Book your session",
     description:
-      "For Personal Training, send your trainer a message via WhatsApp or our contact form — the trainer schedules a moment together with you. For Open Gym and studio rental, pick a time slot online; the evening before you receive your door code via WhatsApp.",
+      "For Personal Training, send your trainer a message via WhatsApp or our contact form. The trainer schedules a moment together with you. For Open Gym and studio rental, pick a time slot online; the evening before you receive your door code via WhatsApp.",
     cta: {
       label: "Pick your trainer",
       href: "/en/find-personal-trainer",
@@ -102,23 +102,23 @@ const bringItems = [
 const faqs = [
   {
     q: "What does the first time cost?",
-    a: "For Personal Training your first intake is always free — you meet your trainer, discuss your goals and (if you want) do a kick-off training right away. No commitment after. For Open Gym you can book a free 60-minute trial session. Studio rental starts at €12 per hour for half studio.",
+    a: "For Personal Training your first intake is always free: you meet your trainer, discuss your goals and (if you want) do a kick-off training right away. No commitment after. For Open Gym you can book a free 60-minute trial session. Studio rental starts at €12 per hour for half studio.",
   },
   {
     q: "Do I need to be fit to start?",
-    a: "No. Our trainers work with every level — complete beginners to advanced athletes. Your trainer adapts every session to your current level and goals. There is no threshold.",
+    a: "No. Our trainers work with every level, from complete beginners to advanced athletes. Your trainer adapts every session to your current level and goals. There is no threshold.",
   },
   {
     q: "Can I come alone, or do I need to sign up somewhere?",
-    a: "No registration, no membership, no contract. You book your session and arrive at the agreed time. The studio is fully private during your session — no strangers, no waiting for equipment, no one watching.",
+    a: "No registration, no membership, no contract. You book your session and arrive at the agreed time. The studio is fully private during your session: no strangers, no waiting for equipment, no one watching.",
   },
   {
-    q: "I don't speak Dutch — is that okay?",
+    q: "I don't speak Dutch, is that okay?",
     a: "Yes. Our trainers speak NL and EN, some also Portuguese or Russian. You can filter trainers by language on the trainer page. The entire site is available in English too.",
   },
   {
     q: "What equipment is available?",
-    a: "A fully equipped private studio: Rogue power rack, barbell with plates, dumbbells, cable machine, benches, kettlebells, mat, foam roller. Not 50 different machines — but everything you actually need for a complete training session.",
+    a: "A fully equipped private studio: Rogue power rack, barbell with plates, dumbbells, cable machine, benches, kettlebells, mat, foam roller. Not 50 different machines, but everything you actually need for a complete training session.",
   },
   {
     q: "How long is a session?",
@@ -126,7 +126,7 @@ const faqs = [
   },
   {
     q: "What if I have an injury or limitation?",
-    a: "Mention it in your WhatsApp message to your trainer or in the contact form. Some trainers (Andrea — posture & technique, Sergei — recovery & posture correction) are explicitly specialized here. Your trainer always adapts the session to what is safe for you.",
+    a: "Mention it in your WhatsApp message to your trainer or in the contact form. Some trainers (Andrea: posture & technique, Sergei: recovery & posture correction) are explicitly specialized here. Your trainer always adapts the session to what is safe for you.",
   },
   {
     q: "Can I cancel or reschedule?",
@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "Can I bring someone along?",
-    a: "Yes. Open Gym allows up to 4 people in the studio at once — so you can come with a training buddy or friend. Personal Training is standard 1-on-1, but many trainers also offer duo or small-group sessions at adjusted rates.",
+    a: "Yes. Open Gym allows up to 4 people in the studio at once, so you can come with a training buddy or friend. Personal Training is standard 1-on-1, but many trainers also offer duo or small-group sessions at adjusted rates.",
   },
   {
     q: "What do I bring?",
@@ -142,11 +142,11 @@ const faqs = [
   },
   {
     q: "What if I can't find the studio?",
-    a: "The evening before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 15 14 79 52 — we usually reply within an hour.",
+    a: "The evening before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 15 14 79 52. We usually reply within an hour.",
   },
   {
     q: "How clean is the studio?",
-    a: "We clean after every session. Equipment and benches are disinfected between sessions. The studio is a private space without foot traffic — not comparable to a busy commercial gym.",
+    a: "We clean after every session. Equipment and benches are disinfected between sessions. The studio is a private space without foot traffic, not comparable to a busy commercial gym.",
   },
 ];
 
@@ -378,7 +378,7 @@ export default function FirstVisitPage() {
                 <p className="font-semibold">For personal training: the first intro is always free</p>
                 <p className="text-sm text-muted-foreground mt-1">
                   You discuss your goals, experience, and any limitations. Your trainer designs an approach that fits.
-                  No commitment — you decide afterwards if you want to continue.
+                  No commitment. You decide afterwards if you want to continue.
                 </p>
               </div>
             </div>

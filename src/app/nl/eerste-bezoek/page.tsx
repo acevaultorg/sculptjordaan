@@ -70,7 +70,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Boek je sessie",
     description:
-      "Voor Personal Training stuur je je trainer een berichtje via WhatsApp of het contactformulier — de trainer plant samen met jou een moment. Voor Open Gym en studio kies je een tijdslot online; de avond ervoor krijg je je deurcode via WhatsApp.",
+      "Voor Personal Training stuur je je trainer een berichtje via WhatsApp of het contactformulier. De trainer plant samen met jou een moment. Voor Open Gym en studio kies je een tijdslot online; de avond ervoor krijg je je deurcode via WhatsApp.",
     cta: {
       label: "Kies je trainer",
       href: "/nl/vind-jouw-personal-trainer",
@@ -102,23 +102,23 @@ const bringItems = [
 const faqs = [
   {
     q: "Wat kost het de eerste keer?",
-    a: "Bij Personal Training is je eerste intake altijd gratis — je maakt kennis met je trainer, bespreekt je doelen en doet (als je wilt) direct een kennismakingstraining. Geen verplichting daarna. Voor Open Gym kun je een gratis probeersessie van 60 minuten boeken. Studio huren start vanaf €12 per uur voor de halve studio.",
+    a: "Bij Personal Training is je eerste intake altijd gratis: je maakt kennis met je trainer, bespreekt je doelen en doet (als je wilt) direct een kennismakingstraining. Geen verplichting daarna. Voor Open Gym kun je een gratis probeersessie van 60 minuten boeken. Studio huren start vanaf €12 per uur voor de halve studio.",
   },
   {
     q: "Moet ik al fit zijn om te beginnen?",
-    a: "Nee. Onze trainers werken met mensen van elk niveau — van complete beginners tot gevorderde sporters. Je trainer past elke sessie aan op jouw huidige niveau en doelen. Er is geen drempel.",
+    a: "Nee. Onze trainers werken met mensen van elk niveau, van complete beginners tot gevorderde sporters. Je trainer past elke sessie aan op jouw huidige niveau en doelen. Er is geen drempel.",
   },
   {
     q: "Kan ik alleen komen, of moet ik me ergens aanmelden?",
-    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé — geen drukte, geen wachttijd, train zonder afleiding.",
+    a: "Geen inschrijving, geen team, geen abonnement. Je boekt je sessie en komt op het afgesproken tijdstip. De studio is tijdens jouw sessie volledig privé: geen drukte, geen wachttijd, train zonder afleiding.",
   },
   {
-    q: "Ik spreek geen Nederlands — kan dat?",
+    q: "Ik spreek geen Nederlands, kan dat?",
     a: "Ja. Onze trainers spreken NL en EN, een aantal ook Portugees of Russisch. Je kunt op de trainer-pagina filteren op taal. De hele site is ook in het Engels beschikbaar.",
   },
   {
     q: "Welke apparatuur is er?",
-    a: "Een volledig uitgeruste privé studio: Rogue power rack, halterstang met gewichten, dumbbells, kabelmachine, banken, kettlebells, mat, foam roller. Niet 50 verschillende machines — wel alles wat je echt nodig hebt voor een complete training.",
+    a: "Een volledig uitgeruste privé studio: Rogue power rack, halterstang met gewichten, dumbbells, kabelmachine, banken, kettlebells, mat, foam roller. Niet 50 verschillende machines, wel alles wat je echt nodig hebt voor een complete training.",
   },
   {
     q: "Hoe lang duurt een sessie?",
@@ -126,7 +126,7 @@ const faqs = [
   },
   {
     q: "Wat als ik een blessure heb of beperking?",
-    a: "Vermeld het in je WhatsApp-bericht aan je trainer of in het contactformulier. Sommige trainers (Andrea — houding & techniek, Sergei — herstel & houdingscorrectie) zijn hier expliciet in gespecialiseerd. Je trainer past de sessie altijd aan op wat veilig is voor jou.",
+    a: "Vermeld het in je WhatsApp-bericht aan je trainer of in het contactformulier. Sommige trainers (Andrea: houding & techniek, Sergei: herstel & houdingscorrectie) zijn hier expliciet in gespecialiseerd. Je trainer past de sessie altijd aan op wat veilig is voor jou.",
   },
   {
     q: "Kan ik annuleren of verplaatsen?",
@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "Kan ik samen met iemand komen?",
-    a: "Ja. Open Gym is max 4 personen tegelijk in de studio — je kunt dus met een trainingsmaatje of vriend(in) komen. Personal Training is standaard 1-op-1, maar veel trainers bieden ook duo- of small-group sessies aan tegen een aangepast tarief.",
+    a: "Ja. Open Gym is max 4 personen tegelijk in de studio, je kunt dus met een trainingsmaatje of vriend(in) komen. Personal Training is standaard 1-op-1, maar veel trainers bieden ook duo- of small-group sessies aan tegen een aangepast tarief.",
   },
   {
     q: "Wat moet ik meenemen?",
@@ -142,11 +142,11 @@ const faqs = [
   },
   {
     q: "Wat als ik de studio niet kan vinden?",
-    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 15 14 79 52 — meestal reageren we binnen het uur.",
+    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 15 14 79 52. Meestal reageren we binnen het uur.",
   },
   {
     q: "Hoe schoon is de studio?",
-    a: "We maken na elke sessie schoon. Apparatuur en banken worden tussen sessies door gedesinfecteerd. De studio is een privé-ruimte zonder doorloop — niet vergelijkbaar met een drukke commerciële sportschool.",
+    a: "We maken na elke sessie schoon. Apparatuur en banken worden tussen sessies door gedesinfecteerd. De studio is een privé-ruimte zonder doorloop, niet vergelijkbaar met een drukke commerciële sportschool.",
   },
 ];
 
@@ -393,7 +393,7 @@ export default function EersteBezoekPage() {
                 <p className="font-semibold">Bij personal training: de eerste intake is altijd gratis</p>
                 <p className="text-sm text-muted-foreground mt-1">
                   Je bespreekt je doelen, ervaring en eventuele beperkingen. Je trainer stelt een aanpak samen die bij je past.
-                  Je zit nergens aan vast — pas daarna beslis je of je verder wilt.
+                  Je zit nergens aan vast. Pas daarna beslis je of je verder wilt.
                 </p>
               </div>
             </div>

@@ -26,7 +26,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
           //    prices). Respects 0%-commission model — the FIRST card below
           //    states trainers set their own rate; here we only claim transparency.
           intro:
-            "Alleen personal training & small group — nooit een volle sportschool. Klein, onafhankelijk, stil. En je ziet vooraf wat het kost: geen 'neem contact op voor prijzen'.",
+            "Alleen personal training & small group, nooit een volle sportschool. Klein, onafhankelijk, stil. En je ziet vooraf wat het kost: geen 'neem contact op voor prijzen'.",
           beliefs: [
             {
               icon: Percent,
@@ -39,7 +39,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               // studio rental (transparent two-sided model, removes the
               // implied "we work for free" trust gap that ZZP trainers would
               // hit on the pricing page anyway).
-              body: "Trainers huren de studio en houden 100% van hun tarief — de prijs die je ziet is wat de trainer krijgt, wij nemen niets van hun sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), niet uit hun werk. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
+              body: "Trainers huren de studio en houden 100% van hun tarief. De prijs die je ziet is wat de trainer krijgt, wij nemen niets van hun sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), niet uit hun werk. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
             },
             {
               icon: Lock,
@@ -48,7 +48,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               // per operator. Reframed the negative (no onlookers) as the
               // positive payoff (full focus). Restructured so the positive
               // lands at the end of the list rather than mid-sentence.
-              body: "Maximaal 4 mensen tegelijk. Geen wachtrij, geen receptie — volledige focus. Je traint zonder afleiding, alleen jij en je werk.",
+              body: "Maximaal 4 mensen tegelijk. Geen wachtrij, geen receptie. Volledige focus. Je traint zonder afleiding, alleen jij en je werk.",
             },
             {
               icon: Calendar,
@@ -61,7 +61,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
           // around the corner". Equipment names are 3rd-party validation that
           // ZZP-trainers + serious clients shop on. Slim line below the 3 cards.
           equipmentLine:
-            "Uitgerust met Rogue, Eleiko en Concept2 — geen instapapparatuur.",
+            "Uitgerust met Rogue, Eleiko en Concept2, geen instapapparatuur.",
         }
       : {
           eyebrow: "What makes us different",
@@ -69,19 +69,19 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
           // See NL parallel — 2026-06-02 intro rewrite: F (PT & small group only)
           // + C (pricing-transparency wedge).
           intro:
-            "Personal training & small group only — never a crowded gym. Small, independent, quiet. And you see the price upfront: no 'contact us for pricing'.",
+            "Personal training & small group only, never a crowded gym. Small, independent, quiet. And you see the price upfront: no 'contact us for pricing'.",
           beliefs: [
             {
               icon: Percent,
               title: "Trainers deserve their full rate.",
               // EN parallel — see NL comment for full 2026-06-02 honesty fix
               // reasoning. Two-sided transparency on the financial model.
-              body: "Trainers rent the studio and keep 100% of their rate — the rate you see is what the trainer charges, we don't touch their session fee. Our revenue comes from studio rental (from €12/hour), not their work. That's why the best independent trainers in Amsterdam work here.",
+              body: "Trainers rent the studio and keep 100% of their rate. The rate you see is what the trainer charges, we don't touch their session fee. Our revenue comes from studio rental (from €12/hour), not their work. That's why the best independent trainers in Amsterdam work here.",
             },
             {
               icon: Lock,
               title: "You train harder in private.",
-              body: "Max 4 people at once. No queue, no reception desk — full focus. You train without distraction, just you and your work.",
+              body: "Max 4 people at once. No queue, no reception desk. Full focus. You train without distraction, just you and your work.",
             },
             {
               icon: Calendar,
@@ -90,7 +90,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
             },
           ],
           equipmentLine:
-            "Equipped with Rogue, Eleiko and Concept2 — no entry-level kit.",
+            "Equipped with Rogue, Eleiko and Concept2, no entry-level kit.",
         };
 
   return (

@@ -87,7 +87,7 @@ const features = [
     // share the room on some weekend hours, so no exclusivity claim here.
     title: "Real availability",
     description:
-      "Book by the hour, whenever suits you — plenty of hours still free on weekday evenings and at weekends.",
+      "Book by the hour, whenever suits you. Plenty of hours still free on weekday evenings and at weekends.",
   },
   {
     icon: Percent,
@@ -150,7 +150,7 @@ const faqs = [
   },
   {
     q: "Will I get clients via SculptClub?",
-    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No middleman on those bookings — we just connect. No profile yet? Ask via WhatsApp and we'll add you.",
+    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No middleman on those bookings, we just connect. No profile yet? Ask via WhatsApp and we'll add you.",
   },
   {
     q: "Can I reserve recurring time slots?",
@@ -162,11 +162,11 @@ const faqs = [
   },
   {
     q: "What if I don't show up?",
-    a: "Cancel or reschedule is always free — no no-show fee. We rely on your professionalism. Recurring last-minute cancellations we discuss directly.",
+    a: "Cancel or reschedule is always free, with no no-show fee. We rely on your professionalism. Recurring last-minute cancellations we discuss directly.",
   },
   {
     q: "Which payment methods are accepted?",
-    a: "CreditCard, Apple Pay, Google Pay, or invoice (on request). iDEAL via Apple Pay. Volume package (€499) can be paid by bank transfer on request — WhatsApp us.",
+    a: "CreditCard, Apple Pay, Google Pay, or invoice (on request). iDEAL via Apple Pay. Volume package (€499) can be paid by bank transfer on request. WhatsApp us.",
   },
 ];
 
@@ -212,7 +212,7 @@ export default function StudioRentalPageEN() {
             🎯 Most room available: weekend afternoons &amp; evenings
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
-            Saturday and Sunday afternoon/evening is typically the quietest time in the studio —
+            Saturday and Sunday afternoon/evening is typically the quietest time in the studio,
             a great fit for a regular weekend slot with your clients. Click Book below to see
             live availability.
           </p>
@@ -230,7 +230,7 @@ export default function StudioRentalPageEN() {
           packages={
             <div className="mx-auto max-w-5xl">
               <p className="mb-4 text-center text-sm text-muted-foreground">
-                A credit package is booking credit for individual studio sessions — the struck-through price is your credit. Valid 1 year.
+                A credit package is booking credit for individual studio sessions. The struck-through price is your credit. Valid 1 year.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <Card className="h-full text-center">
@@ -299,7 +299,7 @@ export default function StudioRentalPageEN() {
               </div>
 
               <p className="mt-4 text-center text-xs text-muted-foreground">
-                Sessions of 60 min — half studio (2 people) €12 · full studio €17. Your credit sets the number of sessions.
+                Sessions of 60 min: half studio (2 people) €12 · full studio €17. Your credit sets the number of sessions.
               </p>
               <p className="mt-3 text-center text-sm text-muted-foreground">
                 Lowest rate: <span className="text-discount font-medium">€9.24/session</span> · Prefer bank transfer?{" "}
@@ -326,7 +326,7 @@ export default function StudioRentalPageEN() {
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Book per session. No subscription, no contract,{" "}
-                <strong className="text-foreground">free cancellation anytime</strong> — credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
+                <strong className="text-foreground">free cancellation anytime</strong>: credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
                 <strong className="text-foreground">Full studio</strong> = fully private for 1 to 8 people, your own group.
               </p>
@@ -342,7 +342,7 @@ export default function StudioRentalPageEN() {
           <p className="overline text-primary">First time here?</p>
           <p className="mt-2 text-xl font-bold">First time? Come see the studio.</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            See the space + equipment and try a free session before you rent — no obligation, no commitment.
+            See the space + equipment and try a free session before you rent. No obligation, no commitment.
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink href="/en/studio-rental/free-trial" size="lg" className="w-full sm:w-auto">
@@ -376,7 +376,7 @@ export default function StudioRentalPageEN() {
               <p className="mt-1 text-sm text-muted-foreground">
                 {/* "advise" → "reply" mirrors the NL "we reageren" correction
                     (operator, earlier this session). */}
-                WhatsApp us your situation — we usually reply within 1 hour.{" "}
+                WhatsApp us your situation. We usually reply within 1 hour.{" "}
                 {/* Q tour option — EN parallel. */}
                 Rather see the space first?{" "}
                 <a
@@ -488,7 +488,7 @@ export default function StudioRentalPageEN() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
                   "Fully equipped private studio for 1:1 and small group",
-                  "You keep 100% of your session rate — we only charge rent",
+                  "You keep 100% of your session rate, we only charge rent",
                   "Flexible booking: only when you have a client",
                   "Door code via WhatsApp the evening before",
                   "Professional equipment: squat rack, cable machine, dumbbells 4–40 kg, Echo Bike and more",
@@ -529,7 +529,7 @@ export default function StudioRentalPageEN() {
                 <tbody>
                   <tr className="border-b">
                     <td className="px-4 py-3 text-muted-foreground">Fixed monthly rent from €600 per month</td>
-                    <td className="px-4 py-3 font-medium">€12 per hour — only when you have a session</td>
+                    <td className="px-4 py-3 font-medium">€12 per hour, only when you have a session</td>
                   </tr>
                   <tr className="border-b">
                     <td className="px-4 py-3 text-muted-foreground">Minimum commitment from 5 hours per week</td>
@@ -592,7 +592,7 @@ export default function StudioRentalPageEN() {
                   studio-rental path (=93% of revenue) must be reachable from the money page. */}
               <a href="/en/book-studio" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">Booking</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Book the studio — hourly availability and rates →</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Book the studio: hourly availability and rates →</p>
               </a>
               <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
@@ -612,7 +612,7 @@ export default function StudioRentalPageEN() {
               </a>
               <a href="/en/become-trainer" className="group block rounded-xl border border-brand/30 bg-brand/5 p-5 transition-colors hover:bg-brand/10">
                 <p className="text-sm text-brand mb-1">For trainers</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Become a trainer at SculptClub — full freedom</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Become a trainer at SculptClub: full freedom</p>
               </a>
               <a href="/en/blog/become-personal-trainer-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

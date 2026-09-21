@@ -112,7 +112,7 @@ const uniqueFeatures = [
     icon: UserCheck,
     title: "Tailored capacity",
     description:
-      "During Open Gym we limit the space to four people. With a full studio rental you have the whole space privately — for 1 to 8 people, you train with your own group.",
+      "During Open Gym we limit the space to four people. With a full studio rental you have the whole space privately: for 1 to 8 people, you train with your own group.",
   },
   // M (2026-06-02) — EN parallel: the 2 positioning principles (Transparent +
   // Trainer-first) the facility grid lacked.
@@ -163,8 +163,8 @@ export default function AboutPage() {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 SculptClub was born out of frustration with overcrowded gyms and
-                long-term contracts. We believe training should be personal
-                — without crowds, without obligations, without compromises.
+                long-term contracts. We believe training should be personal,
+                without crowds, without obligations, without compromises.
               </p>
               <p>
                 Our studio on the Egelantiersgracht offers an intimate training
@@ -175,7 +175,7 @@ export default function AboutPage() {
               <p>
                 Whether you train with a personal trainer, come for an
                 independent Open Gym session, or rent our studio as a freelance
-                trainer for your own clients — at SculptClub it’s all about
+                trainer for your own clients, at SculptClub it’s all about
                 quality over quantity.
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function AboutPage() {
         <SectionHeader
           overline="What we offer"
           title="Three pillars"
-          description="Personal Training, Open Gym and Studio Rental — all under one roof."
+          description="Personal Training, Open Gym and Studio Rental: all under one roof."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (

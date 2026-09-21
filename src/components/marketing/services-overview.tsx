@@ -23,7 +23,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Zelfstandig trainen in een rustige privé studio met professionele apparatuur — max 4 personen. Lidmaatschap per 4 weken, geen contract, eerste probeersessie gratis. Vanaf €7,25 per sessie.",
+        "Zelfstandig trainen in een rustige privé studio met professionele apparatuur, max 4 personen. Lidmaatschap per 4 weken, geen contract, eerste probeersessie gratis. Vanaf €7,25 per sessie.",
       href: "/nl/open-gym",
       cta: "Bekijk Open Gym",
       image: "/images/studio/training-dumbbells-focus.jpg",
@@ -55,7 +55,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Train on your own in a calm private studio with pro equipment — max 4 people. 4-week membership, no contract, first session free. From €7.25 per session.",
+        "Train on your own in a calm private studio with pro equipment, max 4 people. 4-week membership, no contract, first session free. From €7.25 per session.",
       href: "/en/open-gym",
       cta: "View Open Gym",
       image: "/images/studio/training-dumbbells-focus.jpg",

@@ -77,12 +77,12 @@ const benefits = [
   {
     icon: Users,
     title: "Small group, real attention",
-    body: "Four people at most. Your coach watches your technique, corrects where needed and keeps it personal — the best of training together and 1-on-1.",
+    body: "Four people at most. Your coach watches your technique, corrects where needed and keeps it personal: the best of training together and 1-on-1.",
   },
   {
     icon: Dumbbell,
     title: "Strength & balance",
-    body: "Built around strength, posture and stability. Getting stronger in a way your body can handle — whether you're just starting or getting back into it.",
+    body: "Built around strength, posture and stability. Getting stronger in a way your body can handle, whether you're just starting or getting back into it.",
   },
   {
     icon: Sparkles,
@@ -92,7 +92,7 @@ const benefits = [
   {
     icon: Gift,
     title: "First session free",
-    body: "Come try it, no strings attached. No contract, no membership — after the first session you decide whether it fits.",
+    body: "Come try it, no strings attached. No contract, no membership. After the first session you decide whether it fits.",
   },
 ];
 
@@ -175,7 +175,7 @@ export default function SmallGroupEN() {
         <SectionHeader
           overline="The coaches"
           title="Coaches who offer small group"
-          description="Pick the coach that fits you. Follow them on Instagram or send a direct WhatsApp — they'll set up the small group with you."
+          description="Pick the coach that fits you. Follow them on Instagram or send a direct WhatsApp. They'll set up the small group with you."
         />
         <FadeIn>
           <div className="mx-auto max-w-5xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -234,7 +234,7 @@ export default function SmallGroupEN() {
         <SectionHeader
           overline="On Instagram"
           title="See Dara in action"
-          description="A feel for how Dara trains — strength, balance and technique. Want to join a small group? Follow her or send a direct WhatsApp."
+          description="A feel for how Dara trains: strength, balance and technique. Want to join a small group? Follow her or send a direct WhatsApp."
         />
         <FadeIn>
           <InstagramEmbeds

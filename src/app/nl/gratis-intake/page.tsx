@@ -50,17 +50,17 @@ const steps = [
   {
     step: "2",
     title: "Stuur een berichtje",
-    desc: "Via WhatsApp of het formulier. Je trainer reageert meestal binnen 1 uur — samen kies je een moment dat past.",
+    desc: "Via WhatsApp of het formulier. Je trainer reageert meestal binnen 1 uur. Samen kies je een moment dat past.",
   },
   {
     step: "3",
     title: "Gratis kennismaking",
-    desc: "Telefonisch of in onze privé studio in de Jordaan — jouw trainer bepaalt wat het beste past. Je bespreekt je doel, je ervaring en wat je zoekt. Geen verplichting.",
+    desc: "Telefonisch of in onze privé studio in de Jordaan. Jouw trainer bepaalt wat het beste past. Je bespreekt je doel, je ervaring en wat je zoekt. Geen verplichting.",
   },
   {
     step: "4",
     title: "Jouw aanpak op maat",
-    desc: "Je trainer stelt een plan voor dat past bij jouw lichaam, agenda en doel. Je weet precies wat je kunt verwachten — én wat het kost.",
+    desc: "Je trainer stelt een plan voor dat past bij jouw lichaam, agenda en doel. Je weet precies wat je kunt verwachten én wat het kost.",
   },
   {
     step: "5",
@@ -78,7 +78,7 @@ const trustItems = [
 const faqs = [
   {
     q: "Kost de intake echt niets?",
-    a: "Ja. De eerste kennismaking is altijd gratis — geen creditcard vereist. De duur stem je samen met je trainer af.",
+    a: "Ja. De eerste kennismaking is altijd gratis, geen creditcard vereist. De duur stem je samen met je trainer af.",
   },
   {
     q: "Ben ik ergens aan gebonden na de intake?",
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "Hoe kom ik binnen?",
-    a: "Je trainer regelt de studio en zorgt dat je binnen kunt. Bij je intake ontmoet je de trainer bij de deur of krijg je vooraf instructies via WhatsApp — geen bel, geen receptie, alles via je trainer.",
+    a: "Je trainer regelt de studio en zorgt dat je binnen kunt. Bij je intake ontmoet je de trainer bij de deur of krijg je vooraf instructies via WhatsApp. Geen bel, geen receptie, alles via je trainer.",
   },
 ];
 
@@ -137,7 +137,7 @@ export default function GratisIntakePage() {
             3 questions × 30s → top-2 match. Shipped 2026-05-26 lead-cap. */}
         <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
           <p className="text-sm text-foreground">
-            <strong className="font-semibold">12 trainers</strong> — niet zeker welke past?
+            <strong className="font-semibold">12 trainers</strong>. Niet zeker welke past?
           </p>
           <Link
             href="/nl/match-trainer"
@@ -208,7 +208,7 @@ export default function GratisIntakePage() {
         {/* How it works */}
         <div className="mt-16 text-left">
           <h2 className="text-2xl font-bold text-center mb-2">De SculptClub Intake</h2>
-          <p className="text-center text-sm text-muted-foreground mb-8">In 5 stappen — van kennismaking tot je eerste sessie.</p>
+          <p className="text-center text-sm text-muted-foreground mb-8">In 5 stappen van kennismaking tot je eerste sessie.</p>
           <div className="grid gap-4">
             {steps.map((item) => (
               <div
@@ -248,9 +248,9 @@ export default function GratisIntakePage() {
           <ul className="space-y-3">
             {[
               "Gratis persoonlijke kennismaking",
-              "Privé studio — geen drukte, geen afleidingen",
+              "Privé studio: geen drukte, geen afleidingen",
               "Inzicht in jouw doelen en de beste aanpak",
-              "Direct contact met je trainer — geen tussenpersoon",
+              "Direct contact met je trainer, geen tussenpersoon",
               "Trainers vanaf €45/sessie",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
@@ -281,7 +281,7 @@ export default function GratisIntakePage() {
                 ))}
               </div>
               <p className="text-sm leading-relaxed">“{r.text}”</p>
-              <p className="text-xs text-muted-foreground mt-2">— {r.name} · Google</p>
+              <p className="text-xs text-muted-foreground mt-2">{r.name} · Google</p>
             </div>
           ))}
         </div>

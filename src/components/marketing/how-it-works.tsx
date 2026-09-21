@@ -9,7 +9,7 @@ const steps = {
       step: "01",
       title: "Plan je sessie",
       description:
-        "Personal Training plan je direct met je trainer (WhatsApp of contactformulier). Open Gym en studio boek je online via onze website — in 2 minuten geregeld.",
+        "Personal Training plan je direct met je trainer (WhatsApp of contactformulier). Open Gym en studio boek je online via onze website, in 2 minuten geregeld.",
     },
     {
       step: "02",
@@ -29,7 +29,7 @@ const steps = {
       step: "01",
       title: "Plan your session",
       description:
-        "Personal Training is arranged directly with your trainer (via WhatsApp or contact form). Open Gym and studio sessions are booked online via our website — sorted in 2 minutes.",
+        "Personal Training is arranged directly with your trainer (via WhatsApp or contact form). Open Gym and studio sessions are booked online via our website, sorted in 2 minutes.",
     },
     {
       step: "02",

@@ -213,14 +213,14 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
   if (/\/(vind-jouw-personal-trainer|find-personal-trainer)(\/|$)/.test(pathname)) {
     return locale === "nl"
       ? {
-          label: "WhatsApp direct — wij matchen",
+          label: "WhatsApp direct, wij matchen",
           href: "https://wa.me/31615147952?text=" +
             encodeURIComponent("Hoi! Ik wil graag een gratis intake boeken. Kun je mij matchen met de juiste trainer?"),
           external: true,
           ctaId: "mobile-cta-trainerhub-whatsapp",
         }
       : {
-          label: "WhatsApp us — we'll match",
+          label: "WhatsApp us, we'll match",
           href: "https://wa.me/31615147952?text=" +
             encodeURIComponent("Hi! I'd like to book a free intake. Can you match me with the right trainer?"),
           external: true,
