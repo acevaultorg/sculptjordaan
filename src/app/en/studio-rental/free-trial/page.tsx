@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 
 const benefits = [
   { icon: Building2, text: "Private canal-side studio in the Jordaan" },
-  { icon: Percent, text: "Your clients, your rates — you keep 100%" },
+  { icon: Percent, text: "Your clients, your rates: you keep 100%" },
   { icon: Clock, text: "From €12/hr · no contract" },
   { icon: Ban, text: "Free trial · no credit card" },
 ];
@@ -65,10 +65,10 @@ const benefits = [
 // reuses the same PhotoGalleryLightbox + studio shots as /en/studio-rental —
 // tap a thumb for a fullscreen slider. Space + equipment + canal-side atmosphere.
 const galleryImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "Overview of the private studio in the Jordaan — SCULPT wall, sprint lane and equipment" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overview of the private studio in the Jordaan: SCULPT wall, sprint lane and equipment" },
   { src: "/images/studio/studio-interior-1.jpeg", alt: "Strength room with Rogue rack, sled and bumper plates under the skylight" },
   { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack, sled and bumper plates at SculptClub" },
-  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack with plants and record player — the studio's boutique corner" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell rack with plants and record player, the studio's boutique corner" },
   { src: "/images/studio/echo-bike-corner.jpg", alt: "Echo Bike and conditioning corner at SculptClub" },
   { src: "/images/studio/canal-view-doors.jpg", alt: "Open doors overlooking the Egelantiersgracht canal in the Jordaan" },
 ];
@@ -89,10 +89,10 @@ export default function FreeTrialStudioRentalEN() {
         <div className="mb-7 text-center max-w-2xl mx-auto">
           <p className="overline">For personal trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Free Trial Session — Studio Rental
+            Free Trial Session: Studio Rental
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
-            60 minutes in our private studio in the Jordaan. No credit card, no contract, free cancellation anytime — and you keep 100% of your rate.
+            60 minutes in our private studio in the Jordaan. No credit card, no contract, free cancellation anytime, and you keep 100% of your rate.
           </p>
 
           {/* Two co-primary CTAs = the two operator goals, side by side */}
@@ -127,7 +127,7 @@ export default function FreeTrialStudioRentalEN() {
             <span className="text-muted-foreground">on Google · {siteConfig.rating.count} reviews</span>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
-            Not ready to book? Send your question — we usually reply within 1 hour.
+            Not ready to book? Send your question. We usually reply within 1 hour.
           </p>
         </div>
 
@@ -156,13 +156,13 @@ export default function FreeTrialStudioRentalEN() {
               <p className="overline">See it in action</p>
               <h2 className="mt-2 text-xl font-semibold">Train in our private studio in the Jordaan</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                The studio, equipment and canal-side atmosphere — in motion.
+                The studio, equipment and canal-side atmosphere, in motion.
               </p>
             </div>
             <LandingVideo
               src="/videos/studio-promo.mp4"
               poster="/videos/studio-promo-poster.jpg"
-              label="SculptClub — the private studio in Amsterdam Jordaan, in motion"
+              label="SculptClub: the private studio in Amsterdam Jordaan, in motion"
             />
           </div>
         </FadeIn>
@@ -181,9 +181,9 @@ export default function FreeTrialStudioRentalEN() {
             </div>
             <ol className="grid gap-6 sm:grid-cols-3">
               {[
-                { n: "1", title: "Book a time", text: "Pick any slot that suits you — takes 30 seconds. No credit card, nothing to fill in." },
-                { n: "2", title: "Walk in & train", text: "You get the door code via WhatsApp. 60 minutes in the studio — alone or with a client." },
-                { n: "3", title: "Decide freely", text: "Like it? Rent from €12/hr, pay per booking. Not for you? Just walk away — there's nothing to cancel." },
+                { n: "1", title: "Book a time", text: "Pick any slot that suits you. Takes 30 seconds. No credit card, nothing to fill in." },
+                { n: "2", title: "Walk in & train", text: "You get the door code via WhatsApp. 60 minutes in the studio, alone or with a client." },
+                { n: "3", title: "Decide freely", text: "Like it? Rent from €12/hr, pay per booking. Not for you? Just walk away. There's nothing to cancel." },
               ].map((s) => (
                 <li key={s.n} className="text-center sm:text-left">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
@@ -212,7 +212,7 @@ export default function FreeTrialStudioRentalEN() {
               <CalendarCheck className="mx-auto h-6 w-6 text-brand" aria-hidden />
               <h2 className="mt-3 text-xl font-semibold">Book your free trial</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                60 minutes in the private studio. No credit card, no contract — pick a time that suits you.
+                60 minutes in the private studio. No credit card, no contract. Pick a time that suits you.
               </p>
               <ButtonLink
                 href={acuityFreeTrials.studioRentalTryout}
@@ -242,7 +242,7 @@ export default function FreeTrialStudioRentalEN() {
               <p className="overline">The studio</p>
               <h2 className="mt-2 text-xl font-semibold">See the space</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Private canal-side studio in the Jordaan — tap a photo to enlarge.
+                Private canal-side studio in the Jordaan. Tap a photo to enlarge.
               </p>
             </div>
             <PhotoGalleryLightbox images={galleryImages} locale="en" />
@@ -306,7 +306,7 @@ export default function FreeTrialStudioRentalEN() {
       <Section>
         <FadeIn>
           <div className="text-center text-sm text-muted-foreground">
-            <p className="mb-3">Or see everything about studio rental — rates, packages &amp; the studio</p>
+            <p className="mb-3">Or see everything about studio rental: rates, packages &amp; the studio</p>
             <ButtonLink
               href="/en/studio-rental"
               variant="outline"

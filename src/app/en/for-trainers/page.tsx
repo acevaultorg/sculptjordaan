@@ -16,10 +16,10 @@ import { acuityFreeTrials } from "@/config/acuity";
 // src/app/nl/voor-trainers/page.tsx.
 const MEMBERSHIP_FROM = "€179";
 const membershipPerks = [
-  "One fixed monthly rate — no surprises",
+  "One fixed monthly rate: no surprises",
   "Your regular training slots reserved",
   "Lower effective hourly rate than ad-hoc rental",
-  "Pause when you're away — you don't pay",
+  "Pause when you're away, and you don't pay",
   "Cancel monthly, no long contract",
   "Your home base: the private studio in the Jordaan",
 ];
@@ -109,7 +109,7 @@ const pillars = [
     title: "Studio vs home vs outdoor",
     href: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
     text:
-      "Comparison with real numbers: own studio lease, at client's home, outdoor, or hourly rental — when to choose what.",
+      "Comparison with real numbers: own studio lease, at client's home, outdoor, or hourly rental: when to choose what.",
     cta: "See comparison",
   },
 ];
@@ -121,7 +121,7 @@ const trainerFaqs = [
   },
   {
     q: "Is there a fixed membership too?",
-    a: "Yes, optional. Pay per hour and that stays commitment-free. Train here every week? You can choose a Studio Membership: one fixed monthly rate, your regular slots reserved, a lower effective hourly rate, and pause whenever you're away. Cancel monthly. We tailor it to your hours — one message is enough.",
+    a: "Yes, optional. Pay per hour and that stays commitment-free. Train here every week? You can choose a Studio Membership: one fixed monthly rate, your regular slots reserved, a lower effective hourly rate, and pause whenever you're away. Cancel monthly. We tailor it to your hours. One message is enough.",
   },
   {
     q: "How do I book a session?",
@@ -129,7 +129,7 @@ const trainerFaqs = [
   },
   {
     q: "Can I come for a free look first?",
-    a: "Yes. We offer a free 60-minute trial session in the studio — see the space, train yourself, ask questions. No obligation, no sales pitch.",
+    a: "Yes. We offer a free 60-minute trial session in the studio: see the space, train yourself, ask questions. No obligation, no sales pitch.",
   },
   {
     q: "Do I get my own profile on sculptclub.nl?",
@@ -137,11 +137,11 @@ const trainerFaqs = [
   },
   {
     q: "What's the difference between hourly rental and being a regular trainer?",
-    a: "Hourly rental: pay per session, BYO clients. Want inbound clients too? Ask for a profile page — you get one with any form of rental, hourly included: your own profile + match with inbound clients + featured on Instagram/TikTok. With both you just rent the space; you keep 100% of your rate.",
+    a: "Hourly rental: pay per session, BYO clients. Want inbound clients too? Ask for a profile page, you get one with any form of rental, hourly included: your own profile + match with inbound clients + featured on Instagram/TikTok. With both you just rent the space; you keep 100% of your rate.",
   },
   {
     q: "Do I keep 100% of my rate?",
-    a: "Yes. We earn only from the studio rental — whatever you charge your client (€45, €75, €120) is entirely yours.",
+    a: "Yes. We earn only from the studio rental. Whatever you charge your client (€45, €75, €120) is entirely yours.",
   },
   {
     q: "What insurance do I need?",
@@ -176,12 +176,12 @@ export default function ForTrainersHubEN() {
           as="h1"
           overline="For personal trainers"
           title="Build your personal training practice in Amsterdam"
-          description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, your own clients and rates, own profile on our site. Start with hourly rental — or join as a regular trainer and get clients through us."
+          description="SculptClub is built by and for freelance trainers. Private studio in Jordaan, your own clients and rates, own profile on our site. Start with hourly rental, or join as a regular trainer and get clients through us."
           center={false}
         />
         {/* CTAs moved ABOVE the slideshow 2026-05-19 (parallel to NL
             /voor-trainers). Mobile fold at iPhone 14 Pro put the first
-            CTA at y=673 — 13 px below the 660 px fold. Action-first;
+            CTA at y=673: 13 px below the 660 px fold. Action-first;
             slideshow as supporting evidence below. */}
         <FadeIn className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink
@@ -249,7 +249,7 @@ export default function ForTrainersHubEN() {
         <SectionHeader
           overline="Six paths"
           title="Which path fits you?"
-          description="SculptClub works for different types of trainers. Pick where you are now — we help you grow from there."
+          description="SculptClub works for different types of trainers. Pick where you are now. We help you grow from there."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {pillars.map((pillar) => {
@@ -284,7 +284,7 @@ export default function ForTrainersHubEN() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-2xl border border-border bg-card p-5">
             <p className="mb-2 font-semibold">Matched on goal</p>
-            <p className="text-sm leading-relaxed text-muted-foreground">Visitors pick their goal first — lose fat, get stronger, move pain-free and more — and only see the trainers who specialise in it.</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">Visitors pick their goal first (lose fat, get stronger, move pain-free and more) and only see the trainers who specialise in it.</p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-5">
             <p className="mb-2 font-semibold">Warm leads via WhatsApp</p>
@@ -310,12 +310,12 @@ export default function ForTrainersHubEN() {
           stays the no-commitment default; this is the optional upgrade.
           Capacity-limited single studio → fixed monthly block + reserved
           slots + pause, NOT "unlimited". MVP = manual setup via WhatsApp (no
-          self-serve billing yet). Price in MEMBERSHIP_FROM — confirm before deploy. */}
+          self-serve billing yet). Price in MEMBERSHIP_FROM, confirm before deploy. */}
       <Section>
         <SectionHeader
           overline="New · Studio Membership"
           title="Here every week? Pay a flat rate instead of per hour."
-          description="Per-hour stays per-hour — no commitment. But if you train here weekly, a fixed monthly rate works out cheaper: your regular slots reserved and pause whenever you're away."
+          description="Per-hour stays per-hour, no commitment. But if you train here weekly, a fixed monthly rate works out cheaper: your regular slots reserved and pause whenever you're away."
         />
         <div className="grid items-start gap-6 lg:grid-cols-[1.05fr_1fr]">
           <FadeIn>
@@ -329,7 +329,7 @@ export default function ForTrainersHubEN() {
                     <span className="text-muted-foreground">/ month</span>
                   </p>
                   <p className="mt-1.5 text-sm text-muted-foreground">
-                    Tailored to your hours — around 5 hours a week at ~€10/hr. Need more hours? We scale with you.
+                    Tailored to your hours: around 5 hours a week at ~€10/hr. Need more hours? We scale with you.
                   </p>
                 </div>
                 <ul className="space-y-2.5 text-sm">
@@ -341,7 +341,7 @@ export default function ForTrainersHubEN() {
                   ))}
                 </ul>
                 <ButtonLink
-                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm a personal trainer interested in a Studio Membership — I train regularly and would like a fixed monthly rate.")}`}
+                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hi! I'm a personal trainer interested in a Studio Membership. I train regularly and would like a fixed monthly rate.")}`}
                   external
                   size="lg"
                   className="plausible-event-name=trainer_membership_whatsapp_click"
@@ -359,11 +359,11 @@ export default function ForTrainersHubEN() {
             <div className="space-y-5 text-sm leading-relaxed text-muted-foreground lg:pt-2">
               <div>
                 <p className="font-semibold text-foreground">Who is this for?</p>
-                <p className="mt-1">Trainers who are here every week. Prefer to pay per hour? That stays — no commitment, free cancellation anytime.</p>
+                <p className="mt-1">Trainers who are here every week. Prefer to pay per hour? That stays, no commitment, free cancellation anytime.</p>
               </div>
               <div>
                 <p className="font-semibold text-foreground">Pause when you&apos;re away</p>
-                <p className="mt-1">On holiday or a quiet week? Pause your membership and you don&apos;t pay. Cancel monthly — no long contract.</p>
+                <p className="mt-1">On holiday or a quiet week? Pause your membership and you don&apos;t pay. Cancel monthly, no long contract.</p>
               </div>
               <div>
                 <p className="font-semibold text-foreground">How do we set it up?</p>
@@ -389,7 +389,7 @@ export default function ForTrainersHubEN() {
               </p>
             </div>
             <ButtonLink
-              href={`https://wa.me/?text=${encodeURIComponent("Hey! I train my clients at SculptClub — a private studio in the Jordaan: €12/hr, your own clients and rates, no contract. Might be something for you? First session free → https://sculptclub.nl/en/studio-rental")}`}
+              href={`https://wa.me/?text=${encodeURIComponent("Hey! I train my clients at SculptClub, a private studio in the Jordaan: €12/hr, your own clients and rates, no contract. Might be something for you? First session free → https://sculptclub.nl/en/studio-rental")}`}
               external
               size="lg"
               className="mt-4 shrink-0 sm:mt-0 plausible-event-name=trainer_referral_share"

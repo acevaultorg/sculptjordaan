@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 
 const benefits = [
   { icon: Building2, text: "Privé studio aan de gracht in de Jordaan" },
-  { icon: Percent, text: "Jouw klanten, jouw tarieven — jij houdt 100%" },
+  { icon: Percent, text: "Jouw klanten, jouw tarieven: jij houdt 100%" },
   { icon: Clock, text: "Per uur vanaf €12 · geen contract" },
   { icon: Ban, text: "Gratis proefsessie · geen creditcard" },
 ];
@@ -86,10 +86,10 @@ const benefits = [
 // PhotoGalleryLightbox + studio shots as /nl/studio-huren — tap a thumb for a
 // fullscreen slider. Space + equipment + canal-side atmosphere.
 const galleryImages = [
-  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de privé studio in de Jordaan — SCULPT muur, sprintbaan en apparatuur" },
+  { src: "/images/studio/studio-overview.jpeg", alt: "Overzicht van de privé studio in de Jordaan: SCULPT muur, sprintbaan en apparatuur" },
   { src: "/images/studio/studio-interior-1.jpeg", alt: "Krachtruimte met Rogue rack, sled en bumper plates onder de lichtkoepel" },
   { src: "/images/studio/power-rack.jpeg", alt: "Rogue power rack, sled en bumper plates bij SculptClub" },
-  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell-rack met planten en platenspeler — de boutique-hoek van de studio" },
+  { src: "/images/studio/boutique-corner.jpg", alt: "Dumbbell-rack met planten en platenspeler, de boutique-hoek van de studio" },
   { src: "/images/studio/echo-bike-corner.jpg", alt: "Echo Bike en conditioning-hoek bij SculptClub" },
   { src: "/images/studio/canal-view-doors.jpg", alt: "Open deuren met uitzicht op de Egelantiersgracht in de Jordaan" },
 ];
@@ -110,10 +110,10 @@ export default function GratisTestStudioHurenNL() {
         <div className="mb-7 text-center max-w-2xl mx-auto">
           <p className="overline">Voor personal trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Gratis proefsessie — Studio Huren
+            Gratis proefsessie: Studio Huren
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
-            60 minuten in onze privé studio in de Jordaan. Geen creditcard, geen contract, altijd gratis annuleren — en je houdt 100% van je tarief.
+            60 minuten in onze privé studio in de Jordaan. Geen creditcard, geen contract, altijd gratis annuleren, en je houdt 100% van je tarief.
           </p>
 
           {/* Two co-primary CTAs = the two operator goals, side by side */}
@@ -148,7 +148,7 @@ export default function GratisTestStudioHurenNL() {
             <span className="text-muted-foreground">op Google · {siteConfig.rating.count} reviews</span>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
-            Geen zin om meteen te boeken? App je vraag — we reageren meestal binnen 1 uur.
+            Geen zin om meteen te boeken? App je vraag. We reageren meestal binnen 1 uur.
           </p>
         </div>
 
@@ -178,13 +178,13 @@ export default function GratisTestStudioHurenNL() {
               <p className="overline">Zo ziet het eruit</p>
               <h2 className="mt-2 text-xl font-semibold">Train in onze privé studio in de Jordaan</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                De studio, apparatuur en sfeer aan de gracht — in beeld.
+                De studio, apparatuur en sfeer aan de gracht, in beeld.
               </p>
             </div>
             <LandingVideo
               src="/videos/studio-promo.mp4"
               poster="/videos/studio-promo-poster.jpg"
-              label="SculptClub — de privé studio in Amsterdam Jordaan, in beeld"
+              label="SculptClub: de privé studio in Amsterdam Jordaan, in beeld"
             />
           </div>
         </FadeIn>
@@ -203,9 +203,9 @@ export default function GratisTestStudioHurenNL() {
             </div>
             <ol className="grid gap-6 sm:grid-cols-3">
               {[
-                { n: "1", title: "Kies een moment", text: "Boek een tijd die jou uitkomt — duurt 30 seconden. Geen creditcard, niks invullen." },
-                { n: "2", title: "Loop binnen & train", text: "Je krijgt de deurcode via WhatsApp. 60 minuten in de studio — alleen of met je klant." },
-                { n: "3", title: "Beslis vrijblijvend", text: "Bevalt het? Huur vanaf €12/uur, betaal per boeking. Niks voor jou? Gewoon weglopen — er valt niks op te zeggen." },
+                { n: "1", title: "Kies een moment", text: "Boek een tijd die jou uitkomt. Duurt 30 seconden. Geen creditcard, niks invullen." },
+                { n: "2", title: "Loop binnen & train", text: "Je krijgt de deurcode via WhatsApp. 60 minuten in de studio, alleen of met je klant." },
+                { n: "3", title: "Beslis vrijblijvend", text: "Bevalt het? Huur vanaf €12/uur, betaal per boeking. Niks voor jou? Gewoon weglopen. Er valt niks op te zeggen." },
               ].map((s) => (
                 <li key={s.n} className="text-center sm:text-left">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">
@@ -235,7 +235,7 @@ export default function GratisTestStudioHurenNL() {
               <CalendarCheck className="mx-auto h-6 w-6 text-brand" aria-hidden />
               <h2 className="mt-3 text-xl font-semibold">Boek je gratis proefsessie</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                60 minuten in de privé studio. Geen creditcard, geen contract — kies een tijd die jou uitkomt.
+                60 minuten in de privé studio. Geen creditcard, geen contract. Kies een tijd die jou uitkomt.
               </p>
               <ButtonLink
                 href={acuityFreeTrials.studioRentalTryout}
@@ -265,7 +265,7 @@ export default function GratisTestStudioHurenNL() {
               <p className="overline">De studio</p>
               <h2 className="mt-2 text-xl font-semibold">Bekijk de ruimte</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Privé studio aan de Egelantiersgracht in de Jordaan — tik op een foto voor groot.
+                Privé studio aan de Egelantiersgracht in de Jordaan. Tik op een foto voor groot.
               </p>
             </div>
             <PhotoGalleryLightbox images={galleryImages} locale="nl" />
@@ -330,7 +330,7 @@ export default function GratisTestStudioHurenNL() {
       <Section>
         <FadeIn>
           <div className="text-center text-sm text-muted-foreground">
-            <p className="mb-3">Of bekijk alles over studio huren — tarieven, pakketten &amp; de studio</p>
+            <p className="mb-3">Of bekijk alles over studio huren: tarieven, pakketten &amp; de studio</p>
             <ButtonLink
               href="/nl/studio-huren"
               variant="outline"

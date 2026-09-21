@@ -15,10 +15,10 @@ import { acuityFreeTrials } from "@/config/acuity";
 // manually via WhatsApp for now (no self-serve checkout yet).
 const MEMBERSHIP_FROM = "€179";
 const membershipPerks = [
-  "Eén vast maandbedrag — geen verrassingen",
+  "Eén vast maandbedrag: geen verrassingen",
   "Jouw vaste trainingstijden gereserveerd",
   "Lager effectief uurtarief dan losse huur",
-  "Pauzeer wanneer je weg bent — dan betaal je niet",
+  "Pauzeer wanneer je weg bent, dan betaal je niet",
   "Maandelijks opzegbaar, geen lang contract",
   "Jouw thuisbasis: de privé studio in de Jordaan",
 ];
@@ -108,7 +108,7 @@ const pillars = [
     title: "Studio vs thuis vs buiten",
     href: "/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten",
     text:
-      "Vergelijking met echte cijfers: eigen studio leasen, bij klant thuis, in het park, of per uur huren — wanneer kies je wat?",
+      "Vergelijking met echte cijfers: eigen studio leasen, bij klant thuis, in het park, of per uur huren: wanneer kies je wat?",
     cta: "Zie vergelijking",
   },
 ];
@@ -120,7 +120,7 @@ const trainerFaqs = [
   },
   {
     q: "Is er ook een vast membership?",
-    a: "Ja, optioneel. Reken je per uur af, dan blijft dat zonder verplichting. Train je hier elke week? Dan kun je kiezen voor een Studio Membership: één vast maandbedrag, jouw vaste tijden gereserveerd, een lager effectief uurtarief, en pauzeren wanneer je weg bent. Maandelijks opzegbaar. We stemmen het af op jouw uren — een appje is genoeg.",
+    a: "Ja, optioneel. Reken je per uur af, dan blijft dat zonder verplichting. Train je hier elke week? Dan kun je kiezen voor een Studio Membership: één vast maandbedrag, jouw vaste tijden gereserveerd, een lager effectief uurtarief, en pauzeren wanneer je weg bent. Maandelijks opzegbaar. We stemmen het af op jouw uren. Een appje is genoeg.",
   },
   {
     q: "Hoe boek ik een sessie?",
@@ -128,7 +128,7 @@ const trainerFaqs = [
   },
   {
     q: "Kan ik eerst gratis komen kijken?",
-    a: "Ja. We bieden een gratis 60-minuten proefsessie aan in de studio — bekijk de ruimte, train zelf, stel je vragen. Geen verplichting, geen verkoop-pitch.",
+    a: "Ja. We bieden een gratis 60-minuten proefsessie aan in de studio: bekijk de ruimte, train zelf, stel je vragen. Geen verplichting, geen verkoop-pitch.",
   },
   {
     q: "Krijg ik een eigen profiel op sculptclub.nl?",
@@ -136,11 +136,11 @@ const trainerFaqs = [
   },
   {
     q: "Wat is het verschil tussen losse uur-huur en trainer bij SculptClub zijn?",
-    a: "Losse uur-huur: per sessie betalen, BYO klanten. Wil je er ook inbound klanten bij? Vraag om een profielpagina — die krijg je bij elke vorm van huur, ook per uur: eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Bij beide huur je alleen de ruimte; je houdt 100% van je tarief.",
+    a: "Losse uur-huur: per sessie betalen, BYO klanten. Wil je er ook inbound klanten bij? Vraag om een profielpagina, die krijg je bij elke vorm van huur, ook per uur: eigen profiel + match met inbound klanten + vermelding op Instagram/TikTok. Bij beide huur je alleen de ruimte; je houdt 100% van je tarief.",
   },
   {
     q: "Houd ik 100% van mijn tarief?",
-    a: "Ja. Wij verdienen alleen aan de studio-huur — wat jij rekent aan je klant (€45, €75, €120) is volledig voor jou.",
+    a: "Ja. Wij verdienen alleen aan de studio-huur. Wat jij rekent aan je klant (€45, €75, €120) is volledig voor jou.",
   },
   {
     q: "Welke verzekering heb ik nodig?",
@@ -175,12 +175,12 @@ export default function VoorTrainersHubNL() {
           as="h1"
           overline="Voor personal trainers"
           title="Bouw je personal training praktijk in Amsterdam"
-          description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, eigen tarief en klanten, eigen profiel op onze site. Begin met uur-huur — of word trainer bij SculptClub en krijg klanten via ons."
+          description="SculptClub is gebouwd door en voor freelance trainers. Privé studio in Jordaan, eigen tarief en klanten, eigen profiel op onze site. Begin met uur-huur, of word trainer bij SculptClub en krijg klanten via ons."
           center={false}
         />
         {/* CTAs moved ABOVE the slideshow 2026-05-19. Mobile fold audit
             on iPhone 14 Pro (660 px viewport) showed first CTA "Plan gratis
-            rondleiding" at y=674 — 14 px below the fold. The 16:9
+            rondleiding" at y=674: 14 px below the fold. The 16:9
             PhotoSlideshow (~210 px tall on mobile) was pushing the action
             row past the visitor's first frame.
             Action-first order: CTAs + trust line → slideshow as supporting
@@ -255,7 +255,7 @@ export default function VoorTrainersHubNL() {
         <SectionHeader
           overline="Zes paden"
           title="Welk pad past bij jou?"
-          description="SculptClub werkt voor verschillende type trainers. Kies waar je nu staat — we helpen je groeien vanaf daar."
+          description="SculptClub werkt voor verschillende type trainers. Kies waar je nu staat. We helpen je groeien vanaf daar."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {pillars.map((pillar) => {
@@ -290,7 +290,7 @@ export default function VoorTrainersHubNL() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-2xl border border-border bg-card p-5">
             <p className="mb-2 font-semibold">Gematcht op doel</p>
-            <p className="text-sm leading-relaxed text-muted-foreground">Bezoekers kiezen eerst hun doel — afvallen, sterker worden, pijnvrij bewegen en meer — en zien alleen de trainers die daarin gespecialiseerd zijn.</p>
+            <p className="text-sm leading-relaxed text-muted-foreground">Bezoekers kiezen eerst hun doel (afvallen, sterker worden, pijnvrij bewegen en meer) en zien alleen de trainers die daarin gespecialiseerd zijn.</p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-5">
             <p className="mb-2 font-semibold">Warme leads via WhatsApp</p>
@@ -318,12 +318,12 @@ export default function VoorTrainersHubNL() {
           the optional upgrade. The studio is one private room (capacity-
           limited) → a fixed monthly block + reserved slots + pause, NOT
           "unlimited". MVP = manual setup via WhatsApp (no self-serve billing
-          yet). Price lives in MEMBERSHIP_FROM up top — confirm before deploy. */}
+          yet). Price lives in MEMBERSHIP_FROM up top, confirm before deploy. */}
       <Section>
         <SectionHeader
           overline="Nieuw · Studio Membership"
           title="Hier elke week? Betaal vast in plaats van per uur."
-          description="Per uur blijft per uur — geen verplichting. Maar train je hier wekelijks, dan is een vast maandbedrag voordeliger: jouw vaste tijden gereserveerd en pauzeren wanneer je weg bent."
+          description="Per uur blijft per uur, geen verplichting. Maar train je hier wekelijks, dan is een vast maandbedrag voordeliger: jouw vaste tijden gereserveerd en pauzeren wanneer je weg bent."
         />
         <div className="grid items-start gap-6 lg:grid-cols-[1.05fr_1fr]">
           <FadeIn>
@@ -337,7 +337,7 @@ export default function VoorTrainersHubNL() {
                     <span className="text-muted-foreground">/ maand</span>
                   </p>
                   <p className="mt-1.5 text-sm text-muted-foreground">
-                    Afgestemd op jouw uren — ongeveer 5 uur per week tegen ~€10/uur. Meer uren nodig? We schalen mee.
+                    Afgestemd op jouw uren: ongeveer 5 uur per week tegen ~€10/uur. Meer uren nodig? We schalen mee.
                   </p>
                 </div>
                 <ul className="space-y-2.5 text-sm">
@@ -349,7 +349,7 @@ export default function VoorTrainersHubNL() {
                   ))}
                 </ul>
                 <ButtonLink
-                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en heb interesse in een Studio Membership — ik train regelmatig en wil graag een vast maandbedrag.")}`}
+                  href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en heb interesse in een Studio Membership. Ik train regelmatig en wil graag een vast maandbedrag.")}`}
                   external
                   size="lg"
                   className="plausible-event-name=trainer_membership_whatsapp_click"
@@ -367,11 +367,11 @@ export default function VoorTrainersHubNL() {
             <div className="space-y-5 text-sm leading-relaxed text-muted-foreground lg:pt-2">
               <div>
                 <p className="font-semibold text-foreground">Voor wie is dit?</p>
-                <p className="mt-1">Trainers die hier elke week zijn. Reken je liever per uur af? Dat blijft — zonder verplichting, altijd gratis annuleren.</p>
+                <p className="mt-1">Trainers die hier elke week zijn. Reken je liever per uur af? Dat blijft, zonder verplichting, altijd gratis annuleren.</p>
               </div>
               <div>
                 <p className="font-semibold text-foreground">Pauzeren wanneer je weg bent</p>
-                <p className="mt-1">Op vakantie of een rustige week? Zet je membership op pauze en je betaalt niet. Maandelijks opzegbaar — geen lang contract.</p>
+                <p className="mt-1">Op vakantie of een rustige week? Zet je membership op pauze en je betaalt niet. Maandelijks opzegbaar, geen lang contract.</p>
               </div>
               <div>
                 <p className="font-semibold text-foreground">Hoe stellen we het op?</p>
@@ -399,7 +399,7 @@ export default function VoorTrainersHubNL() {
               </p>
             </div>
             <ButtonLink
-              href={`https://wa.me/?text=${encodeURIComponent("Hey! Ik train mijn klanten bij SculptClub — een privé studio in de Jordaan: €12/uur, eigen klanten en tarief, geen contract. Misschien iets voor jou? Eerste sessie gratis → https://sculptclub.nl/studio-huren")}`}
+              href={`https://wa.me/?text=${encodeURIComponent("Hey! Ik train mijn klanten bij SculptClub, een privé studio in de Jordaan: €12/uur, eigen klanten en tarief, geen contract. Misschien iets voor jou? Eerste sessie gratis → https://sculptclub.nl/studio-huren")}`}
               external
               size="lg"
               className="mt-4 shrink-0 sm:mt-0 plausible-event-name=trainer_referral_share"
