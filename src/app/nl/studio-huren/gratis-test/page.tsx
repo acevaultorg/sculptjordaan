@@ -298,7 +298,7 @@ export default function GratisTestStudioHurenNL() {
                   href={whatsappLinks.studioNl}
                   external
                   variant="outline"
-                  className="w-full plausible-event-name=gratis_test_studio_whatsapp"
+                  className="w-full plausible-event-name=gratis_test_studio_whatsapp max-sm:min-h-11"
                 >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp ons
@@ -314,7 +314,7 @@ export default function GratisTestStudioHurenNL() {
                   href={acuityFreeTrials.studioRentalTryout}
                   external
                   variant="outline"
-                  className="w-full plausible-event-name=gratis_test_studio_tour"
+                  className="w-full plausible-event-name=gratis_test_studio_tour max-sm:min-h-11"
                 >
                   <CalendarCheck className="mr-2 h-4 w-4" />
                   Boek je gratis bezoek
@@ -335,7 +335,7 @@ export default function GratisTestStudioHurenNL() {
               href="/nl/studio-huren"
               variant="outline"
               size="default"
-              className="plausible-event-name=gratis_test_studio_to_main"
+              className="max-sm:min-h-11 plausible-event-name=gratis_test_studio_to_main"
             >
               Tarieven, pakketten &amp; meer
               <ArrowRight className="ml-2 h-4 w-4" />

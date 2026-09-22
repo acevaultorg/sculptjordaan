@@ -275,7 +275,7 @@ export default function FreeTrialStudioRentalEN() {
                   href={whatsappLinks.studioEn}
                   external
                   variant="outline"
-                  className="w-full plausible-event-name=free_trial_studio_whatsapp"
+                  className="w-full plausible-event-name=free_trial_studio_whatsapp max-sm:min-h-11"
                 >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp us
@@ -291,7 +291,7 @@ export default function FreeTrialStudioRentalEN() {
                   href={acuityFreeTrials.studioRentalTryout}
                   external
                   variant="outline"
-                  className="w-full plausible-event-name=free_trial_studio_tour"
+                  className="w-full plausible-event-name=free_trial_studio_tour max-sm:min-h-11"
                 >
                   <CalendarCheck className="mr-2 h-4 w-4" />
                   Book your free visit
@@ -311,7 +311,7 @@ export default function FreeTrialStudioRentalEN() {
               href="/en/studio-rental"
               variant="outline"
               size="default"
-              className="plausible-event-name=free_trial_studio_to_main"
+              className="max-sm:min-h-11 plausible-event-name=free_trial_studio_to_main"
             >
               Rates, packages &amp; more
               <ArrowRight className="ml-2 h-4 w-4" />
