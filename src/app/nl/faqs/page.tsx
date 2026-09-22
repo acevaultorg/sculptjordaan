@@ -145,7 +145,16 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Welke pakketten zijn er?",
-        a: "Starter \u20AC89 (10% korting), Routine \u20AC199 (15% korting), Pro \u20AC349 (20% korting) en Volume \u20AC549 (23% korting). Pakketten zijn 1 jaar geldig en te gebruiken voor halve of hele studio.",
+        // Prices corrected 2026-09-22 to match /nl/prijzen, which is the
+        // canonical surface — it is the one with the buy buttons. This answer
+        // had Routine \u20AC199 / Pro \u20AC349 / Volume \u20AC549 while the
+        // pricing page charges \u20AC179 / \u20AC299 / \u20AC499, so three of
+        // the four tiers were quoted ABOVE the real price. The discount
+        // percentages were already right and are unchanged (89/99, 179/210,
+        // 299/375, 499/650 = 10/15/20/23%), which is what dates this as a
+        // stale copy of an older price table rather than a different product.
+        // No number here is invented: all four come from src/app/nl/prijzen.
+        a: "Starter \u20AC89 (10% korting), Routine \u20AC179 (15% korting), Pro \u20AC299 (20% korting) en Volume \u20AC499 (23% korting). Pakketten zijn 1 jaar geldig en te gebruiken voor halve of hele studio.",
       },
       {
         q: "Wat is inbegrepen bij studio huur?",
