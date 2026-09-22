@@ -224,13 +224,23 @@ export default function StudioRentalPageEN() {
             than promising fixed free hours, because that claim survives the
             next booking; a literal "free from 16:00" would not.
 
-            NOTE for whoever owns docs/CLASSPASS-FULLSTUDIO-PRIORITY.md: that
-            doc says Sat 17-21h + Sun 16-21h run recurring ClassPass, and that
-            is the stated reason this copy had to stay vague. It does not
-            reproduce — those exact hours show bookable on the full-studio type
-            on all three weekends. Either the recurring classes ended or they
-            do not block this type. Worth confirming before anyone leans on
-            that doc again.
+            RESOLVED 2026-09-23, same day. The comment above used to say Sat
+            17-21h + Sun 16-21h run recurring ClassPass, and that was the stated
+            reason this copy had to stay vague. It is WRONG, on two independent
+            grounds:
+
+            1. docs/CLASSPASS-FULLSTUDIO-PRIORITY.md's own "Executed 2026-08-05"
+               table lists exactly FOUR live ClassPass slots — Mon/Tue/Thu/Fri
+               21:00 — and nothing on a weekend. The 16-slot table elsewhere in
+               that doc is the CAP of what would be permitted, not what runs.
+            2. Measured: those weekend hours are bookable on the full-studio
+               type on three consecutive weekends.
+
+            So no ClassPass class occupies any weekend hour, and the weekend is
+            genuinely free. The copy is still deliberately RELATIVE ("the
+            quietest day") rather than promising fixed free hours — not because
+            of ClassPass, but because a concrete promise goes stale the moment
+            somebody books. That reason survives; the ClassPass one does not.
         */}
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
           <p className="text-sm font-semibold text-primary">
