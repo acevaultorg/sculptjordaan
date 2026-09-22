@@ -93,12 +93,31 @@ function businessObject(html) {
   return null;
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Acuity rate-limits a rapid sweep: running this twice in a couple of minutes
+ * made three products that had just read ✓ come back "unparseable page"
+ * (measured 2026-09-22). Unparseable is a TRANSPORT symptom, not a pricing
+ * fact, and treating it as a problem turns a flake into a blocked deploy — so
+ * retry once, slowly, before believing it. A genuinely dead product fails the
+ * retry too, so nothing real is hidden.
+ */
+async function readBusiness(u) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    if (attempt) await sleep(2500);
+    const res = await fetch(u, { headers: { "User-Agent": UA }, redirect: "follow" });
+    if (!res.ok) { if (attempt) return { httpError: res.status }; continue; }
+    const b = businessObject(await res.text());
+    if (b !== null) return { business: b };
+  }
+  return { parseFailed: true };
+}
+
 async function productsFor(id) {
-  const res = await fetch(url(id), { headers: { "User-Agent": UA }, redirect: "follow" });
-  if (!res.ok) return { httpError: res.status, products: [] };
-  const b = businessObject(await res.text());
-  if (b === null) return { parseFailed: true, products: [] };
-  return { products: Object.values(b.products ?? {}).flat() };
+  const r = await readBusiness(url(id));
+  if (r.httpError || r.parseFailed) return { ...r, products: [] };
+  return { products: Object.values(r.business.products ?? {}).flat() };
 }
 
 const problems = [];
@@ -206,13 +225,10 @@ const EXPECTED_TYPES = {
 };
 
 async function typesFor(t) {
-  const res = await fetch(typeUrl(t), { headers: { "User-Agent": UA }, redirect: "follow" });
-  if (!res.ok) return { httpError: res.status, types: [] };
-  const b = businessObject(await res.text());
-  if (b === null) return { parseFailed: true, types: [] };
-  const raw = b.appointmentTypes ?? {};
-  const types = Object.values(raw).flatMap((v) => (Array.isArray(v) ? v : [v]));
-  return { types };
+  const r = await readBusiness(typeUrl(t));
+  if (r.httpError || r.parseFailed) return { ...r, types: [] };
+  const raw = r.business.appointmentTypes ?? {};
+  return { types: Object.values(raw).flatMap((v) => (Array.isArray(v) ? v : [v])) };
 }
 
 console.log("\nappointment types (bookable sessions):");
