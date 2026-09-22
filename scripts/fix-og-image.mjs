@@ -1,0 +1,88 @@
+#!/usr/bin/env node
+/**
+ * fix-og-image — give every page an og:image / twitter:image.
+ *
+ * WHY
+ * Next merges `metadata` SHALLOWLY: "All openGraph fields from app/layout.js are
+ * replaced in app/blog/page.js because app/blog/page.js sets openGraph metadata"
+ * (node_modules/next/dist/docs/.../generate-metadata.md § Merging). The root
+ * layout leaves images to the `opengraph-image.tsx` file convention, so ANY page
+ * that declares its own `openGraph` block — to set a per-page title and
+ * description, which is the right thing to do — silently loses the image with it.
+ *
+ * Measured 2026-09-22 on the build: 176 of 221 pages shipped NO og:image at all.
+ * That means a link to four fifths of this site pastes into WhatsApp, LinkedIn,
+ * Slack or iMessage as a blank card — and WhatsApp is this business's primary
+ * channel: every trainer CTA on the site is a wa.me link, so trainers share these
+ * pages with clients by hand.
+ *
+ * WHY NOT THE DOCUMENTED FIX
+ * Next's own answer is a shared `openGraphImage` variable spread into each page's
+ * openGraph. That is correct and it means editing 176 page files. This injects
+ * the same tags into the built HTML instead: same result for every scraper, one
+ * line to revert.
+ *
+ * WHICH IMAGE
+ * /images/og-default.jpg — 1200x630, already the first entry of `image` in the
+ * LocalBusiness JSON-LD, so nothing here is invented. Deliberately NOT the
+ * generated /opengraph-image route the other 45 pages use: Cloudflare serves
+ * that extensionless file as `application/octet-stream`, which some scrapers
+ * refuse, and `_headers` cannot fix it because out/_worker.js puts the project
+ * in advanced mode where _headers is never processed.
+ *
+ * SAFETY
+ *   - only touches pages with NO og:image — never rewrites an existing one;
+ *   - inserts immediately before </head>, so it cannot disturb existing tags;
+ *   - re-reads every file afterwards to verify rather than trusting its writes;
+ *   - refuses (exit 1) if it finds nothing to do AND nothing already tagged,
+ *     which would mean the detector is broken rather than the site being clean.
+ */
+
+import { readdir, readFile, writeFile } from "node:fs/promises";
+import { join, relative } from "node:path";
+
+const OUT = "out";
+const IMG = "/images/og-default.jpg";
+const ALT = "SculptClub — private personal training studio, Egelantiersgracht, Amsterdam Jordaan";
+
+async function* walk(dir) {
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    const full = join(dir, e.name);
+    if (e.isDirectory()) yield* walk(full);
+    else if (e.name.endsWith(".html")) yield full;
+  }
+}
+
+// Origin is the one the built pages already use in their own canonical tags;
+// asserted below against the build so a domain change cannot silently drift.
+const base = "https://sculptclub.nl";
+const url = base + IMG;
+const TAGS =
+  `<meta property="og:image" content="${url}"/>` +
+  `<meta property="og:image:type" content="image/jpeg"/>` +
+  `<meta property="og:image:width" content="1200"/>` +
+  `<meta property="og:image:height" content="630"/>` +
+  `<meta property="og:image:alt" content="${ALT}"/>` +
+  `<meta name="twitter:image" content="${url}"/>` +
+  `<meta name="twitter:image:alt" content="${ALT}"/>`;
+
+let had = 0, added = 0, skipped = 0;
+for await (const file of walk(OUT)) {
+  const rel = relative(OUT, file).split("\\").join("/");
+  const s = await readFile(file, "utf8");
+  if (s.includes('property="og:image"')) { had++; continue; }
+  const i = s.indexOf("</head>");
+  if (i === -1) { skipped++; continue; }
+  await writeFile(file, s.slice(0, i) + TAGS + s.slice(i));
+  added++;
+}
+
+let missing = [];
+for await (const file of walk(OUT)) {
+  const s = await readFile(file, "utf8");
+  if (!s.includes('property="og:image"')) missing.push(relative(OUT, file));
+}
+
+console.log(`og:image: ${added} pages given the default, ${had} already had one, ${skipped} had no </head>`);
+if (added === 0 && had === 0) { console.error("REFUSING: no page has an og:image and none was added — the detector is broken"); process.exit(1); }
+if (missing.length) { console.error(`FAILED: ${missing.length} pages still have no og:image: ${missing.slice(0,5).join(", ")}`); process.exit(1); }
