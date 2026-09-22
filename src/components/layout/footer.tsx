@@ -100,7 +100,7 @@ export function Footer() {
                   href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center p-2 sm:min-h-0 sm:min-w-0 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle className="w-5 h-5" />
@@ -109,7 +109,7 @@ export function Footer() {
                   href={siteConfig.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center p-2 sm:min-h-0 sm:min-w-0 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="Instagram"
                 >
                   <InstagramIcon className="w-5 h-5" />
@@ -118,7 +118,7 @@ export function Footer() {
                   href={siteConfig.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center p-2 sm:min-h-0 sm:min-w-0 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="TikTok"
                 >
                   <TikTokIcon className="w-5 h-5" />
@@ -127,7 +127,7 @@ export function Footer() {
                   href={siteConfig.google}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-0 hover:text-foreground transition-colors"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center p-2 sm:min-h-0 sm:min-w-0 sm:p-0 hover:text-foreground transition-colors"
                   aria-label="Google Maps"
                 >
                   <MapPin className="w-5 h-5" />
