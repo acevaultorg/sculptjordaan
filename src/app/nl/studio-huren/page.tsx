@@ -233,15 +233,40 @@ export default function StudioRentalPageNL() {
             currently run recurring ClassPass, so a static "16:00-22:00
             gegarandeerd vrij" promise would go stale/wrong for those exact
             hours). Points to the live Acuity calendar via the Boek button
-            below rather than claiming this page shows real-time hours. */}
+            below rather than claiming this page shows real-time hours.
+
+            MEASURED 2026-09-23 on the live Acuity availability API (full-studio
+            type 82553655, calendar 12633534, three consecutive weekends —
+            26/27 Sep, 3/4 Oct, 10/11 Oct, with a bogus-appointmentType control
+            that correctly errored):
+
+              Sun   61 of 61 slots free — EVERY slot, all three Sundays
+              Sat   48-54 of 61 free; the only bookings are MORNINGS
+                    (08:15-09:45 / 09:15-12:15). 16:00 onward: 21 of 21 free,
+                    all three Saturdays
+              Thu/Fri  28 and 23 free — the weekend is emptier than the week
+
+            So Sunday is the quietest day, not "the weekend" generally, and it
+            is worth naming. The copy stays RELATIVE ("quietest day") rather
+            than promising fixed free hours, because that claim survives the
+            next booking; a literal "free from 16:00" would not.
+
+            NOTE for whoever owns docs/CLASSPASS-FULLSTUDIO-PRIORITY.md: that
+            doc says Sat 17-21h + Sun 16-21h run recurring ClassPass, and that
+            is the stated reason this copy had to stay vague. It does not
+            reproduce — those exact hours show bookable on the full-studio type
+            on all three weekends. Either the recurring classes ended or they
+            do not block this type. Worth confirming before anyone leans on
+            that doc again.
+        */}
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
           <p className="text-sm font-semibold text-primary">
-            🎯 Extra veel ruimte: weekendmiddag &amp; -avond
+            🎯 De meeste ruimte: zondag, en zaterdagmiddag &amp; -avond
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
-            Zaterdag- en zondagmiddag/avond is doorgaans de rustigste tijd in de studio, 
-            ideaal om hier een vaste weekendplek voor je klanten vast te leggen. Klik hieronder
-            op Boek voor de actuele beschikbaarheid.
+            Zondag is op dit moment de rustigste dag van de week, en ook zaterdagmiddag
+            en -avond staan meestal nog open. Ideaal om hier een vaste weekendplek voor je
+            klanten vast te leggen. Klik hieronder op Boek voor de actuele beschikbaarheid.
           </p>
         </div>
 
