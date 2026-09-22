@@ -161,7 +161,7 @@ export default function FreeIntroPage() {
             href={whatsappLinks.intakeMatchEn}
             target="_blank"
             rel="noopener noreferrer"
-            className="plausible-event-name=free_intro_whatsapp_match_fallback inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-700 underline-offset-4 hover:underline transition-colors"
+            className="plausible-event-name=free_intro_whatsapp_match_fallback inline-flex min-h-11 items-center gap-1.5 py-2 text-sm font-semibold text-emerald-600 hover:text-emerald-700 underline-offset-4 hover:underline transition-colors"
             data-cta="free-intro-whatsapp-match-fallback"
           >
             <MessageCircle className="w-4 h-4" />
