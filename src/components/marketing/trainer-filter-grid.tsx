@@ -228,7 +228,7 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
               onClick={() => setFiltersOpen((v) => !v)}
               aria-expanded={filtersOpen}
               aria-controls="trainer-filter-panel"
-              className="inline-flex items-center gap-2 text-sm font-medium text-foreground"
+              className="inline-flex min-h-11 items-center gap-2 py-2 text-sm font-medium text-foreground"
             >
               <SlidersHorizontal className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <span>{t.filterToggle}</span>
@@ -362,7 +362,7 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={t.ariaInstagram(trainer.instagramHandle)}
-                        className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                        className="shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                       >
                         <InstagramIcon className="w-4 h-4" />
                       </a>

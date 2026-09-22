@@ -111,7 +111,7 @@ export function ReviewsPreview({ locale }: { locale: Locale }) {
           href={t.ctaHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+          className="inline-flex min-h-11 items-center py-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
         >
           {t.cta}
           <ArrowRight className="ml-1 w-4 h-4" />
