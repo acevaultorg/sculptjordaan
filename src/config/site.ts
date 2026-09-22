@@ -43,6 +43,15 @@ export const siteConfig = {
   // /review redirect, so changing it here upgrades all of them at once.
   googleReview:
     "https://search.google.com/local/writereview?placeid=ChIJCXG6-WAJxkcRO-dqhcrQSgU",
+  // VERIFIED LIVE 2026-09-22 against the Google place itself (place_id
+  // ChIJCXG6-WAJxkcRO-dqhcrQSgU, read with a real browser after declining
+  // cookies): "5,0 sterren" / "19 reviews", and the star breakdown is
+  // 19x 5-star, 0 at every other rating. So these two numbers are CURRENT,
+  // not stale — worth saying, because they had not changed since the
+  // 2026-03-23 rebuild and six untouched months reads exactly like drift.
+  // They feed the homepage social-proof line AND aggregateRating in the
+  // LocalBusiness JSON-LD, so an understated count costs trust twice.
+  // Re-verify the same way before assuming it has moved.
   rating: { value: 5.0, count: 19 },
   founded: "2025",
   acuity: {
