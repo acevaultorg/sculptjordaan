@@ -175,7 +175,7 @@ export default function PhysiotherapistPersonalTrainerEN() {
                 Tell us your situation. We listen, think along, and point you toward
                 the right trainer — or, if it’s a better fit, toward a physiotherapist.
               </p>
-              <ButtonLink href="/en/find-personal-trainer">
+              <ButtonLink href="/en/find-personal-trainer" className="max-sm:min-h-11">
                 Find your personal trainer <ArrowRight className="w-4 h-4" />
               </ButtonLink>
             </div>

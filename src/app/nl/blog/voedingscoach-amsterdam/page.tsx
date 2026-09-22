@@ -162,7 +162,7 @@ export default function VoedingscoachAmsterdamNL() {
               <p className="text-muted-foreground mb-6">
                 Wil je jouw training en voeding laten aansluiten? Plan een gratis kennismaking met Eva en ontdek wat er mogelijk is.
               </p>
-              <ButtonLink href="/nl/gratis-intake">
+              <ButtonLink href="/nl/gratis-intake" className="max-sm:min-h-11">
                 Plan gratis intake <ArrowRight className="w-4 h-4" />
               </ButtonLink>
             </div>

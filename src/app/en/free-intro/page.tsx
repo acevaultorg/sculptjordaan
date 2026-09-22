@@ -113,7 +113,7 @@ export default function FreeIntroPage() {
 
       <main className="mx-auto max-w-2xl px-4 pb-24 pt-12 text-center">
         {/* Stars */}
-        <div className="inline-flex items-center gap-1.5 text-sm text-muted-foreground mb-6">
+        <div className="inline-flex min-h-11 items-center gap-1.5 py-2 text-sm text-muted-foreground mb-6">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
           ))}
@@ -139,7 +139,7 @@ export default function FreeIntroPage() {
           </p>
           <Link
             href="/en/match-trainer"
-            className="plausible-event-name=free_intro_quiz_entry inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand text-brand-foreground font-semibold text-sm hover:bg-brand-dark transition-colors"
+            className="plausible-event-name=free_intro_quiz_entry inline-flex min-h-11 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand text-brand-foreground font-semibold text-sm hover:bg-brand-dark transition-colors"
             data-cta="free-intro-quiz-entry"
           >
             <ArrowRight className="w-4 h-4" />
@@ -302,7 +302,7 @@ export default function FreeIntroPage() {
               href={whatsappLinks.intakeMatchEn}
               target="_blank"
               rel="noopener noreferrer"
-              className="plausible-event-name=free_intro_final_whatsapp_direct inline-flex items-center gap-1.5 text-sm font-semibold text-white/90 hover:text-white underline-offset-4 hover:underline transition-colors"
+              className="plausible-event-name=free_intro_final_whatsapp_direct inline-flex min-h-11 items-center gap-1.5 py-2 text-sm font-semibold text-white/90 hover:text-white underline-offset-4 hover:underline transition-colors"
               data-cta="free-intro-final-whatsapp-direct"
             >
               <MessageCircle className="w-4 h-4" />

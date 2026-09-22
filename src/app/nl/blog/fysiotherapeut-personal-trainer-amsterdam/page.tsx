@@ -175,7 +175,7 @@ export default function FysiotherapeutPersonalTrainerNL() {
                 Vertel ons je situatie. We luisteren, denken mee en wijzen je door
                 naar de juiste trainer — of, als dat passender is, naar een fysiotherapeut.
               </p>
-              <ButtonLink href="/nl/vind-jouw-personal-trainer">
+              <ButtonLink href="/nl/vind-jouw-personal-trainer" className="max-sm:min-h-11">
                 Vind jouw personal trainer <ArrowRight className="w-4 h-4" />
               </ButtonLink>
             </div>

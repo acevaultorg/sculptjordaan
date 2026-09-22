@@ -161,7 +161,7 @@ export default function NutritionCoachAmsterdamEN() {
               <p className="text-muted-foreground mb-6">
                 Want to align your training and nutrition? Book a free intro with Eva and find out what’s possible.
               </p>
-              <ButtonLink href="/en/free-intro">
+              <ButtonLink href="/en/free-intro" className="max-sm:min-h-11">
                 Book free intro <ArrowRight className="w-4 h-4" />
               </ButtonLink>
             </div>
