@@ -60,3 +60,4 @@ public/images/wetransfer_*
 # project and publish a duplicate of the site. Without it the command fails fast.
 .vercel/
 vercel.json
+bf.html

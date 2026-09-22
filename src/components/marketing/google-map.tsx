@@ -63,7 +63,7 @@ export function GoogleMap({ locale }: { locale: Locale }) {
             {/* Phone — whole row is a tel: link, icon stays brand-colored (clickable context). */}
             <a
               href={`tel:${siteConfig.phone}`}
-              className="flex items-start gap-3 group"
+              className="flex max-sm:min-h-11 items-start gap-3 py-1 group"
             >
               <Phone className="w-5 h-5 text-brand mt-0.5 shrink-0 group-hover:text-brand-dark transition-colors" aria-hidden="true" />
               <span className="text-sm font-medium text-brand group-hover:text-brand-dark transition-colors">

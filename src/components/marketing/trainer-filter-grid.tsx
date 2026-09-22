@@ -413,7 +413,7 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                       target="_blank"
                       rel="noopener"
                       data-trainer-website={trainer.name}
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline underline-offset-4"
+                      className="inline-flex min-h-11 items-center gap-1.5 py-2 text-sm font-medium text-brand hover:underline underline-offset-4"
                     >
                       <Globe className="h-4 w-4" aria-hidden="true" />
                       {t.website(trainer.website.label)}
@@ -488,7 +488,7 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                   <Link
                     href={`/${locale}/${trainer.slug[locale]}${goalId ? `?doel=${goalId}` : ""}`}
                     aria-label={t.ariaProfile(trainer.name)}
-                    className="inline-flex items-center justify-center gap-1 text-xs font-medium text-muted-foreground hover:text-brand transition-colors"
+                    className="inline-flex min-h-11 items-center justify-center gap-1 py-2 text-xs font-medium text-muted-foreground hover:text-brand transition-colors"
                   >
                     {t.viewProfile}
                     <ArrowRight className="h-3 w-3" />

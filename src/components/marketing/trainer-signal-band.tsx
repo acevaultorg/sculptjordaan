@@ -66,7 +66,7 @@ export function TrainerSignalBand({ locale }: { locale: Locale }) {
           {/* Secondary: full studio page (pricing, photos, self-serve booking). */}
           <Link
             href={c.pageHref}
-            className={`plausible-event-name=trainer_band_studio_click inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-2.5 text-sm font-semibold text-foreground transition hover:text-primary`}
+            className={`plausible-event-name=trainer_band_studio_click inline-flex max-sm:min-h-11 items-center justify-center gap-1.5 rounded-lg px-3 py-2.5 text-sm font-semibold text-foreground transition hover:text-primary`}
           >
             {c.secondary}
             <ArrowRight className="h-4 w-4" />

@@ -271,7 +271,7 @@ export default function VoorTrainersHubNL() {
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {pillar.text}
                     </p>
-                    <ButtonLink href={pillar.href} variant="outline" size="sm">
+                    <ButtonLink href={pillar.href} variant="outline" size="sm" className="max-sm:min-h-11">
                       {pillar.cta}
                       <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
                     </ButtonLink>

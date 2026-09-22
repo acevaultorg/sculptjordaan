@@ -213,7 +213,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                         : c.ariaIntake(trainer.name)
                     }
                     data-cta={`home-trainer-${trainer.id}`}
-                    className={`plausible-event-name=home_trainer_${trainer.id} inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2 py-1 text-xs font-semibold text-primary transition-transform hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm group-hover:translate-x-0.5`}
+                    className={`plausible-event-name=home_trainer_${trainer.id} inline-flex max-sm:min-h-11 items-center gap-1 whitespace-nowrap rounded-lg px-2 py-1 text-xs font-semibold text-primary transition-transform hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm group-hover:translate-x-0.5`}
                   >
                     {trainer.bookingUrl
                       ? trainer.bookingLabel?.[locale] ?? c.ctaCard
