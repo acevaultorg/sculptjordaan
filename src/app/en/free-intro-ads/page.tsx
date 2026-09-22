@@ -86,7 +86,7 @@ export default function FreeIntroAdsPage() {
         <Link
           href="/en/match-trainer"
           data-cta="ads-landing-match-quiz"
-          className="plausible-event-name=ads_landing_quiz inline-flex items-center justify-center gap-1.5 mt-3 text-sm font-semibold text-foreground hover:text-brand underline-offset-4 hover:underline transition-colors"
+          className="plausible-event-name=ads_landing_quiz inline-flex min-h-11 items-center justify-center gap-1.5 mt-3 py-2 text-sm font-semibold text-foreground hover:text-brand underline-offset-4 hover:underline transition-colors"
         >
           Or book directly → match your trainer in 3 questions
           <ArrowRight className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function FreeIntroAdsPage() {
         <a
           href="tel:+31615147952"
           data-cta="ads-landing-phone"
-          className="inline-flex items-center justify-center gap-1.5 mt-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          className="inline-flex min-h-11 items-center justify-center gap-1.5 mt-2 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
         >
           <Phone className="w-3.5 h-3.5" />
           Or call direct · +31 6 15 14 79 52 · daily 9-21

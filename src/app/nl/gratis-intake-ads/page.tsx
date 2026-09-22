@@ -117,7 +117,7 @@ export default function GratisIntakeAdsPage() {
         <Link
           href="/nl/match-trainer"
           data-cta="ads-landing-match-quiz"
-          className="plausible-event-name=ads_landing_quiz inline-flex items-center justify-center gap-1.5 mt-3 text-sm font-semibold text-foreground hover:text-brand underline-offset-4 hover:underline transition-colors"
+          className="plausible-event-name=ads_landing_quiz inline-flex min-h-11 items-center justify-center gap-1.5 mt-3 py-2 text-sm font-semibold text-foreground hover:text-brand underline-offset-4 hover:underline transition-colors"
         >
           Of plan direct gratis intake → match je trainer in 3 vragen
           <ArrowRight className="w-4 h-4" />
@@ -127,7 +127,7 @@ export default function GratisIntakeAdsPage() {
         <a
           href="tel:+31615147952"
           data-cta="ads-landing-phone"
-          className="inline-flex items-center justify-center gap-1.5 mt-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          className="inline-flex min-h-11 items-center justify-center gap-1.5 mt-2 py-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
         >
           <Phone className="w-3.5 h-3.5" />
           Of bel direct · +31 6 15 14 79 52 · dagelijks 09-21
