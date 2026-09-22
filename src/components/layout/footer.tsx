@@ -42,7 +42,7 @@ function FooterColumn({
               href={item.href}
               // Mobile: py-2 gives ≥40px tap target (text-sm line-height ~20px + 16px padding)
               // Desktop (sm+): revert to inline link with space-y-2.5 between items
-              className="block py-2 sm:py-0 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="block py-3 sm:py-0 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
             </Link>
