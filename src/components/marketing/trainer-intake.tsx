@@ -374,7 +374,18 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                 <TrainerPhotoGallery
                   locale={locale}
                   images={[
-                    { src: trainer.image, alt: `${locale === "nl" ? "Foto van" : "Photo of"} ${trainer.name}, personal trainer bij/at SculptClub Amsterdam` },
+                    // "bij/at" shipped on all 26 intake pages: the author localised
+                    // "Foto van"/"Photo of" and left the preposition bilingual, so a
+                    // Dutch visitor's screen reader said "personal trainer bij/at
+                    // SculptClub". Localise the whole sentence, matching the wording
+                    // trainer-filter-grid.tsx already defines as `photoAlt`.
+                    {
+                      src: trainer.image,
+                      alt:
+                        locale === "nl"
+                          ? `Foto van ${trainer.name}, personal trainer bij SculptClub Amsterdam`
+                          : `Photo of ${trainer.name}, personal trainer at SculptClub Amsterdam`,
+                    },
                     ...(trainer.gallery?.map((g) => ({ src: g.src, alt: g.alt[locale], video: g.video })) ?? []),
                   ]}
                 />
