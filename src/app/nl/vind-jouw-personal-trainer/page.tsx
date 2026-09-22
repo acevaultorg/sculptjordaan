@@ -237,7 +237,7 @@ export default function TrainersPageNL() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          Zelfstandig verder na je traject? <a href="/nl/open-gym" className="font-semibold text-brand hover:underline underline-offset-4">Bekijk Open Gym →</a>
+          Zelfstandig verder na je traject? <a href="/nl/open-gym" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">Bekijk Open Gym →</a>
         </p>
       </Section>
 
@@ -416,7 +416,7 @@ export default function TrainersPageNL() {
           </ButtonLink>
         </FadeIn>
         <p className="mt-6 text-center text-sm">
-          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject of pakket →</a>
+          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject of pakket →</a>
         </p>
       </Section>
 

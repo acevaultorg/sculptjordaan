@@ -237,7 +237,7 @@ export default function TrainersPageEN() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          Want to continue on your own after your programme? <a href="/en/open-gym" className="font-semibold text-brand hover:underline underline-offset-4">See Open Gym →</a>
+          Want to continue on your own after your programme? <a href="/en/open-gym" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">See Open Gym →</a>
         </p>
       </Section>
 
@@ -409,7 +409,7 @@ export default function TrainersPageEN() {
           </ButtonLink>
         </FadeIn>
         <p className="mt-6 text-center text-sm">
-          <a href="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">How to price a programme or package →</a>
+          <a href="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">How to price a programme or package →</a>
         </p>
       </Section>
 

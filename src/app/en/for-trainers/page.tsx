@@ -300,8 +300,8 @@ export default function ForTrainersHubEN() {
           </div>
         </div>
         <p className="mt-6 flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:gap-6">
-          <a href="/en/find-personal-trainer" className="font-semibold text-brand hover:underline underline-offset-4">How clients find you →</a>
-          <a href="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">How to price a programme →</a>
+          <a href="/en/find-personal-trainer" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">How clients find you →</a>
+          <a href="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">How to price a programme →</a>
         </p>
       </Section>
 

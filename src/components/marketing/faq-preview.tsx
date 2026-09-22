@@ -129,7 +129,7 @@ export function FaqPreview({ locale }: { locale: Locale }) {
           <div className="mt-5">
             <Link
               href={t.ctaHref}
-              className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+              className="inline-flex min-h-11 items-center py-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
             >
               {t.cta}
               <ArrowRight className="ml-1 w-4 h-4" />

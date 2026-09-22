@@ -306,8 +306,8 @@ export default function VoorTrainersHubNL() {
           </div>
         </div>
         <p className="mt-6 flex flex-col items-center justify-center gap-2 text-sm sm:flex-row sm:gap-6">
-          <a href="/nl/vind-jouw-personal-trainer" className="font-semibold text-brand hover:underline underline-offset-4">Zo vinden klanten je →</a>
-          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject →</a>
+          <a href="/nl/vind-jouw-personal-trainer" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">Zo vinden klanten je →</a>
+          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject →</a>
         </p>
       </Section>
 
