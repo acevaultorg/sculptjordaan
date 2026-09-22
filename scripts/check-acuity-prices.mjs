@@ -174,6 +174,89 @@ for (const id of declared) {
   }
 }
 
+// ── APPOINTMENT TYPES ────────────────────────────────────────────────────────
+// The products above are the CATALOG (packages and subscriptions). The single
+// bookable SESSIONS are a different Acuity object reached by a different URL,
+// and nothing checked them — which is exactly where the drift happened:
+// 2026-09-22 the pricing page advertised the single Open Gym session at €10
+// while Acuity had been charging €9, contradicting /nl/open-gym and
+// /nl/boek-gym, which both already said €9. The dated "ACUITY IN SYNC" note in
+// src/config/acuity.ts lists every product and no session, so the gap was in
+// the verification, not in anyone's attention.
+//
+// Same page shape, same parser: schedule.php also carries `var BUSINESS`, and
+// its `appointmentTypes` map is populated for a real type and EMPTY for a bogus
+// one — so the same self-test applies and is run again below rather than
+// assumed from the catalog one passing.
+const typeUrl = (t) =>
+  `https://app.acuityscheduling.com/schedule.php?owner=${OWNER}&appointmentType=${t}`;
+
+/**
+ * Prices the SITE advertises for bookable sessions. €0 entries are free by
+ * design (the trial sessions) — asserting 0 still catches the day one of them
+ * silently acquires a price.
+ */
+const EXPECTED_TYPES = {
+  83513953: { price: 9, label: "Open Gym Sessie" },
+  82553655: { price: 17, label: "Hele Studio 60 min" },
+  84032351: { price: 12, label: "Halve Studio 60 min" },
+  85410115: { price: 24, label: "Rent Full Studio 90 min" },
+  87017445: { price: 0, label: "Open Gym — first time free" },
+  86758291: { price: 0, label: "Free try out: Full Studio 60 min" },
+};
+
+async function typesFor(t) {
+  const res = await fetch(typeUrl(t), { headers: { "User-Agent": UA }, redirect: "follow" });
+  if (!res.ok) return { httpError: res.status, types: [] };
+  const b = businessObject(await res.text());
+  if (b === null) return { parseFailed: true, types: [] };
+  const raw = b.appointmentTypes ?? {};
+  const types = Object.values(raw).flatMap((v) => (Array.isArray(v) ? v : [v]));
+  return { types };
+}
+
+console.log("\nappointment types (bookable sessions):");
+
+const typeControl = await typesFor(99999999);
+if (typeControl.parseFailed) {
+  console.error("✗ self-test failed: could not parse `var BUSINESS` on schedule.php — Acuity changed its page shape.");
+  process.exit(2);
+}
+if (typeControl.types.length > 0) {
+  console.error("✗ self-test failed: a nonexistent appointmentType returned a type. The check cannot detect absence.");
+  process.exit(2);
+}
+
+for (const [id, exp] of Object.entries(EXPECTED_TYPES)) {
+  const { types, httpError, parseFailed } = await typesFor(id);
+  if (httpError || parseFailed) {
+    problems.push(`${id} ${exp.label} — could not read (${httpError ? `HTTP ${httpError}` : "parse failed"}).`);
+    console.log(`  ?  ${id}  ${exp.label} — unreadable`);
+    continue;
+  }
+  if (types.length === 0) {
+    problems.push(`${id} ${exp.label} — GONE from Acuity, but the site still links to it (dead booking path).`);
+    console.log(`  ✗  ${id}  ${exp.label} — ABSENT`);
+    continue;
+  }
+  const t = types[0];
+  const price = Number(t.price);
+  if (!t.active) {
+    problems.push(`${id} ${exp.label} — exists but is INACTIVE in Acuity, so nobody can book it.`);
+    console.log(`  ✗  ${id}  ${exp.label} — inactive`);
+    continue;
+  }
+  if (price !== exp.price) {
+    problems.push(
+      `${id} ${exp.label} — site advertises €${exp.price} but Acuity charges €${price}. ` +
+        `The site must never quote more than checkout takes.`
+    );
+    console.log(`  ✗  ${id}  ${exp.label} — expected €${exp.price}, Acuity says €${price}`);
+  } else {
+    console.log(`  ✓  ${id}  ${exp.label} — €${price}  (${String(t.name).slice(0, 44)})`);
+  }
+}
+
 if (warnings.length) {
   console.log("\n⚠ warnings (not blocking):");
   for (const w of warnings) console.log(`   ${w}`);
@@ -187,4 +270,6 @@ if (problems.length) {
   process.exit(1);
 }
 
-console.log(`\n✓ all ${Object.keys(EXPECTED).length} advertised products exist at the advertised price.`);
+console.log(
+  `\n✓ all ${Object.keys(EXPECTED).length} advertised products and ${Object.keys(EXPECTED_TYPES).length} bookable sessions exist at the advertised price.`,
+);
