@@ -733,7 +733,17 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                     <Image
                       src={rt.image}
                       style={rt.imagePosition ? { objectPosition: rt.imagePosition } : undefined}
-                      alt={rt.name}
+                      // A bare first name is not alt text — it says nothing
+                      // about what the image shows. Matched to the wording the
+                      // trainer grid already uses (trainer-filter-grid.tsx
+                      // `photoAlt`), so this is the site's own phrasing, not a
+                      // new one. 2026-09-22: 96 <img> across the 26 intake
+                      // pages carried just "Eva" / "Tom" / "Joey".
+                      alt={
+                        locale === "nl"
+                          ? `Foto van ${rt.name}, personal trainer bij SculptClub Amsterdam`
+                          : `Photo of ${rt.name}, personal trainer at SculptClub Amsterdam`
+                      }
                       fill
                       sizes="(max-width: 640px) 30vw, 220px"
                       className="object-cover object-top transition-transform group-hover:scale-[1.03]"

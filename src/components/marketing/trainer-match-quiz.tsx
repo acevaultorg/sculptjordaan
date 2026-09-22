@@ -492,7 +492,11 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                 <Image
                   src={trainer.image}
                   style={trainer.imagePosition ? { objectPosition: trainer.imagePosition } : undefined}
-                  alt={trainer.name}
+                  alt={
+                    locale === "nl"
+                      ? `Foto van ${trainer.name}, personal trainer bij SculptClub Amsterdam`
+                      : `Photo of ${trainer.name}, personal trainer at SculptClub Amsterdam`
+                  }
                   fill
                   className="object-cover"
                   sizes="(max-width: 672px) 100vw, 336px"

@@ -289,7 +289,7 @@ export default function TrainersPageEN() {
                 data-trainer-website={external ? tr.name : undefined}
                 className="group flex gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-brand/60"
               >
-                <Image src={tr.image} alt={tr.name} width={64} height={64} className="h-16 w-16 shrink-0 rounded-full object-cover object-top" />
+                <Image src={tr.image} alt={`Photo of ${tr.name}, personal trainer at SculptClub Amsterdam`} width={64} height={64} className="h-16 w-16 shrink-0 rounded-full object-cover object-top" />
                 <span className="min-w-0">
                   <span className="block font-bold">{tr.name}</span>
                   <span className="block text-sm font-medium text-brand">{card.label}</span>
