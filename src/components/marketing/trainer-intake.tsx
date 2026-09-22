@@ -707,7 +707,11 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                   <span>{t.emailLabel}:</span>
                   <a
                     href="mailto:contact@sculptclub.nl"
-                    className="font-semibold text-brand hover:text-brand-dark"
+                    // The email fallback on all 26 intake pages rendered at 20px.
+                    // Its row is `flex items-center`, so a 44px link just grows
+                    // the row a little — and this is the contact path for anyone
+                    // who does not want WhatsApp.
+                    className="inline-flex min-h-11 items-center py-2 font-semibold text-brand hover:text-brand-dark"
                   >
                     contact@sculptclub.nl
                   </a>
