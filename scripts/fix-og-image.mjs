@@ -92,7 +92,14 @@ for (const rel of GENERATED) {
     if (buf.length < 8 || buf.readUInt32BE(0) !== 0x89504e47) continue; // not a PNG — leave it
     await writeFile(`${src}.png`, buf);
     copied++;
-    rewrites.push([new RegExp(`https://sculptclub\\.nl/${rel}(\\?[^"']*)?`, "g"), `${base}/${rel}.png`]);
+    // The query class must exclude BACKSLASH, not just quotes. Next's generated
+    // card URL carries a `?<hash>` query, and in the RSC flight payload the
+    // closing quote is escaped (`...?abc\"`). A class of [^"'] happily eats that
+    // backslash, so the replacement emitted `...png"` with an UNESCAPED quote —
+    // the inline `self.__next_f.push([1,"…"])` script then failed to PARSE, the
+    // flight stream ended mid-way, and React rendered "This page couldn't load"
+    // while curl still returned perfect HTML. Measured on /nl/lessen 2026-09-23.
+    rewrites.push([new RegExp(`https://sculptclub\\.nl/${rel}(\\?[^"'\\\\]*)?`, "g"), `${base}/${rel}.png`]);
   } catch { /* this route does not exist in this build */ }
 }
 
@@ -127,3 +134,39 @@ for await (const file of walk(OUT)) {
 console.log(`og:image: ${added} pages given the default, ${had} already had one, ${skipped} had no </head>`);
 if (added === 0 && had === 0) { console.error("REFUSING: no page has an og:image and none was added — the detector is broken"); process.exit(1); }
 if (missing.length) { console.error(`FAILED: ${missing.length} pages still have no og:image: ${missing.slice(0,5).join(", ")}`); process.exit(1); }
+
+// ── Guard: every inline script in the built HTML must still PARSE ────────────
+// Any postbuild rewriter that string-replaces across the whole document can
+// corrupt an escaped quote inside Next's RSC flight payload
+// (`self.__next_f.push([1,"…"])`). The failure is invisible to curl — the HTML
+// is byte-perfect and returns 200 — but the browser cannot parse that inline
+// script, the flight stream ends mid-way, and React swaps the page for
+// "This page couldn't load". Prefer this mechanical check over a comment.
+{
+  let checked = 0;
+  const broken = [];
+  const re = /<script(?![^>]*\bsrc=)([^>]*)>([\s\S]*?)<\/script>/g;
+  for await (const file of walk(OUT)) {
+    const html = await readFile(file, "utf8");
+    let m;
+    re.lastIndex = 0;
+    while ((m = re.exec(html))) {
+      if (/type\s*=\s*"application\/(ld\+json|json)"/.test(m[1])) continue;
+      checked++;
+      try { new Function(m[2]); }
+      catch (err) { broken.push(`${relative(OUT, file)} — ${err.message}`); break; }
+    }
+  }
+  // Positive control: a deliberately broken script must be caught, otherwise a
+  // clean sweep proves nothing about the detector.
+  let controlCaught = false;
+  try { new Function('self.__next_f.push([1,"a"}])'); } catch { controlCaught = true; }
+  if (!controlCaught) { console.error("REFUSING: inline-script parse guard cannot detect a broken script"); process.exit(1); }
+  if (checked < 100) { console.error(`REFUSING: only ${checked} inline scripts seen — the guard is looking at the wrong thing`); process.exit(1); }
+  if (broken.length) {
+    console.error(`FAILED: ${broken.length} page(s) have an inline script that will not parse in a browser:`);
+    for (const b of broken.slice(0, 5)) console.error(`  ${b}`);
+    process.exit(1);
+  }
+  console.log(`og:image: inline-script parse guard OK (${checked} scripts, control caught)`);
+}
