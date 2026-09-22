@@ -504,6 +504,47 @@ export default function StudioRentalPageEN() {
         </div>
       </Section>
 
+      {/* Just started — 2026-09-22, NL parity with /nl/studio-huren. The page
+          sold a room to a trainer who already has a full week. Everything here
+          is a PUBLISHED rate or a MEASURED fact; no starter discount is
+          invented, and the quiet hours are named as availability, not a price.
+          Measured 2026-09-21 from Acuity's availability API and the 90-day
+          export: 234 weekday-morning bookings against 95 weekday afternoons and
+          49 across the whole weekend; Saturday and Sunday offer start times
+          06:00-21:00. */}
+      <Section>
+        <SectionHeader
+          overline="Just started"
+          title="Your first client, without fixed costs"
+          description="Just qualified, or just gone freelance? You rent by the hour, so you only pay when you have a client."
+        />
+        <div className="mx-auto max-w-3xl space-y-4">
+          <FadeIn>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {[
+                "One client is enough to start: you book one hour, no membership and no minimum.",
+                "Half studio from €12 per 60 minutes. You keep 100% of what you charge your client.",
+                "The quiet hours are weekday afternoons and the weekend. Saturday and Sunday you can book from 06:00 to 21:00 and the studio is usually empty.",
+                "Your first session is free, so you can try the room with a client there.",
+                "You need professional liability insurance, nothing else.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="pt-2">
+              <ButtonLink href="/en/studio-rental/free-trial" size="lg" className="w-full sm:w-auto">
+                Try the studio for free
+              </ButtonLink>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
       {/* Compare for yourself — competitor-contrast, UNNAMED market facts
           only. Live-verified 2026-08-14: fixed monthly rent elsewhere from
           €600/month · minimum commitment elsewhere from 5 hrs/week ·

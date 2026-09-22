@@ -534,6 +534,49 @@ export default function StudioRentalPageNL() {
         </div>
       </Section>
 
+      {/* Net begonnen — 2026-09-22. The rental page sold a room to a trainer who
+          already has a full week: the words "beginnend", "student", "opleiding"
+          and "net begonnen" appeared ZERO times on the served page, while the
+          people who most need an hourly room are the ones who just qualified.
+          Everything here is a PUBLISHED rate or a MEASURED fact; no starter
+          discount is invented, and the quiet hours are named as availability,
+          not as a price. Measured 2026-09-21 from Acuity's own availability API
+          and the 90-day export: 234 weekday-morning bookings against 95 weekday
+          afternoons and 49 across the whole weekend, and the calendar offers
+          start times 06:00-21:00 on Saturday and Sunday. */}
+      <Section>
+        <SectionHeader
+          overline="Net begonnen"
+          title="Je eerste klant, zonder vaste lasten"
+          description="Pas afgestudeerd of net voor jezelf begonnen? Je huurt per uur, dus je betaalt alleen als je een klant hebt."
+        />
+        <div className="mx-auto max-w-3xl space-y-4">
+          <FadeIn>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {[
+                "Eén klant is genoeg om te beginnen: je boekt één uur, geen abonnement en geen minimum afname.",
+                "Halve studio vanaf €12 per 60 minuten. Je houdt 100% van wat je je klant rekent.",
+                "De rustige uren zijn doordeweeks in de middag en in het weekend. Zaterdag en zondag kun je boeken van 06:00 tot 21:00 en staat de studio meestal leeg.",
+                "Je eerste sessie is gratis, zodat je de ruimte kunt uitproberen met een klant erbij.",
+                "Je hebt een beroepsaansprakelijkheidsverzekering nodig, verder niets.",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="pt-2">
+              <ButtonLink href="/nl/studio-huren/gratis-test" size="lg" className="w-full sm:w-auto">
+                Probeer de studio gratis
+              </ButtonLink>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
+
       {/* Vergelijk zelf — competitor-contrast, UNNAMED market facts only.
           Live-verified 2026-08-14: vaste maandhuur elders v.a. €600/mnd ·
           minimum-afname elders v.a. 5 uur/week · premium alternatief
