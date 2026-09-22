@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
+import { acuityLinks, acuityPackages, openGymSummerDeal, openGymStudentDeal, openGymSinglePrice } from "@/config/acuity";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
@@ -57,7 +57,7 @@ const openGymPlans = [
   {
     name: "Single Session",
     sessions: "1 session",
-    price: "\u20ac10",
+    price: `\u20ac${openGymSinglePrice}`,
     period: "",
     perSession: "No membership needed",
     blurb: "Try the studio, no commitment",
@@ -151,7 +151,7 @@ export default function PricingPageEN() {
         url="/en/pricing"
         recurring
         offers={[
-          { name: "Single Session", description: "1 session, no membership needed", price: 10 },
+          { name: "Single Session", description: "1 session, no membership needed", price: openGymSinglePrice },
           { name: "Starter Plan — 4 sessions", description: "4 sessions per 4 weeks, €7.25 per session", price: 29 },
           {
             name: "Unlimited",

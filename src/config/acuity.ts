@@ -115,6 +115,21 @@ export const acuityPaidSessions = {
 // Acuity bills €49 forever = the price-lock promise.
 // Re-verify after any Acuity price edit: follow each catalog.php add-to-cart link
 // with -L and read the "price" field in the returned JSON.
+// ─── Open Gym single session ────────────────────────────────────────
+// The ONE Open Gym price that was never covered by the "ACUITY IN SYNC"
+// verification above — that note lists every multi-session PRODUCT and none of
+// the single SESSION — and it is the one that drifted. Measured 2026-09-22 by
+// rendering appointmentType 83513953 in a real browser: "Open Gym Sessie /
+// Open Gym Session met SculptClub · 1 uur @ € 9,00". /nl/open-gym and
+// /nl/boek-gym already said €9 in nine places between them; /nl/prijzen and
+// /en/pricing said €10 in two places each, so the pricing page quoted a euro
+// MORE than the customer is charged.
+// Single source from here on, for the reason the Onbeperkt price already
+// carries a few lines below: "never re-hardcode this price. A second hardcode
+// here … is exactly how the /nl/prijzen ↔ /nl/open-gym contradiction happened."
+// Re-verify by opening acuityPaidSessions.openGymSession and reading the price.
+export const openGymSinglePrice = 9;
+
 export const openGymSummerDeal = {
   active: true,
   priceRegular: 79,

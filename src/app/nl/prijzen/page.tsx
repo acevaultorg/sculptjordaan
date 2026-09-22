@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { acuityLinks, acuityPackages, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
+import { acuityLinks, acuityPackages, openGymSummerDeal, openGymStudentDeal, openGymSinglePrice } from "@/config/acuity";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
@@ -57,7 +57,7 @@ const openGymPlans = [
   {
     name: "Losse sessie",
     sessions: "1 sessie",
-    price: "\u20ac10",
+    price: `\u20ac${openGymSinglePrice}`,
     period: "",
     perSession: "Geen lidmaatschap nodig",
     blurb: "Voel de studio, zonder commitment",
@@ -151,7 +151,7 @@ export default function PricingPageNL() {
         url="/nl/prijzen"
         recurring
         offers={[
-          { name: "Losse sessie", description: "1 sessie, geen lidmaatschap nodig", price: 10 },
+          { name: "Losse sessie", description: "1 sessie, geen lidmaatschap nodig", price: openGymSinglePrice },
           { name: "Instapplan — 4 sessies", description: "4 sessies per 4 weken, €7,25 per sessie", price: 29 },
           {
             name: "Onbeperkt",
