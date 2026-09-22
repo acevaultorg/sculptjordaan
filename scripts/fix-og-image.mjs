@@ -66,6 +66,47 @@ const TAGS =
   `<meta name="twitter:image" content="${url}"/>` +
   `<meta name="twitter:image:alt" content="${ALT}"/>`;
 
+// ── Give the GENERATED cards a file extension ────────────────────────────────
+// Next's opengraph-image.tsx / twitter-image.tsx emit `out/opengraph-image`
+// with NO extension, and Cloudflare Pages infers Content-Type from the
+// extension — so the live response is `application/octet-stream` even though
+// the bytes are a valid 1200x630 PNG (magic 89504e470d0a1a0a, measured
+// 2026-09-22). The meta tag correctly declares image/png; only the header
+// disagrees, and a strict scraper may refuse it.
+//
+// `_headers` cannot fix it — out/_worker.js puts the project in advanced mode
+// where _headers is never processed — and a Pages Function could, at the cost
+// of touching the file that also owns 409 redirects, www→apex and the locale
+// middleware. A bad worker takes the whole site down.
+//
+// So: write a `.png` sibling and point the meta tags at it. Same designed
+// image, correct Content-Type, zero worker risk. Dropping Next's cache-busting
+// query also gives the card a stable URL, which is what a scraper cache wants.
+const GENERATED = ["opengraph-image", "twitter-image", "en/opengraph-image", "en/twitter-image"];
+let copied = 0;
+const rewrites = [];
+for (const rel of GENERATED) {
+  const src = join(OUT, rel);
+  try {
+    const buf = await readFile(src);
+    if (buf.length < 8 || buf.readUInt32BE(0) !== 0x89504e47) continue; // not a PNG — leave it
+    await writeFile(`${src}.png`, buf);
+    copied++;
+    rewrites.push([new RegExp(`https://sculptclub\\.nl/${rel}(\\?[^"']*)?`, "g"), `${base}/${rel}.png`]);
+  } catch { /* this route does not exist in this build */ }
+}
+
+let urlPages = 0;
+if (rewrites.length) {
+  for await (const file of walk(OUT)) {
+    const s = await readFile(file, "utf8");
+    let next = s;
+    for (const [re, to] of rewrites) next = next.replace(re, to);
+    if (next !== s) { await writeFile(file, next); urlPages++; }
+  }
+}
+console.log(`og:image: ${copied} generated card(s) given a .png extension, ${urlPages} page(s) repointed`);
+
 let had = 0, added = 0, skipped = 0;
 for await (const file of walk(OUT)) {
   const rel = relative(OUT, file).split("\\").join("/");
