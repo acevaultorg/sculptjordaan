@@ -1,3 +1,25 @@
+/*
+ * TITLE measured, not guessed — 2026-09-23.
+ *
+ * GSC 30d: 100 impressions, position 8.6, ZERO clicks, against this site's own
+ * 7-10 band CTR of 9.17% (expected ~9.2 clicks). One of only TWO genuine
+ * title/snippet levers on the whole site; everything else sits past position 20
+ * where no title change moves anything.
+ *
+ * Checked the SERP before touching it, because inferring a SERP is how this
+ * fleet keeps manufacturing fake title defects. For "boutique gym vs big chain
+ * gym": no institution owns the answer, no on-topic Wikipedia, no dominant
+ * destination — nine results, all vendor blogs, franchises and studios. A
+ * winnable wedge. And not ONE ranking title leads with cost.
+ *
+ * The old title promised only COST. The article has four sections — the big-chain
+ * model, the boutique model, a cost comparison, and who it is for — so the title
+ * was narrowing a broad comparison query to one quarter of the page. New title
+ * leads with the query phrase and keeps cost, which is what the page delivers.
+ *
+ * If this does not move CTR within ~30 days, the next honest read is that the
+ * query is zero-click, NOT that the title needs another rewrite.
+ */
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
@@ -7,7 +29,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "What Does a Boutique Gym Cost vs a Big Chain? — SculptClub" },
+  title: { absolute: "Boutique Gym vs Big Chain Gym: What You Get, and What It Costs — SculptClub" },
   description:
     "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   keywords: [
@@ -27,13 +49,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/boutique-gym-vs-big-chain-gym",
-    title: "What Does a Boutique Gym Cost vs a Big Chain? — SculptClub",
+    title: "Boutique Gym vs Big Chain Gym: What You Get, and What It Costs — SculptClub",
     description:
       "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "What Does a Boutique Gym Cost vs a Big Chain? — SculptClub",
+    title: "Boutique Gym vs Big Chain Gym: What You Get, and What It Costs — SculptClub",
     description:
       "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   },
@@ -43,14 +65,14 @@ export default function BoutiqueGymVsChainEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "What does a boutique gym cost vs a big chain", url: "/en/blog/boutique-gym-vs-big-chain-gym" }]} />
-      <BlogPostingJsonLd title="What Does a Boutique Gym Cost vs a Big Chain?" description="What does it cost to train at a boutique gym vs a big chain gym? Price and contract terms compared." url="/en/blog/boutique-gym-vs-big-chain-gym" datePublished="2026-04-02" />
+      <BlogPostingJsonLd title="Boutique Gym vs Big Chain Gym: What You Get, and What It Costs" description="What does it cost to train at a boutique gym vs a big chain gym? Price and contract terms compared." url="/en/blog/boutique-gym-vs-big-chain-gym" datePublished="2026-04-02" />
 
       <Section>
         <FadeIn>
           <article className="mx-auto max-w-3xl">
             <div className="mb-8">
               <p className="overline mb-3">Blog</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">What Does a Boutique Gym Cost vs a Big Chain?</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Boutique Gym vs Big Chain Gym: What You Get, and What It Costs</h1>
               <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1"><User className="w-4 h-4" />SculptClub</span>
                 <span className="flex items-center gap-1"><CalendarDays className="w-4 h-4" />April 2, 2026</span>
