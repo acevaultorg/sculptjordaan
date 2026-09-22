@@ -41,13 +41,19 @@ export default function responsiveImageLoader({
 
   // Smallest generated width that still covers the requested width.
   const pick = RESPONSIVE_VARIANT_WIDTHS.find((w) => w >= width && w < natural);
-  // Nothing below the natural width covers it → the original IS the right file.
-  if (!pick) return src;
 
   const slash = src.lastIndexOf("/");
   const dir = src.slice(0, slash);
   const file = src.slice(slash + 1);
   const dot = file.lastIndexOf(".");
   const base = dot === -1 ? file : file.slice(0, dot);
+
+  // Nothing below the natural width covers the request — the device genuinely
+  // wants full resolution. Serve the same pixels as WebP rather than the
+  // original JPEG: measured 2026-09-22, a 1440px desktop hero at sizes="100vw"
+  // lands here, which is why desktop still pulled 1,547 KB after the first
+  // pass. The -full variant is written for every source in the manifest.
+  if (!pick) return `${dir}/_rs/${base}-full.webp`;
+
   return `${dir}/_rs/${base}-${pick}.webp`;
 }

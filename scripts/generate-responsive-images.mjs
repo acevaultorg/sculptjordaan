@@ -39,7 +39,10 @@ import sharp from "sharp";
 import { readdir, stat, mkdir, writeFile } from "node:fs/promises";
 import { join, dirname, basename, extname, relative } from "node:path";
 
-const ROOT = "public/images";
+// public/videos holds poster frames (a <video poster> is an image request like
+// any other — the homepage poster was 101 KB of JPEG and was invisible to a
+// scan rooted at public/images).
+const ROOTS = ["public/images", "public/videos"];
 const WIDTHS = [384, 640, 750, 828, 1080, 1920];
 const QUALITY = 72;
 const EXTS = new Set([".jpg", ".jpeg", ".png", ".JPG"]);
@@ -59,7 +62,13 @@ async function* walk(dir) {
 const manifest = {};
 let made = 0, skipped = 0, bytesIn = 0, bytesOut = 0, files = 0;
 
-for await (const file of walk(ROOT)) {
+async function* walkAll() {
+  for (const r of ROOTS) {
+    try { yield* walk(r); } catch { /* optional root */ }
+  }
+}
+
+for await (const file of walkAll()) {
   let meta;
   try {
     meta = await sharp(file).metadata();
@@ -85,6 +94,25 @@ for await (const file of walk(ROOT)) {
     await mkdir(outDir, { recursive: true });
     await sharp(file).resize({ width: w }).webp({ quality: QUALITY }).toFile(out);
     const o = await stat(out);
+    made++; bytesOut += o.size;
+  }
+
+  // Full-size WebP — the FORMAT-only win, for when the device genuinely needs
+  // the natural resolution. Measured 2026-09-22 on desktop (1440x900, DPR 1):
+  // the homepage still pulled 1,547 KB because a 100vw hero on a 1440 viewport
+  // asks for ~1440px and every resized variant is below that, so the loader
+  // correctly fell back to the original JPEG. Same pixels, WebP instead of
+  // JPEG, is ~35-45% off with no resolution loss at all.
+  const full = join(outDir, `${base}-full.webp`);
+  let needFull = true;
+  try {
+    const o = await stat(full);
+    if (o.mtimeMs >= srcStat.mtimeMs) { needFull = false; skipped++; bytesOut += o.size; }
+  } catch { /* not built yet */ }
+  if (needFull) {
+    await mkdir(outDir, { recursive: true });
+    await sharp(file).webp({ quality: QUALITY }).toFile(full);
+    const o = await stat(full);
     made++; bytesOut += o.size;
   }
   bytesIn += srcStat.size;

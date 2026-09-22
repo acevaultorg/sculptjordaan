@@ -105,7 +105,10 @@ export const RESPONSIVE_WIDTHS: Record<string, number> = {
   "/images/trainers/sergei.jpg": 1122,
   "/images/trainers/tom-2.jpg": 1000,
   "/images/trainers/tom-3.jpg": 1200,
-  "/images/trainers/tom.jpg": 1122
+  "/images/trainers/tom.jpg": 1122,
+  "/videos/opengym-canal-poster.jpg": 540,
+  "/videos/studio-promo-poster.jpg": 720,
+  "/videos/studio-training-poster.jpg": 720
 };
 
 export const RESPONSIVE_VARIANT_WIDTHS = [384,640,750,828,1080,1920] as const;
