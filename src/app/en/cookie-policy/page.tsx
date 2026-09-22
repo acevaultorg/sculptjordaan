@@ -42,6 +42,24 @@ export default function CookiePolicyEN() {
 
           <h3>Analytical cookies</h3>
           <p>Google Analytics 4 (GA4) helps us understand how visitors use the website. This data is anonymized.</p>
+          {/* See the NL twin for why this was added 2026-09-22. Cookie names and
+              purposes are taken verbatim from Microsoft's own documentation;
+              retention is not stated there, so it is not stated here either. */}
+          <p>
+            Microsoft Clarity produces heatmaps and session recordings: it lets us
+            replay, anonymized, where visitors click, scroll and get stuck, so we
+            can improve the site. For this Clarity sets the first-party cookies{" "}
+            <code>_clck</code> (a pseudonymous Clarity user ID) and{" "}
+            <code>_clsk</code> (links several page views into one session
+            recording), and may additionally set Microsoft&rsquo;s own cookies
+            (CLID, ANONCHK, MR, MUID and SM). Microsoft acts as processor here;
+            their own cookie list is published in the Clarity documentation.
+          </p>
+          <p>
+            Microsoft Advertising (Bing UET) also loads, to measure whether a
+            visit from Bing leads to a booking. We do not run advertisements on
+            Bing ourselves; the tag is used for measurement only.
+          </p>
 
           <h3>Marketing cookies</h3>
           <p>Facebook Pixel, TikTok Pixel and Google Ads help us show relevant advertisements. These cookies are only placed with your consent.</p>

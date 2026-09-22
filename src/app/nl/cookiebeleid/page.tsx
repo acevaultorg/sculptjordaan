@@ -42,6 +42,29 @@ export default function CookiePolicyNL() {
 
           <h3>Analytische cookies</h3>
           <p>Google Analytics 4 (GA4) helpt ons begrijpen hoe bezoekers de website gebruiken. Deze data is geanonimiseerd.</p>
+          {/* Added 2026-09-22. Clarity and Bing UET demonstrably run on every
+              page and set cookies, and stonden hier niet in — Clarity is
+              bovendien het meest privacygevoelige dat de site laadt, want het
+              maakt sessieopnamen. Cookienamen en doel komen letterlijk uit
+              Microsofts eigen documentatie (learn.microsoft.com/clarity/
+              setup-and-installation/clarity-cookies); bewaartermijnen staan
+              daar niet en worden hier dus ook niet genoemd in plaats van
+              geraden. */}
+          <p>
+            Microsoft Clarity maakt heatmaps en sessieopnamen: we zien
+            geanonimiseerd terug waar bezoekers klikken, scrollen en vastlopen,
+            zodat we de site kunnen verbeteren. Clarity plaatst hiervoor de
+            first-party cookies <code>_clck</code> (een pseudonieme Clarity
+            gebruikers-ID) en <code>_clsk</code> (koppelt meerdere paginaweergaven
+            aan één sessieopname), en kan daarnaast cookies van Microsoft zelf
+            plaatsen (CLID, ANONCHK, MR, MUID en SM). Microsoft is hiervoor
+            verwerker; hun eigen cookieoverzicht staat in de Clarity-documentatie.
+          </p>
+          <p>
+            Microsoft Advertising (Bing UET) laadt mee om te meten of een bezoek
+            uit Bing tot een boeking leidt. We tonen zelf geen advertenties op
+            Bing; de tag dient uitsluitend voor meting.
+          </p>
 
           <h3>Marketing cookies</h3>
           <p>Facebook Pixel, TikTok Pixel en Google Ads helpen ons relevante advertenties te tonen. Deze cookies worden alleen geplaatst met je toestemming.</p>
