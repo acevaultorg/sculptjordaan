@@ -25,7 +25,8 @@
     "check:acuity": "node scripts/check-acuity-prices.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
     "verify:photo-library": "node scripts/verify-photo-library.mjs",
-    "images:responsive": "node scripts/generate-responsive-images.mjs"
+    "images:responsive": "node scripts/generate-responsive-images.mjs",
+    "postbuild": "node scripts/fix-html-lang.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
