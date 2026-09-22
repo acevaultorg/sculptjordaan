@@ -34,7 +34,7 @@ import { Footer } from "@/components/layout/footer";
 export const metadata: Metadata = {
   title: { absolute: "Personal Training Jordaan · Gratis Intake — SculptClub" },
   description:
-    "Privé personal training studio in Amsterdam Jordaan. Vanaf €45/sessie, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
+    "Privé personal training studio in Amsterdam Jordaan. Vanaf €299 per 4 weken, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/nl/gratis-intake",
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     url: "/nl/gratis-intake",
     title: "Personal Training Jordaan · Gratis Intake — SculptClub",
     description:
-      "Privé personal training studio in Amsterdam Jordaan. Vanaf €45/sessie, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
+      "Privé personal training studio in Amsterdam Jordaan. Vanaf €299 per 4 weken, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Training Jordaan · Gratis Intake — SculptClub",
     description:
-      "Privé personal training studio in Amsterdam Jordaan. Vanaf €45/sessie, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
+      "Privé personal training studio in Amsterdam Jordaan. Vanaf €299 per 4 weken, eerste intake gratis. WhatsApp antwoord binnen 30 min.",
   },
 };
 
@@ -95,7 +95,7 @@ export default function GratisIntakeAdsPage() {
           <span className="text-brand">eerste sessie gratis</span>
         </h1>
         <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-md mx-auto">
-          Privé studio · vanaf €45 · WhatsApp antwoord <strong className="text-foreground font-semibold">binnen 30 min</strong>
+          Privé studio · vanaf €299 per 4 weken · WhatsApp antwoord <strong className="text-foreground font-semibold">binnen 30 min</strong>
         </p>
 
         {/* PRIMARY CTA — WhatsApp. Highest-converting path for paid traffic:

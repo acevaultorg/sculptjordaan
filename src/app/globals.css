@@ -441,3 +441,30 @@
     transition: none !important;
   }
 }
+
+/* Small brand-coloured text: WCAG AA, 2026-09-22.
+   Measured: --brand #EF5012 is 3.60:1 on white and 3.40:1 on the paper
+   background. That passes AA for large text and buttons (3:1) and FAILS for
+   small text (4.5:1), and 556 of the 1,141 text-brand usages in this codebase
+   sit on an element that is also text-xs or text-sm.
+   The system already had the answer: --brand-dark #C2410C is 5.18:1 on white
+   and 4.89:1 on paper, and --overline was introduced for exactly this reason
+   ("deeper than --brand so 12px/600 uppercase clears WCAG AA"). So small brand
+   text now uses the existing darker token rather than a new colour.
+   DARK MODE IS DELIBERATELY EXCLUDED: on #0B0907 the darker shade drops to
+   4.14:1 while --brand passes at 5.52:1, so darkening it there would fix light
+   mode and break dark mode.
+   WIDENED from .text-xs/.text-sm to ALL .text-brand after measuring the served
+   pages: on the homepage, the finder, the rental page, pricing and a blog post
+   there were 55 brand-coloured text elements, 26 of them rendering under 24px
+   WITHOUT an explicit text-xs/text-sm class (sized by a parent or another
+   utility), and ZERO rendering large enough to need the brighter colour. A
+   class-based rule therefore fixed barely half the defect. Buttons are
+   unaffected: they use bg-brand with text-brand-foreground, which is a
+   different class. Revert = delete this block. */
+.text-brand {
+  color: var(--brand-dark);
+}
+.dark .text-brand {
+  color: var(--brand);
+}

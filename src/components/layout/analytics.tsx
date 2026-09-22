@@ -493,7 +493,16 @@ export function Analytics() {
               if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com/') !== -1) {
                 var waSig = detectWaIntent(href);
                 if (typeof gtag === 'function') {
-                  gtag('event', 'conversion', {
+                  // 2026-09-22: the Ads conversion follows the SAME once-per-session
+                  // rule as generate_lead below. A visitor who messages three
+                  // trainers is one lead, not three. Safe to do now and not a
+                  // bidding change: the operator's standing decision of
+                  // 2026-08-28 is "no google ads budget", and GA4 shows ZERO
+                  // paid sessions in the last 30 days (no cpc, no paid medium),
+                  // so there is no Smart Bidding to disturb. Revert = drop the
+                  // leadFirst guard on this call.
+                  var leadFirst = leadOnce();
+                  if (leadFirst) gtag('event', 'conversion', {
                     send_to: '${googleAds}/${googleAdsConversion}',
                     value: 45,
                     currency: 'EUR'
@@ -502,7 +511,7 @@ export function Analytics() {
                   // (Google Ads → Conversions → Trainer Intake Lead, status 'Needs attention').
                   // WhatsApp clicks to trainer numbers ARE intake leads — fire the event so
                   // operator can re-trigger the Ads-side conversion against this GA4 event.
-                  gtag('event', 'Trainer_Intake_Lead_1', {
+                  if (leadFirst) gtag('event', 'Trainer_Intake_Lead_1', {
                     value: 45,
                     currency: 'EUR',
                     intent: waSig.intent,
@@ -519,7 +528,7 @@ export function Analytics() {
                     value: 45,
                     currency: 'EUR'
                   });
-                  if (leadOnce()) gtag('event', 'generate_lead', {
+                  if (leadFirst) gtag('event', 'generate_lead', {
                     method: 'whatsapp',
                     intent: waSig.intent,
                     pricing: waSig.pricing,
@@ -568,7 +577,10 @@ export function Analytics() {
               // Click-to-call = high-intent (mobile users tapping CTA).
               if (href.indexOf('tel:') === 0) {
                 if (typeof gtag === 'function') {
-                  gtag('event', 'conversion', {
+                  // 2026-09-22: once per session, same rule and same reason as the
+                  // whatsapp branch above.
+                  var leadFirst = leadOnce();
+                  if (leadFirst) gtag('event', 'conversion', {
                     send_to: '${googleAds}/${googleAdsConversion}',
                     value: 45,
                     currency: 'EUR'
@@ -578,7 +590,7 @@ export function Analytics() {
                     value: 45,
                     currency: 'EUR'
                   });
-                  if (leadOnce()) gtag('event', 'generate_lead', {
+                  if (leadFirst) gtag('event', 'generate_lead', {
                     method: 'phone',
                     value: 45,
                     currency: 'EUR',
@@ -608,7 +620,10 @@ export function Analytics() {
               // ── Email click → lead → Google Ads conversion (lower value) ─
               if (href.indexOf('mailto:') === 0) {
                 if (typeof gtag === 'function') {
-                  gtag('event', 'conversion', {
+                  // 2026-09-22: once per session, same rule and same reason as the
+                  // whatsapp branch above.
+                  var leadFirst = leadOnce();
+                  if (leadFirst) gtag('event', 'conversion', {
                     send_to: '${googleAds}/${googleAdsConversion}',
                     value: 30,
                     currency: 'EUR'
@@ -618,7 +633,7 @@ export function Analytics() {
                     value: 30,
                     currency: 'EUR'
                   });
-                  if (leadOnce()) gtag('event', 'generate_lead', {
+                  if (leadFirst) gtag('event', 'generate_lead', {
                     method: 'email',
                     value: 30,
                     currency: 'EUR',

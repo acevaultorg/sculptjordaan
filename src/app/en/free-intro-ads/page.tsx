@@ -13,7 +13,7 @@ import { Footer } from "@/components/layout/footer";
 export const metadata: Metadata = {
   title: { absolute: "Personal Training Amsterdam · Free Intro — SculptClub" },
   description:
-    "Private personal training studio in Amsterdam Jordaan. From €45/session, first intro free. WhatsApp reply within 30 min.",
+    "Private personal training studio in Amsterdam Jordaan. From €299 per 4 weeks, first intro free. WhatsApp reply within 30 min.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/en/free-intro",
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     url: "/en/free-intro",
     title: "Personal Training Amsterdam · Free Intro — SculptClub",
     description:
-      "Private personal training studio in Amsterdam Jordaan. From €45/session, first intro free. WhatsApp reply within 30 min.",
+      "Private personal training studio in Amsterdam Jordaan. From €299 per 4 weeks, first intro free. WhatsApp reply within 30 min.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Training Amsterdam · Free Intro — SculptClub",
     description:
-      "Private personal training studio in Amsterdam Jordaan. From €45/session, first intro free. WhatsApp reply within 30 min.",
+      "Private personal training studio in Amsterdam Jordaan. From €299 per 4 weeks, first intro free. WhatsApp reply within 30 min.",
   },
 };
 
@@ -69,7 +69,7 @@ export default function FreeIntroAdsPage() {
           <span className="text-brand">first intro free</span>
         </h1>
         <p className="text-base sm:text-lg text-muted-foreground mb-6 max-w-md mx-auto">
-          Private studio in Jordaan · from €45 · WhatsApp reply <strong className="text-foreground font-semibold">within 30 min</strong>
+          Private studio in Jordaan · from €299 per 4 weeks · WhatsApp reply <strong className="text-foreground font-semibold">within 30 min</strong>
         </p>
 
         <a
