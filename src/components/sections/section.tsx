@@ -19,8 +19,12 @@ const bgMap = {
 };
 
 export function Section({ children, className, bg = "default", id, wide }: SectionProps) {
+  // Section rhythm tightened one step at every breakpoint (operator ask
+  // "section ui more minimial", card mplgxz03ohp4hy, shipped 2026-09-22):
+  // was py-16/20/24 = 64/80/96px each side, a marathon scroll on long pages.
+  // Now 48/64/80px. Still breathing room; roughly -20% scroll per section.
   return (
-    <section id={id} className={cn("py-16 sm:py-20 lg:py-24", bgMap[bg], className)}>
+    <section id={id} className={cn("py-12 sm:py-16 lg:py-20", bgMap[bg], className)}>
       <div className={cn("mx-auto px-4 sm:px-6", wide ? "max-w-7xl" : "max-w-5xl")}>
         {children}
       </div>
@@ -83,7 +87,12 @@ export function SectionHeader({
   return (
     <FadeInOnScroll className={cn("mb-10 sm:mb-14", center && "text-center", className)}>
       {overline && <p className="overline mb-3">{overline}</p>}
-      <Tag className="text-[1.625rem] sm:text-4xl lg:text-5xl font-bold text-balance break-words">{title}</Tag>
+      {/* One step smaller than the hero h1 above (card mplgxz03ohp4hy,
+          2026-09-22). Until now this line carried the IDENTICAL classes as the
+          h1 branch, so every section h2 rendered at the same size as the page
+          title and the page had no heading hierarchy. The hero is deliberately
+          untouched — its sizes were already tuned. */}
+      <Tag className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance break-words">{title}</Tag>
       {description && (
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           {description}
