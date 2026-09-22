@@ -259,7 +259,7 @@ export default function UnlimitedSummerDealPage() {
             <div className="mx-auto max-w-xs">
               <LandingVideo
                 src="/videos/opengym-canal.mp4"
-                poster="/videos/opengym-canal-poster.jpg"
+                poster="/videos/_rs/opengym-canal-poster-full.webp"
                 label="The Egelantiersgracht, right outside SculptClub"
                 aspectClassName="aspect-[9/16]"
               />

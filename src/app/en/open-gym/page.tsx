@@ -279,7 +279,7 @@ export default function OpenGymPageEN() {
         <FadeIn>
           <LandingVideo
             src="/videos/studio-training.mp4"
-            poster="/videos/studio-training-poster.jpg"
+            poster="/videos/_rs/studio-training-poster-full.webp"
             label="People training in SculptClub's private studio in Amsterdam Jordaan"
           />
         </FadeIn>

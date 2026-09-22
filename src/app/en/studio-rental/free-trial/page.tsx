@@ -161,7 +161,7 @@ export default function FreeTrialStudioRentalEN() {
             </div>
             <LandingVideo
               src="/videos/studio-promo.mp4"
-              poster="/videos/studio-promo-poster.jpg"
+              poster="/videos/_rs/studio-promo-poster-full.webp"
               label="SculptClub: the private studio in Amsterdam Jordaan, in motion"
             />
           </div>

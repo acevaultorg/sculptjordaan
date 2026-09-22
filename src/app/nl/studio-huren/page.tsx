@@ -388,7 +388,7 @@ export default function StudioRentalPageNL() {
           <div className="mt-6">
             <LandingVideo
               src="/videos/studio-promo.mp4"
-              poster="/videos/studio-promo-poster.jpg"
+              poster="/videos/_rs/studio-promo-poster-full.webp"
               label="SculptClub, de studio in hartje Amsterdam Jordaan, in beeld"
             />
           </div>

@@ -30,7 +30,7 @@ export function StudioVideoBand({ locale }: { locale: Locale }) {
       <FadeIn>
         <LandingVideo
           src="/videos/studio-training.mp4"
-          poster="/videos/studio-training-poster.jpg"
+          poster="/videos/_rs/studio-training-poster-full.webp"
           label={c.label}
         />
       </FadeIn>

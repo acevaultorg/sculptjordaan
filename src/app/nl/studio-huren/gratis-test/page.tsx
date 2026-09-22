@@ -183,7 +183,7 @@ export default function GratisTestStudioHurenNL() {
             </div>
             <LandingVideo
               src="/videos/studio-promo.mp4"
-              poster="/videos/studio-promo-poster.jpg"
+              poster="/videos/_rs/studio-promo-poster-full.webp"
               label="SculptClub: de privé studio in Amsterdam Jordaan, in beeld"
             />
           </div>
