@@ -477,7 +477,20 @@ export function Hero({ locale }: { locale: Locale }) {
                   as a smaller second span below — see next span. */}
               <span className="block font-bold tracking-[0.12em] leading-[0.95] text-[clamp(1.5rem,7vw,4rem)]">
                 PRIVATE GYM
-              </span>
+              </span>{" "}
+              {/* The {" "} above is load-bearing and is NOT cosmetic. Both
+                  spans are display:block, so a whitespace text node between
+                  them renders as nothing — but without it the h1's
+                  textContent is the single token "PRIVATE GYMJORDAAN".
+                  That string is what a screen reader announces and what
+                  Google, Bing and every AI extractor read as the page's
+                  main heading, on the page carrying 44% of all sessions,
+                  for a business whose entire local angle is the Jordaan
+                  (gym jordaan amsterdam / health club jordaan / healthclub
+                  jordaan all show in GSC). Measured and fixed 2026-09-22;
+                  it was the only heading on all 238 pages with this defect.
+                  A JSX comment between two elements emits no whitespace,
+                  which is how it happened. */}
               {/* JORDAAN — 2026-06-02 second H1 line replacing the dropped
                   overline. Smaller clamp (1rem→1.875rem, ~4vw) keeps it
                   visibly subordinate to PRIVATE GYM. Wider tracking
