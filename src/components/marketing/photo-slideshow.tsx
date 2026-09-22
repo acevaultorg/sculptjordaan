@@ -127,7 +127,7 @@ export function PhotoSlideshow({
             type="button"
             onClick={prev}
             aria-label="Vorige foto"
-            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition hover:bg-black/70 sm:left-3"
+            className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition hover:bg-black/70 sm:left-3"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -135,7 +135,7 @@ export function PhotoSlideshow({
             type="button"
             onClick={next}
             aria-label="Volgende foto"
-            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition hover:bg-black/70 sm:right-3"
+            className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition hover:bg-black/70 sm:right-3"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

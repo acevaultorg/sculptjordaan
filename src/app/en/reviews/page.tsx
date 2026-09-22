@@ -153,7 +153,7 @@ export default function ReviewsPageEN() {
               href={siteConfig.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-brand hover:text-brand-dark transition-colors font-medium"
+              className="inline-flex min-h-11 items-center py-2 text-sm text-brand hover:text-brand-dark transition-colors font-medium"
             >
               View on Google
               <ExternalLink className="ml-1 w-3.5 h-3.5" />
@@ -189,7 +189,7 @@ export default function ReviewsPageEN() {
               href={siteConfig.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+              className="inline-flex min-h-11 items-center py-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
             >
               View all reviews on Google
               <ExternalLink className="ml-1 w-4 h-4" />

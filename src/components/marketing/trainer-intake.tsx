@@ -334,7 +334,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
           {/* Back to trainers */}
           <a
             href={trainersUrl}
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand transition-colors mb-6"
+            className="inline-flex min-h-11 items-center gap-1.5 py-2 text-sm text-muted-foreground hover:text-brand transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             {t.browseAll}
@@ -493,7 +493,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                           target="_blank"
                           rel="noopener"
                           data-price-request={trainer.name}
-                          className="font-semibold text-brand hover:underline underline-offset-4"
+                          className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4"
                         >
                           {t.requestPrice}
                         </a>

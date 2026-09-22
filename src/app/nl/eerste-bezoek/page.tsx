@@ -372,7 +372,7 @@ export default function EersteBezoekPage() {
                         href={step.cta.href}
                         external={step.cta.external}
                         variant="outline"
-                        className="rounded-xl"
+                        className="rounded-xl max-sm:min-h-11"
                       >
                         {step.cta.label}
                         <ArrowRight className="ml-2 w-4 h-4" />
@@ -479,7 +479,7 @@ export default function EersteBezoekPage() {
                 href={`https://maps.google.com/?q=${siteConfig.address.street}+${siteConfig.address.zip}+${siteConfig.address.city}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-brand hover:text-brand-dark transition-colors font-medium"
+                className="inline-flex min-h-11 items-center py-2 text-sm text-brand hover:text-brand-dark transition-colors font-medium"
               >
                 Bekijk op Google Maps
                 <ArrowRight className="ml-1 w-4 h-4" />

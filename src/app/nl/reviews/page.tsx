@@ -154,7 +154,7 @@ export default function ReviewsPageNL() {
               href={siteConfig.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-brand hover:text-brand-dark transition-colors font-medium"
+              className="inline-flex min-h-11 items-center py-2 text-sm text-brand hover:text-brand-dark transition-colors font-medium"
             >
               Bekijk op Google
               <ExternalLink className="ml-1 w-3.5 h-3.5" />
@@ -190,7 +190,7 @@ export default function ReviewsPageNL() {
               href={siteConfig.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
+              className="inline-flex min-h-11 items-center py-2 text-sm font-semibold text-brand hover:text-brand-dark transition-colors"
             >
               Bekijk alle reviews op Google
               <ExternalLink className="ml-1 w-4 h-4" />
