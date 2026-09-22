@@ -58,6 +58,7 @@ function lastModifiedFor(routePath: string, fallback: Date): Date {
 const nlPages = [
   "/",
   "/nl/vind-jouw-personal-trainer",
+  "/nl/lessen",
   "/nl/open-gym",
   "/nl/open-gym/onbeperkt-zomerdeal",
   "/nl/open-gym/studentenkorting",
@@ -180,6 +181,7 @@ const nlPages = [
 const enPages = [
   "/en",
   "/en/find-personal-trainer",
+  "/en/classes",
   "/en/open-gym",
   "/en/open-gym/unlimited-summer-deal",
   "/en/open-gym/student-discount",

@@ -79,6 +79,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Gratis intake", href: "/nl/gratis-intake" },
     { label: "Open Gym", href: "/nl/open-gym" },
     { label: "Small Group", href: "/nl/small-group" },
+    { label: "Lessen & trainers", href: "/nl/lessen" },
     { label: "Eerste bezoek", href: "/nl/eerste-bezoek" },
     { label: "Cadeaukaarten", href: "/nl/cadeaukaarten" },
     // SculptCoach link REMOVED 2026-08-29: sculptcoach.app returns HTTP 402
@@ -96,6 +97,7 @@ export const footerServices: Record<Locale, NavItem[]> = {
     { label: "Free intro", href: "/en/free-intro" },
     { label: "Open Gym", href: "/en/open-gym" },
     { label: "Small Group", href: "/en/small-group" },
+    { label: "Classes & trainers", href: "/en/classes" },
     { label: "First Visit", href: "/en/first-visit" },
     { label: "Gift cards", href: "/en/gift-cards" },
     // SculptCoach link REMOVED 2026-08-29: sculptcoach.app returns HTTP 402
@@ -150,6 +152,7 @@ export const alternateRoutes: Record<string, string> = {
   // NL → EN: pages
   "/": "/en",
   "/nl/vind-jouw-personal-trainer": "/en/find-personal-trainer",
+  "/nl/lessen": "/en/classes",
   "/nl/open-gym": "/en/open-gym",
   "/nl/studio-huren": "/en/studio-rental",
   "/nl/boek": "/en/book",
