@@ -39,7 +39,7 @@ export function RentalTabs({
             setTab("hourly");
             trackTabSwitch("rental", "hourly");
           }}
-          className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          className={`min-h-11 flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "hourly"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
@@ -54,7 +54,7 @@ export function RentalTabs({
             setTab("packages");
             trackTabSwitch("rental", "packages");
           }}
-          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          className={`flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "packages"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"

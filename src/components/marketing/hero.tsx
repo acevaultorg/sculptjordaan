@@ -620,7 +620,7 @@ export function Hero({ locale }: { locale: Locale }) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackHeroClick("google_rating", 2, locale)}
-            className="plausible-event-name=hero_trust_reviews mt-4 inline-flex items-center justify-center gap-1.5 self-center text-sm font-medium text-white/90 transition-colors hover:text-white"
+            className="plausible-event-name=hero_trust_reviews relative mt-4 inline-flex items-center justify-center gap-1.5 self-center text-sm font-medium text-white/90 transition-colors after:absolute after:inset-x-0 after:top-1/2 after:h-11 after:-translate-y-1/2 after:content-[''] hover:text-white"
           >
             <span aria-hidden="true" className="text-base leading-none text-[#FFC107]">★★★★★</span>
             <span>

@@ -380,7 +380,7 @@ export default function StudioRentalPageNL() {
               href={whatsappLinks.tourNl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_huren_hero_tour"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_huren_hero_tour relative after:absolute after:inset-x-0 after:top-1/2 after:h-11 after:-translate-y-1/2 after:content-['']"
             >
               Of plan een gratis rondleiding (15 min) via WhatsApp
             </a>

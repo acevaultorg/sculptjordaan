@@ -93,7 +93,7 @@ export function OpenGymPlanTabs({ locale }: { locale: Locale }) {
             setTab("single");
             trackTabSwitch("open_gym", "single");
           }}
-          className={`flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          className={`min-h-11 flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "single"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
@@ -108,7 +108,7 @@ export function OpenGymPlanTabs({ locale }: { locale: Locale }) {
             setTab("membership");
             trackTabSwitch("open_gym", "membership");
           }}
-          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
+          className={`flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition ${
             tab === "membership"
               ? "bg-primary text-primary-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
@@ -177,7 +177,7 @@ export function OpenGymPlanTabs({ locale }: { locale: Locale }) {
                 href={acuityPaidSessions.openGymPlans.instapplan}
                 size="sm"
                 variant="outline"
-                className="mt-3"
+                className="mt-3 min-h-11 sm:min-h-0"
                 data-intent="open_gym"
                 data-pricing="paid"
               >

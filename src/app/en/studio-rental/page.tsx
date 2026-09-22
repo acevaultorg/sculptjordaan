@@ -352,7 +352,7 @@ export default function StudioRentalPageEN() {
               href={whatsappLinks.tourEn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_rental_hero_tour"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80 plausible-event-name=studio_rental_hero_tour relative after:absolute after:inset-x-0 after:top-1/2 after:h-11 after:-translate-y-1/2 after:content-['']"
             >
               Or book a free 15-min tour via WhatsApp
             </a>

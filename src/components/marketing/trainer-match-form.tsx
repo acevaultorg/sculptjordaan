@@ -157,7 +157,7 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
           value={goal}
           onChange={(e) => setGoal(e.target.value)}
           required
-          className="h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm"
+          className="h-11 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm"
         >
           {goals.map((g) => (
             <option key={g.value} value={g.value} disabled={g.value === ""}>
@@ -180,7 +180,7 @@ export function TrainerMatchForm({ locale }: TrainerMatchFormProps) {
 
       <button
         type="submit"
-        className="inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-white transition-colors hover:bg-primary/90"
+        className="inline-flex h-11 w-full items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-white transition-colors hover:bg-primary/90"
       >
         {t.submit}
       </button>
