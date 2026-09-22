@@ -185,9 +185,94 @@ def create_deployment(manifest, worker_js=None, routes_json=None):
 def mime(p):
     m, _ = mimetypes.guess_type(p); return m or "application/octet-stream"
 
+def _git(*args):
+    """Run a git command in the repo that holds OUT_DIR. Returns (rc, stdout)."""
+    try:
+        r = subprocess.run(["git", "-C", str(OUT_DIR.parent), *args],
+                           capture_output=True, text=True, timeout=120)
+        return r.returncode, r.stdout.strip()
+    except Exception as e:
+        return 1, str(e)
+
+
+def fail_fast_stale_checkout():
+    """
+    Fail-fast #5 (2026-09-22): refuse to deploy from a checkout that is BEHIND its
+    remote.
+
+    A Pages deploy REPLACES the whole directory — there is no partial apply and no
+    warning. Deploying a build made from a stale tree therefore silently reverts
+    every commit in between, while the deploy reports success and the site returns
+    200. Fleet doctrine has this measured: a worker shipped from a tree 15 commits
+    behind reverted 321 lines and un-shipped four merged fixes, and it surfaced ~21h
+    later only because an endpoint started 404ing.
+
+    Other fleet repos carry scripts/predeploy-git-guard.mjs for this. THIS repo had
+    no such guard, and the npm-hook version would not have helped anyway: the
+    documented deploy path for this site calls THIS script directly
+    (`bin/ship.sh` is decommissioned and says so), so a pre* hook is never invoked.
+    Hence it lives here, where it runs however the deployer is reached.
+
+    Three things that matter, all of them doctrine paid for in incidents:
+      * `git fetch` must BLOCK on failure. origin/main is a LOCAL CACHE; without a
+        fetch it happily reports "0 behind" while the remote has moved. Measured:
+        before fetch "0 behind", after fetch "2 behind", same second.
+      * Ask each question BY NAME. `rev-list --left-right --count` prints
+        AHEAD<TAB>BEHIND with nothing labelling which is which, and reading it
+        backwards fails in the alarming direction — "13 unpushed commits" invites a
+        push, which is the one action that clobbers.
+      * A non-integer answer REFUSES. A guard that accepts "" or "?" as fine is
+        decoration; the whole point is that an unverifiable state must never read
+        as a pass.
+
+    Escape hatch: ALLOW_STALE_DEPLOY=1, for the rare deliberate case.
+    """
+    if os.environ.get("ALLOW_STALE_DEPLOY") == "1":
+        print("[!] ALLOW_STALE_DEPLOY=1 — skipping the staleness guard on purpose.")
+        return
+
+    rc, _ = _git("rev-parse", "--git-dir")
+    if rc != 0:
+        print("[!] not a git checkout — staleness guard skipped.")
+        return
+
+    rc, branch = _git("rev-parse", "--abbrev-ref", "HEAD")
+    if rc != 0 or not branch:
+        sys.exit("[✗] cannot read the current branch — refusing to deploy blind.")
+
+    rc, upstream = _git("rev-parse", "--abbrev-ref", "@{u}")
+    if rc != 0 or not upstream:
+        sys.exit(f"[✗] branch {branch} has no upstream — cannot verify it is current. "
+                 "Set one (git branch -u origin/<branch>) or ALLOW_STALE_DEPLOY=1.")
+
+    remote = upstream.split("/", 1)[0]
+    rc, _ = _git("fetch", "--quiet", remote)
+    if rc != 0:
+        sys.exit(f"[✗] `git fetch {remote}` FAILED — the local {upstream} ref is a stale cache "
+                 "and would report 'current' while behind. Refusing rather than guessing.")
+
+    rc, behind = _git("rev-list", "--count", f"HEAD..{upstream}")
+    if rc != 0 or not behind.isdigit():
+        sys.exit(f"[✗] staleness UNKNOWN ({upstream} unresolvable) — refusing to deploy.")
+
+    if int(behind) > 0:
+        _, log = _git("log", "--oneline", f"HEAD..{upstream}")
+        sys.exit(
+            f"[✗] this checkout is {behind} commit(s) BEHIND {upstream}.\n"
+            f"    A Pages deploy replaces the whole directory, so shipping this build\n"
+            f"    would REVERT the following on the live site:\n\n{log}\n\n"
+            f"    Fix: git pull --rebase, rebuild, then deploy. (ALLOW_STALE_DEPLOY=1 overrides.)"
+        )
+
+    rc, ahead = _git("rev-list", "--count", f"{upstream}..HEAD")
+    extra = f" · {ahead} unpushed" if ahead.isdigit() and int(ahead) > 0 else ""
+    print(f"[✓] checkout current with {upstream} (0 behind{extra})")
+
+
 def main():
     t0 = time.time()
     print(f"[+] chunked deploy · project={PROJECT} · out={OUT_DIR}")
+    fail_fast_stale_checkout()
     entries = walk(OUT_DIR)
     # Advanced-Mode Functions: _worker.js/_routes.json ship as deployment form fields,
     # NEVER as static assets (CF ignores them there). Pop them out of the entry list.
