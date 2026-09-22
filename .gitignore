@@ -61,3 +61,8 @@ public/images/wetransfer_*
 .vercel/
 vercel.json
 bf.html
+
+# Generated responsive image variants (scripts/generate-responsive-images.mjs).
+# 486 files, 22.9MB, rebuilt on every prebuild from the committed sources —
+# committing them would double the repo for no benefit.
+public/images/**/_rs/

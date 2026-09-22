@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sitemap-lastmod.mjs && node scripts/check-trainer-consistency.mjs && node scripts/generate-image-color-manifest.mjs && node scripts/check-logo.mjs && node scripts/check-deal-honesty.mjs && node scripts/check-hreflang-pairs.mjs && node scripts/check-orphan-routes.mjs",
+    "prebuild": "node scripts/sitemap-lastmod.mjs && node scripts/check-trainer-consistency.mjs && node scripts/generate-image-color-manifest.mjs && node scripts/generate-responsive-images.mjs && node scripts/check-logo.mjs && node scripts/check-deal-honesty.mjs && node scripts/check-hreflang-pairs.mjs && node scripts/check-orphan-routes.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -24,7 +24,8 @@
     "feedback:read": "node scripts/feedback-read.mjs",
     "check:acuity": "node scripts/check-acuity-prices.mjs",
     "photo-library": "node scripts/build-photo-library.mjs",
-    "verify:photo-library": "node scripts/verify-photo-library.mjs"
+    "verify:photo-library": "node scripts/verify-photo-library.mjs",
+    "images:responsive": "node scripts/generate-responsive-images.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

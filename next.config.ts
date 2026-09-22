@@ -40,7 +40,23 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_BUILD_VERSION: buildVersion,
   },
   images: {
-    unoptimized: true,
+    // Was `unoptimized: true`. Static export has no image server, so that
+    // setting made every <Image> render ONE full-size src with no srcset —
+    // measured live 2026-09-22 at 375px: 17 of the homepage's 18 images had no
+    // srcset and the page shipped 2,022 KB of JPEG. A custom loader restores
+    // srcset generation against pre-built WebP variants
+    // (scripts/generate-responsive-images.mjs) without touching the ~122 files
+    // that import next/image. The loader falls back to the original file for
+    // anything it did not generate, so it cannot 404 a live image.
+    // The Cloudflare Image-Resizing path named below stays the eventual answer
+    // if this zone ever moves off the free plan; it is a paid feature today.
+    loader: "custom",
+    loaderFile: "./src/image-loader.ts",
+    // Must match WIDTHS in scripts/generate-responsive-images.mjs — Next asks
+    // the loader for exactly these, and a width with no variant falls back to
+    // the full-size original (correct, just no saving).
+    deviceSizes: [384, 640, 750, 828, 1080, 1920],
+    imageSizes: [384],
   },
 };
 
