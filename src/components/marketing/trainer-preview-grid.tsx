@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { trainers } from "@/config/trainers";
+import { siteConfig } from "@/config/site";
 import { transformationFrom } from "@/config/transformation";
 import { whatsappLinks } from "@/config/acuity";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
@@ -39,7 +40,8 @@ const COPY = {
     ctaAll: `Bekijk alle ${trainers.length} trainers`,
     ctaSeeStudio: "Bekijk de studio",
     seeStudioHref: "/nl/studio",
-    rating: "5.0 op Google",
+    rating: `${siteConfig.rating.value.toFixed(1).replace(".", ",")} op Google`,
+    reviews: `${siteConfig.rating.count} reviews`,
     photoAlt: (name: string) => `${name}, personal trainer bij SculptClub Amsterdam Jordaan`,
     rateLabel: "Tarief",
     onRequest: "Op aanvraag",
@@ -61,7 +63,8 @@ const COPY = {
     ctaAll: `View all ${trainers.length} trainers`,
     ctaSeeStudio: "See the studio",
     seeStudioHref: "/en/studio",
-    rating: "5.0 on Google",
+    rating: `${siteConfig.rating.value.toFixed(1)} on Google`,
+    reviews: `${siteConfig.rating.count} reviews`,
     photoAlt: (name: string) => `${name}, personal trainer at SculptClub Amsterdam Jordaan`,
     rateLabel: "Rate",
     onRequest: "On request",
@@ -97,9 +100,9 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
               <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
             ))}
           </div>
-          <span className="font-semibold text-foreground">5.0</span>
-          <span>·</span>
-          <span>{c.rating}</span>
+          <span className="font-semibold text-foreground">{c.rating}</span>
+          <span aria-hidden>·</span>
+          <span>{c.reviews}</span>
         </div>
       </FadeIn>
 

@@ -223,8 +223,10 @@ export function Header() {
                       // little press feedback.
                       ? "bg-brand text-brand-foreground shadow-sm hover:bg-brand-dark"
                       : overDarkHero
-                        // Over the homepage dark hero: glass tiles.
-                        ? "text-white/90 bg-white/10 border border-white/20 hover:bg-white/20 backdrop-blur-md"
+                        // Over the homepage dark hero: dark glass tiles. Was white/10, which
+                        // read as text floating on the photo's wall lettering (design pass
+                        // 2026-09-23, card mue854z8zfq0va); black/35 keeps the photo visible.
+                        ? "text-white bg-black/35 border border-white/25 hover:bg-black/50 backdrop-blur-md"
                         // Elsewhere / scrolled: solid theme tiles.
                         : "text-foreground bg-muted border border-border/60 hover:border-brand hover:bg-brand/5"
                   )}
