@@ -342,9 +342,9 @@ export default function WordTrainerNL() {
                 </div>
               }
               packages={
-                {/* 2026-09-23: real Acuity packages (CLAUDE.md, checked live). The old 5/10/20-hour
-                    packs at €11.40/€10.20/€9.24 per hour did not exist. */}
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {/* 2026-09-23: real Acuity packages (CLAUDE.md, checked live). The old 5/10/20-hour
+                      packs at €11.40/€10.20/€9.24 per hour did not exist. */}
                   <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
                     <p className="text-sm font-semibold">Starter</p>
                     <p className="text-3xl font-bold mt-1">€89</p>
