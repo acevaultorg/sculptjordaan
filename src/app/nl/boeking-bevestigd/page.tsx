@@ -174,48 +174,16 @@ export default function BookingConfirmedNL() {
               "binnen 7 dagen" framing (post-intake decision window).
               Discount is operator-honoured (no enforcement code-side). */}
           <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="inline-block px-2 py-0.5 rounded-full bg-brand text-brand-foreground text-[10px] font-bold uppercase tracking-wider">
-                Eerste sessie deal
-              </span>
-              <span className="text-xs text-white/60">binnen 7 dagen na intake</span>
-            </div>
-            <h3 className="text-xl font-bold text-white">
-              Bespaar 10% op je eerste pakket
-            </h3>
+            {/* 2026-09-23 (card mud05ioligxhf8): the "10% on your first package" deal and the
+                €179/€319/€449 grid existed nowhere in config and no trainer had agreed to them;
+                each trainer sets their own packages. Honest version: no prices, no discount claim. */}
+            <h3 className="text-xl font-bold text-white">Wil je daarna verder?</h3>
             <p className="mt-2 text-sm text-white/75 leading-relaxed">
-              Als je binnen 7 dagen na je intake een pakket boekt bij je trainer,
-              krijg je 10% korting op je eerste pakket. Geen druk, gewoon een
-              dankjewel als je verder wilt.
+              Elke trainer heeft eigen pakketten en prijzen. Je trainer laat ze zien na je intake.
+              Geen verplichting, je beslist daarna of het past.
             </p>
-
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              {[
-                { name: "Starter", sessions: 4, price: 179, original: 199, perSession: 44.75 },
-                { name: "Routine", sessions: 8, price: 319, original: 359, perSession: 39.88 },
-                { name: "Pro", sessions: 12, price: 449, original: 499, perSession: 37.42 },
-              ].map((pkg, i) => (
-                <div
-                  key={pkg.name}
-                  className={`rounded-xl border ${i === 1 ? "border-brand bg-brand/10" : "border-white/10 bg-white/5"} p-4 text-left`}
-                >
-                  <p className="text-xs font-bold uppercase tracking-wider text-brand">{pkg.name}</p>
-                  <p className="mt-1 text-2xl font-bold text-white">€{pkg.price}</p>
-                  <p className="text-xs text-white/60 line-through">was €{pkg.original}</p>
-                  <p className="mt-2 text-xs text-white/75">
-                    {pkg.sessions} sessies · €{pkg.perSession.toFixed(2)}/sessie
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-4 text-xs text-white/60 leading-relaxed">
-              Geen verplichting bij je intake — je beslist daarna of het past.
-              De deal is een dankjewel, geen contract.
-            </p>
-
             <a
-              href="https://wa.me/31615147952?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+10%25+pakket-deal+na+m%27n+intake."
+              href="https://wa.me/31615147952?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+pakketten+na+m%27n+intake."
               target="_blank"
               rel="noopener noreferrer"
               data-cta="boeking-bevestigd-upsell-whatsapp"

@@ -180,9 +180,7 @@ export function IntakePlanContent() {
         <section className="mb-6 print:mb-4 border-t border-neutral-200 pt-5 print:border-neutral-300">
           <h2 className="text-lg font-bold mb-2 print:text-base">Pakketten (na intake)</h2>
           <div className="text-sm space-y-1 print:text-xs">
-            <p><strong>Starter</strong> · 4 sessies · €179 (€44,75/sessie) · 10% korting</p>
-            <p><strong>Routine</strong> · 8 sessies · €319 (€39,88/sessie) · 15% korting</p>
-            <p><strong>Pro</strong> · 12 sessies · €449 (€37,42/sessie) · 20% korting</p>
+            <p>Elke trainer heeft eigen pakketten en prijzen; je trainer laat ze zien na de intake.</p>
             <p className="text-xs text-neutral-500 mt-2 print:text-[10px]">
               Pakket-keuze bespreek je na de intake — geen verplichting bij boeking.
             </p>
