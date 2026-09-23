@@ -151,7 +151,14 @@ if (missing.length) { console.error(`FAILED: ${missing.length} pages still have 
     let m;
     re.lastIndex = 0;
     while ((m = re.exec(html))) {
-      if (/type\s*=\s*"application\/(ld\+json|json)"/.test(m[1])) continue;
+      // Only these TYPES are executed as JS by a browser. Everything else —
+      // ld+json, importmap, speculationrules, a `text/markdown` twin, an HTML
+      // template — is a DATA block by spec and must never be parsed here.
+      // Measured 2026-09-23: the original deny-list flagged 4,122 readinglist
+      // pages as "broken" purely because they carry <script type="text/markdown">.
+      // A guard that refuses a valid build is worse than no guard.
+      const stype = (/\btype\s*=\s*["']?([^"'\s>]+)/.exec(m[1]) || [, ""])[1].toLowerCase();
+      if (stype && !["text/javascript", "application/javascript", "module", "text/ecmascript"].includes(stype)) continue;
       checked++;
       try { new Function(m[2]); }
       catch (err) { broken.push(`${relative(OUT, file)} — ${err.message}`); break; }
