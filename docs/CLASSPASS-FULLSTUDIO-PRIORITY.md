@@ -105,9 +105,9 @@ Verified 8 weeks forward: only 21:00 classes remain — no Wednesday, no daytime
 
 The set of "hours Full Studio has ever been booked" **grows**. A slot that is safe today becomes a conflict the first time someone rents that hour — silently, with nothing to detect it.
 
-**Guard:** scheduled task `classpass-fullstudio-conflict-guard`, **Mondays 07:02**. Re-exports Acuity, recomputes the grid, diffs against the live ClassPass schedule, removes new conflicts, reports.
-Definition: `~/.claude/scheduled-tasks/classpass-fullstudio-conflict-guard/SKILL.md`
-Data + script: `../acuity-exports/` (CSV · `analyze-classpass-safety.py` · README).
+**Guard (REPORT-ONLY, live since 2026-09-23):** launchd job `com.acepilot.classpass-conflict-guard` on device 1, **Mondays 07:02 local**, runs `~/.claude/bin/classpass-conflict-guard`. It reads Acuity's PUBLIC availability API (no login, books nothing) for the next 14 days, and reports any Mon/Tue/Thu/Fri whose 21:00–22:00 hour is wholly occupied, as ONE line appended to board card `mud9vyalgki8rv`. **It never edits ClassPass, Acuity or the site** — removing a conflicting class is Paulo's click. Log: `~/.claude/fleet/logs/classpass-conflict-guard.log`. Controls: a synthetic conflict (`ACUITY_SYNTHETIC_CONFLICT=YYYY-MM-DD`) fires the CONFLICT line; a closed day or a half-absent/full-present anomaly reports UNKNOWN, never CONFLICT. Verified 2026-09-23: real run clean (8 days), synthetic control fires.
+~~scheduled task `classpass-fullstudio-conflict-guard` … removes new conflicts … `~/.claude/scheduled-tasks/…/SKILL.md`~~ (superseded 2026-09-23: that task never existed; the removal step was dropped because the ClassPass schedule is Paulo's account).
+Historical data + grid script (still valid for the safe-hours CAP, a different check): `../acuity-exports/` (CSV · `analyze-classpass-safety.py` · README).
 
 ### The two URLs (don't guess — these are verified)
 
