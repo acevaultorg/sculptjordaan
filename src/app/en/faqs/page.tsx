@@ -137,11 +137,11 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "How much does it cost to rent the studio?",
-        a: "From \u20AC12 per 60 minutes. We also offer discount packages: a 10-hour package with 15% off and a 20-hour package with 23% off.",
+        a: "From \u20AC12 per 60 minutes. We also offer credit packages with 10% to 23% off.",
       },
       {
         q: "What packages are available?",
-        a: "Per hour: \u20AC12/60 min. 10-hour package: \u20AC10.20/60 min (15% off). 20-hour package: \u20AC9.24/60 min (23% off). Packages are valid for 1 year.",
+        a: "Per hour: \u20AC12/60 min (half studio) or \u20AC17/60 min (full studio). Credit packages: Starter \u20AC89 for \u20AC99 credit (10% off), Routine \u20AC179 for \u20AC210 (15%), Pro \u20AC299 for \u20AC375 (20%), Volume \u20AC499 for \u20AC650 (23%). Packages are valid for 1 year.",
       },
       {
         q: "What's included with studio rental?",

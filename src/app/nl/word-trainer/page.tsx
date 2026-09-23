@@ -105,7 +105,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "Wat kost het om de studio te huren?", a: "Vanaf €12 per 60 minuten. Met een 10-uren pakket betaal je €10,20/uur (15% korting). Met een 20-uren pakket €9,24/uur (23% korting). Pakketten zijn 1 jaar geldig." },
+  { q: "Wat kost het om de studio te huren?", a: "Vanaf €12 per 60 minuten. Met een strippenkaart koop je tegoed met korting: Starter €89 voor €99 (10%), Routine €179 voor €210 (15%), Pro €299 voor €375 (20%), Volume €499 voor €650 (23%). Pakketten zijn 1 jaar geldig." },
   { q: "Heb ik een eigen verzekering nodig?", a: "Ja, je dient een geldige beroepsaansprakelijkheidsverzekering te hebben. Dit is je eigen verantwoordelijkheid." },
   { q: "Hoeveel klanten kan ik tegelijk trainen?", a: "In de halve studio train je 1-op-1 (max 2 personen). De hele studio huur je voor groepen van 1 tot 8 personen." },
   { q: "Krijg ik echt een profiel op de website?", a: "Ja. Je krijgt een eigen profielpagina met foto, bio, specialisaties, tarieven en een directe boekingslink. Dit is inbegrepen bij elk huurpakket — en ook bij losse uur-huur. Vraag er via WhatsApp om en we zetten je erop." },
@@ -342,24 +342,32 @@ export default function WordTrainerNL() {
                 </div>
               }
               packages={
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
-                    <p className="text-3xl font-bold">€10,20</p>
-                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
-                    <p className="text-sm mt-2">10-uren pakket</p>
-                    <p className="text-xs text-brand mt-1">15% korting</p>
+                {/* 2026-09-23: real Acuity packages (CLAUDE.md, checked live). The old 5/10/20-hour
+                    packs at €11.40/€10.20/€9.24 per hour did not exist. */}
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Starter</p>
+                    <p className="text-3xl font-bold mt-1">€89</p>
+                    <p className="text-xs text-muted-foreground mt-1">€99 tegoed</p>
+                    <p className="text-xs text-brand mt-1">10% korting</p>
                   </div>
-                  <div className="rounded-2xl border border-brand bg-brand/5 px-5 py-5 text-center">
-                    <p className="text-3xl font-bold">€9,24</p>
-                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
-                    <p className="text-sm mt-2">20-uren pakket</p>
-                    <p className="text-xs text-brand mt-1 font-semibold">23% korting</p>
+                  <div className="rounded-2xl border border-brand bg-brand/5 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Routine</p>
+                    <p className="text-3xl font-bold mt-1">€179</p>
+                    <p className="text-xs text-muted-foreground mt-1">€210 tegoed</p>
+                    <p className="text-xs text-brand mt-1 font-semibold">15% korting</p>
                   </div>
-                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
-                    <p className="text-3xl font-bold">€11,40</p>
-                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
-                    <p className="text-sm mt-2">5-uren pakket</p>
-                    <p className="text-xs text-brand mt-1">5% korting</p>
+                  <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Pro</p>
+                    <p className="text-3xl font-bold mt-1">€299</p>
+                    <p className="text-xs text-muted-foreground mt-1">€375 tegoed</p>
+                    <p className="text-xs text-brand mt-1">20% korting</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Volume</p>
+                    <p className="text-3xl font-bold mt-1">€499</p>
+                    <p className="text-xs text-muted-foreground mt-1">€650 tegoed</p>
+                    <p className="text-xs text-brand mt-1">23% korting</p>
                   </div>
                 </div>
               }

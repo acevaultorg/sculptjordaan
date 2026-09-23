@@ -105,7 +105,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "How much does it cost to rent the studio?", a: "From €12 per 60 minutes. With a 10-hour package you pay €10.20/hour (15% off). With a 20-hour package €9.24/hour (23% off). Packages are valid for 1 year." },
+  { q: "How much does it cost to rent the studio?", a: "From €12 per 60 minutes. A credit package buys studio credit at a discount: Starter €89 for €99 (10%), Routine €179 for €210 (15%), Pro €299 for €375 (20%), Volume €499 for €650 (23%). Packages are valid for 1 year." },
   { q: "Do I need my own insurance?", a: "Yes, you need a valid professional liability insurance. This is your own responsibility." },
   { q: "How many clients can I train at once?", a: "The half studio is for 1-on-1 sessions (max 2 people). The full studio fits groups of 1 to 8 people." },
   { q: "Do I really get a profile on the website?", a: "Yes. You get a personal profile page with photo, bio, specialisations, rates and a direct booking link. This is included with every rental package — and with hourly rental too. Ask via WhatsApp and we'll add you." },
@@ -347,24 +347,32 @@ export default function BecomeTrainerEN() {
                 </div>
               }
               packages={
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
-                    <p className="text-3xl font-bold">€10.20</p>
-                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
-                    <p className="text-sm mt-2">10-hour pack</p>
-                    <p className="text-xs text-brand mt-1">15% off</p>
+                {/* 2026-09-23: real Acuity packages (CLAUDE.md, checked live). The old 5/10/20-hour
+                    packs at €11.40/€10.20/€9.24 per hour did not exist. */}
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Starter</p>
+                    <p className="text-3xl font-bold mt-1">€89</p>
+                    <p className="text-xs text-muted-foreground mt-1">€99 credit</p>
+                    <p className="text-xs text-brand mt-1">10% off</p>
                   </div>
-                  <div className="rounded-2xl border border-brand bg-brand/5 px-5 py-5 text-center">
-                    <p className="text-3xl font-bold">€9.24</p>
-                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
-                    <p className="text-sm mt-2">20-hour pack</p>
-                    <p className="text-xs text-brand mt-1 font-semibold">23% off</p>
+                  <div className="rounded-2xl border border-brand bg-brand/5 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Routine</p>
+                    <p className="text-3xl font-bold mt-1">€179</p>
+                    <p className="text-xs text-muted-foreground mt-1">€210 credit</p>
+                    <p className="text-xs text-brand mt-1 font-semibold">15% off</p>
                   </div>
-                  <div className="rounded-2xl border border-border bg-card/30 px-5 py-5 text-center">
-                    <p className="text-3xl font-bold">€11.40</p>
-                    <p className="text-xs text-muted-foreground mt-1">per 60 min</p>
-                    <p className="text-sm mt-2">5-hour pack</p>
-                    <p className="text-xs text-brand mt-1">5% off</p>
+                  <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Pro</p>
+                    <p className="text-3xl font-bold mt-1">€299</p>
+                    <p className="text-xs text-muted-foreground mt-1">€375 credit</p>
+                    <p className="text-xs text-brand mt-1">20% off</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-card/30 px-4 py-5 text-center">
+                    <p className="text-sm font-semibold">Volume</p>
+                    <p className="text-3xl font-bold mt-1">€499</p>
+                    <p className="text-xs text-muted-foreground mt-1">€650 credit</p>
+                    <p className="text-xs text-brand mt-1">23% off</p>
                   </div>
                 </div>
               }
