@@ -133,6 +133,9 @@ export default function BookStudioPageEN() {
           <p className="mt-2 text-sm text-muted-foreground">
             From €12/hour · Full freedom · Free cancellation · Daily 06:00–22:00
           </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Weekends cost the same. Sundays and Saturday afternoons are usually still free.
+          </p>
         </div>
 
         <RentalTabs

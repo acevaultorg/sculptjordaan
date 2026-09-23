@@ -133,6 +133,9 @@ export default function BoekStudioPageNL() {
           <p className="mt-2 text-sm text-muted-foreground">
             Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
           </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            In het weekend dezelfde prijs. Zondag en zaterdagmiddag zijn meestal nog vrij.
+          </p>
         </div>
 
         <RentalTabs
