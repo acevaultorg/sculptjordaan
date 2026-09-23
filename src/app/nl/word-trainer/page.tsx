@@ -105,7 +105,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "Wat kost het om de studio te huren?", a: "Vanaf €12 per 60 minuten. Met een 10-uren pakket betaal je €10,20/uur (15% korting). Met een 20-uren pakket €9,24/uur (23% korting). Pakketten zijn 3 maanden geldig." },
+  { q: "Wat kost het om de studio te huren?", a: "Vanaf €12 per 60 minuten. Met een 10-uren pakket betaal je €10,20/uur (15% korting). Met een 20-uren pakket €9,24/uur (23% korting). Pakketten zijn 1 jaar geldig." },
   { q: "Heb ik een eigen verzekering nodig?", a: "Ja, je dient een geldige beroepsaansprakelijkheidsverzekering te hebben. Dit is je eigen verantwoordelijkheid." },
   { q: "Hoeveel klanten kan ik tegelijk trainen?", a: "In de halve studio train je 1-op-1 (max 2 personen). De hele studio huur je voor groepen van 1 tot 8 personen." },
   { q: "Krijg ik echt een profiel op de website?", a: "Ja. Je krijgt een eigen profielpagina met foto, bio, specialisaties, tarieven en een directe boekingslink. Dit is inbegrepen bij elk huurpakket — en ook bij losse uur-huur. Vraag er via WhatsApp om en we zetten je erop." },
@@ -367,7 +367,7 @@ export default function WordTrainerNL() {
           </div>
         </FadeIn>
         <FadeIn delay={0.2} className="mt-6 text-center">
-          <p className="text-sm text-muted-foreground">Alle pakketten zijn 3 maanden geldig. <a href="/nl/prijzen" className="text-brand hover:underline">Bekijk alle tarieven</a></p>
+          <p className="text-sm text-muted-foreground">Alle pakketten zijn 1 jaar geldig. <a href="/nl/prijzen" className="text-brand hover:underline">Bekijk alle tarieven</a></p>
         </FadeIn>
       </Section>
 

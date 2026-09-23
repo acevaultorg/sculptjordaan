@@ -141,7 +141,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What packages are available?",
-        a: "Per hour: \u20AC12/60 min. 10-hour package: \u20AC10.20/60 min (15% off). 20-hour package: \u20AC9.24/60 min (23% off). Packages are valid for 3 months.",
+        a: "Per hour: \u20AC12/60 min. 10-hour package: \u20AC10.20/60 min (15% off). 20-hour package: \u20AC9.24/60 min (23% off). Packages are valid for 1 year.",
       },
       {
         q: "What's included with studio rental?",
