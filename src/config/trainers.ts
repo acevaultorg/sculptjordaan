@@ -165,7 +165,13 @@ export interface Trainer {
 // Roberta added 2026-07-25 (her own email request). Placed at #6 — her
 // Strength / posture-&-mobility / weight-loss profile sits
 // naturally among the general-strength coaches. Operator can reorder freely.
-const DISPLAY_ORDER = ["eva", "gezina", "bryan", "tom", "joey", "roberta", "ibrahim", "alex", "andrea", "sergei", "dara", "jearmey", "hamish"] as const;
+// 2026-09-23 (Subchief 2, card below): bryan, tom and sergei moved to the END. Acuity export
+// 2026-09-14 (cancellations excluded, alias check on email/phone/package code): Bryan's last
+// rental was 2026-03-25 and he now runs his own place; Tom has 1 booking ever (2026-06-09);
+// Sergei's last was 2026-07-11. #3 and #4 are in the homepage top-4 preview, so homepage intake
+// leads went to trainers who rent nothing here. Nobody is removed; Eva/Gezina keep the operator's
+// order. Move them back up the moment they rent again.
+const DISPLAY_ORDER = ["eva", "gezina", "joey", "roberta", "ibrahim", "alex", "andrea", "dara", "jearmey", "hamish", "bryan", "tom", "sergei"] as const;
 
 const trainersRaw: Trainer[] = [
   {
