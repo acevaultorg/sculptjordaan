@@ -46,6 +46,7 @@ const copy = {
     website: (label: string) => `Methode & ervaringen: ${label}`,
     profile: "Profiel & beschikbaarheid",
     instagram: "Instagram",
+    tiktok: "TikTok",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
     langNames: { NL: "Nederlands", EN: "Engels", PT: "Portugees", RU: "Russisch", IT: "Italiaans", ES: "Spaans", FR: "Frans", DE: "Duits" } as Record<string, string>,
@@ -69,6 +70,7 @@ const copy = {
     website: (label: string) => `Method & client stories: ${label}`,
     profile: "Profile & availability",
     instagram: "Instagram",
+    tiktok: "TikTok",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,
     langNames: { NL: "Dutch", EN: "English", PT: "Portuguese", RU: "Russian", IT: "Italian", ES: "Spanish", FR: "French", DE: "German" } as Record<string, string>,
@@ -224,6 +226,16 @@ function TrainerCard({
                   className="inline-flex min-h-11 items-center text-sm font-medium text-brand hover:underline underline-offset-4"
                 >
                   {t.instagram}
+                </a>
+              )}
+              {trainer.tiktok && (
+                <a
+                  href={trainer.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center text-sm font-medium text-brand hover:underline underline-offset-4"
+                >
+                  {t.tiktok}
                 </a>
               )}
             </div>

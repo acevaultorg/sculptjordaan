@@ -327,7 +327,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
         url={`/${locale}/${trainer.slug[locale]}`}
         jobTitle={locale === "nl" ? "Personal Trainer" : "Personal Trainer"}
         languages={trainer.languages}
-        sameAs={[trainer.instagram, trainer.website?.url].filter((u): u is string => Boolean(u))}
+        sameAs={[trainer.instagram, trainer.tiktok, trainer.website?.url].filter((u): u is string => Boolean(u))}
       />
       <Section>
         <div className="max-w-4xl mx-auto">

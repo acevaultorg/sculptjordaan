@@ -33,6 +33,8 @@ export interface Trainer {
    */
   instagram?: string;
   instagramHandle?: string;
+  /** Trainer's own TikTok profile URL (operator-confirmed). Shown next to Instagram. */
+  tiktok?: string;
   /**
    * Localized credential string shown under the trainer's name on cards
    * and intake pages. Use the locale-appropriate professional title:
@@ -782,6 +784,9 @@ const trainersRaw: Trainer[] = [
     },
     instagram: "https://instagram.com/fitmillennial.pt",
     instagramHandle: "@fitmillennial.pt",
+    // Paulo 2026-09-25 (card mug4onpif8d9af). Verified: profile name "Roberta Virzi Personal Trainer",
+    // bio "Italian Certified PT in Amsterdam + online".
+    tiktok: "https://www.tiktok.com/@fitmillennial.pt",
     website: {
       url: "https://www.robertavirzipt.com/",
       label: "Roberta Virzi PT",
