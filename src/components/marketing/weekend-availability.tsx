@@ -10,17 +10,25 @@ import { useEffect, useState } from "react";
 type Day = { date: string; morning: boolean; afternoon: boolean };
 
 const copy = {
-  nl: { lead: "Dit weekend nog plek:", morning: "ochtend", afternoon: "middag", and: "en", locale: "nl-NL" },
-  en: { lead: "Room this weekend:", morning: "morning", afternoon: "afternoon", and: "and", locale: "en-GB" },
+  nl: { lead: "Dit weekend nog plek:", leadStudio: "Live, dit weekend nog vrij:", morning: "ochtend", afternoon: "middag", and: "en", locale: "nl-NL" },
+  en: { lead: "Room this weekend:", leadStudio: "Live, still free this weekend:", morning: "morning", afternoon: "afternoon", and: "and", locale: "en-GB" },
 };
 
-export function WeekendAvailability({ locale }: { locale: "nl" | "en" }) {
+export function WeekendAvailability({
+  locale,
+  kind = "gym",
+  className = "mt-3 text-sm text-muted-foreground",
+}: {
+  locale: "nl" | "en";
+  kind?: "gym" | "studio";
+  className?: string;
+}) {
   const [days, setDays] = useState<Day[] | null>(null);
   const t = copy[locale];
 
   useEffect(() => {
     let alive = true;
-    fetch("/api/weekend-availability")
+    fetch(`/api/weekend-availability?type=${kind}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
         if (alive && j?.ok && Array.isArray(j.days)) setDays(j.days);
@@ -29,7 +37,7 @@ export function WeekendAvailability({ locale }: { locale: "nl" | "en" }) {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [kind]);
 
   const open = (days ?? []).filter((d) => d.morning || d.afternoon);
   if (open.length === 0) return null;
@@ -45,8 +53,8 @@ export function WeekendAvailability({ locale }: { locale: "nl" | "en" }) {
   };
 
   return (
-    <p className="mt-3 text-sm text-muted-foreground">
-      <span className="font-medium text-foreground">{t.lead}</span> {open.map(label).join(" · ")}
+    <p className={className}>
+      <span className="font-medium text-foreground">{kind === "studio" ? t.leadStudio : t.lead}</span> {open.map(label).join(" · ")}
     </p>
   );
 }

@@ -49,6 +49,7 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 import { StudioRateTable } from "@/components/marketing/studio-rate-table";
+import { WeekendAvailability } from "@/components/marketing/weekend-availability";
 
 export const metadata: Metadata = {
   title: { absolute: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur" },
@@ -278,6 +279,7 @@ export default function StudioRentalPageNL() {
             en -avond staan meestal nog open. Ideaal om hier een vaste weekendplek voor je
             klanten vast te leggen. Klik hieronder op Boek voor de actuele beschikbaarheid.
           </p>
+          <WeekendAvailability locale="nl" kind="studio" className="mt-2 text-sm text-muted-foreground" />
         </div>
 
         {/* Booking table is now the FIRST thing after the header — operator

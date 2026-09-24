@@ -1,7 +1,8 @@
 // GET /api/weekend-availability — is there Open Gym room this weekend?
 //
 // Reads Acuity's PUBLIC scheduler availability (no login, books nothing) for
-// the Open Gym session type and answers per upcoming weekend day whether the
+// the Open Gym session type (?type=gym, default) or the half-studio rental
+// type (?type=studio) and answers per upcoming weekend day whether the
 // morning (07-11h) and afternoon (12-16h) still have a free place. It never
 // returns counts: an all-empty studio is not something to advertise.
 // Shown by src/components/marketing/weekend-availability.tsx on /nl/open-gym
@@ -11,6 +12,8 @@
 const OWNER = "fba376d5"; // scheduler owner hash (not the public owner id)
 const CALENDAR = "12633534";
 const OPEN_GYM = "83513953";
+const HALF_STUDIO = "84032351"; // any free half = the studio can still be rented
+const TYPES: Record<string, string> = { gym: OPEN_GYM, studio: HALF_STUDIO };
 
 type Slot = { time: string; slotsAvailable?: number };
 
@@ -29,8 +32,8 @@ function upcomingWeekendDays(now: Date): string[] {
   return out;
 }
 
-async function dayTimes(date: string): Promise<Slot[] | null> {
-  const u = `https://app.acuityscheduling.com/api/scheduling/v1/availability/times?owner=${OWNER}&appointmentTypeId=${OPEN_GYM}&calendarId=${CALENDAR}&startDate=${date}&timezone=Europe%2FAmsterdam`;
+async function dayTimes(date: string, typeId: string): Promise<Slot[] | null> {
+  const u = `https://app.acuityscheduling.com/api/scheduling/v1/availability/times?owner=${OWNER}&appointmentTypeId=${typeId}&calendarId=${CALENDAR}&startDate=${date}&timezone=Europe%2FAmsterdam`;
   const r = await fetch(u, { headers: { "User-Agent": "Mozilla/5.0 (sculptclub.nl weekend-availability)" } });
   if (!r.ok) return null;
   const j = (await r.json()) as Record<string, Slot[]>;
@@ -38,14 +41,15 @@ async function dayTimes(date: string): Promise<Slot[] | null> {
 }
 
 export const onRequestGet: PagesFunction = async (context) => {
+  const kind = new URL(context.request.url).searchParams.get("type") === "studio" ? "studio" : "gym";
   const cache = caches.default;
-  const key = new Request(new URL("/api/weekend-availability", context.request.url).toString());
+  const key = new Request(new URL(`/api/weekend-availability?type=${kind}`, context.request.url).toString());
   const hit = await cache.match(key);
   if (hit) return hit;
 
   const days = [];
   for (const date of upcomingWeekendDays(new Date())) {
-    const times = await dayTimes(date);
+    const times = await dayTimes(date, TYPES[kind]);
     if (times === null) {
       return new Response(JSON.stringify({ ok: false }), {
         status: 502,

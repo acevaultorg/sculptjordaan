@@ -33,6 +33,7 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 import { StudioRateTable } from "@/components/marketing/studio-rate-table";
+import { WeekendAvailability } from "@/components/marketing/weekend-availability";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Studio Rental | SculptClub Jordaan" },
@@ -251,6 +252,7 @@ export default function StudioRentalPageEN() {
             evening are usually open too — a great fit for a regular weekend slot with your
             clients. Click Book below to see live availability.
           </p>
+          <WeekendAvailability locale="en" kind="studio" className="mt-2 text-sm text-muted-foreground" />
         </div>
 
         {/* Booking table is now the FIRST thing after the header — NL parity
