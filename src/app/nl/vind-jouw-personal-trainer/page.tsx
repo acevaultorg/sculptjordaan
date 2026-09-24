@@ -1,14 +1,11 @@
 import { PageLayout } from "@/components/layout/page-layout";
-import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
-import { ButtonLink } from "@/components/ui/button-link";
+import { Section, SectionHeader } from "@/components/sections/section";
 import { trainers } from "@/config/trainers";
-import { acuityLinks } from "@/config/acuity";
 import { TrainerMatchForm } from "@/components/marketing/trainer-match-form";
-import { TrainerFilterGrid } from "@/components/marketing/trainer-filter-grid";
-import { GoalFunnel } from "@/components/marketing/goal-funnel";
+import { TrainerCompactGrid } from "@/components/marketing/trainer-compact-grid";
 import { ptGoals } from "@/config/pt-goals";
 import Image from "next/image";
-import { Star, Users, Gift, Percent, Building2, CalendarClock, MessageCircle, ArrowRight, Sparkles, Target, Check, X, Globe } from "lucide-react";
+import { Star, MessageCircle, ArrowDown, Sparkles, ChevronDown } from "lucide-react";
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import {
@@ -46,20 +43,6 @@ export const metadata: Metadata = {
   },
 };
 
-const trustBadges = [
-  { icon: Building2, label: "Privé studio" },
-  { icon: Star, label: "5.0 op Google" },
-  { icon: Users, label: `${trainers.length} trainers` },
-  { icon: Gift, label: "Gratis intake" },
-  { icon: MessageCircle, label: "Direct met je trainer" },
-];
-
-const trainerBenefits = [
-  { icon: Percent, title: "Jij houdt 100%", description: "Eigen tarief, eigen klanten. Jij huurt de studio en houdt 100% van je inkomsten." },
-  { icon: Building2, title: "Premium studio", description: "Train je cli\u00ebnten in een volledig uitgeruste priv\u00e9 studio in de Jordaan." },
-  { icon: CalendarClock, title: "Flexibel rooster", description: "Plan je sessies wanneer het jou uitkomt. Volledige vrijheid over je agenda." },
-];
-
 const faqs = [
   {
     q: "Wat is een traject?",
@@ -83,7 +66,7 @@ const faqs = [
   },
   {
     q: "Kan ik met een vriend(in) of partner trainen?",
-    a: "Ja. Veel trainers bieden duo-sessies of small-group training aan (2\u20134 personen) tegen een aangepast tarief per persoon. Goedkoper \u00e9n leuker als je samen wilt trainen.",
+    a: "Ja. Een duo-transformatie start vanaf \u20ac199 p.p. per 4 weken (voor twee, \u20ac399 totaal). Veel trainers bieden ook small-group training aan (2\u20134 personen) tegen een aangepast tarief per persoon.",
   },
   {
     q: "Ik spreek geen Nederlands, kan dat?",
@@ -107,19 +90,6 @@ const faqs = [
   },
 ];
 
-
-// Goal-first PT hub (operator 2026-09-11: sell transformations, not hours).
-const trajectSteps = [
-  { title: "Gratis intake", desc: "Telefonisch of in de studio. Je vertelt waar je nu staat en waar je naartoe wilt; samen leggen jullie je startpunt vast." },
-  { title: "Jouw traject-plan", desc: "Doel, duur, hoe vaak je traint, wat je meet en de totaalprijs, vooraf afgesproken. Geen verrassingen." },
-  { title: "Trainen in de privé studio", desc: "Alleen jij, je trainer en de hele studio. Je trainer stuurt bij op basis van hoe je vooruitgaat." },
-  { title: "Meetmoment & volgende stap", desc: "Je ziet wat er veranderd is. Daarna kies je: een volgend traject, zelfstandig verder in Open Gym, of stoppen." },
-];
-
-// Every trainer with a VERIFIED own website (research 2026-09-11, docs/PT-TRANSFORMATION-STRATEGY.md).
-const methodCards = trainers
-  .filter((t) => t.website)
-  .map((t) => ({ id: t.id, label: t.website!.label, text: t.website!.tagline?.nl ?? "", kind: "site" as const }));
 
 export default function TrainersPageNL() {
   return (
@@ -168,325 +138,167 @@ export default function TrainersPageNL() {
           }),
         }}
       />
-      {/* Hero — goal-first (operator 2026-09-11: "sell transformations, not hours").
-          30d before: 93 views, ~10s engagement/view, 1 lead on the NL hub — a
-          directory of 13 bios priced per session. Now the page starts from the
-          visitor's goal and routes to the trainers who advertise that goal. */}
-      <Section>
-        <SectionHeader
-          as="h1"
-          overline="SCULPT TRANSFORMATION · Jordaan"
-          title="Geen losse uren. Een transformatie in 4 weken."
-          description="Body transformaties vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Kies wat je wilt bereiken, ontmoet de trainer die daarin gespecialiseerd is, en spreek bij de gratis intake je plan en je prijs af."
+      {/* Redesign 2026-09-24 (operator on his phone: "very long and confusing",
+          "can look way better, big good images"). One promise, one sub-line,
+          the trainers straight after with big photos and ONE button each.
+          Studio photo only (no faces). The long blocks (traject steps, traject
+          vs losse sessie, method cards, recruitment) are gone; the facts they
+          carried live in the hero line, the card "Meer" panels and the FAQ. */}
+      <section className="relative isolate overflow-hidden bg-[#0B0907]">
+        <Image
+          src="/images/studio/studio-overview.jpeg"
+          alt="De privé studio van SculptClub aan de Egelantiersgracht in de Jordaan"
+          fill
+          priority
+          sizes="100vw"
+          className="-z-10 object-cover object-[50%_40%]"
         />
-        {/* Brand line (operator 2026-09-20: slogan "MAKE IT WORK"; he also floated
-            "Let it work" and the chief picked this one). Deliberately BELOW the H1
-            and description: the card asked for it inside the first 375px screen
-            WITHOUT pushing the H1 down, and anything placed above the H1 moves it.
-            Measured at 375px before this change: overline top 192, H1 216-298,
-            description 314, first CTA 662 — so there is room here and the H1 stays
-            at 216. English on the Dutch page by design; it is a brand line, not copy.
-            Written in literal capitals rather than CSS uppercase so a grep for
-            "MAKE IT WORK" in the served HTML finds it — an audit already reported it
-            missing once, and CSS-only capitals would have kept reporting that. */}
-        <p className="mt-5 text-center text-sm font-extrabold tracking-[0.18em] text-brand">
-          MAKE IT WORK
-        </p>
-        <FadeIn>
-          <div className="mb-8 flex flex-wrap justify-center gap-6 sm:gap-10">
-            {trustBadges.map((badge) => (
-              <div key={badge.label} className="flex items-center gap-2 text-sm font-medium">
-                <badge.icon className="h-5 w-5 text-primary" />
-                <span>{badge.label}</span>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-        <FadeIn>
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-3">
-            <a href="#doelen" data-cta="trainerhub-goals" className="inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-bold text-brand-foreground shadow-brand-lg transition-all hover:bg-brand-dark active:scale-[0.98]">
-              <Target className="h-5 w-5" />
-              Kies je doel
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/60 to-black/35" aria-hidden="true" />
+        <div className="mx-auto max-w-5xl px-4 pb-10 pt-24 text-white sm:px-6 sm:pb-14 sm:pt-40">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/80">SCULPT TRANSFORMATION · Jordaan</p>
+          <h1 className="mt-3 max-w-2xl text-4xl font-bold leading-[1.05] text-white text-balance sm:text-6xl">
+            Vind je trainer in de Jordaan.
+          </h1>
+          <p className="mt-4 max-w-xl text-lg text-white/85">
+            Eerste kennismaking gratis. Daarna vanaf €299 per 4 weken, incl. onbeperkt Open Gym.
+          </p>
+          {/* Brand line (operator 2026-09-20). Literal capitals so a grep of the
+              served HTML finds it. */}
+          <p className="mt-4 text-sm font-extrabold tracking-[0.18em] text-white">MAKE IT WORK</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="#trainers" data-cta="trainerhub-goals" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand px-6 text-base font-bold text-brand-foreground transition-colors hover:bg-brand-dark">
+              Bekijk de trainers
+              <ArrowDown className="h-4 w-4" aria-hidden="true" />
             </a>
-            <a href="/nl/match-trainer" data-cta="trainerhub-quiz" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-transparent px-6 py-3.5 text-base font-semibold text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 active:scale-[0.98]">
-              <Sparkles className="h-5 w-5" />
+            <a href="/nl/match-trainer" data-cta="trainerhub-quiz" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/40 px-5 text-base font-semibold text-white transition-colors hover:bg-white/10">
+              <Sparkles className="h-4 w-4" aria-hidden="true" />
               Twijfel je? 3 vragen
             </a>
           </div>
-        </FadeIn>
-      </Section>
+          <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-white/80">
+            <span className="inline-flex items-center gap-1.5"><Star className="h-4 w-4" aria-hidden="true" />5.0 op Google</span>
+            <span>{trainers.length} trainers</span>
+            <span>Privé studio</span>
+          </p>
+        </div>
+      </section>
 
-      {/* Step 1 — goal picker → traject outline → matched trainers */}
-      <Section bg="muted" id="doelen" className="scroll-mt-20">
-        <SectionHeader overline="Stap 1" title="Wat wil je bereiken?" description="Kies je doel. Je ziet direct waar een traject aan werkt en welke trainers hierin gespecialiseerd zijn." />
-        <GoalFunnel goals={ptGoals} trainers={trainers} locale="nl" />
-      </Section>
+      {/* Trainers — filter row + big-photo cards. #doelen and #trainer-grid kept
+          as anchors so older links into this page still land here. */}
+      <section id="trainers" className="scroll-mt-28 py-8 sm:py-12">
+        <div id="doelen" className="mx-auto max-w-6xl scroll-mt-28 px-4 sm:px-6">
+          <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Kies je trainer</h2>
+          <div id="trainer-grid" className="scroll-mt-28">
+            <TrainerCompactGrid trainers={trainers} goals={ptGoals} locale="nl" />
+          </div>
+        </div>
+      </section>
 
-      {/* How a traject works — the SculptClub standard every trainer delivers */}
-      <Section>
-        <SectionHeader overline="Zo werkt het" title="Van intake tot resultaat" description="Elke trainer werkt op zijn eigen manier. Dit mag je van elk traject bij SculptClub verwachten." />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {trajectSteps.map((step, i) => (
-            <FadeIn key={step.title} delay={i * 0.1}>
-              <div className="h-full rounded-2xl border border-border bg-card p-5">
-                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-brand-foreground">{i + 1}</div>
-                <p className="mb-1 font-semibold">{step.title}</p>
-                <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
-              </div>
-            </FadeIn>
+      {/* How it works — three short facts, no scroll. */}
+      <section className="border-y border-border bg-secondary/50 py-8">
+        <ol className="mx-auto grid max-w-5xl gap-4 px-4 sm:grid-cols-3 sm:px-6">
+          {[
+            { t: "Gratis kennismaking", d: "App je trainer. Jullie trainen een keer samen, zonder verplichting." },
+            { t: "Jouw plan, prijs vooraf", d: "Doel, duur en totaalprijs spreek je samen af. Geen verrassingen." },
+            { t: "Trainen in de privé studio", d: "Vanaf €299 per 4 weken, incl. onbeperkt Open Gym." },
+          ].map((s, i) => (
+            <li key={s.t} className="flex gap-3">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-sm font-bold text-background">{i + 1}</span>
+              <span>
+                <span className="block font-semibold">{s.t}</span>
+                <span className="block text-sm text-muted-foreground">{s.d}</span>
+              </span>
+            </li>
           ))}
-        </div>
-        <p className="mt-6 text-center text-sm text-muted-foreground">
-          Zelfstandig verder na je traject? <a href="/nl/open-gym" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">Bekijk Open Gym →</a>
-        </p>
-      </Section>
+        </ol>
+      </section>
 
-      {/* Traject vs single session */}
-      <Section bg="muted">
-        <SectionHeader overline="Waarom een traject" title="Traject of losse sessie?" description="Losse sessies blijven altijd mogelijk. Maar wie een doel heeft, komt verder met een plan." />
-        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <p className="mb-4 text-lg font-bold">Losse sessie</p>
-            <ul className="space-y-2 text-muted-foreground">
-              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Per keer boeken</li>
-              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Geen vast plan of einddatum</li>
-              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Geen vaste meetmomenten</li>
-              <li className="flex gap-2 text-sm"><X className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />Per sessie afgerekend</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border-2 border-brand bg-card p-6 shadow-brand-lg">
-            <p className="mb-4 text-lg font-bold">Traject</p>
-            <ul className="space-y-2">
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Een concreet doel met een einddatum</li>
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Een plan per week dat past in je agenda</li>
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Meetmomenten, zodat je ziet wat je bereikt</li>
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Vanaf €299 per 4 weken, incl. onbeperkt Open Gym</li>
-              <li className="flex gap-2 text-sm"><Check className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />Vaste totaalprijs vooraf afgesproken met je trainer</li>
-            </ul>
-          </div>
-        </div>
-        {/* DUO (chief 2026-09-21, from the operator's question "299 for one
-            person 4 weeks, 399 for two persons?"). Deliberately ONE sentence
-            here and NOT a third button on the trainer cards: the studio holds
-            max 4, so a duo fits, but a third CTA on a mobile card costs more
-            conversion than the duo line wins. Price keeps "vanaf" for the same
-            reason as the solo line: each trainer sets their own. */}
-        <p className="mx-auto mt-4 max-w-4xl text-center text-sm text-muted-foreground">
-          Samen trainen? Duo-transformatie vanaf €199 p.p. per 4 weken (voor twee, €399 totaal).
-        </p>
-      </Section>
-
-      {/* Trainers with their own coaching brand — link out to their sites */}
-      <Section>
-        <SectionHeader overline="Eigen methode" title="Trainers met een eigen merk en programma's" description="Veel trainers bij SculptClub hebben een eigen coachingbedrijf, met programma's en pakketten. Lees op hun site hoe ze werken en wat hun cliënten zeggen." />
-        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-3">
-          {methodCards.map((card) => {
-            const tr = trainers.find((x) => x.id === card.id);
-            if (!tr) return null;
-            const href = card.kind === "site" && tr.website ? tr.website.url : `/nl/${tr.slug.nl}`;
-            const external = card.kind === "site" && Boolean(tr.website);
-            return (
-              <a
-                key={card.id}
-                href={href}
-                {...(external ? { target: "_blank", rel: "noopener" } : {})}
-                data-trainer-website={external ? tr.name : undefined}
-                className="group flex gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-brand/60"
-              >
-                <Image src={tr.image} alt={`Foto van ${tr.name}, personal trainer bij SculptClub Amsterdam`} width={64} height={64} className="h-16 w-16 shrink-0 rounded-full object-cover object-top" />
-                <span className="min-w-0">
-                  <span className="block font-bold">{tr.name}</span>
-                  <span className="block text-sm font-medium text-brand">{card.label}</span>
-                  <span className="mt-1 block text-sm text-muted-foreground">{card.text}</span>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-foreground group-hover:text-brand">
-                    {external ? <Globe className="h-3.5 w-3.5" aria-hidden="true" /> : null}
-                    {external ? "Bekijk methode & ervaringen" : "Bekijk profiel"} {external ? "↗" : "→"}
-                  </span>
-                </span>
-              </a>
-            );
-          })}
-        </div>
-      </Section>
-
-      {/* All trainers — for visitors who prefer to browse */}
-      <Section bg="muted">
-        <SectionHeader overline="Alle trainers" title={`Liever zelf kiezen? Bekijk alle ${trainers.length}`} description="Filter op specialiteit of taal. De eerste intake is altijd gratis." />
-        <div id="trainer-grid" className="scroll-mt-24">
-          <TrainerFilterGrid trainers={trainers} locale="nl" />
-        </div>
-      </Section>
-
-      {/* Specific-need routing — self-segment for high-intent visitors */}
-      <Section>
-        <SectionHeader
-          overline="Specifieke behoefte?"
-          title="Direct naar jouw situatie"
-          description="Op zoek naar een trainer voor een specifieke levensfase of samenstelling? Gebruik de snelkoppelingen hieronder."
-        />
-        <FadeIn>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/nl/blog/vrouwelijke-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Vrouwelijke personal trainer</p>
-              <p className="text-sm text-muted-foreground">Gezina, Eva of Andrea: drie vrouwelijke trainers, privé studio, comfortabel leren krachttrainen.</p>
-            </a>
-            {/* De-orphaned 2026-08-28 — zero inbound internal links before this. */}
-            <a href="/nl/personal-trainer-jordaan" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Personal trainer in de Jordaan</p>
-              <p className="text-sm text-muted-foreground">Egelantiersgracht 424: privé studio in de Jordaan en het Centrum, geen keten, geen wachtrij.</p>
-            </a>
-            <a href="/nl/blog/engels-sprekende-personal-trainer-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Engels-sprekende trainer</p>
-              <p className="text-sm text-muted-foreground">Alle trainers coachen vloeiend in het Engels. Geschikt voor expats en internationale teams.</p>
-            </a>
-            <a href="/nl/blog/personal-trainer-zwangerschap-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Tijdens je zwangerschap</p>
-              <p className="text-sm text-muted-foreground">Veilig blijven trainen per trimester. Mobiliteit, core, bevallingsvoorbereiding.</p>
-            </a>
-            <a href="/nl/blog/personal-trainer-na-bevalling-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Na de bevalling (postpartum)</p>
-              <p className="text-sm text-muted-foreground">Geleidelijk terug naar kracht. Diastase, bekkenbodem, relaxine, met ervaring.</p>
-            </a>
-            <a href="/nl/blog/small-group-training-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Samen trainen (2–4 personen)</p>
-              <p className="text-sm text-muted-foreground">Duo of klein groepje met partner, vriend of collega’s. Kosten delen, privé studio.</p>
-            </a>
-            <a href="/nl/blog/personal-trainer-voor-senioren-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Voor senioren (50+)</p>
-              <p className="text-sm text-muted-foreground">Sterker blijven, balans behouden, valpreventie. Rustig opbouwen in een rustige ruimte.</p>
-            </a>
-            {/* S-finish (2026-06-02): injury-recovery niche — the gap in the
-                router, validated by Studio Performance Boost's injury segment.
-                Trainers Alex (herstel), Ibrahim (revalidatie), Andrea (techniek)
-                cover this. Links to the existing na-blessure blog. */}
-            <a href="/nl/blog/personal-trainer-na-blessure-amsterdam" className="group block rounded-xl border border-border/50 p-5 transition-colors hover:bg-muted">
-              <p className="font-semibold text-base group-hover:text-brand transition-colors mb-1">Herstel na een blessure</p>
-              <p className="text-sm text-muted-foreground">Veilig terug opbouwen na een blessure of operatie. Revalidatie-ervaren trainers, rustig tempo, techniek eerst.</p>
-            </a>
-          </div>
-        </FadeIn>
-      </Section>
-
-      {/* Trainer matching form */}
-      <Section bg="muted">
-        <SectionHeader
-          overline="Hulp nodig?"
-          title="Weet je niet welke trainer bij je past?"
-          description="Vul het formulier in en we helpen je de juiste trainer te vinden."
-        />
-        <FadeIn>
-          <TrainerMatchForm locale="nl" />
-        </FadeIn>
-      </Section>
-
-      {/* For trainers — recruitment cross-link */}
-      <Section>
-        <SectionHeader
-          overline="Voor trainers"
-          title="Personal trainer? Verkoop trajecten, geen uren."
-          description="Huur de studio vanaf €12/uur, houd 100% van je tarief en krijg klanten die met een doel binnenkomen. Deze pagina stuurt ze naar jou."
-        />
-
-        <div className="grid gap-8 sm:grid-cols-3">
-          {trainerBenefits.map((benefit, i) => (
-            <FadeIn key={benefit.title} delay={i * 0.15}>
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                  <benefit.icon className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold">{benefit.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {benefit.description}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
-        <FadeIn delay={0.4} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <ButtonLink href="/nl/voor-trainers" size="lg">
-            Bekijk voor-trainers info
-          </ButtonLink>
-          <ButtonLink
-            href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik ben personal trainer en wil graag meer weten over werken bij SculptClub")}`}
-            size="lg"
-            variant="outline"
-          >
-            WhatsApp ons
-          </ButtonLink>
-        </FadeIn>
-        <p className="mt-6 text-center text-sm">
-          <a href="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam" className="inline-flex min-h-11 items-center font-semibold text-brand hover:underline underline-offset-4">Zo prijs je een traject of pakket →</a>
-        </p>
-      </Section>
-
-      {/* Real Google reviews of the STUDIO (card mub833cd8fiu6l).
-          Reuses the shipped ReviewsPreview, already live on 6+ pages, rather
-          than building a second reviews surface: the quotes are real and
-          attributed (name + Google mark + Local Guide badge where true), and
-          the aggregate line reads siteConfig.rating, so the 5.0/19 stays in one
-          place — that single source is what stopped the 21-vs-19 overstatement
-          recurring. Studio reviews only; no per-trainer quotes here, because
-          trainers.ts testimonials render ONLY where a consented real quote
-          exists and none has been collected yet (blocked on mpy22kmsv5acpq). */}
+      {/* Real Google reviews of the STUDIO (card mub833cd8fiu6l); the aggregate
+          reads siteConfig.rating. Studio reviews only, no per-trainer quotes. */}
       <ReviewsPreview locale="nl" />
 
-      {/* FAQ */}
-      <Section>
-        <SectionHeader
-          overline="Veelgestelde vragen"
-          title="Wat je wilt weten voor je begint"
-          description="Alles wat eerste-keer-bezoekers ons vragen. Mis je iets? App ons."
-        />
-        <FadeIn>
-          <div className="max-w-2xl mx-auto">
-            <Accordion className="w-full">
-              {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`pt-faq-${i}`}>
-                  <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+      {/* Specific-need routing — compact links (several pages rely on these
+          as their only inbound internal link, e.g. /nl/personal-trainer-jordaan). */}
+      <section className="py-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <h2 className="mb-3 text-lg font-bold">Specifieke situatie?</h2>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { href: "/nl/blog/vrouwelijke-personal-trainer-amsterdam", label: "Vrouwelijke trainer" },
+              { href: "/nl/personal-trainer-jordaan", label: "Personal trainer in de Jordaan" },
+              { href: "/nl/blog/engels-sprekende-personal-trainer-amsterdam", label: "Engels-sprekende trainer" },
+              { href: "/nl/blog/personal-trainer-zwangerschap-amsterdam", label: "Tijdens je zwangerschap" },
+              { href: "/nl/blog/personal-trainer-na-bevalling-amsterdam", label: "Na de bevalling" },
+              { href: "/nl/blog/small-group-training-amsterdam", label: "Samen trainen (2–4)" },
+              { href: "/nl/blog/personal-trainer-voor-senioren-amsterdam", label: "Senioren (50+)" },
+              { href: "/nl/blog/personal-trainer-na-blessure-amsterdam", label: "Herstel na een blessure" },
+            ].map(({ href, label }) => (
+              <a key={href} href={href} className="inline-flex min-h-11 items-center rounded-full border border-border bg-card px-4 text-sm font-medium text-foreground transition-colors hover:border-brand hover:text-brand">
+                {label}
+              </a>
+            ))}
           </div>
-        </FadeIn>
+        </div>
+      </section>
+
+      {/* FAQ — kept in full: FaqJsonLd above must match visible questions. */}
+      <Section bg="muted">
+        <SectionHeader overline="Veelgestelde vragen" title="Wat je wilt weten voor je begint" />
+        <div className="mx-auto max-w-2xl">
+          <Accordion className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`pt-faq-${i}`}>
+                <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </Section>
 
-      {/* Bottom CTA */}
-      <Section bg="dark">
-        <SectionHeader
-          overline="Klaar om te beginnen?"
-          title="Kies je doel, plan je gratis intake"
-          description="Geen contract, geen verplichting. Je trainer maakt een plan met een vaste prijs vooraf. Jij beslist daarna."
+      {/* Bottom band — second studio photo, WhatsApp match + the match form
+          folded behind one tap. */}
+      <section className="relative isolate overflow-hidden bg-[#0B0907] text-white">
+        <Image
+          src="/images/studio/power-rack.jpeg"
+          alt="Power rack en halters in de SculptClub studio"
+          fill
+          sizes="100vw"
+          className="-z-10 object-cover"
         />
-        <FadeIn className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <ButtonLink
-            href="#doelen"
-            size="lg"
-            className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-brand-foreground rounded-xl px-8 py-6 text-base font-semibold"
-          >
-            Kies je doel
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </ButtonLink>
-          <ButtonLink
-            href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake plannen bij SculptClub.")}`}
-            external
-            size="lg"
-            variant="outline"
-            className="w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
-          >
-            <MessageCircle className="w-4 h-4" />
-            WhatsApp ons
-          </ButtonLink>
-        </FadeIn>
-        <FadeIn>
-          <p className="mt-6 text-center text-xs text-white/55">
-            +31 6 15 14 79 52 · meestal antwoorden we binnen het uur
+        <div className="absolute inset-0 -z-10 bg-black/70" aria-hidden="true" />
+        <div className="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-16">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Twijfel je? Wij matchen je.</h2>
+          <p className="mt-3 text-white/85">Geen contract, geen verplichting. Meestal antwoorden we binnen het uur.</p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={`https://wa.me/31615147952?text=${encodeURIComponent("Hoi! Ik wil graag een gratis intake plannen bij SculptClub.")}`}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-brand px-7 text-base font-bold text-brand-foreground transition-colors hover:bg-brand-dark sm:w-auto"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              WhatsApp ons
+            </a>
+            <a href="/nl/match-trainer" className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/40 px-6 text-base font-semibold text-white transition-colors hover:bg-white/10 sm:w-auto">
+              3 vragen, wij kiezen
+            </a>
+          </div>
+          <details className="group mx-auto mt-6 max-w-xl text-left">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-center gap-1 text-sm font-semibold text-white/85 hover:text-white [&::-webkit-details-marker]:hidden">
+              Of vul het formulier in
+              <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+            <div className="mt-4 rounded-2xl bg-card p-4 text-foreground">
+              <TrainerMatchForm locale="nl" />
+            </div>
+          </details>
+          <p className="mt-6 text-xs text-white/60">
+            +31 6 15 14 79 52 · Personal trainer zelf?{" "}
+            <a href="/nl/voor-trainers" className="font-semibold text-white underline underline-offset-4">Huur de studio</a>
           </p>
-        </FadeIn>
-      </Section>
+        </div>
+      </section>
     </PageLayout>
   );
 }
