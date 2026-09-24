@@ -182,6 +182,11 @@ export default function StudioRentalPageEN() {
         description="Rent a private training studio in Amsterdam Jordaan for freelance personal trainers and physiotherapists. Professional equipment, flexible by the hour, your own rates and clients."
         url="/en/studio-rental"
         priceRange="From €12 per hour"
+        offers={[
+          { name: "Half studio (1-to-1, max 2 people), 60 min", price: 12, url: "/en/studio-rental" },
+          { name: "Full studio (small group, 1 to 8 people), 60 min", price: 17, url: "/en/studio-rental" },
+          { name: "Free trial session for trainers, 60 min", price: 0, url: "/en/studio-rental/free-trial" },
+        ]}
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* ═══ Top: booking widget — NL parity at

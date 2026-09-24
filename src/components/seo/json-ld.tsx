@@ -593,12 +593,15 @@ export function ServiceJsonLd({
   url,
   priceRange,
   areaServed,
+  offers,
 }: {
   name: string;
   description: string;
   url: string;
   priceRange: string;
   areaServed?: string;
+  /** Optional hourly offers (price in EUR per 60 min; 0 = free trial). */
+  offers?: { name: string; price: number; url: string }[];
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -623,6 +626,28 @@ export function ServiceJsonLd({
       name: areaServed || "Amsterdam",
     },
     priceRange,
+    ...(offers && offers.length
+      ? {
+          offers: offers.map((o) => ({
+            "@type": "Offer",
+            name: o.name,
+            url: `${siteConfig.url}${o.url}`,
+            price: o.price.toFixed(2),
+            priceCurrency: "EUR",
+            ...(o.price > 0
+              ? {
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: o.price.toFixed(2),
+                    priceCurrency: "EUR",
+                    unitCode: "HUR",
+                    referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "HUR" },
+                  },
+                }
+              : {}),
+          })),
+        }
+      : {}),
   };
 
   return (

@@ -194,6 +194,11 @@ export default function StudioRentalPageNL() {
         description="Huur een privé trainingsruimte in Amsterdam Jordaan voor freelance personal trainers en fysiotherapeuten. Professionele apparatuur, flexibel per uur, eigen tarief en klanten."
         url="/nl/studio-huren"
         priceRange="Vanaf €12 per uur"
+        offers={[
+          { name: "Halve studio (1-op-1, max 2 personen), 60 min", price: 12, url: "/nl/studio-huren" },
+          { name: "Hele studio (kleine groep, 1 tot 8 personen), 60 min", price: 17, url: "/nl/studio-huren" },
+          { name: "Gratis proefsessie voor trainers, 60 min", price: 0, url: "/nl/studio-huren/gratis-test" },
+        ]}
       />
       <FaqJsonLd faqs={faqJsonLdData} />
       {/* ═══ Top: booking widget — operator directive 2026-05-27:
