@@ -4,7 +4,7 @@ import { Section, SectionHeader } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
+import { acuityFreeTrials, whatsappLinks, openGymSinglePrice, openGymSummerDeal } from "@/config/acuity";
 import { MessageCircle, Clock, MapPin, Users, Dumbbell } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -262,6 +262,13 @@ export default function GratisProeflesPage() {
           description="Bevalt het? Dan kies je zelf hoe je verdergaat — of je laat het gewoon hierbij."
         />
         <div className="mx-auto max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground">
+          {/* 2026-09-24: the next step's price, read from config so it cannot drift from
+              /nl/prijzen (the reason 11b757b linked instead of restating). */}
+          <p className="text-foreground">
+            Een losse sessie kost €{openGymSinglePrice}, zonder lidmaatschap. Onbeperkt trainen:
+            €{openGymSummerDeal.active ? openGymSummerDeal.priceDeal : openGymSummerDeal.priceRegular} per 4 weken
+            {openGymSummerDeal.active ? " (introductieprijs voor nieuwe leden)" : ""}, altijd opzegbaar.
+          </p>
           <p>
             Na je probeersessie zit je nergens aan vast. Je kunt losse sessies
             blijven boeken of een plan van vier weken nemen; er is ook een

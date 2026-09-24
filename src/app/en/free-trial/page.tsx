@@ -4,7 +4,7 @@ import { Section, SectionHeader } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { AcuityEmbed } from "@/components/marketing/acuity-embed";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
-import { acuityFreeTrials, whatsappLinks } from "@/config/acuity";
+import { acuityFreeTrials, whatsappLinks, openGymSinglePrice, openGymSummerDeal } from "@/config/acuity";
 import { MessageCircle, Clock, MapPin, Users, Dumbbell } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -263,6 +263,12 @@ export default function FreeTrialPage() {
           description="If you like it, you choose how to continue — or you simply leave it here."
         />
         <div className="mx-auto max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground">
+          {/* 2026-09-24: see the NL twin; prices read from config. */}
+          <p className="text-foreground">
+            A single session costs €{openGymSinglePrice}, no membership needed. Unlimited training:
+            €{openGymSummerDeal.active ? openGymSummerDeal.priceDeal : openGymSummerDeal.priceRegular} per 4 weeks
+            {openGymSummerDeal.active ? " (introductory price for new members)" : ""}, cancel anytime.
+          </p>
           <p>
             After your trial you are tied to nothing. You can keep booking single
             sessions or take a four-week plan; there is also a student rate on
