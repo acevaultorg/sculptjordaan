@@ -19,6 +19,7 @@ import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/jso
 import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { PhotoSlideshow } from "@/components/marketing/photo-slideshow";
 import { StudioRateTable } from "@/components/marketing/studio-rate-table";
+import { WeekendAvailability } from "@/components/marketing/weekend-availability";
 import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt, Check } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -136,6 +137,7 @@ export default function BoekStudioPageNL() {
           <p className="mt-1 text-sm text-muted-foreground">
             In het weekend dezelfde prijs. Zondag en zaterdagmiddag zijn meestal nog vrij.
           </p>
+          <WeekendAvailability locale="nl" kind="studio" className="mt-1 text-sm text-muted-foreground" />
         </div>
 
         <RentalTabs
