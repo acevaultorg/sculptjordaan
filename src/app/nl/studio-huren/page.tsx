@@ -270,6 +270,19 @@ export default function StudioRentalPageNL() {
             of ClassPass, but because a concrete promise goes stale the moment
             somebody books. That reason survives; the ClassPass one does not.
         */}
+        {/* First-timer trial entry ABOVE the fold (2026-09-24, Subchief 3).
+            Measured: studio trial -> paying renter 52% (15/29, card muevvylus84iuu),
+            but only ~10 of 79 users on this page reached the trial page in 60d
+            (GA4 nav_click, 2026-07-26..09-24) because its only entry sat below the
+            price table. The booking table still leads for returning renters
+            (operator 2026-07-04); this is one line, not a block. */}
+        <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center gap-1 text-center">
+          <ButtonLink href="/nl/studio-huren/gratis-test" variant="outline" size="lg" className="w-full sm:w-auto">
+            Eerste keer hier? Probeer de studio gratis
+          </ButtonLink>
+          <p className="text-xs text-muted-foreground">Eén gratis sessie met je eigen klant, vrijblijvend.</p>
+        </div>
+
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
           <p className="text-sm font-semibold text-primary">
             🎯 De meeste ruimte: zondag, en zaterdagmiddag &amp; -avond
