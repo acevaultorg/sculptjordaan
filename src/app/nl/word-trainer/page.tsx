@@ -160,7 +160,10 @@ export default function WordTrainerNL() {
                   Pre-fix: primary was WhatsApp + secondary "Bekijk studio
                   & tarieven" → sent trainer AWAY to studio-huren losing
                   the trainer-funnel context. Operator: "vage funnels!!"
-                  Now: structured first-touch via form, WA stays available. */}
+                  Now: structured first-touch via form, WA stays available.
+                  2026-09-24: the BOTTOM secondary button goes to the trainer free-trial page
+                  (studio trial -> paying renter 52%, card muevvylus84iuu) instead of the
+                  general studio page. Hero untouched. */}
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <ButtonLink
                   href="#aanmelden"
@@ -450,12 +453,12 @@ export default function WordTrainerNL() {
                 WhatsApp ons
               </ButtonLink>
               <ButtonLink
-                href="/nl/studio-huren"
+                href="/nl/studio-huren/gratis-test"
                 variant="outline"
                 size="lg"
-                className="plausible-event-name=word_trainer_bottom_studio_huren w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+                className="plausible-event-name=word_trainer_bottom_gratis_test w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
-                Bekijk tarieven
+                Gratis proefuur boeken
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
             </div>

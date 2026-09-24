@@ -452,12 +452,12 @@ export default function BecomeTrainerEN() {
                 WhatsApp us
               </ButtonLink>
               <ButtonLink
-                href="/en/studio-rental"
+                href="/en/studio-rental/free-trial"
                 variant="outline"
                 size="lg"
-                className="plausible-event-name=become_trainer_bottom_studio_rental w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
+                className="plausible-event-name=become_trainer_bottom_free_trial w-full sm:w-auto rounded-xl px-8 py-6 text-base font-semibold border-white/20 text-white hover:bg-white/10"
               >
-                View rates
+                Book a free trial hour
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
             </div>
