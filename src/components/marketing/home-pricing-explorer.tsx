@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button-link";
 import { trackTabSwitch } from "@/lib/tracking";
@@ -43,8 +43,34 @@ import type { Locale } from "@/config/site";
 
 type Tab = "hourly" | "packages" | "membership";
 
+/**
+ * Audience switch (operator 2026-09-24, card mufc5tthvb0zx6: "there must be a
+ * switch above this, like 'for trainers' and 'for individuals'"). It sits ABOVE
+ * the payment-axis pills and filters them: "self" shows Open Gym per hour +
+ * memberships; "trainers" shows half/full studio per hour + credit packages +
+ * the free studio test. Default "self". The choice is remembered per browser
+ * (localStorage, best-effort) and deep-linkable: ?voor=trainers | ?voor=jezelf
+ * (EN also accepts ?for=trainers | ?for=yourself). No prices changed.
+ */
+type Audience = "self" | "trainers";
+const AUDIENCE_KEY = "sc_home_audience";
+const TABS_FOR: Record<Audience, Tab[]> = {
+  self: ["hourly", "membership"],
+  trainers: ["hourly", "packages"],
+};
+
+function audienceFromUrl(): Audience | null {
+  if (typeof window === "undefined") return null;
+  const p = new URLSearchParams(window.location.search);
+  const v = (p.get("voor") || p.get("for") || "").toLowerCase();
+  if (v === "trainers" || v === "trainer") return "trainers";
+  if (v === "jezelf" || v === "yourself" || v === "self") return "self";
+  return null;
+}
+
 const COPY = {
   nl: {
+    audience: { self: "Voor jezelf", trainers: "Voor trainers" },
     title: "Open Gym & studio huren: alle tarieven",
     subtitle:
       "Train zelf of huur de ruimte als trainer. Geen abonnement verplicht, geen contract, altijd gratis annuleren.",
@@ -115,6 +141,7 @@ const COPY = {
     book: "Boek",
   },
   en: {
+    audience: { self: "For yourself", trainers: "For trainers" },
     title: "Open Gym & studio rental: all rates",
     subtitle:
       "Train on your own or rent the space as a trainer. No membership required, no contract, always free cancellation.",
@@ -211,6 +238,30 @@ function PriceButton({
 
 export function HomePricingExplorer({ locale }: { locale: Locale }) {
   const [tab, setTab] = useState<Tab>("hourly");
+  const [audience, setAudienceState] = useState<Audience>("self");
+
+  // URL wins over the remembered choice; both are read after mount so the
+  // static HTML (default "self") hydrates without a mismatch.
+  useEffect(() => {
+    const fromUrl = audienceFromUrl();
+    let remembered: Audience | null = null;
+    try {
+      const v = window.localStorage.getItem(AUDIENCE_KEY);
+      if (v === "self" || v === "trainers") remembered = v;
+    } catch {}
+    const next = fromUrl ?? remembered;
+    if (next) setAudienceState(next);
+  }, []);
+
+  const setAudience = (a: Audience) => {
+    setAudienceState(a);
+    if (!TABS_FOR[a].includes(tab)) setTab("hourly");
+    try {
+      window.localStorage.setItem(AUDIENCE_KEY, a);
+    } catch {}
+    trackTabSwitch("home_pricing_audience", a);
+  };
+  const shownTab: Tab = TABS_FOR[audience].includes(tab) ? tab : "hourly";
   const c = COPY[locale];
   const deal = openGymSummerDeal;
 
@@ -234,11 +285,11 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
         trackTabSwitch("home_pricing", key);
       }}
       className={`flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold transition ${
-        tab === key
+        shownTab === key
           ? "bg-primary text-primary-foreground shadow-sm"
           : "text-muted-foreground hover:text-foreground"
       }`}
-      aria-pressed={tab === key}
+      aria-pressed={shownTab === key}
     >
       <span>{label}</span>
       {badge && (
@@ -255,18 +306,41 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
       <FadeIn>
         <div className="mx-auto max-w-2xl">
           {/* Payment-axis toggle — house pill shape (RentalTabs/OpenGymPlanTabs) */}
+          {/* Audience switch — same pill shape, sits above the payment axis */}
+          <div
+            className="mb-3 flex gap-1 rounded-full border border-border bg-card p-1 sm:gap-2"
+            role="group"
+            aria-label={locale === "nl" ? "Voor wie" : "Who is it for"}
+          >
+            {(["self", "trainers"] as Audience[]).map((a) => (
+              <button
+                key={a}
+                type="button"
+                onClick={() => setAudience(a)}
+                className={`flex min-h-11 flex-1 items-center justify-center rounded-full px-3 py-2 text-sm font-semibold transition ${
+                  audience === a
+                    ? "bg-foreground text-background shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+                aria-pressed={audience === a}
+              >
+                {c.audience[a]}
+              </button>
+            ))}
+          </div>
           <div className="flex gap-1 rounded-full border border-border bg-card p-1 sm:gap-2">
             {tabButton("hourly", c.tabs.hourly)}
-            {tabButton("packages", c.tabs.packages, c.savePackages)}
-            {tabButton("membership", c.tabs.membership, c.saveMembership)}
+            {audience === "trainers" && tabButton("packages", c.tabs.packages, c.savePackages)}
+            {audience === "self" && tabButton("membership", c.tabs.membership, c.saveMembership)}
           </div>
 
           <div className="mt-4 rounded-2xl border border-border bg-card">
-            {tab === "hourly" && (
+            {shownTab === "hourly" && (
               <div>
                 <p className="px-5 pt-4 text-sm text-muted-foreground">{c.hourly.note}</p>
                 {/* Capacity rows: 1 persoon → 2 personen → hele studio */}
                 <div className="divide-y divide-border">
+                  {audience === "self" && (
                   <div className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="font-semibold">
@@ -288,6 +362,8 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       />
                     </div>
                   </div>
+                  )}
+                  {audience === "trainers" && (
                   <div className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="font-semibold">
@@ -309,6 +385,8 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       />
                     </div>
                   </div>
+                  )}
+                  {audience === "trainers" && (
                   <div className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="font-semibold">
@@ -330,11 +408,12 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
                       />
                     </div>
                   </div>
+                  )}
                 </div>
               </div>
             )}
 
-            {tab === "packages" && (
+            {shownTab === "packages" && (
               <div>
                 <p className="px-5 pt-4 text-sm text-muted-foreground">{c.packages.forWho}</p>
                 <div className="divide-y divide-border">
@@ -389,7 +468,7 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
               </div>
             )}
 
-            {tab === "membership" && (
+            {shownTab === "membership" && (
               <div className="space-y-4 p-5">
                 <p className="text-sm text-muted-foreground">{c.membership.forWho}</p>
                 <div>
@@ -461,26 +540,28 @@ export function HomePricingExplorer({ locale }: { locale: Locale }) {
             )}
           </div>
 
-          {/* Free-trial escape hatch — both funnels, one quiet line */}
+          {/* Free-trial escape hatch — only the one that fits the chosen audience */}
           <p className="mt-3 text-center text-sm text-muted-foreground">
             {c.tryFirst}{" "}
-            <Link
-              href={gymTrialHref}
-              className="font-medium text-primary hover:underline"
-              data-intent="open_gym"
-              data-pricing="free"
-            >
-              {c.tryGym}
-            </Link>
-            {" · "}
-            <Link
-              href={studioTrialHref}
-              className="font-medium text-primary hover:underline"
-              data-intent="studio_rental"
-              data-pricing="free"
-            >
-              {c.tryStudio}
-            </Link>
+            {audience === "self" ? (
+              <Link
+                href={gymTrialHref}
+                className="font-medium text-primary hover:underline"
+                data-intent="open_gym"
+                data-pricing="free"
+              >
+                {c.tryGym}
+              </Link>
+            ) : (
+              <Link
+                href={studioTrialHref}
+                className="font-medium text-primary hover:underline"
+                data-intent="studio_rental"
+                data-pricing="free"
+              >
+                {c.tryStudio}
+              </Link>
+            )}
           </p>
         </div>
       </FadeIn>
