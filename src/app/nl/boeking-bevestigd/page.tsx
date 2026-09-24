@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
@@ -37,6 +37,16 @@ import { siteConfig } from "@/config/site";
  * Fix BOTH, and verify in GA4 (eventValue on `purchase` by URL), not in the bundle.
  */
 export default function BookingConfirmedNL() {
+  // What was booked decides the next-step block (2026-09-24). Separate effect on purpose:
+  // the conversion effect below returns early on every real booking (analytics.tsx sets
+  // __scBookingFired first), so detection inside it would never run.
+  // 60d GA4: 125 of 193 confirmations are studio credit bookings, 26 paid studio hours,
+  // 26 Open Gym, ~7 free trials. The trainer block fits none of the first three.
+  const [kind, setKind] = useState<"studio" | "opengym" | "other">("other");
+  useEffect(() => {
+    const t = (new URLSearchParams(window.location.search).get("type") ?? "").toLowerCase();
+    setKind(t.includes("studio") ? "studio" : t.includes("gym") ? "opengym" : "other");
+  }, []);
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -173,25 +183,53 @@ export default function BookingConfirmedNL() {
               countdown timer, NO "expires in X hours", just realistic
               "binnen 7 dagen" framing (post-intake decision window).
               Discount is operator-honoured (no enforcement code-side). */}
-          <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
-            {/* 2026-09-23 (card mud05ioligxhf8): the "10% on your first package" deal and the
-                €179/€319/€449 grid existed nowhere in config and no trainer had agreed to them;
-                each trainer sets their own packages. Honest version: no prices, no discount claim. */}
-            <h3 className="text-xl font-bold text-white">Wil je daarna verder?</h3>
-            <p className="mt-2 text-sm text-white/75 leading-relaxed">
-              Elke trainer heeft eigen pakketten en prijzen. Je trainer laat ze zien na je intake.
-              Geen verplichting, je beslist daarna of het past.
-            </p>
-            <a
-              href="https://wa.me/31615147952?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+pakketten+na+m%27n+intake."
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="boeking-bevestigd-upsell-whatsapp"
-              className="plausible-event-name=booking_confirmed_upsell_whatsapp mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
-            >
-              WhatsApp je trainer over het pakket
-            </a>
-          </div>
+          {kind === "other" && (
+            <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
+              {/* 2026-09-23 (card mud05ioligxhf8): the "10% on your first package" deal and the
+                  €179/€319/€449 grid existed nowhere in config and no trainer had agreed to them;
+                  each trainer sets their own packages. Honest version: no prices, no discount claim. */}
+              <h3 className="text-xl font-bold text-white">Wil je daarna verder?</h3>
+              <p className="mt-2 text-sm text-white/75 leading-relaxed">
+                Elke trainer heeft eigen pakketten en prijzen. Je trainer laat ze zien na je intake.
+                Geen verplichting, je beslist daarna of het past.
+              </p>
+              <a
+                href="https://wa.me/31615147952?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+pakketten+na+m%27n+intake."
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="boeking-bevestigd-upsell-whatsapp"
+                className="plausible-event-name=booking_confirmed_upsell_whatsapp mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
+              >
+                WhatsApp je trainer over het pakket
+              </a>
+            </div>
+          )}
+          {kind === "studio" && (
+            <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
+              <h3 className="text-xl font-bold text-white">Huur je vaker? Dan is een strippenkaart goedkoper.</h3>
+              <p className="mt-2 text-sm text-white/75 leading-relaxed">Met een strippenkaart koop je studiotegoed met 10% tot 23% korting. Je tegoed is 1 jaar geldig, handig als je elke week klanten traint.</p>
+              <Link
+                href="/nl/prijzen"
+                data-cta="booking-confirmed-next-studio"
+                className="mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground font-bold text-sm transition-colors"
+              >
+                Bekijk de strippenkaarten <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          )}
+          {kind === "opengym" && (
+            <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
+              <h3 className="text-xl font-bold text-white">Vaker trainen?</h3>
+              <p className="mt-2 text-sm text-white/75 leading-relaxed">Met het Instapplan train je 4 keer per 4 weken voor €29. Onbeperkt kan ook. Geen contract, altijd opzegbaar.</p>
+              <Link
+                href="/nl/open-gym"
+                data-cta="booking-confirmed-next-opengym"
+                className="mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground font-bold text-sm transition-colors"
+              >
+                Bekijk de Open Gym-plannen <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          )}
 
           {/* Anticipation image — added 2026-05-16. Swapped same session
               from portrait studio/training-dumbbells-smile.jpg (cropped
