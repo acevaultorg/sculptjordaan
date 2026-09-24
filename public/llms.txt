@@ -1,6 +1,6 @@
 # SculptClub
 
-> Boutique private personal training studio in Amsterdam Jordaan. Personal training from €45/session, Open Gym from €29/4 weeks, studio rental from €12/hour. No contracts, free first intake, cancel anytime. Daily 06:00–22:00. Rated 5.0 on Google.
+> Boutique private personal training studio in Amsterdam Jordaan. Personal training from €299 per 4 weeks (unlimited Open Gym included), Open Gym from €29/4 weeks, studio rental from €12/hour. No contracts, free first intake, cancel anytime. Daily 06:00–22:00. Rated 5.0 on Google.
 
 SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan. Three services: personal training with independent trainers (trainers set their own rates and keep 100% of them, renting the room by the hour), Open Gym memberships in 4-week cycles with no lock-in, and studio rental by the hour for freelance trainers and physiotherapists. Open daily 06:00–22:00. Founded 2025. KvK 64708101 / VAT NL002250100B57.
 
@@ -38,15 +38,15 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 
 ## Pricing
 
-- Personal training: from €45/session — trainers set their own rates, first intake free
+- Personal training: SCULPT TRANSFORMATION from €299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own rates; first intake free
 - Open Gym Instapplan: 4 sessions, €29/4 weeks (€7.25/session)
 - Open Gym Populair: 8 sessions, €49/4 weeks (€6.13/session)
 - Open Gym Onbeperkt: unlimited, €79/4 weeks (currently €49/4 weeks for new members, price-locked for as long as membership lasts)
 - Open Gym single session: €10
 - Studio rental half-studio: €12/60min, €17/90min
 - Studio rental full studio: €17/60min, €24/90min
-- Studio rental packages: Starter €89 (10% off), Routine €179 (15% off), Pro €299 (20% off), Volume €499 (23% off)
-- Free studio rental tryout: yes, one
+- Studio rental packages (studio credit, valid 1 year): Starter €89 for €99 credit (10% off), Routine €179 for €210 (15% off), Pro €299 for €375 (20% off), Volume €499 for €650 (23% off)
+- Free studio rental tryout: yes, one free hour for trainers, no credit card: https://sculptclub.nl/nl/studio-huren/gratis-test (EN: https://sculptclub.nl/en/studio-rental/free-trial)
 - Invoicing: available for package purchases (not single hours)
 - All prices include 9% VAT (Dutch sport rate)
 
@@ -76,6 +76,8 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 - [Open Gym (EN)](https://sculptclub.nl/en/open-gym): self-train without a membership, 4-week cycles
 - [Studio rental (NL)](https://sculptclub.nl/nl/studio-huren): private studio rental for freelance trainers and physiotherapists
 - [Studio rental (EN)](https://sculptclub.nl/en/studio-rental): private studio rental for freelance trainers and physiotherapists
+- [Free studio trial for trainers (NL)](https://sculptclub.nl/nl/studio-huren/gratis-test): book one free hour in the studio
+- [Free studio trial for trainers (EN)](https://sculptclub.nl/en/studio-rental/free-trial): book one free hour in the studio
 - [Pricing (NL)](https://sculptclub.nl/nl/prijzen): all rates and packages
 - [Pricing (EN)](https://sculptclub.nl/en/pricing): all rates and packages
 - [First visit (NL)](https://sculptclub.nl/nl/eerste-bezoek): what to expect on your first visit
