@@ -272,6 +272,42 @@ FRAME_SETS["studio-leeg-001"] = [
   },
 ];
 
+// ── trainer-arithmetic-002 + trainer-inbegrepen-001 (2026-09-24, Subchief 2) ─────
+// Trainer acquisition series. NO faces: consent for the people in the 17 Aug shoot is
+// unconfirmed, so every frame is a room/equipment photo from public/images/studio.
+// Facts only from CLAUDE.md: €12 half / €17 full per 60 min, no contract, first session
+// free, 06:00-22:00, dumbbells 4-40 kg, "wifi, muziek en schoonmaak inbegrepen" (FAQ).
+// Measured reason for the series: studio trial -> paying renter 52% (card muevvylus84iuu),
+// trainer pages reached via Instagram/Facebook, not search.
+FRAME_SETS["trainer-arithmetic-002"] = [
+  { id: "01-hook", photoAbs: "public/images/studio/power-rack.jpeg", focus: "40% 55%",
+    kicker: "Voor personal trainers", head: "Je eigen studio in de&nbsp;Jordaan.", big: "€240", sub: "per maand" },
+  { id: "02-rekensom", photoAbs: "public/images/studio/studio-interior-3.jpeg", focus: "50% 55%",
+    kicker: "De rekensom", head: "20 uur × €12",
+    body: "Halve studio, per uur. Hele studio €17. Je betaalt alleen de uren die je echt gebruikt." },
+  { id: "03-vergelijk", photoAbs: "public/images/studio/studio-interior-1.jpeg", focus: "50% 50%",
+    kicker: "Elders", head: "Vast bedrag per maand. Of minimaal vijf uur per&nbsp;week.",
+    body: "Hier: geen contract, geen minimum, geen abonnement." },
+  { id: "04-jouw-klanten", photoAbs: "public/images/studio/dumbbell-rack.jpeg", focus: "50% 55%",
+    kicker: "Jouw praktijk", head: "Jouw klanten. Jouw tarief.", body: "Wij rekenen alleen de huur van de ruimte." },
+  { id: "05-cta", photoAbs: "public/images/studio/facade-sculptclub.jpg", focus: "50% 45%",
+    kicker: "Egelantiersgracht 424", head: "Eerste sessie gratis.", body: "Even voelen of het klopt. Dagelijks 06:00–22:00." },
+];
+FRAME_SETS["trainer-inbegrepen-001"] = [
+  { id: "01-hook", photoAbs: "public/images/studio/studio-interior-2.jpeg", focus: "50% 50%",
+    kicker: "Studio huren · Jordaan", head: "Wat je krijgt voor €12 per&nbsp;uur." },
+  { id: "02-kracht", photoAbs: "public/images/studio/studio-interior-3.jpeg", focus: "45% 55%",
+    kicker: "Kracht", head: "Rack, bank en kabels.", body: "Alles voor zwaar werk met je klant." },
+  { id: "03-dumbbells", photoAbs: "public/images/studio/sculpt-wall-logo.jpeg", focus: "55% 55%",
+    kicker: "Losse gewichten", head: "Dumbbells van 4 tot 40&nbsp;kg.", body: "Plus kettlebells." },
+  { id: "04-conditie", photoAbs: "public/images/studio/echo-bike-corner.jpg", focus: "55% 55%",
+    kicker: "Conditie", head: "Echo Bike en sled.", body: "Voor intervallen en finishers." },
+  { id: "05-inbegrepen", photoAbs: "public/images/studio/boutique-corner.jpg", focus: "50% 50%",
+    kicker: "Inbegrepen", head: "Wifi, muziek en schoonmaak.", body: "Hele studio voor jezelf: €17 per uur." },
+  { id: "06-cta", photoAbs: "public/images/studio/facade-sculptclub.jpg", focus: "50% 45%",
+    kicker: "Egelantiersgracht 424", head: "Eerste sessie gratis.", body: "Geen contract, geen minimum. Dagelijks 06:00–22:00." },
+];
+
 const FRAMES = FRAME_SETS[POST] || FRAME_SETS["trainer-arithmetic-001"];
 
 const css = (w, h, textTop, textBottom) => `
