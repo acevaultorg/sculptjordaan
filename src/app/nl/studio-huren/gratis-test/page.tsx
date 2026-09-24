@@ -203,7 +203,7 @@ export default function GratisTestStudioHurenNL() {
             </div>
             <ol className="grid gap-6 sm:grid-cols-3">
               {[
-                { n: "1", title: "Kies een moment", text: "Boek een tijd die jou uitkomt. Duurt 30 seconden. Geen creditcard, niks invullen." },
+                { n: "1", title: "Kies een moment", text: "Boek een tijd die jou uitkomt. Duurt 30 seconden: alleen je naam, telefoon en e-mail. Geen creditcard." },
                 { n: "2", title: "Loop binnen & train", text: "Je krijgt de deurcode via WhatsApp. 60 minuten in de studio, alleen of met je klant." },
                 { n: "3", title: "Beslis vrijblijvend", text: "Bevalt het? Huur vanaf €12/uur, betaal per boeking. Niks voor jou? Gewoon weglopen. Er valt niks op te zeggen." },
               ].map((s) => (

@@ -181,7 +181,7 @@ export default function FreeTrialStudioRentalEN() {
             </div>
             <ol className="grid gap-6 sm:grid-cols-3">
               {[
-                { n: "1", title: "Book a time", text: "Pick any slot that suits you. Takes 30 seconds. No credit card, nothing to fill in." },
+                { n: "1", title: "Book a time", text: "Pick any slot that suits you. Takes 30 seconds: just your name, phone and email. No credit card." },
                 { n: "2", title: "Walk in & train", text: "You get the door code via WhatsApp. 60 minutes in the studio, alone or with a client." },
                 { n: "3", title: "Decide freely", text: "Like it? Rent from €12/hr, pay per booking. Not for you? Just walk away. There's nothing to cancel." },
               ].map((s) => (
