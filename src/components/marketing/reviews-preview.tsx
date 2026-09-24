@@ -46,19 +46,48 @@ const reviews = [
   },
 ];
 
-export function ReviewsPreview({ locale }: { locale: Locale }) {
+/* Trainer-facing set for the studio-rental trial pages (2026-09-24). Quoted from the live
+   Google listing, read 2026-09-24; only whole sentences as written there. Why: the studio
+   trial is the money page (trial -> paying renter 52%), and a trainer trusts other trainers. */
+const trainerReviews = [
+  {
+    name: "Sergei Novozhilov",
+    initial: "S",
+    color: "bg-sky-700",
+    text: {
+      nl: "Ik gebruik SculptClub voor mijn personal training sessies en ik hou echt van de sfeer. Schoon, professioneel en perfect om met klanten één-op-één of in kleine groepen te werken. Echt een aanrader.",
+      en: "I've been using SculptClub for my personal training sessions and really love the atmosphere. Clean, professional, and perfect for working with clients one-on-one or in small groups. Highly recommended.",
+    },
+    rating: 5,
+  },
+  {
+    name: "Solly Muwaniri",
+    initial: "S",
+    color: "bg-emerald-700",
+    badge: "Local Guide",
+    text: {
+      nl: "Een knusse, privé, goed uitgeruste gym in het hart van de Jordaan. Ik hou van de flexibiliteit om hier je personal training klanten te trainen.",
+      en: "A cosy, private, well equipped gym in the heart of Jordaan. I like the flexibility it offers, to train your personal training clients there.",
+    },
+    rating: 5,
+  },
+  reviews[2], // Dara Thompson
+];
+
+export function ReviewsPreview({ locale, audience }: { locale: Locale; audience?: "trainer" }) {
+  const list = audience === "trainer" ? trainerReviews : reviews;
   const t =
     locale === "nl"
       ? {
           overline: "Google Reviews",
-          title: "Wat onze klanten zeggen",
+          title: audience === "trainer" ? "Wat trainers zeggen" : "Wat onze klanten zeggen",
           cta: "Bekijk alle reviews op Google",
           ctaHref: siteConfig.google,
           google: `${siteConfig.rating.value} sterren op Google (${siteConfig.rating.count} reviews)`,
         }
       : {
           overline: "Google Reviews",
-          title: "What our clients say",
+          title: audience === "trainer" ? "What trainers say" : "What our clients say",
           cta: "View all reviews on Google",
           ctaHref: siteConfig.google,
           google: `${siteConfig.rating.value} stars on Google (${siteConfig.rating.count} reviews)`,
@@ -68,7 +97,7 @@ export function ReviewsPreview({ locale }: { locale: Locale }) {
     <Section>
       <SectionHeader overline={t.overline} title={t.title} description={t.google} />
       <div className="grid sm:grid-cols-3 gap-6">
-        {reviews.map((review, i) => (
+        {list.map((review, i) => (
           <FadeIn key={review.name} delay={i * 0.1}>
             <Link href={reviewsHref[locale]} className="block h-full">
               <div className="h-full cursor-pointer rounded-2xl border border-border/50 bg-card p-6 shadow-brand-sm hover:shadow-brand-lg transition-shadow duration-300">

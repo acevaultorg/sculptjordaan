@@ -275,7 +275,7 @@ export default function GratisTestStudioHurenNL() {
 
       {/* Social proof — echte Google-reviews (5.0). Een trainer die twijfelt of
           deze studio serieus is, wil andermans woorden, niet de onze. */}
-      <ReviewsPreview locale="nl" />
+      <ReviewsPreview locale="nl" audience="trainer" />
 
       {/* Locatie — waar IS het? Praktische drempel weg: adres, kaart, route,
           openingstijden. De gracht in de Jordaan is ook een verkoopargument. */}

@@ -252,7 +252,7 @@ export default function FreeTrialStudioRentalEN() {
 
       {/* Social proof — real Google reviews (5.0). A trainer deciding whether
           this studio is credible wants other people's words, not ours. */}
-      <ReviewsPreview locale="en" />
+      <ReviewsPreview locale="en" audience="trainer" />
 
       {/* Location — where IS this? Practical objection killer: address, map,
           route planner, hours. Canal-side Jordaan is also a selling point. */}
