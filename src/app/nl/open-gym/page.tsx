@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityPaidSessions, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
+import { WeekendAvailability } from "@/components/marketing/weekend-availability";
 import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
@@ -244,6 +245,7 @@ export default function OpenGymPageNL() {
                   Gratis annuleren
                 </span>
               </div>
+              <WeekendAvailability locale="nl" />
               {/* Losse sessie ⟷ Abonnement toggle. Operator 2026-07-25: visitors
                   were not learning that Open Gym HAS memberships — all three
                   prices lived far below the fold, so the hero only ever showed

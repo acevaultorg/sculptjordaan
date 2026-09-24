@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { acuityPaidSessions, openGymSummerDeal, openGymStudentDeal } from "@/config/acuity";
 import { LandingVideo } from "@/components/marketing/landing-video";
+import { WeekendAvailability } from "@/components/marketing/weekend-availability";
 import { OpenGymPlanTabs } from "@/components/marketing/open-gym-plan-tabs";
 import { FaqJsonLd, BreadcrumbJsonLd, ServiceJsonLd, OfferCatalogJsonLd } from "@/components/seo/json-ld";
 import { Clock, Key, Dumbbell, Info, Check } from "lucide-react";
@@ -243,6 +244,7 @@ export default function OpenGymPageEN() {
                   Free cancellation
                 </span>
               </div>
+              <WeekendAvailability locale="en" />
               {/* Single-session ⟷ Membership toggle — see the NL twin for the
                   full rationale (operator 2026-07-25: make memberships
                   discoverable in the hero). Defaults to the membership tab. */}
