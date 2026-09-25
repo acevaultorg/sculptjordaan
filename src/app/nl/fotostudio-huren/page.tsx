@@ -38,7 +38,7 @@ const gallery = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "Fotostudio huren Amsterdam Jordaan — vanaf €17/uur, privé | SculptClub" },
+  title: { absolute: "Fotostudio huren Amsterdam Jordaan — hele studio €17/uur | SculptClub" },
   description:
     "Huur onze privé studio in de Jordaan voor een fotoshoot of content: daglicht door het dakraam, een industriële gym als decor en de gracht voor de deur. Hele studio €17 per uur, dagelijks 06:00–22:00, gratis annuleren.",
   keywords: [
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: PATH,
-    title: "Fotostudio huren in de Jordaan — privé, vanaf €17/uur",
+    title: "Fotostudio huren in de Jordaan — hele studio €17 per uur",
     description: "Daglicht, een industriële gym als decor en de gracht voor de deur. Per uur te boeken.",
     images: ["/images/studio/training-barbell-skylight.jpg"],
   },
@@ -147,7 +147,7 @@ export default function FotostudioHurenPage() {
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink
                 href={acuityPaidSessions.studioRentalFull60}
-                size="lg"
+                size="tall"
                 className="w-full sm:w-auto"
                 data-intent="studio_rental"
                 data-pricing="paid"
@@ -157,7 +157,7 @@ export default function FotostudioHurenPage() {
               <ButtonLink
                 href={whatsappLinks.studioNl}
                 external
-                size="lg"
+                size="tall"
                 variant="outline"
                 className="w-full sm:w-auto"
               >

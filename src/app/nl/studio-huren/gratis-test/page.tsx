@@ -121,7 +121,7 @@ export default function GratisTestStudioHurenNL() {
             <ButtonLink
               href={acuityFreeTrials.studioRentalTryout}
               external
-              size="lg"
+              size="tall"
               className="w-full sm:w-auto plausible-event-name=gratis_test_book_cta"
             >
               <CalendarCheck className="mr-2 h-4 w-4" />
@@ -130,7 +130,7 @@ export default function GratisTestStudioHurenNL() {
             <ButtonLink
               href={whatsappLinks.studioNl}
               external
-              size="lg"
+              size="tall"
               variant="outline"
               className="w-full sm:w-auto plausible-event-name=gratis_test_studio_whatsapp_hero"
             >
@@ -240,7 +240,7 @@ export default function GratisTestStudioHurenNL() {
               <ButtonLink
                 href={acuityFreeTrials.studioRentalTryout}
                 external
-                size="lg"
+                size="tall"
                 className="mt-5 w-full sm:w-auto plausible-event-name=gratis_test_book_cta_section"
               >
                 <CalendarCheck className="mr-2 h-4 w-4" />

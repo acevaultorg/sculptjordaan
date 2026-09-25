@@ -145,7 +145,7 @@ export default function FreeTrialPage() {
           <ButtonLink
             href={whatsappLinks.openGymEn}
             variant="outline"
-            size="lg"
+            size="tall"
             external
           >
             <MessageCircle className="mr-2 h-4 w-4" aria-hidden />
@@ -291,10 +291,10 @@ export default function FreeTrialPage() {
           </p>
         </div>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <ButtonLink href="/en/open-gym" size="lg">
+          <ButtonLink href="/en/open-gym" size="tall">
             View Open Gym
           </ButtonLink>
-          <ButtonLink href="/en/pricing" variant="outline" size="lg">
+          <ButtonLink href="/en/pricing" variant="outline" size="tall">
             All prices
           </ButtonLink>
         </div>

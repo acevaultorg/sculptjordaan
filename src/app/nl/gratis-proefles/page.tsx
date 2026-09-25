@@ -145,7 +145,7 @@ export default function GratisProeflesPage() {
           <ButtonLink
             href={whatsappLinks.openGymNl}
             variant="outline"
-            size="lg"
+            size="tall"
             external
           >
             <MessageCircle className="mr-2 h-4 w-4" aria-hidden />
@@ -291,10 +291,10 @@ export default function GratisProeflesPage() {
           </p>
         </div>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <ButtonLink href="/nl/open-gym" size="lg">
+          <ButtonLink href="/nl/open-gym" size="tall">
             Bekijk Open Gym
           </ButtonLink>
-          <ButtonLink href="/nl/prijzen" variant="outline" size="lg">
+          <ButtonLink href="/nl/prijzen" variant="outline" size="tall">
             Alle prijzen
           </ButtonLink>
         </div>

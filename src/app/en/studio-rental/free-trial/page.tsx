@@ -100,7 +100,7 @@ export default function FreeTrialStudioRentalEN() {
             <ButtonLink
               href={acuityFreeTrials.studioRentalTryout}
               external
-              size="lg"
+              size="tall"
               className="w-full sm:w-auto plausible-event-name=free_trial_book_cta"
             >
               <CalendarCheck className="mr-2 h-4 w-4" />
@@ -109,7 +109,7 @@ export default function FreeTrialStudioRentalEN() {
             <ButtonLink
               href={whatsappLinks.studioEn}
               external
-              size="lg"
+              size="tall"
               variant="outline"
               className="w-full sm:w-auto plausible-event-name=free_trial_studio_whatsapp_hero"
             >
@@ -217,7 +217,7 @@ export default function FreeTrialStudioRentalEN() {
               <ButtonLink
                 href={acuityFreeTrials.studioRentalTryout}
                 external
-                size="lg"
+                size="tall"
                 className="mt-5 w-full sm:w-auto plausible-event-name=free_trial_book_cta_section"
               >
                 <CalendarCheck className="mr-2 h-4 w-4" />
