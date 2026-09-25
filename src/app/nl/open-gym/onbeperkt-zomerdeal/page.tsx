@@ -103,10 +103,10 @@ export const metadata: Metadata = {
 };
 
 const included = [
-  { icon: Users, text: "Max 4 personen in de studio — nooit wachten op een toestel" },
+  { icon: Users, text: "Max 4 personen in de studio, dus nooit wachten op een toestel" },
   { icon: Clock, text: "Elke dag open van 06:00 tot 22:00" },
-  { icon: KeyRound, text: "Deurcode via WhatsApp — je kunt meteen beginnen" },
-  { icon: Ban, text: "Geen contract, geen opzegtermijn — stoppen is altijd gratis" },
+  { icon: KeyRound, text: "Deurcode via WhatsApp, zodat je meteen kunt beginnen" },
+  { icon: Ban, text: "Geen contract en geen opzegtermijn. Stoppen is altijd gratis" },
 ];
 
 const faqs = [
@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     question: "Wat gebeurt er als de introductieprijs afloopt?",
-    answer: `Dan gaat Onbeperkt voor nieuwe leden terug naar €${deal.priceRegular} per 4 weken. Voor jou verandert er niets — jij houdt €${deal.priceDeal}.`,
+    answer: `Dan gaat Onbeperkt voor nieuwe leden terug naar €${deal.priceRegular} per 4 weken. Voor jou verandert er niets: jij houdt €${deal.priceDeal}.`,
   },
   {
     question: "Kan ik eerst gratis proberen?",
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     question: "Hoe druk is het?",
-    answer: "Er zijn maximaal 4 mensen tegelijk in de studio. Dat is het hele punt van een privé gym — je hoeft nooit te wachten en je traint niet in een volle zaal.",
+    answer: "Er zijn maximaal 4 mensen tegelijk in de studio. Dat is het hele punt van een privé gym: je hoeft nooit te wachten en je traint niet in een volle zaal.",
   },
 ];
 
@@ -218,7 +218,7 @@ export default function OnbeperktZomerdealPage() {
             </div>
 
             <p className="mt-4 text-sm text-muted-foreground">
-              Eerste sessie gratis en vrijblijvend — ook als je daarna geen lid
+              Eerste sessie gratis en vrijblijvend, ook als je daarna geen lid
               wordt.
             </p>
           </div>
@@ -237,7 +237,7 @@ export default function OnbeperktZomerdealPage() {
                 </h2>
                 <p className="mt-2 text-muted-foreground">
                   Dit is geen kortingsperiode van vier weken. Word je nu lid,
-                  dan betaal je €{deal.priceDeal} per 4 weken en dat blijft zo —
+                  dan betaal je €{deal.priceDeal} per 4 weken en dat blijft zo,
                   ook als het tarief voor nieuwe leden later weer €
                   {deal.priceRegular} is. Wat sluit is het{" "}
                   <strong className="text-foreground">instapmoment</strong>,
@@ -289,7 +289,7 @@ export default function OnbeperktZomerdealPage() {
               <p className="overline">Midden in de Jordaan</p>
               <h2 className="mt-2 text-2xl font-bold text-foreground">Train waar Amsterdam op z&apos;n mooist is</h2>
               <p className="mt-2 text-muted-foreground">
-                Jouw gym aan de Egelantiersgracht — bootjes voorbij, deuren open, nooit druk.
+                Jouw gym ligt aan de Egelantiersgracht. De bootjes varen voorbij en het is er nooit druk.
               </p>
             </div>
             <div className="mx-auto max-w-xs">
@@ -342,7 +342,7 @@ export default function OnbeperktZomerdealPage() {
               Kom een keer langs
             </h2>
             <p className="mt-3 text-muted-foreground">
-              {siteConfig.address.street} — een paar minuten lopen vanaf de
+              {siteConfig.address.street}, een paar minuten lopen vanaf de
               Westermarkt. Boek een gratis sessie of stel eerst je vraag.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">

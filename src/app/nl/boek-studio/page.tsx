@@ -87,7 +87,7 @@ const faqs = [
   },
   {
     q: "Kan ik de studio eerst uitproberen?",
-    a: "Ja, boek een gratis proefsessie. Bekijk de ruimte, test de apparatuur — geen verplichtingen.",
+    a: "Ja, boek een gratis proefsessie. Bekijk de ruimte en test de apparatuur, zonder verplichtingen.",
   },
   {
     q: "Heb ik een verzekering nodig?",
@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: "Hoe werkt de deurcode?",
-    a: "Om 00:00 in de nacht voor je sessie ontvang je een deurcode via WhatsApp. Daarmee kun je de studio zelf betreden — geen receptie.",
+    a: "Om 00:00 in de nacht voor je sessie ontvang je een deurcode via WhatsApp. Daarmee kun je de studio zelf binnen. Er is geen receptie.",
   },
 ];
 
@@ -283,7 +283,7 @@ export default function BoekStudioPageNL() {
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong> — credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
+                <strong className="text-foreground">altijd gratis annuleren</strong>. Credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
                 <strong className="text-foreground">Hele studio</strong> = volledig privé voor 1 tot 8 personen, jouw eigen groep.
               </p>
@@ -299,7 +299,7 @@ export default function BoekStudioPageNL() {
             <div>
               <p className="text-base font-semibold">Niet zeker welke optie?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp ons je situatie — we reageren meestal binnen 1 uur.
+                WhatsApp ons je situatie. We reageren meestal binnen 1 uur.
               </p>
             </div>
             <ButtonLink

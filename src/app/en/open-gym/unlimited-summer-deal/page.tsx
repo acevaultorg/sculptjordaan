@@ -70,10 +70,10 @@ export const metadata: Metadata = {
 };
 
 const included = [
-  { icon: Users, text: "Max 4 people in the studio — never wait for equipment" },
+  { icon: Users, text: "Max 4 people in the studio, so you never wait for equipment" },
   { icon: Clock, text: "Open every day from 06:00 to 22:00" },
-  { icon: KeyRound, text: "Door code via WhatsApp — you can start right away" },
-  { icon: Ban, text: "No contract, no notice period — cancelling is always free" },
+  { icon: KeyRound, text: "Door code via WhatsApp, so you can start right away" },
+  { icon: Ban, text: "No contract and no notice period. Cancelling is always free" },
 ];
 
 const faqs = [
@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     question: "What happens when the intro offer ends?",
-    answer: `Unlimited goes back to €${deal.priceRegular} per 4 weeks for new members. Nothing changes for you — you keep €${deal.priceDeal}.`,
+    answer: `Unlimited goes back to €${deal.priceRegular} per 4 weeks for new members. Nothing changes for you: you keep €${deal.priceDeal}.`,
   },
   {
     question: "Can I try it for free first?",
@@ -91,11 +91,11 @@ const faqs = [
   },
   {
     question: "Am I tied into anything?",
-    answer: "No. Open Gym runs in 4-week cycles and you can always cancel for free — no notice period, no explanation needed.",
+    answer: "No. Open Gym runs in 4-week cycles and you can always cancel for free, with no notice period and no explanation needed.",
   },
   {
     question: "How busy is it?",
-    answer: "There are never more than 4 people in the studio at once. That's the whole point of a private gym — you never queue for equipment and you don't train in a crowded room.",
+    answer: "There are never more than 4 people in the studio at once. That's the whole point of a private gym: you never queue for equipment and you don't train in a crowded room.",
   },
 ];
 
@@ -182,7 +182,7 @@ export default function UnlimitedSummerDealPage() {
             </div>
 
             <p className="mt-4 text-sm text-muted-foreground">
-              First session free and no obligation — even if you don&apos;t join
+              First session free and no obligation, even if you don&apos;t join
               afterwards.
             </p>
           </div>
@@ -201,7 +201,7 @@ export default function UnlimitedSummerDealPage() {
                 </h2>
                 <p className="mt-2 text-muted-foreground">
                   This isn&apos;t a four-week discount. Join now and you pay €
-                  {deal.priceDeal} per 4 weeks, and it stays that way — even
+                  {deal.priceDeal} per 4 weeks, and it stays that way, even
                   once the rate for new members is €{deal.priceRegular} again.
                   What closes is the{" "}
                   <strong className="text-foreground">joining window</strong>,
@@ -253,7 +253,7 @@ export default function UnlimitedSummerDealPage() {
               <p className="overline">Right in the Jordaan</p>
               <h2 className="mt-2 text-2xl font-bold text-foreground">Train where Amsterdam is at its best</h2>
               <p className="mt-2 text-muted-foreground">
-                Your gym on the Egelantiersgracht — boats going by, doors open, never crowded.
+                Your gym is on the Egelantiersgracht. Boats go by and it is never crowded.
               </p>
             </div>
             <div className="mx-auto max-w-xs">
@@ -304,7 +304,7 @@ export default function UnlimitedSummerDealPage() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-bold text-foreground">Come have a look</h2>
             <p className="mt-3 text-muted-foreground">
-              {siteConfig.address.street} — a few minutes&apos; walk from the
+              {siteConfig.address.street}, a few minutes&apos; walk from the
               Westermarkt. Book a free session or ask your question first.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">

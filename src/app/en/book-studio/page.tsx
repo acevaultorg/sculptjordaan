@@ -87,7 +87,7 @@ const faqs = [
   },
   {
     q: "Can I try the studio first?",
-    a: "Yes, book a free trial session. See the space, test the equipment — no obligation.",
+    a: "Yes, book a free trial session. See the space and test the equipment, with no obligation.",
   },
   {
     q: "Do I need insurance?",
@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: "How does the door code work?",
-    a: "At midnight before your session you receive a door code via WhatsApp. You can enter the studio yourself — no reception.",
+    a: "At midnight before your session you receive a door code via WhatsApp. You can enter the studio yourself. There is no reception.",
   },
 ];
 
@@ -283,7 +283,7 @@ export default function BookStudioPageEN() {
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Book per session. No subscription, no contract,{" "}
-                <strong className="text-foreground">free cancellation anytime</strong> — credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
+                <strong className="text-foreground">free cancellation anytime</strong>. Credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
                 <strong className="text-foreground">Full studio</strong> = fully private for 1 to 8 people, your own group.
               </p>
@@ -299,7 +299,7 @@ export default function BookStudioPageEN() {
             <div>
               <p className="text-base font-semibold">Not sure which option?</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                WhatsApp us your situation — we usually advise within 1 hour.
+                WhatsApp us your situation. We usually reply within 1 hour.
               </p>
             </div>
             <ButtonLink

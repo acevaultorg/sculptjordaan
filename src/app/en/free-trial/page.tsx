@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Book a free Open Gym trial: Private Studio Jordaan",
   },
   description:
-    "Book your free Open Gym trial at SculptClub in the Jordaan. Come by and train one session free — no membership, no commitment.",
+    "Book your free Open Gym trial at SculptClub in the Jordaan. Come by and train one session free: no membership, no commitment.",
   alternates: {
     canonical: "/en/free-trial",
     languages: { nl: "/nl/gratis-proefles", en: "/en/free-trial" },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title:
       "Book a free Open Gym trial: Private Studio Jordaan",
     description:
-      "Book your free Open Gym trial at SculptClub in the Jordaan. Come by and train one session free — no membership, no commitment.",
+      "Book your free Open Gym trial at SculptClub in the Jordaan. Come by and train one session free: no membership, no commitment.",
   },
   twitter: {
     card: "summary_large_image",
@@ -51,7 +51,7 @@ const faqs = [
   {
     question: "Can I cancel or reschedule free of charge?",
     answer:
-      "Yes, always and with no time limit. There is no 24-hour cancellation window — just let us know on WhatsApp.",
+      "Yes, always and with no time limit. There is no 24-hour cancellation window. Just let us know on WhatsApp.",
   },
   {
     question: "How do I get in?",
@@ -61,7 +61,7 @@ const faqs = [
   {
     question: "Is a trainer present during Open Gym?",
     answer:
-      "No. Open Gym is training on your own in a private studio — not a class and not supervised. If you do want guidance, start with a personal trainer instead; that first session is free too.",
+      "No. Open Gym is training on your own in a private studio, not a class and not supervised. If you do want guidance, start with a personal trainer instead; that first session is free too.",
   },
   {
     question: "How busy does it get?",
@@ -127,7 +127,7 @@ export default function FreeTrialPage() {
         <SectionHeader
           overline="Free trial"
           title="Book your free trial"
-          description="Pick a time and come by. No commitment, no membership — experience for yourself how quiet and fully equipped our private studio in the Jordaan is."
+          description="Pick a time and come by. No commitment and no membership. Experience for yourself how quiet and fully equipped our private studio in the Jordaan is."
         />
         <AcuityEmbed
           url={acuityFreeTrials.openGymTryout}
@@ -139,8 +139,8 @@ export default function FreeTrialPage() {
         />
         <div className="mt-8 flex flex-col items-center gap-3 text-center">
           <p className="text-sm text-muted-foreground">
-            No time slot works, or have a question? Just send us a message —
-            we&apos;re happy to help.
+            No time slot works, or have a question? Just send us a message
+            and we&apos;re happy to help.
           </p>
           <ButtonLink
             href={whatsappLinks.openGymEn}
@@ -163,8 +163,8 @@ export default function FreeTrialPage() {
           <p>
             Open Gym means you{" "}
             <strong className="text-foreground">train independently</strong> in a
-            private studio — no group class, no trainer watching over you, no
-            fixed programme. You have the space largely to yourself and decide
+            private studio. There is no group class, no trainer watching over
+            you and no fixed programme. You have the space largely to yourself and decide
             what you do and how long you stay.
           </p>
           <p>
@@ -177,7 +177,7 @@ export default function FreeTrialPage() {
             >
               personal trainer
             </Link>{" "}
-            is the better starting point — that first session is free as well.
+            is the better starting point, and that first session is free as well.
           </p>
         </div>
       </Section>
@@ -260,7 +260,7 @@ export default function FreeTrialPage() {
       <Section bg="muted">
         <SectionHeader
           title="And after that?"
-          description="If you like it, you choose how to continue — or you simply leave it here."
+          description="If you like it, you choose how to continue. Or you simply leave it here."
         />
         <div className="mx-auto max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground">
           {/* 2026-09-24: see the NL twin; prices read from config. */}

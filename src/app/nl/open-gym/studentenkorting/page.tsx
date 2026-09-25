@@ -93,22 +93,22 @@ export const metadata: Metadata = {
 };
 
 const included = [
-  { icon: Users, text: "Max 4 personen in de studio — nooit wachten op een toestel" },
-  { icon: Clock, text: "Elke dag open van 06:00 tot 22:00 — ook tussen colleges door" },
-  { icon: KeyRound, text: "Deurcode via WhatsApp — je kunt meteen beginnen" },
-  { icon: Ban, text: "Geen contract, geen opzegtermijn — stoppen is altijd gratis" },
+  { icon: Users, text: "Max 4 personen in de studio, dus nooit wachten op een toestel" },
+  { icon: Clock, text: "Elke dag open van 06:00 tot 22:00, ook tussen colleges door" },
+  { icon: KeyRound, text: "Deurcode via WhatsApp, zodat je meteen kunt beginnen" },
+  { icon: Ban, text: "Geen contract en geen opzegtermijn. Stoppen is altijd gratis" },
 ];
 
 const faqs = [
   {
     question: "Wie komt in aanmerking voor de studentenprijs?",
     answer:
-      "Iedereen met een geldige studentenpas. Nederlands of internationaal, voltijd of deeltijd, HBO, universiteit of MBO — het maakt niet uit. Je laat je pas één keer zien bij je eerste bezoek.",
+      "Iedereen met een geldige studentenpas. Nederlands of internationaal, voltijd of deeltijd, HBO, universiteit of MBO: het maakt niet uit. Je laat je pas één keer zien bij je eerste bezoek.",
   },
   {
     question: "Hoe laat ik zien dat ik student ben?",
     answer:
-      "Gewoon je studentenpas of collegekaart laten zien als je er de eerste keer bent. Meer is het niet — geen formulieren, geen bewijs opsturen.",
+      "Gewoon je studentenpas of collegekaart laten zien als je er de eerste keer bent. Meer is het niet. Geen formulieren en niets opsturen.",
   },
   {
     question: `Wat kost het precies?`,
@@ -127,7 +127,7 @@ const faqs = [
   {
     question: "Hoe druk is het?",
     answer:
-      "Er zijn maximaal 4 mensen tegelijk in de studio. Dat is het hele punt van een privé gym — je hoeft nooit te wachten en je traint niet in een volle zaal.",
+      "Er zijn maximaal 4 mensen tegelijk in de studio. Dat is het hele punt van een privé gym: je hoeft nooit te wachten en je traint niet in een volle zaal.",
   },
   {
     question: "Is er ook iets goedkopers als ik weinig train?",
@@ -216,7 +216,7 @@ export default function StudentenkortingPage() {
             </div>
 
             <p className="mt-4 text-sm text-muted-foreground">
-              Eerste sessie gratis en vrijblijvend — ook als je daarna geen lid
+              Eerste sessie gratis en vrijblijvend, ook als je daarna geen lid
               wordt.
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function StudentenkortingPage() {
                   Eén keer je studentenpas laten zien, that&apos;s it
                 </h2>
                 <p className="mt-2 text-muted-foreground">
-                  Elke geldige studentenpas telt — Nederlands of
+                  Elke geldige studentenpas telt: Nederlands of
                   internationaal, voltijd of deeltijd, UvA, VU, HvA, MBO of
                   ergens anders. Geen formulieren, geen bewijs opsturen, geen
                   wachttijd. Je laat je pas zien als je er de eerste keer bent
@@ -285,8 +285,8 @@ export default function StudentenkortingPage() {
                 Train waar Amsterdam op z&apos;n mooist is
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Jouw gym aan de Egelantiersgracht — bootjes voorbij, deuren
-                open, nooit druk.
+                Jouw gym ligt aan de Egelantiersgracht. De bootjes varen voorbij
+                en het is er nooit druk.
               </p>
             </div>
             <div className="mx-auto max-w-xs">

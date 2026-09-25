@@ -267,7 +267,7 @@ export default function StudioRentalPageEN() {
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
             Sunday is currently the quietest day of the week, and Saturday afternoon and
-            evening are usually open too — a great fit for a regular weekend slot with your
+            evening are usually open too, which suits a regular weekend slot with your
             clients. Click Book below to see live availability.
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">

@@ -69,22 +69,22 @@ export const metadata: Metadata = {
 };
 
 const included = [
-  { icon: Users, text: "Max 4 people in the studio — never wait for equipment" },
-  { icon: Clock, text: "Open every day from 06:00 to 22:00 — including between lectures" },
-  { icon: KeyRound, text: "Door code via WhatsApp — you can start straight away" },
-  { icon: Ban, text: "No contract, no notice period — cancelling is always free" },
+  { icon: Users, text: "Max 4 people in the studio, so you never wait for equipment" },
+  { icon: Clock, text: "Open every day from 06:00 to 22:00, including between lectures" },
+  { icon: KeyRound, text: "Door code via WhatsApp, so you can start straight away" },
+  { icon: Ban, text: "No contract and no notice period. Cancelling is always free" },
 ];
 
 const faqs = [
   {
     question: "Who qualifies for the student price?",
     answer:
-      "Anyone with a valid student card. Dutch or international, full-time or part-time, university, HBO or MBO — it does not matter. You show your card once, on your first visit.",
+      "Anyone with a valid student card. Dutch or international, full-time or part-time, university, HBO or MBO: it does not matter. You show your card once, on your first visit.",
   },
   {
     question: "How do I prove I am a student?",
     answer:
-      "Just show your student card when you are here the first time. That is all — no forms, nothing to email over.",
+      "Just show your student card when you are here the first time. That is all. No forms and nothing to email over.",
   },
   {
     question: "What does it cost exactly?",
@@ -103,7 +103,7 @@ const faqs = [
   {
     question: "How busy is it?",
     answer:
-      "There are never more than 4 people in the studio at once. That is the whole point of a private gym — you never wait, and you are not training in a crowded room.",
+      "There are never more than 4 people in the studio at once. That is the whole point of a private gym: you never wait, and you are not training in a crowded room.",
   },
   {
     question: "Is there something cheaper if I train rarely?",
@@ -193,7 +193,7 @@ export default function StudentDiscountPage() {
             </div>
 
             <p className="mt-4 text-sm text-muted-foreground">
-              First session free, no obligation — even if you do not join
+              First session free, no obligation, even if you do not join
               afterwards.
             </p>
           </div>
@@ -211,7 +211,7 @@ export default function StudentDiscountPage() {
                   Show your student card once, that is it
                 </h2>
                 <p className="mt-2 text-muted-foreground">
-                  Any valid student card counts — Dutch or international,
+                  Any valid student card counts: Dutch or international,
                   full-time or part-time, UvA, VU, HvA, an exchange programme or
                   somewhere else entirely. No forms, nothing to send in, no
                   waiting. You show your card when you are here the first time
@@ -262,8 +262,8 @@ export default function StudentDiscountPage() {
                 Train where Amsterdam is at its best
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Your gym on the Egelantiersgracht — boats going past, doors
-                open, never crowded.
+                Your gym is on the Egelantiersgracht. Boats go past and it is
+                never crowded.
               </p>
             </div>
             <div className="mx-auto max-w-xs">
