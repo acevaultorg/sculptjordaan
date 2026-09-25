@@ -365,6 +365,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/sportschool-jordaan": "/en/boutique-gym-amsterdam",
   "/en/boutique-gym-amsterdam": "/nl/sportschool-jordaan",
   "/nl/studio-huren/gratis-test": "/en/studio-rental/free-trial",
+  "/nl/fotostudio-huren": "/en/photo-studio-rental",
+  "/en/photo-studio-rental": "/nl/fotostudio-huren",
   "/en/studio-rental/free-trial": "/nl/studio-huren/gratis-test",
   "/nl/studio-huren/rekentool": "/en/studio-rental/calculator",
   "/en/studio-rental/calculator": "/nl/studio-huren/rekentool",

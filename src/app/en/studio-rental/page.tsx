@@ -270,6 +270,12 @@ export default function StudioRentalPageEN() {
             evening are usually open too — a great fit for a regular weekend slot with your
             clients. Click Book below to see live availability.
           </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Doing a photo shoot or content?{" "}
+            <a href="/en/photo-studio-rental" className="font-medium text-primary hover:underline">
+              Rent the studio as a photo studio
+            </a>
+          </p>
           <WeekendAvailability locale="en" kind="studio" className="mt-2 text-sm text-muted-foreground" />
         </div>
 

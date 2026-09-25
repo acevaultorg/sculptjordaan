@@ -297,6 +297,12 @@ export default function StudioRentalPageNL() {
             en -avond staan meestal nog open. Ideaal om hier een vaste weekendplek voor je
             klanten vast te leggen. Klik hieronder op Boek voor de actuele beschikbaarheid.
           </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Fotoshoot of content maken?{" "}
+            <a href="/nl/fotostudio-huren" className="font-medium text-primary hover:underline">
+              Huur de studio als fotostudio
+            </a>
+          </p>
           <WeekendAvailability locale="nl" kind="studio" className="mt-2 text-sm text-muted-foreground" />
         </div>
 
