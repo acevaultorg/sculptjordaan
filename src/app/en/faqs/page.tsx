@@ -63,7 +63,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How do I cancel a session?",
-        a: "For Open Gym and studio sessions, you can always cancel or reschedule for free via our booking system (Acuity). For Personal Training, contact your trainer directly — also always free. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
+        a: "For Open Gym and studio sessions, you can always cancel or reschedule for free via our booking system (Acuity). For Personal Training, contact your trainer directly. That is always free too. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
       },
       {
         q: "What should I bring?",
@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How does the booking system work?",
-        a: "For Open Gym and studio rental we use Acuity Scheduling — you book online and receive your door code via WhatsApp at midnight before your session. For Personal Training you contact your trainer directly (WhatsApp or contact form); the trainer schedules with you and arranges studio access. No reception, no waiting.",
+        a: "For Open Gym and studio rental we use Acuity Scheduling: you book online and receive your door code via WhatsApp at midnight before your session. For Personal Training you contact your trainer directly (WhatsApp or contact form); the trainer schedules with you and arranges studio access. No reception, no waiting.",
       },
     ],
   },
@@ -84,7 +84,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What do the trainers charge?",
-        a: "Trainers set their own rates. A SCULPT TRANSFORMATION starts from €299 per 4 weeks, unlimited Open Gym included. The price your trainer quotes you pay directly — no middleman.",
+        a: "Trainers set their own rates. A SCULPT TRANSFORMATION starts from €299 per 4 weeks, unlimited Open Gym included. You pay the price your trainer quotes directly to them, with no middleman.",
       },
       {
         q: "How do I choose a trainer?",
@@ -96,18 +96,18 @@ const faqCategories: FaqCategory[] = [
       },
       {
         // T (2026-06-02) first-timer gap — beginner nervousness.
-        q: "I've never done personal training before — is this for me?",
-        a: "Absolutely. Many clients start with zero experience. Your trainer begins at your level, explains every exercise calmly, and builds at your pace — in a private studio, with full focus. Especially if you're new, 1-on-1 coaching is the safest and fastest way to start well.",
+        q: "I've never done personal training before. Is this for me?",
+        a: "Absolutely. Many clients start with zero experience. Your trainer begins at your level, explains every exercise calmly, and builds at your pace in a private studio, with full focus. Especially if you're new, 1-on-1 coaching is the safest and fastest way to start well.",
       },
       {
         // T — expat / English.
         q: "Do the trainers speak English?",
-        a: "Yes. All our trainers coach fluently in English — no Dutch required. Each trainer's profile shows which languages they speak.",
+        a: "Yes. All our trainers coach fluently in English. No Dutch required. Each trainer's profile shows which languages they speak.",
       },
       {
         // T — injury-safe. Honest about no in-house physio.
         q: "Can I train with an injury or after rehab?",
-        a: "Yes, with the right trainer. Several trainers have experience with recovery and rehab and build up safely — technique first, calm pace. Discuss your situation during the free intro; for medical issues we work with your physiotherapist where needed. We don't have an in-house physiotherapist.",
+        a: "Yes, with the right trainer. Several trainers have experience with recovery and rehab and build up safely: technique first, at a calm pace. Discuss your situation during the free intro; for medical issues we work with your physiotherapist where needed. We don't have an in-house physiotherapist.",
       },
     ],
   },

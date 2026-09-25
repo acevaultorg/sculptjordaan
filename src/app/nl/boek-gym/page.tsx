@@ -115,7 +115,7 @@ export default function BoekGymPageNL() {
           <p className="overline text-primary">Open Gym · Jordaan, Amsterdam</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek een Open Gym Sessie</h1>
           <p className="mt-3 text-muted-foreground">
-            Train zelfstandig in een privé studio. Losse sessie of lidmaatschap — altijd opzegbaar.
+            Train zelfstandig in een privé studio. Losse sessie of lidmaatschap, altijd opzegbaar.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <ButtonLink href={acuityLinks.openGymBook} size="xl" className="w-full sm:w-auto">
@@ -203,9 +203,9 @@ export default function BoekGymPageNL() {
           <div className="mx-auto max-w-lg">
             <ul className="space-y-3">
               {[
-                "gratis probeersessie — probeer het zonder verplichtingen",
-                "Losse sessie (1 uur) €9 — geen lidmaatschap nodig",
-                "Privé studio helemaal voor jezelf — geen wachten, geen drukte",
+                "Gratis probeersessie, zonder verplichtingen",
+                "Losse sessie (1 uur) €9, geen lidmaatschap nodig",
+                "Privé studio helemaal voor jezelf. Nooit wachten en nooit druk",
                 "Lidmaatschap vanaf €29/4 weken (€7,25/sessie)",
                 "Onbeperkt trainen voor €79/4 weken",
                 "Deurcode via WhatsApp, direct starten",
@@ -278,7 +278,7 @@ export default function BoekGymPageNL() {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Klaar om te trainen?</h2>
             <p className="mx-auto mt-3 max-w-xl text-white/70">
-              Boek je sessie — morgen kun je al starten.
+              Boek je sessie. Morgen kun je al starten.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <ButtonLink href={acuityLinks.openGymBook} size="lg">

@@ -133,7 +133,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   // nothing is invented. The WhatsApp button and form below are untouched, so
   // the warm path from quiz/grid is unchanged.
     overline: "Gratis intake",
-    title: `${trainer.name} — personal trainer in de Jordaan`,
+    title: `${trainer.name}, personal trainer in de Jordaan`,
     description: `${listNl(trainer.specialization.nl)}. Vertel wat je wilt bereiken, dan plannen we een gratis kennismaking.`,
     specializations: "Specialisaties",
     languages: "Talen",
