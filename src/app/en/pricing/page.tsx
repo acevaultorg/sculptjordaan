@@ -30,7 +30,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym" },
   description:
-    "All pricing SculptClub Amsterdam: personal training from €299 per 4 weeks (free intro), studio rental €12/hour (your own rates), Open Gym €29/4wk. No contract.",
+    "All SculptClub prices: personal training from €299 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
   alternates: {
     canonical: "/en/pricing",
     languages: {
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: "/en/pricing",
     title: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym",
     description:
-      "All pricing SculptClub Amsterdam: personal training from €299 per 4 weeks (free intro), studio rental €12/hour (your own rates), Open Gym €29/4wk. No contract.",
+      "All SculptClub prices: personal training from €299 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym",
     description:
-      "All pricing SculptClub Amsterdam: personal training from €299 per 4 weeks (free intro), studio rental €12/hour (your own rates), Open Gym €29/4wk. No contract.",
+      "All SculptClub prices: personal training from €299 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
   },
 };
 

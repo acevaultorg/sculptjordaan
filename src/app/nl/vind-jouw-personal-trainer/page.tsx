@@ -19,8 +19,8 @@ import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub" },
-  description: `Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Bij een gratis intake krijg je een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
+  title: { absolute: "Personal trainer Amsterdam Jordaan | SculptClub" },
+  description: "Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Gratis intake met een plan en een vaste prijs vooraf.",
   alternates: {
     canonical: "/nl/vind-jouw-personal-trainer",
     languages: {
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/vind-jouw-personal-trainer",
-    title: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub",
-    description: `Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Bij een gratis intake krijg je een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
+    title: "Personal trainer Amsterdam Jordaan | SculptClub",
+    description: "Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Gratis intake met een plan en een vaste prijs vooraf.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Amsterdam — Traject naar jouw doel | SculptClub",
-    description: `Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Bij een gratis intake krijg je een traject-plan met vaste prijs vooraf. ${trainers.length} trainers, privé studio in de Jordaan.`,
+    title: "Personal trainer Amsterdam Jordaan | SculptClub",
+    description: "Personal trainer in Amsterdam? Kies je doel: afvallen, sterker worden of pijnvrij bewegen. Gratis intake met een plan en een vaste prijs vooraf.",
   },
 };
 

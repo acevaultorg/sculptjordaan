@@ -54,7 +54,7 @@ import { WeekendAvailability } from "@/components/marketing/weekend-availability
 export const metadata: Metadata = {
   title: { absolute: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur" },
   description:
-    "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+    "Privé trainingsruimte in de Jordaan vanaf €12 per uur. Eigen klanten, eigen tarief, geen contract en gratis annuleren. Eerste sessie gratis.",
   alternates: {
     canonical: "/nl/studio-huren",
     languages: {
@@ -69,13 +69,13 @@ export const metadata: Metadata = {
     url: "/nl/studio-huren",
     title: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur",
     description:
-      "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+      "Privé trainingsruimte in de Jordaan vanaf €12 per uur. Eigen klanten, eigen tarief, geen contract en gratis annuleren. Eerste sessie gratis.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur",
     description:
-      "Privé trainingsruimte in Amsterdam Jordaan vanaf €12/uur, eigen klanten, eigen tarief, geen contract, gratis annuleren. Voor PT en fysiotherapeut. Eerste sessie gratis.",
+      "Privé trainingsruimte in de Jordaan vanaf €12 per uur. Eigen klanten, eigen tarief, geen contract en gratis annuleren. Eerste sessie gratis.",
   },
 };
 
@@ -219,7 +219,7 @@ export default function StudioRentalPageNL() {
         <div className="mb-4 text-center sm:mb-6">
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Trainingsruimte huren voor personal trainers in Amsterdam
+            Trainingsruimte huren in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
             Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00

@@ -190,7 +190,7 @@ export default function OpenGymPageEN() {
             <SectionHeader
               as="h1"
               overline="Open Gym · Jordaan"
-              title="Train whenever you want in a quiet private studio"
+              title="Train whenever you want in a private gym"
               description="Train freely in a fully equipped studio on the Egelantiersgracht, in the heart of the Jordaan. 60-minute sessions, max 4 people at a time. No contract, cancel anytime for free, and your first session is on us."
               center={false}
             />

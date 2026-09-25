@@ -38,7 +38,7 @@ import { WeekendAvailability } from "@/components/marketing/weekend-availability
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Studio Rental | SculptClub Jordaan" },
   description:
-    "Private training studio in Amsterdam Jordaan from €12/hour — your clients, your rates, no contract, free cancellation. For PT and physiotherapist. First session free.",
+    "Private training studio in the Jordaan from €12 an hour. Your clients, your rates, no contract, free cancellation. First session free.",
   alternates: {
     canonical: "/en/studio-rental",
     languages: {
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     url: "/en/studio-rental",
     title: "Personal Trainer Studio Rental | SculptClub Jordaan",
     description:
-      "Private training studio in Amsterdam Jordaan from €12/hour — your clients, your rates, no contract, free cancellation. For PT and physiotherapist. First session free.",
+      "Private training studio in the Jordaan from €12 an hour. Your clients, your rates, no contract, free cancellation. First session free.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Studio Rental | SculptClub Jordaan",
     description:
-      "Private training studio in Amsterdam Jordaan from €12/hour — your clients, your rates, no contract, free cancellation. For PT and physiotherapist. First session free.",
+      "Private training studio in the Jordaan from €12 an hour. Your clients, your rates, no contract, free cancellation. First session free.",
   },
 };
 
@@ -198,7 +198,7 @@ export default function StudioRentalPageEN() {
         <div className="mb-4 text-center sm:mb-6">
           <p className="overline text-primary">For Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Studio rental for personal trainers in Amsterdam
+            Studio rental for trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
             From €12/hr · Full freedom · Free cancellation · Daily 06:00–22:00
@@ -698,7 +698,7 @@ export default function StudioRentalPageEN() {
               </a>
               <a href="/en/blog/studio-rental-personal-trainers-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>
-                <p className="font-semibold group-hover:text-brand transition-colors">Studio rental for personal trainers in Amsterdam</p>
+                <p className="font-semibold group-hover:text-brand transition-colors">Studio rental for trainers in Amsterdam</p>
               </a>
               <a href="/en/blog/gym-rental-per-hour-amsterdam" className="group block rounded-xl border border-white/10 p-5 transition-colors hover:bg-muted">
                 <p className="text-sm text-muted-foreground mb-1">Blog</p>

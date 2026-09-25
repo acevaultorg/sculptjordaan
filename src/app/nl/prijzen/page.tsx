@@ -30,7 +30,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym" },
   description:
-    "Alle prijzen SculptClub Amsterdam: personal training vanaf €299 per 4 weken (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
+    "Alle prijzen van SculptClub: personal training vanaf €299 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
   alternates: {
     canonical: "/nl/prijzen",
     languages: {
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: "/nl/prijzen",
     title: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym",
     description:
-      "Alle prijzen SculptClub Amsterdam: personal training vanaf €299 per 4 weken (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
+      "Alle prijzen van SculptClub: personal training vanaf €299 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym",
     description:
-      "Alle prijzen SculptClub Amsterdam: personal training vanaf €299 per 4 weken (gratis intake), studio huur €12/uur (eigen tarief & klanten), Open Gym €29/4wk. Geen contract.",
+      "Alle prijzen van SculptClub: personal training vanaf €299 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
   },
 };
 

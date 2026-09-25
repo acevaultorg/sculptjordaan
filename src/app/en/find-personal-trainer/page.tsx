@@ -19,8 +19,8 @@ import { ReviewsPreview } from "@/components/marketing/reviews-preview";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub" },
-  description: `Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. At a free intro you get a programme plan with a fixed price upfront. ${trainers.length} trainers, private studio in the Jordaan.`,
+  title: { absolute: "Personal Trainer Amsterdam Jordaan | SculptClub" },
+  description: "Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. Free intro with a plan and a fixed price upfront.",
   alternates: {
     canonical: "/en/find-personal-trainer",
     languages: {
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/find-personal-trainer",
-    title: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub",
-    description: `Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. At a free intro you get a programme plan with a fixed price upfront. ${trainers.length} trainers, private studio in the Jordaan.`,
+    title: "Personal Trainer Amsterdam Jordaan | SculptClub",
+    description: "Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. Free intro with a plan and a fixed price upfront.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Amsterdam — A Programme Toward Your Goal | SculptClub",
-    description: `Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. At a free intro you get a programme plan with a fixed price upfront. ${trainers.length} trainers, private studio in the Jordaan.`,
+    title: "Personal Trainer Amsterdam Jordaan | SculptClub",
+    description: "Looking for a personal trainer in Amsterdam? Pick your goal: lose fat, get stronger or move pain-free. Free intro with a plan and a fixed price upfront.",
   },
 };
 
