@@ -1,12 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { CheckCircle2, ArrowRight } from "lucide-react";
-import { PageLayout } from "@/components/layout/page-layout";
-import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
-import { Card, CardContent } from "@/components/ui/card";
+import { useEffect } from "react";
+import { BookingConfirmedBody } from "@/components/marketing/booking-confirmed-body";
 import { siteConfig } from "@/config/site";
 
 /**
@@ -37,16 +32,7 @@ import { siteConfig } from "@/config/site";
  * Fix BOTH, and verify in GA4 (eventValue on `purchase` by URL), not in the bundle.
  */
 export default function BookingConfirmedNL() {
-  // What was booked decides the next-step block (2026-09-24). Separate effect on purpose:
-  // the conversion effect below returns early on every real booking (analytics.tsx sets
-  // __scBookingFired first), so detection inside it would never run.
-  // 60d GA4: 125 of 193 confirmations are studio credit bookings, 26 paid studio hours,
-  // 26 Open Gym, ~7 free trials. The trainer block fits none of the first three.
-  const [kind, setKind] = useState<"studio" | "opengym" | "other">("other");
-  useEffect(() => {
-    const t = (new URLSearchParams(window.location.search).get("type") ?? "").toLowerCase();
-    setKind(t.includes("studio") ? "studio" : t.includes("gym") ? "opengym" : "other");
-  }, []);
+  // Visible page: src/components/marketing/booking-confirmed-body.tsx (presentation only).
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -133,126 +119,5 @@ export default function BookingConfirmedNL() {
     fire();
   }, []);
 
-  return (
-    <PageLayout>
-      <Section className="pt-32">
-        <SectionHeader
-          as="h1"
-          overline="Bevestigd"
-          title="Je boeking is bevestigd"
-          description="Bedankt — we kijken ernaar uit je te zien in de studio."
-        />
-
-        <FadeIn className="mt-8 max-w-2xl">
-          <Card className="border-emerald-500/30 bg-emerald-500/5">
-            <CardContent className="space-y-4 p-6">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="h-10 w-10 flex-shrink-0 text-emerald-400" />
-                <div>
-                  <h2 className="text-xl font-bold text-white">Wat nu?</h2>
-                  <ul className="mt-3 space-y-2 text-sm text-white/85">
-                    <li>• Je krijgt een bevestigingsmail van Acuity met de details.</li>
-                    <li>• De deurcode sturen we de avond ervoor via WhatsApp.</li>
-                    <li>• Vragen? App naar +31 6 15 14 79 52 — meestal reageren we binnen 1 uur.</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition hover:bg-brand/85"
-            >
-              Terug naar home
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-            <Link
-              href="/nl/studio-huren"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-white/85 transition hover:bg-white/15"
-            >
-              Nog een sessie boeken
-            </Link>
-          </div>
-
-          {/* Soft-upsell — added 2026-05-26 lead-cap (task D). Visitor just
-              took an action (booking) = high-commitment moment. Industry
-              benchmark: post-booking upsell lifts first-paid-session
-              conversion +15-25%. Anti-pattern compliance per I-23: NO
-              countdown timer, NO "expires in X hours", just realistic
-              "binnen 7 dagen" framing (post-intake decision window).
-              Discount is operator-honoured (no enforcement code-side). */}
-          {kind === "other" && (
-            <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
-              {/* 2026-09-23 (card mud05ioligxhf8): the "10% on your first package" deal and the
-                  €179/€319/€449 grid existed nowhere in config and no trainer had agreed to them;
-                  each trainer sets their own packages. Honest version: no prices, no discount claim. */}
-              <h3 className="text-xl font-bold text-white">Wil je daarna verder?</h3>
-              <p className="mt-2 text-sm text-white/75 leading-relaxed">
-                Elke trainer heeft eigen pakketten en prijzen. Je trainer laat ze zien na je intake.
-                Geen verplichting, je beslist daarna of het past.
-              </p>
-              <a
-                href="https://wa.me/31615147952?text=Hoi%21+Ik+wil+graag+meer+weten+over+de+pakketten+na+m%27n+intake."
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cta="boeking-bevestigd-upsell-whatsapp"
-                className="plausible-event-name=booking_confirmed_upsell_whatsapp mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-colors"
-              >
-                WhatsApp je trainer over het pakket
-              </a>
-            </div>
-          )}
-          {kind === "studio" && (
-            <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
-              <h3 className="text-xl font-bold text-white">Huur je vaker? Dan is een strippenkaart goedkoper.</h3>
-              <p className="mt-2 text-sm text-white/75 leading-relaxed">Met een strippenkaart koop je studiotegoed met 10% tot 23% korting. Je tegoed is 1 jaar geldig, handig als je elke week klanten traint.</p>
-              <Link
-                href="/nl/prijzen"
-                data-cta="booking-confirmed-next-studio"
-                className="mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground font-bold text-sm transition-colors"
-              >
-                Bekijk de strippenkaarten <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          )}
-          {kind === "opengym" && (
-            <div className="mt-10 rounded-2xl border border-brand/30 bg-brand/5 p-6">
-              <h3 className="text-xl font-bold text-white">Vaker trainen?</h3>
-              <p className="mt-2 text-sm text-white/75 leading-relaxed">Met het Instapplan train je 4 keer per 4 weken voor €29. Onbeperkt kan ook. Geen contract, altijd opzegbaar.</p>
-              <Link
-                href="/nl/open-gym"
-                data-cta="booking-confirmed-next-opengym"
-                className="mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 rounded-xl bg-brand hover:bg-brand-dark text-brand-foreground font-bold text-sm transition-colors"
-              >
-                Bekijk de Open Gym-plannen <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
-          )}
-
-          {/* Anticipation image — added 2026-05-16. Swapped same session
-              from portrait studio/training-dumbbells-smile.jpg (cropped
-              torso-only, head cut off — operator screenshot 13:00) to
-              landscape-native hero/training-session.jpg (1376×720, ~1.91:1)
-              which fits the 16:7 banner without bad cropping. Footer
-              position keeps the "What's next?" Card + CTAs above-fold;
-              image rewards scroll + anchors the studio visually between
-              booking and visit (no-show rate reduction). */}
-          {/* aspect-[1376/720] matches homepage-hero.jpg native ratio
-              (1.911:1) — zero crop, zero perceived distortion. */}
-          <div className="mt-10 relative aspect-[1376/720] overflow-hidden rounded-2xl shadow-lg">
-            <Image
-              src="/images/hero/homepage-hero.jpg"
-              alt="Tot snel — SculptClub privé studio interieur met merkmuur, Rogue power rack en agility ladder"
-              fill
-              className="object-cover"
-              sizes="(max-width: 672px) 100vw, 672px"
-              loading="lazy"
-            />
-          </div>
-        </FadeIn>
-      </Section>
-    </PageLayout>
-  );
+  return <BookingConfirmedBody locale="nl" />;
 }
