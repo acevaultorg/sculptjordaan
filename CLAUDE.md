@@ -36,7 +36,7 @@ Boutique personal training studio in Amsterdam Jordaan. Next.js app with bilingu
 
 ## Policies (ALWAYS use these)
 - **Cancellation:** Always free. No time restriction. Never say "24 hours" or "12 hours".
-- **Door code:** Sent via WhatsApp the night before. Never say "per e-mail" or "by email".
+- **Door code:** Sent via WhatsApp at **00:00 the night before** the session (Paulo's own welcome template, 2026-09-24; site-wide wording "om 00:00 in de nacht voor je sessie" / "at midnight before your session" since 2026-09-25). Never say "per e-mail" or "by email", and never "the evening before".
 - **Payment:** CreditCard, Apple Pay, Google Pay. Studio rental also accepts invoice. iDEAL only via Apple Pay (don't list separately).
 - **Contracts:** None. No membership required. Open Gym = 4-week cycles, cancel anytime.
 

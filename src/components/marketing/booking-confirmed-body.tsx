@@ -24,8 +24,10 @@ import { Section, FadeIn } from "@/components/sections/section";
  * "Free try out: Full Studio 60 min", "Halve Studio 60 min / Half Studio 60 min",
  * "Open Gym Sessie / Open Gym Session"). Anything else, or nothing, falls back to a
  * plain "your booking" wording. Acuity sends no date, so "when" points to the mail.
- * Facts (door code the evening before via WhatsApp, entrance, what to bring, free
- * cancellation) match /nl/eerste-bezoek and CLAUDE.md.
+ * Facts (door code at midnight before your session via WhatsApp, entrance, what to bring, free
+ * cancellation) match /nl/eerste-bezoek, CLAUDE.md and Paulo's own welcome WhatsApp template
+ * (card mufsullnk2v86h, 2026-09-24: code at 00:00 the night before, small changing space,
+ * stick to your reserved time).
  */
 
 type Locale = "nl" | "en";
@@ -51,9 +53,9 @@ const COPY = {
     stepsTitle: "Wat gebeurt er nu?",
     steps: [
       { icon: CheckCircle2, title: "Bevestigingsmail", text: "Binnen een paar minuten krijg je een mail van Acuity met alle details. Niets gezien? Kijk even in je spam." },
-      { icon: KeyRound, title: "Deurcode via WhatsApp", text: "De avond voor je sessie sturen we je persoonlijke deurcode via WhatsApp. Er is geen receptie." },
-      { icon: MapPin, title: "Waar", text: "Egelantiersgracht 424, Jordaan. Fietsenrekken voor de deur. Kom 5 minuten eerder." },
-      { icon: Backpack, title: "Neem mee", text: "Sportkleding, een handdoek, een waterfles en schone indoor sportschoenen. Er is een kleedruimte, douchen kan niet." },
+      { icon: KeyRound, title: "Deurcode via WhatsApp", text: "Om 00:00 in de nacht voor je sessie sturen we je persoonlijke deurcode via WhatsApp. Er is geen receptie." },
+      { icon: MapPin, title: "Waar", text: "Egelantiersgracht 424, Jordaan. Fietsenrekken voor de deur. Kom op je eigen tijd; we werken met privé tijdsloten. Later? Stuur even een bericht." },
+      { icon: Backpack, title: "Neem mee", text: "Een handdoek, een waterfles en schone indoor sportschoenen. De kleedruimte is klein, dus kom liefst al in sportkleding. Een trui is handig voor je warming-up. Douchen kan niet." },
       { icon: RefreshCw, title: "Wijzigen of annuleren", text: "Via de link in je bevestigingsmail. Annuleren is altijd gratis." },
     ],
     route: "Route in Google Maps",
@@ -87,9 +89,9 @@ const COPY = {
     stepsTitle: "What happens next?",
     steps: [
       { icon: CheckCircle2, title: "Confirmation email", text: "Within a few minutes you get an email from Acuity with all the details. Nothing there? Check your spam folder." },
-      { icon: KeyRound, title: "Door code via WhatsApp", text: "The evening before your session we send your personal door code via WhatsApp. There is no reception." },
-      { icon: MapPin, title: "Where", text: "Egelantiersgracht 424, Jordaan. Bike racks right outside. Arrive 5 minutes early." },
-      { icon: Backpack, title: "Bring", text: "Sportswear, a towel, a water bottle and clean indoor sports shoes. There is a changing area; no showers." },
+      { icon: KeyRound, title: "Door code via WhatsApp", text: "At midnight before your session we send your personal door code via WhatsApp. There is no reception." },
+      { icon: MapPin, title: "Where", text: "Egelantiersgracht 424, Jordaan. Bike racks right outside. Come at your booked time; we work with private time slots. Running late? Just send a message." },
+      { icon: Backpack, title: "Bring", text: "A towel, a water bottle and clean indoor sports shoes. The changing space is small, so arrive ready to train if you can. A sweater is handy for your warm-up. No showers." },
       { icon: RefreshCw, title: "Change or cancel", text: "Use the link in your confirmation email. Cancelling is always free." },
     ],
     route: "Directions in Google Maps",

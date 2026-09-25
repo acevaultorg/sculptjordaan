@@ -70,7 +70,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Boek je sessie",
     description:
-      "Voor Personal Training stuur je je trainer een berichtje via WhatsApp of het contactformulier. De trainer plant samen met jou een moment. Voor Open Gym en studio kies je een tijdslot online; de avond ervoor krijg je je deurcode via WhatsApp.",
+      "Voor Personal Training stuur je je trainer een berichtje via WhatsApp of het contactformulier. De trainer plant samen met jou een moment. Voor Open Gym en studio kies je een tijdslot online; om 00:00 in de nacht voor je sessie krijg je je deurcode via WhatsApp.",
     cta: {
       label: "Kies je trainer",
       href: "/nl/vind-jouw-personal-trainer",
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     q: "Wat als ik de studio niet kan vinden?",
-    a: "De avond voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 15 14 79 52. Meestal reageren we binnen het uur.",
+    a: "Om 00:00 in de nacht voor je sessie ontvang je via WhatsApp het exacte adres en een routebeschrijving. Voor PT regelt je trainer toegang tot de studio; voor Open Gym en studio krijg je je persoonlijke deurcode. Vragen onderweg? App ons op +31 6 15 14 79 52. Meestal reageren we binnen het uur.",
   },
   {
     q: "Hoe schoon is de studio?",

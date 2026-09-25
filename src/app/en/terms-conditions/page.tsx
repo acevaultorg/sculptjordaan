@@ -148,7 +148,7 @@ export default function TermsPageEN() {
             <p className="text-muted-foreground">
               Bookings are made through our online booking system (Acuity
               Scheduling). After booking, you will receive a confirmation via the booking system.
-              The evening before your session, you will receive a unique door
+              At midnight before your session, you will receive a unique door
               code via WhatsApp. Payment for Open Gym is made in advance
               per cycle through the booking system. Payment for personal training
               is made directly to the trainer according to their terms. Payment

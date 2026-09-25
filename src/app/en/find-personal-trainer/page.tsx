@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: "Where is the studio?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam, in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area. The evening before your session you receive the exact address and directions via WhatsApp.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam, in the heart of the Jordaan. 5 min walk from Westermarkt (tram 13/17), easy by bike, paid street parking in the area. At midnight before your session you receive the exact address and directions via WhatsApp.",
   },
 ];
 

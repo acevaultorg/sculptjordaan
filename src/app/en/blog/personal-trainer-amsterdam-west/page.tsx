@@ -110,8 +110,8 @@ export default function PersonalTrainerAmsterdamWestEN() {
                 At SculptClub you don’t train in a busy gym. You get a full private studio with
                 professional equipment — power rack, cable machine, dumbbells up to 40 kg, assault
                 bike. Maximum 4 people at a time, but during personal training it’s just you and
-                your trainer. No waiting for equipment, no distractions. Door code via WhatsApp the
-                evening before.
+                your trainer. No waiting for equipment, no distractions. Door code via WhatsApp at
+                midnight before your session.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Independent trainers, each with their own specialisation</h2>

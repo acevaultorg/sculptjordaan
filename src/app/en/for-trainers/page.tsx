@@ -125,7 +125,7 @@ const trainerFaqs = [
   },
   {
     q: "How do I book a session?",
-    a: "Online via Acuity (our booking system). You receive immediate confirmation and the night before your session you get a unique door code via WhatsApp. No reception, no keys.",
+    a: "Online via Acuity (our booking system). You receive immediate confirmation and at midnight before your session you get a unique door code via WhatsApp. No reception, no keys.",
   },
   {
     q: "Can I come for a free look first?",

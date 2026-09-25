@@ -103,7 +103,7 @@ export default function BlogPostConsistentNL() {
                 De grootste drempel is vaak de stap naar de sportschool. Hoe meer obstakels je moet overwinnen, hoe
                 sneller je afhaakt. Kies daarom een studio die dicht bij je huis of werk ligt. Leg je sportkleding de
                 avond ervoor klaar. En kies een sportschool waar je snel naar binnen kunt, zonder gedoe met pasjes of
-                wachtrijen. Bij SculptClub krijg je de avond ervoor een deurcode via WhatsApp, zodat je op je eigen
+                wachtrijen. Bij SculptClub krijg je om 00:00 in de nacht ervoor een deurcode via WhatsApp, zodat je op je eigen
                 tempo kunt binnenlopen.
               </p>
 

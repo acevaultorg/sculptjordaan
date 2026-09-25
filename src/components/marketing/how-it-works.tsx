@@ -15,7 +15,7 @@ const steps = {
       step: "02",
       title: "Krijg toegang",
       description:
-        "Voor PT regelt je trainer de studio en zorgt dat je binnen kunt. Voor Open Gym en studio ontvang je de avond ervoor een deurcode via WhatsApp. Geen receptie, geen wachten.",
+        "Voor PT regelt je trainer de studio en zorgt dat je binnen kunt. Voor Open Gym en studio ontvang je om 00:00 in de nacht ervoor een deurcode via WhatsApp. Geen receptie, geen wachten.",
     },
     {
       step: "03",
@@ -35,7 +35,7 @@ const steps = {
       step: "02",
       title: "Get access",
       description:
-        "For PT your trainer arranges the studio and gets you in. For Open Gym and studio rental, you receive a door code via WhatsApp the evening before. No reception, no waiting.",
+        "For PT your trainer arranges the studio and gets you in. For Open Gym and studio rental, you receive a door code via WhatsApp at midnight before your session. No reception, no waiting.",
     },
     {
       step: "03",

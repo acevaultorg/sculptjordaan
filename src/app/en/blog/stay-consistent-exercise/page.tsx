@@ -103,7 +103,7 @@ export default function BlogPostConsistentEN() {
                 The biggest barrier is often getting to the gym in the first place. The more obstacles you have to
                 overcome, the quicker you drop off. Choose a studio close to your home or work. Lay out your workout
                 clothes the night before. And pick a gym where you can get in quickly, without fuss over keycards or
-                waiting in line. At SculptClub, you receive a door code via WhatsApp the evening before, so you can
+                waiting in line. At SculptClub, you receive a door code via WhatsApp at midnight before your session, so you can
                 walk in at your own pace.
               </p>
 

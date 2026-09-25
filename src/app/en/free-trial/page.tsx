@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "How do I get in?",
     answer:
-      "You receive the door code on WhatsApp the evening before your session. There is no front desk and nobody needs to let you in.",
+      "You receive the door code on WhatsApp at midnight before your session. There is no front desk and nobody needs to let you in.",
   },
   {
     question: "Is a trainer present during Open Gym?",
@@ -102,7 +102,7 @@ const steps = [
   {
     n: "2",
     title: "Get the door code",
-    body: "The evening before, we send you the code on WhatsApp along with the address.",
+    body: "At midnight before your session, we send you the code on WhatsApp along with the address.",
   },
   {
     n: "3",

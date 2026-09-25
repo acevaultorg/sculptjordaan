@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: "Hoe werkt de deurcode?",
-    a: "De avond voor je sessie ontvang je een deurcode via WhatsApp. Daarmee kun je de studio zelf betreden — geen receptie.",
+    a: "Om 00:00 in de nacht voor je sessie ontvang je een deurcode via WhatsApp. Daarmee kun je de studio zelf betreden — geen receptie.",
   },
 ];
 

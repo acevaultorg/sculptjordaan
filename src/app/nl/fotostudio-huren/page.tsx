@@ -67,7 +67,7 @@ const features = [
   { icon: Camera, text: "Industrieel decor: zwarte vloer, rack, halters, sled en de SCULPT-muur" },
   { icon: Users, text: "Hele studio volledig privé, voor 1 tot 8 personen" },
   { icon: Clock, text: "Elke dag te boeken van 06:00 tot 22:00, per uur" },
-  { icon: KeyRound, text: "Deurcode via WhatsApp de avond ervoor, geen receptie" },
+  { icon: KeyRound, text: "Deurcode via WhatsApp om 00:00 in de nacht ervoor, geen receptie" },
   { icon: Ban, text: "Gratis annuleren, geen contract" },
 ];
 

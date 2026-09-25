@@ -157,7 +157,7 @@ export default function BlogPostStudioRentalEN() {
                 The experience you offer your clients determines whether they come back and refer others. In a
                 private studio, every session feels exclusive. Your client does not have to walk through a
                 crowded gym, wait for equipment or feel self-conscious. They receive the door code via WhatsApp
-                the evening before, so they can walk right in. That attention to detail makes all the difference.
+                at midnight before your session, so they can walk right in. That attention to detail makes all the difference.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Insurance and legal considerations</h2>

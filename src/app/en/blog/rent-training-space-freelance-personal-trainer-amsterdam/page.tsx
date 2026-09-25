@@ -166,8 +166,8 @@ export default function BlogPostFreelanceTrainerEN() {
                 <li><strong>Cancellation policy:</strong> What happens when a client cancels?</li>
               </ul>
               <p>
-                At SculptClub, you can always cancel for free. You receive a door code via WhatsApp the
-                evening before, so you can walk straight in. The studio is cleaned after every session
+                At SculptClub, you can always cancel for free. You receive a door code via WhatsApp at
+                midnight before your session, so you can walk straight in. The studio is cleaned after every session
                 and equipment is always in top condition.
               </p>
 

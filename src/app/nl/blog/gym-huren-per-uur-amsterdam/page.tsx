@@ -133,7 +133,7 @@ export default function BlogPostGymHurenPerUur() {
                 </table>
               </div>
               <p>
-                Bij SculptClub zijn geen extra kosten verbonden aan het gebruik van apparatuur, wifi of schoonmaak. Je boekt online, je ontvangt de avond voor je sessie een deurcode via WhatsApp en je kunt direct starten.
+                Bij SculptClub zijn geen extra kosten verbonden aan het gebruik van apparatuur, wifi of schoonmaak. Je boekt online, je ontvangt om 00:00 in de nacht voor je sessie een deurcode via WhatsApp en je kunt direct starten.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">Wat heb je nodig om de studio te huren?</h2>

@@ -47,7 +47,7 @@ export default function PTAmsterdamZuidNL() {
       <BlogPostingJsonLd title="Personal Trainer Amsterdam Zuid" description="SculptClub in de Jordaan: personal training op fietsafstand van Amsterdam Zuid." url="/nl/blog/personal-trainer-amsterdam-zuid" datePublished="2026-04-03" />
       <FaqJsonLd faqs={[
         { question: "Waarom naar de Jordaan voor personal training?", answer: "Amsterdam Zuid heeft veel sportscholen, maar weinig privé studios. Bij SculptClub train je in een volledig uitgeruste studio — alleen jij en je trainer. Geen wachttijden bij apparaten, geen drukte, geen blikken. De studio ligt aan de Egelantiersgracht, een rustige gracht in het hart van de Jordaan." },
-        { question: "Wat maakt SculptClub anders?", answer: "Privé studio: Train alleen met je trainer — geen andere klanten tegelijk; Geen abonnement: Boek per sessie, annuleer altijd gratis; Gratis intake: De eerste kennismaking kost niets; Zeven trainers: Van krachttraining en voeding tot training voor vrouwen en houding; Deurcode via WhatsApp: De avond ervoor, geen receptie nodig" },
+        { question: "Wat maakt SculptClub anders?", answer: "Privé studio: Train alleen met je trainer — geen andere klanten tegelijk; Geen abonnement: Boek per sessie, annuleer altijd gratis; Gratis intake: De eerste kennismaking kost niets; Zeven trainers: Van krachttraining en voeding tot training voor vrouwen en houding; Deurcode via WhatsApp: Om 00:00 in de nacht ervoor, geen receptie nodig" },
         { question: "Hoe bereik je SculptClub vanuit Amsterdam Zuid?", answer: "Met de fiets: 10-15 minuten via Nassaukade of Singelgracht. Fietsparkeren direct voor de deur." },
       ]} />
 
@@ -97,7 +97,7 @@ export default function PTAmsterdamZuidNL() {
                 <li><strong>Geen abonnement:</strong> Boek per sessie, annuleer altijd gratis</li>
                 <li><strong>Gratis intake:</strong> De eerste kennismaking kost niets</li>
                 <li><strong>Zeven trainers:</strong> Van krachttraining en voeding tot training voor vrouwen en houding</li>
-                <li><strong>Deurcode via WhatsApp:</strong> De avond ervoor, geen receptie nodig</li>
+                <li><strong>Deurcode via WhatsApp:</strong> Om 00:00 in de nacht ervoor, geen receptie nodig</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Onze trainers</h2>

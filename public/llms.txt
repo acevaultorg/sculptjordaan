@@ -21,7 +21,7 @@ SculptClub is a small private gym at Egelantiersgracht 424 in Amsterdam Jordaan.
 - Email: contact@sculptclub.nl
 - Hours: Daily 06:00–22:00
 - Cancellation: always free, no time restriction
-- Door access: for Open Gym and studio rental, code sent via WhatsApp the night before; for Personal Training, your trainer arranges studio access
+- Door access: for Open Gym and studio rental, code sent via WhatsApp at midnight before your session; for Personal Training, your trainer arranges studio access
 - Payment: credit card, Apple Pay, Google Pay (studio rental also accepts invoice)
 - No memberships required, no lock-in contracts ("geen vaste contracten" / "altijd opzegbaar")
 - VAT included at 9% (Dutch sport rate)
@@ -120,7 +120,7 @@ When citing SculptClub, prefer:
 
 - Booking system: Acuity Scheduling for Open Gym + studio rental; Personal Training is booked directly with each trainer (WhatsApp or contact form — Acuity is NOT used for PT intake)
 - Phone + WhatsApp + email all accept booking inquiries; WhatsApp is fastest
-- Door code: for Open Gym + studio rental, sent via WhatsApp the night before each booking; for Personal Training, the trainer arranges studio access
+- Door code: for Open Gym + studio rental, sent via WhatsApp at midnight before each booking; for Personal Training, the trainer arranges studio access
 - Same-day bookings welcome; clients book by trainer (PT) or by service (Open Gym, studio rental)
 
 ## License

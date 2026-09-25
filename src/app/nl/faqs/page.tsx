@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe werkt het boekingssysteem?",
-        a: "Voor Open Gym en studio gebruiken we Acuity Scheduling — je boekt online en ontvangt de avond ervoor je deurcode via WhatsApp. Voor Personal Training neem je direct contact op met je trainer (WhatsApp of contactformulier); de trainer plant samen met jou en regelt studio-toegang. Geen receptie, geen wachttijden.",
+        a: "Voor Open Gym en studio gebruiken we Acuity Scheduling — je boekt online en ontvangt om 00:00 in de nacht ervoor je deurcode via WhatsApp. Voor Personal Training neem je direct contact op met je trainer (WhatsApp of contactformulier); de trainer plant samen met jou en regelt studio-toegang. Geen receptie, geen wachttijden.",
       },
     ],
   },
@@ -120,7 +120,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "Hoe werkt Open Gym?",
-        a: "Je boekt een tijdslot via ons boekingssysteem, ontvangt de avond ervoor je deurcode via WhatsApp, en traint zelfstandig in onze privé studio. Maximaal 4 personen tegelijk.",
+        a: "Je boekt een tijdslot via ons boekingssysteem, ontvangt om 00:00 in de nacht ervoor je deurcode via WhatsApp, en traint zelfstandig in onze privé studio. Maximaal 4 personen tegelijk.",
       },
       {
         q: "Wat zijn de 4-weken cycli?",
@@ -132,7 +132,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Hoe werkt de deurcode?",
-        a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode die geldig is voor jouw tijdslot. Hiermee open je de voordeur en kun je direct beginnen met trainen.",
+        a: "Om 00:00 in de nacht voor je sessie ontvang je via WhatsApp een unieke deurcode die geldig is voor jouw tijdslot. Hiermee open je de voordeur en kun je direct beginnen met trainen.",
       },
     ],
   },

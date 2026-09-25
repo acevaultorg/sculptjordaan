@@ -107,7 +107,7 @@ export default function PTAfterInjuryEN() {
                 At SculptClub you train in a private studio — just you and your trainer. Our
                 <a href="/en/location-hours" className="text-brand hover:underline"> studio on the
                 Egelantiersgracht</a> is fully equipped and you receive your door code via
-                WhatsApp the evening before.
+                WhatsApp at midnight before your session.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Common injuries and how training helps</h2>

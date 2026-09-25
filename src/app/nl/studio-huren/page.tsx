@@ -155,7 +155,7 @@ const faqs = [
   },
   {
     q: "Hoe werkt de boeking?",
-    a: "Je boekt online via ons boekingssysteem. De avond voor je sessie ontvang je een deurcode via WhatsApp waarmee je de studio kunt betreden.",
+    a: "Je boekt online via ons boekingssysteem. Om 00:00 in de nacht voor je sessie ontvang je een deurcode via WhatsApp waarmee je de studio kunt betreden.",
   },
   {
     q: "Kan ik de studio eerst uitproberen?",

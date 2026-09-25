@@ -166,7 +166,7 @@ export default function EnglishSpeakingPTAmsterdamEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">The practical side</h2>
               <ul>
                 <li><strong>Booking:</strong> Acuity online scheduler in English — one-click rebooking, email confirmations.</li>
-                <li><strong>Door code:</strong> Sent via WhatsApp the evening before your session (not by email).</li>
+                <li><strong>Door code:</strong> Sent via WhatsApp at midnight before your session (not by email).</li>
                 <li><strong>Cancellation:</strong> Always free. No 24-hour rule, no 12-hour rule. Life happens, we get it.</li>
                 <li><strong>Payments:</strong> Card, Apple Pay, Google Pay. For studio rental we also invoice.</li>
                 <li><strong>Facilities:</strong> Private studio in the Jordaan. Shower and changing room on site.</li>

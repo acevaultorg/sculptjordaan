@@ -225,7 +225,7 @@ export default function BurnoutPersonalTrainerAmsterdam() {
               <p>
                 <strong>Location:</strong> SculptClub at Egelantiersgracht 424 in the Jordaan,
                 Amsterdam. Private studio — no reception, no crowds, no other clients at
-                the same time. You receive the door code the evening before via WhatsApp.
+                the same time. You receive the door code at midnight before your session via WhatsApp.
               </p>
               <p>
                 <strong>Duration:</strong> 60 minutes per session.

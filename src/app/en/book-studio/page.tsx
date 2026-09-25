@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: "How does the door code work?",
-    a: "The evening before your session you receive a door code via WhatsApp. You can enter the studio yourself — no reception.",
+    a: "At midnight before your session you receive a door code via WhatsApp. You can enter the studio yourself — no reception.",
   },
 ];
 

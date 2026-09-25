@@ -109,7 +109,7 @@ const included = [
   {
     icon: Key,
     title: "Door code via WhatsApp",
-    description: "You receive your unique access code the night before.",
+    description: "You receive your unique access code at midnight before your session.",
   },
   {
     icon: Handshake,
@@ -549,7 +549,7 @@ export default function PricingPageEN() {
               { q: "Does my health insurance cover personal training?", a: "Sometimes partially: certain supplementary policies reimburse lifestyle or exercise coaching. Whether it applies in your case, check with your health insurer, we can provide an invoice in your name." },
               { q: "What if the trainer isn't right for me?", a: "The first intro is free and no-obligation. Not a match? No worries. You can always try a different trainer." },
               { q: "Are there hidden costs?", a: "No. The prices on this page are all-inclusive. No sign-up fee, no admin charges, no surprises." },
-              { q: "How does the door code work?", a: "The evening before your session you receive a unique door code via WhatsApp. No reception, no keys, walk straight in." },
+              { q: "How does the door code work?", a: "At midnight before your session you receive a unique door code via WhatsApp. No reception, no keys, walk straight in." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-border/50 py-6">
                 <h3 className="font-semibold mb-2">{faq.q}</h3>

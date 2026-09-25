@@ -208,7 +208,7 @@ export default function PersonalTrainerAmsterdamJordaanPage() {
               "First intro free, no credit card needed",
               "From €299 per 4 weeks — you pay your trainer directly",
               "Open daily 06:00–22:00 — train when it suits you",
-              "Door code via WhatsApp the night before — no reception",
+              "Door code via WhatsApp at midnight before your session — no reception",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

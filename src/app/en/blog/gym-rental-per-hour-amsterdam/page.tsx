@@ -136,7 +136,7 @@ export default function BlogPostGymRentalPerHour() {
                 </table>
               </div>
               <p>
-                At SculptClub there are no additional fees for equipment, wifi, or cleaning. Book online, receive your door code via WhatsApp the evening before your session, and walk straight in.
+                At SculptClub there are no additional fees for equipment, wifi, or cleaning. Book online, receive your door code via WhatsApp at midnight before your session, and walk straight in.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What do you need to rent the studio?</h2>

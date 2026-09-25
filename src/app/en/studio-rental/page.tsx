@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: "How does booking work?",
-    a: "You book online via our booking system. The night before your session you receive a door code via WhatsApp to enter the studio.",
+    a: "You book online via our booking system. At midnight before your session you receive a door code via WhatsApp to enter the studio.",
   },
   {
     q: "Can I try the studio first?",
@@ -551,7 +551,7 @@ export default function StudioRentalPageEN() {
                   "Fully equipped private studio for 1:1 and small group",
                   "You keep 100% of your session rate, we only charge rent",
                   "Flexible booking: only when you have a client",
-                  "Door code via WhatsApp the evening before",
+                  "Door code via WhatsApp at midnight before your session",
                   "Professional equipment: squat rack, cable machine, dumbbells 4–40 kg, Echo Bike and more",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">

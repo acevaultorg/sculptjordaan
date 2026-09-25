@@ -148,7 +148,7 @@ const faqs = [
   },
   {
     q: "Waar is de studio en hoe kom ik er?",
-    a: "Egelantiersgracht 424, 1015 RR Amsterdam, middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk (Europarking 5 min lopen). De avond voor je sessie krijg je via WhatsApp de deurcode + routebeschrijving.",
+    a: "Egelantiersgracht 424, 1015 RR Amsterdam, middenin de Jordaan. 5 min lopen vanaf Westermarkt (tram 13/17), goed bereikbaar per fiets, betaald parkeren in de wijk (Europarking 5 min lopen). Om 00:00 in de nacht voor je sessie krijg je via WhatsApp de deurcode + routebeschrijving.",
   },
   {
     q: "Zijn er kleedkamers en douches?",

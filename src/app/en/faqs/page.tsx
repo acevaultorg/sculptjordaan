@@ -71,7 +71,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How does the booking system work?",
-        a: "For Open Gym and studio rental we use Acuity Scheduling — you book online and receive your door code via WhatsApp the evening before. For Personal Training you contact your trainer directly (WhatsApp or contact form); the trainer schedules with you and arranges studio access. No reception, no waiting.",
+        a: "For Open Gym and studio rental we use Acuity Scheduling — you book online and receive your door code via WhatsApp at midnight before your session. For Personal Training you contact your trainer directly (WhatsApp or contact form); the trainer schedules with you and arranges studio access. No reception, no waiting.",
       },
     ],
   },
@@ -116,7 +116,7 @@ const faqCategories: FaqCategory[] = [
     items: [
       {
         q: "How does Open Gym work?",
-        a: "You book a time slot via our booking system, receive your door code via WhatsApp the evening before, and train independently in our private studio. Maximum 4 people at a time.",
+        a: "You book a time slot via our booking system, receive your door code via WhatsApp at midnight before your session, and train independently in our private studio. Maximum 4 people at a time.",
       },
       {
         q: "What are the 4-week cycles?",
@@ -128,7 +128,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "How does the door code work?",
-        a: "The evening before your session, you receive a unique door code via WhatsApp that is valid for your time slot. Use it to open the front door and start training right away.",
+        a: "At midnight before your session, you receive a unique door code via WhatsApp that is valid for your time slot. Use it to open the front door and start training right away.",
       },
     ],
   },

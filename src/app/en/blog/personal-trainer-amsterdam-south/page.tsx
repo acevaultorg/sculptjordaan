@@ -91,7 +91,7 @@ export default function PTAmsterdamSouthEN() {
                 <li><strong>No membership:</strong> Book per session, cancel any time for free</li>
                 <li><strong>Free intro:</strong> The first session costs nothing</li>
                 <li><strong>Seven trainers:</strong> From strength training and nutrition to women’s training and posture</li>
-                <li><strong>Door code via WhatsApp:</strong> The evening before, no reception needed</li>
+                <li><strong>Door code via WhatsApp:</strong> At midnight before your session, no reception needed</li>
               </ul>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Our trainers</h2>

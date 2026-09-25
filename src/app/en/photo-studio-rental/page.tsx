@@ -67,7 +67,7 @@ const features = [
   { icon: Camera, text: "Industrial set: black floor, rack, dumbbells, sled and the SCULPT wall" },
   { icon: Users, text: "Full studio completely private, for 1 to 8 people" },
   { icon: Clock, text: "Bookable every day from 06:00 to 22:00, by the hour" },
-  { icon: KeyRound, text: "Door code via WhatsApp the night before, no reception" },
+  { icon: KeyRound, text: "Door code via WhatsApp at midnight before your session, no reception" },
   { icon: Ban, text: "Free cancellation, no contract" },
 ];
 

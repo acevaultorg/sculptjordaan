@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "Hoe kom ik binnen?",
     answer:
-      "Je krijgt de deurcode via WhatsApp, de avond voor je sessie. Er is geen balie en niemand hoeft je binnen te laten.",
+      "Je krijgt de deurcode via WhatsApp, om 00:00 in de nacht voor je sessie. Er is geen balie en niemand hoeft je binnen te laten.",
   },
   {
     question: "Staat er een trainer klaar tijdens de Open Gym?",
@@ -102,7 +102,7 @@ const steps = [
   {
     n: "2",
     title: "Je krijgt de deurcode",
-    body: "De avond ervoor sturen we je de code via WhatsApp, samen met het adres.",
+    body: "Om 00:00 in de nacht ervoor sturen we je de code via WhatsApp, samen met het adres.",
   },
   {
     n: "3",

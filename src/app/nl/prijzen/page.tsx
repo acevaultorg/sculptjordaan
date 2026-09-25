@@ -109,7 +109,7 @@ const included = [
   {
     icon: Key,
     title: "Deurcode via WhatsApp",
-    description: "Je ontvangt de avond ervoor je unieke toegangscode.",
+    description: "Je ontvangt om 00:00 in de nacht ervoor je unieke toegangscode.",
   },
   {
     icon: Handshake,
@@ -554,7 +554,7 @@ export default function PricingPageNL() {
               { q: "Vergoedt mijn zorgverzekering personal training?", a: "Soms gedeeltelijk: bepaalde aanvullende verzekeringen vergoeden leefstijl- of beweegcoaching. Of dit in jouw geval geldt, vraag je na bij je zorgverzekeraar, wij kunnen een factuur op naam leveren." },
               { q: "Wat als de trainer niet bij me past?", a: "De eerste intake is gratis en vrijblijvend. Bevalt het niet? Geen verplichtingen. Je kunt altijd een andere trainer proberen." },
               { q: "Zijn er verborgen kosten?", a: "Nee. De prijzen op deze pagina zijn alles-inclusief. Geen inschrijfgeld, geen administratiekosten, geen verrassingen." },
-              { q: "Hoe werkt de deurcode?", a: "De avond voor je sessie ontvang je via WhatsApp een unieke deurcode. Geen receptie, geen sleutels, je loopt direct naar binnen." },
+              { q: "Hoe werkt de deurcode?", a: "Om 00:00 in de nacht voor je sessie ontvang je via WhatsApp een unieke deurcode. Geen receptie, geen sleutels, je loopt direct naar binnen." },
             ].map((faq, i) => (
               <div key={i} className="border-b border-border/50 py-6">
                 <h3 className="font-semibold mb-2">{faq.q}</h3>

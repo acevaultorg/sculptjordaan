@@ -46,7 +46,7 @@ const steps = [
   {
     step: "3",
     title: "Train on your schedule",
-    desc: "Open daily 06:00–22:00. Door code via WhatsApp the night before. No reception, no queues, no small talk.",
+    desc: "Open daily 06:00–22:00. Door code via WhatsApp at midnight before your session. No reception, no queues, no small talk.",
   },
 ];
 

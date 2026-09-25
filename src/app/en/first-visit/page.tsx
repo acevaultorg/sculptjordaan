@@ -70,7 +70,7 @@ const steps = [
     icon: CalendarCheck,
     title: "Book your session",
     description:
-      "For Personal Training, send your trainer a message via WhatsApp or our contact form. The trainer schedules a moment together with you. For Open Gym and studio rental, pick a time slot online; the evening before you receive your door code via WhatsApp.",
+      "For Personal Training, send your trainer a message via WhatsApp or our contact form. The trainer schedules a moment together with you. For Open Gym and studio rental, pick a time slot online; at midnight before your session you receive your door code via WhatsApp.",
     cta: {
       label: "Pick your trainer",
       href: "/en/find-personal-trainer",
@@ -142,7 +142,7 @@ const faqs = [
   },
   {
     q: "What if I can't find the studio?",
-    a: "The evening before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 15 14 79 52. We usually reply within an hour.",
+    a: "At midnight before your session you receive the exact address and directions via WhatsApp. For PT your trainer arranges studio access; for Open Gym and studio rental you receive your personal door code. Questions on the way? WhatsApp us at +31 6 15 14 79 52. We usually reply within an hour.",
   },
   {
     q: "How clean is the studio?",

@@ -108,7 +108,7 @@ export function FaqPreview({ locale }: { locale: Locale }) {
         "View all FAQs →" link, which sent answer-hunting visitors deeper
         into static content rather than to a booking/contact path. Per
         CLAUDE.md the operator's preferred informal channel is WhatsApp
-        ("Door code: Sent via WhatsApp the night before") and tracked
+        ("Door code: Sent via WhatsApp at midnight before your session") and tracked
         conversion goals include WhatsApp clicks. Primary CTA is now
         WhatsApp; "View all FAQs" remains as a tertiary link below.
       */}

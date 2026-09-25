@@ -124,7 +124,7 @@ const trainerFaqs = [
   },
   {
     q: "Hoe boek ik een sessie?",
-    a: "Online via Acuity (ons boekingssysteem). Je krijgt direct bevestiging en de avond voor je sessie ontvang je een unieke deurcode via WhatsApp. Geen receptie, geen sleutels.",
+    a: "Online via Acuity (ons boekingssysteem). Je krijgt direct bevestiging en om 00:00 in de nacht voor je sessie ontvang je een unieke deurcode via WhatsApp. Geen receptie, geen sleutels.",
   },
   {
     q: "Kan ik eerst gratis komen kijken?",

@@ -226,7 +226,7 @@ export default function PersonalTrainerStressBurnoutAmsterdam() {
               <p>
                 <strong>Locatie:</strong> SculptClub aan de Egelantiersgracht 424 in de Jordaan,
                 Amsterdam. Privé studio — geen receptie, geen drukte, geen andere klanten
-                tegelijk. Deurcode ontvang je de avond ervoor via WhatsApp.
+                tegelijk. Deurcode ontvang je om 00:00 in de nacht ervoor via WhatsApp.
               </p>
               <p>
                 <strong>Duur:</strong> 60 minuten per sessie.
