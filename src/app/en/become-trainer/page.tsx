@@ -25,9 +25,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan" },
+  title: { absolute: "Become a Trainer at SculptClub: Studio Rental Jordaan" },
   description:
-    "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour. Free tour.",
+    "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour.",
   keywords: [
     "become personal trainer amsterdam",
     "personal trainer studio rental",
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/become-trainer",
-    title: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan",
+    title: "Become a Trainer at SculptClub: Studio Rental Jordaan",
     description:
-      "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour. Free tour.",
+      "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Become a Trainer at SculptClub — Studio Rental Amsterdam Jordaan",
+    title: "Become a Trainer at SculptClub: Studio Rental Jordaan",
     description:
-      "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour. Free tour.",
+      "Start or grow your personal training practice at SculptClub. Your clients, your rates, your own profile on our website, private studio from €12/hour.",
   },
 };
 

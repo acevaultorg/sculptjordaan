@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Weight Loss Through Strength Training: Why It Works — SculptClub" },
+  title: { absolute: "Weight Loss Through Strength Training: Why It Works" },
   description:
-    "Want to lose weight? Discover why strength training is more effective than cardio for fat loss. The science behind the afterburn effect, metabolism, and practical tips.",
+    "Want to lose weight? Discover why strength training is more effective than cardio for fat loss.",
   keywords: [
     "weight loss strength training",
     "strength training fat loss",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/weight-loss-strength-training",
-    title: "Weight Loss Through Strength Training: Why It Works — SculptClub",
+    title: "Weight Loss Through Strength Training: Why It Works",
     description:
-      "Want to lose weight? Discover why strength training is more effective than cardio for fat loss. The science behind the afterburn effect, metabolism, and practical tips.",
+      "Want to lose weight? Discover why strength training is more effective than cardio for fat loss.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Weight Loss Through Strength Training: Why It Works — SculptClub",
+    title: "Weight Loss Through Strength Training: Why It Works",
     description:
-      "Want to lose weight? Discover why strength training is more effective than cardio for fat loss. The science behind the afterburn effect, metabolism, and practical tips.",
+      "Want to lose weight? Discover why strength training is more effective than cardio for fat loss.",
   },
 };
 

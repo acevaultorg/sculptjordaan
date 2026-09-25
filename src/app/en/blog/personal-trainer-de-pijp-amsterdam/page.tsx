@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer De Pijp Amsterdam — SculptClub" },
   description:
-    "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
+    "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride.",
   keywords: [
     "personal trainer de pijp",
     "personal trainer de pijp amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-trainer-de-pijp-amsterdam",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
+      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
+      "Looking for a personal trainer in De Pijp, Amsterdam? SculptClub in the Jordaan is a 10-minute bike ride.",
   },
 };
 

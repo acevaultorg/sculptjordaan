@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Personal Trainer Locatie Amsterdam Jordaan — waarom het werkt | SculptClub",
+      "Personal Trainer Locatie Amsterdam Jordaan: waarom het werkt",
   },
   description:
-    "Waarom Jordaan een sterke locatie is voor freelance personal trainers in Amsterdam. Demografie, klantprofiel, bereikbaarheid, en wat trainers hier verdienen.",
+    "Waarom de Jordaan een sterke plek is voor freelance personal trainers in Amsterdam: klantprofiel, bereikbaarheid en wat trainers hier verdienen.",
   keywords: [
     "personal trainer amsterdam jordaan",
     "personal trainer locatie amsterdam",
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/voor-trainers/personal-trainer-locatie-amsterdam-jordaan",
-    title: "Personal Trainer Locatie Amsterdam Jordaan — waarom het werkt | SculptClub",
+    title: "Personal Trainer Locatie Amsterdam Jordaan: waarom het werkt",
     description:
-      "Waarom Jordaan een sterke locatie is voor freelance personal trainers in Amsterdam. Demografie, klantprofiel, bereikbaarheid, en wat trainers hier verdienen.",
+      "Waarom de Jordaan een sterke plek is voor freelance personal trainers in Amsterdam: klantprofiel, bereikbaarheid en wat trainers hier verdienen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Locatie Amsterdam Jordaan — waarom het werkt | SculptClub",
+    title: "Personal Trainer Locatie Amsterdam Jordaan: waarom het werkt",
     description:
-      "Waarom Jordaan een sterke locatie is voor freelance personal trainers in Amsterdam. Demografie, klantprofiel, bereikbaarheid, en wat trainers hier verdienen.",
+      "Waarom de Jordaan een sterke plek is voor freelance personal trainers in Amsterdam: klantprofiel, bereikbaarheid en wat trainers hier verdienen.",
   },
 };
 

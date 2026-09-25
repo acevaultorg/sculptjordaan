@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Afvallen met krachttraining: Waarom het werkt — SculptClub" },
   description:
-    "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect, metabolisme en praktische tips.",
+    "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding.",
   keywords: [
     "afvallen met krachttraining",
     "krachttraining vetverbranding",
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/afvallen-met-krachttraining",
     title: "Afvallen met krachttraining: Waarom het werkt — SculptClub",
     description:
-      "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect, metabolisme en praktische tips.",
+      "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Afvallen met krachttraining: Waarom het werkt — SculptClub",
     description:
-      "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding. De wetenschap achter het afterburn effect, metabolisme en praktische tips.",
+      "Wil je afvallen? Ontdek waarom krachttraining effectiever is dan cardio voor vetverbranding.",
   },
 };
 

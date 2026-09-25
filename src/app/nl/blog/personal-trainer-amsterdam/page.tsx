@@ -8,9 +8,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer in Amsterdam: Zo vind je de beste match — SculptClub" },
+  title: { absolute: "Personal Trainer in Amsterdam: Zo vind je de beste match" },
   description:
-    "Hoe vind je de juiste personal trainer in Amsterdam? Ontdek waar je op moet letten, welke rode vlaggen je moet vermijden en waarom een gratis intake het verschil maakt.",
+    "Hoe vind je de juiste personal trainer in Amsterdam? Waar je op let, welke rode vlaggen je vermijdt en waarom een gratis intake helpt kiezen.",
   keywords: [
     "personal trainer amsterdam",
     "personal trainer zoeken amsterdam",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/personal-trainer-amsterdam",
-    title: "Personal Trainer in Amsterdam: Zo vind je de beste match — SculptClub",
+    title: "Personal Trainer in Amsterdam: Zo vind je de beste match",
     description:
-      "Hoe vind je de juiste personal trainer in Amsterdam? Ontdek waar je op moet letten, welke rode vlaggen je moet vermijden en waarom een gratis intake het verschil maakt.",
+      "Hoe vind je de juiste personal trainer in Amsterdam? Waar je op let, welke rode vlaggen je vermijdt en waarom een gratis intake helpt kiezen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer in Amsterdam: Zo vind je de beste match — SculptClub",
+    title: "Personal Trainer in Amsterdam: Zo vind je de beste match",
     description:
-      "Hoe vind je de juiste personal trainer in Amsterdam? Ontdek waar je op moet letten, welke rode vlaggen je moet vermijden en waarom een gratis intake het verschil maakt.",
+      "Hoe vind je de juiste personal trainer in Amsterdam? Waar je op let, welke rode vlaggen je vermijdt en waarom een gratis intake helpt kiezen.",
   },
 };
 

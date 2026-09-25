@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Fysiotherapie Studio Huren in Amsterdam — SculptClub" },
   description:
-    "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur. Ideaal voor ZZP-fysiotherapeuten.",
+    "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur.",
   keywords: [
     "fysiotherapie studio huren amsterdam",
     "ruimte huren fysiotherapeut",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/fysiotherapie-studio-huren-amsterdam",
     title: "Fysiotherapie Studio Huren in Amsterdam — SculptClub",
     description:
-      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur. Ideaal voor ZZP-fysiotherapeuten.",
+      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Fysiotherapie Studio Huren in Amsterdam — SculptClub",
     description:
-      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur. Ideaal voor ZZP-fysiotherapeuten.",
+      "Op zoek naar een ruimte voor fysiotherapie of revalidatietraining in Amsterdam? Huur een volledig uitgeruste studio per uur.",
   },
 };
 

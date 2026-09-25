@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Own Studio vs Home vs Outdoor — where to work as a personal trainer | SculptClub",
+      "Own Studio, Home or Outdoor: Where Should a PT Work?",
   },
   description:
     "Comparison for freelance personal trainers: own studio (lease), at client's home, in a park, or hourly studio rental. Costs, margins, client perception.",
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/for-trainers/personal-trainer-own-studio-vs-home-vs-outdoor",
-    title: "Own Studio vs Home vs Outdoor — where to work as a personal trainer | SculptClub",
+    title: "Own Studio, Home or Outdoor: Where Should a PT Work?",
     description:
       "Comparison for freelance personal trainers: own studio (lease), at client's home, in a park, or hourly studio rental. Costs, margins, client perception.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Own Studio vs Home vs Outdoor — where to work as a personal trainer | SculptClub",
+    title: "Own Studio, Home or Outdoor: Where Should a PT Work?",
     description:
       "Comparison for freelance personal trainers: own studio (lease), at client's home, in a park, or hourly studio rental. Costs, margins, client perception.",
   },

@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Physiotherapy Studio Rental in Amsterdam — SculptClub" },
   description:
-    "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
+    "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour.",
   keywords: [
     "physiotherapy studio rental amsterdam",
     "rent space physiotherapist amsterdam",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "/en/blog/physiotherapy-studio-rental-amsterdam",
     title: "Physiotherapy Studio Rental in Amsterdam — SculptClub",
     description:
-      "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
+      "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Physiotherapy Studio Rental in Amsterdam — SculptClub",
     description:
-      "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour. Ideal for freelance physiotherapists.",
+      "Looking for a space for physiotherapy or rehab training in Amsterdam? Rent a fully equipped private studio by the hour.",
   },
 };
 

@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User, Info } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer bij Rugklachten Amsterdam — SculptClub" },
   description:
-    "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut. Gratis intake in Amsterdam Jordaan.",
+    "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut.",
   keywords: [
     "personal trainer rugklachten amsterdam",
     "personal trainer rugpijn amsterdam",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/personal-trainer-rugklachten-amsterdam",
     title: "Personal Trainer bij Rugklachten Amsterdam — SculptClub",
     description:
-      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut. Gratis intake in Amsterdam Jordaan.",
+      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer bij Rugklachten Amsterdam — SculptClub",
     description:
-      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut. Gratis intake in Amsterdam Jordaan.",
+      "Rugklachten? Krachttraining gericht op techniek, houding en opbouw kan rugpijn structureel verminderen — in samenwerking met je fysiotherapeut.",
   },
 };
 

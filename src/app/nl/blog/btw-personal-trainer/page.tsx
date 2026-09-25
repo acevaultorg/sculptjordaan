@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Btw voor personal trainers — 21% of 9%? Zo zit het in 2026 — SculptClub" },
+  title: { absolute: "Btw voor personal trainers: 21% of 9%? Zo zit het in 2026" },
   description:
-    "Welk btw-tarief geldt voor personal training? Losse PT-sessies vallen onder 21%. Het 9%-tarief geldt alleen als je training combineert met het ter beschikking stellen van een sportaccommodatie. Plus: de KOR onder €20.000 omzet.",
+    "Btw op personal training: losse PT-sessies vallen onder 21%. Het 9%-tarief geldt alleen samen met het gebruik van een sportaccommodatie. Plus de KOR.",
   keywords: [
     "btw personal trainer",
     "personal training btw 9 of 21",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/btw-personal-trainer",
-    title: "Btw voor personal trainers — 21% of 9%? Zo zit het in 2026 — SculptClub",
+    title: "Btw voor personal trainers: 21% of 9%? Zo zit het in 2026",
     description:
       "Losse PT-sessies: 21%. Het 9%-tarief geldt alleen mét sportaccommodatie. En onder €20.000 omzet is er de KOR. De regels, met de criteria van de Belastingdienst.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Btw voor personal trainers — 21% of 9%? Zo zit het in 2026 — SculptClub",
+    title: "Btw voor personal trainers: 21% of 9%? Zo zit het in 2026",
     description:
       "Losse PT-sessies: 21%. Het 9%-tarief geldt alleen mét sportaccommodatie. En onder €20.000 omzet is er de KOR.",
   },

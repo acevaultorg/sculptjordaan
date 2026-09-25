@@ -8,9 +8,9 @@ import { FaqJsonLd } from "@/components/seo/json-ld";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Jordaan & Centrum — SculptClub Privé Studio Amsterdam" },
+  title: { absolute: "Personal Trainer Jordaan & Centrum | SculptClub" },
   description:
-    "Personal training in de Jordaan en het Centrum van Amsterdam. Privé studio aan de Egelantiersgracht — vanaf €299 per 4 weken, geen contract, eerste intake gratis. Telefonisch of in de studio.",
+    "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €299 per 4 weken, geen contract, eerste intake gratis.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/nl/personal-trainer-jordaan",
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/personal-trainer-jordaan",
-    title: "Personal Trainer Jordaan & Centrum — SculptClub Privé Studio Amsterdam",
+    title: "Personal Trainer Jordaan & Centrum | SculptClub",
     description:
-      "Personal training in de Jordaan en het Centrum van Amsterdam. Privé studio aan de Egelantiersgracht — vanaf €299 per 4 weken, geen contract, eerste intake gratis. Telefonisch of in de studio.",
+      "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €299 per 4 weken, geen contract, eerste intake gratis.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Jordaan & Centrum — SculptClub Privé Studio Amsterdam",
+    title: "Personal Trainer Jordaan & Centrum | SculptClub",
     description:
-      "Personal training in de Jordaan en het Centrum van Amsterdam. Privé studio aan de Egelantiersgracht — vanaf €299 per 4 weken, geen contract, eerste intake gratis. Telefonisch of in de studio.",
+      "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €299 per 4 weken, geen contract, eerste intake gratis.",
   },
 };
 

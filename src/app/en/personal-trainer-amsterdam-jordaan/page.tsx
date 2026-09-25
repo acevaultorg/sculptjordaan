@@ -8,9 +8,9 @@ import { FaqJsonLd } from "@/components/seo/json-ld";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio" },
+  title: { absolute: "Personal Trainer Amsterdam Jordaan & Centrum | SculptClub" },
   description:
-    "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €299 per 4 weeks, no contract, first intro free.",
+    "Personal training in the Jordaan and Centrum. English-speaking trainers, private canal-side studio, from €299 per 4 weeks, no contract, first intro free.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/en/personal-trainer-amsterdam-jordaan",
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/personal-trainer-amsterdam-jordaan",
-    title: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio",
+    title: "Personal Trainer Amsterdam Jordaan & Centrum | SculptClub",
     description:
-      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €299 per 4 weeks, no contract, first intro free.",
+      "Personal training in the Jordaan and Centrum. English-speaking trainers, private canal-side studio, from €299 per 4 weeks, no contract, first intro free.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Amsterdam Jordaan & Centrum — SculptClub Private Studio",
+    title: "Personal Trainer Amsterdam Jordaan & Centrum | SculptClub",
     description:
-      "Personal training in Amsterdam's Jordaan and Centrum. English-speaking trainers, private canal-side studio on the Egelantiersgracht — from €299 per 4 weeks, no contract, first intro free.",
+      "Personal training in the Jordaan and Centrum. English-speaking trainers, private canal-side studio, from €299 per 4 weeks, no contract, first intro free.",
   },
 };
 

@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub" },
+  title: { absolute: "Voedingscoach Amsterdam: wanneer heb je een diëtist nodig?" },
   description:
-    "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig? Ontdek hoe voeding en training samenkomen bij SculptClub.",
+    "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig?",
   keywords: [
     "voedingscoach amsterdam",
     "diëtist amsterdam",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/voedingscoach-amsterdam",
-    title: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub",
+    title: "Voedingscoach Amsterdam: wanneer heb je een diëtist nodig?",
     description:
-      "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig? Ontdek hoe voeding en training samenkomen bij SculptClub.",
+      "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Voedingscoach Amsterdam: Wat doet een diëtist en wanneer heb je er een nodig? — SculptClub",
+    title: "Voedingscoach Amsterdam: wanneer heb je een diëtist nodig?",
     description:
-      "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig? Ontdek hoe voeding en training samenkomen bij SculptClub.",
+      "Wat is het verschil tussen een voedingscoach en diëtist in Amsterdam? Wanneer heb je een voedingsconsult nodig?",
   },
 };
 

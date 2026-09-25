@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub" },
+  title: { absolute: "Personal Trainer tijdens Zwangerschap in Amsterdam" },
   description:
     "Veilig blijven trainen tijdens je zwangerschap. Privé studio in de Jordaan, vrouwelijke trainers met ervaring in prenatale kracht- en mobiliteitstraining.",
   keywords: [
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/personal-trainer-zwangerschap-amsterdam",
-    title: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub",
+    title: "Personal Trainer tijdens Zwangerschap in Amsterdam",
     description:
       "Veilig blijven trainen tijdens je zwangerschap. Privé studio in de Jordaan, vrouwelijke trainers met ervaring in prenatale kracht- en mobiliteitstraining.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer tijdens Zwangerschap in Amsterdam — SculptClub",
+    title: "Personal Trainer tijdens Zwangerschap in Amsterdam",
     description:
       "Veilig blijven trainen tijdens je zwangerschap. Privé studio in de Jordaan, vrouwelijke trainers met ervaring in prenatale kracht- en mobiliteitstraining.",
   },

@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026 Guide) — SculptClub" },
+  title: { absolute: "Freelance Personal Trainer NL: Tax, KvK, Insurance (2026)" },
   description:
-    "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, professional liability, disability insurance, pension and bookkeeping. With 2026 numbers.",
+    "Becoming a freelance personal trainer in the Netherlands: KvK, VAT, liability and disability insurance, pension and bookkeeping, with 2026 numbers.",
   keywords: [
     "freelance personal trainer netherlands vat",
     "personal trainer kvk registration",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension",
-    title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026 Guide) — SculptClub",
+    title: "Freelance Personal Trainer NL: Tax, KvK, Insurance (2026)",
     description:
-      "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, professional liability, disability insurance, pension and bookkeeping. With 2026 numbers.",
+      "Becoming a freelance personal trainer in the Netherlands: KvK, VAT, liability and disability insurance, pension and bookkeeping, with 2026 numbers.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026 Guide) — SculptClub",
+    title: "Freelance Personal Trainer NL: Tax, KvK, Insurance (2026)",
     description:
-      "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, professional liability, disability insurance, pension and bookkeeping. With 2026 numbers.",
+      "Becoming a freelance personal trainer in the Netherlands: KvK, VAT, liability and disability insurance, pension and bookkeeping, with 2026 numbers.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostFreelanceTrainerTax() {
       />
       <BlogPostingJsonLd
         title="Freelance personal trainer in the Netherlands — tax, KvK, insurance, pension (2026 guide)"
-        description="Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, professional liability, disability insurance, pension and bookkeeping. With 2026 numbers."
+        description="Becoming a freelance personal trainer in the Netherlands: KvK, VAT, liability and disability insurance, pension and bookkeeping, with 2026 numbers."
         url="/en/blog/freelance-personal-trainer-netherlands-tax-registration-insurance-pension"
         datePublished="2026-05-20"
       />

@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Cost of Private Studio Rental vs Opening Your Own Gym in Amsterdam — SculptClub" },
+  title: { absolute: "Private Studio Rental vs Your Own Gym: Costs Amsterdam" },
   description:
-    "Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym. With real 2026 numbers.",
+    "Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym.",
   keywords: [
     "cost open own gym amsterdam",
     "private studio rental cost amsterdam",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/cost-private-studio-rental-vs-opening-own-gym-amsterdam",
-    title: "Cost of Private Studio Rental vs Opening Your Own Gym in Amsterdam — SculptClub",
+    title: "Private Studio Rental vs Your Own Gym: Costs Amsterdam",
     description:
-      "Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym. With real 2026 numbers.",
+      "Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cost of Private Studio Rental vs Opening Your Own Gym in Amsterdam — SculptClub",
+    title: "Private Studio Rental vs Your Own Gym: Costs Amsterdam",
     description:
-      "Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym. With real 2026 numbers.",
+      "Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostCostStudioVsOwnGym() {
       />
       <BlogPostingJsonLd
         title="Cost of private studio rental vs opening your own gym in Amsterdam"
-        description="Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym. With real 2026 numbers."
+        description="Freelance personal trainer in Amsterdam? The full cost comparison between renting a private studio per hour, leasing space, or opening your own gym."
         url="/en/blog/cost-private-studio-rental-vs-opening-own-gym-amsterdam"
         datePublished="2026-05-20"
       />

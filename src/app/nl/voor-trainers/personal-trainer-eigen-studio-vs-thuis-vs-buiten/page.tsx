@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Eigen Studio vs Thuis vs Buiten — waar werk je als personal trainer? | SculptClub",
+      "Eigen studio, thuis of buiten: waar werk je als PT?",
   },
   description:
-    "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren. Kosten, marge, klantperceptie.",
+    "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren.",
   keywords: [
     "personal trainer waar trainen",
     "eigen studio vs thuis personal trainer",
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/voor-trainers/personal-trainer-eigen-studio-vs-thuis-vs-buiten",
-    title: "Eigen Studio vs Thuis vs Buiten — waar werk je als personal trainer? | SculptClub",
+    title: "Eigen studio, thuis of buiten: waar werk je als PT?",
     description:
-      "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren. Kosten, marge, klantperceptie.",
+      "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eigen Studio vs Thuis vs Buiten — waar werk je als personal trainer? | SculptClub",
+    title: "Eigen studio, thuis of buiten: waar werk je als PT?",
     description:
-      "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren. Kosten, marge, klantperceptie.",
+      "Vergelijking voor freelance personal trainers: eigen studio (lease), bij de klant thuis, in het park, of studio per uur huren.",
   },
 };
 

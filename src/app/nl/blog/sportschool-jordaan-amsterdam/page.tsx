@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub" },
+  title: { absolute: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij" },
   description:
     "Op zoek naar een sportschool in de Jordaan, Amsterdam? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
   keywords: [
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/sportschool-jordaan-amsterdam",
-    title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub",
+    title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij",
     description:
       "Op zoek naar een sportschool in de Jordaan, Amsterdam? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij — SculptClub",
+    title: "Sportschool Jordaan Amsterdam: Jouw Opties op een Rij",
     description:
       "Op zoek naar een sportschool in de Jordaan, Amsterdam? Vergelijk grote ketens, boutique studio's en privé gyms. Ontdek wat het beste bij je past.",
   },

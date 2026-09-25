@@ -6,9 +6,9 @@ import { Star, MapPin, Clock, Shield } from "lucide-react";
 import { acuityLinks, whatsappLinks } from "@/config/acuity";
 
 export const metadata: Metadata = {
-  title: { absolute: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan" },
+  title: { absolute: "Welkom bij SculptClub: privé studio in de Jordaan" },
   description:
-    "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac299 per 4 weken, Open Gym vanaf \u20ac6,13/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+    "Privé studio in de Jordaan. PT vanaf €299 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/nl/start",
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/start",
-    title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
+    title: "Welkom bij SculptClub: privé studio in de Jordaan",
     description:
-      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac299 per 4 weken, Open Gym vanaf \u20ac6,13/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+      "Privé studio in de Jordaan. PT vanaf €299 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welkom bij SculptClub \u2014 Priv\u00e9 Studio Amsterdam Jordaan",
+    title: "Welkom bij SculptClub: privé studio in de Jordaan",
     description:
-      "Priv\u00e9 personal training studio in de Jordaan. Personal training vanaf \u20ac299 per 4 weken, Open Gym vanaf \u20ac6,13/sessie, studio huren vanaf \u20ac12/uur. Eerste sessie gratis.",
+      "Privé studio in de Jordaan. PT vanaf €299 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
   },
 };
 

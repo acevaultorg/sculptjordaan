@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Studio Huren vs Commerciële Gym als Personal Trainer — Vergelijking Amsterdam — SculptClub" },
+  title: { absolute: "Studio huren of commerciële gym als personal trainer?" },
   description:
-    "Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren? Volledige vergelijking voor ZZP personal trainers in Amsterdam.",
+    "Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren?",
   keywords: ["personal trainer commerciële gym vs huren", "fitnesscentrum trainer worden", "personal trainer studio huren amsterdam", "zzp pt commerciële gym", "trainer commissie commerciële sportschool"],
   alternates: {
     canonical: "/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam",
-    title: "Studio Huren vs Commerciële Gym als Personal Trainer — Vergelijking Amsterdam — SculptClub",
+    title: "Studio huren of commerciële gym als personal trainer?",
     description:
-      "Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren? Volledige vergelijking voor ZZP personal trainers in Amsterdam.",
+      "Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Huren vs Commerciële Gym als Personal Trainer — Vergelijking Amsterdam — SculptClub",
+    title: "Studio huren of commerciële gym als personal trainer?",
     description:
-      "Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren? Volledige vergelijking voor ZZP personal trainers in Amsterdam.",
+      "Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren?",
   },
 };
 
@@ -33,7 +33,7 @@ export default function BlogPostStudioVsCommercieleGym() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Studio huren vs commerciële gym", url: "/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam" }]} />
-      <BlogPostingJsonLd title="Studio huren vs commerciële gym als personal trainer in Amsterdam" description="Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren? Volledige vergelijking voor ZZP personal trainers in Amsterdam." url="/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="Studio huren vs commerciële gym als personal trainer in Amsterdam" description="Twijfel je tussen werken in een commerciële gym (Optimum, Sportcity, David Lloyd) of een privé studio huren?" url="/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "Wat is de commissie bij commerciële gyms voor personal trainers?", answer: "30 tot 50% in Amsterdam — afhankelijk van de keten. Sportcity en David Lloyd zitten typisch rond 40%, Optimum richting 30-35%. Onder de bovengrens van 30% kom je vrijwel nooit." },
         { question: "Wie is de klant — de PT of de gym?", answer: "Bij commerciële gyms is de klant van de gym, niet van jou. Als je weggaat, blijven ze. Bij studio-huur (zoals SculptClub) is de klant van jou — jullie gaan samen mee." },

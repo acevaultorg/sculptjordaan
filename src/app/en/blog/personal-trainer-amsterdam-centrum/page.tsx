@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam Centrum — SculptClub" },
   description:
-    "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, transformations from €299 per 4 weeks.",
+    "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner.",
   keywords: [
     "personal trainer amsterdam centrum",
     "personal training centrum amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-trainer-amsterdam-centrum",
     title: "Personal Trainer Amsterdam Centrum — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, transformations from €299 per 4 weeks.",
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam Centrum — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, transformations from €299 per 4 weeks.",
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner.",
   },
 };
 

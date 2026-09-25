@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub" },
+  title: { absolute: "Eerste keer naar de sportschool: 7 tips voor beginners" },
   description:
-    "Zenuwachtig voor je eerste bezoek aan de sportschool? Deze 7 praktische tips helpen je om je voor te bereiden, zelfverzekerd binnen te stappen en direct een goede start te maken.",
+    "Zenuwachtig voor je eerste keer in de sportschool? Zeven praktische tips om je voor te bereiden en zeker van je zaak binnen te stappen.",
   keywords: [
     "eerste keer sportschool",
     "sportschool beginners tips",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/eerste-keer-sportschool-tips",
-    title: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub",
+    title: "Eerste keer naar de sportschool: 7 tips voor beginners",
     description:
-      "Zenuwachtig voor je eerste bezoek aan de sportschool? Deze 7 praktische tips helpen je om je voor te bereiden, zelfverzekerd binnen te stappen en direct een goede start te maken.",
+      "Zenuwachtig voor je eerste keer in de sportschool? Zeven praktische tips om je voor te bereiden en zeker van je zaak binnen te stappen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eerste keer naar de sportschool: 7 tips voor beginners — SculptClub",
+    title: "Eerste keer naar de sportschool: 7 tips voor beginners",
     description:
-      "Zenuwachtig voor je eerste bezoek aan de sportschool? Deze 7 praktische tips helpen je om je voor te bereiden, zelfverzekerd binnen te stappen en direct een goede start te maken.",
+      "Zenuwachtig voor je eerste keer in de sportschool? Zeven praktische tips om je voor te bereiden en zeker van je zaak binnen te stappen.",
   },
 };
 

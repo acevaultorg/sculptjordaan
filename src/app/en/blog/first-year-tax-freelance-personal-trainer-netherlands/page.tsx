@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "First-year tax as a freelance personal trainer in the Netherlands (2026) — SculptClub" },
+  title: { absolute: "First-Year Tax for Freelance Personal Trainers (2026)" },
   description:
-    "Self-employed deduction €1,200, starter's deduction €2,123, the 1,225-hour criterion, and the 12.7% SME profit exemption — what each Dutch tax deduction actually saves in your first year, with a worked example.",
+    "Self-employed deduction €1,200, starter's deduction €2,123, the 1,225-hour rule and the 12.7% SME exemption: what each saves in year one, worked out.",
   keywords: [
     "first year tax freelance personal trainer netherlands",
     "zelfstandigenaftrek 2026 english",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
-    title: "First-year tax as a freelance personal trainer in the Netherlands (2026) — SculptClub",
+    title: "First-Year Tax for Freelance Personal Trainers (2026)",
     description:
       "The hours criterion, self-employed deduction, starter's deduction and SME profit exemption — the four deductions that shape your first year, with the Belastingdienst's own figures and a worked example.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "First-year tax as a freelance personal trainer in the Netherlands (2026) — SculptClub",
+    title: "First-Year Tax for Freelance Personal Trainers (2026)",
     description:
       "The hours criterion, self-employed deduction, starter's deduction and SME profit exemption — with a worked example for your first year.",
   },

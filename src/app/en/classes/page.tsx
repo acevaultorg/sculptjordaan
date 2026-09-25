@@ -31,7 +31,7 @@ import { Globe, CalendarCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Classes & trainers in the Jordaan — SculptClub",
   description:
-    "The self-employed personal trainers and coaches who teach in our private studio on the Egelantiersgracht. Each with their own offer, their own site and their own schedule.",
+    "The self-employed personal trainers and coaches who teach in our private studio on the Egelantiersgracht.",
   alternates: { canonical: "/en/classes", languages: { nl: "/en/classes", en: "/en/classes" } },
   openGraph: {
     type: "website",

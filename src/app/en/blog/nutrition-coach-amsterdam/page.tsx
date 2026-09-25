@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub" },
+  title: { absolute: "Nutrition Coach Amsterdam: Do You Need a Dietitian?" },
   description:
-    "What's the difference between a nutrition coach and a registered dietitian in Amsterdam? When does nutrition advice actually make a difference in your training results?",
+    "Nutrition coach or registered dietitian in Amsterdam: what's the difference, and when does nutrition advice change your training results?",
   keywords: [
     "nutrition coach amsterdam",
     "dietitian amsterdam",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/nutrition-coach-amsterdam",
-    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub",
+    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian?",
     description:
-      "What's the difference between a nutrition coach and a registered dietitian in Amsterdam? When does nutrition advice actually make a difference in your training results?",
+      "Nutrition coach or registered dietitian in Amsterdam: what's the difference, and when does nutrition advice change your training results?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian for Your Training? — SculptClub",
+    title: "Nutrition Coach Amsterdam: Do You Need a Dietitian?",
     description:
-      "What's the difference between a nutrition coach and a registered dietitian in Amsterdam? When does nutrition advice actually make a difference in your training results?",
+      "Nutrition coach or registered dietitian in Amsterdam: what's the difference, and when does nutrition advice change your training results?",
   },
 };
 

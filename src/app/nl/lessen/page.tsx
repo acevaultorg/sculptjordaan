@@ -31,7 +31,7 @@ import { Globe, CalendarCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Lessen & trainers in de Jordaan — SculptClub",
   description:
-    "De zelfstandige personal trainers en coaches die lesgeven in onze privé studio aan de Egelantiersgracht. Elk met hun eigen aanbod, eigen site en eigen agenda.",
+    "De zelfstandige personal trainers en coaches die lesgeven in onze privé studio aan de Egelantiersgracht.",
   alternates: { canonical: "/nl/lessen", languages: { nl: "/nl/lessen", en: "/en/classes" } },
   openGraph: {
     type: "website",

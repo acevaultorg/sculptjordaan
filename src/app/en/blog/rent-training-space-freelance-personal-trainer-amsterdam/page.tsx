@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Rent Training Space as a Freelance Personal Trainer in Amsterdam — SculptClub" },
+  title: { absolute: "Rent Training Space as a Freelance Trainer in Amsterdam" },
   description:
     "Practical guide for freelance personal trainers looking to rent training space in Amsterdam. Costs, insurance, tax benefits and how to get started.",
   keywords: [
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/rent-training-space-freelance-personal-trainer-amsterdam",
-    title: "Rent Training Space as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    title: "Rent Training Space as a Freelance Trainer in Amsterdam",
     description:
       "Practical guide for freelance personal trainers looking to rent training space in Amsterdam. Costs, insurance, tax benefits and how to get started.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rent Training Space as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    title: "Rent Training Space as a Freelance Trainer in Amsterdam",
     description:
       "Practical guide for freelance personal trainers looking to rent training space in Amsterdam. Costs, insurance, tax benefits and how to get started.",
   },

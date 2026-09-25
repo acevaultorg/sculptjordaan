@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Wat Kost een Boutique Gym vs een Ketensportschool? — SculptClub" },
+  title: { absolute: "Wat Kost een Boutique Gym vs een Ketensportschool?" },
   description:
-    "Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld — op een rij.",
+    "Wat kost sporten bij een boutique gym tegenover een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld.",
   keywords: [
     "boutique gym amsterdam",
     "boutique gym prijs vs sportschool",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/boutique-gym-vs-sportschool-keten",
-    title: "Wat Kost een Boutique Gym vs een Ketensportschool? — SculptClub",
+    title: "Wat Kost een Boutique Gym vs een Ketensportschool?",
     description:
-      "Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld — op een rij.",
+      "Wat kost sporten bij een boutique gym tegenover een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wat Kost een Boutique Gym vs een Ketensportschool? — SculptClub",
+    title: "Wat Kost een Boutique Gym vs een Ketensportschool?",
     description:
-      "Wat kost sporten bij een boutique gym vergeleken met een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld — op een rij.",
+      "Wat kost sporten bij een boutique gym tegenover een grote sportschoolketen? Prijs, contractvoorwaarden en wat je echt krijgt voor je geld.",
   },
 };
 

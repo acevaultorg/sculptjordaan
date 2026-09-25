@@ -38,9 +38,9 @@ const gallery = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "Fotostudio huren Amsterdam Jordaan — hele studio €17/uur | SculptClub" },
+  title: { absolute: "Fotostudio huren Amsterdam Jordaan: hele studio €17/uur" },
   description:
-    "Huur onze privé studio in de Jordaan voor een fotoshoot of content: daglicht door het dakraam, een industriële gym als decor en de gracht voor de deur. Hele studio €17 per uur, dagelijks 06:00–22:00, gratis annuleren.",
+    "Huur onze privé studio in de Jordaan voor een fotoshoot of content: daglicht door het dakraam, een industriële gym als decor en de gracht voor de deur.",
   keywords: [
     "fotostudio huren amsterdam",
     "studio huren fotoshoot amsterdam",

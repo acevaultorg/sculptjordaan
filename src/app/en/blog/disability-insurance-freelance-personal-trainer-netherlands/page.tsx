@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Disability insurance (AOV) for freelance personal trainers in the Netherlands — mandatory from ~2030 — SculptClub" },
+  title: { absolute: "Disability Insurance (AOV) for Freelance Trainers NL" },
   description:
-    "Is disability insurance mandatory for freelance personal trainers in the Netherlands? From around 2030 it will be (the BAZ act). What the mandatory AOV means, what private cover costs for a physical profession, and when a broodfonds is enough.",
+    "Is disability insurance mandatory for freelance personal trainers in the Netherlands? From around 2030 it will be (the BAZ act).",
   keywords: [
     "aov personal trainer netherlands",
     "disability insurance freelance netherlands",

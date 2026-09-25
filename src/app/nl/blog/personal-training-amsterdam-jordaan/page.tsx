@@ -8,9 +8,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Training in Amsterdam Jordaan: Wat je moet weten — SculptClub" },
+  title: { absolute: "Personal Training in Amsterdam Jordaan: Wat je moet weten" },
   description:
-    "Alles over personal training in de Jordaan, Amsterdam. Ontdek wat een privé studio biedt, wat je kunt verwachten van een trainer, en waarom de Jordaan de perfecte locatie is.",
+    "Personal training in de Jordaan, Amsterdam: wat een privé studio biedt, wat je van een trainer kunt verwachten en waarom de Jordaan goed werkt.",
   keywords: [
     "personal training amsterdam jordaan",
     "personal trainer jordaan",
@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/personal-training-amsterdam-jordaan",
-    title: "Personal Training in Amsterdam Jordaan: Wat je moet weten — SculptClub",
+    title: "Personal Training in Amsterdam Jordaan: Wat je moet weten",
     description:
-      "Alles over personal training in de Jordaan, Amsterdam. Ontdek wat een privé studio biedt, wat je kunt verwachten van een trainer, en waarom de Jordaan de perfecte locatie is.",
+      "Personal training in de Jordaan, Amsterdam: wat een privé studio biedt, wat je van een trainer kunt verwachten en waarom de Jordaan goed werkt.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Training in Amsterdam Jordaan: Wat je moet weten — SculptClub",
+    title: "Personal Training in Amsterdam Jordaan: Wat je moet weten",
     description:
-      "Alles over personal training in de Jordaan, Amsterdam. Ontdek wat een privé studio biedt, wat je kunt verwachten van een trainer, en waarom de Jordaan de perfecte locatie is.",
+      "Personal training in de Jordaan, Amsterdam: wat een privé studio biedt, wat je van een trainer kunt verwachten en waarom de Jordaan goed werkt.",
   },
 };
 

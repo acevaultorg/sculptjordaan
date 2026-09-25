@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Belasting eerste jaar ZZP personal trainer — wat houd je over? (2026) — SculptClub" },
+  title: { absolute: "Belasting eerste jaar ZZP personal trainer (2026)" },
   description:
-    "Zelfstandigenaftrek €1.200, startersaftrek €2.123, urencriterium 1.225 uur, mkb-winstvrijstelling 12,7% — wat elke aftrekpost in je eerste jaar als ZZP personal trainer daadwerkelijk oplevert, met een rekenvoorbeeld.",
+    "Zelfstandigenaftrek €1.200, startersaftrek €2.123, urencriterium 1.225 uur, mkb-winstvrijstelling 12,7%: wat elke aftrekpost in jaar één oplevert.",
   keywords: [
     "belasting eerste jaar zzp personal trainer",
     "zelfstandigenaftrek 2026",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
-    title: "Belasting eerste jaar ZZP personal trainer — wat houd je over? (2026) — SculptClub",
+    title: "Belasting eerste jaar ZZP personal trainer (2026)",
     description:
       "Urencriterium, zelfstandigenaftrek, startersaftrek en mkb-winstvrijstelling — de vier aftrekposten die je eerste jaar bepalen, met de bedragen van de Belastingdienst en een rekenvoorbeeld.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Belasting eerste jaar ZZP personal trainer — wat houd je over? (2026) — SculptClub",
+    title: "Belasting eerste jaar ZZP personal trainer (2026)",
     description:
       "Urencriterium, zelfstandigenaftrek, startersaftrek en mkb-winstvrijstelling — met een rekenvoorbeeld voor je eerste jaar.",
   },

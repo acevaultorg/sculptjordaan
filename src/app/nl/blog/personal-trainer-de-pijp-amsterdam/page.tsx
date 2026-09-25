@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer De Pijp Amsterdam — SculptClub" },
   description:
-    "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
+    "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen.",
   keywords: [
     "personal trainer de pijp",
     "personal trainer de pijp amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/personal-trainer-de-pijp-amsterdam",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer De Pijp Amsterdam — SculptClub",
     description:
-      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in De Pijp, Amsterdam? SculptClub in de Jordaan is 10 minuten fietsen.",
   },
 };
 

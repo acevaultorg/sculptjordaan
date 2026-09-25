@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Become a Personal Trainer in Amsterdam — How to Start | SculptClub" },
+  title: { absolute: "Become a Personal Trainer in Amsterdam: How to Start" },
   description:
     "Want to become a personal trainer in Amsterdam? Everything about starting as a freelance trainer: studio, clients, rates and how SculptClub helps you grow.",
   keywords: [
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/become-personal-trainer-amsterdam",
-    title: "Become a Personal Trainer in Amsterdam — How to Start | SculptClub",
+    title: "Become a Personal Trainer in Amsterdam: How to Start",
     description:
       "Want to become a personal trainer in Amsterdam? Everything about starting as a freelance trainer: studio, clients, rates and how SculptClub helps you grow.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Become a Personal Trainer in Amsterdam — How to Start | SculptClub",
+    title: "Become a Personal Trainer in Amsterdam: How to Start",
     description:
       "Want to become a personal trainer in Amsterdam? Everything about starting as a freelance trainer: studio, clients, rates and how SculptClub helps you grow.",
   },

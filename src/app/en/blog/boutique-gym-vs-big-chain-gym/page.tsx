@@ -29,7 +29,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Boutique Gym vs Big Chain Gym: What You Get, and What It Costs — SculptClub" },
+  title: { absolute: "Boutique Gym vs Big Chain Gym: What You Get and Pay" },
   description:
     "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   keywords: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/boutique-gym-vs-big-chain-gym",
-    title: "Boutique Gym vs Big Chain Gym: What You Get, and What It Costs — SculptClub",
+    title: "Boutique Gym vs Big Chain Gym: What You Get and Pay",
     description:
       "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boutique Gym vs Big Chain Gym: What You Get, and What It Costs — SculptClub",
+    title: "Boutique Gym vs Big Chain Gym: What You Get and Pay",
     description:
       "What does it cost to train at a boutique gym vs a big chain gym? Price, contract terms and what you actually get for your money — compared.",
   },

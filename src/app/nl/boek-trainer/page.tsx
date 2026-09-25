@@ -14,7 +14,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam" },
+  title: { absolute: "Boek een Personal Trainer: Gratis Kennismaking | SculptClub" },
   description:
     "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €299 per 4 weken, geen abonnement, altijd gratis annuleren.",
   alternates: {
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/boek-trainer",
-    title: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam",
+    title: "Boek een Personal Trainer: Gratis Kennismaking | SculptClub",
     description:
       "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €299 per 4 weken, geen abonnement, altijd gratis annuleren.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boek een Personal Trainer — Gratis Kennismaking | SculptClub Amsterdam",
+    title: "Boek een Personal Trainer: Gratis Kennismaking | SculptClub",
     description:
       "Boek je gratis kennismaking met een personal trainer bij SculptClub in de Jordaan. Vanaf €299 per 4 weken, geen abonnement, altijd gratis annuleren.",
   },

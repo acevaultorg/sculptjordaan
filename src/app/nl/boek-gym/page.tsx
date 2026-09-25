@@ -23,7 +23,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam" },
+  title: { absolute: "Boek Open Gym: Train Zelfstandig in een Privé Studio" },
   description:
     "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:00–22:00.",
   alternates: {
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/boek-gym",
-    title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
+    title: "Boek Open Gym: Train Zelfstandig in een Privé Studio",
     description:
       "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:00–22:00.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boek Open Gym — Train Zelfstandig in een Privé Studio | SculptClub Amsterdam",
+    title: "Boek Open Gym: Train Zelfstandig in een Privé Studio",
     description:
       "Boek een Open Gym sessie bij SculptClub in de Jordaan. Losse sessie (1 uur) €9 of lidmaatschap vanaf €29/4 weken. Privé studio, dagelijks 06:00–22:00.",
   },

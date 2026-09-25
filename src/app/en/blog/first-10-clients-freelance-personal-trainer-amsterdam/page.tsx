@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "First 10 Clients as a Freelance Personal Trainer in Amsterdam — SculptClub" },
+  title: { absolute: "First 10 Clients as a Freelance Trainer in Amsterdam" },
   description:
-    "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam? An honest roadmap with what works and what doesn't in 2026.",
+    "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam?",
   keywords: [
     "freelance personal trainer clients amsterdam",
     "starting personal trainer amsterdam",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",
-    title: "First 10 Clients as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    title: "First 10 Clients as a Freelance Trainer in Amsterdam",
     description:
-      "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam? An honest roadmap with what works and what doesn't in 2026.",
+      "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "First 10 Clients as a Freelance Personal Trainer in Amsterdam — SculptClub",
+    title: "First 10 Clients as a Freelance Trainer in Amsterdam",
     description:
-      "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam? An honest roadmap with what works and what doesn't in 2026.",
+      "How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam?",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostFirst10Clients() {
       />
       <BlogPostingJsonLd
         title="First 10 clients as a freelance personal trainer in Amsterdam"
-        description="How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam? An honest roadmap with what works and what doesn't in 2026."
+        description="How do you get your first 10 paying clients as a starting freelance personal trainer in Amsterdam?"
         url="/en/blog/first-10-clients-freelance-personal-trainer-amsterdam"
         datePublished="2026-05-20"
       />

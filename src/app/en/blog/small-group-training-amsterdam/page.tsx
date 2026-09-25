@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Small Group Training in Amsterdam — SculptClub Jordaan" },
   description:
-    "Train with your partner, friend or colleagues. Small group personal training in a private studio in the Jordaan. From 2 people, no contract, invoice available.",
+    "Train with your partner, friend or colleagues. Small group personal training in a private studio in the Jordaan.",
   keywords: [
     "small group training amsterdam",
     "duo personal training amsterdam",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     url: "/en/blog/small-group-training-amsterdam",
     title: "Small Group Training in Amsterdam — SculptClub Jordaan",
     description:
-      "Train with your partner, friend or colleagues. Small group personal training in a private studio in the Jordaan. From 2 people, no contract, invoice available.",
+      "Train with your partner, friend or colleagues. Small group personal training in a private studio in the Jordaan.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Small Group Training in Amsterdam — SculptClub Jordaan",
     description:
-      "Train with your partner, friend or colleagues. Small group personal training in a private studio in the Jordaan. From 2 people, no contract, invoice available.",
+      "Train with your partner, friend or colleagues. Small group personal training in a private studio in the Jordaan.",
   },
 };
 

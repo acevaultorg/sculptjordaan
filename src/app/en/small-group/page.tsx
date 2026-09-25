@@ -45,7 +45,7 @@ const DARA_REELS = [
 export const metadata: Metadata = {
   title: { absolute: "Small Group Training in the Jordaan — SculptClub" },
   description:
-    "Train together in a small group of 2 to 4, with a coach who actually sees you. Strength & balance in a calm private studio in the Jordaan. Follow the coaches on Instagram or message them directly.",
+    "Train together in a small group of 2 to 4, with a coach who actually sees you. Strength & balance in a calm private studio in the Jordaan.",
   keywords: [
     "small group training amsterdam",
     "small group training jordaan",

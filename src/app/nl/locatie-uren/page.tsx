@@ -17,7 +17,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: { absolute: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan" },
   description:
-    "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+    "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00.",
   alternates: {
     canonical: "/nl/locatie-uren",
     languages: {
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     url: "/nl/locatie-uren",
     title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Locatie & Openingstijden — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00. Makkelijk bereikbaar met tram, metro, fiets of te voet.",
+      "SculptClub ligt aan de Egelantiersgracht in de Jordaan, Amsterdam. Dagelijks geopend van 06:00 tot 22:00.",
   },
 };
 

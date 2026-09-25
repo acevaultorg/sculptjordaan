@@ -8,9 +8,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub" },
+  title: { absolute: "Sportschool zonder abonnement in Amsterdam: Je opties" },
   description:
-    "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer. Vergelijk flexibel sporten.",
+    "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer.",
   keywords: [
     "sportschool zonder abonnement amsterdam",
     "gym zonder contract amsterdam",
@@ -29,15 +29,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/sportschool-zonder-abonnement-amsterdam",
-    title: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub",
+    title: "Sportschool zonder abonnement in Amsterdam: Je opties",
     description:
-      "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer. Vergelijk flexibel sporten.",
+      "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sportschool zonder abonnement in Amsterdam: Je opties — SculptClub",
+    title: "Sportschool zonder abonnement in Amsterdam: Je opties",
     description:
-      "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer. Vergelijk flexibel sporten.",
+      "Geen zin in een langlopend sportschoolabonnement? Ontdek je opties in Amsterdam: pay-per-session, Open Gym, strippenkaarten en meer.",
   },
 };
 

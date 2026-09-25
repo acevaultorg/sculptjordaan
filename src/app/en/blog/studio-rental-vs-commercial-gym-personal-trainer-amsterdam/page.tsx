@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Studio Rental vs Commercial Gym as a Personal Trainer — Amsterdam Comparison — SculptClub" },
+  title: { absolute: "Studio Rental vs Commercial Gym for Trainers, Amsterdam" },
   description:
-    "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio? Full comparison for freelance personal trainers in Amsterdam.",
+    "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio?",
   keywords: ["personal trainer commercial gym vs rental", "fitness center trainer", "personal trainer studio rental amsterdam", "freelance pt commercial gym", "trainer commission commercial gym"],
   alternates: {
     canonical: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam",
-    title: "Studio Rental vs Commercial Gym as a Personal Trainer — Amsterdam Comparison — SculptClub",
+    title: "Studio Rental vs Commercial Gym for Trainers, Amsterdam",
     description:
-      "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio? Full comparison for freelance personal trainers in Amsterdam.",
+      "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Rental vs Commercial Gym as a Personal Trainer — Amsterdam Comparison — SculptClub",
+    title: "Studio Rental vs Commercial Gym for Trainers, Amsterdam",
     description:
-      "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio? Full comparison for freelance personal trainers in Amsterdam.",
+      "Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio?",
   },
 };
 
@@ -33,7 +33,7 @@ export default function BlogPostStudioVsCommercialGym() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "Studio rental vs commercial gym", url: "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam" }]} />
-      <BlogPostingJsonLd title="Studio rental vs commercial gym as a personal trainer in Amsterdam" description="Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio? Full comparison for freelance personal trainers in Amsterdam." url="/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="Studio rental vs commercial gym as a personal trainer in Amsterdam" description="Choosing between working in a commercial gym (Optimum, Sportcity, David Lloyd) or renting a private studio?" url="/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "What commission do commercial gyms take from personal trainers?", answer: "30 to 50% in Amsterdam — depending on the chain. Sportcity and David Lloyd typically around 40%, Optimum towards 30-35%. Below 30% you basically never get." },
         { question: "Whose client is it — the PT's or the gym's?", answer: "At commercial gyms the client belongs to the gym, not you. If you leave, they stay. At studio rental (like SculptClub) the client is yours — you move together." },

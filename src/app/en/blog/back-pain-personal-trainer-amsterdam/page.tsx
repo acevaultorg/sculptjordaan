@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User, Info } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer for Back Pain Amsterdam — SculptClub" },
   description:
-    "Back pain? Targeted strength training focused on technique, posture and progression can reduce back pain long-term — alongside (not instead of) your physiotherapist. Free intro in Amsterdam Jordaan.",
+    "Back pain? Strength training with good technique and steady progression can ease it long-term, next to your physiotherapist. Free intro in the Jordaan.",
   keywords: [
     "back pain personal trainer amsterdam",
     "low back pain personal trainer amsterdam",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "/en/blog/back-pain-personal-trainer-amsterdam",
     title: "Personal Trainer for Back Pain Amsterdam — SculptClub",
     description:
-      "Back pain? Targeted strength training focused on technique, posture and progression can reduce back pain long-term — alongside (not instead of) your physiotherapist. Free intro in Amsterdam Jordaan.",
+      "Back pain? Strength training with good technique and steady progression can ease it long-term, next to your physiotherapist. Free intro in the Jordaan.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer for Back Pain Amsterdam — SculptClub",
     description:
-      "Back pain? Targeted strength training focused on technique, posture and progression can reduce back pain long-term — alongside (not instead of) your physiotherapist. Free intro in Amsterdam Jordaan.",
+      "Back pain? Strength training with good technique and steady progression can ease it long-term, next to your physiotherapist. Free intro in the Jordaan.",
   },
 };
 

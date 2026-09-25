@@ -8,9 +8,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Wat kost personal training in Amsterdam? Prijzen & uitleg — SculptClub" },
+  title: { absolute: "Wat kost personal training in Amsterdam? Prijzen & uitleg" },
   description:
-    "Wat kost personal training in Amsterdam? Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio als SculptClub vanaf €299 per 4 weken uitstekende waarde biedt.",
+    "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €299 per 4 weken).",
   keywords: [
     "personal training kosten amsterdam",
     "personal trainer prijs amsterdam",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/wat-kost-personal-training-amsterdam",
-    title: "Wat kost personal training in Amsterdam? Prijzen & uitleg — SculptClub",
+    title: "Wat kost personal training in Amsterdam? Prijzen & uitleg",
     description:
-      "Wat kost personal training in Amsterdam? Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio als SculptClub vanaf €299 per 4 weken uitstekende waarde biedt.",
+      "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €299 per 4 weken).",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wat kost personal training in Amsterdam? Prijzen & uitleg — SculptClub",
+    title: "Wat kost personal training in Amsterdam? Prijzen & uitleg",
     description:
-      "Wat kost personal training in Amsterdam? Ontdek de gemiddelde prijzen, wat de kosten bepaalt en waarom een boutique studio als SculptClub vanaf €299 per 4 weken uitstekende waarde biedt.",
+      "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €299 per 4 weken).",
   },
 };
 

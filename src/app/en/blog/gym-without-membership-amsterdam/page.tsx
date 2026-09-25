@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Gym Without Membership in Amsterdam: Your Options — SculptClub" },
+  title: { absolute: "Gym Without Membership in Amsterdam: Your Options" },
   description:
     "Don't want a long-term gym membership? Discover your options in Amsterdam: pay-per-session, Open Gym, punch cards and more. Compare flexible fitness.",
   keywords: [
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/gym-without-membership-amsterdam",
-    title: "Gym Without Membership in Amsterdam: Your Options — SculptClub",
+    title: "Gym Without Membership in Amsterdam: Your Options",
     description:
       "Don't want a long-term gym membership? Discover your options in Amsterdam: pay-per-session, Open Gym, punch cards and more. Compare flexible fitness.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gym Without Membership in Amsterdam: Your Options — SculptClub",
+    title: "Gym Without Membership in Amsterdam: Your Options",
     description:
       "Don't want a long-term gym membership? Discover your options in Amsterdam: pay-per-session, Open Gym, punch cards and more. Compare flexible fitness.",
   },

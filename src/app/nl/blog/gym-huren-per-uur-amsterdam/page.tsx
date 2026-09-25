@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub" },
+  title: { absolute: "Gym huren per uur in Amsterdam voor ZZP-trainers" },
   description:
-    "Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten.",
+    "Een gym of trainingsruimte per uur huren in Amsterdam: hoe flexibele studioverhuur werkt voor freelance personal trainers en fysiotherapeuten.",
   keywords: [
     "gym huren per uur amsterdam",
     "trainingsruimte huren per uur",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/gym-huren-per-uur-amsterdam",
-    title: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub",
+    title: "Gym huren per uur in Amsterdam voor ZZP-trainers",
     description:
-      "Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten.",
+      "Een gym of trainingsruimte per uur huren in Amsterdam: hoe flexibele studioverhuur werkt voor freelance personal trainers en fysiotherapeuten.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers — SculptClub",
+    title: "Gym huren per uur in Amsterdam voor ZZP-trainers",
     description:
-      "Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten.",
+      "Een gym of trainingsruimte per uur huren in Amsterdam: hoe flexibele studioverhuur werkt voor freelance personal trainers en fysiotherapeuten.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostGymHurenPerUur() {
       />
       <BlogPostingJsonLd
         title="Gym Huren per Uur Amsterdam: Flexibele Trainingsruimte voor ZZP-trainers"
-        description="Op zoek naar een gym of trainingsruimte huren per uur in Amsterdam? Alles over flexibele studio verhuur voor freelance personal trainers en fysiotherapeuten."
+        description="Een gym of trainingsruimte per uur huren in Amsterdam: hoe flexibele studioverhuur werkt voor freelance personal trainers en fysiotherapeuten."
         url="/nl/blog/gym-huren-per-uur-amsterdam"
         datePublished="2026-04-01"
       />

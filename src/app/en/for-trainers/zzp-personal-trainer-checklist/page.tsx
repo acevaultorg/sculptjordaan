@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "ZZP Personal Trainer Checklist Netherlands (2026) | SculptClub",
+      "ZZP Personal Trainer Checklist Netherlands (2026)",
   },
   description:
     "Step-by-step checklist for personal trainers becoming self-employed (ZZP) in the Netherlands. KvK, VAT, insurance, banking, admin, first invoice.",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/for-trainers/zzp-personal-trainer-checklist",
-    title: "ZZP Personal Trainer Checklist Netherlands (2026) | SculptClub",
+    title: "ZZP Personal Trainer Checklist Netherlands (2026)",
     description:
       "Step-by-step checklist for personal trainers becoming self-employed (ZZP) in the Netherlands. KvK, VAT, insurance, banking, admin, first invoice.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZZP Personal Trainer Checklist Netherlands (2026) | SculptClub",
+    title: "ZZP Personal Trainer Checklist Netherlands (2026)",
     description:
       "Step-by-step checklist for personal trainers becoming self-employed (ZZP) in the Netherlands. KvK, VAT, insurance, banking, admin, first invoice.",
   },

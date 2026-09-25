@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User, Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Trainen met een blessure of klachten in Amsterdam — SculptClub" },
+  title: { absolute: "Trainen met een blessure of klachten in Amsterdam" },
   description:
-    "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Lees hoe SculptClub omgaat met training na blessure, in samenwerking met je fysiotherapeut.",
+    "Een blessure of chronische klacht hoeft je training niet te stoppen. Zo traint SculptClub na een blessure, samen met je fysiotherapeut.",
   keywords: [
     "trainen met blessure amsterdam",
     "personal trainer blessure amsterdam",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/fysiotherapeut-personal-trainer-amsterdam",
-    title: "Trainen met een blessure of klachten in Amsterdam — SculptClub",
+    title: "Trainen met een blessure of klachten in Amsterdam",
     description:
-      "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Lees hoe SculptClub omgaat met training na blessure, in samenwerking met je fysiotherapeut.",
+      "Een blessure of chronische klacht hoeft je training niet te stoppen. Zo traint SculptClub na een blessure, samen met je fysiotherapeut.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trainen met een blessure of klachten in Amsterdam — SculptClub",
+    title: "Trainen met een blessure of klachten in Amsterdam",
     description:
-      "Een blessure of chronische klacht hoeft geen einde van je training te betekenen. Lees hoe SculptClub omgaat met training na blessure, in samenwerking met je fysiotherapeut.",
+      "Een blessure of chronische klacht hoeft je training niet te stoppen. Zo traint SculptClub na een blessure, samen met je fysiotherapeut.",
   },
 };
 

@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Eerste 10 Klanten Krijgen als ZZP Personal Trainer in Amsterdam — SculptClub" },
+  title: { absolute: "Eerste 10 klanten als ZZP personal trainer in Amsterdam" },
   description:
-    "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam? Eerlijke roadmap met de tactieken die wel en niet werken in 2026.",
+    "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam?",
   keywords: [
     "klanten werven personal trainer",
     "starten als personal trainer amsterdam",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam",
-    title: "Eerste 10 Klanten Krijgen als ZZP Personal Trainer in Amsterdam — SculptClub",
+    title: "Eerste 10 klanten als ZZP personal trainer in Amsterdam",
     description:
-      "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam? Eerlijke roadmap met de tactieken die wel en niet werken in 2026.",
+      "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eerste 10 Klanten Krijgen als ZZP Personal Trainer in Amsterdam — SculptClub",
+    title: "Eerste 10 klanten als ZZP personal trainer in Amsterdam",
     description:
-      "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam? Eerlijke roadmap met de tactieken die wel en niet werken in 2026.",
+      "Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam?",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostEerste10Klanten() {
       />
       <BlogPostingJsonLd
         title="Eerste 10 klanten krijgen als ZZP personal trainer in Amsterdam"
-        description="Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam? Eerlijke roadmap met de tactieken die wel en niet werken in 2026."
+        description="Hoe krijg je je eerste 10 betalende klanten als beginnende ZZP personal trainer in Amsterdam?"
         url="/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam"
         datePublished="2026-05-20"
       />

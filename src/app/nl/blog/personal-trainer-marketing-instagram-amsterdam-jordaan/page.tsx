@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Marketing op Instagram — Wat werkt in Amsterdam (Jordaan) — SculptClub" },
+  title: { absolute: "Instagram-marketing voor personal trainers in Amsterdam" },
   description:
-    "Welke Instagram-content levert echt PT-klanten op in Amsterdam? Reels-lengte, hashtags, post-tijden, DM-strategie — alles wat werkt in 2026 voor ZZP personal trainers.",
+    "Welke Instagram-content levert PT-klanten op in Amsterdam? Reels-lengte, hashtags, posttijden en DM's: wat in 2026 werkt voor ZZP trainers.",
   keywords: ["personal trainer instagram marketing", "klanten via instagram personal trainer", "pt content instagram amsterdam", "reels personal trainer", "instagram strategie ZZP trainer"],
   alternates: {
     canonical: "/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
-    title: "Personal Trainer Marketing op Instagram — Wat werkt in Amsterdam (Jordaan) — SculptClub",
+    title: "Instagram-marketing voor personal trainers in Amsterdam",
     description:
-      "Welke Instagram-content levert echt PT-klanten op in Amsterdam? Reels-lengte, hashtags, post-tijden, DM-strategie — alles wat werkt in 2026 voor ZZP personal trainers.",
+      "Welke Instagram-content levert PT-klanten op in Amsterdam? Reels-lengte, hashtags, posttijden en DM's: wat in 2026 werkt voor ZZP trainers.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Marketing op Instagram — Wat werkt in Amsterdam (Jordaan) — SculptClub",
+    title: "Instagram-marketing voor personal trainers in Amsterdam",
     description:
-      "Welke Instagram-content levert echt PT-klanten op in Amsterdam? Reels-lengte, hashtags, post-tijden, DM-strategie — alles wat werkt in 2026 voor ZZP personal trainers.",
+      "Welke Instagram-content levert PT-klanten op in Amsterdam? Reels-lengte, hashtags, posttijden en DM's: wat in 2026 werkt voor ZZP trainers.",
   },
 };
 
@@ -33,7 +33,7 @@ export default function BlogPostInstagramMarketing() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Personal trainer Instagram marketing", url: "/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" }]} />
-      <BlogPostingJsonLd title="Personal trainer marketing op Instagram — wat werkt in Amsterdam (Jordaan)" description="Welke Instagram-content levert echt PT-klanten op in Amsterdam? Reels-lengte, hashtags, post-tijden, DM-strategie — alles wat werkt in 2026 voor ZZP personal trainers." url="/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="Personal trainer marketing op Instagram — wat werkt in Amsterdam (Jordaan)" description="Welke Instagram-content levert PT-klanten op in Amsterdam? Reels-lengte, hashtags, posttijden en DM's: wat in 2026 werkt voor ZZP trainers." url="/nl/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "Welke Instagram-content werkt voor personal trainers in 2026?", answer: "Reels van 7-15 seconden met een sterke hook in de eerste 2 seconden converteren het beste. Form-correction video's, hyper-specifieke tips, en behind-the-scenes momenten. Geen generieke motivational quotes." },
         { question: "Hoeveel hashtags moet ik gebruiken op Instagram?", answer: "5 tot 7 niche-specifieke hashtags in 2026 (anders dan vroeger 20+). Algorithm pusht inhoud, niet hashtag-stuffing. Liever #personaltrainerjordaan dan #fitness." },

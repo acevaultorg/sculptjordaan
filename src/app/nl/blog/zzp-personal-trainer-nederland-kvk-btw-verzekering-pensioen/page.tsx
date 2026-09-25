@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026 gids) — SculptClub" },
+  title: { absolute: "ZZP personal trainer: KvK, btw, verzekering (2026 gids)" },
   description:
-    "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding. Met cijfers voor 2026.",
+    "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding.",
   keywords: [
     "zzp personal trainer btw",
     "personal trainer inschrijven kvk",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen",
-    title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026 gids) — SculptClub",
+    title: "ZZP personal trainer: KvK, btw, verzekering (2026 gids)",
     description:
-      "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding. Met cijfers voor 2026.",
+      "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026 gids) — SculptClub",
+    title: "ZZP personal trainer: KvK, btw, verzekering (2026 gids)",
     description:
-      "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding. Met cijfers voor 2026.",
+      "Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostZzpKvkBtw() {
       />
       <BlogPostingJsonLd
         title="ZZP personal trainer Nederland — KvK, btw, verzekering, pensioen complete gids 2026"
-        description="Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding. Met cijfers voor 2026."
+        description="Complete gids voor wie ZZP personal trainer wordt in Nederland: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding."
         url="/nl/blog/zzp-personal-trainer-nederland-kvk-btw-verzekering-pensioen"
         datePublished="2026-05-20"
       />

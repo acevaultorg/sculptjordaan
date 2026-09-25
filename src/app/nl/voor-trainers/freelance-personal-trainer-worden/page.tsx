@@ -9,10 +9,10 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Freelance Personal Trainer worden in Amsterdam — gids 2026 | SculptClub",
+      "Freelance Personal Trainer worden in Amsterdam: gids 2026",
   },
   description:
-    "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan. Geschreven door een trainer-studio.",
+    "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan.",
   keywords: [
     "freelance personal trainer worden",
     "zzp personal trainer amsterdam",
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/voor-trainers/freelance-personal-trainer-worden",
-    title: "Freelance Personal Trainer worden in Amsterdam — gids 2026 | SculptClub",
+    title: "Freelance Personal Trainer worden in Amsterdam: gids 2026",
     description:
-      "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan. Geschreven door een trainer-studio.",
+      "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Freelance Personal Trainer worden in Amsterdam — gids 2026 | SculptClub",
+    title: "Freelance Personal Trainer worden in Amsterdam: gids 2026",
     description:
-      "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan. Geschreven door een trainer-studio.",
+      "Praktische gids voor PT's die overwegen ZZP'er te worden in Amsterdam. KvK, tarieven, eerste klanten, ruimte huren in Jordaan.",
   },
 };
 

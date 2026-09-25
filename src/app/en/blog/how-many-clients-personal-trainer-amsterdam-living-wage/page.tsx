@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "How Many Clients Does a Personal Trainer in Amsterdam Need? — SculptClub" },
+  title: { absolute: "How Many Clients Does a Personal Trainer in Amsterdam Need?" },
   description:
-    "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family? With 2026 numbers.",
+    "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family?",
   keywords: ["how much does a personal trainer earn", "minimum clients personal trainer", "personal trainer income amsterdam", "freelance trainer salary", "living wage personal trainer"],
   alternates: {
     canonical: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage",
-    title: "How Many Clients Does a Personal Trainer in Amsterdam Need? — SculptClub",
+    title: "How Many Clients Does a Personal Trainer in Amsterdam Need?",
     description:
-      "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family? With 2026 numbers.",
+      "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Many Clients Does a Personal Trainer in Amsterdam Need? — SculptClub",
+    title: "How Many Clients Does a Personal Trainer in Amsterdam Need?",
     description:
-      "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family? With 2026 numbers.",
+      "Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family?",
   },
 };
 
@@ -33,7 +33,7 @@ export default function BlogPostHowManyClients() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "How many clients does a PT need", url: "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage" }]} />
-      <BlogPostingJsonLd title="How many clients does a personal trainer in Amsterdam need?" description="Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family? With 2026 numbers." url="/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="How many clients does a personal trainer in Amsterdam need?" description="Honest math: how many paying clients does a freelance personal trainer in Amsterdam need to live, earn a median income, or support a family?" url="/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "How many sessions per week to earn a median income?", answer: "At a €60 average session rate, you need ~18-22 sessions/week to reach a Dutch median net income (€3,000). At €45/session: ~25 sessions/week. At €80/session: ~14 sessions/week." },
         { question: "What are the fixed monthly costs of a freelance PT in Amsterdam?", answer: "Realistically €200-€600/month: studio rental (€100-400), insurance (€50-100), KvK + bookkeeping (~€20), phone/website (~€30-50)." },

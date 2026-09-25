@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Book a free Open Gym trial — Private Studio Jordaan | SculptClub Amsterdam",
+      "Book a free Open Gym trial: Private Studio Jordaan",
   },
   description:
     "Book your free Open Gym trial at SculptClub in the Jordaan. Come by and train one session free — no membership, no commitment.",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/en/free-trial",
     title:
-      "Book a free Open Gym trial — Private Studio Jordaan | SculptClub Amsterdam",
+      "Book a free Open Gym trial: Private Studio Jordaan",
     description:
       "Book your free Open Gym trial at SculptClub in the Jordaan. Come by and train one session free — no membership, no commitment.",
   },

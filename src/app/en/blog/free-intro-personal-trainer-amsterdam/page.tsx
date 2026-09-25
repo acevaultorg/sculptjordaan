@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub" },
+  title: { absolute: "Free Intro Personal Trainer Amsterdam: What to Expect" },
   description:
-    "What happens during a free intro with a personal trainer in Amsterdam? Find out what to expect, how to prepare, and what questions to ask to find the right trainer for you.",
+    "What happens at a free intro with a personal trainer in Amsterdam: what to expect, how to prepare and which questions to ask before you choose.",
   keywords: [
     "free intro personal trainer amsterdam",
     "free personal trainer consultation amsterdam",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/free-intro-personal-trainer-amsterdam",
-    title: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub",
+    title: "Free Intro Personal Trainer Amsterdam: What to Expect",
     description:
-      "What happens during a free intro with a personal trainer in Amsterdam? Find out what to expect, how to prepare, and what questions to ask to find the right trainer for you.",
+      "What happens at a free intro with a personal trainer in Amsterdam: what to expect, how to prepare and which questions to ask before you choose.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Intro Personal Trainer Amsterdam: What to Expect — SculptClub",
+    title: "Free Intro Personal Trainer Amsterdam: What to Expect",
     description:
-      "What happens during a free intro with a personal trainer in Amsterdam? Find out what to expect, how to prepare, and what questions to ask to find the right trainer for you.",
+      "What happens at a free intro with a personal trainer in Amsterdam: what to expect, how to prepare and which questions to ask before you choose.",
   },
 };
 

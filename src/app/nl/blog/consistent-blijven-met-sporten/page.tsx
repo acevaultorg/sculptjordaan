@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Hoe blijf je consistent met sporten? 7 bewezen tips — SculptClub" },
+  title: { absolute: "Hoe blijf je consistent met sporten? 7 bewezen tips" },
   description:
     "Moeite om vol te houden? Ontdek 7 praktische tips om consistent te blijven met sporten. Van routine opbouwen tot de juiste sportschool kiezen.",
   keywords: [
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/consistent-blijven-met-sporten",
-    title: "Hoe blijf je consistent met sporten? 7 bewezen tips — SculptClub",
+    title: "Hoe blijf je consistent met sporten? 7 bewezen tips",
     description:
       "Moeite om vol te houden? Ontdek 7 praktische tips om consistent te blijven met sporten. Van routine opbouwen tot de juiste sportschool kiezen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hoe blijf je consistent met sporten? 7 bewezen tips — SculptClub",
+    title: "Hoe blijf je consistent met sporten? 7 bewezen tips",
     description:
       "Moeite om vol te houden? Ontdek 7 praktische tips om consistent te blijven met sporten. Van routine opbouwen tot de juiste sportschool kiezen.",
   },

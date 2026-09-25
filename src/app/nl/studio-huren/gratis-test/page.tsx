@@ -53,7 +53,7 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
 export const metadata: Metadata = {
   title: { absolute: "Gratis proefsessie — Studio Huren | SculptClub Jordaan" },
   description:
-    "Boek je gratis 60-minuten proefsessie in onze privé studio in Amsterdam Jordaan — of stel eerst je vraag via WhatsApp. Geen creditcard, geen contract, eigen tarief & klanten. Voor personal trainers.",
+    "Boek je gratis 60-minuten proefsessie in onze privé studio in Amsterdam Jordaan — of stel eerst je vraag via WhatsApp.",
   alternates: {
     canonical: "/nl/studio-huren/gratis-test",
     languages: {

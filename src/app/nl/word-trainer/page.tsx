@@ -24,9 +24,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan" },
+  title: { absolute: "Word trainer bij SculptClub: studio huren in de Jordaan" },
   description:
-    "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
+    "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur.",
   keywords: [
     "word personal trainer amsterdam",
     "personal trainer worden amsterdam",
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/word-trainer",
-    title: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan",
+    title: "Word trainer bij SculptClub: studio huren in de Jordaan",
     description:
-      "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
+      "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Word Trainer bij SculptClub — Studio Huren in Amsterdam Jordaan",
+    title: "Word trainer bij SculptClub: studio huren in de Jordaan",
     description:
-      "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur. Gratis kennismaking.",
+      "Start of groei je personal training praktijk bij SculptClub. Eigen tarief en klanten, eigen profiel op onze website, privé studio vanaf €12/uur.",
   },
 };
 

@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "AOV voor personal trainers (ZZP) — verplicht vanaf 2030, dit kost het nu — SculptClub" },
+  title: { absolute: "AOV voor ZZP personal trainers: verplicht vanaf 2030" },
   description:
-    "Is een arbeidsongeschiktheidsverzekering verplicht als ZZP personal trainer? Vanaf ±2030 wel (Wet BAZ). Wat de verplichte AOV inhoudt, wat een private AOV nu kost voor een fysiek beroep, en hoe een broodfonds zich verhoudt.",
+    "Is een arbeidsongeschiktheidsverzekering verplicht als ZZP personal trainer? Vanaf ±2030 wel (Wet BAZ).",
   keywords: [
     "aov personal trainer",
     "verplichte aov zzp",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/aov-personal-trainer-zzp",
-    title: "AOV voor personal trainers (ZZP) — verplicht vanaf 2030, dit kost het nu — SculptClub",
+    title: "AOV voor ZZP personal trainers: verplicht vanaf 2030",
     description:
       "Wat de verplichte AOV (Wet BAZ) betekent voor personal trainers, wat een private AOV nu kost voor een fysiek beroep, en wanneer een broodfonds genoeg is.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AOV voor personal trainers (ZZP) — verplicht vanaf 2030, dit kost het nu — SculptClub",
+    title: "AOV voor ZZP personal trainers: verplicht vanaf 2030",
     description:
       "Wat de verplichte AOV (Wet BAZ) betekent voor personal trainers, wat een private AOV nu kost voor een fysiek beroep, en wanneer een broodfonds genoeg is.",
   },

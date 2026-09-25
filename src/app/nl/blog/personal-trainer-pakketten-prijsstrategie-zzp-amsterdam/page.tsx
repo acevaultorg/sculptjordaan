@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Pakketten — Prijsstrategie voor ZZP Trainers in Amsterdam — SculptClub" },
+  title: { absolute: "Personal trainer pakketten: prijsstrategie voor ZZP'ers" },
   description:
-    "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026? Concrete prijsstrategie met cijfers.",
+    "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026?",
   keywords: [
     "personal trainer pakket prijzen",
     "pt pakket samenstellen",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam",
-    title: "Personal Trainer Pakketten — Prijsstrategie voor ZZP Trainers in Amsterdam — SculptClub",
+    title: "Personal trainer pakketten: prijsstrategie voor ZZP'ers",
     description:
-      "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026? Concrete prijsstrategie met cijfers.",
+      "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Pakketten — Prijsstrategie voor ZZP Trainers in Amsterdam — SculptClub",
+    title: "Personal trainer pakketten: prijsstrategie voor ZZP'ers",
     description:
-      "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026? Concrete prijsstrategie met cijfers.",
+      "Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026?",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostPakkettenPrijsstrategie() {
       />
       <BlogPostingJsonLd
         title="Personal trainer pakketten — prijsstrategie voor ZZP trainers in Amsterdam"
-        description="Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026? Concrete prijsstrategie met cijfers."
+        description="Hoe stel je pakketten samen als ZZP personal trainer? Welke korting bied je aan, welke prijspsychologie werkt in Amsterdam 2026?"
         url="/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam"
         datePublished="2026-05-20"
       />

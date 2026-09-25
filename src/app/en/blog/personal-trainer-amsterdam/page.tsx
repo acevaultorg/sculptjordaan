@@ -8,9 +8,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer in Amsterdam: How to Find the Best Match — SculptClub" },
+  title: { absolute: "Personal Trainer in Amsterdam: How to Find the Best Match" },
   description:
-    "How do you find the right personal trainer in Amsterdam? Discover what to look for, red flags to avoid, and why a free intro session makes all the difference.",
+    "How to find the right personal trainer in Amsterdam: what to look for, the red flags to avoid, and why a free intro session helps you choose.",
   keywords: [
     "personal trainer amsterdam",
     "find personal trainer amsterdam",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/personal-trainer-amsterdam",
-    title: "Personal Trainer in Amsterdam: How to Find the Best Match — SculptClub",
+    title: "Personal Trainer in Amsterdam: How to Find the Best Match",
     description:
-      "How do you find the right personal trainer in Amsterdam? Discover what to look for, red flags to avoid, and why a free intro session makes all the difference.",
+      "How to find the right personal trainer in Amsterdam: what to look for, the red flags to avoid, and why a free intro session helps you choose.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer in Amsterdam: How to Find the Best Match — SculptClub",
+    title: "Personal Trainer in Amsterdam: How to Find the Best Match",
     description:
-      "How do you find the right personal trainer in Amsterdam? Discover what to look for, red flags to avoid, and why a free intro session makes all the difference.",
+      "How to find the right personal trainer in Amsterdam: what to look for, the red flags to avoid, and why a free intro session helps you choose.",
   },
 };
 

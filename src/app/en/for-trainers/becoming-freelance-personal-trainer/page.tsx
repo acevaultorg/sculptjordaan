@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Becoming a Freelance Personal Trainer in Amsterdam — 2026 guide | SculptClub",
+      "Becoming a Freelance Personal Trainer in Amsterdam (2026)",
   },
   description:
-    "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan. Written by a trainer-studio.",
+    "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan.",
   keywords: [
     "freelance personal trainer amsterdam",
     "becoming a personal trainer netherlands",
@@ -29,15 +29,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/for-trainers/becoming-freelance-personal-trainer",
-    title: "Becoming a Freelance Personal Trainer in Amsterdam — 2026 guide | SculptClub",
+    title: "Becoming a Freelance Personal Trainer in Amsterdam (2026)",
     description:
-      "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan. Written by a trainer-studio.",
+      "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Becoming a Freelance Personal Trainer in Amsterdam — 2026 guide | SculptClub",
+    title: "Becoming a Freelance Personal Trainer in Amsterdam (2026)",
     description:
-      "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan. Written by a trainer-studio.",
+      "Practical guide for personal trainers going freelance in Amsterdam. Registration, rates, first clients, renting a studio in Jordaan.",
   },
 };
 

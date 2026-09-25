@@ -26,7 +26,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: { absolute: "Over Ons — SculptClub Amsterdam Jordaan" },
   description:
-    "SculptClub is een boutique personal training studio in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Egelantiersgracht. Opgericht 2025.",
+    "SculptClub is een boutique personal training studio in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Egelantiersgracht.",
   alternates: {
     canonical: "/nl/over-ons",
     languages: {
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     url: "/nl/over-ons",
     title: "Over Ons — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub is een boutique personal training studio in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Egelantiersgracht. Opgericht 2025.",
+      "SculptClub is een boutique personal training studio in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Egelantiersgracht.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Over Ons — SculptClub Amsterdam Jordaan",
     description:
-      "SculptClub is een boutique personal training studio in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Egelantiersgracht. Opgericht 2025.",
+      "SculptClub is een boutique personal training studio in Amsterdam Jordaan. Priv\u00e9 training, Open Gym en studio verhuur. Egelantiersgracht.",
   },
 };
 

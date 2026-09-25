@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Privé sportschool vs grote sportschool: De verschillen — SculptClub" },
+  title: { absolute: "Privé sportschool vs grote sportschool: De verschillen" },
   description:
     "Wat is het verschil tussen een privé sportschool en een grote keten? Vergelijk sfeer, apparatuur, persoonlijke aandacht, hygiëne en prijs.",
   keywords: [
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/prive-sportschool-vs-grote-sportschool",
-    title: "Privé sportschool vs grote sportschool: De verschillen — SculptClub",
+    title: "Privé sportschool vs grote sportschool: De verschillen",
     description:
       "Wat is het verschil tussen een privé sportschool en een grote keten? Vergelijk sfeer, apparatuur, persoonlijke aandacht, hygiëne en prijs.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privé sportschool vs grote sportschool: De verschillen — SculptClub",
+    title: "Privé sportschool vs grote sportschool: De verschillen",
     description:
       "Wat is het verschil tussen een privé sportschool en een grote keten? Vergelijk sfeer, apparatuur, persoonlijke aandacht, hygiëne en prijs.",
   },

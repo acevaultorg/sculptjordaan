@@ -9,19 +9,19 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam" },
+  title: { absolute: "Book a Personal Trainer: Free Introduction | SculptClub" },
   description: "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €299 per 4 weeks, no membership, always free cancellation.",
   alternates: { canonical: "/en/book-trainer", languages: { nl: "/nl/boek-trainer", en: "/en/book-trainer" } },
   openGraph: {
     type: "website",
     url: "/en/book-trainer",
-    title: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam",
+    title: "Book a Personal Trainer: Free Introduction | SculptClub",
     description:
       "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €299 per 4 weeks, no membership, always free cancellation.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book a Personal Trainer — Free Introduction | SculptClub Amsterdam",
+    title: "Book a Personal Trainer: Free Introduction | SculptClub",
     description:
       "Book your free introduction with a personal trainer at SculptClub in the Jordaan. From €299 per 4 weeks, no membership, always free cancellation.",
   },

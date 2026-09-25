@@ -24,9 +24,9 @@ import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt, Check
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Book the Studio — Private Training Space | SculptClub Amsterdam" },
+  title: { absolute: "Book the Studio: Private Training Space | SculptClub" },
   description:
-    "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
+    "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off.",
   alternates: {
     canonical: "/en/book-studio",
     languages: {
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/book-studio",
-    title: "Book the Studio — Private Training Space | SculptClub Amsterdam",
+    title: "Book the Studio: Private Training Space | SculptClub",
     description:
-      "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
+      "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book the Studio — Private Training Space | SculptClub Amsterdam",
+    title: "Book the Studio: Private Training Space | SculptClub",
     description:
-      "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off. First trial session free.",
+      "Rent a private studio in the Jordaan. From €12/hour — your clients, your rates, no contract, free cancellation anytime. Discount packages up to 23% off.",
   },
 };
 

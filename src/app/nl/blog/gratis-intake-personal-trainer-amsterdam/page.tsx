@@ -7,9 +7,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub" },
+  title: { absolute: "Gratis intake personal trainer Amsterdam: wat te verwachten" },
   description:
-    "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en waar je op let bij het kiezen van een trainer.",
+    "Wat gebeurt er bij een gratis intake met een personal trainer in Amsterdam? Wat je kunt verwachten, hoe je je voorbereidt en waar je op let.",
   keywords: [
     "gratis intake personal trainer amsterdam",
     "gratis kennismaking personal trainer",
@@ -28,15 +28,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/gratis-intake-personal-trainer-amsterdam",
-    title: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub",
+    title: "Gratis intake personal trainer Amsterdam: wat te verwachten",
     description:
-      "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en waar je op let bij het kiezen van een trainer.",
+      "Wat gebeurt er bij een gratis intake met een personal trainer in Amsterdam? Wat je kunt verwachten, hoe je je voorbereidt en waar je op let.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gratis intake personal trainer Amsterdam: wat te verwachten — SculptClub",
+    title: "Gratis intake personal trainer Amsterdam: wat te verwachten",
     description:
-      "Wat is een gratis intake bij een personal trainer in Amsterdam? Ontdek wat er tijdens de kennismaking gebeurt, hoe je je voorbereidt en waar je op let bij het kiezen van een trainer.",
+      "Wat gebeurt er bij een gratis intake met een personal trainer in Amsterdam? Wat je kunt verwachten, hoe je je voorbereidt en waar je op let.",
   },
 };
 

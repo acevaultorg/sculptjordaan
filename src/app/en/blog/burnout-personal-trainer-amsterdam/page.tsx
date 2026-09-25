@@ -10,7 +10,7 @@ import { ArrowRight, CalendarDays, User, Info, MessageCircle } from "lucide-reac
 export const metadata: Metadata = {
   title: { absolute: "Burnout & Stress Personal Trainer Amsterdam — SculptClub" },
   description:
-    "High-end personal training for entrepreneurs and high performers experiencing stress and burnout. Joey's Ascend Method — strength, breathwork and nervous system regulation in a private studio in the Jordaan. Free intro.",
+    "High-end personal training for entrepreneurs and high performers experiencing stress and burnout.",
   keywords: [
     "burnout personal trainer amsterdam",
     "stress personal trainer amsterdam",

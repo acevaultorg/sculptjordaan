@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Hoeveel Klanten heb je nodig als Personal Trainer in Amsterdam? — SculptClub" },
+  title: { absolute: "Hoeveel klanten heeft een personal trainer nodig?" },
   description:
-    "Eerlijke rekensom: hoeveel betalende klanten heeft een ZZP personal trainer nodig om in Amsterdam rond te komen, modaal te verdienen of een gezin te onderhouden? Met cijfers voor 2026.",
+    "Eerlijke rekensom: hoeveel betalende klanten een ZZP personal trainer in Amsterdam nodig heeft om rond te komen of modaal te verdienen. Cijfers 2026.",
   keywords: ["hoeveel verdient een personal trainer", "minimum klanten personal trainer", "personal trainer inkomen amsterdam", "rondkomen als pt", "zzp trainer salaris"],
   alternates: {
     canonical: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen",
-    title: "Hoeveel Klanten heb je nodig als Personal Trainer in Amsterdam? — SculptClub",
+    title: "Hoeveel klanten heeft een personal trainer nodig?",
     description:
-      "Eerlijke rekensom: hoeveel betalende klanten heeft een ZZP personal trainer nodig om in Amsterdam rond te komen, modaal te verdienen of een gezin te onderhouden? Met cijfers voor 2026.",
+      "Eerlijke rekensom: hoeveel betalende klanten een ZZP personal trainer in Amsterdam nodig heeft om rond te komen of modaal te verdienen. Cijfers 2026.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hoeveel Klanten heb je nodig als Personal Trainer in Amsterdam? — SculptClub",
+    title: "Hoeveel klanten heeft een personal trainer nodig?",
     description:
-      "Eerlijke rekensom: hoeveel betalende klanten heeft een ZZP personal trainer nodig om in Amsterdam rond te komen, modaal te verdienen of een gezin te onderhouden? Met cijfers voor 2026.",
+      "Eerlijke rekensom: hoeveel betalende klanten een ZZP personal trainer in Amsterdam nodig heeft om rond te komen of modaal te verdienen. Cijfers 2026.",
   },
 };
 
@@ -33,7 +33,7 @@ export default function BlogPostHoeveelKlanten() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Blog", url: "/nl/blog" }, { name: "Hoeveel klanten heeft een PT nodig", url: "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen" }]} />
-      <BlogPostingJsonLd title="Hoeveel klanten heb je nodig als personal trainer in Amsterdam?" description="Eerlijke rekensom: hoeveel betalende klanten heeft een ZZP personal trainer nodig om in Amsterdam rond te komen, modaal te verdienen of een gezin te onderhouden? Met cijfers voor 2026." url="/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="Hoeveel klanten heb je nodig als personal trainer in Amsterdam?" description="Eerlijke rekensom: hoeveel betalende klanten een ZZP personal trainer in Amsterdam nodig heeft om rond te komen of modaal te verdienen. Cijfers 2026." url="/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "Hoeveel sessies per week moet ik geven om modaal te verdienen?", answer: "Bij een gemiddeld tarief van €60 per sessie heb je ongeveer 18 tot 22 sessies per week nodig om netto modaal (€3.000) te bereiken. Bij €45 per sessie: ~25 sessies/week. Bij €80 per sessie: ~14 sessies/week." },
         { question: "Wat zijn de vaste lasten van een ZZP personal trainer in Amsterdam?", answer: "Realistisch €200 tot €600 per maand: studio-huur (€100-400), verzekeringen (€50-100), KvK + boekhouding (~€20), telefoon/website (~€30-50)." },

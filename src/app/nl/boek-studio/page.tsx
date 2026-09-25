@@ -24,9 +24,9 @@ import { MessageCircle, CreditCard, Eye, Key, Repeat, ArrowRight, Receipt, Check
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam" },
+  title: { absolute: "Boek de Studio: Privé Trainingsruimte Huren | SculptClub" },
   description:
-    "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
+    "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting.",
   alternates: {
     canonical: "/nl/boek-studio",
     languages: {
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/boek-studio",
-    title: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam",
+    title: "Boek de Studio: Privé Trainingsruimte Huren | SculptClub",
     description:
-      "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
+      "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Boek de Studio — Privé Trainingsruimte Huren | SculptClub Amsterdam",
+    title: "Boek de Studio: Privé Trainingsruimte Huren | SculptClub",
     description:
-      "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting. Eerste proefsessie gratis.",
+      "Huur een privé studio in de Jordaan. Vanaf €12/uur — eigen tarief en klanten, geen contract, altijd gratis annuleren. Kortingspakketten tot 23% korting.",
   },
 };
 

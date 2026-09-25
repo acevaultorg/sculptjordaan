@@ -6,7 +6,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club" },
+  title: { absolute: "Sportschool Jordaan zonder Abonnement | SculptClub" },
   description:
     "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €7,25 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   robots: { index: true, follow: true },
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/sportschool-jordaan",
-    title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
+    title: "Sportschool Jordaan zonder Abonnement | SculptClub",
     description:
       "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €7,25 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sportschool Jordaan zonder Abonnement — SculptClub Privé Club",
+    title: "Sportschool Jordaan zonder Abonnement | SculptClub",
     description:
       "De sportschool in de Jordaan zonder abonnement. Privé studio, Open Gym vanaf €7,25 per sessie. Geen contract, geen drukte. Eerste keer gratis proberen.",
   },

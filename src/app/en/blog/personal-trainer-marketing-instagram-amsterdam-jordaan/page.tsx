@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Marketing on Instagram — What Works in Amsterdam (Jordaan) — SculptClub" },
+  title: { absolute: "Instagram Marketing for Personal Trainers in Amsterdam" },
   description:
-    "Which Instagram content actually brings PT clients in Amsterdam? Reel length, hashtags, post times, DM strategy — everything that works in 2026 for freelance personal trainers.",
+    "Which Instagram content brings PT clients in Amsterdam: reel length, hashtags, post times and DMs. What works in 2026 for freelance personal trainers.",
   keywords: ["personal trainer instagram marketing", "clients via instagram personal trainer", "pt content instagram amsterdam", "reels personal trainer", "instagram strategy freelance trainer"],
   alternates: {
     canonical: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan",
-    title: "Personal Trainer Marketing on Instagram — What Works in Amsterdam (Jordaan) — SculptClub",
+    title: "Instagram Marketing for Personal Trainers in Amsterdam",
     description:
-      "Which Instagram content actually brings PT clients in Amsterdam? Reel length, hashtags, post times, DM strategy — everything that works in 2026 for freelance personal trainers.",
+      "Which Instagram content brings PT clients in Amsterdam: reel length, hashtags, post times and DMs. What works in 2026 for freelance personal trainers.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Marketing on Instagram — What Works in Amsterdam (Jordaan) — SculptClub",
+    title: "Instagram Marketing for Personal Trainers in Amsterdam",
     description:
-      "Which Instagram content actually brings PT clients in Amsterdam? Reel length, hashtags, post times, DM strategy — everything that works in 2026 for freelance personal trainers.",
+      "Which Instagram content brings PT clients in Amsterdam: reel length, hashtags, post times and DMs. What works in 2026 for freelance personal trainers.",
   },
 };
 
@@ -33,7 +33,7 @@ export default function BlogPostInstagramMarketingEN() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "Personal trainer Instagram marketing", url: "/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" }]} />
-      <BlogPostingJsonLd title="Personal trainer marketing on Instagram — what works in Amsterdam (Jordaan)" description="Which Instagram content actually brings PT clients in Amsterdam? Reel length, hashtags, post times, DM strategy — everything that works in 2026 for freelance personal trainers." url="/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="Personal trainer marketing on Instagram — what works in Amsterdam (Jordaan)" description="Which Instagram content brings PT clients in Amsterdam: reel length, hashtags, post times and DMs. What works in 2026 for freelance personal trainers." url="/en/blog/personal-trainer-marketing-instagram-amsterdam-jordaan" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "What Instagram content works for personal trainers in 2026?", answer: "Reels of 7-15 seconds with a strong hook in the first 2 seconds convert best. Form-correction videos, hyper-specific tips, and behind-the-scenes moments. No generic motivational quotes." },
         { question: "How many hashtags should I use on Instagram?", answer: "5 to 7 niche-specific hashtags in 2026 (vs the 20+ tactic of years ago). Algorithm rewards content, not hashtag-stuffing. Prefer #personaltrainerjordaan over #fitness." },

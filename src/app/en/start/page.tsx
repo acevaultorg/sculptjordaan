@@ -8,7 +8,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "Welcome to SculptClub — Private Studio Amsterdam Jordaan" },
   description:
-    "Private personal training studio in the Jordaan. Personal training from \u20ac299 per 4 weeks, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
+    "Private studio in the Jordaan. PT from €299 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/en/start",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/en/start",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private personal training studio in the Jordaan. Personal training from \u20ac299 per 4 weeks, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
+      "Private studio in the Jordaan. PT from €299 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private personal training studio in the Jordaan. Personal training from \u20ac299 per 4 weeks, Open Gym from \u20ac6.13/session, studio rental from \u20ac12/hour. Free first session.",
+      "Private studio in the Jordaan. PT from €299 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
   },
 };
 

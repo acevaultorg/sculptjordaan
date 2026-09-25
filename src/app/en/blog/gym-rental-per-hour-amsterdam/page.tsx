@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers — SculptClub" },
+  title: { absolute: "Gym Rental per Hour in Amsterdam for Freelance Trainers" },
   description:
-    "Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists.",
+    "Rent a gym or training studio by the hour in Amsterdam: how flexible studio hire works for freelance personal trainers and physiotherapists.",
   keywords: [
     "gym rental per hour amsterdam",
     "private studio hire amsterdam",
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/gym-rental-per-hour-amsterdam",
-    title: "Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers — SculptClub",
+    title: "Gym Rental per Hour in Amsterdam for Freelance Trainers",
     description:
-      "Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists.",
+      "Rent a gym or training studio by the hour in Amsterdam: how flexible studio hire works for freelance personal trainers and physiotherapists.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers — SculptClub",
+    title: "Gym Rental per Hour in Amsterdam for Freelance Trainers",
     description:
-      "Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists.",
+      "Rent a gym or training studio by the hour in Amsterdam: how flexible studio hire works for freelance personal trainers and physiotherapists.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function BlogPostGymRentalPerHour() {
       />
       <BlogPostingJsonLd
         title="Gym Rental Per Hour Amsterdam: Flexible Studio for Freelance Trainers"
-        description="Looking for a gym or training studio to rent per hour in Amsterdam? Everything about flexible studio hire for freelance personal trainers and physiotherapists."
+        description="Rent a gym or training studio by the hour in Amsterdam: how flexible studio hire works for freelance personal trainers and physiotherapists."
         url="/en/blog/gym-rental-per-hour-amsterdam"
         datePublished="2026-04-01"
       />

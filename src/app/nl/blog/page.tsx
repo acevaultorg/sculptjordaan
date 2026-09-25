@@ -16,7 +16,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan" },
+  title: { absolute: "Blog: Tips, Inzichten & Verhalen | SculptClub" },
   description:
     "Lees onze blog over personal training, open gym, fitness tips en meer vanuit onze studio in de Jordaan, Amsterdam.",
   alternates: {
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/blog",
-    title: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan",
+    title: "Blog: Tips, Inzichten & Verhalen | SculptClub",
     description:
       "Lees onze blog over personal training, open gym, fitness tips en meer vanuit onze studio in de Jordaan, Amsterdam.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog — Tips, Inzichten & Verhalen | SculptClub Amsterdam Jordaan",
+    title: "Blog: Tips, Inzichten & Verhalen | SculptClub",
     description:
       "Lees onze blog over personal training, open gym, fitness tips en meer vanuit onze studio in de Jordaan, Amsterdam.",
   },

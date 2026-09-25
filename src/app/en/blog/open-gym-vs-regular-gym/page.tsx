@@ -8,7 +8,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub" },
+  title: { absolute: "Open Gym vs Regular Gym: Which is Right for You?" },
   description:
     "What is the difference between Open Gym and a regular gym? Compare price, privacy, equipment, and atmosphere to make the best choice for your training.",
   keywords: [
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/open-gym-vs-regular-gym",
-    title: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub",
+    title: "Open Gym vs Regular Gym: Which is Right for You?",
     description:
       "What is the difference between Open Gym and a regular gym? Compare price, privacy, equipment, and atmosphere to make the best choice for your training.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Open Gym vs Regular Gym: Which is Right for You? — SculptClub",
+    title: "Open Gym vs Regular Gym: Which is Right for You?",
     description:
       "What is the difference between Open Gym and a regular gym? Compare price, privacy, equipment, and atmosphere to make the best choice for your training.",
   },

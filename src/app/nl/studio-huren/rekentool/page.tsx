@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Studio Huren Kosten Berekenen — Personal Trainer Amsterdam | SculptClub" },
+  title: { absolute: "Studio Huren Kosten Berekenen: Personal Trainer Amsterdam" },
   description:
-    "Bereken wat je overhoudt als je de studio huurt vanaf €12/uur en je eigen tarief houdt — vs een gym die 30-50% commissie pakt. Voor personal trainers in Amsterdam Jordaan.",
+    "Bereken wat je overhoudt als je de studio huurt vanaf €12/uur en je eigen tarief houdt — vs een gym die 30-50% commissie pakt.",
   alternates: {
     canonical: "/nl/studio-huren/rekentool",
     languages: {
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/nl/studio-huren/rekentool",
-    title: "Studio Huren Kosten Berekenen — Personal Trainer Amsterdam | SculptClub",
+    title: "Studio Huren Kosten Berekenen: Personal Trainer Amsterdam",
     description:
-      "Bereken wat je overhoudt als je de studio huurt vanaf €12/uur en je eigen tarief houdt — vs een gym die 30-50% commissie pakt. Voor personal trainers in Amsterdam Jordaan.",
+      "Bereken wat je overhoudt als je de studio huurt vanaf €12/uur en je eigen tarief houdt — vs een gym die 30-50% commissie pakt.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Huren Kosten Berekenen — Personal Trainer Amsterdam | SculptClub",
+    title: "Studio Huren Kosten Berekenen: Personal Trainer Amsterdam",
     description:
-      "Bereken wat je overhoudt als je de studio huurt vanaf €12/uur en je eigen tarief houdt — vs een gym die 30-50% commissie pakt. Voor personal trainers in Amsterdam Jordaan.",
+      "Bereken wat je overhoudt als je de studio huurt vanaf €12/uur en je eigen tarief houdt — vs een gym die 30-50% commissie pakt.",
   },
 };
 

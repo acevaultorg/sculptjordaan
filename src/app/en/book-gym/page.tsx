@@ -11,19 +11,19 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam" },
+  title: { absolute: "Book Open Gym: Train Independently in a Private Studio" },
   description: "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:00–22:00.",
   alternates: { canonical: "/en/book-gym", languages: { nl: "/nl/boek-gym", en: "/en/book-gym" } },
   openGraph: {
     type: "website",
     url: "/en/book-gym",
-    title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
+    title: "Book Open Gym: Train Independently in a Private Studio",
     description:
       "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:00–22:00.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book Open Gym — Train Independently in a Private Studio | SculptClub Amsterdam",
+    title: "Book Open Gym: Train Independently in a Private Studio",
     description:
       "Book an Open Gym session at SculptClub in the Jordaan. Single session (1 hour) €9 or membership from €29/4 weeks. Private studio, daily 06:00–22:00.",
   },

@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Gratis Open Gym probeersessie boeken — Privé Studio Jordaan | SculptClub Amsterdam",
+      "Gratis Open Gym probeersessie boeken: Privé Studio Jordaan",
   },
   description:
     "Boek je gratis Open Gym probeersessie bij SculptClub in de Jordaan. Kom vrijblijvend langs en train één sessie gratis — geen abonnement, geen verplichting.",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/nl/gratis-proefles",
     title:
-      "Gratis Open Gym probeersessie boeken — Privé Studio Jordaan | SculptClub Amsterdam",
+      "Gratis Open Gym probeersessie boeken: Privé Studio Jordaan",
     description:
       "Boek je gratis Open Gym probeersessie bij SculptClub in de Jordaan. Kom vrijblijvend langs en train één sessie gratis — geen abonnement, geen verplichting.",
   },

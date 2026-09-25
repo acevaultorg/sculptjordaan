@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "VAT for personal trainers in the Netherlands — 21% or 9%? — SculptClub" },
+  title: { absolute: "VAT for personal trainers in the Netherlands: 21% or 9%?" },
   description:
-    "Which Dutch VAT (btw) rate applies to personal training? Standalone PT sessions are 21%. The reduced 9% rate only applies when training is combined with providing a sports facility. Plus the KOR exemption under €20,000 revenue.",
+    "Dutch VAT on personal training: standalone PT sessions are 21%. The 9% rate only applies with use of a sports facility. Plus the KOR under €20,000.",
   keywords: [
     "vat personal trainer netherlands",
     "btw personal training 9 or 21",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/vat-personal-trainer-netherlands",
-    title: "VAT for personal trainers in the Netherlands — 21% or 9%? — SculptClub",
+    title: "VAT for personal trainers in the Netherlands: 21% or 9%?",
     description:
       "Standalone PT sessions: 21%. The reduced 9% rate only applies with a sports facility included. And under €20,000 revenue there is the KOR exemption.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "VAT for personal trainers in the Netherlands — 21% or 9%? — SculptClub",
+    title: "VAT for personal trainers in the Netherlands: 21% or 9%?",
     description:
       "Standalone PT sessions: 21%. The reduced 9% rate only applies with a sports facility included. And under €20,000 revenue there is the KOR exemption.",
   },

@@ -6,9 +6,9 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo
 import { ArrowRight, CalendarDays, User } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Packages — Pricing Strategy for Freelancers in Amsterdam — SculptClub" },
+  title: { absolute: "Personal Trainer Packages: Pricing for Freelancers" },
   description:
-    "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026? Concrete pricing strategy with numbers.",
+    "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026?",
   keywords: ["personal trainer package pricing", "pt session pack", "personal trainer pricing strategy", "freelance trainer pricing", "pt session bundle amsterdam"],
   alternates: {
     canonical: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
-    title: "Personal Trainer Packages — Pricing Strategy for Freelancers in Amsterdam — SculptClub",
+    title: "Personal Trainer Packages: Pricing for Freelancers",
     description:
-      "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026? Concrete pricing strategy with numbers.",
+      "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026?",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Packages — Pricing Strategy for Freelancers in Amsterdam — SculptClub",
+    title: "Personal Trainer Packages: Pricing for Freelancers",
     description:
-      "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026? Concrete pricing strategy with numbers.",
+      "How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026?",
   },
 };
 
@@ -36,7 +36,7 @@ export default function BlogPostPackagesPricing() {
   return (
     <PageLayout>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/en" }, { name: "Blog", url: "/en/blog" }, { name: "Personal trainer packages + pricing strategy", url: "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" }]} />
-      <BlogPostingJsonLd title="Personal trainer packages — pricing strategy for freelance trainers in Amsterdam" description="How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026? Concrete pricing strategy with numbers." url="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" datePublished="2026-05-20" />
+      <BlogPostingJsonLd title="Personal trainer packages — pricing strategy for freelance trainers in Amsterdam" description="How do you build PT packages as a freelance trainer? What discount works, what pricing psychology in Amsterdam 2026?" url="/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam" datePublished="2026-05-20" />
       <FaqJsonLd faqs={[
         { question: "What discount works on a PT session pack?", answer: "Netherlands standard: 4-pack 5%, 10-pack 10-15%, 20-pack 20-25%. Below that no incentive; above that you lose margin without retention gain." },
         { question: "How long should packs stay valid?", answer: "Three months is the sweet spot. Longer creates scope creep; shorter feels like pressure and hurts retention." },

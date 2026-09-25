@@ -35,7 +35,7 @@ import { ArrowRight, MessageCircle, Building2, Ban, Clock, Percent, CalendarChec
 export const metadata: Metadata = {
   title: { absolute: "Free Trial Session — Studio Rental | SculptClub Jordaan" },
   description:
-    "Book your free 60-minute trial session in our private studio in Amsterdam Jordaan — or just ask your question on WhatsApp first. No credit card, no contract, your own rates. For personal trainers.",
+    "Book your free 60-minute trial session in our private studio in Amsterdam Jordaan — or just ask your question on WhatsApp first.",
   alternates: {
     canonical: "/en/studio-rental/free-trial",
     languages: {
