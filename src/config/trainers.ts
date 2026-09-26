@@ -830,8 +830,8 @@ const trainersRaw: Trainer[] = [
     // relabelled to match what she actually delivers.
     bookingUrl: "https://calendly.com/robertavirzipt/30min",
     bookingLabel: {
-      nl: "Boek een gratis kennismakingsgesprek",
-      en: "Book a free discovery call",
+      nl: "Gratis kennismaking",
+      en: "Free discovery call",
     },
   },
 ];
