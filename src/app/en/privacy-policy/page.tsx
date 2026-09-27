@@ -37,7 +37,7 @@ export default function PrivacyPolicyEN() {
           as="h1"
           overline="Legal"
           title="Privacy Policy"
-          description="Last updated: 23 February 2026"
+          description="Last updated: 27 September 2026"
         />
       </Section>
 
@@ -121,6 +121,12 @@ export default function PrivacyPolicyEN() {
               it. We only show an answer on the site if you ticked the
               separate box for that. You can withdraw that consent at any time
               via contact@sculptclub.nl.
+            </p>
+            <p className="text-muted-foreground mt-3">
+              <strong>Blog cheat sheet:</strong> if you request the cheat
+              sheet, we keep your email address, the page you requested it on
+              and the language. We only use it to email you about it. To have
+              it deleted, email contact@sculptclub.nl.
             </p>
           </div>
         </FadeIn>
@@ -334,6 +340,10 @@ export default function PrivacyPolicyEN() {
               </li>
               <li>
                 <strong>Feedback form:</strong> 2 years, then deleted
+                automatically. Sooner on request.
+              </li>
+              <li>
+                <strong>Cheat sheet requests:</strong> 2 years, then deleted
                 automatically. Sooner on request.
               </li>
               <li>

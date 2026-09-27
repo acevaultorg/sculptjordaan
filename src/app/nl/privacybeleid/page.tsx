@@ -37,7 +37,7 @@ export default function PrivacyPageNL() {
           as="h1"
           overline="Juridisch"
           title="Privacybeleid"
-          description="Laatst bijgewerkt: 23 februari 2026"
+          description="Laatst bijgewerkt: 27 september 2026"
         />
       </Section>
 
@@ -122,6 +122,12 @@ export default function PrivacyPageNL() {
               IP-adres op. We tonen een antwoord alleen op de site als je
               daarvoor apart het vinkje hebt gezet. Die toestemming kun je
               altijd intrekken via contact@sculptclub.nl.
+            </p>
+            <p className="text-muted-foreground mt-3">
+              <strong>Cheat sheet op de blog:</strong> vraag je de cheat sheet
+              aan, dan bewaren we je e-mailadres, de pagina waar je dat deed en
+              de taal. We gebruiken het alleen om je daarover te mailen. Wil je
+              dat we het verwijderen, mail dan contact@sculptclub.nl.
             </p>
           </div>
         </FadeIn>
@@ -343,6 +349,10 @@ export default function PrivacyPageNL() {
               <li>
                 <strong>Feedbackformulier:</strong> 2 jaar, daarna automatisch
                 verwijderd. Eerder op verzoek.
+              </li>
+              <li>
+                <strong>Aanvragen cheat sheet:</strong> 2 jaar, daarna
+                automatisch verwijderd. Eerder op verzoek.
               </li>
               <li>
                 <strong>Camerabeelden:</strong> maximaal 4 weken.

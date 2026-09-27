@@ -3,8 +3,8 @@
 // migration (2026-07-07): static export can't host a Request-reading route,
 // so it lives here as a CF Pages Function. Behaviour is identical:
 //   1. validate email format  2. log the capture (CF Functions logs)  3. 200 OK
-// OPERATOR-ACTION TODO (unchanged): swap the log for a real email service
-// (ConvertKit / Resend / Buttondown). Captures are logged so nothing is lost.
+// Captures are stored in the FEEDBACK KV namespace under "lead:" (2026-09-27);
+// the console.log line stays as a second trace.
 
 interface LeadMagnetRequest {
   email?: string;
@@ -48,13 +48,30 @@ export const onRequestPost: PagesFunction = async (context) => {
     ua: context.request.headers.get("user-agent")?.slice(0, 100) || "unknown",
   }));
 
+  // 2026-09-27: store the capture durably. Until now it only went to
+  // console.log, and CF Functions logs are not kept unless someone is tailing,
+  // so every address was lost. Reuses the FEEDBACK KV binding (prefix "lead:")
+  // with the same 2-year TTL as feedback (privacy policy section 7). A missing
+  // binding does not fail the visitor: they still get the cheat sheet below.
+  const kv = (context.env as { FEEDBACK?: KVNamespace }).FEEDBACK;
+  if (kv) {
+    const ts = new Date().toISOString();
+    await kv.put(
+      `lead:${ts}:${crypto.randomUUID().slice(0, 8)}`,
+      JSON.stringify({ ts, email: trimmed, source_page, locale, lead_magnet }),
+      { expirationTtl: 60 * 60 * 24 * 365 * 2 },
+    );
+  } else {
+    console.log("LEAD_MAGNET_BINDING_MISSING");
+  }
+
   const cheatSheetUrl = locale === "en" ? "/pt-cheat-sheet?locale=en" : "/pt-cheat-sheet";
   return json({
     ok: true,
     cheat_sheet_url: cheatSheetUrl,
     message: locale === "en"
-      ? "Captured — operator will send the PDF shortly."
-      : "Geregistreerd — operator stuurt de PDF binnenkort.",
+      ? "Saved. Your cheat sheet is ready."
+      : "Opgeslagen. Je cheat sheet staat klaar.",
   });
 };
 // Only POST is defined → CF Pages auto-returns 405 for other methods.
