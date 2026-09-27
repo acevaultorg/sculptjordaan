@@ -404,6 +404,14 @@ const posts = [
     date: "2 sep 2026",
   },
   {
+    title: "Pensioen als zzp personal trainer: lijfrente en jaarruimte (2026)",
+    excerpt:
+      "Hoeveel je in 2026 mag inleggen en aftrekken: 30% van je inkomen boven €19.172, maximaal €35.589. Met reserveringsruimte en een rekenvoorbeeld.",
+    category: "Voor Trainers",
+    href: "/nl/blog/pensioen-zzp-personal-trainer",
+    date: "28 sep 2026",
+  },
+  {
     title: "Factuur maken als personal trainer: wat moet erop? (2026)",
     excerpt:
       "De verplichte gegevens volgens de Belastingdienst, waarom particuliere klanten geen factuur nodig hebben, factureren onder de KOR en de bewaarplicht van 7 jaar.",

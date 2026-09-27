@@ -404,6 +404,14 @@ const posts = [
     date: "Sep 2, 2026",
   },
   {
+    title: "Pension for Freelance Personal Trainers in the Netherlands (2026)",
+    excerpt:
+      "How much you can put into a tax-deductible lijfrente in 2026: 30% of income above €19,172, up to €35,589. With unused room and a worked example.",
+    category: "For Trainers",
+    href: "/en/blog/pension-freelance-personal-trainer-netherlands",
+    date: "Sep 28, 2026",
+  },
+  {
     title: "Invoicing as a Freelance Personal Trainer in the Netherlands (2026)",
     excerpt:
       "What a Dutch invoice must show, why private clients need none, how to invoice under the KOR and why you keep invoices for 7 years.",

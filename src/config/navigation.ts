@@ -313,6 +313,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer": "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
   "/en/blog/first-year-tax-freelance-personal-trainer-netherlands": "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
   "/nl/blog/factuur-personal-trainer-zzp": "/en/blog/invoice-freelance-personal-trainer-netherlands",
+  "/nl/blog/pensioen-zzp-personal-trainer": "/en/blog/pension-freelance-personal-trainer-netherlands",
+  "/en/blog/pension-freelance-personal-trainer-netherlands": "/nl/blog/pensioen-zzp-personal-trainer",
   "/en/blog/invoice-freelance-personal-trainer-netherlands": "/nl/blog/factuur-personal-trainer-zzp",
   "/nl/blog/btw-personal-trainer": "/en/blog/vat-personal-trainer-netherlands",
   "/en/blog/vat-personal-trainer-netherlands": "/nl/blog/btw-personal-trainer",

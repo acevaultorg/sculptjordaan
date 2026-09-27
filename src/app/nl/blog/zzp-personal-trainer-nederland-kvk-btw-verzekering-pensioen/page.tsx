@@ -187,7 +187,7 @@ export default function BlogPostZzpKvkBtw() {
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Lijfrente bij ABN AMRO / Brand New Day / Bright Pensions", "Stort jaarlijks (tot ~€16k per jaar fiscaal aftrekbaar). Geld zit vast tot pensioenleeftijd."],
+                  ["Lijfrente bij ABN AMRO / Brand New Day / Bright Pensions", "Stort jaarlijks, aftrekbaar tot je jaarruimte (in 2026 30% van je inkomen boven €19.172, max €35.589). Geld zit vast tot pensioenleeftijd."],
                   ["Banksparen (lijfrente-rekening)", "Vergelijkbaar met lijfrente maar bij een bank. Vaak iets lagere kosten dan beleggings-lijfrente."],
                   ["Vrij beleggen (ETF’s via DEGIRO / Saxo)", "Geen fiscale aftrek, maar geld blijft beschikbaar. Riskanter — vereist discipline om niet te tappen."],
                 ].map(([type, desc]) => (
@@ -271,6 +271,7 @@ export default function BlogPostZzpKvkBtw() {
                   <a href="/nl/blog/kosten-prive-studio-huren-vs-eigen-gym-openen-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Kosten privé studio vs eigen gym</p></a>
                   <a href="/nl/blog/btw-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Btw voor personal trainers — 21% of 9%</p></a>
                   <a href="/nl/blog/aov-personal-trainer-zzp" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">AOV voor personal trainers — dit kost het</p></a>
+                  <a href="/nl/blog/pensioen-zzp-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Pensioen: lijfrente en jaarruimte 2026</p></a>
                   <a href="/nl/blog/belasting-eerste-jaar-zzp-personal-trainer" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Belasting eerste jaar — wat houd je over?</p></a>
                 </div>
               </div>

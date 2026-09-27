@@ -187,7 +187,7 @@ export default function BlogPostFreelanceTrainerTax() {
               </p>
               <ul className="space-y-2 list-none pl-0">
                 {[
-                  ["Lijfrente via ABN AMRO / Brand New Day / Bright Pensions", "Deposit yearly (up to ~€16k/year tax-deductible). Money locked until pension age."],
+                  ["Lijfrente via ABN AMRO / Brand New Day / Bright Pensions", "Deposit yearly, deductible up to your jaarruimte (in 2026: 30% of income above €19,172, max €35,589). Money locked until pension age."],
                   ["Banksparen (annuity savings account)", "Like lijfrente but at a bank. Often lower fees than investment-based annuities."],
                   ["Free investing (ETFs via DEGIRO / Saxo)", "No tax deduction, but money stays accessible. Riskier — requires discipline not to tap."],
                 ].map(([type, desc]) => (
@@ -274,6 +274,7 @@ export default function BlogPostFreelanceTrainerTax() {
                   <a href="/en/blog/cost-private-studio-rental-vs-opening-own-gym-amsterdam" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Cost: studio rental vs opening own gym</p></a>
                   <a href="/en/blog/vat-personal-trainer-netherlands" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">VAT for personal trainers — 21% or 9%</p></a>
                   <a href="/en/blog/disability-insurance-freelance-personal-trainer-netherlands" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Disability insurance (AOV) for personal trainers</p></a>
+                  <a href="/en/blog/pension-freelance-personal-trainer-netherlands" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">Pension: lijfrente and jaarruimte 2026</p></a>
                   <a href="/en/blog/first-year-tax-freelance-personal-trainer-netherlands" className="group block rounded-xl border border-white/10 p-4 transition-colors hover:bg-muted"><p className="font-semibold text-sm group-hover:text-brand transition-colors">First-year tax — what do you actually keep?</p></a>
                 </div>
               </div>
