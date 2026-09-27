@@ -404,6 +404,14 @@ const posts = [
     date: "2 sep 2026",
   },
   {
+    title: "Factuur maken als personal trainer: wat moet erop? (2026)",
+    excerpt:
+      "De verplichte gegevens volgens de Belastingdienst, waarom particuliere klanten geen factuur nodig hebben, factureren onder de KOR en de bewaarplicht van 7 jaar.",
+    category: "Voor Trainers",
+    href: "/nl/blog/factuur-personal-trainer-zzp",
+    date: "27 sep 2026",
+  },
+  {
     title: "ZZP Personal Trainer Nederland — KvK, btw, verzekering, pensioen (2026)",
     excerpt:
       "Complete gids voor wie ZZP personal trainer wordt: KvK-inschrijving, btw-tarief, beroepsaansprakelijkheid, AOV, pensioen en boekhouding — met de actuele cijfers.",

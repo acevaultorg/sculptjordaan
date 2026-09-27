@@ -312,6 +312,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/blog/disability-insurance-freelance-personal-trainer-netherlands": "/nl/blog/aov-personal-trainer-zzp",
   "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer": "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
   "/en/blog/first-year-tax-freelance-personal-trainer-netherlands": "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
+  "/nl/blog/factuur-personal-trainer-zzp": "/en/blog/invoice-freelance-personal-trainer-netherlands",
+  "/en/blog/invoice-freelance-personal-trainer-netherlands": "/nl/blog/factuur-personal-trainer-zzp",
   "/nl/blog/btw-personal-trainer": "/en/blog/vat-personal-trainer-netherlands",
   "/en/blog/vat-personal-trainer-netherlands": "/nl/blog/btw-personal-trainer",
   "/nl/blog/eerste-10-klanten-zzp-personal-trainer-amsterdam": "/en/blog/first-10-clients-freelance-personal-trainer-amsterdam",

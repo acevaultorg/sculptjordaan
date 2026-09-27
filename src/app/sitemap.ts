@@ -131,6 +131,7 @@ const nlPages = [
   "/nl/blog/aov-personal-trainer-zzp",
   "/nl/blog/btw-personal-trainer",
   "/nl/blog/belasting-eerste-jaar-zzp-personal-trainer",
+  "/nl/blog/factuur-personal-trainer-zzp",
   "/nl/blog/personal-trainer-pakketten-prijsstrategie-zzp-amsterdam",
   "/nl/blog/hoeveel-klanten-personal-trainer-amsterdam-rondkomen",
   "/nl/blog/studio-huren-vs-commerciele-gym-personal-trainer-amsterdam",
@@ -253,6 +254,7 @@ const enPages = [
   "/en/blog/disability-insurance-freelance-personal-trainer-netherlands",
   "/en/blog/vat-personal-trainer-netherlands",
   "/en/blog/first-year-tax-freelance-personal-trainer-netherlands",
+  "/en/blog/invoice-freelance-personal-trainer-netherlands",
   "/en/blog/personal-trainer-packages-pricing-strategy-freelance-amsterdam",
   "/en/blog/how-many-clients-personal-trainer-amsterdam-living-wage",
   "/en/blog/studio-rental-vs-commercial-gym-personal-trainer-amsterdam",
@@ -320,6 +322,8 @@ const LEGAL_RE = /\/(privacybeleid|cookiebeleid|algemene-voorwaarden|toegankelij
 
 // Newest blog posts get a priority boost — signals freshness to Google.
 const FRESH_BLOG_SLUGS = new Set([
+  "factuur-personal-trainer-zzp",
+  "invoice-freelance-personal-trainer-netherlands",
   "belasting-eerste-jaar-zzp-personal-trainer",
   "first-year-tax-freelance-personal-trainer-netherlands",
   "btw-personal-trainer",

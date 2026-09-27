@@ -404,6 +404,14 @@ const posts = [
     date: "Sep 2, 2026",
   },
   {
+    title: "Invoicing as a Freelance Personal Trainer in the Netherlands (2026)",
+    excerpt:
+      "What a Dutch invoice must show, why private clients need none, how to invoice under the KOR and why you keep invoices for 7 years.",
+    category: "For Trainers",
+    href: "/en/blog/invoice-freelance-personal-trainer-netherlands",
+    date: "Sep 27, 2026",
+  },
+  {
     title: "Freelance Personal Trainer Netherlands — Tax, KvK, Insurance, Pension (2026)",
     excerpt:
       "Complete guide for becoming a freelance personal trainer in the Netherlands: KvK registration, VAT, liability, AOV, pension and bookkeeping.",
