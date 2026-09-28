@@ -89,37 +89,37 @@ const uniqueFeatures = [
   {
     icon: Lock,
     title: "Priv\u00e9",
-    description: "Maximaal 4 personen bij Open Gym. Geen drukte, geen wachten.",
+    description: "Bij Open Gym zijn er nooit meer dan 4 mensen tegelijk.",
   },
   {
     icon: MapPin,
     title: "Aan de gracht",
     description:
-      "Gelegen aan de Egelantiersgracht in het hart van de Jordaan.",
+      "Egelantiersgracht 424, midden in de Jordaan.",
   },
   {
     icon: KeyRound,
     title: "Deurcode toegang",
     description:
-      "Geen receptie. Na boeking ontvang je een deurcode en train je op jouw gemak.",
+      "Er is geen receptie. Om 00:00 in de nacht voor je sessie krijg je een deurcode via WhatsApp.",
   },
   {
     icon: Clock,
     title: "06:00 \u2013 22:00 dagelijks",
     description:
-      "Open 7 dagen per week. Vroege vogels en avondmensen, iedereen is welkom.",
+      "Elke dag van de week, ook in het weekend.",
   },
   {
     icon: CalendarCheck,
     title: "Flexibel",
     description:
-      "Geen abonnement, geen contracten. Boek per sessie, annuleer altijd gratis.",
+      "Je boekt per sessie of per 4 weken, zonder contract. Annuleren is altijd gratis.",
   },
   {
     icon: UserCheck,
-    title: "Capaciteit op maat",
+    title: "Groepsgrootte",
     description:
-      "Bij Open Gym beperken we de ruimte tot vier personen. Bij volledige studiohuur heb je de hele ruimte privé: voor 1 tot 8 personen, je traint met je eigen groep.",
+      "Huur je de hele studio, dan is die alleen van jou en je groep, van 1 tot 8 personen.",
   },
   // M (2026-06-02) — the 2 positioning PRINCIPLES the facility-logistics grid
   // lacked: Transparant + Trainer-eerst (SculptClub's actual moats). Reuses
@@ -129,7 +129,7 @@ const uniqueFeatures = [
     icon: Eye,
     title: "Transparant",
     description:
-      "Je ziet vooraf wat het kost. Geen verborgen prijzen, geen 'bel ons voor een offerte'.",
+      "Alle prijzen staan op de site. Je hoeft niet te bellen voor een offerte.",
   },
   {
     icon: Handshake,
@@ -148,8 +148,8 @@ export default function OverOnsPage() {
         <SectionHeader
           as="h1"
           overline="Over SculptClub"
-          title="Waar gedisciplineerde ambitie verfijnde transformatie ontmoet"
-          description="SculptClub is een boutique personal training studio in het hart van Amsterdam’s Jordaan. Opgericht in 2025 met een simpele missie: de beste privé trainingsruimte van Amsterdam bieden."
+          title="Een kleine studio aan de Egelantiersgracht"
+          description="Een privé trainingsstudio in de Jordaan, sinds 2025. Met een trainer, zelf, of als trainer die de ruimte huurt."
         />
       </Section>
 
@@ -173,22 +173,19 @@ export default function OverOnsPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                SculptClub is ontstaan uit frustratie met overvolle sportscholen
-                en lange contracten. Wij geloven dat trainen persoonlijk hoort
-                te zijn, zonder drukte, zonder verplichtingen, zonder
-                compromissen.
+                SculptClub begon in 2025 uit ergernis over volle sportscholen en
+                lange contracten. Hier train je zonder abonnement en zonder
+                drukte.
               </p>
               <p>
-                Onze studio aan de Egelantiersgracht biedt een intieme
-                trainingsruimte waar maximaal 4 personen tegelijk welkom zijn.
-                Met professionele apparatuur, flexibele boekingen en deurcode
-                toegang kun je trainen op jouw voorwaarden.
+                De studio is klein: bij Open Gym zijn er nooit meer dan 4 mensen
+                tegelijk. Je boekt online en komt binnen met een deurcode die je
+                via WhatsApp krijgt.
               </p>
               <p>
-                Of je nu traint met een personal trainer, zelfstandig komt
-                trainen via Open Gym, of als ZZP-trainer onze studio huurt voor
-                je eigen klanten. Bij SculptClub draait alles om kwaliteit
-                boven kwantiteit.
+                Je traint hier met een personal trainer of zelf via Open Gym. Ben
+                je zelf trainer of fysiotherapeut, dan huur je de ruimte per uur
+                voor je eigen klanten.
               </p>
             </div>
           </FadeIn>
@@ -199,8 +196,8 @@ export default function OverOnsPage() {
       <Section>
         <SectionHeader
           overline="Wat wij bieden"
-          title="Drie pijlers"
-          description="Personal Training, Open Gym en Studio Verhuur: alles onder één dak."
+          title="Wat je hier kunt doen"
+          description="Er zijn drie manieren om hier te trainen."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
@@ -228,9 +225,9 @@ export default function OverOnsPage() {
       {/* Wat maakt ons uniek */}
       <Section bg="muted">
         <SectionHeader
-          overline="Onze waarden"
-          title="Wat maakt ons uniek"
-          description="Geen abonnement. Geen drukte. Geen contracten."
+          overline="Praktisch"
+          title="Hoe het hier werkt"
+          description="Wat je wilt weten voor je eerste bezoek."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {uniqueFeatures.map((value, i) => (
@@ -262,7 +259,7 @@ export default function OverOnsPage() {
               {siteConfig.address.city}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Open {siteConfig.hours.toLowerCase()}. Deurcode toegang na boeking.
+              Dagelijks open van 06:00 tot 22:00. Na je boeking krijg je een deurcode.
             </p>
           </div>
         </FadeIn>
@@ -273,7 +270,7 @@ export default function OverOnsPage() {
         <FadeIn>
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Kom langs en ervaar het zelf
+              Kom een keer langs
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Boek een gratis intake of neem contact met ons op via WhatsApp.

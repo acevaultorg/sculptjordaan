@@ -82,37 +82,37 @@ const uniqueFeatures = [
   {
     icon: Lock,
     title: "Private",
-    description: "Maximum 4 people during Open Gym. No crowds, no waiting.",
+    description: "Open Gym never has more than 4 people at once.",
   },
   {
     icon: MapPin,
     title: "Canal-side",
     description:
-      "Located on the Egelantiersgracht in the heart of the Jordaan.",
+      "Egelantiersgracht 424, in the middle of the Jordaan.",
   },
   {
     icon: KeyRound,
     title: "Door code access",
     description:
-      "No reception desk. After booking you receive a door code and train at your convenience.",
+      "There's no reception desk. At midnight before your session you get a door code via WhatsApp.",
   },
   {
     icon: Clock,
     title: "06:00 \u2013 22:00 daily",
     description:
-      "Open 7 days a week. Early birds and night owls, everyone is welcome.",
+      "Every day of the week, weekends included.",
   },
   {
     icon: CalendarCheck,
     title: "Flexible",
     description:
-      "No membership, no contracts. Book per session, cancel anytime for free.",
+      "You book per session or per 4 weeks, with no contract. Cancelling is always free.",
   },
   {
     icon: UserCheck,
-    title: "Tailored capacity",
+    title: "Group size",
     description:
-      "During Open Gym we limit the space to four people. With a full studio rental you have the whole space privately: for 1 to 8 people, you train with your own group.",
+      "Rent the whole studio and it's only you and your group, from 1 to 8 people.",
   },
   // M (2026-06-02) — EN parallel: the 2 positioning principles (Transparent +
   // Trainer-first) the facility grid lacked.
@@ -120,7 +120,7 @@ const uniqueFeatures = [
     icon: Eye,
     title: "Transparent",
     description:
-      "You see the price upfront. No hidden pricing, no 'contact us for a quote'.",
+      "Every price is on the site. You never have to call for a quote.",
   },
   {
     icon: Handshake,
@@ -139,8 +139,8 @@ export default function AboutPage() {
         <SectionHeader
           as="h1"
           overline="About SculptClub"
-          title="Where disciplined ambition meets refined transformation"
-          description="SculptClub is a boutique personal training studio in the heart of Amsterdam’s Jordaan. Founded in 2025 with a simple mission: to provide the best private training space in Amsterdam."
+          title="A small studio on the Egelantiersgracht"
+          description="A private training studio in the Jordaan, open since 2025. With a trainer, on your own, or as a trainer renting the space."
         />
       </Section>
 
@@ -162,21 +162,19 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">Our story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                SculptClub was born out of frustration with overcrowded gyms and
-                long-term contracts. We believe training should be personal,
-                without crowds, without obligations, without compromises.
+                SculptClub started in 2025 out of annoyance with packed gyms and
+                long contracts. Here you train without a membership and without
+                the crowd.
               </p>
               <p>
-                Our studio on the Egelantiersgracht offers an intimate training
-                space where a maximum of 4 people are welcome at a time. With
-                professional equipment, flexible bookings and door code access,
-                you can train on your own terms.
+                The studio is small: Open Gym never has more than 4 people at
+                once. You book online and get in with a door code sent via
+                WhatsApp.
               </p>
               <p>
-                Whether you train with a personal trainer, come for an
-                independent Open Gym session, or rent our studio as a freelance
-                trainer for your own clients, at SculptClub it’s all about
-                quality over quantity.
+                You can train here with a personal trainer or on your own through
+                Open Gym. If you are a trainer or physio yourself, you rent the
+                space by the hour for your own clients.
               </p>
             </div>
           </FadeIn>
@@ -187,8 +185,8 @@ export default function AboutPage() {
       <Section>
         <SectionHeader
           overline="What we offer"
-          title="Three pillars"
-          description="Personal Training, Open Gym and Studio Rental: all under one roof."
+          title="What you can do here"
+          description="There are three ways to train here."
         />
         <div className="grid sm:grid-cols-3 gap-8">
           {pillars.map((pillar, i) => (
@@ -216,9 +214,9 @@ export default function AboutPage() {
       {/* What makes us unique */}
       <Section bg="muted">
         <SectionHeader
-          overline="Our values"
-          title="What makes us unique"
-          description="No membership. No crowds. No contracts."
+          overline="Practical"
+          title="How it works here"
+          description="What to know before your first visit."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {uniqueFeatures.map((value, i) => (
@@ -250,7 +248,7 @@ export default function AboutPage() {
               {siteConfig.address.city}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Open {siteConfig.hours.toLowerCase()}. Door code access after booking.
+              Open daily from 06:00 to 22:00. After booking you get a door code.
             </p>
           </div>
         </FadeIn>
@@ -261,7 +259,7 @@ export default function AboutPage() {
         <FadeIn>
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Come and experience it yourself
+              Come and see the studio
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
               Book a free intro or reach out via WhatsApp.
