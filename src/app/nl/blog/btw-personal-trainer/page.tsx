@@ -83,6 +83,31 @@ export default function BlogPostBtwPersonalTrainer() {
                 <em>Belangrijk: dit artikel is informatief, geen belastingadvies. De criteria hieronder komen van de Belastingdienst (stand augustus 2026); voor jouw situatie: je boekhouder of de Belastingdienst zelf.</em>
               </p>
 
+              <div className="overflow-x-auto rounded-xl border border-border bg-card my-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="px-4 py-3 text-left font-semibold text-foreground">Jouw situatie</th>
+                      <th className="px-4 py-3 text-left font-semibold text-foreground">Btw</th>
+                      <th className="px-4 py-3 text-left font-semibold text-foreground">Bron</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ["Je traint een klant buiten, bij de klant thuis of in een gym waar de klant zelf lid is", "21%", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw/sportbeoefening_waaronder_zwembaden_en_sauna/gelegenheid_geven_om_te_sporten/gelegenheid_geven_om_te_sporten"],
+                      ["Je stelt zelf de sportaccommodatie ter beschikking, zorgt voor onderhoud of schoonmaak en levert de toestellen, en de training hoort daarbij", "9%", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw/sportbeoefening_waaronder_zwembaden_en_sauna/gelegenheid_geven_om_te_sporten/gelegenheid_geven_om_te_sporten"],
+                      ["Je omzet is niet meer dan €20.000 per kalenderjaar en je kiest voor de KOR", "Geen btw (vrijstelling)", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/"],
+                    ].map(([situatie, tarief, bron]) => (
+                      <tr key={situatie} className="border-b last:border-0">
+                        <td className="px-4 py-3">{situatie}</td>
+                        <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{tarief}</td>
+                        <td className="px-4 py-3"><a href={bron} target="_blank" rel="noopener noreferrer" className="text-brand underline">Belastingdienst</a></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8">Welk btw-tarief geldt voor personal training?</h2>
               <p>
                 De hoofdregel van de Belastingdienst is helder: sportlessen, instructie of begeleiding die <em>niet</em> gegeven worden in combinatie met het ter beschikking stellen van een sportaccommodatie, vallen onder het <strong className="text-foreground">21%-tarief</strong>. Dat is de situatie van de meeste personal trainers: je verkoopt je expertise en begeleiding als dienst.
@@ -136,6 +161,10 @@ export default function BlogPostBtwPersonalTrainer() {
                   </li>
                 ))}
               </ul>
+
+              <p>
+                Twijfel je of een studio waar jij zelf de ruimte regelt bij jouw manier van werken past? Je kunt de SculptClub-studio eerst <a href="/nl/studio-huren/gratis-test" className="text-brand underline">60 minuten gratis proberen</a>, zonder contract.
+              </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Verder lezen</h3>
