@@ -28,7 +28,8 @@ Opening hours are **06:00–22:00, every day** (corrected 2026-08-05 — "06:30"
 
 ## Ground truth — complete Acuity export
 
-`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-09-14**: **2,319 rows · 342 cancelled · 0 unclassified · 980 whole-room bookings · 97 distinct weekday-hour slots.**
+`2020-01-01 → 2027-12-31`, **including cancelled** — refreshed **2026-09-28**: **2,398 rows · 357 cancelled · 0 unclassified · 1,016 whole-room bookings · 97 distinct weekday-hour slots.** File: `acuity-full-export-2026-09-28.csv`.
+(Prior 2026-09-14: 2,319 rows · 342 cancelled · 980 whole-room · 97 slots — safe-hours grid byte-identical.)
 (Prior 2026-09-07: 2,231 rows · 336 cancelled · 958 whole-room · 97 slots — safe-hours grid byte-identical.)
 (Prior 2026-08-31: 2,188 rows · 332 cancelled · 944 whole-room · 96 slots.
 Prior 2026-08-30: 2,186 rows · 331 cancelled · 944 whole-room · 96 slots.
@@ -37,13 +38,13 @@ Prior 2026-08-05: 1,951 rows · 309 cancelled · 822 whole-room · 93 slots. Fil
 Whole-room bookings per weekday-hour (count in brackets):
 
 ```
-Mon  6(3)  7(9)  8(14) 9(8)  10(2)  11(4)  12(3)  13(5)  14(1)  15(7) 16(7)  17(18) 18(34) 19(36) 20(11)
-Tue  6(1)  7(27) 8(7)  9(3)  10(8)  11(7)  12(10) 13(8)  14(7)  15(5) 16(9)  17(24) 18(58) 19(22) 20(3)
-Wed        7(13) 8(14) 9(11) 10(7)  11(5)  12(2)  13(4)  14(5)  15(5) 16(10) 17(15) 18(24) 19(8)  20(20) 21(2)
-Thu  6(1)  7(9)  8(13) 9(15) 10(13) 11(4)  12(9)  13(7)  14(5)  15(9) 16(4)  17(5)  18(37) 19(21) 20(8)  22(1)
-Fri  6(26) 7(3)  8(16) 9(10) 10(7)  11(11) 12(6)  13(13) 14(14) 15(8) 16(9)  17(7)  18(24) 19(14) 20(1)
-Sat        7(1)  8(4)  9(12) 10(12) 11(14) 12(8)  13(10) 14(1)  15(3) 16(11) 17(2)
-Sun        7(1)  8(5)  9(3)  10(7)  11(12) 12(4)  13(4)  14(4)  15(3) 16(1)
+Mon  6(3)  7(8)  8(13) 9(6)  10(2)  11(4)  12(3)  13(5)  14(1)  15(7)  16(9)  17(18) 18(38) 19(40) 20(11)
+Tue  6(1)  7(29) 8(8)  9(5)  10(8)  11(7)  12(11) 13(9)  14(7)  15(5)  16(9)  17(25) 18(58) 19(28) 20(3)
+Wed        7(15) 8(14) 9(11) 10(9)  11(6)  12(2)  13(4)  14(6)  15(6)  16(10) 17(15) 18(24) 19(8)  20(20) 21(2)
+Thu  6(1)  7(8)  8(13) 9(14) 10(11) 11(4)  12(12) 13(7)  14(6)  15(10) 16(5)  17(9)  18(39) 19(21) 20(8)  22(1)
+Fri  6(27) 7(6)  8(17) 9(10) 10(7)  11(11) 12(6)  13(13) 14(15) 15(8)  16(9)  17(7)  18(24) 19(14) 20(1)
+Sat        7(1)  8(4)  9(17) 10(13) 11(17) 12(10) 13(10) 14(1)  15(3)  16(11) 17(2)
+Sun        7(1)  8(5)  9(4)  10(8)  11(14) 12(5)  13(5)  14(4)  15(3)  16(1)
 ```
 
 ## ✅ The ONLY hours ClassPass may be offered
@@ -154,6 +155,7 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 | 2026-08-31 | ✅ **Clean — zero conflicts** | Both halves verified. Fresh export (2,188 rows, 332 cancelled) → grid identical to 08-30. Live ClassPass: **35** forward instances enumerated, all 21:00 Mon/Tue/Thu/Fri. Nothing deleted. |
 | 2026-09-07 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED** | Fresh export (2,231 rows, 336 cancelled). **Sun 16:00 lost virgin status** → cap 17→16. All 4 known live slots still 0-conflict. **ClassPass session expired** — live schedule could not be read. Nothing deleted. 👤 needs operator sign-in. |
 | 2026-09-14 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED (2nd week)** | Fresh export (2,319 rows, 342 cancelled). Conservative grid identical to 09-07 → cap stays **16**. Mon/Tue/Thu/Fri 21:00 still 0 whole-room bookings ever. **ClassPass partner session still expired** (`/manage` → `/login`) — any slot added since 08-31 is unseen. Nothing deleted. 👤 needs operator sign-in. |
+| 2026-09-28 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED (3rd run)** | Fresh export (2,398 rows, 357 cancelled — control ↑ from 342 ✓). Conservative grid identical to 09-14 → cap stays **16**. Mon/Tue/Thu/Fri 21:00 still 0 whole-room bookings ever. **ClassPass partner session still expired** (`/manage` → `/login`) — any slot added since 08-31 is unseen (4 weeks). No 09-21 run happened. Nothing deleted. 👤 needs operator sign-in. |
 
 ### 2026-08-30 — full run, zero conflicts
 
