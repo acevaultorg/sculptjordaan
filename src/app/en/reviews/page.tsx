@@ -228,7 +228,7 @@ export default function ReviewsPageEN() {
               Experience it yourself
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Book a free trial and discover why our clients give us 5 stars.
+              Book a free trial and see the studio for yourself.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <ButtonLink

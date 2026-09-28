@@ -60,7 +60,7 @@ const openGymPlans = [
     price: `\u20ac${openGymSinglePrice}`,
     period: "",
     perSession: "Geen lidmaatschap nodig",
-    blurb: "Voel de studio, zonder commitment",
+    blurb: "Probeer de studio, zonder lidmaatschap",
     badge: null,
     link: acuityLinks.openGymBook,
   },
@@ -182,7 +182,7 @@ export default function PricingPageNL() {
           as="h1"
           overline="Prijzen"
           title="Alle prijzen op een rij"
-          description="Geen verborgen kosten, geen langlopende contracten. Studio huur vanaf €12/uur (eigen tarief & klanten), personal training vanaf €299 per 4 weken, Open Gym vanaf €29/4wk."
+          description="Studio huur vanaf €12 per uur, personal training vanaf €299 per 4 weken, Open Gym vanaf €29 per 4 weken."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -345,7 +345,7 @@ export default function PricingPageNL() {
                 {siteConfig.rating.value.toFixed(1)}★ op Google{siteConfig.rating.count ? ` · gebaseerd op ${siteConfig.rating.count} reviews` : ""}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Leden waarderen de rust, de persoonlijke aandacht en het ontbreken van verplichtingen.
+                <a href={siteConfig.google} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">Lees de reviews op Google</a>
               </p>
             </CardContent>
           </Card>

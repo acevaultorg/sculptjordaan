@@ -60,7 +60,7 @@ const openGymPlans = [
     price: `\u20ac${openGymSinglePrice}`,
     period: "",
     perSession: "No membership needed",
-    blurb: "Try the studio, no commitment",
+    blurb: "Try the studio, no membership",
     badge: null,
     link: acuityLinks.openGymBook,
   },
@@ -182,7 +182,7 @@ export default function PricingPageEN() {
           as="h1"
           overline="Pricing"
           title="All Pricing at a Glance"
-          description="No hidden costs, no long-term contracts. Studio rental from €12/hour (your own rates), personal training from €299 per 4 weeks, Open Gym from €29/4wk."
+          description="Studio rental from €12 an hour, personal training from €299 per 4 weeks, Open Gym from €29 per 4 weeks."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -345,7 +345,7 @@ export default function PricingPageEN() {
                 {siteConfig.rating.value.toFixed(1)}★ on Google{siteConfig.rating.count ? ` · based on ${siteConfig.rating.count} reviews` : ""}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Members value the calm, the personal attention, and the absence of obligations.
+                <a href={siteConfig.google} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">Read the reviews on Google</a>
               </p>
             </CardContent>
           </Card>
