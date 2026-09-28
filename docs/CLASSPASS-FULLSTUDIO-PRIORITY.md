@@ -2,6 +2,12 @@
 
 **Operator directive 2026-08-05:** *"we prioritise full studio. for all hours full studio is ever booked"* + *"for the hours that never had full studio booking, we can offer classpass"*.
 
+> ## ⛔ 2026-09-28 — ClassPass is OFF (operator decision)
+> *"classpass now block revenue, classpass doesnt bring any clients, and its blocking hours that can get booked, not good"* (operator, 2026-09-28).
+> Last ClassPass class: Thu 2026-09-24 21:00. No recurring schedules left on ClassPass.
+> The three leftover Acuity blocks **"\*\*Open gym - class pass"** — Wed 20:00–22:00, Thu 21:00–22:00, Fri 20:00–22:00, Full-Studio group, repeating to 2030 — were **deleted 2026-09-28** ("this and all future"). Verified: no blocks remain through Jan 2027; the public Full Studio scheduler now offers Thu + Fri up to 21:00 (Wed stops at 20:00 because of a real recurring half-studio booking at 21:00).
+> The weekly guard now checks that ClassPass and its blocks stay gone. Everything below is the history of when ClassPass was on; the safe-hours table only matters again if it is ever re-enabled.
+
 ## Why this matters (the conflict)
 
 Full Studio = **fully private**, the whole room. Open Gym (incl. ClassPass) puts strangers in that room.
@@ -156,6 +162,7 @@ Pulling the CSV with an in-page `fetch()` returns **only non-cancelled rows** (1
 | 2026-09-07 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED** | Fresh export (2,231 rows, 336 cancelled). **Sun 16:00 lost virgin status** → cap 17→16. All 4 known live slots still 0-conflict. **ClassPass session expired** — live schedule could not be read. Nothing deleted. 👤 needs operator sign-in. |
 | 2026-09-14 | ⚠️ **Acuity half clean · ClassPass half UNVERIFIED (2nd week)** | Fresh export (2,319 rows, 342 cancelled). Conservative grid identical to 09-07 → cap stays **16**. Mon/Tue/Thu/Fri 21:00 still 0 whole-room bookings ever. **ClassPass partner session still expired** (`/manage` → `/login`) — any slot added since 08-31 is unseen. Nothing deleted. 👤 needs operator sign-in. |
 | 2026-09-28 | ✅ **Clean — zero conflicts, because ClassPass is EMPTY** | Acuity: fresh export (2,398 rows, 357 cancelled — control ↑ from 342 ✓), grid identical to 09-14, cap stays **16**. ClassPass: session came back later that day. Recurring-schedule list shows **no schedules** (cookie banner dismissed, essential-only, reloaded — still empty). Classes calendar: **no classes Sep 25 → Oct 4**. Control: same calendar shows the 21:00 Open gym on Aug 31, Sep 21, Sep 22 and Sep 24 → the view works. **Last ClassPass class: Thu 2026-09-24 21:00.** All recurring series ended or were removed that week. Nothing deleted by this run. 👤 Is ClassPass off on purpose? |
+| 2026-09-28 (later) | ⛔ **ClassPass turned off — 3 orphan Acuity blocks deleted** | Operator confirmed ClassPass is off on purpose. Deleted Acuity blocks Wed 20–22, Thu 21–22, Fri 20–22 (Full Studio group, to 2030). Fri block had been edited 2026-09-26 00:48 (not by this run). Verified: 0 blocks in weeks of Sep 28, Oct 5, Oct 26, Jan 4; public scheduler shows Full Studio at Thu/Fri 21:00. Guard repurposed to "keep ClassPass + its blocks gone". |
 
 ### 2026-08-30 — full run, zero conflicts
 
