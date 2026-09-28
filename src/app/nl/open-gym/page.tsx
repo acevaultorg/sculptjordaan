@@ -192,7 +192,7 @@ export default function OpenGymPageNL() {
               as="h1"
               overline="Open Gym · Jordaan"
               title="Train wanneer je wilt in een privé gym"
-              description="Vrij trainen in een volledig uitgeruste studio aan de Egelantiersgracht, in hartje Jordaan. Sessies van 60 minuten, maximaal 4 mensen tegelijk. Geen contract, altijd gratis opzegbaar, en je eerste probeersessie is gratis."
+              description="Vrij trainen in hartje Jordaan. Sessies van 60 minuten, max 4 mensen. Eerste probeersessie gratis."
               center={false}
             />
             <FadeIn className="flex flex-col sm:flex-row gap-3">

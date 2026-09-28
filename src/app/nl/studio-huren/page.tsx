@@ -163,7 +163,7 @@ const faqs = [
   },
   {
     q: "Krijg ik klanten via SculptClub?",
-    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Klanten die SculptClub vinden via Google of Instagram kunnen jou direct bekijken en boeken. Geen tussenpersoon bij die boekingen, wij verbinden alleen. Nog geen profiel? Vraag er via WhatsApp om en we zetten je erop.",
+    a: "Ja. Als verhuurder krijg je een eigen profielpagina op deze site met zoekfilters (taal, specialiteit). Wie SculptClub vindt via Google of Instagram kan jou direct bekijken en boeken. Wij zitten niet tussen die boekingen. Nog geen profiel? Vraag erom via WhatsApp, dan zetten we je erop.",
   },
   {
     q: "Kan ik vaste tijdslots reserveren?",
@@ -412,10 +412,9 @@ export default function StudioRentalPageNL() {
                 <span>CreditCard, Apple Pay, Google Pay of factuur</span>
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
-                Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong>, credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
-                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé voor 1 tot 8 personen, jouw eigen groep.
+                Reserveer per sessie, zonder abonnement of contract, en <strong className="text-foreground">altijd gratis annuleren</strong>: geld of credits komen automatisch terug.{" "}
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 (max 2 personen; de andere helft is dan voor een andere trainer of Open Gym).{" "}
+                <strong className="text-foreground">Hele studio</strong> = privé voor 1 tot 8 personen.
               </p>
             </div>
           }

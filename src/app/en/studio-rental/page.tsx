@@ -151,7 +151,7 @@ const faqs = [
   },
   {
     q: "Will I get clients via SculptClub?",
-    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Clients who find SculptClub via Google or Instagram can view and book you directly. No middleman on those bookings, we just connect. No profile yet? Ask via WhatsApp and we'll add you.",
+    a: "Yes. As a host you get your own profile page on this site with search filters (language, specialty). Anyone who finds SculptClub via Google or Instagram can view and book you directly. We don't sit between those bookings. No profile yet? Ask via WhatsApp and we'll add you.",
   },
   {
     q: "Can I reserve recurring time slots?",
@@ -386,10 +386,9 @@ export default function StudioRentalPageEN() {
                 <span>CreditCard, Apple Pay, Google Pay or invoice</span>
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
-                Book per session. No subscription, no contract,{" "}
-                <strong className="text-foreground">free cancellation anytime</strong>: credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
-                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private for 1 to 8 people, your own group.
+                Book per session, no subscription or contract, and <strong className="text-foreground">free cancellation anytime</strong>: money or credits come back automatically.{" "}
+                <strong className="text-foreground">Half studio</strong> = 1-on-1 (max 2 people; the other half is then free for another trainer or Open Gym).{" "}
+                <strong className="text-foreground">Full studio</strong> = private for 1 to 8 people.
               </p>
             </div>
           }

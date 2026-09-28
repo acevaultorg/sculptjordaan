@@ -282,10 +282,9 @@ export default function BookStudioPageEN() {
                 <span>Pick your time and pay securely with CreditCard, Apple Pay, Google Pay or invoice</span>
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
-                Book per session. No subscription, no contract,{" "}
-                <strong className="text-foreground">free cancellation anytime</strong>. Credits come back instantly, card payments for single sessions are refunded automatically within a few days.{" "}
-                <strong className="text-foreground">Half studio</strong> = 1-on-1 sessions (max 2 people; the other half can be used by another trainer or Open Gym at the same time).{" "}
-                <strong className="text-foreground">Full studio</strong> = fully private for 1 to 8 people, your own group.
+                Book per session, no subscription or contract, and <strong className="text-foreground">free cancellation anytime</strong>: money or credits come back automatically.{" "}
+                <strong className="text-foreground">Half studio</strong> = 1-on-1 (max 2 people; the other half is then free for another trainer or Open Gym).{" "}
+                <strong className="text-foreground">Full studio</strong> = private for 1 to 8 people.
               </p>
             </div>
           }

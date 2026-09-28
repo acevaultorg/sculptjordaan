@@ -44,8 +44,8 @@ const galleryImages = [
 
 
 export const metadata: Metadata = {
-  title: { absolute: `Intro Offer — Unlimited Open Gym €${deal.priceDeal}/4 weeks | SculptClub Jordaan` },
-  description: `Train as often as you like in our private gym in Amsterdam Jordaan for €${deal.priceDeal} per 4 weeks (normally €${deal.priceRegular}). Join now and keep that price for as long as you stay a member. Max 4 people, no contract, first session free.`,
+  title: { absolute: `Intro Offer: Unlimited Open Gym €${deal.priceDeal}/4 weeks | SculptClub` },
+  description: `Unlimited Open Gym in Amsterdam Jordaan for €${deal.priceDeal} per 4 weeks (normally €${deal.priceRegular}), locked in as long as you stay. Max 4 people, no contract. First session free.`,
   keywords: [
     "gym deal amsterdam",
     "unlimited gym amsterdam",

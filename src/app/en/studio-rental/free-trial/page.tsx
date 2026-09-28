@@ -92,7 +92,7 @@ export default function FreeTrialStudioRentalEN() {
             Free Trial Session: Studio Rental
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
-            60 minutes in our private studio in the Jordaan. No credit card, no contract, free cancellation anytime, and you keep 100% of your rate.
+            60 minutes in our private studio. No credit card or contract, free cancellation. You keep 100% of your rate.
           </p>
 
           {/* Two co-primary CTAs = the two operator goals, side by side */}

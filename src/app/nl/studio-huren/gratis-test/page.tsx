@@ -113,7 +113,7 @@ export default function GratisTestStudioHurenNL() {
             Gratis proefsessie: Studio Huren
           </h1>
           <p className="mt-3 text-base text-muted-foreground">
-            60 minuten in onze privé studio in de Jordaan. Geen creditcard, geen contract, altijd gratis annuleren, en je houdt 100% van je tarief.
+            60 minuten in onze privé studio. Geen creditcard of contract, gratis annuleren. Je houdt 100% van je tarief.
           </p>
 
           {/* Two co-primary CTAs = the two operator goals, side by side */}

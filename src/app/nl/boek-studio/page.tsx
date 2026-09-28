@@ -282,10 +282,9 @@ export default function BoekStudioPageNL() {
                 <span>Kies je tijd en betaal veilig met CreditCard, Apple Pay, Google Pay of factuur</span>
               </div>
               <p className="mt-4 text-center text-sm text-muted-foreground">
-                Reserveer per sessie. Geen abonnement, geen contract,{" "}
-                <strong className="text-foreground">altijd gratis annuleren</strong>. Credits komen direct terug, kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.{" "}
-                <strong className="text-foreground">Halve studio</strong> = 1-op-1 sessies (max 2 personen; de andere helft kan tegelijk door een andere trainer of Open Gym gebruikt worden).{" "}
-                <strong className="text-foreground">Hele studio</strong> = volledig privé voor 1 tot 8 personen, jouw eigen groep.
+                Reserveer per sessie, zonder abonnement of contract, en <strong className="text-foreground">altijd gratis annuleren</strong>: geld of credits komen automatisch terug.{" "}
+                <strong className="text-foreground">Halve studio</strong> = 1-op-1 (max 2 personen; de andere helft is dan voor een andere trainer of Open Gym).{" "}
+                <strong className="text-foreground">Hele studio</strong> = privé voor 1 tot 8 personen.
               </p>
             </div>
           }

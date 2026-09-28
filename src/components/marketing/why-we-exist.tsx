@@ -39,7 +39,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               // studio rental (transparent two-sided model, removes the
               // implied "we work for free" trust gap that ZZP trainers would
               // hit on the pricing page anyway).
-              body: "Trainers huren de studio en houden 100% van hun tarief. De prijs die je ziet is wat de trainer krijgt, wij nemen niets van hun sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), niet uit hun werk. Daardoor werken de beste onafhankelijke trainers van Amsterdam hier.",
+              body: "Trainers huren de studio en houden 100% van hun tarief. Wat je ziet is wat de trainer krijgt, wij nemen niets van de sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), dus onafhankelijke trainers werken hier op eigen voorwaarden.",
             },
             {
               icon: Lock,
@@ -76,7 +76,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               title: "Trainers deserve their full rate.",
               // EN parallel — see NL comment for full 2026-06-02 honesty fix
               // reasoning. Two-sided transparency on the financial model.
-              body: "Trainers rent the studio and keep 100% of their rate. The rate you see is what the trainer charges, we don't touch their session fee. Our revenue comes from studio rental (from €12/hour), not their work. That's why the best independent trainers in Amsterdam work here.",
+              body: "Trainers rent the studio and keep 100% of their rate. What you see is what the trainer gets, we take nothing from the session. Our income comes from studio rental (from €12/hour), so independent trainers work here on their own terms.",
             },
             {
               icon: Lock,
