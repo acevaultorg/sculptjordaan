@@ -84,12 +84,12 @@ const features = [
     icon: Dumbbell,
     title: "Professionele apparatuur",
     description:
-      "Powerrack, kabelmachine, dumbbells en alles wat je nodig hebt.",
+      "Powerrack, kabelmachine, dumbbells van 4 tot 40 kg en een Echo Bike.",
   },
   {
     icon: Lock,
     title: "Priv\u00e9 ruimte",
-    description: "Geen pottenkijkers. Alleen jij en je klant(en).",
+    description: "Met de hele studio ben je alleen met je klanten. Bij een halve studio gebruikt een andere trainer of Open Gym de andere helft.",
   },
   {
     // Availability is a top-3 objection for a trainer choosing a studio
@@ -222,7 +222,7 @@ export default function StudioRentalPageNL() {
             Trainingsruimte huren in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
+            Vanaf €12/uur · Gratis annuleren · Dagelijks 06:00–22:00
           </p>
         </div>
 
@@ -430,7 +430,7 @@ export default function StudioRentalPageNL() {
           <p className="overline text-primary">Ben je hier voor het eerst?</p>
           <p className="mt-2 text-xl font-bold">Eerste keer? Kom de studio zien.</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            Bekijk de ruimte + apparatuur en doe een gratis proefsessie voordat je huurt, vrijblijvend, geen verplichting.
+            Bekijk de ruimte + apparatuur en doe een gratis proefsessie voordat je huurt. Je zit nergens aan vast.
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink href="/nl/studio-huren/gratis-test" size="lg" className="w-full sm:w-auto">
@@ -527,7 +527,7 @@ export default function StudioRentalPageNL() {
       <Section bg="muted">
         <SectionHeader
           overline="Waarom SculptClub"
-          title="Alles wat je nodig hebt"
+          title="Wat je krijgt"
         />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

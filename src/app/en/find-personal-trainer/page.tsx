@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "What if I don't click with the trainer?",
-    a: "No problem. You can always switch: no contracts, no fees, no awkward conversations. Try another trainer or let us match you via the form below.",
+    a: "Then pick another trainer. There's no contract and switching costs nothing. You can also let us match you via the form below.",
   },
   {
     q: "How long is a session?",
@@ -199,7 +199,7 @@ export default function TrainersPageEN() {
         <ol className="mx-auto grid max-w-5xl gap-4 px-4 sm:grid-cols-3 sm:px-6">
           {[
             { t: "Free intro", d: "WhatsApp your trainer. You train together once, no commitment." },
-            { t: "Your plan, price upfront", d: "Goal, duration and total price, agreed together. No surprises." },
+            { t: "Your plan, price upfront", d: "You agree on your goal, the length and the total price before you start." },
             { t: "Train in the private studio", d: "From €299 per 4 weeks, unlimited Open Gym included." },
           ].map((s, i) => (
             <li key={s.t} className="flex gap-3">

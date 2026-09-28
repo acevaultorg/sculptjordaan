@@ -68,12 +68,12 @@ const features = [
     icon: Dumbbell,
     title: "Professional equipment",
     description:
-      "Power rack, cable machine, dumbbells and everything you need.",
+      "Power rack, cable machine, dumbbells from 4 to 40 kg and an Echo Bike.",
   },
   {
     icon: Lock,
     title: "Private space",
-    description: "No onlookers. Just you and your client(s).",
+    description: "Book the whole studio and it's just you and your clients. With half the studio, another trainer or Open Gym uses the other half.",
   },
   {
     icon: Clock,
@@ -201,7 +201,7 @@ export default function StudioRentalPageEN() {
             Studio rental for trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hr · Full freedom · Free cancellation · Daily 06:00–22:00
+            From €12/hr · Free cancellation · Daily 06:00–22:00
           </p>
         </div>
 
@@ -402,7 +402,7 @@ export default function StudioRentalPageEN() {
           <p className="overline text-primary">First time here?</p>
           <p className="mt-2 text-xl font-bold">First time? Come see the studio.</p>
           <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
-            See the space + equipment and try a free session before you rent. No obligation, no commitment.
+            See the space + equipment and try a free session before you rent. Nothing ties you in.
           </p>
           <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <ButtonLink href="/en/studio-rental/free-trial" size="lg" className="w-full sm:w-auto">
@@ -497,7 +497,7 @@ export default function StudioRentalPageEN() {
       <Section bg="muted">
         <SectionHeader
           overline="Why SculptClub"
-          title="Everything You Need"
+          title="What you get"
         />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

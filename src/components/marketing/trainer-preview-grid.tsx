@@ -33,7 +33,7 @@ const COPY = {
   nl: {
     overline: "Onze trainers",
     title: "Maak kennis met je trainer",
-    subtitle: `${trainers.length} personal trainers, eigen specialisatie, gratis intake. Geen abonnement, geen tussenpersoon.`,
+    subtitle: `${trainers.length} personal trainers, elk met een eigen specialisatie. De intake is gratis en je betaalt de trainer direct.`,
     ctaCard: "Boek intake",
     ctaProfile: "Bekijk profiel",
     ariaProfile: (name: string) => `Bekijk het profiel van ${name}`,
@@ -56,7 +56,7 @@ const COPY = {
     // ALL trainers speak English (every roster entry has "EN" in languages),
     // so "all English-speaking" is accurate. No-Dutch-required removes the
     // single biggest hesitation for Amsterdam expats researching in English.
-    subtitle: `${trainers.length} personal trainers, all English-speaking, no Dutch required. Distinct specialties, free intro. No membership, no middleman.`,
+    subtitle: `${trainers.length} personal trainers, all English-speaking, each with their own specialty. The intro is free and you pay your trainer directly.`,
     ctaCard: "Book intake",
     ctaProfile: "View profile",
     ariaProfile: (name: string) => `View ${name}'s profile`,

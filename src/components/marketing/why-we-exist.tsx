@@ -15,7 +15,7 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
     locale === "nl"
       ? {
           eyebrow: "Het verschil",
-          title: "Geen contract. Volledige vrijheid. Geen drukte.",
+          title: "Een kleine studio, zonder contract",
           // 2026-06-02 intro rewrite per operator competitive-audit decisions:
           //  · F ("PT en small group only") — opens by stating the model: alleen
           //    personal training & small group, nooit een volle sportschool.
@@ -26,11 +26,11 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
           //    prices). Respects 0%-commission model — the FIRST card below
           //    states trainers set their own rate; here we only claim transparency.
           intro:
-            "Alleen personal training & small group, nooit een volle sportschool. Klein, onafhankelijk, stil. En je ziet vooraf wat het kost: geen 'neem contact op voor prijzen'.",
+            "Hier train je met een personal trainer of in een kleine groep, nooit in een volle zaal. Alle prijzen staan op de site, je hoeft er niet naar te vragen.",
           beliefs: [
             {
               icon: Percent,
-              title: "Trainers verdienen hun volle tarief.",
+              title: "Je trainer houdt het hele tarief",
               // 2026-06-02 honesty fix per operator: "this is not the full
               // story, trainers pay rent". Previous body only mentioned 0%
               // commission on session rates without disclosing the studio-
@@ -39,21 +39,21 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
               // studio rental (transparent two-sided model, removes the
               // implied "we work for free" trust gap that ZZP trainers would
               // hit on the pricing page anyway).
-              body: "Trainers huren de studio en houden 100% van hun tarief. Wat je ziet is wat de trainer krijgt, wij nemen niets van de sessie. Onze inkomsten komen uit studiohuur (vanaf €12/uur), dus onafhankelijke trainers werken hier op eigen voorwaarden.",
+              body: "Trainers huren de studio en houden 100% van wat jij ze betaalt. Wij verdienen alleen aan de huur, vanaf €12 per uur.",
             },
             {
               icon: Lock,
-              title: "Je traint harder in privé.",
+              title: "Maximaal 4 mensen tegelijk",
               // 2026-06-02 (2nd pass): "geen meekijkers" → "volledige focus"
               // per operator. Reframed the negative (no onlookers) as the
               // positive payoff (full focus). Restructured so the positive
               // lands at the end of the list rather than mid-sentence.
-              body: "Maximaal 4 mensen tegelijk. Geen wachtrij, geen receptie. Volledige focus. Je traint zonder afleiding, alleen jij en je werk.",
+              body: "Er is geen receptie. Met zo weinig mensen in de studio hoef je niet op een rek of bank te wachten.",
             },
             {
               icon: Calendar,
-              title: "Vrijheid maakt je sterker.",
-              body: "De eerste intake is gratis, Open Gym loopt in 4-weken cycli die je altijd kunt opzeggen, en PT boek je per sessie. Je blijft omdat het werkt, niet omdat je vast zit.",
+              title: "Je zit nergens aan vast",
+              body: "De eerste intake is gratis. PT boek je per sessie, en Open Gym loopt per 4 weken die je altijd kunt opzeggen.",
             },
           ],
           // N (equipment-brand validation) per operator: "Rogue Eleiko brands"
@@ -61,36 +61,36 @@ export function WhyWeExist({ locale }: { locale: Locale }) {
           // around the corner". Equipment names are 3rd-party validation that
           // ZZP-trainers + serious clients shop on. Slim line below the 3 cards.
           equipmentLine:
-            "Uitgerust met Rogue, Eleiko en Concept2, geen instapapparatuur.",
+            "De apparatuur is van Rogue, Eleiko en Concept2.",
         }
       : {
           eyebrow: "What makes us different",
-          title: "No contract. Full freedom. No crowds.",
+          title: "A small studio with no contract",
           // See NL parallel — 2026-06-02 intro rewrite: F (PT & small group only)
           // + C (pricing-transparency wedge).
           intro:
-            "Personal training & small group only, never a crowded gym. Small, independent, quiet. And you see the price upfront: no 'contact us for pricing'.",
+            "You train here with a personal trainer or in a small group, never in a packed room. Every price is on the site, so you never have to ask.",
           beliefs: [
             {
               icon: Percent,
-              title: "Trainers deserve their full rate.",
+              title: "Your trainer keeps the full rate",
               // EN parallel — see NL comment for full 2026-06-02 honesty fix
               // reasoning. Two-sided transparency on the financial model.
-              body: "Trainers rent the studio and keep 100% of their rate. What you see is what the trainer gets, we take nothing from the session. Our income comes from studio rental (from €12/hour), so independent trainers work here on their own terms.",
+              body: "Trainers rent the studio and keep 100% of what you pay them. We only earn from the rent, from €12 an hour.",
             },
             {
               icon: Lock,
-              title: "You train harder in private.",
-              body: "Max 4 people at once. No queue, no reception desk. Full focus. You train without distraction, just you and your work.",
+              title: "Never more than 4 people",
+              body: "There's no reception desk. With so few people in the studio, you don't wait for a rack or a bench.",
             },
             {
               icon: Calendar,
-              title: "Freedom makes you stronger.",
-              body: "First intro is free, Open Gym runs in 4-week cycles you can cancel anytime, and PT is booked per session. You stay because it works, not because you're locked in.",
+              title: "Nothing locks you in",
+              body: "The first intake is free. You book PT per session, and Open Gym runs in 4-week cycles you can stop at any time.",
             },
           ],
           equipmentLine:
-            "Equipped with Rogue, Eleiko and Concept2, no entry-level kit.",
+            "The equipment is Rogue, Eleiko and Concept2.",
         };
 
   return (

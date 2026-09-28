@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "Wat als het niet klikt met de trainer?",
-    a: "Geen probleem. Je kunt altijd switchen: geen contracten, geen kosten, geen ongemakkelijke gesprekken. Probeer een andere trainer of laat ons matchen via het formulier verderop.",
+    a: "Dan kies je een andere trainer. Er is geen contract en overstappen kost niets. Je kunt ons ook laten matchen via het formulier verderop.",
   },
   {
     q: "Hoe lang duurt een sessie?",
@@ -199,7 +199,7 @@ export default function TrainersPageNL() {
         <ol className="mx-auto grid max-w-5xl gap-4 px-4 sm:grid-cols-3 sm:px-6">
           {[
             { t: "Gratis kennismaking", d: "App je trainer. Jullie trainen een keer samen, zonder verplichting." },
-            { t: "Jouw plan, prijs vooraf", d: "Doel, duur en totaalprijs spreek je samen af. Geen verrassingen." },
+            { t: "Jouw plan, prijs vooraf", d: "Je spreekt samen je doel, de duur en de totaalprijs af, voordat je begint." },
             { t: "Trainen in de privé studio", d: "Vanaf €299 per 4 weken, incl. onbeperkt Open Gym." },
           ].map((s, i) => (
             <li key={s.t} className="flex gap-3">

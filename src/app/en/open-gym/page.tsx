@@ -81,9 +81,9 @@ const steps = [
   },
   {
     icon: Dumbbell,
-    title: "Train: the studio is yours",
+    title: "Train",
     description:
-      "The full studio with professional equipment, all to yourself.",
+      "You use all the equipment in the studio. There are never more than 4 people training at once.",
   },
 ];
 
@@ -115,11 +115,11 @@ const faqs = [
     : []),
   {
     q: "What exactly is Open Gym?",
-    a: "Open Gym gives you access to our private studio to train independently. You book a time slot, receive a door code, and have the full space and equipment to yourself.",
+    a: "Open Gym gives you access to our private studio to train independently. You book a time slot, receive a door code, and use all the equipment, with never more than 4 people at once.",
   },
   {
     q: "What equipment is available?",
-    a: "The studio is fully equipped with professional gear from Rogue, Eleiko and Concept2: power rack, adjustable bench, dumbbells, cable machine, cardio and more. Everything you need for a complete workout.",
+    a: "The studio is fully equipped with professional gear from Rogue, Eleiko and Concept2: power rack, adjustable bench, dumbbells up to 40 kg, kettlebells, cable machine and cardio.",
   },
   {
     q: "How long is a session?",
@@ -131,7 +131,7 @@ const faqs = [
   },
   {
     q: "What if I need to cancel?",
-    a: "Cancel or reschedule anytime via the booking system. Always free, no exceptions. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
+    a: "Cancel or reschedule anytime via the booking system, always for free. Cancelled? Your credits come back to your account instantly; card payments for single sessions are refunded automatically within a few days.",
   },
   {
     q: "Is it really a membership?",
@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: "What hours can I train?",
-    a: "Daily 06:00 to 22:00. Early morning, lunch, after work or late evening: you choose. The studio is always private during your booked slot. Weekends too: Saturday and Sunday mornings and afternoons usually still have room.",
+    a: "Daily 06:00 to 22:00, weekends included. There are never more than 4 people training at once. At the weekend, Saturday and Sunday mornings and afternoons usually still have room.",
   },
   {
     q: "Where is the studio and how do I get there?",
@@ -304,7 +304,7 @@ export default function OpenGymPageEN() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Come by with no obligation, feel the studio and train one session free. No membership needed.
+                  Come by and train your first session free. You don't need a membership.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -477,7 +477,7 @@ export default function OpenGymPageEN() {
                     <span className="text-base font-normal text-muted-foreground"> / 4 weeks</span>
                   </p>
                 )}
-                <p className="mt-3 text-sm text-muted-foreground">Maximum freedom</p>
+                <p className="mt-3 text-sm text-muted-foreground">As often as you like, daily 06:00–22:00</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink
@@ -546,7 +546,7 @@ export default function OpenGymPageEN() {
         <SectionHeader
           overline="The Studio"
           title="Fully Equipped"
-          description="Power rack, dumbbells, cable machine, cardio and more. Everything you need."
+          description="Power rack, dumbbells up to 40 kg, kettlebells, cable machine and cardio from Rogue, Eleiko and Concept2."
         />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {studioImages.map((img, i) => (

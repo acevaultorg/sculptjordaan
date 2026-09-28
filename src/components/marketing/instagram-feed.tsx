@@ -39,13 +39,13 @@ const t = {
   nl: {
     overline: "Instagram",
     title: "Volg ons op Instagram",
-    description: "Studio, trainers en sessies. Zonder filter.",
+    description: "Foto's en video's uit de studio aan de Egelantiersgracht.",
     cta: "Volg @sculptclubjordaan",
   },
   en: {
     overline: "Instagram",
     title: "Follow us on Instagram",
-    description: "Studio, trainers and sessions. No filter.",
+    description: "Photos and videos from the studio on the Egelantiersgracht.",
     cta: "Follow @sculptclubjordaan",
   },
 };

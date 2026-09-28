@@ -132,7 +132,7 @@ export default function BoekStudioPageNL() {
           <p className="overline text-primary">Voor Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Boek de Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · Volledige vrijheid · Gratis annuleren · Dagelijks 06:00–22:00
+            Vanaf €12/uur · Gratis annuleren · Dagelijks 06:00–22:00
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             In het weekend dezelfde prijs. Zondag en zaterdagmiddag zijn meestal nog vrij.
@@ -250,7 +250,7 @@ export default function BoekStudioPageNL() {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["Altijd gratis annuleren", "Geen contract", "Volledige vrijheid", "Direct bevestigd"].map((t) => (
+                {["Altijd gratis annuleren", "Geen contract", "Direct bevestigd"].map((t) => (
                   <span key={t} className="inline-flex items-center gap-1.5">
                     <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
                     {t}

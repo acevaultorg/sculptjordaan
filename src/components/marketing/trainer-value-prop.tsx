@@ -8,9 +8,9 @@ type Locale = "nl" | "en";
 const COPY = {
   nl: {
     overline: "Meer dan een ruimte",
-    title: "Huur de studio. Bouw je praktijk.",
+    title: "We sturen ook klanten jouw kant op",
     description:
-      "Andere studio's verhuren je een ruimte. Wij helpen je daarnaast aan klanten. Profileer je in onze trainersgids, krijg gematcht met klanten die SculptClub zelf vinden, en deel onze socialmediabereik.",
+      "Je krijgt een profiel in onze trainersgids. Wie SculptClub via Google of Instagram vindt, kan jou daar direct kiezen.",
     items: [
       {
         icon: Users,
@@ -20,17 +20,17 @@ const COPY = {
       {
         icon: Search,
         title: "Klanten via SEO",
-        text: "10 Nederlandse domeinen sturen 'personal trainer Amsterdam'-zoekers naar de studio. Als huurder profiteer je mee.",
+        text: "10 Nederlandse domeinen sturen mensen die 'personal trainer Amsterdam' zoeken naar de studio.",
       },
       {
         icon: Share2,
         title: "Social bereik",
-        text: "Trainers die hier werken krijgen vermelding op @sculptclubjordaan (Share2 + TikTok). Geen pay-to-promote.",
+        text: "Trainers die hier werken noemen we op Instagram en TikTok (@sculptclubjordaan). Daar betaal je niets voor.",
       },
       {
         icon: TrendingUp,
-        title: "Bewezen funnel",
-        text: "Bezoekers komen, boeken via Acuity, blijven. Jij behoudt 100% van je tarief; wij verdienen alleen aan de huur.",
+        title: "Geen commissie",
+        text: "Jij houdt 100% van je tarief. Wij verdienen alleen aan de huur.",
       },
     ],
     ctaLabel: "Word SculptClub-trainer",
@@ -40,9 +40,9 @@ const COPY = {
   },
   en: {
     overline: "More than a room",
-    title: "Rent the studio. Grow your practice.",
+    title: "We also send clients your way",
     description:
-      "Other studios rent you a room. We also help you grow your client base. Get featured in our trainer directory, get matched with clients who find SculptClub directly, and share in our social reach.",
+      "You get a profile in our trainer directory. People who find SculptClub on Google or Instagram can pick you there directly.",
     items: [
       {
         icon: Users,
@@ -52,17 +52,17 @@ const COPY = {
       {
         icon: Search,
         title: "Clients via SEO",
-        text: "10 Dutch domains funnel 'personal trainer Amsterdam' searchers to the studio. Renters benefit from the inbound traffic.",
+        text: "10 Dutch domains send people searching 'personal trainer Amsterdam' to the studio.",
       },
       {
         icon: Share2,
         title: "Social reach",
-        text: "Trainers working here get mentioned on @sculptclubjordaan (Share2 + TikTok). No pay-to-promote.",
+        text: "We mention trainers who work here on Instagram and TikTok (@sculptclubjordaan). You don't pay for it.",
       },
       {
         icon: TrendingUp,
-        title: "Proven funnel",
-        text: "Visitors arrive, book through Acuity, return. You keep 100% of your rate; we earn only on rental.",
+        title: "No commission",
+        text: "You keep 100% of your rate. We only earn from the rent.",
       },
     ],
     ctaLabel: "Join as a trainer",

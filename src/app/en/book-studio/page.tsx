@@ -132,7 +132,7 @@ export default function BookStudioPageEN() {
           <p className="overline text-primary">For Personal Trainers</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Book the Studio</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hour · Full freedom · Free cancellation · Daily 06:00–22:00
+            From €12/hour · Free cancellation · Daily 06:00–22:00
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             Weekends cost the same. Sundays and Saturday afternoons are usually still free.
@@ -250,7 +250,7 @@ export default function BookStudioPageEN() {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["Always free cancellation", "No contract", "Full freedom", "Instantly confirmed"].map((t) => (
+                {["Always free cancellation", "No contract", "Instantly confirmed"].map((t) => (
                   <span key={t} className="inline-flex items-center gap-1.5">
                     <Check className="h-4 w-4 flex-shrink-0 text-discount" aria-hidden />
                     {t}

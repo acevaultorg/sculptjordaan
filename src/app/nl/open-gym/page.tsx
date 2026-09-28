@@ -81,9 +81,9 @@ const steps = [
   },
   {
     icon: Dumbbell,
-    title: "Train: de studio is van jou",
+    title: "Train",
     description:
-      "De volledige studio met professionele apparatuur, helemaal voor jezelf.",
+      "Je gebruikt alle apparatuur in de studio. Er trainen nooit meer dan 4 mensen tegelijk.",
   },
 ];
 
@@ -116,11 +116,11 @@ const faqs = [
     : []),
   {
     q: "Wat is Open Gym precies?",
-    a: "Open Gym geeft je toegang tot onze privé studio om zelfstandig te trainen. Je boekt een tijdslot, ontvangt een deurcode en hebt de volledige ruimte en apparatuur tot je beschikking.",
+    a: "Open Gym geeft je toegang tot onze privé studio om zelfstandig te trainen. Je boekt een tijdslot, ontvangt een deurcode en gebruikt alle apparatuur, met nooit meer dan 4 mensen tegelijk.",
   },
   {
     q: "Welke apparatuur is beschikbaar?",
-    a: "De studio is volledig uitgerust met professionele apparatuur van Rogue, Eleiko en Concept2: powerrack, verstelbare bank, dumbbells, kabelmachine, cardio en meer. Alles wat je nodig hebt voor een complete training.",
+    a: "De studio is volledig uitgerust met professionele apparatuur van Rogue, Eleiko en Concept2: powerrack, verstelbare bank, dumbbells tot 40 kg, kettlebells, kabelmachine en cardio.",
   },
   {
     q: "Hoe lang duurt een sessie?",
@@ -132,7 +132,7 @@ const faqs = [
   },
   {
     q: "Wat als ik mijn sessie moet annuleren?",
-    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem. Geen kosten, geen uitzonderingen. Annuleer je? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.",
+    a: "Annuleren of verzetten kan altijd gratis via het boekingssysteem. Annuleer je? Je credits komen direct terug op je account; kaartbetalingen voor losse sessies worden binnen enkele dagen automatisch terugbetaald.",
   },
   {
     q: "Is het echt een lidmaatschap?",
@@ -144,7 +144,7 @@ const faqs = [
   },
   {
     q: "Hoe laat kan ik trainen?",
-    a: "Dagelijks van 06:00 tot 22:00. Vroege ochtend, lunchtijd, na het werk of laat in de avond: je kiest. De studio is altijd privé tijdens jouw geboekte tijdslot. Ook in het weekend: zaterdag- en zondagochtend en -middag is er meestal nog plek.",
+    a: "Dagelijks van 06:00 tot 22:00, ook in het weekend. Er trainen nooit meer dan 4 mensen tegelijk. Op zaterdag- en zondagochtend en -middag is er meestal nog plek.",
   },
   {
     q: "Waar is de studio en hoe kom ik er?",
@@ -310,7 +310,7 @@ export default function OpenGymPageNL() {
               </CardHeader>
               <CardContent className="flex-1">
                 <p className="text-sm text-muted-foreground">
-                  Kom vrijblijvend langs, ervaar de studio en train één sessie gratis. Geen abonnement nodig.
+                  Kom langs en train je eerste sessie gratis. Je hebt geen abonnement nodig.
                 </p>
               </CardContent>
               <CardFooter className="justify-center">
@@ -483,7 +483,7 @@ export default function OpenGymPageNL() {
                     <span className="text-base font-normal text-muted-foreground"> / 4 weken</span>
                   </p>
                 )}
-                <p className="mt-3 text-sm text-muted-foreground">Maximale vrijheid</p>
+                <p className="mt-3 text-sm text-muted-foreground">Zo vaak je wilt, dagelijks 06:00–22:00</p>
               </CardContent>
               <CardFooter className="justify-center">
                 <ButtonLink
@@ -552,7 +552,7 @@ export default function OpenGymPageNL() {
         <SectionHeader
           overline="De studio"
           title="Volledig uitgerust"
-          description="Powerrack, dumbbells, kabelmachine, cardio en meer. Alles wat je nodig hebt."
+          description="Powerrack, dumbbells tot 40 kg, kettlebells, kabelmachine en cardio van Rogue, Eleiko en Concept2."
         />
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {studioImages.map((img, i) => (

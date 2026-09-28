@@ -139,7 +139,7 @@ export default function HomePage() {
               Eerste keer bij SculptClub?
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Kies je startpunt. We helpen je op weg.
+              Kies waar je wilt beginnen.
             </p>
             <div className="mt-7">
               <FirstTimeMenu locale="nl" placement="bottom" />

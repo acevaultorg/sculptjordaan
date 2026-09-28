@@ -9,19 +9,19 @@ const steps = {
       step: "01",
       title: "Plan je sessie",
       description:
-        "Personal Training plan je direct met je trainer (WhatsApp of contactformulier). Open Gym en studio boek je online via onze website, in 2 minuten geregeld.",
+        "Personal Training plan je direct met je trainer (WhatsApp of contactformulier). Open Gym en de studio boek je online, dat duurt 2 minuten.",
     },
     {
       step: "02",
       title: "Krijg toegang",
       description:
-        "Voor PT regelt je trainer de studio en zorgt dat je binnen kunt. Voor Open Gym en studio ontvang je om 00:00 in de nacht ervoor een deurcode via WhatsApp. Geen receptie, geen wachten.",
+        "Voor PT regelt je trainer de studio en zorgt dat je binnen kunt. Voor Open Gym en studio ontvang je om 00:00 in de nacht ervoor een deurcode via WhatsApp. Er is geen receptie.",
     },
     {
       step: "03",
       title: "Train privé",
       description:
-        "Loop naar binnen en begin. Alleen jij, je trainer of je training. Annuleren kan altijd gratis.",
+        "Je loopt naar binnen en begint. Kan je toch niet? Annuleren is altijd gratis.",
     },
   ],
   en: [
@@ -29,19 +29,19 @@ const steps = {
       step: "01",
       title: "Plan your session",
       description:
-        "Personal Training is arranged directly with your trainer (via WhatsApp or contact form). Open Gym and studio sessions are booked online via our website, sorted in 2 minutes.",
+        "Personal Training is arranged directly with your trainer (via WhatsApp or contact form). Open Gym and studio sessions are booked online, which takes 2 minutes.",
     },
     {
       step: "02",
       title: "Get access",
       description:
-        "For PT your trainer arranges the studio and gets you in. For Open Gym and studio rental, you receive a door code via WhatsApp at midnight before your session. No reception, no waiting.",
+        "For PT your trainer arranges the studio and gets you in. For Open Gym and studio rental, you receive a door code via WhatsApp at midnight before your session. There's no reception desk.",
     },
     {
       step: "03",
       title: "Train privately",
       description:
-        "Walk in and start. Just you, your trainer or your workout. Cancellation is always free.",
+        "Walk in and start. Can't make it after all? Cancelling is always free.",
     },
   ],
 };

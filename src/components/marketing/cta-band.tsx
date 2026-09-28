@@ -12,7 +12,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
       ? {
           title: "Probeer het gratis",
           description:
-            "Elke optie begint zonder kosten. Probeer vrijblijvend, altijd opzegbaar.",
+            "Alle drie beginnen gratis. Je zit daarna nergens aan vast.",
           options: [
             {
               icon: Users,
@@ -42,7 +42,7 @@ export function CtaBand({ locale }: { locale: Locale }) {
       : {
           title: "Try it free",
           description:
-            "Every option starts at zero cost. Try with no obligation, cancel anytime.",
+            "All three start free, and nothing ties you in afterwards.",
           options: [
             {
               icon: Users,

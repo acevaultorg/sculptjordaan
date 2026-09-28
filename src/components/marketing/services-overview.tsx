@@ -33,7 +33,7 @@ const services = {
       icon: Building2,
       title: "Studio Huren",
       description:
-        "Privé trainingsruimte voor freelance personal trainers en fysiotherapeuten. Huur per uur, behoud je klanten, volledige vrijheid. Vanaf €12/60 min.",
+        "Privé trainingsruimte voor freelance personal trainers en fysiotherapeuten. Je huurt per uur en je klanten blijven van jou. Vanaf €12 per 60 min.",
       href: "/nl/studio-huren",
       cta: "Bekijk studio & tarieven",
       image: "/images/studio/studio-overview.jpeg",
@@ -55,7 +55,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Train on your own in a calm private studio with pro equipment, max 4 people. 4-week membership, no contract, first session free. From €7.25 per session.",
+        "No trainer needed. Train on your own with free weights: squat rack, dumbbells up to 40 kg, kettlebells. Max 4 people, no contract, first session free. From €7.25 per session.",
       href: "/en/open-gym",
       cta: "View Open Gym",
       image: "/images/studio/training-dumbbells-focus.jpg",
@@ -65,7 +65,7 @@ const services = {
       icon: Building2,
       title: "Studio Rental",
       description:
-        "Private training space for freelance personal trainers and physiotherapists. Rent per hour, keep your clients, full freedom. From €12/60 min.",
+        "Private training space for freelance personal trainers and physiotherapists. You rent by the hour and your clients stay yours. From €12 per 60 min.",
       href: "/en/studio-rental",
       cta: "View studio & rates",
       image: "/images/studio/studio-overview.jpeg",
@@ -77,8 +77,8 @@ const services = {
 export function ServicesOverview({ locale }: { locale: Locale }) {
   const items = services[locale];
   const t = locale === "nl"
-    ? { overline: "Kies zelf", title: "Jouw studio, jouw regels" }
-    : { overline: "Your choice", title: "Your studio, your rules" };
+    ? { overline: "Wat we doen", title: "Zo kun je hier trainen" }
+    : { overline: "What we do", title: "How you can train here" };
 
   return (
     <Section>

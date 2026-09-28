@@ -59,8 +59,8 @@ const steps = [
   },
   {
     step: "4",
-    title: "Jouw aanpak op maat",
-    desc: "Je trainer stelt een plan voor dat past bij jouw lichaam, agenda en doel. Je weet precies wat je kunt verwachten én wat het kost.",
+    title: "Een plan met prijs",
+    desc: "Je trainer stelt een plan voor: je doel, hoe vaak je traint en wat het in totaal kost. Dat weet je voordat je begint.",
   },
   {
     step: "5",
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "Hoe kom ik binnen?",
-    a: "Je trainer regelt de studio en zorgt dat je binnen kunt. Bij je intake ontmoet je de trainer bij de deur of krijg je vooraf instructies via WhatsApp. Geen bel, geen receptie, alles via je trainer.",
+    a: "Je trainer regelt de studio en zorgt dat je binnen kunt. Bij je intake ontmoet je de trainer bij de deur of krijg je vooraf instructies via WhatsApp. Er is geen receptie.",
   },
 ];
 
@@ -128,8 +128,8 @@ export default function GratisIntakePage() {
           <span className="text-brand">100% gratis</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
-          Maak kennis met je personal trainer in onze privé studio aan de gracht
-          in de Jordaan. Geen verplichting, geen abonnement.
+          Maak kennis met je trainer in onze studio aan de gracht in de Jordaan.
+          Je zit daarna nergens aan vast.
         </p>
 
         {/* Decision-paralysis killer — 11 trainers in the grid below is a lot
@@ -248,8 +248,8 @@ export default function GratisIntakePage() {
           <ul className="space-y-3">
             {[
               "Gratis persoonlijke kennismaking",
-              "Privé studio: geen drukte, geen afleidingen",
-              "Inzicht in jouw doelen en de beste aanpak",
+              "Een privé studio aan de gracht in de Jordaan",
+              "Een plan voor jouw doel, met de prijs vooraf",
               "Direct contact met je trainer, geen tussenpersoon",
               "Transformaties vanaf €299 per 4 weken",
             ].map((item) => (

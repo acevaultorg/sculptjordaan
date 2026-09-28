@@ -58,8 +58,8 @@ const steps = [
   },
   {
     step: "4",
-    title: "Your tailored approach",
-    desc: "Your trainer proposes a plan around your body, schedule and goal. You know exactly what to expect and what it costs.",
+    title: "A plan with a price",
+    desc: "Your trainer proposes a plan: your goal, how often you train and what it costs in total. You know that before you start.",
   },
   {
     step: "5",
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "How do I get in?",
-    a: "Your trainer arranges the studio and makes sure you can get in. At your intake the trainer either meets you at the door or sends instructions via WhatsApp beforehand. No buzzer, no reception, everything goes through your trainer.",
+    a: "Your trainer arranges the studio and makes sure you can get in. At your intake the trainer either meets you at the door or sends instructions via WhatsApp beforehand. There's no reception desk.",
   },
 ];
 
@@ -127,8 +127,8 @@ export default function FreeIntroPage() {
           <span className="text-brand">100% free</span>
         </h1>
         <p className="text-lg text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
-          Meet your personal trainer in our private studio on the canal in the
-          Jordaan. No obligation, no membership.
+          Meet your trainer in our studio on the canal in the Jordaan.
+          Nothing ties you in afterwards.
         </p>
 
         {/* Decision-paralysis killer — see /nl/gratis-intake parallel.
@@ -229,8 +229,8 @@ export default function FreeIntroPage() {
           <ul className="space-y-3">
             {[
               "Free personal intro",
-              "Private studio: no crowds, no distractions",
-              "Clarity on your goals and the best approach",
+              "A private studio on a Jordaan canal",
+              "A plan for your goal, with the price upfront",
               "Direct contact with your trainer, no middleman",
               "Transformations from €299 per 4 weeks",
             ].map((item) => (
