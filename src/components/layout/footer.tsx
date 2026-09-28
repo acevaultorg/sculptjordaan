@@ -144,8 +144,10 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. {t.rights}
           </p>
-          <p>
-            {siteConfig.address.street}, {siteConfig.address.city}
+          {/* KvK + btw visible (Handelsregisterbesluit art. 20: a business website shows its KvK number). Same numbers as the
+              JSON-LD in seo/json-ld.tsx. Essentials card mul1v7jyd7u5u5, 2026-09-28. */}
+          <p className="text-center">
+            {siteConfig.address.street}, {siteConfig.address.city} · KvK 64708101 · {locale === "nl" ? "btw" : "VAT"} NL002250100B57
           </p>
           {/* Was opacity-40 → contrast 1.76:1 (failing AA). Lighthouse mobile
               audit 2026-05-17 flagged. Bumped to opacity-60 → ~3:1 which clears
