@@ -89,7 +89,6 @@ export default function BlogPostBtwPersonalTrainer() {
                     <tr className="border-b bg-muted/50">
                       <th className="px-4 py-3 text-left font-semibold text-foreground">Jouw situatie</th>
                       <th className="px-4 py-3 text-left font-semibold text-foreground">Btw</th>
-                      <th className="px-4 py-3 text-left font-semibold text-foreground">Bron</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -97,11 +96,13 @@ export default function BlogPostBtwPersonalTrainer() {
                       ["Je traint een klant buiten, bij de klant thuis of in een gym waar de klant zelf lid is", "21%", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw/sportbeoefening_waaronder_zwembaden_en_sauna/gelegenheid_geven_om_te_sporten/gelegenheid_geven_om_te_sporten"],
                       ["Je stelt zelf de sportaccommodatie ter beschikking, zorgt voor onderhoud of schoonmaak en levert de toestellen, en de training hoort daarbij", "9%", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw/sportbeoefening_waaronder_zwembaden_en_sauna/gelegenheid_geven_om_te_sporten/gelegenheid_geven_om_te_sporten"],
                       ["Je omzet is niet meer dan €20.000 per kalenderjaar en je kiest voor de KOR", "Geen btw (vrijstelling)", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/"],
-                    ].map(([situatie, tarief, bron]) => (
-                      <tr key={situatie} className="border-b last:border-0">
-                        <td className="px-4 py-3">{situatie}</td>
-                        <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{tarief}</td>
-                        <td className="px-4 py-3"><a href={bron} target="_blank" rel="noopener noreferrer" className="text-brand underline">Belastingdienst</a></td>
+                    ].map(([situation, rate, source]) => (
+                      <tr key={situation} className="border-b last:border-0 align-top">
+                        <td className="px-4 py-3">{situation}</td>
+                        <td className="px-4 py-3">
+                          <span className="block font-medium text-foreground">{rate}</span>
+                          <a href={source} target="_blank" rel="noopener noreferrer" className="text-xs text-brand underline">Bron: Belastingdienst</a>
+                        </td>
                       </tr>
                     ))}
                   </tbody>

@@ -83,6 +83,32 @@ export default function BlogPostVatPersonalTrainer() {
                 <em>Important: this article is informational, not tax advice. The criteria below come from the Dutch tax office (Belastingdienst), as of August 2026; for your own situation, talk to your accountant or the Belastingdienst directly.</em>
               </p>
 
+              <div className="overflow-x-auto rounded-xl border border-border bg-card my-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="px-4 py-3 text-left font-semibold text-foreground">Your situation</th>
+                      <th className="px-4 py-3 text-left font-semibold text-foreground">VAT</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ["You train a client outdoors, at the client's home, or in a gym where the client is a member", "21%", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw/sportbeoefening_waaronder_zwembaden_en_sauna/gelegenheid_geven_om_te_sporten/gelegenheid_geven_om_te_sporten"],
+                      ["You provide the sports facility yourself, take care of maintenance or cleaning and supply the equipment, and the training is part of that", "9%", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/tarieven_en_vrijstellingen/diensten_9_btw/sportbeoefening_waaronder_zwembaden_en_sauna/gelegenheid_geven_om_te_sporten/gelegenheid_geven_om_te_sporten"],
+                      ["Your turnover is no more than €20,000 per calendar year and you opt into the KOR", "No VAT (exempt)", "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/hoe_werkt_de_btw/kleineondernemersregeling/"],
+                    ].map(([situation, rate, source]) => (
+                      <tr key={situation} className="border-b last:border-0 align-top">
+                        <td className="px-4 py-3">{situation}</td>
+                        <td className="px-4 py-3">
+                          <span className="block font-medium text-foreground">{rate}</span>
+                          <a href={source} target="_blank" rel="noopener noreferrer" className="text-xs text-brand underline">Source: Belastingdienst</a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
               <h2 className="text-2xl font-bold text-foreground mt-8">Which VAT rate applies to personal training?</h2>
               <p>
                 The Belastingdienst&apos;s main rule is clear: sports lessons, instruction or coaching <em>not</em> given in combination with making a sports facility available fall under the <strong className="text-foreground">21% rate</strong>. That is the situation of most personal trainers: you sell your expertise and coaching as a service.
@@ -136,6 +162,10 @@ export default function BlogPostVatPersonalTrainer() {
                   </li>
                 ))}
               </ul>
+
+              <p>
+                Not sure whether a studio where you arrange the space yourself fits the way you work? You can <a href="/en/studio-rental/free-trial" className="text-brand underline">try the SculptClub studio free for 60 minutes</a>, no contract.
+              </p>
 
               <div className="mt-12 border-t border-border/50 pt-8">
                 <h3 className="text-lg font-bold mb-4">Further reading</h3>
