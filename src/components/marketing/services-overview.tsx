@@ -23,7 +23,7 @@ const services = {
       icon: Dumbbell,
       title: "Open Gym",
       description:
-        "Zelfstandig trainen in een rustige privé studio met professionele apparatuur, max 4 personen. Lidmaatschap per 4 weken, geen contract, eerste probeersessie gratis. Vanaf €7,25 per sessie.",
+        "Ook zonder trainer. Train zelf met vrije gewichten: squat rack, dumbbells tot 40 kg, kettlebells. Max 4 personen, geen contract, eerste keer gratis. Vanaf €7,25 per sessie.",
       href: "/nl/open-gym",
       cta: "Bekijk Open Gym",
       image: "/images/studio/training-dumbbells-focus.jpg",

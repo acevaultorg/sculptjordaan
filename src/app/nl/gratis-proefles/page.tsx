@@ -83,8 +83,8 @@ const studioFacts = [
   },
   {
     icon: Dumbbell,
-    title: "Dumbbells 4 – 40 kg",
-    body: "Een volledige set losse gewichten, plus de basis voor kracht- en mobiliteitswerk.",
+    title: "Vrije gewichten",
+    body: "Barbell en squat rack met platform, dumbbells 4 – 40 kg, verstelbare banken en kettlebells.",
   },
   {
     icon: MapPin,
@@ -127,7 +127,7 @@ export default function GratisProeflesPage() {
         <SectionHeader
           overline="gratis probeersessie"
           title="Plan je gratis probeersessie"
-          description="Kies een tijd en kom langs. Geen verplichting, geen abonnement — ervaar eerst zelf hoe rustig en compleet onze privé studio in de Jordaan is."
+          description="Kies een tijd en train een uur zelf met vrije gewichten in onze privé studio in de Jordaan. Geen verplichting, geen abonnement."
         />
         <AcuityEmbed
           url={acuityFreeTrials.openGymTryout}
