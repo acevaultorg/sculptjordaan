@@ -290,7 +290,7 @@ export default function StudioRentalPageNL() {
 
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
           <p className="text-sm font-semibold text-primary">
-            🎯 De meeste ruimte: zondag, en zaterdagmiddag &amp; -avond
+            De meeste ruimte: zondag, en zaterdagmiddag &amp; -avond
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
             Zondag is op dit moment de rustigste dag van de week, en ook zaterdagmiddag

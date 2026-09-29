@@ -263,7 +263,7 @@ export default function StudioRentalPageEN() {
 
         <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
           <p className="text-sm font-semibold text-primary">
-            🎯 Most room available: Sunday, and Saturday afternoon &amp; evening
+            Most room available: Sunday, and Saturday afternoon &amp; evening
           </p>
           <p className="mt-1.5 text-sm text-muted-foreground">
             Sunday is currently the quietest day of the week, and Saturday afternoon and
