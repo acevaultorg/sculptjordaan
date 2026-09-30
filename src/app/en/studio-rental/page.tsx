@@ -10,16 +10,13 @@ import {
 } from "@/components/ui/card";
 import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
-import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { LandingVideo } from "@/components/marketing/landing-video";
-import { getColor } from "@/lib/image-color-manifest";
 import {
   Dumbbell,
   Lock,
   Clock,
   Percent,
-  CreditCard,
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
@@ -33,7 +30,7 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 import { StudioRateTable } from "@/components/marketing/studio-rate-table";
-import { WeekendAvailability } from "@/components/marketing/weekend-availability";
+import { StudioBookingFacts } from "@/components/marketing/studio-booking-facts";
 
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Studio Rental | SculptClub Jordaan" },
@@ -124,6 +121,9 @@ const HERO_IMAGES = [
   { src: "/images/studio/canal-view-doors.jpg", alt: "View from SculptClub to Egelantiersgracht canal Amsterdam" },
 ];
 
+// Top-of-page strip (2026-09-30): the room, the back room, the canal view.
+const STRIP_IMAGES = [HERO_IMAGES[0], HERO_IMAGES[2], HERO_IMAGES[3]];
+
 const faqs = [
   {
     q: "How much does it cost to rent the studio?",
@@ -201,8 +201,15 @@ export default function StudioRentalPageEN() {
             Studio rental for trainers in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            From €12/hr · Free cancellation · Daily 06:00–22:00
+            From €12 per hour · Egelantiersgracht, Jordaan
           </p>
+        </div>
+
+        {/* 2026-09-30 mobile booking-path pass (NL parity): 3-photo strip, then
+            straight into the rate table. Trial entry + weekend note moved
+            directly under the table. */}
+        <div className="mx-auto mb-5 max-w-2xl">
+          <PhotoGalleryLightbox images={STRIP_IMAGES} locale="en" variant="strip" />
         </div>
 
         {/* Weekend-availability hook — NL parity src/app/nl/studio-huren.
@@ -254,31 +261,6 @@ export default function StudioRentalPageEN() {
             (GA4 nav_click, 2026-07-26..09-24) because its only entry sat below the
             price table. The booking table still leads for returning renters
             (operator 2026-07-04); this is one line, not a block. */}
-        <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center gap-1 text-center">
-          <ButtonLink href="/en/studio-rental/free-trial" variant="outline" size="lg" className="w-full sm:w-auto">
-            First time here? Try the studio for free
-          </ButtonLink>
-          <p className="text-xs text-muted-foreground">One free session with your own client, no obligation.</p>
-        </div>
-
-        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
-          <p className="text-sm font-semibold text-primary">
-            Most room available: Sunday, and Saturday afternoon &amp; evening
-          </p>
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            Sunday is currently the quietest day of the week, and Saturday afternoon and
-            evening are usually open too, which suits a regular weekend slot with your
-            clients. Click Book below to see live availability.
-          </p>
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            Doing a photo shoot or content?{" "}
-            <a href="/en/photo-studio-rental" className="font-medium text-primary hover:underline">
-              Rent the studio as a photo studio
-            </a>
-          </p>
-          <WeekendAvailability locale="en" kind="studio" className="mt-2 text-sm text-muted-foreground" />
-        </div>
-
         {/* Booking table is now the FIRST thing after the header — NL parity
             (operator 2026-07-17: "order of /nl/studio-huren is correct, this
             page is not"). Mirrors the NL 2026-07-04 redesign this page never
@@ -381,10 +363,23 @@ export default function StudioRentalPageEN() {
                   { label: "Full studio (small group)", note: "1 to 8 people", price: "€17", href: acuityLinks.fullStudio60 },
                 ]}
               />
-              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                <CreditCard className="h-3.5 w-3.5" />
-                <span>CreditCard, Apple Pay, Google Pay or invoice</span>
-              </div>
+              {/* First-timer trial entry, now a text link under the rows (NL parity). */}
+              <p className="mt-3 text-center text-sm">
+                <a
+                  href="/en/studio-rental/free-trial"
+                  className="plausible-event-name=studio_huren_trial_link inline-flex min-h-11 items-center gap-1 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  First time here? Try the studio free with your own client
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </a>
+              </p>
+              <StudioBookingFacts locale="en" className="mt-3" />
+              <p className="mt-3 text-center text-sm text-muted-foreground">
+                Doing a photo shoot or content?{" "}
+                <a href="/en/photo-studio-rental" className="font-medium text-primary hover:underline">
+                  Rent the studio as a photo studio
+                </a>
+              </p>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Book per session, no subscription or contract, and <strong className="text-foreground">free cancellation anytime</strong>: money or credits come back automatically.{" "}
                 <strong className="text-foreground">Half studio</strong> = 1-on-1 (max 2 people; the other half is then free for another trainer or Open Gym).{" "}
@@ -459,33 +454,6 @@ export default function StudioRentalPageEN() {
               <MessageCircle className="mr-2 h-4 w-4" />
               WhatsApp us
             </ButtonLink>
-          </div>
-        </FadeIn>
-      </Section>
-
-      {/* Slideshow + trust strip — moves below the booking widget. */}
-      <Section>
-        <FadeIn>
-          <div className="mx-auto max-w-4xl">
-            <div
-              className="relative aspect-[16/9] overflow-hidden rounded-2xl"
-              style={{ backgroundColor: getColor(HERO_IMAGES[0].src) }}
-            >
-              <RotatingImageStack
-                images={HERO_IMAGES}
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
-            </div>
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
-              <span className="flex items-center gap-1.5">
-                <span className="text-amber-400">★★★★★</span>
-                <span className="font-semibold">5.0 Google</span>
-              </span>
-              <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-              <span className="font-semibold text-foreground">Private studio</span>
-              <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-              <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>
-            </div>
           </div>
         </FadeIn>
       </Section>
@@ -736,20 +704,21 @@ export default function StudioRentalPageEN() {
             </p>
             {/* 2026-05-27 final: page leads with the booking widget at
                 #book. Bottom CTA scrolls back there. NL parity. */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-8 flex flex-col items-center justify-center gap-2">
               <ButtonLink href="#book" size="lg">
-                Go to booking form
+                See rates and times
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
-              <ButtonLink
+              {/* One button per screen: WhatsApp is a quiet text link here. */}
+              <a
                 href={whatsappLinks.studioEn}
-                variant="outline"
-                size="lg"
-                className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-white/80 underline underline-offset-4 hover:text-white"
               >
-                <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp us
-              </ButtonLink>
+                <MessageCircle className="h-4 w-4" aria-hidden />
+                Rather ask a question first? WhatsApp us
+              </a>
             </div>
           </div>
         </FadeIn>
