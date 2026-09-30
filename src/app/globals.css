@@ -533,3 +533,11 @@ html[data-cta-variant="a"] :is([data-audience="member"], [data-intent="open_gym"
   --primary: var(--cta-bg);
   --primary-foreground: var(--cta-fg);
 }
+/* A few filled buttons hardcode text-white (e.g. the WhatsApp button on the
+   trainer finder). White on coral is only 3.41:1, so in variant A, inside a
+   scope, the label takes the audience's own text colour. Variant B and
+   unscoped buttons keep their white text. */
+html[data-cta-variant="a"] :is([data-audience], [data-intent="studio_rental"], [data-intent="open_gym"], [data-intent="trainer"]) :is(a, button):is([class~="bg-brand"], [class~="bg-primary"])[class~="text-white"],
+html[data-cta-variant="a"] :is([data-audience], [data-intent="studio_rental"], [data-intent="open_gym"], [data-intent="trainer"]) :is(a, button) :is([class~="bg-brand"], [class~="bg-primary"])[class~="text-white"] {
+  color: var(--cta-fg);
+}
