@@ -13,7 +13,9 @@ import { useEffect } from "react";
  *
  * "Filled button" uses the same rule as the colour CSS at the end of
  * globals.css: an <a>/<button> with the bg-brand / bg-primary class, or one
- * that contains a pill with that class (the studio rate rows). The audience is
+ * that contains a pill with that class (the studio rate rows). Tab toggles
+ * (aria-pressed / role="tab") are left out: a selected tab is filled too, but
+ * it is not a call to action and already fires tab_switch. The audience is
  * the nearest scope, again the same rule as the CSS. cta_text is the button's
  * own label (site copy, capped at 60 characters). Nothing about the visitor is
  * sent. If gtag is not on the page, nothing happens.
@@ -43,7 +45,7 @@ export function CtaExperiment() {
     function onClick(e: MouseEvent) {
       const target = e.target as Element | null;
       const el = target?.closest?.("a, button");
-      if (!el || !isFilled(el)) return;
+      if (!el || el.matches('[aria-pressed], [role="tab"]') || !isFilled(el)) return;
       const variant = document.documentElement.getAttribute("data-cta-variant");
       if (variant !== "a" && variant !== "b") return;
       if (typeof window.gtag !== "function") return;

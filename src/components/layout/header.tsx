@@ -180,6 +180,10 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
+                  // CTA A/B colour (globals.css): the active/highlighted tile
+                  // takes its section's colour, so on the studio page it
+                  // matches the page's own buttons.
+                  data-audience={/studio/.test(item.href) ? "rental" : "member"}
                   onClick={() => trackNavClick("header_tiles", item.href, locale)}
                   className={cn(
                     // Each tile keeps its own natural content width (no word is
