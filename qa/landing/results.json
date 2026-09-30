@@ -1,0 +1,440 @@
+[
+  {
+    "page": "/landing",
+    "viewport": "375x667",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing/nl-375x667.png",
+    "scrollHeight": 667,
+    "innerHeight": 667,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "ctas": [
+      {
+        "text": "Bekijk studio huren",
+        "visible": true,
+        "bottom": 289
+      },
+      {
+        "text": "Vind je trainer",
+        "visible": true,
+        "bottom": 574
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Voor personal trainers",
+        "worstRatio": 11.25
+      },
+      {
+        "text": "Train je klanten in een privé studio",
+        "worstRatio": 11.9
+      },
+      {
+        "text": "Huur de studio per uur, vanaf €12. Jorda",
+        "worstRatio": 13.73
+      },
+      {
+        "text": "Voor wie wil trainen",
+        "worstRatio": 10.79
+      },
+      {
+        "text": "Vind je trainer, groepsles of Open Gym",
+        "worstRatio": 8.43
+      },
+      {
+        "text": "Eerste intake gratis. Open Gym vanaf €9 ",
+        "worstRatio": 8.53
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 7.29
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 7.38
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "375x667",
+    "state": "first-visit",
+    "screenshot": "qa/landing/nl-375x667-cookie-banner.png",
+    "banner": {
+      "bannerTop": 524,
+      "buttonsCovered": 1
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "390x844",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing/nl-390x844.png",
+    "scrollHeight": 844,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "ctas": [
+      {
+        "text": "Bekijk studio huren",
+        "visible": true,
+        "bottom": 334
+      },
+      {
+        "text": "Vind je trainer",
+        "visible": true,
+        "bottom": 707
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Voor personal trainers",
+        "worstRatio": 11.56
+      },
+      {
+        "text": "Train je klanten in een privé studio",
+        "worstRatio": 12.2
+      },
+      {
+        "text": "Huur de studio per uur, vanaf €12. Jorda",
+        "worstRatio": 13.54
+      },
+      {
+        "text": "Voor wie wil trainen",
+        "worstRatio": 10.56
+      },
+      {
+        "text": "Vind je trainer, groepsles of Open Gym",
+        "worstRatio": 8.24
+      },
+      {
+        "text": "Eerste intake gratis. Open Gym vanaf €9 ",
+        "worstRatio": 8.36
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 7.14
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 7.37
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "390x844",
+    "state": "first-visit",
+    "screenshot": "qa/landing/nl-390x844-cookie-banner.png",
+    "banner": {
+      "bannerTop": 721,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "1440x900",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing/nl-1440x900.png",
+    "scrollHeight": 900,
+    "innerHeight": 900,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "ctas": [
+      {
+        "text": "Bekijk studio huren",
+        "visible": true,
+        "bottom": 536
+      },
+      {
+        "text": "Vind je trainer",
+        "visible": true,
+        "bottom": 614
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Voor personal trainers",
+        "worstRatio": 11.39
+      },
+      {
+        "text": "Train je klanten in een privé studio",
+        "worstRatio": 11.74
+      },
+      {
+        "text": "Huur de studio per uur, vanaf €12. Jorda",
+        "worstRatio": 13.72
+      },
+      {
+        "text": "Voor wie wil trainen",
+        "worstRatio": 8.3
+      },
+      {
+        "text": "Vind je trainer, groepsles of Open Gym",
+        "worstRatio": 8.57
+      },
+      {
+        "text": "Eerste intake gratis. Open Gym vanaf €9 ",
+        "worstRatio": 7.14
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 7.14
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 7.56
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "1440x900",
+    "state": "first-visit",
+    "screenshot": "qa/landing/nl-1440x900-cookie-banner.png",
+    "banner": {
+      "bannerTop": 823,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "375x667",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing/en-375x667.png",
+    "scrollHeight": 667,
+    "innerHeight": 667,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "ctas": [
+      {
+        "text": "See studio rental",
+        "visible": true,
+        "bottom": 289
+      },
+      {
+        "text": "Find your trainer",
+        "visible": true,
+        "bottom": 574
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "For personal trainers",
+        "worstRatio": 11.25
+      },
+      {
+        "text": "Train your clients in a private studio",
+        "worstRatio": 11.9
+      },
+      {
+        "text": "Rent the studio by the hour, from €12. J",
+        "worstRatio": 13.73
+      },
+      {
+        "text": "For anyone who wants to train",
+        "worstRatio": 10.79
+      },
+      {
+        "text": "Find your trainer, class or Open Gym",
+        "worstRatio": 8.43
+      },
+      {
+        "text": "First intro session free. Open Gym from ",
+        "worstRatio": 8.53
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 7.29
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 7.42
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "375x667",
+    "state": "first-visit",
+    "screenshot": "qa/landing/en-375x667-cookie-banner.png",
+    "banner": {
+      "bannerTop": 544,
+      "buttonsCovered": 1
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "390x844",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing/en-390x844.png",
+    "scrollHeight": 844,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "ctas": [
+      {
+        "text": "See studio rental",
+        "visible": true,
+        "bottom": 334
+      },
+      {
+        "text": "Find your trainer",
+        "visible": true,
+        "bottom": 707
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "For personal trainers",
+        "worstRatio": 11.56
+      },
+      {
+        "text": "Train your clients in a private studio",
+        "worstRatio": 12.2
+      },
+      {
+        "text": "Rent the studio by the hour, from €12. J",
+        "worstRatio": 13.54
+      },
+      {
+        "text": "For anyone who wants to train",
+        "worstRatio": 10.56
+      },
+      {
+        "text": "Find your trainer, class or Open Gym",
+        "worstRatio": 8.24
+      },
+      {
+        "text": "First intro session free. Open Gym from ",
+        "worstRatio": 8.36
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 7.14
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 7.37
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "390x844",
+    "state": "first-visit",
+    "screenshot": "qa/landing/en-390x844-cookie-banner.png",
+    "banner": {
+      "bannerTop": 721,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "1440x900",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing/en-1440x900.png",
+    "scrollHeight": 900,
+    "innerHeight": 900,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "ctas": [
+      {
+        "text": "See studio rental",
+        "visible": true,
+        "bottom": 536
+      },
+      {
+        "text": "Find your trainer",
+        "visible": true,
+        "bottom": 561
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "For personal trainers",
+        "worstRatio": 11.39
+      },
+      {
+        "text": "Train your clients in a private studio",
+        "worstRatio": 11.74
+      },
+      {
+        "text": "Rent the studio by the hour, from €12. J",
+        "worstRatio": 13.72
+      },
+      {
+        "text": "For anyone who wants to train",
+        "worstRatio": 8.3
+      },
+      {
+        "text": "Find your trainer, class or Open Gym",
+        "worstRatio": 9.52
+      },
+      {
+        "text": "First intro session free. Open Gym from ",
+        "worstRatio": 7.59
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 7.01
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 15.06
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "1440x900",
+    "state": "first-visit",
+    "screenshot": "qa/landing/en-1440x900-cookie-banner.png",
+    "banner": {
+      "bannerTop": 823,
+      "buttonsCovered": 0
+    }
+  }
+]
