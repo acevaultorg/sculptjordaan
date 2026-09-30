@@ -255,6 +255,7 @@ export const alternateRoutes: Record<string, string> = {
   // Campaign landing pages
   "/nl/gratis-intake": "/en/free-intro",
   "/nl/start": "/en/start",
+  "/landing": "/en/landing",
   // EN → NL: blog posts
   "/en/blog/weight-loss-strength-training": "/nl/blog/afvallen-met-krachttraining",
   "/en/blog/stay-consistent-exercise": "/nl/blog/consistent-blijven-met-sporten",
@@ -294,6 +295,7 @@ export const alternateRoutes: Record<string, string> = {
   // Campaign landing pages
   "/en/free-intro": "/nl/gratis-intake",
   "/en/start": "/nl/start",
+  "/en/landing": "/landing",
 
   // ─── hreflang-declared pairs, added 2026-08-29 ───────────────────
   // Extracted from each page's own alternates.languages metadata. These 33

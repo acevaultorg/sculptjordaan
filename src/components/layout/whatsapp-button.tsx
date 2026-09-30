@@ -78,6 +78,10 @@ export function WhatsAppButton() {
 
   const label = locale === "nl" ? "Chat via WhatsApp" : "Chat via WhatsApp";
 
+  // /landing split page (2026-09-30): one button per half is the whole design,
+  // and the bubble sat on top of the coral half. Hidden there only.
+  if (/^\/(en\/)?landing\/?$/.test(pathname)) return null;
+
   return (
     <a
       href={href}

@@ -117,6 +117,7 @@ function pickCTA(pathname: string, locale: "nl" | "en"): CTAConfig | null {
     /\/plan-(gratis-intake-met|free-intro-with)-/.test(pathname) || // per-trainer intake step (×22)
     /\/(boek-trainer|boek-gym|boek-studio|book-trainer|book-gym|book-studio)(\/|$)/.test(pathname) || // dedicated book pages
     /\/(boek|book|start)(\/|$)/.test(pathname) || // book/start booking endpoints
+    /^\/(en\/)?landing\/?$/.test(pathname) || // /landing split page: one button per half, no third CTA
     // Feedback forms (2026-09-21): the bar covered the form fields and the submit
     // button at 375px, and a mis-tap on it is a trainer CTA = a fake EUR 45 Ads lead
     // from someone who came to give feedback. Existing clients need no intake CTA.

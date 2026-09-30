@@ -49,6 +49,7 @@ const ALLOW = [
   /booking-confirmed|boeking-bevestigd/,             // Acuity redirect targets — arrived at externally
   /-ads$/,                                           // paid-ad landers — entered from Google Ads only
   /^\/(en|nl)\/start$/,                              // vanity/campaign entry (see CLAUDE.md killed-investigations)
+  /^\/(en\/)?landing$/,                              // campaign split page: Instagram bio, TikTok, QR codes (noindex)
   /^\/intake-plan$/, /^\/pt-cheat-sheet$/,           // lead magnets, shared by direct link
   /^\/(en|nl)\/feedback(\/trainers)?$/,               // feedback forms: reached by QR code + direct link only (noindex)
   // Trainer intake pages are linked DYNAMICALLY, not by literal href:
