@@ -171,6 +171,8 @@ export default function LocationPageEN() {
         </div>
       </Section>
 
+      <LocalIntentLinks locale="en" current="location" bg="muted" />
+
       <Section>
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
@@ -201,8 +203,6 @@ export default function LocationPageEN() {
           </div>
         </FadeIn>
       </Section>
-
-      <LocalIntentLinks locale="en" current="location" bg="muted" />
     </PageLayout>
   );
 }

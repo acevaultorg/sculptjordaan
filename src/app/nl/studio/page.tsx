@@ -167,6 +167,8 @@ export default function StudioPageNL() {
         </div>
       </Section>
 
+      <LocalIntentLinks locale="nl" current="studio" />
+
       {/* Dual-audience CTA section — /nl/studio is reached by BOTH consumer
           visitors (via hero secondary CTA "Bekijk de studio" from 2026-05-16)
           AND ZZP trainers (via "Studio Huren" nav). Before 2026-05-16 the
@@ -215,8 +217,6 @@ export default function StudioPageNL() {
           </div>
         </FadeIn>
       </Section>
-
-      <LocalIntentLinks locale="nl" current="studio" />
     </PageLayout>
   );
 }

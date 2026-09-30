@@ -161,6 +161,8 @@ export default function StudioPageEN() {
         </div>
       </Section>
 
+      <LocalIntentLinks locale="en" current="studio" />
+
       {/* Dual-audience CTA — see NL version comment. Consumer-first primary
           CTA + ZZP trainer rental secondary + WhatsApp tertiary. */}
       <Section bg="muted">
@@ -205,8 +207,6 @@ export default function StudioPageEN() {
           </div>
         </FadeIn>
       </Section>
-
-      <LocalIntentLinks locale="en" current="studio" />
     </PageLayout>
   );
 }
