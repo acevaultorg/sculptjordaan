@@ -130,6 +130,12 @@ export const acuityPaidSessions = {
 // Re-verify by opening acuityPaidSessions.openGymSession and reading the price.
 export const openGymSinglePrice = 9;
 
+// Lowest studio-rental rate: Half studio 60 min (acuityPaidSessions.studioRentalHalf60,
+// appointmentType=84032351). Added 2026-09-30 so new "vanaf €12" copy (/landing) reads
+// one number instead of hardcoding another. Display only — changing it changes no price
+// in Acuity; re-verify there before editing.
+export const studioRentalFromPrice = 12;
+
 export const openGymSummerDeal = {
   active: true,
   priceRegular: 79,

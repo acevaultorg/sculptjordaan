@@ -68,6 +68,26 @@ export function trackFeedbackSubmit(audience: string, locale: string) {
   sendEvent("feedback_submit", { audience, locale });
 }
 
+/**
+ * Track a click on the /landing split page (GA4). Added 2026-09-30. One event
+ * per half so the audience split is a plain event count in GA4:
+ *   landing_trainer_click — the studio-rental half (personal trainers)
+ *   landing_client_click  — the find-a-trainer / class / open gym half
+ * Params are the link target and locale only, never anything about the visitor.
+ * Deliberately NOT a lead or conversion event: every link on the page is
+ * internal, so the global Acuity/WhatsApp conversion listener never fires here.
+ */
+export function trackLandingClick(
+  side: "trainer" | "client",
+  target: string,
+  locale: string,
+) {
+  sendEvent(side === "trainer" ? "landing_trainer_click" : "landing_client_click", {
+    link_target: target,
+    locale,
+  });
+}
+
 /** Track hero CTA clicks to measure conversion by position */
 export function trackHeroClick(label: string, position: number, locale: string) {
   sendEvent("hero_cta_click", {
