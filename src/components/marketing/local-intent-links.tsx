@@ -143,9 +143,9 @@ export function LocalIntentLinks({
                 <item.icon className="h-5 w-5" aria-hidden />
               </span>
               <span className="min-w-0">
-                <span className="flex items-center gap-1.5 font-semibold text-foreground group-hover:text-primary">
+                <span className="block font-semibold text-foreground group-hover:text-primary">
                   {item.title}
-                  <ArrowRight className="h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  <ArrowRight className="ml-1.5 inline-block h-4 w-4 align-[-2px] transition-transform group-hover:translate-x-0.5" aria-hidden />
                 </span>
                 <span className="mt-1 block text-sm text-muted-foreground">{item.text}</span>
               </span>
