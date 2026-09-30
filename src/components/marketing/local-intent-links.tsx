@@ -145,8 +145,12 @@ export function LocalIntentLinks({
               </span>
               <span className="min-w-0">
                 <span className="block font-semibold text-foreground group-hover:text-primary">
-                  {item.title}
-                  <ArrowRight className="ml-1.5 inline-block h-4 w-4 align-[-2px] transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  {item.title.slice(0, item.title.lastIndexOf(" ") + 1)}
+                  {/* Last word + arrow never split, so the arrow can't wrap onto a line alone. */}
+                  <span className="whitespace-nowrap">
+                    {item.title.slice(item.title.lastIndexOf(" ") + 1)}
+                    <ArrowRight className="ml-1.5 inline-block h-4 w-4 align-[-2px] transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  </span>
                 </span>
                 <span className="mt-1 block text-sm text-muted-foreground">{item.text}</span>
               </span>
