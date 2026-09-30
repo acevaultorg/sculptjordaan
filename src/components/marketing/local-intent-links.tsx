@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Section, SectionHeader } from "@/components/sections/section";
 import { siteConfig } from "@/config/site";
 import { openGymSinglePrice } from "@/config/acuity";
@@ -135,7 +136,7 @@ export function LocalIntentLinks({
       <ul className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-2">
         {items.map((item) => (
           <li key={item.key}>
-            <a
+            <Link
               href={item.href}
               className="group flex h-full min-h-11 items-start gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:bg-muted"
             >
@@ -149,7 +150,7 @@ export function LocalIntentLinks({
                 </span>
                 <span className="mt-1 block text-sm text-muted-foreground">{item.text}</span>
               </span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
