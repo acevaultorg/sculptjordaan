@@ -369,13 +369,13 @@ export default function PricingPageEN() {
         <div className="mx-auto max-w-3xl">
           <FadeIn>
             <StudioRateTable
-                headSpace="Space"
-                headDuration="60 min"
-                cta="Book"
-                rows={[
-                  { label: "Half studio (for 2 people)", price: "€12", href: acuityLinks.halfStudio60 },
-                  { label: "Full studio (small group)", note: "1 to 8 people", price: "€17", href: acuityLinks.fullStudio60 },
-                ]}
+              headSpace="Space"
+              headDuration="60 min"
+              cta="Book"
+              rows={[
+                { label: "Half studio (for 2 people)", price: "€12", href: acuityLinks.halfStudio60 },
+                { label: "Full studio (small group)", note: "1 to 8 people", price: "€17", href: acuityLinks.fullStudio60 },
+              ]}
             />
             <StudioBookingFacts locale="en" className="mt-4" />
           </FadeIn>

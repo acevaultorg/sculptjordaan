@@ -369,13 +369,13 @@ export default function PricingPageNL() {
         <div className="mx-auto max-w-3xl">
           <FadeIn>
             <StudioRateTable
-                headSpace="Ruimte"
-                headDuration="60 min"
-                cta="Boek"
-                rows={[
-                  { label: "Halve studio (voor 2 personen)", price: "€12", href: acuityLinks.halfStudio60 },
-                  { label: "Hele studio (kleine groep)", note: "1 tot 8 personen", price: "€17", href: acuityLinks.fullStudio60 },
-                ]}
+              headSpace="Ruimte"
+              headDuration="60 min"
+              cta="Boek"
+              rows={[
+                { label: "Halve studio (voor 2 personen)", price: "€12", href: acuityLinks.halfStudio60 },
+                { label: "Hele studio (kleine groep)", note: "1 tot 8 personen", price: "€17", href: acuityLinks.fullStudio60 },
+              ]}
             />
             <StudioBookingFacts locale="nl" className="mt-4" />
           </FadeIn>

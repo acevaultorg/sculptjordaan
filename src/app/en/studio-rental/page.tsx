@@ -212,7 +212,10 @@ export default function StudioRentalPageEN() {
           <PhotoGalleryLightbox images={STRIP_IMAGES} locale="en" variant="strip" />
         </div>
 
-        {/* Weekend-availability hook — NL parity src/app/nl/studio-huren.
+        {/* (2026-09-30: this weekend note now renders inside StudioBookingFacts,
+            directly under the rate table. The history below is why its copy
+            reads the way it does.)
+            Weekend-availability hook — NL parity src/app/nl/studio-huren.
             Task mtdbcq8ie715lw (2026-08-28). Deliberately durable copy, not a
             hardcoded "13-week" / literal hour-range claim — exact hours shift
             as ClassPass classes occupy specific weekend slots (see
@@ -255,13 +258,8 @@ export default function StudioRentalPageEN() {
             of ClassPass, but because a concrete promise goes stale the moment
             somebody books. That reason survives; the ClassPass one does not.
         */}
-        {/* First-timer trial entry ABOVE the fold (2026-09-24, Subchief 3).
-            Measured: studio trial -> paying renter 52% (15/29, card muevvylus84iuu),
-            but only ~10 of 79 users on this page reached the trial page in 60d
-            (GA4 nav_click, 2026-07-26..09-24) because its only entry sat below the
-            price table. The booking table still leads for returning renters
-            (operator 2026-07-04); this is one line, not a block. */}
-        {/* Booking table is now the FIRST thing after the header — NL parity
+        {/* Booking table is now the FIRST thing after the header (and, since
+            2026-09-30, the 3-photo strip) — NL parity
             (operator 2026-07-17: "order of /nl/studio-huren is correct, this
             page is not"). Mirrors the NL 2026-07-04 redesign this page never
             received: the page is PRIMARY for trainers who ALREADY rent here, so

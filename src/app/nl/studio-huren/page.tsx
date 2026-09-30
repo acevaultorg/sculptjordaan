@@ -237,7 +237,10 @@ export default function StudioRentalPageNL() {
           <PhotoGalleryLightbox images={STRIP_IMAGES} locale="nl" variant="strip" />
         </div>
 
-        {/* Weekend-availability hook — task mtdbcq8ie715lw (2026-08-28): the
+        {/* (2026-09-30: this weekend note now renders inside StudioBookingFacts,
+            directly under the rate table. The history below is why its copy
+            reads the way it does.)
+            Weekend-availability hook — task mtdbcq8ie715lw (2026-08-28): the
             13-week Acuity analysis shows the studio at ~47% utilisation,
             with the weekend afternoon/evening block especially quiet — a
             gap that was previously buried in bullet #3 of the features grid
@@ -286,13 +289,8 @@ export default function StudioRentalPageNL() {
             of ClassPass, but because a concrete promise goes stale the moment
             somebody books. That reason survives; the ClassPass one does not.
         */}
-        {/* First-timer trial entry ABOVE the fold (2026-09-24, Subchief 3).
-            Measured: studio trial -> paying renter 52% (15/29, card muevvylus84iuu),
-            but only ~10 of 79 users on this page reached the trial page in 60d
-            (GA4 nav_click, 2026-07-26..09-24) because its only entry sat below the
-            price table. The booking table still leads for returning renters
-            (operator 2026-07-04); this is one line, not a block. */}
-        {/* Booking table is now the FIRST thing after the header — operator
+        {/* Booking table is now the FIRST thing after the header (and, since
+            2026-09-30, the 3-photo strip) — operator
             2026-07-04: /nl/studio-huren is PRIMARY for trainers who ALREADY rent
             here, so they can book immediately (no scrolling past a tour CTA).
             The "see the studio" content (WhatsApp tour + promo video) moved into
