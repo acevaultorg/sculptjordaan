@@ -399,10 +399,10 @@ export default function StudioRentalPageNL() {
               <p className="mt-3 text-center text-sm">
                 <a
                   href="/nl/studio-huren/gratis-test"
-                  className="plausible-event-name=studio_huren_trial_link inline-flex min-h-11 items-center gap-1 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                  className="plausible-event-name=studio_huren_trial_link inline-block py-3 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
                 >
-                  Eerste keer hier? Probeer de studio gratis met je eigen klant
-                  <ArrowRight className="h-4 w-4" aria-hidden />
+                  Eerste keer? Probeer de studio eerst gratis
+                  <ArrowRight className="ml-1 inline h-4 w-4 align-[-3px]" aria-hidden />
                 </a>
               </p>
               <StudioBookingFacts locale="nl" className="mt-3" />

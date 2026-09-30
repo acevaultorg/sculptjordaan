@@ -367,10 +367,10 @@ export default function StudioRentalPageEN() {
               <p className="mt-3 text-center text-sm">
                 <a
                   href="/en/studio-rental/free-trial"
-                  className="plausible-event-name=studio_huren_trial_link inline-flex min-h-11 items-center gap-1 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                  className="plausible-event-name=studio_huren_trial_link inline-block py-3 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
                 >
-                  First time here? Try the studio free with your own client
-                  <ArrowRight className="h-4 w-4" aria-hidden />
+                  First time? Try the studio free first
+                  <ArrowRight className="ml-1 inline h-4 w-4 align-[-3px]" aria-hidden />
                 </a>
               </p>
               <StudioBookingFacts locale="en" className="mt-3" />
