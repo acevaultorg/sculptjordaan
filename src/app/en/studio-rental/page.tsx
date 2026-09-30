@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/layout/page-layout";
+import { LocalIntentLinks } from "@/components/marketing/local-intent-links";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Badge } from "@/components/ui/badge";
@@ -725,6 +726,8 @@ export default function StudioRentalPageEN() {
       </Section>
 
       {/* Bottom CTA */}
+      <LocalIntentLinks locale="en" current="rental" bg="muted" />
+
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LocalIntentLinks } from "@/components/marketing/local-intent-links";
 import Image from "next/image";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
@@ -265,6 +266,8 @@ export default function SmallGroupNL() {
           </div>
         </FadeIn>
       </Section>
+
+      <LocalIntentLinks locale="nl" current="smallGroup" />
 
       <CtaBand locale="nl" />
     </PageLayout>

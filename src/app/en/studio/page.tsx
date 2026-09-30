@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/layout/page-layout";
+import { LocalIntentLinks } from "@/components/marketing/local-intent-links";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
@@ -204,6 +205,8 @@ export default function StudioPageEN() {
           </div>
         </FadeIn>
       </Section>
+      <LocalIntentLinks locale="en" current="studio" />
+
     </PageLayout>
   );
 }
