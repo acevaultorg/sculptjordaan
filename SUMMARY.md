@@ -111,3 +111,14 @@ Automated checks at both widths: no horizontal scroll on any of the 13 pages, an
 4. Look at the link block on a real phone in light and dark mode (the screenshots are light mode only).
 5. After deploy, run the steps in CLAUDE.md (check:sitemap, check:vanity, Functions 403 check). Ping IndexNow with only the changed URLs: the 10 intent pages, `/nl/sportschool-jordaan`, `/nl/vind-jouw-personal-trainer`, `/en/find-personal-trainer`, `/llms.txt`.
 6. Run the pages through Google's Rich Results Test to confirm the FAQ and LocalBusiness data.
+
+## Review pass (2026-09-30)
+
+A second session reviewed this branch; details in `REVIEW.md`. Changes it made:
+- `public/llms.txt`: transit line removed (Vijzelgracht metro is not a 10-minute walk).
+- Studio and location pages NL+EN: the link block now sits above the closing call to action instead of after it.
+- Studio rental NL+EN: "Bottom CTA" comment moved back above the CTA section.
+- `local-intent-links.tsx`: uses `next/link`; the last word of each title stays together with its arrow.
+- `review/`: all 46 screenshots retaken after these fixes.
+
+Build after the review: exit 0, 246 `.html` pages, same list as `main` (also rebuilt: exit 0, 246).
