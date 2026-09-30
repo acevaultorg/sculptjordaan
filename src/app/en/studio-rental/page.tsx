@@ -37,7 +37,7 @@ import { StudioRateTable } from "@/components/marketing/studio-rate-table";
 import { WeekendAvailability } from "@/components/marketing/weekend-availability";
 
 export const metadata: Metadata = {
-  title: { absolute: "Personal Trainer Studio Rental | SculptClub Jordaan" },
+  title: { absolute: "Rent a PT Studio in Amsterdam from €12/hour | SculptClub" },
   description:
     "Private training studio in the Jordaan from €12 an hour. Your clients, your rates, no contract, free cancellation. First session free.",
   alternates: {
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/en/studio-rental",
-    title: "Personal Trainer Studio Rental | SculptClub Jordaan",
+    title: "Rent a PT Studio in Amsterdam from €12/hour | SculptClub",
     description:
       "Private training studio in the Jordaan from €12 an hour. Your clients, your rates, no contract, free cancellation. First session free.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Trainer Studio Rental | SculptClub Jordaan",
+    title: "Rent a PT Studio in Amsterdam from €12/hour | SculptClub",
     description:
       "Private training studio in the Jordaan from €12 an hour. Your clients, your rates, no contract, free cancellation. First session free.",
   },
@@ -131,12 +131,21 @@ const faqs = [
     a: "Half studio (1:1) from \u20ac12 per 60 minutes. Full studio (small group) from \u20ac17 per 60 minutes. Save 10-23% with a discount package.",
   },
   {
+    // Small-group intent (2026-09-30), EN parity with /nl/studio-huren.
+    q: "Can I rent the full studio for a small group?",
+    a: "Yes. With the full studio the room is private for you and your group, from 1 to 8 people. It costs \u20ac17 per 60 minutes or \u20ac24 per 90 minutes. Suited to small group training with your own clients.",
+  },
+  {
+    q: "Where is the studio and when can I rent it?",
+    a: "At Egelantiersgracht 424, 1015 RR Amsterdam, in the Jordaan. The studio is open every day from 06:00 to 22:00 and you book by the hour.",
+  },
+  {
     q: "What discount packages are available?",
     a: "Starter \u20ac89 (10% off), Routine \u20ac179 (15% off), Pro \u20ac299 (20% off) and Volume \u20ac499 (23% off). Packages are valid for 1 year.",
   },
   {
     q: "What is included with studio rental?",
-    a: "All equipment, wifi, music, climate control and cleaning. The studio is fully private during your rental time.",
+    a: "All equipment, wifi, music, climate control and cleaning. With the full studio the room is yours alone. With a half studio, another trainer or Open Gym may use the other half.",
   },
   {
     q: "Do I need insurance?",

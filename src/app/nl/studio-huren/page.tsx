@@ -143,12 +143,23 @@ const faqs = [
     a: "Halve studio (1:1) vanaf \u20ac12 per 60 minuten. Hele studio (kleine groep) vanaf \u20ac17 per 60 minuten. Bespaar 10-23% met een kortingspakket.",
   },
   {
+    // Small-group intent (2026-09-30): "ruimte huren groepstraining / small
+    // group" had no direct answer on the page, only the "1 tot 8 personen"
+    // note in the rate table. Facts: CLAUDE.md studio rental capacity + prices.
+    q: "Kan ik de hele studio huren voor een kleine groep?",
+    a: "Ja. Met de hele studio heb je de ruimte priv\u00e9 voor jou en je groep, van 1 tot 8 personen. Dat kost \u20ac17 per 60 minuten of \u20ac24 per 90 minuten. Geschikt voor small group training met je eigen klanten.",
+  },
+  {
+    q: "Waar is de studio en wanneer kan ik huren?",
+    a: "Aan de Egelantiersgracht 424, 1015 RR Amsterdam, in de Jordaan. De studio is elke dag open van 06:00 tot 22:00 en je boekt per uur.",
+  },
+  {
     q: "Welke kortingspakketten zijn er?",
     a: "Starter \u20ac89 (10% korting), Routine \u20ac179 (15% korting), Pro \u20ac299 (20% korting) en Volume \u20ac499 (23% korting). Pakketten zijn 1 jaar geldig.",
   },
   {
     q: "Wat is inbegrepen bij studio huur?",
-    a: "Alle apparatuur, wifi, muziek, klimaatbeheersing en schoonmaak. De studio is volledig priv\u00e9 tijdens je huurtijd.",
+    a: "Alle apparatuur, wifi, muziek, klimaatbeheersing en schoonmaak. Met de hele studio heb je de ruimte voor jezelf. Bij een halve studio kan een andere trainer of Open Gym de andere helft gebruiken.",
   },
   {
     q: "Heb ik een verzekering nodig?",
@@ -581,7 +592,7 @@ export default function StudioRentalPageNL() {
                   "Volledig uitgeruste privé studio voor 1:1 en small group",
                   "Jij houdt 100% van je sessietarief, wij rekenen alleen huur",
                   "Flexibel boeken: alleen wanneer jij een klant hebt",
-                  "Deurcode per WhatsApp de avond van tevoren",
+                  "Deurcode per WhatsApp om 00:00 in de nacht voor je sessie",
                   "Professionele apparatuur: squat rack, kabelmachine, dumbbells 4-40 kg, Echo Bike en meer",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">

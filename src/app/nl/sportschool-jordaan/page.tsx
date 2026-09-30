@@ -46,7 +46,7 @@ const steps = [
   {
     step: "3",
     title: "Train wanneer jij wilt",
-    desc: "Dagelijks open van 06:00 tot 22:00. Deurcode via WhatsApp de avond van tevoren. Geen receptie.",
+    desc: "Dagelijks open van 06:00 tot 22:00. Deurcode via WhatsApp om 00:00 in de nacht voor je sessie. Geen receptie.",
   },
 ];
 
