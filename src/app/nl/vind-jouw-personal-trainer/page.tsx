@@ -224,6 +224,7 @@ export default function TrainersPageNL() {
           <h2 className="mb-3 text-lg font-bold">Specifieke situatie?</h2>
           <div className="flex flex-wrap gap-2">
             {[
+              { href: "/nl/trainers", label: "Trainergids Amsterdam" },
               { href: "/nl/blog/vrouwelijke-personal-trainer-amsterdam", label: "Vrouwelijke trainer" },
               { href: "/nl/personal-trainer-jordaan", label: "Personal trainer in de Jordaan" },
               { href: "/nl/blog/engels-sprekende-personal-trainer-amsterdam", label: "Engels-sprekende trainer" },

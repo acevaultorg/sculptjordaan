@@ -224,6 +224,7 @@ export default function TrainersPageEN() {
           <h2 className="mb-3 text-lg font-bold">Specific situation?</h2>
           <div className="flex flex-wrap gap-2">
             {[
+              { href: "/en/trainers", label: "Trainer directory" },
               { href: "/en/blog/female-personal-trainer-amsterdam", label: "Female trainer" },
               { href: "/en/personal-trainer-amsterdam-jordaan", label: "Personal trainer in the Jordaan" },
               { href: "/en/blog/english-speaking-personal-trainer-amsterdam", label: "English-speaking trainer" },

@@ -46,6 +46,8 @@ const COPY = {
     rateLabel: "Tarief",
     onRequest: "Op aanvraag",
     viewAllHref: "/nl/vind-jouw-personal-trainer",
+    directoryHref: "/nl/trainers",
+    directoryLabel: "Of bekijk de trainergids voor Amsterdam",
     ariaIntake: (name: string) => `Plan gratis intake met ${name} via WhatsApp`,
   },
   en: {
@@ -69,6 +71,8 @@ const COPY = {
     rateLabel: "Rate",
     onRequest: "On request",
     viewAllHref: "/en/find-personal-trainer",
+    directoryHref: "/en/trainers",
+    directoryLabel: "Or browse the Amsterdam trainer directory",
     ariaIntake: (name: string) => `Book free intro with ${name} via WhatsApp`,
   },
 } as const;
@@ -258,6 +262,11 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
+        <p className="mt-4 text-center text-sm">
+          <Link href={c.directoryHref} className="inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4 hover:text-primary">
+            {c.directoryLabel}
+          </Link>
+        </p>
       </FadeIn>
     </Section>
   );
