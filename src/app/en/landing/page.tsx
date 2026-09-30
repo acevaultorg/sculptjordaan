@@ -41,7 +41,7 @@ const copy: SplitLandingCopy = {
   },
   client: {
     eyebrow: "For anyone who wants to train",
-    headline: "Find your trainer, class or open gym",
+    headline: "Find your trainer, class or Open Gym",
     support: `First intro session free. Open Gym from €${openGymSinglePrice} an hour. Jordaan, Amsterdam.`,
     cta: { label: "Find your trainer", href: "/en/find-personal-trainer" },
     pills: [

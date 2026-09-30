@@ -74,8 +74,8 @@ function Half({
   return (
     <section
       aria-labelledby={headingId}
-      className={`relative isolate flex min-h-0 flex-col justify-center overflow-hidden px-6 sm:px-10 lg:px-16 ${
-        isTrainer ? "bg-[#0E2A21] pt-16 pb-5 md:pt-24 md:pb-24" : "bg-[#8F2E0B] pt-5 pb-5 md:pt-24 md:pb-24"
+      className={`relative isolate flex min-h-0 flex-col justify-center overflow-hidden px-6 sm:px-10 md:justify-start md:pt-[30vh] md:pb-16 lg:px-16 ${
+        isTrainer ? "bg-[#0E2A21] pt-16 pb-5" : "bg-[#8F2E0B] pt-5 pb-5"
       }`}
     >
       <Image
@@ -97,22 +97,22 @@ function Half({
         aria-hidden="true"
         className={`absolute inset-0 -z-10 ${
           isTrainer
-            ? "bg-[linear-gradient(180deg,rgba(4,20,15,0.62)_0%,rgba(4,20,15,0.70)_50%,rgba(4,20,15,0.78)_100%)]"
-            : "bg-[linear-gradient(180deg,rgba(58,14,0,0.50)_0%,rgba(58,14,0,0.56)_50%,rgba(58,14,0,0.66)_100%)]"
+            ? "bg-[linear-gradient(180deg,rgba(4,20,15,0.40)_0%,rgba(4,20,15,0.52)_50%,rgba(4,20,15,0.62)_100%)]"
+            : "bg-[linear-gradient(180deg,rgba(58,14,0,0.30)_0%,rgba(58,14,0,0.40)_50%,rgba(58,14,0,0.50)_100%)]"
         }`}
       />
 
       <div className="mx-auto w-full max-w-md text-white md:mx-0 lg:max-w-lg">
-        <p className="text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-white/90 sm:text-sm">
+        <p className="text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-white sm:text-sm">
           {half.eyebrow}
         </p>
         <h2
           id={headingId}
-          className="mt-1.5 font-heading text-[1.625rem] font-bold leading-[1.1] tracking-tight text-balance sm:text-4xl md:mt-3 lg:text-5xl"
+          className="mt-1.5 font-heading text-[1.625rem] font-bold leading-[1.1] tracking-tight text-white text-balance sm:text-4xl md:mt-3 lg:text-5xl"
         >
           {half.headline}
         </h2>
-        <p className="mt-2 text-[0.9375rem] leading-snug text-white/95 sm:text-base md:mt-4 md:text-lg">
+        <p className="mt-2 text-[0.9375rem] leading-snug text-white sm:text-base md:mt-4 md:text-lg">
           {half.support}
         </p>
 
@@ -164,7 +164,7 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
             width={162}
             height={30}
             preload
-            className="h-7 w-auto select-none invert drop-shadow md:h-9"
+            className="h-7 w-auto select-none brightness-0 invert drop-shadow md:h-9"
           />
         </Link>
         <Link
