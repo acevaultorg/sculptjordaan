@@ -49,7 +49,7 @@ const faqs = [
 
 export default function StudioRentalCalculatorNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },

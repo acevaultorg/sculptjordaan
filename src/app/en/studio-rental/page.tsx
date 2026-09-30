@@ -175,7 +175,7 @@ const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export default function StudioRentalPageEN() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Studio Rental","url":"/en/studio-rental"}]} />
       <ServiceJsonLd
         name="Studio Rental — Personal Trainer Amsterdam"

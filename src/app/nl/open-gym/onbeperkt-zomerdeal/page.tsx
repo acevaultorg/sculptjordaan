@@ -138,7 +138,7 @@ export default function OnbeperktZomerdealPage() {
   const dealOn = deal.active;
 
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/nl" },

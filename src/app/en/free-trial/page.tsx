@@ -113,7 +113,7 @@ const steps = [
 
 export default function FreeTrialPage() {
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/en" },

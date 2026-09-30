@@ -31,7 +31,7 @@ const COPY = {
 export function TrainerSignalBand({ locale }: { locale: Locale }) {
   const c = COPY[locale];
   return (
-    <section className="border-y border-border bg-card">
+    <section data-audience="rental" className="border-y border-border bg-card">
       <div className="container mx-auto flex flex-col items-start gap-4 px-4 py-7 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-6 md:py-8">
         <div className="flex flex-col gap-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">

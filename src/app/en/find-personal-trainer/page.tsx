@@ -93,7 +93,7 @@ const faqs = [
 
 export default function TrainersPageEN() {
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Personal Trainers","url":"/en/find-personal-trainer"}]} />
       <ReviewsJsonLd reviews={googleReviews} />
       <FaqJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />

@@ -139,7 +139,7 @@ export default function StudentenkortingPage() {
   const on = student.active;
 
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/nl" },

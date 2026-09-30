@@ -319,7 +319,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
   }
 
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <PersonJsonLd
         name={trainer.name}
         description={trainer.bio[locale]}

@@ -95,7 +95,7 @@ const faqs = [
 
 export default function FreeIntroPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div data-audience="member" className="min-h-screen bg-background">
       {/* Minimal header */}
       <header className="flex items-center justify-center py-6 px-4 border-b border-border/30">
         <Link href="/en" aria-label="Back to homepage">

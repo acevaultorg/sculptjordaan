@@ -96,7 +96,7 @@ const galleryImages = [
 
 export default function GratisTestStudioHurenNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function StudioVsThuisVsBuitenNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
