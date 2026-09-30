@@ -11,6 +11,7 @@ import { LanguageHint } from "@/components/layout/language-hint";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { MobileBottomCTABar } from "@/components/layout/mobile-bottom-cta-bar";
 import { UtmCapture } from "@/components/layout/utm-capture";
+import { CtaExperiment } from "@/components/layout/cta-experiment";
 
 const syne = localFont({
   src: [
@@ -142,6 +143,19 @@ export default function RootLayout({
             __html: `(function(){try{var m=matchMedia("(prefers-color-scheme: dark)");var a=function(d){document.documentElement.classList.toggle("dark",d)};a(m.matches);m.addEventListener("change",function(e){a(e.matches)})}catch(e){document.documentElement.classList.add("dark")}})();document.documentElement.lang=location.pathname.startsWith("/en")?"en":"nl"`,
           }}
         />
+        {/* CTA colour A/B test (2026-09-30). Runs before first paint so a
+            visitor never sees the buttons change colour. 50/50 per visitor,
+            kept for 90 days in the first-party cookie sc_cta_ab ("a" | "b").
+            A = rental buttons evergreen, open gym / find-a-trainer coral;
+            B = the current orange. ?cta=a or ?cta=b forces a variant (for QA)
+            and stores it. The cookie holds only the letter: no id, nothing
+            personal. The colour rules live at the end of globals.css; the GA4
+            cta_click event is in components/layout/cta-experiment.tsx. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var k="sc_cta_ab",v=(location.search.match(/[?&]cta=([ab])\\b/)||[])[1],m=document.cookie.match(/(?:^|; )sc_cta_ab=([ab])/);if(!v)v=m?m[1]:(Math.random()<0.5?"a":"b");if(!m||m[1]!==v)document.cookie=k+"="+v+"; Max-Age=7776000; Path=/; SameSite=Lax"+(location.protocol==="https:"?"; Secure":"");document.documentElement.setAttribute("data-cta-variant",v)}catch(e){}})()`,
+          }}
+        />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* plausible.io preconnect REMOVED 2026-07-20 — Plausible was retired
@@ -193,6 +207,7 @@ export default function RootLayout({
         <MobileBottomCTABar />
         <UtmCapture />
         <Analytics />
+        <CtaExperiment />
         {/* FunnelPilot — DISABLED 2026-07-20. funnelpilot.app has our Cloudflare
             nameservers but no A record, so this script failed with
             ERR_NAME_NOT_RESOLVED on every page load and tracked nothing. The

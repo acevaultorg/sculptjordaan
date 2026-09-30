@@ -111,7 +111,7 @@ const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export default function BoekStudioPageNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },

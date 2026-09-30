@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function MatchTrainerPage() {
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <Section bg="default">
         <FadeIn>
           {/* Compact header — visitor came here to take action, not read marketing */}

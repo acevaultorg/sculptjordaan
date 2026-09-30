@@ -84,7 +84,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
   const previewTrainers = trainers.slice(0, PREVIEW_COUNT);
 
   return (
-    <Section wide className="bg-background">
+    <Section wide className="bg-background" audience="member">
       <SectionHeader
         overline={c.overline}
         title={c.title}

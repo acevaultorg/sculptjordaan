@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function ZZPChecklistNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },

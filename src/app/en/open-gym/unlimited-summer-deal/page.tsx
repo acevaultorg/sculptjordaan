@@ -103,7 +103,7 @@ export default function UnlimitedSummerDealPage() {
   const dealOn = deal.active;
 
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/en" },

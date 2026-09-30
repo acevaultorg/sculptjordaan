@@ -411,7 +411,14 @@ export function MobileBottomCTABar() {
               path still lives in the footer + /nl/contact for the rare weekend
               caller. Clean result: ONE orange primary CTA + ONE green WhatsApp
               circle. Do NOT re-add the phone here. */}
-          <div className="flex items-center gap-2">
+          {/* data-audience: button colour in the CTA A/B test (globals.css).
+              Follows where the button goes: studio booking, the studio free
+              trial and trainer pages → rental; everything else (open gym,
+              intake) → member. */}
+          <div
+            className="flex items-center gap-2"
+            data-audience={/studio|trainer|freetrial/.test(cta.ctaId) ? "rental" : "member"}
+          >
             {cta.external ? (
               <a
                 href={cta.href}

@@ -164,7 +164,7 @@ const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export default function OpenGymPageNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Open Gym","url":"/nl/open-gym"}]} />
       <ServiceJsonLd
         name="Open Gym"

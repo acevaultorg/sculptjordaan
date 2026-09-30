@@ -116,7 +116,7 @@ export default function StudentDiscountPage() {
   const on = student.active;
 
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/en" },

@@ -104,7 +104,7 @@ const faqJsonLdData = faqs.map((f) => ({ question: f.q, answer: f.a }));
 
 export default function BoekGymPageNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="member">
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Boek Open Gym", url: "/nl/boek-gym" }]} />
       <ServiceJsonLd name="Open Gym" description="Zelfstandig trainen in een privé studio in de Jordaan, Amsterdam." url="/nl/boek-gym" priceRange="€29 - €79 per 4 weken" />
       <FaqJsonLd faqs={faqJsonLdData} />

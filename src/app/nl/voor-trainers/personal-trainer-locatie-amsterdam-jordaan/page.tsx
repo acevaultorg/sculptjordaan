@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function LocatieJordaanNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },

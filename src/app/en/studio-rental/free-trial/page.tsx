@@ -75,7 +75,7 @@ const galleryImages = [
 
 export default function FreeTrialStudioRentalEN() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/en" },

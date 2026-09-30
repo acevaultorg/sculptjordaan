@@ -232,7 +232,7 @@ export function FirstTimeMenu({
           a Plausible CUSTOM EVENT on every click (the site loads the
           tagged-events script) — make it a Goal in Plausible to read CTR. A
           GA4 `hero_cta_click` event also fires via handleOpen(). */}
-      <div className="flex justify-center">
+      <div data-audience="member" className="flex justify-center">
         <button
           type="button"
           onClick={handleOpen}

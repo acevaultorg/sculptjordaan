@@ -9,6 +9,8 @@ interface SectionProps {
   bg?: "default" | "muted" | "surface" | "dark";
   id?: string;
   wide?: boolean;
+  /** CTA colour scope for the A/B test (see the end of globals.css). */
+  audience?: "rental" | "member";
 }
 
 const bgMap = {
@@ -18,13 +20,13 @@ const bgMap = {
   dark: "bg-[#0B0907] text-[#EDE5DA]",
 };
 
-export function Section({ children, className, bg = "default", id, wide }: SectionProps) {
+export function Section({ children, className, bg = "default", id, wide, audience }: SectionProps) {
   // Section rhythm tightened one step at every breakpoint (operator ask
   // "section ui more minimial", card mplgxz03ohp4hy, shipped 2026-09-22):
   // was py-16/20/24 = 64/80/96px each side, a marathon scroll on long pages.
   // Now 48/64/80px. Still breathing room; roughly -20% scroll per section.
   return (
-    <section id={id} className={cn("py-12 sm:py-16 lg:py-20", bgMap[bg], className)}>
+    <section id={id} data-audience={audience} className={cn("py-12 sm:py-16 lg:py-20", bgMap[bg], className)}>
       <div className={cn("mx-auto px-4 sm:px-6", wide ? "max-w-7xl" : "max-w-5xl")}>
         {children}
       </div>

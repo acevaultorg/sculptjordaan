@@ -1,3 +1,94 @@
+# Button colour per audience + A/B test (2026-09-30)
+
+Branch `cloud/sculptclub-cta-2026-09-30`. **It is based on `cloud/sculptclub-book-2026-09-30`** (that branch exists), so the two changes do not conflict. Merge the booking branch first, or merge this one, which already contains it. Nothing was deployed and nothing was merged. `main` was not touched.
+
+## What changed, and why
+The owner wants each audience to have its own button colour:
+
+| Audience | Pages / sections | Variant A button | Text on it | Contrast |
+|---|---|---|---|---|
+| **rental**: trainers who rent the studio | studio rental (+ calculator, free trial), book-studio, for-trainers (+ 4 articles), become-trainer, home "for trainers" band | evergreen `#1F4D3A` (dark mode `#46997A`) | white (dark mode near-black) | 9.63:1 (dark 5.77:1) |
+| **member**: open gym + finding a trainer | open gym (+ summer deal, student), book-gym, find / book / match a trainer, free intake + the 13 trainer intake pages, free trial, home trainer grid + hero button | coral-orange `#EE5A3C` (dark mode `#FF7A57`) | near-black `#0E0C0A` | 5.73:1 (dark 7.60:1) |
+| everything else (blog, prices, contact, …) | unchanged | today's orange | | |
+
+Every pair passes WCAG AA for normal text (4.5:1). The hover shades pass too: 11.6, 4.90, 7.11 and 8.75. Each button also stands out from the page by at least 3:1, except coral on the light bone background, which is 3.13:1 (today's orange is 3.31:1).
+
+**How it's built (design tokens in the existing CSS):**
+- `src/app/globals.css`: new tokens `--cta-rental-*`, `--cta-member-*` and `--cta-bg / --cta-bg-hover / --cta-fg`, for light and dark mode.
+- A block at the end of the file re-points the existing `--brand` / `--primary` tokens, but only on filled buttons (`a`/`button` with the `bg-brand` or `bg-primary` class, or a pill with that class inside a link, like the studio rate rows).
+- Text links, tints and non-clickable orange are untouched, so the "orange = clickable" rule still holds.
+- **Audience scope:**
+  - `data-audience="rental|member"` goes on the page (new `audience` prop on `PageLayout` and `Section`) or on a section.
+  - The existing analytics attribute `data-intent` also works as a scope: `studio_rental` = rental; `open_gym` and `trainer` = member. That colours the home pricing explorer with no component changes.
+  - The nearest scope wins.
+  - The header tiles and the sticky mobile bar follow their own destination. On the studio page, the active "Huur Studio" tile is green like the page's buttons.
+- **A/B switch:**
+  - A small blocking script in `<head>` (`src/app/layout.tsx`) runs before first paint, so buttons never flash.
+  - It picks A or B at 50/50 per visitor and stores the letter in the first-party cookie `sc_cta_ab` (90 days, `SameSite=Lax`, `Secure` on https).
+  - It sets `data-cta-variant` on `<html>`.
+  - **Variant B = today's colours**, with the CSS resolving to the same values as before.
+  - `?cta=a` / `?cta=b` forces a variant, for checking.
+- **GA4 event** (`src/components/layout/cta-experiment.tsx`): GA4 is already on the site (`gtag`, G-QYW5H4XTXW).
+  - Every click on a filled button sends `cta_click` with `cta_variant` (a/b), `cta_audience` (rental/member/none) and `cta_text` (the button's own label, max 60 characters).
+  - No personal data, no ids.
+  - Tab toggles are left out, because they already send `tab_switch`.
+  - The existing analytics snippet in `analytics.tsx` is unchanged.
+- **One primary button per screen:** I measured the first screen of every changed page at 375 and 390px. No screen shows two different button colours. Home shows one filled button. See "Check" item 3 for the studio page.
+
+## Files touched
+- `src/app/globals.css`: tokens and scope rules
+- `src/app/layout.tsx`: head script and `<CtaExperiment />`
+- `src/components/layout/cta-experiment.tsx`: new, the GA4 click event
+- `src/components/layout/page-layout.tsx`, `src/components/sections/section.tsx`: optional `audience` prop
+- `src/components/layout/header.tsx`, `src/components/layout/mobile-bottom-cta-bar.tsx`: per-tile / per-bar audience
+- `src/components/marketing/trainer-preview-grid.tsx`, `trainer-signal-band.tsx`, `first-time-menu.tsx`, `trainer-intake.tsx`: section audience
+- 38 page files under `src/app/nl|en/...`: one attribute each (`<PageLayout audience="…">`, or `data-audience` on the root `div` of the two free-intake pages)
+- `qa/`, `review/`: screenshots
+- `SUMMARY.md`: this section
+
+No copy, prices, Acuity links or IDs, payment settings, metadata, canonicals, robots, sitemap or analytics snippets changed.
+
+## Build and page count
+- Command: `CI=1 npm run build`. `CI=1` stops the prebuild from rewriting `sitemap-lastmod.json`.
+- **Exit code 0**, before and after. "Compiled successfully", no type errors.
+- **.html pages: 246 before, 246 after, the identical set** (file-list diff). No new pages.
+- As on the booking branch: `npm install` changed `package-lock.json`, and the prebuild rewrote `src/lib/image-color-manifest.ts`. Both were restored, so neither is in this diff.
+
+## Screenshots
+Playwright ran with the pre-installed Chromium against the built `out/`, served locally. Every request to another host was blocked. No booking page, confirmation page or form was opened or submitted. The cookie banner was dismissed as "essential only" for clean shots.
+- `qa/`: home (`/`) and the studio rental page (`/nl/studio-huren`) at 390px, **variant A and variant B**. For each: first screen and full page in light mode, plus the first screen in dark mode (12 files).
+- `review/cta-A-*-375-fold.png` and `*-390-fold.png`: the first screen of **every changed page** at 375 and 390px, in variant A (84 files, 42 routes). Variant B looks like the live site. The 13 trainer intake pages share one template, so only Alex (NL + EN) is shot.
+- Automated checks on all 92 captures:
+  - no horizontal overflow,
+  - every filled button at least 44px tall,
+  - every filled button's text at least 4.5:1,
+  - no mixed button colours on a first screen.
+
+  One problem was found and fixed: a trainer-finder WhatsApp button hardcodes white text, which was 3.41:1 on coral. In variant A, inside a scope, it now uses the audience's text colour.
+- Event check, with a stubbed `gtag` and link navigation blocked:
+  - studio row (A and B) → `rental`
+  - home hero button → `member`
+  - open gym button → `member`
+  - tab click → no event
+- Split check: 40 fresh visitors gave 17 A / 23 B. The cookie and the `<html>` attribute always matched.
+
+## Skipped, and why
+- **Pages with both audiences keep today's orange**: prices, over-ons, blog, contact, reviews. Only home is split per section. Tell me if prices should be split per table too.
+- **The Google Ads landing pages** (`gratis-intake-ads`) are left unchanged, so the A/B test does not mix with the ad copy test.
+- The rules in the prompt about Amazon, affiliate links and "View on Amazon" don't apply to this site (there is no Amazon integration), so nothing was done there.
+
+## Check before this goes live
+1. **Cookie consent:** `sc_cta_ab` is set for every visitor, before any consent. It holds only "a" or "b" and is not used for tracking across sites. Please confirm that is acceptable under your cookie policy, or list it on `/nl/cookiebeleid` as a functional cookie. If consent is required, the head script can be gated on `sc_consent`.
+2. **GA4:**
+   - Register `cta_variant`, `cta_audience` and `cta_text` as event-scoped custom dimensions (Admin → Custom definitions). Otherwise they will not show in reports.
+   - With consent mode "denied", GA4 sends cookieless pings, so the counts are modelled.
+3. **One primary per screen, studio page:** the first screen shows the two Book rows of the rate table and the active "Per uur" tab, all filled in the same colour (true in B too, from the booking branch's layout). If you want strictly one filled button there, the second row's pill or the tab could become an outline. That is a design call, so I left it.
+4. **Brand check:** view both colours on a real phone in light and dark mode. The coral is close to today's orange, so the difference is mostly on the rental side.
+5. **Deciding the test:** in GA4, compare `cta_click` per variant and audience, then bookings (`begin_checkout` / `Book_appointment_1`) split by the same `cta_variant`. Those events do not carry the variant, so use a GA4 segment on users who sent `cta_click` with each variant. Adding `cta_variant` as a user property would make this easier; ask if you want it.
+6. **To end the test:** delete the head script, or pin every visitor to one variant by changing `Math.random()<0.5` to `true` (A) or `false` (B).
+
+---
+
 # Mobile booking path: studio rental (2026-09-30)
 
 Goal: more paid studio bookings from the visitors the site already gets. I walked the path on a phone at 375 and 390px: home → studio rental → prices → availability → book. Nothing was deployed and nothing was merged.

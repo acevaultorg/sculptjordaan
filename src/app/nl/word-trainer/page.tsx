@@ -117,7 +117,7 @@ const faqs = [
 
 export default function WordTrainerNL() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Word Trainer", url: "/nl/word-trainer" }]} />
       {/* FAQPage schema — page had visible FAQs but no schema. Enables AI-extraction /
           citation for trainer-acquisition queries (the #1 revenue lever: studio rental). */}

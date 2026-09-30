@@ -163,7 +163,7 @@ const trainerFaqs = [
 
 export default function ForTrainersHubEN() {
   return (
-    <PageLayout>
+    <PageLayout audience="rental">
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/en" },
