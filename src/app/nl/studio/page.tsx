@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LocalIntentLinks } from "@/components/marketing/local-intent-links";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -165,6 +166,8 @@ export default function StudioPageNL() {
           ))}
         </div>
       </Section>
+
+      <LocalIntentLinks locale="nl" current="studio" />
 
       {/* Dual-audience CTA section — /nl/studio is reached by BOTH consumer
           visitors (via hero secondary CTA "Bekijk de studio" from 2026-05-16)

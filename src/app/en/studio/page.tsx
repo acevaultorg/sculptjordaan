@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/layout/page-layout";
+import { LocalIntentLinks } from "@/components/marketing/local-intent-links";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
@@ -159,6 +160,8 @@ export default function StudioPageEN() {
           ))}
         </div>
       </Section>
+
+      <LocalIntentLinks locale="en" current="studio" />
 
       {/* Dual-audience CTA — see NL version comment. Consumer-first primary
           CTA + ZZP trainer rental secondary + WhatsApp tertiary. */}

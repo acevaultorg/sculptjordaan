@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LocalIntentLinks } from "@/components/marketing/local-intent-links";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -169,6 +170,8 @@ export default function LocationPageNL() {
           ))}
         </div>
       </Section>
+
+      <LocalIntentLinks locale="nl" current="location" bg="muted" />
 
       <Section>
         <FadeIn>

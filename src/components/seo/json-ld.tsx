@@ -16,6 +16,29 @@ const ORG_ID = `${siteConfig.url}#organization`;
 const PLACE_ID = `${siteConfig.url}#localbusiness`;
 const WEBSITE_ID = `${siteConfig.url}#website`;
 
+// Name, address and phone, identical wherever the studio is referenced
+// (provider, seller, worksFor, reviews). 2026-09-30: those references used to
+// carry a bare "LocalBusiness" with a name and sometimes an address, never the
+// phone, and no @id, so a parser saw several half-described businesses instead
+// of one. The @id ties each of them to the full entity in LocalBusinessJsonLd.
+const POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: siteConfig.address.street,
+  addressLocality: siteConfig.address.city,
+  postalCode: siteConfig.address.zip,
+  addressCountry: "NL",
+  addressRegion: "Noord-Holland",
+};
+
+export const BUSINESS_REF = {
+  "@type": ["LocalBusiness", "HealthClub", "SportsActivityLocation"],
+  "@id": PLACE_ID,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  telephone: siteConfig.phone,
+  address: POSTAL_ADDRESS,
+};
+
 export function LocalBusinessJsonLd() {
   const schema = {
     "@context": "https://schema.org",
@@ -113,14 +136,7 @@ export function LocalBusinessJsonLd() {
         telephone: siteConfig.phone,
         email: siteConfig.email,
         parentOrganization: { "@id": ORG_ID },
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: siteConfig.address.street,
-          addressLocality: siteConfig.address.city,
-          postalCode: siteConfig.address.zip,
-          addressCountry: "NL",
-          addressRegion: "Noord-Holland",
-        },
+        address: POSTAL_ADDRESS,
         geo: {
           "@type": "GeoCoordinates",
           latitude: siteConfig.geo.lat,
@@ -261,9 +277,7 @@ export function ReviewsJsonLd({
 }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: siteConfig.name,
-    url: siteConfig.url,
+    ...BUSINESS_REF,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: siteConfig.rating.value,
@@ -319,18 +333,7 @@ export function PersonJsonLd({
     description,
     image: image.startsWith("http") ? image : `${siteConfig.url}${image}`,
     url: url.startsWith("http") ? url : `${siteConfig.url}${url}`,
-    worksFor: {
-      "@type": ["LocalBusiness", "HealthClub"],
-      name: siteConfig.name,
-      url: siteConfig.url,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: siteConfig.address.street,
-        addressLocality: siteConfig.address.city,
-        postalCode: siteConfig.address.zip,
-        addressCountry: "NL",
-      },
-    },
+    worksFor: BUSINESS_REF,
     knowsLanguage: languages.map((l) =>
       l === "NL" ? "Dutch" : l === "EN" ? "English" : l === "PT" ? "Portuguese" : l
     ),
@@ -470,10 +473,7 @@ export function OfferCatalogJsonLd({
         ? { eligibleDuration: { "@type": "QuantitativeValue", value: 4, unitCode: "WEE" } }
         : {}),
       ...(offer.url ? { url: `${siteConfig.url}${offer.url}` } : {}),
-      seller: {
-        "@type": "LocalBusiness",
-        name: siteConfig.name,
-      },
+      seller: BUSINESS_REF,
     })),
   };
 
@@ -609,18 +609,7 @@ export function ServiceJsonLd({
     name,
     description,
     url: `${siteConfig.url}${url}`,
-    provider: {
-      "@type": "LocalBusiness",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: siteConfig.address.street,
-        addressLocality: siteConfig.address.city,
-        postalCode: siteConfig.address.zip,
-        addressCountry: "NL",
-      },
-    },
+    provider: BUSINESS_REF,
     areaServed: {
       "@type": "City",
       name: areaServed || "Amsterdam",

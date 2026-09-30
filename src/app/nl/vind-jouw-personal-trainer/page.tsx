@@ -7,7 +7,7 @@ import { ptGoals } from "@/config/pt-goals";
 import Image from "next/image";
 import { Star, MessageCircle, ArrowDown, Sparkles, ChevronDown } from "lucide-react";
 import type { Metadata } from "next";
-import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
+import { BreadcrumbJsonLd, ServiceJsonLd, ReviewsJsonLd, FaqJsonLd, BUSINESS_REF } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionItem,
@@ -119,11 +119,7 @@ export default function TrainersPageNL() {
                 description: trainer.bio.nl,
                 image: `${siteConfig.url}${trainer.image}`,
                 url: `${siteConfig.url}/nl/${trainer.slug.nl}`,
-                worksFor: {
-                  "@type": "LocalBusiness",
-                  name: siteConfig.name,
-                  url: siteConfig.url,
-                },
+                worksFor: BUSINESS_REF,
                 knowsLanguage: trainer.languages.map((l) =>
                   l === "NL" ? "Dutch" : l === "EN" ? "English" : l === "PT" ? "Portuguese" : l
                 ),
