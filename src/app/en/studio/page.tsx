@@ -205,8 +205,8 @@ export default function StudioPageEN() {
           </div>
         </FadeIn>
       </Section>
-      <LocalIntentLinks locale="en" current="studio" />
 
+      <LocalIntentLinks locale="en" current="studio" />
     </PageLayout>
   );
 }

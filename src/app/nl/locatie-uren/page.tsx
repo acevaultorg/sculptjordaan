@@ -201,8 +201,8 @@ export default function LocationPageNL() {
           </div>
         </FadeIn>
       </Section>
-      <LocalIntentLinks locale="nl" current="location" bg="muted" />
 
+      <LocalIntentLinks locale="nl" current="location" bg="muted" />
     </PageLayout>
   );
 }

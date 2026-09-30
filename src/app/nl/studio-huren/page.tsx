@@ -767,9 +767,9 @@ export default function StudioRentalPageNL() {
         </FadeIn>
       </Section>
 
-      {/* Bottom CTA */}
       <LocalIntentLinks locale="nl" current="rental" bg="muted" />
 
+      {/* Bottom CTA */}
       <Section bg="dark">
         <FadeIn>
           <div className="text-center">
