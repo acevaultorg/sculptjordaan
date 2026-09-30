@@ -105,6 +105,23 @@
   --sidebar-accent-foreground: #0E0C0A;
   --sidebar-border: #D3CCC4;
   --sidebar-ring: #EF5012;
+  /* CTA colour per audience (A/B test, 2026-09-30). See the "CTA audience
+     colours" block at the end of this file for how they are applied.
+     rental = trainers who rent the studio: deep evergreen, white text
+       #1F4D3A: text 9.63:1 · vs bone bg 8.85:1 · hover #17402F text 11.6:1
+     member = open gym + finding a trainer: warm coral-orange, near-black text
+       #EE5A3C: text 5.73:1 · vs bone bg 3.13:1 · hover #DE4F33 text 4.90:1 */
+  --cta-rental-bg: #1F4D3A;
+  --cta-rental-bg-hover: #17402F;
+  --cta-rental-fg: #FFFFFF;
+  --cta-member-bg: #EE5A3C;
+  --cta-member-bg-hover: #DE4F33;
+  --cta-member-fg: #0E0C0A;
+  /* Default = the current brand button (variant B, and every page or section
+     without an audience). */
+  --cta-bg: var(--brand);
+  --cta-bg-hover: var(--brand-dark);
+  --cta-fg: var(--brand-foreground);
 }
 
 /* SculptClub Brand — Dark Mode (Warm Noir — refined 2026-05-17)
@@ -152,6 +169,19 @@
   --sidebar-accent-foreground: #EDE5DA;
   --sidebar-border: #2A2620;
   --sidebar-ring: #FF5A1F;
+  /* Dark mode: a deep green disappears on the near-black page, so the rental
+     button lifts to a mid evergreen with dark text.
+       rental #46997A: text 5.77:1 · vs bg 5.77:1 · hover #56AA8A text 7.11:1
+       member #FF7A57: text 7.60:1 · vs bg 7.74:1 · hover #FF8F70 text 8.75:1 */
+  --cta-rental-bg: #46997A;
+  --cta-rental-bg-hover: #56AA8A;
+  --cta-rental-fg: #0B0907;
+  --cta-member-bg: #FF7A57;
+  --cta-member-bg-hover: #FF8F70;
+  --cta-member-fg: #0E0C0A;
+  --cta-bg: var(--brand);
+  --cta-bg-hover: var(--brand-dark);
+  --cta-fg: var(--brand-foreground);
 }
 
 @layer base {
@@ -467,4 +497,39 @@
 }
 .dark .text-brand {
   color: var(--brand);
+}
+
+/* CTA audience colours + A/B test, 2026-09-30 (owner decision).
+   Two audiences get their own button colour:
+     rental = personal trainers renting the studio  → evergreen ("your workplace")
+     member = open gym + finding a trainer          → coral-orange ("start now")
+   A scope is any element with data-audience="rental|member", or an element that
+   already carries the analytics data-intent (studio_rental → rental; open_gym /
+   trainer → member). The scopes only change colour in variant A: the head
+   script in layout.tsx puts data-cta-variant="a|b" on <html> from the sc_cta_ab
+   cookie (50/50). Variant B = today's orange everywhere.
+
+   How it reaches the buttons without touching every component: a filled
+   button is an <a>/<button> with the bg-brand or bg-primary class (or a pill
+   with that class inside a link, like the studio rate rows). On exactly those
+   elements the brand/primary tokens are re-pointed at --cta-*, which inherit
+   from the nearest scope and fall back to the brand colour at :root. Text
+   links, tints (bg-brand/10) and non-clickable orange are not affected. */
+html[data-cta-variant="a"] :is([data-audience="rental"], [data-intent="studio_rental"]) {
+  --cta-bg: var(--cta-rental-bg);
+  --cta-bg-hover: var(--cta-rental-bg-hover);
+  --cta-fg: var(--cta-rental-fg);
+}
+html[data-cta-variant="a"] :is([data-audience="member"], [data-intent="open_gym"], [data-intent="trainer"]) {
+  --cta-bg: var(--cta-member-bg);
+  --cta-bg-hover: var(--cta-member-bg-hover);
+  --cta-fg: var(--cta-member-fg);
+}
+:is(a, button):is([class~="bg-brand"], [class~="bg-primary"]),
+:is(a, button) :is([class~="bg-brand"], [class~="bg-primary"]) {
+  --brand: var(--cta-bg);
+  --brand-dark: var(--cta-bg-hover);
+  --brand-foreground: var(--cta-fg);
+  --primary: var(--cta-bg);
+  --primary-foreground: var(--cta-fg);
 }
