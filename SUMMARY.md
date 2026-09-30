@@ -71,3 +71,10 @@ Prices, Acuity links and IDs, payment settings, the door-code system, metadata/c
 3. Confirm the quiet-times line (Sunday, Saturday afternoon and evening) still holds.
 4. Confirm the invoice mention in the facts block is fine for hourly bookings. The old hourly line also said "of factuur".
 5. Analytics: the trial entry on the studio pages is now a link with Plausible class `studio_huren_trial_link`, not a ButtonLink. Update the goals if the old button was tracked by another name.
+
+## Review pass (same day, second session)
+A separate review of this branch is in `REVIEW.md`.
+- Build: exit 0. Pages: 246 on `main`, 246 on this branch, same file list. No new pages.
+- Fixes: stale code comments on both studio pages, and the rate-table indentation on both price pages. No change a visitor can see.
+- Screenshots in `review/` were re-taken from the final build at 375px and 390px, with the pre-installed Chromium and all external requests blocked.
+- Verdict: ready to go live after the on-phone checks listed above and in `REVIEW.md`.
