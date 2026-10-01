@@ -51,7 +51,8 @@ async function* walk(dir) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const full = join(dir, e.name);
     if (e.isDirectory()) {
-      if (e.name === "_rs") continue;
+      // _pic/ already holds sized AVIF/WebP/JPEG variants (generate-art-directed-pictures.mjs).
+      if (e.name === "_rs" || e.name === "_pic") continue;
       yield* walk(full);
     } else if (EXTS.has(extname(e.name))) {
       yield full;
