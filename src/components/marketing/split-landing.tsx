@@ -7,16 +7,16 @@ import type { Locale } from "@/config/site";
 
 /**
  * /landing + /en/landing — one-screen split page for campaign traffic
- * (Instagram bio, TikTok, QR codes). Owner's brief 2026-09-30.
+ * (Instagram bio, TikTok, QR codes). Owner's brief 2026-09-30, v3 2026-10-01.
  *
  * Exactly one screen (100svh), no scroll, on phone and desktop:
- *   left / top     = personal trainers who rent the studio (evergreen, male photo)
- *   right / bottom = people who want to train (coral-orange, female photo)
+ *   left / top     = personal trainers who rent the studio (deep navy → cobalt)
+ *   right / bottom = people who want to train (deep crimson → brick red)
  *
  * Colour + legibility: each photo gets a multiply tint in the half's colour and
- * then a dark scrim on top. The scrim alone makes a pure-white pixel under the
- * text land on a dark enough colour for white text to pass WCAG AA (≥ 4.5:1);
- * qa/landing/contrast.json holds the measured values from the render check.
+ * then a dark scrim in the same hue on top. The scrim keeps white text at 7:1 or
+ * better over the brightest part of the photo; qa/landing-v2/results.json holds
+ * the measured values from scripts/qa-landing.mjs.
  *
  * All links are internal on purpose: the global Acuity/WhatsApp click listener
  * in analytics.tsx fires Ads conversions on those, and a routing page must not
@@ -37,10 +37,37 @@ export type SplitLandingCopy = {
   locale: Locale;
   homeHref: string;
   homeLabel: string;
-  switchLang: { label: string; href: string; hrefLang: string };
+  /** Label for the NL | EN toggle group, read by screen readers. */
+  langLabel: string;
+  /** The other language's page. The current language is shown, not linked. */
+  switchLang: { label: string; href: string; hrefLang: string; ariaLabel: string };
   trainer: SplitHalf;
   client: SplitHalf;
 };
+
+/**
+ * Per-half palette. Trainer = navy base, cobalt tint (the cobalt is SculptClub's
+ * pre-2026-05 brand blue #134DE1, deepened). Client = oxblood base, crimson tint.
+ * `ink` is the button text on white: 15:1 (navy) and 10:1 (crimson).
+ */
+const THEME = {
+  trainer: {
+    base: "bg-[#0A1633]",
+    tint: "bg-[#1E4FD6]",
+    scrim:
+      "bg-[linear-gradient(180deg,rgba(5,12,34,0.50)_0%,rgba(5,12,34,0.58)_50%,rgba(5,12,34,0.66)_100%)]",
+    ink: "text-[#0A1633] focus-visible:ring-offset-[#0A1633]",
+    rule: "bg-[#8FB0FF]",
+  },
+  client: {
+    base: "bg-[#3F0910]",
+    tint: "bg-[#B42330]",
+    scrim:
+      "bg-[linear-gradient(180deg,rgba(46,4,8,0.30)_0%,rgba(46,4,8,0.38)_50%,rgba(46,4,8,0.50)_100%)]",
+    ink: "text-[#9B1620] focus-visible:ring-offset-[#3F0910]",
+    rule: "bg-[#FFB0A8]",
+  },
+} as const;
 
 function ArrowIcon() {
   return (
@@ -69,13 +96,14 @@ function Half({
   locale: Locale;
 }) {
   const isTrainer = side === "trainer";
+  const t = THEME[side];
   const headingId = `landing-${side}-heading`;
 
   return (
     <section
       aria-labelledby={headingId}
-      className={`relative isolate flex min-h-0 flex-col justify-center overflow-hidden px-6 sm:px-10 md:justify-start md:pt-[30vh] md:pb-16 lg:px-16 ${
-        isTrainer ? "bg-[#0E2A21] pt-16 pb-5" : "bg-[#8F2E0B] pt-5 pb-5"
+      className={`relative isolate flex min-h-0 flex-col justify-center overflow-hidden px-6 sm:px-10 md:justify-start md:pt-[30vh] md:pb-16 lg:px-16 ${t.base} ${
+        isTrainer ? "pt-[4.25rem] pb-6" : "pt-6 pb-6"
       }`}
     >
       <Image
@@ -88,40 +116,29 @@ function Half({
         style={{ objectPosition: half.image.position }}
       />
       {/* Colour tint: multiply keeps the photo's light and shade, in the half's colour. */}
-      <div
-        aria-hidden="true"
-        className={`absolute inset-0 -z-20 mix-blend-multiply ${isTrainer ? "bg-[#2C6B52]" : "bg-[#F0592A]"}`}
-      />
-      {/* Scrim: darkest behind the text block, lighter toward the edges so the colour still reads. */}
-      <div
-        aria-hidden="true"
-        className={`absolute inset-0 -z-10 ${
-          isTrainer
-            ? "bg-[linear-gradient(180deg,rgba(4,20,15,0.40)_0%,rgba(4,20,15,0.52)_50%,rgba(4,20,15,0.62)_100%)]"
-            : "bg-[linear-gradient(180deg,rgba(58,14,0,0.30)_0%,rgba(58,14,0,0.40)_50%,rgba(58,14,0,0.50)_100%)]"
-        }`}
-      />
+      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-multiply ${t.tint}`} />
+      {/* Scrim in the same hue: darkest toward the bottom, lighter at the top so the colour still reads. */}
+      <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
       <div className="mx-auto w-full max-w-md text-white md:mx-0 lg:max-w-lg">
-        <p className="text-[0.8125rem] font-semibold uppercase tracking-[0.12em] text-white sm:text-sm">
+        <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white sm:text-[0.8125rem]">
+          <span aria-hidden="true" className={`h-[2px] w-5 rounded-full ${t.rule}`} />
           {half.eyebrow}
         </p>
         <h2
           id={headingId}
-          className="mt-1.5 font-heading text-[1.625rem] font-bold leading-[1.1] tracking-tight text-white text-balance sm:text-4xl md:mt-3 lg:text-5xl"
+          className="mt-2 font-heading text-[1.75rem] font-bold leading-[1.08] tracking-tight text-white text-balance sm:text-4xl md:mt-4 lg:text-5xl"
         >
           {half.headline}
         </h2>
-        <p className="mt-2 text-[0.9375rem] leading-snug text-white sm:text-base md:mt-4 md:text-lg">
+        <p className="mt-2 text-[0.9375rem] leading-snug text-white text-pretty sm:text-base md:mt-4 md:text-lg">
           {half.support}
         </p>
 
         <Link
           href={half.cta.href}
           onClick={() => trackLandingClick(side, half.cta.href, locale)}
-          className={`group mt-4 inline-flex min-h-[52px] w-full items-center justify-between gap-3 rounded-full bg-white px-6 text-base font-semibold shadow-lg shadow-black/20 transition duration-200 hover:-translate-y-px hover:bg-white/90 hover:shadow-xl active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:w-auto sm:min-w-[260px] md:mt-8 md:min-h-[56px] md:text-lg ${
-            isTrainer ? "text-[#0E2A21] focus-visible:ring-offset-[#0E2A21]" : "text-[#8F2E0B] focus-visible:ring-offset-[#8F2E0B]"
-          }`}
+          className={`group mt-4 inline-flex min-h-[56px] w-full items-center justify-between gap-3 rounded-full bg-white px-6 text-[1.0625rem] font-semibold shadow-lg shadow-black/25 transition duration-200 hover:-translate-y-px hover:bg-white/90 hover:shadow-xl active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:w-auto sm:min-w-[280px] md:mt-8 md:text-lg ${t.ink}`}
         >
           <span>{half.cta.label}</span>
           <ArrowIcon />
@@ -134,7 +151,7 @@ function Half({
                 <Link
                   href={pill.href}
                   onClick={() => trackLandingClick(side, pill.href, locale)}
-                  className="inline-flex min-h-[44px] items-center rounded-full border border-white/70 bg-black/15 px-4 text-sm font-medium text-white transition duration-200 hover:border-white hover:bg-white/15 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-white/60 bg-black/20 px-4 text-sm font-medium text-white transition duration-200 hover:border-white hover:bg-white/15 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   {pill.label}
                 </Link>
@@ -148,6 +165,30 @@ function Half({
 }
 
 export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
+  const current = copy.locale.toUpperCase();
+  const switchFirst = copy.locale === "en"; // always show NL | EN in that order
+
+  const currentChip = (
+    <span aria-current="page" className="inline-flex h-11 min-w-[44px] items-center justify-center">
+      <span className="inline-flex h-8 min-w-[2.25rem] items-center justify-center rounded-full bg-white px-2.5 text-[#0A1633]">
+        {current}
+      </span>
+    </span>
+  );
+  const switchChip = (
+    <Link
+      href={copy.switchLang.href}
+      hrefLang={copy.switchLang.hrefLang}
+      lang={copy.switchLang.hrefLang}
+      aria-label={copy.switchLang.ariaLabel}
+      className="group inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+    >
+      <span className="inline-flex h-8 min-w-[2.25rem] items-center justify-center rounded-full border border-white/50 px-2.5 text-white transition-colors group-hover:border-white group-hover:bg-white/15">
+        {copy.switchLang.label}
+      </span>
+    </Link>
+  );
+
   return (
     <main
       id="main-content"
@@ -155,25 +196,29 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
     >
       <h1 className="sr-only">SculptClub</h1>
 
-      {/* Logo (the file, never type) centred over the seam, plus a language switch. */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-center justify-center px-4 pt-4 md:pt-7">
-        <Link href={copy.homeHref} aria-label={copy.homeLabel} className="pointer-events-auto inline-flex min-h-[44px] items-center">
+      {/* Top bar on the content's own left edge: logo (the file, never type) + NL | EN toggle. */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 pt-3 sm:px-10 md:pt-6 lg:px-16">
+        <Link
+          href={copy.homeHref}
+          aria-label={copy.homeLabel}
+          className="pointer-events-auto -ml-1 inline-flex min-h-[44px] items-center rounded px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        >
           <Image
             src="/images/logo-sculptclub.svg"
             alt="SculptClub"
             width={162}
             height={30}
             preload
-            className="h-7 w-auto select-none brightness-0 invert drop-shadow md:h-9"
+            className="h-6 w-auto select-none brightness-0 invert md:h-8"
           />
         </Link>
-        <Link
-          href={copy.switchLang.href}
-          hrefLang={copy.switchLang.hrefLang}
-          className="pointer-events-auto absolute right-3 top-4 inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full px-3 text-sm font-semibold text-white/90 underline-offset-4 hover:text-white hover:underline md:right-6 md:top-7"
+        <nav
+          aria-label={copy.langLabel}
+          className="pointer-events-auto -mr-1.5 flex items-center text-xs font-semibold tracking-wide"
         >
-          {copy.switchLang.label}
-        </Link>
+          {switchFirst ? switchChip : currentChip}
+          {switchFirst ? currentChip : switchChip}
+        </nav>
       </div>
 
       <Half side="trainer" half={copy.trainer} locale={copy.locale} />
