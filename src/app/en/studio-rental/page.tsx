@@ -698,7 +698,8 @@ export default function StudioRentalPageEN() {
               Ready to train your clients here?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Try the studio for free with a trial session. No obligations.
+              Pick a time and book by the hour. No membership, and cancelling
+              is always free.
             </p>
             {/* 2026-05-27 final: page leads with the booking widget at
                 #book. Bottom CTA scrolls back there. NL parity. */}

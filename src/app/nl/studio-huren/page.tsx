@@ -732,8 +732,8 @@ export default function StudioRentalPageNL() {
               Klaar om je klanten hier te trainen?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Probeer de studio gratis uit met een proefsessie. Geen
-              verplichtingen.
+              Kies een tijd en boek per uur. Geen abonnement, en annuleren
+              is altijd gratis.
             </p>
             {/* 2026-05-27 final: page now LEADS with the booking widget
                 (top of page). Bottom CTA = scroll-to-top of booking
