@@ -50,7 +50,8 @@ async function* walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   for (const e of entries) {
     const full = join(dir, e.name);
-    if (e.isDirectory()) yield* walk(full);
+    // _pic/ = grayscale art-directed variants (generate-art-directed-pictures.mjs); no colour to sample.
+    if (e.isDirectory()) { if (e.name !== "_pic") yield* walk(full); }
     else yield full;
   }
 }
