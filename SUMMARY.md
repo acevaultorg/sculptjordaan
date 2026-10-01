@@ -1,65 +1,65 @@
-# SUMMARY: /landing split page (branch `cloud/sculptclub-landing-2026-09-30`)
+# SUMMARY: /landing v2, red and blue (branch `cloud/sculptclub-landing-v3-2026-10-01`)
+
+The owner's feedback on the 30 Sep split page: "Improve the UI/UX design and UX copy. I have the feeling red and blue would be better."
+
+## Read this first: what the branch is based on
+
+The brief said `/landing` "went live today and is on main". **It is not on main.** `origin/main` is still `28af32b`, and the `/landing` commits exist only on `cloud/sculptclub-landing-2026-09-30` (tip `48703ba`). Branching from main would have left nothing to improve, so I branched `cloud/sculptclub-landing-v3-2026-10-01` from `48703ba`. This branch therefore contains the v1 page **plus** these changes. Please check whether v1 was really deployed. If it was, it was deployed from a branch that is not on main.
+
+The brief also named two branches: `cloud/sculptclub-landing-v2-2026-09-30` in the task and `cloud/sculptclub-landing-v3-2026-10-01` in the session rules. I used the v3 name, because the session rules say to use it always. The QA folder is `qa/landing-v2/`, as the task asked.
 
 ## What changed
 
-New one-screen landing page for campaign traffic (Instagram bio, TikTok, QR codes):
+1. **Colours.** The trainer half is now navy `#0A1633` with a cobalt `#1E4FD6` multiply tint. The cobalt is SculptClub's own pre-May brand blue. The client half is now oxblood `#3F0910` with a crimson `#B42330` tint. The scrims are tinted in each half's own dark hue rather than black, so the colour stays rich. Same photos, same tint + scrim approach as before.
+2. **Copy, NL first, plus EN.** Three options were written for each headline. The reasoning is in `qa/landing-v2/SUMMARY.md`.
+   - Trainer: *Ik ben personal trainer* / **Jouw klanten, jouw tarief. Onze studio.** / Privé studio per uur, vanaf €12. Geen contract. Jordaan, Amsterdam. / [Bekijk de studio]
+   - Client: *Ik wil trainen* / **Sterker worden? Begin met een gratis intake.** / Liever zelf trainen? Open Gym vanaf €9 per uur. Jordaan, Amsterdam. / [Kies je trainer] + Groepsles, Open Gym pills
+3. **Phone UX.**
+   - One top bar: the logo sits on the left, on the same 24px gutter as the text. The NL / EN toggle sits on the right; the current language is filled, and each option has a 44px tap area.
+   - First-person eyebrows with a small coloured rule.
+   - Buttons are 56px tall (were 52px), and headlines are 28px on phones (were 26px).
+   - The logo drop shadow is removed.
+4. **QA script.** `scripts/qa-landing.mjs` now writes to `qa/landing-v2/` and fails below 7:1 contrast (it used to fail below 4.5:1).
 
-- **`/landing`** (Dutch) and **`/en/landing`** (English). I checked first that `/landing` was unused: there was no route in `src/app`, and no rule in `public/_redirects` or `functions/_middleware.ts`. So `/start` was not needed and is untouched.
-- Exactly 100svh, no scroll. Left/top: personal trainers who rent the studio (evergreen, male photo). Right/bottom: people who want a trainer, a group class or Open Gym (coral-orange, female photo). One headline, one fact line and one big button per half. The client half also has two small pills.
-- `noindex, follow`, canonical to itself, NL/EN hreflang pair. It is **not** added to the sitemap, because it is noindex.
-- GA4 events `landing_trainer_click` / `landing_client_click`, with params `link_target` and `locale` only.
-
-Full design reasoning, the research behind it and the render-check table are in **[qa/landing/SUMMARY.md](qa/landing/SUMMARY.md)**.
+Unchanged: the prices still come from `src/config/acuity.ts` (`studioRentalFromPrice`, `openGymSinglePrice`), and every href is the same. The `landing_trainer_click` / `landing_client_click` GA4 events are kept. The `noindex, follow` and self-canonical are verified in the built HTML. Nothing in `src/config`, `src/lib`, the analytics, robots.txt, the sitemap or the consent banner was touched.
 
 ## Files touched
 
 | File | Change |
 |---|---|
-| `src/app/landing/page.tsx` | new, NL page, metadata + copy |
-| `src/app/en/landing/page.tsx` | new, EN page |
-| `src/components/marketing/split-landing.tsx` | new, the split layout (client component for the click events) |
-| `src/lib/tracking.ts` | added `trackLandingClick()` |
-| `src/config/acuity.ts` | added `studioRentalFromPrice = 12`, the existing half-studio 60-min rate, so the page reads the number instead of hardcoding it. No price, link or Acuity setting changed. |
-| `src/config/navigation.ts` | `/landing` ↔ `/en/landing` pair (hreflang + language hint) |
-| `src/components/layout/mobile-bottom-cta-bar.tsx` | sticky bar hidden on `/landing` only |
-| `src/components/layout/whatsapp-button.tsx` | desktop WhatsApp bubble hidden on `/landing` only |
-| `scripts/check-orphan-routes.mjs` | allow-list entry for `/landing` (campaign page, reached from outside the site) |
-| `scripts/qa-landing.mjs` | new, local render check + screenshots |
-| `qa/landing/*`, `review/*` | screenshots, `results.json`, design summary |
-
-Not touched: prices, Acuity links, payment settings, analytics snippets, cookie consent, robots.txt, sitemap logic, other canonicals, `/boeking-bevestigd`. No form was submitted and nothing was deployed.
+| `src/components/marketing/split-landing.tsx` | palette, top bar + NL/EN toggle, eyebrow rule, button and type sizes |
+| `src/app/landing/page.tsx`, `src/app/en/landing/page.tsx` | new copy and toggle labels (metadata unchanged) |
+| `scripts/qa-landing.mjs` | output dir `qa/landing-v2/` (override with `QA_DIR`), 7:1 bar |
+| `qa/landing-v2/*` | 12 screenshots, `results.json`, design + copy summary |
+| `review/landing-{nl,en}-{375,390}.png` | refreshed screenshots |
+| `SUMMARY.md` | this file (replaces the v1 one; v1's reasoning stays in `qa/landing/SUMMARY.md`) |
 
 ## Build and page counts
 
-- Baseline on `main` @ `28af32b`: `CI=1 npm run build` → **exit 0, 246 HTML pages**.
-- Final on this branch: `CI=1 npm run build` → **exit 0, 248 HTML pages**. The only additions are `out/landing.html` and `out/en/landing.html`.
-- TypeScript: clean. `check:logo` ✓, `check:sitemap` ✓ (206 URLs, all built), orphan check ✓.
-- ESLint on changed files: one error, in `mobile-bottom-cta-bar.tsx:352` (`setState` in effect). It is **already on main** and not in code I changed.
+- Before (branch base `48703ba`, my changes stashed): `CI=1 npm run build` → **exit 0, 248 HTML pages**.
+- After: `CI=1 npm run build` → **exit 0, 248 HTML pages**. No pages were added or removed.
+- TypeScript clean. ESLint on the changed files: clean. `check:logo` ✓. `check:sitemap` ✓ (206 URLs, all built).
 
 ## Screenshots
 
-All taken with the pre-installed Chromium against the local `out/` build. No `playwright install` was needed.
+Taken with the pre-installed Chromium against the local `out/` build. No live URL was opened.
 
-- `qa/landing/`: NL + EN at 375×667, 390×844, 1440×900, both clean and with the first-visit cookie banner (12 PNGs), plus `results.json`.
-- `review/`: NL + EN at 375 and 390 wide (the only changed pages that render differently).
-- Every check passes at all three sizes: `scrollHeight <= innerHeight`, no horizontal overflow, both buttons fully in view, no link under 44px, text measured white, worst-case text contrast 7.0:1 or better (AA is 4.5:1).
+- `qa/landing-v2/`: NL + EN at 375×667, 390×844 and 1440×900, both clean and with the first-visit cookie banner.
+- `review/`: NL + EN at 375 and 390 wide.
+- All 6 checks pass: no vertical scroll, no horizontal overflow, both buttons fully in view, no link under 44px, all text white. The worst measured text contrast is **10.78:1** (the bar is 7:1).
 
-## Skipped or worked around, and why
+## Skipped or worked around
 
-- **`npm ci` fails on main.** `package-lock.json` is out of sync ("Missing: @swc/helpers@0.5.23"). I used `npm install` to build and then restored the lockfile, so it is **not** in this branch. Someone should fix the lockfile on main separately.
-- **`src/lib/image-color-manifest.ts`** is rewritten by prebuild in a fresh container (it ran before the image variants existed: 103 entries instead of 692). I restored it after every build and did not commit it.
-- **Amazon / affiliate rules from the session brief:** this site has no Amazon or affiliate content, so there was nothing to apply.
-- **Three pills → two.** There is no chooser page for trainer / group class / open gym, so the big client button goes to the trainer finder. The pills cover the other two: Groepsles, Open Gym. A "Personal trainer" pill would have repeated the button.
+- **`npm ci` still fails** (the lockfile is out of sync, same as on v1). I built with `npm install` and restored `package-lock.json`, so it is not in the branch.
+- **`src/lib/image-color-manifest.ts`** is regenerated by prebuild in a fresh container. I restored it after every build and did not commit it.
+- **Amazon / affiliate rules in the session brief:** this site has no Amazon or affiliate content, so there was nothing to apply.
+- The first baseline build ran while I was editing and failed on a half-edited file. I redid it cleanly with my changes stashed; the numbers above come from that clean run.
 
 ## What a human must check before it goes live
 
-1. **Photo consent.** Please confirm that the people in both photos agreed to marketing use:
-   - `public/images/studio/pt-session-barbell.jpg`: man in a white hoodie spotting a client's squat, and the client, who is partly visible.
-   - `public/images/studio/training-women-coaching.jpg`: two women, a trainer and a client doing a dumbbell press.
-   Both photos are already used elsewhere on the site (homepage services, `/nl/word-trainer`, the female-trainer blog post), but this page puts them full-screen as the first thing campaign visitors see.
-2. **Cookie banner on small phones.** On a first visit at 375×667 the banner covers the client button until the visitor chooses (`qa/landing/nl-375x667-cookie-banner.png`). At 390×844 and on desktop nothing is covered. I left consent alone. If this matters, the owner could decide on a smaller banner for this page.
-3. **The orange rule.** CLAUDE.md says "if it's orange, it MUST be clickable". The coral half background was your explicit request, and it is not itself a link. The white button on it is. Please confirm you are happy with that exception.
-4. **The Groepsles pill** goes to `/nl/small-group`. `navigation.ts` notes zero Small Group bookings in July and August, so you may prefer a different target (for example `/nl/lessen`) or no pill.
-5. **"Open Gym vanaf €9 per uur"** refers to the €9 single one-hour session (`openGymSinglePrice`). Please say if you would rather lead with a plan price.
-6. **Branch name.** This session's harness designated `claude/sculptclub-landing-page-k1zj4c`. Your brief named `cloud/sculptclub-landing-2026-09-30`, so the work is on your branch. `main` was not pushed.
-7. After merge: the deploy procedure in CLAUDE.md, then `node bin/indexnow.mjs` is **not** needed, because the page is noindex.
+1. **Is v1 actually live, and from where?** See "Read this first". Merge this branch, not v1, if you want the red/blue version.
+2. **Copy facts.** "Geen contract" on the studio half comes from the house policy "Contracts: None". "Jouw tarief" relies on the trainers setting and keeping their own rates. Please confirm both are still true for studio renters.
+3. **Cookie banner on small phones** (unchanged from v1). On a first visit at 375×667, the banner covers the client button until the visitor chooses: `qa/landing-v2/nl-375x667-cookie-banner.png`.
+4. **Photo consent** for both full-screen photos (unchanged from v1, still open).
+5. **Look at the red on a real phone.** It was tuned on screenshots, and OLED screens make reds look more saturated.
+6. Nothing was deployed and `main` was not pushed.
