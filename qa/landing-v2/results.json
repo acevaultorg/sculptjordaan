@@ -1,0 +1,440 @@
+[
+  {
+    "page": "/landing",
+    "viewport": "375x667",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v2/nl-375x667.png",
+    "scrollHeight": 667,
+    "innerHeight": 667,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 292
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 591
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 12.99
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 13.66
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 15.2
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 14.14
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 12.3
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 11.24
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 11.11
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.23
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "375x667",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v2/nl-375x667-cookie-banner.png",
+    "banner": {
+      "bannerTop": 524,
+      "buttonsCovered": 1
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "390x844",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v2/nl-390x844.png",
+    "scrollHeight": 844,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 336
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 709
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 13.18
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 13.9
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 15.02
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 14.23
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 11.72
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 12.07
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 10.86
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.07
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "390x844",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v2/nl-390x844-cookie-banner.png",
+    "banner": {
+      "bannerTop": 721,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "1440x900",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v2/nl-1440x900.png",
+    "scrollHeight": 900,
+    "innerHeight": 900,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 560
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 612
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 13.14
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 13.58
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 15.15
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 11.85
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 12.12
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 10.78
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 10.82
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.24
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "1440x900",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v2/nl-1440x900-cookie-banner.png",
+    "banner": {
+      "bannerTop": 823,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "375x667",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v2/en-375x667.png",
+    "scrollHeight": 667,
+    "innerHeight": 667,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 292
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 576
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 12.99
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 13.66
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 15.2
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 14.23
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 11.99
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 12.3
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 11.02
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.11
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "375x667",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v2/en-375x667-cookie-banner.png",
+    "banner": {
+      "bannerTop": 544,
+      "buttonsCovered": 1
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "390x844",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v2/en-390x844.png",
+    "scrollHeight": 844,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 336
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 709
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 13.18
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 13.9
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 15.02
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 14.23
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 11.72
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 12.07
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 10.86
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.07
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "390x844",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v2/en-390x844-cookie-banner.png",
+    "banner": {
+      "bannerTop": 721,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "1440x900",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v2/en-1440x900.png",
+    "scrollHeight": 900,
+    "innerHeight": 900,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 560
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 612
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 13.14
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 13.58
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 15.15
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 11.85
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 12.12
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 10.78
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 10.82
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.24
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "1440x900",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v2/en-1440x900-cookie-banner.png",
+    "banner": {
+      "bannerTop": 823,
+      "buttonsCovered": 0
+    }
+  }
+]
