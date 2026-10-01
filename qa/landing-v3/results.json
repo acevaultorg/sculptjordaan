@@ -1,0 +1,738 @@
+[
+  {
+    "page": "/landing",
+    "viewport": "375x667",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/nl-375x667.png",
+    "scrollHeight": 667,
+    "innerHeight": 667,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 292
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 591
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-mobile-828.avif",
+        "bytes": 15050,
+        "rendered": "375x334",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub"
+      },
+      {
+        "file": "landing-client-mobile-828.avif",
+        "bytes": 13954,
+        "rendered": "375x334",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "Een vrouw traint met een barbell onder het daklicht van de SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 10.85
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 11.87
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 9.96
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 8.01
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 8.14
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 9.88
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 14.93
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 12.26
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "375x667",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/nl-375x667-cookie-banner.png",
+    "banner": {
+      "bannerTop": 524,
+      "buttonsCovered": 1
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "390x844",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/nl-390x844.png",
+    "scrollHeight": 844,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 336
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 709
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-mobile-828.avif",
+        "bytes": 15050,
+        "rendered": "390x422",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub"
+      },
+      {
+        "file": "landing-client-mobile-828.avif",
+        "bytes": 13954,
+        "rendered": "390x422",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "Een vrouw traint met een barbell onder het daklicht van de SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 11.04
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 11.66
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 9.93
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 8.14
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 10.02
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 9.88
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 14.74
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 12.35
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "390x844",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/nl-390x844-cookie-banner.png",
+    "banner": {
+      "bannerTop": 721,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "768x1024",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/nl-768x1024.png",
+    "scrollHeight": 1024,
+    "innerHeight": 1024,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 611
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 650
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-desktop-800.avif",
+        "bytes": 15948,
+        "rendered": "384x1024",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub"
+      },
+      {
+        "file": "landing-client-desktop-960.avif",
+        "bytes": 19642,
+        "rendered": "384x1024",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "Een vrouw traint met een barbell onder het daklicht van de SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 11.08
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 11.99
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 10.84
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 9.88
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 9.55
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 9.54
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 13.46
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.12
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "768x1024",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/nl-768x1024-cookie-banner.png",
+    "banner": {
+      "bannerTop": 947,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/landing",
+    "viewport": "1440x900",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/nl-1440x900.png",
+    "scrollHeight": 900,
+    "innerHeight": 900,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "ctas": [
+      {
+        "text": "Bekijk de studio",
+        "visible": true,
+        "bottom": 560
+      },
+      {
+        "text": "Kies je trainer",
+        "visible": true,
+        "bottom": 612
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-desktop-800.avif",
+        "bytes": 15948,
+        "rendered": "720x900",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub"
+      },
+      {
+        "file": "landing-client-desktop-720.avif",
+        "bytes": 13902,
+        "rendered": "720x900",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "Een vrouw traint met een barbell onder het daklicht van de SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "Ik ben personal trainer",
+        "worstRatio": 11.24
+      },
+      {
+        "text": "Jouw klanten, jouw tarief. Onze studio.",
+        "worstRatio": 12.03
+      },
+      {
+        "text": "Privé studio per uur, vanaf €12. Geen co",
+        "worstRatio": 11.04
+      },
+      {
+        "text": "Ik wil trainen",
+        "worstRatio": 10.15
+      },
+      {
+        "text": "Sterker worden? Begin met een gratis int",
+        "worstRatio": 9.73
+      },
+      {
+        "text": "Liever zelf trainen? Open Gym vanaf €9 p",
+        "worstRatio": 9.62
+      },
+      {
+        "text": "Groepsles",
+        "worstRatio": 15.17
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 14.41
+      }
+    ]
+  },
+  {
+    "page": "/landing",
+    "viewport": "1440x900",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/nl-1440x900-cookie-banner.png",
+    "banner": {
+      "bannerTop": 823,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "375x667",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/en-375x667.png",
+    "scrollHeight": 667,
+    "innerHeight": 667,
+    "scrollWidth": 375,
+    "innerWidth": 375,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 292
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 576
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-mobile-828.avif",
+        "bytes": 15050,
+        "rendered": "375x334",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio"
+      },
+      {
+        "file": "landing-client-mobile-828.avif",
+        "bytes": 13954,
+        "rendered": "375x334",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "A woman training with a barbell under the skylight of the SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 10.85
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 11.87
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 9.96
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 8.07
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 8.24
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 9.96
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 14.74
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.86
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "375x667",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/en-375x667-cookie-banner.png",
+    "banner": {
+      "bannerTop": 544,
+      "buttonsCovered": 1
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "390x844",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/en-390x844.png",
+    "scrollHeight": 844,
+    "innerHeight": 844,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 336
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 709
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-mobile-828.avif",
+        "bytes": 15050,
+        "rendered": "390x422",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio"
+      },
+      {
+        "file": "landing-client-mobile-828.avif",
+        "bytes": 13954,
+        "rendered": "390x422",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "A woman training with a barbell under the skylight of the SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 11.04
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 11.66
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 9.93
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 8.14
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 10.02
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 9.88
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 14.74
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 11.51
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "390x844",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/en-390x844-cookie-banner.png",
+    "banner": {
+      "bannerTop": 721,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "768x1024",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/en-768x1024.png",
+    "scrollHeight": 1024,
+    "innerHeight": 1024,
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 611
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 635
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-desktop-800.avif",
+        "bytes": 15948,
+        "rendered": "384x1024",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio"
+      },
+      {
+        "file": "landing-client-desktop-960.avif",
+        "bytes": 19642,
+        "rendered": "384x1024",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "A woman training with a barbell under the skylight of the SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 11.08
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 11.99
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 10.84
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 9.88
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 9.62
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 9.47
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 13.6
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 10.22
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "768x1024",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/en-768x1024-cookie-banner.png",
+    "banner": {
+      "bannerTop": 947,
+      "buttonsCovered": 0
+    }
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "1440x900",
+    "state": "clean",
+    "ok": true,
+    "screenshot": "qa/landing-v3/en-1440x900.png",
+    "scrollHeight": 900,
+    "innerHeight": 900,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "ctas": [
+      {
+        "text": "See the studio",
+        "visible": true,
+        "bottom": 560
+      },
+      {
+        "text": "Choose your trainer",
+        "visible": true,
+        "bottom": 612
+      }
+    ],
+    "smallLinks": [],
+    "hiddenLinks": [],
+    "cookieBanner": false,
+    "cls": 0,
+    "photos": [
+      {
+        "file": "landing-trainer-desktop-800.avif",
+        "bytes": 15948,
+        "rendered": "720x900",
+        "fetchpriority": "high",
+        "loading": "eager",
+        "alt": "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio"
+      },
+      {
+        "file": "landing-client-desktop-720.avif",
+        "bytes": 13902,
+        "rendered": "720x900",
+        "fetchpriority": "auto",
+        "loading": "lazy",
+        "alt": "A woman training with a barbell under the skylight of the SculptClub studio"
+      }
+    ],
+    "stickyBar": false,
+    "whatsappBubble": false,
+    "nonWhiteText": [],
+    "contrast": [
+      {
+        "text": "I'm a personal trainer",
+        "worstRatio": 11.24
+      },
+      {
+        "text": "Your clients, your rate. Our studio.",
+        "worstRatio": 12.03
+      },
+      {
+        "text": "Private studio by the hour, from €12. No",
+        "worstRatio": 11.04
+      },
+      {
+        "text": "I want to train",
+        "worstRatio": 10.15
+      },
+      {
+        "text": "Want to get stronger? Start with a free ",
+        "worstRatio": 9.73
+      },
+      {
+        "text": "Rather train on your own? Open Gym from ",
+        "worstRatio": 9.62
+      },
+      {
+        "text": "Group class",
+        "worstRatio": 15.17
+      },
+      {
+        "text": "Open Gym",
+        "worstRatio": 14.41
+      }
+    ]
+  },
+  {
+    "page": "/en/landing",
+    "viewport": "1440x900",
+    "state": "first-visit",
+    "screenshot": "qa/landing-v3/en-1440x900-cookie-banner.png",
+    "banner": {
+      "bannerTop": 823,
+      "buttonsCovered": 0
+    }
+  }
+]

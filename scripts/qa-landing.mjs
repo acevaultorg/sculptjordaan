@@ -9,6 +9,8 @@
  *   - both main buttons fully inside the viewport, every link >= 44px tall
  *   - white-text contrast over the photos: re-renders with text hidden and
  *     reads the brightest background pixel behind each text box (worst case)
+ *   - photos: which file + format each half loaded, bytes, fetchpriority/loading,
+ *     and cumulative layout shift (must be 0)
  * and saves screenshots into $QA_DIR (default qa/landing-v2/; clean state = cookie choice made) and
  * one first-visit shot per viewport with the cookie banner showing.
  * Also copies the 375 + 390 clean shots into review/.
@@ -21,7 +23,7 @@ import { join, extname } from "node:path";
 import { chromium } from "@playwright/test";
 
 const OUT = "out";
-const QA = process.env.QA_DIR || "qa/landing-v2"; // v1 results stay in qa/landing/
+const QA = process.env.QA_DIR || "qa/landing-v3"; // v1/v2 results stay in qa/landing/ and qa/landing-v2/
 const REVIEW = "review";
 // Owner's bar (2026-10-01): every text box at 7:1 or better, well above AA's 4.5:1.
 const MIN_CONTRAST = 7;
@@ -50,6 +52,7 @@ const BASE = "http://localhost:4173";
 const VIEWPORTS = [
   { w: 375, h: 667 },
   { w: 390, h: 844 },
+  { w: 768, h: 1024 }, // tallest desktop-crop slot (portrait tablet)
   { w: 1440, h: 900 },
 ];
 const PAGES = [
@@ -71,10 +74,15 @@ let failed = 0;
 for (const pg of PAGES) {
   for (const vp of VIEWPORTS) {
     const mobile = vp.w < 768;
+    const dpr = mobile ? 2 : vp.w === 768 ? 2 : 1;
     for (const state of ["clean", "first-visit"]) {
-      const ctx = await browser.newContext({ viewport: { width: vp.w, height: vp.h }, deviceScaleFactor: mobile ? 2 : 1, isMobile: mobile, hasTouch: mobile, locale: pg.slug === "nl" ? "nl-NL" : "en-GB" });
+      const ctx = await browser.newContext({ viewport: { width: vp.w, height: vp.h }, deviceScaleFactor: dpr, isMobile: mobile, hasTouch: mobile, locale: pg.slug === "nl" ? "nl-NL" : "en-GB" });
       if (state === "clean") await ctx.addCookies([{ name: "sc_consent", value: "essential", url: BASE }]);
       const page = await ctx.newPage();
+      await page.addInitScript(() => {
+        window.__cls = 0;
+        new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__cls += e.value; }).observe({ type: "layout-shift", buffered: true });
+      });
       await page.goto(BASE + pg.path, { waitUntil: "networkidle" });
       await page.evaluate(async () => { await Promise.all([...document.images].map((i) => (i.complete ? null : i.decode().catch(() => null)))); });
       await page.waitForTimeout(1500); // cookie banner shows after 700ms
@@ -105,6 +113,12 @@ for (const pg of PAGES) {
           smallLinks: links.filter((l) => l.h < 44 || l.w < 44),
           hiddenLinks: links.filter((l) => !l.visible).map((l) => l.text),
           cookieBanner: overlays[0],
+          cls: +window.__cls.toFixed(4),
+          photos: [...document.querySelectorAll("main section picture img")].map((i) => {
+            const url = i.currentSrc;
+            const res = performance.getEntriesByType("resource").find((r) => r.name === url);
+            return { file: url.split("/").pop(), bytes: res?.encodedBodySize ?? null, rendered: `${Math.round(i.getBoundingClientRect().width)}x${Math.round(i.getBoundingClientRect().height)}`, fetchpriority: i.getAttribute("fetchpriority"), loading: i.getAttribute("loading"), alt: i.alt };
+          }),
           stickyBar: !!document.querySelector(".fixed.bottom-0.md\\:hidden"),
           whatsappBubble: !!document.querySelector('a[aria-label="Chat via WhatsApp"]'),
           // The contrast pass below assumes white text; prove it (a global h2 colour once overrode it).
@@ -132,7 +146,7 @@ for (const pg of PAGES) {
           for (let i = 0; i < d.length; i += 4) lums.push([d[i], d[i + 1], d[i + 2]]);
           return { text, pixels: lums };
         });
-      }, { b64: buf.toString("base64"), boxes, dpr: mobile ? 2 : 1 });
+      }, { b64: buf.toString("base64"), boxes, dpr });
       const contrast = px.map(({ text, pixels }) => {
         const L = pixels.map(luminance).sort((a, b) => a - b);
         const p99 = L[Math.floor(L.length * 0.99)] ?? 0; // ignore a stray 1% of pixels (anti-aliasing)
@@ -144,6 +158,7 @@ for (const pg of PAGES) {
         m.scrollWidth <= m.innerWidth &&
         m.ctas.length === 2 && m.ctas.every((c) => c.visible) &&
         m.hiddenLinks.length === 0 && m.smallLinks.length === 0 && m.nonWhiteText.length === 0 &&
+        m.cls === 0 && m.photos.length === 2 && m.photos.every((p) => p.file && p.alt) &&
         contrast.every((c) => c.worstRatio >= MIN_CONTRAST);
       if (!ok) failed++;
       results.push({ page: pg.path, viewport: `${vp.w}x${vp.h}`, state, ok, screenshot: shot, ...m, contrast });
@@ -159,7 +174,8 @@ await writeFile(`${QA}/results.json`, JSON.stringify(results, null, 2) + "\n");
 for (const r of results) {
   if (r.state === "clean") {
     const minC = Math.min(...r.contrast.map((c) => c.worstRatio));
-    console.log(`${r.ok ? "PASS" : "FAIL"} ${r.page} ${r.viewport} scroll ${r.scrollHeight}/${r.innerHeight} width ${r.scrollWidth}/${r.innerWidth} ctas ${r.ctas.map((c) => `${c.visible ? "in" : "OUT"}@${c.bottom}`).join(",")} small ${r.smallLinks.length} nonWhite ${r.nonWhiteText.length} minContrast ${minC} bar ${r.stickyBar} wa ${r.whatsappBubble}`);
+    console.log(`${r.ok ? "PASS" : "FAIL"} ${r.page} ${r.viewport} scroll ${r.scrollHeight}/${r.innerHeight} width ${r.scrollWidth}/${r.innerWidth} ctas ${r.ctas.map((c) => `${c.visible ? "in" : "OUT"}@${c.bottom}`).join(",")} small ${r.smallLinks.length} nonWhite ${r.nonWhiteText.length} minContrast ${minC} cls ${r.cls} bar ${r.stickyBar} wa ${r.whatsappBubble}`);
+    for (const ph of r.photos) console.log(`     photo ${ph.file} ${ph.bytes == null ? "?" : (ph.bytes / 1024).toFixed(1) + " KB"} rendered ${ph.rendered} fetchpriority=${ph.fetchpriority} loading=${ph.loading}`);
   } else {
     console.log(`INFO ${r.page} ${r.viewport} first visit: cookie banner top ${r.banner?.bannerTop}, main buttons under it: ${r.banner?.buttonsCovered}`);
   }
