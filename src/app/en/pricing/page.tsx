@@ -25,6 +25,8 @@ import {
   Star,
   Check,
 } from "lucide-react";
+import { StudioRateTable } from "@/components/marketing/studio-rate-table";
+import { StudioBookingFacts } from "@/components/marketing/studio-booking-facts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -360,29 +362,22 @@ export default function PricingPageEN() {
           description="For freelance trainers and physiotherapists. Train your clients in a fully equipped private studio. Your own rates and clients, flexible by the hour, discount packs up to 23%."
         />
 
-        {/* Rate table */}
+        {/* Rate table — 2026-09-30: the €12/€17 rows were plain table cells,
+            so a trainer who had decided on this page had to go to the studio
+            page and find the same rows again. Same bookable rows (and the same
+            Acuity links) as /en/studio-rental, one tap to the calendar. */}
         <div className="mx-auto max-w-3xl">
           <FadeIn>
-            <div className="overflow-hidden rounded-xl border bg-card">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b bg-muted/50">
-                    <th className="px-4 py-3 text-left font-medium">Space</th>
-                    <th className="px-4 py-3 text-center font-medium">60 min</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="px-4 py-3 font-medium">Half studio (1:1)</td>
-                    <td className="px-4 py-3 text-center font-semibold">€12</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 font-medium">Full studio (small group)</td>
-                    <td className="px-4 py-3 text-center font-semibold">€17</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <StudioRateTable
+              headSpace="Space"
+              headDuration="60 min"
+              cta="Book"
+              rows={[
+                { label: "Half studio (for 2 people)", price: "€12", href: acuityLinks.halfStudio60 },
+                { label: "Full studio (small group)", note: "1 to 8 people", price: "€17", href: acuityLinks.fullStudio60 },
+              ]}
+            />
+            <StudioBookingFacts locale="en" className="mt-4" />
           </FadeIn>
         </div>
 
@@ -499,9 +494,13 @@ export default function PricingPageEN() {
         </FadeIn>
 
         <FadeIn delay={0.35} className="mt-6 flex justify-center">
-          <ButtonLink href="/en/studio-rental" variant="outline" size="lg">
-            Rent the studio
-          </ButtonLink>
+          <Link
+            href="/en/studio-rental"
+            className="inline-flex min-h-11 items-center gap-1 text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+          >
+            More about the studio, or try it free first
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </FadeIn>
       </Section>
 

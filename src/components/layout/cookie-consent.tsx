@@ -189,13 +189,16 @@ export function CookieConsent() {
           scrolled past the studio section it looked like two panels colliding.
           Kept compact (single row on desktop, tight stack on mobile) so it
           still covers minimal content — the size issue that retired the
-          original tall bar. */}
+          original tall bar. 2026-10-01: on phones the text is 13px with a
+          smaller icon so it fits in 2 lines instead of 3; at 375px the bar
+          covered the second Book row on /nl/studio-huren on a first visit.
+          Buttons keep their 44px height. */}
       <div className="bg-card border-t border-border shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
-        <div className="mx-auto w-full max-w-3xl px-4 py-3.5 sm:px-6 sm:py-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto w-full max-w-3xl px-4 py-3 sm:px-6 sm:py-4">
+          <div className="flex flex-col gap-2.5 sm:gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-2.5 sm:items-center">
-              <Cookie className="mt-0.5 sm:mt-0 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
-              <p className="text-sm leading-snug text-foreground">
+              <Cookie className="mt-px sm:mt-0 h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
+              <p className="text-[13px] leading-snug text-foreground sm:text-sm">
                 {t.text}{" "}
                 <Link
                   href={t.policyLink}

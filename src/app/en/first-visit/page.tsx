@@ -5,6 +5,7 @@ import { Section, SectionHeader, FadeIn } from "@/components/sections/section";
 import { ButtonLink } from "@/components/ui/button-link";
 import { acuityLinks } from "@/config/acuity";
 import { siteConfig } from "@/config/site";
+import { trainers } from "@/config/trainers";
 import { BreadcrumbJsonLd, FaqJsonLd, HowToJsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
@@ -166,7 +167,7 @@ export default function FirstVisitPage() {
         steps={[
           {
             name: "Pick your trainer",
-            text: "Browse all 12 personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €299 per 4 weeks), and pick the trainer who fits your goal.",
+            text: `Browse all ${trainers.length} personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €299 per 4 weeks), and pick the trainer who fits your goal.`,
             url: "/en/find-personal-trainer",
           },
           {
@@ -283,7 +284,7 @@ export default function FirstVisitPage() {
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
-                <p className="text-center text-[11px] text-muted-foreground">12 trainers · filter by specialty + language</p>
+                <p className="text-center text-[11px] text-muted-foreground">{trainers.length} trainers · filter by specialty + language</p>
               </CardFooter>
             </Card>
           </FadeIn>

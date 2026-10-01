@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { acuityLinks, acuityPackages, whatsappLinks } from "@/config/acuity";
 import { PhotoGalleryLightbox } from "@/components/marketing/photo-gallery-lightbox";
-import { RotatingImageStack } from "@/components/marketing/rotating-image-stack";
 import { RentalTabs } from "@/components/marketing/rental-tabs";
 import { LandingVideo } from "@/components/marketing/landing-video";
 import {
@@ -18,11 +17,9 @@ import {
   Lock,
   Clock,
   Percent,
-  CreditCard,
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
-import { getColor } from "@/lib/image-color-manifest";
 import type { Metadata } from "next";
 
 const HERO_SRC = "/images/studio/gym-latest.jpg";
@@ -40,6 +37,10 @@ const HERO_IMAGES = [
   { src: "/images/studio/back-room-full.jpg", alt: "Achterruimte met sled, Rogue rack en bank onder lichtkoepel bij SculptClub" },
   { src: "/images/studio/canal-view-doors.jpg", alt: "Uitzicht vanuit SculptClub op de Egelantiersgracht in Amsterdam" },
 ];
+
+// Top-of-page strip (2026-09-30): the room, the back room with rack + sled,
+// and the canal view. Tapping one opens them full screen.
+const STRIP_IMAGES = [HERO_IMAGES[0], HERO_IMAGES[2], HERO_IMAGES[3]];
 import {
   Accordion,
   AccordionItem,
@@ -49,7 +50,7 @@ import {
 import { BreadcrumbJsonLd, ServiceJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { TrainerValueProp } from "@/components/marketing/trainer-value-prop";
 import { StudioRateTable } from "@/components/marketing/studio-rate-table";
-import { WeekendAvailability } from "@/components/marketing/weekend-availability";
+import { StudioBookingFacts } from "@/components/marketing/studio-booking-facts";
 
 export const metadata: Metadata = {
   title: { absolute: "Trainingsruimte huren Amsterdam — PT-studio vanaf €12/uur" },
@@ -222,11 +223,24 @@ export default function StudioRentalPageNL() {
             Trainingsruimte huren in Amsterdam
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vanaf €12/uur · Gratis annuleren · Dagelijks 06:00–22:00
+            Vanaf €12 per uur · Egelantiersgracht, Jordaan
           </p>
         </div>
 
-        {/* Weekend-availability hook — task mtdbcq8ie715lw (2026-08-28): the
+        {/* 2026-09-30 mobile booking-path pass: at 375px the first screen was
+            text only (trial button + weekend box) and the Boek rows started
+            below the fold, with the first photo of the room ~5 screens down.
+            Now: a 3-photo strip (tap to enlarge), then straight into the rate
+            table. The trial entry and the weekend note moved directly under
+            the table (still first/second screen), so nothing was dropped. */}
+        <div className="mx-auto mb-5 max-w-2xl">
+          <PhotoGalleryLightbox images={STRIP_IMAGES} locale="nl" variant="strip" />
+        </div>
+
+        {/* (2026-09-30: this weekend note now renders inside StudioBookingFacts,
+            directly under the rate table. The history below is why its copy
+            reads the way it does.)
+            Weekend-availability hook — task mtdbcq8ie715lw (2026-08-28): the
             13-week Acuity analysis shows the studio at ~47% utilisation,
             with the weekend afternoon/evening block especially quiet — a
             gap that was previously buried in bullet #3 of the features grid
@@ -275,38 +289,8 @@ export default function StudioRentalPageNL() {
             of ClassPass, but because a concrete promise goes stale the moment
             somebody books. That reason survives; the ClassPass one does not.
         */}
-        {/* First-timer trial entry ABOVE the fold (2026-09-24, Subchief 3).
-            Measured: studio trial -> paying renter 52% (15/29, card muevvylus84iuu),
-            but only ~10 of 79 users on this page reached the trial page in 60d
-            (GA4 nav_click, 2026-07-26..09-24) because its only entry sat below the
-            price table. The booking table still leads for returning renters
-            (operator 2026-07-04); this is one line, not a block. */}
-        <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center gap-1 text-center">
-          <ButtonLink href="/nl/studio-huren/gratis-test" variant="outline" size="lg" className="w-full sm:w-auto">
-            Eerste keer hier? Probeer de studio gratis
-          </ButtonLink>
-          <p className="text-xs text-muted-foreground">Eén gratis sessie met je eigen klant, vrijblijvend.</p>
-        </div>
-
-        <div className="mx-auto mb-8 max-w-2xl rounded-2xl border border-primary/30 bg-primary/5 p-5 text-center">
-          <p className="text-sm font-semibold text-primary">
-            De meeste ruimte: zondag, en zaterdagmiddag &amp; -avond
-          </p>
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            Zondag is op dit moment de rustigste dag van de week, en ook zaterdagmiddag
-            en -avond staan meestal nog open. Ideaal om hier een vaste weekendplek voor je
-            klanten vast te leggen. Klik hieronder op Boek voor de actuele beschikbaarheid.
-          </p>
-          <p className="mt-1.5 text-sm text-muted-foreground">
-            Fotoshoot of content maken?{" "}
-            <a href="/nl/fotostudio-huren" className="font-medium text-primary hover:underline">
-              Huur de studio als fotostudio
-            </a>
-          </p>
-          <WeekendAvailability locale="nl" kind="studio" className="mt-2 text-sm text-muted-foreground" />
-        </div>
-
-        {/* Booking table is now the FIRST thing after the header — operator
+        {/* Booking table is now the FIRST thing after the header (and, since
+            2026-09-30, the 3-photo strip) — operator
             2026-07-04: /nl/studio-huren is PRIMARY for trainers who ALREADY rent
             here, so they can book immediately (no scrolling past a tour CTA).
             The "see the studio" content (WhatsApp tour + promo video) moved into
@@ -407,10 +391,25 @@ export default function StudioRentalPageNL() {
                   { label: "Hele studio (kleine groep)", note: "1 tot 8 personen", price: "€17", href: acuityLinks.fullStudio60 },
                 ]}
               />
-              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                <CreditCard className="h-3.5 w-3.5" />
-                <span>CreditCard, Apple Pay, Google Pay of factuur</span>
-              </div>
+              {/* First-timer trial entry (2026-09-24: trial -> paying renter 52%).
+                  Kept on the first screens, now as a text link directly under
+                  the rows so the Boek rows are the only buttons in view. */}
+              <p className="mt-3 text-center text-sm">
+                <a
+                  href="/nl/studio-huren/gratis-test"
+                  className="plausible-event-name=studio_huren_trial_link inline-block py-3 font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  Eerste keer? Probeer de studio eerst gratis
+                  <ArrowRight className="ml-1 inline h-4 w-4 align-[-3px]" aria-hidden />
+                </a>
+              </p>
+              <StudioBookingFacts locale="nl" className="mt-3" />
+              <p className="mt-3 text-center text-sm text-muted-foreground">
+                Fotoshoot of content maken?{" "}
+                <a href="/nl/fotostudio-huren" className="font-medium text-primary hover:underline">
+                  Huur de studio als fotostudio
+                </a>
+              </p>
               <p className="mt-4 text-center text-sm text-muted-foreground">
                 Reserveer per sessie, zonder abonnement of contract, en <strong className="text-foreground">altijd gratis annuleren</strong>: geld of credits komen automatisch terug.{" "}
                 <strong className="text-foreground">Halve studio</strong> = 1-op-1 (max 2 personen; de andere helft is dan voor een andere trainer of Open Gym).{" "}
@@ -490,36 +489,6 @@ export default function StudioRentalPageNL() {
         </FadeIn>
       </Section>
 
-      {/* Slideshow + trust strip — moves below the booking widget per
-          operator's "start with booking" directive. Imagery still earns
-          its place (shows the room visitors are about to book) but no
-          longer competes with the conversion surface. */}
-      <Section>
-        <FadeIn>
-          <div className="mx-auto max-w-4xl">
-            <div
-              className="relative aspect-[16/9] overflow-hidden rounded-2xl"
-              style={{ backgroundColor: getColor(HERO_SRC) }}
-            >
-              <RotatingImageStack
-                images={HERO_IMAGES}
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
-            </div>
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
-              <span className="flex items-center gap-1.5">
-                <span className="text-amber-400">★★★★★</span>
-                <span className="font-semibold">5,0 Google</span>
-              </span>
-              <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-              <span className="font-semibold text-foreground">Privé studio</span>
-              <span aria-hidden className="hidden h-4 w-px bg-border sm:inline-block" />
-              <span className="font-medium text-muted-foreground">Egelantiersgracht · Jordaan</span>
-            </div>
-          </div>
-        </FadeIn>
-      </Section>
-
       {/* Client-growth value prop — what trainers GET beyond the room */}
       <TrainerValueProp locale="nl" />
 
@@ -580,7 +549,7 @@ export default function StudioRentalPageNL() {
                   "Volledig uitgeruste privé studio voor 1:1 en small group",
                   "Jij houdt 100% van je sessietarief, wij rekenen alleen huur",
                   "Flexibel boeken: alleen wanneer jij een klant hebt",
-                  "Deurcode per WhatsApp de avond van tevoren",
+                  "Deurcode via WhatsApp, om 00:00 in de nacht voor je sessie",
                   "Professionele apparatuur: squat rack, kabelmachine, dumbbells 4-40 kg, Echo Bike en meer",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
@@ -763,27 +732,28 @@ export default function StudioRentalPageNL() {
               Klaar om je klanten hier te trainen?
             </h2>
             <p className="mt-4 text-lg text-white/70 max-w-xl mx-auto">
-              Probeer de studio gratis uit met een proefsessie. Geen
-              verplichtingen.
+              Kies een tijd en boek per uur. Geen abonnement, en annuleren
+              is altijd gratis.
             </p>
             {/* 2026-05-27 final: page now LEADS with the booking widget
                 (top of page). Bottom CTA = scroll-to-top of booking
                 widget so a visitor who scrolled through 7 sections gets
                 back to the conversion surface in one tap. */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-8 flex flex-col items-center justify-center gap-2">
               <ButtonLink href="#book" size="lg">
-                Naar boekingsformulier
+                Naar de tarieven en agenda
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ButtonLink>
-              <ButtonLink
+              {/* One button per screen: WhatsApp is a quiet text link here. */}
+              <a
                 href={whatsappLinks.studioNl}
-                variant="outline"
-                size="lg"
-                className="border-white/20 bg-transparent text-white hover:bg-white/10 dark:bg-transparent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-white/80 underline underline-offset-4 hover:text-white"
               >
-                <MessageCircle className="mr-2 h-4 w-4" />
-                WhatsApp ons
-              </ButtonLink>
+                <MessageCircle className="h-4 w-4" aria-hidden />
+                Liever eerst een vraag stellen? WhatsApp ons
+              </a>
             </div>
           </div>
         </FadeIn>

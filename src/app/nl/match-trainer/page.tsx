@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/layout/page-layout";
 import { Section, FadeIn } from "@/components/sections/section";
 import { TrainerMatchQuizClient } from "@/components/marketing/trainer-match-quiz-client";
 import { Star } from "lucide-react";
+import { trainers } from "@/config/trainers";
 
 /**
  * /nl/match-trainer — decision-paralysis killer for the 10-trainer roster.
@@ -21,7 +22,7 @@ import { Star } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Match jezelf met je personal trainer — SculptClub" },
   description:
-    "3 vragen, 30 seconden. We tonen je top-2 trainer-match uit 12 trainers in Jordaan. Eerste intake gratis · vrijblijvend.",
+    `3 vragen, 30 seconden. We tonen je top-2 trainer-match uit ${trainers.length} trainers in Jordaan. Eerste intake gratis · vrijblijvend.`,
   robots: { index: false, follow: true },
   alternates: {
     canonical: "/nl/match-trainer",
@@ -35,13 +36,13 @@ export const metadata: Metadata = {
     url: "/nl/match-trainer",
     title: "Match jezelf met je personal trainer — SculptClub",
     description:
-      "3 vragen, 30 seconden. We tonen je top-2 trainer-match uit 12 trainers in Jordaan. Eerste intake gratis · vrijblijvend.",
+      `3 vragen, 30 seconden. We tonen je top-2 trainer-match uit ${trainers.length} trainers in Jordaan. Eerste intake gratis · vrijblijvend.`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Match jezelf met je personal trainer — SculptClub",
     description:
-      "3 vragen, 30 seconden. We tonen je top-2 trainer-match uit 12 trainers in Jordaan. Eerste intake gratis · vrijblijvend.",
+      `3 vragen, 30 seconden. We tonen je top-2 trainer-match uit ${trainers.length} trainers in Jordaan. Eerste intake gratis · vrijblijvend.`,
   },
 };
 
@@ -78,7 +79,7 @@ export default function MatchTrainerPage() {
               Match jezelf met de juiste trainer
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground">
-              3 vragen · 30 seconden · we tonen je top-2 match uit 12 trainers.
+              3 vragen · 30 seconden · we tonen je top-2 match uit {trainers.length} trainers.
             </p>
           </div>
 

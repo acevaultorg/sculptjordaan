@@ -36,13 +36,20 @@ export type GalleryImage = {
 const GRID_CLASSES =
   "grid grid-cols-2 gap-4 lg:grid-cols-4";
 
+// "strip" = one compact row of 3 thumbnails, used above a booking table so a
+// visitor sees the room before the price rows without pushing them off screen.
+const STRIP_GRID_CLASSES = "grid grid-cols-3 gap-2";
+
 export function PhotoGalleryLightbox({
   images,
   locale = "nl",
+  variant = "grid",
 }: {
   images: GalleryImage[];
   locale?: "nl" | "en";
+  variant?: "grid" | "strip";
 }) {
+  const strip = variant === "strip";
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const touchStartX = useRef<number | null>(null);
@@ -94,21 +101,21 @@ export function PhotoGalleryLightbox({
   return (
     <>
       {/* Grid (drop-in replacement for the prior static grid) */}
-      <div className={GRID_CLASSES}>
+      <div className={strip ? STRIP_GRID_CLASSES : GRID_CLASSES}>
         {images.map((img, i) => (
           <button
             key={img.src}
             type="button"
             onClick={() => open(i)}
             aria-label={t.openLabel(i)}
-            className="group relative aspect-square overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className={`group relative ${strip ? "aspect-[4/3] rounded-lg" : "aspect-square rounded-xl"} overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
           >
             <Image
               src={img.src}
               alt={img.alt}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 25vw"
+              sizes={strip ? "(max-width: 768px) 33vw, 240px" : "(max-width: 768px) 50vw, 25vw"}
             />
             {/* Subtle "click to enlarge" affordance — only visible on hover (desktop) */}
             <span className="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/15" aria-hidden />

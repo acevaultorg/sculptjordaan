@@ -5,6 +5,7 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { whatsappLinks } from "@/config/acuity";
 import { TrainerChoiceGrid } from "@/components/marketing/trainer-choice-grid";
 import { Footer } from "@/components/layout/footer";
+import { trainers } from "@/config/trainers";
 
 export const metadata: Metadata = {
   title: { absolute: "Free Intro Personal Training — SculptClub Jordaan" },
@@ -135,7 +136,7 @@ export default function FreeIntroPage() {
             Shipped 2026-05-26 lead-cap. */}
         <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
           <p className="text-sm text-foreground">
-            <strong className="font-semibold">12 trainers</strong>. Not sure which fits?
+            <strong className="font-semibold">{trainers.length} trainers</strong>. Not sure which fits?
           </p>
           <Link
             href="/en/match-trainer"
