@@ -12,6 +12,13 @@ import { getLocaleFromPath, getAlternatePath } from "@/lib/locale";
 // everyone now that it renders below the header.
 const SEEN_KEY = "sc_lang_hint_seen_v2";
 
+// Pages that carry their OWN language offer, where this floating pill would be
+// a second, overlapping one (card mupiur5tiruhfu, 2026-10-01): the split
+// campaign landings have an NL/EN switch in their own header and no site
+// header, so the pill sat on the hero eyebrow; /en/become-trainer renders the
+// in-flow <AltLanguageOffer>.
+const OWN_OFFER_PATHS = new Set(["/landing", "/en/landing", "/en/become-trainer"]);
+
 /**
  * Device-language hint — a polite, one-time offer (never a forced redirect).
  *
@@ -52,6 +59,7 @@ export function LanguageHint() {
       /* private mode / blocked storage — just proceed without the flag */
     }
     if (seen) return;
+    if (OWN_OFFER_PATHS.has(pathname.replace(/\/+$/, "") || "/")) return;
 
     let primary = "";
     try {
