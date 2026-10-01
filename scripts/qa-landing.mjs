@@ -9,7 +9,7 @@
  *   - both main buttons fully inside the viewport, every link >= 44px tall
  *   - white-text contrast over the photos: re-renders with text hidden and
  *     reads the brightest background pixel behind each text box (worst case)
- * and saves screenshots into qa/landing/ (clean state = cookie choice made) and
+ * and saves screenshots into $QA_DIR (default qa/landing-v2/; clean state = cookie choice made) and
  * one first-visit shot per viewport with the cookie banner showing.
  * Also copies the 375 + 390 clean shots into review/.
  *
@@ -21,8 +21,10 @@ import { join, extname } from "node:path";
 import { chromium } from "@playwright/test";
 
 const OUT = "out";
-const QA = "qa/landing";
+const QA = process.env.QA_DIR || "qa/landing-v2"; // v1 results stay in qa/landing/
 const REVIEW = "review";
+// Owner's bar (2026-10-01): every text box at 7:1 or better, well above AA's 4.5:1.
+const MIN_CONTRAST = 7;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".woff2": "font/woff2", ".json": "application/json", ".txt": "text/plain", ".ico": "image/x-icon" };
 
 async function resolveFile(urlPath) {
@@ -142,7 +144,7 @@ for (const pg of PAGES) {
         m.scrollWidth <= m.innerWidth &&
         m.ctas.length === 2 && m.ctas.every((c) => c.visible) &&
         m.hiddenLinks.length === 0 && m.smallLinks.length === 0 && m.nonWhiteText.length === 0 &&
-        contrast.every((c) => c.worstRatio >= 4.5);
+        contrast.every((c) => c.worstRatio >= MIN_CONTRAST);
       if (!ok) failed++;
       results.push({ page: pg.path, viewport: `${vp.w}x${vp.h}`, state, ok, screenshot: shot, ...m, contrast });
       if (mobile) await copyFile(shot, `${REVIEW}/landing-${pg.slug}-${vp.w}.png`);
