@@ -24,7 +24,10 @@ const SEEN_KEY = "sc_lang_hint_seen_v2";
  * UX is tuned to NOT annoy:
  *  - shows at most ONCE per visitor (the header globe is the permanent switch);
  *  - waits ~0.9s then gently slides in, so it never fights the first impression;
- *  - auto-retires after ~10s if ignored, so it gets out of the way on its own;
+ *  - auto-retires after ~10s if ignored, or on the first scroll, so it never
+ *    rides over page content (it is `fixed`);
+ *  - never shows while the cookie banner is still open: it waits for the
+ *    `sc:consent-updated` event when no sc_consent cookie exists yet;
  *  - one tap dismiss; clicking it switches + preserves the current page
  *    (getAlternatePath: /nl/open-gym → /en/open-gym, not just the homepage).
  *
@@ -73,22 +76,45 @@ export function LanguageHint() {
     }
     if (!target) return;
 
-    // Mark seen immediately so it only ever appears once — even if the visitor
-    // navigates away during the entrance delay.
-    try {
-      localStorage.setItem(SEEN_KEY, "1");
-    } catch {
-      /* ignore */
-    }
+    // v4 (2026-10-01, card munn2xhadw3ro4): the pill is `fixed`, so at 390px
+    // it rode over the trainer cards while scrolling and stacked with the
+    // cookie bar on the first screen. Now it (a) waits until the cookie
+    // question is answered, (b) retires on the first real scroll, and
+    // (c) is marked seen only when it actually shows.
+    const consentGiven = () => /(?:^|;\s*)sc_consent=/.test(document.cookie);
+    let shown = false;
+    const hide = () => setVisible(false);
+    const onScroll = () => {
+      if (window.scrollY > 60) hide();
+    };
+    const show = () => {
+      if (shown) return;
+      shown = true;
+      try {
+        localStorage.setItem(SEEN_KEY, "1");
+      } catch {
+        /* ignore */
+      }
+      setHint(target);
+      const tIn = window.setTimeout(() => {
+        // Visitor already scrolled into the page during the delay: skip it.
+        if (window.scrollY > 60) return;
+        setVisible(true);
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }, 900);
+      const tOut = window.setTimeout(hide, 10_000);
+      timers.current.push(tIn, tOut);
+    };
+    const onConsent = () => show();
 
-    setHint(target);
-    const tIn = window.setTimeout(() => setVisible(true), 900);
-    const tOut = window.setTimeout(() => setVisible(false), 10_000);
-    timers.current.push(tIn, tOut);
+    if (consentGiven()) show();
+    else window.addEventListener("sc:consent-updated", onConsent);
 
     return () => {
       timers.current.forEach((t) => clearTimeout(t));
       timers.current = [];
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("sc:consent-updated", onConsent);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
