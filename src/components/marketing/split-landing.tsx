@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArtDirectedPicture } from "@/components/ui/art-directed-picture";
+import type { ArtDirectedPictureId } from "@/lib/art-directed-picture-manifest";
 import { trackLandingClick } from "@/lib/tracking";
 import type { Locale } from "@/config/site";
 
@@ -13,10 +15,17 @@ import type { Locale } from "@/config/site";
  *   left / top     = personal trainers who rent the studio (deep navy → cobalt)
  *   right / bottom = people who want to train (deep crimson → brick red)
  *
- * Colour + legibility: each photo gets a multiply tint in the half's colour and
- * then a dark scrim in the same hue on top. The scrim keeps white text at 7:1 or
- * better over the brightest part of the photo; qa/landing-v2/results.json holds
- * the measured values from scripts/qa-landing.mjs.
+ * Colour + legibility (2026-10-01): each photo is a true duotone in its half's
+ * own two tokens. The grayscale photo is multiplied by `tint` (white -> tint) and
+ * screened with `base` (black -> base), so every pixel lands between the dark
+ * and the light token and nothing in the photo can be brighter than the tint.
+ * A light scrim in the same dark hue then lifts white text to 7:1 or better
+ * over the brightest pixel. qa/landing-v3/results.json holds the values
+ * measured on the rendered pixels by scripts/qa-landing.mjs.
+ *
+ * Photos: the studio's own (no stock), served by <ArtDirectedPicture> as
+ * AVIF/WebP/JPEG with a square crop for the phone half and a portrait crop
+ * for the desktop half. Only the first half's photo is fetchpriority=high.
  *
  * All links are internal on purpose: the global Acuity/WhatsApp click listener
  * in analytics.tsx fires Ads conversions on those, and a routing page must not
@@ -30,7 +39,13 @@ export type SplitHalf = {
   support: string;
   cta: { label: string; href: string };
   pills?: { label: string; href: string }[];
-  image: { src: string; alt: string; position: string };
+  image: {
+    /** Entry in scripts/generate-art-directed-pictures.mjs. */
+    picture: ArtDirectedPictureId;
+    alt: string;
+    /** object-position: `base` for the phone crop, `md` for the desktop crop. */
+    position: { base: string; md: string };
+  };
 };
 
 export type SplitLandingCopy = {
@@ -49,13 +64,16 @@ export type SplitLandingCopy = {
  * Per-half palette. Trainer = navy base, cobalt tint (the cobalt is SculptClub's
  * pre-2026-05 brand blue #134DE1, deepened). Client = oxblood base, crimson tint.
  * `ink` is the button text on white: 15:1 (navy) and 10:1 (crimson).
+ * Duotone ceiling (white photo pixel = screen(tint, base)): #275EDE for blue and
+ * #C72B3D for red, 5.6:1 and 5.5:1 against white before the scrim. The scrim
+ * (30 to 45% of base where the text sits) brings that ceiling above 7:1.
  */
 const THEME = {
   trainer: {
     base: "bg-[#0A1633]",
     tint: "bg-[#1E4FD6]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(5,12,34,0.50)_0%,rgba(5,12,34,0.58)_50%,rgba(5,12,34,0.66)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(10,22,51,0.30)_0%,rgba(10,22,51,0.34)_45%,rgba(10,22,51,0.48)_100%)]",
     ink: "text-[#0A1633] focus-visible:ring-offset-[#0A1633]",
     rule: "bg-[#8FB0FF]",
   },
@@ -63,7 +81,7 @@ const THEME = {
     base: "bg-[#3F0910]",
     tint: "bg-[#B42330]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(46,4,8,0.30)_0%,rgba(46,4,8,0.38)_50%,rgba(46,4,8,0.50)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(63,9,16,0.32)_0%,rgba(63,9,16,0.36)_45%,rgba(63,9,16,0.50)_100%)]",
     ink: "text-[#9B1620] focus-visible:ring-offset-[#3F0910]",
     rule: "bg-[#FFB0A8]",
   },
@@ -90,10 +108,13 @@ function Half({
   side,
   half,
   locale,
+  priority,
 }: {
   side: "trainer" | "client";
   half: SplitHalf;
   locale: Locale;
+  /** First visible photo (top on phones, left on desktop) gets fetchpriority=high; the other is lazy. */
+  priority: boolean;
 }) {
   const isTrainer = side === "trainer";
   const t = THEME[side];
@@ -106,18 +127,19 @@ function Half({
         isTrainer ? "pt-[4.25rem] pb-6" : "pt-6 pb-6"
       }`}
     >
-      <Image
-        src={half.image.src}
+      <ArtDirectedPicture
+        id={half.image.picture}
         alt={half.image.alt}
-        fill
-        preload
         sizes="(min-width: 768px) 50vw, 100vw"
-        className="-z-30 object-cover"
-        style={{ objectPosition: half.image.position }}
+        priority={priority}
+        position={half.image.position}
+        className="absolute inset-0 -z-40 h-full w-full object-cover"
       />
-      {/* Colour tint: multiply keeps the photo's light and shade, in the half's colour. */}
-      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-multiply ${t.tint}`} />
-      {/* Scrim in the same hue: darkest toward the bottom, lighter at the top so the colour still reads. */}
+      {/* Duotone, light end: multiply maps the photo's white to the tint token. */}
+      <div aria-hidden="true" className={`absolute inset-0 -z-30 mix-blend-multiply ${t.tint}`} />
+      {/* Duotone, dark end: screen maps the photo's black to the base token. */}
+      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-screen ${t.base}`} />
+      {/* Scrim in the same hue: a little deeper toward the bottom, light enough that the photo reads. */}
       <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
       <div className="mx-auto w-full max-w-md text-white md:mx-0 lg:max-w-lg">
@@ -221,8 +243,8 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
         </nav>
       </div>
 
-      <Half side="trainer" half={copy.trainer} locale={copy.locale} />
-      <Half side="client" half={copy.client} locale={copy.locale} />
+      <Half side="trainer" half={copy.trainer} locale={copy.locale} priority />
+      <Half side="client" half={copy.client} locale={copy.locale} priority={false} />
     </main>
   );
 }

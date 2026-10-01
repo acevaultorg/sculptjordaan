@@ -35,9 +35,9 @@ const copy: SplitLandingCopy = {
     support: `Private studio by the hour, from €${studioRentalFromPrice}. No contract. Jordaan, Amsterdam.`,
     cta: { label: "See the studio", href: "/en/studio-rental" },
     image: {
-      src: "/images/studio/pt-session-barbell.jpg",
-      alt: "Personal trainer spotting a client's squat in the SculptClub studio",
-      position: "50% 35%",
+      picture: "landing-trainer",
+      alt: "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio",
+      position: { base: "50% 45%", md: "50% 30%" },
     },
   },
   client: {
@@ -50,9 +50,9 @@ const copy: SplitLandingCopy = {
       { label: "Open Gym", href: "/en/open-gym" },
     ],
     image: {
-      src: "/images/studio/training-women-coaching.jpg",
-      alt: "Trainer coaching a client through a dumbbell shoulder press in the SculptClub studio",
-      position: "45% 40%",
+      picture: "landing-client",
+      alt: "A woman training with a barbell under the skylight of the SculptClub studio",
+      position: { base: "55% 30%", md: "54% 25%" },
     },
   },
 };
