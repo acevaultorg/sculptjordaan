@@ -37,9 +37,9 @@ const copy: SplitLandingCopy = {
     support: `Studio per uur, vanaf €${studioRentalFromPrice}. Geen contract. Jordaan, Amsterdam.`,
     cta: { label: "Bekijk de studio", href: "/nl/studio-huren" },
     image: {
-      src: "/images/studio/pt-session-barbell.jpg",
-      alt: "Personal trainer begeleidt een cliënt bij een squat in de studio van SculptClub",
-      position: "50% 35%",
+      picture: "landing-trainer",
+      alt: "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub",
+      position: { base: "50% 45%", md: "50% 30%" },
     },
   },
   client: {
@@ -52,9 +52,9 @@ const copy: SplitLandingCopy = {
       { label: "Open Gym", href: "/nl/open-gym" },
     ],
     image: {
-      src: "/images/studio/training-women-coaching.jpg",
-      alt: "Trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub",
-      position: "45% 40%",
+      picture: "landing-client",
+      alt: "Een vrouw traint met een barbell onder het daklicht van de SculptClub studio",
+      position: { base: "55% 30%", md: "54% 25%" },
     },
   },
 };
