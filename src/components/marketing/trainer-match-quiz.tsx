@@ -151,7 +151,7 @@ const COPY_NL: QuizCopy = {
     // Direct active form fits Dutch operator-action register.
     whatsappLabel: "Of WhatsApp ons",
     reset: "↺ Doe de match opnieuw",
-    findOther: "Bekijk alle 12 trainers",
+    findOther: `Bekijk alle ${trainers.length} trainers`,
     specialty: "Specialisatie",
     languages: "Talen",
     rate: "Tarief",
@@ -203,7 +203,7 @@ const COPY_EN: QuizCopy = {
     waDirectLabel: (name) => `WhatsApp ${name} directly`,
     whatsappLabel: "Or WhatsApp us?",
     reset: "↺ Run the match again",
-    findOther: "See all 12 trainers",
+    findOther: `See all ${trainers.length} trainers`,
     specialty: "Specialty",
     languages: "Languages",
     rate: "Rate",

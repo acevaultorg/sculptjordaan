@@ -5,6 +5,7 @@ import { Star, CheckCircle, ArrowRight, Clock, Shield, MessageCircle } from "luc
 import { whatsappLinks } from "@/config/acuity";
 import { TrainerChoiceGrid } from "@/components/marketing/trainer-choice-grid";
 import { Footer } from "@/components/layout/footer";
+import { trainers } from "@/config/trainers";
 
 export const metadata: Metadata = {
   title: { absolute: "Gratis Intake Personal Training — SculptClub Jordaan" },
@@ -137,7 +138,7 @@ export default function GratisIntakePage() {
             3 questions × 30s → top-2 match. Shipped 2026-05-26 lead-cap. */}
         <div className="mb-8 inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 py-3 rounded-xl bg-brand/10 border border-brand/30">
           <p className="text-sm text-foreground">
-            <strong className="font-semibold">12 trainers</strong>. Niet zeker welke past?
+            <strong className="font-semibold">{trainers.length} trainers</strong>. Niet zeker welke past?
           </p>
           <Link
             href="/nl/match-trainer"
