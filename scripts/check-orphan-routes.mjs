@@ -57,6 +57,8 @@ const ALLOW = [
   //   const intakeHref = `/${locale}/${trainer.slug[locale]}`
   // A static scan cannot see that, so they would be permanent false positives.
   /plan-free-intro-with-/, /plan-gratis-intake-met-/,
+  // Trainer directory profiles are linked by template literal (directoryPaths.profile(slug)).
+  /^\/(en|nl)\/trainers\/[a-z-]+$/,  // also the add-profile pages: linked via directoryPaths.add in trainer-directory.tsx
 ];
 
 function walk(dir, out = []) {

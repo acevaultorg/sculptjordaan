@@ -1,0 +1,4 @@
+{
+  "_readme": "Community listings for the trainer directory (/nl/trainers, /en/trainers). Add an entry ONLY after the trainer has given consent (submissions are stored by functions/api/trainer-profile.ts under the KV prefix trainerprofile:). Entries without consent:true are ignored. After adding one, also add its two profile paths to src/app/sitemap.ts (nlPages/enPages) and src/config/navigation.ts (alternateRoutes). Shape of one entry: slug, name, consent (true), consentDate, photo (optional path), specialties {nl:[],en:[]}, neighbourhood {nl,en}, languages [codes], bio {nl,en} (optional), bookingUrl, website, instagram (all optional).",
+  "listings": []
+}

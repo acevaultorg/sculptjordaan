@@ -31,8 +31,7 @@
 /en/gallery /en 301
 /classes /nl/open-gym 301
 /en/classes /en/open-gym 301
-/trainers /nl/vind-jouw-personal-trainer 301
-/en/trainers /en/find-personal-trainer 301
+/trainers /nl/trainers 301
 /nl/training-studio-huren-amsterdam /nl/studio-huren 301
 /en/rent-training-studio-amsterdam /en/studio-rental 301
 /nl/hoe-het-studio-huren-sculptclub-werkt /nl/studio-huren 301
@@ -125,7 +124,6 @@
 /nl/personal-training /nl/vind-jouw-personal-trainer 301
 /en/personal-training /en/find-personal-trainer 301
 /personal-trainer-amsterdam /nl/vind-jouw-personal-trainer 301
-/nl/trainers /nl/vind-jouw-personal-trainer 301
 /nl/training /nl/vind-jouw-personal-trainer 301
 /nl/team /nl/vind-jouw-personal-trainer 301
 /en/team /en/find-personal-trainer 301

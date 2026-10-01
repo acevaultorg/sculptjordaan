@@ -779,6 +779,11 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                 {t.browseAll}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
+              <p className="mt-4 text-sm">
+                <Link href={`/${locale}/trainers/${trainer.id}`} className="inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4 hover:text-brand">
+                  {locale === "nl" ? "Bekijk ook in de trainergids" : "Also see the trainer directory profile"}
+                </Link>
+              </p>
             </div>
           </div>
         </FadeIn>
