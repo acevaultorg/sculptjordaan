@@ -29,12 +29,13 @@ const copy: SplitLandingCopy = {
   locale: "nl",
   homeHref: "/",
   homeLabel: "SculptClub, naar de homepage",
-  switchLang: { label: "EN", href: "/en/landing", hrefLang: "en" },
+  langLabel: "Taal",
+  switchLang: { label: "EN", href: "/en/landing", hrefLang: "en", ariaLabel: "English" },
   trainer: {
-    eyebrow: "Voor personal trainers",
-    headline: "Train je klanten in een privé studio",
-    support: `Huur de studio per uur, vanaf €${studioRentalFromPrice}. Jordaan, Amsterdam.`,
-    cta: { label: "Bekijk studio huren", href: "/nl/studio-huren" },
+    eyebrow: "Ik ben personal trainer",
+    headline: "Jouw klanten, jouw tarief. Onze studio.",
+    support: `Privé studio per uur, vanaf €${studioRentalFromPrice}. Geen contract. Jordaan, Amsterdam.`,
+    cta: { label: "Bekijk de studio", href: "/nl/studio-huren" },
     image: {
       src: "/images/studio/pt-session-barbell.jpg",
       alt: "Personal trainer begeleidt een cliënt bij een squat in de studio van SculptClub",
@@ -42,10 +43,10 @@ const copy: SplitLandingCopy = {
     },
   },
   client: {
-    eyebrow: "Voor wie wil trainen",
-    headline: "Vind je trainer, groepsles of Open Gym",
-    support: `Eerste intake gratis. Open Gym vanaf €${openGymSinglePrice} per uur. Jordaan, Amsterdam.`,
-    cta: { label: "Vind je trainer", href: "/nl/vind-jouw-personal-trainer" },
+    eyebrow: "Ik wil trainen",
+    headline: "Sterker worden? Begin met een gratis intake.",
+    support: `Liever zelf trainen? Open Gym vanaf €${openGymSinglePrice} per uur. Jordaan, Amsterdam.`,
+    cta: { label: "Kies je trainer", href: "/nl/vind-jouw-personal-trainer" },
     pills: [
       { label: "Groepsles", href: "/nl/small-group" },
       { label: "Open Gym", href: "/nl/open-gym" },

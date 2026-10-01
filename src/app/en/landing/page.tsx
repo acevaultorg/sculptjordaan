@@ -27,12 +27,13 @@ const copy: SplitLandingCopy = {
   locale: "en",
   homeHref: "/en",
   homeLabel: "SculptClub, go to the homepage",
-  switchLang: { label: "NL", href: "/landing", hrefLang: "nl" },
+  langLabel: "Language",
+  switchLang: { label: "NL", href: "/landing", hrefLang: "nl", ariaLabel: "Nederlands" },
   trainer: {
-    eyebrow: "For personal trainers",
-    headline: "Train your clients in a private studio",
-    support: `Rent the studio by the hour, from €${studioRentalFromPrice}. Jordaan, Amsterdam.`,
-    cta: { label: "See studio rental", href: "/en/studio-rental" },
+    eyebrow: "I'm a personal trainer",
+    headline: "Your clients, your rate. Our studio.",
+    support: `Private studio by the hour, from €${studioRentalFromPrice}. No contract. Jordaan, Amsterdam.`,
+    cta: { label: "See the studio", href: "/en/studio-rental" },
     image: {
       src: "/images/studio/pt-session-barbell.jpg",
       alt: "Personal trainer spotting a client's squat in the SculptClub studio",
@@ -40,10 +41,10 @@ const copy: SplitLandingCopy = {
     },
   },
   client: {
-    eyebrow: "For anyone who wants to train",
-    headline: "Find your trainer, class or Open Gym",
-    support: `First intro session free. Open Gym from €${openGymSinglePrice} an hour. Jordaan, Amsterdam.`,
-    cta: { label: "Find your trainer", href: "/en/find-personal-trainer" },
+    eyebrow: "I want to train",
+    headline: "Want to get stronger? Start with a free intro.",
+    support: `Rather train on your own? Open Gym from €${openGymSinglePrice} an hour. Jordaan, Amsterdam.`,
+    cta: { label: "Choose your trainer", href: "/en/find-personal-trainer" },
     pills: [
       { label: "Group class", href: "/en/small-group" },
       { label: "Open Gym", href: "/en/open-gym" },
