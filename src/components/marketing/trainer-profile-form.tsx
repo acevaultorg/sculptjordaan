@@ -37,6 +37,8 @@ const COPY = {
     consent:
       "Ik ga ermee akkoord dat SculptClub mijn naam, specialiteiten, wijk, talen en link in de trainergids op sculptclub.nl toont.",
     consentHint: "Je kunt je profiel altijd laten weghalen via contact@sculptclub.nl.",
+    privacy:
+      "Wat we bewaren: alleen wat je hier invult (naam, e-mailadres, specialiteiten, wijk, talen, link) en het moment van je toestemming, maximaal 2 jaar. Geen IP-adres. Je profiel gaat pas online nadat we het hebben nagekeken en jij toestemming hebt gegeven.",
     submit: "Verstuur",
     sending: "Versturen",
     needName: "Vul je naam in.",
@@ -66,6 +68,8 @@ const COPY = {
     consent:
       "I agree that SculptClub shows my name, specialties, neighbourhood, languages and link in the trainer directory on sculptclub.nl.",
     consentHint: "You can ask us to remove your profile at any time via contact@sculptclub.nl.",
+    privacy:
+      "What we store: only what you enter here (name, email, specialties, neighbourhood, languages, link) and when you gave consent, for at most 2 years. No IP address. Your profile only goes live after we have reviewed it and you have given consent.",
     submit: "Send",
     sending: "Sending",
     needName: "Enter your name.",
@@ -219,6 +223,7 @@ export function TrainerProfileForm({ locale }: { locale: Locale }) {
           <p className="mt-1 text-sm text-muted-foreground">{t.consentHint}</p>
         </div>
       </div>
+      <p className="text-sm text-muted-foreground">{t.privacy}</p>
 
       {problem && (
         <p role="alert" className="text-sm font-medium text-destructive">

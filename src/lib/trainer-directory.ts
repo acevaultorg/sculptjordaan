@@ -84,7 +84,17 @@ const fromCommunity: DirectoryTrainer[] = (
     instagram: e.instagram ?? null,
   }));
 
-export const directoryTrainers: DirectoryTrainer[] = [...fromRoster, ...fromCommunity];
+/**
+ * Roster trainers who are NOT current renters (src: docs/TRAINER-ROSTER-RECONCILIATION-2026-08-25.md,
+ * CLAUDE.md "Trainers"): Bryan (last rental 2026-03), Tom (never rented), Sergei (last rental 2026-07-11,
+ * quiet 49+ days). They keep their intake pages but are not shown in the directory until the
+ * operator confirms they are active. Remove an id from this list to list them.
+ */
+const NOT_LISTED = new Set(["bryan", "tom", "sergei"]);
+
+export const directoryTrainers: DirectoryTrainer[] = [...fromRoster, ...fromCommunity].filter(
+  (t) => !NOT_LISTED.has(t.slug),
+);
 
 export function getDirectoryTrainer(slug: string): DirectoryTrainer | undefined {
   return directoryTrainers.find((t) => t.slug === slug);
