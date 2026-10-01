@@ -11,7 +11,7 @@ import { openGymSinglePrice, studioRentalFromPrice } from "@/config/acuity";
 
 const title = "SculptClub: studio huren of trainen in de Jordaan";
 const description =
-  "Personal trainer? Huur de privé studio per uur. Wil je trainen? Vind je trainer, groepsles of Open Gym. Jordaan, Amsterdam.";
+  "Personal trainer? Huur de studio per uur. Wil je trainen? Vind je trainer, groepsles of Open Gym. Jordaan, Amsterdam.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -34,7 +34,7 @@ const copy: SplitLandingCopy = {
   trainer: {
     eyebrow: "Ik ben personal trainer",
     headline: "Jouw klanten, jouw tarief. Onze studio.",
-    support: `Privé studio per uur, vanaf €${studioRentalFromPrice}. Geen contract. Jordaan, Amsterdam.`,
+    support: `Studio per uur, vanaf €${studioRentalFromPrice}. Geen contract. Jordaan, Amsterdam.`,
     cta: { label: "Bekijk de studio", href: "/nl/studio-huren" },
     image: {
       src: "/images/studio/pt-session-barbell.jpg",
