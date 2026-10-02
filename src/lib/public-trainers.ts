@@ -30,7 +30,8 @@ export interface PublicTrainer {
   area: string;
   tags: string[];
   languages: string[];
-  price: string | null;
+  /** Localised from the price the trainer publishes (raw text kept in price_source). */
+  price: Record<Locale, string> | null;
   website: string;
   websiteLabel: string;
   instagram: string | null;
@@ -44,7 +45,8 @@ interface RawEntry {
   area: string;
   specialities?: string[];
   languages?: string[] | null;
-  price?: string | null;
+  price?: Record<Locale, string> | null;
+  price_source?: string | null;
   website: string;
   instagram?: string | null;
   source_url: string;
@@ -149,7 +151,7 @@ export const publicTrainers: PublicTrainer[] = (data.listings ?? [])
     area: e.area,
     tags: tagsFromText(e.specialities ?? []).slice(0, 4),
     languages: (e.languages ?? []).map((l) => l.toUpperCase()).filter((l) => /^[A-Z]{2}$/.test(l)),
-    price: e.price && e.price.trim() ? e.price.trim() : null,
+    price: e.price && e.price.nl && e.price.en ? e.price : null,
     website: e.website,
     websiteLabel: e.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/.*$/, ""),
     instagram: e.instagram && /^https:\/\/(www\.)?instagram\.com\/[A-Za-z0-9._]+\/?$/.test(e.instagram) ? e.instagram : null,

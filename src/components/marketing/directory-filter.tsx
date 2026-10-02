@@ -43,29 +43,25 @@ function Group({
   onChange: (v: string) => void;
   allLabel: string;
 }) {
+  const id = `dir-filter-${name.toLowerCase().replace(/[^a-z]+/g, "-")}`;
   return (
-    <div>
-      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{name}</p>
-      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
-        {[{ value: "", label: allLabel }, ...options].map((o) => {
-          const active = value === o.value;
-          return (
-            <button
-              key={o.value || "all"}
-              type="button"
-              aria-pressed={active}
-              onClick={() => onChange(o.value)}
-              className={`inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-sm font-medium transition-colors ${
-                active
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border bg-background text-foreground hover:border-foreground"
-              }`}
-            >
-              {o.label}
-            </button>
-          );
-        })}
-      </div>
+    <div className="flex items-center gap-3 sm:block">
+      <label htmlFor={id} className="w-28 shrink-0 text-sm font-semibold text-muted-foreground sm:mb-1.5 sm:block sm:w-auto">
+        {name}
+      </label>
+      <select
+        id={id}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="min-h-11 w-full min-w-0 rounded-xl border border-border bg-background px-3 text-base text-foreground"
+      >
+        <option value="">{allLabel}</option>
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
@@ -97,11 +93,13 @@ export function DirectoryFilter({ areas, tags, langs, labels }: Props) {
   const filtered = Boolean(area || tag || lang);
 
   return (
-    <div className="mt-10 space-y-4 rounded-2xl border border-border bg-card p-4 sm:p-6">
-      <Group name={labels.area} options={areas} value={area} onChange={setArea} allLabel={labels.all} />
-      <Group name={labels.tag} options={tags} value={tag} onChange={setTag} allLabel={labels.all} />
-      <Group name={labels.lang} options={langs} value={lang} onChange={setLang} allLabel={labels.all} />
-      <div className="flex min-h-11 flex-wrap items-center justify-between gap-2 border-t border-border pt-3 text-sm">
+    <div className="mt-10 rounded-2xl border border-border bg-card p-4 sm:p-6">
+      <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+        <Group name={labels.area} options={areas} value={area} onChange={setArea} allLabel={labels.all} />
+        <Group name={labels.tag} options={tags} value={tag} onChange={setTag} allLabel={labels.all} />
+        <Group name={labels.lang} options={langs} value={lang} onChange={setLang} allLabel={labels.all} />
+      </div>
+      <div className="mt-3 flex min-h-11 flex-wrap items-center justify-between gap-2 border-t border-border pt-3 text-sm">
         <p className="font-semibold" aria-live="polite">
           {shown === null ? " " : shown === 0 ? labels.empty : shown === 1 ? labels.one : labels.many.replace("{n}", String(shown))}
         </p>

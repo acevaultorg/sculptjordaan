@@ -1,5 +1,5 @@
 {
- "_readme": "Public listings for /nl/trainers and /en/trainers. Rules: src/lib/public-trainers.ts. Each entry = public business info from the trainer's own website (source_url, checked). Instagram only when that site links it. No photos, phones, e-mails or street addresses. On a removal request: delete the entry AND add the name to `removed`.",
+ "_readme": "Public listings for /nl/trainers and /en/trainers. Rules: src/lib/public-trainers.ts. Each entry = public business info from the trainer's own website (source_url, checked). Instagram only when that site links it. No photos, phones, e-mails or street addresses. On a removal request: delete the entry AND add the name to `removed`. `price` is NL/EN text written from the trainer's own published price, which is kept verbatim in `price_source`.",
  "removed": [],
  "listings": [
   {
@@ -49,12 +49,16 @@
     "NL",
     "EN"
    ],
-   "price": "€85 per 75 min (1x/week); €70 (3x/week)",
    "website": "https://westerparkfit.nl/",
    "instagram": "https://www.instagram.com/ariswesterparkfit/",
    "source_url": "https://westerparkfit.nl/",
    "instagram_source": "https://westerparkfit.nl/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€85 per 75 min (1x/week); €70 (3x/week)",
+   "price": {
+    "nl": "€70–85 per sessie (75 min)",
+    "en": "€70–85 per session (75 min)"
+   }
   },
   {
    "name": "BeyondFit Amsterdam-West",
@@ -83,12 +87,16 @@
     "Rehab"
    ],
    "languages": null,
-   "price": "1-on-1 from €380 per 4 weeks (4x 60 min)",
    "website": "https://dymphyfit.nl/en/",
    "instagram": "https://www.instagram.com/dymphyfit/",
    "source_url": "https://dymphyfit.nl/en/",
    "instagram_source": "https://dymphyfit.nl/en/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "1-on-1 from €380 per 4 weeks (4x 60 min)",
+   "price": {
+    "nl": "€380 per 4 weken (4 sessies)",
+    "en": "€380 per 4 weeks (4 sessions)"
+   }
   },
   {
    "name": "Karakter Personal Training",
@@ -100,12 +108,16 @@
     "Nutrition"
    ],
    "languages": null,
-   "price": "Starting at 44,50 per session",
    "website": "https://www.karakterpt.nl/",
    "instagram": null,
    "source_url": "https://www.karakterpt.nl/",
    "instagram_source": null,
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "Starting at 44,50 per session",
+   "price": {
+    "nl": "Vanaf €44,50 per sessie",
+    "en": "From €44.50 per session"
+   }
   },
   {
    "name": "Omnia Personal Training",
@@ -248,12 +260,16 @@
     "Strength"
    ],
    "languages": null,
-   "price": "Solo €85; Duo/Buddy €60 p.p.",
    "website": "https://rourepersonaltraining.nl/",
    "instagram": "https://www.instagram.com/roure_personaltraining/",
    "source_url": "https://rourepersonaltraining.nl/",
    "instagram_source": "https://rourepersonaltraining.nl/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "Solo €85; Duo/Buddy €60 p.p.",
+   "price": {
+    "nl": "€85 per sessie, duo €60 p.p.",
+    "en": "€85 per session, duo €60 pp"
+   }
   },
   {
    "name": "Improve Personal Training",
@@ -265,12 +281,16 @@
     "Nutrition"
    ],
    "languages": null,
-   "price": "€80 per session (1x per week); €70 per session (3x per week)",
    "website": "https://improve-training.nl/",
    "instagram": "https://www.instagram.com/improve.personal.training/",
    "source_url": "https://improve-training.nl/en/home/",
    "instagram_source": "https://improve-training.nl/en/home/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€80 per session (1x per week); €70 per session (3x per week)",
+   "price": {
+    "nl": "€70–80 per sessie",
+    "en": "€70–80 per session"
+   }
   },
   {
    "name": "Eastbound Gym",
@@ -280,12 +300,16 @@
     "Boxing"
    ],
    "languages": null,
-   "price": "€75 to €90 per single lesson",
    "website": "https://eastboundgym.nl/",
    "instagram": "https://www.instagram.com/eastbound_gym/",
    "source_url": "https://eastboundgym.nl/en/aanbod/personal-training-kickboksen-boksen",
    "instagram_source": "https://eastboundgym.nl/en/aanbod/personal-training-kickboksen-boksen",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€75 to €90 per single lesson",
+   "price": {
+    "nl": "€75–90 per les",
+    "en": "€75–90 per session"
+   }
   },
   {
    "name": "Spallys",
@@ -295,12 +319,16 @@
     "Boxing"
    ],
    "languages": null,
-   "price": "€75 per uur",
    "website": "https://spallys.nl/",
    "instagram": "https://www.instagram.com/spallysdutchstylekickboxing/",
    "source_url": "https://spallys.nl/personal-training/",
    "instagram_source": "https://spallys.nl/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€75 per uur",
+   "price": {
+    "nl": "€75 per uur",
+    "en": "€75 per hour"
+   }
   },
   {
    "name": "Supu Sports Amsterdam",
@@ -413,12 +441,16 @@
     "Strength"
    ],
    "languages": null,
-   "price": "Starter Pack Silver €249 / 4 weeks (2 personal training sessions)",
    "website": "https://calisthenicsamsterdam.com/",
    "instagram": "https://www.instagram.com/calisthenics_amsterdam/",
    "source_url": "https://calisthenicsamsterdam.com/pricing/",
    "instagram_source": "https://calisthenicsamsterdam.com/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "Starter Pack Silver €249 / 4 weeks (2 personal training sessions)",
+   "price": {
+    "nl": "€249 per 4 weken (2 sessies)",
+    "en": "€249 per 4 weeks (2 sessions)"
+   }
   },
   {
    "name": "Betere Mobiliteit",
@@ -429,12 +461,16 @@
     "Rehab"
    ],
    "languages": null,
-   "price": "€1147 one-off (quarterly personal training track)",
    "website": "https://beteremobiliteit.nl/",
    "instagram": null,
    "source_url": "https://beteremobiliteit.nl/personal-training-amsterdam-noord/",
    "instagram_source": null,
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€1147 one-off (quarterly personal training track)",
+   "price": {
+    "nl": "€1.147 per traject van 3 maanden",
+    "en": "€1,147 for a 3-month programme"
+   }
   },
   {
    "name": "Training for Mamas",
@@ -446,12 +482,16 @@
     "Strength"
    ],
    "languages": null,
-   "price": "€1077 incl. BTW for 12 weeks",
    "website": "https://trainingformamas.nl/",
    "instagram": "https://www.instagram.com/trainingformamas/",
    "source_url": "https://trainingformamas.nl/personal-training-tijdens-en-na-de-zwangerschap/",
    "instagram_source": "https://trainingformamas.nl/personal-training-tijdens-en-na-de-zwangerschap/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€1077 incl. BTW for 12 weeks",
+   "price": {
+    "nl": "€1.077 voor 12 weken",
+    "en": "€1,077 for 12 weeks"
+   }
   },
   {
    "name": "The Power Lifestyle",
@@ -562,12 +602,16 @@
     "NL",
     "EN"
    ],
-   "price": "Vanaf €72,50 per sessie",
    "website": "https://thegym.amsterdam/",
    "instagram": "https://www.instagram.com/thegymamsterdam/",
    "source_url": "https://thegym.amsterdam/",
    "instagram_source": "https://thegym.amsterdam/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "Vanaf €72,50 per sessie",
+   "price": {
+    "nl": "Vanaf €72,50 per sessie",
+    "en": "From €72.50 per session"
+   }
   },
   {
    "name": "The Workout Lab",
@@ -593,12 +637,16 @@
     "Strength"
    ],
    "languages": null,
-   "price": "€83 per uur",
    "website": "https://bookyourtrainer.nl/",
    "instagram": "https://www.instagram.com/bookyourtrainer.nl/",
    "source_url": "https://bookyourtrainer.nl/",
    "instagram_source": "https://bookyourtrainer.nl/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "€83 per uur",
+   "price": {
+    "nl": "€83 per uur",
+    "en": "€83 per hour"
+   }
   },
   {
    "name": "MudaGym",
@@ -629,12 +677,16 @@
     "Weight loss"
    ],
    "languages": null,
-   "price": "Losse les: € 94,-",
    "website": "https://www.ironhealth.nl/",
    "instagram": "https://www.instagram.com/ironhealthnl/",
    "source_url": "https://www.ironhealth.nl/",
    "instagram_source": "https://www.ironhealth.nl/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "Losse les: € 94,-",
+   "price": {
+    "nl": "€94 per losse sessie",
+    "en": "€94 per single session"
+   }
   },
   {
    "name": "Personal Training Zuid",
@@ -666,12 +718,16 @@
    "languages": [
     "EN"
    ],
-   "price": "From €90 per session",
    "website": "https://www.cocoongym.com/",
    "instagram": "https://www.instagram.com/cocoongymamsterdam/",
    "source_url": "https://www.cocoongym.com/",
    "instagram_source": "https://www.cocoongym.com/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "From €90 per session",
+   "price": {
+    "nl": "Vanaf €90 per sessie",
+    "en": "From €90 per session"
+   }
   },
   {
    "name": "Physicum",
@@ -689,7 +745,7 @@
    "checked": "2026-10-02"
   },
   {
-   "name": "Fysio Buitenveldert (personal training)",
+   "name": "Fysio Buitenveldert",
    "kind": "studio",
    "area": "Buitenveldert",
    "specialities": [
@@ -699,12 +755,16 @@
    "languages": [
     "NL"
    ],
-   "price": "10 rittenkaart 60 minutes PT € 820",
    "website": "https://fysiobuitenveldert.nl/",
    "instagram": "https://www.instagram.com/fysiobuitenveldert/",
    "source_url": "https://fysiobuitenveldert.nl/personal-training/",
    "instagram_source": "https://fysiobuitenveldert.nl/personal-training/",
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "10 rittenkaart 60 minutes PT € 820",
+   "price": {
+    "nl": "€820 voor 10 sessies van 60 min",
+    "en": "€820 for 10 sessions of 60 min"
+   }
   },
   {
    "name": "Sjoerd Kunstt",
@@ -717,12 +777,16 @@
    "languages": [
     "NL"
    ],
-   "price": "1 sessie per week: €79,- per sessie",
    "website": "https://www.sjoerdkunstt.nl/",
    "instagram": null,
    "source_url": "https://www.sjoerdkunstt.nl/personal-trainer-amsterdam",
    "instagram_source": null,
-   "checked": "2026-10-02"
+   "checked": "2026-10-02",
+   "price_source": "1 sessie per week: €79,- per sessie",
+   "price": {
+    "nl": "€79 per sessie (1x per week)",
+    "en": "€79 per session (once a week)"
+   }
   }
  ]
 }

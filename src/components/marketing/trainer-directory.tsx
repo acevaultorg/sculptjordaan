@@ -275,7 +275,7 @@ function PublicCard({ tr, locale }: { tr: PublicTrainer; locale: Locale }) {
             <span>{languageNames(tr.languages, locale)}</span>
           </li>
         )}
-        {tr.price && <li className="pl-6 font-medium text-foreground">{tr.price}</li>}
+        {tr.price && <li className="pl-6 font-medium text-foreground">{tr.price[locale]}</li>}
       </ul>
       <div className="mt-3 flex flex-wrap gap-x-5 text-sm">
         <a href={tr.website} target="_blank" rel="nofollow noopener noreferrer" className={ext}>
