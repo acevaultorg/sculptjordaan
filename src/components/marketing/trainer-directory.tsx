@@ -68,7 +68,8 @@ const COPY = {
       "Deze vermeldingen bevatten alleen openbare zakelijke gegevens van de eigen website van de trainer: naam, specialiteit, wijk, talen, een prijs als die er staat, en links naar de website en Instagram. Geen foto's, telefoonnummers of e-mailadressen. Sta je hier en wil je iets aanpassen of eruit? Mail contact@sculptclub.nl, dan passen we het aan.",
     rentTitle: "Ben je personal trainer?",
     rentBody: "Huur SculptClub per uur: een privé studio in de Jordaan, halve studio vanaf \u20ac12 per uur. Je houdt 100% van je tarief.",
-    rentBandCta: "Bekijk studio huren",
+    rentBandCta: "Probeer 60 minuten gratis",
+    rentPrices: "Bekijk de prijzen",
     fArea: "Wijk",
     fTag: "Specialiteit",
     fLang: "Taal",
@@ -124,7 +125,8 @@ const COPY = {
       "These listings hold only public business details from the trainer's own website: name, specialty, neighbourhood, languages, a price if one is published, and links to the website and Instagram. No photos, phone numbers or e-mail addresses. Listed here and want something changed or removed? E-mail contact@sculptclub.nl and we will change it.",
     rentTitle: "Are you a personal trainer?",
     rentBody: "Rent SculptClub by the hour: a private studio in the Jordaan, half studio from \u20ac12 per hour. You keep 100% of your rate.",
-    rentBandCta: "See studio rental",
+    rentBandCta: "Try it free for 60 minutes",
+    rentPrices: "See the prices",
     fArea: "Neighbourhood",
     fTag: "Specialty",
     fLang: "Language",
@@ -311,10 +313,20 @@ function RentBand({ locale }: { locale: Locale }) {
         <p className="text-xl font-bold">{c.rentTitle}</p>
         <p className="mt-1 text-background/80">{c.rentBody}</p>
       </div>
-      <Link href={locale === "nl" ? "/nl/studio-huren" : "/en/studio-rental"} className={`${btnPrimary} shrink-0`}>
-        {c.rentBandCta}
-        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-      </Link>
+      <div className="flex shrink-0 flex-col items-start gap-1 sm:items-end">
+        {/* The free 60-minute trial converts best for trainers (7 of 22 users click to book; trial to
+            paying renter 52%, GA4 30d to 2026-10-02, commit 863dca6), so it is the primary action. */}
+        <Link href={locale === "nl" ? "/nl/studio-huren/gratis-test" : "/en/studio-rental/free-trial"} className={btnPrimary}>
+          {c.rentBandCta}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+        <Link
+          href={locale === "nl" ? "/nl/studio-huren" : "/en/studio-rental"}
+          className="inline-flex min-h-11 items-center text-sm font-semibold text-background underline underline-offset-4"
+        >
+          {c.rentPrices}
+        </Link>
+      </div>
     </div>
   );
 }

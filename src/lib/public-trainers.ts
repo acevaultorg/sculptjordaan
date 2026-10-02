@@ -157,5 +157,6 @@ export const publicTrainers: PublicTrainer[] = (data.listings ?? [])
     instagram: e.instagram && /^https:\/\/(www\.)?instagram\.com\/[A-Za-z0-9._]+\/?$/.test(e.instagram) ? e.instagram : null,
     sourceUrl: e.source_url,
     checked: e.checked,
-  }))
-  .sort((a, b) => a.name.localeCompare(b.name));
+  }));
+// No sort: the JSON is ordered on purpose (most likely SculptClub renters first, Paulo 2026-10-02,
+// card mur3ek06pd4z2g). The scores and reasons are private and stay out of this public repo.
