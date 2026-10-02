@@ -1,0 +1,17 @@
+{
+  "name": "sculptclub-invoices",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": false,
+  "observability": { "enabled": true },
+  "d1_databases": [{ "binding": "DB", "database_name": "sculptclub-invoices", "database_id": "5dd5eae6-bf30-4acf-ba16-055c5f0b76cf" }],
+  "r2_buckets": [{ "binding": "PDFS", "bucket_name": "sculptclub-invoices" }],
+  "send_email": [{ "name": "EMAIL" }],
+  "vars": {
+    // Customer mail is OFF until Paulo says yes. Flip to "true" and redeploy (or `wrangler deploy --var SEND_ENABLED:true`).
+    "SEND_ENABLED": "false",
+    "FROM_ADDRESS": "invoices@sculptclub.nl",
+    "REVIEW_FORWARD_TO": "paulomdevries@gmail.com"
+    // Secret (not here): ADMIN_TOKEN  (wrangler secret put ADMIN_TOKEN)
+  }
+}

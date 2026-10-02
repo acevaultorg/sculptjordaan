@@ -1,0 +1,11 @@
+{
+  "name": "sculptclub-invoices",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test/parse.test.mjs",
+    "deploy": "env -u CLOUDFLARE_API_TOKEN -u CF_PAGES_TOKEN wrangler deploy"
+  },
+  "dependencies": { "postal-mime": "^2.4.3" },
+  "devDependencies": { "wrangler": "^4" }
+}
