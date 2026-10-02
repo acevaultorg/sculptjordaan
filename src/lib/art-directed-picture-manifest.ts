@@ -18,8 +18,8 @@ export const ART_DIRECTED_PICTURES = {
       {
         "name": "desktop",
         "media": "(min-width: 768px)",
-        "width": 800,
-        "height": 1066,
+        "width": 1066,
+        "height": 1422,
         "variants": {
           "avif": [
             {
@@ -33,6 +33,10 @@ export const ART_DIRECTED_PICTURES = {
             {
               "url": "/images/_pic/landing-trainer-desktop-800.avif",
               "w": 800
+            },
+            {
+              "url": "/images/_pic/landing-trainer-desktop-1066.avif",
+              "w": 1066
             }
           ],
           "webp": [
@@ -47,6 +51,10 @@ export const ART_DIRECTED_PICTURES = {
             {
               "url": "/images/_pic/landing-trainer-desktop-800.webp",
               "w": 800
+            },
+            {
+              "url": "/images/_pic/landing-trainer-desktop-1066.webp",
+              "w": 1066
             }
           ],
           "jpg": [
@@ -61,6 +69,10 @@ export const ART_DIRECTED_PICTURES = {
             {
               "url": "/images/_pic/landing-trainer-desktop-800.jpg",
               "w": 800
+            },
+            {
+              "url": "/images/_pic/landing-trainer-desktop-1066.jpg",
+              "w": 1066
             }
           ]
         }

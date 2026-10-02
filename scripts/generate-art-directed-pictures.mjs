@@ -11,7 +11,8 @@
  *   crop is written as AVIF + WebP + a JPEG fallback, so the browser picks
  *   both the format and the width.
  *
- * Variants are written GRAYSCALE on purpose: the colour comes from the CSS
+ * Variants were written GRAYSCALE (v1-v3). Since v4 (2026-10-02) they keep their natural colour so skin
+ * reads natural; the hue identity now comes from a soft CSS wash. Old note: the colour came from the CSS
  * duotone in the component (tokens stay in code, not baked into pixels), and a
  * single-channel image is markedly smaller than a colour one.
  *
@@ -34,12 +35,14 @@ const MANIFEST = "src/lib/art-directed-picture-manifest.ts";
 const PICTURES = [
   {
     id: "landing-trainer",
-    src: "public/images/studio/training-women-coaching.jpg", // 1600x1066
+    // v4 (2026-10-02): a man and a woman training in the studio (Paulo: both halves showed women).
+    // Same photo the small-group blog posts use, so the rights are already settled.
+    src: "public/images/studio/training-duo-lunge-wall.jpg", // 1066x1600
     crops: {
       // Desktop half (>=768px) is portrait, roughly 0.4 to 0.9 wide-to-tall.
-      desktop: { media: "(min-width: 768px)", left: 400, top: 0, width: 800, height: 1066, widths: [480, 640, 800] },
-      // Phone half is close to square (375x333 to 430x466).
-      mobile: { left: 219, top: 0, width: 1066, height: 1066, widths: [640, 828, 1066] },
+      desktop: { media: "(min-width: 768px)", left: 0, top: 120, width: 1066, height: 1422, widths: [480, 640, 800, 1066] },
+      // Phone half is close to square (375x333 to 430x466). Faces sit at y 340-620 of 1600.
+      mobile: { left: 0, top: 230, width: 1066, height: 1066, widths: [640, 828, 1066] },
     },
   },
   {
@@ -51,6 +54,8 @@ const PICTURES = [
     },
   },
 ];
+
+const CAP = 0.7; // brightest output value, 0..1
 
 const FORMATS = {
   avif: (img) => img.avif({ quality: 48, effort: 6, chromaSubsampling: "4:2:0" }),
@@ -75,13 +80,17 @@ for (const pic of PICTURES) {
           .rotate()
           .extract({ left: c.left, top: c.top, width: c.width, height: c.height })
           .resize(w, h, { kernel: "lanczos3" })
-          .grayscale()
           .normalise({ lower: 1, upper: 99 })
           // Local contrast, so faces and kit still read once the duotone squeezes the
           // range between two dark-ish tokens. Safe for text: the duotone caps every
           // pixel at the tint colour whatever the photo's brightness.
-          .clahe({ width: Math.round(w / 6), height: Math.round(h / 6), maxSlope: 3 });
-        await encode(img).toFile(out);
+          .clahe({ width: Math.round(w / 6), height: Math.round(h / 6), maxSlope: 2 })
+;
+        // Cap the brightest pixel so white text keeps its contrast over natural colour. A second
+        // pipeline on purpose: sharp runs linear() BEFORE normalise/clahe within one pipeline, so
+        // chaining it above left the max at 255.
+        const capped = sharp(await img.png().toBuffer()).linear(CAP, 0);
+        await encode(capped).toFile(out);
         total += (await stat(out)).size;
         variants[fmt].push({ url: `/images/_pic/${file}`, w });
       }

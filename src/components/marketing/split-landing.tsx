@@ -15,13 +15,12 @@ import type { Locale } from "@/config/site";
  *   left / top     = personal trainers who rent the studio (deep navy → cobalt)
  *   right / bottom = people who want to train (deep crimson → brick red)
  *
- * Colour + legibility (2026-10-01): each photo is a true duotone in its half's
- * own two tokens. The grayscale photo is multiplied by `tint` (white -> tint) and
- * screened with `base` (black -> base), so every pixel lands between the dark
- * and the light token and nothing in the photo can be brighter than the tint.
- * A light scrim in the same dark hue then lifts white text to 7:1 or better
- * over the brightest pixel. qa/landing-v3/results.json holds the values
- * measured on the rendered pixels by scripts/qa-landing.mjs.
+ * Colour + legibility (v4, 2026-10-02, Paulo: "let some color come through"): the photos keep
+ * their natural colour (variants are capped at 70% brightness when generated). A soft hue
+ * wash (mix-blend-color, 32%) carries the blue / red identity and a scrim in the same dark
+ * hue holds white text at WCAG AA or better over the brightest pixel. v1-v3 were a hard
+ * duotone at 7:1; qa/landing-v4/results.json holds the values measured on the rendered
+ * pixels by scripts/qa-landing.mjs (min 4.98:1).
  *
  * Photos: the studio's own (no stock), served by <ArtDirectedPicture> as
  * AVIF/WebP/JPEG with a square crop for the phone half and a portrait crop
@@ -73,7 +72,7 @@ const THEME = {
     base: "bg-[#0A1633]",
     tint: "bg-[#1E4FD6]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(10,22,51,0.30)_0%,rgba(10,22,51,0.34)_45%,rgba(10,22,51,0.48)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(10,22,51,0.42)_0%,rgba(10,22,51,0.44)_45%,rgba(10,22,51,0.56)_100%)]",
     ink: "text-[#0A1633] focus-visible:ring-offset-[#0A1633]",
     rule: "bg-[#8FB0FF]",
   },
@@ -81,7 +80,7 @@ const THEME = {
     base: "bg-[#3F0910]",
     tint: "bg-[#B42330]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(63,9,16,0.32)_0%,rgba(63,9,16,0.36)_45%,rgba(63,9,16,0.50)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(63,9,16,0.42)_0%,rgba(63,9,16,0.44)_45%,rgba(63,9,16,0.56)_100%)]",
     ink: "text-[#9B1620] focus-visible:ring-offset-[#3F0910]",
     rule: "bg-[#FFB0A8]",
   },
@@ -135,11 +134,12 @@ function Half({
         position={half.image.position}
         className="absolute inset-0 -z-40 h-full w-full object-cover"
       />
-      {/* Duotone, light end: multiply maps the photo's white to the tint token. */}
-      <div aria-hidden="true" className={`absolute inset-0 -z-30 mix-blend-multiply ${t.tint}`} />
-      {/* Duotone, dark end: screen maps the photo's black to the base token. */}
-      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-screen ${t.base}`} />
-      {/* Scrim in the same hue: a little deeper toward the bottom, light enough that the photo reads. */}
+      {/* v4 (2026-10-02, Paulo): the photo keeps its natural colour. A soft hue wash
+          (mix-blend-color keeps the photo's lightness and only borrows the hue, at
+          low opacity) carries the blue / red identity without turning skin into plastic. */}
+      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-color opacity-[0.32] ${t.tint}`} />
+      {/* Scrim in the same hue, deeper toward the bottom: holds the text at 7:1 (the photo's own
+          brightest pixel is capped when the variants are generated). */}
       <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
       <div className="mx-auto w-full max-w-md text-white md:mx-0 lg:max-w-lg">

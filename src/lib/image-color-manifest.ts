@@ -10,7 +10,7 @@
 // Why not blur placeholder: see docs/PERF-EXPERIMENTS-2026-05-07.md.
 // (TL;DR: SVG feGaussianBlur regressed Lighthouse mobile LCP by 6-9s.)
 //
-// Generated: 2026-09-22T21:53:44.775Z
+// Generated: 2026-10-02T08:32:47.535Z
 // Total entries: 692
 // Skipped (unsupported format): 2
 
@@ -654,12 +654,12 @@ export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
   "/images/trainers/_rs/joey-wp-750.webp": "#827469",
   "/images/trainers/_rs/joey-wp-828.webp": "#827469",
   "/images/trainers/_rs/joey-wp-full.webp": "#827469",
-  "/images/trainers/_rs/roberta-main-1080.webp": "#765655",
-  "/images/trainers/_rs/roberta-main-384.webp": "#765655",
-  "/images/trainers/_rs/roberta-main-640.webp": "#765655",
-  "/images/trainers/_rs/roberta-main-750.webp": "#765655",
-  "/images/trainers/_rs/roberta-main-828.webp": "#765655",
-  "/images/trainers/_rs/roberta-main-full.webp": "#765655",
+  "/images/trainers/_rs/roberta-studio-1080.webp": "#5e6688",
+  "/images/trainers/_rs/roberta-studio-384.webp": "#5e6688",
+  "/images/trainers/_rs/roberta-studio-640.webp": "#5e6688",
+  "/images/trainers/_rs/roberta-studio-750.webp": "#5e6688",
+  "/images/trainers/_rs/roberta-studio-828.webp": "#5e6688",
+  "/images/trainers/_rs/roberta-studio-full.webp": "#5e6688",
   "/images/trainers/_rs/sergei-1080.webp": "#362922",
   "/images/trainers/_rs/sergei-384.webp": "#352821",
   "/images/trainers/_rs/sergei-640.webp": "#362922",
@@ -702,7 +702,7 @@ export const IMAGE_COLOR_MANIFEST: Record<string, string> = {
   "/images/trainers/jearmey.jpg": "#635647",
   "/images/trainers/joey-wp.jpg": "#83756b",
   "/images/trainers/joey.jpg": "#6e5c49",
-  "/images/trainers/roberta-main.jpg": "#785757",
+  "/images/trainers/roberta-studio.jpg": "#60698b",
   "/images/trainers/sergei.jpg": "#372922",
   "/images/trainers/tom-2.jpg": "#3b3a36",
   "/images/trainers/tom-3.jpg": "#4c5353",

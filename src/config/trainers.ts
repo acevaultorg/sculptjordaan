@@ -823,7 +823,7 @@ const trainersRaw: Trainer[] = [
       nl: "Italiaanse personal trainer in Amsterdam. Roberta helpt drukke volwassenen sterker te worden, beter te bewegen en een realistische routine op te bouwen die bij hun leven past. Ze geeft 1-op-1 en kleine groepen, en losse consulten voor beginners én gevorderden die professionele begeleiding willen zonder wekelijkse afspraken. De nadruk ligt op techniek, houding en mobiliteit, en vooruitgang die je op eigen kracht volhoudt.",
       en: "Italian personal trainer based in Amsterdam. Roberta helps busy adults get stronger, move better and build a realistic routine that fits their lifestyle. She offers one-to-one and small-group coaching, plus focused consultations for beginners and experienced exercisers who want professional guidance without committing to weekly appointments. The emphasis is on proper technique, posture and mobility, and sustainable progress you can carry on your own.",
     },
-    image: "/images/trainers/roberta-main.jpg",
+    image: "/images/trainers/roberta-studio.jpg",
     // Roberta asked (email 2026-07-25) NOT to publish a private mobile —
     // her CTA goes to her own Calendly instead of WhatsApp, and she offers a
     // short free DISCOVERY CALL rather than a full intake, so the button is

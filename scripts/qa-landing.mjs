@@ -26,7 +26,7 @@ const OUT = "out";
 const QA = process.env.QA_DIR || "qa/landing-v3"; // v1/v2 results stay in qa/landing/ and qa/landing-v2/
 const REVIEW = "review";
 // Owner's bar (2026-10-01): every text box at 7:1 or better, well above AA's 4.5:1.
-const MIN_CONTRAST = 7;
+const MIN_CONTRAST = 4.5; // v4 (2026-10-02): natural-colour photos, WCAG AA per Paulo; was 7 on the duotone
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".woff2": "font/woff2", ".json": "application/json", ".txt": "text/plain", ".ico": "image/x-icon" };
 
 async function resolveFile(urlPath) {

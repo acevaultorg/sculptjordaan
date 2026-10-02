@@ -10,6 +10,7 @@ const copy = {
   nl: {
     title: "Cookies",
     text: "Wij gebruiken cookies om je ervaring te verbeteren en onze website te analyseren.",
+    short: "Wij gebruiken cookies.",
     accept: "Accepteren",
     essential: "Alleen essentieel",
     policyLink: "/nl/cookiebeleid",
@@ -18,6 +19,7 @@ const copy = {
   en: {
     title: "Cookies",
     text: "We use cookies to improve your experience and analyze our website.",
+    short: "We use cookies.",
     accept: "Accept",
     essential: "Essential only",
     policyLink: "/en/cookie-policy",
@@ -109,7 +111,9 @@ export function CookieConsent() {
     const baseline = window.scrollY;
     const onScroll = () => {
       const y = window.scrollY;
-      if (y > window.innerHeight * 1.2 && Math.abs(y - baseline) > 300) {
+      // 2026-10-02: collapse after ~160px of real scrolling (was 1.2 viewports): the bar
+      // otherwise sat over the first trainer card CTA until the visitor had scrolled far.
+      if (Math.abs(y - baseline) > 160) {
         setMinimized(true);
       }
     };
@@ -191,12 +195,13 @@ export function CookieConsent() {
           still covers minimal content — the size issue that retired the
           original tall bar. */}
       <div className="bg-card border-t border-border shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
-        <div className="mx-auto w-full max-w-3xl px-4 py-3.5 sm:px-6 sm:py-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-2.5 sm:items-center">
-              <Cookie className="mt-0.5 sm:mt-0 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
-              <p className="text-sm leading-snug text-foreground">
-                {t.text}{" "}
+        <div className="mx-auto w-full max-w-3xl px-3 py-1 sm:px-6 sm:py-4">
+          <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
+            <div className="flex min-w-0 items-center gap-2 sm:gap-2.5">
+              <Cookie className="hidden h-5 w-5 shrink-0 text-muted-foreground min-[420px]:block" aria-hidden="true" />
+              <p className="text-xs leading-tight text-foreground sm:text-sm sm:leading-snug">
+                <span className="sm:hidden">{t.short}</span>
+                <span className="hidden sm:inline">{t.text}</span>{" "}
                 <Link
                   href={t.policyLink}
                   className="underline underline-offset-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -211,16 +216,16 @@ export function CookieConsent() {
                 light-filled (clear affirmative, fast resolution), deliberately
                 NOT brand-orange so it doesn't steal the eye from the hero CTA
                 (2026-05-27 Clarity decision preserved). */}
-            <div className="grid grid-cols-2 gap-2.5 shrink-0 sm:flex">
+            <div className="flex shrink-0 gap-1.5 sm:gap-2.5">
               <button
                 onClick={handleEssential}
-                className="rounded-full border border-border bg-transparent px-5 py-2.5 min-h-[44px] text-sm font-medium text-foreground hover:bg-muted transition-colors cursor-pointer sm:min-w-[150px]"
+                className="rounded-full border border-border bg-transparent px-3 py-2 min-h-[44px] whitespace-nowrap text-xs font-medium sm:px-5 sm:py-2.5 sm:text-sm text-foreground hover:bg-muted transition-colors cursor-pointer sm:min-w-[150px]"
               >
                 {t.essential}
               </button>
               <button
                 onClick={handleAccept}
-                className="rounded-full bg-foreground px-5 py-2.5 min-h-[44px] text-sm font-semibold text-background hover:bg-foreground/90 transition-colors cursor-pointer sm:min-w-[150px]"
+                className="rounded-full bg-foreground px-3 py-2 min-h-[44px] whitespace-nowrap text-xs font-semibold sm:px-5 sm:py-2.5 sm:text-sm text-background hover:bg-foreground/90 transition-colors cursor-pointer sm:min-w-[150px]"
               >
                 {t.accept}
               </button>

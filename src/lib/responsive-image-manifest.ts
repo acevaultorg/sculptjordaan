@@ -101,7 +101,7 @@ export const RESPONSIVE_WIDTHS: Record<string, number> = {
   "/images/trainers/jearmey.jpg": 739,
   "/images/trainers/joey-wp.jpg": 1080,
   "/images/trainers/joey.jpg": 1073,
-  "/images/trainers/roberta-main.jpg": 1843,
+  "/images/trainers/roberta-studio.jpg": 1228,
   "/images/trainers/sergei.jpg": 1122,
   "/images/trainers/tom-2.jpg": 1000,
   "/images/trainers/tom-3.jpg": 1200,

@@ -184,8 +184,8 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                   2-col card and wrapped onto FOUR lines at 375px (measured on
                   the built output before this line existed). trainer-choice-grid
                   already solved the identical squeeze by stacking — same fix. */}
-              <div className="mt-auto flex flex-col items-start gap-1.5 p-3 pt-0 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:p-4 sm:pt-0">
-                  <span className="whitespace-nowrap text-xs font-medium text-muted-foreground sm:text-sm">
+              <div className="mt-auto flex flex-col items-start gap-1.5 p-3 pt-0 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-2 sm:gap-y-1 sm:p-4 sm:pt-0">
+                  <span className="text-xs font-medium text-muted-foreground sm:whitespace-nowrap sm:text-sm">
                     {/* Transformation line, never the hourly rate (operator
                         2026-09-19: "we dont name hourly rate, we say 'from
                         299/ 4 weeks'"). Measured 2026-09-21: this grid was
@@ -220,7 +220,7 @@ export function TrainerPreviewGrid({ locale }: { locale: Locale }) {
                         : c.ariaIntake(trainer.name)
                     }
                     data-cta={`home-trainer-${trainer.id}`}
-                    className={`plausible-event-name=home_trainer_${trainer.id} inline-flex max-sm:min-h-11 items-center gap-1 whitespace-nowrap rounded-lg px-2 py-1 text-xs font-semibold text-primary transition-transform hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm group-hover:translate-x-0.5`}
+                    className={`plausible-event-name=home_trainer_${trainer.id} inline-flex max-w-full max-sm:min-h-11 items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold text-primary transition-transform hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:text-sm group-hover:translate-x-0.5`}
                   >
                     {trainer.bookingUrl
                       ? trainer.bookingLabel?.[locale] ?? c.ctaCard
