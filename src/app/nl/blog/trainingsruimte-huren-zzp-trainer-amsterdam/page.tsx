@@ -234,6 +234,7 @@ export default function BlogPostZZPTrainerNL() {
                   WhatsApp ons
                 </ButtonLink>
               </div>
+              <p className="mt-3 text-sm text-muted-foreground">Eerste keer? <a href="/nl/studio-huren/gratis-test" className="text-brand underline">Probeer de studio 60 minuten gratis</a> met je eigen klant, zonder contract.</p>
             </div>
           </article>
         </FadeIn>

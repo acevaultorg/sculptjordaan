@@ -160,6 +160,7 @@ export default function BlogPostStudioVsCommercieleGym() {
                 <h3 className="text-xl font-bold text-foreground mb-2">Wil je 100% van je tarief?</h3>
                 <p className="mb-4">Bij SculptClub alleen uurhuur — geen lidmaatschap, geen gedeelde klantenbinding. Vanaf €12/uur. Plan een gratis rondleiding.</p>
                 <ButtonLink href="/nl/studio-huren" size="lg">Bekijk Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
+                <p className="mt-3 text-sm text-muted-foreground">Eerste keer? <a href="/nl/studio-huren/gratis-test" className="text-brand underline">Probeer de studio 60 minuten gratis</a> met je eigen klant, zonder contract.</p>
               </div>
             </div>
           </article>

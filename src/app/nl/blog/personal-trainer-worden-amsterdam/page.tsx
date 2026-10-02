@@ -160,6 +160,7 @@ export default function PTWordenAmsterdamNL() {
               <h3 className="text-xl font-bold mb-2">Klaar om te starten als trainer?</h3>
               <p className="text-muted-foreground mb-6">Bekijk de studio, de tarieven en wat we je bieden.</p>
               <ButtonLink href="/nl/word-trainer" size="lg">Word trainer bij SculptClub<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
+              <p className="mt-3 text-sm text-muted-foreground">Eerste keer? <a href="/nl/studio-huren/gratis-test" className="text-brand underline">Probeer de studio 60 minuten gratis</a> met je eigen klant, zonder contract.</p>
             </div>
           </article>
         </FadeIn>

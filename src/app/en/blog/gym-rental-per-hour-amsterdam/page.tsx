@@ -215,7 +215,7 @@ export default function BlogPostGymRentalPerHour() {
                 <p className="mb-4">
                   Book a free trial session and come see the studio. No obligations — just see if it fits.
                 </p>
-                <ButtonLink href="/en/studio-rental" size="lg">
+                <ButtonLink href="/en/studio-rental/free-trial" size="lg">
                   View rates & book a trial session
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>

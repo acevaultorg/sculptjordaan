@@ -232,6 +232,7 @@ export default function BlogPostFreelanceTrainerEN() {
                   WhatsApp us
                 </ButtonLink>
               </div>
+              <p className="mt-3 text-sm text-muted-foreground">First time? <a href="/en/studio-rental/free-trial" className="text-brand underline">Try the studio free for 60 minutes</a> with your own client, no contract.</p>
             </div>
           </article>
         </FadeIn>

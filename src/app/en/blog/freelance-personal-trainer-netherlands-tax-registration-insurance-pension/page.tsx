@@ -288,6 +288,7 @@ export default function BlogPostFreelanceTrainerTax() {
                   See Studio Rental
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
+                <p className="mt-3 text-sm text-muted-foreground">First time? <a href="/en/studio-rental/free-trial" className="text-brand underline">Try the studio free for 60 minutes</a> with your own client, no contract.</p>
               </div>
             </div>
           </article>

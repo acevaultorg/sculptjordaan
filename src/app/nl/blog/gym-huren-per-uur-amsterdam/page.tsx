@@ -211,7 +211,7 @@ export default function BlogPostGymHurenPerUur() {
                 <p className="mb-4">
                   Boek een gratis proefsessie en kom de studio bekijken. Geen verplichtingen — alleen kijken of het bij je past.
                 </p>
-                <ButtonLink href="/nl/studio-huren" size="lg">
+                <ButtonLink href="/nl/studio-huren/gratis-test" size="lg">
                   Bekijk tarieven & boek een proefsessie
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>

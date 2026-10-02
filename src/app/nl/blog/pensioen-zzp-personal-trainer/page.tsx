@@ -184,6 +184,7 @@ export default function BlogPostPensioenZzpPersonalTrainer() {
                   Bekijk Studio Rental
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </ButtonLink>
+                <p className="mt-3 text-sm text-muted-foreground">Eerste keer? <a href="/nl/studio-huren/gratis-test" className="text-brand underline">Probeer de studio 60 minuten gratis</a> met je eigen klant, zonder contract.</p>
               </div>
             </div>
           </article>

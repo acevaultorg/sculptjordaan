@@ -162,6 +162,7 @@ export default function BecomePTAmsterdamEN() {
               <h3 className="text-xl font-bold mb-2">Ready to start as a trainer?</h3>
               <p className="text-muted-foreground mb-6">See the studio, rates and what we offer.</p>
               <ButtonLink href="/en/become-trainer" size="lg">Become a trainer at SculptClub<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
+              <p className="mt-3 text-sm text-muted-foreground">First time? <a href="/en/studio-rental/free-trial" className="text-brand underline">Try the studio free for 60 minutes</a> with your own client, no contract.</p>
             </div>
           </article>
         </FadeIn>

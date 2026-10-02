@@ -158,6 +158,7 @@ export default function BlogPostPackagesPricing() {
                 <h3 className="text-xl font-bold text-foreground mb-2">100% of your rate</h3>
                 <p className="mb-4">At SculptClub we only charge the hourly rent. Whatever packs and prices you build — everything you charge, you keep. Schedule a free tour at our studio.</p>
                 <ButtonLink href="/en/studio-rental" size="lg">See Studio Rental<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>
+                <p className="mt-3 text-sm text-muted-foreground">First time? <a href="/en/studio-rental/free-trial" className="text-brand underline">Try the studio free for 60 minutes</a> with your own client, no contract.</p>
               </div>
             </div>
           </article>
