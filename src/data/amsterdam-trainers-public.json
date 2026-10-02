@@ -1,0 +1,728 @@
+{
+ "_readme": "Public listings for /nl/trainers and /en/trainers. Rules: src/lib/public-trainers.ts. Each entry = public business info from the trainer's own website (source_url, checked). Instagram only when that site links it. No photos, phones, e-mails or street addresses. On a removal request: delete the entry AND add the name to `removed`.",
+ "removed": [],
+ "listings": [
+  {
+   "name": "Tromp Personal Training",
+   "kind": "trainer",
+   "area": "Jordaan",
+   "specialities": [
+    "Strength",
+    "Boxing"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://www.tromppt.nl/",
+   "instagram": "https://www.instagram.com/tromppt/",
+   "source_url": "https://www.tromppt.nl/",
+   "instagram_source": "https://www.tromppt.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Wilson's Workouts",
+   "kind": "trainer",
+   "area": "Oud-West",
+   "specialities": [
+    "Strength",
+    "Mobility",
+    "Running"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://wilsonsworkouts.nl/",
+   "instagram": "https://www.instagram.com/trainerlorna/",
+   "source_url": "https://wilsonsworkouts.nl/personal-training/",
+   "instagram_source": "https://wilsonsworkouts.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Westerparkfit",
+   "kind": "trainer",
+   "area": "Westerpark",
+   "specialities": [
+    "Calisthenics",
+    "Mobility",
+    "Strength",
+    "Nutrition"
+   ],
+   "languages": [
+    "NL",
+    "EN"
+   ],
+   "price": "€85 per 75 min (1x/week); €70 (3x/week)",
+   "website": "https://westerparkfit.nl/",
+   "instagram": "https://www.instagram.com/ariswesterparkfit/",
+   "source_url": "https://westerparkfit.nl/",
+   "instagram_source": "https://westerparkfit.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "BeyondFit Amsterdam-West",
+   "kind": "studio",
+   "area": "Oud-West",
+   "specialities": [
+    "Strength",
+    "Nutrition"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://beyondfit.nl/personal-trainer/amsterdam/west/",
+   "instagram": "https://www.instagram.com/beyondfit.club/",
+   "source_url": "https://beyondfit.nl/personal-trainer/amsterdam/west/",
+   "instagram_source": "https://beyondfit.nl/personal-trainer/amsterdam/west/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Dymphy Fit",
+   "kind": "trainer",
+   "area": "Oud-West",
+   "specialities": [
+    "Strength",
+    "Weight loss",
+    "Pre/postnatal",
+    "Rehab"
+   ],
+   "languages": null,
+   "price": "1-on-1 from €380 per 4 weeks (4x 60 min)",
+   "website": "https://dymphyfit.nl/en/",
+   "instagram": "https://www.instagram.com/dymphyfit/",
+   "source_url": "https://dymphyfit.nl/en/",
+   "instagram_source": "https://dymphyfit.nl/en/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Karakter Personal Training",
+   "kind": "studio",
+   "area": "Jordaan",
+   "specialities": [
+    "Strength",
+    "Weight loss",
+    "Nutrition"
+   ],
+   "languages": null,
+   "price": "Starting at 44,50 per session",
+   "website": "https://www.karakterpt.nl/",
+   "instagram": null,
+   "source_url": "https://www.karakterpt.nl/",
+   "instagram_source": null,
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Omnia Personal Training",
+   "kind": "studio",
+   "area": "Jordaan",
+   "specialities": [
+    "Strength",
+    "Nutrition"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://www.omniapersonaltraining.amsterdam",
+   "instagram": "https://www.instagram.com/omniapersonaltraining/",
+   "source_url": "https://www.omniapersonaltraining.amsterdam",
+   "instagram_source": "https://www.omniapersonaltraining.amsterdam",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Famba Fitness",
+   "kind": "studio",
+   "area": "Nieuw-West",
+   "specialities": [
+    "Calisthenics",
+    "Strength",
+    "Mobility",
+    "Weight loss"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://www.fambafitness.nl/",
+   "instagram": "https://www.instagram.com/solly_muwaniri/",
+   "source_url": "https://www.fambafitness.nl/personal-training",
+   "instagram_source": "https://www.fambafitness.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Movement First Personal Training",
+   "kind": "trainer",
+   "area": "Mobile/at home",
+   "specialities": [
+    "Weight loss",
+    "Mobility",
+    "Rehab",
+    "Pre/postnatal"
+   ],
+   "languages": [
+    "EN",
+    "ES",
+    "PT",
+    "NL"
+   ],
+   "price": null,
+   "website": "https://movement1st.com/",
+   "instagram": null,
+   "source_url": "https://movement1st.com/",
+   "instagram_source": null,
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Staetsgeheim",
+   "kind": "studio",
+   "area": "Westerpark",
+   "specialities": [
+    "Strength",
+    "Pilates",
+    "Pre/postnatal",
+    "Rehab"
+   ],
+   "languages": [
+    "NL",
+    "EN"
+   ],
+   "price": null,
+   "website": "https://staetsgeheim.com/",
+   "instagram": "https://www.instagram.com/staetsgeheim/",
+   "source_url": "https://staetsgeheim.com/",
+   "instagram_source": "https://staetsgeheim.com/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "The Trainers Amsterdam",
+   "kind": "studio",
+   "area": "Westerpark",
+   "specialities": [
+    "HIIT",
+    "Strength",
+    "Pre/postnatal",
+    "Nutrition"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://www.the-trainers.nl/",
+   "instagram": "https://www.instagram.com/the_trainers_amsterdam/",
+   "source_url": "https://www.the-trainers.nl/",
+   "instagram_source": "https://www.the-trainers.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Personal Trainer for Health",
+   "kind": "studio",
+   "area": "Westerpark",
+   "specialities": [
+    "Strength",
+    "Weight loss",
+    "Pre/postnatal",
+    "Seniors"
+   ],
+   "languages": [
+    "NL",
+    "EN"
+   ],
+   "price": null,
+   "website": "https://www.coachingforhealth.nl/",
+   "instagram": null,
+   "source_url": "https://www.personaltrainerforhealth.nl/en/personal-trainer-amsterdam-west/",
+   "instagram_source": null,
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Active Club Amsterdam",
+   "kind": "studio",
+   "area": "Centrum",
+   "specialities": [
+    "Nutrition",
+    "Rehab"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://activeclub.nl/",
+   "instagram": "https://www.instagram.com/activeclubamsterdam/",
+   "source_url": "https://activeclub.nl/",
+   "instagram_source": "https://activeclub.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Roure Personal Training",
+   "kind": "studio",
+   "area": "Oost",
+   "specialities": [
+    "Strength"
+   ],
+   "languages": null,
+   "price": "Solo €85; Duo/Buddy €60 p.p.",
+   "website": "https://rourepersonaltraining.nl/",
+   "instagram": "https://www.instagram.com/roure_personaltraining/",
+   "source_url": "https://rourepersonaltraining.nl/",
+   "instagram_source": "https://rourepersonaltraining.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Improve Personal Training",
+   "kind": "trainer",
+   "area": "Oost",
+   "specialities": [
+    "Strength",
+    "Boxing",
+    "Nutrition"
+   ],
+   "languages": null,
+   "price": "€80 per session (1x per week); €70 per session (3x per week)",
+   "website": "https://improve-training.nl/",
+   "instagram": "https://www.instagram.com/improve.personal.training/",
+   "source_url": "https://improve-training.nl/en/home/",
+   "instagram_source": "https://improve-training.nl/en/home/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Eastbound Gym",
+   "kind": "studio",
+   "area": "Oost",
+   "specialities": [
+    "Boxing"
+   ],
+   "languages": null,
+   "price": "€75 to €90 per single lesson",
+   "website": "https://eastboundgym.nl/",
+   "instagram": "https://www.instagram.com/eastbound_gym/",
+   "source_url": "https://eastboundgym.nl/en/aanbod/personal-training-kickboksen-boksen",
+   "instagram_source": "https://eastboundgym.nl/en/aanbod/personal-training-kickboksen-boksen",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Spallys",
+   "kind": "studio",
+   "area": "Oost",
+   "specialities": [
+    "Boxing"
+   ],
+   "languages": null,
+   "price": "€75 per uur",
+   "website": "https://spallys.nl/",
+   "instagram": "https://www.instagram.com/spallysdutchstylekickboxing/",
+   "source_url": "https://spallys.nl/personal-training/",
+   "instagram_source": "https://spallys.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Supu Sports Amsterdam",
+   "kind": "trainer",
+   "area": "Oost",
+   "specialities": [
+    "Weight loss",
+    "Strength"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://personaltrainer-amsterdam.com/",
+   "instagram": "https://www.instagram.com/supu.sports.amsterdam/",
+   "source_url": "https://personaltrainer-amsterdam.com/",
+   "instagram_source": "https://personaltrainer-amsterdam.com/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Kensho Premium Fitness",
+   "kind": "studio",
+   "area": "Oost",
+   "specialities": [
+    "Strength",
+    "HIIT",
+    "Pilates",
+    "Yoga"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://kenshofitness.nl/",
+   "instagram": "https://www.instagram.com/kenshopremiumfitness/",
+   "source_url": "https://kenshofitness.nl/",
+   "instagram_source": "https://kenshofitness.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "OosterGym",
+   "kind": "studio",
+   "area": "Oost",
+   "specialities": [
+    "Strength",
+    "Boxing",
+    "Pilates",
+    "Yoga"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://oostergym.nl/",
+   "instagram": "https://www.instagram.com/oostergym/",
+   "source_url": "https://oostergym.nl/personal-training-amsterdam-oost/",
+   "instagram_source": "https://oostergym.nl/personal-training-amsterdam-oost/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Trainen met Wendy",
+   "kind": "trainer",
+   "area": "Oost",
+   "specialities": [
+    "Running",
+    "Seniors",
+    "Strength"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://trainenmetwendy.nl/",
+   "instagram": null,
+   "source_url": "https://trainenmetwendy.nl/",
+   "instagram_source": null,
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "SterkHer",
+   "kind": "trainer",
+   "area": "Oost",
+   "specialities": [
+    "Pre/postnatal",
+    "Strength",
+    "Women"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://sterkher.nl/",
+   "instagram": "https://www.instagram.com/sterkher/",
+   "source_url": "https://sterkher.nl/personal-training/",
+   "instagram_source": "https://sterkher.nl/personal-training/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Original Physic",
+   "kind": "studio",
+   "area": "Noord",
+   "specialities": [
+    "Strength",
+    "Mobility"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://originalphysic.nl/",
+   "instagram": "https://www.instagram.com/original_physic/",
+   "source_url": "https://originalphysic.nl/",
+   "instagram_source": "https://originalphysic.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Calisthenics Amsterdam",
+   "kind": "studio",
+   "area": "Noord",
+   "specialities": [
+    "Calisthenics",
+    "Strength"
+   ],
+   "languages": null,
+   "price": "Starter Pack Silver €249 / 4 weeks (2 personal training sessions)",
+   "website": "https://calisthenicsamsterdam.com/",
+   "instagram": "https://www.instagram.com/calisthenics_amsterdam/",
+   "source_url": "https://calisthenicsamsterdam.com/pricing/",
+   "instagram_source": "https://calisthenicsamsterdam.com/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Betere Mobiliteit",
+   "kind": "trainer",
+   "area": "Noord",
+   "specialities": [
+    "Mobility",
+    "Rehab"
+   ],
+   "languages": null,
+   "price": "€1147 one-off (quarterly personal training track)",
+   "website": "https://beteremobiliteit.nl/",
+   "instagram": null,
+   "source_url": "https://beteremobiliteit.nl/personal-training-amsterdam-noord/",
+   "instagram_source": null,
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Training for Mamas",
+   "kind": "trainer",
+   "area": "Noord",
+   "specialities": [
+    "Pre/postnatal",
+    "Women",
+    "Strength"
+   ],
+   "languages": null,
+   "price": "€1077 incl. BTW for 12 weeks",
+   "website": "https://trainingformamas.nl/",
+   "instagram": "https://www.instagram.com/trainingformamas/",
+   "source_url": "https://trainingformamas.nl/personal-training-tijdens-en-na-de-zwangerschap/",
+   "instagram_source": "https://trainingformamas.nl/personal-training-tijdens-en-na-de-zwangerschap/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "The Power Lifestyle",
+   "kind": "studio",
+   "area": "IJburg",
+   "specialities": [
+    "Strength",
+    "Nutrition"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://www.thepowerlifestyle.nl/",
+   "instagram": "https://www.instagram.com/thepowerlifestyle.amsterdam/",
+   "source_url": "https://www.thepowerlifestyle.nl/",
+   "instagram_source": "https://www.thepowerlifestyle.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Premium Personal Training",
+   "kind": "studio",
+   "area": "IJburg",
+   "specialities": [
+    "Weight loss",
+    "Strength"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://premium-personaltraining.nl/",
+   "instagram": "https://www.instagram.com/premiumpersonaltrainingnl/",
+   "source_url": "https://premium-personaltraining.nl/personal-training/",
+   "instagram_source": "https://premium-personaltraining.nl/personal-training/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Motion 3",
+   "kind": "studio",
+   "area": "IJburg",
+   "specialities": [
+    "HIIT",
+    "Strength",
+    "Pilates",
+    "Boxing"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://motion3.nl/",
+   "instagram": "https://www.instagram.com/motion3boutiquegym/",
+   "source_url": "https://motion3.nl/",
+   "instagram_source": "https://motion3.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "FITbyJJ",
+   "kind": "trainer",
+   "area": "Mobile/at home",
+   "specialities": [
+    "Seniors"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://fitbyjj.nl/",
+   "instagram": "https://www.instagram.com/jacobjanadrichem/",
+   "source_url": "https://fitbyjj.nl/personal-training-aan-huis/",
+   "instagram_source": "https://fitbyjj.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "RYS Personal Training",
+   "kind": "studio",
+   "area": "De Pijp",
+   "specialities": [
+    "Strength"
+   ],
+   "languages": [
+    "EN",
+    "NL"
+   ],
+   "price": null,
+   "website": "https://www.ryspersonaltraining.nl/",
+   "instagram": "https://www.instagram.com/ryspersonaltraining/",
+   "source_url": "https://www.ryspersonaltraining.nl/rys-de-pijp/",
+   "instagram_source": "https://www.ryspersonaltraining.nl/rys-de-pijp/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "3SIXTY5 Personal Training",
+   "kind": "studio",
+   "area": "De Pijp",
+   "specialities": [],
+   "languages": null,
+   "price": null,
+   "website": "https://www.3sixty5.nl/",
+   "instagram": "https://www.instagram.com/3sixty5personaltraining/",
+   "source_url": "https://www.3sixty5.nl/en/amsterdam-en/",
+   "instagram_source": "https://www.3sixty5.nl/en/amsterdam-en/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "The Gym Amsterdam",
+   "kind": "studio",
+   "area": "Oud-Zuid",
+   "specialities": [
+    "Boxing",
+    "Pre/postnatal",
+    "Weight loss"
+   ],
+   "languages": [
+    "NL",
+    "EN"
+   ],
+   "price": "Vanaf €72,50 per sessie",
+   "website": "https://thegym.amsterdam/",
+   "instagram": "https://www.instagram.com/thegymamsterdam/",
+   "source_url": "https://thegym.amsterdam/",
+   "instagram_source": "https://thegym.amsterdam/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "The Workout Lab",
+   "kind": "studio",
+   "area": "De Pijp",
+   "specialities": [
+    "Strength",
+    "Pre/postnatal"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://www.theworkoutlab.nl/",
+   "instagram": "https://www.instagram.com/theworkoutlab_/",
+   "source_url": "https://www.theworkoutlab.nl/personal-training-amsterdam-zuid/",
+   "instagram_source": "https://www.theworkoutlab.nl/personal-training-amsterdam-zuid/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Book Your Trainer",
+   "kind": "studio",
+   "area": "Zuidas",
+   "specialities": [
+    "Strength"
+   ],
+   "languages": null,
+   "price": "€83 per uur",
+   "website": "https://bookyourtrainer.nl/",
+   "instagram": "https://www.instagram.com/bookyourtrainer.nl/",
+   "source_url": "https://bookyourtrainer.nl/",
+   "instagram_source": "https://bookyourtrainer.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "MudaGym",
+   "kind": "studio",
+   "area": "Oud-Zuid",
+   "specialities": [
+    "Strength",
+    "Mobility"
+   ],
+   "languages": [
+    "EN",
+    "NL"
+   ],
+   "price": null,
+   "website": "https://mudagym.com/",
+   "instagram": "https://www.instagram.com/mudagym/",
+   "source_url": "https://mudagym.com/",
+   "instagram_source": "https://mudagym.com/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Iron Health",
+   "kind": "studio",
+   "area": "Zuid",
+   "specialities": [
+    "Strength",
+    "Rehab",
+    "Weight loss"
+   ],
+   "languages": null,
+   "price": "Losse les: € 94,-",
+   "website": "https://www.ironhealth.nl/",
+   "instagram": "https://www.instagram.com/ironhealthnl/",
+   "source_url": "https://www.ironhealth.nl/",
+   "instagram_source": "https://www.ironhealth.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Personal Training Zuid",
+   "kind": "studio",
+   "area": "Zuid",
+   "specialities": [
+    "Boxing",
+    "Rehab",
+    "Weight loss",
+    "Strength"
+   ],
+   "languages": [
+    "EN"
+   ],
+   "price": null,
+   "website": "https://www.personaltrainingzuid.nl/",
+   "instagram": "https://www.instagram.com/personaltrainingzuid/",
+   "source_url": "https://www.personaltrainingzuid.nl/about/",
+   "instagram_source": "https://www.personaltrainingzuid.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Cocoon Gym",
+   "kind": "studio",
+   "area": "Zuid",
+   "specialities": [
+    "Strength"
+   ],
+   "languages": [
+    "EN"
+   ],
+   "price": "From €90 per session",
+   "website": "https://www.cocoongym.com/",
+   "instagram": "https://www.instagram.com/cocoongymamsterdam/",
+   "source_url": "https://www.cocoongym.com/",
+   "instagram_source": "https://www.cocoongym.com/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Physicum",
+   "kind": "studio",
+   "area": "Oud-Zuid",
+   "specialities": [
+    "Rehab"
+   ],
+   "languages": null,
+   "price": null,
+   "website": "https://physicum.nl/",
+   "instagram": "https://www.instagram.com/physicum020/",
+   "source_url": "https://physicum.nl/",
+   "instagram_source": "https://physicum.nl/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Fysio Buitenveldert (personal training)",
+   "kind": "studio",
+   "area": "Buitenveldert",
+   "specialities": [
+    "Rehab",
+    "Weight loss"
+   ],
+   "languages": [
+    "NL"
+   ],
+   "price": "10 rittenkaart 60 minutes PT € 820",
+   "website": "https://fysiobuitenveldert.nl/",
+   "instagram": "https://www.instagram.com/fysiobuitenveldert/",
+   "source_url": "https://fysiobuitenveldert.nl/personal-training/",
+   "instagram_source": "https://fysiobuitenveldert.nl/personal-training/",
+   "checked": "2026-10-02"
+  },
+  {
+   "name": "Sjoerd Kunstt",
+   "kind": "trainer",
+   "area": "Rivierenbuurt",
+   "specialities": [
+    "Strength",
+    "Weight loss"
+   ],
+   "languages": [
+    "NL"
+   ],
+   "price": "1 sessie per week: €79,- per sessie",
+   "website": "https://www.sjoerdkunstt.nl/",
+   "instagram": null,
+   "source_url": "https://www.sjoerdkunstt.nl/personal-trainer-amsterdam",
+   "instagram_source": null,
+   "checked": "2026-10-02"
+  }
+ ]
+}

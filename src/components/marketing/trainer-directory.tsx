@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Globe, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Globe, MapPin } from "lucide-react";
 import { PageLayout } from "@/components/layout/page-layout";
 import { Section } from "@/components/sections/section";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
@@ -12,6 +12,8 @@ import {
   languageNames,
   type DirectoryTrainer,
 } from "@/lib/trainer-directory";
+import { publicTrainers, TAGS, AREAS, areaLabel, tagsFromText, type PublicTrainer } from "@/lib/public-trainers";
+import { DirectoryFilter } from "@/components/marketing/directory-filter";
 
 /**
  * Trainer directory (list + profile). Server components only: no client JS, no
@@ -51,6 +53,30 @@ const COPY = {
       `${name} is personal trainer in ${area}, Amsterdam. Specialiteiten: ${specs}. Talen: ${langs}.`,
     jobTitle: "Personal trainer",
     listName: "Personal trainers in Amsterdam",
+    studioBadge: "Traint bij SculptClub",
+    studioHeading: "Trainers bij SculptClub in de Jordaan",
+    publicHeading: "Meer personal trainers in Amsterdam",
+    publicIntro:
+      "Zelfstandige trainers en kleine studio's door de hele stad, met wat ze zelf op hun website zetten. Ze zijn niet aangesloten bij SculptClub: je neemt contact op via hun eigen site.",
+    studioKind: "Studio",
+    source: "Bron",
+    checked: (d: string) => `gecontroleerd ${d}`,
+    edit: "Aanpassen of verwijderen",
+    claim: "Ben jij dit? Maak er een profiel van",
+    editSubject: (name: string) => `Vermelding aanpassen: ${name}`,
+    privacy:
+      "Deze vermeldingen bevatten alleen openbare zakelijke gegevens van de eigen website van de trainer: naam, specialiteit, wijk, talen, een prijs als die er staat, en links naar de website en Instagram. Geen foto's, telefoonnummers of e-mailadressen. Sta je hier en wil je iets aanpassen of eruit? Mail contact@sculptclub.nl, dan passen we het aan.",
+    rentTitle: "Ben je personal trainer?",
+    rentBody: "Huur SculptClub per uur: een privé studio in de Jordaan, halve studio vanaf \u20ac12 per uur. Je houdt 100% van je tarief.",
+    rentBandCta: "Bekijk studio huren",
+    fArea: "Wijk",
+    fTag: "Specialiteit",
+    fLang: "Taal",
+    fAll: "Alle",
+    fEmpty: "Geen trainers met deze filters",
+    fReset: "Wis filters",
+    countAll: (studio: number, pub: number) => `${studio} bij SculptClub · ${pub} in de rest van Amsterdam`,
+    date: (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("nl-NL", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Amsterdam" }),
   },
   en: {
     home: "Home",
@@ -83,6 +109,30 @@ const COPY = {
       `${name} is a personal trainer in ${area}, Amsterdam. Specialties: ${specs}. Languages: ${langs}.`,
     jobTitle: "Personal trainer",
     listName: "Personal trainers in Amsterdam",
+    studioBadge: "Trains at SculptClub",
+    studioHeading: "Trainers at SculptClub in the Jordaan",
+    publicHeading: "More personal trainers in Amsterdam",
+    publicIntro:
+      "Independent trainers and small studios across the city, with what they publish on their own website. They are not part of SculptClub: you contact them through their own site.",
+    studioKind: "Studio",
+    source: "Source",
+    checked: (d: string) => `checked ${d}`,
+    edit: "Edit or remove",
+    claim: "Is this you? Turn it into a profile",
+    editSubject: (name: string) => `Edit listing: ${name}`,
+    privacy:
+      "These listings hold only public business details from the trainer's own website: name, specialty, neighbourhood, languages, a price if one is published, and links to the website and Instagram. No photos, phone numbers or e-mail addresses. Listed here and want something changed or removed? E-mail contact@sculptclub.nl and we will change it.",
+    rentTitle: "Are you a personal trainer?",
+    rentBody: "Rent SculptClub by the hour: a private studio in the Jordaan, half studio from \u20ac12 per hour. You keep 100% of your rate.",
+    rentBandCta: "See studio rental",
+    fArea: "Neighbourhood",
+    fTag: "Specialty",
+    fLang: "Language",
+    fAll: "All",
+    fEmpty: "No trainers match these filters",
+    fReset: "Clear filters",
+    countAll: (studio: number, pub: number) => `${studio} at SculptClub · ${pub} elsewhere in Amsterdam`,
+    date: (iso: string) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/Amsterdam" }),
   },
 } as const;
 
@@ -144,9 +194,20 @@ function TrainerCard({ tr, locale, priority }: { tr: DirectoryTrainer; locale: L
   const c = COPY[locale];
   const href = directoryPaths[locale].profile(tr.slug);
   return (
-    <li className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+    <li
+      data-dir-card=""
+      data-area={tr.source === "studio" ? "Jordaan" : tr.neighbourhood.en}
+      data-tags={tagsFromText(tr.specialties.en).join("|")}
+      data-langs={tr.languages.join("|")}
+      className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card"
+    >
       <Link href={href} aria-label={c.ariaProfile(tr.name)} className="relative block aspect-[4/5] w-full bg-secondary">
         <Photo tr={tr} locale={locale} priority={priority} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+        {tr.source === "studio" && (
+          <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground">
+            {c.studioBadge}
+          </span>
+        )}
       </Link>
       <div className="flex flex-1 flex-col gap-3 p-4">
         <div>
@@ -169,6 +230,92 @@ function TrainerCard({ tr, locale, priority }: { tr: DirectoryTrainer; locale: L
         </Link>
       </div>
     </li>
+  );
+}
+
+function PublicCard({ tr, locale }: { tr: PublicTrainer; locale: Locale }) {
+  const c = COPY[locale];
+  const mail = `mailto:contact@sculptclub.nl?subject=${encodeURIComponent(c.editSubject(tr.name))}`;
+  const ext = "inline-flex min-h-11 items-center gap-1.5 font-semibold text-foreground underline underline-offset-4";
+  return (
+    <li
+      data-dir-card=""
+      data-area={tr.area}
+      data-tags={tr.tags.join("|")}
+      data-langs={tr.languages.join("|")}
+      className="flex flex-col rounded-2xl border border-border bg-card p-4"
+    >
+      <div className="flex items-start gap-3">
+        <div
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-foreground/5 font-heading text-xl font-bold text-foreground/60"
+          aria-hidden="true"
+        >
+          {tr.name.charAt(0)}
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-lg font-bold leading-tight">
+            {tr.name}
+            {tr.kind === "studio" && (
+              <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-wide text-muted-foreground">{c.studioKind}</span>
+            )}
+          </h3>
+          {tr.tags.length > 0 && (
+            <p className="mt-1 text-sm text-muted-foreground">{tr.tags.map((t) => TAGS[t][locale]).join(" · ")}</p>
+          )}
+        </div>
+      </div>
+      <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+        <li className="flex items-center gap-2">
+          <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+          <span>{areaLabel(tr.area, locale)}</span>
+        </li>
+        {tr.languages.length > 0 && (
+          <li className="flex items-center gap-2">
+            <Globe className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span>{languageNames(tr.languages, locale)}</span>
+          </li>
+        )}
+        {tr.price && <li className="pl-6 font-medium text-foreground">{tr.price}</li>}
+      </ul>
+      <div className="mt-3 flex flex-wrap gap-x-5 text-sm">
+        <a href={tr.website} target="_blank" rel="nofollow noopener noreferrer" className={ext}>
+          {tr.websiteLabel}
+          <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+        </a>
+        {tr.instagram && (
+          <a href={tr.instagram} target="_blank" rel="nofollow noopener noreferrer" className={ext}>
+            {c.instagram}
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
+        )}
+      </div>
+      <p className="mt-auto border-t border-border pt-3 text-xs text-muted-foreground">
+        {c.source}:{" "}
+        <a href={tr.sourceUrl} target="_blank" rel="nofollow noopener noreferrer" className="underline underline-offset-2">
+          {tr.websiteLabel}
+        </a>
+        , {c.checked(c.date(tr.checked))} ·{" "}
+        <a href={mail} className="inline-flex min-h-11 items-center underline underline-offset-2">
+          {c.edit}
+        </a>
+      </p>
+    </li>
+  );
+}
+
+function RentBand({ locale }: { locale: Locale }) {
+  const c = COPY[locale];
+  return (
+    <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-foreground p-6 text-background sm:flex-row sm:items-center sm:justify-between sm:p-8">
+      <div>
+        <p className="text-xl font-bold">{c.rentTitle}</p>
+        <p className="mt-1 text-background/80">{c.rentBody}</p>
+      </div>
+      <Link href={locale === "nl" ? "/nl/studio-huren" : "/en/studio-rental"} className={`${btnPrimary} shrink-0`}>
+        {c.rentBandCta}
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </Link>
+    </div>
   );
 }
 
@@ -201,6 +348,18 @@ export function TrainerDirectoryPage({ locale }: { locale: Locale }) {
   const c = COPY[locale];
   const paths = directoryPaths[locale];
   const list = directoryTrainers;
+  const pub = publicTrainers;
+  // Filter options: only values that actually occur, in a fixed order.
+  const allAreas = new Set<string>([...(list.length ? ["Jordaan"] : []), ...pub.map((p) => p.area)]);
+  const areaOpts = AREAS.filter((a) => allAreas.has(a)).map((a) => ({ value: a, label: areaLabel(a, locale) }));
+  const allTags = new Set<string>([...list.flatMap((t) => tagsFromText(t.specialties.en)), ...pub.flatMap((p) => p.tags)]);
+  const tagOpts = Object.keys(TAGS).filter((t) => allTags.has(t)).map((t) => ({ value: t, label: TAGS[t][locale] }));
+  const langCount = new Map<string, number>();
+  for (const l of [...list.flatMap((t) => t.languages), ...pub.flatMap((p) => p.languages)]) langCount.set(l, (langCount.get(l) ?? 0) + 1);
+  const langOpts = [...langCount.entries()]
+    .filter(([, n]) => n >= 2)
+    .sort((a, b) => b[1] - a[1])
+    .map(([l]) => ({ value: l, label: languageNames([l], locale) }));
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -231,12 +390,43 @@ export function TrainerDirectoryPage({ locale }: { locale: Locale }) {
         </div>
         {list.length > 0 ? (
           <>
-            <p className="mt-10 text-sm font-semibold text-muted-foreground">{c.count(list.length)}</p>
-            <ul className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((tr, i) => (
-                <TrainerCard key={tr.slug} tr={tr} locale={locale} priority={i < 2} />
-              ))}
-            </ul>
+            {pub.length > 0 && (
+              <DirectoryFilter
+                areas={areaOpts}
+                tags={tagOpts}
+                langs={langOpts}
+                labels={{ area: c.fArea, tag: c.fTag, lang: c.fLang, all: c.fAll, one: c.count(1), many: c.count(999).replace("999", "{n}"), empty: c.fEmpty, reset: c.fReset }}
+              />
+            )}
+            <div data-dir-group="">
+              <h2 className="mt-10 text-2xl font-bold sm:text-3xl">{c.studioHeading}</h2>
+              <p className="mt-1 text-sm font-semibold text-muted-foreground">
+                {pub.length > 0 ? c.countAll(list.length, pub.length) : c.count(list.length)}
+              </p>
+              <ul className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {list.map((tr, i) => (
+                  <TrainerCard key={tr.slug} tr={tr} locale={locale} priority={i < 2} />
+                ))}
+              </ul>
+            </div>
+            <RentBand locale={locale} />
+            {pub.length > 0 && (
+              <div data-dir-group="">
+                <h2 className="mt-12 text-2xl font-bold sm:text-3xl">{c.publicHeading}</h2>
+                <p className="mt-2 max-w-2xl text-muted-foreground">{c.publicIntro}</p>
+                <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {pub.map((tr) => (
+                    <PublicCard key={tr.id} tr={tr} locale={locale} />
+                  ))}
+                </ul>
+                <p className="mt-6 max-w-3xl text-xs text-muted-foreground">
+                  {c.privacy}{" "}
+                  <Link href={paths.add} className="inline-flex min-h-11 items-center font-semibold underline underline-offset-2">
+                    {c.claim}
+                  </Link>
+                </p>
+              </div>
+            )}
           </>
         ) : (
           <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-border bg-card p-8 text-center">
