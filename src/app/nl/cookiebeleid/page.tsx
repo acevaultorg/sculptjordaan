@@ -65,7 +65,8 @@ export default function CookiePolicyNL() {
           <p>
             Microsoft Advertising (Bing UET) laadt mee om te meten of een bezoek
             uit Bing tot een boeking leidt. We tonen zelf geen advertenties op
-            Bing; de tag dient uitsluitend voor meting.
+            Bing; de tag dient uitsluitend voor meting. Net als Clarity laadt deze
+            tag pas nadat je op de cookiebanner voor alle cookies kiest.
           </p>
 
           <h3>Marketing cookies</h3>

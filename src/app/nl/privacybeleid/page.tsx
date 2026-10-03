@@ -237,7 +237,7 @@ export default function PrivacyPageNL() {
               </li>
               <li>
                 <strong>Hostingproviders:</strong> voor het hosten van onze
-                website (Vercel).
+                website (Cloudflare Pages).
               </li>
             </ul>
             <p className="text-muted-foreground mt-4">

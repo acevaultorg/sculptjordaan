@@ -60,7 +60,8 @@ export default function CookiePolicyEN() {
           <p>
             Microsoft Advertising (Bing UET) also loads, to measure whether a
             visit from Bing leads to a booking. We do not run advertisements on
-            Bing ourselves; the tag is used for measurement only.
+            Bing ourselves; the tag is used for measurement only. Like Clarity, it only loads after
+            you accept all cookies in the cookie banner.
           </p>
 
           <h3>Marketing cookies</h3>

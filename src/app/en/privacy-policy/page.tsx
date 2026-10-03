@@ -235,7 +235,7 @@ export default function PrivacyPolicyEN() {
               </li>
               <li>
                 <strong>Hosting providers:</strong> for hosting our website
-                (Vercel).
+                (Cloudflare Pages).
               </li>
             </ul>
             <p className="text-muted-foreground mt-4">

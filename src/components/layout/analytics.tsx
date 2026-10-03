@@ -171,7 +171,7 @@ export function Analytics() {
           runs before gtm-init and wraps the script-element "src" setter; any
           clarity.ms/tag/ URL assigned before consent is HELD (the element is left
           src-less and inert) and released when sc_consent=all appears. Both
-          loaders therefore share one gate, and a consented visitor still gets
+          loaders therefore share one gate (the same wrap also holds GTM's Bing UET bat.js), and a consented visitor still gets
           exactly one Clarity tag.
 
           Clarity's own consent API spells its keys ad_Storage / analytics_Storage
@@ -184,6 +184,9 @@ export function Analytics() {
             function hasConsent(){ return d.cookie.indexOf('sc_consent=all') > -1; }
             var held = [];
             function isClarity(v){ return typeof v === 'string' && v.indexOf('clarity.ms/tag/') > -1; }
+            // Microsoft Advertising UET (GTM-fired, not in this repo) sits behind the same gate.
+            function isGated(v){ return isClarity(v) || (typeof v === 'string' && v.indexOf('bat.bing.com/bat.js') > -1); }
+            var clarityHeld = false;
             var desc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
             var origSetAttr = Element.prototype.setAttribute;
             if (desc && desc.set) {
@@ -191,12 +194,12 @@ export function Analytics() {
                 Object.defineProperty(HTMLScriptElement.prototype, 'src', {
                   configurable: true, enumerable: desc.enumerable, get: desc.get,
                   set: function(v){
-                    if (isClarity(v) && !hasConsent()) { held.push([this, v, 'prop']); return; }
+                    if (isGated(v) && !hasConsent()) { if (isClarity(v)) clarityHeld = true; held.push([this, v, 'prop']); return; }
                     desc.set.call(this, v);
                   }
                 });
                 Element.prototype.setAttribute = function(n, v){
-                  if (this instanceof HTMLScriptElement && String(n).toLowerCase() === 'src' && isClarity(v) && !hasConsent()) { held.push([this, v, 'attr']); return; }
+                  if (this instanceof HTMLScriptElement && String(n).toLowerCase() === 'src' && isGated(v) && !hasConsent()) { if (isClarity(v)) clarityHeld = true; held.push([this, v, 'attr']); return; }
                   return origSetAttr.apply(this, arguments);
                 };
               } catch (_) {}
@@ -209,7 +212,7 @@ export function Analytics() {
               if (!w.__clarityStarted) {
                 w.__clarityStarted = true;
                 // Direct loader (Clarity's stock snippet) — only if GTM's tag has not already started it.
-                if (!h.length && !d.querySelector('script[src*="clarity.ms/tag/"]')) {
+                if (!clarityHeld && !d.querySelector('script[src*="clarity.ms/tag/"]')) {
                   (function(c,l,a,r,i,t,y){
                     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
