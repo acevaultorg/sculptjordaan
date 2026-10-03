@@ -69,9 +69,21 @@ const map = {};
 let resolved = 0;
 let missed = 0;
 
+// Dynamic [slug] pages render from data files, so their content changes when
+// the data changes, not only when page.tsx does: take the newer of the two.
+const DATA_DEPS = ["src/config/trainers.ts"].map((p) => join(REPO, p));
+function newest(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+  return new Date(a) >= new Date(b) ? a : b;
+}
+
 for (const f of pageFiles) {
   const route = routeForFile(f);
-  const iso = gitCommitTime(f);
+  let iso = gitCommitTime(f);
+  if (iso && route.includes("[")) {
+    for (const dep of DATA_DEPS) iso = newest(iso, gitCommitTime(dep));
+  }
   if (iso) {
     map[route] = iso;
     resolved++;

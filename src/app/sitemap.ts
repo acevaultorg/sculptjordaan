@@ -41,7 +41,11 @@ function pageFileFor(routePath: string): string | null {
   return candidates.find((p) => existsSync(p)) ?? null;
 }
 function lastModifiedFor(routePath: string, fallback: Date): Date {
-  const fromMap = lastmodMap?.[routePath];
+  // Dynamic routes ([slug]) are keyed by their template in the map
+  // ("/nl/trainers/[slug]"); without this lookup every trainer URL fell
+  // through to the build-time `now` (20 URLs re-dated on every deploy).
+  const dynamicKey = routePath.replace(/\/[^/]+$/, "/[slug]");
+  const fromMap = lastmodMap?.[routePath] ?? lastmodMap?.[dynamicKey];
   if (fromMap) {
     const d = new Date(fromMap);
     if (!isNaN(d.valueOf())) return d;

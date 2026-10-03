@@ -54,6 +54,8 @@ export default function CookiePolicyEN() {
             recording), and may additionally set Microsoft&rsquo;s own cookies
             (CLID, ANONCHK, MR, MUID and SM). Microsoft acts as processor here;
             their own cookie list is published in the Clarity documentation.
+            Clarity only loads after you accept all cookies in the cookie banner;
+            without that choice nothing is requested from Microsoft.
           </p>
           <p>
             Microsoft Advertising (Bing UET) also loads, to measure whether a

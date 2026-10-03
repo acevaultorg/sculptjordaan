@@ -157,6 +157,75 @@ export function Analytics() {
         </Script>
       )}
 
+      {/* Microsoft Clarity — CONSENT-GATED (card mumd75ww3ur4ro, 2026-10-03).
+          Clarity records sessions and sets _clck/_clsk cookies, so for a Dutch
+          audience (EEA/UK/CH) it may only start after the visitor chose "Accept"
+          (cookie sc_consent=all) — the same gate Meta and TikTok already use.
+          Until then clarity.ms is never requested (not even a DNS prefetch).
+          Declining costs nothing: window.clarity stays a queueing stub so any
+          clarity(...) calls elsewhere are safe no-ops.
+
+          The GTM container (GTM-PG592B5Q) ALSO carries a Clarity Custom HTML tag
+          (tag_id 8) on "All Pages" with no consent setting, and nothing in this
+          repo can edit GTM. So the gate is enforced on the object: this script
+          runs before gtm-init and wraps the script-element "src" setter; any
+          clarity.ms/tag/ URL assigned before consent is HELD (the element is left
+          src-less and inert) and released when sc_consent=all appears. Both
+          loaders therefore share one gate, and a consented visitor still gets
+          exactly one Clarity tag.
+
+          Clarity's own consent API spells its keys ad_Storage / analytics_Storage
+          (capital S) — that casing is correct, do not "fix" it. We pass consentv2
+          only AFTER consent, so recording starts with both granted. */}
+      <Script id="ms-clarity" strategy="afterInteractive">
+        {`
+          (function(w, d){
+            var CID = "${clarity}";
+            function hasConsent(){ return d.cookie.indexOf('sc_consent=all') > -1; }
+            var held = [];
+            function isClarity(v){ return typeof v === 'string' && v.indexOf('clarity.ms/tag/') > -1; }
+            var desc = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+            var origSetAttr = Element.prototype.setAttribute;
+            if (desc && desc.set) {
+              try {
+                Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+                  configurable: true, enumerable: desc.enumerable, get: desc.get,
+                  set: function(v){
+                    if (isClarity(v) && !hasConsent()) { held.push([this, v, 'prop']); return; }
+                    desc.set.call(this, v);
+                  }
+                });
+                Element.prototype.setAttribute = function(n, v){
+                  if (this instanceof HTMLScriptElement && String(n).toLowerCase() === 'src' && isClarity(v) && !hasConsent()) { held.push([this, v, 'attr']); return; }
+                  return origSetAttr.apply(this, arguments);
+                };
+              } catch (_) {}
+            }
+            var stubbed = false;
+            function release(){
+              if (!hasConsent()) return;
+              var h = held; held = [];
+              for (var i = 0; i < h.length; i++) { try { desc.set.call(h[i][0], h[i][1]); } catch (_) {} }
+              if (!w.__clarityStarted) {
+                w.__clarityStarted = true;
+                // Direct loader (Clarity's stock snippet) — only if GTM's tag has not already started it.
+                if (!h.length && !d.querySelector('script[src*="clarity.ms/tag/"]')) {
+                  (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                  })(w, d, "clarity", "script", CID);
+                }
+                try { w.clarity && w.clarity("consentv2", { ad_Storage: "granted", analytics_Storage: "granted" }); } catch (_) {}
+              }
+            }
+            if (!w.clarity) { w.clarity = function(){ (w.clarity.q = w.clarity.q || []).push(arguments); }; }
+            release();
+            w.addEventListener('sc:consent-updated', release);
+          })(window, document);
+        `}
+      </Script>
+
       {/* Google Tag Manager — loaded AFTER the gtag consent-default block above so
           GTM (container ${gtm}) reads the established Consent Mode v2 state from the
           shared window.dataLayer. Canonical GTM snippet; pairs with the <noscript>
@@ -238,25 +307,6 @@ export function Analytics() {
               });
             }
           })();
-        `}
-      </Script>
-
-      {/* Microsoft Clarity */}
-      <Script id="ms-clarity" strategy="lazyOnload">
-        {`
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${clarity}");
-          // Clarity is cookieless + anonymous by design (no PII, no cross-site tracking).
-          // GA4 consent-mode-v2 'analytics_storage: denied' default was inadvertently
-          // gating Clarity's recording too — 0 sessions captured for 3+ days post-2026-05-15
-          // Consent-Mode-v2-Advanced ship while Plausible still showed 152 UV/7d.
-          // Explicit consent grant scoped to Clarity ONLY restores recording without
-          // touching GA4/Ads consent state. Verified Clarity privacy posture:
-          // https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent
-          window.clarity && window.clarity("consent");
         `}
       </Script>
 

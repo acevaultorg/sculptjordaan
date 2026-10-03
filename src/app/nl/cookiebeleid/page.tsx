@@ -59,6 +59,8 @@ export default function CookiePolicyNL() {
             aan één sessieopname), en kan daarnaast cookies van Microsoft zelf
             plaatsen (CLID, ANONCHK, MR, MUID en SM). Microsoft is hiervoor
             verwerker; hun eigen cookieoverzicht staat in de Clarity-documentatie.
+            Clarity laadt pas nadat je op de cookiebanner voor alle cookies kiest;
+            zonder die keuze wordt er niets bij Microsoft opgevraagd.
           </p>
           <p>
             Microsoft Advertising (Bing UET) laadt mee om te meten of een bezoek

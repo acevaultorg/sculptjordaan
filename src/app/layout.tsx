@@ -154,7 +154,6 @@ export default function RootLayout({
             is kept: the pixel is consent-gated in analytics.tsx, so this just
             shaves the lookup for visitors who DO accept. */}
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <HreflangLinks />
       </head>
