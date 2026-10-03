@@ -73,13 +73,17 @@ const KNOWN_DOWN = {
     "Not registered. The map entry below it is stale; do not re-register on this check's account.",
   "vindpt.nl":
     "IN QUARANTINE — SIDN post-expiry grace window (measured 2026-09-02). Expired; " +
-    "reclaimable for a limited period, then released. Three other domains " +
-    "(ptjordaan/jordaanpt/pt45) already serve the same destination and all work.",
+    "reclaimable for a limited period, then released. Two other domains " +
+    "(ptjordaan/jordaanpt; pt45 lapsed 2026-10-02) serve the same destination.",
   "sculpt45.com":
     "NS NOT SWITCHED — registered + ACTIVE to 2027-07-31 at Hostinger, but delegated to " +
     "ns1/ns2.dns-expired.com serving a parking lander. CF zone + Pages custom domain are " +
     "ALREADY set up; the only gap is the nameserver change at Hostinger to " +
     "amanda/lochlan.ns.cloudflare.com. Operator-gated (registrar access).",
+  "pt45.nl":
+    "LET GO — operator ✓ 2026-10-03 (TaskPeace mtosbnak8ah4fs). Lapsed 2026-10-02, SIDN " +
+    "quarantine until 2026-11-11; restoring costs more than the €9,99 renewal (his money call). " +
+    "If he restores it at Hostinger, this check prints RECOVERED: remove this entry then.",
 };
 
 function parseVanityMap(src) {
