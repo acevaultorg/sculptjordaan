@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SplitLanding, type SplitLandingCopy } from "@/components/marketing/split-landing";
-import { openGymSinglePrice, studioRentalFromPrice } from "@/config/acuity";
+import { studioRentalFromPrice } from "@/config/acuity";
 
 /**
  * /landing — campaign split page (Instagram bio, TikTok, QR codes). Dutch, like
@@ -32,10 +32,11 @@ const copy: SplitLandingCopy = {
   langLabel: "Taal",
   switchLang: { label: "EN", href: "/en/landing", hrefLang: "en", ariaLabel: "English" },
   trainer: {
-    eyebrow: "Ik ben personal trainer",
-    headline: "Jouw klanten, jouw tarief. Onze studio.",
-    support: `Studio per uur, vanaf €${studioRentalFromPrice}. Geen contract. Jordaan, Amsterdam.`,
+    eyebrow: "Ik ben trainer",
+    headline: "Jouw klanten, jouw studio.",
+    support: `Studio per uur, vanaf €${studioRentalFromPrice}.`,
     cta: { label: "Bekijk de studio", href: "/nl/studio-huren" },
+    pills: [{ label: "Huur studio", href: "/nl/boek-studio" }],
     image: {
       picture: "landing-trainer",
       alt: "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub",
@@ -44,8 +45,8 @@ const copy: SplitLandingCopy = {
   },
   client: {
     eyebrow: "Ik wil trainen",
-    headline: "Sterker worden? Begin met een gratis intake.",
-    support: `Liever zelf trainen? Open Gym vanaf €${openGymSinglePrice} per uur. Jordaan, Amsterdam.`,
+    headline: "Sterker worden?",
+    support: "Begin met een gratis intake.",
     cta: { label: "Kies je trainer", href: "/nl/vind-jouw-personal-trainer" },
     pills: [
       { label: "Groepsles", href: "/nl/small-group" },

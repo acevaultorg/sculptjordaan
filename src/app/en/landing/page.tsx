@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SplitLanding, type SplitLandingCopy } from "@/components/marketing/split-landing";
-import { openGymSinglePrice, studioRentalFromPrice } from "@/config/acuity";
+import { studioRentalFromPrice } from "@/config/acuity";
 
 /**
  * /en/landing — English twin of /landing (campaign split page). Same rules:
@@ -30,10 +30,11 @@ const copy: SplitLandingCopy = {
   langLabel: "Language",
   switchLang: { label: "NL", href: "/landing", hrefLang: "nl", ariaLabel: "Nederlands" },
   trainer: {
-    eyebrow: "I'm a personal trainer",
-    headline: "Your clients, your rate. Our studio.",
-    support: `Studio by the hour, from €${studioRentalFromPrice}. No contract. Jordaan, Amsterdam.`,
+    eyebrow: "I'm a trainer",
+    headline: "Your clients, your studio.",
+    support: `Studio by the hour, from €${studioRentalFromPrice}.`,
     cta: { label: "See the studio", href: "/en/studio-rental" },
+    pills: [{ label: "Rent the studio", href: "/en/book-studio" }],
     image: {
       picture: "landing-trainer",
       alt: "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio",
@@ -42,8 +43,8 @@ const copy: SplitLandingCopy = {
   },
   client: {
     eyebrow: "I want to train",
-    headline: "Want to get stronger? Start with a free intro.",
-    support: `Rather train on your own? Open Gym from €${openGymSinglePrice} an hour. Jordaan, Amsterdam.`,
+    headline: "Want to get stronger?",
+    support: "Start with a free intro.",
     cta: { label: "Choose your trainer", href: "/en/find-personal-trainer" },
     pills: [
       { label: "Group class", href: "/en/small-group" },
