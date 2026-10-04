@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam Centrum — SculptClub" },
   description:
-    "Op zoek naar een personal trainer in Amsterdam Centrum? SculptClub in de Jordaan is om de hoek. Gratis intake, transformaties vanaf €299 per 4 weken.",
+    "Op zoek naar een personal trainer in Amsterdam Centrum? SculptClub in de Jordaan is om de hoek. Gratis intake, transformaties vanaf €329 per 4 weken.",
   keywords: [
     "personal trainer amsterdam centrum",
     "personal training centrum amsterdam",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/personal-trainer-amsterdam-centrum",
     title: "Personal Trainer Amsterdam Centrum — SculptClub",
     description:
-      "Op zoek naar een personal trainer in Amsterdam Centrum? SculptClub in de Jordaan is om de hoek. Gratis intake, transformaties vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in Amsterdam Centrum? SculptClub in de Jordaan is om de hoek. Gratis intake, transformaties vanaf €329 per 4 weken.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam Centrum — SculptClub",
     description:
-      "Op zoek naar een personal trainer in Amsterdam Centrum? SculptClub in de Jordaan is om de hoek. Gratis intake, transformaties vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in Amsterdam Centrum? SculptClub in de Jordaan is om de hoek. Gratis intake, transformaties vanaf €329 per 4 weken.",
   },
 };
 
@@ -107,7 +107,7 @@ export default function PersonalTrainerCentrumNL() {
               <p>
                 Bij SculptClub werken zeven onafhankelijke trainers met specialisaties van krachttraining
                 tot voeding, training voor vrouwen en houding. De eerste kennismaking is altijd gratis.
-                Tarieven vanaf €299 per 4 weken. Geen abonnement, geen contract — boek per sessie en
+                Tarieven vanaf €329 per 4 weken. Geen abonnement, geen contract — boek per sessie en
                 annuleer altijd gratis. Je betaalt je trainer direct. Voor fysiotherapie verwijzen we je
                 door — we hebben geen fysiotherapeut in dienst.
               </p>

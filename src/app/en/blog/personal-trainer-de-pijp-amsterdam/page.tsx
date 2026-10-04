@@ -93,7 +93,7 @@ export default function PersonalTrainerDePijpEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Trainers and rates</h2>
               <p>
                 Seven independent trainers. Specialisations: strength, nutrition, women’s training,
-                posture, technique and small group. Rates from €299 per 4 weeks. First intro always free.
+                posture, technique and small group. Rates from €329 per 4 weeks. First intro always free.
                 You pay your trainer directly. No membership, no contract. For
                 rehabilitation or physiotherapy we’ll refer you out — we don’t have a
                 physiotherapist on staff.

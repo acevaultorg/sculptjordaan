@@ -58,7 +58,7 @@ export default function PersonalTrainingAfvallenNL() {
       />
       <FaqJsonLd faqs={[
         { question: "Wat doet een personal trainer voor je?", answer: "Een personal trainer maakt het verschil op drie vlakken:" },
-        { question: "Wat kost personal training voor afvallen?", answer: "Personal training bij SculptClub begint vanaf €299 per 4 weken. Elke trainer bepaalt zelf zijn tarief en je betaalt je trainer direct. De eerste kennismaking is altijd gratis. Tijdens die intake bespreek je je doelen, je trainer bekijkt je huidige niveau en samen bepalen jullie het plan. Geen verplichtingen vooraf." },
+        { question: "Wat kost personal training voor afvallen?", answer: "Personal training bij SculptClub begint vanaf €329 per 4 weken. Elke trainer bepaalt zelf zijn tarief en je betaalt je trainer direct. De eerste kennismaking is altijd gratis. Tijdens die intake bespreek je je doelen, je trainer bekijkt je huidige niveau en samen bepalen jullie het plan. Geen verplichtingen vooraf." },
       ]} />
 
       <Section>
@@ -134,7 +134,7 @@ export default function PersonalTrainingAfvallenNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat kost personal training voor afvallen?</h2>
               <p>
-                Personal training bij SculptClub <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">begint vanaf €299 per 4 weken</Link>. Elke trainer bepaalt zelf
+                Personal training bij SculptClub <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">begint vanaf €329 per 4 weken</Link>. Elke trainer bepaalt zelf
                 zijn tarief en je betaalt je trainer direct. De eerste kennismaking is altijd gratis. Tijdens
                 die intake bespreek je je doelen, je trainer bekijkt je huidige niveau en samen bepalen
                 jullie het plan. Geen verplichtingen vooraf.

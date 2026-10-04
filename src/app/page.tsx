@@ -73,7 +73,7 @@ export default function HomePage() {
           },
           {
             name: "Personal Training",
-            description: "1-op-1 training met een gecertificeerde personal trainer die je sessie ontwerpt rond jouw doelen, niveau en lichaam. Bij SculptClub in de Jordaan vanaf €299 per 4 weken inclusief onbeperkt Open Gym, eerste intake gratis, geen contract, geen lidmaatschap. Trainers werken zelfstandig (ZZP): ze huren de studio en houden 100% van hun tarief.",
+            description: "1-op-1 training met een gecertificeerde personal trainer die je sessie ontwerpt rond jouw doelen, niveau en lichaam. Bij SculptClub in de Jordaan vanaf €329 per 4 weken inclusief onbeperkt Open Gym, eerste intake gratis, geen contract, geen lidmaatschap. Trainers werken zelfstandig (ZZP): ze huren de studio en houden 100% van hun tarief.",
             url: "/nl/vind-jouw-personal-trainer",
           },
           {

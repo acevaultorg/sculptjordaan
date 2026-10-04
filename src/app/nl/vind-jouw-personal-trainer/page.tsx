@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "Wat kost personal training bij SculptClub?",
-    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac299 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake, vooraf en zonder verrassingen. De eerste intake is altijd gratis: geen kosten, geen verplichting daarna.",
+    a: "Een SCULPT TRANSFORMATION start vanaf \u20ac329 per 4 weken, inclusief onbeperkt Open Gym. Trainers zijn zelfstandig en bepalen hun eigen prijs, dus je spreekt de exacte totaalprijs af met je trainer bij de gratis intake, vooraf en zonder verrassingen. De eerste intake is altijd gratis: geen kosten, geen verplichting daarna.",
   },
   {
     q: "Hoe werkt de gratis intake?",
@@ -101,7 +101,7 @@ export default function TrainersPageNL() {
         name="Personal Training"
         description="Personal training als traject naar een doel, in een privé studio in de Jordaan, Amsterdam. Kies je doel en je trainer; de eerste intake is altijd gratis."
         url="/nl/vind-jouw-personal-trainer"
-        priceRange="Vanaf €299 per 4 weken"
+        priceRange="Vanaf €329 per 4 weken"
       />
       <script
         type="application/ld+json"
@@ -160,7 +160,7 @@ export default function TrainersPageNL() {
             Vind je trainer in de Jordaan.
           </h1>
           <p className="mt-4 max-w-xl text-lg text-white/85">
-            Eerste kennismaking gratis. Daarna vanaf €299 per 4 weken, incl. onbeperkt Open Gym.
+            Eerste kennismaking gratis. Daarna vanaf €329 per 4 weken, incl. onbeperkt Open Gym.
           </p>
           {/* Brand line (operator 2026-09-20). Literal capitals so a grep of the
               served HTML finds it. */}
@@ -200,7 +200,7 @@ export default function TrainersPageNL() {
           {[
             { t: "Gratis kennismaking", d: "App je trainer. Jullie trainen een keer samen, zonder verplichting." },
             { t: "Jouw plan, prijs vooraf", d: "Je spreekt samen je doel, de duur en de totaalprijs af, voordat je begint." },
-            { t: "Trainen in de privé studio", d: "Vanaf €299 per 4 weken, incl. onbeperkt Open Gym." },
+            { t: "Trainen in de privé studio", d: "Vanaf €329 per 4 weken, incl. onbeperkt Open Gym." },
           ].map((s, i) => (
             <li key={s.t} className="flex gap-3">
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-sm font-bold text-background">{i + 1}</span>

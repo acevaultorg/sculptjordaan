@@ -30,7 +30,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym" },
   description:
-    "Alle prijzen van SculptClub: personal training vanaf €299 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
+    "Alle prijzen van SculptClub: personal training vanaf €329 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
   alternates: {
     canonical: "/nl/prijzen",
     languages: {
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: "/nl/prijzen",
     title: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym",
     description:
-      "Alle prijzen van SculptClub: personal training vanaf €299 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
+      "Alle prijzen van SculptClub: personal training vanaf €329 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Prijzen SculptClub Jordaan | PT, Studio Huur, Open Gym",
     description:
-      "Alle prijzen van SculptClub: personal training vanaf €299 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
+      "Alle prijzen van SculptClub: personal training vanaf €329 per 4 weken, studio huren €12 per uur en Open Gym vanaf €29 per 4 weken. Geen contract.",
   },
 };
 
@@ -129,9 +129,9 @@ export default function PricingPageNL() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/"},{"name":"Prijzen","url":"/nl/prijzen"}]} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, transformaties vanaf €299 per 4 weken inclusief onbeperkt Open Gym, je betaalt je trainer direct."
+        description="Personal training in een privé studio in Amsterdam Jordaan. Gratis intake, transformaties vanaf €329 per 4 weken inclusief onbeperkt Open Gym, je betaalt je trainer direct."
         url="/nl/prijzen"
-        priceRange="Vanaf €299 per 4 weken"
+        priceRange="Vanaf €329 per 4 weken"
       />
       <ServiceJsonLd
         name="Open Gym"
@@ -182,7 +182,7 @@ export default function PricingPageNL() {
           as="h1"
           overline="Prijzen"
           title="Alle prijzen op een rij"
-          description="Studio huur vanaf €12 per uur, personal training vanaf €299 per 4 weken, Open Gym vanaf €29 per 4 weken."
+          description="Studio huur vanaf €12 per uur, personal training vanaf €329 per 4 weken, Open Gym vanaf €29 per 4 weken."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -210,7 +210,7 @@ export default function PricingPageNL() {
               href="#personal-training"
               className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium transition hover:bg-muted"
             >
-              Personal Training (vanaf €299)
+              Personal Training (vanaf €329)
             </a>
             <a
               href="#open-gym"
@@ -233,7 +233,7 @@ export default function PricingPageNL() {
         <FadeIn>
           <Card className="mx-auto max-w-lg text-center">
             <CardHeader>
-              <CardTitle className="text-2xl">Vanaf €299 / 4 weken</CardTitle>
+              <CardTitle className="text-2xl">Vanaf €329 / 4 weken</CardTitle>
               <CardDescription>Inclusief onbeperkt Open Gym. Trainers bepalen hun eigen tarief.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -247,10 +247,13 @@ export default function PricingPageNL() {
                 Samen trainen? Duo-transformatie vanaf €199 p.p. per 4 weken (voor twee, €399 totaal).
               </p>
             </CardContent>
-            <CardFooter className="justify-center">
+            <CardFooter className="flex-wrap justify-center gap-3">
               <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg">
                 Bekijk trainers
                 <ArrowRight className="ml-2 h-4 w-4" />
+              </ButtonLink>
+              <ButtonLink href="/nl/sculpt-programma" size="lg" variant="outline">
+                Bekijk het Sculpt Program
               </ButtonLink>
             </CardFooter>
           </Card>

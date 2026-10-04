@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { trainerIntakeOg } from "@/lib/trainer-intake-meta";
 
 const title = "Andrea — personal trainer posture & technique";
-const description = "Book a free intro with Andrea — posture, technique and strength specialist at SculptClub Amsterdam Jordaan. From €299 per 4 weeks.";
+const description = "Book a free intro with Andrea — posture, technique and strength specialist at SculptClub Amsterdam Jordaan. From €329 per 4 weeks.";
 const canonical = "/en/plan-free-intro-with-andrea";
 
 export const metadata: Metadata = {

@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam West & Oud-West — SculptClub" },
   description:
-    "Op zoek naar een personal trainer in Amsterdam West of Oud-West? SculptClub in de Jordaan is 5 minuten fietsen. Gratis intake, vanaf €299 per 4 weken.",
+    "Op zoek naar een personal trainer in Amsterdam West of Oud-West? SculptClub in de Jordaan is 5 minuten fietsen. Gratis intake, vanaf €329 per 4 weken.",
   keywords: [
     "personal trainer amsterdam west",
     "personal trainer oud-west amsterdam",
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/personal-trainer-amsterdam-west",
     title: "Personal Trainer Amsterdam West & Oud-West — SculptClub",
     description:
-      "Op zoek naar een personal trainer in Amsterdam West of Oud-West? SculptClub in de Jordaan is 5 minuten fietsen. Gratis intake, vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in Amsterdam West of Oud-West? SculptClub in de Jordaan is 5 minuten fietsen. Gratis intake, vanaf €329 per 4 weken.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam West & Oud-West — SculptClub",
     description:
-      "Op zoek naar een personal trainer in Amsterdam West of Oud-West? SculptClub in de Jordaan is 5 minuten fietsen. Gratis intake, vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in Amsterdam West of Oud-West? SculptClub in de Jordaan is 5 minuten fietsen. Gratis intake, vanaf €329 per 4 weken.",
   },
 };
 
@@ -127,7 +127,7 @@ export default function PersonalTrainerAmsterdamWestNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en flexibiliteit</h2>
               <p>
-                Personal training bij SculptClub begint vanaf €299 per 4 weken. De eerste kennismaking
+                Personal training bij SculptClub begint vanaf €329 per 4 weken. De eerste kennismaking
                 is altijd gratis. Geen abonnement, geen contract — je boekt per sessie en annuleert
                 altijd gratis. Je betaalt je trainer direct, dus wat je betaalt gaat
                 volledig naar jouw trainer.

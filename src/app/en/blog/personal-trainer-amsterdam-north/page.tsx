@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "What does personal training cost at SculptClub?",
     answer:
-      "Trainers set their own rates. A SCULPT TRANSFORMATION starts from €299 per 4 weeks, unlimited Open Gym included. No membership, no contract, and the first intro is free. You pay your trainer directly.",
+      "Trainers set their own rates. A SCULPT TRANSFORMATION starts from €329 per 4 weeks, unlimited Open Gym included. No membership, no contract, and the first intro is free. You pay your trainer directly.",
   },
   {
     question: "What if I prefer to train solo?",
@@ -154,7 +154,7 @@ export default function PersonalTrainerAmsterdamNorthEN() {
                 SculptClub has seven independent trainers covering strength, nutrition, women’s
                 training, posture and movement technique. For physiotherapy we’ll refer you out —
                 we don’t have a physiotherapist on staff. You pick the trainer that fits your goal — not the
-                other way round. A SCULPT TRANSFORMATION starts from €299 per 4 weeks and we keep an{" "}
+                other way round. A SCULPT TRANSFORMATION starts from €329 per 4 weeks and we keep an{" "}
                 <a href="/en/blog/personal-training-cost-amsterdam" className="text-brand hover:underline">honest breakdown of what personal training costs in Amsterdam</a>.
                 The first intro is always free. No membership, no long contracts, no hidden fees.
                 Cancellation is always free. The studio is open daily 06:00 to 22:00, so squeezing a

@@ -307,7 +307,7 @@ export const whatsappLinks = {
    *
    *  BUSINESS MODEL (operator directive 2026-09-19, version (a) — do not change
    *  without a written operator decision): the TRAINER sells and collects this.
-   *  SculptClub markets the shared FORMAT ("vanaf €299 / 4 weken, incl.
+   *  SculptClub markets the shared FORMAT ("vanaf €329 / 4 weken, incl.
    *  onbeperkt Open Gym") and earns the room rent, exactly as today. There is
    *  deliberately NO SculptClub checkout for €299 — that would be a different
    *  company (payment flow, VAT, liability, trainer agreements) and is NOT
@@ -328,11 +328,11 @@ export const whatsappLinks = {
     const text =
       locale === "nl"
         ? goal
-          ? `Hoi ${name}! Ik wil graag starten met een SCULPT TRANSFORMATION van 4 weken (vanaf €299, incl. onbeperkt Open Gym). Mijn doel: ${goal}. Wat wordt de prijs bij jou?`
-          : `Hoi ${name}! Ik wil graag starten met een SCULPT TRANSFORMATION van 4 weken (vanaf €299, incl. onbeperkt Open Gym). Wat wordt de prijs bij jou?`
+          ? `Hoi ${name}! Ik wil graag starten met een SCULPT TRANSFORMATION van 4 weken (vanaf €329, incl. onbeperkt Open Gym). Mijn doel: ${goal}. Wat wordt de prijs bij jou?`
+          : `Hoi ${name}! Ik wil graag starten met een SCULPT TRANSFORMATION van 4 weken (vanaf €329, incl. onbeperkt Open Gym). Wat wordt de prijs bij jou?`
         : goal
-          ? `Hi ${name}! I'd like to start a 4-week SCULPT TRANSFORMATION (from €299, unlimited Open Gym included). My goal: ${goal}. What would the price be with you?`
-          : `Hi ${name}! I'd like to start a 4-week SCULPT TRANSFORMATION (from €299, unlimited Open Gym included). What would the price be with you?`;
+          ? `Hi ${name}! I'd like to start a 4-week SCULPT TRANSFORMATION (from €329, unlimited Open Gym included). My goal: ${goal}. What would the price be with you?`
+          : `Hi ${name}! I'd like to start a 4-week SCULPT TRANSFORMATION (from €329, unlimited Open Gym included). What would the price be with you?`;
     return `${base}?text=${encodeURIComponent(text)}`;
   },
   /** Generic (no pre-filled text) */

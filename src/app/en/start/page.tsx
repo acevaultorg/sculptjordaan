@@ -8,7 +8,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "Welcome to SculptClub — Private Studio Amsterdam Jordaan" },
   description:
-    "Private studio in the Jordaan. PT from €299 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
+    "Private studio in the Jordaan. PT from €329 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/en/start",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/en/start",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private studio in the Jordaan. PT from €299 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
+      "Private studio in the Jordaan. PT from €329 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Welcome to SculptClub — Private Studio Amsterdam Jordaan",
     description:
-      "Private studio in the Jordaan. PT from €299 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
+      "Private studio in the Jordaan. PT from €329 per 4 weeks, Open Gym from €6.13 a session, studio rental from €12/hour. First session free.",
   },
 };
 
@@ -44,7 +44,7 @@ const paths = [
   {
     icon: "Users" as const,
     title: "I want a personal trainer",
-    description: "Get matched with a trainer who fits your goals. First intro is 100% free. After that a programme from \u20ac299 per 4 weeks.",
+    description: "Get matched with a trainer who fits your goals. First intro is 100% free. After that a programme from \u20ac329 per 4 weeks.",
     cta: "Book free intro",
     href: withUtm("/en/free-intro", "pt"),
     external: false,

@@ -188,12 +188,12 @@ export const SOCIAL_PACKS: SocialPack[] = [
     tiktok: {
       title: "SCULPT TRANSFORMATION met Alex in de Jordaan",
       description:
-        "Vier weken gericht trainen met een eigen programma, en zien dat het werkt.\n\nSCULPT TRANSFORMATION vanaf €299 per 4 weken, inclusief onbeperkt Open Gym.\n\nMet Alex in onze privé studio aan de Egelantiersgracht. Kracht · Calisthenics · Hersteltraining. NL · EN · PT. Alex is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.\n\nProbeer eerst gratis → sculptclub.nl/nl/plan-gratis-intake-met-alex\n\nMAKE IT WORK.",
+        "Vier weken gericht trainen met een eigen programma, en zien dat het werkt.\n\nSCULPT TRANSFORMATION vanaf €329 per 4 weken, inclusief onbeperkt Open Gym.\n\nMet Alex in onze privé studio aan de Egelantiersgracht. Kracht · Calisthenics · Hersteltraining. NL · EN · PT. Alex is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.\n\nProbeer eerst gratis → sculptclub.nl/nl/plan-gratis-intake-met-alex\n\nMAKE IT WORK.",
       hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #calisthenics #krachttraining",
     },
     instagram: {
       caption:
-        "Vier weken gericht trainen met een eigen programma, en zien dat het werkt.\n\nSCULPT TRANSFORMATION vanaf €299 per 4 weken, inclusief onbeperkt Open Gym.\n\nMet Alex, onze personal trainer voor kracht, calisthenics en hersteltraining. NL · EN · PT. Alex is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.\n\nProbeer eerst gratis. Link in bio 👆\n\nMAKE IT WORK.",
+        "Vier weken gericht trainen met een eigen programma, en zien dat het werkt.\n\nSCULPT TRANSFORMATION vanaf €329 per 4 weken, inclusief onbeperkt Open Gym.\n\nMet Alex, onze personal trainer voor kracht, calisthenics en hersteltraining. NL · EN · PT. Alex is zelfstandig en spreekt de exacte prijs met je af bij de gratis intake.\n\nProbeer eerst gratis. Link in bio 👆\n\nMAKE IT WORK.",
       hashtags: "#personaltrainingamsterdam #amsterdamgym #jordaan #calisthenics #krachttraining",
     },
   },

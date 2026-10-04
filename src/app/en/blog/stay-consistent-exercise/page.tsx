@@ -152,7 +152,7 @@ export default function BlogPostConsistentEN() {
                 A personal trainer is not just for elite athletes. Especially as a beginner, a good trainer makes the
                 difference between quitting and sticking with it. A trainer holds you accountable, adjusts your
                 program when needed and ensures you train with proper form. At SculptClub, you can book personal
-                training from €299 per 4 weeks, or train independently via Open Gym.
+                training from €329 per 4 weeks, or train independently via Open Gym.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Consistency is not about perfection</h2>

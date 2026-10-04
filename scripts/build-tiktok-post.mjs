@@ -559,7 +559,7 @@ const POSTS = {
       // hero's own first word. This line is Alex's own bio wording and it is
       // what the photo shows.
       usp: "Van push-up tot handstand",
-      cta: "Vanaf €299 / 4 weken · gratis intake",
+      cta: "Vanaf €329 / 4 weken · gratis intake",
     },
     {
       name: "cta",

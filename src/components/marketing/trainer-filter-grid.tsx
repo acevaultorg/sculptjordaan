@@ -62,12 +62,12 @@ const copy = {
     /** SCULPT TRANSFORMATION — the shared FORMAT SculptClub markets; the trainer
      *  sells it and sets the exact price at or above the €299 floor, which is why
      *  every line here keeps "vanaf" and defers the exact price to the intake. */
-    transformationPrice: "vanaf €299 / 4 weken",
+    transformationPrice: "vanaf €329 / 4 weken",
     transformationIncl: "incl. onbeperkt Open Gym",
-    transformationCta: "Start transformatie · vanaf €299",
+    transformationCta: "Start transformatie · vanaf €329",
     tryFree: "Probeer gratis",
     ariaTransformation: (name: string) =>
-      `Start een SCULPT TRANSFORMATION van 4 weken met ${name}. Vanaf €299, prijs afgesproken bij de gratis intake`,
+      `Start een SCULPT TRANSFORMATION van 4 weken met ${name}. Vanaf €329, prijs afgesproken bij de gratis intake`,
     viewProfile: "Bekijk profiel & beschikbaarheid",
     photoAlt: (name: string) => `Foto van ${name}, personal trainer bij SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Plan een gratis intake met ${name} via WhatsApp`,
@@ -91,12 +91,12 @@ const copy = {
     requestPrice: "Ask for price →",
     bookIntro: "Book intake",
     /** See the nl block — "from" is load-bearing, the trainer sets the price. */
-    transformationPrice: "from €299 / 4 weeks",
+    transformationPrice: "from €329 / 4 weeks",
     transformationIncl: "unlimited Open Gym included",
-    transformationCta: "Start your transformation · from €299",
+    transformationCta: "Start your transformation · from €329",
     tryFree: "Try for free",
     ariaTransformation: (name: string) =>
-      `Start a 4-week SCULPT TRANSFORMATION with ${name}. From €299, price agreed at the free intro`,
+      `Start a 4-week SCULPT TRANSFORMATION with ${name}. From €329, price agreed at the free intro`,
     viewProfile: "View profile & availability",
     photoAlt: (name: string) => `Photo of ${name}, personal trainer at SculptClub Amsterdam`,
     ariaIntro: (name: string) => `Book a free intro with ${name} via WhatsApp`,
@@ -439,7 +439,7 @@ export function TrainerFilterGrid({ trainers, locale, hideFilters = false, goalL
                       falls back to the central SculptClub line for her, which is
                       correct here. Do NOT route her transformation to her
                       bookingUrl — that Calendly is a FREE discovery call, so a
-                      "vanaf €299" button pointing at it would promise one thing
+                      "vanaf €329" button pointing at it would promise one thing
                       and open another. Her free call stays the secondary CTA. */}
                   <Link
                     href={whatsappLinks.trainerTransformation(trainer.name, locale, trainer.whatsapp, goalLabel)}

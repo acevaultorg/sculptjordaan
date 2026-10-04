@@ -143,7 +143,7 @@ export default function BlogPostPriveVsGrEN() {
                 This is where the biggest difference lies. A big box gym is cheaper, sometimes starting from €20
                 per month. A private studio costs more, but you also get more in return: exclusive access, personal
                 attention, better hygiene and no waiting times. At SculptClub, you can book Open Gym sessions or
-                choose personal training from €299 per 4 weeks. It is an investment in quality over quantity.
+                choose personal training from €329 per 4 weeks. It is an investment in quality over quantity.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Which one is right for you?</h2>

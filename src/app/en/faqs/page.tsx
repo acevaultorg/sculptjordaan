@@ -84,7 +84,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "What do the trainers charge?",
-        a: "Trainers set their own rates. A SCULPT TRANSFORMATION starts from €299 per 4 weeks, unlimited Open Gym included. You pay the price your trainer quotes directly to them, with no middleman.",
+        a: "Trainers set their own rates. A SCULPT TRANSFORMATION starts from €329 per 4 weeks, unlimited Open Gym included. You pay the price your trainer quotes directly to them, with no middleman.",
       },
       {
         q: "How do I choose a trainer?",

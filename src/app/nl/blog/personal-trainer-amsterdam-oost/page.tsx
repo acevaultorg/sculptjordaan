@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam Oost — SculptClub" },
   description:
-    "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
+    "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, transformaties vanaf €329 per 4 weken.",
   keywords: [
     "personal trainer amsterdam oost",
     "personal training oost amsterdam",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/personal-trainer-amsterdam-oost",
     title: "Personal Trainer Amsterdam Oost — SculptClub",
     description:
-      "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, transformaties vanaf €329 per 4 weken.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam Oost — SculptClub",
     description:
-      "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, transformaties vanaf €299 per 4 weken.",
+      "Op zoek naar een personal trainer in Amsterdam Oost? SculptClub in de Jordaan is 15 minuten fietsen. Gratis intake, transformaties vanaf €329 per 4 weken.",
   },
 };
 
@@ -87,7 +87,7 @@ export default function PersonalTrainerOostNL() {
               <h2 className="text-2xl font-bold mt-10 mb-4">Wat krijg je bij SculptClub?</h2>
               <p>
                 Een volledig uitgeruste privé studio met professionele apparatuur. Zeven onafhankelijke
-                trainers met elk hun eigen specialisatie. Gratis intake. Tarieven vanaf €299 per 4 weken.
+                trainers met elk hun eigen specialisatie. Gratis intake. Tarieven vanaf €329 per 4 weken.
                 Geen abonnement. Ook Open Gym voor zelfstandig trainen vanaf €7,25 per sessie.
               </p>
 

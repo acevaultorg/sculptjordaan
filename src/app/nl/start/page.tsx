@@ -8,7 +8,7 @@ import { acuityLinks, whatsappLinks } from "@/config/acuity";
 export const metadata: Metadata = {
   title: { absolute: "Welkom bij SculptClub: privé studio in de Jordaan" },
   description:
-    "Privé studio in de Jordaan. PT vanaf €299 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
+    "Privé studio in de Jordaan. PT vanaf €329 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: "/nl/start",
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     url: "/nl/start",
     title: "Welkom bij SculptClub: privé studio in de Jordaan",
     description:
-      "Privé studio in de Jordaan. PT vanaf €299 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
+      "Privé studio in de Jordaan. PT vanaf €329 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Welkom bij SculptClub: privé studio in de Jordaan",
     description:
-      "Privé studio in de Jordaan. PT vanaf €299 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
+      "Privé studio in de Jordaan. PT vanaf €329 per 4 weken, Open Gym vanaf €6,13 per sessie, studio huren vanaf €12/uur. Eerste sessie gratis.",
   },
 };
 
@@ -44,7 +44,7 @@ const paths = [
   {
     icon: "Users" as const,
     title: "Ik zoek een personal trainer",
-    description: "Vind een trainer die bij jouw doelen past. De eerste intake is 100% gratis. Daarna een traject vanaf \u20ac299 per 4 weken.",
+    description: "Vind een trainer die bij jouw doelen past. De eerste intake is 100% gratis. Daarna een traject vanaf \u20ac329 per 4 weken.",
     cta: "Boek gratis intake",
     href: withUtm("/nl/gratis-intake", "pt"),
     external: false,

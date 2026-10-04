@@ -10,7 +10,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "How Much Does Personal Training Cost in Amsterdam?" },
   description:
-    "What personal training costs in Amsterdam: average prices, what drives the price, and what SculptClub charges (from €299 per 4 weeks).",
+    "What personal training costs in Amsterdam: average prices, what drives the price, and what SculptClub charges (from €329 per 4 weeks).",
   keywords: [
     "personal training cost amsterdam",
     "personal trainer price amsterdam",
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-training-cost-amsterdam",
     title: "How Much Does Personal Training Cost in Amsterdam?",
     description:
-      "What personal training costs in Amsterdam: average prices, what drives the price, and what SculptClub charges (from €299 per 4 weeks).",
+      "What personal training costs in Amsterdam: average prices, what drives the price, and what SculptClub charges (from €329 per 4 weeks).",
   },
   twitter: {
     card: "summary_large_image",
     title: "How Much Does Personal Training Cost in Amsterdam?",
     description:
-      "What personal training costs in Amsterdam: average prices, what drives the price, and what SculptClub charges (from €299 per 4 weeks).",
+      "What personal training costs in Amsterdam: average prices, what drives the price, and what SculptClub charges (from €329 per 4 weeks).",
   },
 };
 

@@ -64,7 +64,7 @@ const steps = [
   {
     step: "5",
     title: "Train on your terms",
-    desc: "Clicks? Then you start your programme. From €299 per 4 weeks, unlimited Open Gym included. No contract, stop any time.",
+    desc: "Clicks? Then you start your programme. From €329 per 4 weeks, unlimited Open Gym included. No contract, stop any time.",
   },
 ];
 
@@ -232,7 +232,7 @@ export default function FreeIntroPage() {
               "A private studio on a Jordaan canal",
               "A plan for your goal, with the price upfront",
               "Direct contact with your trainer, no middleman",
-              "Transformations from €299 per 4 weeks",
+              "Transformations from €329 per 4 weeks",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

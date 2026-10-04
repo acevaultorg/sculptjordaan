@@ -208,7 +208,7 @@ export default function BackPainPersonalTrainerAmsterdam() {
               <p>
                 The first step is a free intro. No obligations, no cost. You discuss
                 your symptoms, your goals and your expectations. Then you decide whether
-                you want to begin. Personal training starts from €299 per 4 weeks.
+                you want to begin. Personal training starts from €329 per 4 weeks.
                 Cancellation is always free — no restrictions.
               </p>
               <p>
