@@ -14,7 +14,8 @@ import { siteConfig, type Locale } from "@/config/site";
  * /landing + /en/landing — one-screen split page for campaign traffic
  * (Instagram bio, TikTok, QR codes). Owner's brief 2026-09-30, v3 2026-10-01.
  *
- * Exactly one screen (100svh), no scroll, on phone and desktop:
+ * One screen (100svh) on phone and desktop, with a minimum height on small
+ * phones so the copy and contact controls stay readable without overlapping:
  *   left / top     = personal trainers who rent the studio (deep navy → cobalt)
  *   right / bottom = people who want to train (deep crimson → brick red)
  *
@@ -63,9 +64,8 @@ export type SplitLandingCopy = {
  * Per-half palette. Trainer = navy base, cobalt tint (the cobalt is SculptClub's
  * pre-2026-05 brand blue #134DE1, deepened). Client = oxblood base, crimson tint.
  * `ink` is the button text on white: 15:1 (navy) and 10:1 (crimson).
- * Duotone ceiling (white photo pixel = screen(tint, base)): #275EDE for blue and
- * #C72B3D for red, 5.6:1 and 5.5:1 against white before the scrim. The scrim
- * (30 to 45% of base where the text sits) brings that ceiling above 7:1.
+ * A subtle colour wash keeps the original photos visible, with a neutral
+ * scrim behind the white copy rather than a strong duotone treatment.
  */
 const THEME = {
   trainer: {
@@ -242,7 +242,7 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
     <main
       id="main-content"
       data-landing-version="proposal-20261004"
-      className="relative grid h-[100svh] w-full grid-rows-2 overflow-hidden md:grid-cols-2 md:grid-rows-1"
+      className="relative grid h-[100svh] min-h-[640px] w-full grid-rows-2 overflow-hidden max-[359px]:min-h-[720px] md:min-h-0 md:grid-cols-2 md:grid-rows-1"
     >
       <h1 className="sr-only">SculptClub</h1>
 
