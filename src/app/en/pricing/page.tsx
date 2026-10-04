@@ -30,7 +30,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym" },
   description:
-    "All SculptClub prices: personal training from €299 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
+    "All SculptClub prices: personal training from €329 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
   alternates: {
     canonical: "/en/pricing",
     languages: {
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: "/en/pricing",
     title: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym",
     description:
-      "All SculptClub prices: personal training from €299 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
+      "All SculptClub prices: personal training from €329 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Pricing SculptClub Jordaan | PT, Studio Rental, Open Gym",
     description:
-      "All SculptClub prices: personal training from €299 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
+      "All SculptClub prices: personal training from €329 per 4 weeks, studio rental €12 an hour and Open Gym from €29 per 4 weeks. No contract.",
   },
 };
 
@@ -129,9 +129,9 @@ export default function PricingPageEN() {
       <BreadcrumbJsonLd items={[{"name":"Home","url":"/en"},{"name":"Pricing","url":"/en/pricing"}]} />
       <ServiceJsonLd
         name="Personal Training"
-        description="Personal training in a private studio in Amsterdam Jordaan. Free intro session, transformations from €299 per 4 weeks with unlimited Open Gym, you pay your trainer directly."
+        description="Personal training in a private studio in Amsterdam Jordaan. Free intro session, transformations from €329 per 4 weeks with unlimited Open Gym, you pay your trainer directly."
         url="/en/pricing"
-        priceRange="From €299 per 4 weeks"
+        priceRange="From €329 per 4 weeks"
       />
       <ServiceJsonLd
         name="Open Gym"
@@ -182,7 +182,7 @@ export default function PricingPageEN() {
           as="h1"
           overline="Pricing"
           title="All Pricing at a Glance"
-          description="Studio rental from €12 an hour, personal training from €299 per 4 weeks, Open Gym from €29 per 4 weeks."
+          description="Studio rental from €12 an hour, personal training from €329 per 4 weeks, Open Gym from €29 per 4 weeks."
         />
         <FadeIn>
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-3">
@@ -210,7 +210,7 @@ export default function PricingPageEN() {
               href="#personal-training"
               className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium transition hover:bg-muted"
             >
-              Personal Training (from €299)
+              Personal Training (from €329)
             </a>
             <a
               href="#open-gym"
@@ -233,7 +233,7 @@ export default function PricingPageEN() {
         <FadeIn>
           <Card className="mx-auto max-w-lg text-center">
             <CardHeader>
-              <CardTitle className="text-2xl">From €299 / 4 weeks</CardTitle>
+              <CardTitle className="text-2xl">From €329 / 4 weeks</CardTitle>
               <CardDescription>Unlimited Open Gym included. Trainers set their own rate.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -247,10 +247,13 @@ export default function PricingPageEN() {
                 Training with a partner? Duo transformation from €199 p.p. per 4 weeks (for two, €399 total).
               </p>
             </CardContent>
-            <CardFooter className="justify-center">
+            <CardFooter className="flex-wrap justify-center gap-3">
               <ButtonLink href="/en/find-personal-trainer" size="lg">
                 View trainers
                 <ArrowRight className="ml-2 h-4 w-4" />
+              </ButtonLink>
+              <ButtonLink href="/en/sculpt-program" size="lg" variant="outline">
+                See the Sculpt Program
               </ButtonLink>
             </CardFooter>
           </Card>

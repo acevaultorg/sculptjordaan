@@ -65,7 +65,7 @@ const steps = [
   {
     step: "5",
     title: "Train op jouw moment",
-    desc: "Klikt het? Dan start je je traject. Vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Geen contract, stoppen kan altijd.",
+    desc: "Klikt het? Dan start je je traject. Vanaf €329 per 4 weken, inclusief onbeperkt Open Gym. Geen contract, stoppen kan altijd.",
   },
 ];
 
@@ -251,7 +251,7 @@ export default function GratisIntakePage() {
               "Een privé studio aan de gracht in de Jordaan",
               "Een plan voor jouw doel, met de prijs vooraf",
               "Direct contact met je trainer, geen tussenpersoon",
-              "Transformaties vanaf €299 per 4 weken",
+              "Transformaties vanaf €329 per 4 weken",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm">
                 <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />

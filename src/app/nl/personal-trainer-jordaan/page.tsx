@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/footer";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Jordaan & Centrum | SculptClub" },
   description:
-    "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €299 per 4 weken, geen contract, eerste intake gratis.",
+    "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €329 per 4 weken, geen contract, eerste intake gratis.",
   robots: { index: true, follow: true },
   alternates: {
     canonical: "/nl/personal-trainer-jordaan",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     url: "/nl/personal-trainer-jordaan",
     title: "Personal Trainer Jordaan & Centrum | SculptClub",
     description:
-      "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €299 per 4 weken, geen contract, eerste intake gratis.",
+      "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €329 per 4 weken, geen contract, eerste intake gratis.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Jordaan & Centrum | SculptClub",
     description:
-      "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €299 per 4 weken, geen contract, eerste intake gratis.",
+      "Personal training in de Jordaan en het Centrum. Privé studio aan de Egelantiersgracht, vanaf €329 per 4 weken, geen contract, eerste intake gratis.",
   },
 };
 
@@ -51,7 +51,7 @@ const steps = [
   {
     step: "3",
     title: "Train op jouw moment",
-    desc: "Dagelijks open van 06:00 tot 22:00. Je traject start vanaf €299 per 4 weken. Geen verplichting achteraf.",
+    desc: "Dagelijks open van 06:00 tot 22:00. Je traject start vanaf €329 per 4 weken. Geen verplichting achteraf.",
   },
 ];
 
@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: "Wat kost een personal trainer in de Jordaan?",
-    a: "Een SCULPT TRANSFORMATION start vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. Trainers bepalen hun eigen tarief; je betaalt je trainer direct. De eerste intake is gratis.",
+    a: "Een SCULPT TRANSFORMATION start vanaf €329 per 4 weken, inclusief onbeperkt Open Gym. Trainers bepalen hun eigen tarief; je betaalt je trainer direct. De eerste intake is gratis.",
   },
   {
     q: "Kan ik mijn personal trainer zelf kiezen?",
@@ -124,7 +124,7 @@ export default function PersonalTrainerJordaanPage() {
         </h1>
         <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed">
           {trainers.length} trainers, één privé studio aan de Egelantiersgracht.
-          Vanaf €299 per 4 weken. Geen contract. Eerste intake gratis.
+          Vanaf €329 per 4 weken. Geen contract. Eerste intake gratis.
         </p>
 
         {/* Primary CTA */}
@@ -209,7 +209,7 @@ export default function PersonalTrainerJordaanPage() {
               "Privé studio aan de Egelantiersgracht — geen drukte",
               "5 personal trainers, jouw match qua doel en stijl",
               "Eerste intake 100% gratis, geen creditcard nodig",
-              "Geen abonnement — een traject vanaf €299 per 4 weken",
+              "Geen abonnement — een traject vanaf €329 per 4 weken",
               "Dagelijks open van 06:00 tot 22:00",
               "Deurcode via WhatsApp — geen receptie, geen wachten",
             ].map((item) => (

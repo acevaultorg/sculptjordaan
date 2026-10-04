@@ -171,9 +171,9 @@ export function LocalBusinessJsonLd() {
                   // read by Google and by the AI answers even when no page shows
                   // it, so it has to say the same thing the pages say.
                   itemOffered: { "@type": "Service", name: "SCULPT TRANSFORMATION (4 weeks)" },
-                  price: 299,
+                  price: 329,
                   priceCurrency: "EUR",
-                  description: "1-on-1 personal training. Trainers set their own rates; transformations from €299 per 4 weeks, unlimited Open Gym included. Free intro session.",
+                  description: "1-on-1 personal training. Trainers set their own rates; transformations from €329 per 4 weeks, unlimited Open Gym included. Free intro session.",
                 },
               ],
             },

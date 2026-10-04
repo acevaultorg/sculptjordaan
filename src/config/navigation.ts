@@ -368,6 +368,8 @@ export const alternateRoutes: Record<string, string> = {
   "/en/plan-free-intro-with-sergei": "/nl/plan-gratis-intake-met-sergei",
   "/nl/plan-gratis-intake-met-tom": "/en/plan-free-intro-with-tom",
   "/en/plan-free-intro-with-tom": "/nl/plan-gratis-intake-met-tom",
+  "/nl/sculpt-programma": "/en/sculpt-program",
+  "/en/sculpt-program": "/nl/sculpt-programma",
   "/nl/small-group": "/en/small-group",
   "/en/small-group": "/nl/small-group",
   "/nl/sportschool-jordaan": "/en/boutique-gym-amsterdam",

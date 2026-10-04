@@ -152,7 +152,7 @@ export default function BlogPostConsistentNL() {
                 Een personal trainer is niet alleen voor topsporters. Juist als beginner maakt een goede trainer het
                 verschil tussen afhaken en doorgaan. Een trainer houdt je verantwoordelijk, past je programma aan
                 wanneer nodig en zorgt ervoor dat je op de juiste manier traint. Bij SculptClub kun je personal
-                training boeken vanaf €299 per 4 weken, of zelfstandig trainen via Open Gym.
+                training boeken vanaf €329 per 4 weken, of zelfstandig trainen via Open Gym.
               </p>
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Consistentie gaat niet over perfectie</h2>

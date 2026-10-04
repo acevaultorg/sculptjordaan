@@ -260,7 +260,7 @@ export default function ImproveBodyCompositionAmsterdam() {
                 .
               </p>
               <p>
-                Personal training starts at €299 per 4 weeks. No membership, no contract. Your
+                Personal training starts at €329 per 4 weeks. No membership, no contract. Your
                 first intake is free and non-committal — we discuss your goals and build a plan.
               </p>
             </div>

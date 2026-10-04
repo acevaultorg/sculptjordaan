@@ -10,7 +10,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Wat kost personal training in Amsterdam? Prijzen & uitleg" },
   description:
-    "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €299 per 4 weken).",
+    "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €329 per 4 weken).",
   keywords: [
     "personal training kosten amsterdam",
     "personal trainer prijs amsterdam",
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     url: "/nl/blog/wat-kost-personal-training-amsterdam",
     title: "Wat kost personal training in Amsterdam? Prijzen & uitleg",
     description:
-      "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €299 per 4 weken).",
+      "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €329 per 4 weken).",
   },
   twitter: {
     card: "summary_large_image",
     title: "Wat kost personal training in Amsterdam? Prijzen & uitleg",
     description:
-      "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €299 per 4 weken).",
+      "Wat kost personal training in Amsterdam? De gemiddelde prijzen, wat de prijs bepaalt en wat SculptClub vraagt (vanaf €329 per 4 weken).",
   },
 };
 
@@ -115,7 +115,7 @@ export default function WatKostPersonalTraining() {
                 <li><strong>Top-tier (bekende trainers, celebrities):</strong> €120 – €200+ per sessie</li>
               </ul>
               <p>
-                Bij SculptClub start een <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">SCULPT TRANSFORMATION vanaf €299 per 4 weken</Link>, inclusief onbeperkt Open Gym.
+                Bij SculptClub start een <Link href="/nl/prijzen" className="text-brand underline-offset-2 hover:underline">SCULPT TRANSFORMATION vanaf €329 per 4 weken</Link>, inclusief onbeperkt Open Gym.
                 Bij één sessie per week komt dat neer op ongeveer €75 per sessie. Elke
                 trainer bepaalt zelf zijn of haar uiteindelijke tarief, zodat je altijd de beste match kunt vinden voor je budget en
                 doelen.
@@ -182,7 +182,7 @@ export default function WatKostPersonalTraining() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Personal training bij SculptClub</h2>
               <p>
-                Bij SculptClub in de Jordaan betaal je vanaf €299 per 4 weken voor training in een privé studio met
+                Bij SculptClub in de Jordaan betaal je vanaf €329 per 4 weken voor training in een privé studio met
                 professionele apparatuur. Onze trainers hebben elk hun eigen specialisatie — van krachttraining en
                 afvallen tot revalidatie en sportprestaties. De eerste <Link href="/nl/gratis-intake" className="text-brand underline-offset-2 hover:underline">kennismaking is altijd gratis</Link>, zodat je
                 vrijblijvend kunt ontdekken welke trainer bij je past.

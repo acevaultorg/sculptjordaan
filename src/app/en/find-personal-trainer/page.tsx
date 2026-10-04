@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "What does personal training cost at SculptClub?",
-    a: "A SCULPT TRANSFORMATION starts from \u20ac299 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro, upfront and with no surprises. The first intro is always free: no charge, no commitment after.",
+    a: "A SCULPT TRANSFORMATION starts from \u20ac329 per 4 weeks, unlimited Open Gym included. Trainers are self-employed and set their own price, so you agree the exact total with your trainer at the free intro, upfront and with no surprises. The first intro is always free: no charge, no commitment after.",
   },
   {
     q: "How does the free intro work?",
@@ -101,7 +101,7 @@ export default function TrainersPageEN() {
         name="Personal Training"
         description="Personal training as a programme toward a goal, in a private studio in the Jordaan, Amsterdam. Choose your goal and your trainer; the first intro is always free."
         url="/en/find-personal-trainer"
-        priceRange="From €299 per 4 weeks"
+        priceRange="From €329 per 4 weeks"
       />
       <script
         type="application/ld+json"
@@ -160,7 +160,7 @@ export default function TrainersPageEN() {
             Find your trainer in the Jordaan.
           </h1>
           <p className="mt-4 max-w-xl text-lg text-white/85">
-            First intro session free. Then from €299 per 4 weeks, unlimited Open Gym included.
+            First intro session free. Then from €329 per 4 weeks, unlimited Open Gym included.
           </p>
           {/* Brand line (operator 2026-09-20). Literal capitals so a grep of the
               served HTML finds it. */}
@@ -200,7 +200,7 @@ export default function TrainersPageEN() {
           {[
             { t: "Free intro", d: "WhatsApp your trainer. You train together once, no commitment." },
             { t: "Your plan, price upfront", d: "You agree on your goal, the length and the total price before you start." },
-            { t: "Train in the private studio", d: "From €299 per 4 weeks, unlimited Open Gym included." },
+            { t: "Train in the private studio", d: "From €329 per 4 weeks, unlimited Open Gym included." },
           ].map((s, i) => (
             <li key={s.t} className="flex gap-3">
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-sm font-bold text-background">{i + 1}</span>

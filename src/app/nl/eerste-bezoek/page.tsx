@@ -169,7 +169,7 @@ export default function EersteBezoekPage() {
         steps={[
           {
             name: "Kies je trainer",
-            text: "Bekijk alle 12 personal trainers op /nl/vind-jouw-personal-trainer. Filter op specialiteit (kracht, calisthenics, herstel, voeding) en taal (NL/EN/PT). Lees korte profielen, bekijk tarieven (vanaf €299 per 4 weken) en kies de trainer die bij jouw doel past.",
+            text: "Bekijk alle 12 personal trainers op /nl/vind-jouw-personal-trainer. Filter op specialiteit (kracht, calisthenics, herstel, voeding) en taal (NL/EN/PT). Lees korte profielen, bekijk tarieven (vanaf €329 per 4 weken) en kies de trainer die bij jouw doel past.",
             url: "/nl/vind-jouw-personal-trainer",
           },
           {
@@ -294,7 +294,7 @@ export default function EersteBezoekPage() {
                   <Users className="h-5 w-5 text-amber-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
-                <CardDescription>1-op-1 met een trainer die bij je past. Gratis kennismaking + training. Vanaf €299 per 4 weken daarna.</CardDescription>
+                <CardDescription>1-op-1 met een trainer die bij je past. Gratis kennismaking + training. Vanaf €329 per 4 weken daarna.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/nl/vind-jouw-personal-trainer" size="lg" className="w-full">Vind jouw trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

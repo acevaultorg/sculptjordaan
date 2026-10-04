@@ -104,7 +104,7 @@ export default function PTAmsterdamZuidNL() {
               <p>
                 Bij SculptClub kiezen trainers hun eigen specialisatie en tarieven. Je vindt
                 op onze <a href="/nl/vind-jouw-personal-trainer" className="text-brand hover:underline">trainerspagina</a> het
-                volledige profiel van elke trainer. Personal training begint vanaf €299 per 4 weken.
+                volledige profiel van elke trainer. Personal training begint vanaf €329 per 4 weken.
               </p>
               <p>
                 <a href="/nl/blog/voedingscoach-amsterdam" className="text-brand hover:underline">Eva</a> combineert

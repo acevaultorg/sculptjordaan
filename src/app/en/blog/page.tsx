@@ -69,7 +69,7 @@ const posts = [
   {
     title: "How Much Does Personal Training Cost in Amsterdam?",
     excerpt:
-      "Discover average prices, what affects the cost, and why a boutique studio offers great value from €299 per 4 weeks.",
+      "Discover average prices, what affects the cost, and why a boutique studio offers great value from €329 per 4 weeks.",
     category: "Personal Training",
     href: "/en/blog/personal-training-cost-amsterdam",
     date: "March 24, 2026",
@@ -197,7 +197,7 @@ const posts = [
   {
     title: "Personal Trainer Amsterdam West & Oud-West",
     excerpt:
-      "Looking for a personal trainer in Amsterdam West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €299 per 4 weeks.",
+      "Looking for a personal trainer in Amsterdam West? SculptClub in the Jordaan is a 5-minute bike ride. Free intro, from €329 per 4 weeks.",
     category: "Local",
     href: "/en/blog/personal-trainer-amsterdam-west",
     date: "April 2, 2026",
@@ -205,7 +205,7 @@ const posts = [
   {
     title: "Personal Trainer Amsterdam Centrum",
     excerpt:
-      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, from €299 per 4 weeks.",
+      "Looking for a personal trainer in Amsterdam Centrum? SculptClub in the Jordaan is just around the corner. Free intro, from €329 per 4 weeks.",
     category: "Local",
     href: "/en/blog/personal-trainer-amsterdam-centrum",
     date: "April 2, 2026",

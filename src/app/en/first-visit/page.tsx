@@ -166,7 +166,7 @@ export default function FirstVisitPage() {
         steps={[
           {
             name: "Pick your trainer",
-            text: "Browse all 12 personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €299 per 4 weeks), and pick the trainer who fits your goal.",
+            text: "Browse all 12 personal trainers at /en/find-personal-trainer. Filter by specialty (strength, calisthenics, recovery, nutrition) and language (NL/EN/PT). Read short bios, check rates (from €329 per 4 weeks), and pick the trainer who fits your goal.",
             url: "/en/find-personal-trainer",
           },
           {
@@ -279,7 +279,7 @@ export default function FirstVisitPage() {
                   <Users className="h-5 w-5 text-amber-600" />
                 </div>
                 <CardTitle>Personal Training</CardTitle>
-                <CardDescription>1-on-1 with a trainer that fits you. Free intro + training. From €299 per 4 weeks after.</CardDescription>
+                <CardDescription>1-on-1 with a trainer that fits you. Free intro + training. From €329 per 4 weeks after.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex flex-col gap-2">
                 <ButtonLink href="/en/find-personal-trainer" size="lg" className="w-full">Find your trainer<ArrowRight className="ml-2 w-4 h-4" /></ButtonLink>

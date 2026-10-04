@@ -26,6 +26,6 @@ import type { Locale } from "./site";
  *    (trainers are independent and keep 100%), which is why this says "vanaf".
  */
 export const transformationFrom: Record<Locale, string> = {
-  nl: "Vanaf €299 / 4 weken",
-  en: "From €299 / 4 weeks",
+  nl: "Vanaf €329 / 4 weken",
+  en: "From €329 / 4 weeks",
 };

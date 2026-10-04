@@ -154,7 +154,7 @@ export default function PTNaBlessureNL() {
 
               <h2 className="text-2xl font-bold mt-10 mb-4">Kosten en hoe je begint</h2>
               <p>
-                Personal training bij SculptClub begint vanaf €299 per 4 weken. De eerste
+                Personal training bij SculptClub begint vanaf €329 per 4 weken. De eerste
                 kennismaking is altijd gratis. Geen abonnement, geen contract. Je boekt per
                 sessie en <a href="/nl/faqs" className="text-brand hover:underline">annuleert altijd
                 gratis</a>.

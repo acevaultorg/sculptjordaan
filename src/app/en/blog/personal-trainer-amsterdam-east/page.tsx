@@ -9,7 +9,7 @@ import { ArrowRight, CalendarDays, User } from "lucide-react";
 export const metadata: Metadata = {
   title: { absolute: "Personal Trainer Amsterdam East — SculptClub" },
   description:
-    "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
+    "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, transformations from €329 per 4 weeks.",
   keywords: [
     "personal trainer amsterdam east",
     "personal training oost amsterdam",
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     url: "/en/blog/personal-trainer-amsterdam-east",
     title: "Personal Trainer Amsterdam East — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
+      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, transformations from €329 per 4 weeks.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Personal Trainer Amsterdam East — SculptClub",
     description:
-      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, transformations from €299 per 4 weeks.",
+      "Looking for a personal trainer in Amsterdam East? SculptClub in the Jordaan is a 15-minute bike ride. Free intro, transformations from €329 per 4 weeks.",
   },
 };
 
@@ -85,7 +85,7 @@ export default function PersonalTrainerEastEN() {
               <h2 className="text-2xl font-bold mt-10 mb-4">What do you get at SculptClub?</h2>
               <p>
                 A fully equipped private studio with professional equipment. Seven independent trainers
-                each with their own specialisation. Free intro. Rates from €299 per 4 weeks. No
+                each with their own specialisation. Free intro. Rates from €329 per 4 weeks. No
                 membership. Also Open Gym for independent training from €7.25 per session.
               </p>
 

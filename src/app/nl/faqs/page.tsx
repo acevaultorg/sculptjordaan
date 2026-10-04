@@ -84,7 +84,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         q: "Wat kosten de trainers?",
-        a: "Trainers bepalen hun eigen tarieven. Een SCULPT TRANSFORMATION start vanaf €299 per 4 weken, inclusief onbeperkt Open Gym. De prijs die je van je trainer hoort betaal je direct — zonder tussenpersoon.",
+        a: "Trainers bepalen hun eigen tarieven. Een SCULPT TRANSFORMATION start vanaf €329 per 4 weken, inclusief onbeperkt Open Gym. De prijs die je van je trainer hoort betaal je direct — zonder tussenpersoon.",
       },
       {
         q: "Hoe kies ik een trainer?",

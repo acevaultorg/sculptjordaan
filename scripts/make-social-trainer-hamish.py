@@ -154,7 +154,7 @@ def f4(out):
     y = 900
     y = block(d, M, y, 'Train met', font('Syne-800.ttf', 100), BONE, W - M * 2, lead=1.03)
     y = block(d, M, y, 'Hamish.', font('Syne-800.ttf', 100), ORANGE, W - M * 2, lead=1.03) + 34
-    y = block(d, M, y, 'Eerste kennismaking gratis · vanaf €299 per 4 weken',
+    y = block(d, M, y, 'Eerste kennismaking gratis · vanaf €329 per 4 weken',
               font('IS-500.ttf', 42), BONE, W - M * 2 - 70, lead=1.3) + 18
     y = block(d, M, y, 'Egelantiersgracht 424 · dagelijks 06:00–22:00',
               font('IS-500.ttf', 34), MUTED, W - M * 2 - 60, lead=1.3) + 34
