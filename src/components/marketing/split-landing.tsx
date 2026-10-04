@@ -18,21 +18,18 @@ import { siteConfig, type Locale } from "@/config/site";
  *   left / top     = personal trainers who rent the studio (deep navy → cobalt)
  *   right / bottom = people who want to train (deep crimson → brick red)
  *
- * Colour + legibility (v4, 2026-10-02, Paulo: "let some color come through"): the photos keep
- * their natural colour (variants are capped at 70% brightness when generated). A soft hue
- * wash (mix-blend-color, 32%) carries the blue / red identity and a scrim in the same dark
- * hue holds white text at WCAG AA or better over the brightest pixel. v1-v3 were a hard
- * duotone at 7:1; qa/landing-v4/results.json holds the values measured on the rendered
- * pixels by scripts/qa-landing.mjs (min 4.98:1).
+ * Paulo's 2026-10-04 proposal: centred logo, language left, menu right,
+ * shorter copy, rental shortcut, address and WhatsApp in the lower half.
+ * The 20% hue wash preserves more natural photo colour; a mostly neutral,
+ * darker scrim behind the copy keeps the white text readable.
  *
  * Photos: the studio's own (no stock), served by <ArtDirectedPicture> as
  * AVIF/WebP/JPEG with a square crop for the phone half and a portrait crop
  * for the desktop half. Only the first half's photo is fetchpriority=high.
  *
- * All links are internal on purpose: the global Acuity/WhatsApp click listener
- * in analytics.tsx fires Ads conversions on those, and a routing page must not
- * count as a lead. The only events here are landing_trainer_click /
- * landing_client_click (GA4, no personal data).
+ * Routing links stay internal and use landing_trainer_click / landing_client_click.
+ * The owner's requested WhatsApp contact is the single external contact action;
+ * its existing global click listener handles contact tracking.
  */
 
 export type SplitHalf = {
@@ -137,12 +134,9 @@ function Half({
         position={half.image.position}
         className="absolute inset-0 -z-40 h-full w-full object-cover"
       />
-      {/* v4 (2026-10-02, Paulo): the photo keeps its natural colour. A soft hue wash
-          (mix-blend-color keeps the photo's lightness and only borrows the hue, at
-          low opacity) carries the blue / red identity without turning skin into plastic. */}
+      {/* Preserve the photo's luminance and natural skin tones under a softer hue wash. */}
       <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-color opacity-[0.20] ${t.tint}`} />
-      {/* Scrim in the same hue, deeper toward the bottom: holds the text at 7:1 (the photo's own
-          brightest pixel is capped when the variants are generated). */}
+      {/* More shade behind the copy, less over the rest of the photograph. */}
       <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
       <div className="mx-auto w-full max-w-md text-white md:mx-0 lg:max-w-lg">
@@ -218,7 +212,7 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
 
   const menuLinks = [
     { label: isNl ? "Studio huren" : "Studio rental", href: copy.trainer.cta.href },
-    { label: isNl ? "Personal training" : "Personal training", href: copy.client.cta.href },
+    { label: "Personal training", href: copy.client.cta.href },
     ...(copy.client.pills || []),
     { label: isNl ? "Alle mogelijkheden" : "Explore SculptClub", href: copy.homeHref },
   ];
