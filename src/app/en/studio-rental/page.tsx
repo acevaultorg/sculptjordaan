@@ -276,6 +276,12 @@ export default function StudioRentalPageEN() {
               Rent the studio as a photo studio
             </a>
           </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Physio, coach or pilates teacher?{" "}
+            <a href="/en/practice-space-rental" className="font-medium text-primary hover:underline">
+              Rent a fixed afternoon every week
+            </a>
+          </p>
           <WeekendAvailability locale="en" kind="studio" className="mt-2 text-sm text-muted-foreground" />
         </div>
 

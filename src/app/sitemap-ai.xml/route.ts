@@ -22,6 +22,8 @@ const aiPriorityPages = [
   { path: "/en/studio-rental", priority: 0.95 },
   { path: "/nl/fotostudio-huren", priority: 0.7 },
   { path: "/en/photo-studio-rental", priority: 0.7 },
+  { path: "/nl/praktijkruimte-huren", priority: 0.7 },
+  { path: "/en/practice-space-rental", priority: 0.7 },
   { path: "/nl/prijzen", priority: 0.9 },
   { path: "/en/pricing", priority: 0.9 },
   { path: "/nl/gratis-intake", priority: 0.95 },

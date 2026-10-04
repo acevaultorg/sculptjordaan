@@ -375,6 +375,8 @@ export const alternateRoutes: Record<string, string> = {
   "/nl/studio-huren/gratis-test": "/en/studio-rental/free-trial",
   "/nl/fotostudio-huren": "/en/photo-studio-rental",
   "/en/photo-studio-rental": "/nl/fotostudio-huren",
+  "/nl/praktijkruimte-huren": "/en/practice-space-rental",
+  "/en/practice-space-rental": "/nl/praktijkruimte-huren",
   "/en/studio-rental/free-trial": "/nl/studio-huren/gratis-test",
   "/nl/studio-huren/rekentool": "/en/studio-rental/calculator",
   "/en/studio-rental/calculator": "/nl/studio-huren/rekentool",

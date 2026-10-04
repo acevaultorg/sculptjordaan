@@ -81,6 +81,7 @@ const nlPages = [
   "/nl/small-group",
   "/nl/studio-huren",
   "/nl/fotostudio-huren",
+  "/nl/praktijkruimte-huren",
   "/nl/studio-huren/rekentool",
   // Added 2026-07-30 — was `index, follow` + self-canonical but absent from this
   // hand-maintained array, so it was never submitted for indexing. This is the
@@ -219,6 +220,7 @@ const enPages = [
   "/en/small-group",
   "/en/studio-rental",
   "/en/photo-studio-rental",
+  "/en/practice-space-rental",
   "/en/studio-rental/calculator",
   // Added 2026-07-30 — EN twin of /nl/studio-huren/gratis-test. Same story:
   // `index, follow` + self-canonical, but never in this array so never submitted.

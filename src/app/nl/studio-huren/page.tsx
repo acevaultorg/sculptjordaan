@@ -303,6 +303,12 @@ export default function StudioRentalPageNL() {
               Huur de studio als fotostudio
             </a>
           </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">
+            Fysio, coach of pilatesdocent?{" "}
+            <a href="/nl/praktijkruimte-huren" className="font-medium text-primary hover:underline">
+              Huur een vaste middag per week
+            </a>
+          </p>
           <WeekendAvailability locale="nl" kind="studio" className="mt-2 text-sm text-muted-foreground" />
         </div>
 
