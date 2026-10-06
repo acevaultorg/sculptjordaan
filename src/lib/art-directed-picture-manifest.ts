@@ -134,8 +134,8 @@ export const ART_DIRECTED_PICTURES = {
       {
         "name": "desktop",
         "media": "(min-width: 768px)",
-        "width": 1440,
-        "height": 1920,
+        "width": 1280,
+        "height": 1620,
         "variants": {
           "avif": [
             {
@@ -151,8 +151,8 @@ export const ART_DIRECTED_PICTURES = {
               "w": 960
             },
             {
-              "url": "/images/_pic/landing-client-desktop-1440.avif",
-              "w": 1440
+              "url": "/images/_pic/landing-client-desktop-1280.avif",
+              "w": 1280
             }
           ],
           "webp": [
@@ -169,8 +169,8 @@ export const ART_DIRECTED_PICTURES = {
               "w": 960
             },
             {
-              "url": "/images/_pic/landing-client-desktop-1440.webp",
-              "w": 1440
+              "url": "/images/_pic/landing-client-desktop-1280.webp",
+              "w": 1280
             }
           ],
           "jpg": [
@@ -187,8 +187,8 @@ export const ART_DIRECTED_PICTURES = {
               "w": 960
             },
             {
-              "url": "/images/_pic/landing-client-desktop-1440.jpg",
-              "w": 1440
+              "url": "/images/_pic/landing-client-desktop-1280.jpg",
+              "w": 1280
             }
           ]
         }

@@ -35,8 +35,10 @@ const copy: SplitLandingCopy = {
     eyebrow: "Ik ben trainer",
     headline: "Jouw klanten, jouw studio.",
     support: `Studio per uur, vanaf €${studioRentalFromPrice}.`,
-    cta: { label: "Bekijk de studio", href: "/nl/studio-huren" },
-    pills: [{ label: "Huur studio", href: "/nl/boek-studio" }],
+    // Paulo 2026-10-04 (muu5d6dn1ypv53): "Huur studio" first, "Bekijk de studio" underneath.
+    cta: { label: "Huur studio", href: "/nl/boek-studio" },
+    pills: [{ label: "Bekijk de studio", href: "/nl/studio-huren" }],
+    menuHref: "/nl/studio-huren",
     image: {
       picture: "landing-trainer",
       alt: "Personal trainer coacht een cliënt bij schouderdrukken met dumbbells in de studio van SculptClub",
@@ -54,8 +56,8 @@ const copy: SplitLandingCopy = {
     ],
     image: {
       picture: "landing-client",
-      alt: "Een vrouw traint met een barbell onder het daklicht van de SculptClub studio",
-      position: { base: "55% 30%", md: "54% 25%" },
+      alt: "Een vrouw traint met dumbbells in de SculptClub studio",
+      position: { base: "50% 30%", md: "50% 0%" },
     },
   },
 };

@@ -33,8 +33,10 @@ const copy: SplitLandingCopy = {
     eyebrow: "I'm a trainer",
     headline: "Your clients, your studio.",
     support: `Studio by the hour, from €${studioRentalFromPrice}.`,
-    cta: { label: "See the studio", href: "/en/studio-rental" },
-    pills: [{ label: "Rent the studio", href: "/en/book-studio" }],
+    // Paulo 2026-10-04 (muu5d6dn1ypv53): "Rent the studio" first, "See the studio" underneath.
+    cta: { label: "Rent the studio", href: "/en/book-studio" },
+    pills: [{ label: "See the studio", href: "/en/studio-rental" }],
+    menuHref: "/en/studio-rental",
     image: {
       picture: "landing-trainer",
       alt: "Personal trainer coaching a client through a dumbbell shoulder press in the SculptClub studio",
@@ -52,8 +54,8 @@ const copy: SplitLandingCopy = {
     ],
     image: {
       picture: "landing-client",
-      alt: "A woman training with a barbell under the skylight of the SculptClub studio",
-      position: { base: "55% 30%", md: "54% 25%" },
+      alt: "A woman training with dumbbells in the SculptClub studio",
+      position: { base: "50% 30%", md: "50% 0%" },
     },
   },
 };

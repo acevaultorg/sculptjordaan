@@ -39,6 +39,8 @@ export type SplitHalf = {
   support: string;
   cta: { label: string; href: string };
   pills?: { label: string; href: string }[];
+  /** Where the header menu sends this audience (the info page); defaults to the main CTA. */
+  menuHref?: string;
   image: {
     /** Entry in scripts/generate-art-directed-pictures.mjs. */
     picture: ArtDirectedPictureId;
@@ -122,7 +124,7 @@ function Half({
   return (
     <section
       aria-labelledby={headingId}
-      className={`relative isolate flex min-h-0 flex-col overflow-hidden px-6 sm:px-10 md:pt-[26vh] md:pb-36 lg:px-16 ${t.base} ${
+      className={`relative isolate flex min-h-0 flex-col overflow-hidden px-6 sm:px-10 md:pt-28 md:pb-36 lg:px-16 ${t.base} ${
         isTrainer ? "pt-16 pb-4" : "pt-4 pb-28"
       }`}
     >
@@ -139,7 +141,11 @@ function Half({
       {/* More shade behind the copy, less over the rest of the photograph. */}
       <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
-      <div className={`mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col text-white md:mx-0 lg:max-w-lg ${isTrainer ? "justify-end md:justify-start" : ""}`}>
+      {/* Phone: copy above the buttons. Desktop (Paulo 2026-10-04, muu5d6dn1ypv53): copy in the vertical
+          middle of the photo, buttons on the bottom line of both halves. */}
+      <div className={`mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col text-white md:mx-0 md:grid md:grid-rows-[1fr_auto_1fr] lg:max-w-lg ${isTrainer ? "justify-end" : ""}`}>
+        {/* Same minimum height on both halves so the two eyebrows start on one line. */}
+        <div className="md:row-start-2 md:min-h-[12rem] lg:min-h-[14rem]">
         <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white sm:text-[0.8125rem]">
           <span aria-hidden="true" className={`h-[2px] w-5 rounded-full ${t.rule}`} />
           {half.eyebrow}
@@ -153,13 +159,14 @@ function Half({
         <p className="mt-2 text-[0.9375rem] leading-snug text-white text-pretty sm:text-base md:mt-4 md:text-lg">
           {half.support}
         </p>
+        </div>
 
         {/* Buttons sit at the bottom of each half so both CTAs line up across the split. */}
-        <div className={`pt-3 md:mt-auto md:pt-8 ${isTrainer ? "" : "mt-auto"}`}>
+        <div className={`pt-3 md:row-start-3 md:self-end md:pt-8 ${isTrainer ? "" : "mt-auto"}`}>
         <Link
           href={half.cta.href}
           onClick={() => trackLandingClick(side, half.cta.href, locale)}
-          className={`group inline-flex min-h-[52px] w-full items-center justify-between gap-3 rounded-full bg-white px-6 text-[1.0625rem] font-semibold shadow-lg shadow-black/25 transition duration-200 hover:-translate-y-px hover:bg-white/90 hover:shadow-xl active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:w-auto sm:min-w-[280px] md:min-h-[56px] md:text-lg ${t.ink}`}
+          className={`group inline-flex min-h-[52px] w-full items-center justify-between gap-3 whitespace-nowrap rounded-full bg-white px-6 text-[1.0625rem] font-semibold shadow-lg shadow-black/25 transition duration-200 hover:-translate-y-px hover:bg-white/90 hover:shadow-xl active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:w-auto sm:min-w-[280px] md:min-h-[56px] md:text-lg ${t.ink}`}
         >
           <span>{half.cta.label}</span>
           <ArrowIcon />
@@ -172,7 +179,7 @@ function Half({
                 <Link
                   href={pill.href}
                   onClick={() => trackLandingClick(side, pill.href, locale)}
-                  className="inline-flex min-h-[44px] items-center rounded-full border border-white/60 bg-black/20 px-4 text-sm font-medium text-white transition duration-200 hover:border-white hover:bg-white/15 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border border-white/60 bg-black/20 px-4 text-sm font-medium text-white transition duration-200 hover:border-white hover:bg-white/15 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   {pill.label}
                 </Link>
@@ -213,8 +220,8 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
   }, [menuOpen]);
 
   const menuLinks = [
-    { label: isNl ? "Studio huren" : "Studio rental", href: copy.trainer.cta.href },
-    { label: "Personal training", href: copy.client.cta.href },
+    { label: isNl ? "Studio huren" : "Studio rental", href: copy.trainer.menuHref ?? copy.trainer.cta.href },
+    { label: "Personal training", href: copy.client.menuHref ?? copy.client.cta.href },
     ...(copy.client.pills || []),
     { label: isNl ? "Alle mogelijkheden" : "Explore SculptClub", href: copy.homeHref },
   ];
@@ -276,7 +283,7 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
   return (
     <main
       id="main-content"
-      data-landing-version="proposal-20261004"
+      data-landing-version="feedback-20261006"
       className="relative grid h-[100svh] min-h-[640px] w-full grid-rows-2 overflow-hidden max-[359px]:min-h-[720px] md:min-h-0 md:grid-cols-2 md:grid-rows-1"
     >
       <h1 className="sr-only">SculptClub</h1>

@@ -47,10 +47,18 @@ const PICTURES = [
   },
   {
     id: "landing-client",
-    src: "public/images/studio/training-barbell-squat.jpg", // 1920x1920
+    // v5 (2026-10-06): Paulo offered two photos of this model to replace the barbell shot (thought
+    // mutu7zf99zd2sj); this is the dumbbell one. Dark background keeps the white copy readable and her
+    // face sits high in the frame, so the headline no longer covers it. Was training-barbell-squat.jpg.
+    src: "public/images/studio/training-dumbbells-focus.jpg", // 1280x1920, face at y 520-790
+    // Low-key photo (mostly black): the global 0.7 cap made her face muddy. Her lit skin is the only
+    // bright area and the copy sits on the dark background, so a higher cap keeps text contrast.
+    cap: 0.85,
     crops: {
-      desktop: { media: "(min-width: 768px)", left: 278, top: 0, width: 1440, height: 1920, widths: [480, 720, 960, 1440] },
-      mobile: { left: 0, top: 0, width: 1920, height: 1920, widths: [640, 828, 1080] },
+      // Portrait desktop half: start at y 300 so her face lands in the top fifth, above the centred copy.
+      desktop: { media: "(min-width: 768px)", left: 0, top: 300, width: 1280, height: 1620, widths: [480, 720, 960, 1280] },
+      // Phone half: square from y 160 so her face lands in the free band between the copy and the buttons.
+      mobile: { left: 0, top: 160, width: 1280, height: 1280, widths: [640, 828, 1080] },
     },
   },
 ];
@@ -89,7 +97,7 @@ for (const pic of PICTURES) {
         // Cap the brightest pixel so white text keeps its contrast over natural colour. A second
         // pipeline on purpose: sharp runs linear() BEFORE normalise/clahe within one pipeline, so
         // chaining it above left the max at 255.
-        const capped = sharp(await img.png().toBuffer()).linear(CAP, 0);
+        const capped = sharp(await img.png().toBuffer()).linear(pic.cap ?? CAP, 0);
         await encode(capped).toFile(out);
         total += (await stat(out)).size;
         variants[fmt].push({ url: `/images/_pic/${file}`, w });
