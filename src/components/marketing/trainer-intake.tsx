@@ -11,6 +11,7 @@ import { TrainerPhotoGallery } from "@/components/marketing/trainer-photo-galler
 import Image from "next/image";
 import Link from "next/link";
 import { trainers } from "@/config/trainers";
+import { getDirectoryTrainer } from "@/lib/trainer-directory";
 import { ptGoals } from "@/config/pt-goals";
 import { whatsappLinks } from "@/config/acuity";
 import { trackNavClick } from "@/lib/tracking";
@@ -779,11 +780,14 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                 {t.browseAll}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </ButtonLink>
-              <p className="mt-4 text-sm">
-                <Link href={`/${locale}/trainers/${trainer.id}`} className="inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4 hover:text-brand">
-                  {locale === "nl" ? "Bekijk ook in de trainergids" : "Also see the trainer directory profile"}
-                </Link>
-              </p>
+              {/* Only trainers in the directory have a profile page (NOT_LISTED in trainer-directory.ts); a link for the others 404s. */}
+              {getDirectoryTrainer(trainer.id) && (
+                <p className="mt-4 text-sm">
+                  <Link href={`/${locale}/trainers/${trainer.id}`} className="inline-flex min-h-11 items-center font-semibold text-foreground underline underline-offset-4 hover:text-brand">
+                    {locale === "nl" ? "Bekijk ook in de trainergids" : "Also see the trainer directory profile"}
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </FadeIn>
