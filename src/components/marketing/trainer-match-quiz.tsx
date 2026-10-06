@@ -552,7 +552,7 @@ export function TrainerMatchQuiz({ locale }: { locale: "nl" | "en" }) {
                   onClick={() =>
                     track("Quiz Lead", { trainer_name: trainer.id, position: i + 1, method: "whatsapp_direct" })
                   }
-                  className="mt-2 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white font-bold text-sm transition-colors min-h-[48px]"
+                  className="mt-2 inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-[#15803d] hover:bg-[#116b34] text-white font-bold text-sm transition-colors min-h-[48px]"
                 >
                   <MessageCircle className="w-4 h-4" />
                   {t.result.waDirectLabel(trainer.name)}

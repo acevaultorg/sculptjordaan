@@ -560,7 +560,7 @@ export function TrainerIntakePage({ trainerId, locale }: TrainerIntakeProps) {
                     href={trainerWhatsapp}
                     external
                     size="lg"
-                    className="w-full bg-[#25D366] hover:bg-[#1da851] text-white rounded-xl px-6 py-5 text-base font-semibold transition-all"
+                    className="w-full bg-[#15803d] hover:bg-[#116b34] text-white rounded-xl px-6 py-5 text-base font-semibold transition-all"
                   >
                     <MessageCircle className="mr-2 w-5 h-5" />
                     {t.whatsappLabel}
