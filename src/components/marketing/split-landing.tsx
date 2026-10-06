@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/layout/whatsapp-button";
 import { ArtDirectedPicture } from "@/components/ui/art-directed-picture";
 import type { ArtDirectedPictureId } from "@/lib/art-directed-picture-manifest";
@@ -72,7 +72,7 @@ const THEME = {
     base: "bg-[#0A1633]",
     tint: "bg-[#1E4FD6]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(7,14,25,0.22)_0%,rgba(7,14,25,0.44)_35%,rgba(7,14,25,0.46)_65%,rgba(7,14,25,0.32)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(7,14,25,0.16)_0%,rgba(7,14,25,0.30)_35%,rgba(7,14,25,0.34)_65%,rgba(7,14,25,0.24)_100%)]",
     ink: "text-[#0A1633] focus-visible:ring-offset-[#0A1633]",
     rule: "bg-[#8FB0FF]",
   },
@@ -80,7 +80,7 @@ const THEME = {
     base: "bg-[#3F0910]",
     tint: "bg-[#B42330]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(34,10,12,0.28)_0%,rgba(34,10,12,0.44)_35%,rgba(34,10,12,0.46)_65%,rgba(34,10,12,0.36)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(34,10,12,0.20)_0%,rgba(34,10,12,0.30)_35%,rgba(34,10,12,0.34)_65%,rgba(34,10,12,0.28)_100%)]",
     ink: "text-[#9B1620] focus-visible:ring-offset-[#3F0910]",
     rule: "bg-[#FFB0A8]",
   },
@@ -122,8 +122,8 @@ function Half({
   return (
     <section
       aria-labelledby={headingId}
-      className={`relative isolate flex min-h-0 flex-col justify-center overflow-hidden px-6 sm:px-10 md:justify-start md:pt-[30vh] md:pb-16 lg:px-16 ${t.base} ${
-        isTrainer ? "pt-16 pb-4" : "pt-4 pb-28 md:pb-32"
+      className={`relative isolate flex min-h-0 flex-col overflow-hidden px-6 sm:px-10 md:pt-[26vh] md:pb-36 lg:px-16 ${t.base} ${
+        isTrainer ? "pt-16 pb-4" : "pt-4 pb-28"
       }`}
     >
       <ArtDirectedPicture
@@ -135,11 +135,11 @@ function Half({
         className="absolute inset-0 -z-40 h-full w-full object-cover"
       />
       {/* Preserve the photo's luminance and natural skin tones under a softer hue wash. */}
-      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-color opacity-[0.20] ${t.tint}`} />
+      <div aria-hidden="true" className={`absolute inset-0 -z-20 mix-blend-color opacity-[0.16] ${t.tint}`} />
       {/* More shade behind the copy, less over the rest of the photograph. */}
       <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
-      <div className="mx-auto w-full max-w-md text-white md:mx-0 lg:max-w-lg">
+      <div className="mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col text-white md:mx-0 lg:max-w-lg">
         <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white sm:text-[0.8125rem]">
           <span aria-hidden="true" className={`h-[2px] w-5 rounded-full ${t.rule}`} />
           {half.eyebrow}
@@ -154,10 +154,12 @@ function Half({
           {half.support}
         </p>
 
+        {/* Buttons sit at the bottom of each half so both CTAs line up across the split. */}
+        <div className="mt-auto pt-3 md:pt-8">
         <Link
           href={half.cta.href}
           onClick={() => trackLandingClick(side, half.cta.href, locale)}
-          className={`group mt-3 inline-flex min-h-[52px] w-full items-center justify-between gap-3 rounded-full bg-white px-6 text-[1.0625rem] font-semibold shadow-lg shadow-black/25 transition duration-200 hover:-translate-y-px hover:bg-white/90 hover:shadow-xl active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:w-auto sm:min-w-[280px] md:mt-8 md:min-h-[56px] md:text-lg ${t.ink}`}
+          className={`group inline-flex min-h-[52px] w-full items-center justify-between gap-3 rounded-full bg-white px-6 text-[1.0625rem] font-semibold shadow-lg shadow-black/25 transition duration-200 hover:-translate-y-px hover:bg-white/90 hover:shadow-xl active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 sm:w-auto sm:min-w-[280px] md:min-h-[56px] md:text-lg ${t.ink}`}
         >
           <span>{half.cta.label}</span>
           <ArrowIcon />
@@ -178,6 +180,7 @@ function Half({
             ))}
           </ul>
         )}
+        </div>
       </div>
     </section>
   );
@@ -189,7 +192,6 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const isNl = copy.locale === "nl";
   const current = copy.locale.toUpperCase();
-  const switchFirst = copy.locale === "en"; // always show NL | EN in that order
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -217,25 +219,58 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
     { label: isNl ? "Alle mogelijkheden" : "Explore SculptClub", href: copy.homeHref },
   ];
 
-  const currentChip = (
-    <span aria-current="page" className="inline-flex h-11 min-w-[44px] items-center justify-center">
-      <span className="inline-flex h-8 min-w-[2.25rem] items-center justify-center rounded-full bg-white px-2.5 text-[#0A1633]">
+  const langMenuRef = useRef<HTMLDivElement>(null);
+  const [langOpen, setLangOpen] = useState(false);
+  useEffect(() => {
+    if (!langOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setLangOpen(false);
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !langMenuRef.current?.contains(event.target)) setLangOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [langOpen]);
+
+  // Compact language menu: shows the current language, opens a two-item list.
+  const langMenu = (
+    <div ref={langMenuRef} className="relative">
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={langOpen}
+        aria-controls="landing-lang-menu"
+        aria-label={`${copy.langLabel}: ${current}`}
+        onClick={() => setLangOpen(!langOpen)}
+        className="inline-flex h-11 min-w-[44px] items-center justify-center gap-1 rounded-lg border border-white/25 bg-black/20 px-2.5 text-white backdrop-blur-sm transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
         {current}
-      </span>
-    </span>
-  );
-  const switchChip = (
-    <Link
-      href={copy.switchLang.href}
-      hrefLang={copy.switchLang.hrefLang}
-      lang={copy.switchLang.hrefLang}
-      aria-label={copy.switchLang.ariaLabel}
-      className="group inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-    >
-      <span className="inline-flex h-8 min-w-[2.25rem] items-center justify-center rounded-full border border-white/50 px-2.5 text-white transition-colors group-hover:border-white group-hover:bg-white/15">
-        {copy.switchLang.label}
-      </span>
-    </Link>
+        <ChevronDown className={`h-4 w-4 transition-transform ${langOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+      </button>
+      <div
+        id="landing-lang-menu"
+        hidden={!langOpen}
+        className="absolute left-0 top-[calc(100%+8px)] w-28 rounded-xl border border-white/20 bg-[#0A1633]/95 p-1.5 text-white shadow-xl backdrop-blur-md"
+      >
+        <span aria-current="page" className="flex min-h-11 items-center rounded-lg bg-white/10 px-3 text-sm font-semibold">
+          {current}
+        </span>
+        <Link
+          href={copy.switchLang.href}
+          hrefLang={copy.switchLang.hrefLang}
+          lang={copy.switchLang.hrefLang}
+          aria-label={copy.switchLang.ariaLabel}
+          className="flex min-h-11 items-center rounded-lg px-3 text-sm font-medium hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        >
+          {copy.switchLang.label}
+        </Link>
+      </div>
+    </div>
   );
 
   return (
@@ -248,12 +283,8 @@ export function SplitLanding({ copy }: { copy: SplitLandingCopy }) {
 
       {/* Paulo's proposal: language left, the real logo centred, navigation right. */}
       <header className="pointer-events-none absolute inset-x-0 top-0 z-20 grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-4 pt-3 sm:px-10 md:pt-6 lg:px-16">
-        <nav
-          aria-label={copy.langLabel}
-          className="pointer-events-auto -ml-1.5 flex items-center justify-self-start text-xs font-semibold tracking-wide"
-        >
-          {switchFirst ? switchChip : currentChip}
-          {switchFirst ? currentChip : switchChip}
+        <nav aria-label={copy.langLabel} className="pointer-events-auto justify-self-start text-xs font-semibold tracking-wide">
+          {langMenu}
         </nav>
         <Link
           href={copy.homeHref}
