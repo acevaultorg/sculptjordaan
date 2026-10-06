@@ -139,7 +139,7 @@ function Half({
       {/* More shade behind the copy, less over the rest of the photograph. */}
       <div aria-hidden="true" className={`absolute inset-0 -z-10 ${t.scrim}`} />
 
-      <div className="mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col text-white md:mx-0 lg:max-w-lg">
+      <div className={`mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col text-white md:mx-0 lg:max-w-lg ${isTrainer ? "justify-end md:justify-start" : ""}`}>
         <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white sm:text-[0.8125rem]">
           <span aria-hidden="true" className={`h-[2px] w-5 rounded-full ${t.rule}`} />
           {half.eyebrow}
@@ -155,7 +155,7 @@ function Half({
         </p>
 
         {/* Buttons sit at the bottom of each half so both CTAs line up across the split. */}
-        <div className="mt-auto pt-3 md:pt-8">
+        <div className={`pt-3 md:mt-auto md:pt-8 ${isTrainer ? "" : "mt-auto"}`}>
         <Link
           href={half.cta.href}
           onClick={() => trackLandingClick(side, half.cta.href, locale)}
