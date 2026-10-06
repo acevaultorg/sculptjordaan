@@ -82,7 +82,7 @@ const THEME = {
     base: "bg-[#3F0910]",
     tint: "bg-[#B42330]",
     scrim:
-      "bg-[linear-gradient(180deg,rgba(34,10,12,0.20)_0%,rgba(34,10,12,0.30)_35%,rgba(34,10,12,0.34)_65%,rgba(34,10,12,0.28)_100%)]",
+      "bg-[linear-gradient(180deg,rgba(34,10,12,0.20)_0%,rgba(34,10,12,0.34)_35%,rgba(34,10,12,0.42)_65%,rgba(34,10,12,0.30)_100%)]",
     ink: "text-[#9B1620] focus-visible:ring-offset-[#3F0910]",
     rule: "bg-[#FFB0A8]",
   },
@@ -145,7 +145,7 @@ function Half({
           middle of the photo, buttons on the bottom line of both halves. */}
       <div className={`mx-auto flex min-h-0 w-full max-w-md flex-1 flex-col text-white md:mx-0 md:grid md:grid-rows-[1fr_auto_1fr] lg:max-w-lg ${isTrainer ? "justify-end" : ""}`}>
         {/* Same minimum height on both halves so the two eyebrows start on one line. */}
-        <div className="md:row-start-2 md:min-h-[12rem] lg:min-h-[14rem]">
+        <div className="md:row-start-2 md:min-h-[12rem] lg:min-h-[14rem] [text-shadow:0_1px_14px_rgba(0,0,0,0.55)]">
         <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-white sm:text-[0.8125rem]">
           <span aria-hidden="true" className={`h-[2px] w-5 rounded-full ${t.rule}`} />
           {half.eyebrow}
@@ -179,7 +179,7 @@ function Half({
                 <Link
                   href={pill.href}
                   onClick={() => trackLandingClick(side, pill.href, locale)}
-                  className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border border-white/60 bg-black/20 px-4 text-sm font-medium text-white transition duration-200 hover:border-white hover:bg-white/15 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full border border-white/60 bg-black/40 px-4 text-sm font-medium text-white backdrop-blur-sm transition duration-200 hover:border-white hover:bg-white/15 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   {pill.label}
                 </Link>
